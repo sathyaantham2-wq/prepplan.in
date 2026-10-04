@@ -44,6 +44,7 @@ import { Route as ApiErrorsRouteImport } from './routes/api/errors'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiExamCountdownRouteImport } from './routes/api/exam-countdown'
 import { Route as ApiGuardianInvitesRouteImport } from './routes/api/guardian-invites'
+import { Route as ApiGuestRouteImport } from './routes/api/guest'
 import { Route as ApiHabitDrillsRouteImport } from './routes/api/habit-drills'
 import { Route as ApiLeaderboardRouteImport } from './routes/api/leaderboard'
 import { Route as ApiPapersRouteImport } from './routes/api/papers'
@@ -325,6 +326,11 @@ const ApiExamCountdownRoute = ApiExamCountdownRouteImport.update({
 const ApiGuardianInvitesRoute = ApiGuardianInvitesRouteImport.update({
   id: '/api/guardian-invites',
   path: '/api/guardian-invites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiGuestRoute = ApiGuestRouteImport.update({
+  id: '/api/guest',
+  path: '/api/guest',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiHabitDrillsRoute = ApiHabitDrillsRouteImport.update({
@@ -920,6 +926,7 @@ export interface FileRoutesByFullPath {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
+  '/api/guest': typeof ApiGuestRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/leaderboard': typeof ApiLeaderboardRoute
   '/api/papers': typeof ApiPapersRouteWithChildren
@@ -1063,6 +1070,7 @@ export interface FileRoutesByTo {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
+  '/api/guest': typeof ApiGuestRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/leaderboard': typeof ApiLeaderboardRoute
   '/api/papers': typeof ApiPapersRouteWithChildren
@@ -1207,6 +1215,7 @@ export interface FileRoutesById {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
+  '/api/guest': typeof ApiGuestRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/leaderboard': typeof ApiLeaderboardRoute
   '/api/papers': typeof ApiPapersRouteWithChildren
@@ -1352,6 +1361,7 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/guardian-invites'
+    | '/api/guest'
     | '/api/habit-drills'
     | '/api/leaderboard'
     | '/api/papers'
@@ -1495,6 +1505,7 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/guardian-invites'
+    | '/api/guest'
     | '/api/habit-drills'
     | '/api/leaderboard'
     | '/api/papers'
@@ -1638,6 +1649,7 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/guardian-invites'
+    | '/api/guest'
     | '/api/habit-drills'
     | '/api/leaderboard'
     | '/api/papers'
@@ -1782,6 +1794,7 @@ export interface RootRouteChildren {
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiExamCountdownRoute: typeof ApiExamCountdownRoute
   ApiGuardianInvitesRoute: typeof ApiGuardianInvitesRouteWithChildren
+  ApiGuestRoute: typeof ApiGuestRoute
   ApiHabitDrillsRoute: typeof ApiHabitDrillsRouteWithChildren
   ApiLeaderboardRoute: typeof ApiLeaderboardRoute
   ApiPapersRoute: typeof ApiPapersRouteWithChildren
@@ -2074,6 +2087,13 @@ declare module '@tanstack/react-router' {
       path: '/api/guardian-invites'
       fullPath: '/api/guardian-invites'
       preLoaderRoute: typeof ApiGuardianInvitesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/guest': {
+      id: '/api/guest'
+      path: '/api/guest'
+      fullPath: '/api/guest'
+      preLoaderRoute: typeof ApiGuestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/habit-drills': {
@@ -3255,6 +3275,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiExamCountdownRoute: ApiExamCountdownRoute,
   ApiGuardianInvitesRoute: ApiGuardianInvitesRouteWithChildren,
+  ApiGuestRoute: ApiGuestRoute,
   ApiHabitDrillsRoute: ApiHabitDrillsRouteWithChildren,
   ApiLeaderboardRoute: ApiLeaderboardRoute,
   ApiPapersRoute: ApiPapersRouteWithChildren,
