@@ -974,8 +974,8 @@ function MyPaper() {
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-small text-muted-foreground">
                 {(chapterIds ?? []).length} chapter
-                {(chapterIds ?? []).length === 1 ? '' : 's'} · {questionCount}{' '}
-                questions
+                {(chapterIds ?? []).length === 1 ? '' : 's'} ·{' '}
+                {plan ? plan.total_questions : questionCount} questions
                 {plan ? ` · about ${plan.estimated_minutes} min` : ''}
               </p>
               <div className="flex gap-2">
