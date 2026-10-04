@@ -63,8 +63,8 @@ function geminiModels(): Record<ModelTier, string> {
 // 2026-09-24, user request ("another option of api key along with gemini and side by side...
 // groq, cerebras, openrouter"): three more vendors, each checked against its own current docs
 // before picking a default (not remembered/guessed) --
-//   Groq:       console.groq.com/docs -- llama-3.3-70b-versatile (strong), llama-3.1-8b-instant
-//               (cheap), both explicitly current in Groq's own docs as of this date.
+//   Groq:       console.groq.com/docs -- first llama-3.3-70b-versatile / llama-3.1-8b-instant;
+//               replaced 2026-10-04 by openai/gpt-oss-120b / -20b, see groqModels() below.
 //   Cerebras:   inference-docs.cerebras.ai -- gpt-oss-120b (strong), a materially smaller model
 //               for cheap; Cerebras's own docs excerpt available at research time was partial, so
 //               this is the least-confirmed of the three defaults here -- ai_jobs.error is the
@@ -75,12 +75,19 @@ function geminiModels(): Record<ModelTier, string> {
 //               not a specific vendor's flagship.
 // All three: override with <PROVIDER>_MODEL_STRONG / <PROVIDER>_MODEL_CHEAP if a default is wrong
 // or a different model is preferred.
+//
+// 2026-10-04: llama-3.3-70b-versatile and llama-3.1-8b-instant are now listed by Groq as
+// enterprise ("contact sales") models, so on an ordinary account every call to them failed with a
+// 404 "does not exist or you do not have access to it" (production ai_jobs.error). The defaults
+// are now the two production models Groq's docs list with ordinary self-serve limits:
+// openai/gpt-oss-120b (strong) and openai/gpt-oss-20b (cheap). Those are reasoning models; see
+// ai-provider.ts for how they are called.
 function groqModels(): Record<ModelTier, string> {
-  const strong = env.GROQ_MODEL_STRONG ?? 'llama-3.3-70b-versatile'
+  const strong = env.GROQ_MODEL_STRONG ?? 'openai/gpt-oss-120b'
   return {
     strong,
     mid: strong,
-    cheap: env.GROQ_MODEL_CHEAP ?? 'llama-3.1-8b-instant',
+    cheap: env.GROQ_MODEL_CHEAP ?? 'openai/gpt-oss-20b',
   }
 }
 

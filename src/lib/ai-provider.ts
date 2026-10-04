@@ -234,12 +234,21 @@ interface OpenAiCompatibleResponse {
   usage?: { prompt_tokens?: number; completion_tokens?: number }
 }
 
+// Output room added for a Groq gpt-oss model's thinking, at low effort.
+const GROQ_REASONING_HEADROOM_TOKENS = 1024
+
 async function completeOpenAiCompatible(
   input: CompletionInput,
   apiKey: string,
   baseUrl: string,
 ): Promise<CompletionResult> {
   const images = input.images ?? []
+  // Groq's openai/gpt-oss models reason before they answer, and that thinking is spent from the
+  // same output budget. Left alone, a short answer limit can be used up before any answer text
+  // appears, leaving an empty reply. So their effort is set to low (a documented parameter for
+  // these models) and the limit gets room for the thinking on top of the answer.
+  const groqReasoning =
+    baseUrl.includes('groq.com') && input.model.startsWith('openai/gpt-oss')
   const response = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',
     headers: {
@@ -268,9 +277,12 @@ async function completeOpenAiCompatible(
               : input.prompt,
         },
       ],
-      max_tokens: input.maxTokens,
+      max_tokens: groqReasoning
+        ? input.maxTokens + GROQ_REASONING_HEADROOM_TOKENS
+        : input.maxTokens,
       temperature: 0.2,
       response_format: { type: 'json_object' },
+      ...(groqReasoning ? { reasoning_effort: 'low' } : {}),
     }),
     signal: AbortSignal.timeout(60_000),
   })
