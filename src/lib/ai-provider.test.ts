@@ -273,6 +273,40 @@ describe('completeText with OpenAI-compatible vendors (Groq, Cerebras, OpenRoute
     },
   ]
 
+  it('groq gpt-oss: low reasoning effort, and room for the thinking on top of the answer', async () => {
+    const fetchMock = stubFetch({
+      choices: [{ message: { content: '{"ok": true}' } }],
+      usage: { prompt_tokens: 7, completion_tokens: 40 },
+    })
+    const result = await completeText(
+      { model: 'openai/gpt-oss-120b', prompt: 'hello', maxTokens: 300 },
+      'groq',
+      { GROQ_API_KEY: 'secret-key' },
+    )
+    expect(result.text).toBe('{"ok": true}')
+    const sent = JSON.parse(
+      (fetchMock.mock.calls[0] as [string, RequestInit])[1].body as string,
+    )
+    expect(sent.model).toBe('openai/gpt-oss-120b')
+    expect(sent.reasoning_effort).toBe('low')
+    expect(sent.max_tokens).toBe(300 + 1024)
+    expect(sent.response_format).toEqual({ type: 'json_object' })
+  })
+
+  it('a gpt-oss model on another vendor is left alone (its reasoning settings differ)', async () => {
+    const fetchMock = stubFetch({ choices: [{ message: { content: '{}' } }] })
+    await completeText(
+      { model: 'openai/gpt-oss-120b', prompt: 'p', maxTokens: 300 },
+      'openrouter',
+      { OPENROUTER_API_KEY: 'secret-key' },
+    )
+    const sent = JSON.parse(
+      (fetchMock.mock.calls[0] as [string, RequestInit])[1].body as string,
+    )
+    expect(sent.max_tokens).toBe(300)
+    expect(sent).not.toHaveProperty('reasoning_effort')
+  })
+
   for (const { provider, config, baseUrl } of cases) {
     it(`${provider}: posts to its chat/completions endpoint with a Bearer key and JSON mode on`, async () => {
       const fetchMock = stubFetch({
@@ -301,6 +335,20 @@ describe('completeText with OpenAI-compatible vendors (Groq, Cerebras, OpenRoute
       expect(sent.messages).toEqual([{ role: 'user', content: 'hello' }])
       expect(sent.max_tokens).toBe(100)
       expect(sent.response_format).toEqual({ type: 'json_object' })
+    })
+
+    it(`${provider}: an ordinary model gets exactly the limit it asked for and no reasoning setting`, async () => {
+      const fetchMock = stubFetch({ choices: [{ message: { content: '{}' } }] })
+      await completeText(
+        { model: 'some/model', prompt: 'p', maxTokens: 300 },
+        provider,
+        config,
+      )
+      const sent = JSON.parse(
+        (fetchMock.mock.calls[0] as [string, RequestInit])[1].body as string,
+      )
+      expect(sent.max_tokens).toBe(300)
+      expect(sent).not.toHaveProperty('reasoning_effort')
     })
 
     it(`${provider}: sends a photo as an image_url content part alongside the prompt text`, async () => {

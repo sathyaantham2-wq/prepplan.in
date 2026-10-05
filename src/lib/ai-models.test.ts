@@ -20,7 +20,7 @@ describe('modelForFeature (F094 task-to-model map)', () => {
   it("maps to each vendor's own models", () => {
     expect(modelForFeature('AI-05', 'gemini')).toBe('gemini-3.5-flash')
     expect(modelForFeature('AI-02', 'gemini')).toBe('gemini-3.5-flash-lite')
-    expect(modelForFeature('AI-05', 'groq')).toBe('llama-3.3-70b-versatile')
+    expect(modelForFeature('AI-05', 'groq')).toBe('openai/gpt-oss-120b')
     expect(modelForFeature('AI-05', 'cerebras')).toBe('gpt-oss-120b')
     expect(modelForFeature('AI-05', 'openrouter')).toBe(
       'meta-llama/llama-3.3-70b-instruct',
@@ -65,7 +65,7 @@ describe('callWithProviderChain (F094 automatic fallback on failure, cross-vendo
     })
     expect(outcome.result).toBe('anthropic result')
     expect(outcome.provider).toBe('anthropic')
-    expect(fn).toHaveBeenNthCalledWith(1, 'groq', 'llama-3.3-70b-versatile')
+    expect(fn).toHaveBeenNthCalledWith(1, 'groq', 'openai/gpt-oss-120b')
     expect(fn).toHaveBeenNthCalledWith(2, 'anthropic', 'claude-sonnet-5')
   })
 
@@ -117,7 +117,7 @@ describe('callWithProviderChain (F094 automatic fallback on failure, cross-vendo
       expect(err.attempts).toEqual([
         {
           provider: 'groq',
-          model: 'llama-3.3-70b-versatile',
+          model: 'openai/gpt-oss-120b',
           error: 'groq: auth failed',
         },
         {
@@ -134,7 +134,7 @@ describe('callWithProviderChain (F094 automatic fallback on failure, cross-vendo
       // The message alone (what lands in ai_jobs.error) names every vendor tried, not only the
       // last one -- this is the part that was actually missing in production.
       expect(err.message).toContain(
-        'groq/llama-3.3-70b-versatile: groq: auth failed',
+        'groq/openai/gpt-oss-120b: groq: auth failed',
       )
       expect(err.message).toContain(
         'cerebras/gpt-oss-120b: cerebras: 503 overloaded',
