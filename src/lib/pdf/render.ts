@@ -1,5 +1,5 @@
-import { chromium } from 'playwright'
-import type { Browser } from 'playwright'
+import { chromium } from 'playwright-core'
+import type { Browser } from 'playwright-core'
 
 /**
  * F033: server-side HTML->PDF on headless Chromium (tab09's locked choice). A single browser
@@ -14,13 +14,32 @@ import type { Browser } from 'playwright'
  */
 let browserPromise: Promise<Browser> | null = null
 
+/**
+ * Where the browser comes from. On a developer machine, in tests and in CI it is Playwright's own
+ * Chromium (`npx playwright install`). On Vercel there is no such install -- a PDF there failed
+ * with "Executable doesn't exist" -- so the serverless-sized Chromium from @sparticuz/chromium is
+ * used instead; its version is pinned to the one Playwright 1.63 expects (153). The import is
+ * dynamic so nothing else ever loads that package.
+ */
+async function launchBrowser(): Promise<Browser> {
+  if (process.env.VERCEL) {
+    const serverlessChromium = (await import('@sparticuz/chromium')).default
+    return chromium.launch({
+      executablePath: await serverlessChromium.executablePath(),
+      args: serverlessChromium.args,
+      headless: true,
+    })
+  }
+  return chromium.launch()
+}
+
 async function getBrowser(): Promise<Browser> {
   if (!browserPromise) {
-    browserPromise = chromium.launch()
+    browserPromise = launchBrowser()
   }
   let browser = await browserPromise
   if (!browser.isConnected()) {
-    browserPromise = chromium.launch()
+    browserPromise = launchBrowser()
     browser = await browserPromise
   }
   return browser
