@@ -4,7 +4,21 @@ import { createRepository, createScopedRepository } from './factory'
 // The tenant root — never itself scoped by household_id (it *is* the household).
 export const householdsRepository = createRepository('households')
 
-export const usersRepository = createScopedRepository('users', 'household_id')
+export const usersRepository = {
+  ...createScopedRepository('users', 'household_id'),
+  // Guest accounts (try-it-first login) are ordinary student accounts whose email ends in this
+  // reserved, undeliverable domain. Counting recent ones is how guest sign-up is kept from being
+  // used to flood the database.
+  async countGuestsSince(db: Db, since: Date): Promise<number> {
+    const row = await db
+      .selectFrom('users')
+      .select((eb) => eb.fn.countAll<string>().as('c'))
+      .where('email', 'like', '%@guest.prepplan.invalid')
+      .where('created_at', '>=', since)
+      .executeTakeFirstOrThrow()
+    return Number(row.c)
+  },
+}
 
 export const studentsRepository = {
   ...createScopedRepository('students', 'household_id'),
