@@ -221,6 +221,9 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // and the TanStack devtools overlay the dev server renders carries aria-labels like
   // "Open match details for /admin/questions", which a bare 'Questions' also matches.
   await expect(page.getByLabel('Questions', { exact: true })).toHaveValue('10')
+  // The default type is Combined, which adds short and long answers (2026-10-04); this flow is the
+  // quick multiple-choice assessment, marked at once, so it asks for exactly that.
+  await page.getByLabel('Question type', { exact: true }).selectOption('mcq')
   // The plan summary lives in the sticky bar only (the header badge went 2026-10-01): question
   // count and estimated minutes, derived from the count, not chosen directly.
   await expect(

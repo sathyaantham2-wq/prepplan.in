@@ -61,9 +61,10 @@ export interface PaperPlan {
  * concept, at what difficulty, and how long it should take. Everything comes from the student's
  * own concept mastery; a student with no history gets a short Easy first assessment.
  *
- * Written (short and long answer) sections appear once the student's concepts have moved up. Their
- * marks are proposed by the AI grader and confirmed automatically when it is confident; otherwise
- * the paper waits for a parent (see auto-confirm.ts).
+ * Written (short and long answer) sections are always included when the student chooses Combined
+ * or Written; with no type chosen they appear once her concepts have moved up. Their marks are
+ * proposed by the AI grader and confirmed automatically when it is confident; otherwise the paper
+ * waits for a check (see auto-confirm.ts).
  */
 export async function buildPaperPlan(
   db: Db,
@@ -80,12 +81,9 @@ export async function buildPaperPlan(
     // "Questions" dropdown on /my-paper offers QUESTION_COUNT_OPTIONS. Unset keeps the original
     // mastery-driven default (INITIAL_QUESTIONS / PRACTICE_QUESTIONS).
     questionCount?: number
-    // 'mcq' drops any written sections a student would otherwise have qualified for; 'written'
-    // keeps only the written ones (and, if she hasn't qualified for any yet, falls back to the
-    // normal MCQ section rather than handing back an empty paper -- a student can ask for written
-    // practice before the adaptive system would have proactively offered it, but not conjure
-    // written questions for concepts that don't have any). Unset ('combined') is the original
-    // mastery-gated mix.
+    // 'mcq' keeps only multiple choice; 'combined' is multiple choice plus short and long answer;
+    // 'written' is short and long answer only. The last two always include written sections
+    // (2026-10-04), at any level. Unset is the original mastery-gated mix.
     questionType?: PlanQuestionType
   },
 ): Promise<PaperPlan | null> {
@@ -200,7 +198,31 @@ export async function buildPaperPlan(
       bloom_allowed: ['Remember', 'Understand', 'Apply'],
     },
   ]
-  if (input.includeWritten !== false && !isInitial) {
+  // Owner decision 2026-10-04: choosing "Combined" or "Written" always brings written questions,
+  // whatever her level and even on a first paper -- before this they appeared only once her
+  // concepts had moved up, so a new student asking for written practice got multiple choice. The
+  // size follows the paper size she picked. Written questions in the bank are Hard or Hardest, so
+  // a lower-level student gets the easiest written ones available (the picker falls back to the
+  // lowest level a concept has), and the bloom range is wider than for a qualified student so
+  // there is always something to draw. With no type chosen the mastery-gated mix is unchanged.
+  const forceWritten =
+    input.includeWritten !== false &&
+    (input.questionType === 'combined' || input.questionType === 'written')
+  if (forceWritten) {
+    const writtenOnly = input.questionType === 'written'
+    sections.push({
+      name: 'Section B',
+      count: Math.max(2, Math.round(objective * (writtenOnly ? 0.4 : 0.2))),
+      marks_per_question: 2,
+      bloom_allowed: ['Understand', 'Apply', 'Analyse', 'Evaluate'],
+    })
+    sections.push({
+      name: 'Section C',
+      count: Math.max(1, Math.round(objective * (writtenOnly ? 0.2 : 0.1))),
+      marks_per_question: 3,
+      bloom_allowed: ['Apply', 'Analyse', 'Evaluate', 'Create'],
+    })
+  } else if (input.includeWritten !== false && !isInitial) {
     if (avgLevel >= 2.5) {
       sections.push({
         name: 'Section B',
@@ -222,11 +244,14 @@ export async function buildPaperPlan(
     sections = sections.filter((s) => s.marks_per_question === 1)
   } else if (input.questionType === 'written') {
     const written = sections.filter((s) => s.marks_per_question !== 1)
-    // She hasn't qualified for any written section yet -- offer what's actually available
-    // (Section A) rather than an empty paper; F032's "shortfalls are reported, never hidden"
-    // spirit, just for a plan instead of a generated paper.
+    // Only reachable now with written practice switched off (includeWritten false): offer what is
+    // available (Section A) rather than an empty paper -- F032's "shortfalls are reported, never
+    // hidden" spirit, just for a plan instead of a generated paper.
     sections = written.length > 0 ? written : sections
   }
+  // Letters follow the sections that remain (a written-only paper has no multiple-choice
+  // Section A, so its first section is A, not B).
+  sections = sections.map((s, i) => ({ ...s, name: `Section ${'ABC'[i] ?? i + 1}` }))
   const totalQuestions = sections.reduce((a, s) => s.count + a, 0)
   const totalMarks = sections.reduce((a, s) => a + s.count * s.marks_per_question, 0)
 
@@ -263,7 +288,8 @@ export async function buildPaperPlan(
     Math.ceil(sections.reduce((a, s) => a + s.count * perQuestionMinutes(s), 0) / 5) * 5,
   )
 
-  const types = ['Multiple choice']
+  const types: Array<string> = []
+  if (sections.some((s) => s.marks_per_question === 1)) types.push('Multiple choice')
   if (sections.some((s) => s.marks_per_question === 2)) types.push('Short answer')
   if (sections.some((s) => s.marks_per_question === 3)) types.push('Long answer')
 
