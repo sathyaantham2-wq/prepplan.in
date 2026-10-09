@@ -92,8 +92,27 @@ Never invent a feature ID. If work doesn't map to an existing F-number, say so a
 - **Paper themes use original artwork only.** "Manga" is a genre and is fine to evoke; named
   franchises, their characters, logos and typefaces are not. The doodle theme is called
   **Doodle Journal** — never reference *Diary of a Wimpy Kid* in code, comments, assets or prompts.
-- **Difficulty is a ceiling, not a filter on weakness.** Whatever tier the student picks, the 40%
-  weak/priority concept weighting still applies. (F119.)
+- **Difficulty is not student-selectable on a normal paper (2026-10-05, user decision).** The
+  paper's mix comes from its blueprint (target for a school-style paper: about 50% recall and
+  understanding, 30% application, 20% analysis and evaluation); the generation screen has no
+  difficulty control and `POST /api/papers/generate` and `generatePaper()` ignore any
+  `difficulty_ceiling` on a non-adaptive paper. The 40% weak/priority concept weighting still
+  applies and shortfalls are still printed (F119, F032). Unchanged: the question bank and its
+  difficulty tags, existing papers, and adaptive practice papers (`/my-paper` keeps its own
+  difficulty control, honoured only when `adaptive` is true).
+- **"School Half-Yearly" is a blueprint, not code (2026-10-05, no F-number yet).** 80 marks, 3
+  hours, layout in `blueprints.sections` + `blueprints.config` (written by
+  `scripts/seed-school-half-yearly.ts` from `src/lib/school-paper.ts`). Social Science: History 25 /
+  Geography 25 / Civics 20 / Economics 10, mix about 50/30/20, chapters tagged by
+  `chapters.discipline` (`content/disciplines/`). Maths/Science: A 20x1, B 5x2, C 6x3, D 4x5, E 3x4
+  case studies, mix about 25/45/30, **a draft estimate pending the owner**. Questions are told
+  apart by `questions.tags` (`case_study`, `map`, `construction`, `figure`); a slot never takes a
+  question it did not ask for, and a discipline slot is never filled from another discipline. OR
+  needs the same marks and level from a different concept. `paper_questions.expected_words` is the
+  word limit snapshotted at generation; an answer under half of it sets
+  `evaluation_items.possible_stopped_early` (a diagnosis flag, never a deduction). Section
+  totals, numbering and four options are checked before a paper is saved; the PDF prints and
+  verifies its own page count.
 - **Shortfalls are reported, never hidden.** If the bank can't fill a blueprint slot, generate the
   paper anyway with a printed note naming the concept and cell that came up short. (F032.)
 - **A student may generate as many papers a day as she wants.** F112's original acceptance

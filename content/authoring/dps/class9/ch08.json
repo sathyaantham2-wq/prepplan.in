@@ -1,0 +1,2570 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 8,
+  "name": "Predicting What Comes Next: Exploring Sequences and Progressions"
+ },
+ "source_code": "iemh108",
+ "concepts": [
+  {
+   "code": "C9M-8.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meena stacks oranges for a fruit display. The top row has 1 orange, the next row has 2, the next 3, and so on, each row one more than the row above. How many oranges does she need for 8 rows?",
+     "a": "36",
+     "o": [
+      "36",
+      "28",
+      "45",
+      "64"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A hall floor is tiled as a square of 11 by 11 tiles. The contractor extends it to a 12 by 12 square by adding one L-shaped border of tiles. How many tiles are in the border?",
+     "a": "23",
+     "o": [
+      "23",
+      "24",
+      "21",
+      "25"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Asha writes the sequence -7, -3, 1, 5, 9, ... as s1, s2, s3, ... What is the value of s4 + s2?",
+     "a": "2",
+     "o": [
+      "2",
+      "8",
+      "-2",
+      "14"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about sequences.\nStatement 1: The list 6, 12, 24, 48, 96 is a finite sequence with five terms.\nStatement 2: In t4 = 7 for the odd numbers, the subscript 4 is the value of the term.\nStatement 3: In the triangular numbers, the differences between the first six consecutive terms are 2, 3, 4, 5 and 6.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "2 only",
+      "1 and 2 only",
+      "all three"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The differences between consecutive square numbers 1, 4, 9, 16, 25 are the odd numbers 3, 5, 7, 9.\nReason (R): Each square number is the sum of the odd numbers up to that term, so the next square adds the next odd number.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The sum of the first 12 odd numbers is ___ .",
+     "a": "144"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each sequence in Column I with its 7th term in Column II.\nColumn I: 1. Odd numbers  2. Square numbers  3. Triangular numbers  4. Natural numbers\nColumn II: a. 28  b. 49  c. 13  d. 7",
+     "a": "1-c, 2-b, 3-a, 4-d",
+     "o": [
+      "1-c, 2-b, 3-a, 4-d",
+      "1-c, 2-a, 3-b, 4-d",
+      "1-d, 2-b, 3-a, 4-c",
+      "1-b, 2-c, 3-d, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A coach says a student's roll number, 91, is a triangular number. Which sum of natural numbers up to a term shows that she is right?",
+     "a": "1 + 2 + 3 + ... + 13",
+     "o": [
+      "1 + 2 + 3 + ... + 13",
+      "1 + 2 + 3 + ... + 12",
+      "1 + 2 + 3 + ... + 14",
+      "13 x 7, the product of its factors"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The difference between the 9th and the 8th triangular numbers is 9.",
+     "a": "True. Each triangular number adds the next natural number to the previous one, so 45 - 36 = 9.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Reason: the 9th term adds 9 to the 8th, 45 - 36 = 9",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Take the sequence 1, 4, 7, 10, 13, ... (a) Write the next four terms. (b) Using your answer, find the sum of the first eight terms.",
+     "a": "(a) 16, 19, 22, 25, since each term is 3 more than the one before. (b) 1 + 4 + 7 + 10 + 13 + 16 + 19 + 22 = 92.",
+     "s": [
+      [
+       "Part (a): 16, 19, 22, 25",
+       1
+      ],
+      [
+       "Part (b): adds the eight terms to get 92",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Consider the sequence -7, -3, 1, 5, 9, ... (a) Write the next two terms. (b) Using them, find the first term of the sequence that is more than 20 and say its position.",
+     "a": "(a) 13 and 17, adding 4 each time. (b) Continuing, 21 is the first term above 20, in the 8th position (s8 = 21).",
+     "s": [
+      [
+       "Part (a): 13 and 17",
+       1
+      ],
+      [
+       "Part (b): 21 at position 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate between a finite sequence and an infinite sequence. Give one example of each from the numbers of this chapter or from daily life.",
+     "a": "A finite sequence ends after a fixed number of terms, for example 6, 12, 24, 48, 96 (five terms) or the marks in five unit tests. An infinite sequence continues forever (shown by three dots), for example the odd numbers 1, 3, 5, 7, ... .",
+     "s": [
+      [
+       "Distinguishes ending after a fixed number of terms from continuing indefinitely",
+       1
+      ],
+      [
+       "Gives a correct example of each",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rohan says the triangular numbers 1, 3, 6, 10, 15 and the square numbers 1, 4, 9, 16, 25 grow in the same way because both start at 1. (a) Write the first four differences of each sequence. (b) Say whether Rohan is right.",
+     "a": "(a) Triangular: 2, 3, 4, 5. Square: 3, 5, 7, 9. (b) Rohan is not right. The triangular differences go up by 1 each time, while the square differences go up by 2 each time, so the two sequences grow at different rates.",
+     "s": [
+      [
+       "Part (a): 2, 3, 4, 5 and 3, 5, 7, 9",
+       1
+      ],
+      [
+       "Part (b): says not the same growth, with the gap in differences rising by 1 versus 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tanvi says: 'In the sequence -7, -3, 1, 5, ... the first term is negative, so the position number n must be negative too.' Is she right? Give two reasons.",
+     "a": "No. The subscript n in s_n only counts the position (1st, 2nd, 3rd, ...), so it is never negative; only the value of the term can be negative (here s1 = -7). The term can be any real number, such as a negative integer or a fraction.",
+     "s": [
+      [
+       "Verdict: Tanvi is wrong",
+       1
+      ],
+      [
+       "n is a position number, so it is never negative",
+       1
+      ],
+      [
+       "The term itself can be negative or any real number, with s1 = -7 as the evidence",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that 50 cannot be a term of the sequence of triangular numbers 1, 3, 6, 10, 15, ... .",
+     "a": "The triangular numbers keep increasing, so 50 would have to lie between two neighbouring terms. The 9th triangular number is 1 + 2 + ... + 9 = 45 and the 10th is 45 + 10 = 55. Since 45 < 50 < 55 and no term sits between consecutive terms, 50 is not a term.",
+     "s": [
+      [
+       "Finds the neighbouring terms 45 and 55",
+       1
+      ],
+      [
+       "Shows 45 < 50 < 55 with the sequence increasing",
+       1
+      ],
+      [
+       "Concludes that 50 is not a term",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Describe a real stacking situation that gives the numbers 1, 3, 6, 10, ... . Then say how many items the 12th stage needs.",
+     "a": "A pile of pipes (or cans) in which the top row has 1, the next 2, then 3, then 4: the totals after each row are 1, 3, 6, 10. The 12th stage is 1 + 2 + ... + 12 = 78 items.",
+     "s": [
+      [
+       "Describes rows increasing by one with running totals 1, 3, 6, 10",
+       1
+      ],
+      [
+       "States the rule: sum of natural numbers up to the stage",
+       1
+      ],
+      [
+       "Gives 78 for the 12th stage",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A school builds a square rangoli of coloured dots. The first square has 1 dot, and each bigger square is made by adding an L-shaped border of the next odd number of dots. (a) How many dots are added to go from the 9th square to the 10th? (b) How many dots are in the 15th square? (c) Show that the 15th square is made from the first 15 odd numbers. (d) How many more dots turn the 15th square into the 20th? (e) The art teacher says the 20th square needs exactly 400 dots. Is she right?",
+     "a": "(a) The 10th odd number, 19 (100 - 81 = 19). (b) 15 x 15 = 225. (c) 1 + 3 + 5 + ... + 29 = 225 and the 15th odd number is 29. (d) 400 - 225 = 175. (e) Yes, 20 x 20 = 400.",
+     "s": [
+      [
+       "Part (a): 19 from 10 squared minus 9 squared",
+       1
+      ],
+      [
+       "Part (b): 225 dots",
+       1
+      ],
+      [
+       "Part (c): relates 225 to the odd numbers up to 29",
+       1
+      ],
+      [
+       "Part (d): 175 more dots",
+       1
+      ],
+      [
+       "Part (e): confirms 400 with the square rule",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Priya takes the sequence 1, 4, 7, 10, 13, ... and forms a new sequence by adding all the terms up to a given term: the first term is 1, the second is 1 + 4, the third is 1 + 4 + 7, and so on. (a) Write the first 10 terms of the new sequence. (b) Find the difference between each pair of consecutive terms of the new sequence for the first four pairs. (c) Compare these differences with the terms of the original sequence. (d) Use this to predict the 11th term of the new sequence without adding every term. (e) Is 145 the 10th term of the new sequence? Say how your list tells you.",
+     "a": "(a) 1, 5, 12, 22, 35, 51, 70, 92, 117, 145. (b) 4, 7, 10, 13. (c) They are the original terms from the second onward: each new term adds the next original term. (d) The 11th original term is 31, so the 11th new term is 145 + 31 = 176. (e) Yes, the 10th term in the list is 145.",
+     "s": [
+      [
+       "Part (a): the ten sums 1, 5, 12, ..., 145",
+       1
+      ],
+      [
+       "Part (b): differences 4, 7, 10, 13",
+       1
+      ],
+      [
+       "Part (c): links differences to the original terms",
+       1
+      ],
+      [
+       "Part (d): 31 added to 145 gives 176",
+       1
+      ],
+      [
+       "Part (e): reads 145 as the 10th term",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school hall is 20 chairs wide. The organiser has 300 chairs for the annual day and is deciding between two layouts. Layout T: row 1 has 1 chair, row 2 has 2, row 3 has 3, and so on, each row one chair longer. Layout S: a square block with the same number of chairs in each row as there are rows. (a) How many chairs are used by the first 12 rows of Layout T? (b) How many complete rows can the 300 chairs fill in Layout T, and how long is the last row? (c) How many chairs are left over if Layout S uses the biggest square block possible? (d) The hall is only 20 chairs wide. Which layout should the organiser choose, and why?",
+     "a": "(a) 1 + 2 + ... + 12 = 78. (b) The triangular numbers 276 (23 rows) and 300 (24 rows) show 24 complete rows, with 24 chairs in the last row. (c) 17 x 17 = 289, so 300 - 289 = 11 chairs are left. (d) Layout T needs a row of 24 chairs, wider than the 20-chair hall, so it cannot be set up even though it uses all 300 chairs. Layout S has rows of only 17 chairs, fits the hall, and leaves 11 chairs spare, so Layout S should be chosen.",
+     "s": [
+      [
+       "Part (a): 78 chairs in 12 rows",
+       1
+      ],
+      [
+       "Part (b): 24 rows and a last row of 24 chairs",
+       1
+      ],
+      [
+       "Part (c): 289 chairs used and 11 left over",
+       1
+      ],
+      [
+       "Part (d): chooses Layout S because 24 > 20 while 17 fits, accepting 11 spare chairs",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Meera is making a square pattern with beads, adding one L-shaped border at a time. The first design has 1 bead and each new border has the next odd number of beads, so the designs have 1, 4, 9, 16, ... beads. Beads cost Rs 2 each. She already has 200 beads. (a) How many beads does the 12th border contain? (b) A finished design has 169 beads. How many borders does it have? (c) What is the largest complete design she can make with 200 beads, and how many beads are left over? (d) She could stop at that design or buy extra beads to finish the next bigger one. Using your answers, find the extra cost of the next design and say which choice you recommend.",
+     "a": "(a) The 12th odd number is 2 x 12 - 1 = 23. (b) 169 = 13 x 13, so 13 borders. (c) 14 x 14 = 196 is the largest design, leaving 200 - 196 = 4 beads. (d) The next design has 15 x 15 = 225 beads, so she needs 25 more beads, costing 25 x 2 = Rs 50. Either choice can be defended: Rs 50 buys a larger design, while stopping at 196 costs nothing and wastes only 4 beads. A reasoned recommendation using these numbers earns the mark.",
+     "s": [
+      [
+       "Part (a): 23 beads in the 12th border",
+       1
+      ],
+      [
+       "Part (b): 13 borders from 169 = 13 squared",
+       1
+      ],
+      [
+       "Part (c): 196 beads with 4 left over",
+       1
+      ],
+      [
+       "Part (d): 25 extra beads at Rs 50 and a justified recommendation",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ravi's piggy-bank plan deposits Rs (50n + 120) in month n. How much does he deposit in month 18?",
+     "a": "Rs 1,020",
+     "o": [
+      "Rs 1,020",
+      "Rs 970",
+      "Rs 900",
+      "Rs 1,070"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A teacher uses the rule s_n = 7n - 3 to number the lockers on a corridor. Only one of these numbers is a locker number on the corridor. Which one?",
+     "a": "480",
+     "o": [
+      "480",
+      "482",
+      "486",
+      "490"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the sequence t_n = 4n + 9, Kabir wants the position of the term 213. Which working is correct and what position does he get?",
+     "a": "Solve 4n + 9 = 213, giving n = 51",
+     "o": [
+      "Solve 4n + 9 = 213, giving n = 51",
+      "Divide 213 by 4, giving n = 53 and a remainder",
+      "Solve 4n = 213 - 9 and take 204 as the position",
+      "Solve 4n + 9 = 213, giving n = 50"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about explicit rules.\nStatement 1: To find the 300th term from an explicit rule we must first work out all 299 earlier terms.\nStatement 2: If solving f(n) = N gives n = -4, then N is not a term of the sequence.\nStatement 3: For u_n = 2n - 1, the number 137 is the 69th term because 2n - 1 = 137 gives n = 69.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The rule t_n = 3n - 7 gives a negative first term, t_1 = -4.\nReason (R): For a term to be negative, the position number n must itself be negative.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the sequence t_n = n^2 - 3n + 5, the 6th term is ___ .",
+     "a": "23"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which explicit rule gives the sequence 5, 8, 11, 14, ... ?",
+     "a": "t_n = 3n + 2",
+     "o": [
+      "t_n = 3n + 2",
+      "t_n = 3n + 5",
+      "t_n = 2n + 3",
+      "t_n = n + 4"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many terms of the sequence t_n = 4n - 1 are smaller than 100?",
+     "a": "25",
+     "o": [
+      "25",
+      "24",
+      "26",
+      "99"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The number 180 is a term of the sequence given by s_n = 7n - 3.",
+     "a": "False. Solving 7n - 3 = 180 gives 7n = 183 and n = 26.14..., which is not a natural number, so 180 is not a term.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Shows n = 183/7 is not a natural number",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the rule t_n = 9n - 4, (a) find the 25th term. (b) Using your answer, write the 26th term and say how you got it.",
+     "a": "(a) t_25 = 9 x 25 - 4 = 221. (b) t_26 = 221 + 9 = 230, since the rule increases by 9 each time n goes up by 1; direct substitution gives 9 x 26 - 4 = 230 as well.",
+     "s": [
+      [
+       "Part (a): 221",
+       1
+      ],
+      [
+       "Part (b): 230 by adding 9 (or substituting) with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A sequence has the explicit rule s_n = 6n - 3. (a) Find the position of the term 207. (b) Hence say whether 213 is a term, and where.",
+     "a": "(a) 6n - 3 = 207 gives 6n = 210 and n = 35. (b) 213 = 6 x 36 - 3, so 213 is the 36th term, one place after 207.",
+     "s": [
+      [
+       "Part (a): n = 35",
+       1
+      ],
+      [
+       "Part (b): 213 is the 36th term, with the check",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For s_n = 5n - 2, a student solves 5n - 2 = 427 and gets n = 85.8. Explain what this tells us about 427, and why a non-natural value of n decides the matter.",
+     "a": "Since 85.8 is not a natural number, 427 is not a term of the sequence. The subscript n counts positions (1st, 2nd, 3rd, ...), so a term cannot be in the 85.8th place.",
+     "s": [
+      [
+       "Concludes 427 is not a term",
+       1
+      ],
+      [
+       "Reason: n is a position count so it must be a natural number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write an explicit rule for the square numbers 1, 4, 9, 16, ... . (b) Use it to find which term of the sequence is 1521.",
+     "a": "(a) t_n = n^2. (b) n^2 = 1521 gives n = 39, so 1521 is the 39th term.",
+     "s": [
+      [
+       "Part (a): t_n = n squared",
+       1
+      ],
+      [
+       "Part (b): 39 from the square root of 1521",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Zoya says: 'The rule 2n + 1 gives only odd numbers, so it is also the explicit rule for the sequence of odd numbers 1, 3, 5, 7, ... .' Is she right?",
+     "a": "Partly right. The rule 2n + 1 does produce only odd numbers, but it gives 3, 5, 7, ... for n = 1, 2, 3, so t_1 = 3 and the first odd number 1 is missing. The explicit rule for 1, 3, 5, 7, ... is 2n - 1.",
+     "s": [
+      [
+       "Accepts that 2n + 1 gives only odd numbers",
+       1
+      ],
+      [
+       "Shows t_1 = 3, so 1 is missing",
+       1
+      ],
+      [
+       "Gives 2n - 1 as the correct rule",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no even number can be a term of the sequence t_n = 6n - 1.",
+     "a": "For any natural number n, 6n is even, because it is a multiple of 6 (and so of 2). Subtracting 1 from an even number gives an odd number. So every term 6n - 1 is odd, and an even number can never equal a term.",
+     "s": [
+      [
+       "States 6n is even for every n",
+       1
+      ],
+      [
+       "Concludes 6n - 1 is odd",
+       1
+      ],
+      [
+       "Links this to no even number being a term",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up a real situation for which the rule t_n = 15n + 60 works, saying what n and t_n stand for. Then find the 12th term.",
+     "a": "For example, a gym charges a Rs 60 joining fee and Rs 15 per visit, so after n visits the total spent is 15n + 60 rupees. The 12th term is 15 x 12 + 60 = 240, so Rs 240 after 12 visits.",
+     "s": [
+      [
+       "Gives a situation with a fixed part 60 and a part 15 per step",
+       1
+      ],
+      [
+       "Says what n and t_n mean",
+       1
+      ],
+      [
+       "Finds t_12 = 240",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Aditi is on a reading challenge. She reads (8n + 4) pages on day n. (a) How many pages does she read on day 25? (b) On which day does she read exactly 100 pages? (c) Can she ever read exactly 150 pages in a day? (d) What is the first day on which she reads more than 150 pages, and how many pages is that? (e) Explain in one line why the answer to (c) cannot be fixed by 'rounding the day'.",
+     "a": "(a) 8 x 25 + 4 = 204. (b) 8n + 4 = 100 gives n = 12. (c) 8n + 4 = 150 gives n = 18.25, so she never reads exactly 150 pages. (d) Day 18 gives 148 and day 19 gives 156, so day 19 with 156 pages. (e) A day is a whole number, so 18.25 is not a day and no day gives 150.",
+     "s": [
+      [
+       "Part (a): 204 pages",
+       1
+      ],
+      [
+       "Part (b): day 12",
+       1
+      ],
+      [
+       "Part (c): n = 18.25 so never 150",
+       1
+      ],
+      [
+       "Part (d): day 19 with 156 pages",
+       1
+      ],
+      [
+       "Part (e): the day must be a natural number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two sequences are given by s_n = 5n - 2 and t_n = 3n + 10. (a) Write the first six terms of each. (b) Find the position at which both sequences have the same value, and that value. (c) Show by solving an equation that this is the only position at which they are equal. (d) Which sequence has larger terms from the 7th position onward? Justify with the rules.",
+     "a": "(a) s: 3, 8, 13, 18, 23, 28. t: 13, 16, 19, 22, 25, 28. (b) Both are 28 at position 6. (c) 5n - 2 = 3n + 10 gives 2n = 12 and n = 6, the only solution. (d) For n > 6, 5n - 2 - (3n + 10) = 2n - 12 > 0, so s has larger terms from the 7th position.",
+     "s": [
+      [
+       "Part (a): both lists of six terms",
+       1
+      ],
+      [
+       "Part (b): position 6 and value 28",
+       1
+      ],
+      [
+       "Part (c): solves to n = 6 as the only solution",
+       1
+      ],
+      [
+       "Part (d): s is larger since the difference 2n - 12 is positive",
+       1
+      ],
+      [
+       "Part (d): ties the conclusion to the 7th position onward",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Rahul and Sana each start a monthly savings plan. In month n, Rahul deposits Rs (100n + 400) and Sana deposits Rs (150n + 200). (a) What does each deposit in month 8? (b) In which month do both deposit the same amount, and how much? (c) Sana says that Rs 1,350 will be one of her deposits, and Rahul says it will be one of his. Is either of them right? (d) Neha plans to save for only 3 months, while Ravi plans to save for 12 months. Using your answers, which plan should each of them choose to have the larger deposit in the final month?",
+     "a": "(a) Rahul 100 x 8 + 400 = 1,200; Sana 150 x 8 + 200 = 1,400. (b) Month 4, Rs 800 each. (c) Sana: 150n + 200 = 1,350 gives n = 7.67, not natural. Rahul: 100n + 400 = 1,350 gives n = 9.5, not natural. Neither is right. (d) In month 3 Rahul deposits Rs 700 and Sana Rs 650, so Neha should choose Rahul's plan; in month 12 Rahul deposits Rs 1,600 and Sana Rs 2,000, so Ravi should choose Sana's plan, as hers overtakes Rahul's after month 4.",
+     "s": [
+      [
+       "Part (a): Rs 1,200 and Rs 1,400",
+       1
+      ],
+      [
+       "Part (b): month 4 and Rs 800",
+       1
+      ],
+      [
+       "Part (c): both n values are not natural, so neither is right",
+       1
+      ],
+      [
+       "Part (d): Rahul for 3 months (700 vs 650), Sana for 12 months (2,000 vs 1,600)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A coaching centre issues form numbers by the rule 12n + 7 to its n-th applicant. At the counter a clerk finds three forms numbered 355, 500 and 619 in a pile and suspects that one was not issued by the centre. (a) What is the form number of the 40th applicant? (b) Which applicant holds form 355? (c) Which of the three forms in the pile cannot have been issued by the centre, and why? (d) The clerk has 200 more forms to check. Using your answers, state a quick test that decides whether a number N could have been issued, and explain why it works.",
+     "a": "(a) 12 x 40 + 7 = 487. (b) 12n + 7 = 355 gives n = 29, the 29th applicant. (c) Form 500 gives 12n = 493, n = 41.08, not natural, so it was not issued; 619 gives n = 51, which is a valid applicant. (d) Test: subtract 7 from N and see whether the result divides exactly by 12; if so N is the form of applicant (N - 7)/12, otherwise N was not issued. It works because solving 12n + 7 = N gives n = (N - 7)/12, and N is a term only if n is a natural number.",
+     "s": [
+      [
+       "Part (a): 487",
+       1
+      ],
+      [
+       "Part (b): 29th applicant",
+       1
+      ],
+      [
+       "Part (c): 500 fails because n = 41.08 is not natural",
+       1
+      ],
+      [
+       "Part (d): subtract 7 and test divisibility by 12, justified by n = (N - 7)/12",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Asha starts a jar with Rs 4 on day 1. Each following day she doubles the amount in the jar and then takes out Rs 3. How much is in the jar on day 5?",
+     "a": "Rs 19",
+     "o": [
+      "Rs 19",
+      "Rs 35",
+      "Rs 11",
+      "Rs 16"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two friends both use the rule t_n = t_(n-1) + 4 but write 5, 9, 13, ... and 2, 6, 10, ... respectively. What explains the different lists?",
+     "a": "They began from different first terms, 5 and 2",
+     "o": [
+      "They began from different first terms, 5 and 2",
+      "One used an explicit rule and the other a recursive rule",
+      "The rule adds 4 to the previous term only for odd values of n",
+      "One of them added 4 to the wrong term in every step"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student continues the Virahanka-Fibonacci sequence 1, 2, 3, 5, 8, 13, 21, 34, ... . What is the 10th term?",
+     "a": "89",
+     "o": [
+      "89",
+      "68",
+      "76",
+      "55"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: A recursive rule can only use the term just before the one being found; it can never use two earlier terms.\nStatement 2: In the Virahanka-Fibonacci sequence V3 = 3 and V5 = 8.\nStatement 3: The Italian mathematician Fibonacci studied the sequence before Virahanka wrote it down.\nWhich of the statements are correct?",
+     "a": "2 only",
+     "o": [
+      "2 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For s1 = 4 and s_n = s_(n-1)(s_(n-1) - 1), the first three terms 4, 12, 132 have neither a constant difference nor a constant ratio.\nReason (R): A recursive rule describes a sequence by relating each term to the earlier terms.",
+     "a": "A and R are both true, but R is not the correct explanation of A.",
+     "o": [
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For t1 = 5 and t_n = 2 t_(n-1) - 1, the 4th term is ___ .",
+     "a": "33"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each recursive rule in Column I with its 4th term in Column II.\nColumn I: 1. t1 = 2, t_n = t_(n-1) + 5  2. t1 = 2, t_n = 2 t_(n-1)  3. t1 = 1, t2 = 2, t_n = t_(n-1) + t_(n-2)  4. T1 = 1, T2 = 2, T3 = 4, T_n = T_(n-1) + T_(n-2) + T_(n-3)\nColumn II: a. 5  b. 7  c. 16  d. 17",
+     "a": "1-d, 2-c, 3-a, 4-b",
+     "o": [
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-b, 4-a",
+      "1-a, 2-b, 3-c, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair of statements is a correct recursive description of the sequence 7, 11, 15, 19, ... ?",
+     "a": "t1 = 7 and t_n = t_(n-1) + 4",
+     "o": [
+      "t1 = 7 and t_n = t_(n-1) + 4",
+      "t1 = 7 and t_n = 4 t_(n-1)",
+      "t1 = 4 and t_n = t_(n-1) + 7",
+      "t_n = t_(n-1) + 4 with no first term"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The recursive rule t1 = 2, t_n = t_(n-1) + 5 describes the same sequence as the explicit rule t_n = 5n - 3.",
+     "a": "True. The recursive rule gives 2, 7, 12, ..., and 5n - 3 gives 2, 7, 12, ... : each term is 5 more than the one before and the first term is 5 x 1 - 3 = 2.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Checks first term 2 and the constant step 5 in both rules",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A sequence is given by u1 = 4 and u_n = 2u_(n-1) - 3 for n >= 2. (a) Write its first five terms. (b) Keep going and decide whether 67 is a term.",
+     "a": "(a) 4, 5, 7, 11, 19. (b) The next terms are 35 and 67, so 67 is the 7th term.",
+     "s": [
+      [
+       "Part (a): 4, 5, 7, 11, 19",
+       1
+      ],
+      [
+       "Part (b): continues to 35, 67 and says 67 is the 7th term",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The Virahanka-Fibonacci sequence runs 1, 2, 3, 5, 8, 13, 21, 34, ... . (a) Write the next two terms. (b) Which of the first ten terms are even, and what pattern do their positions show?",
+     "a": "(a) 55 and 89. (b) The even terms are 2, 8 and 34, in positions 2, 5 and 8, so every third term is even.",
+     "s": [
+      [
+       "Part (a): 55 and 89",
+       1
+      ],
+      [
+       "Part (b): even terms at positions 2, 5, 8, a gap of 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera must find the 50th term of a sequence. She is offered either the recursive rule t1 = 7, t_n = t_(n-1) + 6 or the explicit rule t_n = 6n + 1. Which would you use and why?",
+     "a": "Use the explicit rule. It gives t_50 = 6 x 50 + 1 = 301 in one step, but the recursive rule needs t_49 first, and so on back to t_1, which is 49 additions.",
+     "s": [
+      [
+       "Chooses the explicit rule",
+       1
+      ],
+      [
+       "Gives t_50 = 301 directly and notes the recursive rule needs all earlier terms",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Let T1 = 1, T2 = 1, T3 = 2 and T_n = T_(n-1) + T_(n-2) + T_(n-3) for n >= 4. (a) Find T4 to T7. (b) Using them, find the position of the first term greater than 50.",
+     "a": "(a) T4 = 4, T5 = 7, T6 = 13, T7 = 24. (b) T8 = T7 + T6 + T5 = 24 + 13 + 7 = 44 and T9 = 44 + 24 + 13 = 81, so the first term above 50 is T9 = 81, in the 9th position.",
+     "s": [
+      [
+       "Part (a): 4, 7, 13, 24",
+       1
+      ],
+      [
+       "Part (b): T8 = 44, T9 = 81, so position 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Hari says: 'The recursive rule t1 = 6, t_n = t_(n-1) + 4 and the explicit rule t_n = 4n + 2 give the same sequence.' Is he right? Test it.",
+     "a": "Yes, he is right. The explicit rule gives t1 = 6, t2 = 10, t3 = 14, ..., and the recursive rule gives 6, then 6 + 4 = 10, then 10 + 4 = 14. The first terms match and both rules add 4 each step, so they describe the same sequence.",
+     "s": [
+      [
+       "Verdict: Hari is right",
+       1
+      ],
+      [
+       "Computes the first terms by both rules",
+       1
+      ],
+      [
+       "Explains both start at 6 and rise by 4 each step",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "The recursive rule is u1 = 1 and u_n = 2u_(n-1) + 3. Show that 133 is not a term.",
+     "a": "The terms are 1, 5, 13, 29, 61, 125, 253, ... and they keep increasing. Since 125 < 133 < 253 and nothing lies between the 6th term 125 and the 7th term 253, 133 is not a term.",
+     "s": [
+      [
+       "Lists the terms up to 125 and 253",
+       1
+      ],
+      [
+       "Notes the sequence increases",
+       1
+      ],
+      [
+       "Concludes 133 lies between two terms so is not one",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A sequence begins 2, 7, 22, 67, ... and each term is a fixed multiple of the previous term plus a fixed number. Write its recursive rule, and show how you found it.",
+     "a": "Let t_n = a t_(n-1) + b. Then 7 = 2a + b and 22 = 7a + b. Subtracting gives 15 = 5a, so a = 3 and b = 1. The rule is t1 = 2, t_n = 3t_(n-1) + 1; check: 3 x 22 + 1 = 67.",
+     "s": [
+      [
+       "Sets up two equations from the first terms",
+       1
+      ],
+      [
+       "Solves a = 3 and b = 1",
+       1
+      ],
+      [
+       "States the rule with t1 = 2 and checks 67",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Kavya studies the Virahanka-Fibonacci sequence V1 = 1, V2 = 2, V_n = V_(n-1) + V_(n-2). (a) Write the first 12 terms. (b) How many of them are even, and at which positions? (c) Use the pattern in the positions to predict the next even term's position. (d) Find V14 by continuing and check your prediction. (e) Does Kavya's list prove that every third term is even forever? Explain.",
+     "a": "(a) 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233. (b) Four terms are even: positions 2, 5, 8 and 11. (c) The next even term should be at position 14. (d) V13 = 377 and V14 = 610, which is even, so the prediction holds. (e) No, a pattern seen in 14 terms is not a proof; it needs a reason that works for every term.",
+     "s": [
+      [
+       "Part (a): twelve correct terms",
+       1
+      ],
+      [
+       "Part (b): four even terms at positions 2, 5, 8, 11",
+       1
+      ],
+      [
+       "Part (c): predicts position 14",
+       1
+      ],
+      [
+       "Part (d): V14 = 610, even",
+       1
+      ],
+      [
+       "Part (e): a pattern in some terms is not a proof for all",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A sequence has the recursive rule t1 = 7 and t_n = t_(n-1) + 6. (a) Write the first five terms. (b) Find the explicit rule. (c) Check it against t5. (d) Which term is 301? (e) Priya says she would always use the recursive rule since it is easier to understand. Decide whether that holds when we need the 50th term.",
+     "a": "(a) 7, 13, 19, 25, 31. (b) t_n = 7 + (n - 1) x 6 = 6n + 1. (c) 6 x 5 + 1 = 31, matching. (d) 6n + 1 = 301 gives n = 50. (e) For the 50th term the recursive rule needs 49 additions from t1, while the explicit rule needs one step, so Priya's claim does not hold when a far-off term is needed.",
+     "s": [
+      [
+       "Part (a): 7, 13, 19, 25, 31",
+       1
+      ],
+      [
+       "Part (b): 6n + 1",
+       1
+      ],
+      [
+       "Part (c): 31 matches",
+       1
+      ],
+      [
+       "Part (d): the 50th term",
+       1
+      ],
+      [
+       "Part (e): compares 49 steps with one step",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A village cooperative keeps a fund of B_n lakh rupees in year n. Every year the profit from trade doubles the previous year's fund, and then a payout of p lakh is made, so B_n = 2B_(n-1) - p. Plan X has B_1 = 8 and p = 6. Plan Y has B_1 = 12 and p = 12. (a) Write the fund for years 2 to 5 under Plan X. (b) In which year does the fund under Plan X first exceed Rs 100 lakh? (c) Write the fund for years 2 to 5 under Plan Y. (d) Between year 2 and year 5 there are four payouts. Compare the two plans on the fund at the end of year 5 and the total paid out, and recommend one.",
+     "a": "(a) 10, 14, 22, 38. (b) Continuing, year 6 is 70 and year 7 is 134, so year 7. (c) 12, 12, 12, 12; the fund stays constant. (d) Plan X: fund 38 lakh, paid out 4 x 6 = 24 lakh. Plan Y: fund 12 lakh, paid out 4 x 12 = 48 lakh. Plan X builds capital while Plan Y pays twice as much each year with no growth. Either is defensible: choose X if the cooperative wants to grow, Y if it needs larger yearly payouts.",
+     "s": [
+      [
+       "Part (a): 10, 14, 22, 38",
+       1
+      ],
+      [
+       "Part (b): year 7 with 134 lakh",
+       1
+      ],
+      [
+       "Part (c): a constant 12 lakh in each year",
+       1
+      ],
+      [
+       "Part (d): compares 38 vs 12 and 24 vs 48 and justifies a choice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tile shop lays a strip of n squares using tiles that are either 1 square long or 2 squares long. The number of different patterns W_n follows W_1 = 1, W_2 = 2 and W_n = W_(n-1) + W_(n-2), because the last tile is either a 1-square tile or a 2-square tile. A customer wants to look at a sample of every pattern, and each sample costs Rs 150. Her budget is Rs 6,000. (a) How many patterns are there for a strip of 7 squares? (b) How many patterns are there for a strip of 10 squares? (c) What is the cost of seeing every pattern for strips of 8 squares and of 9 squares? (d) Using your answers, what is the longest strip whose patterns she can see in full within the budget, and what could she do for a longer strip?",
+     "a": "(a) W_3 = 3, W_4 = 5, W_5 = 8, W_6 = 13, W_7 = 21. (b) Continuing, W_8 = 34, W_9 = 55, W_10 = 89. (c) 8 squares: 34 x 150 = Rs 5,100; 9 squares: 55 x 150 = Rs 8,250. (d) The 8-square strip, because Rs 5,100 is within Rs 6,000 while Rs 8,250 is not. For a longer strip she could sample only some patterns (up to 40 samples) or raise the budget.",
+     "s": [
+      [
+       "Part (a): 21",
+       1
+      ],
+      [
+       "Part (b): 89",
+       1
+      ],
+      [
+       "Part (c): Rs 5,100 and Rs 8,250",
+       1
+      ],
+      [
+       "Part (d): 8 squares is the longest affordable strip, with an alternative for longer strips",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An auto-rickshaw charges Rs 30 as a fixed fee plus Rs 14 for every kilometre. The fares after 1 km, 2 km, 3 km, ... form an AP. What is the fare for a 15 km ride?",
+     "a": "Rs 240",
+     "o": [
+      "Rs 240",
+      "Rs 254",
+      "Rs 210",
+      "Rs 226"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Anita joins a firm at Rs 4,80,000 a year and gets a rise of Rs 15,000 at the start of every later year. In which year of service does her salary first reach Rs 6,00,000?",
+     "a": "9th year",
+     "o": [
+      "9th year",
+      "8th year",
+      "10th year",
+      "7th year"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student plots the points (n, t_n) for the AP 11, 7, 3, -1, -5, ... with the term number on the horizontal axis. Which description of the plotted points is correct?",
+     "a": "They lie on a straight line that falls as n increases",
+     "o": [
+      "They lie on a straight line that falls as n increases",
+      "They lie on a straight line that rises as n increases",
+      "They lie on a curve that falls as n increases",
+      "They lie on a curve that rises and then falls"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: The sequence -5, -1, 3, 7, ... is an AP with common difference 4.\nStatement 2: The points (n, t_n) of an AP lie on a straight line.\nStatement 3: The nth term of an AP with first term a and common difference d is a + nd.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sequence 3, 6, 12, 24, ... is an arithmetic progression, because each term is double the one before.\nReason (R): In an arithmetic progression the difference between consecutive terms is the same throughout.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In an AP with first term 9 and common difference -4, the 12th term is ___ .",
+     "a": "-35"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following lists is an arithmetic progression?",
+     "a": "5, 5, 5, 5, ...",
+     "o": [
+      "5, 5, 5, 5, ...",
+      "1, 2, 4, 7, ...",
+      "3, 6, 12, 24, ...",
+      "1, 1/2, 1/3, 1/4, ..."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The AP 3/4, 7/4, 11/4, 15/4, ... has the nth term",
+     "a": "n - 1/4",
+     "o": [
+      "n - 1/4",
+      "n + 3/4",
+      "3n/4",
+      "4n - 1"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The list 20, 17, 14, 11, ... cannot be an AP because its terms are decreasing.",
+     "a": "False. The difference between consecutive terms is the same, -3, so it is an AP with a = 20 and d = -3; a common difference can be negative.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Gives the constant difference -3 and says d may be negative",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In an AP the 4th term is 17 and the 9th term is 42. (a) Find the first term and the common difference. (b) Using them, write t_n and find the 30th term.",
+     "a": "(a) The 5 steps from the 4th to the 9th term add 25, so d = 5, and a = 17 - 3 x 5 = 2. (b) t_n = 2 + (n - 1) x 5 = 5n - 3, so t_30 = 147.",
+     "s": [
+      [
+       "Part (a): d = 5 and a = 2",
+       1
+      ],
+      [
+       "Part (b): t_n = 5n - 3 and t_30 = 147",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the AP 14, 11, 8, 5, ... (a) write the nth term. (b) Without plotting, say what shape you expect for the points (n, t_n) and whether it rises or falls.",
+     "a": "(a) a = 14, d = -3, so t_n = 14 + (n - 1)(-3) = 17 - 3n. (b) The points lie on a straight line, and since d is negative, the line falls as n increases.",
+     "s": [
+      [
+       "Part (a): 17 - 3n",
+       1
+      ],
+      [
+       "Part (b): straight line that falls because d < 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the AP 12.5, 10, 7.5, ... (a) write the recursive rule. (b) Use it to find the 5th term.",
+     "a": "(a) t1 = 12.5 and t_n = t_(n-1) - 2.5 for n >= 2. (b) t2 = 10, t3 = 7.5, t4 = 5, t5 = 2.5.",
+     "s": [
+      [
+       "Part (a): t1 = 12.5 and subtract 2.5 each step",
+       1
+      ],
+      [
+       "Part (b): t5 = 2.5 by repeating the rule",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sameer notices that 3, 6, 12, 24, ... is built by a fixed rule from the previous term and calls it an AP. Use differences to explain why it is not an AP.",
+     "a": "The differences are 6 - 3 = 3, 12 - 6 = 6 and 24 - 12 = 12. They are not equal, and an AP needs the same difference between every pair of consecutive terms, so the list is not an AP; a fixed rule alone (here doubling) does not make it one.",
+     "s": [
+      [
+       "Computes the differences 3, 6, 12",
+       1
+      ],
+      [
+       "Concludes not equal, so not an AP, since a fixed rule is not enough",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tara says: 'In an AP the common difference must be positive, otherwise the terms would soon become negative and the list would stop being a sequence.' Is she right?",
+     "a": "No. The list 11, 7, 3, -1, -5, ... is an AP with common difference -4, and it continues even after the terms become negative. A term of a sequence can be negative or any real number, so d can be negative or zero.",
+     "s": [
+      [
+       "Verdict: Tara is wrong",
+       1
+      ],
+      [
+       "Gives a valid AP with negative d such as 11, 7, 3, -1",
+       1
+      ],
+      [
+       "Explains that terms may be negative and the sequence goes on",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In an AP the 8th term is 29 and the 13th term is 54. Sam says: 'The difference of the terms is 54 - 29 = 25, so d = 25 and the 31st term is 29 + 23 x 25 = 604.' Check his claim.",
+     "a": "No, not quite. Subtracting the terms is the right start, but 25 is the total increase over 5 steps (from the 8th to the 13th term), so d = 25/5 = 5. The 31st term is 29 + 23 x 5 = 144, not 604.",
+     "s": [
+      [
+       "Gives the verdict that the claim is wrong, while noting that subtracting the terms is a correct start",
+       1
+      ],
+      [
+       "Corrects d to 25 / 5 = 5",
+       1
+      ],
+      [
+       "Gives the 31st term as 144",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that 0 cannot be a term of the AP 22, 18, 14, 10, ... .",
+     "a": "Here a = 22 and d = -4, so t_n = 22 - 4(n - 1) = 26 - 4n. Putting t_n = 0 gives n = 6.5, which is not a natural number. Check: t_6 = 2 and t_7 = -2, so the terms jump over 0.",
+     "s": [
+      [
+       "Writes t_n = 26 - 4n",
+       1
+      ],
+      [
+       "Solves n = 6.5, not natural",
+       1
+      ],
+      [
+       "Checks the neighbours 2 and -2",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up a real situation described by an AP whose first term is 150 and common difference is -20. Say what the 8th term means.",
+     "a": "For example, a tank holds 150 litres on day 1 and 20 litres are used every day, so the daily readings are 150, 130, 110, ... . The 8th term is 150 - 7 x 20 = 10, so 10 litres remain at the start of day 8.",
+     "s": [
+      [
+       "Gives a situation that starts at 150 and falls by 20 each step",
+       1
+      ],
+      [
+       "Computes t_8 = 10",
+       1
+      ],
+      [
+       "Interprets it in the situation",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "An AP has 4th term 19, and its 9th term is 15 more than its 6th term. (a) Find the common difference. (b) Find the first term. (c) Write the first four terms and the nth term. (d) Which of 300 and 304 is a term of this AP? (e) Give the position of that term.",
+     "a": "(a) The 9th term is 3 steps after the 6th, so 3d = 15 and d = 5. (b) a + 3 x 5 = 19 gives a = 4. (c) 4, 9, 14, 19 and t_n = 4 + (n - 1) x 5 = 5n - 1. (d) 5n - 1 = 300 gives n = 60.2, not natural, but 5n - 1 = 304 gives n = 61, so 304 is a term. (e) It is the 61st term.",
+     "s": [
+      [
+       "Part (a): d = 5 from 3d = 15",
+       1
+      ],
+      [
+       "Part (b): a = 4",
+       1
+      ],
+      [
+       "Part (c): four terms and 5n - 1",
+       1
+      ],
+      [
+       "Part (d): 300 fails (n = 60.2) and 304 works",
+       1
+      ],
+      [
+       "Part (e): 61st term",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A raffle book has tickets numbered 1 to 500, and every sixth ticket wins a prize. The winning tickets between ticket 20 and ticket 500 form an AP. (a) Write the first and the last winning ticket in that range. (b) Write the first term and common difference. (c) How many winning tickets are there? (d) What is the number of the 30th winning ticket? (e) Is ticket 300 a winner, and which winner is it?",
+     "a": "(a) The first multiple of 6 above 20 is 24 and the last below 500 is 498. (b) a = 24, d = 6. (c) 24 + (n - 1) x 6 = 498 gives n = 80, so 80 winners. (d) 24 + 29 x 6 = 198. (e) 300 = 6 x 50 is a winner; 24 + (n - 1) x 6 = 300 gives n = 47, so it is the 47th winner.",
+     "s": [
+      [
+       "Part (a): 24 and 498",
+       1
+      ],
+      [
+       "Part (b): a = 24 and d = 6",
+       1
+      ],
+      [
+       "Part (c): 80 winners",
+       1
+      ],
+      [
+       "Part (d): 198",
+       1
+      ],
+      [
+       "Part (e): 300 is the 47th winner",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A software engineer in Hyderabad has two job offers. Offer A pays Rs 4,50,000 in year 1 and raises the salary by Rs 30,000 every year. Offer B pays Rs 5,10,000 in year 1 and raises it by Rs 18,000 every year. (a) What does each offer pay in year 6? (b) In year 4, which offer pays more and by how much? (c) Does each offer pay exactly Rs 6,60,000 in some year? (d) She plans to stay with the firm for either 4 years or 10 years. Use your answers to say which offer suits each plan.",
+     "a": "(a) A: 4,50,000 + 5 x 30,000 = 6,00,000. B: 5,10,000 + 5 x 18,000 = 6,00,000; the two are equal. (b) A pays 5,40,000 and B pays 5,64,000, so B pays Rs 24,000 more. (c) A: 4,50,000 + (n - 1) x 30,000 = 6,60,000 gives n = 8, so year 8. B: (n - 1) x 18,000 = 1,50,000 gives n - 1 = 8.33..., so never exactly. (d) The offers are equal in year 6; B pays more in years 1 to 5 and A pays more from year 7. For 4 years Offer B is better; for 10 years Offer A is better (year 10: A pays 7,20,000 and B 6,72,000).",
+     "s": [
+      [
+       "Part (a): equal at Rs 6,00,000",
+       1
+      ],
+      [
+       "Part (b): B pays Rs 24,000 more in year 4",
+       1
+      ],
+      [
+       "Part (c): A in year 8, B never",
+       1
+      ],
+      [
+       "Part (d): B for 4 years, A for 10 years, using the year 6 crossover",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Priya designs rangoli patterns. Stage 1 uses 7 dots and each later stage uses 5 more dots than the one before. She has 500 dots. (a) How many dots does Stage 20 need? (b) Which stage needs 177 dots? (c) She plots the points (stage, dots) and joins them in a line. What value does the line reach if she extends it back to stage 0? (d) She can make one large pattern or two identical smaller ones from her 500 dots. Using the rule for the nth stage, find the biggest stage for each choice and advise her.",
+     "a": "(a) 7 + 19 x 5 = 102. (b) 7 + (n - 1) x 5 = 177 gives n = 35. (c) The nth term is 5n + 2, so at stage 0 the line gives 2. (d) One pattern: 5n + 2 <= 500 gives n <= 99.6, so Stage 99 with 497 dots. Two identical patterns: 2(5n + 2) <= 500 gives n <= 49.6, so Stage 49 with 247 dots each (494 used). One Stage 99 pattern is far larger, while two Stage 49 patterns give a pair; a reasoned choice using these figures is expected.",
+     "s": [
+      [
+       "Part (a): 102 dots",
+       1
+      ],
+      [
+       "Part (b): Stage 35",
+       1
+      ],
+      [
+       "Part (c): the line gives 2 at stage 0, from 5n + 2",
+       1
+      ],
+      [
+       "Part (d): Stage 99 for one pattern, Stage 49 for two, with a justified advice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Seema reads 1 page of a novel on day 1, 2 pages on day 2, 3 pages on day 3, and so on, one more page each day. How many pages has she read in all by the end of day 30?",
+     "a": "465",
+     "o": [
+      "465",
+      "495",
+      "930",
+      "450"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A librarian numbers the books in a block from 40 to 75 and wants their total. Using the formula for the sum of the first n natural numbers, which working gives the right value and what is it?",
+     "a": "S75 - S39 = 2070",
+     "o": [
+      "S75 - S39 = 2070",
+      "S75 - S40 = 2030",
+      "S75 - S38 = 2109",
+      "S75 = 2850"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A decorator makes a staircase of dots with 1 dot in the first row, 2 in the second, and so on up to 14 rows. She copies it, turns the copy upside down and joins the two to make a rectangle of 15 columns and 14 rows. How many dots does the original staircase have?",
+     "a": "105",
+     "o": [
+      "105",
+      "210",
+      "196",
+      "98"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: By the formula, 1 + 2 + ... + 20 = 420.\nStatement 2: 25 + 26 + ... + 58 equals S58 - S25.\nStatement 3: Aryabhata's rule says the sum can be found by taking the average of the first and last terms and multiplying by the number of terms.\nWhich of the statements are correct?",
+     "a": "3 only",
+     "o": [
+      "3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sum 1 + 2 + ... + 100 is 5050.\nReason (R): When the sum is written forwards and backwards and added, each of the 100 pairs adds to 101, so twice the sum is 100 x 101.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The smallest value of n for which 1 + 2 + ... + n is more than 1000 is ___ .",
+     "a": "45"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each expression in Column I with its value in Column II.\nColumn I: 1. 1 + 2 + ... + 30  2. 11 + 12 + ... + 20  3. The 12th triangular number  4. 1 + 2 + ... + 100\nColumn II: a. 78  b. 155  c. 465  d. 5050",
+     "a": "1-c, 2-b, 3-a, 4-d",
+     "o": [
+      "1-c, 2-b, 3-a, 4-d",
+      "1-c, 2-a, 3-b, 4-d",
+      "1-b, 2-c, 3-a, 4-d",
+      "1-c, 2-b, 3-d, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which expression gives the sum 51 + 52 + ... + 100?",
+     "a": "S100 - S50",
+     "o": [
+      "S100 - S50",
+      "S100 - S51",
+      "S100 - S49",
+      "S100 / 2"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: For 1 + 2 + ... + 40, the average of the first and last terms multiplied by the number of terms gives the sum 820.",
+     "a": "True. The average of 1 and 40 is 20.5 and there are 40 terms, so 20.5 x 40 = 820, which equals 40 x 41 / 2.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Computes 20.5 x 40 = 820 and matches it with the formula",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find S20 and S50. (b) Using them, find 21 + 22 + ... + 50.",
+     "a": "(a) S20 = 20 x 21 / 2 = 210 and S50 = 50 x 51 / 2 = 1275. (b) 21 + ... + 50 = S50 - S20 = 1275 - 210 = 1065.",
+     "s": [
+      [
+       "Part (a): 210 and 1275",
+       1
+      ],
+      [
+       "Part (b): subtracts to get 1065",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the 15th triangular number. (b) Using the formula for t_n, decide whether 200 is a triangular number.",
+     "a": "(a) t_15 = 15 x 16 / 2 = 120. (b) n(n + 1) = 400 would be needed, but 19 x 20 = 380 and 20 x 21 = 420, so no whole n works and 200 is not triangular (t_19 = 190 and t_20 = 210).",
+     "s": [
+      [
+       "Part (a): 120",
+       1
+      ],
+      [
+       "Part (b): shows n(n + 1) = 400 has no whole solution, 200 lies between 190 and 210",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To find 1 + 2 + ... + 12 you write the sum forwards and backwards and add. Say what each pair adds to, how many pairs there are, and what the sum is.",
+     "a": "Each pair (1 + 12, 2 + 11, ...) adds to 13, and there are 12 pairs, so 2S = 12 x 13 = 156 and S = 78.",
+     "s": [
+      [
+       "Pair value 13 and 12 pairs",
+       1
+      ],
+      [
+       "2S = 156 so S = 78",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Compare two ways to find 1 + 2 + ... + 100: pairing the sum with its reverse, and multiplying the average of the first and last terms by the number of terms. Show that both give the same value.",
+     "a": "Pairing: 100 pairs each adding to 101, so 2S = 10100 and S = 5050. Average method: (1 + 100) / 2 = 50.5, and 50.5 x 100 = 5050. The methods agree because 50.5 x 100 is exactly half of 100 x 101.",
+     "s": [
+      [
+       "Pairing method gives 5050",
+       1
+      ],
+      [
+       "Average method gives 5050 and explains why they agree",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dev says: 'To find 30 + 31 + ... + 60 I compute S60 - S30.' Is he right?",
+     "a": "No, his working is wrong. Subtracting a smaller S from S60 is the right idea, but S30 also removes the term 30 that we want to keep. The right working is S60 - S29 = 1830 - 435 = 1395, while Dev's gives 1830 - 465 = 1365, which is 30 too small.",
+     "s": [
+      [
+       "Gives the verdict that his working is wrong, though subtracting a smaller sum from S60 is the right idea",
+       1
+      ],
+      [
+       "Says the subtraction should be S29, since 30 must stay",
+       1
+      ],
+      [
+       "Gives 1395 against Dev's 1365",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Asha says: 'The value n(n + 1)/2 is always a whole number, whatever natural number n is.' Is she right? Give a reason.",
+     "a": "Yes. n and n + 1 are consecutive natural numbers, so one of them is even; their product n(n + 1) is therefore even and dividing it by 2 leaves a whole number. For example n = 7 gives 28 and n = 8 gives 36.",
+     "s": [
+      [
+       "Verdict: Asha is right",
+       1
+      ],
+      [
+       "Reason: one of two consecutive numbers is even, so the product is even",
+       1
+      ],
+      [
+       "Supports with a checked example",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that a child cannot arrange exactly 1000 marbles in complete rows of 1, 2, 3, ... marbles, one more in each row.",
+     "a": "Complete rows use S_n = n(n + 1)/2 marbles. S44 = 990 and S45 = 1035, and the sums keep increasing, so 1000 lies between two neighbouring sums and equals none of them.",
+     "s": [
+      [
+       "Links complete rows to S_n",
+       1
+      ],
+      [
+       "Finds S44 = 990 and S45 = 1035",
+       1
+      ],
+      [
+       "Concludes 1000 lies strictly between them",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a sum of consecutive natural numbers that you can evaluate as S70 - S29, and find its value.",
+     "a": "S70 - S29 = 30 + 31 + ... + 70. S70 = 70 x 71 / 2 = 2485 and S29 = 29 x 30 / 2 = 435, so the sum is 2485 - 435 = 2050.",
+     "s": [
+      [
+       "Names the sum 30 + 31 + ... + 70",
+       1
+      ],
+      [
+       "Computes S70 and S29",
+       1
+      ],
+      [
+       "Subtracts to get 2050",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The number 45 equals 1 + 2 + ... + 9. (a) Verify this with the formula. (b) Show using S_k - S_(m-1) that 7 + 8 + 9 + 10 + 11 = 45. (c) Show in the same way that 14 + 15 + 16 = 45. (d) Find one way to write 45 as the sum of just two consecutive numbers. (e) A student claims there are exactly four ways to write 45 as a sum of two or more consecutive natural numbers; the four are the ones from (a), (b), (c) and (d). Check by also testing 5 + 6 + ... + 10.",
+     "a": "(a) S9 = 9 x 10 / 2 = 45. (b) S11 - S6 = 66 - 21 = 45. (c) S16 - S13 = 136 - 91 = 45. (d) 22 + 23 = 45. (e) 5 + 6 + ... + 10 = S10 - S4 = 55 - 10 = 45, which is a fifth way, so the claim of exactly four is wrong.",
+     "s": [
+      [
+       "Part (a): S9 = 45",
+       1
+      ],
+      [
+       "Part (b): 66 - 21 = 45",
+       1
+      ],
+      [
+       "Part (c): 136 - 91 = 45",
+       1
+      ],
+      [
+       "Part (d): 22 + 23",
+       1
+      ],
+      [
+       "Part (e): 55 - 10 = 45 gives a fifth way, so the claim fails",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A school hall needs a seating block in which row 1 has 1 chair, row 2 has 2 chairs, and each row has one chair more than the row before. The school owns 500 chairs. (a) How many chairs do 31 rows need? (b) How many chairs are left if it builds 31 rows? (c) How many chairs does the 32nd row need, and how many chairs do 32 rows need in all? (d) How many extra chairs would have to be bought to build 32 rows? (e) Chairs cost Rs 350 each to buy. Is it worth spending the money for the 32nd row?",
+     "a": "(a) S31 = 31 x 32 / 2 = 496. (b) 500 - 496 = 4 chairs. (c) The 32nd row needs 32 chairs, and 32 rows need S32 = 528. (d) 528 - 500 = 28 extra chairs. (e) 28 x 350 = Rs 9,800 for one more row, which adds only 32 seats; a reasoned view is expected, such as keeping 31 rows because the school has no spare money, or buying if the extra 32 seats are needed.",
+     "s": [
+      [
+       "Part (a): 496",
+       1
+      ],
+      [
+       "Part (b): 4 left",
+       1
+      ],
+      [
+       "Part (c): 32 chairs in the row and 528 in all",
+       1
+      ],
+      [
+       "Part (d): 28 extra chairs",
+       1
+      ],
+      [
+       "Part (e): Rs 9,800 with a justified view",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Twelve schools enter an inter-school kabaddi league in which every pair of schools plays exactly one match. Counting the matches goes like this: the first school meets the other 11, the second school meets the 10 it has not yet met, the third meets 9 it has not yet met, and so on. (a) How many matches are there in all for 12 schools? (b) How many for 16 schools? (c) A smaller league has 28 matches in all. How many schools are in it? (d) The ground is booked for 100 match slots, and each extra slot costs Rs 6,000. Should the organisers admit 14 or 15 schools? Use your answers.",
+     "a": "(a) 11 + 10 + ... + 1 = S11 = 66. (b) S15 = 120. (c) S7 = 28, so 7 + 1 = 8 schools. (d) 14 schools need S13 = 91 matches, within 100 slots with 9 spare. 15 schools need S14 = 105 matches, so 5 extra slots costing 5 x 6,000 = Rs 30,000. Either is defensible: 14 schools stays within the booking, while 15 schools admits one more school for Rs 30,000.",
+     "s": [
+      [
+       "Part (a): 66",
+       1
+      ],
+      [
+       "Part (b): 120",
+       1
+      ],
+      [
+       "Part (c): 8 schools, from S7 = 28",
+       1
+      ],
+      [
+       "Part (d): 91 matches versus 105 matches with the Rs 30,000 cost, and a justified choice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Rohit decides to save Rs 1 on day 1, Rs 2 on day 2, Rs 3 on day 3 and so on, saving Rs n on day n. His sister Pooja saves a steady Rs 30 every day. Both want to reach Rs 1,500. (a) How much has Rohit saved by the end of day 30? (b) How much does he save from day 11 to day 30? (c) On which day does Rohit's total first reach Rs 1,500? (d) Compare the two plans on the number of days needed and the amount saved after 20 days, and say which suits a student with very little pocket money in the first weeks.",
+     "a": "(a) S30 = 465. (b) S30 - S10 = 465 - 55 = 410. (c) S54 = 1485 and S55 = 1540, so day 55. (d) Pooja reaches 1,500 on day 50 (30 x 50), five days sooner than Rohit's 55. After 20 days Rohit has S20 = 210 and Pooja 30 x 20 = 600. Rohit's plan asks very little early on and more later, so it suits a student short of money in the first weeks, though it takes five days longer.",
+     "s": [
+      [
+       "Part (a): Rs 465",
+       1
+      ],
+      [
+       "Part (b): Rs 410",
+       1
+      ],
+      [
+       "Part (c): day 55",
+       1
+      ],
+      [
+       "Part (d): 50 days vs 55 days and Rs 600 vs Rs 210 after 20 days, with a justified choice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A culture in a lab has 45 bacteria at the start, and the number triples every hour. How many bacteria are there at the end of the 4th hour?",
+     "a": "3,645",
+     "o": [
+      "3,645",
+      "1,215",
+      "10,935",
+      "180"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A ball is dropped from a height of 50 m. Each time it bounces, it rises to 80% of its previous height. How high does it rise after the 3rd bounce?",
+     "a": "25.6 m",
+     "o": [
+      "25.6 m",
+      "32 m",
+      "40 m",
+      "20.48 m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student plots (n, 3^n) and (n, (3/4)^n) for the stages n = 0, 1, 2, 3, 4 of the Sierpinski triangle. Which description is correct?",
+     "a": "The first set rises steeply and the second falls towards 0, and neither lies on a straight line",
+     "o": [
+      "The first set rises steeply and the second falls towards 0, and neither lies on a straight line",
+      "Both sets lie on straight lines, one rising and one falling",
+      "The first set lies on a straight line and the second falls towards 0",
+      "Both sets rise steeply and neither lies on a straight line"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: The list 1, -1, 1, -1, 1, ... is a GP with common ratio -1.\nStatement 2: The recursive rule t1 = 3, t_n = 10 t_(n-1) gives the GP 3, 30, 300, 3000, ... .\nStatement 3: In the Sierpinski triangle, the number of black triangles at each stage is three times the number at the previous stage.\nWhich of the statements are correct?",
+     "a": "1, 2 and 3",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the Sierpinski triangle, the area of the black region becomes smaller as the stages go on.\nReason (R): The number of black triangles becomes smaller at every stage.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Stage 0 of the Sierpinski square carpet is one square. At each stage every remaining square is divided into nine equal squares and the centre one is removed, so each square leaves 8. At Stage 4 there are ___ squares.",
+     "a": "4096"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each GP in Column I with its common ratio in Column II.\nColumn I: 1. 7, -14, 28, -56, ...  2. 81, 27, 9, 3, ...  3. 0.5, 2, 8, 32, ...  4. 100, 110, 121, 133.1, ...\nColumn II: a. 1/3  b. -2  c. 4  d. 1.1",
+     "a": "1-b, 2-a, 3-c, 4-d",
+     "o": [
+      "1-b, 2-a, 3-c, 4-d",
+      "1-b, 2-c, 3-a, 4-d",
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-a, 3-d, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these lists is a geometric progression?",
+     "a": "27, 9, 3, 1, ...",
+     "o": [
+      "27, 9, 3, 1, ...",
+      "2, 4, 6, 8, ...",
+      "1, 4, 9, 16, ...",
+      "1, 2, 4, 7, ..."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: Just as for an AP, the points (n, t_n) obtained from a GP lie on a straight line.",
+     "a": "False. For the GP 3, 6, 12, 24, 48 the points (1, 3), (2, 6), (3, 12), (4, 24), (5, 48) do not lie on a straight line; only an AP, with a constant difference, gives points on a line.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Cites the GP points that are not collinear, or contrasts with the constant difference of an AP",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a GP the 2nd term is 12 and the 5th term is 96. (a) Find the common ratio and the first term. (b) Find the 8th term.",
+     "a": "(a) The 5th term is the 2nd term multiplied by r three times, so r^3 = 96/12 = 8 and r = 2, and a = 12/2 = 6. (b) t_8 = 6 x 2^7 = 768.",
+     "s": [
+      [
+       "Part (a): r = 2 and a = 6",
+       1
+      ],
+      [
+       "Part (b): 768",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the GP 8, 12, 18, 27, ... (a) find the common ratio and write the nth term. (b) Find the 5th term.",
+     "a": "(a) r = 12/8 = 3/2 (also 18/12 and 27/18), so t_n = 8 x (3/2)^(n-1). (b) t_5 = 8 x (3/2)^4 = 8 x 81/16 = 40.5.",
+     "s": [
+      [
+       "Part (a): r = 3/2 and 8 (3/2)^(n-1)",
+       1
+      ],
+      [
+       "Part (b): 40.5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the number of black triangles at the nth stage of the Sierpinski triangle is 3^n.",
+     "a": "At every stage each black triangle is replaced by three smaller black triangles, so the number is multiplied by 3 each time. Starting from 1 at Stage 0, we get 1, 3, 9, 27, ..., which is 3^n at Stage n.",
+     "s": [
+      [
+       "Each black triangle is replaced by three at the next stage",
+       1
+      ],
+      [
+       "Starts from 1 and multiplies by 3 each stage to give 3^n",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write the recursive rule for the GP with nth term t_n = 5 x 4^(n-1). (b) Use it to find the 4th term.",
+     "a": "(a) t1 = 5 and t_n = 4 t_(n-1) for n >= 2. (b) t2 = 20, t3 = 80, t4 = 320.",
+     "s": [
+      [
+       "Part (a): t1 = 5 and t_n = 4 t_(n-1)",
+       1
+      ],
+      [
+       "Part (b): 320",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Ria says: 'The area of the black region in the Sierpinski triangle keeps decreasing, so the number of black triangles must also keep decreasing.' Is she right?",
+     "a": "No. The number of black triangles increases as 1, 3, 9, 27, ... because each triangle is replaced by three, while the area falls as 1, 3/4, (3/4)^2, ... because each new triangle is smaller. The two quantities move in opposite directions.",
+     "s": [
+      [
+       "Verdict: Ria is wrong",
+       1
+      ],
+      [
+       "Gives the increasing count 1, 3, 9, 27",
+       1
+      ],
+      [
+       "Gives the decreasing area (3/4)^n and says they move in opposite directions",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Maya says: 'For the GP 3, 6, 12, 24, ... the 4th term is 3 x 2^4 = 48, using t_n = a r^n.' Check her claim.",
+     "a": "Partly right. She has the right a = 3 and r = 2, but the nth term is a r^(n-1), not a r^n. So t_4 = 3 x 2^3 = 24, which is the 4th term in the list; 48 is the 5th term.",
+     "s": [
+      [
+       "Accepts a = 3 and r = 2",
+       1
+      ],
+      [
+       "Corrects the formula to a r^(n-1)",
+       1
+      ],
+      [
+       "Gives t_4 = 24 and notes 48 is the 5th term",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rahul says: 'In the bouncing ball problem the heights after the bounces 18, 13.5, 10.125 form a GP, so 13.5/18 is equal to 10.125/13.5.' Is he right? Test it.",
+     "a": "Yes. 13.5/18 = 0.75 and 10.125/13.5 = 0.75, so the ratios of consecutive terms are equal. This is exactly what a GP needs, with common ratio 0.75, because each bounce rises to 3/4 of the previous height.",
+     "s": [
+      [
+       "Verdict: Rahul is right",
+       1
+      ],
+      [
+       "Computes both ratios as 0.75",
+       1
+      ],
+      [
+       "Links equal ratios to the definition of a GP / the 3/4 bounce",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that 100 cannot be a term of the GP 2, 6, 18, 54, ... .",
+     "a": "The nth term is 2 x 3^(n-1). Setting this equal to 100 needs 3^(n-1) = 50. But the powers of 3 are 1, 3, 9, 27, 81, ..., and 50 lies between 27 and 81, so no power of 3 equals 50 and 100 is not a term (the terms around it are 54 and 162).",
+     "s": [
+      [
+       "Writes t_n = 2 x 3^(n-1)",
+       1
+      ],
+      [
+       "Reduces to 3^(n-1) = 50",
+       1
+      ],
+      [
+       "Shows 50 is not a power of 3 (between 27 and 81)",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up a real situation described by a GP with first term 800 and common ratio 1/2. Say what the 6th term means.",
+     "a": "For example, a tank has 800 litres of water and every hour half of what is in it is drained, so the amounts are 800, 400, 200, ... . The 6th term is 800 x (1/2)^5 = 25, so 25 litres remain at the 6th reading.",
+     "s": [
+      [
+       "Gives a situation that halves each step starting at 800",
+       1
+      ],
+      [
+       "Computes t_6 = 25",
+       1
+      ],
+      [
+       "Interprets it in the situation",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In the Sierpinski triangle the black region has area 1 square unit at Stage 0. (a) How many black triangles are there at Stage 6? (b) What is the black area at Stage 4? (c) What is the black area at Stage 6? (d) How many times as many black triangles are there at Stage 6 as at Stage 3? (e) Explain, using your answers, why the picture shows more and more triangles but less and less black area.",
+     "a": "(a) 3^6 = 729. (b) (3/4)^4 = 81/256. (c) (3/4)^6 = 729/4096. (d) 729 / 27 = 27 times. (e) Each stage multiplies the number of triangles by 3, but each new triangle has only a quarter of the area of the one it replaces, so the total area is multiplied by 3/4, which is less than 1.",
+     "s": [
+      [
+       "Part (a): 729",
+       1
+      ],
+      [
+       "Part (b): 81/256",
+       1
+      ],
+      [
+       "Part (c): 729/4096",
+       1
+      ],
+      [
+       "Part (d): 27 times",
+       1
+      ],
+      [
+       "Part (e): count multiplied by 3, area by 3/4 (less than 1)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A ball is dropped from a height of 64 m and rebounds to half of its previous height each time. (a) Write the heights after the first three bounces. (b) What is the height after the 6th bounce? (c) After how many bounces is the height first below 0.5 m? (d) Is the list of heights an AP or a GP? Give the common ratio or difference. (e) Radha says the ball will reach exactly 0 m after some bounce. Is she right according to the rule?",
+     "a": "(a) 32 m, 16 m, 8 m. (b) 64 x (1/2)^6 = 1 m. (c) After the 7th bounce the height is 0.5 m, which is not below 0.5, and after the 8th it is 0.25 m, so 8 bounces. (d) A GP with common ratio 1/2, since the ratio of consecutive heights is constant but the difference is not. (e) No: halving a positive height always leaves a positive height, so no bounce gives exactly 0.",
+     "s": [
+      [
+       "Part (a): 32, 16, 8",
+       1
+      ],
+      [
+       "Part (b): 1 m",
+       1
+      ],
+      [
+       "Part (c): 8 bounces",
+       1
+      ],
+      [
+       "Part (d): GP with r = 1/2, not constant differences",
+       1
+      ],
+      [
+       "Part (e): halving a positive number never gives 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A designer makes a Sierpinski carpet from a square cloth of side 81 cm. At each stage every remaining square is cut into nine equal squares and the centre one is removed. (a) At Stage 3, how many squares remain, and what is the side and area of each? (b) What is the total area of cloth left at Stage 3, and what percentage of the original cloth is that? (c) What is the number of squares and the area left at Stage 4? (d) The client wants at least 3,000 separate small squares in the design and at least 65% of the cloth kept. Check both Stages 3 and 4 against these two conditions and advise the designer.",
+     "a": "(a) 8^3 = 512 squares, each of side 81/27 = 3 cm and area 9 sq cm. (b) 512 x 9 = 4,608 sq cm, which is 4,608/6,561 = 70.2% of the original 6,561 sq cm. (c) Stage 4 has 8^4 = 4,096 squares, each of side 1 cm, so 4,096 sq cm are left, which is 62.4%. (d) Stage 3 keeps 70.2% (passes) but has only 512 squares (fails); Stage 4 has 4,096 squares (passes) but keeps only 62.4% (fails). No stage meets both, so the designer must relax one condition: choose Stage 4 if the look matters most, or Stage 3 if saving cloth matters most.",
+     "s": [
+      [
+       "Part (a): 512 squares, 3 cm side, 9 sq cm each",
+       1
+      ],
+      [
+       "Part (b): 4,608 sq cm and 70.2%",
+       1
+      ],
+      [
+       "Part (c): 4,096 squares and 4,096 sq cm (62.4%)",
+       1
+      ],
+      [
+       "Part (d): neither stage meets both conditions, with a justified choice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Anil's father offers two monthly saving plans. Plan A: deposit Rs 1,000 in month 1 and Rs 300 more each month than the month before. Plan B: deposit Rs 1,024 in month 1 and multiply the deposit by 5/4 each month. The bank accepts at most Rs 5,000 per month. (a) What does each plan deposit in month 5? (b) In which month do the two plans deposit the same amount? (c) What is the last month in which each plan stays within Rs 5,000? (d) Anil's goal runs for 8 months in one case and for 14 months in another. Use your answers to say which plan suits each goal.",
+     "a": "(a) A: 1,000 + 4 x 300 = 2,200. B: 1,024 x (5/4)^4 = 2,500. (b) Both deposit Rs 1,600 in month 3. (c) Plan B: month 8 gives 1,024 x (5/4)^7 = 4,882.81 and month 9 gives 6,103.52, so month 8. Plan A: month 14 gives 1,000 + 13 x 300 = 4,900 and month 15 gives 5,200, so month 14. (d) For an 8-month goal both plans fit, and Plan B deposits more in the final month (about Rs 4,883 against Rs 3,100). For a 14-month goal only Plan A stays within the Rs 5,000 limit through month 14.",
+     "s": [
+      [
+       "Part (a): Rs 2,200 and Rs 2,500",
+       1
+      ],
+      [
+       "Part (b): month 3 at Rs 1,600",
+       1
+      ],
+      [
+       "Part (c): month 8 for Plan B, month 14 for Plan A",
+       1
+      ],
+      [
+       "Part (d): B for 8 months, A for 14 months, with reasons from the cap",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

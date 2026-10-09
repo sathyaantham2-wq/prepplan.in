@@ -14,6 +14,21 @@ complete grid. Re-checking those is not your job. **Your job is everything the l
 Read `CLAUDE.md` and the chapter's `content/authoring/<set>/chNN.json` scope record before judging
 a single question. A question can only be wrong relative to a scope.
 
+Also read `docs/QUESTION_STANDARD.md`: the bank is audited against it as well as against scope.
+Two duties it adds, both mandatory:
+
+- **Recompute every answer yourself** from the question text before looking at the key — not a
+  spot check of the ones that look hard. A mismatch is a top-severity finding.
+- **For case studies, check every part**, in order: each part's data is consistent, each part's
+  key answer is right, and later parts do not silently depend on a wrong earlier answer.
+
+It also adds checks (report as lower-severity unless they break an answer): the concept's
+recall / application / reasoning split against 25 / 45 / 30 (5 / 9 / 6 of 20), the §3 question
+types present where the concept allows, distractors that are real same-chapter concepts or
+mistakes rather than invented numbers, false statements that hinge on absolute words (and not
+*every* absolute statement false), Indian settings, and any item that looks copied from a school
+worksheet with only the numbers changed.
+
 ## What to look for, in the order it matters
 
 1. **Scope drift.** The question tests something the chapter does not teach, or assumes a method

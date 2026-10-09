@@ -22,6 +22,15 @@ export interface EligibleSlotParams {
   difficultiesAllowed: Array<DifficultyTier>
   marks: number
   excludeQuestionIds: Array<string>
+  // School Half-Yearly slots (all optional; a legacy blueprint slot sets none of them).
+  types?: Array<QuestionType>
+  // The question must carry this tag (case_study, map, ...).
+  requiredTag?: string
+  // The question must carry none of these tags (so a plain slot never receives a case study).
+  excludeTags?: Array<string>
+  // The question must have a real, original figure (maps and figure questions).
+  requireDiagram?: boolean
+  excludeConceptIds?: Array<string>
 }
 
 // The question bank is global reference data (not household-owned), unscoped.
@@ -71,6 +80,23 @@ export const questionsRepository = {
 
     if (params.excludeQuestionIds.length > 0) {
       query = query.where('id', 'not in', params.excludeQuestionIds)
+    }
+    if (params.types && params.types.length > 0) {
+      query = query.where('type', 'in', params.types)
+    }
+    if (params.requiredTag) {
+      query = query.where(sql<boolean>`tags @> ARRAY[${params.requiredTag}]::text[]`)
+    }
+    if (params.excludeTags && params.excludeTags.length > 0) {
+      query = query.where(
+        sql<boolean>`NOT (tags && ARRAY[${sql.join(params.excludeTags)}]::text[])`,
+      )
+    }
+    if (params.requireDiagram) {
+      query = query.where('diagram_kind', 'is not', null)
+    }
+    if (params.excludeConceptIds && params.excludeConceptIds.length > 0) {
+      query = query.where('concept_id', 'not in', params.excludeConceptIds)
     }
 
     return query

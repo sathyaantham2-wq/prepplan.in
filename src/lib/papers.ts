@@ -1,5 +1,5 @@
 import type { Db } from '../db/connection'
-import type { BloomLevel, DifficultyTier } from '../db/enums'
+import type { BloomLevel, DifficultyTier, QuestionType } from '../db/enums'
 import {
   blueprintsRepository,
   papersRepository,
@@ -20,6 +20,17 @@ import {
   guaranteeRetention,
 } from './adaptive/weights'
 import type { ConceptSignal, ConceptWeight } from './adaptive/weights'
+import {
+  LEVEL_BLOOMS,
+  SPECIAL_TAGS,
+  THINKING_LEVELS,
+  checkPaperStructure,
+  expectedWordsFor,
+  levelOfBloom,
+  parseHalfYearlyConfig,
+} from './school-paper'
+import type { CheckSlot, ThinkingLevel } from './school-paper'
+import { isObjectiveType } from './scoring'
 
 const DIFFICULTY_ORDER: Array<DifficultyTier> = ['Easy', 'Hard', 'Hardest']
 
@@ -116,6 +127,12 @@ interface BlueprintSection {
   marks_per_question: number
   count: number
   bloom_allowed: Array<BloomLevel>
+  // School Half-Yearly layout fields (see school-paper.ts); a legacy section sets none of them.
+  slot?: string
+  types?: Array<QuestionType>
+  tag?: string
+  discipline?: string
+  or_count?: number
 }
 
 // F030: "Choice pairs marked in the paper, counted once in total marks, and handled correctly in
@@ -139,8 +156,13 @@ export interface GeneratePaperInput {
   // The weak/priority weighting still applies among whatever concepts are left.
   concept_ids?: Array<string>
   theme?: string
+  // Honoured only when `adaptive` is true. A normal paper's difficulty mix comes from its
+  // blueprint, never from the caller (owner decision 2026-10-05).
   difficulty_ceiling?: DifficultyTier
   weighting_override?: Weighting
+  // Where the paper will be answered. A ruler-and-compass (construction) question is only
+  // eligible for a paper that will be printed or uploaded, never for a phone attempt.
+  delivery?: 'screen' | 'print'
   // F113: chapter_id -> percentage (must sum to 100, enforced by the route). Overrides the
   // concept-count-proportional default entirely when supplied.
   chapter_weighting_override?: Record<string, number>
@@ -166,6 +188,9 @@ interface Shortfall {
   section: string
   bucket?: Bucket
   reason: string
+  // School Half-Yearly: the layout slot, and how many marks of it the shortfall leaves unfilled.
+  slot?: string
+  marks_missing?: number
 }
 
 /**
@@ -197,9 +222,10 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     choiceRules.map((r) => [r.section, r.count]),
   )
   let weighting = input.weighting_override ?? DEFAULT_WEIGHTING
-  const difficultiesAllowed = difficultiesUpTo(
-    input.difficulty_ceiling ?? 'Hardest',
-  )
+  const difficultyCeiling = input.adaptive
+    ? (input.difficulty_ceiling ?? 'Hardest')
+    : 'Hardest'
+  const difficultiesAllowed = difficultiesUpTo(difficultyCeiling)
   const recentWindowDays = input.recentUsageWindowDays ?? 14
 
   const chapterConcepts = await db
@@ -228,11 +254,42 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     (sum, s) => sum + s.marks_per_question * s.count,
     0,
   )
-  const chapterMarksTargets = computeChapterMarksTargets(
-    nominalTotalMarks,
+  // School Half-Yearly: the layout is blueprint data (blueprints.config); a legacy blueprint has
+  // none, and every half-yearly branch below is skipped for it.
+  const halfYearly = parseHalfYearlyConfig(blueprint.config)
+  const delivery = input.delivery ?? 'screen'
+  const chapterRows = await db
+    .selectFrom('chapters')
+    .select(['id', 'discipline', 'name'])
+    .where('id', 'in', input.chapter_ids)
+    .execute()
+  const disciplineByChapter = new Map(chapterRows.map((c) => [c.id, c.discipline]))
+  const chapterNameById = new Map(chapterRows.map((c) => [c.id, c.name]))
+  const hasDisciplineOf = (chapterId: string, discipline: string | undefined) =>
+    !discipline || disciplineByChapter.get(chapterId) === discipline
+
+  // F113 per-chapter marks targets. A slot tied to a discipline (Social Science: History,
+  // Geography, ...) only draws on that discipline's chapters, so its marks are shared out among
+  // those chapters alone; everything else is shared across all chosen chapters as before.
+  const chapterMarksTargets: Record<string, number> = computeChapterMarksTargets(
+    sections
+      .filter((s) => !s.discipline)
+      .reduce((sum, s) => sum + s.marks_per_question * s.count, 0),
     chapterConceptCounts,
     input.chapter_weighting_override,
   )
+  for (const discipline of new Set(sections.flatMap((s) => (s.discipline ? [s.discipline] : [])))) {
+    const marks = sections
+      .filter((s) => s.discipline === discipline)
+      .reduce((sum, s) => sum + s.marks_per_question * s.count, 0)
+    const inDiscipline = input.chapter_ids.filter((id) => hasDisciplineOf(id, discipline))
+    if (inDiscipline.length === 0) continue
+    const shares = allocateProportionally(
+      marks,
+      Object.fromEntries(inDiscipline.map((id) => [id, chapterConceptCounts[id] ?? 0])),
+    )
+    for (const id of inDiscipline) chapterMarksTargets[id] = (chapterMarksTargets[id] ?? 0) + shares[id]
+  }
   const chapterMarksAssigned: Record<string, number> = Object.fromEntries(
     input.chapter_ids.map((id) => [id, 0]),
   )
@@ -312,7 +369,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     ),
   )
 
-  type Candidate = { id: string; bloom: BloomLevel; concept_id: string; difficulty: DifficultyTier }
+  type Candidate = { id: string; bloom: BloomLevel; concept_id: string; difficulty: DifficultyTier; type: QuestionType }
 
   // One place that fetches a question for a slot. Normal mode is the original single query over
   // the pool. Adaptive mode walks the pool from the concept with the biggest unmet question target
@@ -327,6 +384,18 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
       difficultiesAllowed,
       marks: section.marks_per_question,
       excludeQuestionIds: [...excludeQuestionIds],
+      ...(halfYearly
+        ? {
+            types: section.types,
+            requiredTag: section.tag,
+            // A plain slot never receives a special question; a ruler-and-compass one is only
+            // eligible when the paper will be printed.
+            excludeTags: SPECIAL_TAGS.filter(
+              (t) => t !== section.tag && !(t === 'construction' && delivery === 'print'),
+            ),
+            requireDiagram: section.tag === 'map' || section.tag === 'figure',
+          }
+        : {}),
     }
     if (!adaptiveCtx) {
       const rows = await questionsRepository.findEligibleForSlot(db, { conceptIds: pool, ...base }, 1)
@@ -367,16 +436,111 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     // answered, so only one should count toward what the paper's contents "really" are.
     choiceGroup?: string
     isChoiceAlternate?: boolean
+    slot?: string
+    expectedWords?: number
+    type: QuestionType
+    concept_id: string
   }> = []
   const shortfalls: Array<Shortfall> = []
+
+  // ---- School Half-Yearly helpers (all inert for a legacy blueprint) -------------------------
+  const levelTargetMarks: Record<ThinkingLevel, number> = {
+    recall_understanding: 0,
+    application: 0,
+    analysis_evaluation: 0,
+  }
+  const levelAssignedMarks: Record<ThinkingLevel, number> = { ...levelTargetMarks }
+  // Thinking levels a slot can serve: those that share a Bloom level with its bloom_allowed.
+  const levelsFor = (section: BlueprintSection): Array<ThinkingLevel> =>
+    THINKING_LEVELS.filter((l) => LEVEL_BLOOMS[l].some((b) => section.bloom_allowed.includes(b)))
+  // One planned thinking level per question slot, so the paper lands on the blueprint's mix
+  // instead of whatever the first slots happen to draw. The most constrained slots are placed
+  // first; each goes to the allowed level with the most marks still to fill.
+  const levelPlan = new Map<BlueprintSection, Array<ThinkingLevel>>()
+  if (halfYearly) {
+    for (const l of THINKING_LEVELS) {
+      levelTargetMarks[l] = (halfYearly.level_mix[l] / 100) * nominalTotalMarks
+    }
+    const remaining = { ...levelTargetMarks }
+    const units = sections.flatMap((section) =>
+      Array.from({ length: section.count }, () => section),
+    )
+    const order = [...units].sort(
+      (a, b) =>
+        levelsFor(a).length - levelsFor(b).length ||
+        b.marks_per_question - a.marks_per_question,
+    )
+    for (const section of order) {
+      const allowed = levelsFor(section)
+      const best = [...allowed].sort((x, y) => remaining[y] - remaining[x])[0]
+      remaining[best] -= section.marks_per_question
+      const plan = levelPlan.get(section) ?? []
+      plan.push(best)
+      levelPlan.set(section, plan)
+    }
+  }
+  // Unfilled slots are reported once per layout slot (not once per question), with the marks the
+  // gap leaves empty, so the section totals still reconcile and nothing is hidden (F032).
+  const slotMissing = new Map<
+    string,
+    { section: string; slot: string; count: number; marks: number; reason: string }
+  >()
+  const orMissing = new Map<string, { section: string; slot: string; count: number }>()
+  const slotFields = (section: BlueprintSection, q: Candidate) => ({
+    slot: section.slot,
+    // Only a written question has an expected length; the word limit is snapshotted here so an
+    // old paper never changes if the blueprint's limits are edited later.
+    expectedWords:
+      halfYearly && !isObjectiveType(q.type)
+        ? (expectedWordsFor(section.marks_per_question, halfYearly) ?? undefined)
+        : undefined,
+    type: q.type,
+    concept_id: q.concept_id,
+  })
 
   for (const section of sections) {
     const allocation = allocateByWeighting(section.count, weighting)
     const choicePairCount = Math.min(
-      choicePairCountBySection.get(section.name) ?? 0,
+      halfYearly
+        ? (section.or_count ?? 0)
+        : (choicePairCountBySection.get(section.name) ?? 0),
       section.count,
     )
     let sectionSlotIndex = 0
+    // A discipline slot (History, Geography, ...) draws only on chapters of that discipline;
+    // the other disciplines' chapters are never used to fill it.
+    const sectionChapterIds = input.chapter_ids.filter((id) =>
+      hasDisciplineOf(id, section.discipline),
+    )
+    const sectionConceptSet = new Set(
+      conceptIds.filter((id) => sectionChapterIds.includes(chapterByConceptId.get(id) ?? '')),
+    )
+    const sectionConceptIds = [...sectionConceptSet]
+    const plannedLevels = [...(levelPlan.get(section) ?? [])]
+
+    // Picks a question for this slot at its planned thinking level, falling back to the other
+    // levels this slot can serve (the shortfall report then shows the mix drifted).
+    const pickForSlot = async (
+      pool: Array<string>,
+      preferred: ThinkingLevel | undefined,
+    ): Promise<Candidate | undefined> => {
+      if (!halfYearly || !preferred) return findForSlot(pool, section)
+      const levels = [
+        preferred,
+        ...levelsFor(section)
+          .filter((l) => l !== preferred)
+          .sort((x, y) => levelTargetMarks[y] - levelAssignedMarks[y] - (levelTargetMarks[x] - levelAssignedMarks[x])),
+      ]
+      for (const level of levels) {
+        if (!levelsFor(section).includes(level)) continue
+        const hit = await findForSlot(pool, {
+          ...section,
+          bloom_allowed: section.bloom_allowed.filter((b) => LEVEL_BLOOMS[level].includes(b)),
+        })
+        if (hit) return hit
+      }
+      return undefined
+    }
 
     for (const bucket of [
       'weak_priority',
@@ -386,12 +550,14 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
       for (let i = 0; i < allocation[bucket]; i++) {
         // Fall back to the full chapter concept pool if this bucket happens to be empty (e.g. a
         // brand-new student with no Strong concepts yet) rather than silently under-filling.
-        const pool = buckets[bucket].length > 0 ? buckets[bucket] : conceptIds
+        const plannedLevel = plannedLevels.shift()
+        const bucketPool = buckets[bucket].filter((id) => sectionConceptSet.has(id))
+        const pool = bucketPool.length > 0 ? bucketPool : sectionConceptIds
 
         // F113: try chapters in order of largest remaining proportional deficit first, so marks
         // land on the chapter that most needs them; a chapter with a 0 target (e.g. no concepts)
         // is skipped entirely.
-        const chaptersByDeficit = [...input.chapter_ids].sort(
+        const chaptersByDeficit = [...sectionChapterIds].sort(
           (a, b) =>
             chapterMarksTargets[b] -
             chapterMarksAssigned[b] -
@@ -416,7 +582,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
               dueRetestConceptIds.has(id),
             )
             if (duePool.length > 0) {
-              const dueEligible = await findForSlot(duePool, section)
+              const dueEligible = await pickForSlot(duePool, plannedLevel)
               if (dueEligible) {
                 picked = dueEligible
                 chosenChapterId = chapterId
@@ -425,7 +591,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
             }
           }
 
-          const eligible = await findForSlot(chapterPool, section)
+          const eligible = await pickForSlot(chapterPool, plannedLevel)
           if (eligible) {
             picked = eligible
             chosenChapterId = chapterId
@@ -437,7 +603,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
         // (old, chapter-agnostic behaviour) so the paper still fills, and say so rather than
         // silently drifting from the proportional target (F032's "report, never hide").
         if (!picked) {
-          picked = await findForSlot(pool, section)
+          picked = await pickForSlot(pool, plannedLevel)
           chosenChapterId = picked
             ? chapterByConceptId.get(picked.concept_id)
             : undefined
@@ -451,13 +617,30 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
         }
 
         if (!picked) {
+          if (halfYearly) {
+            const key = `${section.name}#${section.slot ?? ''}`
+            const entry = slotMissing.get(key) ?? {
+              section: section.name,
+              slot: section.slot ?? `${section.marks_per_question}-mark`,
+              count: 0,
+              marks: 0,
+              reason: section.discipline && sectionChapterIds.length === 0
+                ? `none of the chosen chapters is ${section.discipline}, so this was left out rather than filled from another discipline`
+                : `no approved question in the bank for ${section.tag ? `a ${section.tag.replace('_', ' ')} question` : `types [${(section.types ?? ['any']).join(', ')}]`}, bloom [${section.bloom_allowed.join(', ')}], ${section.marks_per_question} mark(s)${section.tag === 'map' || section.tag === 'figure' ? ', with an original figure' : ''}`,
+            }
+            entry.count += 1
+            entry.marks += section.marks_per_question
+            slotMissing.set(key, entry)
+            continue
+          }
           shortfalls.push({
             section: section.name,
             bucket,
-            reason: `No approved question available for bloom in [${section.bloom_allowed.join(', ')}], difficulty<=${input.difficulty_ceiling ?? 'Hardest'}, ${section.marks_per_question} mark(s)`,
+            reason: `No approved question available for bloom in [${section.bloom_allowed.join(', ')}], difficulty<=${difficultyCeiling}, ${section.marks_per_question} mark(s)`,
           })
           continue
         }
+        levelAssignedMarks[levelOfBloom(picked.bloom)] += section.marks_per_question
 
         excludeQuestionIds.add(picked.id)
         if (adaptiveCtx) {
@@ -483,14 +666,27 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
           const alternatePool = chosenChapterId
             ? pool.filter((id) => chapterByConceptId.get(id) === chosenChapterId)
             : pool
-          const alternate = await findForSlot(
-            alternatePool.length > 0 ? alternatePool : pool,
-            section,
-          )
+          // Half-Yearly OR: same marks and same thinking level as the first option, but from a
+          // DIFFERENT concept of the chosen chapters, so the choice is a real one.
+          const alternate = halfYearly
+            ? await findForSlot(
+                sectionConceptIds.filter((id) => id !== picked.concept_id),
+                {
+                  ...section,
+                  bloom_allowed: section.bloom_allowed.filter((b) =>
+                    LEVEL_BLOOMS[levelOfBloom(picked.bloom)].includes(b),
+                  ),
+                },
+              )
+            : await findForSlot(
+                alternatePool.length > 0 ? alternatePool : pool,
+                section,
+              )
           if (alternate) {
-            choiceGroup = `${section.name}#${sectionSlotIndex}`
+            choiceGroup = `${section.name}#${section.slot ?? ''}#${sectionSlotIndex}`
             excludeQuestionIds.add(alternate.id)
             selected.push({
+              ...slotFields(section, picked),
               section: section.name,
               marks: section.marks_per_question,
               bucket,
@@ -498,6 +694,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
               choiceGroup,
             })
             selected.push({
+              ...slotFields(section, alternate),
               section: section.name,
               marks: section.marks_per_question,
               bucket,
@@ -507,15 +704,23 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
             })
             continue
           }
-          shortfalls.push({
-            section: section.name,
-            bucket,
-            reason:
-              'Internal choice requested for this slot but no second eligible question was available -- printed as a single required question instead',
-          })
+          if (halfYearly) {
+            const key = `${section.name}#${section.slot ?? ''}`
+            const entry = orMissing.get(key) ?? { section: section.name, slot: section.slot ?? '', count: 0 }
+            entry.count += 1
+            orMissing.set(key, entry)
+          } else {
+            shortfalls.push({
+              section: section.name,
+              bucket,
+              reason:
+                'Internal choice requested for this slot but no second eligible question was available -- printed as a single required question instead',
+            })
+          }
         }
 
         selected.push({
+          ...slotFields(section, picked),
           section: section.name,
           marks: section.marks_per_question,
           bucket,
@@ -530,6 +735,25 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
   // the paper's contents "really" are. paperQuestions/question_usage still use `selected` in
   // full, since BOTH members are real rows the student needs printed and excluded from reuse.
   const countedSelected = selected.filter((item) => !item.isChoiceAlternate)
+
+  // School Half-Yearly: one shortfall line per unfilled layout slot, carrying the marks it
+  // leaves empty (so printed + shortfall marks still add up to the section total).
+  for (const m of slotMissing.values()) {
+    shortfalls.push({
+      section: m.section,
+      slot: m.slot,
+      marks_missing: m.marks,
+      reason: `${m.slot}: ${m.count} question(s), ${m.marks} mark(s) NOT printed -- ${m.reason}`,
+    })
+  }
+  for (const m of orMissing.values()) {
+    shortfalls.push({
+      section: m.section,
+      slot: m.slot,
+      marks_missing: 0,
+      reason: `${m.slot}: ${m.count} internal choice(s) printed without an OR -- no second question of the same marks and thinking level from a different concept was available`,
+    })
+  }
 
   // F029: report the actual Bloom mix and flag any target missed by more than 5 percentage
   // points, rather than blocking paper generation on it.
@@ -546,7 +770,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
       Math.round((count / Math.max(countedSelected.length, 1)) * 1000) / 10
   }
   // Adaptive papers choose by difficulty level, so a fixed Bloom mix does not apply to them.
-  for (const [bloom, target] of (input.adaptive
+  for (const [bloom, target] of (input.adaptive || halfYearly
     ? []
     : Object.entries(bloomTargets)) as Array<[BloomLevel, number]>) {
     const actual = bloomActual[bloom] ?? 0
@@ -558,16 +782,38 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     }
   }
 
+  // School Half-Yearly: the mix is stated in thinking levels (by marks). Report the real one and
+  // flag a level that missed its target by more than 5 points.
+  const levelPrinted = Math.max(
+    THINKING_LEVELS.reduce((n, l) => n + levelAssignedMarks[l], 0),
+    1,
+  )
+  const levelActualPct = Object.fromEntries(
+    THINKING_LEVELS.map((l) => [l, Math.round((levelAssignedMarks[l] / levelPrinted) * 1000) / 10]),
+  ) as Record<ThinkingLevel, number>
+  if (halfYearly) {
+    for (const l of THINKING_LEVELS) {
+      if (Math.abs(levelActualPct[l] - halfYearly.level_mix[l]) > 5) {
+        shortfalls.push({
+          section: 'overall',
+          reason: `Thinking-level mix off target: ${l.replace('_', ' ')} is ${levelActualPct[l]}% of the printed marks vs a ${halfYearly.level_mix[l]}% target`,
+        })
+      }
+    }
+  }
+
   // F113: flag any chapter whose actual marks drift from its proportional target by more than a
   // mark (or 5% of the paper, whichever is larger) -- small rounding gaps are expected and fine.
-  for (const chapterId of input.chapter_ids) {
+  // A Half-Yearly paper's chapter drift is a consequence of the unfilled slots already reported
+  // one by one above, so it is not repeated per chapter.
+  for (const chapterId of halfYearly ? [] : input.chapter_ids) {
     const target = chapterMarksTargets[chapterId] ?? 0
     const actual = chapterMarksAssigned[chapterId] ?? 0
     const tolerance = Math.max(1, nominalTotalMarks * 0.05)
     if (Math.abs(actual - target) > tolerance) {
       shortfalls.push({
         section: 'overall',
-        reason: `Chapter ${chapterId} got ${actual} mark(s) vs a ${target} mark proportional target`,
+        reason: `Chapter ${halfYearly ? (chapterNameById.get(chapterId) ?? chapterId) : chapterId} got ${actual} mark(s) vs a ${target} mark proportional target`,
       })
     }
   }
@@ -590,6 +836,55 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
   // F030: "counted once in total marks" -- an OR pair contributes its shared mark value once,
   // not once per printed alternative.
   const totalMarks = countedSelected.reduce((sum, item) => sum + item.marks, 0)
+
+  // Slot numbers. A legacy paper numbers every row (an OR pair takes two numbers); a Half-Yearly
+  // paper numbers a slot once, so both members of an OR pair share the printed number and the
+  // paper reads 1..N with no gap.
+  let runningNumber = 0
+  const positions = selected.map((item) => {
+    if (!halfYearly) return ++runningNumber
+    if (!item.isChoiceAlternate) runningNumber += 1
+    return runningNumber
+  })
+
+  // School Half-Yearly: structural checks before the paper is saved, so a broken paper is never
+  // shown. Continuous numbering, four options on every multiple-choice question, and section
+  // marks (printed + shortfall) adding up to the section totals and the paper total.
+  if (halfYearly) {
+    const optionTypeIds = selected
+      .filter((item) => ['mcq', 'assertion_reason', 'multi_statement', 'match'].includes(item.type))
+      .map((item) => item.question.id)
+    const optionCounts = new Map<string, number>()
+    if (optionTypeIds.length > 0) {
+      const rows = await db
+        .selectFrom('question_options')
+        .select(['question_id', (eb) => eb.fn.countAll<string>().as('n')])
+        .where('question_id', 'in', optionTypeIds)
+        .groupBy('question_id')
+        .execute()
+      for (const r of rows) optionCounts.set(r.question_id, Number(r.n))
+    }
+    const checkSlots: Array<CheckSlot> = selected.map((item, index) => ({
+      section: item.section,
+      position: positions[index],
+      marks: item.marks,
+      type: item.type,
+      optionCount: optionCounts.get(item.question.id) ?? 0,
+      choiceGroup: item.choiceGroup ?? null,
+      isChoiceAlternate: item.isChoiceAlternate ?? false,
+    }))
+    const problems = checkPaperStructure(
+      checkSlots,
+      shortfalls
+        .filter((f) => f.marks_missing)
+        .map((f) => ({ section: f.section, marksMissing: f.marks_missing ?? 0 })),
+      halfYearly.section_totals,
+      blueprint.total_marks,
+    )
+    if (problems.length > 0) {
+      throw new Error(`School Half-Yearly paper failed its pre-show checks: ${problems.join('; ')}`)
+    }
+  }
 
   // F113: resolved for the paper header (part + chapter_no + name) -- read-only, so it's safe to
   // fetch outside the write transaction below.
@@ -614,6 +909,21 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
         actual: bucketActualPct,
         bloom_target: bloomTargets,
         bloom_actual: bloomActual,
+        ...(halfYearly
+          ? {
+              half_yearly: {
+                draft: halfYearly.draft ?? false,
+                draft_note: halfYearly.draft_note ?? null,
+                section_totals: halfYearly.section_totals,
+                section_order: halfYearly.section_order,
+                instructions: halfYearly.instructions,
+                word_limits: halfYearly.word_limits,
+                level_target: halfYearly.level_mix,
+                level_actual: levelActualPct,
+                delivery,
+              },
+            }
+          : {}),
         chapter_target: chapterMarksTargets,
         chapter_actual: chapterMarksAssigned,
         ...(adaptiveCtx
@@ -645,9 +955,11 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
               paper_id: paper.id,
               question_id: item.question.id,
               section: item.section,
-              position: index + 1,
+              position: positions[index],
               marks: item.marks,
               choice_group: item.choiceGroup ?? null,
+              slot: item.slot ?? null,
+              expected_words: item.expectedWords ?? null,
             })),
           )
         : []

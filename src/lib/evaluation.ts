@@ -16,6 +16,7 @@ import {
 import { gradeSubjectiveAnswer } from './ai-grading'
 import { AiCapReachedError, StudentSpendCapReachedError, enforceStudentSpendBudget } from './ai-metering'
 import { recordMasteryAttempt } from './mastery'
+import { isPossiblyStoppedEarly } from './school-paper'
 import { recordPointsForConfirmedItems } from './points'
 import type { GradedObjectiveItem } from './points'
 import { recordConfirmedAnswers } from './adaptive/service'
@@ -99,6 +100,10 @@ export async function createEvaluation(db: Db, attemptId: string) {
     error_type: ErrorType | null
     ai_error_type: ErrorType | null
     feedback: string
+    // A flag for the diagnosis, never a mark deduction (see isPossiblyStoppedEarly).
+    possible_stopped_early?: boolean
+    // Per-part marks (a case study is marked part by part), so a result can show where she stopped.
+    step_marks_awarded?: string
   }> = []
 
   type EvaluationItemDraft = (typeof items)[number]
@@ -169,6 +174,13 @@ export async function createEvaluation(db: Db, attemptId: string) {
       }
     }
 
+    // School Half-Yearly: an answer well under the expected length may be the "stopped writing
+    // too early" habit. Flagged whether the AI marked it or it waits for a person.
+    const stoppedEarly = isPossiblyStoppedEarly(
+      answer?.response_text,
+      slot.expected_words,
+    )
+
     if (aiResult && !aiResult.needsManualMarking) {
       anyAutoScored = true
       return {
@@ -179,6 +191,10 @@ export async function createEvaluation(db: Db, attemptId: string) {
         error_type: aiResult.errorType,
         ai_error_type: aiResult.errorType,
         feedback: aiResult.feedback,
+        possible_stopped_early: stoppedEarly,
+        ...(aiResult.stepMarksAwarded.length > 0
+          ? { step_marks_awarded: JSON.stringify(aiResult.stepMarksAwarded) }
+          : {}),
       }
     }
     return {
@@ -189,6 +205,7 @@ export async function createEvaluation(db: Db, attemptId: string) {
       error_type: null,
       ai_error_type: null,
       feedback: 'Needs manual marking.',
+      possible_stopped_early: stoppedEarly,
     }
   }
 

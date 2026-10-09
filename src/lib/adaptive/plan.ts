@@ -14,7 +14,7 @@ import {
 // can override this (see buildPaperPlan's questionCount) within this range.
 export const INITIAL_QUESTIONS = 10
 export const PRACTICE_QUESTIONS = 12
-export const QUESTION_COUNT_OPTIONS = [10, 20, 30] as const
+export const QUESTION_COUNT_OPTIONS = [10, 15, 30] as const
 const MIN_QUESTION_COUNT = 5
 const MAX_QUESTION_COUNT = 40
 const MAX_RECOMMENDED_CHAPTERS = 2

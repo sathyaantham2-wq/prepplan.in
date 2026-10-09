@@ -70,6 +70,8 @@ export const paperQuestionsRepository = {
         'paper_questions.position',
         'paper_questions.marks',
         'paper_questions.choice_group',
+        'paper_questions.slot',
+        'paper_questions.expected_words',
         'questions.concept_id',
         'questions.bloom',
         'questions.difficulty',
@@ -81,6 +83,7 @@ export const paperQuestionsRepository = {
         'questions.diagram_params',
         'questions.language',
         'questions.is_reversal_word',
+        'questions.tags',
       ])
       .where('paper_questions.paper_id', '=', paperId)
       .orderBy('paper_questions.position')

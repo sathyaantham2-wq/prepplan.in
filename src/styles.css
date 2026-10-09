@@ -495,6 +495,20 @@ pre code {
   -webkit-backdrop-filter: blur(20px) saturate(1.3);
 }
 
+/* Touch and narrow screens: the animated blurred backdrop and a live blur on every card make long
+   pages (a paper review is dozens of cards) scroll in jerks on older phones. Keep the look, drop
+   the per-frame cost: the backdrop holds still and cards stop sampling what is behind them. */
+@media (hover: none), (max-width: 1023px) {
+  .aurora > span {
+    animation: none;
+    filter: blur(48px);
+  }
+  [data-slot='card'] {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
 /* ---------- 3D buttons: a darker "edge" underneath that the button presses into ---------- */
 .btn-3d {
   color: white;

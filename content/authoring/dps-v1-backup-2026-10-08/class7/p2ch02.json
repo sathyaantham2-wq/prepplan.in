@@ -1,0 +1,2902 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 2,
+  "name": "Operations with Integers"
+ },
+ "source_code": "gegp202",
+ "concepts": [
+  {
+   "code": "C7M-2.1",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find 7 - 18 with tokens, we add zero pairs so that 18 positive tokens can be removed. How many zero pairs are needed?",
+     "a": "11",
+     "o": [
+      "11",
+      "7",
+      "18",
+      "25"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write the additive inverse of -45.\n(b) Use it to rewrite and evaluate 20 - (-45).",
+     "a": "(a) 45. (b) 20 - (-45) = 20 + 45 = 65.",
+     "s": [
+      [
+       "Part (a): gives 45 as the additive inverse",
+       1
+      ],
+      [
+       "Part (b): rewrites as 20 + 45 and gets 65",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "At the Class 7 science fair, Meena says: \"Two integers have sum -7, and first minus second is -1.\" Using the sum-and-difference method, what is the first integer?",
+     "a": "-4",
+     "o": [
+      "-4",
+      "-3",
+      "4",
+      "-6"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Use the token model for these. (a) Find 5 - 13 by adding zero pairs and removing tokens. (b) Find 5 + (-13) by combining tokens. (c) Compare (a) and (b) and test the rule a - b = a + (-b) with a - b = 3 - (-9).",
+     "a": "(a) Add 8 zero pairs to 5 greens, remove 13 greens: 8 reds left, -8. (b) 5 greens and 13 reds: 5 zero pairs cancel, 8 reds left, -8. (c) Both give -8, so 5 - 13 = 5 + (-13). For 3 - (-9): add 9 zero pairs, remove 9 reds: 12 greens, and 3 + 9 = 12.",
+     "s": [
+      [
+       "Part (a): adds 8 zero pairs, removes 13 positives, gets -8",
+       2
+      ],
+      [
+       "Part (b): cancels 5 zero pairs from 5 greens and 13 reds, gets -8",
+       2
+      ],
+      [
+       "Part (c): compares and tests the rule with 3 - (-9) = 3 + 9 = 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two hill stations, Auli and Mussoorie, record night temperatures. A student notes that the sum of the two temperatures is -4 degrees C and that Auli minus Mussoorie is -10 degrees C. A school trip carries sleeping bags rated down to -10 degrees C. (a) Find the temperature of each station. (b) Check your pair using the sum and the difference. (c) If both stations fall by 5 degrees C the next night, find the new temperatures. (d) Should the group choose Auli with these bags? Justify.",
+     "a": "(a) Auli = (-4-10)/2 = -7, Mussoorie = (-4+10)/2 = 3. (b) -7 + 3 = -4 and -7 - 3 = -10. (c) Auli -7 + (-5) = -12, Mussoorie 3 + (-5) = -2. (d) Not safely: -12 is below the -10 rating, so Auli needs warmer bags or the trip should pick Mussoorie.",
+     "s": [
+      [
+       "Part (a): finds -7 and 3 from the sum and difference",
+       1
+      ],
+      [
+       "Part (b): verifies sum -4 and difference -10",
+       1
+      ],
+      [
+       "Part (c): adds -5 to each to get -12 and -2",
+       1
+      ],
+      [
+       "Part (d): compares -12 with -10 and decides with a reason",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find two integers whose sum is 30 and whose difference (first - second) is 8.\n(b) Using your answer to (a), write the pair whose sum is 30 and whose difference is -8.",
+     "a": "(a) 19 and 11 (19+11=30, 19-11=8). (b) Swap the numbers: first 11, second 19 (11-19=-8).",
+     "s": [
+      [
+       "Part (a): finds 19 and 11 and checks sum and difference",
+       1
+      ],
+      [
+       "Part (b): swaps the pair to get 11 and 19 with difference -8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A coin at 0 is struck twice. The first strike moves it +9 and the coin finishes at -3.\n(a) What is the second movement?\n(b) What third strike would bring the coin back to 0?",
+     "a": "(a) 9 + b = -3 so b = -12 (12 units leftwards). (b) From -3 a strike of +3 brings it to 0.",
+     "s": [
+      [
+       "Part (a): finds second movement -12 from final - first",
+       1
+      ],
+      [
+       "Part (b): finds the third strike +3 from the position -3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A coin is struck in turn with movements 2, -3, 4, -5, 6, -7, 8, -9. Find its final position by pairing the movements.",
+     "a": "Pairs: (2-3)+(4-5)+(6-7)+(8-9) = -1-1-1-1 = -4. The coin ends at -4, 4 units left of 0.",
+     "s": [
+      [
+       "Pairs the movements, each pair giving -1",
+       1
+      ],
+      [
+       "Adds the four pairs to get -4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Rakesh plays his sum-and-difference game (difference means first minus second). Find the two numbers for each case: (a) Sum 40, difference 14. (b) Sum -20, difference 6. (c) Sum 0, difference -10. (d) Sum -7, difference -13. (e) Check pair (d) by finding its sum and difference again.",
+     "a": "(a) 27 and 13. (b) -7 and -13. (c) -5 and 5. (d) -10 and 3. (e) -10 + 3 = -7 and -10 - 3 = -13, so the pair is correct.",
+     "s": [
+      [
+       "Part (a): 27 and 13",
+       1
+      ],
+      [
+       "Part (b): -7 and -13",
+       1
+      ],
+      [
+       "Part (c): -5 and 5 with correct order",
+       1
+      ],
+      [
+       "Part (d): -10 and 3",
+       1
+      ],
+      [
+       "Part (e): verifies the sum -7 and difference -13",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rakesh thinks of two numbers with sum 25 and difference 11 (first number minus second number). Which pair is his?",
+     "a": "18 and 7",
+     "o": [
+      "18 and 7",
+      "19 and 6",
+      "20 and 5",
+      "7 and 18"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using zero pairs of red and green tokens, explain why 4 - (-12) = 16.",
+     "a": "Start with 4 green tokens. To remove 12 red tokens there are none, so add 12 zero pairs. Remove the 12 red tokens. 4 + 12 = 16 green tokens remain, so the value is 16.",
+     "s": [
+      [
+       "Adds 12 zero pairs so 12 negatives can be removed",
+       1
+      ],
+      [
+       "Counts the green tokens left as 16",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A toy car runs on a straight track marked in centimetres, with right as positive. It moves 8 cm right, then 12 cm left, then 5 cm right. Where is it from the starting point 0?",
+     "a": "1",
+     "o": [
+      "1",
+      "-1",
+      "25",
+      "-9"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no two integers can have sum 7 and difference 4.",
+     "a": "The numbers would be (7 + 4) / 2 = 11/2 and (7 - 4) / 2 = 3/2. These are not integers, so no pair of integers has sum 7 and difference 4. (Trying 5 and 2 gives difference 3, 6 and 1 gives 5, so 4 is skipped.)",
+     "s": [
+      [
+       "Uses (S+D)/2 to get 11/2",
+       1
+      ],
+      [
+       "Uses (S-D)/2 to get 3/2",
+       1
+      ],
+      [
+       "Concludes neither is an integer, so no such pair exists",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each sum and difference (difference = first - second) with the pair of numbers (first, second).\n1. Sum 10, difference 2\n2. Sum 10, difference -2\n3. Sum -10, difference 2\n4. Sum -10, difference -2\na. (4, 6)\nb. (-6, -4)\nc. (6, 4)\nd. (-4, -6)",
+     "a": "1-c, 2-a, 3-d, 4-b. Each is found with (S+D)/2 and (S-D)/2.",
+     "o": [
+      "1-c, 2-a, 3-d, 4-b",
+      "1-a, 2-c, 3-b, 4-d",
+      "1-c, 2-a, 3-b, 4-d",
+      "1-d, 2-b, 3-c, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The additive inverse of -18 is 18.\nReason (R): The additive inverse of a number a is written -a, so -(-18) = 18.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. The inverse of -18 is -(-18), which is 18, exactly as R says.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion",
+      "Assertion is true, but the Reason is false",
+      "Assertion is false, but the Reason is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. The final position of a coin after two strikes is a + b even when one of the strikes is leftwards, if leftwards is taken as negative.\n2. 7 - 18 gives the same result as 7 + (-18).\n3. Removing 18 positive tokens from 7 positive tokens (with 11 zero pairs added) leaves 11 positive tokens.\nWhich of the statements is/are correct?",
+     "a": "1 and 2 only. Statement 3 is false: 11 negative tokens are left, giving -11. Statements 1 and 2 are the chapter's results.",
+     "o": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A carrom coin starts at 0. The first strike moves it +6 and the second strike moves it -9, where rightwards is positive. Where does the coin finish?",
+     "a": "-3",
+     "o": [
+      "-3",
+      "3",
+      "-15",
+      "15"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Create a real-life situation (a lift, a temperature, a bank account or a game) that is represented by 6 + (-10) = -4. Say what each number means.",
+     "a": "Example: The temperature in Manali at 6 pm is 6 degrees C. It falls by 10 degrees overnight, which is +6 + (-10). The new temperature is -4 degrees C, which is 4 degrees below zero. 6 is the starting value, -10 the change, -4 the result.",
+     "s": [
+      [
+       "Gives a realistic setting with a starting value of 6",
+       1
+      ],
+      [
+       "Shows -10 as a fall or a loss",
+       1
+      ],
+      [
+       "Interprets the result -4 correctly in the setting",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tara says: \"After two strikes from 0, the coin is a + b units from 0 only when both strikes go the same way; if they go opposite ways, it is nearer than a + b.\" Do you agree? Test it with strikes 5 and 3, and with 5 and -3.",
+     "a": "Yes. Same way: 5 + 3 = 8, which is 8 units from 0 (the sum of the magnitudes). Opposite ways: 5 + (-3) = 2, which is only 2 units from 0, less than 8. The leftward strike cancels part of the rightward one.",
+     "s": [
+      [
+       "Tests the same-direction case: 8 units",
+       1
+      ],
+      [
+       "Tests the opposite-direction case: 2 units",
+       1
+      ],
+      [
+       "Gives the verdict yes with the reason that opposite strikes cancel",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which expression has the same value as 4 - (-12)?",
+     "a": "4 + 12",
+     "o": [
+      "4 + 12",
+      "4 + (-12)",
+      "4 - 12",
+      "-4 + 12"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In the school carrom tournament, a player scores 10 points, minus the distance of the coin from 0, minus the number of strikes used. Rightwards is positive. Plan P uses four strikes: +9, -6, -7, +5. Plan Q uses two strikes: +10, -12. The coach must pick one plan. (a) Find the final position after plan P. (b) Find the final position after plan Q. (c) Work out the points for each plan. (d) Which plan should the coach choose, and why?",
+     "a": "(a) 9-6-7+5 = 1. (b) 10-12 = -2. (c) P: 10-1-4 = 5. Q: 10-2-2 = 6. (d) Plan Q, because it scores 6 against 5: it ends farther from 0 (2 against 1) but saves two strikes.",
+     "s": [
+      [
+       "Part (a): adds P strikes to get 1",
+       1
+      ],
+      [
+       "Part (b): adds Q strikes to get -2",
+       1
+      ],
+      [
+       "Part (c): computes 5 and 6 using distance as a positive number",
+       1
+      ],
+      [
+       "Part (d): chooses Q and justifies with the trade-off of distance and strikes",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): (-4) x 2 can be found by removing 2 positive tokens from the bag 4 times.\nReason (R): Removing 2 positive tokens is the same as adding 2 negative tokens.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. Subtracting a number is adding its inverse, so removing +2 equals adding -2; both give 8 negatives, -8.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion",
+      "Assertion is true, but the Reason is false",
+      "Assertion is false, but the Reason is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. Placing 2 red tokens into an empty bag 4 times gives 8 negatives.\n2. To remove 2 negatives from an empty bag, we first put in 2 zero pairs, and so (-4) x (-2) = -8.\n3. Whatever different token sets show the number -2, placing each 4 times gives the same result, -8.\nWhich of the statements is/are correct?",
+     "a": "1 and 3 only. Statement 2 is false: removing red tokens leaves green tokens, so (-4) x (-2) = +8.",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Create a story with money, a game or a water tank for (-3) x 4 and say what the answer means. (Hint: a negative multiplier means removing.)",
+     "a": "Example: Riya has Rs 0 in her piggy bank account. Three times, Rs 4 is taken out, which is removing 4 positives 3 times, written (-3) x 4. The result is -12: she owes Rs 12 (the account is Rs 12 below zero).",
+     "s": [
+      [
+       "Gives a sensible story where 4 is taken or removed 3 times",
+       1
+      ],
+      [
+       "Links the negative multiplier -3 to removal or a repeated fall",
+       1
+      ],
+      [
+       "Interprets the answer -12 correctly in the story",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rani says a stall sold 8 pens at a loss of Rs 7 on each and made a profit of Rs 56 in all. Using tokens, show that this cannot be true.",
+     "a": "A loss of Rs 7 is -7, so the total is 8 x (-7): place 7 red tokens in an empty bag 8 times. The bag holds 56 reds and no green tokens, so the total is -56, a loss of Rs 56, not a profit.",
+     "s": [
+      [
+       "Writes the total as 8 x (-7)",
+       1
+      ],
+      [
+       "Shows 56 red tokens and no greens in the bag",
+       1
+      ],
+      [
+       "Concludes the result is -56, a loss, so a profit of 56 is impossible",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given 78 x 94 = 7332, Ananya wants to write (-78) x (-94) without calculating. Which is correct, and why?",
+     "a": "7332, as two negative factors give a positive product",
+     "o": [
+      "7332, as two negative factors give a positive product",
+      "-7332, as every negative factor makes the product negative",
+      "-7332, as the first factor decides the sign",
+      "0, as the zero pairs cancel all the tokens"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these has the SAME value as (-7) x 3?",
+     "a": "3 x (-7)",
+     "o": [
+      "3 x (-7)",
+      "(-3) x (-7)",
+      "7 x 3",
+      "(-3) x 7 x (-1)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find (-6) x 5.\n(b) Hence find (-6) x (-5) and explain, in one line, how the sign changed.",
+     "a": "(a) -30. (b) (-6) x (-5) = 30; the magnitude stays 30 and only the sign changes since both factors are negative.",
+     "s": [
+      [
+       "Part (a): gives -30",
+       1
+      ],
+      [
+       "Part (b): gives 30 with the sign reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement describes 4 x (-2) with tokens, starting from an empty bag?",
+     "a": "Place 2 red tokens into the bag 4 times",
+     "o": [
+      "Place 2 red tokens into the bag 4 times",
+      "Place 4 red tokens into the bag 2 times",
+      "Remove 2 green tokens from the bag 4 times",
+      "Place 2 green tokens into the bag 4 times"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of (-4) x (-2) is",
+     "a": "8",
+     "o": [
+      "8",
+      "-8",
+      "6",
+      "-6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shopkeeper at the Diwali mela has a loss of Rs 6 on every kite he sells. If he sells 9 kites at this loss, his profit is represented by which integer?",
+     "a": "-54",
+     "o": [
+      "-54",
+      "54",
+      "-15",
+      "15"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 4 x (-6) by placing tokens into a bag.\n(b) Find 9 x (-7) the same way and say how many red tokens are in the bag.",
+     "a": "(a) Place 6 red tokens 4 times: 24 reds, -24. (b) 7 red tokens 9 times: 63 reds in the bag, so -63.",
+     "s": [
+      [
+       "Part (a): counts 24 red tokens, -24",
+       1
+      ],
+      [
+       "Part (b): counts 63 red tokens, -63",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The canteen at the annual day sells samosas. Each ordinary samosa sold gives a profit of Rs 3. A tray went slightly cold, so those samosas were sold cheaper at a loss of Rs 5 each (the loss is written as an integer). On day one the canteen sold 40 ordinary and 12 cold samosas; on day two it sold 25 ordinary and 18 cold ones. If the cold samosas had been thrown away instead, each would be a loss of Rs 8. (a) Find the result for day one. (b) Find the result for day two. (c) Find the result for the two days together. (d) For day two, compare selling the cold samosas with throwing them away and advise the canteen.",
+     "a": "(a) 40 x 3 + 12 x (-5) = 120 - 60 = +60. (b) 25 x 3 + 18 x (-5) = 75 - 90 = -15. (c) 60 + (-15) = +45. (d) Throwing away: 75 + 18 x (-8) = 75 - 144 = -69, which is worse than -15, so selling at the cheaper price is better, although day two still makes a loss.",
+     "s": [
+      [
+       "Part (a): +60 using gains and losses",
+       1
+      ],
+      [
+       "Part (b): -15 using 18 x (-5)",
+       1
+      ],
+      [
+       "Part (c): adds the days to get +45",
+       1
+      ],
+      [
+       "Part (d): computes -69 for throwing away and recommends selling",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school bookstall must return unsold notebooks. Supplier P charges a fee of Rs 6 for each returned notebook. Supplier Q charges Rs 9 for each returned notebook but gives back a flat Rs 50 once. Fees are written as negative integers and the Rs 50 as +50. The stall expects between 14 and 20 returns. (a) Find the result with Supplier P for 14 returns. (b) Find the result with Supplier Q for 14 returns. (c) Find both results for 17 returns. (d) The stall expects 17 returns; which supplier should it choose, and for how many returns would the other supplier be better?",
+     "a": "(a) 14 x (-6) = -84. (b) 14 x (-9) + 50 = -126 + 50 = -76. (c) P: 17 x (-6) = -102. Q: 17 x (-9) + 50 = -103. (d) P, since -102 is better than -103. At 16 returns P is -96 and Q is -94, so Q is better for 16 or fewer returns.",
+     "s": [
+      [
+       "Part (a): -84",
+       1
+      ],
+      [
+       "Part (b): -76",
+       1
+      ],
+      [
+       "Part (c): -102 and -103",
+       1
+      ],
+      [
+       "Part (d): chooses P for 17 and notes Q is better up to 16 returns",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Fill in with an integer: (a) 14 x (-5) = -70 and (-5) x ____ = -70. (b) (-30) x 12 = ____ and 12 x (-30) = ____.",
+     "a": "(a) 14. (b) -360 and -360.",
+     "s": [
+      [
+       "Part (a): 14, product unchanged by swapping",
+       1
+      ],
+      [
+       "Part (b): both -360",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For (-4) x 2, the bag is empty at the start. What must be done before 2 positive tokens can be removed 4 times?",
+     "a": "Put in zero pairs",
+     "o": [
+      "Put in zero pairs",
+      "Put in only red tokens",
+      "Put in only green tokens",
+      "Multiply 4 by 2 first"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Ravi's worksheet says: (i) (-45) x 64 = -2880. (ii) 45 x (-64) = 2880. (iii) (-45) x (-64) = -2880. (a) Which of the three are wrong? (b) Write the correct value of each wrong one. (c) State which sign rule Ravi seems to be using for the wrong ones. (d) Use the token picture of removing red tokens to explain the correct value of (iii).",
+     "a": "(a) (ii) and (iii) are wrong; (i) is right. (b) (ii) 45 x (-64) = -2880; (iii) (-45) x (-64) = 2880. (c) He seems to think the sign of the first factor is carried to the answer, or that a negative anywhere means a positive/negative regardless. (d) Removing 64 red tokens 45 times from zero pairs leaves 45 x 64 = 2880 green tokens.",
+     "s": [
+      [
+       "Part (a): identifies (ii) and (iii) as wrong",
+       1
+      ],
+      [
+       "Part (b): corrects (ii) to -2880 and (iii) to 2880",
+       2
+      ],
+      [
+       "Part (c): names the faulty sign rule",
+       1
+      ],
+      [
+       "Part (d): explains 2880 greens left after removing reds",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says that for (-4) x 2 we should remove red tokens, not green ones. Which tokens are removed in the book's method, and why are zero pairs needed?",
+     "a": "Green tokens are removed, because the multiplier -4 means removing 2 positives 4 times. The bag is empty, so zero pairs are put in first so that the positives can be taken out; 8 negatives are left, giving -8.",
+     "s": [
+      [
+       "States that positives (green) are removed",
+       1
+      ],
+      [
+       "Explains zero pairs are needed since the bag is empty",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use tokens to find (-5) x (-2).\n(b) Using your answer to (a), find (-5) x (-2) x 3, and say whether it is positive or negative.",
+     "a": "(a) Remove 2 red tokens 5 times from zero pairs: 10 greens left, so +10. (b) 10 x 3 = 30, positive, since (-5) x (-2) is already positive.",
+     "s": [
+      [
+       "Part (a): removes reds from zero pairs and gets +10",
+       1
+      ],
+      [
+       "Part (b): multiplies by 3 to get +30 and names the sign",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dev says: \"In the token model, 4 x (-2) and (-4) x 2 both finish with 8 red tokens in the bag, so they are equal.\" Do you agree? Describe how each bag is built.",
+     "a": "Yes. 4 x (-2): put 2 red tokens in the empty bag 4 times, giving 8 reds, so -8. (-4) x 2: put in zero pairs and remove 2 green tokens 4 times, leaving 8 reds, so -8. Both bags end with 8 reds, so both equal -8.",
+     "s": [
+      [
+       "Builds 4 x (-2) as 8 reds placed",
+       1
+      ],
+      [
+       "Builds (-4) x 2 as 8 greens removed from zero pairs, 8 reds left",
+       1
+      ],
+      [
+       "Concludes yes: both are -8",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Using tokens and a swap, find each product and explain it. (a) 3 x (-2). (b) (-5) x (-2). (c) (-4) x (-1). (d) (-7) x 3. (e) State, using your answers, which products are positive and which are negative.",
+     "a": "(a) -6. (b) 10. (c) 4. (d) -21. (e) (b) and (c) are positive since both factors are negative; (a) and (d) are negative since one factor is negative.",
+     "s": [
+      [
+       "Part (a): -6",
+       1
+      ],
+      [
+       "Part (b): 10 with zero-pair removal of reds",
+       1
+      ],
+      [
+       "Part (c): 4",
+       1
+      ],
+      [
+       "Part (d): -21",
+       1
+      ],
+      [
+       "Part (e): classifies the signs with the reason",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find (-15) x (-8) and the product with the two numbers swapped.\n(b) Fill in the blank: 11 x (-6) = -66 and (-6) x ___ = -66.",
+     "a": "(a) (-15) x (-8) = 120 and (-8) x (-15) = 120. (b) 11.",
+     "s": [
+      [
+       "Part (a): gives 120 for both orders",
+       1
+      ],
+      [
+       "Part (b): 11",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write two multiplications with integers (not both positive) whose product is -36, and one whose product is +36. State which sign rule each uses.",
+     "a": "Examples: 9 x (-4) = -36 (positive x negative) and (-6) x 6 = -36 (negative x positive); (-9) x (-4) = 36 (negative x negative). Magnitudes multiply to 36; signs follow the rule.",
+     "s": [
+      [
+       "Gives two correct products equal to -36",
+       1
+      ],
+      [
+       "Gives one correct product equal to +36",
+       1
+      ],
+      [
+       "Names the sign rule for each",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each statement with the value of the product.\n1. (-9) x (-3)\n2. (-9) x 3\n3. (-1) x (-9)\n4. (-1) x 0\na. -27\nb. 9\nc. 27\nd. 0",
+     "a": "1-c, 2-a, 3-b, 4-d. (-9)x(-3)=27; (-9)x3=-27; (-1)x(-9)=9; (-1)x0=0.",
+     "o": [
+      "1-c, 2-a, 3-b, 4-d",
+      "1-a, 2-c, 3-b, 4-d",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-b, 2-a, 3-c, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the integer a for which (-1) x a = -44.\n(b) For which integer a is (-1) x a = 0?",
+     "a": "(a) a = 44, since (-1) x 44 = -44. (b) a = 0.",
+     "s": [
+      [
+       "Part (a): 44 using (-1) x a = -a",
+       1
+      ],
+      [
+       "Part (b): 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 4 x (-3) and (-6) x (-3).\n(b) Without any other working, say which of the two products is larger and why.",
+     "a": "(a) -12 and 18. (b) 18 is larger, because (-6) x (-3) is positive while 4 x (-3) is negative.",
+     "s": [
+      [
+       "Part (a): gives -12 and 18",
+       1
+      ],
+      [
+       "Part (b): compares using the signs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Complete the pattern table for the times-(-3) multiplication: 4 x (-3), 3 x (-3), 2 x (-3), 1 x (-3), 0 x (-3), (-1) x (-3), (-2) x (-3), (-3) x (-3). (a) Write all eight products. (b) By how much does the product change at each step? (c) State the sign of the product when the multiplier is negative. (d) Compare with the times-3 table for the same multipliers.",
+     "a": "(a) -12, -9, -6, -3, 0, 3, 6, 9. (b) It increases by 3 at each step down. (c) The product is positive when the multiplier is negative (the multiplicand is negative too). (d) In the times-3 table the products are 12, 9, 6, 3, 0, -3, -6, -9: same magnitudes, opposite signs.",
+     "s": [
+      [
+       "Part (a): writes the eight products correctly",
+       2
+      ],
+      [
+       "Part (b): increase of 3",
+       1
+      ],
+      [
+       "Part (c): positive product for negative multiplier",
+       1
+      ],
+      [
+       "Part (d): same magnitudes with opposite signs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the times-3 table, as the multiplier decreases by 1 each time (4, 3, 2, 1, 0, -1, ...), the product",
+     "a": "decreases by 3 each time, also below zero",
+     "o": [
+      "decreases by 3 each time, also below zero",
+      "decreases by 3 only until the multiplier reaches 0",
+      "increases by 3 below zero",
+      "stays the same below zero"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): (-12) x (-12) is positive.\nReason (R): Multiplication of integers is commutative, so a x b = b x a.",
+     "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. Both are true, but the sign of (-12) x (-12) comes from the rule that two negatives give a positive, not from commutativity.",
+     "o": [
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion",
+      "Assertion is true, but the Reason is false",
+      "Assertion is false, but the Reason is true"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these products is negative?",
+     "a": "(-8) x 4",
+     "o": [
+      "(-8) x 4",
+      "(-9) x (-3)",
+      "6 x 7",
+      "(-1) x (-1)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Brahmagupta wrote that \"the product of two debts is a fortune\". A debt of Rs 6 is written as (-6) and the multiplier is a debt of 4 (written -4). Which statement follows the rule Brahmagupta stated?",
+     "a": "(-4) x (-6) = 24, a fortune",
+     "o": [
+      "(-4) x (-6) = 24, a fortune",
+      "(-4) x (-6) = -24, a debt",
+      "4 x (-6) = 24, a fortune",
+      "(-4) x 6 = 24, a debt"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A worksheet says (-4) x 9 = 36. Using the times-9 pattern 2 x 9 = 18, 1 x 9 = 9, 0 x 9 = 0, show that this cannot be right.",
+     "a": "Continuing the pattern, the product falls by 9 each time the multiplier falls by 1: (-1) x 9 = -9, (-2) x 9 = -18, (-3) x 9 = -27, (-4) x 9 = -36. So (-4) x 9 = -36, not 36: a negative and a positive factor give a negative product.",
+     "s": [
+      [
+       "Extends the pattern with a fall of 9 each step",
+       1
+      ],
+      [
+       "Reaches (-4) x 9 = -36",
+       1
+      ],
+      [
+       "Concludes 36 is impossible because one negative factor gives a negative product",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For any integer a, the value of (-1) x a is",
+     "a": "-a",
+     "o": [
+      "-a",
+      "a",
+      "0",
+      "1"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Isha says: \"Multiplying an integer by a negative integer always gives a smaller number.\" Test this with 5 x (-2) and (-5) x (-2), and give your verdict.",
+     "a": "5 x (-2) = -10 is smaller than 5, but (-5) x (-2) = 10 is larger than -5. So the claim is false: multiplying by a negative integer can give a larger number when the first factor is negative.",
+     "s": [
+      [
+       "Computes -10 and 10 correctly",
+       1
+      ],
+      [
+       "Compares each with the starting number (5 and -5)",
+       1
+      ],
+      [
+       "Gives the verdict that the claim is false with a reason",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In the times-5 table the multiplier goes 2, 1, 0, -1, -2. How does the product change at each step, and what are the products for -1 and -2?",
+     "a": "The product decreases by 5 at each step: 10, 5, 0, -5, -10. So (-1) x 5 = -5 and (-2) x 5 = -10.",
+     "s": [
+      [
+       "States the product falls by the multiplicand each time",
+       1
+      ],
+      [
+       "Gives -5 and -10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement matches the rule a x b = b x a when a = -30 and b = 12?",
+     "a": "(-30) x 12 = 12 x (-30)",
+     "o": [
+      "(-30) x 12 = 12 x (-30)",
+      "(-30) x 12 = (-30) x (-12)",
+      "(-30) x 12 = 30 x 12",
+      "(-30) x 12 = (-12) x (-30)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Find the six products: (i) 5 x (-4), (ii) (-7) x (-3), (iii) (-6) x (-1), (iv) (-9) x 5, (v) (-8) x 10, (vi) 12 x (-15). (b) Which of the six are positive? (c) Explain, using the sign rule, why exactly those are positive and the others negative.",
+     "a": "(a) (i) -20, (ii) 21, (iii) 6, (iv) -45, (v) -80, (vi) -180. (b) (ii) and (iii) are positive. (c) A product is positive when both factors are negative, as in (ii) and (iii); in (i), (iv), (v) and (vi) exactly one factor is negative, so the product is negative.",
+     "s": [
+      [
+       "Part (a): the first three products correct",
+       1
+      ],
+      [
+       "Part (a): the last three products correct",
+       1
+      ],
+      [
+       "Part (b): picks (ii) and (iii)",
+       1
+      ],
+      [
+       "Part (c): both-negative rule",
+       1
+      ],
+      [
+       "Part (c): exactly-one-negative rule for the others",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Ravi's worksheet on products of integers gives these answers: 1. 12 x (-5) = -60. 2. (-9) x (-4) = -36. 3. (-7) x 8 = -56. 4. (-6) x (-3) = -18. 5. 15 x (-2) = -30. The teacher gives +2 for a right answer and -1 for a wrong answer, and the pass mark is 5. (a) Which answers are wrong? (b) Write the correct values. (c) What is Ravi's score, and does he pass? (d) The teacher lets him correct some answers and be re-marked. What is the fewest he must correct to pass, and what is his score then?",
+     "a": "(a) Answers 2 and 4. (b) (-9) x (-4) = 36 and (-6) x (-3) = 18. (c) 3 right and 2 wrong: 3 x 2 + 2 x (-1) = 4, below 5, so he does not pass. (d) Correcting one answer gives 4 right and 1 wrong: 8 + (-1) = 7, which passes. Fewest corrections: 1 (score 7).",
+     "s": [
+      [
+       "Part (a): answers 2 and 4 (two negatives give a positive)",
+       1
+      ],
+      [
+       "Part (b): 36 and 18",
+       1
+      ],
+      [
+       "Part (c): 4 marks, does not pass",
+       1
+      ],
+      [
+       "Part (d): one correction, score 7",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. The product of a negative and a positive integer changes sign if the two factors are swapped.\n2. The magnitude of a product does not change when the signs of the two factors change.\n3. When one factor is positive and the other is negative, the product is negative.\nWhich of the statements is/are correct?",
+     "a": "2 and 3 only. Statement 1 is false: swapping never changes a product; (-4) x 3 = 3 x (-4) = -12.",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Kabir lists the times-(-7) table: 4 x (-7) = -28, 3 x (-7) = -21, 2 x (-7) = -14, 1 x (-7) = -7, 0 x (-7) = 0. Continuing the same pattern, what is (-2) x (-7)?",
+     "a": "14",
+     "o": [
+      "14",
+      "-14",
+      "-7",
+      "7"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school is choosing between two marking schemes for a 24-question quiz. Scheme X gives +5 for a correct answer and -3 for a wrong answer. Scheme Y gives +3 for a correct answer and -1 for a wrong answer. Gauri guessed everything: 12 correct and 12 wrong. Sahil answered only what he knew: 9 correct and none wrong. Tanvi was careful but not perfect: 16 correct and 4 wrong. The principal wants Sahil to beat Gauri by at least 10 marks, and wants Tanvi to lose no more than 10 marks to her wrong answers. (a) Find Gauri's marks under X and under Y. (b) Find Sahil's marks under X and under Y. (c) Find the marks Tanvi loses to her 4 wrong answers under X and under Y. (d) Which scheme should the school choose? Neither meets both wishes; say which comes closer and why.",
+     "a": "(a) X: 12 x 5 + 12 x (-3) = 24; Y: 12 x 3 + 12 x (-1) = 24. (b) X: 9 x 5 = 45; Y: 9 x 3 = 27. (c) X: 4 x (-3) = -12; Y: 4 x (-1) = -4. (d) X gives Sahil a lead of 21 (needs 10) but Tanvi loses 12, 2 more than 10. Y gives a lead of only 3, 7 short of 10, with Tanvi losing 4. X misses by 2 marks, Y by 7, so X comes closer.",
+     "s": [
+      [
+       "Part (a): 24 and 24",
+       1
+      ],
+      [
+       "Part (b): 45 and 27",
+       1
+      ],
+      [
+       "Part (c): -12 and -4",
+       1
+      ],
+      [
+       "Part (d): compares the lead (21, 3) and the loss (12, 4) against 10 and picks X with the margins",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the sign of a product (a) when both factors are negative, and (b) when exactly one factor is negative. Give one example of each.",
+     "a": "(a) Positive, e.g. (-9) x (-3) = 27. (b) Negative, e.g. (-9) x 3 = -27.",
+     "s": [
+      [
+       "Part (a): positive with an example",
+       1
+      ],
+      [
+       "Part (b): negative with an example",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.4",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): (-100) / (-4) = 25.\nReason (R): (-4) x 25 = -100.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. Division is found as the missing factor: (-4) x ? = -100 gives 25, which is the quotient.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion",
+      "Assertion is true, but the Reason is false",
+      "Assertion is false, but the Reason is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find (-72) / 8 and (-90) / (-15).\n(b) State which of the two quotients is positive and give the reason in terms of signs.",
+     "a": "(a) -9 and 6. (b) (-90) / (-15) is positive, because the dividend and the divisor are both negative.",
+     "s": [
+      [
+       "Part (a): -9 and 6",
+       1
+      ],
+      [
+       "Part (b): names the second with the same-sign reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A shop in Pune made a loss in two years. Year 1 loss was Rs 6,300 and year 2 loss was Rs 7,200; losses are written as negative integers and shared equally among the partners. Raju, a partner, can bear a loss of at most Rs 850 in any one year. The shop has 7 partners and can take in more, but then 9 partners in all. (a) Find each partner's year-1 share with 7 partners. (b) Find each partner's year-1 share with 9 partners. (c) Find each partner's year-2 share with 9 partners. (d) Should the shop take in the two new partners if it wants Raju to stay? Justify.",
+     "a": "(a) (-6300) / 7 = -900. (b) (-6300) / 9 = -700. (c) (-7200) / 9 = -800. (d) Yes. With 7 partners Raju loses 900 in year 1, above his limit of 850. With 9 partners he loses 700 and 800, both within 850, so he can stay.",
+     "s": [
+      [
+       "Part (a): -900",
+       1
+      ],
+      [
+       "Part (b): -700",
+       1
+      ],
+      [
+       "Part (c): -800",
+       1
+      ],
+      [
+       "Part (d): compares 900 with 850 and 700, 800 with 850 and decides yes",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Fill each blank with an integer and check by multiplying: (a) ____ / (-9) = 7. (b) ____ / 6 = -13.",
+     "a": "(a) -63, since 7 x (-9) = -63 and (-63) / (-9) = 7. (b) -78, since (-13) x 6 = -78 and (-78) / 6 = -13.",
+     "s": [
+      [
+       "Part (a): -63",
+       1
+      ],
+      [
+       "Part (b): -78",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. (-46) / (-23) = 2.\n2. 36 / (-18) = 2, because the divisor is negative the sign is dropped.\n3. If a / b is positive for integers a and b, then a and b must both be positive.\nWhich of the statements is/are correct?",
+     "a": "1 only. Statements 2 and 3 are false: 36 / (-18) = -2, and (-46) / (-23) = 2 shows a positive quotient from two negatives.",
+     "o": [
+      "1 only",
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Neha says: \"For positive integers a and b, (-a) / b and a / (-b) are always equal.\" Do you agree? Test with a = 48 and b = 6.",
+     "a": "Yes. (-48) / 6 = -8 and 48 / (-6) = -8. Each has one negative and one positive number, so each quotient is negative with the same magnitude a / b = 8.",
+     "s": [
+      [
+       "Computes (-48) / 6 = -8",
+       1
+      ],
+      [
+       "Computes 48 / (-6) = -8",
+       1
+      ],
+      [
+       "Gives the verdict yes with the one-negative reason",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rohit writes (-63) / 9 = -7 and then checks it. Which check proves his answer?",
+     "a": "9 x (-7) = -63",
+     "o": [
+      "9 x (-7) = -63",
+      "(-7) x (-7) = 49",
+      "9 + (-7) = 2",
+      "(-63) x 9 = -7"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that (-45) / 4 is not an integer, and write the two multiples of 4 on either side of -45 with their quotients when divided by 4.",
+     "a": "The quotient would need 4 x ? = -45, but 4 x (-11) = -44 and 4 x (-12) = -48, so no integer works. The multiples on either side of -45 are -44 and -48, and (-44) / 4 = -11, (-48) / 4 = -12.",
+     "s": [
+      [
+       "Shows 4 x ? = -45 has no integer solution (-44 and -48)",
+       1
+      ],
+      [
+       "States -45 is not a multiple of 4",
+       1
+      ],
+      [
+       "Gives -44 and -48 with quotients -11 and -12",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Find the following using the rule for division of integers: (a) (-96) / 8. (b) 96 / (-8). (c) (-96) / (-8). (d) Which two of these have equal values and why? (e) Write the multiplication that checks (c).",
+     "a": "(a) -12. (b) -12. (c) 12. (d) (a) and (b), as each has dividend and divisor of opposite signs. (e) (-8) x 12 = -96.",
+     "s": [
+      [
+       "Part (a): -12",
+       1
+      ],
+      [
+       "Part (b): -12",
+       1
+      ],
+      [
+       "Part (c): 12",
+       1
+      ],
+      [
+       "Part (d): names (a) and (b) with the opposite-signs reason",
+       1
+      ],
+      [
+       "Part (e): writes (-8) x 12 = -96",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Fill in the missing integers and name the division you used for each. (a) (-6) x ____ = 48. (b) 7 x ____ = -91. (c) ____ x (-9) = -117. (d) ____ x (-13) = 104. (e) State the sign rule you used for (d).",
+     "a": "(a) -8 (48 / (-6)). (b) -13 (-91 / 7). (c) 13 ((-117) / (-9)). (d) -8 (104 / (-13)). (e) A positive product with one negative factor needs a negative missing factor.",
+     "s": [
+      [
+       "Part (a): -8 with the division",
+       1
+      ],
+      [
+       "Part (b): -13 with the division",
+       1
+      ],
+      [
+       "Part (c): 13 with the division",
+       1
+      ],
+      [
+       "Part (d): -8 with the division",
+       1
+      ],
+      [
+       "Part (e): states the sign rule",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 96 / (-6).\n(b) Multiply your answer by (-6) to check it.",
+     "a": "(a) -16. (b) (-16) x (-6) = 96, so the quotient is correct.",
+     "s": [
+      [
+       "Part (a): -16",
+       1
+      ],
+      [
+       "Part (b): checks with the product 96",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Brahmagupta said the quotient of a debt and a fortune is a",
+     "a": "debt",
+     "o": [
+      "debt",
+      "fortune",
+      "debt only if the debt is the larger of the two",
+      "zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find (-100) / 25 the book rewrites the division as",
+     "a": "25 x ? = -100",
+     "o": [
+      "25 x ? = -100",
+      "25 + ? = -100",
+      "? x ? = -100",
+      "-100 x ? = 25"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A probe in a school science project sinks into a pond at a steady rate, written as a negative number of metres per minute. In the first setting it goes down 48 m in 6 minutes. In the second setting it goes down 90 m in 15 minutes. A probe that rises from depth uses a rise of 60 m in 5 minutes. The probe must go to -120 m and then rise back to 0 within a battery life of 25 minutes. (a) Find the rate of the first setting. (b) Find the rate of the second setting. (c) Find the time to go down to -120 m at each setting, and the time to rise back from -120 m. (d) Which setting can the project use? Justify.",
+     "a": "(a) (-48) / 6 = -8 m per minute. (b) (-90) / 15 = -6 m per minute. (c) Down: (-120) / (-8) = 15 min and (-120) / (-6) = 20 min. Rise rate 60 / 5 = +12 m per minute, so rising takes 120 / 12 = 10 min. (d) First setting: 15 + 10 = 25 min, within the battery life. Second: 20 + 10 = 30 min, too long. Use the first setting.",
+     "s": [
+      [
+       "Part (a): -8",
+       1
+      ],
+      [
+       "Part (b): -6",
+       1
+      ],
+      [
+       "Part (c): 15, 20 and 10 minutes",
+       1
+      ],
+      [
+       "Part (d): totals 25 and 30 against 25 and chooses the first setting",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use the missing-factor idea to find 50 / (-25). Write the multiplication that proves it.",
+     "a": "(-25) x ? = 50, and (-25) x (-2) = 50, so 50 / (-25) = -2.",
+     "s": [
+      [
+       "Writes (-25) x ? = 50",
+       1
+      ],
+      [
+       "Finds -2 and checks (-25) x (-2) = 50",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A freezer is cooled so that its temperature changes by -5 degrees C every hour. It loses a total of 35 degrees C, which is -35. Dividing the total change by the hourly change, for how many hours did it run?",
+     "a": "7",
+     "o": [
+      "7",
+      "-7",
+      "175",
+      "-175"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cold store's temperature changes by -4 degrees C every hour. (a) Find the total change in 9 hours. (b) The same total change must instead be made at a steady rate in 6 hours; find the change per hour.",
+     "a": "(a) 9 x (-4) = -36 degrees C. (b) (-36) / 6 = -6 degrees C per hour.",
+     "s": [
+      [
+       "Part (a): -36",
+       1
+      ],
+      [
+       "Part (b): -6 per hour",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is equal to -(a / b) for positive integers a and b?",
+     "a": "(-a) / b",
+     "o": [
+      "(-a) / b",
+      "(-a) / (-b)",
+      "a / b",
+      "(-b) / (-a)"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Create a real-life situation for (-90) / 15 = -6 and say what each of -90, 15 and -6 means.",
+     "a": "Example: A trader's total loss is Rs 90 (-90) shared equally between 15 shops, so each shop has a loss of Rs 6, written -6.",
+     "s": [
+      [
+       "Gives a situation with a total loss or fall of 90 shared equally",
+       1
+      ],
+      [
+       "Identifies the divisor 15 as the number of equal parts",
+       1
+      ],
+      [
+       "Interprets -6 as a loss per share",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of (-100) / (-4) is",
+     "a": "25",
+     "o": [
+      "25",
+      "-25",
+      "4",
+      "-4"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A 20-question test gives +5 for each correct and -2 for each wrong answer, and all 20 are attempted. Ankit says he got exactly 50. Find the totals for 12 correct and for 13 correct answers, and use them to show that 50 is impossible.",
+     "a": "12 correct and 8 wrong: 12 x 5 + 8 x (-2) = 60 - 16 = 44. 13 correct and 7 wrong: 13 x 5 + 7 x (-2) = 65 - 14 = 51. One more correct answer changes the total by 7, so the totals go 44, 51 and skip 50. No number of correct answers gives 50.",
+     "s": [
+      [
+       "Computes 44 for 12 correct",
+       1
+      ],
+      [
+       "Computes 51 for 13 correct",
+       1
+      ],
+      [
+       "Shows that totals step by 7 and so skip 50",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A dairy in Anand earns a profit of Rs 12 on each packet of paneer and has a loss of Rs 8 on each packet of curd that turns sour. (a) Find the result when 1,500 paneer packets are sold and 2,000 curd packets turn sour. (b) With 2,700 sour curd packets, find the result for 1,500, then 1,800, then 2,100 paneer packets. (c) Explain why the result rises by the same amount each time, and say which paneer figure gives neither profit nor loss.",
+     "a": "(a) 1500 x 12 + 2000 x (-8) = 18000 - 16000 = +2000. (b) 1500: 18000 - 21600 = -3600. 1800: 21600 - 21600 = 0. 2100: 25200 - 21600 = +3600. (c) Each 300 extra paneer packets add 300 x 12 = 3600. The 1,800 figure gives neither profit nor loss.",
+     "s": [
+      [
+       "Part (a): +2000",
+       2
+      ],
+      [
+       "Part (b): -3600, 0 and +3600",
+       2
+      ],
+      [
+       "Part (c): 3600 per 300 packets and 1,800 as the break-even",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A mine lift starts at ground level (0) and goes down at 4 metres per minute. Its position after 25 minutes is",
+     "a": "-100 m",
+     "o": [
+      "-100 m",
+      "100 m",
+      "-29 m",
+      "-21 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A stationery shop earns Rs 7 on every notebook sold in good condition and loses Rs 4 on every water-damaged notebook sold cheaply. It sells 120 good and 45 damaged notebooks. What is its profit or loss?",
+     "a": "Profit of Rs 660",
+     "o": [
+      "Profit of Rs 660",
+      "Profit of Rs 1,020",
+      "Loss of Rs 660",
+      "Profit of Rs 840"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. In a test with +3 for a correct and -2 for a wrong answer, 14 correct and 6 wrong answers give a total of 30.\n2. A fair stall that earns Rs 10 on each of 2,400 cups and loses Rs 6 on each of 4,000 cups has neither profit nor loss.\n3. A lift at 20 m above ground that goes down at 4 m per minute for 50 minutes ends 180 m below ground.\nWhich of the statements is/are correct?",
+     "a": "1, 2 and 3. 1: 42-12 = 30. 2: 24000-24000 = 0. 3: 20-200 = -180. All three are true.",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A mining museum has two lifts. Lift 1 starts 30 m above ground and goes down at 5 m per minute. Lift 2 starts at ground level and goes down at 4 m per minute. A guide must reach the display at -140 m within 34 minutes. (a) Where is Lift 1 after 12 minutes? (b) After how many minutes does Lift 1 reach -150 m? (c) Where is Lift 2 after 34 minutes? (d) Which lift should the guide take, and why?",
+     "a": "(a) 30 + 12 x (-5) = -30. (b) (30 + 150) / 5 = 36 minutes. (c) 34 x (-4) = -136. (d) Lift 1: after 34 minutes it is at 30 - 170 = -140, exactly the display, while Lift 2 is only at -136.",
+     "s": [
+      [
+       "Part (a): -30",
+       1
+      ],
+      [
+       "Part (b): 36 minutes",
+       1
+      ],
+      [
+       "Part (c): -136",
+       1
+      ],
+      [
+       "Part (d): Lift 1, using -140 against -136",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cold-room is at 28 degrees C. It is cooled by 4 degrees C every hour for 9 hours. Write the final temperature as an integer expression and evaluate it.",
+     "a": "28 + 9 x (-4) = 28 + (-36) = -8 degrees C.",
+     "s": [
+      [
+       "Writes 28 + 9 x (-4)",
+       1
+      ],
+      [
+       "Evaluates to -8 degrees C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a test of 30 questions, +4 is given for each correct answer and -2 for each wrong answer. Nazia attempts all 30 and gets 18 correct.\n(a) Find her total marks.\n(b) How many marks did she lose compared with the maximum possible?",
+     "a": "(a) 18 x 4 + 12 x (-2) = 72 - 24 = 48. (b) Maximum is 30 x 4 = 120, so she lost 120 - 48 = 72 marks.",
+     "s": [
+      [
+       "Part (a): 72 + (-24) = 48",
+       1
+      ],
+      [
+       "Part (b): 120 - 48 = 72",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A tile factory loses Rs 6 on every rejected tile. Write this as an integer and find the result when 5,000 tiles are rejected. Is it a profit or a loss?",
+     "a": "The loss per tile is -6. 5000 x (-6) = -30,000, a loss of Rs 30,000.",
+     "s": [
+      [
+       "Writes -6 per tile",
+       1
+      ],
+      [
+       "Finds -30,000 and calls it a loss",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A test has 25 questions with +3 for a correct answer, -1 for a wrong answer and 0 for an unanswered question. Hiral attempted all 25 and got 15 correct. (a) How many were wrong? (b) Find her total. (c) How many marks did she lose compared with the maximum 75? (d) She says that if she had left her 4 least-sure answers unanswered, all of which were wrong, her total would have been higher. Find the new total and say whether she is right. (e) By how much does her total change?",
+     "a": "(a) 10 wrong. (b) 15 x 3 + 10 x (-1) = 45 - 10 = 35. (c) 75 - 35 = 40. (d) 4 wrong answers become blank: 15 x 3 + 6 x (-1) = 39, higher than 35, so she is right. (e) It rises by 4.",
+     "s": [
+      [
+       "Part (a): 10 wrong",
+       1
+      ],
+      [
+       "Part (b): 35",
+       1
+      ],
+      [
+       "Part (c): 40 lost",
+       1
+      ],
+      [
+       "Part (d): 39 and the verdict yes",
+       1
+      ],
+      [
+       "Part (e): a rise of 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A lift starts 20 m above ground and goes down at 4 m per minute for 8 minutes.\n(a) Write an expression for its final position.\n(b) Find the position.",
+     "a": "(a) 20 + 8 x (-4). (b) 20 + (-32) = -12, which is 12 m below the ground.",
+     "s": [
+      [
+       "Part (a): 20 + 8 x (-4)",
+       1
+      ],
+      [
+       "Part (b): -12 and its meaning",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a quiz, 3 marks are given for each correct answer and 1 mark is deducted for each wrong answer. A student has 18 correct and 7 wrong answers. Her total is",
+     "a": "47",
+     "o": [
+      "47",
+      "61",
+      "54",
+      "40"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A research submarine is at -30 m (30 m below sea level). It rises by 4 m every minute for 6 minutes. Where is it now?",
+     "a": "-6 m",
+     "o": [
+      "-6 m",
+      "-54 m",
+      "6 m",
+      "54 m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A lift starting at ground level and going down at 5 m per minute for 40 minutes ends at -200 m.\nReason (R): Integer multiplication is commutative, so 40 x (-5) = (-5) x 40.",
+     "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. A is true (40 x (-5) = -200) and R is true, but commutativity does not explain the position; the negative speed times the time does.",
+     "o": [
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion",
+      "Assertion is true, but the Reason is false",
+      "Assertion is false, but the Reason is true"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a word problem (a lift, a game, a shop or a temperature) that is represented by 50 + 12 x (-5), and state its answer with meaning.",
+     "a": "Example: Anu has Rs 50 in her canteen card. Each day for 12 days Rs 5 is deducted without recharging, giving 50 + 12 x (-5) = -10, so the card is Rs 10 overdrawn. 50 is the starting amount, -5 the daily change and 12 the days.",
+     "s": [
+      [
+       "Gives a setting with a starting value 50 and a repeated change",
+       1
+      ],
+      [
+       "Shows -5 as the repeated change over 12 times",
+       1
+      ],
+      [
+       "Interprets the result -10 correctly",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A tea stall earns Rs 6 on each special tea and loses Rs 4 on each spilt cup. (a) Find the result for 50 special teas and 30 spilt cups. (b) If spilt cups rise to 75 with the same 50 teas, find the new result and explain it.",
+     "a": "(a) 50 x 6 + 30 x (-4) = 300 - 120 = +180. (b) 300 + 75 x (-4) = 300 - 300 = 0: neither profit nor loss.",
+     "s": [
+      [
+       "Part (a): +180",
+       1
+      ],
+      [
+       "Part (b): 0 with explanation of break-even",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A test of 40 questions gives +5 for each correct and -2 for each wrong answer, and every question is attempted. What is the least possible total?",
+     "a": "-80",
+     "o": [
+      "-80",
+      "80",
+      "-40",
+      "-2"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The temperature is 12 degrees C and falls by 3 degrees C every hour. Which expression gives the temperature after 7 hours?",
+     "a": "12 + 7 x (-3)",
+     "o": [
+      "12 + 7 x (-3)",
+      "12 x 7 + (-3)",
+      "12 - 7 x (-3)",
+      "(12 + 7) x (-3)"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a school quiz of 25 questions the marking is +5 for a correct answer, -2 for a wrong answer and 0 for an unanswered question. Team A had 15 correct, 6 wrong and 4 unanswered. Team B had 17 correct, 8 wrong and none unanswered. Team C had 14 correct, none wrong and 11 unanswered. (a) Find Team A's score. (b) Find Team B's score. (c) Find Team C's score. (d) Name the winner. By how many marks does Team B lose, and how could B have won?",
+     "a": "(a) 15 x 5 + 6 x (-2) = 63. (b) 17 x 5 + 8 x (-2) = 69. (c) 14 x 5 = 70. (d) Team C wins by 1 mark over B. B lost 16 marks to wrong answers; leaving just one wrong answer unanswered would have made B 71, above 70.",
+     "s": [
+      [
+       "Part (a): 63",
+       1
+      ],
+      [
+       "Part (b): 69",
+       1
+      ],
+      [
+       "Part (c): 70",
+       1
+      ],
+      [
+       "Part (d): names C, 1-mark gap and shows 71 would win",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sana says: \"In a test with +4 for a correct and -2 for a wrong answer, a student who scores 0 must have exactly twice as many wrong answers as correct ones, or have answered nothing.\" Do you agree? Test it with 3 correct and some wrong answers that give a total of 0.",
+     "a": "Yes. For 3 correct: 3 x 4 = 12, so the wrong answers must give -12, which is 6 x (-2). 6 is twice 3. Each correct answer (+4) is cancelled by two wrong answers (2 x (-2) = -4). With nothing answered the total is 0 as well.",
+     "s": [
+      [
+       "Finds 12 marks for 3 correct answers",
+       1
+      ],
+      [
+       "Finds 6 wrong answers give -12, twice the correct ones",
+       1
+      ],
+      [
+       "Gives the verdict yes with the cancelling reason",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each situation with the integer expression that represents it.\n1. A lift goes down 2 m per minute for 45 minutes from ground level\n2. A student gets 25 answers right (+5) and 10 wrong (-2)\n3. Temperature starts at 20 and falls 3 degrees every hour for 6 hours\n4. A loss of Rs 4 per bag on 2,500 bags\na. 25 x 5 + 10 x (-2)\nb. 20 + 6 x (-3)\nc. 2500 x (-4)\nd. 45 x (-2)",
+     "a": "1-d, 2-a, 3-b, 4-c. Speed times time, gains plus losses, start plus change, loss per bag times bags.",
+     "o": [
+      "1-d, 2-a, 3-b, 4-c",
+      "1-a, 2-d, 3-b, 4-c",
+      "1-d, 2-a, 3-c, 4-b",
+      "1-c, 2-a, 3-d, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Write the value of -1 multiplied 1, 2, 3, 4, 5 and 6 times. (b) State the pattern. (c) What is the sign of a product of 15 negative and 20 positive integers? (d) What is the sign of (-1) x (-2) x (-3) x ... x (-10)? Give a reason.",
+     "a": "(a) -1, 1, -1, 1, -1, 1. (b) An odd number of factors of -1 gives -1; an even number gives 1. (c) Negative, since 15 negatives is odd. (d) Positive, since there are 10 negative factors, an even number.",
+     "s": [
+      [
+       "Part (a): the six values correct",
+       1
+      ],
+      [
+       "Part (b): odd and even rule",
+       1
+      ],
+      [
+       "Part (c): negative with the odd reason",
+       1
+      ],
+      [
+       "Part (d): positive",
+       1
+      ],
+      [
+       "Part (d): counts 10 negatives as the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A product has 8 negative factors and 3 positive factors, and no factor is zero. The product is",
+     "a": "positive",
+     "o": [
+      "positive",
+      "negative",
+      "positive only if the positive factors outnumber the negative ones",
+      "negative only if the negative factors outnumber the positive ones"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Without evaluating, give the sign of (-3) x (-7) x (-2) x (-4) x (-1) x 5. Count the negative factors in your reason.",
+     "a": "It has 5 negative factors (an odd number), so the product is negative.",
+     "s": [
+      [
+       "Counts 5 negative factors",
+       1
+      ],
+      [
+       "States negative because the count is odd",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A 3 by 3 grid is made so that each cell is (row number) x (column number), with row numbers 3, -2, 5 and column numbers 4, -6, -1. The cells are 12, -18, -3 in row one, -8, 12, 2 in row two and 20, -30, -5 in row three. A student circles one cell, strikes its row and column, and repeats until three cells are circled. (a) Circle 12, 12 and -5 and find their product. (b) Circle -18, -8 and -5 and find their product. (c) Explain why the product is always the same. (d) Predict, without circling, the product for a grid with row numbers 2, -3, 4 and column numbers 5, -1, -2, and say whether it is larger than the first grid's product.",
+     "a": "(a) 12 x 12 x (-5) = -720. (b) (-18) x (-8) x (-5) = -720. (c) Each circled product is (3 x -2 x 5) x (4 x -6 x -1) in some order, = (-30) x 24 = -720. (d) (2 x -3 x 4) x (5 x -1 x -2) = (-24) x 10 = -240, which is larger than -720.",
+     "s": [
+      [
+       "Part (a): -720",
+       1
+      ],
+      [
+       "Part (b): -720",
+       1
+      ],
+      [
+       "Part (c): one cell from each row and column so all row and column numbers appear once",
+       1
+      ],
+      [
+       "Part (d): -240, larger than -720",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Multiply 4, -17 and 25 in these orders. (a) (4 x (-17)) x 25. (b) 4 x ((-17) x 25). (c) (4 x 25) x (-17). (d) Which order is easiest and why? (e) Which two properties let you use any order?",
+     "a": "(a) -68 x 25 = -1700. (b) 4 x (-425) = -1700. (c) 100 x (-17) = -1700. (d) (c), as 4 x 25 = 100. (e) Associativity and commutativity.",
+     "s": [
+      [
+       "Part (a): -1700",
+       1
+      ],
+      [
+       "Part (b): -1700",
+       1
+      ],
+      [
+       "Part (c): -1700",
+       1
+      ],
+      [
+       "Part (d): picks (c) with a reason",
+       1
+      ],
+      [
+       "Part (e): names associative and commutative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 8 x (-25) x 4 by multiplying (-25) x 4 first.\n(b) Which property lets you choose which two numbers to multiply first?",
+     "a": "(a) (-25) x 4 = -100, then 8 x (-100) = -800. (b) The associative property (together with commutativity if the order is also changed).",
+     "s": [
+      [
+       "Part (a): -100 then -800",
+       1
+      ],
+      [
+       "Part (b): names the associative property",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. The product of 6 negative integers is negative.\n2. The product of 7 negative integers is negative.\n3. A product of non-zero integers is negative whenever it has at least one negative factor.\nWhich of the statements is/are correct?",
+     "a": "2 only. Statements 1 and 3 are false: 6 negatives give a positive, and (-2) x (-3) = 6 is positive although it has negative factors.",
+     "o": [
+      "2 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dhruv writes (-2) x 5 x (-3) x (-1) x 4 x 6 = 720. Count the negative factors and show that his answer cannot be right. What is the correct value?",
+     "a": "The factors -2, -3 and -1 are negative: 3 negative factors (an odd number), so the product is negative. The magnitude is 2 x 5 x 3 x 1 x 4 x 6 = 720, so the correct value is -720, not 720.",
+     "s": [
+      [
+       "Counts 3 negative factors",
+       1
+      ],
+      [
+       "States the product must be negative",
+       1
+      ],
+      [
+       "Finds the correct value -720",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Evaluate (-2) x (-1) x (-5) x (-3).\n(b) How many negative factors are there, and does this agree with the sign you found?",
+     "a": "(a) 30. (b) There are 4 negative factors, an even number, so the product is positive, which agrees.",
+     "s": [
+      [
+       "Part (a): 30",
+       1
+      ],
+      [
+       "Part (b): 4 negatives and a positive product",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Evaluate (-7) x 4 x (-1) by choosing a convenient order, and name the order you chose.",
+     "a": "(-7) x (-1) = 7, then 7 x 4 = 28. Product is 28 (any order gives 28).",
+     "s": [
+      [
+       "Chooses the order (-7) x (-1) first",
+       1
+      ],
+      [
+       "Gets 28",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The product (-3) x (-4) x (-5) x (-2) x (-1) is positive.\nReason (R): A product of non-zero integers with an even number of negative factors is positive.",
+     "a": "Assertion is false, but the Reason is true. A is false: it has 5 negative factors so it is negative (-120). R is a true statement.",
+     "o": [
+      "Assertion is false, but the Reason is true",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion",
+      "Assertion is true, but the Reason is false"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sign of (-2) x 3 x (-4) x (-5) x 6 is",
+     "a": "negative, since it has 3 negative factors",
+     "o": [
+      "negative, since it has 3 negative factors",
+      "positive, since it has 2 positive factors",
+      "positive, since two negatives cancel",
+      "negative, since it has 5 factors"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The product of seven numbers, each equal to -1, is",
+     "a": "-1",
+     "o": [
+      "-1",
+      "1",
+      "7",
+      "-7"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a board game a card multiplies your score by -2 each time it is drawn. Dev starts with 3 and draws the card four times in a row. What is his score at the end?",
+     "a": "48",
+     "o": [
+      "48",
+      "-48",
+      "24",
+      "-24"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ravi finds 40 x (-3) x 5 as (40 x 5) x (-3), and Tara finds it as (40 x (-3)) x 5. What do they get?",
+     "a": "Both get -600",
+     "o": [
+      "Both get -600",
+      "Ravi gets -600 and Tara gets 600",
+      "Both get 600",
+      "Their answers differ because the order is different"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which equation shows that integer multiplication is associative?",
+     "a": "a x (b x c) = (a x b) x c",
+     "o": [
+      "a x (b x c) = (a x b) x c",
+      "a x b = b x a",
+      "a x (b + c) = a x b + a x c",
+      "a x 1 = a"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a card game, each card multiplies your score. Gita starts with 5 and draws the cards -2, 3 and -1 in order, then -4. (a) What is her score after the first three cards? (b) What is it after the fourth? (c) Three cards remain: -3, 2 and -5. She must draw exactly two of them (the order does not matter). Find the score for each possible pair. (d) Which pair should she draw to finish highest?",
+     "a": "(a) 5 x (-2) x 3 x (-1) = 30. (b) 30 x (-4) = -120. (c) (-3, 2): 720; (-3, -5): -1800; (2, -5): 1200. (d) The pair 2 and -5, giving 1200, the highest.",
+     "s": [
+      [
+       "Part (a): 30",
+       1
+      ],
+      [
+       "Part (b): -120",
+       1
+      ],
+      [
+       "Part (c): 720, -1800 and 1200",
+       1
+      ],
+      [
+       "Part (d): picks 2 and -5 with 1200",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write two different products of four non-zero integers, one with exactly one negative factor and one with exactly three negative factors, both equal to -24.",
+     "a": "Example: 2 x 3 x 4 x (-1) = -24 (one negative) and (-2) x (-3) x (-1) x 4 = -24 (three negatives). Either has an odd number of negative factors.",
+     "s": [
+      [
+       "Gives a product of four integers with one negative equal to -24",
+       1
+      ],
+      [
+       "Gives a product of four integers with three negatives equal to -24",
+       1
+      ],
+      [
+       "States the odd count of negatives is why both are negative",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Lalit says: \"If a product of non-zero integers has an odd number of negative factors, the product is negative, whatever the other factors are.\" Do you agree? Test with (-2) x 3 x (-4) x (-1) x 5.",
+     "a": "Yes. The product has 3 negative factors (an odd number). (-2) x 3 = -6, then -6 x (-4) = 24, then 24 x (-1) = -24, then -24 x 5 = -120, which is negative. Each pair of negatives gives a positive, and the one left over makes the product negative.",
+     "s": [
+      [
+       "Counts 3 negative factors",
+       1
+      ],
+      [
+       "Computes -120",
+       1
+      ],
+      [
+       "Gives the verdict yes with the pairing reason",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Evaluate (-6 x 4) x 5 and (-6) x (4 x 5).\n(b) Which property of integer multiplication do the two results illustrate?",
+     "a": "(a) (-24) x 5 = -120 and (-6) x 20 = -120. (b) The associative property: grouping does not change the product.",
+     "s": [
+      [
+       "Part (a): -120 for both groupings",
+       1
+      ],
+      [
+       "Part (b): names the associative property",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.7",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two shopkeepers near the school gate, Mohan and Sheela, are asked to bid for a stall at the annual fair for 8 weeks. Mohan's weekly entries in rupees, over five days, are +500, -300, +200, -450 and +150. Sheela's are +250, +250, -600, +400 and -100, but she must also pay a one-time fair fee of Rs 1,000 (written -1000). Each shopkeeper's weekly pattern repeats for all 8 weeks. (a) Find Mohan's weekly total and Sheela's weekly total. (b) Use the distributive property to find Mohan's total for 8 weeks: 8 x (500 + (-300) + 200 + (-450) + 150). (c) Find Sheela's total for 8 weeks including the fee. (d) The school will give the stall to the shopkeeper whose 8-week result is higher. Whom should it choose? Would the answer change at 10 weeks?",
+     "a": "(a) Mohan 100, Sheela 200. (b) 8 x 500 + 8 x (-300) + 8 x 200 + 8 x (-450) + 8 x 150 = 4000 - 2400 + 1600 - 3600 + 1200 = 800. (c) 8 x 200 + (-1000) = 600. (d) Mohan, 800 against 600. At 10 weeks Mohan has 1000 and Sheela 2000 + (-1000) = 1000, a tie.",
+     "s": [
+      [
+       "Part (a): 100 and 200",
+       1
+      ],
+      [
+       "Part (b): 800 by distributing 8",
+       1
+      ],
+      [
+       "Part (c): 600 including the fee",
+       1
+      ],
+      [
+       "Part (d): chooses Mohan and notes the tie at 10 weeks",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Given that 15 x ((-8) + 3) = -75, write the value of (-15) x (8 - 3) without calculating, and say why.",
+     "a": "-75. Since (-8) + 3 = -(8 - 3), we have 15 x (-(8 - 3)) = (-15) x (8 - 3), the same product.",
+     "s": [
+      [
+       "States -75",
+       1
+      ],
+      [
+       "Reason: the inverse of (8 - 3) is (-8) + 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A game-zone token machine gives green tokens worth +11 points and red tokens worth -7 points. A prize needs an exact score. Veena may use any number of each kind. To list the scores she writes the multiples of 11 (11, 22, 33, 44, 55 and so on) and subtracts multiples of 7. (a) Make a score of 15 and say how many tokens you used. (b) Make a score of 4. (c) Make a score of -3. (d) The machine takes at most 9 tokens per prize. Can Veena win the 6-point prize? Use her listing; the only way to 6 uses 55 - 49. Justify.",
+     "a": "(a) 2 green and 1 red: 22 - 7 = 15, 3 tokens. (b) 1 green and 1 red: 11 - 7 = 4, 2 tokens. (c) 1 green and 2 red: 11 - 14 = -3, 3 tokens. (d) No. The first way to get 6 is 5 green and 7 red: 55 - 49 = 6, which is 12 tokens, more than 9; checking 1 to 4 green tokens with up to 9 tokens in all does not give 6.",
+     "s": [
+      [
+       "Part (a): 22 - 7 = 15 with 3 tokens",
+       1
+      ],
+      [
+       "Part (b): 11 - 7 = 4",
+       1
+      ],
+      [
+       "Part (c): 11 - 14 = -3",
+       1
+      ],
+      [
+       "Part (d): 55 - 49 with 12 tokens, over the limit, so no",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 102 as 100 + 2 and use the distributive property to find 102 x (-45).\n(b) Write the answer as a debt or fortune.",
+     "a": "(a) 100 x (-45) + 2 x (-45) = -4500 + (-90) = -4590. (b) It is a debt (negative).",
+     "s": [
+      [
+       "Part (a): -4500 + (-90) = -4590",
+       1
+      ],
+      [
+       "Part (b): negative, so a debt",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pattern machine does (first number) + (second number) - (third number). For the inputs 7, -3 and -8 it gives",
+     "a": "12",
+     "o": [
+      "12",
+      "-4",
+      "18",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "At the school fair, every packet sold has one item that earns Rs 9 and one item that loses Rs 4. If 15 packets are sold, which expression gives the net result in rupees?",
+     "a": "15 x (9 + (-4))",
+     "o": [
+      "15 x (9 + (-4))",
+      "15 x 9 + (-4)",
+      "15 + 9 x (-4)",
+      "(15 + 9) x (-4)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each statement with its name or description.\n1. a x (b + c) = a x b + a x c\n2. a x (b x c) = (a x b) x c\n3. a x b = b x a\n4. -(a + b) = (-a) + (-b)\na. Multiplication is commutative\nb. The inverse of a sum is the sum of the inverses\nc. Multiplication is distributive over addition\nd. Multiplication is associative",
+     "a": "1-c, 2-d, 3-a, 4-b. Each equation is matched with the property it states.",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-a, 2-d, 3-c, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A token machine has only two kinds of coins, +5 and -10. Using the distributive property, show that +12 can never be made exactly. (Hint: 5 x a + (-10) x b.)",
+     "a": "Any total is 5 x a + (-10) x b = 5 x (a + (-2) x b) by the distributive property, so it is in the times-5 table (a multiple of 5). 12 is not a multiple of 5, so +12 cannot be made.",
+     "s": [
+      [
+       "Writes the total as 5 x a + (-10) x b",
+       1
+      ],
+      [
+       "Factors it as 5 x (a + (-2) x b) using the distributive property",
+       1
+      ],
+      [
+       "Concludes 12 is not a multiple of 5",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The distributive property holds for integers, including negative ones.\nReason (R): (-2) x (4 + (-3)) and (-2) x 4 + (-2) x (-3) both equal -2.",
+     "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. Both are true, but one example only checks the property; it does not explain why it holds for all integers.",
+     "o": [
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion",
+      "Assertion is true, but the Reason is false",
+      "Assertion is false, but the Reason is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meena finds that 12 - 30 + 8 - 5 + 20 = 5. Without recalculating, what is -12 + 30 - 8 + 5 - 20?",
+     "a": "-5",
+     "o": [
+      "-5",
+      "5",
+      "0",
+      "-45"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ritu writes: 6 x (5 + (-2)) = 6 x 5 + (-2) = 28. (a) Find her error. (b) Write the correct value, using both bracket-first and the distributive property.",
+     "a": "(a) She multiplied only the first number in the bracket by 6. (b) Bracket first: 6 x 3 = 18. Distributive: 6 x 5 + 6 x (-2) = 30 + (-12) = 18.",
+     "s": [
+      [
+       "Part (a): says 6 was not multiplied with (-2)",
+       1
+      ],
+      [
+       "Part (b): 18 by both methods",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. The distributive property a x (b + c) = a x b + a x c holds only when a, b and c are positive.\n2. (-2) x (4 + (-3)) is equal to (-2) x 4 + (-2) x 3.\n3. (-48) x (15 - 9) has the same value as 48 x (-15 + 9).\nWhich of the statements is/are correct?",
+     "a": "3 only. Statement 1 is false (it holds for all integers). Statement 2 is false: it should be (-2) x (-3). Statement 3 is true: both equal -288.",
+     "o": [
+      "3 only",
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Use the numbers 4, -3, 2 and -5 exactly once each, and each of the operations +, - and x exactly once, with brackets as you need. (a) Write an expression with the greatest possible value. (b) Write an expression with the least possible value. (c) Explain why the signs of your two answers are different.",
+     "a": "(a) ((-3) - (4 + 2)) x (-5) = (-9) x (-5) = 45. (b) (4 - (-3) + 2) x (-5) = 9 x (-5) = -45. (c) In (a) the bracket is negative and is multiplied by -5, giving a positive; in (b) the bracket is positive and multiplied by -5, giving a negative. The bracket magnitudes are equal (9).",
+     "s": [
+      [
+       "Part (a): a valid expression with value 45",
+       2
+      ],
+      [
+       "Part (b): a valid expression with value -45",
+       2
+      ],
+      [
+       "Part (c): explains the sign difference with -5 as multiplier",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The additive inverse of the sum (a + b) is",
+     "a": "(-a) + (-b)",
+     "o": [
+      "(-a) + (-b)",
+      "(-a) + b",
+      "a + (-b)",
+      "(-a) x (-b)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The property a x (b + c) = (a x b) + (a x c) is called",
+     "a": "distributive",
+     "o": [
+      "distributive",
+      "commutative property of multiplication",
+      "associative property of addition",
+      "additive inverse property"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Pranav says: \"Since a x (b + c) = a x b + a x c, it must also be true that a + (b x c) = (a + b) x (a + c).\" Do you agree? Test with a = 2, b = 3, c = 4.",
+     "a": "No. a + (b x c) = 2 + 12 = 14, but (a + b) x (a + c) = 5 x 6 = 30. The distributive property is for multiplication over addition, not addition over multiplication, so the claim fails.",
+     "s": [
+      [
+       "Computes 14",
+       1
+      ],
+      [
+       "Computes 30",
+       1
+      ],
+      [
+       "Concludes no: the property works only in the form a x (b + c)",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) A machine does (first) + (second) - (third). Find its result for (-6), (-2) and (-9).\n(b) For the inputs (-6), (-2) and c, find c so that the result is 5.",
+     "a": "(a) (-6) + (-2) - (-9) = 1. (b) -8 - c = 5, so c = -13. Check: -8 + 13 = 5.",
+     "s": [
+      [
+       "Part (a): 1",
+       1
+      ],
+      [
+       "Part (b): c = -13",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Fill in the blanks in three different ways with integers: ( __ + __ ) x __ = -24. At least one way must have a negative last number.",
+     "a": "Examples: (5 + 3) x (-3) = -24; ((-2) + (-10)) x 2 = -24; ((-1) + (-5)) x 4 = -24. A negative total times a positive number, or a positive total times a negative number, gives a negative product.",
+     "s": [
+      [
+       "Gives one correct way with a negative last number",
+       1
+      ],
+      [
+       "Gives two more correct and different ways",
+       1
+      ],
+      [
+       "Explains the sign pattern that gives -24",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Check the distributive property for (-3) x (7 + (-5)): find the value with the bracket first, and then by distributing. (b) Do the same for 7 x (6 + (-9)). (c) Ritu writes (-7) x ((-6) + 9) = (-7) x (-6) + 9 = 51. Find her error and give the correct value. (d) What do (a) to (c) suggest about the property for integers?",
+     "a": "(a) Bracket first: (-3) x 2 = -6. Distributing: -21 + 15 = -6. (b) 7 x (-3) = -21 and 42 + (-63) = -21. (c) She multiplied only the first number by (-7): the correct working is (-7) x (-6) + (-7) x 9 = 42 + (-63) = -21. (d) The property a x (b + c) = a x b + a x c holds for integers whatever their signs.",
+     "s": [
+      [
+       "Part (a): -6 by both ways",
+       1
+      ],
+      [
+       "Part (b): -21 by both ways",
+       1
+      ],
+      [
+       "Part (c): spots that (-7) was not multiplied with 9",
+       1
+      ],
+      [
+       "Part (c): corrects to -21",
+       1
+      ],
+      [
+       "Part (d): states the property holds for integers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 5 x (4 + (-2)) is",
+     "a": "10",
+     "o": [
+      "10",
+      "18",
+      "30",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find (-4) x (25 + (-5)) by first adding the numbers in brackets.\n(b) Check the answer by distributing (-4) over the sum.",
+     "a": "(a) (-4) x 20 = -80. (b) (-4) x 25 + (-4) x (-5) = -100 + 20 = -80.",
+     "s": [
+      [
+       "Part (a): -80",
+       1
+      ],
+      [
+       "Part (b): -100 + 20 = -80",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

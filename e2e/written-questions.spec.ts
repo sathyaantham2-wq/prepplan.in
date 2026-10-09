@@ -4,6 +4,8 @@ import type { Db } from '../src/db/connection'
 import { studentsRepository } from '../src/db/repositories'
 import { createParentSession, createStudentSession } from '../src/db/test-helpers'
 import type { TestSession } from '../src/db/test-helpers'
+import { createClass7Fixture, removeClass7Fixture } from './class7-fixture'
+import type { Class7Fixture } from './class7-fixture'
 
 /**
  * Owner decision 2026-10-04: choosing Combined or Written on the paper page always brings written
@@ -16,9 +18,11 @@ import type { TestSession } from '../src/db/test-helpers'
 let db: Db
 let parent: TestSession
 let student: TestSession
+let fixture: Class7Fixture
 
 test.beforeAll(async () => {
   db = createDb()
+  fixture = await createClass7Fixture(db, 'written')
   parent = await createParentSession('e2e-written-parent')
   const row = await studentsRepository.insert(db, {
     household_id: parent.householdId,
@@ -32,6 +36,7 @@ test.beforeAll(async () => {
 
 test.afterAll(async () => {
   await db.deleteFrom('households').where('id', '=', parent.householdId).execute()
+  await removeClass7Fixture(db, fixture)
   await db.destroy()
 })
 

@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { resolveEnabledStudent } from '../../../lib/access'
+import { findSchoolBlueprint } from '../../../lib/school-blueprint'
 import { generatePaper } from '../../../lib/papers'
 import { buildPaperPlan, ensureAdaptiveBlueprint } from '../../../lib/adaptive/plan'
 import { getSharedDb } from '../../../db/connection'
@@ -71,12 +72,18 @@ const generateSchema = z
     // route's own ?theme= override is deliberately more lenient (falls back rather than 400s,
     // since it's just a re-print convenience, not the generation record).
     theme: z.enum(PAPER_THEMES).optional(),
-    // F119: this is a ceiling on difficulty, never a filter on which concepts get picked.
+    // F119: this is a ceiling on difficulty, never a filter on which concepts get picked. Since
+    // 2026-10-05 only adaptive practice papers honour it; a normal paper's difficulty mix is set
+    // by its blueprint, so the value is still accepted (old clients must not get a 400) but is
+    // dropped below.
     difficulty_ceiling: z.enum(DIFFICULTY_TIERS).optional(),
     // Adaptive mode only -- overrides buildPaperPlan's mastery-driven size/mix. Ignored by
     // blueprint-driven generation, same as adaptive/subject_id are.
     adaptive_question_count: z.number().int().positive().optional(),
     adaptive_question_type: z.enum(['combined', 'mcq', 'written']).optional(),
+    // Where the paper will be answered: a ruler-and-compass question is only eligible for a
+    // paper that will be printed or uploaded.
+    delivery: z.enum(['screen', 'print']).optional(),
     weighting_override: weightingSchema.optional(),
     // F113: overrides the concept-count-proportional per-chapter marks split.
     chapter_weighting_override: chapterWeightingSchema.optional(),
@@ -182,8 +189,19 @@ export const Route = createFileRoute('/api/papers/generate')({
           }
         }
 
-        const adaptive = parsed.data.adaptive ?? false
+        let adaptive = parsed.data.adaptive ?? false
         let blueprintId = parsed.data.blueprint_id
+        // A subject with a school-exam-standard blueprint gets that paper instead of the mastery-
+        // sized adaptive one: the layout, marks and mix are the blueprint's, and the student
+        // chooses chapters only. The weak/priority weighting still applies (F119) and a slot the
+        // bank cannot fill is still printed as a shortfall (F032).
+        if (adaptive && !blueprintId && parsed.data.subject_id) {
+          const school = await findSchoolBlueprint(db, parsed.data.subject_id, parsed.data.adaptive_question_count ?? 10)
+          if (school) {
+            blueprintId = school.id
+            adaptive = false
+          }
+        }
         let plan = null
         if (adaptive && !blueprintId) {
           plan = await buildPaperPlan(db, {
@@ -209,6 +227,7 @@ export const Route = createFileRoute('/api/papers/generate')({
 
         const result = await generatePaper(db, {
           ...parsed.data,
+          difficulty_ceiling: adaptive ? parsed.data.difficulty_ceiling : undefined,
           blueprint_id: blueprintId!,
           adaptive,
           title: plan

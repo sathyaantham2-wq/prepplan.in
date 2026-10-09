@@ -34,6 +34,24 @@ shortfall if a blueprint asks for them.
 Depth targets are configuration (`target_question_count`), so this table scales — at 40 per concept
 the same proportions apply.
 
+## The school exam standard
+
+Every question also has to meet `docs/QUESTION_STANDARD.md` — read it before writing. The grid
+above says *how many* and at which Bloom level; the standard says *what they should be like*:
+
+- Build from the chapter's own examples, activities, "Figure it Out" items and stories; change the
+  numbers or setting and raise one level. Never copy a school worksheet — write originals in the
+  same style.
+- About 25% recall, 45% application, 30% reasoning and checking per concept (5 / 9 / 6 of 20; the
+  standard maps these onto the grid cells, so the grid itself is unchanged).
+- Include, where the concept allows: claim-check, "show it cannot work", reverse, 4–5 part case
+  studies ending in a decision, scenario MCQs, assertion-reason, statement 1-2-3 and match the
+  columns.
+- Wrong options are real concepts or common mistakes from the same chapter; false statements hinge
+  on absolute words ("always", "only") — but not every absolute statement is false.
+- Indian settings (₹, lakh, crore, school events).
+- Recompute every key yourself; for case studies, every part.
+
 ## Rules that make a question usable
 
 - **Traceable.** Every question names the IN-scope item it tests. If it cannot, discard it — that

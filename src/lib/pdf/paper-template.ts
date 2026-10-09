@@ -22,6 +22,9 @@ export interface PaperTemplateQuestion {
   // rendered together under one shared [marks] and one printed slot number, an "OR" divider
   // between them, never as two separately-numbered questions.
   choice_group: string | null
+  // School Half-Yearly: the layout slot it filled, and the printed mark split such as "(1+2)".
+  slot?: string | null
+  mark_split?: string
   // Never includes is_correct or the correct-answer text -- this template renders the STUDENT
   // paper, and a student can never see or download an answer key (CLAUDE.md hard rule).
   options: Array<{ label: string; text: string; order_index: number }>
@@ -36,8 +39,21 @@ export interface PaperTemplateInput {
   totalMarks: number
   chapters: Array<{ part: string; chapter_no: number; name: string }>
   questions: Array<PaperTemplateQuestion>
-  shortfalls: Array<{ section: string; reason: string }>
+  shortfalls: Array<{ section: string; reason: string; slot?: string }>
   theme?: PaperTheme
+  // School Half-Yearly paper: header block, general instructions, section headings with totals.
+  halfYearly?: {
+    subjectName: string
+    instructions: Array<string>
+    // Headings in print order, and what each is worth.
+    sectionOrder: Array<string>
+    sectionTotals: Record<string, number>
+    // The marks the layout is worth, which exceeds totalMarks when a shortfall leaves some out.
+    nominalMarks: number
+    // Set by the two-pass render once the real page count is known.
+    pageCount?: number
+    draftNote?: string | null
+  }
 }
 
 const ANSWER_LINE_COUNT: Record<QuestionType, number> = {
@@ -113,7 +129,7 @@ function renderQuestion(q: PaperTemplateQuestion): string {
       <div class="q-number">${q.position}.</div>
       <div class="q-body">${renderQuestionBody(q)}
       </div>
-      <div class="q-marks">[${q.marks}]</div>
+      <div class="q-marks">[${q.marks}]${q.mark_split ? `<div class="mark-split">${escapeHtml(q.mark_split)}</div>` : ''}</div>
     </div>`
 }
 
@@ -132,7 +148,7 @@ function renderChoicePair(
       <div class="q-body">${renderQuestionBody(primary)}
         <div class="or-divider">OR</div>${renderQuestionBody(alternate)}
       </div>
-      <div class="q-marks">[${primary.marks}]</div>
+      <div class="q-marks">[${primary.marks}]${primary.mark_split ? `<div class="mark-split">${escapeHtml(primary.mark_split)}</div>` : ''}</div>
     </div>`
 }
 
@@ -156,6 +172,35 @@ function renderQuestionsInSection(
     html.push(renderQuestion(q))
   }
   return html.join('')
+}
+
+/**
+ * Questions of one section, with a small sub-heading wherever the layout slot changes (for
+ * example "2-mark very short answer"), and the shortfall notes for a slot printed under it so a
+ * missing question is visible where it would have been.
+ */
+function renderHalfYearlySection(
+  questions: Array<PaperTemplateQuestion>,
+  notesBySlot: Map<string, Array<string>>,
+  slotOrder: Array<string>,
+): string {
+  const bySlot = new Map<string, Array<PaperTemplateQuestion>>()
+  for (const q of questions) {
+    const key = q.slot ?? ''
+    bySlot.set(key, [...(bySlot.get(key) ?? []), q])
+  }
+  const slots = [...new Set([...slotOrder, ...bySlot.keys(), ...notesBySlot.keys()])]
+  return slots
+    .map((slot) => {
+      const qs = bySlot.get(slot) ?? []
+      const notes = notesBySlot.get(slot) ?? []
+      if (qs.length === 0 && notes.length === 0) return ''
+      return `
+        ${slot ? `<div class="slot-title">${escapeHtml(slot)}</div>` : ''}
+        ${renderQuestionsInSection(qs)}
+        ${notes.map((n) => `<div class="slot-note">Not printed: ${escapeHtml(n)}</div>`).join('')}`
+    })
+    .join('')
 }
 
 function groupBySection(
@@ -184,7 +229,38 @@ function groupBySection(
  * decoration, since @page margin boxes aren't supported).
  */
 export function buildPaperHtml(input: PaperTemplateInput): string {
-  const sections = groupBySection(input.questions)
+  const hy = input.halfYearly
+  const sections = hy
+    ? hy.sectionOrder.map((section) => ({
+        section,
+        questions: input.questions
+          .filter((q) => q.section === section)
+          .sort((a, b) => a.position - b.position),
+      }))
+    : groupBySection(input.questions)
+  const printedMarks = input.questions
+    .filter((q, i, all) => q.choice_group === null || all.findIndex((x) => x.choice_group === q.choice_group) === i)
+    .reduce((n, q) => n + q.marks, 0)
+  const hours = input.durationMin / 60
+  const timeLabel = hy ? `${Number.isInteger(hours) ? hours : hours.toFixed(1)} hours` : `${input.durationMin} min`
+  const sectionNotes = (section: string) => {
+    const bySlot = new Map<string, Array<string>>()
+    for (const f of input.shortfalls) {
+      if (f.section !== section) continue
+      bySlot.set(f.slot ?? '', [...(bySlot.get(f.slot ?? '') ?? []), f.reason])
+    }
+    return bySlot
+  }
+  const hyHeader = hy
+    ? `
+      <table class="hy-fields">
+        <tr><td>Name: ${escapeHtml(input.studentName)}</td><td>Roll No.: ________</td><td>Section: ________</td></tr>
+        <tr><td>Class: ${input.class} (${escapeHtml(input.board)})</td><td>Subject: ${escapeHtml(hy.subjectName)}</td><td>Date: ____________</td></tr>
+        <tr><td>Maximum marks: ${hy.nominalMarks}${printedMarks !== hy.nominalMarks ? ` (${printedMarks} printed — see the notes)` : ''}</td><td>Time: ${timeLabel}</td><td>${hy.pageCount ? `Printed pages: ${hy.pageCount}` : ''}</td></tr>
+      </table>
+      ${hy.draftNote ? `<div class="draft-banner">${escapeHtml(hy.draftNote)}</div>` : ''}
+      <div class="instructions"><strong>General instructions</strong><ol>${hy.instructions.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ol></div>`
+    : ''
   const themePack = THEME_PACKS[input.theme ?? DEFAULT_THEME]
   const chaptersLabel = input.chapters
     .map(
@@ -225,7 +301,7 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
   .q-concept { font-size: 0.8em; color: #666; margin-top: 4px; }
   .question { display: flex; page-break-inside: avoid; margin-bottom: 12px; }
   .or-divider { text-align: center; font-weight: bold; font-size: 9pt; color: #555; margin: 8px 0; }
-  .q-number { flex: 0 0 22px; font-weight: bold; }
+  .q-number { flex: 0 0 28px; font-weight: bold; }
   .q-body { flex: 1 1 auto; padding-right: 10px; }
   .q-marks { flex: 0 0 32px; text-align: right; font-weight: bold; }
   .options { margin-top: 4px; }
@@ -248,6 +324,16 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
     font-size: 7pt;
     color: #999;
   }
+  .hy-fields { width: 100%; border-collapse: collapse; font-size: 10pt; margin-top: 4px; }
+  .hy-fields td { padding: 3px 4px; border: 1px solid #999; }
+  .draft-banner { margin-top: 6px; padding: 4px 6px; border: 1px dashed #a60; color: #a60; font-size: 8.5pt; }
+  .instructions { font-size: 9pt; margin-top: 6px; }
+  .instructions ol { margin: 2px 0 0 18px; padding: 0; }
+  .hy-section-title { display: flex; justify-content: space-between; text-decoration: none; border-bottom: 1px solid #111; font-size: 12pt; }
+  .slot-title { font-size: 9.5pt; font-style: italic; margin: 8px 0 6px; color: #333; break-after: avoid; page-break-after: avoid; }
+  .slot-note { font-size: 8.5pt; color: #a00; margin: 2px 0 8px 22px; }
+  .mark-split { font-weight: normal; font-size: 8.5pt; color: #555; }
+  .hy-question-text, .section .q-text { white-space: pre-line; }
   .shortfall-note {
     font-size: 8pt;
     color: #a00;
@@ -264,30 +350,42 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
     <header class="paper-header">
       ${themePack.cornerOrnament ? `<div class="theme-ornament">${themePack.cornerOrnament}</div>` : ''}
       <h1>${escapeHtml(input.title)}</h1>
-      <div class="meta-row">
+      ${
+        hy
+          ? hyHeader
+          : `<div class="meta-row">
         <span>Name: ${escapeHtml(input.studentName)}</span>
         <span>Class ${input.class} (${escapeHtml(input.board)})</span>
         <span>Time: ${input.durationMin} min</span>
         <span>Max Marks: ${input.totalMarks}</span>
-      </div>
+      </div>`
+      }
       ${chaptersLabel ? `<div class="chapters">Chapters covered: ${chaptersLabel}</div>` : ''}
     </header>
     ${sections
       .map(
         (group) => `
       <div class="section">
-        <div class="section-title">${escapeHtml(group.section)}</div>
-        ${renderQuestionsInSection(group.questions)}
+        ${
+          hy
+            ? `<div class="section-title hy-section-title"><span>${escapeHtml(group.section)}</span><span>${hy.sectionTotals[group.section] ?? ''} marks</span></div>
+        ${renderHalfYearlySection(group.questions, sectionNotes(group.section), [])}`
+            : `<div class="section-title">${escapeHtml(group.section)}</div>
+        ${renderQuestionsInSection(group.questions)}`
+        }
       </div>`,
       )
       .join('')}
-    ${
-      input.shortfalls.length > 0
-        ? `<div class="shortfall-note">Note: ${input.shortfalls
+    ${(() => {
+      const rest = hy
+        ? input.shortfalls.filter((f) => !hy.sectionOrder.includes(f.section))
+        : input.shortfalls
+      return rest.length > 0
+        ? `<div class="shortfall-note">Note: ${rest
             .map((s) => escapeHtml(`${s.section}: ${s.reason}`))
             .join(' | ')}</div>`
         : ''
-    }
+    })()}
   </div>
 </body>
 </html>`

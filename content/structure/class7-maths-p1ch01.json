@@ -1,0 +1,212 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-05, so the local test database has the concepts a DPS pack attaches to. Contains no questions.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 1,
+  "name": "Large Numbers Around Us",
+  "blurb": "Reading/writing large numbers (lakh, crore, arab), Indian vs American naming, rounding, estimation, and multiplication shortcuts.",
+  "order_index": 1,
+  "source_code": "gegp101"
+ },
+ "scope": [
+  [
+   "IN",
+   "Read and write numbers up to crores/arabs in the Indian place-value system, with correct comma placement",
+   "1-5"
+  ],
+  [
+   "IN",
+   "Build a number as a sum of place-value multiples in more than one way; find the fewest-click (minimal) representation",
+   "4-8"
+  ],
+  [
+   "IN",
+   "Convert a number between the Indian (lakh/crore/arab) and American (thousand/million/billion) naming systems",
+   "8-9"
+  ],
+  [
+   "IN",
+   "Round a number up or down appropriately for a stated everyday context",
+   "9-11"
+  ],
+  [
+   "IN",
+   "Find the nearest thousand/lakh/crore of a number; estimate whether a sum or difference exceeds a stated round value",
+   "11-13"
+  ],
+  [
+   "IN",
+   "Use factor regrouping (e.g. x5 = x10/2, x25 = x100/4) to multiply quickly",
+   "13-15"
+  ],
+  [
+   "IN",
+   "Predict the number of digits in a product from the digit-counts of its factors",
+   "15"
+  ],
+  [
+   "IN",
+   "Answer a real-world large-number estimation question using staged multiplication/division and reasonable assumptions",
+   "18-21"
+  ],
+  [
+   "IN",
+   "Use 1,00,000 as the smallest 6-digit number, compare a lifetime in days (365 x years) with one lakh, and say how much more or less than a lakh a given population is",
+   "pp.1-3"
+  ],
+  [
+   "IN",
+   "Get a feel for a large quantity by comparing it with a familiar one, and argue whether a lakh is big or small depending on what it is compared with",
+   "pp.3-4"
+  ],
+  [
+   "IN",
+   "Relate lakh, crore and arab (1 lakh = 100 thousand, 1 crore = 100 lakh, 1 arab = 100 crore) and count the zeros in each",
+   "p.8"
+  ],
+  [
+   "IN",
+   "Solve digit-arrangement puzzles with a 10-digit number that uses each digit once, and write calculator button-click expressions such as 92,100 = 9 x 10,000 + 21 x 100",
+   "pp.20-21"
+  ],
+  [
+   "IN",
+   "Solve toothpick-digit puzzles: count the sticks in a number and make bigger or smaller numbers with a given number of sticks",
+   "p.23"
+  ],
+  [
+   "OUT",
+   "Scientific/exponential notation for large numbers",
+   "Not introduced until a later grade"
+  ],
+  [
+   "OUT",
+   "Percentages, ratios, or unit-rate word problems outside the large-number-estimation framing",
+   "Not covered in this chapter"
+  ],
+  [
+   "OUT",
+   "Formal long multiplication/division algorithms",
+   "Assumed prior knowledge; this chapter only teaches shortcut regrouping"
+  ],
+  [
+   "OUT",
+   "Algebraic letter-number expressions",
+   "Introduced in Part I Ch 4 (Expressions Using Letter-Numbers)"
+  ],
+  [
+   "OUT",
+   "Negative numbers / integer operations",
+   "This chapter only uses positive whole numbers; integers are Part II Ch 2"
+  ],
+  [
+   "OUT",
+   "Decimal numbers and decimal place value",
+   "Introduced in Part I Ch 3 (A Peek Beyond the Point), not here"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-1.1",
+   "name": "Reading & writing large numbers (Indian system)",
+   "description": "Placing commas and naming numbers up to crores/arabs using the Indian place-value system.",
+   "idea": "Indian commas group digits 3-2-2-2 from the right (thousand, lakh, crore, arab), unlike the uniform 3-3-3 American grouping.",
+   "rule": "100 thousand = 1 lakh; 100 lakh = 1 crore; 100 crore = 1 arab.",
+   "example": "12,78,830 = twelve lakh seventy eight thousand eight hundred thirty.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-1.2",
+   "name": "Indian vs. American/International numbering systems",
+   "description": "Converting a number between Indian naming (lakh, crore, arab) and American naming (thousand, million, billion).",
+   "idea": "The same number has two different names and comma placements depending on the system.",
+   "rule": "10 lakh = 1 million; 1 crore = 10 million; 1 arab = 1 billion.",
+   "example": "9,87,65,01,234 (Indian) = 9,876,501,234 (American).",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-1.3",
+   "name": "Place-value composition & minimal representations",
+   "description": "Building a number as a sum of place-value multiples in more than one way, and finding the representation using the fewest terms.",
+   "idea": "Any number can be built from multiples of 1, 10, 100, 1000... in several combinations.",
+   "rule": "The fewest-click representation is the one that matches the number's own Indian place-value digits.",
+   "example": "5072 = (5x1000) + (7x10) + (2x1), 14 clicks.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-1.4",
+   "name": "Rounding large numbers",
+   "description": "Rounding a number up or down to a stated context, and finding the nearest thousand / lakh / crore of a given number.",
+   "idea": "An approximation is often more useful than an exact count for everyday communication.",
+   "rule": "Round up when the approximation must not fall short; round down when it must not overshoot.",
+   "example": "Nearest lakh of 6,72,85,183 is 6,73,00,000.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-1.5",
+   "name": "Estimating sums and differences of large numbers",
+   "description": "Judging whether an estimated sum/difference is greater or less than a stated round value, without computing the exact value first.",
+   "idea": "Estimation before exact calculation catches errors and builds number sense.",
+   "rule": "Compare each number to its nearest round neighbour to bound the sum/difference before computing exactly.",
+   "example": "4,63,128 + 4,19,682 is just under 9,00,000.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-1.6",
+   "name": "Multiplication shortcuts via regrouping",
+   "description": "Rewriting a product using an equivalent factor (e.g. 5 = 10/2, 25 = 100/4, 125 = 1000/8) to calculate mentally.",
+   "idea": "Multiplying by 5, 25, 125, 50, 250 etc. is quicker via a related power of 10.",
+   "rule": "a x 5 = a x 10 / 2 (and similarly for 25, 125, 50...).",
+   "example": "116 x 5 = 116 x 10 / 2 = 1160 / 2 = 580.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-1.7",
+   "name": "Digit-count patterns in products",
+   "description": "Predicting the number of digits in a product of two numbers from the number of digits in the factors, without multiplying.",
+   "idea": "The smallest and largest possible products for given digit-lengths bound the digit-count of any product of that shape.",
+   "rule": "An m-digit x n-digit product has either (m+n-1) or (m+n) digits.",
+   "example": "A 2-digit x 2-digit product is always a 3- or 4-digit number.",
+   "difficulty_base": "Hardest"
+  },
+  {
+   "code": "C7M-1.8",
+   "name": "Real-world estimation with large numbers",
+   "description": "Using reasonable assumptions and staged multiplication/division to answer a Fermi-style real-world question involving large quantities.",
+   "idea": "Large real-world questions are answered by breaking them into stages with sensible assumptions.",
+   "rule": "Convert a rate (per day/per second) to a total by multiplying by the relevant count, computing in stages.",
+   "example": "At 100 km/day, distance in 10 years = 100 x 365 x 10 km, computed in stages.",
+   "difficulty_base": "Hardest"
+  },
+  {
+   "code": "C7M-1.9",
+   "name": "Lakh, crore and arab in context",
+   "description": "How lakh, crore and arab relate to each other and to thousands, how many zeros each has, and how to judge and compare the size of a lakh using everyday quantities.",
+   "idea": "Each Indian unit is 100 times the one before it, so the number of zeros grows by two each time from a lakh to a crore to an arab.",
+   "rule": "1 lakh = 100 thousand (5 zeros); 1 crore = 100 lakh (7 zeros); 1 arab = 100 crore (9 zeros); a thousand lakh is 10 crore (8 zeros); 99,999 + 1 = 1,00,000.",
+   "example": "365 x 100 = 36,500 days in 100 years, so 3 varieties a day gives 3 x 36,500 = 1,09,500, which is more than one lakh.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-1.10",
+   "name": "Large-number puzzles: digit arrangements and toothpick digits",
+   "description": "Puzzle-style problems: arranging the digits 0 to 9 into the largest or smallest number, button-click expressions on a two-button calculator, writing numbers in a row, and counting sticks in toothpick digits.",
+   "idea": "To make the largest or smallest number, place the biggest or smallest digits in the highest places first, subject to the condition given (for example an even last digit).",
+   "rule": "A number is a multiple of 5 only if it ends in 0 or 5, and even only if it ends in an even digit; a calculator with +10,000 and +100 can only show multiples of 100; more digits means a bigger number.",
+   "example": "The largest 10-digit multiple of 5 that uses every digit once is 9876543210.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

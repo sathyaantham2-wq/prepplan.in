@@ -4,20 +4,24 @@ import type { Db } from '../src/db/connection'
 import { studentsRepository } from '../src/db/repositories'
 import { createParentSession, createStudentSession } from '../src/db/test-helpers'
 import type { TestSession } from '../src/db/test-helpers'
+import { createClass7Fixture, removeClass7Fixture } from './class7-fixture'
+import type { Class7Fixture } from './class7-fixture'
 
 /**
  * The chapter picker on /my-paper (2026-10-03 request): the parts (Part I, Part II ...) start
- * closed and she opens the one she wants. Uses the seeded multi-chapter Class 7 Maths subject so
+ * closed and she opens the one she wants. Builds its own two-part Class 7 subject (see class7-fixture.ts) so
  * the picker is shown at all (it hides itself when a subject has a single chapter).
  */
 
 let db: Db
 let parent: TestSession
 let student: TestSession
+let fixture: Class7Fixture
 let studentId: string
 
 test.beforeAll(async () => {
   db = createDb()
+  fixture = await createClass7Fixture(db, 'written')
   parent = await createParentSession('e2e-parts-parent')
   const row = await studentsRepository.insert(db, {
     household_id: parent.householdId,
@@ -32,6 +36,7 @@ test.beforeAll(async () => {
 
 test.afterAll(async () => {
   await db.deleteFrom('households').where('id', '=', parent.householdId).execute()
+  await removeClass7Fixture(db, fixture)
   await db.destroy()
 })
 

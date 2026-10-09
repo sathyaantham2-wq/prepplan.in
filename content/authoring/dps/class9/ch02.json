@@ -1,0 +1,2705 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Introduction to Linear Polynomials"
+ },
+ "source_code": "iemh102",
+ "concepts": [
+  {
+   "code": "C9M-2.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A stall's profit in rupees is P = 6a − 4b + 11, where a is the number of bags sold and b is the number of boxes returned. Next week a stays the same but b is 3 more than this week. By how much does P change?",
+     "a": "Only the b term changes. The coefficient of b is −4, so 3 more boxes change P by −4 × 3 = −12, a fall of ₹12.",
+     "o": [
+      "It falls by 12",
+      "It rises by 12",
+      "It falls by 4",
+      "It rises by 3"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The polynomial 9 − 2y + 7y³ − y² is rewritten with its powers in descending order. The coefficient of the first term is ___.",
+     "a": "7"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a linear polynomial?",
+     "a": "5 − 4y has the highest power of y equal to 1, so it has degree 1.",
+     "o": [
+      "5 − 4y",
+      "5y² − 4",
+      "−9",
+      "y³ − 4y"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which polynomial has degree 2, coefficient of x equal to −3 and constant term 4?",
+     "a": "x² − 3x + 4 has highest power 2, the term −3x has coefficient −3 and the constant term is 4.",
+     "o": [
+      "x² − 3x + 4",
+      "4x² − 3x + 2",
+      "x³ − 3x² + 4",
+      "−3x² + x + 4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meena buys a packets of pens with 6 pens in each, b packets of pencils with 12 pencils in each, and gets 5 erasers free. The total number of items is 6a + 12b + 5. Which statement about this expression is correct?",
+     "a": "The terms are 6a, 12b and 5, so it has three terms, and the variables are a and b, so it has two variables.",
+     "o": [
+      "It has three terms and two variables",
+      "It has two terms and two variables",
+      "It has three variables and one constant",
+      "It is a one-variable polynomial of degree 1"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 30 cm wire is bent into a rectangle of length x cm, so its width is (15 − x) cm. Ria says, 'Length and width are both linear, so the area x(15 − x) must be a linear polynomial.' What is the area expression really?",
+     "a": "x(15 − x) = 15x − x². The highest power of x is 2, so it is a quadratic polynomial of degree 2.",
+     "o": [
+      "Quadratic, of degree 2",
+      "Linear, of degree 1",
+      "Cubic, of degree 3",
+      "Constant, of degree 0"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 2t² − 9t + 4 is a quadratic polynomial.\nReason (R): The constant term of 2t² − 9t + 4 is 4.",
+     "a": "Both are true but the reason does not explain the assertion.",
+     "o": [
+      "Both A and R are true but R is not the correct explanation of A",
+      "Both A and R are true and R is the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. In 5y³ + y² + 2y − 1 the coefficient of y² is 1.\n2. The degree of a polynomial is the number of terms it has.\n3. A non-zero constant such as −9 is a polynomial of degree 0.\nWhich of the statements is/are correct?",
+     "a": "Statement 1 is true: y² is the same as 1·y². Statement 2 is false: x² + 5x + 1 has three terms but degree 2. Statement 3 is true: −9 = −9x⁰. So 1 and 3 are correct.",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each expression in Column I with its degree in Column II after like terms are combined.\n1. 3z² − z³ + 8\n2. 4x² + 9 − 4x² + 7x\n3. 14\n4. 5x² + 3x − 3x²\na. Degree 0\nb. Degree 1\nc. Degree 2\nd. Degree 3",
+     "a": "3z² − z³ + 8 has highest power 3. In the second, 4x² cancels, leaving 7x + 9 of degree 1. 14 is a constant, degree 0. The fourth becomes 2x² + 3x, degree 2.",
+     "o": [
+      "1-d, 2-b, 3-a, 4-c",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-b, 3-a, 4-d",
+      "1-d, 2-b, 3-c, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A shop sells notebooks at ₹x each and pens at ₹y each. Anil buys 6 notebooks and 4 pens and gets a ₹10 discount. (a) Write the expression for what he pays and list its terms with their coefficients. (b) How many variables does it use, and why is it not a one-variable polynomial?",
+     "a": "(a) 6x + 4y − 10; terms 6x, 4y and −10 with coefficients 6 and 4 and constant −10. (b) It uses two variables, x and y, so it is not a one-variable (univariate) polynomial.",
+     "s": [
+      [
+       "Part (a): writes 6x + 4y − 10 with terms and coefficients",
+       1
+      ],
+      [
+       "Part (b): two variables x and y, so not univariate",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the degree of 3z² − z³ + 8. (b) Rewrite it with the powers in descending order and name its type.",
+     "a": "(a) The highest power is 3, so the degree is 3. (b) −z³ + 3z² + 8, a cubic polynomial (the coefficient of z³ is −1).",
+     "s": [
+      [
+       "Part (a): degree 3 from the highest power, not from the first term",
+       1
+      ],
+      [
+       "Part (b): −z³ + 3z² + 8 and cubic",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) The perimeter of an equilateral triangle of side x cm is 3x and the area of a square of side x cm is x². State the degree of each. (b) Replace x by 2x in both and say which expression becomes four times as large.",
+     "a": "(a) 3x has degree 1 and x² has degree 2. (b) 3(2x) = 6x is only twice 3x, while (2x)² = 4x² is four times x². So the square's area becomes four times as large.",
+     "s": [
+      [
+       "Part (a): degree 1 and degree 2",
+       1
+      ],
+      [
+       "Part (b): shows 6x is double and 4x² is four times",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write a polynomial of degree 4 in y in which the coefficient of y³ is 6 and the constant term is −2. Say how you know its degree is 4.",
+     "a": "For example y⁴ + 6y³ − 2. The highest power of y is 4, the coefficient of y³ is 6 and the constant term is −2.",
+     "s": [
+      [
+       "Gives a valid polynomial with y³ coefficient 6 and constant −2",
+       1
+      ],
+      [
+       "Explains degree 4 from the highest power y⁴",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Pooja says that 10x − x² is a linear polynomial because it contains the linear term 10x. Is she correct? Give the reason.",
+     "a": "No. The degree is the highest power of the variable. The term −x² has power 2, so 10x − x² is quadratic, not linear.",
+     "s": [
+      [
+       "Verdict: Pooja is wrong",
+       1
+      ],
+      [
+       "Reason: highest power is 2 because of −x²",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Kavya says, 'x² + 5x + 1 and 5y³ + y² − 8 both have three terms, so both have degree 3.' Check her claim.",
+     "a": "She is wrong. Degree is the highest power, not the number of terms. The first polynomial has highest power 2 (degree 2, quadratic). The second has highest power 3 (degree 3, cubic). Only the second has degree 3.",
+     "s": [
+      [
+       "Verdict that the claim is wrong",
+       1
+      ],
+      [
+       "Degree comes from the highest power, not the count of terms",
+       1
+      ],
+      [
+       "Correct degrees 2 and 3 for the two polynomials",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Reverse problem: write a real-life situation, with ₹, whose cost is given by 40n + 25, and state the degree of the polynomial.",
+     "a": "For example, a school canteen charges ₹25 for a plate and ₹40 for each extra dish ordered; for n dishes the cost is 40n + 25. The highest power of n is 1, so the degree is 1 (linear).",
+     "s": [
+      [
+       "Situation matching 40 per unit and 25 fixed",
+       1
+      ],
+      [
+       "Links n to the number of items",
+       1
+      ],
+      [
+       "States degree 1, linear",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Mohit says he has written a quadratic polynomial in x in which the coefficient of x² is 0. Show that this is impossible.",
+     "a": "If the coefficient of x² is 0, the x² term is 0·x² = 0 and disappears. The highest remaining power is then at most 1, so the degree is at most 1. A quadratic needs a non-zero x² term, so Mohit cannot be right.",
+     "s": [
+      [
+       "Notes that a zero coefficient removes the x² term",
+       1
+      ],
+      [
+       "Concludes the highest power is now below 2",
+       1
+      ],
+      [
+       "States a quadratic needs a non-zero x² coefficient",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Name the type of each polynomial and give its degree: (i) 8 (ii) 2z − 9 (iii) 4z² − z + 1 (iv) z³ + 6.",
+     "a": "(i) constant, degree 0 (8 = 8x⁰). (ii) linear, degree 1. (iii) quadratic, degree 2. (iv) cubic, degree 3.",
+     "s": [
+      [
+       "(i) constant, degree 0",
+       1
+      ],
+      [
+       "(ii) and (iii) linear degree 1 and quadratic degree 2",
+       1
+      ],
+      [
+       "(iv) cubic, degree 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "For the school Rangoli Day, a rectangular ground is l m long and w m wide. Garland costs ₹60 per metre along the two lengths and ₹45 per metre along the two widths, and a floor mat costs ₹30 per square metre for the whole ground. (a) Write the cost of the garlands. (b) Write the total cost with the mat. (c) Name the terms and coefficients of the total. (d) If the ground is a square of side x m, write the total cost in x, give its degree, and find the cost for x = 4.",
+     "a": "(a) 2l × 60 + 2w × 45 = 120l + 90w. (b) 120l + 90w + 30lw. (c) Terms 120l, 90w, 30lw with coefficients 120, 90 and 30. (d) l = w = x gives 120x + 90x + 30x² = 210x + 30x², degree 2. For x = 4: 840 + 480 = ₹1320.",
+     "s": [
+      [
+       "Part (a): 120l + 90w",
+       1
+      ],
+      [
+       "Part (b): adds the mat to get 120l + 90w + 30lw",
+       1
+      ],
+      [
+       "Part (c): lists the three terms with coefficients",
+       1
+      ],
+      [
+       "Part (d): 210x + 30x² and degree 2",
+       1
+      ],
+      [
+       "Part (d): cost ₹1320 at x = 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A 30 cm wire is bent into a rectangle of length x cm. (a) Write the width in terms of x. (b) Write the area as a polynomial in x. (c) Give its degree and type. (d) Find the area for x = 5 and for x = 10, and explain in words why the two areas match.",
+     "a": "(a) Width = 15 − x. (b) Area = x(15 − x) = 15x − x². (c) Degree 2, quadratic. (d) x = 5 gives 75 − 25 = 50 cm². x = 10 gives 150 − 100 = 50 cm². The rectangles are 5 by 10 and 10 by 5, the same rectangle turned.",
+     "s": [
+      [
+       "Part (a): width 15 − x",
+       1
+      ],
+      [
+       "Part (b): area 15x − x²",
+       1
+      ],
+      [
+       "Part (c): degree 2, quadratic",
+       1
+      ],
+      [
+       "Part (d): both areas equal 50 cm²",
+       1
+      ],
+      [
+       "Part (d): explains same rectangle with sides swapped",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The sports department orders c cones at ₹35 each and b bibs at ₹60 each, and pays ₹500 for delivery. Later it decides to order the same number n of cones and bibs. The budget is ₹2000. A rival supplier quotes 90n + 700 rupees for n cones and n bibs together. (a) Write the cost of the first order in terms of c and b. (b) For the same number n of each, write the cost as a polynomial in n and give its degree. (c) Find the largest n each supplier allows within ₹2000, and decide which supplier the department should choose.",
+     "a": "(a) 35c + 60b + 500. (b) 35n + 60n + 500 = 95n + 500, degree 1. (c) First supplier: 95n + 500 ≤ 2000 gives n ≤ 15.78, so n = 15 costing ₹1925. Rival: 90n + 700 ≤ 2000 gives n ≤ 14.4, so n = 14 costing ₹1960. The first supplier gives one more set for less money, so choose the first supplier.",
+     "s": [
+      [
+       "Part (a): 35c + 60b + 500",
+       1
+      ],
+      [
+       "Part (b): 95n + 500, degree 1",
+       1
+      ],
+      [
+       "Part (c): n = 15 at ₹1925 against n = 14 at ₹1960, chooses the first supplier",
+       2
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Mrs Fernandes has 40 m of fencing wire for a rectangular vegetable bed in the school garden. The bed has length x m. The gate needs one side of at least 11 m, and the Eco Club wants an area of at least 95 m². (a) Write the width in terms of x. (b) Write the area as a polynomial in x and state its degree. (c) Find the area for x = 10, x = 12 and x = 14. (d) Which length should she choose, and why?",
+     "a": "(a) Width = 20 − x. (b) Area = 20x − x², degree 2. (c) x = 10: 100 m²; x = 12: 96 m²; x = 14: 84 m². (d) x = 10 has sides 10 m and 10 m, so no side reaches 11 m. x = 14 has area 84, below 95. Only x = 12 (12 m by 8 m, area 96 m²) meets both needs.",
+     "s": [
+      [
+       "Part (a): width 20 − x",
+       1
+      ],
+      [
+       "Part (b): 20x − x² and degree 2",
+       1
+      ],
+      [
+       "Part (c): 100, 96, 84 square metres",
+       1
+      ],
+      [
+       "Part (d): picks x = 12 after testing both conditions",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or false: In 4m³ − 7m² + 2m − 15 the constant term is 15, because a constant term is the number with no variable and no sign is part of it. Give the verdict and the reason or correction.",
+     "a": "False. The constant term is −15; the sign belongs to the term, just as −7 belongs to the m² term.",
+     "s": [
+      [
+       "Verdict: false",
+       1
+      ],
+      [
+       "Correction: the constant term is −15, with its sign",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On a trek, the temperature in °C at step x (each step is 100 m above camp) is T = 5x − 3. Aman's reading is taken in a valley at x = −2. What is the temperature there?",
+     "a": "T = 5(−2) − 3 = −10 − 3 = −13 °C.",
+     "o": [
+      "−13 °C",
+      "−7 °C",
+      "7 °C",
+      "13 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sum of two numbers is 90 and one number is 14 more than the other. If the smaller number is x, which equation is correct?",
+     "a": "The larger number is x + 14, so the sum is x + (x + 14) = 90.",
+     "o": [
+      "x + (x + 14) = 90",
+      "x + 14 = 90",
+      "2x − 14 = 90",
+      "x(x + 14) = 90"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The linear polynomial 7 − 2x has the value 15 when x = ___.",
+     "a": "−4"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the value of 4 − 3x when x = −2?",
+     "a": "4 − 3 × (−2) = 4 + 6 = 10.",
+     "o": [
+      "10",
+      "−2",
+      "−1",
+      "−10"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A chess club charges a joining fee of ₹200 and ₹50 for every match played. Nisha has paid ₹650 in all. Which equation finds the number of matches m she played?",
+     "a": "The fee is 200 + 50m, and this equals the ₹650 paid.",
+     "o": [
+      "200 + 50m = 650",
+      "50 + 200m = 650",
+      "(200 + 50)m = 650",
+      "200 − 50m = 650"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A machine takes a number x and gives out 3x − 2. Rohit notes that the machine gave out 13. Which input did he put in?",
+     "a": "3x − 2 = 13 gives 3x = 15, so x = 5. Check: 3 × 5 − 2 = 13.",
+     "o": [
+      "5",
+      "15",
+      "11",
+      "11/3"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The equation 3x − 7 = 20 has the solution x = 9.\nReason (R): At x = 9 the linear polynomial 3x − 7 takes the value 20.",
+     "a": "Both are true and the reason explains the assertion.",
+     "o": [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is not the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. The value of 5x − 3 at x = −1 is 2.\n2. The value of the quadratic polynomial 7s² − 4s + 6 at s = −3 is 81.\n3. Equating a linear polynomial to a constant gives a linear equation.\nWhich of the statements is/are correct?",
+     "a": "Statement 1 is false: 5 × (−1) − 3 = −8, not 2 (the sign of the input was dropped). Statement 2 is true: 63 + 12 + 6 = 81. Statement 3 is true. So 2 and 3 only.",
+     "o": [
+      "2 and 3 only",
+      "1 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A badminton academy charges ₹300 as joining fee and ₹40 for every session. (a) What does a player pay for 6 sessions? (b) A player has paid ₹860 in all. How many sessions did she attend?",
+     "a": "(a) 300 + 40 × 6 = ₹540. (b) 300 + 40s = 860 gives 40s = 560, so s = 14 sessions.",
+     "s": [
+      [
+       "Part (a): ₹540",
+       1
+      ],
+      [
+       "Part (b): forms 300 + 40s = 860 and solves s = 14",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the value of 4t³ − t² + 6 at t = 2. (b) Find its value at t = −2 and name the term whose sign change makes the two values so different.",
+     "a": "(a) 32 − 4 + 6 = 34. (b) 4(−8) − 4 + 6 = −30. The cubic term 4t³ changes sign (from +32 to −32) because −2 cubed is negative, while t² stays positive.",
+     "s": [
+      [
+       "Part (a): 34",
+       1
+      ],
+      [
+       "Part (b): −30 with the cubic term identified",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) A machine gives out 3x − 5. Find the output for the inputs 4 and −6. (b) For which input is the output 31?",
+     "a": "(a) 3 × 4 − 5 = 7 and 3 × (−6) − 5 = −23. (b) 3x − 5 = 31 gives 3x = 36, so x = 12.",
+     "s": [
+      [
+       "Part (a): outputs 7 and −23",
+       1
+      ],
+      [
+       "Part (b): input 12 from 3x − 5 = 31",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Imran's father is four times as old as Imran. After 6 years, the sum of their ages will be 62 years. Form an equation and find their present ages.",
+     "a": "Let Imran's age be x. Then (x + 6) + (4x + 6) = 62, so 5x = 50 and x = 10. Imran is 10 and his father is 40.",
+     "s": [
+      [
+       "Forms (x + 6) + (4x + 6) = 62",
+       1
+      ],
+      [
+       "Solves x = 10 and father 40",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The difference between two positive integers is 36 and their ratio is 2 : 5. Find the integers.",
+     "a": "Let the numbers be 2k and 5k. Then 5k − 2k = 36, so k = 12. The integers are 24 and 60.",
+     "s": [
+      [
+       "Takes the numbers as 2k and 5k and forms 3k = 36",
+       1
+      ],
+      [
+       "Finds 24 and 60",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The length of a rectangle is 2 more than three times its width, and its perimeter is 44 cm. Find its length and width.",
+     "a": "Width w, length 3w + 2. Perimeter 2(w + 3w + 2) = 44, so 4w + 2 = 22 and w = 5. Length = 17 cm and width = 5 cm.",
+     "s": [
+      [
+       "Forms 2(w + 3w + 2) = 44",
+       1
+      ],
+      [
+       "Finds width 5 cm and length 17 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tara solved 3x + 12 = 45 like this: '3x = 45 + 12 = 57, so x = 19.' Find the error, give the correct solution, and show how a check exposes her answer.",
+     "a": "She added 12 instead of removing it. The inverse of '+12' is '−12', so 3x = 45 − 12 = 33 and x = 11. Her answer fails the check: 3 × 19 + 12 = 69, not 45. The correct x = 11 gives 33 + 12 = 45.",
+     "s": [
+      [
+       "Identifies that 12 should be subtracted, not added",
+       1
+      ],
+      [
+       "Correct solution x = 11",
+       1
+      ],
+      [
+       "Checks by substitution: 69 for x = 19, 45 for x = 11",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Ruby has three times as many ₹2 coins as ₹5 coins. Show that she cannot have exactly ₹90 in these coins.",
+     "a": "Let there be f five-rupee coins, so 3f two-rupee coins. Money = 2 × 3f + 5f = 11f. For ₹90, 11f = 90 and f = 90/11, which is not a whole number. Coins cannot be fractional, so ₹90 is impossible (₹88 would work with f = 8).",
+     "s": [
+      [
+       "Forms 11f as the total money",
+       1
+      ],
+      [
+       "Sets 11f = 90 and gets f = 90/11",
+       1
+      ],
+      [
+       "Concludes a coin count must be whole, so impossible",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Reverse problem: write a short story that leads to the equation 5x + 20 = 95, and solve it.",
+     "a": "For example, a school library fine is ₹20 for losing a card plus ₹5 for each late day, and a student paid ₹95. Then 5x = 75 and x = 15 days.",
+     "s": [
+      [
+       "A story with ₹5 per unit and ₹20 fixed",
+       1
+      ],
+      [
+       "Links the total ₹95 to the equation",
+       1
+      ],
+      [
+       "Solves x = 15",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A rope of 332 m is cut into two pieces. The longer piece is 2 m more than five times the shorter piece. Find the two lengths.",
+     "a": "Shorter piece x m, longer 5x + 2. Then x + 5x + 2 = 332, so 6x = 330 and x = 55. The pieces are 55 m and 277 m.",
+     "s": [
+      [
+       "Forms x + (5x + 2) = 332",
+       1
+      ],
+      [
+       "Solves x = 55",
+       1
+      ],
+      [
+       "Gives 277 m for the longer piece",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Gym A charges a joining fee of ₹500 and ₹60 per visit. Gym B has no joining fee and charges ₹110 per visit. (a) Write each gym's cost for v visits. (b) For how many visits do the two cost the same? (c) Which gym is cheaper for 6 visits and which for 15 visits? Show the costs.",
+     "a": "(a) A: 500 + 60v. B: 110v. (b) 500 + 60v = 110v gives 50v = 500, so v = 10 visits (both ₹1100). (c) At 6 visits A costs 860 and B 660, so B is cheaper. At 15 visits A costs 1400 and B 1650, so A is cheaper.",
+     "s": [
+      [
+       "Part (a): 500 + 60v and 110v",
+       1
+      ],
+      [
+       "Part (b): forms 500 + 60v = 110v",
+       1
+      ],
+      [
+       "Part (b): v = 10",
+       1
+      ],
+      [
+       "Part (c): costs 860 and 660 at 6 visits",
+       1
+      ],
+      [
+       "Part (c): costs 1400 and 1650 at 15 visits and the conclusion",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A positive number is 4 times another number. If 12 is added to both, the larger new number becomes twice the smaller new number. (a) Form an equation, taking the smaller number as x. (b) Solve it. (c) Write both numbers. (d) Verify with the new numbers.",
+     "a": "(a) 4x + 12 = 2(x + 12). (b) 4x + 12 = 2x + 24, so 2x = 12 and x = 6. (c) The numbers are 6 and 24. (d) After adding 12 they are 18 and 36, and 36 = 2 × 18.",
+     "s": [
+      [
+       "Part (a): 4x + 12 = 2(x + 12)",
+       1
+      ],
+      [
+       "Part (b): expands and solves x = 6",
+       2
+      ],
+      [
+       "Part (c): numbers 6 and 24",
+       1
+      ],
+      [
+       "Part (d): 18 and 36 verified",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Class 9 plans a trip to Hampi. Plan A: the bus hire is ₹6000 and the meals cost ₹250 per student, with n students going. Plan B: the bus hire is ₹9000 and the meals cost ₹200 per student. (a) Write the total cost of Plan A for n students and its value for 32 students. (b) The Plan A bill came to ₹14,750. Form and solve an equation for n. (c) The class has 45 students and a budget of ₹17,500. Find the cost of both options for 45 students and decide which one the class should book.",
+     "a": "(a) 6000 + 250n; for n = 32 it is ₹14,000. (b) 6000 + 250n = 14750 gives 250n = 8750, so n = 35. (c) Plan A: 6000 + 250 × 45 = ₹17,250. Plan B: 9000 + 200 × 45 = ₹18,000. Only A is within ₹17,500, so book Plan A.",
+     "s": [
+      [
+       "Part (a): 6000 + 250n and ₹14,000",
+       1
+      ],
+      [
+       "Part (b): forms the equation and finds n = 35",
+       1
+      ],
+      [
+       "Part (c): ₹17,250 against ₹18,000, chooses Plan A for the budget",
+       2
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At the school science fair, Rashid's class sells tickets at ₹15 each for a game stall. The stall costs ₹400 to set up, whatever the number of tickets sold. Profit means money earned minus ₹400. (a) Write the profit as a polynomial in t, the tickets sold, and find it for 60 tickets. (b) What does the value for 20 tickets show? (c) How many tickets give a profit of exactly ₹950? (d) At ₹15 the class expects to sell 120 tickets, but at ₹20 only 80. Which price should it choose, and why?",
+     "a": "(a) 15t − 400; for t = 60 it is ₹500. (b) 15 × 20 − 400 = −100, a loss of ₹100. (c) 15t − 400 = 950 gives t = 90. (d) At ₹15: 15 × 120 − 400 = ₹1400. At ₹20: 20 × 80 − 400 = ₹1200. So keep the price at ₹15, which gives ₹200 more profit.",
+     "s": [
+      [
+       "Part (a): 15t − 400 and ₹500",
+       1
+      ],
+      [
+       "Part (b): −100 means a loss of ₹100",
+       1
+      ],
+      [
+       "Part (c): t = 90",
+       1
+      ],
+      [
+       "Part (d): compares ₹1400 and ₹1200 and chooses ₹15",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or false: Equating the linear polynomial 4x + 7 to 31 gives a linear equation, and its solution is the input at which the polynomial has the value 31. Give the verdict and the reason.",
+     "a": "True. 4x + 7 = 31 gives x = 6, and 4(6) + 7 = 31, so x = 6 is exactly the input giving the value 31.",
+     "s": [
+      [
+       "Verdict: true",
+       1
+      ],
+      [
+       "Reason: solving gives x = 6 and substitution checks it",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.3",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The nth term of the linear pattern 7, 11, 15, 19, … is",
+     "a": "The constant difference is 4 and the first term is 7, so the nth term is 4n + 3 (n = 1 gives 7, n = 2 gives 11).",
+     "o": [
+      "4n + 3",
+      "3n + 4",
+      "7n",
+      "4n + 7"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An auto union publishes four fare charts for 1, 2, 3 and 4 km. Which chart follows a linear pattern?",
+     "a": "The fares 25, 40, 55, 70 rise by the same ₹15 each km, so the pattern is linear.",
+     "o": [
+      "₹25, 40, 55, 70",
+      "₹20, 30, 45, 65",
+      "₹10, 20, 40, 80",
+      "₹30, 45, 70, 100"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a linear pattern the 4th term is 33 and the 7th term is 54. The 25th term is ___.",
+     "a": "180"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An auto-rickshaw charges ₹40 for the first 2 km and then ₹18 for every extra kilometre. What is the fare for a 9 km ride?",
+     "a": "The first 2 km cost ₹40, and the other 7 km cost 7 × 18 = ₹126. Total = ₹166.",
+     "o": [
+      "₹166",
+      "₹202",
+      "₹162",
+      "₹184"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A row of n squares made from matchsticks needs 3n + 1 sticks. Kabir has exactly 100 sticks and wants to use all of them. How many squares can he make in a row?",
+     "a": "3n + 1 = 100 gives 3n = 99, so n = 33 squares, using all 100 sticks.",
+     "o": [
+      "33",
+      "25",
+      "34",
+      "32"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sequence 5, 8, 11, 14, … is a linear pattern.\nReason (R): In a linear pattern the differences between consecutive terms keep increasing by the same amount.",
+     "a": "The assertion is true but the reason is false.",
+     "o": [
+      "A is true but R is false",
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is not the correct explanation of A",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. The sequence 3, 6, 12, 24, … is a linear pattern because its terms keep increasing.\n2. In the tile pattern 1, 3, 5, 7, … the 15th term is 31.\n3. The terms 120, 111, 102, 93, … form a linear pattern.\nWhich of the statements is/are correct?",
+     "a": "Statement 1 is false: the differences 3, 6, 12 are not constant. Statement 2 is false: the nth term is 2n − 1, so the 15th term is 29. Statement 3 is true: the difference is always −9. So only 3 is correct.",
+     "o": [
+      "3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match Column I with Column II.\n1. 5, 8, 11, 14, …\n2. 20, 17, 14, 11, …\n3. 4, 9, 14, 19, …\n4. 7, 14, 21, 28, …\na. 7n\nb. 3n + 2\nc. 5n − 1\nd. 23 − 3n",
+     "a": "Test n = 1 and n = 2 in each rule: 3n + 2 gives 5 and 8, 23 − 3n gives 20 and 17, 5n − 1 gives 4 and 9, 7n gives 7 and 14.",
+     "o": [
+      "1-b, 2-d, 3-c, 4-a",
+      "1-b, 2-d, 3-a, 4-c",
+      "1-d, 2-b, 3-c, 4-a",
+      "1-c, 2-d, 3-b, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Harsh has a 360-page novel and reads 18 pages every day. (a) Write an expression for the pages left after n days. (b) After how many days will he finish it?",
+     "a": "(a) 360 − 18n. (b) 360 − 18n = 0 gives n = 20 days.",
+     "s": [
+      [
+       "Part (a): 360 − 18n",
+       1
+      ],
+      [
+       "Part (b): sets it to 0 and gets 20 days",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Divya has ₹1200 in a savings account and adds ₹350 at the end of every month. (a) Write an expression for her savings after n months. (b) After how many whole months does she first have at least ₹5000?",
+     "a": "(a) 1200 + 350n. (b) 350n ≥ 3800 gives n ≥ 10.86, so n = 11 months, when she has ₹5050 (after 10 months she has only ₹4700).",
+     "s": [
+      [
+       "Part (a): 1200 + 350n",
+       1
+      ],
+      [
+       "Part (b): 11 months checked against 10 months",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular box has length 6 cm and breadth 5 cm. (a) Find its volume for heights 3 cm, 6 cm and 9 cm. (b) Show that these volumes form a linear pattern and write the rule in terms of the height h.",
+     "a": "(a) 30h gives 90, 180 and 270 cm³. (b) The difference between consecutive values is 90 each time (heights go up by 3), so the pattern is linear, with volume = 30h.",
+     "s": [
+      [
+       "Part (a): 90, 180, 270",
+       1
+      ],
+      [
+       "Part (b): constant difference 90 and rule 30h",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The area of a rectangle of length 9 cm is found for breadths 4 cm, 6 cm and 8 cm. Find the areas and the difference between consecutive areas.",
+     "a": "The areas are 36, 54 and 72 cm². The difference is 18 each time, which is 9 × 2.",
+     "s": [
+      [
+       "Areas 36, 54, 72",
+       1
+      ],
+      [
+       "Constant difference 18",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A pattern has the nth term 3n + 1. Find the 40th term and the stage which has 85 tiles.",
+     "a": "40th term = 3 × 40 + 1 = 121. For 85: 3n + 1 = 85 gives n = 28, so Stage 28.",
+     "s": [
+      [
+       "40th term 121",
+       1
+      ],
+      [
+       "Stage 28",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "An auto charges ₹30 for the first 3 km and ₹12 for every kilometre after that. Sana says the fare for n km is 12n − 6 for every n from 1 onwards. Check her claim using n = 1 and n = 5.",
+     "a": "For n = 5 the fare is 30 + 12 × 2 = ₹54 and 12 × 5 − 6 = 54, so it matches. For n = 1 the fare is ₹30 but 12 − 6 = 6. So the rule holds only when n ≥ 3, and Sana is wrong for n = 1 and 2.",
+     "s": [
+      [
+       "Checks n = 5 and finds a match",
+       1
+      ],
+      [
+       "Checks n = 1: fare 30 but rule gives 6",
+       1
+      ],
+      [
+       "Concludes the rule is valid only for n ≥ 3",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A pattern starts 3, 8, 13, … and Arjun says that 100 is one of its terms. Show that he is wrong.",
+     "a": "The difference is 5 and the nth term is 5n − 2. If 5n − 2 = 100 then n = 102/5 = 20.4, which is not a whole number. So 100 is not a term (98 is the 20th term and 103 the 21st).",
+     "s": [
+      [
+       "Finds nth term 5n − 2",
+       1
+      ],
+      [
+       "Sets 5n − 2 = 100 and gets n = 20.4",
+       1
+      ],
+      [
+       "Concludes n must be whole, so 100 is not a term",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Reverse problem: describe a real-life pattern whose nth term is 8n + 50, and write its first four terms.",
+     "a": "For example, a library card costs ₹50 and each book borrowed costs ₹8, so n books cost 8n + 50. First four terms: 58, 66, 74, 82.",
+     "s": [
+      [
+       "A situation with ₹8 per unit and ₹50 fixed",
+       1
+      ],
+      [
+       "Links n to the situation",
+       1
+      ],
+      [
+       "First four terms 58, 66, 74, 82",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "For Diwali, stage 1 of a rangoli has 5 dots and every next stage has 4 more dots. (a) Write the number of dots at stage n. (b) How many dots are in stage 30? (c) Which stage has 101 dots?",
+     "a": "(a) 5 + 4(n − 1) = 4n + 1. (b) 4 × 30 + 1 = 121. (c) 4n + 1 = 101 gives n = 25.",
+     "s": [
+      [
+       "Part (a): 4n + 1",
+       1
+      ],
+      [
+       "Part (b): 121",
+       1
+      ],
+      [
+       "Part (c): stage 25",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A strip of triangles is made from matchsticks. Stage 1 is one triangle (3 sticks), and each new stage adds one triangle sharing a side with the last one, so it needs 2 more sticks. (a) List the sticks for stages 1 to 5. (b) Write the rule for stage n. (c) How many sticks does stage 15 need? (d) Can 150 matchsticks make exactly one stage of this pattern? Justify.",
+     "a": "(a) 3, 5, 7, 9, 11. (b) 2n + 1. (c) 2 × 15 + 1 = 31. (d) 2n + 1 = 150 gives n = 74.5. A stage number must be whole, so 150 sticks cannot make exactly one stage. In fact, every stage needs an odd number of sticks, and 150 is even.",
+     "s": [
+      [
+       "Part (a): 3, 5, 7, 9, 11",
+       1
+      ],
+      [
+       "Part (b): 2n + 1",
+       1
+      ],
+      [
+       "Part (c): 31",
+       1
+      ],
+      [
+       "Part (d): solves for n = 74.5",
+       1
+      ],
+      [
+       "Part (d): concludes not possible, because the stage number must be whole",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Ishaan has ₹360 and spends ₹15 every day. (a) Write the amount left at the end of day n. (b) On which day is ₹90 left? (c) After how many days is the money finished? (d) Rohan says the rule can be used to find the amount on day 25. Find what it gives and explain why it makes no sense.",
+     "a": "(a) 360 − 15n. (b) 360 − 15n = 90 gives n = 18. (c) 360 − 15n = 0 gives n = 24 days. (d) On day 25 the rule gives 360 − 375 = −15, a negative amount. He has no money after day 24, so the rule holds only for n up to 24.",
+     "s": [
+      [
+       "Part (a): 360 − 15n",
+       1
+      ],
+      [
+       "Part (b): day 18",
+       1
+      ],
+      [
+       "Part (c): 24 days",
+       1
+      ],
+      [
+       "Part (d): rule gives −15",
+       1
+      ],
+      [
+       "Part (d): explains the money is finished after day 24",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For the annual day, the school hall has rows of chairs. Row 1 has 12 seats and each next row has 3 more seats than the row before. The hall is only wide enough for 50 seats in a row. The principal wants 14 rows and suggests another plan with 2 more seats in each next row than the row before, starting with 12 seats in row 1. (a) Write the number of seats in row n for the first plan. (b) Find the seats in the 14th row. (c) Which row has 63 seats? (d) Can the hall use the first plan for 14 rows? What about the other plan?",
+     "a": "(a) 12 + 3(n − 1) = 3n + 9. (b) 3 × 14 + 9 = 51. (c) 3n + 9 = 63 gives n = 18. (d) The first plan's 14th row has 51 seats, more than 50, so it does not fit. The other plan gives 12 + 2(n − 1) = 2n + 10, so the 14th row has 38 seats and fits. So choose the plan with 2 more seats per row.",
+     "s": [
+      [
+       "Part (a): 3n + 9",
+       1
+      ],
+      [
+       "Part (b): 51 seats",
+       1
+      ],
+      [
+       "Part (c): row 18",
+       1
+      ],
+      [
+       "Part (d): 51 > 50 so plan 1 fails, plan 2 gives 38 and fits",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A caterer arranges tables end to end for a tea party. One table seats 4, and every extra table joined at the end adds 2 seats. The guests are seated only at whole tables. (a) Find the seats for 5 tables joined in a row and write the rule for n tables. (b) How many tables are needed for 40 guests? (c) Can exactly 15 guests fill the seats of one row of tables? (d) 60 guests are invited, but the hall fits at most 20 tables in one row. Show how to seat them using the fewest tables.",
+     "a": "(a) 2n + 2 gives 12 seats for 5 tables. (b) 2n + 2 = 40 gives 19 tables. (c) 2n + 2 = 15 gives n = 6.5, not whole, so exactly 15 seats are impossible. (d) One row would need 29 tables, more than 20. With two rows of n1 and n2 tables, seats = 2(n1 + n2) + 4 ≥ 60 gives n1 + n2 ≥ 28. Two rows of 14 tables seat 30 + 30 = 60 using 28 tables.",
+     "s": [
+      [
+       "Part (a): 12 seats and the rule 2n + 2",
+       1
+      ],
+      [
+       "Part (b): 19 tables",
+       1
+      ],
+      [
+       "Part (c): n = 6.5 so impossible",
+       1
+      ],
+      [
+       "Part (d): two rows of 14 tables, 28 tables, 60 seats",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or false: The sequence 50, 44, 38, 32, … cannot be a linear pattern because the terms are decreasing. Give the verdict and the reason or correction.",
+     "a": "False. The difference is the constant −6, so it is linear with nth term 56 − 6n.",
+     "s": [
+      [
+       "Verdict: false",
+       1
+      ],
+      [
+       "Correction: constant difference −6 and nth term 56 − 6n",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cab firm's cost for d km is C(d) = 100 + 60d rupees. Priya travels 4 km further than Rohan. How much more does she pay?",
+     "a": "Each extra km adds the slope 60, so 4 extra km add 60 × 4 = ₹240, whatever Rohan's distance is.",
+     "o": [
+      "₹240",
+      "₹60",
+      "₹100",
+      "₹340"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The height of water in a tank is h(t) = 3 − 0.5t metres after t months. This is an example of",
+     "a": "The height falls by the same 0.5 m every month, so it is linear decay.",
+     "o": [
+      "linear decay, with 0.5 m lost each month",
+      "linear growth, because 3 is positive",
+      "linear decay, with 3 m lost each month",
+      "a pattern that is not linear because of the minus sign"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The values of a quantity at t = 0, 1, 2, 3 are given in four tables. Which table shows linear decay?",
+     "a": "90, 78, 66, 54 falls by the same 12 each step, which is linear decay.",
+     "o": [
+      "90, 78, 66, 54",
+      "10, 22, 34, 46",
+      "90, 80, 66, 48",
+      "90, 45, 22.5, 11.25"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT an example of linear growth?",
+     "a": "The phone value 10,000 − 800t falls by ₹800 every year, so it is linear decay. The other three each increase by a fixed amount.",
+     "o": [
+      "Value of a phone: 10000 − 800t",
+      "Height of a plant: 1.75 + 0.5t",
+      "Population of a village: 750 + 50t",
+      "Journey cost: 100 + 60d"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A prepaid balance of ₹600 falls by ₹15 every day after the recharge, so the balance after x days is b(x) = 600 − 15x. What is the balance after 12 days?",
+     "a": "b(12) = 600 − 15 × 12 = 600 − 180 = ₹420.",
+     "o": [
+      "₹420",
+      "₹780",
+      "₹585",
+      "₹180"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of a school bus (in ₹) at the start of years 0, 1, 2 and 3 is 50000, 46500, 43000 and 39500. Which description fits?",
+     "a": "The value falls by ₹3500 every year, a fixed amount over equal intervals, so this is linear decay of ₹3500 per year.",
+     "o": [
+      "Linear decay of ₹3500 per year",
+      "Linear growth of ₹3500 per year",
+      "Linear decay of ₹50000 per year",
+      "Linear growth of ₹4500 per year"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A phone whose value is 10000 − 800t rupees after t years shows linear growth.\nReason (R): The value of the phone falls by the same ₹800 every year.",
+     "a": "The assertion is false but the reason is true.",
+     "o": [
+      "A is false but R is true",
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is not the correct explanation of A",
+      "A is true but R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. In linear growth, the increase over every equal interval is the same.\n2. For h(t) = 3 − 0.5t, the height after 4 months is 1 m.\n3. The model h(t) = 3 − 0.5t cannot be used for t = 8 months, because it gives a negative height.\nWhich of the statements is/are correct?",
+     "a": "Statement 1 is true by the definition. Statement 2 is true: 3 − 0.5 × 4 = 1. Statement 3 is true: 3 − 0.5 × 8 = −1 m, which is impossible for a height. So all three are correct.",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A bamboo shoot in Assam is 0.8 m tall and grows 0.3 m every week. (a) Find its height after 9 weeks. (b) Write an expression for the height h after t weeks and say why it shows linear growth.",
+     "a": "(a) 0.8 + 0.3 × 9 = 3.5 m. (b) h = 0.8 + 0.3t. It is linear growth because the height rises by the same 0.3 m in every week.",
+     "s": [
+      [
+       "Part (a): 3.5 m",
+       1
+      ],
+      [
+       "Part (b): 0.8 + 0.3t with the fixed increase 0.3 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A scooter costs ₹24,000 and its value falls by ₹1,500 every year. (a) Find its value after 4 years. (b) After how many years will it be worth ₹9,000?",
+     "a": "(a) 24000 − 1500 × 4 = ₹18,000. (b) 24000 − 1500t = 9000 gives 1500t = 15000, so t = 10 years.",
+     "s": [
+      [
+       "Part (a): ₹18,000",
+       1
+      ],
+      [
+       "Part (b): forms 24000 − 1500t = 9000 and gets 10 years",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A taxi charges ₹80 plus ₹45 for each kilometre, so the cost is C(d) = 80 + 45d. (a) Find the cost of a 12 km trip. (b) For how many kilometres is the bill ₹980?",
+     "a": "(a) 80 + 45 × 12 = ₹620. (b) 80 + 45d = 980 gives 45d = 900, so d = 20 km.",
+     "s": [
+      [
+       "Part (a): ₹620",
+       1
+      ],
+      [
+       "Part (b): d = 20 km",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A recharge of ₹450 loses ₹18 every day. Write the balance after x days and find after how many days the balance runs out.",
+     "a": "b(x) = 450 − 18x. It runs out when 450 − 18x = 0, so x = 25 days.",
+     "s": [
+      [
+       "Writes b(x) = 450 − 18x",
+       1
+      ],
+      [
+       "Solves x = 25 days",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The values of a quantity at t = 0, 1, 2, 3 are 40, 52, 64, 76. Does the table show linear growth? Write the expression for the quantity.",
+     "a": "The difference between consecutive values is 12 every time, so it is linear growth. The quantity is 40 + 12t.",
+     "s": [
+      [
+       "Constant difference 12, so linear growth",
+       1
+      ],
+      [
+       "Expression 40 + 12t",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "The sales of a school magazine in three years were 100, 110 and 121 copies. Varun says this is linear growth because the sales rise every year. Is he right? Explain.",
+     "a": "No. The rise is 10 in the first year and 11 in the next. Linear growth needs the same fixed increase over equal intervals, not just any rise, so this is not linear growth.",
+     "s": [
+      [
+       "Verdict that Varun is wrong",
+       1
+      ],
+      [
+       "Computes the increases 10 and 11",
+       1
+      ],
+      [
+       "States that linear growth needs a fixed increase",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "The height of water in a tank is h(t) = 3 − 0.5t metres after t months. Show that this model cannot be used to describe the tank after 8 months.",
+     "a": "h(8) = 3 − 4 = −1 m. A height cannot be negative. The height reaches 0 when t = 6 months, so the model works only for t up to 6.",
+     "s": [
+      [
+       "Computes h(8) = −1",
+       1
+      ],
+      [
+       "Says a height cannot be negative",
+       1
+      ],
+      [
+       "Finds the limit t = 6 months",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Reverse problem: describe a real situation of linear decay for which the value of a machine is v(t) = 50000 − 4000t rupees after t years. Say what 50000 and 4000 mean and when the value becomes 0.",
+     "a": "For example, a school photocopier bought for ₹50,000 loses ₹4,000 of value every year. 50000 is the value at t = 0 and 4000 is the fall per year. Value 0 when t = 50000/4000 = 12.5 years.",
+     "s": [
+      [
+       "A decay situation matching the function",
+       1
+      ],
+      [
+       "Meaning of 50000 and 4000",
+       1
+      ],
+      [
+       "t = 12.5 years",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A cyclist is 120 km from Hyderabad and rides towards it at 15 km every hour, so the distance left is d(t) = 120 − 15t. (a) Find the distance left after 3 hours. (b) After how many hours does she arrive? (c) Is this linear growth or decay? Why?",
+     "a": "(a) 120 − 45 = 75 km. (b) 120 − 15t = 0 gives t = 8 hours. (c) Linear decay, because the distance falls by the same 15 km every hour.",
+     "s": [
+      [
+       "Part (a): 75 km",
+       1
+      ],
+      [
+       "Part (b): 8 hours",
+       1
+      ],
+      [
+       "Part (c): decay, fixed fall of 15 km per hour",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Plant A is 12 cm tall and grows 3 cm every week. Plant B is 20 cm tall and grows 2 cm every week. (a) Write the height of each after t weeks. (b) Find both heights after 4 weeks. (c) Which plant is growing faster and how do you know? (d) After how many weeks are the plants equally tall, and how tall are they then?",
+     "a": "(a) A: 12 + 3t. B: 20 + 2t. (b) A is 24 cm and B is 28 cm. (c) A grows faster: 3 cm a week against 2 cm a week. (d) 12 + 3t = 20 + 2t gives t = 8 weeks, when both are 36 cm.",
+     "s": [
+      [
+       "Part (a): 12 + 3t and 20 + 2t",
+       1
+      ],
+      [
+       "Part (b): 24 cm and 28 cm",
+       1
+      ],
+      [
+       "Part (c): A faster, 3 cm a week against 2 cm",
+       1
+      ],
+      [
+       "Part (d): equation giving t = 8",
+       1
+      ],
+      [
+       "Part (d): height 36 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A hostel water tank holds 4000 litres and 250 litres are used every day without refilling. (a) Write the volume V left after d days. (b) How much water is left after 9 days? (c) After how many days is the tank empty? (d) The warden refills the tank when only 1000 litres are left. After how many days must the refill be done?",
+     "a": "(a) V = 4000 − 250d. (b) 4000 − 2250 = 1750 litres. (c) 4000 − 250d = 0 gives d = 16 days. (d) 4000 − 250d = 1000 gives 250d = 3000, so d = 12 days.",
+     "s": [
+      [
+       "Part (a): 4000 − 250d",
+       1
+      ],
+      [
+       "Part (b): 1750 litres",
+       1
+      ],
+      [
+       "Part (c): 16 days",
+       1
+      ],
+      [
+       "Part (d): forms the equation with 1000",
+       1
+      ],
+      [
+       "Part (d): 12 days",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The school office bought a scooter for ₹90,000. Its value falls by ₹6,000 every year. The yearly servicing cost starts at ₹2,000 in year 0 and rises by ₹500 every year. The office plans to sell the scooter in the first year when the servicing cost for that year is more than a quarter (25%) of the scooter's value. (a) Write the value v(t) after t years and find it for t = 5. (b) After how many years is the value ₹30,000? (c) Compare the servicing cost with 25% of the value in years 10 and 11, and decide when to sell.",
+     "a": "(a) v(t) = 90000 − 6000t; v(5) = ₹60,000. (b) 90000 − 6000t = 30000 gives t = 10 years. (c) Servicing cost is 2000 + 500t. At t = 10 it is ₹7000 against 25% of 30000 = ₹7500 (not more). At t = 11 it is ₹7500 against 25% of 24000 = ₹6000 (more). So the office should sell in year 11.",
+     "s": [
+      [
+       "Part (a): 90000 − 6000t and ₹60,000",
+       1
+      ],
+      [
+       "Part (b): 10 years",
+       1
+      ],
+      [
+       "Part (c): compares 7000 with 7500, then 7500 with 6000, and decides year 11",
+       2
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Kabir has ₹800 in his piggy bank and adds ₹150 every week. His friend Zoya has ₹1,400 and takes out ₹100 every week for snacks. A cycle in the shop costs ₹1,500. (a) Write each child's amount after w weeks and say which one shows linear growth. (b) Find the two amounts after 6 weeks. (c) In which first whole week does Kabir have more than Zoya? (d) Who can buy the cycle, and when, if both carry on as they are?",
+     "a": "(a) Kabir: 800 + 150w, growth. Zoya: 1400 − 100w, decay. (b) Kabir ₹1,700 and Zoya ₹800. (c) 800 + 150w = 1400 − 100w gives w = 2.4, so Kabir is ahead from week 3 (₹1,250 against ₹1,100). (d) Kabir reaches 800 + 150w ≥ 1500 at w = 5 (₹1,550; week 4 gives only ₹1,400). Zoya's amount only falls from ₹1,400, so she can never afford it. Kabir buys the cycle at the end of week 5.",
+     "s": [
+      [
+       "Part (a): both expressions and Kabir as growth",
+       1
+      ],
+      [
+       "Part (b): ₹1,700 and ₹800",
+       1
+      ],
+      [
+       "Part (c): week 3 from w = 2.4",
+       1
+      ],
+      [
+       "Part (d): Kabir in week 5, Zoya never",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or false: Sneha's savings are S(m) = 900 + 120m rupees after m months, so from month 3 to month 8 her savings rise by ₹600. Give the verdict and the reason.",
+     "a": "True. In linear growth each month adds the same 120, so 5 months add 5 × 120 = 600; also S(8) − S(3) = 1860 − 1260 = 600.",
+     "s": [
+      [
+       "Verdict: true",
+       1
+      ],
+      [
+       "Reason: equal rise per month, 5 × 120 = 600",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A broadband bill is y = 20x + 150 rupees for x GB of data. A customer uses 5 GB more than last month. By how much does the bill rise?",
+     "a": "Each GB adds a = 20, so 5 GB add 100; the fixed 150 does not change.",
+     "o": [
+      "₹100",
+      "₹20",
+      "₹150",
+      "₹250"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A relation y = ax + b gives y = 7 when x = 1 and y = 13 when x = 3. The value of a is",
+     "a": "Two pairs give 7 = a + b and 13 = 3a + b. Subtracting gives 2a = 6, so a = 3 (and b = 4).",
+     "o": [
+      "3",
+      "6",
+      "2",
+      "4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A line y = ax + b passes through (2, 5) and (6, −3). Then b = ___.",
+     "a": "9"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about y = ax + b is NOT correct?",
+     "a": "b is the value of y when x = 0, not the change in y for one unit of x. The change in y for one unit of x is a.",
+     "o": [
+      "b is the change in y when x increases by 1",
+      "a is the change in y when x increases by 1",
+      "b is the value of y when x = 0",
+      "Two pairs of values are used to find a and b"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A swimming club charges a fixed monthly fee and a fixed amount for each hour of pool use. Divya paid ₹950 for 8 hours and ₹1,250 for 12 hours. The fixed monthly fee is",
+     "a": "The extra 4 hours cost ₹300, so ₹75 per hour. Then b = 950 − 75 × 8 = ₹350.",
+     "o": [
+      "₹350",
+      "₹75",
+      "₹600",
+      "₹950"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A line y = ax + b passes through (0, 12) and (4, 40). Which equation does it follow?",
+     "a": "The pair (0, 12) gives b = 12. Then 40 = 4a + 12 gives a = 7, so y = 7x + 12.",
+     "o": [
+      "y = 7x + 12",
+      "y = 12x + 7",
+      "y = 10x + 12",
+      "y = 7x + 40"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the tile pattern y = 2x − 1, where x is the stage number, the value of a is 2.\nReason (R): If the pattern were continued to stage 0, the number of tiles would be −1.",
+     "a": "Both are true but the reason does not explain the assertion.",
+     "o": [
+      "Both A and R are true but R is not the correct explanation of A",
+      "Both A and R are true and R is the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. If y = ax + b passes through (1, 5) and (3, 11), then b = 3.\n2. If y = ax + b passes through (1, 5) and (3, 11), then a = 3.\n3. One pair of values of x and y is enough to find both a and b in y = ax + b.\nWhich of the statements is/are correct?",
+     "a": "The two pairs give 5 = a + b and 11 = 3a + b, so a = 3 and b = 2. Statement 1 is false (b = 2), statement 2 is true, statement 3 is false since one equation cannot give two unknowns. So only 2 is correct.",
+     "o": [
+      "2 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match Column I with Column II.\n1. The line through (0, 3) and (2, 7)\n2. The line through (1, 1) and (3, −3)\n3. The line through (0, −3) and (1, 0)\n4. The line through (0, 0) and (2, 5)\na. y = 3x − 3\nb. y = 2x + 3\nc. y = −2x + 3\nd. y = (5/2)x",
+     "a": "Find a and b for each pair: (0, 3) and (2, 7) give 2 and 3; (1, 1) and (3, −3) give −2 and 3; (0, −3) and (1, 0) give 3 and −3; (0, 0) and (2, 5) give 5/2 and 0.",
+     "o": [
+      "1-b, 2-c, 3-a, 4-d",
+      "1-c, 2-b, 3-a, 4-d",
+      "1-b, 2-c, 3-d, 4-a",
+      "1-b, 2-a, 3-c, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A learning app charges a fixed fee plus a fixed amount per module. For 12 modules the bill is ₹560 and for 18 modules it is ₹740. (a) Write the two equations in a and b. (b) Solve them to find a and b.",
+     "a": "(a) 560 = 12a + b and 740 = 18a + b. (b) Subtracting gives 6a = 180, so a = 30; then b = 560 − 360 = 200.",
+     "s": [
+      [
+       "Part (a): the two equations",
+       1
+      ],
+      [
+       "Part (b): a = 30 and b = 200",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ice melts at 0 °C (32 °F) and water boils at 100 °C (212 °F). Take °F = p × (°C) + q. (a) Find p and q. (b) Find the Fahrenheit reading for 40 °C.",
+     "a": "(a) q = 32 from the first pair; 212 = 100p + 32 gives p = 1.8. (b) 1.8 × 40 + 32 = 104 °F.",
+     "s": [
+      [
+       "Part (a): p = 1.8 and q = 32",
+       1
+      ],
+      [
+       "Part (b): 104 °F",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The line y = ax + b passes through (2, 9) and (5, 18). Find a and b.",
+     "a": "9 = 2a + b and 18 = 5a + b. Subtracting gives 3a = 9, so a = 3, and b = 9 − 6 = 3.",
+     "s": [
+      [
+       "Forms two equations and finds a = 3",
+       1
+      ],
+      [
+       "Finds b = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A line y = ax + b passes through (0, 7) and (4, 19). Which pair gives b without any solving, and what is the line?",
+     "a": "The pair (0, 7) gives b = 7 directly, because x = 0 removes the ax term. Then 19 = 4a + 7 gives a = 3, so y = 3x + 7.",
+     "s": [
+      [
+       "Names (0, 7) and gives b = 7",
+       1
+      ],
+      [
+       "a = 3 and the line y = 3x + 7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A taxi bill is y = 35x + 120 rupees for x km. Say what 35 and 120 mean, and find the bill for 14 km.",
+     "a": "35 is the charge for each km and 120 is the fixed charge (the bill at 0 km). For 14 km: 35 × 14 + 120 = ₹610.",
+     "s": [
+      [
+       "Meaning of 35 and 120",
+       1
+      ],
+      [
+       "Bill ₹610",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "For the data points (10, 350) and (20, 550), Rahul says that a = 550 − 350 = 200. Is he right? Find the correct a and b.",
+     "a": "No. The y-values rose by 200 while x rose by 10, so a is 200 for 10 units, which is 20 for one unit. Then b = 350 − 20 × 10 = 150. The line is y = 20x + 150.",
+     "s": [
+      [
+       "Verdict that Rahul is wrong",
+       1
+      ],
+      [
+       "a = 20 from the change per unit of x",
+       1
+      ],
+      [
+       "b = 150",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Neha has the pairs (2, 7) and (2, 11) and says she can find a and b in y = ax + b. Show that she cannot.",
+     "a": "The pairs give 7 = 2a + b and 11 = 2a + b. The left sides differ but the right sides are equal, which is a contradiction (2a + b cannot be both 7 and 11). So no line of the form y = ax + b passes through both points.",
+     "s": [
+      [
+       "Writes both equations",
+       1
+      ],
+      [
+       "Shows that 2a + b would equal both 7 and 11",
+       1
+      ],
+      [
+       "Concludes no such a and b exist",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Reverse problem: write a bill problem with two data pairs for which a = 12 and b = 90, and show that your pairs give these values.",
+     "a": "For example, a cable operator charges ₹90 fixed plus ₹12 per channel pack. Two pairs: 3 packs give ₹126 and 5 packs give ₹150. Then a = (150 − 126)/2 = 12 and b = 126 − 36 = 90.",
+     "s": [
+      [
+       "A situation with fixed ₹90 and ₹12 per unit",
+       1
+      ],
+      [
+       "Two correct data pairs",
+       1
+      ],
+      [
+       "Shows a = 12 and b = 90 from them",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A mobile plan bill y = ax + b rupees for x GB is ₹260 for 4 GB and ₹385 for 9 GB. Find a and b and the bill for 20 GB.",
+     "a": "385 − 260 = 125 for 5 GB, so a = 25. b = 260 − 100 = 160. For 20 GB: 25 × 20 + 160 = ₹660.",
+     "s": [
+      [
+       "a = 25",
+       1
+      ],
+      [
+       "b = 160",
+       1
+      ],
+      [
+       "Bill ₹660",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Plan P gives a bill of ₹300 for 5 GB and ₹500 for 15 GB. Plan Q gives ₹250 for 5 GB and ₹550 for 15 GB. Both bills are of the form y = ax + b. (a) Find a and b for Plan P. (b) Find a and b for Plan Q. (c) For how many GB do both plans cost the same? (d) Which plan should a student choose if she uses 8 GB, and which if she uses 14 GB?",
+     "a": "(a) P: a = 20, b = 200. (b) Q: a = 30, b = 100. (c) 200 + 20x = 100 + 30x gives x = 10 GB (both ₹400). (d) At 8 GB: P = ₹360, Q = ₹340, so Q. At 14 GB: P = ₹480, Q = ₹520, so P.",
+     "s": [
+      [
+       "Part (a): 20 and 200",
+       1
+      ],
+      [
+       "Part (b): 30 and 100",
+       1
+      ],
+      [
+       "Part (c): 10 GB",
+       1
+      ],
+      [
+       "Part (d): 8 GB gives P 360 and Q 340, so Q",
+       1
+      ],
+      [
+       "Part (d): 14 GB gives P 480 and Q 520, so P",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In a growing tile pattern, stage 3 has 11 tiles and stage 7 has 23 tiles, and the number of tiles y at stage x is y = ax + b. (a) Find a and b. (b) Write the rule. (c) How many tiles are in stage 20? (d) Which stage has 98 tiles? (e) What does b tell about the pattern?",
+     "a": "(a) 23 − 11 = 12 for 4 stages, so a = 3; b = 11 − 9 = 2. (b) y = 3x + 2. (c) 3 × 20 + 2 = 62. (d) 3x + 2 = 98 gives x = 32. (e) b = 2 is the value at stage 0, the starting number before any stage is added.",
+     "s": [
+      [
+       "Part (a): a = 3 and b = 2",
+       2
+      ],
+      [
+       "Part (b): y = 3x + 2",
+       1
+      ],
+      [
+       "Parts (c) and (d): 62 tiles and stage 32",
+       1
+      ],
+      [
+       "Part (e): b is the value at stage 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A thermometer has a Celsius scale and a Fahrenheit scale. Ice melts at 0 °C (32 °F) and water boils at 100 °C (212 °F). Take °F = p × (°C) + q. Priya is planning a trip, and her guidebook says to carry a jacket when the temperature is below 59 °F. Shimla will be at 8 °C and Jaipur at 16 °C. (a) Find p and q. (b) Find the Fahrenheit reading of normal body temperature 37 °C. (c) Find the Celsius value of 59 °F. (d) For which of the two cities should Priya carry a jacket?",
+     "a": "(a) q = 32 and p = 180/100 = 1.8. (b) 1.8 × 37 + 32 = 98.6 °F. (c) 1.8c + 32 = 59 gives c = 15 °C. (d) Shimla at 8 °C is below 15 °C (46.4 °F), so a jacket is needed. Jaipur at 16 °C is above 15 °C (60.8 °F), so no jacket is needed there.",
+     "s": [
+      [
+       "Part (a): p = 1.8 and q = 32",
+       1
+      ],
+      [
+       "Part (b): 98.6 °F",
+       1
+      ],
+      [
+       "Part (c): 15 °C",
+       1
+      ],
+      [
+       "Part (d): jacket for Shimla only, with 46.4 and 60.8 °F",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "An electricity bill is y = ax + b rupees for x units, where b is a fixed charge. For a flat, the bill was ₹780 for 120 units and ₹1,260 for 200 units. Ravi's bill last month was ₹1,020, and he wants to bring it to ₹1,000 or less. (a) Find a and b. (b) What does b mean here? (c) Find the bill for 150 units. (d) How many units did Ravi use last month, and by how many units at least must he cut his use to reach his target?",
+     "a": "(a) a = 480/80 = 6 and b = 780 − 720 = 60. (b) b = ₹60 is the fixed charge payable even with 0 units. (c) 6 × 150 + 60 = ₹960. (d) 6x + 60 = 1020 gives 160 units. At 156 units the bill is ₹996 and at 157 it is ₹1,002, so he must use at most 156 units, a cut of at least 4 units.",
+     "s": [
+      [
+       "Part (a): a = 6 and b = 60",
+       1
+      ],
+      [
+       "Part (b): the fixed charge at 0 units",
+       1
+      ],
+      [
+       "Part (c): ₹960",
+       1
+      ],
+      [
+       "Part (d): 160 units and a cut of at least 4 units",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A candle's height in cm after x hours is y = 9 − 4x and its graph is drawn as a line. Where does this line meet the x-axis?",
+     "a": "At the x-axis y = 0, so 9 − 4x = 0 and x = 9/4 = 2.25. The point is (2.25, 0), and it says the candle burns out after 2.25 hours.",
+     "o": [
+      "(2.25, 0)",
+      "(0, 2.25)",
+      "(0, 9)",
+      "(4, 0)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these lines slopes downward and is the steepest of the four?",
+     "a": "A downward slope needs a negative coefficient of x, and −5 has the largest size among the negative ones, so y = −5x + 1 is the steepest falling line.",
+     "o": [
+      "y = −5x + 1",
+      "y = −2x + 8",
+      "y = 6x − 3",
+      "y = −x + 20"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following lines passes through the origin?",
+     "a": "A line y = ax has b = 0, so at x = 0 we get y = 0 and the line passes through (0, 0).",
+     "o": [
+      "y = 7x",
+      "y = 7x + 1",
+      "y = x − 7",
+      "y = 7 + x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair of lines is parallel?",
+     "a": "y = 2x + 5 and y = 2x − 1 have the same slope 2 and different y-intercepts, so they are parallel.",
+     "o": [
+      "y = 2x + 5 and y = 2x − 1",
+      "y = 2x + 1 and y = −2x + 1",
+      "y = 3x + 2 and y = 2x + 2",
+      "y = x + 3 and y = 3x + 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which point lies on the line y = 2x + 1?",
+     "a": "For x = 4, y = 2 × 4 + 1 = 9, so (4, 9) satisfies the equation.",
+     "o": [
+      "(4, 9)",
+      "(4, 8)",
+      "(9, 4)",
+      "(4, 7)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A graph of the water level y (in metres) of a pond against the month x is a straight line that falls as x increases and cuts the y-axis at 5. Which equation fits when the level falls by 0.5 m every month?",
+     "a": "The line falls, so the slope is negative, −0.5. It cuts the y-axis at 5, so b = 5. The equation is y = −0.5x + 5.",
+     "o": [
+      "y = −0.5x + 5",
+      "y = 0.5x + 5",
+      "y = −0.5x − 5",
+      "y = 5x − 0.5"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The fare of two cab firms is drawn as lines: Firm A is y = 15x + 40 and Firm B is y = 15x + 70, where x is km and y is rupees. Since the lines are parallel, what does this tell the passenger?",
+     "a": "The slopes are equal (₹15 per km), so both charge the same for each extra km. The intercepts differ by 30, so Firm B charges ₹30 more fixed charge and costs ₹30 more for every distance.",
+     "o": [
+      "Both charge ₹15 per km, but B's fixed charge is ₹30 more",
+      "Both have the same fixed charge, but B charges more per km",
+      "The two firms charge the same fare for every distance",
+      "The two lines meet at the point (0, 40)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The lines y = 2x + 1 and y = 2x + 5 are parallel.\nReason (R): The line y = 2x + 1 cuts the y-axis at the point (0, 1).",
+     "a": "Both are true but the reason does not explain the assertion.",
+     "o": [
+      "Both A and R are true but R is not the correct explanation of A",
+      "Both A and R are true and R is the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\n1. Every line of the form y = ax passes through the origin.\n2. The lines y = x + 3 and y = 2x + 3 are parallel, since both have y-intercept 3.\n3. The line y = −2x − 3 represents linear growth.\nWhich of the statements is/are correct?",
+     "a": "Statement 1 is true: putting x = 0 gives y = 0. Statement 2 is false: their slopes 1 and 2 differ, so they meet at (0, 3). Statement 3 is false: the slope −2 is negative, which means linear decay. So only 1 is correct.",
+     "o": [
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "3 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The line y = 7 − 2x is drawn on graph paper. (a) State its slope and y-intercept. (b) At which point does it cut the y-axis, and does it show growth or decay?",
+     "a": "(a) Written as y = −2x + 7, the slope is −2 and the y-intercept is 7. (b) It cuts the y-axis at (0, 7), and since the slope is negative it shows linear decay.",
+     "s": [
+      [
+       "Part (a): slope −2 and y-intercept 7",
+       1
+      ],
+      [
+       "Part (b): point (0, 7) and decay from negative slope",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the line y = 3x − 4, (a) find y when x = 0 and when x = 2. (b) Does the point (5, 10) lie on the line? Show why.",
+     "a": "(a) At x = 0, y = −4; at x = 2, y = 2. (b) At x = 5, y = 3 × 5 − 4 = 11, not 10, so (5, 10) does not lie on the line.",
+     "s": [
+      [
+       "Part (a): −4 and 2",
+       1
+      ],
+      [
+       "Part (b): finds 11 at x = 5 and says no",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Without drawing, arrange the lines y = 2x, y = x and y = (1/2)x from the steepest to the least steep. Give the reason.",
+     "a": "y = 2x, then y = x, then y = (1/2)x. All pass through the origin, and for y = ax with a > 0 a larger a gives a steeper line (a > 1 is steeper than y = x, a < 1 is less steep).",
+     "s": [
+      [
+       "Correct order 2x, x, (1/2)x",
+       1
+      ],
+      [
+       "Reason: larger a means steeper, since a is the slope",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate between the graphs of y = 3x + 1 and y = −3x + 1.",
+     "a": "Both cut the y-axis at (0, 1) because b = 1 in each. The first has slope 3 and rises (linear growth); the second has slope −3 and falls (linear decay).",
+     "s": [
+      [
+       "Same y-intercept (0, 1)",
+       1
+      ],
+      [
+       "Slopes 3 and −3: one rises, the other falls",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The points (−2, 8), (0, 0), (1, −4) and (3, −12) lie on a straight line. Find its equation and verify it with one point.",
+     "a": "Each y-value is −4 times the x-value, so y = −4x. Check: for (3, −12), −4 × 3 = −12.",
+     "s": [
+      [
+       "Equation y = −4x",
+       1
+      ],
+      [
+       "Verification with a point",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rhea says the lines y = x + 3 and y = 2x + 3 are parallel, as both have the same y-intercept 3. Is she correct? Give the reason and say where the lines meet.",
+     "a": "No. Parallel lines have equal slopes but different intercepts. These slopes are 1 and 2, so the lines are not parallel. Both pass through (0, 3), so they meet there.",
+     "s": [
+      [
+       "Verdict that Rhea is wrong",
+       1
+      ],
+      [
+       "Parallel needs equal slopes and different intercepts",
+       1
+      ],
+      [
+       "The lines meet at (0, 3)",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no line y = ax + b can be parallel to y = 4x + 2 and also pass through the point (0, 2) as a different line.",
+     "a": "Parallel means the same slope, so a = 4. Passing through (0, 2) gives b = 2. Then the equation is y = 4x + 2, the same line. Parallel lines need different y-intercepts, so a second parallel line through (0, 2) cannot exist.",
+     "s": [
+      [
+       "Parallel gives a = 4",
+       1
+      ],
+      [
+       "Point (0, 2) gives b = 2",
+       1
+      ],
+      [
+       "Concludes it is the same line, not a different parallel line",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Reverse problem: describe a real situation whose graph is the line y = −20x + 800. Say what the slope and the y-intercept mean, and the point where it cuts the y-axis.",
+     "a": "For example, a school water tank holds 800 litres and loses 20 litres every minute. The slope −20 is the loss per minute (decay) and the y-intercept 800 is the starting amount. It cuts the y-axis at (0, 800).",
+     "s": [
+      [
+       "A decay situation with 800 at the start and 20 per unit",
+       1
+      ],
+      [
+       "Meaning of slope −20 and intercept 800",
+       1
+      ],
+      [
+       "Point (0, 800)",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write the lines 3y = 6x + 5 and 4y = 8x − 3 in the form y = ax + b. State the slope and y-intercept of each, and say whether the lines are parallel.",
+     "a": "3y = 6x + 5 gives y = 2x + 5/3 (slope 2, y-intercept 5/3). 4y = 8x − 3 gives y = 2x − 3/4 (slope 2, y-intercept −3/4). The slopes are equal and the intercepts differ, so the lines are parallel.",
+     "s": [
+      [
+       "Rewrites both in y = ax + b form",
+       1
+      ],
+      [
+       "Slopes 2 and intercepts 5/3 and −3/4",
+       1
+      ],
+      [
+       "Concludes parallel because of equal slopes and different intercepts",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A line y = ax + b passes through the points (2, 4) and (5, 13). (a) Find a and b. (b) At which point does it cut the y-axis? (c) At which point does it cut the x-axis? (d) Check whether (4, 10) lies on the line.",
+     "a": "(a) a = (13 − 4)/3 = 3 and b = 4 − 6 = −2, so y = 3x − 2. (b) (0, −2). (c) y = 0 gives 3x = 2, so (2/3, 0). (d) 3 × 4 − 2 = 10, so (4, 10) lies on the line.",
+     "s": [
+      [
+       "Part (a): a = 3 and b = −2",
+       2
+      ],
+      [
+       "Part (b): (0, −2)",
+       1
+      ],
+      [
+       "Part (c): (2/3, 0)",
+       1
+      ],
+      [
+       "Part (d): 3 × 4 − 2 = 10 verifies",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The graph of p(x) = ax + b passes through (1, 4) and (5, 12). A second linear polynomial q(x) = cx + d has a graph parallel to that of p(x) and passes through (3, −1). (a) Find p(x). (b) Find q(x). (c) Find where each graph cuts the x-axis. (d) Verify from the answers that the graphs are parallel and different.",
+     "a": "(a) a = 8/4 = 2 and b = 2, so p(x) = 2x + 2. (b) Parallel gives c = 2. Then −1 = 6 + d gives d = −7, so q(x) = 2x − 7. (c) p cuts the x-axis at (−1, 0); q at (7/2, 0). (d) Both have slope 2 and the intercepts 2 and −7 differ.",
+     "s": [
+      [
+       "Part (a): p(x) = 2x + 2",
+       2
+      ],
+      [
+       "Part (b): q(x) = 2x − 7",
+       1
+      ],
+      [
+       "Part (c): (−1, 0) and (7/2, 0)",
+       1
+      ],
+      [
+       "Part (d): equal slopes and different intercepts",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school has two water tanks. Tank 1 holds 800 litres at time 0 and loses 20 litres every minute, so y = 800 − 20x. Tank 2 holds 500 litres at time 0 and gains 30 litres every minute, so y = 500 + 30x. Here x is in minutes and y in litres. A cleaning job can start at a whole minute and needs a tank holding at least 700 litres at that minute. (a) State the slope and y-intercept of each line and say which shows growth. (b) Find the volume in both tanks at x = 6. (c) At which minute are both tanks equal? (d) For the minutes 3, 6 and 8, which tank, if any, can the caretaker use?",
+     "a": "(a) Tank 1: slope −20, y-intercept 800 (decay). Tank 2: slope 30, y-intercept 500 (growth). (b) Both have 680 litres. (c) 800 − 20x = 500 + 30x gives x = 6, the same minute. (d) At minute 3: Tank 1 has 740 and Tank 2 has 590, so Tank 1. At minute 6: both have 680, so neither. At minute 8: Tank 1 has 640 and Tank 2 has 740, so Tank 2.",
+     "s": [
+      [
+       "Part (a): slopes and intercepts with growth for Tank 2",
+       1
+      ],
+      [
+       "Part (b): 680 litres each",
+       1
+      ],
+      [
+       "Part (c): x = 6",
+       1
+      ],
+      [
+       "Part (d): Tank 1 at 3, neither at 6, Tank 2 at 8",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three friends save for a class trip. With x as the week and y as rupees saved, Asha follows y = 150x + 500, Bela follows y = 150x + 300 and Chitra follows y = 200x + 300. The group needs a gift costing ₹1,500 as early as possible and will use one friend's savings. (a) Which two lines are parallel, and which two cut the y-axis at the same point? (b) Find each friend's savings at week 10. (c) In which first week does each of Asha and Chitra reach ₹1,500? (d) Whose savings should be used, and why does the friend who started with less win?",
+     "a": "(a) Asha's and Bela's lines are parallel (slope 150). Bela's and Chitra's cut the y-axis at the same point (0, 300). (b) Asha ₹2,000, Bela ₹1,800, Chitra ₹2,300. (c) Asha: 500 + 150x ≥ 1500 gives week 7 (₹1,550; week 6 gives ₹1,400). Chitra: 300 + 200x ≥ 1500 gives week 6 (₹1,500). (d) Chitra's savings should be used. Her slope 200 is steeper than Asha's 150, which overcomes Asha's ₹200 head start (the lines meet at week 4).",
+     "s": [
+      [
+       "Part (a): Asha with Bela parallel; Bela with Chitra same intercept",
+       1
+      ],
+      [
+       "Part (b): 2000, 1800, 2300",
+       1
+      ],
+      [
+       "Part (c): week 7 for Asha, week 6 for Chitra",
+       1
+      ],
+      [
+       "Part (d): chooses Chitra because of the larger slope 200",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

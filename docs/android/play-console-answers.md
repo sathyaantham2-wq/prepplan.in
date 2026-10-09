@@ -13,7 +13,7 @@ If what the app collects changes, update this file, `src/lib/legal.ts` and the P
 |---|---|
 | Privacy policy URL | `https://www.prepplan.in/privacy` |
 | Ads | **No**, the app contains no ads |
-| App access | Some features need sign-in. Give reviewers a test **parent** and a test **student** login (create both on production, with a linked student who has one marked paper) |
+| App access | Some features need sign-in. Give reviewers a test **student** login (create it on production and give it one marked paper). New sign-ups are students only since 2026-10-02, so no parent login is needed unless you keep a legacy parent account for review |
 | Content rating (IARC) | Category *Education*. No violence, sexual content, profanity, drugs, gambling or user-to-user chat. Users can't talk to each other; the leaderboard shows random nicknames only. Expect **Everyone / 3+** |
 | Target audience | **Includes under 13** (ages 9–12 and 13–15, plus 16–17). This puts the app under the **Families Policy** |
 | Appeals to children? | Yes |
@@ -67,7 +67,7 @@ web browsing history, installed apps.
 > Syllabus-exact practice papers, marked question by question, with what to fix.
 
 **Full description:**
-> PrepPlan makes practice question papers that match your child's NCERT textbook exactly, chapter by chapter, for CBSE Classes 6 to 10.
+> PrepPlan makes practice question papers that match your child's NCERT textbook exactly, chapter by chapter, for CBSE Classes 6 to 12.
 >
 > After each paper, every answer is marked question by question, and PrepPlan tells you something a score alone never shows: which marks were lost because a topic wasn't understood, and which were lost because of how the answer was written (a missing step, a missing unit, stopping too early).
 >
@@ -76,12 +76,12 @@ web browsing history, installed apps.
 > • Marks with a reason for each one. You can ask for any mark to be checked again
 > • A topic tracker that shows what's improving and what needs more practice
 > • Adaptive practice that focuses on weak topics without skipping the rest
-> • A weekly summary for parents
+> • Share your chapter progress with a parent in one tap
 >
-> Made for students and their parents. No ads. Leaderboards are optional and use random nicknames, never real names.
+> Made for students, who can share their progress with a parent. No ads. Leaderboards are optional and use random nicknames, never real names.
 
 **Telugu full description (optional localized listing, te-IN):**
-> PrepPlan మీ పిల్లల NCERT పాఠ్యపుస్తకానికి సరిగ్గా సరిపోయే ప్రాక్టీస్ ప్రశ్నాపత్రాలను అధ్యాయం వారీగా తయారుచేస్తుంది. ఇది CBSE 6 నుండి 10వ తరగతి వరకు.
+> PrepPlan మీ పిల్లల NCERT పాఠ్యపుస్తకానికి సరిగ్గా సరిపోయే ప్రాక్టీస్ ప్రశ్నాపత్రాలను అధ్యాయం వారీగా తయారుచేస్తుంది. ఇది CBSE 6 నుండి 12వ తరగతి వరకు.
 >
 > ప్రతి పేపర్ తర్వాత ప్రతి జవాబు ప్రశ్న వారీగా మార్క్ చేయబడుతుంది. ఏ మార్కులు విషయం అర్థం కాక పోయాయి, ఏవి జవాబు రాసే విధానం వల్ల (ఒక స్టెప్ వదిలేయడం, యూనిట్ మర్చిపోవడం, ముందే ఆపేయడం) పోయాయి అనేది PrepPlan స్పష్టంగా చెబుతుంది.
 >
@@ -89,7 +89,7 @@ web browsing history, installed apps.
 > • ఫోన్‌లోనే జవాబు రాయవచ్చు, లేదా ప్రింట్ తీసి చేతిరాత జవాబుల ఫోటో పంపవచ్చు
 > • ప్రతి మార్కుకు కారణం చూపిస్తుంది. ఏ మార్కునైనా మళ్ళీ చెక్ చేయమని అడగవచ్చు
 > • ఏ టాపిక్ మెరుగవుతోంది, దేనికి ఇంకా ప్రాక్టీస్ కావాలో చూపే ట్రాకర్
-> • తల్లిదండ్రులకు వారపు సారాంశం
+> • మీ పురోగతిని తల్లిదండ్రులతో ఒక్క టాప్‌తో పంచుకోండి
 >
 > ప్రకటనలు లేవు. లీడర్‌బోర్డ్ ఐచ్ఛికం, అందులో నిజమైన పేర్లు కాకుండా యాదృచ్ఛిక నిక్‌నేమ్‌లు మాత్రమే ఉంటాయి.
 
@@ -104,7 +104,7 @@ don't use test fixtures with fake names).
 
 ## Open items: owner decisions
 
-1. **Done 2026-10-01: student self-deletion.** A student who signed up on her own and isn't linked
+1. **Done 2026-10-01, re-checked 2026-10-04: student self-deletion.** A student who signed up on her own and isn't linked
    to a parent can delete her account in the app: Settings (next to Sign out), type DELETE.
    `/delete-account` says so. A student a parent added or follows is directed to the parent, which
    is acceptable to Play because the account holder (the parent) can delete it.
