@@ -448,8 +448,8 @@
      "tags": [
       "case_study"
      ],
-     "q": "At a temple, pegs stand at X and Y, 6 m apart, for the rope method. Three ropes are available: P of 8 m, Q of 10 m and R of 12 m between loops, costing ₹280, ₹300 and ₹340. Measurements show that with each rope the point A rises about 2.6 m, 4 m and 5.2 m above XY. The priest's seat needs A at least 3 m above XY, only 5 m of free ground lies above XY, and the trustees have ₹290 in hand. (a) For rope Q, how far is A from each peg? (b) Where does AB meet XY, measured from X? (c) Which ropes meet both the 3 m and the 5 m limits? (d) The trustees can buy P within their money, or ask for ₹10 more to buy Q. Which should they choose, and why?",
-     "a": "(a) 5 m from each peg, since the rope is folded in half. (b) 3 m from X, the midpoint of XY. (c) Only Q: P gives 2.6 m, below 3 m, and R gives 5.2 m, above 5 m. (d) Buy Q after finding the extra ₹10: that is about 3.4% over the money in hand (10 of 290), while P leaves the seat 0.4 m short of the 3 m need, about 13%. A justified choice that compares these two shortfalls earns the mark.",
+     "q": "At a temple, pegs stand at X and Y, 6 m apart, for the rope method. Three ropes are available: P of 8 m, Q of 10 m and R of 12 m between loops, costing ₹280, ₹300 and ₹340. Measurements show that with each rope the point A rises about 2.6 m, 4 m and 5.2 m above XY. The priest would like A at least 3 m above XY but says 2.6 m would still do for the seat, only 5 m of free ground lies above XY, and the trustees have ₹290 in hand. (a) For rope Q, how far is A from each peg? (b) Where does AB meet XY, measured from X? (c) Which ropes meet both the 3 m and the 5 m limits? (d) The trustees can buy P within their money, or ask for ₹10 more to buy Q. Which should they choose, and why?",
+     "a": "(a) 5 m from each peg, since the rope is folded in half. (b) 3 m from X, the midpoint of XY. (c) Only Q meets both limits: P gives 2.6 m, below 3 m, and R gives 5.2 m, above 5 m. (d) Either can be defended. Buying Q after finding the extra ₹10 meets the 3 m wish: that is about 3.4% over the money in hand (10 of 290), while P leaves the seat 0.4 m short of the 3 m need, about 13%. Buying P is defensible because the priest accepts 2.6 m and no extra money is needed. A justified choice that compares these earns the mark.",
      "s": [
       [
        "Part (a): 5 m from each peg",
@@ -902,7 +902,7 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Eight rays R1 to R8 are drawn from O in order, with equal angles between neighbours. What is the angle between R2 and R6, and what does it tell us?",
+     "q": "Eight rays R1 to R8 are drawn from O in order, going all the way round O so that R8 and R1 are also neighbours, with equal angles between neighbours. What is the angle between R2 and R6, and what does it tell us?",
      "o": [
       "180 degrees, so R2 and R6 lie on one straight line through O",
       "135 degrees, so R6 lies between R2 and the straight line",
@@ -1062,15 +1062,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "On the arms of angle XOY, A and B are marked with OA = OB = 5 cm, and AB measures 6 cm. Equal arcs are then drawn from A and from B. (a) What is the smallest whole-number radius for which the arcs meet at a point C? (b) With that radius, where does C lie, and is OC still the bisector? Give the reason.",
-     "a": "(a) The radius must be at least half of AB, so 3 cm. (b) C is the midpoint of AB. OC is still the bisector, because OA = OB, AC = BC = 3 cm and OC is common, so the triangles are congruent by SSS.",
+     "q": "On the arms of angle XOY, A and B are marked with OA = OB = 5 cm, and AB measures 6 cm. Equal arcs are then drawn from A and from B. (a) What is the smallest whole-number radius for which the arcs cross at two points, one of them C on the angle's side? (b) With that radius, is OC still the bisector? Give the reason.",
+     "a": "(a) A radius of exactly half of AB (3 cm) only touches at the midpoint and gives no crossing, so the radius must be more than 3 cm: 4 cm. (b) Yes. OA = OB, AC = BC = 4 cm and OC is common, so the triangles OAC and OBC are congruent by SSS and the angles at O are equal.",
      "s": [
       [
-       "Part (a): 3 cm, half of AB",
+       "Part (a): 4 cm, because 3 cm only touches at the midpoint",
        1
       ],
       [
-       "Part (b): C is the midpoint of AB; SSS with OA = OB, AC = BC, OC common",
+       "Part (b): SSS with OA = OB, AC = BC, OC common",
        1
       ]
      ]
@@ -1263,7 +1263,7 @@
      "d": "Hard",
      "t": "multi_statement",
      "m": 1,
-     "q": "Statement 1: If the arcs from A and B have equal radii, OC bisects the angle even when OA and OB are unequal.\nStatement 2: Drawing the equal arcs on the far side of O from the angle still gives an angle bisector.\nStatement 3: A protractor is needed to make a copy of an angle by the book's method.\nWhich of the statements are correct?",
+     "q": "Statement 1: If the arcs from A and B have equal radii, OC bisects the angle even when OA and OB are unequal.\nStatement 2: The equal arcs drawn from A and from B may have any radius greater than half of AB.\nStatement 3: A protractor is needed to make a copy of an angle by the book's method.\nWhich of the statements are correct?",
      "a": "2 only",
      "o": [
       "2 only",
@@ -1343,7 +1343,7 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "The line l meets m at A, making 70 degrees with m. Neha draws n through B on l by copying this corresponding angle. She then bisects the interior angle between l and n that lies below n, on the same side of l as the 70 degree angle. What angle does her bisector make with l?",
+     "q": "The line l meets m at A, and the 70 degree angle at A lies above m, on the right of l. Neha draws n through B on l by copying this corresponding angle, so the copied 70 degree angle at B lies above n, on the right of l. She then bisects the interior angle between l and n that lies below n, on the right of l. What angle does her bisector make with l?",
      "o": [
       "55 degrees",
       "35 degrees",
@@ -1363,8 +1363,8 @@
      "tags": [
       "case_study"
      ],
-     "q": "Rahim stitches stripes on a cloth whose bottom edge is m. A fold line l meets m at A making 70 degrees. Stripe n1 through B1 was drawn by copying 70 degrees with equal radii at A and B1. Stripe n2 through B2 used a 4 cm arc at A but a 5 cm arc at B2. Each copy of the angle takes 5 minutes and Rahim has 12 minutes left. The client pays ₹150 per correct stripe, but rejects the whole cloth if any stripe is not parallel to m. Stripes n3 and n4 are still to be drawn. If he overruns the 12 minutes, the client deducts ₹40 for lateness but still pays for every correct stripe. (a) What angle does n1 make with l on the straight line next to the 70 degree angle at B1? (b) Is n2 sure to be parallel to m? (c) How many correct stripes can be ready in 12 minutes if he redoes n2 first, and what is the pay? (d) Should he deliver on time or finish a fourth stripe late? Give figures.",
-     "a": "(a) 110 degrees, since 180 - 70 = 110. (b) No, the radii at A and B2 differ, so the angle copied need not equal 70 degrees. (c) Two copies fit in 12 minutes (redo n2 and draw n3), giving n1, n2 and n3: 3 x 150 = ₹450. (d) Finishing n4 takes 5 more minutes: 4 x 150 - 40 = ₹560, which is ₹110 more than ₹450 on time. Either choice is defensible if the figures are used: late earns ₹110 more; on time avoids the lateness penalty and any risk of the client refusing a late job.",
+     "q": "Rahim stitches stripes on a cloth whose bottom edge is m. A fold line l meets m at A making 70 degrees. Stripe n1 through B1 was drawn by copying 70 degrees with equal radii at A and B1. Stripe n2 through B2 used a 4 cm arc at A but a 5 cm arc at B2. Each copy of the angle takes 5 minutes and Rahim has 12 minutes left. The client pays ₹150 per correct stripe, but rejects the whole cloth if any stripe is not parallel to m. Stripes n3 and n4 are still to be drawn. If he overruns the 12 minutes, the client deducts ₹140 for lateness but still pays for every correct stripe. (a) What angle does n1 make with l on the straight line next to the 70 degree angle at B1? (b) Is n2 sure to be parallel to m? (c) How many correct stripes can be ready in 12 minutes if he redoes n2 first, and what is the pay? (d) Should he deliver on time or finish a fourth stripe late? Give figures.",
+     "a": "(a) 110 degrees, since 180 - 70 = 110. (b) No, the radii at A and B2 differ, so the angle copied need not equal 70 degrees. (c) Two copies fit in 12 minutes (redo n2 and draw n3), giving n1, n2 and n3: 3 x 150 = ₹450. (d) Finishing n4 takes 5 more minutes: 4 x 150 - 140 = ₹460, which is only ₹10 more than ₹450 on time. Either choice is defensible if the figures are used: late gains just ₹10, which one redo (5 more minutes) would wipe out, so delivering on time is the safer choice; finishing late is defensible only if he is sure all four stripes are parallel.",
      "s": [
       [
        "Part (a): 110 degrees",
@@ -1379,7 +1379,7 @@
        1
       ],
       [
-       "Part (d): compares ₹560 late with ₹450 on time and justifies a choice",
+       "Part (d): compares ₹460 late with ₹450 on time and justifies a choice",
        1
       ]
      ]
@@ -1525,7 +1525,7 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Rani draws the perpendicular from a point P1 to a line l, and then the perpendicular from another point P2, on the same side of l, to the same line l. How are the two perpendicular lines related?",
+     "q": "Rani draws the perpendicular from a point P1 to a line l, and then the perpendicular from another point P2 that does not lie on the first perpendicular, on the same side of l, to the same line l. How are the two perpendicular lines related?",
      "o": [
       "They are parallel, since each makes the same 90 degrees with l",
       "They meet above l, since both start from points above the line l",
@@ -1653,7 +1653,7 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Lines m and n are parallel and a transversal l crosses them. Which statement about the angles formed is NOT true?",
+     "q": "Lines m and n are parallel and a transversal l crosses them. Which statement about the angles formed is NOT true in general?",
      "o": [
       "The two interior angles on the same side of l are equal to each other",
       "The alternate interior angles are equal",

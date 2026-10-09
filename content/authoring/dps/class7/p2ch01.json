@@ -210,8 +210,8 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Tile T1 is a rectangle 30 cm by 20 cm. Tile T2 fits exactly over T1 only after a quarter turn. Tile T3 fits exactly over T2 only after being turned over. Naveen says T3 and T1 need not be congruent because he never placed them together. (a) Is he right? Give the reason. (b) State T3's two measurements.",
-     "a": "(a) No. T2 is congruent to T1 and T3 is congruent to T2, so T3 has the same shape and size as T1 (the same moves of turning and flipping carry one onto the other). (b) 30 cm by 20 cm.",
+     "q": "Tile T1 is a rectangle 30 cm by 20 cm. Tile T2 fits exactly over T1 only after a quarter turn. Tile T3 fits exactly over T2 only after a half turn. Naveen says T3 and T1 need not be congruent because he never placed them together. (a) Is he right? Give the reason. (b) State T3's two measurements.",
+     "a": "(a) No. T2 is congruent to T1 and T3 is congruent to T2, so T3 has the same shape and size as T1 (turning, sliding or flipping never changes shape or size). (b) 30 cm by 20 cm.",
      "s": [
       [
        "Part (a): No, with the chain T3 to T2 to T1 as the reason",
@@ -739,20 +739,28 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "ΔHEN ≅ ΔBIG, with HE = 5.5 cm, EN = 6.5 cm and HN = 8 cm. (a) Write two other correct ways of stating the congruence. (b) Find BI, IG and BG. (c) Is ΔHEN ≅ ΔBGI correct? Check using the sides.",
-     "a": "(a) For example ΔEHN ≅ ΔIBG and ΔNEH ≅ ΔGIB. (b) BI = 5.5 cm, IG = 6.5 cm, BG = 8 cm. (c) No. It would make HE match BG, but HE = 5.5 cm and BG = 8 cm.",
+     "q": "Triangles ΔABC and ΔPQR have AB = 5 cm, BC = 6 cm, CA = 7 cm and PQ = 6 cm, QR = 7 cm, RP = 5 cm. A student writes ΔABC ≅ ΔQRP. (a) Under her statement, which side of ΔQRP is matched with AB, and is the statement correct? (b) Which sides actually match? (c) Write a correct congruence starting with ΔABC, and name the condition. (d) Write another correct statement that starts with ΔCAB. (e) Which angle of ΔABC equals ∠Q?",
+     "a": "(a) A is matched with Q and B with R, so AB is matched with QR = 7 cm, but AB = 5 cm; the statement is wrong. (b) AB = 5 cm matches RP = 5 cm, BC = 6 cm matches PQ = 6 cm, and CA = 7 cm matches QR = 7 cm. (c) A with R, B with P, C with Q: ΔABC ≅ ΔRPQ, by SSS. (d) C, A, B correspond to Q, R, P: ΔCAB ≅ ΔQRP. (e) ∠Q corresponds to C, so ∠Q = ∠C.",
      "s": [
       [
-       "Part (a): two valid reorderings of both names",
+       "Part (a): AB matched with QR = 7 cm, so the statement is wrong",
        1
       ],
       [
-       "Part (b): BI = 5.5, IG = 6.5, BG = 8",
-       2
+       "Part (b): the three matching side pairs",
+       1
       ],
       [
-       "Part (c): says no, and shows HE = 5.5 differs from BG = 8",
-       2
+       "Part (c): ΔABC ≅ ΔRPQ, SSS",
+       1
+      ],
+      [
+       "Part (d): ΔCAB ≅ ΔQRP",
+       1
+      ],
+      [
+       "Part (e): ∠Q = ∠C",
+       1
       ]
      ]
     },
@@ -761,8 +769,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "Ms Sharma's school makes triangular flags for Independence Day, which is 4 days away. The template ΔPQR has PQ = 30 cm, QR = 40 cm and RP = 50 cm. Tailor A has made 50 flags with these sides. Tailor B has made 45 flags ΔLMN with LM = 40 cm, MN = 50 cm and NL = 30 cm. Tailor C has made 25 flags with sides 30 cm, 40 cm and 55 cm. The school pays ₹8 for each flag congruent to the template and needs 120 flags.\n(a) Which tailors' flags are congruent to the template? (b) Write ΔLMN's congruence with the template in order. (c) How much is paid so far, and how many flags are still short? (d) The 25 missing flags can come from Tailor A, who charges ₹8 each and needs 6 days, or from Tailor B, who charges ₹8 each plus ₹100 for express work and needs 2 days. Decide whom to ask.",
-     "a": "(a) A and B (SSS); C has 55 cm, not 50 cm. (b) L is between 40 and 30, which meet at Q; M between 40 and 50, at R; N between 50 and 30, at P. So ΔPQR ≅ ΔNLM. (c) 95 x 8 = ₹760; 120 - 95 = 25 short. (d) Tailor A: 25 x 8 = ₹200 but ready in 6 days, after the festival. Tailor B: 200 + 100 = ₹300, ready in 2 days. Ask Tailor B: the extra ₹100 is the price of finishing on time, and the flags are congruent either way.",
+     "q": "Ms Sharma's school makes triangular flags for Independence Day, which is 4 days away. The template ΔPQR has PQ = 30 cm, QR = 40 cm and RP = 50 cm. Tailor A has made 50 flags with these sides. Tailor B has made 45 flags ΔLMN with LM = 40 cm, MN = 50 cm and NL = 30 cm. Tailor C has made 25 flags with sides 30 cm, 40 cm and 55 cm. The school pays ₹8 for each flag congruent to the template and needs 120 flags.\n(a) Which tailors' flags are congruent to the template? (b) Write ΔLMN's congruence with the template in order. (c) How much is paid so far, and how many flags are still short? (d) The 25 missing flags can come from Tailor A, who charges ₹8 each and needs 3 days, or from Tailor B, who charges ₹8 each plus ₹100 for express work and needs 2 days. Decide whom to ask.",
+     "a": "(a) A and B (SSS); C has 55 cm, not 50 cm. (b) L is between 40 and 30, which meet at Q; M between 40 and 50, at R; N between 50 and 30, at P. So ΔPQR ≅ ΔNLM. (c) 95 x 8 = ₹760; 120 - 95 = 25 short. (d) Tailor A: 25 x 8 = ₹200, ready in 3 days, which is within the 4 days. Tailor B: 200 + 100 = ₹300, ready in 2 days. Both are in time and the flags are congruent either way, so ask Tailor A: the extra day is free and saves ₹100.",
      "s": [
       [
        "Part (a): A and B, with C failing on the 55 cm side",
@@ -777,7 +785,7 @@
        1
       ],
       [
-       "Part (d): Tailor B at ₹300, because Tailor A's 6 days is too late",
+       "Part (d): Tailor A at ₹200, ready in 3 days, ₹100 cheaper than Tailor B",
        1
       ]
      ],
@@ -928,7 +936,7 @@
      "d": "Hard",
      "t": "match",
      "m": 1,
-     "q": "In each row of Column I, ΔABC and ΔPQR have the equal parts shown. Match the row with the conclusion in Column II.\nColumn I: 1. AB = PQ = 6 cm, BC = QR = 8 cm, ∠B = 100°, ∠Q = 100°  2. AB = PQ = 6 cm, BC = QR = 8 cm, ∠A = ∠P = 50°  3. ∠A = ∠P = 50°, ∠B = ∠Q = 60°, ∠C = ∠R = 70°  4. ABC has sides 6, 8, 7 cm and PQR has PQ = 7, QR = 6, RP = 8 cm\nColumn II: a. Congruent by SSS  b. Congruent by SAS  c. Same shape only, congruence not guaranteed  d. SSA, congruence not guaranteed",
+     "q": "In each row of Column I, ΔABC and ΔPQR have the equal parts shown. Match the row with the conclusion in Column II.\nColumn I: 1. AB = PQ = 6 cm, BC = QR = 8 cm, ∠B = 100°, ∠Q = 100°  2. AB = PQ = 8 cm, BC = QR = 7 cm, ∠A = ∠P = 50°  3. ∠A = ∠P = 50°, ∠B = ∠Q = 60°, ∠C = ∠R = 70°  4. ABC has sides 6, 8, 7 cm and PQR has PQ = 7, QR = 6, RP = 8 cm\nColumn II: a. Congruent by SSS  b. Congruent by SAS  c. Same shape only, congruence not guaranteed  d. SSA, congruence not guaranteed",
      "a": "1-b, 2-d, 3-c, 4-a",
      "o": [
       "1-b, 2-d, 3-c, 4-a",
@@ -1112,8 +1120,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "A workshop owner compares four pairs of triangular plates, ΔABC and ΔPQR. Pair 1: AB = PQ = 7 cm, AC = PR = 9 cm, ∠A = ∠P = 48°. Pair 2: AB = PQ = 7 cm, AC = PR = 9 cm, ∠B = ∠Q = 48°. Pair 3: ∠A = ∠P = 48°, ∠B = ∠Q = 62°, ∠C = ∠R = 70°, and no side is measured. Pair 4: AB = QR = 7 cm, BC = PQ = 9 cm, ∠B = ∠Q = 48°.\n(a) Is Pair 1 certainly congruent? Name the condition. (b) Pair 2 has the same sides but the 48° is at B and Q. What goes wrong? (c) What can be said about Pair 3? (d) Is Pair 4 certainly congruent? If so write the congruence in order. (e) Which single extra equality would make Pair 3 certainly congruent, and by which condition?",
-     "a": "(a) Yes, SAS: the 48° lies between the 7 cm and 9 cm sides in both. (b) The 48° is not between the two given sides, so this is the SSA case; two different triangles can fit and congruence is not certain. (c) The plates have the same shape but may differ in size, so congruence is not certain. (d) Yes, SAS: ∠B lies between AB and BC, and ∠Q between PQ and QR; AB matches QR and BC matches PQ, so ΔABC ≅ ΔRQP. (e) Any one pair of corresponding sides, for example AB = PQ, gives ASA (or AAS), because all three angles are already equal.",
+     "q": "A workshop owner compares four pairs of triangular plates, ΔABC and ΔPQR. Pair 1: AB = PQ = 7 cm, AC = PR = 9 cm, ∠A = ∠P = 48°. Pair 2: AB = PQ = 9 cm, AC = PR = 7 cm, ∠B = ∠Q = 48°. Pair 3: ∠A = ∠P = 48°, ∠B = ∠Q = 62°, ∠C = ∠R = 70°, and no side is measured. Pair 4: AB = QR = 7 cm, BC = PQ = 9 cm, ∠B = ∠Q = 48°.\n(a) Is Pair 1 certainly congruent? Name the condition. (b) Pair 2 has the same two lengths but the 48° is at B and Q, opposite the 7 cm side. What goes wrong? (c) What can be said about Pair 3? (d) Is Pair 4 certainly congruent? If so write the congruence in order. (e) Which single extra equality would make Pair 3 certainly congruent, and by which condition?",
+     "a": "(a) Yes, SAS: the 48° lies between the 7 cm and 9 cm sides in both. (b) The 48° is not between the two given sides, so this is the SSA case. The 7 cm side opposite the 48° is shorter than AB = 9 cm but longer than 9 sin 48° (about 6.7 cm), so two different triangles can fit and congruence is not certain. (c) The plates have the same shape but may differ in size, so congruence is not certain. (d) Yes, SAS: ∠B lies between AB and BC, and ∠Q between PQ and QR; AB matches QR and BC matches PQ, so ΔABC ≅ ΔRQP. (e) Any one pair of corresponding sides, for example AB = PQ, gives ASA (or AAS), because all three angles are already equal.",
      "s": [
       [
        "Part (a): yes, SAS",
@@ -1168,8 +1176,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "The fete committee cuts triangular rangoli sheets to match a template with two sides of 24 cm and 18 cm and 50° between them, and pays ₹5 for each sheet congruent to it. Four students cut sheets. Anil cuts 12 sheets with sides 24 cm and 18 cm and 50° between. Bela cuts 10 with 24 cm and 18 cm and 70° between. Chitra cuts 8 with sides 18 cm and 24 cm and 50° between. Dev cuts 6 with sides 24 cm and 20 cm and 50° between. The rangoli is laid on Friday morning and needs 30 matching sheets.\n(a) Which students' sheets are congruent to the template? (b) For each of the others, say which part fails the SAS condition. (c) How much is paid? (d) The 10 missing sheets can be cut by Anil at ₹5 each, but only by Friday evening, or supplied exactly to the template by Dev on Wednesday at ₹7 each. Decide whom to ask.",
-     "a": "(a) Anil and Chitra, by SAS. (b) Bela's included angle is 70°, not 50°; Dev's second side is 20 cm, not 18 cm. (c) (12 + 8) x 5 = ₹100. (d) Ask Dev. Anil's would cost 10 x 5 = ₹50 but arrive after Friday morning; Dev's cost 10 x 7 = ₹70, which is ₹20 more but are ready in time, and they match the template exactly.",
+     "q": "The fete committee cuts triangular rangoli sheets to match a template with two sides of 24 cm and 18 cm and 50° between them, and pays ₹5 for each sheet congruent to it. Four students cut sheets. Anil cuts 12 sheets with sides 24 cm and 18 cm and 50° between. Bela cuts 10 with 24 cm and 18 cm and 70° between. Chitra cuts 8 with sides 18 cm and 24 cm and 50° between. Dev cuts 6 with sides 24 cm and 20 cm and 50° between. The rangoli is laid on Friday at 4 pm and needs 30 matching sheets.\n(a) Which students' sheets are congruent to the template? (b) For each of the others, say which part fails the SAS condition. (c) How much is paid? (d) The 10 missing sheets can be cut by Anil at ₹5 each, who will finish by Friday noon, or supplied exactly to the template by Dev on Wednesday at ₹7 each. Decide whom to ask.",
+     "a": "(a) Anil and Chitra, by SAS. (b) Bela's included angle is 70°, not 50°; Dev's second side is 20 cm, not 18 cm. (c) (12 + 8) x 5 = ₹100. (d) Ask Anil. Anil's would cost 10 x 5 = ₹50 and arrive by Friday noon; Dev's cost 10 x 7 = ₹70. Both are in time and both sets are congruent to the template (SAS), so ask Anil: ₹20 cheaper.",
      "s": [
       [
        "Part (a): Anil and Chitra",
@@ -1184,7 +1192,7 @@
        1
       ],
       [
-       "Part (d): Dev, ₹70 against ₹50, because Anil's would be late",
+       "Part (d): Anil, ₹50 against ₹70, both in time and both congruent",
        1
       ]
      ],
@@ -1406,15 +1414,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Two straight rods AD and BC cross at O, with AB ∥ CD and BO = CO. (a) Name the angle pairs that are equal in ΔAOB and ΔDOC, and the reason for each. (b) Which condition shows ΔAOB ≅ ΔDOC, and why is it not ASA? What follows for AB and DC?",
-     "a": "(a) ∠OAB = ∠ODC, as alternate angles (AB ∥ CD, transversal AD), and ∠AOB = ∠DOC, as vertically opposite angles. (b) AAS: the equal side BO = CO is opposite ∠OAB and ∠ODC, so it is not between the two equal angles. Hence ΔAOB ≅ ΔDOC and AB = DC.",
+     "q": "Two straight rods AD and BC cross at O, with AB ∥ CD and BO = CO. (a) Name the angle pairs that are equal in ΔAOB and ΔDOC, and the reason for each. (b) Name one condition that shows ΔAOB ≅ ΔDOC. What follows for AB and DC?",
+     "a": "(a) ∠OAB = ∠ODC, as alternate angles (AB ∥ CD, transversal AD), and ∠AOB = ∠DOC, as vertically opposite angles. (b) AAS: the equal side BO = CO is opposite ∠OAB and ∠ODC. (ASA also works, since ∠OBA = ∠OCD as alternate angles with transversal BC, and BO lies between ∠OBA and ∠AOB.) Hence ΔAOB ≅ ΔDOC and AB = DC.",
      "s": [
       [
        "Part (a): alternate angles and vertically opposite angles",
        1
       ],
       [
-       "Part (b): AAS, with BO and CO not between the angles, so AB = DC",
+       "Part (b): a valid condition (AAS, or ASA with the third angle pair), so AB = DC",
        1
       ]
      ]
@@ -1609,7 +1617,7 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "Surveyor Tara checks whether triangular plots are congruent. Plot 1 has ∠A = 48°, ∠C = 62° and BC = 40 m. For Plot 2 she measures ∠P = 48°, ∠Q = 70°, ∠R = 62° and QR = 40 m. For Plot 4 she measures ∠K = 62°, ∠L = 70° and KM = 40 m. Measuring an angle costs ₹600 and measuring a side costs ₹400. For Plot 3 she must choose between measuring two angles and one side, or all three sides, but a pond blocks side CA and a boat to measure it costs ₹700 extra.\n(a) Find ∠B of Plot 1. (b) Are Plots 1 and 2 congruent? Name the condition. (c) Do Plot 4's measurements show that it is congruent to Plot 1? Compare where the 40 m side lies. (d) Which plan should she use for Plot 3? Decide.",
+     "q": "Surveyor Tara checks whether triangular plots are congruent. Plot 1 has ∠A = 48°, ∠C = 62° and BC = 40 m. For Plot 2 she measures ∠P = 48°, ∠Q = 70°, ∠R = 62° and QR = 40 m. For Plot 4 she measures ∠K = 62°, ∠L = 70° and KM = 40 m. Measuring an angle costs ₹600 and measuring a side costs ₹400. Plot 3 is ΔXYZ, to be compared with Plot 1, whose angles and all three sides are already known. For Plot 3 she must choose between measuring two angles and one side, or all three sides, but a pond blocks side ZX and a boat to measure it costs ₹700 extra.\n(a) Find ∠B of Plot 1. (b) Are Plots 1 and 2 congruent? Name the condition. (c) Do Plot 4's measurements show that it is congruent to Plot 1? Compare where the 40 m side lies. (d) Which plan should she use for Plot 3? Decide.",
      "a": "(a) ∠B = 180° - 48° - 62° = 70°. (b) Yes, AAS: ∠A = ∠P, ∠B = ∠Q and BC = QR (the side opposite ∠A and ∠P). (c) No. In Plot 4, ∠M = 180° - 62° - 70° = 48°, and KM is opposite ∠L = 70°. In Plot 1, BC is opposite ∠A = 48°. The 40 m sides do not correspond. (d) Two angles and a side cost 2 x 600 + 400 = ₹1,600; three sides cost 3 x 400 + 700 = ₹1,900. Use two angles and a side, ₹300 cheaper.",
      "s": [
       [
@@ -1855,7 +1863,7 @@
      "t": "short_answer",
      "m": 3,
      "q": "A fitter says: 'Two right-angled brackets with the same 10 cm hypotenuse are congruent, and so are two right-angled brackets with a 10 cm hypotenuse and an equal 6 cm side.' Is he right?",
-     "a": "Partly. The second claim is right: with the right angle, equal hypotenuse and an equal side, RHS applies. The first is wrong. Draw one bracket with a 6 cm side and another with a 9 cm side, both with a 10 cm hypotenuse: the arc of 10 cm cuts the perpendicular at different heights, giving other sides of about 8 cm and 4.4 cm, so they cannot fit over each other.",
+     "a": "Partly. The second claim is right: with the right angle, equal hypotenuse and an equal side, RHS applies. The first is wrong. Draw one bracket with a 6 cm side and another with a 9 cm side, both with a 10 cm hypotenuse: the 10 cm arc from the end of each side cuts the perpendicular line at different distances, so the remaining sides differ and the brackets cannot fit over each other.",
      "s": [
       [
        "Verdict: partly right",
@@ -2012,8 +2020,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "A shop orders 20 triangular boards congruent to board P (∠B = 90°, BC = 12 cm, AC = 15 cm), paying ₹150 for each. Twelve boards arrive with ∠Y = 90°, YZ = 12 cm and XZ = 15 cm. The supplier also offers eight more boards with sides of 12 cm and 15 cm, whose angles are unknown, at ₹90 each; the shop must pay for all eight even if they do not fit. The shop may instead have each of the eight measured for ₹60 per board and pay only for those found with a right angle. In the supplier's last batch of eight, six were not right-angled.\n(a) Which of the twelve are congruent to P, and by which condition? (b) Why can the eight not yet be called congruent to P? (c) What is the payment for the twelve? (d) If the next batch behaves like the last (two right-angled boards), compare the two ways of buying the eight. Decide.",
-     "a": "(a) All twelve, by RHS (right angle, hypotenuse 15 cm, side 12 cm). (b) Their angles are unknown, so the data are only two sides, which does not guarantee congruence. (c) 12 x 150 = ₹1,800. (d) Paying for all eight unseen: 8 x 90 = ₹720 for two usable boards. Measuring first: 8 x 60 + 2 x 90 = ₹660. Measure first: it costs ₹60 less if the batch repeats.",
+     "q": "A shop orders 20 triangular boards congruent to board P (∠B = 90°, BC = 12 cm, AC = 15 cm), paying ₹150 for each. Twelve boards arrive with ∠Y = 90°, YZ = 12 cm and XZ = 15 cm. The supplier also offers eight more boards with sides of 12 cm and 15 cm, whose angles are unknown, at ₹90 each; the shop must pay for all eight even if they do not fit. The shop may instead have each of the eight measured for ₹60 per board and pay only for those found with the right angle opposite the 15 cm side (so that 15 cm is the hypotenuse). In the supplier's last batch of eight, six were not right-angled.\n(a) Which of the twelve are congruent to P, and by which condition? (b) Why can the eight not yet be called congruent to P? (c) What is the payment for the twelve? (d) If the next batch behaves like the last (two boards with the right angle opposite the 15 cm side), compare the two ways of buying the eight. Decide.",
+     "a": "(a) All twelve, by RHS (right angle, hypotenuse 15 cm, side 12 cm). (b) Their angles are unknown, so the data are only two sides. A board whose right angle lies between the 12 cm and 15 cm sides has a longer hypotenuse, so it would not fit P; congruence is not guaranteed. (c) 12 x 150 = ₹1,800. (d) Paying for all eight unseen: 8 x 90 = ₹720 for two usable boards. Measuring first: 8 x 60 + 2 x 90 = ₹660. Measure first: it costs ₹60 less if the batch repeats.",
      "s": [
       [
        "Part (a): all twelve, by RHS",
@@ -2187,15 +2195,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Two angles of an isosceles triangle are 50° and 80°. (a) Find the third angle. (b) Show that the third angle cannot be 80°.",
-     "a": "(a) The third angle is 50°, so the angles are 50°, 50° and 80°. (b) If the third angle were 80°, the angles would be 50°, 80° and 80°, which add to 210°, more than 180°. So the equal angles must be the two 50° angles.",
+     "q": "One angle of an isosceles triangle is 80°. (a) Find the other two angles in each possible case. (b) Show that if the given angle is 100° there is only one case.",
+     "a": "(a) If 80° is one of the two equal angles, the angles are 80°, 80° and 20°. If 80° is the odd angle, the other two are equal and (180° - 80°)/2 = 50° each, giving 80°, 50°, 50°. (b) Two equal angles of 100° would add to 200°, more than 180°, so 100° must be the odd angle and the others are (180° - 100°)/2 = 40° each.",
      "s": [
       [
-       "Part (a): 50°, with the triangle 50°, 50°, 80°",
+       "Part (a): both cases, 80°-80°-20° and 80°-50°-50°",
        1
       ],
       [
-       "Part (b): 80° + 80° + 50° = 210°, more than 180°",
+       "Part (b): 100° + 100° = 200° > 180°, so only 100°-40°-40°",
        1
       ]
      ]
@@ -2774,15 +2782,15 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "ABCD has AB ∥ DC and AD ∥ BC, and the diagonal BD is drawn. (a) Which pairs of angles are equal, and why? (b) Which condition shows ΔABD ≅ ΔCDB, and what is the common side? (c) Write the congruence in order. (d) AB is 7.5 cm and AD is 4.2 cm. Find DC and BC, and state which angle of ΔCDB equals ∠A.",
-     "a": "(a) ∠ABD = ∠CDB, as alternate angles (AB ∥ DC, transversal BD), and ∠ADB = ∠CBD, as alternate angles (AD ∥ BC, transversal BD). (b) ASA, with the common side BD between the equal angles. (c) ΔABD ≅ ΔCDB (A with C, B with D, D with B). (d) DC = AB = 7.5 cm and BC = AD = 4.2 cm; ∠A = ∠C.",
+     "q": "ABCD has AB ∥ DC and AB = DC, and the diagonal BD is drawn. (a) Which pair of angles is equal, and why? (b) Which condition shows ΔABD ≅ ΔCDB, and what is the common side? (c) Write the congruence in order. (d) AB is 7.5 cm and AD is 4.2 cm. Find DC and BC, and state which angle of ΔCDB equals ∠A.",
+     "a": "(a) ∠ABD = ∠CDB, as alternate angles (AB ∥ DC, transversal BD). (b) SAS: AB = CD, the angle between AB and BD equals the angle between CD and DB, and BD is the common side. (c) ΔABD ≅ ΔCDB (A with C, B with D, D with B). (d) DC = AB = 7.5 cm and BC = AD = 4.2 cm; ∠A = ∠C.",
      "s": [
       [
-       "Part (a): two pairs of alternate angles",
+       "Part (a): alternate angles ∠ABD = ∠CDB",
        1
       ],
       [
-       "Part (b): ASA with BD common",
+       "Part (b): SAS with BD common",
        1
       ],
       [
