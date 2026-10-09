@@ -13,6 +13,8 @@ export interface ReviewItem {
   marks_awarded: number
   marks_max: number
   feedback: string | null
+  parts?: Array<{ step_no: number; description: string; marks_awarded: number; marks_max: number }> | null
+  possible_stopped_early?: boolean
   dispute: { comment: string; reply: string; marks_before: number; marks_after: number } | null
   excluded: boolean
 }
@@ -189,6 +191,25 @@ export function AnswerReview({
               </span>
               {item.feedback && !item.excluded && <span className="text-small text-muted-foreground">{item.feedback}</span>}
             </div>
+            {item.parts && !item.excluded && (
+              <ul className="text-small space-y-0.5" aria-label="Marks part by part">
+                {item.parts.map((part) => (
+                  <li key={part.step_no} className="flex justify-between gap-2">
+                    <span className={part.marks_awarded < part.marks_max ? 'font-medium' : 'text-muted-foreground'}>
+                      Part {part.step_no}: {part.description}
+                    </span>
+                    <span>
+                      {part.marks_awarded} of {part.marks_max}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {item.possible_stopped_early && !item.excluded && (
+              <p className="text-small text-muted-foreground">
+                This answer is much shorter than the question asked for. If you knew more, write it all out next time.
+              </p>
+            )}
 
             {item.dispute && (
               <div className="space-y-2" aria-label="Your conversation with the AI">

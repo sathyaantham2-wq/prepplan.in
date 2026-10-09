@@ -113,6 +113,7 @@ export interface Blueprints {
   board: string;
   choice_rules: Generated<Json>;
   class: number;
+  config: Generated<Json>;
   created_at: Generated<Timestamp>;
   duration_min: number;
   id: Generated<string>;
@@ -127,6 +128,7 @@ export interface Chapters {
   blurb: string | null;
   chapter_no: number;
   created_at: Generated<Timestamp>;
+  discipline: string | null;
   id: Generated<string>;
   name: string;
   order_index: number;
@@ -278,6 +280,7 @@ export interface EvaluationItems {
   marks_max: Numeric;
   overridden_by: string | null;
   paper_question_id: string;
+  possible_stopped_early: Generated<boolean>;
   step_marks_awarded: Json | null;
 }
 
@@ -419,12 +422,14 @@ export interface Notifications {
 export interface PaperQuestions {
   choice_group: string | null;
   created_at: Generated<Timestamp>;
+  expected_words: number | null;
   id: Generated<string>;
   marks: number;
   paper_id: string;
   position: number;
   question_id: string;
   section: string;
+  slot: string | null;
 }
 
 export interface Papers {

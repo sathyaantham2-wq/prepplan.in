@@ -13,9 +13,30 @@ Read `CLAUDE.md` first. Its architecture invariants are not negotiable, in parti
 identity is `(book, part, chapter_number)` and never the number alone, `board` and `class` are
 first-class everywhere, and every question must trace to an IN-scope concept.
 
+**Every question you write must meet `docs/QUESTION_STANDARD.md`** — read it before step 4. In
+short: build each item from the chapter's own examples, activities, "Figure it Out" items and
+stories (change the numbers/setting, raise one level); aim for about 25% recall / 45% application /
+30% reasoning-and-checking per concept; include claim-check, "show it cannot work", reverse, case
+study (4–5 parts, ending in a decision), scenario MCQ, assertion-reason, statement and match items
+where the concept allows; make wrong options real same-chapter concepts or common mistakes; use
+Indian settings (₹, lakh, crore, school events); never copy a school worksheet. Where the standard
+and the loader disagree (e.g. `match` is not yet loadable), follow the loader and flag it.
+
 The three skills `examprep-ingest-source`, `examprep-scope-authoring` and
 `examprep-question-generation` hold the detail. Follow them. This file is the running order and
 the things that have actually gone wrong.
+
+## Current mode: the DPS bank (owner decision 2026-10-05)
+
+The old Bloom x difficulty grid (Easy / Hard / Hardest, 20 per concept) is **retired as the way to
+author**. A chapter whose scope and concepts already exist is rewritten as a *DPS bank*: about 20
+school-exam-standard questions per concept in the proportions of `docs/QUESTION_STANDARD.md`
+section 10, written to its sections 9 and 11, into
+`content/authoring/dps/<set>/<chapter>.json` and loaded with `scripts/load-dps-pack.ts` (its
+`--check` is the format spec and enforces the per-concept minimums). Read the whole standard first.
+The old grid questions are never touched by you: they are retired later, in a separate explicit
+step. The running order below (ingest, scope, the old grid) applies only to a chapter that does
+not exist yet.
 
 ## Running order
 
@@ -91,6 +112,10 @@ Quality rules the loader cannot enforce, which are the actual job:
 - Spread `assertion_reason` and `multi_statement` about one per concept rather than clustering
   them. They are the only item types that expose First-Plausible Commit, which is why they matter.
 - Reversal words (NOT, least, cannot) get `"rev": true`.
+- Meet `docs/QUESTION_STANDARD.md`: the 5 / 9 / 6 recall / application / reasoning split per
+  concept (§2), the type spread (§3), distractors from the same chapter and absolute-word false
+  statements (§4), Indian settings and originality (§5), case studies marked part by part (§6).
+  Say in your report how each concept's split came out and which §3 types the chapter lacks.
 - Stay inside the IN-scope list. If a good question needs something not in scope, the question is
   wrong, not the scope.
 

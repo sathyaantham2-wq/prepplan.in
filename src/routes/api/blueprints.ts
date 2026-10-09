@@ -19,6 +19,15 @@ const sectionSchema = z.object({
   marks_per_question: z.number().int().positive(),
   count: z.number().int().positive(),
   bloom_allowed: z.array(z.enum(BLOOM_LEVELS)).min(1),
+  // School Half-Yearly layout fields (see src/lib/school-paper.ts); all optional.
+  slot: z.string().min(1).optional(),
+  types: z
+    .array(z.enum(['mcq', 'assertion_reason', 'match', 'multi_statement', 'short_answer', 'long_answer', 'fill_blank', 'diagram']))
+    .min(1)
+    .optional(),
+  tag: z.enum(['case_study', 'map', 'construction', 'figure']).optional(),
+  discipline: z.string().min(1).optional(),
+  or_count: z.number().int().nonnegative().optional(),
 })
 
 // F030: {section, count} -- "count" of that section's slots become OR pairs. Validated against
@@ -38,6 +47,8 @@ const createBlueprintSchema = z
     sections: z.array(sectionSchema).min(1),
     bloom_targets: z.record(z.enum(BLOOM_LEVELS), z.number().min(0).max(100)),
     choice_rules: z.array(choiceRuleSchema).optional(),
+    // Paper-type settings (kind, instructions, word limits, thinking-level mix, ...).
+    config: z.record(z.string(), z.unknown()).optional(),
   })
   .superRefine((data, ctx) => {
     const bloomTotal = Object.values(data.bloom_targets).reduce(
@@ -123,6 +134,7 @@ export const Route = createFileRoute('/api/blueprints')({
           choice_rules: parsed.data.choice_rules
             ? JSON.stringify(parsed.data.choice_rules)
             : undefined,
+          config: parsed.data.config ? JSON.stringify(parsed.data.config) : undefined,
         })
         return Response.json(blueprint, { status: 201 })
       },

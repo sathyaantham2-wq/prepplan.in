@@ -3,6 +3,8 @@ import { z } from 'zod'
 import { getSharedDb } from '../../../db/connection'
 import { resolveAdaptiveStudent } from '../../../lib/adaptive/access'
 import { buildPaperPlan } from '../../../lib/adaptive/plan'
+import { findSchoolBlueprint } from '../../../lib/school-blueprint'
+import { parseHalfYearlyConfig } from '../../../lib/school-paper'
 import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const querySchema = z.object({
@@ -64,7 +66,20 @@ export const Route = createFileRoute('/api/adaptive/plan')({
             { status: 404 },
           )
         }
-        return Response.json(plan)
+        // When the subject has a school-exam-standard paper, that is the paper she gets: fixed
+        // sections and marks, no choice of count, question type or difficulty.
+        const school = await findSchoolBlueprint(db, parsed.data.subject_id, parsed.data.question_count ?? 10)
+        return Response.json({
+          ...plan,
+          school_paper: school
+            ? {
+                name: school.name,
+                total_marks: school.total_marks,
+                duration_min: school.duration_min,
+                draft: parseHalfYearlyConfig(school.config)?.draft ?? false,
+              }
+            : null,
+        })
       },
     },
   },

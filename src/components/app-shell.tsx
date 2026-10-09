@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
 import { SoundToggle } from './sound-toggle'
@@ -352,6 +352,17 @@ export function AppShell({
 
   const [mobileOpen, setMobileOpen] = useState(false)
   const [signingOut, setSigningOut] = useState(false)
+
+  // With the drawer open the page behind it must not scroll (it did, on touch devices, which made
+  // the drawer feel stuck and the page jump).
+  useEffect(() => {
+    if (!mobileOpen) return
+    const previous = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = previous
+    }
+  }, [mobileOpen])
   const user = session?.user as { name?: string; email?: string } | undefined
   const displayName = user?.name || user?.email || ''
 
@@ -485,7 +496,7 @@ export function AppShell({
       )}
 
       <div
-        className={`no-print glass border-border fixed inset-y-0 left-0 z-40 flex w-[260px] max-w-[80vw] shrink-0 flex-col border-r p-[18px] pt-7 transition-transform duration-200 lg:sticky lg:top-0 lg:h-screen lg:w-[232px] lg:max-w-none lg:translate-x-0 ${
+        className={`no-print glass border-border fixed inset-y-0 left-0 z-40 flex w-[260px] overflow-y-auto overscroll-contain max-w-[80vw] shrink-0 flex-col border-r p-[18px] pt-7 transition-transform duration-200 lg:sticky lg:top-0 lg:h-screen lg:w-[232px] lg:max-w-none lg:translate-x-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

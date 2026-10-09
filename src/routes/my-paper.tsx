@@ -38,16 +38,10 @@ function idList(value: string | undefined): Array<string> {
   return (value ?? '').split(',').filter((id) => UUID.test(id))
 }
 
-// Real tiers, not "Medium" -- same DIFFICULTY_TIERS /generate.tsx uses (sourced from
-// src/routes/api/papers/generate.ts). '' means no ceiling (F119's default: every difficulty
-// stays eligible, weighted toward weak/priority concepts).
-const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
-type DifficultyTier = (typeof DIFFICULTY_TIERS)[number]
-
 // Mirrors src/lib/adaptive/plan.ts's QUESTION_COUNT_OPTIONS -- kept as a local literal rather
 // than an import, since that file pulls in server-only modules (db/connection, pg) that must
 // never end up in the client bundle.
-const QUESTION_COUNT_OPTIONS = [10, 20, 30] as const
+const QUESTION_COUNT_OPTIONS = [10, 15, 30] as const
 
 const QUESTION_TYPES = [
   { value: 'combined', label: 'Combined' },
@@ -89,22 +83,6 @@ function HashIcon() {
       strokeLinejoin="round"
     >
       <path d="M5 9h14M5 15h14M10 3 8 21M16 3l-2 18" />
-    </svg>
-  )
-}
-function BarsIcon() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 20V10M10 20V4M17 20v-7" />
     </svg>
   )
 }
@@ -287,6 +265,9 @@ interface Plan {
   difficulty_range: { min: string; max: string }
   estimated_minutes: number
   question_types: Array<string>
+  // Set when the subject has a school-exam-standard paper: fixed sections and marks, no choice of
+  // question count, type or difficulty.
+  school_paper?: { name: string; total_marks: number; duration_min: number; draft: boolean } | null
 }
 
 interface ChapterChoice {
@@ -339,9 +320,6 @@ function MyPaper() {
   const [questionCount, setQuestionCount] =
     useState<(typeof QUESTION_COUNT_OPTIONS)[number]>(10)
   const [questionType, setQuestionType] = useState<QuestionType>('combined')
-  const [difficultyCeiling, setDifficultyCeiling] = useState<
-    DifficultyTier | ''
-  >('')
 
   useEffect(() => {
     if (isPending) return
@@ -497,7 +475,6 @@ function MyPaper() {
   function resetPreferences() {
     setQuestionCount(10)
     setQuestionType('combined')
-    setDifficultyCeiling('')
     if (subjectId) void loadPlan(subjectId, chapterIds, 10, 'combined')
   }
 
@@ -528,9 +505,6 @@ function MyPaper() {
           theme: DEFAULT_THEME,
           adaptive_question_count: questionCount,
           adaptive_question_type: questionType,
-          ...(difficultyCeiling
-            ? { difficulty_ceiling: difficultyCeiling }
-            : {}),
         }),
       })
       const paper = await generated.json()
@@ -693,33 +667,7 @@ function MyPaper() {
                   </select>
                 </div>
 
-                <div className="space-y-1">
-                  <Label
-                    htmlFor="my-paper-difficulty"
-                    className="text-muted-foreground text-xs flex items-center gap-1.5"
-                  >
-                    <BarsIcon />
-                    Difficulty
-                  </Label>
-                  <select
-                    id="my-paper-difficulty"
-                    className="border-input flex h-8 w-full rounded-md border bg-transparent px-2 text-sm shadow-xs"
-                    value={difficultyCeiling}
-                    onChange={(e) =>
-                      setDifficultyCeiling(
-                        e.target.value as DifficultyTier | '',
-                      )
-                    }
-                  >
-                    <option value="">Any (auto)</option>
-                    {DIFFICULTY_TIERS.map((tier) => (
-                      <option key={tier} value={tier}>
-                        {tier}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
+                {!plan?.school_paper && (
                 <div className="space-y-1">
                   <Label
                     htmlFor="my-paper-question-type"
@@ -743,6 +691,12 @@ function MyPaper() {
                     ))}
                   </select>
                 </div>
+                )}
+                {plan?.school_paper && (
+                  <p className="text-caption text-muted-foreground col-span-full">
+                    Your questions are written in the style of school exams: multiple choice, short and long answers, and case studies.
+                  </p>
+                )}
               </div>
 
               {/* Only the no-chapters-selected guard remains here now -- the plan-summary
@@ -974,9 +928,10 @@ function MyPaper() {
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-small text-muted-foreground">
                 {(chapterIds ?? []).length} chapter
-                {(chapterIds ?? []).length === 1 ? '' : 's'} · {questionCount}{' '}
-                questions
-                {plan ? ` · about ${plan.estimated_minutes} min` : ''}
+                {(chapterIds ?? []).length === 1 ? '' : 's'}
+                {plan?.school_paper
+                  ? ` · ${questionCount} questions · ${plan.school_paper.total_marks} marks · ${plan.school_paper.duration_min} min`
+                  : ` · ${questionCount} questions${plan ? ` · about ${plan.estimated_minutes} min` : ''}`}
               </p>
               <div className="flex gap-2">
                 <Button

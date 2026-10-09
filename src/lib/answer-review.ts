@@ -23,6 +23,11 @@ export interface ReviewItem {
   marks_awarded: number
   marks_max: number
   feedback: string | null
+  // Marks part by part (a case study is marked per part), so the result shows where she stopped
+  // or went wrong. Null when the AI gave no per-part breakdown.
+  parts: Array<{ step_no: number; description: string; marks_awarded: number; marks_max: number }> | null
+  // A flag for the diagnosis ("did she stop writing too early?"), never a deduction.
+  possible_stopped_early: boolean
   dispute: {
     comment: string
     reply: string
@@ -42,6 +47,27 @@ export interface ReviewData {
   objective: { marks: number; marks_max: number; count: number }
   total_now: number
   total_max: number
+}
+
+function partsFor(
+  questionId: string,
+  awarded: unknown,
+  steps: Array<{ question_id: string; step_no: number; description: string; marks: number }>,
+): ReviewItem['parts'] {
+  if (!Array.isArray(awarded) || awarded.length === 0) return null
+  const scheme = steps.filter((s) => s.question_id === questionId)
+  if (scheme.length < 2) return null
+  return scheme.map((step) => {
+    const got = (awarded as Array<{ step_no: number; marks_awarded: number }>).find(
+      (a) => a.step_no === step.step_no,
+    )
+    return {
+      step_no: step.step_no,
+      description: step.description,
+      marks_awarded: Number(got?.marks_awarded ?? 0),
+      marks_max: step.marks,
+    }
+  })
 }
 
 async function findEvaluation(db: Db, attemptId: string) {
@@ -69,6 +95,9 @@ async function loadItems(db: Db, evaluationId: string, attemptId: string) {
       'ei.ai_marks',
       'ei.feedback',
       'ei.excluded_by_student',
+      'ei.step_marks_awarded',
+      'ei.possible_stopped_early',
+      'pq.question_id',
       'pq.position',
       'pq.section',
       'q.type',
@@ -114,6 +143,14 @@ export async function loadReview(
   if (!evaluation) return empty('waiting_for_parent')
 
   const rows = await loadItems(db, evaluation.id, attempt.id)
+  const stepRows = rows.length
+    ? await db
+        .selectFrom('question_step_marks')
+        .select(['question_id', 'step_no', 'description', 'marks'])
+        .where('question_id', 'in', [...new Set(rows.map((r) => r.question_id))])
+        .orderBy('step_no')
+        .execute()
+    : []
   const written: Array<ReviewItem> = []
   const objective = { marks: 0, marks_max: 0, count: 0 }
   let totalNow = 0
@@ -142,6 +179,8 @@ export async function loadReview(
       marks_awarded: marks,
       marks_max: max,
       feedback: row.feedback,
+      parts: partsFor(row.question_id, row.step_marks_awarded, stepRows),
+      possible_stopped_early: row.possible_stopped_early,
       dispute:
         row.student_comment !== null
           ? {

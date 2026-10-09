@@ -14,11 +14,6 @@ import {
 } from '../components/install-app-dialog'
 
 const FORM_ID = 'generate-paper-form'
-// Real tiers, not the reference mockup's "Medium" -- src/routes/api/papers/generate.ts's own
-// DIFFICULTY_TIERS. '' means no ceiling chosen (every difficulty stays eligible, F119's default).
-const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
-type DifficultyTier = (typeof DIFFICULTY_TIERS)[number]
-
 const INSTALL_OFFER_KEY = 'prepplan-install-offer-generate'
 
 export const Route = createFileRoute('/generate')({ component: GeneratePaper })
@@ -77,12 +72,8 @@ function GeneratePaper() {
   const [chapterIds, setChapterIds] = useState<Array<string>>([])
   const [chapterSearch, setChapterSearch] = useState('')
   const [theme, setTheme] = useState<PaperTheme>(DEFAULT_THEME)
-  // F119: "a ceiling, not a filter on weakness" -- unset (no ceiling) is the honest default,
-  // since the backend already exists for this (POST /api/papers/generate's difficulty_ceiling)
-  // but no screen has ever exposed a control for it until now.
-  const [difficultyCeiling, setDifficultyCeiling] = useState<
-    DifficultyTier | ''
-  >('')
+  // Difficulty is not student-selectable on a normal paper (owner decision 2026-10-05): the
+  // blueprint alone sets the mix, and the server ignores any difficulty value sent here.
 
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -224,9 +215,6 @@ function GeneratePaper() {
           blueprint_id: blueprintId,
           chapter_ids: chapterIds,
           theme,
-          ...(difficultyCeiling
-            ? { difficulty_ceiling: difficultyCeiling }
-            : {}),
         }),
       })
       const body = await response.json()
@@ -517,7 +505,7 @@ function GeneratePaper() {
 
                     {/* Two columns, not four -- this card sits in the left 2/3 of a 3-column
                         page layout, so it never actually gets viewport-width's "lg" breakpoint
-                        worth of room; four columns here overlapped the Difficulty/Time controls
+                        worth of room; four columns here overlapped the Time control
                         in testing. */}
                     {studentId && (
                       <div className="grid gap-4 sm:grid-cols-2">
@@ -585,30 +573,6 @@ function GeneratePaper() {
                         </div>
 
                         <div className="space-y-1.5">
-                          <Label>Difficulty level</Label>
-                          <div className="flex gap-1.5">
-                            {DIFFICULTY_TIERS.map((tier) => (
-                              <button
-                                key={tier}
-                                type="button"
-                                onClick={() =>
-                                  setDifficultyCeiling((prev) =>
-                                    prev === tier ? '' : tier,
-                                  )
-                                }
-                                className={
-                                  difficultyCeiling === tier
-                                    ? 'bg-primary text-primary-foreground flex-1 rounded-md px-2 py-2 text-sm font-semibold'
-                                    : 'border-input hover:bg-muted/50 flex-1 rounded-md border px-2 py-2 text-sm font-medium'
-                                }
-                              >
-                                {tier}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="space-y-1.5">
                           <Label>Time</Label>
                           <div className="border-input text-muted-foreground flex h-9 w-full items-center gap-2 rounded-md border bg-transparent px-3 text-sm">
                             <svg
@@ -633,9 +597,7 @@ function GeneratePaper() {
                       </div>
                     )}
                     <p className="text-caption text-muted-foreground">
-                      {difficultyCeiling
-                        ? `Difficulty is a ceiling, not a filter -- weak and priority concepts are still weighted in even at ${difficultyCeiling}. See F119.`
-                        : 'No ceiling picked -- every difficulty stays eligible, weighted toward weak and priority concepts (F119).'}
+                      The paper follows one exam-standard mix of questions, weighted toward weak and priority concepts (F119).
                     </p>
                   </CardContent>
                 </Card>
@@ -802,21 +764,12 @@ function GeneratePaper() {
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">
-                      Difficulty ceiling
-                    </span>
-                    <span className="font-medium">
-                      {difficultyCeiling || 'Any'}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
                     <span className="text-muted-foreground">Theme</span>
                     <span className="font-medium">{theme}</span>
                   </div>
                   <div className="bg-muted text-caption text-muted-foreground rounded-md p-3 leading-relaxed">
                     Question selection weights weak and priority concepts
-                    regardless of any difficulty you'd otherwise pick — see
-                    F119.
+                    and follows one exam-standard mix — see F119.
                   </div>
 
                   <div

@@ -4,14 +4,12 @@ import { resolveEnabledStudent } from '../../../../lib/access'
 import { getSharedDb } from '../../../../db/connection'
 import {
   papersRepository,
-  paperQuestionsRepository,
   studentsRepository,
-  chaptersRepository,
-  questionOptionsRepository,
   questionStepMarksRepository,
 } from '../../../../db/repositories'
 import { renderHtmlToPdf } from '../../../../lib/pdf/render'
-import { buildPaperHtml } from '../../../../lib/pdf/paper-template'
+import { renderWithPageCount } from '../../../../lib/pdf/page-count'
+import { preparePaperHtml } from '../../../../lib/pdf/prepare-paper'
 import { buildAnswerKeyHtml } from '../../../../lib/pdf/key-template'
 import { computeCoverageTable } from '../../../../lib/pdf/coverage'
 import { extractStyleAndBody } from '../../../../lib/pdf/html-utils'
@@ -75,73 +73,18 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
             ? paper.theme
             : DEFAULT_THEME
 
-        const [student, slots, chapters] = await Promise.all([
-          studentsRepository.findById(db, auth.householdId, paper.student_id),
-          paperQuestionsRepository.listForPaperWithQuestions(db, paper.id),
-          chaptersRepository.listByIds(db, paper.chapter_ids),
-        ])
+        const student = await studentsRepository.findById(db, auth.householdId, paper.student_id)
         if (!student) return new Response(null, { status: 404 })
-
-        const conceptRows = await db
-          .selectFrom('concepts')
-          .select(['id', 'name'])
-          .where('id', 'in', [...new Set(slots.map((s) => s.concept_id))])
-          .execute()
-        const conceptName = new Map(conceptRows.map((c) => [c.id, c.name]))
-
-        const optionsByQuestion = new Map(
-          await Promise.all(
-            slots.map(
-              async (s) =>
-                [
-                  s.question_id,
-                  await questionOptionsRepository.listByQuestion(
-                    db,
-                    s.question_id,
-                  ),
-                ] as const,
-            ),
-          ),
-        )
-
-        const shortfalls = paper.shortfalls
-          ? (paper.shortfalls as Array<{ section: string; reason: string }>)
-          : []
-
-        const paperHtml = buildPaperHtml({
-          title: paper.title,
-          studentName: student.name,
-          board: student.board,
-          class: student.class,
-          durationMin: paper.duration_min,
-          totalMarks: paper.total_marks,
-          chapters: chapters.map((c) => ({
-            part: c.part,
-            chapter_no: c.chapter_no,
-            name: c.name,
-          })),
-          questions: slots.map((s) => ({
-            id: s.id,
-            section: s.section,
-            position: s.position,
-            marks: s.marks,
-            bloom: s.bloom,
-            difficulty: s.difficulty,
-            type: s.type,
-            text: s.text,
-            diagram_kind: s.diagram_kind,
-            diagram_params: s.diagram_params,
-            concept_name: conceptName.get(s.concept_id) ?? null,
-            choice_group: s.choice_group,
-            options: (optionsByQuestion.get(s.question_id) ?? []).map((o) => ({
-              label: o.label,
-              text: o.text,
-              order_index: o.order_index,
-            })),
-          })),
-          shortfalls,
+        const { slots, optionsByQuestion, hyMeta, buildHtml } = await preparePaperHtml(db, {
+          paper,
+          student,
           theme,
         })
+
+        // A half-yearly paper prints its own page count, so it is rendered until the number in
+        // the header equals the pages produced; any other paper renders once, as before.
+        const counted = hyMeta ? await renderWithPageCount(buildHtml) : null
+        const paperHtml = buildHtml(counted?.pages)
 
         let finalHtml = paperHtml
 
@@ -212,7 +155,7 @@ ${keyParts.body}
 </html>`
         }
 
-        const pdf = await renderHtmlToPdf(finalHtml)
+        const pdf = includeKey || !counted ? await renderHtmlToPdf(finalHtml) : counted.pdf
 
         await logProductEvent(db, {
           eventType: 'paper_downloaded',

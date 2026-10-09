@@ -37,7 +37,7 @@ export interface PackQuestion {
 }
 
 export interface PackFile {
-  kind: 'dps_pack'
+  kind: string
   subject: { code: string; class: number; board: string }
   chapter: { part: string; chapter_no: number; name: string }
   source_code: string
