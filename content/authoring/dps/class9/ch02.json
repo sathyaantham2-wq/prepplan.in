@@ -37,21 +37,21 @@
      "d": "Hard",
      "t": "fill_blank",
      "m": 1,
-     "q": "The polynomial 9 − 2y + 7y³ − y² is rewritten with its powers in descending order. The coefficient of the first term is ___.",
-     "a": "7"
+     "q": "The polynomial 9 − 2y + 7y³ − y² is rewritten with its powers in descending order. The product of the coefficient of the first term and the coefficient of the term of degree 2 is ___.",
+     "a": "−7"
     },
     {
      "b": "Understand",
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Which of the following is a linear polynomial?",
-     "a": "5 − 4y has the highest power of y equal to 1, so it has degree 1.",
+     "q": "Which of the following is a linear polynomial whose constant term is negative?",
+     "a": "3y − 8 has highest power 1 and constant term −8. The polynomial 8 − 3y is linear but its constant term is +8, y² − 8 is quadratic, and −8 is a constant of degree 0.",
      "o": [
-      "5 − 4y",
-      "5y² − 4",
-      "−9",
-      "y³ − 4y"
+      "3y − 8",
+      "y² − 8",
+      "−8",
+      "8 − 3y"
      ]
     },
     {
@@ -170,15 +170,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "(a) Find the degree of 3z² − z³ + 8. (b) Rewrite it with the powers in descending order and name its type.",
-     "a": "(a) The highest power is 3, so the degree is 3. (b) −z³ + 3z² + 8, a cubic polynomial (the coefficient of z³ is −1).",
+     "q": "(a) Find the degree of 8 + 2m − 5m³ + m². (b) Rewrite it with the powers in descending order and name its type.",
+     "a": "(a) The highest power is 3, so the degree is 3. (b) −5m³ + m² + 2m + 8, a cubic polynomial (the coefficient of m³ is −5).",
      "s": [
       [
        "Part (a): degree 3 from the highest power, not from the first term",
        1
       ],
       [
-       "Part (b): −z³ + 3z² + 8 and cubic",
+       "Part (b): −5m³ + m² + 2m + 8 and cubic",
        1
       ]
      ]
@@ -369,15 +369,15 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "A 30 cm wire is bent into a rectangle of length x cm. (a) Write the width in terms of x. (b) Write the area as a polynomial in x. (c) Give its degree and type. (d) Find the area for x = 5 and for x = 10, and explain in words why the two areas match.",
-     "a": "(a) Width = 15 − x. (b) Area = x(15 − x) = 15x − x². (c) Degree 2, quadratic. (d) x = 5 gives 75 − 25 = 50 cm². x = 10 gives 150 − 100 = 50 cm². The rectangles are 5 by 10 and 10 by 5, the same rectangle turned.",
+     "q": "A 36 cm string is bent into a rectangle of length x cm. (a) Write the width in terms of x. (b) Write the area as a polynomial in x. (c) Give its degree and type. (d) Find the area for x = 4 and for x = 14, and explain in words why the two areas match.",
+     "a": "(a) Width = 18 − x. (b) Area = x(18 − x) = 18x − x². (c) Degree 2, quadratic. (d) x = 4 gives 72 − 16 = 56 cm². x = 14 gives 252 − 196 = 56 cm². The rectangles are 4 by 14 and 14 by 4, the same rectangle turned.",
      "s": [
       [
-       "Part (a): width 15 − x",
+       "Part (a): width 18 − x",
        1
       ],
       [
-       "Part (b): area 15x − x²",
+       "Part (b): area 18x − x²",
        1
       ],
       [
@@ -385,7 +385,7 @@
        1
       ],
       [
-       "Part (d): both areas equal 50 cm²",
+       "Part (d): both areas equal 56 cm²",
        1
       ],
       [
@@ -399,8 +399,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "The sports department orders c cones at ₹35 each and b bibs at ₹60 each, and pays ₹500 for delivery. Later it decides to order the same number n of cones and bibs. The budget is ₹2000. A rival supplier quotes 90n + 700 rupees for n cones and n bibs together. (a) Write the cost of the first order in terms of c and b. (b) For the same number n of each, write the cost as a polynomial in n and give its degree. (c) Find the largest n each supplier allows within ₹2000, and decide which supplier the department should choose.",
-     "a": "(a) 35c + 60b + 500. (b) 35n + 60n + 500 = 95n + 500, degree 1. (c) First supplier: 95n + 500 ≤ 2000 gives n ≤ 15.78, so n = 15 costing ₹1925. Rival: 90n + 700 ≤ 2000 gives n ≤ 14.4, so n = 14 costing ₹1960. The first supplier gives one more set for less money, so choose the first supplier.",
+     "q": "The sports department orders c cones at ₹35 each and b bibs at ₹60 each, and pays ₹500 for delivery. Later it decides to order the same number n of cones and bibs. A rival supplier quotes 80n + 800 rupees for n cones and n bibs together. (a) Write the cost of the first order in terms of c and b. (b) For the same number n of each, write the cost as a polynomial in n and give its degree. (c) Find the n at which both suppliers cost the same, and decide which supplier is cheaper for an order of 10 sets and for an order of 40 sets.",
+     "a": "(a) 35c + 60b + 500. (b) 35n + 60n + 500 = 95n + 500, degree 1. (c) 95n + 500 = 80n + 800 gives 15n = 300, so n = 20. For 10 sets the first supplier charges ₹1450 and the rival ₹1600, so the first is cheaper. For 40 sets the first charges ₹4300 and the rival ₹4000, so the rival is cheaper.",
      "s": [
       [
        "Part (a): 35c + 60b + 500",
@@ -411,7 +411,7 @@
        1
       ],
       [
-       "Part (c): n = 15 at ₹1925 against n = 14 at ₹1960, chooses the first supplier",
+       "Part (c): equal at n = 20, with the costs 1450 and 1600 for 10 sets and 4300 and 4000 for 40 sets, and the right choice for each order",
        2
       ]
      ],
@@ -424,8 +424,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "Mrs Fernandes has 40 m of fencing wire for a rectangular vegetable bed in the school garden. The bed has length x m. The gate needs one side of at least 11 m, and the Eco Club wants an area of at least 95 m². (a) Write the width in terms of x. (b) Write the area as a polynomial in x and state its degree. (c) Find the area for x = 10, x = 12 and x = 14. (d) Which length should she choose, and why?",
-     "a": "(a) Width = 20 − x. (b) Area = 20x − x², degree 2. (c) x = 10: 100 m²; x = 12: 96 m²; x = 14: 84 m². (d) x = 10 has sides 10 m and 10 m, so no side reaches 11 m. x = 14 has area 84, below 95. Only x = 12 (12 m by 8 m, area 96 m²) meets both needs.",
+     "q": "Mrs Fernandes has 40 m of fencing wire for a rectangular vegetable bed in the school garden. The bed has length x m. The gate needs one side of at least 11 m, and the Eco Club wants an area of at least 95 m². (a) Write the width in terms of x. (b) Write the area as a polynomial in x and state its degree. (c) Find the area for x = 10, x = 12 and x = 14. (d) Of the three lengths in part (c), which one meets both needs, and why?",
+     "a": "(a) Width = 20 − x. (b) Area = 20x − x², degree 2. (c) x = 10: 100 m²; x = 12: 96 m²; x = 14: 84 m². (d) x = 10 has sides 10 m and 10 m, so no side reaches 11 m. x = 14 has area 84, below 95. Of these three lengths only x = 12 (12 m by 8 m, area 96 m²) meets both needs.",
      "s": [
       [
        "Part (a): width 20 − x",
@@ -440,7 +440,7 @@
        1
       ],
       [
-       "Part (d): picks x = 12 after testing both conditions",
+       "Part (d): picks x = 12 after testing both conditions on the three lengths",
        1
       ]
      ],
@@ -510,21 +510,21 @@
      "d": "Hard",
      "t": "fill_blank",
      "m": 1,
-     "q": "The linear polynomial 7 − 2x has the value 15 when x = ___.",
-     "a": "−4"
+     "q": "The linear polynomials 7 − 2x and 3x − 8 take the same value when x = ___.",
+     "a": "3"
     },
     {
      "b": "Apply",
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "What is the value of 4 − 3x when x = −2?",
-     "a": "4 − 3 × (−2) = 4 + 6 = 10.",
+     "q": "For the polynomial 4 − 3x, what is its value when x = −2, and for which value of x does it equal 19?",
+     "a": "At x = −2: 4 − 3 × (−2) = 4 + 6 = 10. For 4 − 3x = 19 we get −3x = 15, so x = −5.",
      "o": [
-      "10",
-      "−2",
-      "−1",
-      "−10"
+      "10 and −5",
+      "−2 and −5",
+      "10 and 5",
+      "−2 and 5"
      ]
     },
     {
@@ -566,7 +566,7 @@
      "d": "Hard",
      "t": "assertion_reason",
      "m": 1,
-     "q": "Assertion (A): The equation 3x − 7 = 20 has the solution x = 9.\nReason (R): At x = 9 the linear polynomial 3x − 7 takes the value 20.",
+     "q": "Assertion (A): The equation 3x − 7 = 20 has the solution x = 9.\nReason (R): Adding 7 to both sides gives 3x = 27, and dividing both sides by 3 gives x = 9.",
      "a": "Both are true and the reason explains the assertion.",
      "o": [
       "Both A and R are true and R is the correct explanation of A",
@@ -855,8 +855,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "Class 9 plans a trip to Hampi. Plan A: the bus hire is ₹6000 and the meals cost ₹250 per student, with n students going. Plan B: the bus hire is ₹9000 and the meals cost ₹200 per student. (a) Write the total cost of Plan A for n students and its value for 32 students. (b) The Plan A bill came to ₹14,750. Form and solve an equation for n. (c) The class has 45 students and a budget of ₹17,500. Find the cost of both options for 45 students and decide which one the class should book.",
-     "a": "(a) 6000 + 250n; for n = 32 it is ₹14,000. (b) 6000 + 250n = 14750 gives 250n = 8750, so n = 35. (c) Plan A: 6000 + 250 × 45 = ₹17,250. Plan B: 9000 + 200 × 45 = ₹18,000. Only A is within ₹17,500, so book Plan A.",
+     "q": "Class 9 plans a trip to Hampi. Plan A: the bus hire is ₹6000 and the meals cost ₹250 per student, with n students going. Plan B: the bus hire is ₹7500 and the meals cost ₹200 per student. (a) Write the total cost of Plan A for n students and its value for 32 students. (b) The Plan A bill came to ₹14,750. Form and solve an equation for n. (c) Find the n at which both plans cost the same, and say which plan is cheaper if 25 students go and if 45 students go.",
+     "a": "(a) 6000 + 250n; for n = 32 it is ₹14,000. (b) 6000 + 250n = 14750 gives 250n = 8750, so n = 35. (c) 6000 + 250n = 7500 + 200n gives 50n = 1500, so n = 30. For 25 students Plan A costs ₹12,250 and Plan B ₹12,500, so A is cheaper. For 45 students Plan A costs ₹17,250 and Plan B ₹16,500, so B is cheaper.",
      "s": [
       [
        "Part (a): 6000 + 250n and ₹14,000",
@@ -867,7 +867,7 @@
        1
       ],
       [
-       "Part (c): ₹17,250 against ₹18,000, chooses Plan A for the budget",
+       "Part (c): equal at n = 30, A cheaper for 25 (12,250 against 12,500), B cheaper for 45 (17,250 against 16,500)",
        2
       ]
      ],
@@ -1053,15 +1053,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Harsh has a 360-page novel and reads 18 pages every day. (a) Write an expression for the pages left after n days. (b) After how many days will he finish it?",
-     "a": "(a) 360 − 18n. (b) 360 − 18n = 0 gives n = 20 days.",
+     "q": "Harsh has a 360-page novel and reads 18 pages every day. His sister has a 300-page novel and reads 12 pages every day. Both start today. (a) Write an expression for the pages Harsh has left after n days. (b) After how many days will both have the same number of pages left, and how many is that?",
+     "a": "(a) 360 − 18n. (b) 360 − 18n = 300 − 12n gives 60 = 6n, so n = 10 days. Each then has 360 − 180 = 180 pages left.",
      "s": [
       [
        "Part (a): 360 − 18n",
        1
       ],
       [
-       "Part (b): sets it to 0 and gets 20 days",
+       "Part (b): equates the two expressions to get 10 days and 180 pages",
        1
       ]
      ]
@@ -1329,8 +1329,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "A caterer arranges tables end to end for a tea party. One table seats 4, and every extra table joined at the end adds 2 seats. The guests are seated only at whole tables. (a) Find the seats for 5 tables joined in a row and write the rule for n tables. (b) How many tables are needed for 40 guests? (c) Can exactly 15 guests fill the seats of one row of tables? (d) 60 guests are invited, but the hall fits at most 20 tables in one row. Show how to seat them using the fewest tables.",
-     "a": "(a) 2n + 2 gives 12 seats for 5 tables. (b) 2n + 2 = 40 gives 19 tables. (c) 2n + 2 = 15 gives n = 6.5, not whole, so exactly 15 seats are impossible. (d) One row would need 29 tables, more than 20. With two rows of n1 and n2 tables, seats = 2(n1 + n2) + 4 ≥ 60 gives n1 + n2 ≥ 28. Two rows of 14 tables seat 30 + 30 = 60 using 28 tables.",
+     "q": "A caterer arranges tables end to end for a tea party. One table seats 4, and every extra table joined at the end adds 2 seats. The guests are seated only at whole tables. (a) Find the seats for 5 tables joined in a row and write the rule for n tables. (b) How many tables are needed for 40 guests? (c) Can exactly 15 guests fill the seats of one row of tables? (d) 60 guests are invited, but the hall fits at most 20 tables in one row, so the caterer uses exactly two rows. Show how to seat them using the fewest tables.",
+     "a": "(a) 2n + 2 gives 12 seats for 5 tables. (b) 2n + 2 = 40 gives 19 tables. (c) 2n + 2 = 15 gives n = 6.5, not whole, so exactly 15 seats are impossible. (d) One row would need 29 tables, more than 20. With two rows of n1 and n2 tables, seats = 2(n1 + n2) + 4 ≥ 60 gives n1 + n2 ≥ 28. So the fewest is 28 tables, for example two rows of 14 tables (30 + 30 = 60 seats) or rows of 20 and 8 tables (42 + 18 = 60 seats).",
      "s": [
       [
        "Part (a): 12 seats and the rule 2n + 2",
@@ -1345,7 +1345,7 @@
        1
       ],
       [
-       "Part (d): two rows of 14 tables, 28 tables, 60 seats",
+       "Part (d): exactly two rows, 28 tables in all (for example 14 and 14), 60 seats",
        1
       ]
      ],
@@ -1401,12 +1401,12 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "The height of water in a tank is h(t) = 3 − 0.5t metres after t months. This is an example of",
-     "a": "The height falls by the same 0.5 m every month, so it is linear decay.",
+     "q": "The volume of water in a drum is v(t) = 80 − 4t litres after t hours. This is an example of",
+     "a": "The volume falls by the same 4 litres every hour, so it is linear decay.",
      "o": [
-      "linear decay, with 0.5 m lost each month",
-      "linear growth, because 3 is positive",
-      "linear decay, with 3 m lost each month",
+      "linear decay, with 4 litres lost each hour",
+      "linear growth, because 80 is positive",
+      "linear decay, with 80 litres lost each hour",
       "a pattern that is not linear because of the minus sign"
      ]
     },
@@ -1444,13 +1444,13 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "A prepaid balance of ₹600 falls by ₹15 every day after the recharge, so the balance after x days is b(x) = 600 − 15x. What is the balance after 12 days?",
-     "a": "b(12) = 600 − 15 × 12 = 600 − 180 = ₹420.",
+     "q": "A prepaid balance of ₹600 falls by ₹15 every day after the recharge, so the balance after x days is b(x) = 600 − 15x. On which day number does the balance first fall below ₹200?",
+     "a": "600 − 15x < 200 gives 15x > 400, so x > 26.67. Check: b(26) = ₹210 and b(27) = ₹195. So the balance first falls below ₹200 on day 27.",
      "o": [
-      "₹420",
-      "₹780",
-      "₹585",
-      "₹180"
+      "27",
+      "26",
+      "28",
+      "40"
      ],
      "tags": [
       "scenario"
@@ -1596,19 +1596,19 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "The sales of a school magazine in three years were 100, 110 and 121 copies. Varun says this is linear growth because the sales rise every year. Is he right? Explain.",
-     "a": "No. The rise is 10 in the first year and 11 in the next. Linear growth needs the same fixed increase over equal intervals, not just any rise, so this is not linear growth.",
+     "q": "The sales of a school magazine in four years were 100, 110, 120 and 130 copies. Varun says this is linear growth because the sales rise by the same 10 copies every year. Is he right? Write the sales after t years.",
+     "a": "Yes. The rise is 10 in every year, a fixed increase over equal intervals, so the growth is linear. The sales after t years are 100 + 10t.",
      "s": [
       [
-       "Verdict that Varun is wrong",
+       "Verdict that Varun is right",
        1
       ],
       [
-       "Computes the increases 10 and 11",
+       "Shows the same increase of 10 each year",
        1
       ],
       [
-       "States that linear growth needs a fixed increase",
+       "Expression 100 + 10t",
        1
       ]
      ],
@@ -1984,15 +1984,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Ice melts at 0 °C (32 °F) and water boils at 100 °C (212 °F). Take °F = p × (°C) + q. (a) Find p and q. (b) Find the Fahrenheit reading for 40 °C.",
-     "a": "(a) q = 32 from the first pair; 212 = 100p + 32 gives p = 1.8. (b) 1.8 × 40 + 32 = 104 °F.",
+     "q": "A cab charges y rupees for x km, where y = ax + b. A 10 km ride costs ₹180 and a 20 km ride costs ₹320. (a) Find a and b. (b) Find the fare for 35 km.",
+     "a": "(a) a = (320 − 180) ÷ 10 = 14, and b = 180 − 14 × 10 = 40. (b) 14 × 35 + 40 = ₹530.",
      "s": [
       [
-       "Part (a): p = 1.8 and q = 32",
+       "Part (a): a = 14 and b = 40",
        1
       ],
       [
-       "Part (b): 104 °F",
+       "Part (b): ₹530",
        1
       ]
      ]
@@ -2289,8 +2289,8 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Which of these lines slopes downward and is the steepest of the four?",
-     "a": "A downward slope needs a negative coefficient of x, and −5 has the largest size among the negative ones, so y = −5x + 1 is the steepest falling line.",
+     "q": "Which of these lines slopes downward and falls by the largest amount for each 1 unit increase in x?",
+     "a": "A downward slope needs a negative coefficient of x, and −5 has the largest size among the negative ones, so y = −5x + 1 falls the most per unit of x.",
      "o": [
       "y = −5x + 1",
       "y = −2x + 8",
@@ -2303,13 +2303,13 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Which of the following lines passes through the origin?",
-     "a": "A line y = ax has b = 0, so at x = 0 we get y = 0 and the line passes through (0, 0).",
+     "q": "Which line passes through the origin and also through the point (3, 12)?",
+     "a": "y = 4x has b = 0, so it passes through (0, 0), and 4 × 3 = 12. The line y = x + 9 passes through (3, 12) but not the origin, and y = 3x passes through the origin but gives 9 at x = 3.",
      "o": [
-      "y = 7x",
-      "y = 7x + 1",
-      "y = x − 7",
-      "y = 7 + x"
+      "y = 4x",
+      "y = x + 9",
+      "y = 3x",
+      "y = 4x + 1"
      ]
     },
     {
@@ -2331,13 +2331,13 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Which point lies on the line y = 2x + 1?",
-     "a": "For x = 4, y = 2 × 4 + 1 = 9, so (4, 9) satisfies the equation.",
+     "q": "The point (k, 13) lies on the line y = 2x + 1. What is k?",
+     "a": "13 = 2k + 1 gives 2k = 12, so k = 6.",
      "o": [
-      "(4, 9)",
-      "(4, 8)",
-      "(9, 4)",
-      "(4, 7)"
+      "6",
+      "7",
+      "12",
+      "27"
      ]
     },
     {
@@ -2497,19 +2497,19 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "Rhea says the lines y = x + 3 and y = 2x + 3 are parallel, as both have the same y-intercept 3. Is she correct? Give the reason and say where the lines meet.",
-     "a": "No. Parallel lines have equal slopes but different intercepts. These slopes are 1 and 2, so the lines are not parallel. Both pass through (0, 3), so they meet there.",
+     "q": "Rhea says the lines y = 3x + 1 and y = 3x − 4 are parallel and never meet. Is she correct? Give the reason and say where each line cuts the y-axis.",
+     "a": "Yes. Parallel lines have equal slopes and different intercepts. Both slopes are 3 and the intercepts 1 and −4 differ, so the lines never meet. They cut the y-axis at (0, 1) and (0, −4).",
      "s": [
       [
-       "Verdict that Rhea is wrong",
+       "Verdict that Rhea is right",
        1
       ],
       [
-       "Parallel needs equal slopes and different intercepts",
+       "Equal slopes 3 and different intercepts mean parallel",
        1
       ],
       [
-       "The lines meet at (0, 3)",
+       "Intercepts (0, 1) and (0, −4)",
        1
       ]
      ],

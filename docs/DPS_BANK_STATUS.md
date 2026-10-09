@@ -52,3 +52,14 @@ All 47 Class 7 chapters (Maths 15, Science 12, Social Science 20) now have an in
 Nothing is loaded to production; loading and retiring the old grid need the owner's explicit OK
 (old questions are retired, never deleted). Migration 0074 is NOT yet applied to production, so PR #20
 is not merged (CI is green).
+
+## Update 2026-10-09 (night)
+
+All 77 packs (Class 7: 47, Class 9: Maths 8, Science 13, Social Science 9) pass `--check` and have had an
+independent review with 0 HIGH (Class 9 Social Science ch09 had its last small fix applied after the final
+review; wheat/MSP wording replaced by the book's minimum-wage example). Optional MEDIUM/LOW polish is listed in
+`content/authoring/dps/_reviews/`. PR #20 is merged to main and migration 0074 is applied to production.
+Nothing is loaded to production yet: the owner runs `scripts/load-dps-class7.sh trial|all` (and
+`load-dps-class9.sh`) with the production DATABASE_URL; the old easy grid is not yet retired (a separate step,
+retire never delete). The daily Backup workflow fails because secrets PROD_DATABASE_URL and BACKUP_PASSPHRASE
+are not set in GitHub; set them before loading.

@@ -1,0 +1,42 @@
+# Review v2: class9sc ch13 (Earth as a System: Energy, Matter, and Life), SCI9, iesc113
+
+First independent review of this file. Chapter file not edited.
+Source: content/extracted/iesc113/pages 001-018 read in full (019-021 are blank page, answer key; the key gives only Revise Q1 (ii) and Q2 (iii) for ch13). Scope judged against the old authoring file content/authoring/class9sc/ch13.json (scope_in/scope_out) and the pages.
+
+Read: 141 questions in 7 concepts (20, 20, 20, 20, 21, 20, 20). Types: 32 mcq, 4 match, 7 multi_statement, 7 assertion_reason, 7 fill_blank, 56 short_answer, 28 long_answer (per concept 2 five-mark, 2 four-mark case studies). Marks per step sum to m on every item (checked in code).
+
+Verdict: PASS (no HIGH; MEDIUM items are small and fixable in one pass).
+
+## What was recomputed
+Keys were recomputed before reading the stored answer.
+- Numeric: 0.5 s x 3e8 = 1.5e8; 2 m2 x 1 kWm-2 x 1800 s = 3.6e6 J; 3 m2 for 1 h = 1.08e7 J = 3 units; 1.4 kWm-2 x 3600 = 5.04e6 J, difference 1.44e6 J = 28.6%; school solar case (7.2e8 J = 200 units, 40 produced, 80 short, 80 m2 = Rs 4.8 lakh, saves Rs 640/day, 750 days); Jaisalmer/Shillong (67.9%, 28.6%, 1.368e7 and 5.76e6 J, 47.5 m2, Rs 2.85 lakh vs 1.2 lakh); albedo 0.85 gives 150 J of 1000 (and 750 for rock, 5x); roof case (144000 and 54000 J/s, 3.24e8 J = 90 units, Rs 12000); heat island (4.5 C, 6.0 C, 27%, Rs 0.83 and 0.5 crore per C); lapse rate (30 - 26 = 4 C; 30 - 65 = -35 C; 30 - 52 = -22 C); 18000 ft = 5.486 km, -5.7 C, -20.7 C, 6.51 km; CFC 75 kg, Rs 1.5 lakh, 300 fridges / 45 kg, 200 / 30 kg; ocean current 43.2 km a day, 100 days; port case (1080000 t, 720000 t, Rs 28.8 crore); 200 kg x 49% = 98 kg; CO2 105 ppm, 1.6 per year, 452 ppm; urea 260.87 kg (261), Rs 7826, mixed farm Rs 5217, saving Rs 2609, earnings loss Rs 14000; carbon model 50% and 20%; nitrogen 648 kg and 1620 kg; fishing 250 kg x 120 = Rs 30000, Rs 600 per family, Rs 90 lakh, 1.67 years; forest case 1080 mm, Rs 60 lakh, Rs 14.4 lakh, nets Rs 45.6 and 22.8 lakh. All correct except the small wording errors listed below.
+- All 7 multi_statement and 7 assertion_reason keys derived from the pages first, then compared: all correct. MS keys vary (1+3, 2+3, 1, 1+2, all three, 3, 2); AR outcomes vary (explains, A false R true x2, A true R false, explains x2, true-not-explanation).
+- All 4 match keys correct (spheres, albedo descriptions, pressure belts, bacteria roles).
+- All 32 mcq, 4 match, 7 AR, 7 MS: the stored `a` begins with exactly one option (the key text) and then adds a one-line reason; no duplicate options; no positional references (the two "above" hits are ordinary words: "above the storm clouds", "above 1%"). Every key sits at option index 0 (32 of 32 mcq); this is a bank-wide storage convention, so it is only a problem if the loader does not shuffle. Confirm.
+- Scope: no question uses Coriolis, c = f x lambda, mesosphere/thermosphere numbers, Table 13.1's blank rows, other named currents or Kyoto/Paris details. Facts used (Anna Mani, K.R. Ramanathan, IITM not used, Mission LiFE 2021, Haber-Bosch 1-2%, 49% and 71% carbon, Keeling 315-420 ppm) are all on the pages.
+
+## HIGH
+None.
+
+## MEDIUM
+1. C9SC-13.4#14 (show-impossible, 25 C at 8 km): the key's last sentence "25 C would need no fall at all" is wrong. 30 to 25 C is a 5 C fall; the real point is that 8 km should give a 52 C fall. The second rubric line ("so air cannot be warmer than the ground") is also a non sequitur, since -22 C is colder, not warmer. Fix the key and rubric: "a fall of only 5 C would be reached within about 0.8 km, not at 8 km".
+2. C9SC-13.4#19 (CFC case): (d) is a strawman. Venting is plainly harmful and "wait for the subsidy" costs nothing, so there is no real trade-off; the stem also asserts that scrapped refrigerators vent their CFC to the sky, which the chapter does not say (it only says CFCs were used in refrigerators and aerosols). Add a real cost to waiting (e.g. storage fee or a rule that the fridges must be cleared this month) or ask only for the recovery arithmetic.
+3. C9SC-13.6#19 (carbon model) and 13.5#20 (port case): (d) options are lopsided. "Rely on the oceans to absorb the rest" is rejected by the chapter's own warning in the stem; in 13.5#20 the icebreaker has no price, so the choice cannot be justified "using figures". Give the icebreaker a cost and a second real option for 13.6#19 (e.g. forests absorb a stated amount at a stated cost).
+4. C9SC-13.4#18 (Himalaya climb): the -10 C bag fails at -20.7 C by a wide margin, so (d) has one answer. Pick a night temperature near the rating (say -9 C or -12 C) or give a probabilistic range so weight against safety is a real call.
+5. C9SC-13.1#18 (Spiti sheep): (d) compares "sell now" with "truck at a high cost each summer" with no cost figure for the truck, so the answer is asserted rather than computed. Add a truck cost per sheep per summer and a price per sheep.
+6. Repeated ideas inside a concept (limit about two per idea). 13.1: snow, lake, grass and sheep appears in #0, #5, #6, #8, #14, #17, #18 (seven of 20). 13.3: "absorbed = 1 - albedo" in #0, #9, #10, #17, and the polar/equator "spread over a larger area" in #4, #5, #8, #13, #16. 13.6: the Rhizobium/Nitrosomonas/Nitrobacter roles appear in #1, #2, #5, #7, #12, #15, #17, #18. 13.4: Venus vs Mercury in #2 and #15; troposphere/stratosphere in #1, #5, #8, #9, #10, #16. Replace about a third in each with untested ideas (13.1: the five sphere definitions and the Fig 13.1 features; 13.3: the Table 13.1 ice row, re-radiation by concrete; 13.6: eutrophication-free items such as the carbon store shares, the fast/slow carbon time scales, Fig 13.12 water-cycle terms; 13.4: ozone hole, PhET-style greenhouse reasoning).
+7. 13.5 has 21 questions (all other concepts have 20); the bank target is 20 per concept. Retire or merge one (13.5#15 reverse-port duplicates 13.5#4 and the port case #20).
+8. Key-is-longest skew: in 22 of 32 mcq the key is the longest option, and several distractors are visibly absurd ("sound is..."-style: 13.4#2 "Venus is larger, so it receives more sunlight per unit area", 13.4#7 "CO2 is a poison above 1%", 13.5#3 "number of earthquakes", 13.7#3 "alkaline, which protects plankton", 13.7#1 "plants absorb it, oxygen rises, fish die of heat"). Trim key length and build distractors from real confusions (cooling/warming swapped, hemispheres swapped, nitrification vs ammonification, fixation vs assimilation).
+
+## LOW
+- Easy in disguise (one-line book facts labelled Hard): 13.1#0, 13.1#12, 13.3#0 (1 - 0.85), 13.3#1 (lowest albedo of three), 13.4#0 (30 - 26), 13.5#0 (valley breeze), 13.7#0, 13.7#3, 13.7#4, 13.7#7, 13.7#8, 13.2#8 (name the atlas and authors), 13.5#6 (all three statements true, each a verbatim sentence), 13.6#3 (NOT-question where two options contradict each other, so the odd one out is obvious), 13.4#3 (the key is the absurd option).
+- 13.3#17 says crushed rock absorbs "about five times" as much as snow and that melting "exposes" crushed rock; the chapter gives ranges (3.5x to 7.5x) and never says melting exposes bare rock. Say "about 3 to 7 times" and drop the exposed-rock step or label it as reasoning.
+- 13.2#13 (Sunita): the chapter says microwaves and radio waves carry very little energy; "they do reach the Earth" is an inference from EM waves crossing a vacuum. Acceptable but flag as inference in the key.
+- 13.2#14 uses "cannot" for a clear-sky ground maximum the chapter calls "about 1 kWm-2"; say "is not reached on a clear day".
+- 13.6#13 (Amit): "a small store changes by a large fraction when carbon is added" is not stated in the chapter.
+- 13.6#17: "five steps in order" -- the chapter lists fixation, assimilation, ammonification, nitrification, denitrification; the key follows a different (process-logical) order. Say "in a logical order" or follow the book's list.
+- 13.6#18 key prints Rs 5218; exact is 5217.4 (saving 2608.7). Harmless, write "about Rs 5217".
+- 13.6#1 and #15 rely on groundnut and pea being legumes, which this chapter does not state (it says only "legumes"). Name them as legumes in the stem.
+- 13.5#19 (trek camp) is a genuine trade-off but its facts (temperature readings) are invented; keep, but state they are example readings.
+- 13.7#19 (forest clearing) is lopsided on income (clear 150 ha nets more), so the extra non-money costs carry all the weight; acceptable as designed.
+- Match items and the 4-option mcq are stored with the key always first; confirm the loader shuffles.
