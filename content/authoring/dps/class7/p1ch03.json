@@ -55,8 +55,8 @@
           "d": "Hard",
           "t": "fill_blank",
           "m": 1,
-          "q": "Two lace pieces measure 2 6/10 m and 1 7/10 m. Laid end to end they measure ___ tenths of a metre.",
-          "a": "43"
+          "q": "Two lace pieces measure 2 6/10 m and 1 7/10 m. They are joined end to end and then 1 9/10 m is cut away from the joined length. The lace left is ___ tenths of a metre.",
+          "a": "24"
         },
         {
           "b": "Create",
@@ -184,15 +184,15 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 2,
-          "q": "A tape measures 29/10 m. (a) Into how many pieces of 1/10 m can it be cut? (b) Write the tape as a mixed form and say how many full metres it holds.",
-          "a": "(a) 29 tenths, so 29 pieces. (b) 29/10 = 20/10 + 9/10 = 2 9/10 m, which holds 2 full metres and 9 tenths over.",
+          "q": "A tape measures 29/10 m. (a) Write the length as a mixed number and say how many full metres it holds. (b) Strips of 4/10 m are cut from it. How many full strips can be cut and what length is left over?",
+          "a": "(a) 29/10 = 20/10 + 9/10 = 2 9/10 m, so 2 full metres. (b) 29 tenths divided into strips of 4 tenths gives 7 strips (28 tenths) with 1 tenth, that is 1/10 m, left over.",
           "s": [
             [
-              "Part (a): 29 pieces of one-tenth",
+              "Part (a): 2 9/10 m with 2 full metres",
               1
             ],
             [
-              "Part (b): mixed form 2 9/10 with 2 full metres",
+              "Part (b): 7 strips and 1/10 m left over",
               1
             ]
           ]
@@ -390,7 +390,7 @@
           "t": "long_answer",
           "m": 4,
           "q": "Ramesh, a tailor in Jaipur, has three pieces of lace for a lehenga border: 2 7/10 m, 3 5/10 m and 1 8/10 m. The customer's border needs 8 1/10 m. The shop sells extra lace only as a 2/10 m cut (₹60 each) or as one 1 m piece (₹90). The customer may also order a matching dupatta trim that needs 5/10 m more.\n(a) Write the 3 5/10 m piece in tenths only.\n(b) Find the total of the three pieces in tenths.\n(c) By how many tenths is the lace short of 8 1/10 m?\n(d) The customer says she will probably order the trim as well. Compare buying 2/10 m cuts with buying the 1 m piece, in length and in cost, and decide.",
-          "a": "(a) 35/10. (b) 27 + 35 + 18 = 80 tenths = 8 m. (c) 81 - 80 = 1 tenth short. (d) With the trim he needs 81 + 5 = 86 tenths, which is 6 tenths more than he has. That takes three 2/10 m cuts (₹180) but one 1 m piece (10 tenths, ₹90) covers it with 4 tenths to spare. If she orders the trim, buy the 1 m piece; if she orders only the border, a single 2/10 m cut (₹60) is enough.",
+          "a": "(a) 35/10. (b) 27 + 35 + 18 = 80 tenths = 8 m. (c) 81 - 80 = 1 tenth short. (d) With the trim the order needs 81 + 5 = 86 tenths, which is 6 tenths more than she has. That takes three 2/10 m cuts (₹180) but one 1 m piece (10 tenths, ₹90) covers it with 4 tenths to spare. If she orders the trim, buy the 1 m piece; if she orders only the border, a single 2/10 m cut (₹60) is enough.",
           "s": [
             [
               "Part (a): writes 35/10",
@@ -544,13 +544,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "Mohan, a shopkeeper in Surat, wants to write 7 units and 5 hundredths on a bill but writes 7.5. What quantity has he actually written?",
-          "a": "7 units and 5 tenths",
+          "q": "Mohan, a shopkeeper in Surat, wants to write 7 units and 5 hundredths on a bill but writes 7.5. By how much does the quantity he has written differ from the quantity he meant?",
+          "a": "It is 45 hundredths more",
           "o": [
-            "7 units and 5 tenths",
-            "7 tens and 5 units",
-            "7 units and 5 thousandths",
-            "7 units and 5 hundredths"
+            "It is 45 hundredths more",
+            "It is 5 hundredths more",
+            "It is 45 tenths more",
+            "It is 45 hundredths less"
           ],
           "tags": [
             "scenario"
@@ -561,13 +561,13 @@
           "d": "Hard",
           "t": "match",
           "m": 1,
-          "q": "Match each digit 4 in Column I with its value in Column II.\nColumn I: 1. the 4 in 6.42   2. the 4 in 6.042   3. the 4 in 46.2   4. the 4 in 12.504\nColumn II: a. 0.4   b. 0.04   c. 40   d. 0.004",
-          "a": "1-a, 2-b, 3-c, 4-d",
+          "q": "Match each description in Column I with the decimal in Column II.\nColumn I: 1. 3 units and 4 hundredths   2. 3 tens and 4 tenths   3. 3 tenths and 4 thousandths   4. 3 hundredths and 4 units\nColumn II: a. 30.4   b. 4.03   c. 0.304   d. 3.04",
+          "a": "1-d, 2-a, 3-c, 4-b",
           "o": [
-            "1-a, 2-b, 3-c, 4-d",
-            "1-b, 2-a, 3-c, 4-d",
-            "1-a, 2-b, 3-d, 4-c",
-            "1-a, 2-d, 3-c, 4-b"
+            "1-d, 2-a, 3-c, 4-b",
+            "1-d, 2-a, 3-b, 4-c",
+            "1-a, 2-d, 3-c, 4-b",
+            "1-d, 2-c, 3-a, 4-b"
           ],
           "tags": [
             "match"
@@ -790,11 +790,11 @@
           "tags": [
             "case_study"
           ],
-          "q": "A school lab in Chennai must choose a new measuring scale for a unit length. Scale P splits each unit into 4 equal parts and each quarter again into 4 equal parts. Scale Q splits each unit into 10 tenths and each tenth again into 10 hundredths. The lab records readings as decimals, and its experiments need differences no coarser than 0.1 of a unit, but each class has only 30 minutes to read the scale.\n(a) How many smallest parts make one unit on scale P and on scale Q?\n(b) Which scale can show smaller differences, and how do you know?\n(c) A reading on scale Q is 2 units, 3 tenths and 7 hundredths. Write it as a decimal.\n(d) Both scales meet the 0.1 need. Which should the lab choose? Give one advantage and one drawback of your choice.",
-          "a": "(a) P: 4 x 4 = 16 parts; Q: 10 x 10 = 100 parts. (b) Q: its smallest part is 1/100 of a unit, smaller than 1/16, because more parts fit in a unit. (c) 2.37. (d) Both meet the need (1/16 = 0.0625 and 0.01 are each below 0.1). Choosing Q: readings write directly as decimals (hundredths are the second decimal place) but 100 marks per unit are slower to read. Choosing P: only 16 marks, quicker, but a reading like 1/16 is 0.0625, which needs four decimal places. Either choice is acceptable if one advantage and one drawback are given.",
+          "q": "A school lab in Chennai must choose a new measuring scale for a unit length. Scale P splits each unit into 4 equal parts and each quarter again into 4 equal parts. Scale Q splits each unit into 10 tenths and each tenth again into 10 hundredths. The lab's record sheet allows readings only as decimals with at most two places, its experiments need differences no coarser than 0.1 of a unit, and each class has only 30 minutes to read the scale (the more marks, the slower the reading).\n(a) Write one smallest part of each scale as a fraction of the unit, and say which of the two is a decimal place.\n(b) Which scale can show smaller differences, and how do you know?\n(c) A reading on scale Q is 2 units, 3 tenths and 7 hundredths. Write it as a decimal and say by how much it is more than 2.3.\n(d) Both scales meet the 0.1 need. Which should the lab choose, given the record sheet rule? Give one advantage and one drawback of your choice.",
+          "a": "(a) P: 4 x 4 = 16 parts, so one smallest part is 1/16 of a unit; Q: 10 x 10 = 100 parts, so 1/100. Only 1/100 is a decimal place (the hundredths place); 1/16 is not a tenth or a hundredth. (b) Q: its smallest part is 1/100 of a unit, smaller than 1/16, because a unit cut into 100 parts has finer parts than one cut into 16. (c) 2.37, which is 7 hundredths (0.07) more than 2.3. (d) Both meet the 0.1 need: 1/16 is smaller than 1/10 and 1/100 is smaller still. The record sheet decides it: choose Q. Advantage: every mark is a tenth or a hundredth, so each reading writes as a decimal with at most two places. Drawback: 100 marks per unit are slower to read in 30 minutes. Scale P is quicker (16 marks), but most of its marks (1/16, 3/16, 5/16 ...) are not tenths or hundredths, so they cannot be written within two places; only marks such as 1/4, 1/2 and 3/4 can.",
           "s": [
             [
-              "Part (a): 16 parts on P and 100 on Q",
+              "Part (a): 1/16 and 1/100, and says only 1/100 is a decimal place (hundredths)",
               1
             ],
             [
@@ -802,11 +802,11 @@
               1
             ],
             [
-              "Part (c): writes 2.37",
+              "Part (c): writes 2.37 and 0.07 more than 2.3",
               1
             ],
             [
-              "Part (d): notes both meet 0.1 and justifies a choice with an advantage and a drawback",
+              "Part (d): chooses Q using the two-place record rule, with one advantage and one drawback",
               1
             ]
           ]
@@ -917,14 +917,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "A chemistry club pours 0.30 L, then 0.4 L, then 0.200 L of water into one jug. What does the jug now hold?",
+          "q": "A chemistry club pours 0.30 L, then 0.4 L, then 0.200 L of water into a jug whose capacity is 1 L. It then tries to pour in 0.15 L more. How much of that 0.15 L fits, and how much spills?",
           "o": [
-            "0.9 L",
-            "0.45 L",
-            "0.09 L",
-            "9 L"
+            "0.1 L fits and 0.05 L spills",
+            "0.15 L fits and none spills",
+            "0.01 L fits and 0.14 L spills",
+            "0.1 L fits and 0.5 L spills"
           ],
-          "a": "0.9 L"
+          "a": "0.1 L fits and 0.05 L spills"
         },
         {
           "b": "Analyse",
@@ -957,13 +957,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "A lab report lists 0.002 g of a dye. A student copying it writes 0.02 g. Compared with the report, the copied value is",
-          "a": "10 times too large",
+          "q": "A lab report lists 0.002 g of a dye. One student copies it as 0.02 g and another as 0.0020 g. Compared with the report, which is correct?",
+          "a": "The first copy is 18 thousandths too large; the second is unchanged",
           "o": [
-            "10 times too large",
-            "10 times too small",
-            "100 times too large",
-            "the same, because only a zero was dropped"
+            "The first copy is 18 thousandths too large; the second is unchanged",
+            "The first copy is 18 thousandths too large; the second is 10 times too large",
+            "The first copy is 2 thousandths too large; the second is unchanged",
+            "The first copy is 18 hundredths too large; the second is unchanged"
           ],
           "tags": [
             "scenario"
@@ -1020,14 +1020,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "A digital scale in a lab always shows exactly three digits after the point. It is used to weigh 3.5 g, 0.35 g and 12 g of three powders. Which row shows what the display reads for the three powders in that order?",
+          "q": "A digital scale in a lab always shows exactly three digits after the point. It is used to weigh 3.5 g, 0.35 g and 12 g of three powders, which are tipped into one pan, and then a fourth powder of 0.5 g is added. The scale can show at most 16.000 g without an overload warning. What does the display read, and does the warning appear?",
           "o": [
-            "3.500, 0.350, 12.000",
-            "3.005, 0.035, 12.000",
-            "3.500, 0.035, 12.0",
-            "3.50, 0.350, 12.00"
+            "16.350 g, and the warning appears",
+            "16.350 g, and no warning",
+            "15.855 g, and no warning",
+            "16.850 g, and the warning appears"
           ],
-          "a": "3.500, 0.350, 12.000"
+          "a": "16.350 g, and the warning appears"
         },
         {
           "b": "Analyse",
@@ -1355,14 +1355,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "A surveyor's chart shows the segment from 6.7 to 6.8 divided into 10 equal parts. Her marker P is on the third mark counting back from 6.8. What number does P show?",
+          "q": "A surveyor's chart shows the segment from 6.7 to 6.8 divided into 10 equal parts. Marker P is three marks to the left of 6.8 and marker Q is two marks to the right of 6.7. How far apart are P and Q?",
           "o": [
-            "6.77",
-            "6.73",
-            "6.83",
-            "6.37"
+            "0.05",
+            "0.5",
+            "0.15",
+            "0.005"
           ],
-          "a": "6.77"
+          "a": "0.05"
         },
         {
           "b": "Analyse",
@@ -1516,13 +1516,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "Ishaan wants to locate 6.274 on a number line by magnifying one segment at a time. Which order of segments should he use?",
-          "a": "6 to 7, then 6.2 to 6.3, then 6.27 to 6.28",
+          "q": "Ishaan locates 6.274 on a number line by magnifying one segment at a time. His first two segments are 6 to 7 and then 6.2 to 6.3. Which describes the third segment and where 6.274 lies in it?",
+          "a": "6.27 to 6.28, with 6.274 at the fourth mark after 6.27",
           "o": [
-            "6 to 7, then 6.2 to 6.3, then 6.27 to 6.28",
-            "6 to 7, then 6.7 to 6.8, then 6.74 to 6.75",
-            "6.27 to 6.28, then 6.2 to 6.3, then 6 to 7",
-            "6 to 7, then 6.2 to 6.3, then 6.20 to 6.21"
+            "6.27 to 6.28, with 6.274 at the fourth mark after 6.27",
+            "6.27 to 6.28, with 6.274 at the fourth mark before 6.28",
+            "6.2 to 6.3 again, with 6.274 at the 74th mark",
+            "6.27 to 6.28, with 6.274 at the seventh mark after 6.27"
           ],
           "tags": [
             "scenario"
@@ -1590,13 +1590,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "A chef arranges four spice jars by weight, lightest first. Their weights are 2.5 g, 2.55 g, 2.05 g and 2.505 g. Which order is correct?",
-          "a": "2.05 g, 2.5 g, 2.505 g, 2.55 g",
+          "q": "A chef arranges four spice jars by weight, lightest first, and notes the gap between the heaviest and the lightest. Their weights are 2.5 g, 2.55 g, 2.05 g and 2.505 g. Which order and gap are correct?",
+          "a": "2.05, 2.5, 2.505, 2.55 and a gap of 0.5 g",
           "o": [
-            "2.05 g, 2.5 g, 2.505 g, 2.55 g",
-            "2.5 g, 2.05 g, 2.505 g, 2.55 g",
-            "2.05 g, 2.5 g, 2.55 g, 2.505 g",
-            "2.505 g, 2.05 g, 2.5 g, 2.55 g"
+            "2.05, 2.5, 2.505, 2.55 and a gap of 0.5 g",
+            "2.05, 2.5, 2.505, 2.55 and a gap of 0.05 g",
+            "2.05, 2.5, 2.55, 2.505 and a gap of 0.5 g",
+            "2.505, 2.05, 2.5, 2.55 and a gap of 0.45 g"
           ],
           "tags": [
             "scenario"
@@ -1717,14 +1717,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "A billing machine accepts only kilograms. Ravi buys 250 g of ginger and 1.5 kg of onions in one bill. What total weight must the shopkeeper type?",
+          "q": "A billing machine accepts only kilograms. Ravi buys 250 g of ginger, 1.5 kg of onions and 380 g of garlic in one bill. The shop gives free delivery on 2 kg or more. What total must be typed, and how does it compare with the free-delivery limit?",
           "o": [
-            "1.75 kg",
-            "1.55 kg",
-            "4 kg",
-            "1.5250 kg"
+            "2.13 kg, which is 130 g above the limit",
+            "2.13 kg, which is 13 g above the limit",
+            "1.88 kg, which is 120 g below the limit",
+            "4.38 kg, which is 2.38 kg above the limit"
           ],
-          "a": "1.75 kg"
+          "a": "2.13 kg, which is 130 g above the limit"
         },
         {
           "b": "Analyse",
@@ -1946,14 +1946,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "A 1970s bill from a shop in Madurai lists 3 bananas at 25 paise each and one coconut at ₹0.85. What is the total of the bill, written in rupees?",
+          "q": "A 1970s bill from a shop in Madurai lists 3 bananas at 25 paise each and one coconut at ₹0.85. Mother pays with a ₹2 coin. How much change should she get, written in rupees?",
           "o": [
-            "₹1.60",
-            "₹1.10",
-            "₹16.0",
-            "₹0.160"
+            "₹0.40",
+            "₹0.60",
+            "₹4.00",
+            "₹0.04"
           ],
-          "a": "₹1.60"
+          "a": "₹0.40"
         },
         {
           "b": "Analyse",
@@ -1988,13 +1988,13 @@
           "d": "Hard",
           "t": "match",
           "m": 1,
-          "q": "Match each measure in Column I with the equal measure in Column II.\nColumn I: 1. 1450 g   2. 0.9 m   3. 7 mm   4. 5 paise\nColumn II: a. 90 cm   b. 1.45 kg   c. 0.7 cm   d. ₹0.05",
-          "a": "1-b, 2-a, 3-c, 4-d",
+          "q": "Work out each calculation in Column I and match it with the same quantity, written in a different unit, in Column II.\nColumn I: 1. 1.2 kg + 250 g   2. 2 m - 110 cm   3. ₹1 - 35 paise   4. 4 cm 3 mm + 2.7 cm\nColumn II: a. ₹0.65   b. 0.07 m   c. 1450 g   d. 90 cm",
+          "a": "1-c, 2-d, 3-a, 4-b",
           "o": [
-            "1-b, 2-a, 3-c, 4-d",
-            "1-b, 2-c, 3-a, 4-d",
-            "1-a, 2-b, 3-c, 4-d",
-            "1-b, 2-a, 3-d, 4-c"
+            "1-c, 2-d, 3-a, 4-b",
+            "1-c, 2-d, 3-b, 4-a",
+            "1-d, 2-c, 3-a, 4-b",
+            "1-c, 2-a, 3-d, 4-b"
           ],
           "tags": [
             "match"
@@ -2174,7 +2174,7 @@
           "t": "short_answer",
           "m": 3,
           "q": "A student works out 12.65 - 4.8 and gets 8.25. Show by checking with addition that this cannot be right, then give the correct difference and the likely slip.",
-          "a": "If 8.25 were right, 8.25 + 4.8 would be 12.65, but 8.25 + 4.80 = 13.05. So 8.25 is wrong. The correct difference is 12.65 - 4.80 = 7.85. The slip: in the tenths column 6 - 8 cannot be done, so he took 8 - 6 = 2 and never borrowed from the units.",
+          "a": "If 8.25 were right, 8.25 + 4.8 would be 12.65, but 8.25 + 4.80 = 13.05. So 8.25 is wrong. The correct difference is 12.65 - 4.80 = 7.85. The slip: in the tenths column 6 - 8 cannot be done, so she took 8 - 6 = 2 and never borrowed from the units.",
           "s": [
             [
               "Adds back 8.25 + 4.8 = 13.05",
@@ -2199,7 +2199,7 @@
           "d": "Hard",
           "t": "assertion_reason",
           "m": 1,
-          "q": "Assertion (A): 40 - 0.08 = 39.92.\nReason (R): Taking a number smaller than 1 away from 40 always leaves a result between 39 and 40.",
+          "q": "Assertion (A): 40 - 0.08 = 39.92.\nReason (R): Taking a decimal between 0 and 1 away from 40 always leaves a result between 39 and 40.",
           "o": [
             "A and R are both true, but R is not the correct explanation of A.",
             "A and R are both true, and R is the correct explanation of A.",
@@ -2299,14 +2299,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "Imran's mother has 12.4 m of cloth. She uses 6.7 m for curtains and then 2.65 m for cushion covers. How much cloth is left?",
+          "q": "Imran's mother has 12.4 m of cloth. She uses 6.7 m for curtains and then 2.65 m for cushion covers. She wants a table runner 3.1 m long from what is left. Which statement is correct?",
           "o": [
-            "3.05 m",
-            "3.15 m",
-            "2.15 m",
-            "5.7 m"
+            "3.05 m is left, which is 0.05 m short of the runner",
+            "3.05 m is left, which leaves 0.05 m spare after the runner",
+            "3.15 m is left, so the runner fits with 0.05 m spare",
+            "2.15 m is left, which is 0.95 m short of the runner"
           ],
-          "a": "3.05 m"
+          "a": "3.05 m is left, which is 0.05 m short of the runner"
         },
         {
           "b": "Create",
@@ -2334,21 +2334,20 @@
           ]
         },
         {
-          "b": "Understand",
+          "b": "Analyse",
           "d": "Hard",
-          "t": "short_answer",
-          "m": 2,
-          "q": "Add 19.99 and 6.01. Show the carries across the decimal point, and say why the answer is a whole number.",
-          "a": "Hundredths 9 + 1 = 10 (write 0, carry 1 tenth); tenths 9 + 0 + 1 = 10 (write 0, carry 1 unit); units 9 + 6 + 1 = 16 (write 6, carry 1 ten); tens 1 + 0 + 1 = 2. Sum = 26.00. The decimal parts 0.99 and 0.01 together make exactly 1.",
-          "s": [
-            [
-              "Shows the carries from hundredths and tenths across the point, and on to the tens",
-              1
-            ],
-            [
-              "Explains 0.99 + 0.01 = 1 so the sum is 26",
-              1
-            ]
+          "t": "mcq",
+          "m": 1,
+          "q": "At a farmers' market in Nashik, Sarita buys 3.75 kg of tomatoes, 2.5 kg of onions and 0.45 kg of green chillies. Her bag holds at most 7 kg. What is the weight now, and can she add 0.5 kg of ginger?",
+          "a": "6.7 kg, and no because it would reach 7.2 kg",
+          "o": [
+            "6.7 kg, and no because it would reach 7.2 kg",
+            "6.7 kg, and yes because it would reach 6.75 kg",
+            "6.25 kg, and yes because it would reach 6.75 kg",
+            "7.7 kg, and no because it is already over"
+          ],
+          "tags": [
+            "scenario"
           ]
         },
         {
@@ -2370,8 +2369,8 @@
           "d": "Hard",
           "t": "fill_blank",
           "m": 1,
-          "q": "A 30 m rope has 28.206 m cut off for a stage. The length of rope left is ___ m.",
-          "a": "1.794"
+          "q": "A pupil adds 17.4 + 6.85 + 0.09 in columns but puts the 9 of 0.09 under the tenths digits, so her total is 25.15. The correct total is ___.",
+          "a": "24.34"
         },
         {
           "b": "Analyse",
@@ -2381,65 +2380,31 @@
           "tags": [
             "scenario"
           ],
-          "q": "A 10 L water can springs two leaks: first 0.07 L drips out, then 0.15 L more. Four pupils write the water left as shown below. Which is correct?",
+          "q": "A 10 L water can springs two leaks: first 0.07 L drips out, then 0.15 L more. Ria says 'only 0.15 - 0.07 = 0.08 L is lost, so 9.92 L is left.' Which statement is correct?",
           "o": [
-            "9.78 L",
-            "9.22 L",
-            "9.88 L",
-            "9.7 L"
+            "Ria subtracted the two leaks instead of adding them; 9.78 L is left",
+            "Ria misplaced the decimal point; 9.88 L is left",
+            "Ria is right, 9.92 L is left",
+            "Ria added when she should have subtracted; 10.22 L is left"
           ],
-          "a": "9.78 L"
+          "a": "Ria subtracted the two leaks instead of adding them; 9.78 L is left"
         },
         {
-          "b": "Apply",
+          "b": "Analyse",
           "d": "Hard",
           "t": "mcq",
           "m": 1,
           "tags": [
             "scenario"
           ],
-          "q": "A chemist has 52.806 g of salt. She uses 25.9 g in one experiment and 3.45 g in another. How much salt is left?",
+          "q": "A chemist has 52.806 g of salt and uses 25.9 g in one experiment. Her notebook says 52.806 - 25.9 = 52.547 g is left. Which statement is correct?",
           "o": [
-            "23.456 g",
-            "26.906 g",
-            "30.356 g",
-            "24.266 g"
+            "Wrong: the range is 26 to 28; 26.906 g is left (she used 0.259)",
+            "Right: the whole parts give a range of 52 to 54, which contains 52.547",
+            "Wrong: the range is 26 to 28, and 27.906 g is left; she forgot a borrow",
+            "Right: 52.806 - 25.9 keeps the 52 and only the .806 changes"
           ],
-          "a": "23.456 g"
-        },
-        {
-          "b": "Apply",
-          "d": "Hard",
-          "t": "mcq",
-          "m": 1,
-          "tags": [
-            "scenario"
-          ],
-          "q": "A bamboo shoot in a school garden grows 0.478 m in the first week, 0.7 m in the second week and 0.35 m in the third week. How much has it grown in all?",
-          "o": [
-            "1.528 m",
-            "1.178 m",
-            "1.213 m",
-            "2.528 m"
-          ],
-          "a": "1.528 m"
-        },
-        {
-          "b": "Apply",
-          "d": "Hard",
-          "t": "mcq",
-          "m": 1,
-          "q": "At a farmers' market in Nashik, Sarita buys 3.75 kg of tomatoes, 2.5 kg of onions and 0.45 kg of green chillies. What is the total weight?",
-          "a": "6.7 kg",
-          "o": [
-            "6.7 kg",
-            "6.25 kg",
-            "7.7 kg",
-            "5.7 kg"
-          ],
-          "tags": [
-            "scenario"
-          ]
+          "a": "Wrong: the range is 26 to 28; 26.906 g is left (she used 0.259)"
         },
         {
           "b": "Evaluate",
@@ -2465,6 +2430,41 @@
           "tags": [
             "claim_check"
           ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Add 19.99 and 6.01. Show the carries across the decimal point, and say why the answer is a whole number.",
+          "a": "Hundredths 9 + 1 = 10 (write 0, carry 1 tenth); tenths 9 + 0 + 1 = 10 (write 0, carry 1 unit); units 9 + 6 + 1 = 16 (write 6, carry 1 ten); tens 1 + 0 + 1 = 2. Sum = 26.00. The decimal parts 0.99 and 0.01 together make exactly 1.",
+          "s": [
+            [
+              "Shows the carries from hundredths and tenths across the point, and on to the tens",
+              1
+            ],
+            [
+              "Explains 0.99 + 0.01 = 1 so the sum is 26",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A bamboo shoot in a school garden grew 0.478 m in the first week and 0.7 m in the second. The class wants its total growth after three weeks to be exactly 1.6 m. How much must it grow in the third week?",
+          "o": [
+            "0.422 m",
+            "0.522 m",
+            "0.378 m",
+            "1.178 m"
+          ],
+          "a": "0.422 m"
         },
         {
           "b": "Evaluate",
@@ -2534,7 +2534,7 @@
           "d": "Hard",
           "t": "fill_blank",
           "m": 1,
-          "q": "A student estimates 47.3 - 18.8 as lying between 28 and 30 by the whole-number parts rule, and then works it out exactly. The exact difference is ___.",
+          "q": "Two pupils write 47.3 - 18.8 as 31.5 and as 29.5. The range from the whole-number parts, 28 to 30, rules out only one of them, yet the other is also wrong. The correct difference is ___.",
           "a": "28.5"
         },
         {
@@ -2542,15 +2542,15 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 2,
-          "q": "(a) Between which whole numbers must 52.4 - 18.75 lie? (b) A student gets 35.65. Can the range rule it out? Find the exact difference.",
-          "a": "(a) 52 - 18 = 34, so the difference lies between 33 and 35. (b) Yes: 35.65 is above 35, so it is outside the range. The exact difference 52.40 - 18.75 = 33.65.",
+          "q": "A school may spend at most ₹60 on a bat costing ₹32.75 and a ball costing ₹26.40. (a) Using only the whole-number parts, between which two amounts must the total lie? (b) Can the range alone tell the school that the bill is within the limit? Decide, then find the exact total.",
+          "a": "(a) 32 + 26 = 58, so the total lies between 58 and 60. (b) Yes: the total is below 60, so it cannot exceed the limit of ₹60. The exact total is 32.75 + 26.40 = 59.15, which is within the limit.",
           "s": [
             [
-              "Part (a): range 33 to 35",
+              "Part (a): range 58 to 60",
               1
             ],
             [
-              "Part (b): says 35.65 is outside the range and finds 33.65",
+              "Part (b): decides the bill is within ₹60 because the total is below 60, and finds 59.15",
               1
             ]
           ]
@@ -2560,15 +2560,15 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 2,
-          "q": "(a) Find 4.1 + 3.1 and 4.9 + 3.9. (b) The whole parts 4 and 3 give the range 7 to 9. Can the sum of a decimal with whole part 4 and a decimal with whole part 3 be exactly 9? Can it be exactly 7? Explain.",
-          "a": "(a) 4.1 + 3.1 = 7.2 and 4.9 + 3.9 = 8.8. (b) It can never be exactly 9: that needs the two fractional parts to total 2, but each is below 1. It can be exactly 7 only when both fractional parts are 0 (for example 4.0 + 3.0); any non-zero fractional part pushes the sum above 7.",
+          "q": "(a) Find 4.1 + 3.1 and 4.9 + 3.9. (b) The whole parts 4 and 3 give the range 7 to 9. If both decimals have non-zero fractional parts, can their sum be exactly 9? Can it be exactly 7? Explain.",
+          "a": "(a) 4.1 + 3.1 = 7.2 and 4.9 + 3.9 = 8.8. (b) Neither. It can never be 9: that needs the two fractional parts to total 2, but each is below 1. It cannot be 7 either: two non-zero fractional parts add to more than 0, so the sum is more than 7. It lies strictly between 7 and 9.",
           "s": [
             [
               "Part (a): 7.2 and 8.8",
               1
             ],
             [
-              "Part (b): 9 impossible since fractional parts total less than 2; 7 only when both are 0",
+              "Part (b): says neither, 9 impossible since fractional parts total less than 2, and 7 impossible since they total more than 0",
               1
             ]
           ]
@@ -2649,12 +2649,12 @@
           "tags": [
             "scenario"
           ],
-          "q": "A baker weighs two lots of flour in pairs and checks each pair by whole-number parts. For which pair does the whole-parts rule give the range 14 kg to 16 kg for the total?",
+          "q": "A baker weighs two lots of flour in pairs. For which pair does the whole-parts rule give the range 14 kg to 16 kg for the total, and is the exact total above 15 kg?",
           "o": [
             "7.3 kg and 7.9 kg",
+            "7.1 kg and 7.2 kg",
             "6.9 kg and 7.9 kg",
-            "8.1 kg and 7.2 kg",
-            "7.5 kg and 8.5 kg"
+            "8.1 kg and 7.2 kg"
           ],
           "a": "7.3 kg and 7.9 kg"
         },
@@ -2746,13 +2746,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "A cashier adds ₹2,345.60 and ₹1,987.45. Four colleagues announce the total as ₹4,323.05, ₹4,333.05, ₹4,335.05 and ₹4,433.05. Using only the whole-number parts, which is the only total the range does NOT rule out?",
-          "a": "₹4,333.05",
+          "q": "A cashier adds ₹2,345.60 and ₹1,987.45 and has ₹4,333 in the till. Using only the whole-number parts, which statement is correct?",
+          "a": "The range 4,332 to 4,334 cannot decide it; the exact total ₹4,333.05 is ₹0.05 more than the till",
           "o": [
-            "₹4,333.05",
-            "₹4,323.05",
-            "₹4,335.05",
-            "₹4,433.05"
+            "The range 4,332 to 4,334 cannot decide it; the exact total ₹4,333.05 is ₹0.05 more than the till",
+            "The range starts at 4,332, so the till is certainly enough",
+            "The range ends at 4,334, so the till is certainly not enough",
+            "The range shows the exact total is ₹4,333"
           ],
           "tags": [
             "scenario"
@@ -2807,19 +2807,19 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 3,
-          "q": "Someone says 14.9 + 9.9 = 26. Show that this cannot be correct without adding the decimals, and then find the true sum.",
-          "a": "Whole parts 14 and 9 give 23, so the sum lies between 23 and 25. 26 is outside that range, so it cannot be right. True sum: 14.9 + 9.9 = 24.8.",
+          "q": "Someone says 31.4 - 12.8 = 20.4. Show that this cannot be correct without subtracting the decimals, and then find the true difference.",
+          "a": "Whole parts 31 and 12 give 19, so the difference lies between 18 and 20. 20.4 is outside that range, so it cannot be right. True difference: 31.4 - 12.8 = 18.6. (The difference of the whole parts is 19; the true difference can be up to 1 less or 1 more.)",
           "s": [
             [
-              "Finds the whole parts' sum 23 and the range 23 to 25",
+              "Finds the whole parts' difference 19 and the range 18 to 20",
               1
             ],
             [
-              "Says 26 is outside the range so it is impossible",
+              "Says 20.4 is outside the range so it is impossible",
               1
             ],
             [
-              "Gives the true sum 24.8",
+              "Gives the true difference 18.6",
               1
             ]
           ],
@@ -2846,19 +2846,19 @@
           "a": "The range is 20 to 22; the point was moved one place left, so her figure is 10 times too small"
         },
         {
-          "b": "Analyse",
+          "b": "Create",
           "d": "Hard",
           "t": "short_answer",
           "m": 2,
-          "q": "(a) Find 40.3 - 17.9 and 40.9 - 17.1. (b) The whole parts give 40 - 17 = 23. On which side of 23 does each answer fall, and why must every such difference lie between 22 and 24?",
-          "a": "(a) 40.3 - 17.9 = 22.4 and 40.9 - 17.1 = 23.8. (b) 22.4 is below 23 and 23.8 is above 23. Each decimal is its whole part plus a fractional part below 1, so the difference can be at most 1 below or 1 above the whole-parts difference: between 22 and 24.",
+          "q": "Write two decimals with whole parts 9 and 6 whose sum is exactly 16. Show that your pair fits the whole-number-parts range, and give a second pair, each number with two digits after the point, that also totals 16.",
+          "a": "The range is 9 + 6 = 15 to 17, and 16 sits inside it. For example 9.6 + 6.4 = 16.0. A second pair: 9.35 + 6.65 = 16.00 (the hundredths 5 + 5 = 10 and tenths 3 + 6 + 1 = 10 carry to give 6 + 9 + 1 = 16).",
           "s": [
             [
-              "Part (a): 22.4 and 23.8",
+              "Gives a valid pair (e.g. 9.6 and 6.4) and shows 16 lies in 15 to 17",
               1
             ],
             [
-              "Part (b): says below and above 23, and the fractional parts are below 1 so the range is 22 to 24",
+              "Gives a valid two-decimal-place pair totalling 16 (e.g. 9.35 and 6.65)",
               1
             ]
           ]
@@ -3131,13 +3131,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "Karan reads 'Overs bowled: 8.5' on the school scoreboard and says the next ball will make it 8.6. Which statement is correct?",
-          "a": "It will read 9.0, because 6 balls make a complete over",
+          "q": "The school scoreboard reads 'Overs bowled: 8.5'. Karan says that after 3 more balls it will read 8.8. Which statement is correct?",
+          "a": "It will read 9.2, because 5 + 3 = 8 balls is one over and 2 balls",
           "o": [
-            "It will read 9.0, because 6 balls make a complete over",
-            "It will read 8.6, because the digit after the point just goes up by 1",
-            "It will read 9.5, because the over is rounded up",
-            "It will read 8.10, because 5 balls plus 5 more are 10 balls"
+            "It will read 9.2, because 5 + 3 = 8 balls is one over and 2 balls",
+            "It will read 8.8, because the digit after the point goes up by 3",
+            "It will read 9.3, because the first ball completes the over and 3 more balls follow",
+            "It will read 9.8, because 8.5 and 3 balls make 9.8"
           ],
           "tags": [
             "scenario"
@@ -3165,15 +3165,15 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 2,
-          "q": "(a) Write 2.4 hours in hours and minutes. (b) Is that the same as 2 hours 40 minutes? Explain.",
-          "a": "(a) 0.4 hour = 4 tenths of an hour = 4 x 6 = 24 minutes, so 2 h 24 min (2 h 24 min). (b) No. 40 minutes would be 4/6 of an hour, but 0.4 hour is 4/10 of an hour; an hour has 60 minutes, not 100.",
+          "q": "A video app shows 'Watched: 1.9 hours'. Sana's own log says she watched for 1 hour 54 minutes, and her friend Tara wrote that she watched for 1 hour 9 minutes as '1.9 hours'. (a) Do the app and Sana's log agree? Use 1 tenth of an hour = 6 minutes. (b) By how many minutes does the app's 1.9 hours differ from Tara's real 1 hour 9 minutes?",
+          "a": "(a) Yes. 1.9 hours is 1 hour and 9 tenths of an hour; 9 x 6 = 54 minutes, so 1 h 54 min. (b) 1.9 hours is 114 minutes and Tara watched 69 minutes, so the difference is 114 - 69 = 45 minutes.",
           "s": [
             [
-              "Part (a): 4 x 6 = 24 minutes, so 2 h 24 min",
+              "Part (a): 9 x 6 = 54 minutes, so they agree",
               1
             ],
             [
-              "Part (b): says it is not 2 h 40 min, as an hour is 60 minutes and not 10 tenths of 10 minutes",
+              "Part (b): 114 - 69 = 45 minutes",
               1
             ]
           ]
@@ -3196,19 +3196,23 @@
           "a": "6:16 p.m."
         },
         {
-          "b": "Apply",
+          "b": "Analyse",
           "d": "Hard",
           "t": "short_answer",
-          "m": 2,
-          "q": "In a 20-over match the scoreboard shows 'Overs left: 6.2'. (a) How many balls are left? (b) How many overs have been bowled? Write it as the scoreboard would.",
-          "a": "(a) 6 x 6 + 2 = 38 balls. (b) 20 overs = 120 balls, so 82 balls have been bowled, which is 13.4 overs on the scoreboard.",
+          "m": 3,
+          "q": "After 94 balls of a 20-over match, a pupil writes 'Overs bowled: 9.4' by cutting 94 into 9 and 4. (a) Show that 9.4 cannot be right. (b) Write the correct scoreboard entry. (c) Write the overs left as the scoreboard would show them.",
+          "a": "(a) 9.4 would mean 9 x 6 + 4 = 58 balls, not 94. (b) 94 = 15 x 6 + 4, so the board reads 15.4. (c) 120 - 94 = 26 balls = 4 x 6 + 2, so 4.2 overs are left.",
           "s": [
             [
-              "Part (a): converts 6.2 overs to 38 balls",
+              "Part (a): 9.4 stands for 58 balls, not 94",
               1
             ],
             [
-              "Part (b): 120 - 38 = 82 balls = 13.4 overs",
+              "Part (b): 15.4",
+              1
+            ],
+            [
+              "Part (c): 26 balls = 4.2 overs left",
               1
             ]
           ]
@@ -3221,14 +3225,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "In one school match the scoreboard reads 'Overs bowled: 12.5' and in another it reads 'Overs bowled: 13.0'. Meena subtracts 13.0 - 12.5 = 0.5 and says half a ball more has been bowled in the second match. How many balls more have actually been bowled?",
+          "q": "Two school matches show 'Overs bowled: 12.5' and 'Overs bowled: 14.1'. Meena subtracts 14.1 - 12.5 = 1.6 and says 16 balls more have been bowled in the second match. How many balls more have actually been bowled?",
           "o": [
-            "1 ball",
-            "5 balls",
-            "0.5 balls",
+            "8 balls",
+            "16 balls",
+            "10 balls",
             "6 balls"
           ],
-          "a": "1 ball"
+          "a": "8 balls"
         },
         {
           "b": "Create",
@@ -3308,13 +3312,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "In a 20-over match the scoreboard shows 'Overs bowled: 19.2'. Ritu subtracts 20 - 19.2 = 0.8 and says 8 balls remain. How many balls really remain?",
-          "a": "4 balls",
+          "q": "In a 20-over match the scoreboard shows 'Overs bowled: 19.2'. Ritu subtracts 20 - 19.2 = 0.8 and says 8 balls remain. After 3 more balls are bowled, what will the scoreboard read and how many balls really remain?",
+          "a": "19.5, and 1 ball remains",
           "o": [
-            "4 balls",
-            "8 balls",
-            "0.8 balls",
-            "116 balls"
+            "19.5, and 1 ball remains",
+            "19.5, and 5 balls remain",
+            "19.8, and 0.2 of an over remains",
+            "20.1, and no balls remain"
           ],
           "tags": [
             "scenario"
@@ -3357,8 +3361,8 @@
           "tags": [
             "case_study"
           ],
-          "q": "In a 20-over school final in Jaipur the scoreboard shows 'Overs bowled: 16.4'. A bowler may bowl at most 4 overs in the match. So far the fast bowler Kabir has bowled 3 overs and the spinner has bowled 3 overs. A third bowler is finishing the current over. The captain now plans the 18th, 19th and 20th overs.\n(a) How many balls have been bowled so far, and how many remain?\n(b) How many balls are left in the current over, and how many full overs come after it?\n(c) How many more overs can Kabir and the spinner bowl together, and how many of the last three overs must someone else bowl?\n(d) The captain must choose which of the last three overs goes to the other bowler. Pick one and give a reason.",
-          "a": "(a) 16 x 6 + 4 = 100 balls bowled; 120 - 100 = 20 balls remain. (b) The 17th over has 4 of its 6 balls bowled, so 2 balls are left; the other 18 balls are 3 full overs (18th, 19th, 20th). (c) Each has 4 - 3 = 1 over left, so together they can bowl 2 overs; the third of the last three overs must be bowled by someone else. (d) Any choice with a reason is accepted, for example giving the 18th to the other bowler so that the two main bowlers keep their last overs for the 19th and 20th.",
+          "q": "In a 20-over school final in Jaipur the scoreboard shows 'Overs bowled: 16.4'. A bowler may bowl at most 4 overs in the match. So far the fast bowler Kabir has bowled 3 overs and the spinner has bowled 3 overs. A third bowler is finishing the current over; he has bowled 2 overs so far, including this one. Every other bowler has already used up his 4 overs, so only Kabir, the spinner and the third bowler can bowl the rest. The captain now plans the 18th, 19th and 20th overs.\n(a) How many balls have been bowled so far, and how many remain?\n(b) How many balls are left in the current over, and how many full overs come after it?\n(c) How many more overs can Kabir and the spinner bowl together, and how many of the last three overs must someone else bowl?\n(d) No bowler may bowl two overs in a row, Kabir will bowl only the last over, and the spinner cannot bowl the 20th. Which over does the third bowler, who is finishing the 17th, take? Give the reason.",
+          "a": "(a) 16 x 6 + 4 = 100 balls bowled; 120 - 100 = 20 balls remain. (b) The 17th over has 4 of its 6 balls bowled, so 2 balls are left; the other 18 balls are 3 full overs (18th, 19th, 20th). (c) Each has 4 - 3 = 1 over left, so together they can bowl 2 overs; the third of the last three overs must be bowled by someone else (the third bowler, the only other bowler left, who has 4 - 2 = 2 overs available). (d) The third bowler bowls the 17th, so he cannot bowl the 18th. Kabir bowls only the 20th, and the spinner cannot bowl the 20th, so the 18th goes to the spinner (Kabir is saved for the 20th and the third bowler cannot follow his own over). That leaves the 19th for the third bowler, giving spinner, third bowler, Kabir with nobody bowling twice in a row. Only the 19th works.",
           "s": [
             [
               "Part (a): 100 balls bowled and 20 remaining",
@@ -3369,11 +3373,11 @@
               1
             ],
             [
-              "Part (c): 2 overs between Kabir and the spinner, one over for someone else",
+              "Part (c): 2 overs between Kabir and the spinner, one over for someone else (the third bowler)",
               1
             ],
             [
-              "Part (d): picks an over and justifies the choice",
+              "Part (d): rules out the 18th for the third bowler, puts Kabir on the 20th, so the spinner takes the 18th, and concludes the third bowler takes the 19th",
               1
             ]
           ]
@@ -3388,11 +3392,11 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "Fatima needs a ribbon as close to 1 m as possible. The pieces in the shop measure 0.8 m, 0.69 m, 1.08 m and 0.95 m. Which should she buy?",
-          "a": "0.95 m",
+          "q": "Fatima needs a ribbon as close to 1 m as possible, but it must not be shorter than 1 m. The pieces in the shop measure 0.8 m, 0.69 m, 1.08 m and 0.95 m. Which should she buy?",
+          "a": "1.08 m",
           "o": [
-            "0.95 m",
             "1.08 m",
+            "0.95 m",
             "0.8 m",
             "0.69 m"
           ],
@@ -3405,8 +3409,8 @@
           "d": "Hard",
           "t": "fill_blank",
           "m": 1,
-          "q": "A tank shows 8.4 L, 7.9 L and 7.4 L at its first three hourly checks, and the same change continues. The reading at the 7th check will be ___ L.",
-          "a": "5.4"
+          "q": "A tank shows 8.4 L, 7.9 L and 7.4 L at its first three hourly checks, and the same change continues. It must be topped up at the first check that shows less than 5 L. That is check number ___.",
+          "a": "8"
         },
         {
           "b": "Analyse",
@@ -3638,22 +3642,22 @@
           "d": "Hard",
           "t": "assertion_reason",
           "m": 1,
-          "q": "Assertion (A): 1.01 is closer to 1 than 0.9 is, even though 1.01 has more digits.\nReason (R): Closeness to a target is the size of the difference from it, and 1.01 - 1 = 0.01 is smaller than 1 - 0.9 = 0.1.",
+          "q": "Assertion (A): The sequence 5.4, 5.1, 4.8, ... has 3.9 as its 6th term.\nReason (R): The constant change in this sequence is +0.3, because consecutive terms differ by 0.3.",
           "o": [
             "A and R are both true, and R is the correct explanation of A.",
             "A and R are both true, but R is not the correct explanation of A.",
             "A is true but R is false.",
             "A is false but R is true."
           ],
-          "a": "A and R are both true, and R is the correct explanation of A."
+          "a": "A is true but R is false."
         },
         {
           "b": "Analyse",
           "d": "Hardest",
           "t": "long_answer",
           "m": 5,
-          "q": "Look at the sequence 2, 2.5, 2.25, 2.75, 2.5, 3, ... (a) Describe the two changes that alternate. (b) Write the next four terms. (c) Find the 10th term. (d) What is the total change over every two steps, and how does adding it again and again help you check the 9th term?",
-          "a": "(a) Alternately add 0.5 and subtract 0.25. (b) 2.75, 3.25, 3, 3.5. (c) The 10th term is 3.5. (d) Every two steps change the value by 0.5 - 0.25 = 0.25. Starting from 2, four such pairs give 2 + 0.25 + 0.25 + 0.25 + 0.25 = 3, which is the 9th term, and it matches.",
+          "q": "Look at the sequence 2, 2.5, 2.25, 2.75, 2.5, 3, ... (a) Describe the two changes that alternate. (b) Write the next four terms. (c) Find the 10th term. (d) What is the net change over every two steps? Use it, without listing every term, to find the 19th term and then the 20th term.",
+          "a": "(a) Alternately add 0.5 and subtract 0.25. (b) 2.75, 3.25, 3, 3.5. (c) The 10th term is 3.5. (d) Every two steps change the value by 0.5 - 0.25 = 0.25. The 19th term is 9 pairs of steps after the first term: 2 + 9 x 0.25 = 4.25 (adding 0.25 nine times). The 20th term adds 0.5 to that: 4.75.",
           "s": [
             [
               "Part (a): +0.5 and -0.25 alternately",
@@ -3668,7 +3672,7 @@
               1
             ],
             [
-              "Part (d): net 0.25 per two steps; four pairs reach 3 as the 9th term",
+              "Part (d): net 0.25 per two steps; 19th term 4.25 and 20th term 4.75",
               1
             ]
           ]
@@ -3730,14 +3734,14 @@
           "tags": [
             "scenario"
           ],
-          "q": "A bean plant in a school garden is 4.6 cm tall in week 1 and 5.2 cm tall in week 3. It grows by the same amount each week. How tall will it be in week 5?",
+          "q": "Plant A in a school garden is 4.6 cm tall in week 1 and 5.2 cm tall in week 3, growing by the same amount each week. Plant B is 5.0 cm in week 1 and grows 0.2 cm each week. In which week are the two plants first equally tall, and how tall?",
           "o": [
-            "5.8 cm",
-            "5.5 cm",
-            "6.4 cm",
-            "5.9 cm"
+            "Week 5, at 5.8 cm",
+            "Week 4, at 5.5 cm",
+            "Week 5, at 5.9 cm",
+            "Week 6, at 6.1 cm"
           ],
-          "a": "5.8 cm"
+          "a": "Week 5, at 5.8 cm"
         },
         {
           "b": "Evaluate",
