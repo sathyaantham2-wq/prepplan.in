@@ -42,3 +42,13 @@ Known leftovers (from reviews, not fixed everywhere): fill_blank items that are 
 Operational: agents died when the Mac slept ("computer went to sleep mid-response") and several stalls came from agents hunting for textbook page files that do not exist: `content/extracted/<src>/pages/` has chapter-relative files 001.txt.. and the scope files' page numbers are the BOOK's printed pages. Keep the Mac plugged in, lid open, `caffeinate -di` running. Max 8 agents at once.
 
 Operational: the agents died every time the Mac slept. `caffeinate` alone does not stop lid-closed sleep on battery; keep the Mac plugged in with the lid open (or disable sleep) while authoring runs. Run at most 6-8 agents at once and have them write one concept at a time.
+
+
+## Update 2026-10-09 (evening)
+
+All 47 Class 7 chapters (Maths 15, Science 12, Social Science 20) now have an independent re-review with
+0 HIGH (verdict "pass"; remaining MEDIUM/LOW are optional polish, listed in `_reviews/`). Class 9
+(Maths 8, Science 13, Social Science 9) has not had its first independent review yet.
+Nothing is loaded to production; loading and retiring the old grid need the owner's explicit OK
+(old questions are retired, never deleted). Migration 0074 is NOT yet applied to production, so PR #20
+is not merged (CI is green).

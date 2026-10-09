@@ -461,13 +461,13 @@
           "d": "Hard",
           "t": "mcq",
           "m": 1,
-          "q": "A truck driver goes from Pune to Nashik on a road kept up by the Maharashtra public works department. At Nashik he joins a national highway to Delhi. Who maintains the first stretch and who maintains the second?",
-          "a": "A road kept up by a state department is a state highway, and national highways are built and maintained by the central government. The other options flip the two or give one government both.",
+          "q": "After heavy rain, a pothole is reported on a state highway joining two district towns and another on a national highway. A student writes, 'Both roads lie inside the state, so the state government must repair both.' Which correction is right?",
+          "a": "The chapter says state highways are built and maintained by the state, while national highways and expressways are built and maintained by the central government. So the state repairs the first and the central government the second. The other options give both to one government or flip them.",
           "o": [
-            "State government first, central government after",
-            "The central government first, the state government after",
-            "The central government for both stretches",
-            "The state government for both stretches"
+            "The state repairs the state highway and the central government repairs the national highway",
+            "The central government repairs the state highway and the state repairs the national highway",
+            "The central government repairs both roads",
+            "The student is right, since a road inside a state is always the state's"
           ],
           "tags": [
             "scenario"
@@ -612,15 +612,15 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 2,
-          "q": "(a) A pothole appears on a state highway between two district towns and another on NH44. Which government must repair each? (b) A farmer sends crops from his village to a market 200 km away in another state. List, in order, the three levels of road his truck is likely to use.",
-          "a": "(a) The state government (public works department) repairs the state highway; the central government repairs NH44. (b) A local road from the village, then a state highway, then a national highway or expressway.",
+          "q": "(a) A pothole appears on a state highway between two district towns and another on NH44. Which government must repair each? (b) For each of these, name the level of road and the government that maintains it: the lane to a farmer's field, the road joining two district towns, and the road joining two states.",
+          "a": "(a) The state government (public works department) repairs the state highway; the central government repairs NH44. (b) The lane to the field is a local road (kept up locally); the road joining district towns is a state highway (state government); the road joining states is a national highway (central government).",
           "s": [
             [
               "Part (a): state government for the state highway, central government for NH44",
               1
             ],
             [
-              "Part (b): local road, state highway, national highway in order",
+              "Part (b): local road, state highway and national highway matched with the right government",
               1
             ]
           ]
@@ -791,8 +791,8 @@
           "d": "Hardest",
           "t": "long_answer",
           "m": 4,
-          "q": "Roshan runs a vegetable transport business in Assam with 6 trucks that cross a river to a city market once each per day. Suppose a bridge like Dhola Sadiya cuts every crossing by the same number of hours as that bridge did. Each truck costs ₹450 for every hour it is on the road. Before the bridge the ferry ran on 335 days a year and the river was in flood on the other 30 days. He wants to spend the saving on one item: a cold storage room for ₹9 lakh that would prevent spoilage worth ₹12,000 a day, or a seventh truck for ₹11 lakh that would earn ₹9,500 a day net.\n(a) By how many hours does the bridge cut each crossing?\n(b) Find Roshan's daily saving on the 6 trucks.\n(c) Find the saving over the 335 days when the ferry ran, and say what happened to his business on the 30 flood days before the bridge.\n(d) Check whether the saving in (c) covers each purchase, compare the days each takes to repay its cost, and recommend one, giving a reason from the chapter.",
-          "a": "(a) Four hours. (b) 6 x 4 x 450 = ₹10,800 a day. (c) 10,800 x 335 = ₹36,18,000 (₹36.18 lakh). On flood days the ferry did not work, so the trucks could not cross and vegetables spoiled. (d) The saving of ₹36.18 lakh covers both purchases. Cold storage repays in 9,00,000 / 12,000 = 75 days; the truck in 11,00,000 / 9,500 = about 116 days. Cold storage repays faster and keeps vegetables fresh before they reach the market, as in Satish's chain, and the bridge now lets them reach it even in floods. Recommending the truck is acceptable only with a reason that also uses these figures.",
+          "q": "Roshan runs a vegetable transport business in Assam with 6 trucks that cross a river to a city market once each per day. Suppose a bridge like Dhola Sadiya cuts every crossing by the same number of hours as that bridge did. Each truck costs ₹450 for every hour it is on the road. Before the bridge the ferry ran on 335 days a year and the river was in flood on the other 30 days. He wants to spend on one item: a cold storage room for ₹9 lakh that prevents spoilage worth ₹9,000 a day, but only in the 150-day vegetable season; or a seventh truck for ₹11 lakh that now earns ₹9,500 a day net on all 365 days, since the bridge never closes.\n(a) By how many hours does the bridge cut each crossing?\n(b) Find Roshan's daily saving on the 6 trucks.\n(c) Find the saving over the 335 days when the ferry ran, and say what happened to his business on the 30 flood days before the bridge.\n(d) Find the days of working each item takes to repay its cost and its gain in the first year after the cost is repaid out of the year's earnings. Then recommend one, giving a reason from the chapter.",
+          "a": "(a) Four hours. (b) 6 x 4 x 450 = ₹10,800 a day. (c) 10,800 x 335 = ₹36,18,000 (₹36.18 lakh). On flood days the ferry did not work, so the trucks could not cross and vegetables spoiled. (d) Cold storage repays in 9,00,000 / 9,000 = 100 working days; the truck in 11,00,000 / 9,500 = about 116 days. In one year cold storage earns 9,000 x 150 = ₹13.5 lakh, a first-year gain of ₹4.5 lakh; the truck earns 9,500 x 365 = ₹34,67,500, a gain of about ₹23.7 lakh. So cold storage repays sooner and keeps vegetables fresh on the way to the market, as in Satish's chain, but the truck gains far more in a year and uses the bridge that now stays open in floods. Either is accepted if the recommendation uses both the payback and the first-year gain and gives a chapter reason (storage and fresh produce, or reliable all-year links).",
           "s": [
             [
               "Part (a): 4 hours",
@@ -807,7 +807,7 @@
               1
             ],
             [
-              "Part (d): payback days compared and a reasoned recommendation",
+              "Part (d): paybacks 100 and about 116 days, first-year gains, and a reasoned recommendation",
               1
             ]
           ],
@@ -937,8 +937,8 @@
           "d": "Hard",
           "t": "assertion_reason",
           "m": 1,
-          "q": "Assertion (A): Moving a large load of coal by cargo train is better for the environment than moving it by road.\nReason (R): Cargo trains use 75 to 90 per cent less energy than road transport.\nChoose the correct option.",
-          "a": "R is a figure from the chapter, and using much less energy for the same load means less pollution, so R explains A.",
+          "q": "Assertion (A): Replacing coal and diesel locomotives with electric ones reduces the pollution caused by running trains.\nReason (R): Earlier, trains used coal and diesel, which caused a lot of pollution.\nChoose the correct option.",
+          "a": "Both are in the chapter: trains once ran on coal and diesel, which caused a lot of pollution, and the move to electricity is called better for the environment. R gives the reason for A, so R explains A.",
           "o": [
             "Both A and R are true, and R is the correct explanation of A.",
             "Both A and R are true, but R is not the correct explanation of A.",
@@ -1094,19 +1094,19 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 3,
-          "q": "A trucking convoy uses 400 units of energy to carry a load. A reporter writes that carrying the same load by cargo train would use 90 per cent MORE energy. Using the chapter's figure, show that this cannot be right and give the range the train's energy must lie in.",
-          "a": "The chapter says cargo trains use 75 to 90 per cent LESS energy. So the train uses between 10 per cent and 25 per cent of 400, that is 40 to 100 units. 90 per cent more would be 760 units, which is far outside this range.",
+          "q": "The chapter says Indian Railways carry over 20 million passengers every day and had about 1.21 million employees in 2024. A magazine writes that 'every railway employee looks after more than 100 passengers a day'. Show, using only these two figures, that this cannot be true for every employee, and give the average number of passengers per employee.",
+          "a": "If every one of the 1.21 million employees looked after more than 100 passengers, the total would exceed 1.21 million x 100 = 121 million passenger-contacts a day, far above 20 million passengers. The average is 20 / 1.21 = about 16.5 passengers per employee, so the claim cannot hold for every employee.",
           "s": [
             [
-              "States the chapter's 75 to 90 per cent less",
+              "Multiplies 1.21 million by 100 to get 121 million",
               1
             ],
             [
-              "Computes the range 40 to 100 units",
+              "Compares 121 million with 20 million and concludes the claim fails",
               1
             ],
             [
-              "Shows 760 units contradicts it",
+              "Average of about 16.5 per employee",
               1
             ]
           ],
@@ -1527,7 +1527,7 @@
           "t": "long_answer",
           "m": 5,
           "q": "'India's long coastline and its ports are a great advantage for trade.' Justify this statement with five points from the chapter.",
-          "a": "India's coastline of about 11,100 km is connected to West Asia, Africa and Europe, supporting trade through shipping. Ships are a cheaper mode and carry heavy goods such as coal, cars and cement over long distances. Ships dock at ports where goods are loaded and unloaded, and India has 12 major and 217 minor ports. The volume of cargo handled has risen by 50 per cent in the past decade. Highways and railways connect with ports so goods can travel smoothly.",
+          "a": "India's coastline of about 11,100 km is connected to West Asia, Africa and Europe, supporting trade through shipping. Ships are a cheaper mode and carry heavy goods such as coal, cars and cement over long distances. Ships dock at ports where goods are loaded and unloaded, and India has 12 major and 217 minor ports. The volume of cargo handled has risen by 50 per cent in the past decade. National highways and expressways connect with railway stations, airports and ports, so goods can travel smoothly.",
           "s": [
             [
               "Coastline of about 11,100 km linked to three regions",
@@ -1546,7 +1546,7 @@
               1
             ],
             [
-              "Connection of ports with roads and railways",
+              "Highways linked to ports (and railway stations, airports)",
               1
             ]
           ]
@@ -1557,7 +1557,7 @@
           "t": "long_answer",
           "m": 5,
           "q": "Compare air transport and shipping on speed, the goods each carries, cost and use in disasters. Then say which one you would use to send (i) 500 tonnes of cement to a buyer in Africa and (ii) 50 kg of urgent vaccines to Europe, and why.",
-          "a": "Air transport is the fastest way to connect places; ships are slower but a cheaper mode. Air carries passengers and high-value or perishable goods such as vaccines and seafood, while ships carry heavy goods like coal, cars and cement over long distances. In floods and earthquakes air can deliver aid to difficult terrain. (i) The cement goes by ship, since it is a heavy good and ships are cheaper, and India's coastline of about 11,100 km links it to Africa. (ii) The vaccines go by cargo flight, since they are high-value goods that need the fastest mode.",
+          "a": "Air transport is the fastest way to connect places; ships are a cheaper mode. Air carries passengers and high-value or perishable goods such as vaccines and seafood, while ships carry heavy goods like coal, cars and cement over long distances. In floods and earthquakes air can deliver aid to difficult terrain. (i) The cement goes by ship, since it is a heavy good and ships are cheaper, and India's coastline of about 11,100 km links it to Africa. (ii) The vaccines go by cargo flight, since they are high-value goods that need the fastest mode.",
           "s": [
             [
               "Speed compared",
@@ -1586,8 +1586,8 @@
           "d": "Hardest",
           "t": "long_answer",
           "m": 4,
-          "q": "The container terminal of a port, 'Sagar Port', had container ships with a combined capacity of 4,20,000 TEU a decade ago. Suppose its capacity needs have risen by the same percentage as the cargo handled by all Indian ports over the past decade. The port's new fleet has a combined capacity of 5,50,000 TEU. To cover any shortfall it can either buy more ship capacity, costing ₹1,500 crore and taking 3 years, or move the extra cargo by cargo train, costing ₹2,000 per TEU every year.\n(a) By what percentage did cargo handled by Indian ports rise in the past decade, and what capacity in TEU does Sagar Port now need?\n(b) Find the volume of that need in cubic metres, using the chapter's value for 1 TEU, in crore.\n(c) Find the shortfall of the new fleet in TEU and in cubic metres.\n(d) Find the yearly cost of the rail option, and recommend one of the two options, justifying it with the figures and the chapter's idea about how ports connect with other infrastructure.",
-          "a": "(a) 50 per cent; 4,20,000 x 1.5 = 6,30,000 TEU. (b) 6,30,000 x 33 = 2,07,90,000 cubic metres, i.e. about 2.08 crore. (c) 6,30,000 - 5,50,000 = 80,000 TEU; 80,000 x 33 = 26,40,000 cubic metres. (d) Rail: 80,000 x 2,000 = ₹16 crore a year, so ₹1,500 crore of new ships equals about 94 years of rail cost; rail is also quick to start, saves energy and uses the highways and railways that connect with ports. Buying ships is acceptable if justified, for example by very long-run use or the 3-year wait being affordable.",
+          "q": "The container terminal of a port, 'Sagar Port', had container ships with a combined capacity of 4,20,000 TEU a decade ago. Suppose its capacity needs have risen by the same percentage as the cargo handled by all Indian ports over the past decade. The port's present fleet has a combined capacity of 5,50,000 TEU. To cover the shortfall it can either buy ships costing ₹200 crore (they arrive in 3 years and then last 15 years in all, counted from today; during the 3 years the shortfall goes by cargo train), or move the extra cargo by cargo train for the whole 15 years, costing ₹2,000 per TEU every year.\n(a) By what percentage did cargo handled by Indian ports rise in the past decade, and what capacity in TEU does Sagar Port now need?\n(b) Find the volume of that need in cubic metres, using the chapter's value for 1 TEU, in crore.\n(c) Find the shortfall of the present fleet in TEU and in cubic metres.\n(d) Find the 15-year cost of each option (ignore running costs of the ships), and recommend one, justifying it with the figures and one non-cost idea from the chapter.",
+          "a": "(a) 50 per cent; 4,20,000 x 1.5 = 6,30,000 TEU. (b) 6,30,000 x 33 = 2,07,90,000 cubic metres, i.e. about 2.08 crore. (c) 6,30,000 - 5,50,000 = 80,000 TEU; 80,000 x 33 = 26,40,000 cubic metres. (d) Rail: 80,000 x 2,000 = ₹16 crore a year, so 15 x 16 = ₹240 crore. Ships: ₹200 crore + 3 years of rail (3 x 16 = ₹48 crore) = ₹248 crore. The two are within ₹8 crore (about 3 per cent), so the choice rests on other things. Ships are acceptable: the chapter calls ships a cheaper mode for heavy goods over long distances, and if the shortfall keeps growing the rail bill rises while owned ships do not. Rail is acceptable: it costs ₹8 crore less on these figures, needs no 3-year wait, and the national highways, expressways and railways connect with ports, so goods move smoothly. Either choice needs both the totals and one such reason.",
           "s": [
             [
               "Part (a): 50 per cent and 6,30,000 TEU",
@@ -1602,7 +1602,7 @@
               1
             ],
             [
-              "Part (d): ₹16 crore a year and a recommendation justified with figures and the port-connection idea",
+              "Part (d): ₹240 crore and ₹248 crore, and a recommendation justified with the figures and a chapter idea",
               1
             ]
           ],
@@ -1649,7 +1649,7 @@
           "d": "Hard",
           "t": "fill_blank",
           "m": 1,
-          "q": "In 2025 India has 1,160 million wireless telephone subscribers and nearly 900 million internet connections. Subscribers exceed internet connections by about ___ million.",
+          "q": "In 2025 India has 1,160 million wireless telephone subscribers and nearly 900 million internet connections. Suppose every internet connection belongs to a different wireless subscriber. Then the number of subscribers with no internet connection is about ___ million.",
           "a": "260"
         },
         {
@@ -1843,15 +1843,15 @@
           "d": "Hard",
           "t": "short_answer",
           "m": 2,
-          "q": "Arrange the following in order, earliest first: television, telegraph, internet, telephone. Give the year of the earliest and the latest.",
-          "a": "Telegraph (1844), telephone (1876), television (1927), internet (1994). The earliest is 1844 and the latest is 1994.",
+          "q": "Arrange the following in order, earliest first: television, telegraph, internet, telephone. Give the year of the earliest and the latest, and the number of years between them.",
+          "a": "Telegraph (1844), telephone (1876), television (1927), internet (1994). The earliest is 1844 and the latest is 1994, which are 150 years apart.",
           "s": [
             [
               "Correct order of the four",
               1
             ],
             [
-              "Years of the earliest and latest",
+              "Years of the earliest and latest, and the gap of 150 years",
               1
             ]
           ]
@@ -1911,11 +1911,11 @@
           "tags": [
             "claim_check"
           ],
-          "q": "Kabir says, 'J.C. Bose showed signals passing through a wall in Calcutta in 1895, six years before Marconi's patent of 1901, so Bose deserves recognition as an early pioneer of wireless transmission even though Marconi won the Nobel Prize.' Do you agree? Use dates from the chapter.",
-          "a": "Yes. Bose showed in 1895 in Calcutta that signals could pass through a wall (1901 - 1895 = 6 years before Marconi's patent) and invented a new type of coherer. Marconi patented a similar device in 1901 and won the Nobel Prize in 1909, but Bose rarely bothered to patent his inventions, which explains why his work did not gain international recognition even though the early work was his.",
+          "q": "Kabir says, 'The chapter's text dates J.C. Bose's Calcutta experiment to 1895, while its timeline shows his wireless demonstration under 1899. Either way it came before Marconi's patent of 1901, so Bose deserves recognition as an early pioneer of wireless transmission even though Marconi won the Nobel Prize.' Do you agree? Use dates from the chapter.",
+          "a": "Yes. On either date Bose came first: 1901 - 1895 = 6 years before Marconi's patent by the text, or 1901 - 1899 = 2 years by the timeline. Bose showed signals passing through a wall and invented a new type of coherer. Marconi patented a similar device in 1901 and won the Nobel Prize in 1909, but Bose rarely bothered to patent his inventions, which explains why his work did not gain international recognition even though the early work was his.",
           "s": [
             [
-              "Verdict: agrees, and the 6-year gap is checked from 1895 and 1901",
+              "Verdict: agrees, because both dates in the chapter (1895 and 1899) fall before 1901",
               1
             ],
             [
@@ -1964,7 +1964,7 @@
           "t": "long_answer",
           "m": 5,
           "q": "A museum panel must show five milestones of communication in order and explain how each made communication faster or wider than the one before it. Choose five milestones from the chapter's timelines, give each year, and write the improvement in one line each.",
-          "a": "One acceptable set: the telegraph (1844) sent electric signals over long distances by dots and dashes, faster than runners or horse couriers; the telephone (1876) carried the voice itself; television (1927) brought moving pictures to homes; the internet (1994) joined computers across the world; the smartphone (1993) put phones, computers and the internet in one hand. Other correct milestones with correct years are accepted if the order is right and each improvement is explained.",
+          "a": "One acceptable set, earliest first: the telegraph (1844) sent electric signals over long distances by dots and dashes, faster than runners or horse couriers; the telephone (1876) carried the voice itself; television (1927) brought moving pictures to homes; the smartphone (1993) put calling and computing in one hand; the internet (1994) joined computers across the world. Other correct milestones with correct years are accepted if the order is right and each improvement is explained.",
           "s": [
             [
               "Five valid milestones",
@@ -2022,8 +2022,8 @@
           "d": "Hardest",
           "t": "long_answer",
           "m": 4,
-          "q": "The history club of a Kolkata school prepares a wall timeline titled 'Who gave us wireless?'. It must fix the dates for four panels: the telegraph, the telephone, Bose's experiment in Calcutta and Marconi's patent.\n(a) How many years after the telegraph was the telephone invented?\n(b) How many years separate Bose's Calcutta experiment from Marconi's patent?\n(c) Marconi won the Nobel Prize in Physics in 1909. How many years after Bose's Calcutta experiment was this?\n(d) The club must give the title panel to either Bose or Marconi. Choose one and justify with two points from the chapter.",
-          "a": "(a) Telegraph 1844, telephone 1876: 32 years. (b) Bose 1895, Marconi patent 1901: 6 years. (c) 1909 - 1895 = 14 years. (d) Either is accepted with two valid points: Bose showed signals passing through a wall in 1895 and invented a coherer; Marconi patented a similar device in 1901, sent a radio signal across the Atlantic the same year and won the Nobel Prize in 1909, while Bose rarely patented.",
+          "q": "The history club of a Kolkata school prepares a wall timeline titled 'Who gave us wireless?'. It must fix the dates for four panels: the telegraph, the telephone, Bose's experiment in Calcutta and Marconi's patent.\n(a) How many years after the telegraph was the telephone invented?\n(b) Use 1895, the year the chapter's text gives for Bose's Calcutta experiment. How many years separate it from Marconi's patent (1901)?\n(c) Marconi won the Nobel Prize in Physics in 1909. How many years after Bose's 1895 experiment was this?\n(d) The club must give the title panel to either Bose or Marconi. Choose one and justify with two points from the chapter.",
+          "a": "(a) Telegraph 1844, telephone 1876: 32 years. (b) Bose 1895 (the chapter's text; its timeline shows 1899, which would give 2 years), Marconi patent 1901: 6 years. (c) 1909 - 1895 = 14 years. (d) Either is accepted with two valid points: Bose showed signals passing through a wall in 1895 and invented a coherer; Marconi patented a similar device in 1901, sent a radio signal across the Atlantic the same year and won the Nobel Prize in 1909, while Bose rarely patented.",
           "s": [
             [
               "Part (a): 32 years",
