@@ -44,6 +44,8 @@ function Home() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [guardianOk, setGuardianOk] = useState(false)
+  const [guestOk, setGuestOk] = useState(false)
+  const [guestBusy, setGuestBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
 
@@ -117,6 +119,33 @@ function Home() {
   // credentials existed to test against. signIn.social redirects to Google and back to this same
   // page -- the useEffect above (watching useSession()) does the actual post-login redirect,
   // exactly like the email/password path.
+  // "Try as guest": a one-tap student account with nothing to remember (see api/guest.ts). The
+  // cookie comes back with the response; a full reload lets the redirect effect above pick up the
+  // new session and send her to finish her profile.
+  async function handleGuest() {
+    setError(null)
+    setGuestBusy(true)
+    try {
+      const response = await fetch('/api/guest', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ guardian_ok: true }),
+      })
+      if (!response.ok) {
+        const body = (await response.json().catch(() => null)) as {
+          error?: string
+        } | null
+        setError(body?.error ?? 'Could not start a guest session.')
+        setGuestBusy(false)
+        return
+      }
+      window.location.assign('/')
+    } catch {
+      setError('Could not start a guest session. Check your connection.')
+      setGuestBusy(false)
+    }
+  }
+
   async function handleGoogleSignIn() {
     setError(null)
     await signIn.social({ provider: 'google', callbackURL: '/' })
@@ -293,6 +322,33 @@ function Home() {
                 >
                   Continue with Google
                 </Button>
+
+                <div className="bg-muted/50 mt-4 space-y-3 rounded-lg border p-3">
+                  <p className="text-small text-muted-foreground">
+                    Just looking around? Try PrepPlan as a guest, with no email or
+                    password. Your progress stays on this device.
+                  </p>
+                  <Label className="items-start">
+                    <input
+                      type="checkbox"
+                      className="mt-0.5"
+                      checked={guestOk}
+                      onChange={(e) => setGuestOk(e.target.checked)}
+                    />
+                    <span className="text-small font-normal">
+                      My parent or guardian agrees to my using PrepPlan.
+                    </span>
+                  </Label>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="w-full"
+                    disabled={!guestOk || guestBusy}
+                    onClick={() => void handleGuest()}
+                  >
+                    {guestBusy ? 'Please wait…' : 'Try as guest'}
+                  </Button>
+                </div>
               </>
             )}
 
