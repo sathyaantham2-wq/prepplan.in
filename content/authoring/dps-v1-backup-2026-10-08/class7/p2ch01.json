@@ -1,0 +1,2832 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 1,
+  "name": "Geometric Twins"
+ },
+ "source_code": "gegp201",
+ "concepts": [
+  {
+   "code": "C7M-1.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement best describes congruent figures?",
+     "a": "Same shape and size, so one fits exactly over the other",
+     "o": [
+      "Same shape and size, so one fits exactly over the other",
+      "Same shape, but their sizes may be quite different from each other",
+      "Same size, but their shapes may be different from each other",
+      "Same shape and size, but only when neither one has been flipped"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two rectangular notice boards are to be made congruent. Which measurements must be the same?",
+     "a": "Length and breadth of each",
+     "o": [
+      "Length and breadth of each",
+      "Only the length of each board",
+      "Only the breadth of each board",
+      "Its length and the angle at one corner"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is NOT allowed while checking two figures for congruence by superimposing?",
+     "a": "Stretching one figure to fit the other",
+     "o": [
+      "Stretching one figure to fit the other",
+      "Rotating one figure before placing it down",
+      "Flipping one figure over before placing it",
+      "Turning one figure through a half turn first"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fitter checks two steel brackets. Each has arms of 10 cm and 6 cm, but the angle between the arms is 60° on one and 75° on the other. What can he conclude?",
+     "a": "Not congruent, as the angle also fixes the bracket",
+     "o": [
+      "Not congruent, as the angle also fixes the bracket",
+      "Congruent, because both arm lengths match on the two brackets",
+      "Congruent, because one can be rotated onto the other bracket",
+      "Not congruent, because the two arms must be equal to each other"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Hasina cuts a paper arrow from one notice. She turns the arrow over and it covers the arrow on another notice exactly. What does this show?",
+     "a": "The two arrows are congruent, since flipping is allowed",
+     "o": [
+      "The two arrows are congruent, since flipping is allowed",
+      "The arrows are not congruent, since flipping changes the figure",
+      "The arrows are congruent only if they are the same way up",
+      "Nothing, until the arrow is also stretched a little"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sunita says: 'Two rectangles are congruent whenever their longer sides are both 10 cm.' Do you agree? Support your answer with measurements.",
+     "a": "No. Take 10 cm by 4 cm and 10 cm by 6 cm. Both have a longer side of 10 cm but the breadths differ, so they do not fit over each other. Both length and breadth must match.",
+     "s": [
+      [
+       "Verdict: Sunita is wrong",
+       1
+      ],
+      [
+       "Counterexample such as 10 by 4 and 10 by 6",
+       1
+      ],
+      [
+       "States that length and breadth must both be equal",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two rectangles that both have length 10 cm are always congruent.\nReason (R): A rectangle is fixed by its length and its breadth.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "q": "Match what must be measured to copy each figure (Column I) with the measurements (Column II).\nColumn I: 1. A circle  2. A rectangle  3. A steel bracket with two arms meeting at a corner  4. A square\nColumn II: a. Length of one side  b. The radius  c. Length and breadth  d. Both arm lengths and the angle ABC",
+     "a": "1-b, 2-c, 3-d, 4-a",
+     "o": [
+      "1-b, 2-c, 3-d, 4-a",
+      "1-b, 2-a, 3-d, 4-c",
+      "1-a, 2-c, 3-d, 4-b",
+      "1-b, 2-d, 3-c, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Circle P has radius 7 cm. What radius must a circle have to be congruent to P? (b) Rani says a circle Q of diameter 15 cm is congruent to P. Is she right? Give the reason.",
+     "a": "(a) 7 cm. (b) No. Q has radius 15 / 2 = 7.5 cm, which is not 7 cm, so Q is larger and cannot fit exactly over P.",
+     "s": [
+      [
+       "Part (a): radius 7 cm",
+       1
+      ],
+      [
+       "Part (b): halves the diameter to 7.5 cm and says not congruent",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Is a rectangle 9 cm by 4 cm congruent to one that is 4 cm by 9 cm? What must be done to the second before superimposing? (b) Is it congruent to a rectangle 9 cm by 5 cm? Why?",
+     "a": "(a) Yes; rotate it (a quarter turn) so the 9 cm sides lie together. (b) No; the breadths 4 cm and 5 cm differ, so it cannot fit exactly.",
+     "s": [
+      [
+       "Part (a): yes, after rotating so the 9 cm sides match",
+       1
+      ],
+      [
+       "Part (b): no, because the breadths differ",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State what congruent figures are, and name the two movements that may be used while superimposing them.",
+     "a": "Congruent figures have the same shape and size and can be fitted exactly one over the other. The figure may be rotated or flipped.",
+     "s": [
+      [
+       "Defines congruent figures as same shape and size",
+       1
+      ],
+      [
+       "Names rotating and flipping",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The arms of the signboard symbol are AB = 4 cm and BC = 8 cm. (a) Why can these two lengths alone not recreate it exactly? (b) Which third measurement fixes it?",
+     "a": "(a) Many different symbols can be drawn with the same arm lengths, as the angle between the arms can change. (b) The angle ABC, for example 80°.",
+     "s": [
+      [
+       "Part (a): says the angle between the arms can vary, giving different symbols",
+       1
+      ],
+      [
+       "Part (b): names angle ABC",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A tailor cuts one patch from a paper pattern lying face up and another from the same pattern turned over. Are the two patches congruent? Give a reason.",
+     "a": "Yes. They have the same shape and size; one can be flipped over to fit exactly on the other.",
+     "s": [
+      [
+       "Says yes, congruent",
+       1
+      ],
+      [
+       "Gives the reason that flipping is allowed so they fit exactly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about congruent figures.\nStatement 1: Two circles are congruent whenever their radii differ by less than 1 cm.\nStatement 2: A rectangle 7 cm by 3 cm is congruent to a rectangle 3 cm by 7 cm.\nStatement 3: Two symbols with the same two arm lengths can still be non-congruent.\nWhich statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write the measurements of three rectangles R1, R2, R3 such that R1 and R2 are congruent although R2 is turned, and R3 has the same longer side as R1 but is not congruent to it.",
+     "a": "Example: R1 is 12 cm by 5 cm. R2 is 5 cm by 12 cm (turned through a quarter turn, so congruent). R3 is 12 cm by 7 cm: same longer side, different breadth, not congruent.",
+     "s": [
+      [
+       "R1 and R2 with the same two sides in swapped order",
+       1
+      ],
+      [
+       "R3 with the same longer side",
+       1
+      ],
+      [
+       "Says R3 differs in breadth so it is not congruent",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A signmaker's arrow-head has arms of 5 cm and 9 cm with 70° between them. Copy X has arms 5 cm and 9 cm with 70° between. Copy Y has arms 9 cm and 5 cm with 70° between, drawn the other way round. Copy Z has arms 5 cm and 9 cm with 110° between. Which copies are congruent to the arrow-head? Give reasons.",
+     "a": "X and Y are congruent: the same two arms and the same angle between them (Y is the arrow-head turned or flipped). Z is not, because its angle between the arms is 110°, not 70°.",
+     "s": [
+      [
+       "X is congruent: same arms and angle",
+       1
+      ],
+      [
+       "Y is congruent: turning or flipping is allowed",
+       1
+      ],
+      [
+       "Z is not: the angle differs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Honey runs a sign shop in a Jaipur market. (a) What one measurement fixes a circular sign? (b) What measurements fix a rectangular sign? (c) A customer wants a copy of a symbol with two arms meeting at a corner. Which three measurements must Honey copy? (d) The customer gives only the arms, 5 cm and 9 cm. Explain why Honey cannot promise a congruent copy.",
+     "a": "(a) The radius. (b) Length and breadth. (c) Both arm lengths and the angle between them. (d) With arms 5 cm and 9 cm the angle can take many values, giving different non-congruent symbols, so the angle must be given too.",
+     "s": [
+      [
+       "Part (a): the radius",
+       1
+      ],
+      [
+       "Part (b): length and breadth",
+       1
+      ],
+      [
+       "Part (c): both arms and the included angle",
+       1
+      ],
+      [
+       "Part (d): explains the angle can vary so copies differ",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A school wants to check two big rectangular boards (2.4 m by 1.2 m and 1.2 m by 2.4 m) and two small leaf-shaped cutouts for congruence. (a) For which pair would you measure, and for which would you trace and superimpose? (b) Check the boards by measuring. (c) What movement is used to place one board over the other? (d) Why can two lengths not settle the leaf cutouts?",
+     "a": "(a) Measure the boards (too big to trace); trace/superimpose the leaf cutouts. (b) Both are 2.4 m by 1.2 m, so congruent. (c) A quarter turn. (d) A leaf outline has no short list of lengths that fixes it, so it must be placed over the other.",
+     "s": [
+      [
+       "Part (a): measuring for boards, superimposing for leaves",
+       1
+      ],
+      [
+       "Part (b): both 2.4 m by 1.2 m, congruent",
+       1
+      ],
+      [
+       "Part (c): rotation",
+       1
+      ],
+      [
+       "Part (d): irregular shape needs superimposing",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The Gram Panchayat wants steel brackets congruent to a template: arms of 10 cm and 6 cm with 60° between them. The gate needs 50 such brackets at ₹40 each. The storeroom shelves need 25 brackets of any shape. Lot A has 30 brackets with arms 10 cm and 6 cm and 60° between. Lot B has 20 with arms 6 cm and 10 cm and 60° between. Lot C has 25 with arms 10 cm and 6 cm and 75° between, offered at ₹20 each.\n(a) Which lots are congruent to the template? (b) What is paid for the gate brackets? (c) An inspector checks only the arm lengths and passes all three lots at ₹40 each. How much extra is paid for lot C? (d) Should the Panchayat buy lot C for the shelves, or buy 25 more congruent brackets at ₹40 for them? Decide.",
+     "a": "(a) Lots A and B (lot B has the same arms and the same angle between them, turned over). Lot C has 75°. (b) 50 x 40 = ₹2,000. (c) 25 x 40 = ₹1,000, for brackets that cannot match the gate. (d) Buy lot C for the shelves: the shelves need no matching, so 25 x 20 = ₹500 against ₹1,000 saves ₹500; lot C must stay away from the gate.",
+     "s": [
+      [
+       "Part (a): lots A and B, with the reason for B and why C fails",
+       1
+      ],
+      [
+       "Part (b): ₹2,000",
+       1
+      ],
+      [
+       "Part (c): ₹1,000 extra",
+       1
+      ],
+      [
+       "Part (d): lot C for the shelves, saving ₹500, none at the gate",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tile shop in Surat shows four tiles. T1: circle of radius 10 cm. T2: circle of diameter 21 cm. T3: rectangle 30 cm by 20 cm. T4: rectangle 20 cm by 30 cm. Mrs Nair needs 40 tiles congruent to T1 at ₹45 each and 24 tiles congruent to T3 at ₹60 each from the shop. A wholesaler offers 24 tiles congruent to T3 at ₹54 each plus ₹200 for delivery.\n(a) Which other tile, if any, is congruent to T1? (b) Which tile is congruent to T3? (c) What is the shop's price for her whole order? (d) For the 24 rectangular tiles, is the wholesaler cheaper? Decide.",
+     "a": "(a) None: T2 has radius 21 / 2 = 10.5 cm. (b) T4, a turned copy. (c) 40 x 45 + 24 x 60 = 1,800 + 1,440 = ₹3,240. (d) Wholesaler: 24 x 54 + 200 = ₹1,496 against ₹1,440 at the shop, so the shop is ₹56 cheaper; buy from the shop.",
+     "s": [
+      [
+       "Part (a): none, because T2 has radius 10.5 cm",
+       1
+      ],
+      [
+       "Part (b): T4",
+       1
+      ],
+      [
+       "Part (c): ₹3,240",
+       1
+      ],
+      [
+       "Part (d): ₹1,496 against ₹1,440, buy at the shop",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.2",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If ΔPQR ≅ ΔLMN, which side of ΔLMN is equal to QR?",
+     "a": "MN",
+     "o": [
+      "MN",
+      "LM",
+      "LN",
+      "PQ"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which description matches the SSS condition?",
+     "a": "All three sides of one triangle equal the three sides of the other",
+     "o": [
+      "All three sides of one triangle equal the three sides of the other",
+      "Two sides and the angle between them are equal in both",
+      "All three angles of one triangle equal those of the other",
+      "Two sides and an angle not between them are equal in both"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "ΔABC ≅ ΔXYZ. Which of these is another correct way to write the same congruence?",
+     "a": "ΔCBA ≅ ΔZYX",
+     "o": [
+      "ΔCBA ≅ ΔZYX",
+      "ΔCBA ≅ ΔXYZ",
+      "ΔBAC ≅ ΔXYZ",
+      "ΔACB ≅ ΔXYZ"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tailor has a triangular patch with sides 15 cm, 20 cm and 25 cm. His apprentice cuts another with sides 25 cm, 15 cm and 20 cm. Without measuring any angle, what can the tailor say?",
+     "a": "The patches are congruent by SSS",
+     "o": [
+      "The patches are congruent by SSS",
+      "The patches may differ, so the angles must be checked",
+      "They are congruent only if cut the same way up",
+      "They have the same shape but may differ in size"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In rectangle PQRS the diagonal PR makes ΔPQR and ΔRSP. Ravi wants to prove them congruent by SSS. Which pair is the third equal pair of sides?",
+     "a": "PR, a side common to both triangles",
+     "o": [
+      "PR, a side common to both triangles",
+      "QS, the other diagonal of the rectangle",
+      "PQ and PS, two sides from corner P",
+      "No third pair exists, so an angle is needed"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about naming congruent triangles.\nStatement 1: If ΔABC ≅ ΔXYZ, then ∠B = ∠Y.\nStatement 2: If ΔABC ≅ ΔXYZ, it is also correct to write ΔACB ≅ ΔXYZ.\nStatement 3: Circles of radii 5 cm and 9 cm drawn from the ends of a 7 cm segment meet at two points, and the two triangles formed are congruent.\nWhich statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "3 only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If ΔABC ≅ ΔXYZ, then side BC equals side YZ.\nReason (R): In the name ΔABC ≅ ΔXYZ, the second vertex of the first triangle corresponds to the second vertex of the second.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "q": "ΔKAR ≅ ΔMUL. Match each part in Column I with its corresponding part in Column II.\nColumn I: 1. Vertex A  2. Side AR  3. Angle R  4. Side KR\nColumn II: a. Angle L  b. Side ML  c. Vertex U  d. Side UL",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-c, 2-b, 3-a, 4-d",
+      "1-a, 2-d, 3-c, 4-b",
+      "1-c, 2-d, 3-b, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "ΔHEN ≅ ΔBIG. (a) List the three pairs of corresponding sides. (b) In how many ways can this congruence be written in all, and why?",
+     "a": "(a) HE and BI, EN and IG, HN and BG. (b) 6 ways, since the three vertices of ΔHEN can be arranged in 6 orders and ΔBIG is written in the matching order.",
+     "s": [
+      [
+       "Part (a): HE-BI, EN-IG, HN-BG",
+       1
+      ],
+      [
+       "Part (b): 6 ways because 3 vertices can be ordered in 6 ways",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "ΔABC and ΔDCB share the side BC, with AB = DC and AC = DB. (a) Name the condition that gives ΔABC ≅ ΔDCB and write the matching of vertices. (b) Which angle equals ∠ABC?",
+     "a": "(a) SSS: AB = DC, AC = DB and BC common (BC = CB). A goes with D, B with C, C with B. (b) ∠ABC = ∠DCB, as corresponding angles.",
+     "s": [
+      [
+       "Part (a): SSS with the common side BC and the matching A-D, B-C, C-B",
+       1
+      ],
+      [
+       "Part (b): ∠DCB",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ΔLMN, LM = 6 cm, MN = 7.5 cm and LN = 9 cm. In ΔDEF, DE = 7.5 cm, EF = 9 cm and FD = 6 cm. Show the triangles are congruent and write the congruence in order.",
+     "a": "All three sides match (6, 7.5, 9), so SSS holds. L lies between sides 6 and 9, which meet at F; M between 6 and 7.5 at D; N between 7.5 and 9 at E. So ΔLMN ≅ ΔFDE.",
+     "s": [
+      [
+       "Names SSS with the three equal side pairs",
+       1
+      ],
+      [
+       "Writes ΔLMN ≅ ΔFDE by matching the vertices",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ritu draws a 7 cm segment AB and circles of radii 5 cm and 9 cm from A and B. (a) Why do two triangles, ΔABE and ΔABF, appear? (b) Why does this not stop us using SSS?",
+     "a": "(a) The circles cross at two points, one on each side of AB. (b) The two triangles are mirror images in AB, so they are congruent; every triangle with these three sides is congruent.",
+     "s": [
+      [
+       "Part (a): circles meet at two points on either side of AB",
+       1
+      ],
+      [
+       "Part (b): the two triangles are congruent (AB is a line of symmetry)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For ΔABC ≅ ΔXYZ, Aman writes ΔACB ≅ ΔXYZ. Why is this wrong, and how can the same congruence be written starting with ΔACB?",
+     "a": "The first, second and third vertices must correspond in order, but C corresponds to Z, not Y. The correct form is ΔACB ≅ ΔXZY.",
+     "s": [
+      [
+       "Says the order of vertices does not match (C goes with Z)",
+       1
+      ],
+      [
+       "Writes ΔACB ≅ ΔXZY",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rectangle ABCD has AB = 9 cm and BC = 5 cm. Dev writes ΔABD ≅ ΔCBD, keeping B and D in place, because BD is common to both. Is his statement right? Give your reason.",
+     "a": "No. Writing ΔABD ≅ ΔCBD makes A match C and lays AB over CB. But AB = 9 cm and CB = 5 cm, so they do not overlap. The correct statement is ΔABD ≅ ΔCDB, with A matching C, B matching D and D matching B, so that AB = CD.",
+     "s": [
+      [
+       "Verdict: Dev's statement is wrong",
+       1
+      ],
+      [
+       "Shows AB (9 cm) would fall on CB (5 cm)",
+       1
+      ],
+      [
+       "Gives the correct matching ΔABD ≅ ΔCDB",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In ΔABC, AB = 5 cm, BC = 6 cm and CA = 7 cm. In ΔXYZ, XY = 5 cm, YZ = 7 cm and ZX = 6 cm. Show that ΔABC ≅ ΔXYZ cannot be the correct way to write their congruence, and then write one that is correct.",
+     "a": "In ΔABC ≅ ΔXYZ, BC would match YZ, but BC = 6 cm and YZ = 7 cm. Matching equal sides instead: AB = YX = 5, BC = XZ = 6, CA = ZY = 7, so B goes with X, A with Y, C with Z. ΔABC ≅ ΔYXZ is correct.",
+     "s": [
+      [
+       "Shows BC ≠ YZ so the order fails",
+       1
+      ],
+      [
+       "Pairs the equal sides AB-YX, BC-XZ, CA-ZY",
+       1
+      ],
+      [
+       "Writes ΔABC ≅ ΔYXZ",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up side lengths (all different numbers) for ΔABC and ΔPQR so that ΔABC ≅ ΔQRP. Write which sides are equal.",
+     "a": "Example: AB = 8 cm, BC = 10 cm, CA = 12 cm; QR = 8 cm, RP = 10 cm, PQ = 12 cm. In ΔABC ≅ ΔQRP, A goes with Q, B with R, C with P, so AB = QR, BC = RP, CA = PQ.",
+     "s": [
+      [
+       "Gives three side lengths for each triangle that are equal in pairs",
+       1
+      ],
+      [
+       "States AB = QR, BC = RP, CA = PQ",
+       1
+      ],
+      [
+       "Checks the order A-Q, B-R, C-P",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In a kite ABCD, AB = AD = 6.5 cm and CB = CD = 9 cm. (a) Which two triangles are congruent, and by which condition? (b) Write the congruence in order. (c) List the three pairs of equal angles. (d) Does AC cut ∠BAD into two equal parts? Give a reason.",
+     "a": "(a) ΔABC and ΔADC, by SSS (AB = AD, CB = CD, AC common). (b) ΔABC ≅ ΔADC. (c) ∠BAC = ∠DAC, ∠BCA = ∠DCA, ∠B = ∠D. (d) Yes, since ∠BAC and ∠DAC are corresponding angles of congruent triangles.",
+     "s": [
+      [
+       "Part (a): triangles and SSS with the common side",
+       1
+      ],
+      [
+       "Part (b): ΔABC ≅ ΔADC",
+       1
+      ],
+      [
+       "Part (c): three pairs of equal angles",
+       1
+      ],
+      [
+       "Part (d): yes, corresponding angles are equal",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "ΔHEN ≅ ΔBIG, with HE = 5.5 cm, EN = 6.5 cm and HN = 8 cm. (a) Write two other correct ways of stating the congruence. (b) Find BI, IG and BG. (c) Is ΔHEN ≅ ΔBGI correct? Check using the sides.",
+     "a": "(a) For example ΔEHN ≅ ΔIBG and ΔNEH ≅ ΔGIB. (b) BI = 5.5 cm, IG = 6.5 cm, BG = 8 cm. (c) No. It would make HE match BG, but HE = 5.5 cm and BG = 8 cm.",
+     "s": [
+      [
+       "Part (a): two valid reorderings of both names",
+       1
+      ],
+      [
+       "Part (b): BI = 5.5, IG = 6.5, BG = 8",
+       2
+      ],
+      [
+       "Part (c): says no, and shows HE = 5.5 differs from BG = 8",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Ms Sharma's school makes triangular flags for Independence Day. The template ΔPQR has PQ = 30 cm, QR = 40 cm and RP = 50 cm. Tailor A makes 50 flags with these sides. Tailor B makes 45 flags ΔLMN with LM = 40 cm, MN = 50 cm and NL = 30 cm. Tailor C makes 25 flags with sides 30 cm, 40 cm and 55 cm. The school pays ₹8 per flag congruent to the template and needs 120 flags.\n(a) Which tailors' flags are congruent to the template? (b) Write ΔLMN's congruence with the template in order. (c) How much is paid, and how many flags are still short? (d) Should the school accept Tailor C's flags to finish at once, or ask for 25 new ones? Decide.",
+     "a": "(a) A and B (SSS); C has 55 cm, not 50. (b) L is between 40 and 30, which meet at Q; M between 40 and 50, at R; N between 50 and 30, at P. ΔPQR ≅ ΔNLM. (c) 95 x 8 = ₹760; 120 - 95 = 25 short. (d) Ask for 25 new ones: C's flags are not congruent, so the line would hang unevenly; accepting is defensible only if speed matters more than a uniform line.",
+     "s": [
+      [
+       "Part (a): A and B by SSS, C rejected (55 cm)",
+       1
+      ],
+      [
+       "Part (b): ΔPQR ≅ ΔNLM",
+       1
+      ],
+      [
+       "Part (c): ₹760 and 25 short",
+       1
+      ],
+      [
+       "Part (d): decision using the non-congruence of C",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Sunil, a carpenter in Ludhiana, makes door panels as rectangles ABCD with AB = 90 cm and BC = 210 cm and cuts each along the diagonal BD to get two triangular panels. A contractor needs 36 identical triangular panels. Option 1: buy 18 rectangular sheets at ₹400 each and cut them. Option 2: buy 36 separate triangular sheets at ₹210 each.\n(a) Write the lengths of CD and DA. (b) Which triangles are congruent, by what condition, and in what order? (c) Find the cost of each option. (d) Which option should the contractor choose? Justify using (b) and (c).",
+     "a": "(a) CD = 90 cm, DA = 210 cm. (b) ΔABD ≅ ΔCDB by SSS (AB = CD, AD = CB, BD common). (c) Cutting 18 rectangular sheets: 18 x 400 = ₹7,200. Buying 36 triangular sheets: 36 x 210 = ₹7,560. (d) Buying 18 rectangular sheets and cutting them is ₹360 cheaper, and every cut gives two congruent panels by SSS.",
+     "s": [
+      [
+       "Part (a): CD = 90 cm, DA = 210 cm",
+       1
+      ],
+      [
+       "Part (b): ΔABD ≅ ΔCDB by SSS",
+       1
+      ],
+      [
+       "Part (c): ₹7,200 and ₹7,560",
+       1
+      ],
+      [
+       "Part (d): chooses the cheaper rectangular-sheet plan with cost and congruence reasons",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.3",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which description matches the SAS condition?",
+     "a": "Two sides and the angle between them are equal",
+     "o": [
+      "Two sides and the angle between them are equal",
+      "Two sides and an angle not between them are equal in both",
+      "Two angles and the side between them are equal in both",
+      "All three sides of the two triangles are equal"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In ΔABC, which angle is included between the sides AB and AC?",
+     "a": "∠A",
+     "o": [
+      "∠A",
+      "∠B",
+      "∠C",
+      "∠B and ∠C together"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two triangles both have angles 30°, 70° and 80°. Which statement is correct?",
+     "a": "They have the same shape but need not be congruent",
+     "o": [
+      "They have the same shape but need not be congruent",
+      "They must be congruent, since all angles are equal",
+      "They must be congruent if one is turned over",
+      "They cannot have the same shape unless sizes match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a rangoli, ΔABC and ΔXYZ have AB = XY = 9 cm, AC = XZ = 7 cm and ∠A = ∠X = 55°. What can be concluded?",
+     "a": "ΔABC ≅ ΔXYZ by SAS",
+     "o": [
+      "ΔABC ≅ ΔXYZ by SAS",
+      "The third sides must be checked first",
+      "ΔABC ≅ ΔXYZ by SSA",
+      "They are similar by AAA but may differ"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meena and Zoya each draw ΔABC with AB = 7 cm, AC = 5 cm and ∠B = 40°. Their triangles may look different. Why?",
+     "a": "The angle is not between the sides, so two triangles can fit",
+     "o": [
+      "The angle is not between the sides, so two triangles can fit",
+      "Meena and Zoya used protractors of different sizes",
+      "The angle lies between the sides, so both are right",
+      "Two sides are always too few to draw any triangle"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: Two triangles can have all three angles equal and still have different sizes.\nStatement 2: For SAS, the equal angle must lie between the two equal sides.\nStatement 3: If two sides and a non-included angle are equal, the triangles are always congruent.\nWhich statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two triangles with angles 30°, 70° and 80° need not be congruent.\nReason (R): Triangles with equal angles always have equal sizes.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "q": "Match each set of equal parts in two triangles (Column I) with what it guarantees (Column II).\nColumn I: 1. Two sides and the angle between them  2. Two sides and an angle not between them  3. All three angles  4. All three sides\nColumn II: a. Congruence by SSS  b. Congruence by SAS  c. Same shape only, congruence not guaranteed  d. SSA, congruence not guaranteed",
+     "a": "1-b, 2-d, 3-c, 4-a",
+     "o": [
+      "1-b, 2-d, 3-c, 4-a",
+      "1-b, 2-c, 3-d, 4-a",
+      "1-a, 2-d, 3-c, 4-b",
+      "1-d, 2-b, 3-c, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "O is the midpoint of PS and also of QR. (a) Name the three equal parts of ΔPOQ and ΔSOR. (b) Write the congruence in order and say which side equals PQ.",
+     "a": "(a) PO = SO, QO = RO and ∠POQ = ∠SOR (vertically opposite angles). (b) ΔPOQ ≅ ΔSOR by SAS, so PQ = SR.",
+     "s": [
+      [
+       "Part (a): PO = SO, QO = RO, vertically opposite angles",
+       1
+      ],
+      [
+       "Part (b): ΔPOQ ≅ ΔSOR by SAS, PQ = SR",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Gauri says: 'Two triangles with equal sides of 8 cm and 6 cm and an equal angle of 35° are always congruent.' Is she right?",
+     "a": "Not always. If the 35° lies between the 8 cm and 6 cm sides, SAS makes them congruent. If it does not, it is the SSA case, where two different triangles may be possible, so she cannot be sure.",
+     "s": [
+      [
+       "Verdict: not always",
+       1
+      ],
+      [
+       "Congruent when the angle is included (SAS)",
+       1
+      ],
+      [
+       "Not guaranteed when the angle is not included (SSA)",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the SAS condition for congruence of triangles. What does 'included angle' mean?",
+     "a": "If two sides and the included angle of one triangle equal two sides and the included angle of the other, the triangles are congruent. The included angle is the angle between the two sides.",
+     "s": [
+      [
+       "States SAS correctly",
+       1
+      ],
+      [
+       "Explains included angle as the angle between the two sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "ΔPQR has PQ = 8 cm, PR = 6.5 cm and ∠P = 62°. ΔLMN has LM = 8 cm, LN = 6.5 cm and ∠L = 62°. (a) Are they congruent? Name the condition and write the congruence. (b) QR is measured as 7.4 cm. What is MN, and why?",
+     "a": "(a) Yes, SAS (the 62° lies between the equal sides): ΔPQR ≅ ΔLMN. (b) MN = 7.4 cm, since QR and MN are corresponding sides.",
+     "s": [
+      [
+       "Part (a): SAS and ΔPQR ≅ ΔLMN",
+       1
+      ],
+      [
+       "Part (b): MN = 7.4 cm as corresponding sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rafi draws PQ = 10 cm, a line from P at 35°, and an arc of radius 7 cm from Q to cut the line. (a) How many points can the arc cut the line at? (b) What does this say about SSA?",
+     "a": "(a) Two points, R and S, so two triangles fit the same measurements. (b) SSA (two sides and a non-included angle) does not guarantee congruence.",
+     "s": [
+      [
+       "Part (a): the arc cuts the line at two points",
+       1
+      ],
+      [
+       "Part (b): SSA does not guarantee congruence",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "ΔABC has AB = 7 cm, BC = 6 cm, ∠B = 47°; ΔXYZ has XY = 7 cm, YZ = 6 cm, ∠Y = 47°. (a) Are they congruent? Name the condition. (b) If the 47° were ∠A and ∠X instead (same sides), could you still be sure?",
+     "a": "(a) Yes, SAS, ΔABC ≅ ΔXYZ, the angle being between the two sides. (b) No. The angle is then not included, which is the SSA case, and two different triangles can fit.",
+     "s": [
+      [
+       "Part (a): congruent by SAS with the angle between the sides",
+       1
+      ],
+      [
+       "Part (b): not sure, since it becomes SSA",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that equal angles alone cannot make two triangles congruent: describe two triangles with angles 50°, 60° and 70°.",
+     "a": "Draw one with a 5 cm side between the 50° and 60° angles, and another with a 10 cm side between the same angles. Both have angles 50°, 60°, 70°, but their sizes differ, so they are not congruent.",
+     "s": [
+      [
+       "Both triangles have the same three angles",
+       1
+      ],
+      [
+       "Gives different side lengths such as 5 cm and 10 cm",
+       1
+      ],
+      [
+       "Concludes same shape but not congruent",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In ΔABC, AB = 7 cm, AC = 9 cm, ∠A = 65°. Write the three measurements for ΔXYZ that make ΔABC ≅ ΔXYZ by SAS, and name the matching vertices.",
+     "a": "XY = 7 cm, XZ = 9 cm, ∠X = 65°. A matches X, B matches Y, C matches Z.",
+     "s": [
+      [
+       "Gives XY = 7 cm and XZ = 9 cm",
+       1
+      ],
+      [
+       "Gives ∠X = 65° between them",
+       1
+      ],
+      [
+       "States the matching A-X, B-Y, C-Z",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Priya cuts a metal triangle ΔPQR with PQ = 7 cm, PR = 5 cm and ∠QPR = 40°. Her helper cuts ΔXYZ with XY = 7 cm, XZ = 5 cm and ∠YXZ = 40°, but lays the metal face down, so ΔXYZ is a mirror image. (a) Which angle lies between the given sides in each triangle? (b) Is the helper's piece congruent? Name the condition. (c) Write the congruence in order. (d) QR is measured as 4.5 cm. Which side of ΔXYZ is 4.5 cm, and does flipping change this?",
+     "a": "(a) ∠QPR in ΔPQR and ∠YXZ in ΔXYZ. (b) Yes, SAS; flipping is allowed. (c) ΔPQR ≅ ΔXYZ. (d) YZ = 4.5 cm, since QR and YZ are corresponding sides; flipping a figure does not change its lengths.",
+     "s": [
+      [
+       "Part (a): the included angles ∠QPR and ∠YXZ",
+       1
+      ],
+      [
+       "Part (b): congruent by SAS, flipping allowed",
+       1
+      ],
+      [
+       "Part (c): ΔPQR ≅ ΔXYZ",
+       1
+      ],
+      [
+       "Part (d): YZ = 4.5 cm and flipping keeps lengths",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Compare two constructions. In (i) PQ = 9 cm, PR = 7 cm and ∠P = 40°. In (ii) PQ = 9 cm, QR = 7 cm and ∠P = 40°. (a) In which is the angle included? (b) Which condition applies to it? (c) For the other, why can two triangles be drawn? (d) Which one lets Rabia be sure of congruence?",
+     "a": "(a) (i): ∠P is between PQ and PR. (b) SAS. (c) In (ii) the 40° is not between the sides (SSA), and an arc of 7 cm from Q cuts the line from P at two points. (d) Construction (i), because SAS guarantees congruence.",
+     "s": [
+      [
+       "Part (a): (i) has the included angle",
+       1
+      ],
+      [
+       "Part (b): SAS",
+       1
+      ],
+      [
+       "Part (c): arc cuts the line at two points in SSA",
+       2
+      ],
+      [
+       "Part (d): (i) is certain",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The fete committee cuts triangular rangoli sheets to match a template with two sides of 24 cm and 18 cm and 50° between them, and pays ₹5 for each sheet congruent to it. Four students cut sheets. Anil cuts 12 sheets with sides 24 cm and 18 cm and 50° between. Bela cuts 10 with 24 cm and 18 cm and 70° between. Chitra cuts 8 with sides 18 cm and 24 cm and 50° between. Dev cuts 6 with sides 24 cm and 20 cm and 50° between.\n(a) Which students' sheets are congruent to the template? (b) For each of the others, say which part fails the SAS condition. (c) How much is paid? (d) The committee needs 30 matching sheets tonight. Anil can cut the 10 missing ones tomorrow at ₹5 each. Dev can supply 10 tonight at ₹3 each. Decide whom to ask.",
+     "a": "(a) Anil and Chitra, by SAS. (b) Bela's included angle is 70°, not 50°; Dev's second side is 20 cm, not 18 cm. (c) (12 + 8) x 5 = ₹100. (d) Wait for Anil. Dev's 10 sheets would save only 10 x (5 - 3) = ₹20 and, with a 20 cm side, would not match the other 20 sheets, which spoils the rangoli.",
+     "s": [
+      [
+       "Part (a): Anil and Chitra",
+       1
+      ],
+      [
+       "Part (b): Bela's angle and Dev's side fail",
+       1
+      ],
+      [
+       "Part (c): ₹100",
+       1
+      ],
+      [
+       "Part (d): asks Anil, citing the ₹20 saving against a mismatch",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A gardener marks triangular flower beds with ropes. Bed 1 has sides 12 m and 9 m with 40° between them. Bed 2 has sides 9 m and 12 m with 40° between them. Bed 3 has sides 12 m and 9 m with 55° between them. Five beds are needed: three like bed 1 and two like bed 3. A stone-edging mould made for one shape can be reused for every congruent bed. The first mould costs ₹2,400 and a mould for bed 3 costs ₹5,000. The two beds like bed 3 could instead be re-marked with a 40° angle between the 12 m and 9 m sides for ₹800 each.\n(a) Is bed 2 congruent to bed 1? Give the condition. (b) Is bed 3 congruent to bed 1? Give the reason. (c) What do the moulds cost if the five beds are made as planned? (d) Should the gardener re-mark the two beds? Decide.",
+     "a": "(a) Yes, SAS: the same two sides with the same angle between them. (b) No, the angle between the 12 m and 9 m sides is 55°, not 40°. (c) 2,400 + 5,000 = ₹7,400. (d) Re-marked, all five beds are congruent, so one mould is enough: 2,400 + 2 x 800 = ₹4,000, which saves ₹3,400; re-mark them.",
+     "s": [
+      [
+       "Part (a): congruent by SAS",
+       1
+      ],
+      [
+       "Part (b): not congruent, included angle differs",
+       1
+      ],
+      [
+       "Part (c): ₹7,400",
+       1
+      ],
+      [
+       "Part (d): ₹4,000 and a saving of ₹3,400, so re-mark",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.4",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which description matches the ASA condition?",
+     "a": "Two angles and the side between them are equal",
+     "o": [
+      "Two angles and the side between them are equal",
+      "Two angles and a side not between them are equal",
+      "Two sides and the angle between them are equal",
+      "All three angles of the triangles are equal"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In ΔABC, ∠A = 38° and ∠C = 64°. What is ∠B?",
+     "a": "78°",
+     "o": [
+      "78°",
+      "102°",
+      "26°",
+      "142°"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In ΔPQR, which side lies between ∠P and ∠Q?",
+     "a": "PQ",
+     "o": [
+      "PQ",
+      "QR",
+      "PR",
+      "None of the three sides"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In ΔABC, ∠A = 50°, ∠B = 60° and BC = 8 cm. In ΔPQR, ∠P = 50°, ∠Q = 60° and QR = 8 cm. Which conclusion is right?",
+     "a": "Congruent: the third angles are 70°, so ASA applies",
+     "o": [
+      "Congruent: the third angles are 70°, so ASA applies",
+      "Not sure: the 8 cm side is not between the angles",
+      "Congruent by SSA",
+      "Same shape only, since sizes may differ"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In ΔABC and ΔDEF, ∠A = ∠D = 40°, ∠B = ∠E = 65°, AC = 9 cm and DF = 11 cm. What follows?",
+     "a": "Not congruent: corresponding sides AC and DF differ",
+     "o": [
+      "Not congruent: corresponding sides AC and DF differ",
+      "Congruent by AAS, as two angles and a side are equal",
+      "Congruent, since all three angles are equal",
+      "Not congruent, since the side must lie between the angles"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about ASA and AAS.\nStatement 1: ASA and AAS are the same condition, because the equal side always lies between the equal angles.\nStatement 2: In AAS the third angle is found by adding the two given angles.\nStatement 3: Two triangles with two equal angles and the equal side between them are congruent.\nWhich statements are correct?",
+     "a": "3 only",
+     "o": [
+      "3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Isha says: 'If two angles and a side not between them in one triangle equal the matching parts of another (AAS), the triangles are still congruent.' Do you agree?",
+     "a": "Yes. The third angle is 180° minus the two given angles, so it is equal in both triangles. The equal side now lies between two equal angles, so ASA applies and the triangles are congruent.",
+     "s": [
+      [
+       "Verdict: agree",
+       1
+      ],
+      [
+       "Finds the third angle as 180° minus the other two",
+       1
+      ],
+      [
+       "Shows ASA now applies",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "q": "Match the equal parts in two triangles (Column I) with the condition they satisfy (Column II).\nColumn I: 1. ∠B = ∠Y, BC = YZ, ∠C = ∠Z  2. ∠A = ∠X, ∠C = ∠Z, BC = YZ  3. AB = XY, BC = YZ, CA = ZX  4. AB = XY, AC = XZ, ∠A = ∠X\nColumn II: a. SSS  b. SAS  c. ASA  d. AAS",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-a, 2-d, 3-c, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ΔABC, ∠A = 48°, ∠C = 62° and BC = 6 cm. In ΔXYZ, ∠X = 48°, ∠Z = 62° and YZ = 6 cm. (a) Find ∠B and ∠Y. (b) Name the condition for ΔABC ≅ ΔXYZ and write it in order.",
+     "a": "(a) ∠B = 180° - 110° = 70° and ∠Y = 70°. (b) AAS (BC lies opposite ∠A, not between the given angles), or ASA once the third angles are found: ΔABC ≅ ΔXYZ.",
+     "s": [
+      [
+       "Part (a): ∠B = ∠Y = 70°",
+       1
+      ],
+      [
+       "Part (b): names AAS (or ASA after the third angle) and writes ΔABC ≅ ΔXYZ",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ΔABC, AD is perpendicular to BC and AD bisects ∠BAC. (a) Which condition gives ΔABD ≅ ΔACD, and which parts are equal? (b) What follows for AB and AC, and for BD and DC?",
+     "a": "(a) ASA: ∠BAD = ∠CAD, the common side AD, and ∠ADB = ∠ADC = 90°. (b) AB = AC and BD = DC, as corresponding sides.",
+     "s": [
+      [
+       "Part (a): ASA with ∠BAD = ∠CAD, AD common, ∠ADB = ∠ADC",
+       1
+      ],
+      [
+       "Part (b): AB = AC and BD = DC",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "ΔPQR and ΔXYZ have ∠P = ∠X = 55° and ∠Q = ∠Y = 65°. (a) If PQ = XY = 7 cm, which condition applies? (b) If instead QR = YZ = 7 cm, which condition applies?",
+     "a": "(a) PQ lies between ∠P and ∠Q, so ASA. (b) QR is opposite ∠P and not between the angles, so AAS.",
+     "s": [
+      [
+       "Part (a): ASA since PQ is between the angles",
+       1
+      ],
+      [
+       "Part (b): AAS since QR is not between the angles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rina draws ΔABC with BC = 6 cm, ∠B = 50° and ∠C = 60°. Her friend draws ΔDEF with EF = 6 cm, ∠E = 50° and ∠F = 60°. (a) Which condition shows ΔABC ≅ ΔDEF? (b) DE is measured as 5.5 cm. What is AB, and why?",
+     "a": "(a) ASA: the 6 cm side lies between the 50° and 60° angles in both. (b) AB = 5.5 cm, since AB and DE are corresponding sides.",
+     "s": [
+      [
+       "Part (a): ASA with the included side 6 cm",
+       1
+      ],
+      [
+       "Part (b): AB = 5.5 cm as corresponding sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the ASA condition, and say how the AAS condition differs from it.",
+     "a": "ASA: two angles and the side between them are equal. AAS: two angles and a side not between them are equal; the third angle is then found, which gives ASA.",
+     "s": [
+      [
+       "States ASA correctly",
+       1
+      ],
+      [
+       "States AAS side is not between the angles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two triangles with two angles and the included side equal are congruent.\nReason (R): The third angles of such triangles are also equal.",
+     "a": "Both A and R are true, but R is not the correct explanation of A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Two triangles have angles 40°, 60° and 80°, and each has a side of 5 cm. Show that they still need not be congruent.",
+     "a": "In one triangle the 5 cm side can be opposite the 40° angle; in the other it can be opposite the 80° angle. The sides are not in corresponding positions, so the sizes differ and the triangles are not congruent.",
+     "s": [
+      [
+       "Both have the same angles and a 5 cm side",
+       1
+      ],
+      [
+       "Places the 5 cm side opposite different angles",
+       1
+      ],
+      [
+       "Concludes the side must correspond",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "For ΔABC with ∠A = 50°, AB = 6 cm and ∠B = 70°, write the data for ΔPQR that is congruent by ASA, and then different data for ΔXYZ that is congruent by AAS.",
+     "a": "ΔPQR: ∠P = 50°, PQ = 6 cm, ∠Q = 70° (ASA). For AAS, first find ∠C = 180° - 120° = 60°. ΔXYZ: ∠X = 50°, ∠Z = 60° and XY = 6 cm; XY is opposite ∠Z and not between the angles, so AAS gives ΔABC ≅ ΔXYZ.",
+     "s": [
+      [
+       "ASA data with the included side 6 cm",
+       1
+      ],
+      [
+       "AAS data with ∠C = 60° found",
+       1
+      ],
+      [
+       "Places the 6 cm side opposite ∠Z",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Rina's triangle T1 has ∠B = 40°, BC = 7 cm and ∠C = 65°. Triangle T2 has ∠D = 75°, ∠E = 40° and EF = 7 cm. Triangle T3 has ∠K = 40°, ∠L = 65° and KM = 7 cm. (a) Find ∠A in T1. (b) Is T2 congruent to T1? Give the condition and write the congruence. (c) Is T3 congruent to T1? Explain using the position of the 7 cm side. (d) Change one measurement of T3 so that it becomes congruent to T1.",
+     "a": "(a) ∠A = 180° - 105° = 75°. (b) In T2, ∠F = 180° - 115° = 65°, so EF lies between 40° and 65° as BC does in T1: ASA (AAS as given), ΔABC ≅ ΔDEF. (c) No. In T3 the 7 cm side KM lies between ∠K = 40° and ∠M = 75°, not between 40° and 65°, so it does not correspond to BC. (d) Make the side KL (between ∠K = 40° and ∠L = 65°) 7 cm; then ASA gives T3 ≅ T1.",
+     "s": [
+      [
+       "Part (a): 75°",
+       1
+      ],
+      [
+       "Part (b): third angle 65°, ASA/AAS, ΔABC ≅ ΔDEF",
+       1
+      ],
+      [
+       "Part (c): not congruent because the 7 cm side is in a different position",
+       1
+      ],
+      [
+       "Part (d): sets KL = 7 cm, giving ASA",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "AB ∥ CD with AB = CD = 9 cm. The segments AD and BC cross at O. (a) Which angle pairs are equal, and why? (b) Which triangles are congruent, by which condition? (c) Which sides are equal other than AB, CD? (d) Is O the midpoint of both AD and BC? Justify.",
+     "a": "(a) ∠OAB = ∠ODC and ∠OBA = ∠OCD (alternate angles). (b) ΔAOB ≅ ΔDOC by ASA. (c) AO = DO and BO = CO. (d) Yes, since AO = DO and BO = CO.",
+     "s": [
+      [
+       "Part (a): alternate angles",
+       1
+      ],
+      [
+       "Part (b): ASA",
+       1
+      ],
+      [
+       "Part (c): AO = DO, BO = CO",
+       1
+      ],
+      [
+       "Part (d): O is the midpoint of both",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For a shed, roof frame 1 has ∠A = 50°, ∠B = 60° and AB = 3 m. Frame 2 has ∠P = 50°, ∠Q = 60° and PQ = 3 m. Frame 3 has ∠X = 50°, ∠Y = 60° and YZ = 3 m. Two sheds need 8 frames congruent to frame 1 in all. The contractor has 6 frames like frames 1 or 2 and 5 like frame 3. Option A: make 2 new frames at ₹2,500 each. Option B: hire 2 frames like frame 1 from a neighbouring school at ₹1,200 each, to be returned after 3 weeks. The sheds must stand for a year.\n(a) Find the third angle of frame 1. (b) Are frames 1 and 2 congruent? Name the condition. (c) Are frames 1 and 3 congruent? Explain using where the 3 m side lies. (d) Which option should the contractor take? Decide.",
+     "a": "(a) 70°. (b) Yes, ASA: AB lies between ∠A and ∠B, and PQ between ∠P and ∠Q. (c) No: in frame 3 the 3 m side YZ lies opposite ∠X, not between the 50° and 60° angles, so it does not correspond to AB. (d) Making 2 new frames costs 2 x 2,500 = ₹5,000 and hiring 2 costs 2 x 1,200 = ₹2,400. Hiring is cheaper, but the hired frames go back after 3 weeks while the sheds must stand for a year, so make the new frames.",
+     "s": [
+      [
+       "Part (a): 70°",
+       1
+      ],
+      [
+       "Part (b): ASA from the positions of AB and PQ",
+       1
+      ],
+      [
+       "Part (c): not congruent, as the 3 m side is in a different position",
+       1
+      ],
+      [
+       "Part (d): ₹5,000 against ₹2,400 and a choice using the year-long need",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Surveyor Reena checks whether two triangular plots are congruent. Plot 1 has ∠A = 48°, ∠C = 62° and BC = 40 m. For Plot 2 she measures ∠P = 48°, ∠Q = 70°, ∠R = 62° and QR = 40 m. Measuring an angle costs ₹600 and measuring a side costs ₹400. For Plot 3 she must choose between measuring two angles and one side, or all three sides. A pond blocks side CA, and a boat to measure it costs ₹700 extra.\n(a) Find ∠B of Plot 1. (b) Are the two plots congruent? Name the condition. (c) What did Reena's four measurements of Plot 2 cost, and how much could she have saved? (d) Which plan should she use for Plot 3? Decide.",
+     "a": "(a) ∠B = 180° - 110° = 70°. (b) Yes, AAS: ∠A = ∠P, ∠B = ∠Q and BC = QR (the side opposite ∠A and ∠P). (c) 3 x 600 + 400 = ₹2,200; two angles and the side were enough (₹1,600), so she could have saved ₹600. (d) Two angles and a side cost ₹1,600; three sides cost 3 x 400 + 700 = ₹1,900. Use two angles and a side.",
+     "s": [
+      [
+       "Part (a): 70°",
+       1
+      ],
+      [
+       "Part (b): congruent by AAS",
+       1
+      ],
+      [
+       "Part (c): ₹2,200 and a saving of ₹600",
+       1
+      ],
+      [
+       "Part (d): ₹1,600 against ₹1,900, so angles-and-side",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a right-angled triangle, which side is the hypotenuse?",
+     "a": "The side opposite the right angle",
+     "o": [
+      "The side opposite the right angle",
+      "The side next to the right angle",
+      "The shortest side of the triangle",
+      "The side opposite the smallest angle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these does NOT guarantee that two triangles are congruent?",
+     "a": "Three equal angles (AAA)",
+     "o": [
+      "Three equal angles (AAA)",
+      "Three equal sides (SSS)",
+      "Two angles and the included side (ASA)",
+      "Right angle, hypotenuse and a side (RHS)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement describes the RHS condition?",
+     "a": "A right angle, the hypotenuse and one other side are equal",
+     "o": [
+      "A right angle, the hypotenuse and one other side are equal",
+      "The longest side and any one angle are equal",
+      "A right angle and the two shorter sides are equal",
+      "A right angle and both acute angles are equal"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which list holds only conditions that guarantee congruence?",
+     "a": "SSS, SAS, ASA, AAS, RHS",
+     "o": [
+      "SSS, SAS, ASA, AAS, RHS",
+      "SSS, SAS, SSA, RHS",
+      "SSS, AAA, ASA, AAS",
+      "SAS, ASA, SSA, AAA"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Board ΔABC has ∠B = 90°, BC = 18 cm and AC = 21 cm. Board ΔXYZ has ∠Y = 90°, YZ = 18 cm and XZ = 21 cm. What can be said?",
+     "a": "They are congruent by RHS",
+     "o": [
+      "They are congruent by RHS",
+      "They are congruent by SAS",
+      "Not sure, since SSA does not work",
+      "Not sure, until AB and XY are measured"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Zoya says two triangular pennants are congruent because each has sides of 9 cm and 12 cm and a 40° angle opposite the 9 cm side. Ayaan says the data is not enough. Who is right?",
+     "a": "Ayaan: this is SSA, and two different triangles fit these parts",
+     "o": [
+      "Ayaan: this is SSA, and two different triangles fit these parts",
+      "Zoya: two sides and an angle give congruence by SAS",
+      "Zoya: an angle and two sides are always enough",
+      "Ayaan: two sides and an angle can never fix a triangle"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: In a right-angled triangle, the hypotenuse is the side opposite the right angle.\nStatement 2: RHS can be applied to any two triangles with an equal side and equal longest side.\nStatement 3: SSA guarantees congruence in every case.\nWhich statements are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "1 and 3 only",
+      "2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two right-angled triangles with equal hypotenuses are congruent.\nReason (R): In the RHS condition, one side besides the hypotenuse must also be equal.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ΔPQR, ∠Q = 90°, QR = 9 cm, PR = 15 cm. In ΔLMN, ∠M = 90°, MN = 9 cm, LN = 15 cm. (a) Name the hypotenuse of each. (b) Write the congruence in order and the condition.",
+     "a": "(a) PR and LN. (b) RHS: ΔPQR ≅ ΔLMN, with Q ↔ M and R ↔ N.",
+     "s": [
+      [
+       "Part (a): PR and LN",
+       1
+      ],
+      [
+       "Part (b): RHS with ΔPQR ≅ ΔLMN",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 6 cm line QR is drawn with a perpendicular l at Q, and an arc of radius 10 cm from R cuts l above QR. (a) Does the arc cut l below QR too? (b) Why is the triangle below congruent to the one above?",
+     "a": "(a) Yes, the arc also cuts the extension of l below QR. (b) The two triangles are mirror images in QR; they share the right angle, QR and the hypotenuse of 10 cm, so they are congruent by RHS.",
+     "s": [
+      [
+       "Part (a): the arc meets l below QR as well",
+       1
+      ],
+      [
+       "Part (b): same right angle, side and hypotenuse, so congruent",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "ΔABC has ∠B = 90°, AB = 6 cm and AC = 10 cm. ΔDEF has ∠E = 90°, DF = 10 cm and EF = 6 cm. (a) Which condition applies? (b) Write the congruence in the correct order.",
+     "a": "(a) RHS: hypotenuses AC = DF and a side AB = EF. (b) ΔABC ≅ ΔFED, with A with F, B with E, C with D.",
+     "s": [
+      [
+       "Part (a): RHS",
+       1
+      ],
+      [
+       "Part (b): ΔABC ≅ ΔFED",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the RHS condition and name the five conditions that guarantee congruence.",
+     "a": "RHS: a right angle, the hypotenuse and one other side of one triangle equal those of the other. The five are SSS, SAS, ASA, AAS and RHS.",
+     "s": [
+      [
+       "States RHS fully",
+       1
+      ],
+      [
+       "Names the five conditions",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two right triangles each have a hypotenuse of 10 cm and one side of 6 cm. (a) Which condition proves them congruent? (b) Why would the same data not be enough if the triangles had no right angle?",
+     "a": "(a) RHS. (b) Without the right angle it is SSA, which can give two different triangles.",
+     "s": [
+      [
+       "Part (a): RHS",
+       1
+      ],
+      [
+       "Part (b): no right angle gives SSA, not guaranteed",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A fitter says: 'Two right-angled brackets with the same 10 cm hypotenuse are congruent, and so are two with a 10 cm hypotenuse and an equal 6 cm side.' Is he right?",
+     "a": "Partly. Equal hypotenuses alone are not enough: a 6 cm and an 8 cm side bracket both have a 10 cm hypotenuse but do not fit over each other. With a 10 cm hypotenuse and an equal 6 cm side as well, RHS applies and they are congruent.",
+     "s": [
+      [
+       "Verdict: partly right",
+       1
+      ],
+      [
+       "Counterexample 6 cm side against 8 cm side with the same hypotenuse",
+       1
+      ],
+      [
+       "States RHS holds when the hypotenuse and one more side are equal",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "ΔABC has ∠B = 90°, AB = 6 cm, BC = 8 cm. ΔXYZ has ∠Y = 90°, XY = 6 cm, YZ = 10 cm. Show that a right angle and one equal side are not enough for congruence.",
+     "a": "Both have a right angle and a 6 cm side, but their other sides are 8 cm and 10 cm, so one cannot be fitted over the other. A right angle and one side alone do not fix the triangle; the hypotenuse (or another side) must also match.",
+     "s": [
+      [
+       "Notes the right angle and 6 cm side match",
+       1
+      ],
+      [
+       "Notes the other sides 8 cm and 10 cm differ",
+       1
+      ],
+      [
+       "Concludes the hypotenuse or another part is needed",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write measurements for right triangles ΔPQR (right angle at P) and ΔXYZ (right angle at Y) so that RHS proves them congruent. Write the congruence in order.",
+     "a": "Example: ΔPQR with ∠P = 90°, PQ = 5 cm and hypotenuse QR = 13 cm; ΔXYZ with ∠Y = 90°, XY = 5 cm and hypotenuse XZ = 13 cm. The hypotenuses QR and XZ match, and PQ matches YX, so P goes with Y, Q with X, R with Z: ΔPQR ≅ ΔYXZ.",
+     "s": [
+      [
+       "Gives right angles, equal hypotenuses and one equal side",
+       1
+      ],
+      [
+       "Identifies hypotenuses QR and XZ",
+       1
+      ],
+      [
+       "Writes the congruence in matching order",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two ladders of 6.5 m lean on a vertical wall and each reaches 6 m up it. (a) Where are the right angles? (b) Which sides are the hypotenuses? (c) Show the two triangles are congruent. (d) What do you conclude about the feet of the ladders? (e) Why would this fail if the wall were not at right angles to the ground?",
+     "a": "(a) Where the wall meets the ground. (b) The ladders. (c) RHS: right angle, equal hypotenuse 6.5 m, equal side 6 m. (d) The feet are equally far from the wall. (e) Without the right angle it would be SSA, which does not guarantee congruence.",
+     "s": [
+      [
+       "Part (a)-(b): right angle at ground and ladders as hypotenuses",
+       1
+      ],
+      [
+       "Part (c): RHS",
+       1
+      ],
+      [
+       "Part (d): feet equally far",
+       1
+      ],
+      [
+       "Part (e): no right angle gives SSA",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Which of the five conditions SSS, SAS, ASA, AAS, RHS mentions a right angle, and which one needs the angle to lie between two sides? (b) Take PQ = 12 cm, ∠P = 25° and QR = 8 cm. How many triangles can be drawn, and why? (c) Which special case of two sides and an angle does work, and why?",
+     "a": "(a) RHS mentions the right angle; SAS needs the angle between the two sides. (b) Two triangles, since the 8 cm arc from Q cuts the 25° line at two points. (c) RHS, because the right angle makes the second point give a congruent mirror triangle.",
+     "s": [
+      [
+       "Part (a): RHS and SAS",
+       1
+      ],
+      [
+       "Part (b): two triangles and the reason",
+       2
+      ],
+      [
+       "Part (c): RHS and the reason",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a school fair, tent A has a vertical pole of 3 m and a rope of 5 m from its top to a stake on level ground. The stake is measured at 4 m from the pole. Tent B has the same pole and rope. The third tent can be built like tent A (4 ropes of 5 m) or like tent C (pole 3 m, 4 ropes of 5.5 m, more shade, stake distance to be measured on site). Rope costs ₹40 per metre.\n(a) In tent A's triangle, which side is the hypotenuse? (b) Is tent B's triangle congruent to A's, and how far is B's stake from its pole? (c) What do the ropes of tents A and B together cost? (d) Should the third tent be built like A or like C? Decide.",
+     "a": "(a) The rope. (b) Yes, RHS (right angle, rope 5 m, pole 3 m), so B's stake is also 4 m from its pole. (c) 2 x 4 x 5 x 40 = ₹1,600. (d) Like A: ropes cost 4 x 5 x 40 = ₹800 against 4 x 5.5 x 40 = ₹880, and by RHS its stake is already known to be 4 m; choose C only if the extra shade is worth ₹80 and a site measurement.",
+     "s": [
+      [
+       "Part (a): the rope",
+       1
+      ],
+      [
+       "Part (b): RHS and 4 m",
+       1
+      ],
+      [
+       "Part (c): ₹1,600",
+       1
+      ],
+      [
+       "Part (d): compares ₹800 with ₹880 and the stake measurement, and decides",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A shop orders 20 triangular boards congruent to board P (∠B = 90°, BC = 12 cm, AC = 15 cm), paying ₹150 for each. Twelve boards arrive with ∠Y = 90°, YZ = 12 cm and XZ = 15 cm. The supplier also offers eight more with sides of 12 cm and 15 cm, whose angles have never been measured, at ₹110 each with no returns. Measuring the angle of a board costs ₹20.\n(a) Which of the twelve are congruent to P, and by which condition? (b) Why can the eight not yet be called congruent to P? (c) What is the payment for the twelve? (d) Should the shop take the eight unseen, or have each measured first? Decide.",
+     "a": "(a) All twelve, by RHS (right angle, hypotenuse 15 cm, side 12 cm). (b) Their angles are unknown, so the data is only two sides, which does not guarantee congruence. (c) 12 x 150 = ₹1,800. (d) Measure first: 8 x 20 = ₹160, small against 8 x 110 = ₹880 that would be wasted with no returns if the boards turn out not to match.",
+     "s": [
+      [
+       "Part (a): the twelve by RHS",
+       1
+      ],
+      [
+       "Part (b): angles unknown, only two sides known",
+       1
+      ],
+      [
+       "Part (c): ₹1,800",
+       1
+      ],
+      [
+       "Part (d): measures first, comparing ₹160 with ₹880",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In ΔABC, AB = AC. Which two angles are equal?",
+     "a": "∠B and ∠C",
+     "o": [
+      "∠B and ∠C",
+      "∠A and ∠B",
+      "∠A and ∠C",
+      "All three angles"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the measure of each angle of an equilateral triangle?",
+     "a": "60°",
+     "o": [
+      "60°",
+      "45°",
+      "90°",
+      "30°"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In ΔABC, AB = AC and ∠A = 80°. What is ∠B?",
+     "a": "50°",
+     "o": [
+      "50°",
+      "80°",
+      "100°",
+      "40°"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Mira says: 'In an isosceles triangle the angles opposite the equal sides are equal, so if the apex angle is 40°, each base angle is 70°.' Do you agree?",
+     "a": "Yes. The two base angles are equal and the three angles add to 180°, so each is (180° - 40°)/2 = 70°.",
+     "s": [
+      [
+       "Verdict: Mira is right",
+       1
+      ],
+      [
+       "Uses the angle sum 180° with equal base angles",
+       1
+      ],
+      [
+       "Computes (180° - 40°)/2 = 70°",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The roof truss of a shed is an isosceles triangle with an apex angle of 100° between the two equal rafters. What is each base angle?",
+     "a": "40°",
+     "o": [
+      "40°",
+      "80°",
+      "50°",
+      "100°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A is the centre of a circular pond, and B and C lie on its edge with ∠BAC = 140°. What is ∠ABC?",
+     "a": "20°",
+     "o": [
+      "20°",
+      "40°",
+      "70°",
+      "140°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which triangle must have all its angles equal?",
+     "a": "An equilateral triangle",
+     "o": [
+      "An equilateral triangle",
+      "An isosceles triangle",
+      "A triangle with one right angle",
+      "A triangle with two equal sides"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The base angles of an isosceles triangle are always 60°.\nStatement 2: In an isosceles triangle with AB = AC and ∠A = 40°, each base angle is 70°.\nStatement 3: An isosceles triangle can have two right angles at its base.\nWhich statements are correct?",
+     "a": "2 only",
+     "o": [
+      "2 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In ΔABC with AB = AC, ∠B = ∠C.\nReason (R): Angles opposite equal sides are equal.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ΔABC, AB = AC and ∠A = 70°. (a) Find ∠B and ∠C. (b) If ∠A were 100° instead, what would each base angle be, and what does this show about a larger angle at A?",
+     "a": "(a) ∠B = ∠C = (180° - 70°)/2 = 55°. (b) (180° - 100°)/2 = 40°. A larger angle at A gives smaller base angles.",
+     "s": [
+      [
+       "Part (a): 55° each",
+       1
+      ],
+      [
+       "Part (b): 40° and the larger-apex, smaller-base remark",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In an isosceles triangle ABC with AB = AC, each base angle is 65°. (a) Find the angle at A. (b) Why are the angles at B and C equal in the first place?",
+     "a": "(a) ∠A = 180° - 130° = 50°. (b) Angles opposite equal sides (AC and AB) are equal.",
+     "s": [
+      [
+       "Part (a): 50°",
+       1
+      ],
+      [
+       "Part (b): angles opposite equal sides are equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ΔABC, AB = AC, ∠B = (2x + 10)° and ∠C = (3x - 5)°. (a) Find x and ∠B. (b) Find ∠A.",
+     "a": "(a) Since AB = AC, ∠B = ∠C, so 2x + 10 = 3x - 5 and x = 15; ∠B = 40°. (b) ∠A = 180° - 80° = 100°.",
+     "s": [
+      [
+       "Part (a): equates the base angles to get x = 15 and ∠B = 40°",
+       1
+      ],
+      [
+       "Part (b): ∠A = 100°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain in two steps why every angle of an equilateral triangle is 60°.",
+     "a": "The sides are equal, so the angles opposite them are equal. The three equal angles add up to 180°, so each is 180° / 3 = 60°.",
+     "s": [
+      [
+       "Equal sides give equal angles",
+       1
+      ],
+      [
+       "180° divided by 3 gives 60°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the property of the angles of a triangle that has two equal sides, and write the formula for each base angle when the angle between the equal sides is a.",
+     "a": "Angles opposite equal sides are equal. Each base angle is (180° - a)/2.",
+     "s": [
+      [
+       "States angles opposite equal sides are equal",
+       1
+      ],
+      [
+       "Writes (180° - a)/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To show that ∠B = ∠C when AB = AC, the book draws the altitude AD to BC. Which pair of triangles is used, with which condition?",
+     "a": "ΔADB and ΔADC, by RHS",
+     "o": [
+      "ΔADB and ΔADC, by RHS",
+      "ΔADB and ΔADC, by AAA",
+      "ΔABC and ΔADC, by SSS",
+      "ΔABD and ΔACB, by SAS"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that a triangle with AB = AC cannot have ∠B = 90°.",
+     "a": "Since AB = AC, ∠B = ∠C. If ∠B = 90° then ∠C = 90°, and ∠B + ∠C = 180° already, leaving nothing for ∠A. The angles of a triangle must add up to 180° with ∠A greater than 0, so it cannot exist.",
+     "s": [
+      [
+       "Uses ∠B = ∠C",
+       1
+      ],
+      [
+       "Adds 90° + 90° = 180°",
+       1
+      ],
+      [
+       "Concludes no angle is left for ∠A",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up a problem about an isosceles triangle ABC with AB = AC whose answer is that each base angle is 75°. Give the problem and its solution.",
+     "a": "Example: In ΔABC, AB = AC and ∠A = 30°. Find ∠B and ∠C. Solution: (180° - 30°)/2 = 75°.",
+     "s": [
+      [
+       "Writes a valid problem with AB = AC and a given angle",
+       1
+      ],
+      [
+       "Chooses ∠A = 30° or an equivalent",
+       1
+      ],
+      [
+       "Solves with (180° - a)/2 = 75°",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "ΔPQR is isosceles with PQ = PR and ∠P = 56°. PS is drawn perpendicular to QR. (a) Name the condition that gives ΔPSQ ≅ ΔPSR and the three equal parts. (b) What does this say about ∠Q and ∠R? (c) Find ∠Q and ∠R. (d) Find ∠QPS and check the angles of ΔPSQ add up to 180°.",
+     "a": "(a) RHS: PQ = PR, ∠PSQ = ∠PSR = 90° and PS common. (b) ∠Q = ∠R. (c) ∠Q = ∠R = (180° - 56°)/2 = 62°. (d) ∠QPS = 28° (corresponding to ∠RPS, half of 56°), and 28° + 62° + 90° = 180°.",
+     "s": [
+      [
+       "Part (a): RHS with three equal parts",
+       1
+      ],
+      [
+       "Part (b): ∠Q = ∠R",
+       1
+      ],
+      [
+       "Part (c): 62° each",
+       1
+      ],
+      [
+       "Part (d): 28° and the check to 180°",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "For an equilateral triangle ABC: (a) Why is ∠B = ∠C? (b) Why is ∠A = ∠C? (c) Find each angle. (d) Can an equilateral triangle have an angle of 90°? Justify.",
+     "a": "(a) AB = AC. (b) AB = BC. (c) 3 x angle = 180°, so 60° each. (d) No. All angles are equal, so one 90° angle would make all 90° and the sum 270°.",
+     "s": [
+      [
+       "Part (a): AB = AC gives ∠B = ∠C",
+       1
+      ],
+      [
+       "Part (b): AB = BC gives ∠A = ∠C",
+       1
+      ],
+      [
+       "Part (c): 60°",
+       1
+      ],
+      [
+       "Part (d): no, sum would be 270°",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "An engineer compares three roof trusses, each an isosceles triangle with two equal rafters. The apex angle (between the rafters) is 50° for truss 1, 90° for truss 2 and 20° for truss 3. To keep the sideways push on the walls low, each base angle must be at least 60°. The trusses cost ₹40,000, ₹30,000 and ₹55,000, and the budget is ₹45,000.\n(a) Find the base angle of each truss. (b) Which trusses meet the 60° rule? (c) What is the largest apex angle that still meets the rule, and what kind of triangle has it? (d) Which truss should be chosen? Decide using the rule, the costs and the budget.",
+     "a": "(a) 65°, 45° and 80°. (b) Trusses 1 and 3. (c) Base angle at least 60° means (180° - apex)/2 is at least 60°, so the apex is at most 60°; at exactly 60° all three angles are 60°, an equilateral triangle. (d) Truss 1 meets the rule at ₹40,000, within the budget; truss 3 is ₹10,000 over it; choose truss 1.",
+     "s": [
+      [
+       "Part (a): 65°, 45°, 80°",
+       1
+      ],
+      [
+       "Part (b): trusses 1 and 3",
+       1
+      ],
+      [
+       "Part (c): apex at most 60°, equilateral at the limit",
+       1
+      ],
+      [
+       "Part (d): truss 1, citing rule, cost and budget",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rangoli group makes flower patterns from paper equilateral triangles of side 15 cm. Each flower uses triangles that meet at one centre point and fill the full turn of 360°. They need 18 flowers. Readymade triangles cost ₹4 each. One sheet costing ₹25 can be cut into 8 such triangles by the students.\n(a) What is the angle of each triangle at the centre? (b) How many triangles meet at the centre of one flower? (c) How many triangles are needed in all, and what do readymade ones cost? (d) What do sheets cost, and which way should the group choose? Decide.",
+     "a": "(a) 60°. (b) 360° / 60° = 6. (c) 18 x 6 = 108 triangles; 108 x 4 = ₹432. (d) 108/8 = 13.5, so 14 sheets cost 14 x 25 = ₹350, which is ₹82 less; cutting sheets is cheaper, though readymade pieces save time and give neater triangles. Either choice is fine if the reason uses these costs.",
+     "s": [
+      [
+       "Part (a): 60°",
+       1
+      ],
+      [
+       "Part (b): 6 triangles",
+       1
+      ],
+      [
+       "Part (c): 108 triangles and ₹432",
+       1
+      ],
+      [
+       "Part (d): 14 sheets, ₹350, and a reasoned choice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.7",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair of angles can be used as equal parts of two triangles that meet at a point O where two lines cross?",
+     "a": "Vertically opposite angles at O",
+     "o": [
+      "Vertically opposite angles at O",
+      "Adjacent angles at O",
+      "Angles that add up to 180° at O",
+      "Angles at O and an angle elsewhere"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When AB ∥ CD and a transversal AD cuts them, which angles are equal?",
+     "a": "The alternate angles",
+     "o": [
+      "The alternate angles",
+      "The two angles on the same side of AD",
+      "The vertically opposite angles at the crossing",
+      "All the angles formed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "ΔPQS and ΔRQS lie on opposite sides of their shared side QS. In proving them congruent, the pair QS = QS is called:",
+     "a": "a common side",
+     "o": [
+      "a common side",
+      "a corresponding angle",
+      "a vertically opposite pair",
+      "an included angle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which is the correct order of steps when using congruence to show two parts equal?",
+     "a": "Find equal parts, match a condition, write the congruence, read off",
+     "o": [
+      "Find equal parts, match a condition, write the congruence, read off",
+      "Write the congruence, find equal parts, then match a condition",
+      "Match a condition, then measure all the sides and angles",
+      "Find the equal parts, then use AAA to show the congruence"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Lines AB and CD are parallel, and a crossbar AD cuts them. M is the midpoint of AD, and the line BC passes through M. Which reasoning proves ΔAMB ≅ ΔDMC?",
+     "a": "ASA: alternate angles at A and D, vertically opposite angles at M, and AM = DM",
+     "o": [
+      "ASA: alternate angles at A and D, vertically opposite angles at M, and AM = DM",
+      "SAS: AM = DM, MB = MC and the angle between them",
+      "SSS: all three pairs of sides are given equal",
+      "RHS: AD is perpendicular to both parallel lines"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "ΔABC and ΔABD share the side AB, with ∠CAB = ∠DAB and ∠CBA = ∠DBA. Which statement is justified?",
+     "a": "AC = AD, by ASA with the common side AB",
+     "o": [
+      "AC = AD, by ASA with the common side AB",
+      "AC = BD, by SAS with the common side AB",
+      "BC = AD, by ASA with the common side AB",
+      "Nothing follows, since only angles are given"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about using congruence.\nStatement 1: A side that belongs to both triangles can be used as a pair of equal sides.\nStatement 2: When two lines are parallel, alternate angles made by a transversal are equal.\nStatement 3: Vertically opposite angles are equal.\nWhich statements are correct?",
+     "a": "1, 2 and 3",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If AD and BC cross at O and AB ∥ CD, then ∠OAB = ∠ODC.\nReason (R): Vertically opposite angles at O are equal.",
+     "a": "Both A and R are true, but R is not the correct explanation of A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "AB ∥ CD and AB = CD, and BD is joined. (a) Name the three equal parts that give ΔABD ≅ ΔCDB and the condition. (b) What follows for AD and CB?",
+     "a": "(a) AB = CD, ∠ABD = ∠CDB (alternate angles) and BD common: SAS. (b) AD = CB, as corresponding sides.",
+     "s": [
+      [
+       "Part (a): the three equal parts and SAS",
+       1
+      ],
+      [
+       "Part (b): AD = CB",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "PQRS is a rectangle. (a) Which condition shows ΔPQS ≅ ΔRSQ? (b) Which angle equals ∠PSQ, and why?",
+     "a": "(a) SSS: PQ = RS, PS = RQ and QS common. (b) ∠RQS, as corresponding angles of congruent triangles.",
+     "s": [
+      [
+       "Part (a): SSS with common side QS",
+       1
+      ],
+      [
+       "Part (b): ∠RQS as corresponding angle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "AB bisects ∠CAD, and AC = AD. (a) Which condition shows ΔCAB ≅ ΔDAB? (b) What follows for BC and BD?",
+     "a": "(a) SAS: AC = AD, ∠CAB = ∠DAB (the included angle) and AB common. (b) BC = BD.",
+     "s": [
+      [
+       "Part (a): SAS with common AB",
+       1
+      ],
+      [
+       "Part (b): BC = BD",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ΔABC, AB = AC and D is the midpoint of BC. Show ΔABD ≅ ΔACD and name what it tells about ∠B and ∠C.",
+     "a": "AB = AC, BD = DC and AD common, so SSS gives ΔABD ≅ ΔACD. Hence ∠B = ∠C as corresponding angles.",
+     "s": [
+      [
+       "SSS with the three equal pairs",
+       1
+      ],
+      [
+       "Concludes ∠B = ∠C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "ΔETN ≅ ΔARY. (a) Name the side equal to EN and the angle equal to ∠N. (b) Write one other correct form of the congruence.",
+     "a": "(a) EN = AY and ∠N = ∠Y. (b) For example ΔTEN ≅ ΔRAY.",
+     "s": [
+      [
+       "Part (a): AY and ∠Y",
+       1
+      ],
+      [
+       "Part (b): a valid reordering of both names",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In ΔABC, AB = AC, and D is a point on BC with AD perpendicular to BC and BD = DC = 9 cm. (a) Which condition uses the right angle, and which parts are equal? (b) Which condition uses BD = DC and the right angle between BD and AD? (c) Which condition uses only sides? (d) Why is it useful that all three work, and which would you use if the right angle were not given?",
+     "a": "(a) RHS: hypotenuses AB = AC, ∠ADB = ∠ADC = 90° and side AD common. (b) SAS: BD = DC, ∠ADB = ∠ADC and AD common. (c) SSS: AB = AC, BD = DC and AD common. (d) Any one of them is enough, so a proof does not fail if one fact is missing; without the right angle, use SSS.",
+     "s": [
+      [
+       "Part (a): RHS with the equal parts",
+       1
+      ],
+      [
+       "Part (b): SAS with the equal parts",
+       1
+      ],
+      [
+       "Part (c): SSS with the equal parts",
+       1
+      ],
+      [
+       "Part (d): any one suffices and SSS needs no angle",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "PQ is common to ΔPQR and ΔPQS, with ∠PQR = ∠PQS and PR = PS. Show that ΔPQR ≅ ΔPQS cannot be concluded from this.",
+     "a": "The equal parts are the common side PQ, the angle at Q, and the sides PR = PS. The equal angle ∠PQR = ∠PQS is not between PQ and PR, so this is the SSA case. SSA does not guarantee congruence, so the triangles may differ.",
+     "s": [
+      [
+       "Lists the equal parts",
+       1
+      ],
+      [
+       "Notes the angle is not included, so SSA",
+       1
+      ],
+      [
+       "Concludes SSA does not guarantee congruence",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a short question about ΔPQR and ΔSTU, giving ∠Q = ∠T, QR = TU and ∠R = ∠U, whose answer is PQ = ST. Include the reasoning that answers it.",
+     "a": "Question: In ΔPQR and ΔSTU, ∠Q = ∠T, QR = TU and ∠R = ∠U. Show that PQ = ST. Answer: QR lies between ∠Q and ∠R, and TU between ∠T and ∠U, so ΔPQR ≅ ΔSTU by ASA. PQ and ST are corresponding sides, so PQ = ST.",
+     "s": [
+      [
+       "Gives a question with the three equal parts",
+       1
+      ],
+      [
+       "Names ASA with the included side QR = TU",
+       1
+      ],
+      [
+       "Concludes PQ = ST as corresponding sides",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Karan says: 'If two triangles share a common side and have one more pair of equal sides, they are congruent.' Is he right? Test with ΔABC and ΔABD where AB = 5 cm, AC = AD = 6 cm, BC = 4 cm and BD = 7 cm.",
+     "a": "No. AB is common and AC = AD, but BC = 4 cm and BD = 7 cm differ, so the triangles are not congruent. A third equal pair (or an included angle) is needed.",
+     "s": [
+      [
+       "Verdict: Karan is wrong",
+       1
+      ],
+      [
+       "Shows BC = 4 and BD = 7 are unequal",
+       1
+      ],
+      [
+       "Says a third pair is needed",
+       1
+      ]
+     ],
+     "rev": true,
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In ΔPQR, PQ = PR and S is the midpoint of QR, with ∠QPR = 64°. (a) Show ΔPQS ≅ ΔPRS. (b) Show ∠PSQ = 90°. (c) Find ∠QPS and ∠Q. (d) Check that ΔPQS's angles add up to 180°.",
+     "a": "(a) PQ = PR, QS = SR and PS common, so SSS. (b) ∠PSQ = ∠PSR and they add to 180°, so each is 90°. (c) ∠QPS = 32° and ∠Q = (180° - 64°)/2 = 58°. (d) 32° + 58° + 90° = 180°.",
+     "s": [
+      [
+       "Part (a): SSS",
+       2
+      ],
+      [
+       "Part (b): equal angles on a line, each 90°",
+       1
+      ],
+      [
+       "Part (c): 32° and 58°",
+       1
+      ],
+      [
+       "Part (d): sum is 180°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tile shop cuts square tiles ABCD along the diagonal AC into two triangular ledges. Each square tile costs ₹30. Readymade triangular ledges cost ₹18 each. A hostel needs 48 triangular ledges.\n(a) List the equal parts of ΔABC and ΔADC. (b) Write the congruence in two different ways. (c) In ΔABC, AB = BC and ∠B = 90°. Find ∠BAC. (d) Which option is cheaper for 48 ledges, and should the hostel take it? Decide using your earlier answers.",
+     "a": "(a) AB = AD, BC = DC and AC common. (b) ΔABC ≅ ΔADC and ΔABC ≅ ΔCDA. (c) The base angles are equal: (180° - 90°)/2 = 45°. (d) Cutting 24 tiles costs 24 x 30 = ₹720; readymade ledges cost 48 x 18 = ₹864. Cutting is ₹144 cheaper, and every pair is congruent by SSS.",
+     "s": [
+      [
+       "Part (a): AB = AD, BC = DC, AC common",
+       1
+      ],
+      [
+       "Part (b): two valid congruences",
+       1
+      ],
+      [
+       "Part (c): 45°",
+       1
+      ],
+      [
+       "Part (d): ₹720 versus ₹864 and a decision",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Meera wants the width of a river without crossing it. A tree P stands on the far bank. She stands at Q on her bank so that PQ is at right angles to the bank. She walks along the bank 40 m to R, then 40 m further to S, turns at right angles away from the river and walks until the flag at R and the tree P are in line, at point T. She finds ST = 65 m. A bridge would cost ₹35,000 per metre of width and the town has ₹20 lakh.\n(a) Name the three equal parts of ΔPQR and ΔTSR. (b) Write the congruence and name the condition. (c) What is PQ? (d) Can the town afford the bridge here? Decide.",
+     "a": "(a) QR = SR = 40 m, ∠Q = ∠S = 90°, ∠PRQ = ∠TRS (vertically opposite). (b) ΔPQR ≅ ΔTSR by ASA. (c) PQ = TS = 65 m. (d) Cost = 65 x 35,000 = ₹22,75,000, which is ₹2,75,000 more than ₹20 lakh, so not at this site.",
+     "s": [
+      [
+       "Part (a): the three equal parts",
+       1
+      ],
+      [
+       "Part (b): ASA",
+       1
+      ],
+      [
+       "Part (c): 65 m",
+       1
+      ],
+      [
+       "Part (d): ₹22,75,000 against ₹20,00,000",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

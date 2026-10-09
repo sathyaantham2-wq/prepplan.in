@@ -1,0 +1,2501 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "The Mathematics of Maybe: Introduction to Probability"
+ },
+ "source_code": "iemh107",
+ "concepts": [
+  {
+   "code": "C9M-7.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Nisha holds six cards, some purple and the rest green. She swaps green cards for purple ones one at a time, starting from none, until picking a purple card first stops being 'less likely' and becomes an even chance. How many purple cards does she then hold?",
+     "a": "3",
+     "o": [
+      "3",
+      "2",
+      "4",
+      "5"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The hockey captain of Sana's school says the chance of winning tomorrow's inter-school match is 0.6. Which reading of this is correct?",
+     "a": "Winning is more likely than not, with a 60% chance.",
+     "o": [
+      "Winning is more likely than not, with a 60% chance.",
+      "Winning is certain, since 0.6 is above the even-chance value 0.5.",
+      "Winning is an even chance, since 0.6 is close enough to 0.5.",
+      "The chance of winning is only 0.6%, so it is very unlikely."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four students report the chance of a thunderstorm tomorrow: Aman says 0.35, Bela says 35%, Chetan says 3.5 and Dia says 7/20. Which statement is correct?",
+     "a": "Chetan's value is impossible as a probability; the other three are the same.",
+     "o": [
+      "Chetan's value is impossible as a probability; the other three are the same.",
+      "Bela's value is invalid, because a percentage is not on the 0 to 1 scale.",
+      "Dia's value is invalid, because a fraction cannot be placed on the scale.",
+      "Aman's value is invalid, because a decimal below 0.5 means impossible."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rhea lists five events: P, a red sweet from a bag holding only red sweets; Q, a die showing 3; R, a number from 2 to 10 drawn from a pack of 52 cards (36 such cards); S, a die showing a number greater than 6; T, a coin showing heads. Which list puts them in increasing order of probability?",
+     "a": "S, Q, T, R, P",
+     "o": [
+      "S, Q, T, R, P",
+      "S, Q, R, T, P",
+      "Q, S, T, R, P",
+      "S, T, Q, R, P"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: A probability of 0.5 means an even chance, the same as a 50% chance.\nStatement 2: With 5 purple cards in a deck of six, picking a purple card is certain.\nStatement 3: A random experiment can be repeated, and each repetition may give a different result.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A probability of 0.9 for an event means that the event is certain to happen.\nReason (R): Probability 1 is the highest value on the probability scale.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A deck of six cards has 2 purple cards and 4 green cards. The probability of NOT picking a purple card is ___ (as a fraction in lowest terms).",
+     "a": "2/3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match the situations in Column I with the values in Column II.\nColumn I:\n1. Six cards, none purple: picking purple\n2. Six cards, 1 purple: picking purple\n3. Six cards, 3 purple: picking purple\n4. Six cards, 5 purple: picking purple\nColumn II:\na. even chance\nb. impossible\nc. less likely\nd. more likely",
+     "a": "1-b, 2-c, 3-a, 4-d",
+     "o": [
+      "1-b, 2-c, 3-a, 4-d",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-c, 2-b, 3-a, 4-d",
+      "1-b, 2-c, 3-d, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: Because the chance of the school winning the match is 0.75, the school is certain to win. Give a reason.",
+     "a": "False. Certain means probability 1; 0.75 means a 75% chance, so winning is only more likely than not and losing or drawing is still possible.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Says certain needs probability 1, while 0.75 only makes winning more likely than not",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Isha looks at the bright sun and says rain today is unlikely. Jai feels the heat and says rain may come later. (a) What kind of probability is each friend giving? (b) Why can both answers differ for the same event?",
+     "a": "(a) Each gives a subjective probability. (b) Each interprets the present weather conditions differently, so the same event gets different estimates.",
+     "s": [
+      [
+       "Part (a): names it subjective probability",
+       1
+      ],
+      [
+       "Part (b): different reading of the present conditions or evidence",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A deck of six cards has 2 purple and 4 green cards. (a) Write the probability of picking purple. (b) One green card is replaced by a purple card. Find the new probability and say what the chance is now called.",
+     "a": "(a) 2/6 = 1/3. (b) 3 purple of 6 gives 3/6 = 1/2, an even chance.",
+     "s": [
+      [
+       "Part (a): 1/3 from 2 of 6",
+       1
+      ],
+      [
+       "Part (b): 1/2 and named even chance",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Distinguish an impossible event from a less likely event, using a die. Give one example of each and its probability.",
+     "a": "An impossible event cannot occur at all: a number greater than 6 on a die, probability 0. A less likely event can occur but with small chance: rolling a 3 on a die, probability 1/6.",
+     "s": [
+      [
+       "Impossible event with example and probability 0",
+       1
+      ],
+      [
+       "Less likely event with example and probability 1/6, which is not zero",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two captains argue over how to decide who bats first: one wants a coin toss, the other wants the umpire to guess. Using the idea of randomness, give two reasons why the toss is the fair method.",
+     "a": "Heads and tails are equally likely, so neither side has an advantage; and nobody can predict or control which one will fall, so the result is not influenced by anyone.",
+     "s": [
+      [
+       "Both outcomes equally likely",
+       1
+      ],
+      [
+       "Result cannot be predicted or controlled",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Divya says: 'The monthly lucky draw at assembly is a random experiment, even though we know exactly which students could be picked.' Is she right? Justify with the idea of randomness.",
+     "a": "Yes. In a random experiment all possible outcomes (every student's name) can be known, but which one will be drawn cannot be predicted, and each name has an equal chance. So the draw is random.",
+     "s": [
+      [
+       "Verdict: Yes, she is right",
+       1
+      ],
+      [
+       "Possible outcomes are known but the actual result is unpredictable",
+       1
+      ],
+      [
+       "Each student has an equal chance, so the selection is random",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no deck of six cards can give a probability of exactly 0.4 for picking a purple card. Which two probabilities are nearest to 0.4 and what are they called?",
+     "a": "For k purple cards, k/6 = 0.4 gives k = 2.4, which is not a whole number of cards. So 0.4 is impossible. The nearest are 2/6 = 1/3 (less likely) and 3/6 = 1/2 (even chance).",
+     "s": [
+      [
+       "Sets k/6 = 0.4 and finds k = 2.4",
+       1
+      ],
+      [
+       "Concludes a whole number of cards cannot give it",
+       1
+      ],
+      [
+       "Names nearest values 1/3 and 1/2 with their labels",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write one situation of your own (not a die, coin or deck of cards) whose probability is 0 and one whose probability is 1. Say why each is placed there.",
+     "a": "Any consistent pair, for example: a student passing an examination without writing it has probability 0, since it cannot happen; the sun setting this evening has probability 1, since it is certain.",
+     "s": [
+      [
+       "Gives a valid situation with probability 0",
+       1
+      ],
+      [
+       "Gives a valid situation with probability 1",
+       1
+      ],
+      [
+       "Justifies each placement on the scale",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A deck has six cards and k of them are purple (k = 0, 1, 2, 3, 4, 5, 6). (a) Write the probability of picking purple for each k in lowest terms. (b) Label each as impossible, less likely, even chance, more likely or certain. (c) For how many values of k is picking purple more likely than not? (d) What is the least k for which the probability exceeds 0.7? (e) By how much does the probability change when one green card is replaced by a purple card?",
+     "a": "(a) 0, 1/6, 1/3, 1/2, 2/3, 5/6, 1. (b) impossible, less likely, less likely, even chance, more likely, more likely, certain. (c) For k = 4, 5 and 6 the probability exceeds 1/2, so 3 values, if certain is counted. (d) 4/6 is about 0.667 and 5/6 is about 0.833, so k = 5. (e) It rises by 1/6, about 0.167, each time.",
+     "s": [
+      [
+       "Part (a): seven probabilities in lowest terms",
+       1
+      ],
+      [
+       "Part (b): labels matched to the values",
+       1
+      ],
+      [
+       "Part (c): counts k = 4, 5, 6",
+       1
+      ],
+      [
+       "Part (d): k = 5 with the 0.667 versus 0.833 check",
+       1
+      ],
+      [
+       "Part (e): a rise of 1/6 each swap",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A hostel mess box holds 40 laddus: 25 besan, 10 coconut and 5 motichoor. One laddu is picked at random. (a) Find the probability of each flavour. (b) Label each probability in words. (c) Find the probability that the laddu is besan or coconut. (d) Find the probability that it is a rose-flavoured laddu and say what this tells you. (e) Arrange besan, coconut, motichoor and rose in increasing order of probability.",
+     "a": "(a) besan 25/40 = 0.625, coconut 10/40 = 0.25, motichoor 5/40 = 0.125. (b) besan more likely, coconut less likely, motichoor less likely. (c) 35/40 = 0.875. (d) 0, so it is impossible. (e) rose (0), motichoor (0.125), coconut (0.25), besan (0.625).",
+     "s": [
+      [
+       "Part (a): three probabilities from counts over 40",
+       1
+      ],
+      [
+       "Part (b): correct word labels",
+       1
+      ],
+      [
+       "Part (c): 35/40 = 0.875 by counting favourable laddus",
+       1
+      ],
+      [
+       "Part (d): 0 and impossible, since no such laddu",
+       1
+      ],
+      [
+       "Part (e): correct increasing order",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school of 800 students draws one slip every Monday to choose who performs at assembly; every student has one slip in the box. Class IX-B has 40 students. The headmaster is thinking of adding a second slip for each of the 8 house captains, so the box would then hold 808 slips. (a) Find the probability that a particular IX-B student is chosen in an ordinary draw, and the probability that the chosen student is from IX-B. (b) Where does the second value lie on the probability scale, and what is its label? (c) After the change, find the probability that a particular house captain is chosen and a particular non-captain is chosen. (d) Should the headmaster make the change? Support your answer with the two probabilities and the idea of a fair draw.",
+     "a": "(a) 1/800 = 0.00125; 40/800 = 0.05. (b) 0.05 is close to 0, so it is less likely. (c) Captain 2/808, about 0.00248; non-captain 1/808, about 0.00124. (d) Either decision is accepted if justified: the change doubles a captain's chance, so each student no longer has an equal chance and the draw is not a fair lucky draw; or it can be kept as a deliberate reward that is announced openly while the other students' chance falls only from 0.00125 to 0.00124.",
+     "s": [
+      [
+       "Part (a): 1/800 and 40/800 computed",
+       1
+      ],
+      [
+       "Part (b): 0.05 near 0, less likely",
+       1
+      ],
+      [
+       "Part (c): 2/808 and 1/808 compared",
+       1
+      ],
+      [
+       "Part (d): reasoned decision using unequal chances and fairness",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A cricket club plays three knock-out matches, where a draw cannot occur. The coach estimates the chances of winning as 0.8 against the Rovers, 0.5 against the Hawks and 0.35 against the Tigers. The star batter is injured and can be rested in only one of the three matches. (a) Label each match's chance of winning in words. (b) Express the chance of losing each match as a percentage. (c) In which match is the club's win probability highest and by how much does it exceed the lowest? (d) The coach must decide in which match to rest the star batter. Argue for one choice, using the numbers, and name the risk of your choice.",
+     "a": "(a) Rovers more likely, Hawks even chance, Tigers less likely. (b) Lose: 20%, 50%, 65%. (c) Rovers; 0.8 - 0.35 = 0.45. (d) Either is accepted if justified: resting the batter against the Rovers puts him out of the match the club is most likely to win anyway, but it risks turning a safe win into a closer match; resting him against the Tigers loses little because winning is already less likely, but then the club may lose a match it could have won with its best batter.",
+     "s": [
+      [
+       "Part (a): three correct labels",
+       1
+      ],
+      [
+       "Part (b): 20%, 50%, 65% from knock-out wins and losses",
+       1
+      ],
+      [
+       "Part (c): Rovers and a gap of 0.45",
+       1
+      ],
+      [
+       "Part (d): reasoned choice with the probabilities and a stated risk",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A die is rolled 80 times and shows a 5 on 17 of the rolls. Which value is the experimental probability of rolling a 5?",
+     "a": "17/80",
+     "o": [
+      "17/80",
+      "17/63",
+      "1/6",
+      "80/17"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A canteen helper samples 40 sweets from a bag of 800 sweets and finds 6 yellow ones. Using the sample, about how many yellow sweets are likely in the bag?",
+     "a": "120",
+     "o": [
+      "120",
+      "240",
+      "133",
+      "6"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sports teacher wants a better estimate of the favourite fruit of all 1500 students than her survey of 50 students of one class. Which change improves it most?",
+     "a": "Ask 100 students taken from different classes and grades.",
+     "o": [
+      "Ask 100 students taken from different classes and grades.",
+      "Ask 100 more students, all from the same class.",
+      "Ask the same 50 students once again.",
+      "Ask 50 members of the school cricket team."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A paper cup is tossed 100 times and lands on its bottom 24 times, on its top 9 times and on its side 67 times. What is the best estimate of the probability that it lands on its side?",
+     "a": "0.67",
+     "o": [
+      "0.67",
+      "1/3",
+      "0.09",
+      "0.24"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: Relative frequency of an event is the number of times it occurred divided by the number of trials.\nStatement 2: In 12 rolls of a fair die, the experimental probability of a 3 must equal 1/6.\nStatement 3: A larger and more representative sample gives a more reliable estimate for the population.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Experimental probability is found from the data of actual trials, without assuming that outcomes are equally likely.\nReason (R): The experimental probability of an event is always equal to its theoretical probability.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a sample of 60 students, 18 prefer cricket. Using this sample for a school of 1500 students, the estimated number who prefer cricket is ___.",
+     "a": "450"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match the situations in Column I with the values in Column II.\nColumn I:\n1. 18 of a 50-student sample prefer Science Club; school of 1200\n2. 13 of 50 prefer Arts Club; school of 1200\n3. 12 of 50 prefer Sports Club; school of 1200\n4. 7 of 50 prefer Debate Club; school of 1200\nColumn II:\na. 288 students\nb. 432 students\nc. 168 students\nd. 312 students",
+     "a": "1-b, 2-d, 3-a, 4-c",
+     "o": [
+      "1-b, 2-d, 3-a, 4-c",
+      "1-b, 2-a, 3-d, 4-c",
+      "1-d, 2-b, 3-a, 4-c",
+      "1-b, 2-d, 3-c, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: A fair die rolled 12 times shows a 3 on 3 rolls. The experimental probability of 1/4 differs from 1/6, but this alone does not mean the die is unfair. Give a reason.",
+     "a": "True. With few trials the experimental probability can differ from the theoretical one even for a fair die; the two come closer as the number of trials increases.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Says small numbers of trials can differ from theory, and the gap shrinks with more trials",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A sample of 25 sweets from a large bag has 9 red, 6 green, 5 yellow and 5 blue. (a) Find the probability that a sweet picked from the sample is green. (b) The whole bag has 500 sweets. Estimate how many are blue.",
+     "a": "(a) 6/25 = 0.24. (b) Blue is 5/25 = 0.2 of the sample, so 0.2 x 500 = 100 sweets.",
+     "s": [
+      [
+       "Part (a): 6/25 = 0.24",
+       1
+      ],
+      [
+       "Part (b): 0.2 x 500 = 100",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A die is rolled 20 times and shows a 6 on 6 rolls. (a) Find the experimental and the theoretical probability of a 6. (b) Which of the two is expected to move closer to the other if the die is rolled 6000 times, and why?",
+     "a": "(a) Experimental 6/20 = 0.3; theoretical 1/6, about 0.167. (b) The experimental probability moves towards the theoretical one, by the Law of Large Numbers, because more trials reduce chance variation.",
+     "s": [
+      [
+       "Part (a): 0.3 and 1/6 both found",
+       1
+      ],
+      [
+       "Part (b): experimental moves towards theoretical, Law of Large Numbers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Out of 80 students, 28 like hockey. (a) State the frequency and the relative frequency of liking hockey. (b) Which of the two can be used as a probability estimate, and why?",
+     "a": "(a) Frequency 28; relative frequency 28/80 = 0.35. (b) The relative frequency, because probability is a fraction of the trials between 0 and 1, while 28 depends on how many students were asked.",
+     "s": [
+      [
+       "Part (a): 28 and 0.35",
+       1
+      ],
+      [
+       "Part (b): relative frequency, since it is a fraction of the total on the 0 to 1 scale",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate experimental probability from theoretical probability using a paper cup tossed in the air and a fair die. Which can be used for each, and why?",
+     "a": "The paper cup's landing positions (bottom, top, side) are not known to be equally likely, so only experimental probability from many tosses can be used. A fair die has six equally likely faces, so theoretical probability 1/6 per face can be found without any experiment.",
+     "s": [
+      [
+       "Cup: outcomes not equally likely, so use experimental data",
+       1
+      ],
+      [
+       "Fair die: equally likely outcomes, so theory without an experiment",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Ravi tossed a coin 10 times and got 7 heads. He says: 'The probability of heads is 0.7, so the coin must be biased.' Is Ravi right?",
+     "a": "No. 7/10 = 0.7 is only the experimental probability of heads from 10 tosses. With few trials it can differ much from the theoretical value even for a fair coin, so 10 tosses are not enough to call the coin biased; more tosses are needed.",
+     "s": [
+      [
+       "Computes 7/10 = 0.7 as the experimental value",
+       1
+      ],
+      [
+       "Says a small number of trials can differ from 1/2 even for a fair coin",
+       1
+      ],
+      [
+       "Concludes the claim of bias is not supported and more tosses are needed",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that a sample of 30 students cannot give an experimental probability of exactly 0.45 for liking mango. Which two values are nearest to 0.45, to three decimal places?",
+     "a": "If x students like mango, x/30 = 0.45 gives x = 13.5, which is not a whole number of students. So 0.45 is impossible with 30 students. The nearest values are 13/30 = 0.433 and 14/30 = 0.467.",
+     "s": [
+      [
+       "Sets x/30 = 0.45 and finds x = 13.5",
+       1
+      ],
+      [
+       "Concludes a whole number of students cannot give it",
+       1
+      ],
+      [
+       "Gives 0.433 and 0.467",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A bus depot records how far 800 tyres ran before replacement: 40 tyres ran less than 5000 km, 168 ran 5000 to 10000 km, 296 ran 10001 to 15000 km and 296 ran more than 15000 km. Find the probability that a randomly chosen tyre ran (i) less than 5000 km, (ii) 5000 to 15000 km, (iii) more than 15000 km.",
+     "a": "(i) 40/800 = 0.05. (ii) (168 + 296)/800 = 464/800 = 0.58. (iii) 296/800 = 0.37.",
+     "s": [
+      [
+       "(i) 0.05",
+       1
+      ],
+      [
+       "(ii) 464/800 = 0.58 from the two middle groups",
+       1
+      ],
+      [
+       "(iii) 0.37",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A teacher surveys 60 students of one class for the favourite fruit: 27 like mango, 15 apples, 12 bananas and 6 grapes. The school has 1800 students. (a) Find the probability for each fruit. (b) Estimate how many of each fruit the school should buy. (c) Check that the four estimates account for all 1800 students. (d) Give one weakness of the sample. (e) Say how to make the estimate more reliable.",
+     "a": "(a) 0.45, 0.25, 0.20, 0.10. (b) 810 mangoes, 450 apples, 360 bananas, 180 grapes. (c) 810 + 450 + 360 + 180 = 1800. (d) Only one class was asked, so it may not represent every grade. (e) Ask more students, drawn from different classes and grades.",
+     "s": [
+      [
+       "Part (a): four relative frequencies",
+       1
+      ],
+      [
+       "Part (b): four estimates from 1800",
+       1
+      ],
+      [
+       "Part (c): the sum 1800 checked",
+       1
+      ],
+      [
+       "Part (d): one-class sample not representative",
+       1
+      ],
+      [
+       "Part (e): larger and more representative sample",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A paper cup is tossed 100 times: it lands on its bottom 38 times, on its top 14 times and on its side 48 times. (a) Assign the experimental probabilities. (b) Show that they are consistent with the scale. (c) Explain why 1/3 for each position cannot be justified. (d) Predict the number of side landings in 2000 tosses. (e) Say how reliable that prediction is and why.",
+     "a": "(a) 0.38, 0.14, 0.48. (b) They lie between 0 and 1 and add to 1. (c) The three positions are not shown to be equally likely, so theory by equal likelihood does not apply. (d) 0.48 x 2000 = 960. (e) It is only an estimate: the 100 tosses are few, and with many more tosses the relative frequency should settle nearer the true value.",
+     "s": [
+      [
+       "Part (a): three experimental probabilities",
+       1
+      ],
+      [
+       "Part (b): all within 0 to 1 and summing to 1",
+       1
+      ],
+      [
+       "Part (c): positions not equally likely",
+       1
+      ],
+      [
+       "Part (d): 960 side landings",
+       1
+      ],
+      [
+       "Part (e): an estimate that improves with more trials",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school canteen manager must decide how many mango drinks to stock for 1200 students. Survey 1: she asks 30 members of the football squad and 21 choose mango. Survey 2: her assistant asks 90 students, taken from every class, and 36 choose mango. (a) Find the experimental probability of choosing mango in each survey. (b) Use each to estimate the number of mango drinks for the school. (c) Which survey is the more trustworthy, and give two reasons. (d) She can order the estimate from Survey 2 and risk a shortage, or order the larger estimate and risk waste. Which should she order and why?",
+     "a": "(a) 21/30 = 0.7 and 36/90 = 0.4. (b) 0.7 x 1200 = 840 and 0.4 x 1200 = 480. (c) Survey 2: it is larger and covers every class, whereas Survey 1 asks only footballers, who may not represent all students. (d) Either is accepted if reasoned: ordering about 480 is supported by the better sample but may run short; ordering above that avoids a shortage but risks unsold drinks, as 840 rests on a biased sample.",
+     "s": [
+      [
+       "Part (a): 0.7 and 0.4",
+       1
+      ],
+      [
+       "Part (b): 840 and 480",
+       1
+      ],
+      [
+       "Part (c): larger and more representative sample chosen with two reasons",
+       1
+      ],
+      [
+       "Part (d): reasoned order quantity naming the risk",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Meera rolls a die 60 times and records how often each face shows: 1 appears 7 times, 2 appears 12 times, 3 appears 9 times, 4 appears 14 times, 5 appears 8 times and 6 appears 10 times. (a) Find the experimental probability of a 4. (b) How many times would each face show if the experimental probability matched the theoretical one, and which faces fell below that number? (c) By how much does the experimental probability of a 4 exceed the theoretical one? (d) Meera concludes the die favours 4 and wants to throw it away. Her friend says to roll it 600 times first. Whose advice would you follow and why?",
+     "a": "(a) 14/60 = 7/30, about 0.233. (b) 60 x 1/6 = 10; the faces 1, 3 and 5 fell below it (7, 9, 8). (c) 0.233 - 0.167 = about 0.067. (d) Either is accepted if reasoned: the friend is supported since 60 rolls is a small number and a gap of 4 rolls can be chance; Meera's worry is also fair, since a 4 appearing 14 times is the highest count, but only more rolls can show whether it persists.",
+     "s": [
+      [
+       "Part (a): 7/30 or about 0.233",
+       1
+      ],
+      [
+       "Part (b): 10 each and faces 1, 3, 5 below",
+       1
+      ],
+      [
+       "Part (c): difference of about 0.067",
+       1
+      ],
+      [
+       "Part (d): reasoned choice using the effect of small trials",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A letter is picked at random from the word STATISTICS. What is the probability that it is an S or a T?",
+     "a": "3/5",
+     "o": [
+      "3/5",
+      "1/3",
+      "1/5",
+      "3/10"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The arrow of a spinner stops at random on one of 12 equal sectors numbered 1 to 12. What is the probability that it stops on a prime number?",
+     "a": "5/12",
+     "o": [
+      "5/12",
+      "7/12",
+      "1/3",
+      "1/2"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Priya says: 'A car either starts or does not start, so the probability that it starts is 1/2.' What is wrong with her reasoning?",
+     "a": "The two outcomes need not be equally likely, so favourable over possible does not apply.",
+     "o": [
+      "The two outcomes need not be equally likely, so favourable over possible does not apply.",
+      "A car is a machine, so probability cannot be used for it at all.",
+      "The sample space has a third outcome, 'starts halfway'.",
+      "The probability of starting must be 0.99 for every car."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bag has 4 red, 3 blue and 5 green balls. One ball is picked at random. What is the probability that it is not red?",
+     "a": "2/3",
+     "o": [
+      "2/3",
+      "1/3",
+      "1/2",
+      "8/4"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Fifteen identical cards are numbered 1 to 15 and one is drawn at random. What is the probability that its number is a multiple of 4?",
+     "a": "1/5",
+     "o": [
+      "1/5",
+      "1/4",
+      "4/15",
+      "3/4"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: Theoretical probability is found by repeating the experiment many times and counting the successes.\nStatement 2: For a fair die, the probability of an even number is 3/6 = 1/2.\nStatement 3: In a bag of 3 red and 7 blue marbles, the probability of a red marble is 3/10.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The probability of picking the letter B from the word PROBABILITY is 2/11.\nReason (R): The word PROBABILITY has 11 letters.",
+     "a": "A and R are both true, but R is not the correct explanation of A.",
+     "o": [
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A spinner has 8 equal sectors numbered 1 to 8. The probability that the arrow stops on a number greater than 2 is ___ (in lowest terms).",
+     "a": "3/4"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: When a letter is picked at random from the word BANANA, the letter A is the most likely one. Give a reason.",
+     "a": "True. A appears 3 times in 6 letters, so P(A) = 3/6 = 1/2, which is more than P(N) = 2/6 and P(B) = 1/6.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Compares 3/6 with 2/6 and 1/6 for the other letters",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A letter is chosen at random from the word PARALLEL. (a) Find the probability that it is the letter L. (b) Find the probability that it is a vowel. Which is more likely?",
+     "a": "(a) L appears 3 times in 8 letters: 3/8. (b) The vowels A, A, E are 3 of 8: 3/8. The two are equally likely.",
+     "s": [
+      [
+       "Part (a): 3/8",
+       1
+      ],
+      [
+       "Part (b): 3/8 and the conclusion that they are equally likely",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Twenty identical tickets are numbered 1 to 20. (a) Find the probability that a ticket drawn at random is a multiple of 5. (b) The tickets 5, 10, 15 and 20 are removed. Find the new probability of drawing a multiple of 5 and name the event.",
+     "a": "(a) 4/20 = 1/5. (b) No multiple of 5 remains, so the probability is 0 and the event is impossible.",
+     "s": [
+      [
+       "Part (a): 4/20 = 1/5",
+       1
+      ],
+      [
+       "Part (b): 0, impossible event",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the rule 'favourable outcomes over possible outcomes' needs equally likely outcomes. Give an example in which a bag has two colours but the probability of one colour is not 1/2.",
+     "a": "The rule counts each outcome as one equal share of the chances, which is true only when outcomes are equally likely. A bag with 3 red and 7 blue marbles has two colours, but P(red) = 3/10, not 1/2, because the marbles of the two colours are not equal in number.",
+     "s": [
+      [
+       "Rule works only when all outcomes are equally likely",
+       1
+      ],
+      [
+       "Example such as 3 red and 7 blue with P(red) = 3/10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For a spinner with 12 equal sectors numbered 1 to 12, find (i) the probability that the number is less than 13 and (ii) the probability that it is greater than 12. State what each result tells you about the event.",
+     "a": "(i) 12/12 = 1, so the event is certain. (ii) 0/12 = 0, so the event is impossible.",
+     "s": [
+      [
+       "Part (i): 1, certain",
+       1
+      ],
+      [
+       "Part (ii): 0, impossible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Karan says: 'A bag of 5 red and 5 blue balls gives P(red) = 1/2, and a bag of 5 red and 10 blue balls also gives P(red) = 1/2, since there are two colours.' Is he right?",
+     "a": "He is partly right. In the first bag, 5 of 10 balls are red, so P(red) = 1/2. In the second bag, 5 of 15 are red, so P(red) = 1/3: two colours do not make the outcomes equally likely.",
+     "s": [
+      [
+       "First bag correct: 5/10 = 1/2",
+       1
+      ],
+      [
+       "Second bag wrong: 5/15 = 1/3",
+       1
+      ],
+      [
+       "Gives the reason that the number of colours is not what decides it",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that a bag of 12 identical marbles cannot have a probability of exactly 5/8 for picking a red marble. What are the nearest probabilities that a bag of 12 marbles can give on either side of 5/8?",
+     "a": "If r marbles are red, r/12 = 5/8 gives r = 7.5, which is not a whole number. The nearest are 7/12 (about 0.583) and 8/12 = 2/3 (about 0.667).",
+     "s": [
+      [
+       "Sets r/12 = 5/8 and finds r = 7.5",
+       1
+      ],
+      [
+       "Concludes a whole number of marbles cannot give it",
+       1
+      ],
+      [
+       "Gives 7/12 and 2/3 as the nearest possible values",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A bag holds 20 marbles, each red, blue or green. Give a possible composition so that the probability of red is 3/10 and the probability of blue is 1/2. Find the probability of green.",
+     "a": "Red: 3/10 x 20 = 6, blue: 1/2 x 20 = 10, so green = 20 - 6 - 10 = 4, and P(green) = 4/20 = 1/5.",
+     "s": [
+      [
+       "Red 6 and blue 10 marbles",
+       1
+      ],
+      [
+       "Green 4 marbles from the remainder",
+       1
+      ],
+      [
+       "P(green) = 1/5",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two fair dice are rolled together, giving 36 equally likely outcomes. (a) Find the probability that the sum is 9. (b) Find the probability that the sum is a prime number. (c) Find the probability that the sum is 13. (d) Find the probability that both dice show the same number. (e) Which is more likely, a prime sum or a double? Justify with the values.",
+     "a": "(a) 4/36 = 1/9. (b) Sums 2, 3, 5, 7, 11 occur in 1 + 2 + 4 + 6 + 2 = 15 ways: 15/36 = 5/12. (c) 0, impossible. (d) 6/36 = 1/6. (e) A prime sum is more likely, since 15/36 is larger than 6/36.",
+     "s": [
+      [
+       "Part (a): 4 outcomes of 36",
+       1
+      ],
+      [
+       "Part (b): 15 outcomes giving 5/12",
+       1
+      ],
+      [
+       "Part (c): 0",
+       1
+      ],
+      [
+       "Part (d): 6/36 = 1/6",
+       1
+      ],
+      [
+       "Part (e): comparison 15/36 versus 6/36",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A box holds 36 tickets numbered 1 to 36. One is drawn at random. (a) Find the probability that the number is divisible by 6. (b) Find the probability that it is a perfect square. (c) Find the probability that it is a prime number. (d) Which is more likely, a perfect square or a prime? (e) How many extra tickets, each marked with a perfect square, must be added to make the probability of a perfect square 1/3?",
+     "a": "(a) 6/36 = 1/6. (b) 1, 4, 9, 16, 25, 36 give 6/36 = 1/6. (c) 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 give 11/36. (d) A prime is more likely. (e) (6 + x)/(36 + x) = 1/3 gives x = 9, and 15/45 = 1/3.",
+     "s": [
+      [
+       "Part (a): 6/36 = 1/6",
+       1
+      ],
+      [
+       "Part (b): 6 squares, 1/6",
+       1
+      ],
+      [
+       "Part (c): 11 primes, 11/36",
+       1
+      ],
+      [
+       "Part (d): prime more likely",
+       1
+      ],
+      [
+       "Part (e): equation solved to x = 9 and checked",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a village fair a wheel has 20 equal sectors: 8 red, 6 blue, 4 yellow and 2 green. The stall owner wants to name a colour, or a pair of colours, as the 'prize' colour. A player wins if the arrow stops on a prize colour. He would like the chance of winning to be as near as possible to 1/4. (a) Find the probability of stopping on each colour. (b) What is the probability of not stopping on red? (c) Which single colours or pair of colours give a winning chance nearest to 1/4, and how far is each from 1/4? (d) The owner can choose between two options from part (c). Which should he choose, and why?",
+     "a": "(a) Red 8/20 = 0.4, blue 6/20 = 0.3, yellow 4/20 = 0.2, green 2/20 = 0.1. (b) 12/20 = 0.6. (c) Blue (0.3) and yellow (0.2) are each 0.05 from 0.25; yellow + green is also 0.3, the same distance. (d) Either is accepted if reasoned: yellow gives a 0.20 chance, which suits the stall owner as fewer players win; blue gives 0.30, which attracts more players but pays out more often.",
+     "s": [
+      [
+       "Part (a): four probabilities from 20 sectors",
+       1
+      ],
+      [
+       "Part (b): 12/20 = 0.6",
+       1
+      ],
+      [
+       "Part (c): finds 0.3 and 0.2 both 0.05 from 0.25",
+       1
+      ],
+      [
+       "Part (d): reasoned choice that weighs fewer wins against more attraction",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A teacher puts 11 cards in a box, one letter of EXAMINATION on each card, and draws one at random. Two friends play a game: Ravi bets that the letter is a vowel and Sia bets that it is a consonant. (a) Find the probability of drawing an A. (b) Find the probability that the card is a vowel. (c) By how much does the vowel probability differ from the consonant probability? (d) The teacher wants a fair game, with both bets equally likely. She can remove one card or add one card. Choose one way, name the card, and show that it works.",
+     "a": "(a) A appears twice: 2/11. (b) The vowels E, A, I, A, I, O give 6/11. (c) Consonants are 5/11, so the difference is 1/11. (d) Either is accepted: remove one vowel card, leaving 5 vowels and 5 consonants of 10 (each 1/2), or add one consonant card, giving 6 and 6 of 12 (each 1/2).",
+     "s": [
+      [
+       "Part (a): 2/11",
+       1
+      ],
+      [
+       "Part (b): 6/11 counting E, A, I, A, I, O",
+       1
+      ],
+      [
+       "Part (c): 6/11 - 5/11 = 1/11",
+       1
+      ],
+      [
+       "Part (d): a valid fix named and shown to give 1/2 each",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A random integer is chosen from -5 to +5, both ends included. How many elements are in the sample space?",
+     "a": "11",
+     "o": [
+      "11",
+      "10",
+      "9",
+      "5"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A die is rolled and a coin is tossed together. How many outcomes are in the event 'the coin shows heads and the die shows an even number'?",
+     "a": "3",
+     "o": [
+      "3",
+      "6",
+      "2",
+      "9"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four coins are tossed and the number of tails is recorded. Which list is a correct sample space for this experiment?",
+     "a": "{0, 1, 2, 3, 4}",
+     "o": [
+      "{0, 1, 2, 3, 4}",
+      "{1, 2, 3, 4}",
+      "{0, 1, 2, 3}",
+      "{0, 1, 2, 3, 4, 5}"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two coins are tossed. Which set is the event 'exactly one head'?",
+     "a": "{HT, TH}",
+     "o": [
+      "{HT, TH}",
+      "{HH, HT, TH}",
+      "{HT}",
+      "{HH, TT}"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A farmer wants to record whether a day has no rain, drizzle, light rain or heavy rain. Which sample space is detailed enough, with no outcome repeated or left out?",
+     "a": "{No Rain, Drizzle, Light Rain, Heavy Rain}",
+     "o": [
+      "{No Rain, Drizzle, Light Rain, Heavy Rain}",
+      "{Rain, No Rain}",
+      "{Rain, Drizzle, Light Rain, Heavy Rain}",
+      "{Drizzle, Light Rain, Heavy Rain}"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: The number of elements in a sample space S is called its sample size n(S).\nStatement 2: An event is a subset of the sample space.\nStatement 3: When two coins are tossed, HT and TH are the same outcome, so S has 3 elements.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sample space for tossing two coins has four elements.\nReason (R): HT and TH are different outcomes because the coins are different and the order records which coin shows the head.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match the situations in Column I with the values in Column II.\nColumn I:\n1. A coin is tossed three times\n2. A die is rolled and a coin is tossed together\n3. One of 3 snacks and one of 2 drinks is chosen\n4. A random integer from -5 to +5 (both included)\nColumn II:\na. 6 elements\nb. 11 elements\nc. 12 elements\nd. 8 elements",
+     "a": "1-d, 2-c, 3-a, 4-b",
+     "o": [
+      "1-d, 2-c, 3-a, 4-b",
+      "1-d, 2-c, 3-b, 4-a",
+      "1-c, 2-d, 3-a, 4-b",
+      "1-a, 2-c, 3-d, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: When two coins are tossed, the sample space is {HH, HT, TT}, because HT and TH look the same. Give a reason or the correction.",
+     "a": "False. HT (first coin head, second tail) and TH (first tail, second head) are different outcomes, so S = {HH, HT, TH, TT} and n(S) = 4.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Corrects to four outcomes by listing HT and TH separately",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A die is rolled. (a) List the event A: 'the number is a prime number'. (b) Use n(A) and n(S) to find the probability of A.",
+     "a": "(a) A = {2, 3, 5}. (b) n(A) = 3 and n(S) = 6, so the probability is 3/6 = 1/2.",
+     "s": [
+      [
+       "Part (a): A = {2, 3, 5}",
+       1
+      ],
+      [
+       "Part (b): 3/6 = 1/2 from n(A) over n(S)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A coin is tossed and a card is drawn from six cards numbered 1 to 6. (a) How many elements does the sample space have? (b) List the event 'a tail together with an odd number'.",
+     "a": "(a) 2 x 6 = 12 elements, from H1 to H6 and T1 to T6. (b) {T1, T3, T5}.",
+     "s": [
+      [
+       "Part (a): 12 elements",
+       1
+      ],
+      [
+       "Part (b): {T1, T3, T5}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A weather office first uses S = {Rain, No Rain}. Later it wants to report drizzle, light rain and heavy rain separately. Why must the sample space change, and what is the new one?",
+     "a": "The first sample space is not detailed enough to tell the kinds of rain apart, so it must match the detail the question needs. The new one is {No Rain, Drizzle, Light Rain, Heavy Rain}, with 4 elements.",
+     "s": [
+      [
+       "Says the sample space must be detailed enough for the question asked",
+       1
+      ],
+      [
+       "Gives the four-element sample space",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate an outcome from an event, using the roll of a die as the example. Say how many elements each has in your example.",
+     "a": "An outcome is one possible result, such as 4, which is a single element of S. An event is a subset of S, such as 'an even number' = {2, 4, 6}, which has 3 elements.",
+     "s": [
+      [
+       "Outcome: a single result with an example and one element",
+       1
+      ],
+      [
+       "Event: a subset such as {2, 4, 6} with its size",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Kabir says: 'When two coins are tossed there are only three outcomes, two heads, one head and no head, so the probability of one head is 1/3.' Is he right?",
+     "a": "No. 'One head' is not a single outcome: it covers HT and TH, so the three groups are not equally likely. The sample space has four outcomes HH, HT, TH, TT, so P(one head) = 2/4 = 1/2.",
+     "s": [
+      [
+       "Verdict: Kabir is wrong",
+       1
+      ],
+      [
+       "Shows 'one head' contains two outcomes, HT and TH",
+       1
+      ],
+      [
+       "Uses four outcomes to get 2/4 = 1/2",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Two coins are tossed and the number of heads is recorded. Show that {1, 2} and {0, 1, 2, 3} both fail to be the sample space, and give the correct one.",
+     "a": "{1, 2} leaves out 0, which occurs for TT, so it does not include every outcome. {0, 1, 2, 3} contains 3, which cannot occur with only two coins. The correct sample space is {0, 1, 2}.",
+     "s": [
+      [
+       "{1, 2} omits 0 (TT)",
+       1
+      ],
+      [
+       "{0, 1, 2, 3} includes the impossible 3",
+       1
+      ],
+      [
+       "Correct sample space {0, 1, 2}",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write an experiment of your own with exactly 8 outcomes, list its sample space, and write an event with 3 elements from it.",
+     "a": "For example, tossing a coin three times: S = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}, and the event 'exactly two heads' = {HHT, HTH, THH}.",
+     "s": [
+      [
+       "Experiment with 8 outcomes",
+       1
+      ],
+      [
+       "Complete sample space listed once each",
+       1
+      ],
+      [
+       "A valid 3-element event",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Three coins are tossed together. (a) List the sample space. (b) List the event 'exactly two heads' and find its probability. (c) List the event 'at least two heads' and find its probability. (d) List the event 'the first coin shows heads and exactly two heads occur in all' and find its probability. (e) Which of the three events is the most likely, and by how many outcomes does it lead the least likely?",
+     "a": "(a) HHH, HHT, HTH, HTT, THH, THT, TTH, TTT (8). (b) {HHT, HTH, THH}: 3/8. (c) {HHH, HHT, HTH, THH}: 4/8 = 1/2. (d) {HHT, HTH}: 2/8 = 1/4. (e) 'At least two heads' is most likely; it has 2 more outcomes than event (d).",
+     "s": [
+      [
+       "Part (a): all 8 outcomes",
+       1
+      ],
+      [
+       "Part (b): 3 outcomes, 3/8",
+       1
+      ],
+      [
+       "Part (c): 4 outcomes, 1/2",
+       1
+      ],
+      [
+       "Part (d): 2 outcomes, 1/4",
+       1
+      ],
+      [
+       "Part (e): most likely event and the difference of 2 outcomes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A canteen offers 2 sandwiches (veg, cheese) and 4 drinks (juice, lassi, milk, tea). A student picks one sandwich and one drink at random. (a) List the sample space as pairs. (b) State the sample size. (c) List the event 'cheese sandwich' and find its probability. (d) Find the probability that the drink is lassi. (e) If one more drink is added, find the new sample size and the new probability of lassi, and say what happened to it.",
+     "a": "(a) Veg-juice, veg-lassi, veg-milk, veg-tea, cheese-juice, cheese-lassi, cheese-milk, cheese-tea. (b) 2 x 4 = 8. (c) Four pairs, so 4/8 = 1/2. (d) 2/8 = 1/4. (e) The sample size becomes 2 x 5 = 10 and P(lassi) = 2/10 = 1/5, which is smaller than before because the same two favourable pairs are shared among more outcomes.",
+     "s": [
+      [
+       "Part (a): eight pairs listed once each",
+       1
+      ],
+      [
+       "Part (b): n(S) = 8",
+       1
+      ],
+      [
+       "Part (c): 4 pairs and 1/2",
+       1
+      ],
+      [
+       "Part (d): 2/8 = 1/4",
+       1
+      ],
+      [
+       "Part (e): n(S) = 10, P = 1/5, decreased",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Rohan makes all possible four-digit numbers with the cards 1, 2, 3, 4, using each card once, and picks one number at random for a game. (a) How many elements does the sample space have? (b) How many outcomes form the event 'the number is even', and what is its probability? (c) Find the probability that the number is greater than 2400. (d) Meena records only the last digit of the number, so her sample space is {1, 2, 3, 4}. Can her sample space answer the questions in (b) and (c)? Which sample space would you advise them to use and why?",
+     "a": "(a) 4 x 3 x 2 x 1 = 24. (b) The last digit 2 or 4 gives 12 numbers, so 12/24 = 1/2. (c) The first digit 3 or 4 gives 12 numbers, and 2413 and 2431 add 2 more, so 14/24 = 7/12. (d) Meena's space can answer (b), since evenness depends on the last digit, but not (c), because greater than 2400 depends on the first digits too. The full 24-outcome space answers both, so it is advised, although it takes longer to list.",
+     "s": [
+      [
+       "Part (a): 24 numbers",
+       1
+      ],
+      [
+       "Part (b): 12 even numbers, 1/2",
+       1
+      ],
+      [
+       "Part (c): 14 numbers, 7/12",
+       1
+      ],
+      [
+       "Part (d): judges the sample spaces by the question's needed detail and recommends one",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A weather office records 40 days of a rainy month using the sample space {No Rain, Drizzle, Light Rain, Heavy Rain}: 22 days had no rain, 8 drizzle, 6 light rain and 4 heavy rain. A farmer will skip irrigating only if rain good enough for the crop is likely, and he treats drizzle as too little. (a) What is the sample size of this record, and of the simpler space {Rain, No Rain}? (b) List the event 'some rain' as a subset and find its experimental probability. (c) Find the experimental probability of 'light or heavy rain'. (d) The farmer's neighbour reads only the simpler record and says to skip irrigating. Is that advice sound? Decide for the farmer using both records.",
+     "a": "(a) 4 and 2. (b) {Drizzle, Light Rain, Heavy Rain}; 18/40 = 0.45. (c) 10/40 = 0.25. (d) The simpler record gives 0.45, which looks close to an even chance, but it counts drizzle as rain. Using the detailed record, good rain has only 0.25 probability, so the farmer should irrigate; skipping would be sound only if drizzle were enough, which he does not accept.",
+     "s": [
+      [
+       "Part (a): 4 and 2",
+       1
+      ],
+      [
+       "Part (b): the subset and 18/40 = 0.45",
+       1
+      ],
+      [
+       "Part (c): 10/40 = 0.25",
+       1
+      ],
+      [
+       "Part (d): decision that explains how the finer sample space changes the advice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Bag A holds 1 red and 2 green marbles, and bag B holds 1 blue and 1 yellow marble. One marble is drawn at random from each bag. What is the probability of a red marble from A and a yellow marble from B?",
+     "a": "1/6",
+     "o": [
+      "1/6",
+      "1/4",
+      "1/3",
+      "1/2"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A box holds four balls numbered 1 to 4. Two balls are drawn one after the other, and the first ball is NOT put back. How many complete paths does the tree diagram have?",
+     "a": "12",
+     "o": [
+      "12",
+      "16",
+      "8",
+      "6"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A coin is tossed three times. Aman says the tree has 2 + 2 + 2 = 6 paths. Which statement is correct?",
+     "a": "The tree has 8 paths, so the probability of TTT is 1/8.",
+     "o": [
+      "The tree has 8 paths, so the probability of TTT is 1/8.",
+      "The tree has 6 paths, so the probability of TTT is 1/6.",
+      "The tree has 8 paths, so the probability of TTT is 1/3.",
+      "The tree has 4 paths, so the probability of TTT is 1/4."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A basket has 3 red and 5 blue balls. One ball is drawn and laid aside, and then a second is drawn. What is the probability of a red ball followed by a blue ball?",
+     "a": "15/56",
+     "o": [
+      "15/56",
+      "15/64",
+      "1/7",
+      "3/7"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A box has balls numbered 1 to 4. Two balls are drawn one after the other without putting the first back. Which pair of numbers cannot be a path in the tree?",
+     "a": "(3, 3)",
+     "o": [
+      "(3, 3)",
+      "(3, 4)",
+      "(4, 3)",
+      "(1, 3)"
+     ],
+     "tags": [
+      "scenario"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: Each complete path of a tree diagram, from the start to the end, is one outcome of the experiment.\nStatement 2: Two draws from a box of 4 numbered balls, with the first ball put back, have 16 paths.\nStatement 3: For two tosses of a fair coin, the tree has 4 paths, so P(HH) = 1/4.\nWhich of the statements are correct?",
+     "a": "1, 2 and 3",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Without replacement, two draws from a box of 4 numbered balls give 12 paths.\nReason (R): The second draw is made from the same 4 balls as the first draw.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two balls are drawn one after the other from a box of balls numbered 1 to 5, and the first ball is put back each time. The tree diagram has ___ paths.",
+     "a": "25"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: In the tree for two balls drawn without replacement from a box of balls numbered 1 to 4, the path (2, 2) appears. Give a reason.",
+     "a": "False. There is only one ball numbered 2, and once it is drawn it is not put back, so the second ball cannot also be 2.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Says the first ball is not replaced so the same number cannot repeat",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A coin is tossed and then a die is rolled. (a) How many paths does the tree diagram have? (b) Find the probability of a head with a number greater than 4.",
+     "a": "(a) 2 x 6 = 12 paths. (b) The favourable paths are H5 and H6, so 2/12 = 1/6.",
+     "s": [
+      [
+       "Part (a): 12 paths",
+       1
+      ],
+      [
+       "Part (b): 2 favourable paths, 1/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A box has 2 red pens and 1 black pen. One pen is picked and put back, and then a second is picked. Treat the pens as three different pens. (a) How many paths does the tree have? (b) Find the probability that both pens are of the same colour.",
+     "a": "(a) 3 x 3 = 9 paths. (b) The two red pens give 4 same-pair paths and the black pen gives 1, so 5/9.",
+     "s": [
+      [
+       "Part (a): 9 paths",
+       1
+      ],
+      [
+       "Part (b): 5 same-colour paths out of 9, 5/9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "On the tree for tossing a fair coin twice, each branch carries probability 1/2. (a) Find P(HH) by multiplying along its path. (b) Use the tree to find the probability of at least one tail.",
+     "a": "(a) 1/2 x 1/2 = 1/4. (b) The paths HT, TH and TT contain a tail: 3/4.",
+     "s": [
+      [
+       "Part (a): 1/2 x 1/2 = 1/4",
+       1
+      ],
+      [
+       "Part (b): 3 paths of 4, 3/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate drawing two cards from three cards numbered 1, 2, 3 with replacement and without replacement, by the number of paths in the tree. Give the numbers.",
+     "a": "With replacement the second draw again has 3 cards, so 3 x 3 = 9 paths. Without replacement the second draw has only 2 cards left, so 3 x 2 = 6 paths.",
+     "s": [
+      [
+       "With replacement: 9 paths because 3 choices both times",
+       1
+      ],
+      [
+       "Without replacement: 6 paths because only 2 cards remain",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tara says: 'A bag has 4 red and 5 blue balls. If two are drawn one after another without replacement, the tree has four end-paths RR, RB, BR, BB, so each has probability 1/4.' Is she right?",
+     "a": "She is partly right. The tree does have four end-paths. But they are not equally likely: P(RB) = 4/9 x 5/8 = 5/18, about 0.278, not 1/4, because the second draw is made from 8 balls whose make-up depends on the first.",
+     "s": [
+      [
+       "Accepts that there are four end-paths",
+       1
+      ],
+      [
+       "Says the paths are not equally likely, so 1/4 is wrong",
+       1
+      ],
+      [
+       "Computes P(RB) = 4/9 x 5/8 = 5/18",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that two balls drawn without replacement from a box numbered 1 to 4 can never show the same number. Contrast this with the probability of the same number when the first ball is put back.",
+     "a": "After the first ball is taken, the remaining balls carry the other three numbers, so (1,1), (2,2), (3,3), (4,4) are not paths and the probability is 0. With replacement those four pairs are among 16 equally likely paths, so the probability is 4/16 = 1/4.",
+     "s": [
+      [
+       "Shows the remaining balls do not include the number drawn",
+       1
+      ],
+      [
+       "Gives 0 for no replacement",
+       1
+      ],
+      [
+       "Gives 4/16 = 1/4 with replacement",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Describe a two-step experiment of your own whose tree diagram has exactly 6 paths. Say how many branches leave the start and how many leave each of those branches, and list the paths.",
+     "a": "For example, a child with 2 shirts (red, blue) and 3 pants (jeans, khakis, shorts): 2 branches leave the start and 3 branches leave each, giving 6 paths: red-jeans, red-khakis, red-shorts, blue-jeans, blue-khakis, blue-shorts.",
+     "s": [
+      [
+       "An experiment with 2 steps, giving 6 paths",
+       1
+      ],
+      [
+       "States the branches at each step",
+       1
+      ],
+      [
+       "Lists all 6 paths",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A box holds four balls numbered 1 to 4 and two balls are drawn one after the other. (a) Give the number of paths when the first ball is put back and when it is not. (b) Find the probability that the sum is 5 in each case. (c) Find the probability that both numbers are the same in each case. (d) Which case gives the larger chance of a sum of 5? (e) Explain, in terms of the tree, why the chances differ.",
+     "a": "(a) 16 with replacement; 12 without. (b) Four pairs, (1,4), (2,3), (3,2), (4,1): 4/16 = 1/4 with replacement and 4/12 = 1/3 without. (c) 4/16 = 1/4 with replacement; 0 without. (d) Without replacement, since 1/3 is more than 1/4. (e) The four favourable paths stay the same while the total shrinks from 16 to 12, as the repeated-number paths disappear.",
+     "s": [
+      [
+       "Part (a): 16 and 12",
+       1
+      ],
+      [
+       "Part (b): 1/4 and 1/3",
+       1
+      ],
+      [
+       "Part (c): 1/4 and 0",
+       1
+      ],
+      [
+       "Part (d): without replacement is larger",
+       1
+      ],
+      [
+       "Part (e): same favourable paths over a smaller total",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A bag has 3 red and 5 blue balls. Two balls are drawn one after the other without replacement. (a) Find the probability that the first ball is red. (b) Find the probability of red then blue. (c) Find the probability of two blue balls. (d) Find the probability of two red balls. (e) Find the probability that the two balls have different colours and check that all four path probabilities add to 1.",
+     "a": "(a) 3/8. (b) 3/8 x 5/7 = 15/56. (c) 5/8 x 4/7 = 20/56 = 5/14. (d) 3/8 x 2/7 = 6/56 = 3/28. (e) Blue then red is 5/8 x 3/7 = 15/56, so different colours = 30/56 = 15/28; and 6/56 + 15/56 + 15/56 + 20/56 = 1.",
+     "s": [
+      [
+       "Part (a): 3/8",
+       1
+      ],
+      [
+       "Part (b): 15/56 by multiplying along the path",
+       1
+      ],
+      [
+       "Part (c): 5/14",
+       1
+      ],
+      [
+       "Part (d): 3/28",
+       1
+      ],
+      [
+       "Part (e): 15/28 and the sum check 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school quiz has 3 multiple-choice questions, each with 4 options and exactly one correct. Anu has not studied and guesses every answer. (a) How many correct/wrong paths does the tree for the three questions have, and what is the probability of getting all three right? (b) Find the probability of getting exactly two right. (c) The pass mark is at least 2 right. Find Anu's chance of passing by guessing. (d) She has an hour: she can learn one question's topic thoroughly so that answer is certain, and guess the other two. Find her chance of passing then, and say whether the hour is worth spending that way instead of general revision.",
+     "a": "(a) 2 x 2 x 2 = 8 paths; P(all right) = (1/4)^3 = 1/64. (b) Three paths, each (1/4)(1/4)(3/4) = 3/64, so 9/64. (c) 9/64 + 1/64 = 10/64 = 5/32, about 0.156. (d) She then needs at least 1 right of the other two: 1 - (3/4)(3/4) = 7/16, about 0.4375. Either decision is accepted if reasoned: the hour lifts her chance nearly threefold but it stays below one half, so general revision across all three could be better if it makes more than one answer reliable.",
+     "s": [
+      [
+       "Part (a): 8 paths and 1/64",
+       1
+      ],
+      [
+       "Part (b): 3 paths of 3/64 each, 9/64",
+       1
+      ],
+      [
+       "Part (c): 5/32",
+       1
+      ],
+      [
+       "Part (d): 7/16 and a reasoned judgement about the hour",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a school fair, a box holds 3 red, 4 black and 2 green pens. A player picks a pen, puts it back, and the stall owner picks one. The player wins if both pens are the same colour. (a) How many paths does the tree have, treating the pens as 9 different pens? (b) Find the probability that both pens are red. (c) Find the probability that the player wins. (d) The owner wants the player's chance of winning to be near 1/3. If the pen is NOT put back, the win chance changes; the owner dislikes the extra step of putting pens back. Find the win chance without putting back, and decide which rule to use.",
+     "a": "(a) 9 x 9 = 81 paths. (b) 9/81 = 1/9. (c) Red 9 + black 16 + green 4 = 29, so 29/81, about 0.358. (d) Without putting back: (3 x 2 + 4 x 3 + 2 x 1)/(9 x 8) = 20/72 = 5/18, about 0.278. With putting back is 0.025 from 1/3 and without is 0.055 from 1/3. Either is accepted if reasoned: putting back is closer to 1/3; not putting back is quicker to run but gives the player a lower chance.",
+     "s": [
+      [
+       "Part (a): 81 paths",
+       1
+      ],
+      [
+       "Part (b): 9/81 = 1/9",
+       1
+      ],
+      [
+       "Part (c): 29/81",
+       1
+      ],
+      [
+       "Part (d): 5/18 compared with 1/3 and a reasoned rule",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fair coin has landed heads on all nine tosses so far. Which value is the probability of heads on the tenth toss?",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "(1/2)^10",
+      "less than 1/2",
+      "more than 1/2"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Aman has not thrown a 6 on his fair die in 20 turns of Snakes and Ladders and says a 6 is now due. What is the probability of a 6 on his next throw?",
+     "a": "1/6",
+     "o": [
+      "1/6",
+      "1",
+      "20/21",
+      "1/20"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fair coin is tossed repeatedly. The fraction of heads is 0.7 after 10 tosses, 0.56 after 100 tosses and 0.505 after 1000 tosses. What does this show?",
+     "a": "The experimental probability gets closer to the theoretical 1/2 as trials increase.",
+     "o": [
+      "The experimental probability gets closer to the theoretical 1/2 as trials increase.",
+      "The coin became fair only after many tosses.",
+      "Tails must have come more often later to balance the early heads.",
+      "The coin was biased at the start and later corrected itself."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bent coin is tossed thousands of times and lands heads about 3 times in every 4. Which description is best?",
+     "a": "It is biased, so 1/2 does not apply and about 0.75 is its experimental probability.",
+     "o": [
+      "It is biased, so 1/2 does not apply and about 0.75 is its experimental probability.",
+      "It is fair, because the result of every toss is random.",
+      "It is fair, since each toss is independent of the earlier tosses.",
+      "It is unbiased, but the Law of Large Numbers has failed."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fair die is rolled 600 times. Which statement is best supported?",
+     "a": "About 100 fours are expected, though not necessarily exactly 100.",
+     "o": [
+      "About 100 fours are expected, though not necessarily exactly 100.",
+      "Exactly 100 fours will appear.",
+      "At least 100 fours will appear.",
+      "One four will appear in every block of six rolls."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: A fair coin is symmetrical, so there is no reason for it to land more often on one side.\nStatement 2: After three 6s in a row on a fair die, a 6 is impossible on the next roll.\nStatement 3: The Law of Large Numbers says that after a run of heads, tails must come to balance it out.\nWhich of the statements are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "2 only",
+      "1 and 2 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): After a fair die shows 6, 6, 6 in three rolls, the chance of a 6 on the fourth roll is still 1/6.\nReason (R): Each roll of a fair die is independent of the earlier rolls.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A fair die is rolled 1200 times. In the long run, the number of fours expected is about ___.",
+     "a": "200"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: A fair coin lands heads six times in a row. The probability of tails on the next toss is still 1/2. Give a reason.",
+     "a": "True. The coin has no memory, so each toss is independent and the chance of tails stays 1/2 whatever happened before.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Says the coin does not remember past tosses so the toss is independent",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A coin is tossed 50 times and shows 31 heads. (a) Find the experimental probability of heads. (b) For 5000 tosses of the same fair coin, about how many heads would you expect, and why is it not about 3100?",
+     "a": "(a) 31/50 = 0.62. (b) About 2500, since for a fair coin the experimental probability moves towards 1/2 as the number of trials increases (Law of Large Numbers), so 0.62 is expected to fall.",
+     "s": [
+      [
+       "Part (a): 0.62",
+       1
+      ],
+      [
+       "Part (b): about 2500 with the Law of Large Numbers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rohan has rolled a 4 eight times in a row on a fair die. (a) Give the probability of a 4 on his ninth roll. (b) Name the mistake in saying 'a 4 cannot come again now'.",
+     "a": "(a) Still 1/6, about 0.167. (b) It is the Gambler's Fallacy: the die has no memory, so each roll is independent of the earlier ones.",
+     "s": [
+      [
+       "Part (a): 1/6",
+       1
+      ],
+      [
+       "Part (b): Gambler's Fallacy with the independence reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate a fair (unbiased) coin from a random toss of a coin.",
+     "a": "A fair or unbiased coin is symmetrical, so there is no reason for it to come down more often on one side. A random toss means the coin is allowed to fall freely, without any bias or interference in how it is thrown.",
+     "s": [
+      [
+       "Fair coin: symmetrical, no reason to favour a side",
+       1
+      ],
+      [
+       "Random toss: falls freely without interference",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why 7 heads in 10 tosses does not show a coin is biased, but 7000 heads in 10000 tosses would be a strong sign.",
+     "a": "With only 10 tosses the experimental probability can differ much from 1/2 even for a fair coin. With 10000 tosses a fair coin's fraction should be close to 1/2, so 0.7 would be far from what is expected.",
+     "s": [
+      [
+       "Few trials: wide difference from 1/2 is possible",
+       1
+      ],
+      [
+       "Many trials: a fair coin should be near 1/2, so 0.7 is strong evidence",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dev says: 'The chance of each face of a fair die is 1/6, so if I roll it six times every number must show exactly once.' Is he right?",
+     "a": "No. The probability 1/6 describes the long run, not what must happen in a few rolls. Each roll is independent, so in six rolls some numbers may repeat and others may not appear at all.",
+     "s": [
+      [
+       "Verdict: he is wrong",
+       1
+      ],
+      [
+       "Probability describes the long run, not a few trials",
+       1
+      ],
+      [
+       "Rolls are independent so repeats or gaps can occur",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that the experimental probability of a given face cannot equal exactly 1/6 after 20 rolls of a die. Which two values come nearest, and what happens as the rolls increase?",
+     "a": "If x rolls show the face, x/20 = 1/6 gives x = 3.33, which is not a whole number. The nearest values are 3/20 = 0.15 and 4/20 = 0.20. With more rolls the experimental probability should come closer to 1/6.",
+     "s": [
+      [
+       "Sets x/20 = 1/6 and finds x = 3.33",
+       1
+      ],
+      [
+       "Gives 0.15 and 0.20",
+       1
+      ],
+      [
+       "States the trend towards 1/6 with more trials",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Describe a situation of your own (not a coin or a die) where someone could fall into the Gambler's Fallacy, and give the correct reasoning with the probability.",
+     "a": "For example, an arrow spinner with 8 equal sectors has not stopped on 5 in 15 spins and a player says 5 is due. Each spin is independent, so the chance of 5 on the next spin is still 1/8.",
+     "s": [
+      [
+       "A random situation with repeated independent trials",
+       1
+      ],
+      [
+       "The mistaken 'due' belief stated",
+       1
+      ],
+      [
+       "The correct probability with the independence reason",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A coin is tossed in four series and the heads are counted: 7 heads in 10 tosses, 56 in 100, 508 in 1000 and 5032 in 10000. (a) Find the experimental probability for each series. (b) Find how far each is from 1/2. (c) Find the gap between the number of heads and half the tosses in each series. (d) What do (b) and (c) show together? (e) Does this mean the coin has to catch up with tails later? Explain.",
+     "a": "(a) 0.7, 0.56, 0.508, 0.5032. (b) 0.2, 0.06, 0.008, 0.0032. (c) 2, 6, 8, 32. (d) The gap in numbers of heads grows, but the experimental probability gets closer to 1/2 as tosses increase. (e) No: the coin has no memory, and the share settles because the extra tosses are so many that a bigger gap is a smaller fraction.",
+     "s": [
+      [
+       "Part (a): four experimental probabilities",
+       1
+      ],
+      [
+       "Part (b): four distances from 1/2",
+       1
+      ],
+      [
+       "Part (c): gaps 2, 6, 8, 32",
+       1
+      ],
+      [
+       "Part (d): counts gap grows while the fraction approaches 1/2",
+       1
+      ],
+      [
+       "Part (e): no catching up, no memory, a larger total dilutes the gap",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Leela plays Snakes and Ladders with a fair die and rolls a 6 on three turns in a row. She says: 'There is no way I will get a 6 on the next roll.' (a) Give the probability of a 6 on the fourth roll. (b) Name her mistake and say what it wrongly assumes. (c) In 300 rolls, about how many sixes would you expect? (d) After 12 rolls she has seen five 6s; find the experimental probability and compare it with 1/6. (e) Is that enough to call the die biased?",
+     "a": "(a) 1/6, about 0.167. (b) The Gambler's Fallacy: it assumes the die remembers its earlier results. (c) 300 x 1/6 = 50. (d) 5/12 = 0.417, much more than 0.167. (e) Not by itself: 12 rolls is a small number and a fair die can differ widely; she should roll it many more times.",
+     "s": [
+      [
+       "Part (a): 1/6",
+       1
+      ],
+      [
+       "Part (b): Gambler's Fallacy and the memory assumption",
+       1
+      ],
+      [
+       "Part (c): about 50",
+       1
+      ],
+      [
+       "Part (d): 0.417 compared with 0.167",
+       1
+      ],
+      [
+       "Part (e): too few rolls to call it biased",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school committee uses one coin to decide the toss before each league match. Maya's team has lost the toss 6 times in a row. In the 40 tosses recorded with this coin, heads came up 27 times. Maya says her team is now due to win the toss and wants the coin replaced. (a) What is the probability that Maya's team wins the next toss if the coin is fair, and what mistake is in saying her team is 'due'? (b) Find the experimental probability of heads from the record and its difference from 1/2. (c) If the coin kept giving heads at this rate, how many heads would it give in 400 tosses, compared with a fair coin? (d) Replacing the coin costs nothing, but a new coin also needs testing. The committee can keep the coin, or test it 400 more times before deciding. What would you advise and why?",
+     "a": "(a) 1/2; the coin has no memory, so past losses do not make a win more likely (Gambler's Fallacy). (b) 27/40 = 0.675, which is 0.175 more than 1/2. (c) 0.675 x 400 = 270, against 200 for a fair coin. (d) Either is accepted if reasoned: 40 tosses is a small number so 0.675 may be chance, and 400 more tosses would show whether it stays; but keeping the coin is simplest if the committee judges the difference small.",
+     "s": [
+      [
+       "Part (a): 1/2 and the Gambler's Fallacy named",
+       1
+      ],
+      [
+       "Part (b): 0.675 and a difference of 0.175",
+       1
+      ],
+      [
+       "Part (c): 270 against 200",
+       1
+      ],
+      [
+       "Part (d): reasoned advice using the small number of tosses",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A shop gives a scratch card with every purchase, and exactly 1 card in 5 wins a prize, each card being independent of the others. Seema's first four cards have all lost. The shopkeeper says: 'Your fifth is sure to win, because you are due.' Seema has Rs 50 left, and each card costs Rs 10. (a) What is the probability that her fifth card wins, and what is the shopkeeper's mistake called? (b) Out of 500 cards sold, how many winners can the shop expect? (c) The shop actually sold 500 cards and 112 won. Find the experimental probability and say whether it is close to the claim. (d) Seema can spend the Rs 50 on five more cards or keep it. Advise her using the probabilities.",
+     "a": "(a) 1/5 = 0.2, and the mistake is the Gambler's Fallacy. (b) 500 x 0.2 = 100. (c) 112/500 = 0.224, close to 0.2 for so many cards. (d) Either is accepted if reasoned: every card still has only a 0.2 chance whatever came before, so 'due' is no reason to buy; but if she values the chance of a prize more than the Rs 10 per card, she may buy knowing that losing is likelier than winning on each card.",
+     "s": [
+      [
+       "Part (a): 0.2 and Gambler's Fallacy",
+       1
+      ],
+      [
+       "Part (b): 100 winners",
+       1
+      ],
+      [
+       "Part (c): 0.224, close to 0.2 for a large number of cards",
+       1
+      ],
+      [
+       "Part (d): advice that uses the independent 0.2 chance",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,3017 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Arithmetic Expressions"
+ },
+ "source_code": "gegp102",
+ "concepts": [
+  {
+   "code": "C7M-2.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tanvi pays ₹18 for a bus ride on every school day, Monday to Saturday. Which expression gives her bus spending in one week?",
+     "a": "6 × 18",
+     "o": [
+      "6 × 18",
+      "6 + 18",
+      "7 × 18",
+      "18 ÷ 6"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Asha says: 'I can compare two sums without adding only if just one of the numbers changes. In 1,205 + 340 and 1,204 + 345 both numbers change, so I must add both pairs first.' Is she right? Compare them and explain.",
+     "a": "No. Both numbers changing is not a problem if we look at each change: 1,204 is 1 less than 1,205 but 345 is 5 more than 340, so the second expression is 5 - 1 = 4 more. So 1,205 + 340 < 1,204 + 345 (1,545 and 1,549 as a check).",
+     "s": [
+      [
+       "Gives the verdict that she is not right, a comparison is possible without adding both pairs",
+       1
+      ],
+      [
+       "Compares the first numbers (1 less) and the second numbers (5 more)",
+       1
+      ],
+      [
+       "Concludes the second expression is 4 more, so < is correct",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school library has two branches. The North branch had 1,240 books and lent out 365 of them. The South branch had 1,238 books and lent out 360 of them. The librarian wants to know which branch has more books on its shelves now.\n(a) Write an expression for the books left in each branch.\n(b) Without finding the values, say which branch has more books left and by how many more.\n(c) Find both values and check your answer to (b).\n(d) The librarian sends 40 new books to the branch with fewer books left. Which branch is that, and after the delivery which branch has more and by how many?",
+     "a": "(a) 1,240 - 365 and 1,238 - 360. (b) North started with 2 more but lent 5 more, so South has 3 more. (c) 875 and 878; the difference 878 - 875 = 3 agrees with (b). (d) North has fewer, so it gets the 40 books: 915. North then has 915 - 878 = 37 more than South.",
+     "s": [
+      [
+       "Part (a): writes 1,240 - 365 and 1,238 - 360",
+       1
+      ],
+      [
+       "Part (b): 2 more at the start but 5 more lent, so South has 3 more",
+       1
+      ],
+      [
+       "Part (c): values 875 and 878 and the check that the difference is 3",
+       1
+      ],
+      [
+       "Part (d): North gets the books, reaches 915 and leads by 37",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Priya had 212 stickers and gave away 40. Rohit had 211 stickers and gave away 39. Who has more stickers left?",
+     "a": "Both have the same number",
+     "o": [
+      "Both have the same number",
+      "Priya, because she began with one sticker more",
+      "Rohit, because he gave away one sticker fewer",
+      "It cannot be said without finding both values"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ishaan's notebook for 'Ravi had ₹200 and spent ₹60' reads:\nLine 1: 'The expression is 140 and its value is 200 − 60.'\nLine 2: 'Another expression with the same value is 200 + 60.'\nWhich statement about his work is correct?",
+     "a": "Both lines have a slip: line 1 swaps expression and value, and 200 + 60 has the value 260",
+     "o": [
+      "Both lines have a slip: line 1 swaps expression and value, and 200 + 60 has the value 260",
+      "Only line 1 has a slip; 200 + 60 does have the value 140",
+      "Only line 2 has a slip; a single number such as 140 is the expression",
+      "Neither line has a slip, since 140 and 200 − 60 are equal numbers"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write an expression for: 6 packets of 15 pencils each, from which 8 pencils are then given away. (b) Find its value and say what the 8 stands for in the situation.",
+     "a": "(a) 6 × 15 − 8. (b) 90 − 8 = 82; the 8 is the pencils given away.",
+     "s": [
+      [
+       "Part (a): writes 6 × 15 − 8",
+       1
+      ],
+      [
+       "Part (b): value 82 and the 8 identified as the pencils given away",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the number that makes 48 + □ = 7 × 9. (b) Using your answer, find the number that makes 48 + □ = 7 × 9 + 5.",
+     "a": "(a) 7 × 9 = 63 and 63 − 48 = 15. (b) The right side is 5 more, so the number must be 5 more: 20.",
+     "s": [
+      [
+       "Part (a): evaluates 7 × 9 and finds 15",
+       1
+      ],
+      [
+       "Part (b): reasons that 5 more on the right needs 5 more in the box, giving 20",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Class 7C sells bookmarks at the school fair. It buys 8 packs of 12 bookmarks at ₹60 a pack and spends ₹45 on a banner. It sells 70 bookmarks at ₹9 each and all the remaining bookmarks at ₹5 each.\n(a) Write an expression for the total spending.\n(b) Write an expression for the money received from sales.\n(c) Find the value of each expression.\n(d) Write one expression for the profit and find it.",
+     "a": "(a) 8 × 60 + 45 = 480 + 45 = ₹525. (b) The remaining bookmarks are 8 × 12 - 70 = 26, so the sales are 70 × 9 + 26 × 5. (c) 630 + 130 = ₹760 from sales and ₹525 spent. (d) Profit = 70 × 9 + 26 × 5 - (8 × 60 + 45) = 760 - 525 = ₹235.",
+     "s": [
+      [
+       "Part (a): 8 × 60 + 45 and its value ₹525",
+       1
+      ],
+      [
+       "Part (b): finds 26 remaining bookmarks and writes 70 × 9 + 26 × 5",
+       2
+      ],
+      [
+       "Part (c): sales ₹760",
+       1
+      ],
+      [
+       "Part (d): profit expression with the whole spending taken away, ₹235",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shopkeeper receives 4 boxes of 25 pens and 30 loose pens, and then sells 45 pens. Four students write expressions for the pens left. Exactly one student made a slip. Whose expression is it?",
+     "a": "4 × 25 − 45 − 30",
+     "o": [
+      "4 × 25 − 45 − 30",
+      "4 × 25 + 30 − 45",
+      "130 − 45",
+      "100 + 30 − 40 − 5"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Without adding the full numbers, compare 1450 + 36 with 1449 + 40. The second sum is more than the first by ___.",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write three different expressions, each using two numbers and a different operation, whose value is 18. (b) Make up a short situation for one of them.",
+     "a": "(a) 10 + 8, 20 − 2 and 3 × 6 (36 ÷ 2 also works). (b) For 20 − 2: Neha had 20 pencils and lost 2, so 18 are left.",
+     "s": [
+      [
+       "Part (a): three expressions with three different operations, each equal to 18",
+       1
+      ],
+      [
+       "Part (b): a situation that really matches the chosen expression",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cinema hall has 18 rows of 14 seats and a balcony with 26 seats. (a) Write an expression for the total number of seats. (b) For a Sunday show 40 seats are booked. Write one expression for the seats still empty and find its value.",
+     "a": "(a) 18 × 14 + 26 (= 252 + 26 = 278). (b) 18 × 14 + 26 - 40 = 278 - 40 = 238 seats are empty.",
+     "s": [
+      [
+       "Part (a): 18 × 14 + 26",
+       1
+      ],
+      [
+       "Part (b): subtracts 40 from the total, giving 238",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the expressions 1,480 + 275 and 1,475 + 281, the second has the greater value.\nReason (R): The first number of the second expression is 5 less and its second number is 6 more than in the first expression.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each situation in Column I with its value in Column II.\nColumn I: 1. ₹200 with ₹60 spent, then ₹30 added   2. 4 packets costing ₹12 each, then a ₹15 discount   3. ₹90 shared equally among 5 friends, each then adds ₹8   4. ₹70 plus ₹30, then split into 4 equal parts\nColumn II: a. ₹25   b. ₹26   c. ₹33   d. ₹170",
+     "a": "1-d, 2-c, 3-b, 4-a",
+     "o": [
+      "1-d, 2-c, 3-b, 4-a",
+      "1-d, 2-b, 3-c, 4-a",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-d, 2-c, 3-a, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran pays for 3 pens at ₹14 each and 2 pads at ₹35 each with a ₹200 note. (a) Write one expression for the change she gets and find its value. (b) Riya buys 4 pens and 1 pad and also pays with ₹200. Without working out her change from the start, say who gets more change and by how much.",
+     "a": "(a) 200 − 3 × 14 − 2 × 35 = 200 − 42 − 70 = ₹88. (b) Riya has one more pen (₹14 more) but one pad fewer (₹35 less), so she spends ₹21 less and gets ₹21 more change (₹109).",
+     "s": [
+      [
+       "Part (a): the expression 200 − 3 × 14 − 2 × 35 with value ₹88",
+       1
+      ],
+      [
+       "Part (b): one pen more and one pad fewer, so ₹35 − ₹14 = ₹21 more change for Riya",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which story is modelled by the expression 3 × 40 − 25?",
+     "a": "3 notebooks cost ₹40 each and ₹25 is taken off the total bill",
+     "o": [
+      "3 notebooks cost ₹40 each and ₹25 is taken off the total bill",
+      "3 notebooks cost ₹40 each and ₹25 is taken off each notebook",
+      "3 notebooks cost ₹40 together and ₹25 more is paid",
+      "₹40 is shared by 3 children and ₹25 is added to each share"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements.\nStatement 1: The value of 7 × 8 − 6 is 50.\nStatement 2: If 12 × 15 − 20 is changed to 12 × 15 − 25, its value goes down by 5.\nStatement 3: 425 + 38 is less than 428 + 35, because the first number is smaller.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no expression of the form 2 × a + 2 × b, where a and b are whole numbers, can have the value 51.",
+     "a": "Each term 2 × a and 2 × b is a number in the 2 times table, so each is even. The sum of two even numbers is even. 51 is odd, so no whole numbers a and b can give the value 51.",
+     "s": [
+      [
+       "Notes that 2 × a and 2 × b are each multiples of 2 (even)",
+       1
+      ],
+      [
+       "Reasons that two even numbers always add to an even number",
+       1
+      ],
+      [
+       "Compares with 51, which is odd, and concludes it is impossible",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Using exactly three 5s each time, with the four operations and brackets where needed, (a) write expressions with the values 2, 15 and 20. (b) Write one expression with value 0 and one with value 6, again using exactly three 5s, and say which of your five expressions needed a bracket.",
+     "a": "(a) (5 + 5) ÷ 5 = 2, 5 + 5 + 5 = 15, 5 × 5 - 5 = 20. (b) 5 × (5 - 5) = 0 and 5 ÷ 5 + 5 = 6. In this answer the expressions for 2 and 0 needed brackets; the others did not (other answers may differ).",
+     "s": [
+      [
+       "Part (a): an expression for 2 with three 5s",
+       1
+      ],
+      [
+       "Part (a): expressions for 15 and 20 with three 5s",
+       1
+      ],
+      [
+       "Part (b): a valid expression for 0 with three 5s",
+       1
+      ],
+      [
+       "Part (b): a valid expression for 6 with three 5s",
+       1
+      ],
+      [
+       "Part (b): names which of their own five expressions needed a bracket",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For the annual day lunch, a caterer gives two offers. Offer A: ₹85 a plate plus ₹500 for decoration. Offer B: ₹90 a plate with the decoration free. The school expects about 60 guests, but the number may rise to 110.\n(a) Write an expression for the cost of each offer for 60 guests.\n(b) Without finding both totals, say which offer is cheaper for 60 guests and by how much.\n(c) Find the cost of each offer for 100 guests and for 110 guests.\n(d) Which offer should the school choose, and why?",
+     "a": "(a) A: 60 × 85 + 500; B: 60 × 90. (b) B charges 60 × 5 = ₹300 more on plates but A charges ₹500 extra for decoration, so B is cheaper by 500 - 300 = ₹200 (5,600 against 5,400). (c) For 100 guests both cost ₹9,000. For 110 guests A costs ₹9,850 and B ₹9,900. (d) B is cheaper by ₹200 at 60 guests and the two cost the same at 100; A is cheaper only for more than 100 guests (₹50 less at 110). Since about 60 are expected, choose B; if more than 100 guests are likely, choose A.",
+     "s": [
+      [
+       "Part (a): 60 × 85 + 500 and 60 × 90",
+       1
+      ],
+      [
+       "Part (b): compares +300 on plates with the extra 500 and finds B cheaper by 200",
+       1
+      ],
+      [
+       "Part (c): ₹9,000 each for 100 guests; ₹9,850 and ₹9,900 for 110",
+       1
+      ],
+      [
+       "Part (d): chooses B for about 60 guests, with the break-even at 100 and A better only above it",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write one situation for 250 − 80 and a different situation for 250 ÷ 5, each from a school or shop setting, and give the value of each.",
+     "a": "250 − 80: a school fair stall had 250 samosas and sold 80, so 170 are left. 250 ÷ 5: ₹250 collected for the class picnic is shared equally by 5 groups, so each group gets ₹50.",
+     "s": [
+      [
+       "A sensible subtraction situation for 250 − 80",
+       1
+      ],
+      [
+       "A sensible sharing situation for 250 ÷ 5",
+       1
+      ],
+      [
+       "Gives the correct values 170 and 50",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use each of the numbers 4, 6 and 9 exactly once to fill the blanks in ___ × ___ − ___. (a) Which arrangement gives the greatest value? (b) Which gives the least value? Give both values and one line of reasoning.",
+     "a": "(a) 6 × 9 − 4 = 50: the two large numbers are multiplied and the smallest is subtracted. (b) 4 × 6 − 9 = 15 (or 6 × 4 − 9): the two small numbers are multiplied and the largest is subtracted.",
+     "s": [
+      [
+       "Part (a): 6 × 9 − 4 = 50 with the reason (largest product, smallest subtraction)",
+       1
+      ],
+      [
+       "Part (b): 4 × 6 − 9 = 15 with the reason (smallest product, largest subtraction)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements.\nStatement 1: The expression 8 × 5 − 3 + 12 ÷ 4 has three terms and the value 40.\nStatement 2: In 9 − 2 × 3 the subtraction can be done first, because 9 − 2 is a term.\nStatement 3: Adding the inverse of the term −24 ÷ 6 to 100 − 24 ÷ 6 gives 100.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A worksheet line reads: 'The terms of 12 + 5 × 3 are 12 + 5 and 3, so the value is 17 × 3 = 51.' (a) Which statement in the line is wrong? (b) Write the correct terms and the correct value.",
+     "a": "(a) The claim that 12 + 5 is a term is wrong: terms are separated by + signs and 5 × 3 has no + inside, so 5 × 3 cannot be split. The value 51 belongs to (12 + 5) × 3. (b) The terms are 12 and 5 × 3, so the value is 12 + 15 = 27.",
+     "s": [
+      [
+       "Part (a): finds the wrong step, splitting the term 5 × 3",
+       1
+      ],
+      [
+       "Part (b): correct terms 12 and 5 × 3",
+       1
+      ],
+      [
+       "Part (b): correct value 27",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "The terms of an expression are 20, −6 × 2 and 15 ÷ 3. Write the expression in two different ways by changing the order of the terms, and show that its value is the same in both.",
+     "a": "For example 20 - 6 × 2 + 15 ÷ 3 and 15 ÷ 3 + 20 - 6 × 2. Each has the terms 20, -6 × 2 and 15 ÷ 3: 20 + (-12) + 5 = 13, and 5 + 20 + (-12) = 13.",
+     "s": [
+      [
+       "Writes one valid expression with these three terms, keeping the sign of -6 × 2",
+       1
+      ],
+      [
+       "Writes a second expression with the terms in a different order",
+       1
+      ],
+      [
+       "Shows the value 13 in both",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dev says: 'An expression with three numbers always has three terms.' Is he right? Support your answer with examples.",
+     "a": "No. 5 + 4 + 3 has three numbers and three terms, but 5 × 4 × 3 has three numbers and only one term, and 6 × 4 + 3 has three numbers and two terms. Only + signs (after subtractions are written as additions) separate terms.",
+     "s": [
+      [
+       "Gives the verdict that he is not right",
+       1
+      ],
+      [
+       "Gives an example where three numbers make fewer than three terms",
+       1
+      ],
+      [
+       "States that terms are separated by + signs, not counted by numbers",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) List the terms of 2 × 9 − 3 × 4 × 5. (b) Find its value.",
+     "a": "(a) Two terms: 2 × 9 and −3 × 4 × 5. (b) 18 + (−60) = −42.",
+     "s": [
+      [
+       "Part (a): two terms, with the product 3 × 4 × 5 kept whole and negative",
+       1
+      ],
+      [
+       "Part (b): 18 − 60 = −42",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "At the school canteen Sunita sells 45 samosas at ₹12 each on each of 5 days and 30 sandwiches at ₹25 each on each of 2 days in a week. She also refunds ₹60 for a faulty order.\n(a) Write her week's takings as a sum of terms.\n(b) List the terms and say which one is negative.\n(c) Find the takings.\n(d) Her costs for the week are ₹3,900. Find her profit.\n(e) By how much would the refund term have to grow to wipe out the profit?",
+     "a": "(a) 5 × 45 × 12 + 2 × 30 × 25 + (-60). (b) The terms are 5 × 45 × 12, 2 × 30 × 25 and -60; the refund -60 is negative. (c) 2,700 + 1,500 - 60 = ₹4,140. (d) 4,140 - 3,900 = ₹240. (e) It would have to grow by ₹240, to ₹300 in all.",
+     "s": [
+      [
+       "Part (a): sum of three terms with the refund as -60",
+       1
+      ],
+      [
+       "Part (b): lists the terms and names the refund as negative",
+       1
+      ],
+      [
+       "Part (c): takings ₹4,140",
+       1
+      ],
+      [
+       "Part (d): profit ₹240",
+       1
+      ],
+      [
+       "Part (e): the refund term must grow by ₹240",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The terms of Meera's shopping expression are 3 × 15, 4 × 20 and −10. Which story does it describe?",
+     "a": "3 pens at ₹15 each and 4 pads at ₹20 each, with ₹10 returned",
+     "o": [
+      "3 pens at ₹15 each and 4 pads at ₹20 each, with ₹10 returned",
+      "3 pens at ₹15 each and 4 pads at ₹20 each, with ₹10 more paid for a bag",
+      "3 pens at ₹15 each and 4 pads at ₹20 each, with ₹10 off every pad",
+      "One pen set of 3 for ₹15, 4 pads at ₹20 each, with ₹10 returned"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Three students worked on expressions and each made one mistake. Find it and give the correct terms and value.\n(a) 90 − 12 × 5 + 36 ÷ 4: terms 90, 12 × 5 and 36 ÷ 4, value 159.\n(b) 7 × 3 − 2 × 4 × 5: worked as (7 × 3 − 2) × 4 × 5, value 380.\n(c) 10 − 6 − 3 × 2: worked as (10 − 6 − 3) × 2, value 2.",
+     "a": "(a) The subtraction was not turned into a negative term. Terms 90, -12 × 5, 36 ÷ 4: 90 - 60 + 9 = 39. (b) 2 × 4 × 5 is one negative term, not to be joined to 7 × 3 first. Terms 7 × 3 and -2 × 4 × 5: 21 - 40 = -19. (c) 3 × 2 is a term and cannot be split by an imagined bracket. Terms 10, -6 and -3 × 2: 10 - 6 - 6 = -2.",
+     "s": [
+      [
+       "Part (a): the missing negative sign on 12 × 5, terms and value 39",
+       2
+      ],
+      [
+       "Part (b): the invented bracket, terms and value -19",
+       2
+      ],
+      [
+       "Part (c): the invented bracket, terms and value -2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The expression 36 ÷ 4 − 7 + 2 × 5 has three terms.\nReason (R): A new term starts wherever a × or ÷ sign appears.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "During a game in class, 38 children are in the playground. The teacher calls out 7 and the children settle into groups of 7: 5 groups form and 3 children are left out. Which expression, written as a sum of terms, describes the 38 children?",
+     "a": "5 × 7 + 3, with terms 5 × 7 and 3",
+     "o": [
+      "5 × 7 + 3, with terms 5 × 7 and 3",
+      "5 × (7 + 3), a single term",
+      "5 + 7 × 3, with terms 5 and 7 × 3",
+      "5 × 7 × 3, a single term"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Written as a sum of terms, exactly one of these expressions has a negative term whose value is −20. Which one?",
+     "a": "30 − 4 × 5 + 2",
+     "o": [
+      "30 − 4 × 5 + 2",
+      "30 + 4 × 5 − 2",
+      "30 − 40 ÷ 4 + 5",
+      "30 − 2 × 5 + 4"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The expression 30 − 4 × 5 + 6 has the terms 30, −4 × 5 and 6. (a) Change only the sign of the middle term to make the value of the expression 56, and write the new expression. (b) In the original expression, if 5 is changed to 6 in the middle term, by how much does the value fall, and why?",
+     "a": "(a) 30 + 4 × 5 + 6 = 30 + 20 + 6 = 56. (b) The middle term changes from −20 to −24, a fall of 4 (original value 16, new value 12), because 4 × 6 is 4 more than 4 × 5.",
+     "s": [
+      [
+       "Part (a): 30 + 4 × 5 + 6 with value 56",
+       1
+      ],
+      [
+       "Part (b): the middle term goes from −20 to −24, so the value falls by 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Gurpreet runs the class tuck shop. On Monday she bought 6 packets of biscuits at ₹14 each and 3 packets of chips at ₹18 each. Then she returned 2 damaged biscuit packets and got ₹14 back for each. She has ₹120 to spend.\n(a) Write an expression for her net spending and list its terms.\n(b) Find its value.\n(c) On Tuesday morning she returns one more damaged biscuit packet and gets ₹14 back. Write the new expression, say how many terms it has, and find how much of the ₹120 is left.\n(d) She now buys the geometry box (₹15) and the pen set (₹8). Write one expression for the money she has left out of the ₹120 with every purchase and every return as a term, say how many terms it has, and give its value.",
+     "a": "(a) 6 × 14 + 3 × 18 - 2 × 14; terms 6 × 14, 3 × 18 and -2 × 14. (b) 84 + 54 - 28 = ₹110. (c) 6 × 14 + 3 × 18 - 2 × 14 - 14 has four terms (6 × 14, 3 × 18, -2 × 14, -14) and equals 96, so ₹24 is left. (d) 120 - 6 × 14 - 3 × 18 + 2 × 14 + 14 - 15 - 8 has seven terms (120, -6 × 14, -3 × 18, +2 × 14, +14, -15, -8) and the value 120 - 84 - 54 + 28 + 14 - 15 - 8 = ₹1.",
+     "s": [
+      [
+       "Part (a): the expression and its three terms with the return as a negative term",
+       1
+      ],
+      [
+       "Part (b): value 110",
+       1
+      ],
+      [
+       "Part (c): four terms, value 96 and ₹24 left",
+       1
+      ],
+      [
+       "Part (d): the seven-term expression with purchases negative and returns positive, value ₹1",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sunita already has 3 bags of flour of 5 kg each. She packs another 90 kg of flour into 5 kg bags. Which expression gives the number of 5 kg bags she has now, and what are its terms?",
+     "a": "3 + 90 ÷ 5, with terms 3 and 90 ÷ 5",
+     "o": [
+      "3 + 90 ÷ 5, with terms 3 and 90 ÷ 5",
+      "(3 + 90) ÷ 5, which is a single term",
+      "3 + 90 ÷ 5, with terms 3, 90 and 5",
+      "3 + 90 ÷ 5, with terms 3 + 90 and 5"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 64 − 18 ÷ 3 + 5 as a sum of terms. (b) Find its value.",
+     "a": "(a) 64 + (−18 ÷ 3) + 5, so the terms are 64, −18 ÷ 3 and 5. (b) 64 − 6 + 5 = 63.",
+     "s": [
+      [
+       "Part (a): writes the subtraction as adding the inverse and names the three terms",
+       1
+      ],
+      [
+       "Part (b): evaluates the ÷ term first and adds the terms to get 63",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sunil lists the terms of 5 × (3 + 2) + 7 as 5 × 3, 2 and 7. (a) What is wrong with his list? (b) Write the correct terms and the value.",
+     "a": "(a) The bracket (3 + 2) belongs to the product 5 × (3 + 2): the + is inside a bracket, so it does not separate terms. (b) The terms are 5 × (3 + 2) and 7; the value is 25 + 7 = 32.",
+     "s": [
+      [
+       "Part (a): the + inside the bracket does not separate terms, so 5 × (3 + 2) stays whole",
+       1
+      ],
+      [
+       "Part (b): terms 5 × (3 + 2) and 7 with value 32",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of terms in the expression 30 − 4 × 5 + 12 ÷ 4 − 6 − 2 × 3 is ___.",
+     "a": "5"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In the game 'Fire in the mountain, run, run, run!', 41 children start, but Ruby sits out as scorer, so 40 children play. When the teacher calls a number, children form groups of that size. Ruby writes the number of full groups × group size + the children left out.\n(a) The teacher calls 6. Write Ruby's expression and identify its terms.\n(b) The teacher calls 7. Write Ruby's expression and say how many children are out.\n(c) Find how many are out if she calls 5, 8 or 9.\n(d) The teacher wants nobody out and at least 6 groups. Which of 5, 6, 7, 8, 9 should she call, and why?",
+     "a": "(a) 6 × 6 + 4; terms 6 × 6 and 4. (b) 5 × 7 + 5; 5 children are out. (c) 5: 8 × 5 + 0, none out; 8: 5 × 8 + 0, none out; 9: 4 × 9 + 4, 4 out. (d) Calling 5 or 8 leaves nobody out, but 8 gives only 5 groups and 5 gives 8 groups, so she should call 5.",
+     "s": [
+      [
+       "Part (a): 6 × 6 + 4 with terms 6 × 6 and 4",
+       1
+      ],
+      [
+       "Part (b): 5 × 7 + 5 with 5 children out",
+       1
+      ],
+      [
+       "Part (c): 0 out for 5 and 8, 4 out for 9",
+       1
+      ],
+      [
+       "Part (d): chooses 5 (nobody out and 8 groups, at least 6) and rejects 8 (only 5 groups)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: In 14 − 3 × 2 + 8 the terms are 14, 3 × 2 and 8. Give a reason.",
+     "a": "False. Subtraction is written as adding the inverse, so the terms are 14, −3 × 2 and 8. The term 3 × 2 carries its minus sign with it.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: 14 − 3 × 2 + 8 = 14 + (−3 × 2) + 8, so the second term is −3 × 2",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a token game Zoya's three moves are +30, −4 × 5 and +12 ÷ 3. Which single move now brings her score back to exactly 0?",
+     "a": "−14",
+     "o": [
+      "−14",
+      "+14",
+      "−10",
+      "−34"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 72 − 8 × 5 − 9 as a sum of terms and write the inverse of each term. (b) What do you get when the value of the expression is added to the inverses of all its terms, and why?",
+     "a": "(a) 72 + (−8 × 5) + (−9); the inverses are −72, +40 and +9. (b) The value is 72 − 40 − 9 = 23 and the inverses add up to −72 + 40 + 9 = −23, so the total is 0: each term is cancelled by its own inverse.",
+     "s": [
+      [
+       "Part (a): the three terms 72, −8 × 5, −9 with inverses −72, +40, +9",
+       1
+      ],
+      [
+       "Part (b): 23 + (−23) = 0, since every term meets its inverse",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tara says: 'Since 8 + 3 = 3 + 8, swapping the numbers also works for subtraction, so 8 − 3 = 3 − 8.' Check her claim and say which swap is allowed.",
+     "a": "She is wrong. 8 − 3 = 5 but 3 − 8 = −5. The terms of 8 − 3 are 8 and −3, so the allowed swap is −3 + 8, which equals 5.",
+     "s": [
+      [
+       "Finds the two values 5 and −5 and says the claim is wrong",
+       1
+      ],
+      [
+       "Writes the terms of 8 − 3 as 8 and −3",
+       1
+      ],
+      [
+       "Gives the allowed swap −3 + 8 = 5",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Madhu flies a drone from a terrace that is 12 m above the ground. The flight log gives its moves in order: up 9 m, down 15 m, up 6 m, down 7 m, up 11 m. A school-ground rule says the drone must never go above 30 m from the ground.\n(a) Write the moves as a sum of terms and find the final height above the ground.\n(b) Find the lowest height above the ground during the flight.\n(c) Madhu now adds the moves with all the up-moves first and then the down-moves. Does the final height change? What is the highest height in that order?\n(d) The ground allows a flight above 30 m only with a permit that takes a week to get, and Madhu's project is due in 3 days. Either order gives the same final height. Which order should he fly, and what do the properties of addition tell us, and not tell us, about the heights on the way?",
+     "a": "(a) 12 + 9 + (-15) + 6 + (-7) + 11 = 16 m. (b) The heights after each move are 21, 6, 12, 5, 16, so the lowest is 5 m. (c) The final height is still 16 m, but in the new order the drone reaches 12 + 9 + 6 + 11 = 38 m. (d) He should fly the original order: its greatest height is 21 m, within 30 m, so no permit is needed and the project is on time. The second order also ends at 16 m, but it passes 38 m, which needs the permit. Properties of addition fix only the final sum, not the heights on the way.",
+     "s": [
+      [
+       "Part (a): the sum of terms and final height 16 m",
+       1
+      ],
+      [
+       "Part (b): heights 21, 6, 12, 5, 16 and the lowest 5 m",
+       1
+      ],
+      [
+       "Part (c): final height unchanged at 16 m and the highest height 38 m",
+       1
+      ],
+      [
+       "Part (d): chooses the original order (21 m under 30 m) and says order fixes the final sum but not the heights on the way",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sana finds 64 − 27 + 36 like this: 'I will add 27 + 36 = 63 first, because adding can be done in any order, and then 64 − 63 = 1.' Why is her answer wrong?",
+     "a": "The terms are 64, −27 and 36, so 27 and 36 cannot be added; −27 + 36 = 9 gives 73",
+     "o": [
+      "The terms are 64, −27 and 36, so 27 and 36 cannot be added; −27 + 36 = 9 gives 73",
+      "Adding in any order is not allowed, so 64 − 27 must be done first and then 36 subtracted, giving 1",
+      "The grouping is right but the sum 27 + 36 is 61, so the final answer should be 3",
+      "The terms may be regrouped only when the largest number is first, so 64 − 36 − 27 is needed"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "After a spell of rain the water level in a village tank rises 12 cm, then falls 17 cm in a dry week and rises 9 cm in the next shower. (a) Write the net change in the level as a sum of terms and find it. (b) Add the two rises first and then the fall, and show the net change is the same.",
+     "a": "(a) 12 + (-17) + 9 = 4, so the level is 4 cm higher. (b) 12 + 9 + (-17) = 21 - 17 = 4 cm, the same.",
+     "s": [
+      [
+       "Part (a): sum of terms and net change 4 cm",
+       1
+      ],
+      [
+       "Part (b): rises added first, giving 4 cm again",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A lift in an office tower starts at floor 12 and makes these moves: down 6 floors, up 9, down 8, up 4.\n(a) Write the final floor as a sum of terms.\n(b) Add the terms in the order given and find the final floor.\n(c) Add all the up-moves together and all the down-moves together first, and show that the final floor is the same.\n(d) Name the property that allows this. In a building whose lowest floor is 0, could the lift make all its down-moves first? Explain.",
+     "a": "(a) 12 + (−6) + 9 + (−8) + 4. (b) 12 − 6 = 6, 6 + 9 = 15, 15 − 8 = 7, 7 + 4 = 11, so floor 11. (c) Up-moves and start: 12 + 9 + 4 = 25. Down-moves: −6 + (−8) = −14. 25 − 14 = 11. (d) The commutative and associative properties of addition. Doing both down-moves first would give 12 − 6 − 8 = −2, below floor 0, so the lift could not travel in that order even though the final floor is the same.",
+     "s": [
+      [
+       "Part (a): the sum of terms with the down-moves as negative terms",
+       1
+      ],
+      [
+       "Part (b): the final floor 11",
+       1
+      ],
+      [
+       "Part (c): regroups as 25 and −14 to get 11",
+       2
+      ],
+      [
+       "Part (d): names the properties and shows the down-first order reaches −2, impossible in that building",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: Since (7 + 3) + 5 = 7 + (3 + 5), we can also say (7 − 3) − 5 = 7 − (3 − 5). Give a reason.",
+     "a": "False. (7 − 3) − 5 = −1 but 7 − (3 − 5) = 9. Regrouping works only after the subtractions are written as additions: 7 + (−3) + (−5).",
+     "s": [
+      [
+       "Verdict: False, with the two values −1 and 9",
+       1
+      ],
+      [
+       "Reason: regroup only the terms of a sum, after writing 7 + (−3) + (−5)",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shopkeeper's stock register for a medicine shows the changes +235, −140, +65 and +140 in four days. Which statement about the total change is correct?",
+     "a": "It is +300, because −140 and +140 can be brought together and cancel",
+     "o": [
+      "It is +300, because −140 and +140 can be brought together and cancel",
+      "It is +300, but only when the terms are added in the order written",
+      "It is +580, because the stock changes are all added without signs",
+      "It is +20, because 140 is taken away twice"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements.\nStatement 1: Swapping the two terms of 8 − 3 gives 3 − 8, which has the same value.\nStatement 2: In 40 + (−25) + 25 the last two terms cancel, so the value is 40 whichever two terms are added first.\nStatement 3: −18 + 30 + (−12) and 30 + (−18) + (−12) have the same value, 0.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ravi says: 'The terms of 20 − 8 + 5 can be moved around freely.' Which rearrangement of the same symbols does NOT keep the value of 20 − 8 + 5?",
+     "a": "8 − 20 + 5",
+     "o": [
+      "8 − 20 + 5",
+      "5 + 20 − 8",
+      "−8 + 20 + 5",
+      "20 + 5 − 8"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 14 − 9 + 5 as a sum of terms, and write it again with the terms in a different order. (b) Show that both orders give the same value.",
+     "a": "(a) 14 + (−9) + 5, and for example −9 + 5 + 14. (b) 14 − 9 = 5 and 5 + 5 = 10; −9 + 5 = −4 and −4 + 14 = 10. Both are 10.",
+     "s": [
+      [
+       "Part (a): the sum of terms with the sign of 9 kept as −9, and a second order of the same three terms",
+       1
+      ],
+      [
+       "Part (b): finds the value 10 in both orders",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): (−9 + 4) + 6 = −9 + (4 + 6).\nReason (R): Subtraction is associative, so (7 − 3) − 5 = 7 − (3 − 5).",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 126 − 48 + 74 − 52 by first putting together the terms that give round numbers. (b) Hari groups it as (126 − 48) and (74 − 52), gets 78 and 22, and writes the answer as 78 − 22 = 56. Find his slip and the right answer.",
+     "a": "(a) 126 + 74 = 200 and −48 + (−52) = −100, so the value is 100. (b) The terms 74 and −52 together make +22, but both groups are terms of one sum, so they must be added: 78 + 22 = 100. Hari subtracted 22 as if the second group had a minus sign in front.",
+     "s": [
+      [
+       "Part (a): groups 126 + 74 and −48 − 52 to get 200 − 100 = 100",
+       1
+      ],
+      [
+       "Part (b): the groups are added (78 + 22 = 100), not subtracted",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up a pocket-money story for 500 + (−120) + 80 and show that changing the order in which the events happen does not change the final amount.",
+     "a": "Hamid has ₹500, spends ₹120 on a book and then receives ₹80 from his uncle: 500 − 120 + 80 = ₹460. If the ₹80 came first: 500 + 80 − 120 = ₹460 as well.",
+     "s": [
+      [
+       "A sensible story that matches the three terms",
+       1
+      ],
+      [
+       "Value ₹460 in the story's order",
+       1
+      ],
+      [
+       "Shows the same value in a different order",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A passbook shows a deposit of ₹800, a withdrawal of ₹350 and a deposit of ₹150. (a) Write the net change as a sum of terms. (b) Pair the terms to make the sum easy and find the net change.",
+     "a": "(a) 800 + (−350) + 150. (b) Pairing 800 + 150 = 950, then 950 + (−350) = 600; the net change is +₹600.",
+     "s": [
+      [
+       "Part (a): writes 800 + (−350) + 150",
+       1
+      ],
+      [
+       "Part (b): pairs the deposits and finds ₹600",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each expression in Column I with its value in Column II.\nColumn I: 1. (47 + 53) + (−19)   2. 18 + (−7) + (−18)   3. (5 − 9) + 12   4. 40 − (15 − 6)\nColumn II: a. 8   b. −7   c. 31   d. 81",
+     "a": "1-d, 2-b, 3-a, 4-c",
+     "o": [
+      "1-d, 2-b, 3-a, 4-c",
+      "1-d, 2-a, 3-b, 4-c",
+      "1-b, 2-d, 3-a, 4-c",
+      "1-d, 2-b, 3-c, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "On a token board Bina places 6 positive tokens, 9 negative tokens, 4 positive tokens and 5 negative tokens. (a) After all the zero pairs are removed, what is left, and what number does the board show? (b) Chirag starts with the first two groups, then adds the third, then the fourth. Show his running values and that he ends at the same number.",
+     "a": "(a) 10 positive and 14 negative tokens give 10 zero pairs, leaving 4 negative tokens: −4. (b) 6 + (−9) = −3, then −3 + 4 = 1, then 1 + (−5) = −4, the same.",
+     "s": [
+      [
+       "Part (a): 10 zero pairs removed, 4 negative tokens left, −4",
+       1
+      ],
+      [
+       "Part (b): running values −3, 1, −4, the same final number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 37 + 58 + 63 + 42 by pairing the terms so that each pair makes 100. (b) Name the properties of addition that let you take 63 next to 37.",
+     "a": "(a) 37 + 63 = 100 and 58 + 42 = 100, so the sum is 200. (b) Swapping terms (commutative property) lets 63 move next to 37, and regrouping (associative property) lets us add the pairs first.",
+     "s": [
+      [
+       "Part (a): pairs 37 + 63 and 58 + 42 and the sum 200",
+       1
+      ],
+      [
+       "Part (b): commutative for swapping and associative for regrouping",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Exactly one of these groupings does NOT keep the value of 25 − 14 + 9 − 6. Which one?",
+     "a": "25 − (14 + 9) − 6",
+     "o": [
+      "25 − (14 + 9) − 6",
+      "(25 + 9) + (−14 − 6)",
+      "(25 − 14) + (9 − 6)",
+      "(25 − 6) + (9 − 14)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Two students find 482 + 275 + 18 + 125. Kavya adds the terms in the order written. Imran adds 482 + 18 first, then 275 + 125, and then the two results, and says: 'My answer must be the same as Kavya's, because the order and grouping of terms do not change a sum.' (a) Find the answer by both methods. (b) Is Imran's claim right? Which method is easier to do in the head, and which properties of addition make his regrouping valid?",
+     "a": "(a) Kavya: 482 + 275 = 757, 757 + 18 = 775, 775 + 125 = 900. Imran: 500 + 400 = 900. Both get 900. (b) Yes, his claim is right. His method is easier because the pairs make round numbers. It is valid because terms can be swapped and regrouped (commutative and associative properties).",
+     "s": [
+      [
+       "Part (a): 900 by both methods",
+       1
+      ],
+      [
+       "Part (b): says the claim is right, and the easier method with the round-number reason",
+       1
+      ],
+      [
+       "Part (b): names the commutative and associative properties",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A game board shows the moves 25, −9, 14 and −40 in some order, and one move is missing. Which missing move makes the total of all five exactly 0, whatever the order?",
+     "a": "+10",
+     "o": [
+      "+10",
+      "−10",
+      "+30",
+      "−30"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Find 11 − 12 + 13 − 14 + 15 − 16 + 17 − 18 by grouping the terms in pairs.\n(b) Find the same value by adding the positive terms and the negative terms separately.\n(c) Name the property that lets you regroup the terms.\n(d) Predict the value of 11 − 12 + 13 − 14 + … + 29 − 30 without adding all the terms, and explain your prediction.",
+     "a": "(a) Each pair is 11 − 12 = −1, and there are 4 pairs, so −4. (b) Positive terms 11 + 13 + 15 + 17 = 56; negative terms −12 − 14 − 16 − 18 = −60; 56 − 60 = −4. (c) The associative property (with the commutative property). (d) The terms run from 11 to 30, which is 20 terms, so 10 pairs, each −1, so the value is −10.",
+     "s": [
+      [
+       "Part (a): pairs each −1, four pairs, −4",
+       1
+      ],
+      [
+       "Part (b): 56 and −60 giving −4",
+       1
+      ],
+      [
+       "Part (c): names the associative property (or commutative and associative)",
+       1
+      ],
+      [
+       "Part (d): counts 20 terms as 10 pairs and predicts −10 with the reason",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At the inter-house quiz, a team scores +10, +15 or +20 for a right answer and loses marks for a wrong one. Round scores for Falcons were +15, −5, +20, −10, +15, −5. For Eagles they were +20, −10, +10, +20, −15, −5.\n(a) Write the Falcons' total as a sum of terms and find it by adding the positive and the negative terms separately.\n(b) Find the Eagles' total in the same way.\n(c) Which team led after round 4, and by how much?\n(d) The quiz master says the champion is decided by the final total, which would be the same even if the six rounds had been played in another order. Which team is champion, and by how much? Does the order of the rounds change who leads midway?",
+     "a": "(a) 15 + (−5) + 20 + (−10) + 15 + (−5): positives 50, negatives −20, total 30. (b) Positives 20 + 10 + 20 = 50, negatives −10 − 15 − 5 = −30, total 20. (c) After round 4 the Falcons had 20 and the Eagles 40, so the Eagles led by 20. (d) The Falcons are champions by 10 (30 against 20). The final total does not depend on the order, but who leads midway does depend on the order of the rounds.",
+     "s": [
+      [
+       "Part (a): sum of terms, positives 50, negatives −20, total 30",
+       1
+      ],
+      [
+       "Part (b): Eagles total 20",
+       1
+      ],
+      [
+       "Part (c): 20 and 40 after four rounds, Eagles lead by 20",
+       1
+      ],
+      [
+       "Part (d): Falcons win by 10; the total is order-free but the midway lead is not",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.4",
+   "questions": [
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write an expression with three terms, one a product containing a bracket, one a division and one a plain number, whose value is 50. Show the working.",
+     "a": "For example 4 × (7 + 3) + 12 ÷ 4 + 7 = 40 + 3 + 7 = 50.",
+     "s": [
+      [
+       "An expression with the three kinds of term required",
+       1
+      ],
+      [
+       "Evaluates the bracket and then each term",
+       1
+      ],
+      [
+       "The terms add to exactly 50",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Which operation is done first in 25 + 8 × 3, and what is the value? (b) Where would you put brackets to make the value 99?",
+     "a": "(a) 8 × 3 = 24 is a term and is done first, giving 25 + 24 = 49. (b) (25 + 8) × 3 = 33 × 3 = 99.",
+     "s": [
+      [
+       "Part (a): multiplication first, value 49",
+       1
+      ],
+      [
+       "Part (b): the bracket (25 + 8) × 3 = 99",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Evaluate 18 + 4 × (11 − 5) − 24 ÷ 3 and then check two students' answers. Bilal gets 124 and Dev gets 6.\n(a) List the terms of the expression.\n(b) Find the correct value.\n(c) Explain what Bilal did wrong and what Dev did wrong.",
+     "a": "(a) 18, 4 × (11 − 5) and −24 ÷ 3. (b) 4 × 6 = 24 and 24 ÷ 3 = 8, so 18 + 24 − 8 = 34. (c) Bilal added 18 + 4 first (22 × 6 = 132, then − 8 = 124), splitting the term 4 × (11 − 5). Dev worked left to right: 18 + 24 = 42, 42 − 24 = 18 and 18 ÷ 3 = 6, ignoring that 24 ÷ 3 is a term of its own.",
+     "s": [
+      [
+       "Part (a): three terms with the third as a negative division term",
+       1
+      ],
+      [
+       "Part (b): value 34",
+       2
+      ],
+      [
+       "Part (c): names both mistakes (added before multiplying; worked left to right)",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Putting a bracket round 3 + 2 changes the value of 48 − 6 × 3 + 2 from 32 to ___.",
+     "a": "18"
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "For Sports Day the school bought 15 crates with 24 water bottles in each. 2 crates were returned as damaged and 36 loose bottles were donated. The bottles are shared equally among 6 houses.\n(a) Write one expression, using brackets, for the number of bottles the school has.\n(b) Find its value.\n(c) How many bottles does each house get?\n(d) Each house needs 62 bottles. How many bottles short is each house, and how many in all?",
+     "a": "(a) (15 − 2) × 24 + 36. (b) 13 × 24 = 312 and 312 + 36 = 348. (c) 348 ÷ 6 = 58. (d) 62 − 58 = 4 short per house, and 4 × 6 = 24 in all.",
+     "s": [
+      [
+       "Part (a): bracket round 15 − 2, multiplied by 24, plus 36",
+       2
+      ],
+      [
+       "Part (b): value 348",
+       1
+      ],
+      [
+       "Part (c): 58 bottles per house",
+       1
+      ],
+      [
+       "Part (d): 4 short per house and 24 in all",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The owner of a shop works out 120 − 4 × 5 + 10 as 110, but the till prints 90. Which working produces the printed 90?",
+     "a": "120 − (4 × 5 + 10)",
+     "o": [
+      "120 − (4 × 5 + 10)",
+      "(120 − 4) × 5 + 10",
+      "120 − 4 × (5 + 10)",
+      "120 − 4 × 5, leaving out the + 10"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Kabir says: 'A bracket round 6 × 3 in 24 + 6 × 3 changes nothing, so a bracket can never change the value of an expression.' Is he completely right? Test with 24 + 6 × 3 and (24 + 6) × 3.",
+     "a": "He is right about the first part but wrong about 'never'. 24 + 6 × 3 = 24 + 18 = 42 and 24 + (6 × 3) = 42, because 6 × 3 is already a term. But (24 + 6) × 3 = 90, so a bracket round a different part does change the value.",
+     "s": [
+      [
+       "Verdict: partly right, wrong with 'never'",
+       1
+      ],
+      [
+       "Shows 24 + 6 × 3 and 24 + (6 × 3) are both 42, since 6 × 3 is already one term",
+       1
+      ],
+      [
+       "Shows (24 + 6) × 3 = 90, so brackets can change the value",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The Science Club bought 12 packets of juice at ₹25 each and 9 packets of chips at ₹18 each for the science fair. The shopkeeper allowed a discount of ₹40 on the whole bill. They paid with ₹500.\n(a) Write an expression for the amount payable and find its value.\n(b) Write the change as one expression with brackets and find it.\n(c) An assistant wrote the change as 500 − 12 × 25 + 9 × 18 − 40 and got ₹322. Which bracket did he leave out, and what is the correct change?\n(d) The club now needs 12 packets of chips. Offer B: the same 12 packets of juice and 12 packets of chips with a discount of ₹70. Alternatively, they could keep the first bill and buy 3 more packets of chips later at ₹18 each. Which is cheaper, and by how much?",
+     "a": "(a) 12 × 25 + 9 × 18 − 40 = 300 + 162 − 40 = ₹422. (b) 500 − (12 × 25 + 9 × 18 − 40) = 500 − 422 = ₹78. (c) He left out the bracket round the whole bill; the correct change is ₹78. (d) Offer B costs 12 × 25 + 12 × 18 − 70 = 446. The other way costs 422 + 3 × 18 = 476. Offer B is cheaper by ₹30.",
+     "s": [
+      [
+       "Part (a): the expression and the amount 422",
+       1
+      ],
+      [
+       "Part (b): the bracketed change expression and 78",
+       1
+      ],
+      [
+       "Part (c): names the missing bracket round the bill and the correct change 78",
+       1
+      ],
+      [
+       "Part (d): 446 against 476, Offer B cheaper by 30",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Where should one pair of brackets be placed in 60 − 6 × 3 + 2 so that its value becomes 30?",
+     "a": "60 − 6 × (3 + 2)",
+     "o": [
+      "60 − 6 × (3 + 2)",
+      "(60 − 6) × 3 + 2",
+      "60 − (6 × 3 + 2)",
+      "(60 − 6 × 3) + 2"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meera works out 7 × (9 − 4) + 6 × 3 and Neel works out 7 × 9 − 4 + 6 × 3, writing the bracket away. By how much do their values differ?",
+     "a": "24",
+     "o": [
+      "24",
+      "4",
+      "28",
+      "18"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Anwar works out 90 − 3 × (8 + 4) + 12 ÷ 3 as 87 × 12 + 4 = 1,048. (a) Which step is wrong and why? (b) List the correct terms and find the correct value.",
+     "a": "(a) He subtracted 3 from 90 before multiplying, which splits the term 3 × (8 + 4). The bracket should be worked first and then the product. (b) The terms are 90, -3 × (8 + 4) and 12 ÷ 3: 90 - 36 + 4 = 58.",
+     "s": [
+      [
+       "Part (a): finds that 90 - 3 was done first, splitting the term 3 × (8 + 4)",
+       1
+      ],
+      [
+       "Part (b): correct terms 90, -3 × (8 + 4), 12 ÷ 3",
+       1
+      ],
+      [
+       "Part (b): correct value 58",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Place one pair of brackets in 18 + 6 × 4 − 2 so that its value is 30. (b) Place one pair of brackets in the same expression so that its value is 94. Show the working for each.",
+     "a": "(a) 18 + 6 × (4 − 2) = 18 + 12 = 30. (b) (18 + 6) × 4 − 2 = 96 - 2 = 94.",
+     "s": [
+      [
+       "Part (a): brackets round 4 − 2, giving 18 + 12 = 30",
+       1
+      ],
+      [
+       "Part (b): brackets round 18 + 6, giving 24 × 4 − 2 = 94",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements.\nStatement 1: In 60 − (12 + 8) × 2 the bracket is evaluated first, then the product, and the value is 20.\nStatement 2: In 16 + 24 ÷ 4 the value is 10, because 16 + 24 = 40 and 40 ÷ 4 = 10.\nStatement 3: Putting a bracket round 30 − 4 in 30 − 4 × 5 raises the value by 120.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sneha pays with a ₹500 note for 3 notebooks at ₹45 each and 2 pens at ₹12 each. Which expression gives the change she should get?",
+     "a": "500 − (3 × 45 + 2 × 12)",
+     "o": [
+      "500 − (3 × 45 + 2 × 12)",
+      "500 − 3 × 45 + 2 × 12",
+      "(500 − 3) × 45 + 2 × 12",
+      "500 − (3 + 45) + 2 × 12"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena buys 4 pen sets marked ₹45 each, with ₹8 off each set. She also pays her share of the gift wrap, ₹60 divided equally among 5 friends. (a) Write one expression for what she pays and list its terms. (b) Find its value.",
+     "a": "(a) 4 × (45 − 8) + 60 ÷ 5, with the two terms 4 × (45 − 8) and 60 ÷ 5. (b) 4 × 37 = 148 and 60 ÷ 5 = 12, so she pays ₹160.",
+     "s": [
+      [
+       "Part (a): the expression with the bracket inside the first term, and the two terms",
+       1
+      ],
+      [
+       "Part (b): 148 + 12 = ₹160",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Evaluate (96 − 36) ÷ 6 + 4 × 7. (b) Remove the brackets and evaluate 96 − 36 ÷ 6 + 4 × 7. Why do the two values differ?",
+     "a": "(a) 60 ÷ 6 + 28 = 10 + 28 = 38. (b) Without brackets the terms are 96, −36 ÷ 6 and 4 × 7, so 96 − 6 + 28 = 118. The bracket makes 96 − 36 happen first.",
+     "s": [
+      [
+       "Part (a): value 38 with the bracket first",
+       1
+      ],
+      [
+       "Part (b): value 118 and the reason: the bracket changes what is divided",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A hostel mess buys supplies: 6 sacks of rice at ₹1,150 a sack, 4 bags of dal at ₹650 a bag, and vegetables for the week at ₹450 a day for 6 days (the mess is closed on Sunday). One damaged rice sack is taken back by the shop and its ₹1,150 is returned. There are 25 students in the hostel.\n(a) Write the net bill as an expression with its terms and find its value.\n(b) Write the same net bill with a bracket for the number of rice sacks paid for, and check that the value is the same.\n(c) How much does each student pay if the net bill is shared equally?\n(d) The warden can spend only ₹10,800. Choose between cutting vegetables for one day or asking each student to add ₹10. Justify your choice using the shortfall.",
+     "a": "(a) 6 × 1,150 + 4 × 650 + 450 × 6 − 1,150 = 6,900 + 2,600 + 2,700 − 1,150 = ₹11,050. (b) (6 − 1) × 1,150 + 4 × 650 + 450 × 6 = 5,750 + 2,600 + 2,700 = ₹11,050. (c) 11,050 ÷ 25 = ₹442. (d) The shortfall is 11,050 − 10,800 = ₹250. Adding ₹10 for each of 25 students gives exactly ₹250. Cutting one day of vegetables saves ₹450 and leaves ₹200 spare. Either choice can be justified with its number: dropping a day of vegetables saves ₹450, more than the ₹250 needed; asking ₹10 from each student raises exactly ₹250 and keeps every meal.",
+     "s": [
+      [
+       "Part (a): the expression with a negative refund term and value 11,050",
+       1
+      ],
+      [
+       "Part (b): the bracketed form with the same value 11,050",
+       1
+      ],
+      [
+       "Part (c): ₹442 per student",
+       1
+      ],
+      [
+       "Part (d): shortfall ₹250 against ₹250 (₹10 each) or ₹450 (one day's vegetables), and either choice with its matching number",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tara and Naveen both evaluate 30 + (4 + 5) × 2. Tara gets 48 and Naveen gets 78. Who is right?",
+     "a": "Tara: the bracket gives 9, the term 9 × 2 is 18, and 30 + 18 = 48",
+     "o": [
+      "Tara: the bracket gives 9, the term 9 × 2 is 18, and 30 + 18 = 48",
+      "Naveen: 30 is added to the bracket first, 39, and then × 2 gives 78",
+      "Both: for + and × the order of working does not matter",
+      "Neither: the bracket must be left for the last step"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The value of 100 − (35 + 15) is 50.\nReason (R): A bracket is worked out before any operation that uses its value.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the number that goes in the box so that (90 − □) ÷ 6 + 7 × (13 − 8) = 47. (b) If the number in the box is made 6 more, by how much does the value of the expression change, and why?",
+     "a": "(a) 7 × 5 = 35, so (90 − □) ÷ 6 = 12, 90 − □ = 72 and □ = 18. (b) With □ = 24: (90 − 24) ÷ 6 + 35 = 46. The value falls by 1, because 6 more taken from 90 makes the quotient 1 less.",
+     "s": [
+      [
+       "Part (a): the term 35, then 90 − □ = 72 and □ = 18",
+       1
+      ],
+      [
+       "Part (b): value 46, a fall of 1, since 6 ÷ 6 = 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ayaan reads 24 − 6 ÷ 3 as (24 − 6) ÷ 3 = 6. (a) What has he done wrong, and what is the correct value? (b) Where would the bracket have to be for his answer 6 to be right?",
+     "a": "(a) He subtracted before dividing, which splits the term 6 ÷ 3; the value is 24 − 2 = 22. (b) 6 is right only for (24 − 6) ÷ 3, so the brackets must be put round 24 − 6.",
+     "s": [
+      [
+       "Part (a): the term 6 ÷ 3 was split; correct value 22",
+       1
+      ],
+      [
+       "Part (b): brackets round 24 − 6 are needed for the answer 6",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Dhruv has 45 marbles in one box and 60 in another. He gives 18 marbles from the second box to a friend. Which expression does NOT give the marbles he has left?",
+     "a": "45 − (60 − 18)",
+     "o": [
+      "45 − (60 − 18)",
+      "45 + (60 − 18)",
+      "45 + 60 − 18",
+      "45 + 60 + (−18)"
+     ],
+     "tags": [
+      "scenario"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To subtract 98 from a number, Lekha subtracts 100 and then adds 2. Using a bracket, explain why this always gives the correct answer.",
+     "a": "98 = 100 − 2, so subtracting 98 is subtracting (100 − 2). Removing the bracket after the minus changes both signs: n − (100 − 2) = n − 100 + 2.",
+     "s": [
+      [
+       "Writes 98 as 100 − 2 and subtracts the bracket",
+       1
+      ],
+      [
+       "Removes the bracket with the signs changed to get − 100 + 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 60 − (−15 + 5) can be written as 60 + 15 − 5, and its value is 70. Give a reason.",
+     "a": "True. The bracket follows a minus sign, so the sign of each term inside changes: −15 becomes +15 and +5 becomes −5. The bracket is −10, and 60 − (−10) = 70; also 60 + 15 − 5 = 70.",
+     "s": [
+      [
+       "Verdict: True, with both forms equal to 70",
+       1
+      ],
+      [
+       "Reason: a minus before the bracket changes the sign of every term inside, so −15 becomes +15 and +5 becomes −5",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The library fine fund had ₹1,800. On Monday ₹650 of fines were collected. The same day the librarian spent ₹420 on stationery and ₹280 on repairs. Clerk 1 wrote the closing balance as 1,800 + 650 − (420 + 280). Clerk 2 wrote it as 1,800 + 650 − 420 + 280.\n(a) Find Clerk 1's closing balance.\n(b) Find Clerk 2's closing balance.\n(c) Which sign did Clerk 2 get wrong, and by how much do the two balances differ?\n(d) The fund must always keep at least ₹1,500 as a reserve, and the school wants to buy an almirah for ₹300 from the fund. Using the correct balance, can it buy the almirah? What is the most the fund can spend? Which clerk's ledger would have wrongly allowed the purchase?",
+     "a": "(a) 1,800 + 650 - (420 + 280) = 2,450 - 700 = ₹1,750. (b) 1,800 + 650 - 420 + 280 = 2,450 - 420 + 280 = ₹2,310. (c) The sign of 280 should be minus; the balances differ by 2 × 280 = ₹560. (d) Clerk 1's ₹1,750 is right. The almirah would leave 1,750 - 300 = ₹1,450, below the ₹1,500 reserve, so it cannot be bought; the most the fund can spend is 1,750 - 1,500 = ₹250. Clerk 2's ledger (₹2,310 - 300 = ₹2,010) would wrongly allow it.",
+     "s": [
+      [
+       "Part (a): ₹1,750",
+       1
+      ],
+      [
+       "Part (b): ₹2,310",
+       1
+      ],
+      [
+       "Part (c): the wrong sign on 280 and the difference ₹560",
+       1
+      ],
+      [
+       "Part (d): ₹1,450 is below the reserve, so no; most ₹250; Clerk 2's ledger would allow it",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Put brackets in 90 − 20 + 5 so that its value becomes 65, and show the working.",
+     "a": "90 − (20 + 5) = 90 − 25 = 65. (Without brackets the value is 75.)",
+     "s": [
+      [
+       "Puts the bracket round 20 + 5",
+       1
+      ],
+      [
+       "Shows the working to 65",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which choice gives 50 − (4 × 3 + 2) without brackets, with its correct value?",
+     "a": "50 − 4 × 3 − 2, value 36",
+     "o": [
+      "50 − 4 × 3 − 2, value 36",
+      "50 − 4 × 3 + 2, value 40",
+      "50 + 4 × 3 + 2, value 64",
+      "50 − 4 × 3 − 2, value 40"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A shop has 80 packets of biscuits. Write each situation as an expression with a bracket, remove the bracket and find the value.\n(a) 24 packets and 16 packets arrive together in one delivery.\n(b) 24 packets and 16 packets are sold together in one order.\n(c) 24 packets arrive, of which 16 are damaged and unusable.\n(d) 24 packets are sold, of which 16 are returned by the customer.\n(e) If the brackets in (a) to (d) were simply erased with no sign changed, for which situations would the answer stay right, and why?",
+     "a": "(a) 80 + (24 + 16) = 80 + 24 + 16 = 120. (b) 80 - (24 + 16) = 80 - 24 - 16 = 40. (c) 80 + (24 - 16) = 80 + 24 - 16 = 88. (d) 80 - (24 - 16) = 80 - 24 + 16 = 72. (e) Only (a) and (c), because the bracket follows a plus sign; in (b) and (d) the bracket follows a minus sign, so erasing it would give the wrong value.",
+     "s": [
+      [
+       "Part (a): bracketed form, removal and 120",
+       1
+      ],
+      [
+       "Part (b): bracket after a minus removed, 40",
+       1
+      ],
+      [
+       "Part (c): signs unchanged, 88",
+       1
+      ],
+      [
+       "Part (d): both signs flipped, 72",
+       1
+      ],
+      [
+       "Part (e): (a) and (c) stay right, since a plus before the bracket leaves the signs unchanged",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a shopping story for 120 − (45 + 30) and show how 120 − 45 − 30 fits the same story.",
+     "a": "Rani has ₹120 and buys a book for ₹45 and a pen for ₹30. Change: 120 − (45 + 30) = 120 − 75 = ₹45. Paying one after the other gives the same change: 120 − 45 = 75 and 75 − 30 = ₹45.",
+     "s": [
+      [
+       "A sensible story that matches the bracket",
+       1
+      ],
+      [
+       "Finds the change ₹45 with the bracket",
+       1
+      ],
+      [
+       "Shows paying one item at a time gives 120 − 45 − 30 = 45",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each expression in Column I with the same expression without brackets in Column II.\nColumn I: 1. 50 − (20 + 6)   2. 50 − (20 − 6)   3. 50 + (20 − 6)   4. 50 − (−20 − 6)\nColumn II: a. 50 − 20 + 6   b. 50 + 20 − 6   c. 50 − 20 − 6   d. 50 + 20 + 6",
+     "a": "1-c, 2-a, 3-b, 4-d",
+     "o": [
+      "1-c, 2-a, 3-b, 4-d",
+      "1-a, 2-c, 3-b, 4-d",
+      "1-c, 2-b, 3-a, 4-d",
+      "1-c, 2-a, 3-d, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Remove the bracket from 100 − (35 − 20 + 15), which has three terms inside. (b) Find the value in two ways: by working the bracket first and from your bracket-free form.",
+     "a": "(a) 100 − 35 + 20 − 15, every sign inside changes. (b) Bracket first: 35 − 20 + 15 = 30 and 100 − 30 = 70. Bracket-free: 100 − 35 = 65, 65 + 20 = 85, 85 − 15 = 70.",
+     "s": [
+      [
+       "Part (a): all three signs inside the bracket changed",
+       1
+      ],
+      [
+       "Part (b): 70 by both routes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements.\nStatement 1: 40 − (15 + 6) equals 40 − 15 + 6.\nStatement 2: 27 + (9 − 4) equals 27 + 9 + 4.\nStatement 3: 80 − (30 − 12) equals 80 − 30 + 12.\nWhich of the statements are correct?",
+     "a": "3 only",
+     "o": [
+      "3 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three friends buy railway tickets to Mysuru at ₹780 each. One friend cancels, and the railway refunds the ticket price less a cancellation charge of ₹95.\n(a) Write the money the group has spent after the refund as one expression using a bracket, and find its value.\n(b) Remove the bracket and list the terms of the new expression.\n(c) What is the net cost to the friend who cancelled? What would the group's net spending have been if the charge were ₹120? Use your terms from (b).\n(d) Instead she could transfer the ticket to a buyer who pays her ₹730, but she must pay a ₹60 transfer fee. Which option costs her less, and by how much?",
+     "a": "(a) 3 × 780 - (780 - 95) = 2,340 - 685 = ₹1,655. (b) 3 × 780 - 780 + 95; the terms are 3 × 780, -780 and 95. (c) The friend's net cost is the term 95, i.e. 780 - (780 - 95) = ₹95. With a ₹120 charge the term becomes 120, so the group spends 2,340 - 780 + 120 = ₹1,680. (d) Transfer costs her 780 - 730 + 60 = ₹110, so cancelling (₹95) costs ₹15 less.",
+     "s": [
+      [
+       "Part (a): the bracketed expression and ₹1,655",
+       1
+      ],
+      [
+       "Part (b): bracket-free form with signs changed and three terms listed",
+       1
+      ],
+      [
+       "Part (c): net cost ₹95 and ₹1,680 for a ₹120 charge",
+       1
+      ],
+      [
+       "Part (d): transfer costs ₹110 against ₹95, so cancelling costs ₹15 less",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Neha says: 'Brackets after a minus sign change the signs inside, so brackets after a plus sign must change them too.' Check her claim using 31 + (47 − 12).",
+     "a": "No. 31 + (47 - 12) = 31 + 35 = 66 and 31 + 47 - 12 = 66, so the signs stay the same. If the signs were changed we would get 31 + 47 + 12 = 90, which is a different value.",
+     "s": [
+      [
+       "States that her claim is wrong",
+       1
+      ],
+      [
+       "Shows 31 + (47 - 12) = 31 + 47 - 12 = 66",
+       1
+      ],
+      [
+       "Shows changing the signs would give 90, a different value",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Without evaluating, say which of these three expressions is the odd one out, and which sign decides it: 90 − (30 + 12), 90 − 30 − 12, 90 − 30 + 12.",
+     "a": "90 - 30 + 12 is the odd one out. Removing the bracket after the minus in 90 - (30 + 12) changes both signs, giving 90 - 30 - 12, so those two are equal (both 48). In the third the sign of 12 is + instead of -, so it is 72.",
+     "s": [
+      [
+       "Names 90 - 30 + 12 as the odd one out",
+       1
+      ],
+      [
+       "Removes the bracket to show the first two are equal",
+       1
+      ],
+      [
+       "Names the sign of 12 as the deciding sign",
+       1
+      ]
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Remove the brackets from 36 + (−14 + 5) and find the value. (b) Remove the brackets from 36 − (14 + 5) and find the value. Why are the values different?",
+     "a": "(a) 36 − 14 + 5 = 27. (b) 36 − 14 − 5 = 17. A bracket after + leaves the signs unchanged, while a bracket after − changes the signs of the terms inside it.",
+     "s": [
+      [
+       "Part (a): signs unchanged, value 27",
+       1
+      ],
+      [
+       "Part (b): signs changed, value 17, with the reason for the difference",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Jaya has 340 stamps in album A and 275 in album B. She gives 60 stamps from album B to Rohit.\n(a) Write an expression, using a bracket, for the number of stamps she has in all.\n(b) Remove the bracket and say what happens to the signs.\n(c) Find the value.\n(d) Suppose the 60 stamps had come from album A. Write that expression and say, using terms, whether the total changes.",
+     "a": "(a) 340 + (275 − 60). (b) 340 + 275 − 60; the bracket follows a plus sign, so the signs inside stay the same. (c) 615 − 60 = 555. (d) (340 − 60) + 275 = 555. The terms are the same three, 340, 275 and −60, so the total does not change.",
+     "s": [
+      [
+       "Part (a): 340 + (275 − 60)",
+       1
+      ],
+      [
+       "Part (b): bracket-free form with signs unchanged after +",
+       1
+      ],
+      [
+       "Part (c): value 555",
+       1
+      ],
+      [
+       "Part (d): expression and the reason that the terms are the same",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Remove both brackets: 200 − (60 + 45) − (30 − 10). (b) Evaluate the original and your bracket-free form and show that they agree.",
+     "a": "(a) 200 − 60 − 45 − 30 + 10. (b) 200 − 105 − 20 = 75 and 200 − 60 − 45 − 30 + 10 = 75.",
+     "s": [
+      [
+       "Part (a): both brackets follow a minus, so 60 and 45 become −60 and −45 and 30 and −10 become −30 and +10",
+       1
+      ],
+      [
+       "Part (b): both forms evaluate to 75",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these four expressions has the greatest value?",
+     "a": "100 − (−30 − 20)",
+     "o": [
+      "100 − (−30 − 20)",
+      "100 + (30 − 20)",
+      "100 − (30 − 20)",
+      "100 − (30 + 20)"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bus has 62 passengers. At the first stop 18 get off, but 7 of them get back on. At the second stop 14 get off. Which choice gives the bracket-free form of 62 − (18 − 7) − 14 and the passengers left?",
+     "a": "62 − 18 + 7 − 14, with 37 passengers",
+     "o": [
+      "62 − 18 + 7 − 14, with 37 passengers",
+      "62 − 18 − 7 − 14, with 23 passengers",
+      "62 − 18 + 7 + 14, with 65 passengers",
+      "62 + 18 − 7 − 14, with 59 passengers"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Which of 91 − (45 + 16) and 91 − (45 − 16) is equal to 91 − 45 − 16? (b) Write one more expression, with the same three terms in a different order, that is also equal to 91 − 45 − 16.",
+     "a": "(a) 91 − (45 + 16), because removing the bracket after the minus gives 91 − 45 − 16 (both are 30; the other is 62). (b) For example −45 + 91 − 16, which is also 30.",
+     "s": [
+      [
+       "Part (a): chooses 91 − (45 + 16) with the sign-change reason",
+       1
+      ],
+      [
+       "Part (b): a valid reordering that keeps each term's sign, such as −45 + 91 − 16",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Mina has ₹80 and writes four expressions for the money left after different payments. In each she then erases the brackets and changes no signs. For which expression does the value stay the same?",
+     "a": "80 + (24 + 16 − 5)",
+     "o": [
+      "80 + (24 + 16 − 5)",
+      "80 − (24 + 16 − 5)",
+      "80 − (24 − 16)",
+      "80 − (−24 + 16)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The value of 90 − (25 − 10) is 55.\nReason (R): Removing the bracket from 90 − (25 − 10) gives 90 − 25 + 10.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use the distributive property to find (a) 99 × 12 and (b) 102 × 25.",
+     "a": "(a) (100 − 1) × 12 = 1,200 − 12 = 1,188. (b) (100 + 2) × 25 = 2,500 + 50 = 2,550.",
+     "s": [
+      [
+       "Part (a): (100 − 1) × 12 = 1,188",
+       1
+      ],
+      [
+       "Part (b): (100 + 2) × 25 = 2,550",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a shopping story for 8 × 45 + 8 × 15 and find the total using the factored form.",
+     "a": "A teacher buys 8 packets of chalk at ₹45 each and 8 packets of dusters at ₹15 each. The total is 8 × 45 + 8 × 15 = 8 × (45 + 15) = 8 × 60 = ₹480.",
+     "s": [
+      [
+       "A sensible story with 8 of each item",
+       1
+      ],
+      [
+       "Writes the factored form 8 × (45 + 15)",
+       1
+      ],
+      [
+       "Total ₹480",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A canteen gets 7 crates. Each crate holds 36 apples and 64 oranges, and 20 fruits in every crate are rotten and thrown away. Which single product gives the number of good fruits?",
+     "a": "7 × (36 + 64 − 20)",
+     "o": [
+      "7 × (36 + 64 − 20)",
+      "7 × (36 + 64) − 20",
+      "7 × (36 + 64 + 20)",
+      "(7 + 7 + 7) × (36 + 64 − 20)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangle 13 cm wide and 48 cm long is cut by a line into two rectangles, one 40 cm long and one 8 cm long. (a) Write its area as a sum of two products and find it. (b) Show that 13 × 50 − 13 × 2 gives the same area and say what rectangle this second form describes.",
+     "a": "(a) 13 × 40 + 13 × 8 = 520 + 104 = 624 cm². (b) 13 × 50 − 13 × 2 = 650 − 26 = 624 cm². It is a 13 by 50 rectangle from which a 13 by 2 strip has been removed.",
+     "s": [
+      [
+       "Part (a): 13 × 40 + 13 × 8 = 624 cm²",
+       1
+      ],
+      [
+       "Part (b): 650 − 26 = 624 and the picture of a 13 by 2 strip taken away",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A baker sells 98 buns in each of 10 trays on Monday and in each of 3 trays on Tuesday. Which single product gives the total buns, and what is it?",
+     "a": "98 × 13 = 1,274",
+     "o": [
+      "98 × 13 = 1,274",
+      "98 × 30 = 2,940",
+      "(98 + 10) × 3 = 324",
+      "98 + 13 = 111"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "To find 102 × 35, Neeta writes (100 + 2) × 35 and Karan writes 102 × 30 + 102 × 5. Neeta says: 'Both of us must get the same value, and mine is easier because 100 × 35 is a round-number product.' (a) Find the value by both methods. (b) Is Neeta's claim right? Give the reason for each half of it.",
+     "a": "(a) Neeta: 100 × 35 + 2 × 35 = 3,500 + 70 = 3,570. Karan: 102 × 30 + 102 × 5 = 3,060 + 510 = 3,570. (b) Yes, her claim is right. Both split 102 × 35 correctly, so the values must agree. Her way is easier because 100 × 35 needs no working and 2 × 35 is small.",
+     "s": [
+      [
+       "Part (a): 3,570 by both methods",
+       1
+      ],
+      [
+       "Part (b): says the claim is right, with the values agreeing",
+       1
+      ],
+      [
+       "Part (b): the round-number reason why Neeta's way is easier",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 38 × 12 + 38 × 8 as one product and find its value. (b) Without finding 40 × 20 by a separate method, say which is greater, this value or 40 × 20, and by how much.",
+     "a": "(a) 38 × (12 + 8) = 38 × 20 = 760. (b) 40 × 20 = 800 is greater, by (40 − 38) × 20 = 2 × 20 = 40.",
+     "s": [
+      [
+       "Part (a): 38 × (12 + 8) = 760",
+       1
+      ],
+      [
+       "Part (b): 800 is greater, by 2 × 20 = 40",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school drama show has 45 tickets sold for the first show and 55 for the second. The first show's 45 tickets are all regular tickets. A regular ticket costs ₹120 and a student ticket costs ₹15 less. All 55 tickets of the second show are student tickets.\n(a) The treasurer writes the money from the second show as 55 × 120 − 15. Is this right? Write the correct expression with a bracket and find it.\n(b) Find the money actually collected from 45 regular and 55 student tickets.\n(c) Show, using the distributive property, that the money collected equals 100 × 120 − 55 × 15.\n(d) Management thinks that if the student discount rises to ₹20, then 65 student tickets and the same 45 regular tickets will be sold. Which plan earns more, and by how much?",
+     "a": "(a) No: the ₹15 discount applies to every one of the 55 tickets. The correct expression is 55 × (120 - 15) = 55 × 105 = ₹5,775. (b) 45 × 120 + 55 × 105 = 5,400 + 5,775 = ₹11,175. (c) 45 × 120 + 55 × (120 - 15) = 45 × 120 + 55 × 120 - 55 × 15 = 100 × 120 - 825 = 12,000 - 825 = 11,175. (d) The new plan gives 45 × 120 + 65 × 100 = 5,400 + 6,500 = ₹11,900, which is ₹725 more, if the extra 10 students really come, so the lower student price earns more.",
+     "s": [
+      [
+       "Part (a): says no and writes 55 × (120 - 15) = ₹5,775",
+       1
+      ],
+      [
+       "Part (b): 5,400 + 5,775 = 11,175",
+       1
+      ],
+      [
+       "Part (c): distributes 55 × (120 - 15) and gets 12,000 - 825 = 11,175",
+       1
+      ],
+      [
+       "Part (d): 11,900 against 11,175, ₹725 more, with the choice stated",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of 64 × 58 − 64 × 8 − 64 × 50 is ___.",
+     "a": "0"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Rajan Tailors charges ₹98 to stitch each piece. A school orders 36 shirts and 24 pairs of shorts. Shop B charges ₹95 per piece plus a fixed ₹400 for the whole order.\n(a) Write Rajan Tailors' cost as a product with a bracket, and find it by writing 98 as 100 − 2.\n(b) Find shop B's cost for the same order.\n(c) Which shop is cheaper for this order, and by how much?\n(d) The school may later place an order of 140 pieces. Which shop is cheaper for that order, and by how much?",
+     "a": "(a) (36 + 24) × 98 = 60 × (100 − 2) = 6,000 − 120 = ₹5,880. (b) 60 × 95 + 400 = 5,700 + 400 = ₹6,100. (c) Rajan Tailors is cheaper by ₹220. (d) Rajan: 140 × 98 = ₹13,720; B: 140 × 95 + 400 = ₹13,700, so shop B is cheaper by ₹20.",
+     "s": [
+      [
+       "Part (a): (36 + 24) × 98 evaluated as 6,000 − 120 = 5,880",
+       1
+      ],
+      [
+       "Part (b): 6,100",
+       1
+      ],
+      [
+       "Part (c): Rajan cheaper by 220",
+       1
+      ],
+      [
+       "Part (d): 13,720 against 13,700, so shop B is cheaper by 20 for the larger order",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rani buys 12 notebooks at ₹30 each and 12 pens at ₹15 each. Which single expression gives the total she pays?",
+     "a": "12 × (30 + 15)",
+     "o": [
+      "12 × (30 + 15)",
+      "12 × 30 + 15",
+      "(12 + 12) × (30 + 15)",
+      "12 + (30 + 15)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Write 36 in four different ways of the form □ × (□ + □), each with a different number outside the bracket.\n(b) Explain how you can find such ways without trial and error.",
+     "a": "(a) For example 2 × (10 + 8), 3 × (7 + 5), 4 × (6 + 3), 6 × (3 + 3) (also 9 × (2 + 2) and 12 × (2 + 1)). (b) Pick a factor of 36 for the outside number, divide 36 by it, and split the quotient into two parts for the bracket.",
+     "s": [
+      [
+       "First valid way with a correct product of 36",
+       1
+      ],
+      [
+       "Second valid way with a different outside number",
+       1
+      ],
+      [
+       "Third valid way with a different outside number",
+       1
+      ],
+      [
+       "Fourth valid way with a different outside number",
+       1
+      ],
+      [
+       "Part (b): choose a factor of 36 and split 36 divided by it into two parts",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 63 × 18 + 63 × 12 equals 63 × 30.\nReason (R): The distributive property can be used only when the two products are added, never when one is subtracted from the other.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements.\nStatement 1: 18 × (10 + 4) = 18 × 10 + 18 × 4.\nStatement 2: 5 × 4 + 3 = 5 × (4 + 3).\nStatement 3: (15 − 6) × 7 = 15 × 7 − 6.\nWhich of the statements are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 4 × 17 + 4 × 23 + 4 × 60 as a single product and find its value. (b) If the last product were 4 × 40 instead, by how much would the value fall, and how can you tell without recalculating?",
+     "a": "(a) 4 × (17 + 23 + 60) = 4 × 100 = 400. (b) The bracket would be 80 instead of 100, so the value is 320, a fall of 4 × 20 = 80: only the 60 has changed to 40, so the fall is 4 times 20.",
+     "s": [
+      [
+       "Part (a): 4 × (17 + 23 + 60) = 400",
+       1
+      ],
+      [
+       "Part (b): the fall is 4 × 20 = 80 (320 against 400)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Given 47 × 36 = 1,692, find 57 × 36. (b) Using the same fact, find 46 × 36.",
+     "a": "(a) 57 × 36 = (47 + 10) × 36 = 1,692 + 360 = 2,052. (b) 46 × 36 = (47 − 1) × 36 = 1,692 − 36 = 1,656.",
+     "s": [
+      [
+       "Part (a): adds 10 × 36 = 360 to get 2,052",
+       1
+      ],
+      [
+       "Part (b): subtracts 1 × 36 to get 1,656",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Venkat's sweet shop packs 38 laddus in each box. On Monday he packs 27 boxes and on Tuesday 13 boxes.\n(a) Write an expression for the total laddus using the two days separately.\n(b) Write it as one product and find the value.\n(c) On Wednesday he packs 9 boxes fewer than on Monday. Find the laddus packed on Wednesday in two ways using the distributive property.",
+     "a": "(a) 27 × 38 + 13 × 38. (b) (27 + 13) × 38 = 40 × 38 = 1,520. (c) (27 − 9) × 38 = 18 × 38 = 684, and 27 × 38 − 9 × 38 = 1,026 − 342 = 684.",
+     "s": [
+      [
+       "Part (a): 27 × 38 + 13 × 38",
+       1
+      ],
+      [
+       "Part (b): (27 + 13) × 38 and 1,520",
+       2
+      ],
+      [
+       "Part (c): both forms and the value 684",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Ishaan says 5 × (4 + 3) = 5 × 4 + 3, because 'you multiply the first number only'. Check his claim.",
+     "a": "He is wrong. 5 × (4 + 3) = 5 × 7 = 35 but 5 × 4 + 3 = 23. The 5 must multiply both terms: 5 × (4 + 3) = 5 × 4 + 5 × 3 = 35.",
+     "s": [
+      [
+       "Finds the two values 35 and 23 and says the claim is wrong",
+       1
+      ],
+      [
+       "Says the multiplier must multiply every term in the bracket",
+       1
+      ],
+      [
+       "Writes the correct form 5 × 4 + 5 × 3 = 35",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 49 × 40 by writing 49 as 50 − 1. (b) Find 51 × 40 by writing 51 as 50 + 1. What do you notice about the two answers?",
+     "a": "(a) 50 × 40 - 40 = 2,000 - 40 = 1,960. (b) 50 × 40 + 40 = 2,040. Each answer is 40 away from 2,000, one below and one above.",
+     "s": [
+      [
+       "Part (a): 50 × 40 − 40 = 1,960",
+       1
+      ],
+      [
+       "Part (b): 50 × 40 + 40 = 2,040 and the observation that both are 40 from 2,000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular plot is 15 m wide and 52 m long. Its length is cut down to 48 m. Without finding either area, by how much does the area fall?",
+     "a": "60 m²",
+     "o": [
+      "60 m²",
+      "4 m²",
+      "15 m²",
+      "780 m²"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "By how much does 25 × 98 exceed 25 × 100 − 25 × 3?",
+     "a": "25",
+     "o": [
+      "25",
+      "50",
+      "75",
+      "0"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A baker bakes 120 buns each day and is closed every Sunday. (a) Write an expression for the buns baked in 5 weeks and find its value. (b) The baker takes 3 more days off during these 5 weeks. Write the new expression and its value.",
+     "a": "(a) 120 × 5 × (7 − 1) = 120 × 30 = 3,600 buns. (b) 120 × (5 × 6 − 3) = 120 × 27 = 3,240 buns.",
+     "s": [
+      [
+       "Part (a): 120 × 5 × (7 − 1) = 3,600",
+       1
+      ],
+      [
+       "Part (b): reduces the 30 working days by 3, giving 120 × 27 = 3,240",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Ravi runs a tiffin service. He sells 28 meals a day at ₹85 each on 6 days a week. His ingredients cost ₹1,150 a day on those 6 days. He pays his delivery boy ₹9,000 for the 4 weeks.\n(a) Write one expression for Ravi's profit in 4 weeks.\n(b) Find the profit.\n(c) Find his average profit per week.",
+     "a": "(a) 4 × 6 × (85 × 28 − 1,150) − 9,000. (b) 85 × 28 = 2,380; 2,380 − 1,150 = 1,230 a day; 24 × 1,230 = 29,520; 29,520 − 9,000 = ₹20,520. (c) 20,520 ÷ 4 = ₹5,130.",
+     "s": [
+      [
+       "Part (a): the number of days times daily profit, less the delivery cost",
+       2
+      ],
+      [
+       "Part (b): the daily profit 1,230 and the total ₹20,520",
+       2
+      ],
+      [
+       "Part (c): ₹5,130 a week",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Aman adds 99 to a number by adding 100 and then subtracting 1. (a) Use this to find 347 + 99 and say why the bracket in 347 + (100 − 1) can be removed without changing any sign. (b) He says that to subtract 99 you should 'subtract 100 and subtract 1 more'. Find 347 − 99 correctly and name his slip.",
+     "a": "(a) 347 + (100 − 1) = 347 + 100 − 1 = 446; the bracket follows a plus sign, so no sign changes. (b) 347 − (100 − 1) = 347 − 100 + 1 = 248. The bracket follows a minus sign, so the −1 becomes +1: after taking away 100 one has to add 1 back, not subtract 1 more (which gives 246).",
+     "s": [
+      [
+       "Part (a): 347 + (100 − 1) = 446, with the bracket after a plus sign left unchanged",
+       1
+      ],
+      [
+       "Part (b): 347 − (100 − 1) = 248, the 1 is added back, and his slip (subtracting 1 more) is named",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find 63 − 48, Asha works out 63 − 50 + 2, Binu works out 63 − 40 − 8 and Chitra works out 63 − 50 − 2. Which statement is correct?",
+     "a": "Chitra has slipped: after taking away 50 she must add back 2, not take away 2",
+     "o": [
+      "Chitra has slipped: after taking away 50 she must add back 2, not take away 2",
+      "Asha has slipped: after taking away 50 she must take away 2 more",
+      "Binu has slipped: 48 cannot be split as 40 and 8 here",
+      "Nobody has slipped: all three methods give 15"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Use the distributive property with a round number to find (a) 98 × 35, (b) 105 × 24 and (c) 49 × 60. (d) Write one more product for which this method is quick, and one for which it is not, with a reason.",
+     "a": "(a) (100 − 2) × 35 = 3,500 − 70 = 3,430. (b) (100 + 5) × 24 = 2,400 + 120 = 2,520. (c) (50 − 1) × 60 = 3,000 − 60 = 2,940. (d) Quick: 197 × 5 = (200 − 3) × 5. Not quick: 76 × 43, since neither number is near a round number.",
+     "s": [
+      [
+       "Part (a): 3,430 with the working",
+       1
+      ],
+      [
+       "Part (b): 2,520 with the working",
+       1
+      ],
+      [
+       "Part (c): 2,940 with the working",
+       1
+      ],
+      [
+       "Part (d): a suitable product with its round-number form, and an unsuitable one with the reason",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Without working out either product, the difference 103 × 24 − 100 × 24 is ___.",
+     "a": "72"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: A tailor stitches 15 shirts a day and is closed on all 4 Sundays and on 2 other days in a 4-week period. The shirts made in that period are 4 × 7 × 15 − (4 + 2) × 15. Give a reason.",
+     "a": "True. 4 × 7 × 15 = 420 counts all 28 days, and (4 + 2) × 15 = 90 removes the 6 closed days, leaving 330, which is the same as 22 working days × 15.",
+     "s": [
+      [
+       "Verdict: True, with 420 − 90 = 330",
+       1
+      ],
+      [
+       "Reason: (4 + 2) × 15 takes away the output of all 6 closed days, leaving the 22 working days",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school bookshop needs 25 geometry boxes and 40 notebooks. Supplier A charges ₹98 per box and ₹49 per notebook. Supplier B charges ₹96 per box and ₹51 per notebook.\n(a) Find the cost of 25 boxes from A, using 98 = 100 − 2.\n(b) Find the cost of 40 notebooks from A, using 49 = 50 − 1, and A's total for the order.\n(c) Find B's total for the order. Which supplier is cheaper for the whole order, and by how much?\n(d) The shop may buy each item from either supplier. What is the cheapest plan, and how much does it save compared with buying everything from A?",
+     "a": "(a) (100 − 2) × 25 = 2,500 − 50 = ₹2,450. (b) (50 − 1) × 40 = 2,000 − 40 = ₹1,960; A's total is ₹4,410. (c) B: 96 × 25 = 2,400 and 51 × 40 = 2,040, total ₹4,440. A is cheaper by ₹30. (d) Boxes from B (₹2,400) and notebooks from A (₹1,960) cost ₹4,360, which saves ₹50 compared with A alone.",
+     "s": [
+      [
+       "Part (a): ₹2,450",
+       1
+      ],
+      [
+       "Part (b): ₹1,960 and total ₹4,410",
+       1
+      ],
+      [
+       "Part (c): B's total ₹4,440 so A is cheaper by ₹30",
+       1
+      ],
+      [
+       "Part (d): boxes from B and notebooks from A, ₹4,360, saving ₹50",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) For which of 97 × 8, 73 × 46 and 201 × 7 is writing one factor as 'a round number plus or minus a little' not a quick method, and why? (b) Use the method to find the other two products.",
+     "a": "(a) 73 × 46, because neither factor is close to a round number. (b) 97 × 8 = (100 − 3) × 8 = 800 − 24 = 776 and 201 × 7 = (200 + 1) × 7 = 1,400 + 7 = 1,407.",
+     "s": [
+      [
+       "Part (a): picks 73 × 46 with the reason that neither factor is near a round number",
+       1
+      ],
+      [
+       "Part (b): 776 and 1,407 with the working",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school takes 2 teachers and 38 students on a metro trip. A ticket costs ₹45 for an adult and ₹25 for a child, and students pay the child fare. A return-trip package for the same 40 people costs ₹1,950 for both ways, and the share of an absent person is not refunded.\n(a) Write an expression for the cost of one-way tickets for the whole group and find it.\n(b) Find the cost of the return trip with separate tickets and compare it with the package.\n(c) On the day 3 students are absent. What does the return trip cost with separate tickets bought that day?\n(d) How many absent students are needed before separate tickets become cheaper? The school usually expects 3 or 4 absences. Which option should it choose, and why?",
+     "a": "(a) 2 × 45 + 38 × 25 = 90 + 950 = ₹1,040. (b) The return trip costs 2 × 1,040 = ₹2,080 separately, so the package is cheaper by ₹130. (c) 2 × (2 × 45 + 35 × 25) = 2 × 965 = ₹1,930. (d) With 2 absent the separate cost is 2 × (90 + 900) = ₹1,980, still more than ₹1,950; with 3 absent it is ₹1,930. So 3 absences are needed. With 4 absent it is 2 × (90 + 34 × 25) = ₹1,880. For the usual 3 or 4 absences separate tickets are cheaper, saving ₹20 or ₹70, so the school should choose separate tickets.",
+     "s": [
+      [
+       "Part (a): ₹1,040 from the expression with both fares",
+       1
+      ],
+      [
+       "Part (b): ₹2,080 against ₹1,950, so the package saves ₹130",
+       1
+      ],
+      [
+       "Part (c): ₹1,930 with 35 students",
+       1
+      ],
+      [
+       "Part (d): break-even at 3 absences (₹1,980 with 2, ₹1,930 with 3), then separate tickets chosen, saving ₹20 or ₹70",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A snail that climbs 3 cm in the day and slips 2 cm at night takes exactly 10 days to reach the top of a 10 cm post.\nReason (R): In each full day and night the snail gains a net 1 cm.",
+     "a": "A is false but R is true. After 7 full days and nights the snail is at 7 cm; on day 8 it climbs 3 cm to reach 10 cm, so it reaches the top on day 8. R is true: 3 - 2 = 1 cm net a day.",
+     "o": [
+      "A is false but R is true.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each situation in Column I with its value in Column II.\nColumn I: 1. A tailor stitches 15 shirts a day and is closed on Sundays; shirts in 4 weeks   2. 20 pens at ₹12 each with a ₹50 delivery charge; total ₹   3. Change from ₹500 after buying 3 books at ₹95 each; ₹   4. 4 notebooks at ₹35 each and 6 pens at ₹12 each; total ₹\nColumn II: a. 212   b. 215   c. 290   d. 360",
+     "a": "1-d, 2-c, 3-b, 4-a",
+     "o": [
+      "1-d, 2-c, 3-b, 4-a",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-d, 2-b, 3-c, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shop packs 72 pencils in each of 5 boxes on Monday and 28 pencils in each of 5 boxes on Tuesday. Which expression lets her find the total mentally, and what is it?",
+     "a": "5 × (72 + 28) = 500",
+     "o": [
+      "5 × (72 + 28) = 500",
+      "(5 + 5) × (72 + 28) = 1,000",
+      "5 × 72 + 28 = 388",
+      "5 × 72 × 28 = 10,080"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 36 × 101 and 36 × 99 by writing each as a round number plus or minus a little. (b) Without adding the two answers, say what their sum is and why; then find their difference.",
+     "a": "(a) 36 × (100 + 1) = 3,636 and 36 × (100 − 1) = 3,564. (b) The sum is 2 × 36 × 100 = 7,200, because the +36 and −36 cancel; the difference is 36 × 2 = 72.",
+     "s": [
+      [
+       "Part (a): 3,636 and 3,564",
+       1
+      ],
+      [
+       "Part (b): the sum 7,200 because +36 and −36 cancel, and the difference 72",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Lalitha earns ₹18,500 a month. Each month she spends ₹6,000 on rent, ₹4,500 on food and ₹1,750 on other things. Which expression gives her savings in 12 months?",
+     "a": "12 × (18,500 − 6,000 − 4,500 − 1,750)",
+     "o": [
+      "12 × (18,500 − 6,000 − 4,500 − 1,750)",
+      "12 × 18,500 − 6,000 − 4,500 − 1,750",
+      "18,500 − 12 × (6,000 + 4,500 + 1,750)",
+      "12 × (18,500 − 6,000) − 4,500 − 1,750"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rohit says: 'To find 98 × 15 I write 98 as 100 − 2, so 98 × 15 = 100 × 15 − 2 = 1,498.' Is he right? Explain.",
+     "a": "No. (100 − 2) × 15 means 100 times 15 minus 2 times 15, so the answer is 1,500 − 30 = 1,470. Rohit subtracted only 2 instead of 2 × 15.",
+     "s": [
+      [
+       "Says Rohit is wrong",
+       1
+      ],
+      [
+       "Shows the correct working (100 - 2) × 15 = 1,500 - 30",
+       1
+      ],
+      [
+       "Gives 1,470 and names his mistake (subtracting 2 instead of 2 × 15)",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements.\nStatement 1: 98 × 25 can be found as (100 + 2) × 25.\nStatement 2: 198 × 15 = 200 × 15 − 2 × 15.\nStatement 3: A shortcut that uses a round number always changes the value of the product.\nWhich of the statements are correct?",
+     "a": "2 only",
+     "o": [
+      "2 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A snail climbs 4 cm during the day and slips 4 cm at night on a post that is 12 cm high. Show that it can never reach the top.",
+     "a": "In each full day and night the snail's net change is 4 − 4 = 0, so it is back at the bottom every morning. The highest it ever reaches is 4 cm, which is less than 12 cm, so it never reaches the top.",
+     "s": [
+      [
+       "Finds the net change of 4 − 4 = 0 per day and night",
+       1
+      ],
+      [
+       "Says it is back at the start every morning",
+       1
+      ],
+      [
+       "Concludes the highest it reaches is 4 cm, less than 12 cm",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation for the expression 3 × (45 + 20) − 15 and find its value.",
+     "a": "Three friends each buy a ₹45 book and a ₹20 pen and then use one ₹15 discount coupon on the whole bill: 3 × (45 + 20) − 15 = 195 − 15 = ₹180.",
+     "s": [
+      [
+       "A situation in which three people each buy two items",
+       1
+      ],
+      [
+       "The ₹15 is subtracted once, outside the bracket, as a single deduction",
+       1
+      ],
+      [
+       "Value ₹180",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tanmay cycles 4 km on every day of a week except Tuesdays and Fridays. Which expression gives the distance he cycles in 9 weeks?",
+     "a": "9 × (7 − 2) × 4",
+     "o": [
+      "9 × (7 − 2) × 4",
+      "9 × 7 − 2 × 4",
+      "(9 × 7 − 2) × 4",
+      "9 × 7 × 4 − 2"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 96 × 25 as a difference using 100 and evaluate it. (b) Use your answer to find 98 × 25 quickly.",
+     "a": "(a) (100 − 4) × 25 = 2,500 − 100 = 2,400. (b) 98 is 2 more than 96, so add 2 × 25 = 50: 2,450.",
+     "s": [
+      [
+       "Part (a): (100 − 4) × 25 = 2,400",
+       1
+      ],
+      [
+       "Part (b): adds 2 × 25 to get 2,450",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

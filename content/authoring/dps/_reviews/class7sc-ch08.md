@@ -1,0 +1,60 @@
+# Review: DPS pack, Class 7 Science, ch08 "Measurement of Time and Motion" (gecu108)
+
+File: content/authoring/dps/class7sc/ch08.json. Questions read: 123 of 123 (every item, every case-study part). Every number was recomputed independently (speeds, conversions, pendulum periods, gong times, odometer differences, millisecond gaps); facts checked against content/extracted/gecu108/pages/. Checked against the DPS science reference papers: no item is copied (none covers this chapter).
+
+Structure is sound: 20-21 per concept, loader minimums met, 3 match items for 6 concepts, 37% Remember/Understand (cap 60%), 41% Analyse/Evaluate/Create (min 15%), Indian settings (Jaipur, Diwali mela, Pune, sports day, Rs fares). All numeric keys are right except the step text in item 1 below.
+
+## HIGH
+
+1. C7SC-8.5 #15 (show_impossible, "Priya says she cycled 15 km in 30 minutes, so her speed was 50 km/h"). The third step mark reads "50 km/h would need 18 km". That is wrong: 50 km/h x 0.5 h = 25 km (the answer text correctly says 25 km). 18 is the number of minutes 15 km takes at 50 km/h. A student who correctly writes 25 km is marked against a wrong rubric. Fix: step 3 -> "30 km/h is not 50 km/h; at 50 km/h she would cover 25 km in 30 min".
+
+## MEDIUM
+
+2. Multi-statement items are keyed identically in all six concepts (8.1-8.6 #7): Statement III is false and the key is "I and II only" in every one. The standard (anti-template rules) requires the false statement spread over 1, 2 and 3 and the key varied. Fix: rewrite at least four so the false statement is I or II, and use keys such as "I and III only", "II and III only", "I only", "all three" (8.2 and 8.5 are easy: make the 8.2 pendulum-order statement true and the Aryabhata statement false, etc.).
+3. Assertion-reason keys: 5 of 6 are "both true, R not the explanation" (8.1, 8.3, 8.4, 8.5, 8.6); only 8.2 is "R explains A". No item has A true / R false or A false. Standard says about half "explains". Fix: convert two (e.g. 8.3: R "the time period depends on length, not mass" explains A; 8.5: R "speed = distance / time, so unit is length unit / time unit" explains the SI unit) and make one A true / R false.
+4. Claim-checks are keyed identically in all six concepts: every claim is wrong (8.5's is "not necessarily"). None is right-for-a-limited-case. Fix: make one of 8.3/8.4/8.6 a claim that is correct in a limited case (e.g. "a heavier bob can still have the same time period" is true; or "uniform motion has equal average speed in every interval" is true), with the verdict "agree, but only for the same length".
+5. Templated skeleton. Every concept uses the same slot order and nearly the same frames: items 1-4 plain MCQ (item 3 a "Which statement ... is false?" with rev), 5-6 scenario, 7 statements, 8 AR, 9-13 two-mark with (a)/(b) first, 14 "X says ... Check the claim", 15 "Show that ... cannot be", 16 "create / describe in three steps", 17 5-mark recall list "(i)...(v)", 18 5-mark, 19-20 case studies. Content differs by topic, but a student sees the same shape six times. Vary the order and replace one or two slots per concept (e.g. a data/table-reading item, a graded "which is more accurate and why", an error-find on a worked solution).
+6. Four of the 5-mark items are recall lists in disguise: 8.1 #17 ("state what each uses"), 8.2 #17 (names of text/person for four dates), 8.3 #17 ("describe Galileo's observation" - five recall points), 8.4 #17 (five recall points on clocks). Under section 9 a 5-mark item should demand a chain of reasoning. Fix: give each a comparison or decision (e.g. 8.2 #17: "Why was the Ghatika-yantra a better design than the outflow clock, and why did even the pendulum clock replace it only in the nineteenth century?").
+7. Case studies where the decision is a strawman or is given away:
+   - 8.3 #19 (swing operator): the operator's "heavier children swing slower" is the book's own misconception, part (c) already answers it, and (d) repeats (c). Not a trade-off. Make (d) a real choice (e.g. fix ride length by count or by time given a 2.5 s period; or choose between a 2-minute and 3-minute ride with a queue constraint).
+   - 8.5 #20 (relay): the stem prints the rule ("prize goes to the team with the greater speed") and the student's wrong claim, so (d) is free. Also a "relay on a straight track" where teams run 400, 300 and 200 m is odd; say "three teams each ran a different race length". Parts (a)/(b) are the same one-step computation.
+   - 8.4 #20 (hospital clock) and 8.4 #19 (school timer): the decision follows directly from (c) and (b); a nurse suggesting a wall clock for ECG is obvious. Also 8.4 #20 (d)'s key relies on the corridor clock showing "whole seconds", which the stem never says. Add "which shows only whole seconds" to the stem.
+   - 8.3 #20 (Pooja): the stem already states the goal ("a pendulum whose time period is greater than P2"), so (d) is answered by (c). Remove the goal from the stem or ask for a design under a constraint.
+   - 8.2 #19 (principal / sundial vs wall clock): "No" is obvious; the decision needs a real trade-off (e.g. use the sundial for cloudless mornings, wall clock otherwise; or what correction is required).
+8. C7SC-8.6 #3 (option 3 "Train X in Table 8.3 ..."), #8 (assertion about Train X) and #14 (Sunita's claim about Train X and Y) rely on Table 8.3 but the table data is not printed in the stem (section 11: never "as in the book"). Only #10 prints Y's distances. #8 and #14 also reuse the book's own table verbatim. Fix: print the 10-minute distances in the stem (X: 20,20,20,20,20,20; Y: 20,15,15,25,20,25) and change the numbers (or the trains) so the book's table is not reused.
+9. C7SC-8.1 #19 case study: the stem says "equally timed marks" but never says each mark is one minute or that marks are numbered from the top (elapsed time). Part (b) "5th mark ... 8th mark = 3 min" and part (d) need that. It says "as in Activity 8.1" only. Same underspecification in #5 ("touches the 6th mark") and #10 (b) ("9th mark"). Fix: add "marks made every one minute and numbered 1, 2, 3... from the top as the level falls".
+10. C7SC-8.1 #20 case study (Shalini, candle clock): the candle clock has no obvious time-of-day reading; it only gives an interval from when it is lit, so "milk at the same hour every day" is not served by a 12 cm candle that burns out in 2 hours unless someone lights it at a known time. The key "Candle clock (or both)" is defensible but not the only reasonable answer (a sundial on clear days with a backup is as good). The stem also puts "shortest around noon", which the book does not teach. Fix: ask "Which of the two works on a cloudy day, and what must the family do each day to use it?" or accept both with justification explicitly in the key; delete the noon sentence or keep it as flavour only.
+11. Correct option is the longest in many MCQs (loader sees only unique longest): 8.1 #2, #5, #6; 8.2 #3, #4, #5; 8.3 #1, #5, #6 (6 marginal); 8.4 #3, #4, #5, #6; 8.5 #1, #5 (76 vs 59-61 characters); 8.6 #5. That is 16 of 39 plain/scenario MCQs, with clear gaps in 8.2 #5 (70 v 56/45/39), 8.4 #5 (70 v 40/39/37), 8.4 #6 (68 v 48/46/36), 8.5 #5 (76 v 59-61). Fix: lengthen the three distractors to match.
+12. C7SC-8.3 #13: asks to "say what each [precaution] prevents". The book only gives the two precautions (do not push the bob while releasing; keep the string taut) and never says what they prevent; the key's "so that the swings are steady" is an author inference, and the steps do not mark the "prevents" part. Fix: ask only for the two precautions.
+
+## LOW
+
+13. Distractors outside the chapter: 8.2 #1 "The notes of Christiaan Huygens" (a legitimate chapter figure, but not on shadow timekeeping; swap for Varahamihira); 8.4 #2 "A sundial"/"A sinking-bowl water clock" for loses one second in millions of years; 8.4 #4 "one-hundredth of a minute", "one thousand seconds" are invented, not millisecond/microsecond/second confusions (the book's own lookalike is microsecond, option 1; make the others hundredth of a second and one-thousandth of a minute).
+14. 8.3 #6 uses children on a swing as a "pendulum"; the book's rule is for a simple pendulum (bob on thread). Good transfer item, but the stem should say "treat each swing as a simple pendulum" or the key note should say so, otherwise the option "pushed equally hard" is a fair objection.
+15. 8.3 #17 key says Galileo "concluded that the time period depends on length"; the book says he concluded the time of each swing was always the same for a pendulum of a given length. The step text is right; fix the answer sentence.
+16. 8.4 #14 stem "A quartz clock does not use any repeating process" is a reversal-type claim (negation) but is not marked rev. 8.1 #14 and 8.3 #14 are fine.
+17. 8.4 #16 and #19/#20 use the symbol "ms" for millisecond; the chapter writes "millisecond" in words and never gives a symbol. Either give the symbol in the stem or write "milliseconds" in the answer.
+18. Fares written "Rs 60/120/180" (8.5 #19); the bank elsewhere uses the rupee sign. Use the rupee sign.
+19. 8.5 #17: "(e) State how much A is ahead then" assumes both started together at the same instant; add "starting together" to the stem. 8.5 #16 (reverse) and 8.6 #16 are accepted-any-situation items; fine.
+20. 8.1 #5, #19(c) and 8.1 #6 test the same fact (hole size/marks recalibration) three times in one concept; 8.2 repeats "outflow slows as level drops" in #7, #8, #16 and case study #20(c). Replace one in each.
+21. 8.2 #10 (b) and #17: pendulum clock facts (1656, Huygens, Galileo) are on the book's "Know a scientist" box; fine for recall, but 8.2 #10 and 8.3 #17 both test the Galileo/pulse anecdote. Replace one.
+22. Tag: items 14 in 8.5 and 8.6 are tagged claim_check correctly; "reverse" on 8.1 #15 (create a situation) is correct. 8.2 #15 and 8.3 #15 are well-formed show_impossible items with the contradiction computed (2 s vs 1.6 s; 70 ghatis = 28 h).
+
+## Facts and arithmetic verified (no action)
+
+Ghatika-yantra 24 min, 60 ghatis (1440/24); 5 gongs = 120 min (8:00 am); noon = 15 gongs; Samrat Yantra 1 mm/s (2 mm, 6 cm, 60 cm; 12 cm = 120 s; 15 min = 90 cm); pendulum 8 x 1.5 = 12 s; 15 oscillations in 30 s = 2 s; mean 25.0 s -> 2.5 s; 12 oscillations in 30 s = 2.5 s -> 72 in 180 s; P1-P3 periods 1.42, 2.01, 2.00 s; 72 km/h = 20 m/s (and flipped 259.2); 21.6 km in 1.5 h = 14.4 km/h = 4 m/s; 63 km at 45 km/h = 84 min; trains 36/72/90 km/h, Mr Rao: express 9:30 am, Rs 120; relay speeds 5, 5.56, 6 m/s, 400 m at Blue's speed 66.7 s; 54 km/h = 15 m/s, 12 m/s = 43.2 km/h; Varun 2500 m in 10 min = 15 km/h; odometer 150 km in 2.5 h = 60 km/h, 90 km more = 12:00 noon; 60 km in 1.5 h = 40 km/h; 12.487 - 12.482 = 5 ms = 1/200 s; 6 days x 10 s = 60 s; 0.80 - 0.75 = 50 ms.
+
+## Per-concept verdicts
+
+- C7SC-8.1 (early devices): keys right; case study #19 needs the one-minute-mark statement, #20 decision is weak; three recall 5-mark/short items.
+- C7SC-8.2 (Indian methods, Samrat Yantra, Ghatika-yantra, Huygens): all arithmetic correct; 5-mark #17 is recall; repeats the outflow fact four times.
+- C7SC-8.3 (pendulum): keys right; case-study decisions are strawman/given away; #13 asks beyond the book.
+- C7SC-8.4 (units, modern clocks): keys right; "ms" symbol and "whole seconds" assumptions need stating; longest-correct pattern.
+- C7SC-8.5 (speed): one HIGH (step text 18 km in #15); case study #19 (Mr Rao) is the best decision item in the chapter; #20 gives away the rule.
+- C7SC-8.6 (uniform/non-uniform): keys right; three items depend on an unprinted Table 8.3; case studies #19 and #20 are sound.
+
+## Count read
+
+123 of 123 items, every case-study part. HIGH: 1. MEDIUM: 11 (items 2-12). LOW: 10 (items 13-22).
+
+Overall verdict: factually sound and mathematically accurate (one rubric slip), reaches the DPS standard on case-study chains and two-part items, but the bank is partly templated (same slot order and same keys for statements, assertion-reason and claim-check in all six concepts) and several decisions are strawmen. Fix item 1 and items 2-5, 7-9 before loading.

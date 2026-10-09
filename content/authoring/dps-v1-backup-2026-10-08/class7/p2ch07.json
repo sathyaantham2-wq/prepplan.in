@@ -1,0 +1,2954 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 7,
+  "name": "Finding the Unknown"
+ },
+ "source_code": "gegp207",
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the equation 2n + 1 = 99, the expression 2n + 1 is the Left Hand Side.\nReason (R): The arrangement at position 3 in the matchstick sequence uses 2 × 3 + 1 = 7 sticks.",
+     "a": "A and R are both true, but R is not the correct explanation of A.",
+     "o": [
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A balance holds 3 identical sacks and a 2-unit weight on one pan and an 11-unit weight on the other. Arjun writes, '3 sacks weigh 11 + 2 = 13, so one sack weighs 13/3.' Is he right? Explain.",
+     "a": "No. The equation is 3s + 2 = 11, so the 2 must be taken away from both pans: 3s = 11 - 2 = 9, and s = 3. Arjun added 2 instead of removing it. 13/3 does not balance: 3 × 13/3 + 2 = 15, not 11.",
+     "s": [
+      [
+       "Gives the verdict that Arjun is wrong",
+       1
+      ],
+      [
+       "Frames 3s + 2 = 11 and removes 2 from both sides to get s = 3",
+       1
+      ],
+      [
+       "Shows 13/3 fails the balance (gives 15)",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For Diwali, Sneha lays diya borders with sticks. The first three borders use 8, 13 and 18 sticks, and the pattern keeps growing by the same number of sticks each time. She has 200 sticks in all.\n(a) Write an expression for the sticks in border n.\n(b) How many sticks does border 12 need?\n(c) Which border uses exactly 143 sticks?\n(d) She wants to use all 200 sticks in one border. Is that possible? What should she do instead, and why?",
+     "a": "(a) 5n + 3. (b) 5 × 12 + 3 = 63. (c) 5n + 3 = 143, n = 28. (d) 5n + 3 = 200 gives n = 39.4, not whole, so impossible. Border 39 needs 198 sticks (2 left over); border 40 needs 203, more than she has, so she should build border 39.",
+     "s": [
+      [
+       "Part (a): 5n + 3",
+       1
+      ],
+      [
+       "Part (b): 63 sticks",
+       1
+      ],
+      [
+       "Part (c): frames 5n + 3 = 143 and gets border 28",
+       1
+      ],
+      [
+       "Part (d): 39.4 not whole, so border 39 with 198 sticks is the best choice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is an equation?",
+     "a": "3x + 4 = 7",
+     "o": [
+      "3x + 4 = 7",
+      "3x + 4",
+      "5 × 6 + 1",
+      "x + y + z"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Solving an equation means finding the value of the letter-number for which",
+     "a": "the LHS becomes equal to the RHS",
+     "o": [
+      "the LHS becomes equal to the RHS",
+      "the LHS is made as long as possible",
+      "the letter-number is replaced by 1",
+      "the RHS is changed to 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From both pans of a balanced weighing scale, equal weights are removed. What happens to the scale?",
+     "a": "It still stays balanced",
+     "o": [
+      "It still stays balanced",
+      "It tips towards the pan that had more objects",
+      "It tips towards the pan holding the unknown weight",
+      "Nothing can be said without weighing again"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "On a balanced scale the left pan holds one packet of unknown weight p and a 9-unit weight, and the right pan holds only a 4-unit weight. Kabir says, 'The scale will balance if I choose the right packet.' Show that this cannot be true.",
+     "a": "p + 9 = 4 gives p = 4 - 9 = -5. A packet cannot have a negative weight. Also the left pan already holds 9 units, more than the 4 units on the right, so adding a packet only makes it heavier.",
+     "s": [
+      [
+       "States the equation p + 9 = 4",
+       1
+      ],
+      [
+       "Solves to p = -5",
+       1
+      ],
+      [
+       "Concludes a weight cannot be negative, so it cannot balance",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a matchstick sequence, the arrangement at position n uses 2n + 1 sticks.\n(a) How many sticks does position 12 use?\n(b) Write the equation for an arrangement with exactly 61 sticks and find its position.",
+     "a": "(a) 2 × 12 + 1 = 25 sticks. (b) 2n + 1 = 61, so n = 30.",
+     "s": [
+      [
+       "Part (a): 25 sticks at position 12",
+       1
+      ],
+      [
+       "Part (b): frames 2n + 1 = 61 and finds position 30",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "On a balanced scale the left pan has 2 identical sacks and a 6-unit weight; the right pan has 1 such sack and a 10-unit weight.\n(a) What one object can be removed from both pans first to make the problem simpler?\n(b) Find the weight of one sack.",
+     "a": "(a) Remove one sack from each pan; this keeps the scale balanced. (b) One sack and 6 units balance 10 units, so the sack weighs 4 units.",
+     "s": [
+      [
+       "Part (a): removes one sack from each pan",
+       1
+      ],
+      [
+       "Part (b): finds the sack weighs 4 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A tile pattern uses 4k + 3 tiles in Step k.\n(a) How many tiles are in Step 10?\n(b) Frame and solve the equation for a step with 127 tiles.\n(c) Find the step with 103 tiles, and say how many steps apart the arrangements with 103 and 127 tiles are. Check against the tile difference.",
+     "a": "(a) 4 × 10 + 3 = 43. (b) 4k + 3 = 127, 4k = 124, k = 31. (c) 4k + 3 = 103 gives k = 25, so the steps are 31 - 25 = 6 apart; the tiles differ by 127 - 103 = 24 = 4 × 6.",
+     "s": [
+      [
+       "Part (a): 43 tiles",
+       1
+      ],
+      [
+       "Part (b): frames 4k + 3 = 127 and gets k = 31",
+       1
+      ],
+      [
+       "Part (c): frames 4k + 3 = 103",
+       1
+      ],
+      [
+       "Part (c): k = 25 and 6 steps apart",
+       1
+      ],
+      [
+       "Part (c): checks 24 = 4 × 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the equation 2n + 1 = 99, what is the Right Hand Side (RHS)?",
+     "a": "99",
+     "o": [
+      "99",
+      "2n + 1",
+      "2n",
+      "n"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A balanced scale has 3 identical bags and a 4-unit weight on the left pan and a 22-unit weight on the right pan.\n(a) Frame an equation, calling the weight of one bag b.\n(b) Find the weight of one bag.",
+     "a": "(a) 3b + 4 = 22. (b) 3b = 18, so b = 6 units.",
+     "s": [
+      [
+       "Part (a): frames 3b + 4 = 22",
+       1
+      ],
+      [
+       "Part (b): finds b = 6 by removing 4 and dividing by 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the equation 2n + 1 = 99.\nStatement 1: Solving it means finding the n for which 2n + 1 equals 99.\nStatement 2: Its LHS is 2n + 1 and its RHS is 99.\nStatement 3: n = 50 is a solution, because 2 × 50 + 1 is close to 99.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Frame an equation for each situation. Solve (b) and (c).\n(a) Five identical stones balance a 35-unit weight.\n(b) One stone and a 12-unit weight balance three of the same stones.\n(c) The matchstick arrangement at position n uses 2n + 1 sticks, and one arrangement has 71 sticks.",
+     "a": "(a) 5s = 35. (b) s + 12 = 3s, so 12 = 2s and s = 6. (c) 2n + 1 = 71, 2n = 70, n = 35.",
+     "s": [
+      [
+       "Part (a): frames 5s = 35",
+       1
+      ],
+      [
+       "Part (b): frames s + 12 = 3s",
+       1
+      ],
+      [
+       "Part (b): solves s = 6 (removing one stone from both pans)",
+       1
+      ],
+      [
+       "Part (c): frames 2n + 1 = 71",
+       1
+      ],
+      [
+       "Part (c): solves n = 35",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "What is an equation? Give one example and name its two sides.",
+     "a": "A statement of equality between two algebraic expressions, e.g. 3x + 4 = 7. The side before '=' is the LHS (3x + 4) and the side after is the RHS (7).",
+     "s": [
+      [
+       "States that an equation is equality of two expressions",
+       1
+      ],
+      [
+       "Gives an example and names LHS and RHS correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Which of these is NOT an equation: (i) 5y - 3 = 12, (ii) 5y - 3, (iii) 20 = y - 3? Give a reason.",
+     "a": "(ii) is not an equation. It is an expression: it has no equal sign joining two expressions, so there is no LHS = RHS to solve.",
+     "s": [
+      [
+       "Picks (ii)",
+       1
+      ],
+      [
+       "Reason: no equality between two expressions",
+       1
+      ]
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On a balanced scale, the left pan holds one packet of unknown weight p and a 7-unit weight. The right pan holds a single 19-unit weight. Which equation describes the scale?",
+     "a": "p + 7 = 19",
+     "o": [
+      "p + 7 = 19",
+      "7p = 19",
+      "p = 19 + 7",
+      "p + 19 = 7"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A grain merchant in Nashik balances rice sacks on a scale. The left pan holds 3 identical sacks and a 2 kg weight. The right pan holds 1 such sack and a 14 kg weight. The scale is exactly balanced. His van has a load limit of 140 kg of sacks.\n(a) Frame the equation, calling the weight of a sack s kg.\n(b) Which equal things can be removed from both pans to leave sacks only on one pan, and what equation is left?\n(c) Find the weight of a sack.\n(d) He wants to load 25 such sacks. Does the load stay within the limit? Give a reason.",
+     "a": "(a) 3s + 2 = s + 14. (b) Remove one sack and 2 kg from each pan, leaving 2s = 12. (c) s = 6 kg. (d) 25 × 6 = 150 kg, which is more than 140 kg, so no.",
+     "s": [
+      [
+       "Part (a): 3s + 2 = s + 14",
+       1
+      ],
+      [
+       "Part (b): removes one sack and 2 kg from both pans, 2s = 12",
+       1
+      ],
+      [
+       "Part (c): s = 6 kg",
+       1
+      ],
+      [
+       "Part (d): 150 kg exceeds 140 kg",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a short story (a real-life situation) that can be described by the equation 6 + 3p = 27, and say what p stands for.",
+     "a": "Example: A tailor buys 3 identical buttons packets and a 6-rupee thread reel; the total is ₹27; p is the price of one packet (p = 7). Any consistent story with a fixed amount 6, three equal unknown parts p and total 27 is accepted.",
+     "s": [
+      [
+       "Names what p stands for",
+       1
+      ],
+      [
+       "Story includes a fixed part 6 and three equal unknown parts",
+       1
+      ],
+      [
+       "Total is 27 and the story agrees with the equation",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Jasmine wants to build a matchstick arrangement from this sequence using exactly 75 sticks. The arrangement at position n uses 2n + 1 sticks. Which equation should she solve to find the position?",
+     "a": "2n + 1 = 75",
+     "o": [
+      "2n + 1 = 75",
+      "n + 1 = 75",
+      "2(n + 1) = 75",
+      "2 × 75 + 1 = n"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given that 8765 - 432 + 56 + 19 = 8408, Rohan wants the value of 8765 - 432 + 56 without working it out. What should he do?",
+     "a": "Subtract 19 from both sides, getting 8408 - 19",
+     "o": [
+      "Subtract 19 from both sides, getting 8408 - 19",
+      "Add 19 to both sides, getting 8408 + 19",
+      "Divide 8408 by 19",
+      "Subtract 8408 from 19"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Starting from the true statement 15 + 8 = 23, subtract 6 from both sides. The result is",
+     "a": "15 + 8 - 6 = 23 - 6, which is still true",
+     "o": [
+      "15 + 8 - 6 = 23 - 6, which is still true",
+      "15 + 8 - 6 = 23, which is false",
+      "15 + 8 = 23 - 6, which is false",
+      "15 - 6 + 8 + 6 = 23 - 6, which is false"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "What are inverse operations? State the inverse of dividing by 15 and use it in one line of working.",
+     "a": "Inverse operations undo each other (addition-subtraction, multiplication-division). The inverse of dividing by 15 is multiplying by 15; e.g. u/15 = 6 gives u = 6 × 15 = 90.",
+     "s": [
+      [
+       "States what inverse operations are",
+       1
+      ],
+      [
+       "Gives multiplying by 15 with a correct use",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Using Example 2 of the chapter as a model, make up your own problem: give a product of five whole numbers and its value, and ask for the product of four of them. Write the answer and the method.",
+     "a": "Example: 6 × 7 × 13 × 5 × 4 = 10920. Find 6 × 7 × 13 × 5. Divide both sides by 4 (multiplication and division are inverses): the answer is 10920 ÷ 4 = 2730. Any correct problem with matching key is accepted.",
+     "s": [
+      [
+       "Sets a correct product statement of five numbers",
+       1
+      ],
+      [
+       "Asks for the product with one factor removed",
+       1
+      ],
+      [
+       "Solves by dividing both sides by the removed factor",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The trial and error method of solving an equation means",
+     "a": "substituting different values and seeing which makes LHS = RHS",
+     "o": [
+      "substituting different values and seeing which makes LHS = RHS",
+      "adding the same number to both sides until x disappears",
+      "drawing a weighing scale for the equation",
+      "multiplying both sides by the coefficient of x"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a Class 7 maths club contest at a Pune school, three students try values in the equation 4x - 7 = 57. Ananya tries x = 10, Bilal tries x = 15 and Charu tries x = 17. In the next round, with the equation 4x - 7 = 58, each student gets only 3 trials and the prize goes to the first exact answer. The club must advise new members which method to use.\n(a) Find the LHS for each student's value.\n(b) Between which two tried values does the solution lie?\n(c) Solve 4x - 7 = 57 by doing the same operation on both sides.\n(d) For 4x - 7 = 58, should members rely on whole-number trials or the systematic method? Justify with the solution.",
+     "a": "(a) 33, 53, 61. (b) Between 15 and 17 (53 is below 57 and 61 is above). (c) 4x = 64, x = 16. (d) 4x = 65, x = 65/4 = 16.25, not a whole number, so three whole-number trials can never give an exact answer; use the systematic method.",
+     "s": [
+      [
+       "Part (a): 33, 53 and 61",
+       1
+      ],
+      [
+       "Part (b): between 15 and 17",
+       1
+      ],
+      [
+       "Part (c): x = 16",
+       1
+      ],
+      [
+       "Part (d): x = 65/4, so recommends the systematic method",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a trial and error for 4n + 3 = 111, what is the LHS when n = 25?",
+     "a": "103",
+     "o": [
+      "103",
+      "100",
+      "28",
+      "111"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "It is known that 9876 - 987 + 98 - 9 + 54 = 9032.\n(a) Which operation on both sides gives the value of 9876 - 987 + 98 - 9 directly?\n(b) What is that value?",
+     "a": "(a) Subtract 54 from both sides (addition and subtraction are inverse operations). (b) 9032 - 54 = 8978.",
+     "s": [
+      [
+       "Part (a): subtract 54 from both sides",
+       1
+      ],
+      [
+       "Part (b): 8978",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rohit says n = 7 solves 4n - 3 = 22 and n = 5 solves it too. Show that neither is a solution, and say between which whole numbers the true solution lies.",
+     "a": "n = 5 gives 4(5) - 3 = 17 and n = 7 gives 4(7) - 3 = 25; neither is 22. The LHS grows with n, 17 is below 22 and 25 above it, so the solution lies between 5 and 7 (it is 25/4, between 6 and 7, because n = 6 gives 21).",
+     "s": [
+      [
+       "LHS 17 for n = 5 and 25 for n = 7",
+       1
+      ],
+      [
+       "Neither equals 22",
+       1
+      ],
+      [
+       "Says the solution lies between 5 and 7 and is not a whole number",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera solves 2n + 1 = 99 by trial and error.\n(a) What is the LHS when she tries n = 45?\n(b) Should her next try be larger or smaller than 45? Give a reason.",
+     "a": "(a) 2 × 45 + 1 = 91. (b) Larger, because 91 is less than the RHS 99 (n = 49 gives 99).",
+     "s": [
+      [
+       "Part (a): LHS = 91",
+       1
+      ],
+      [
+       "Part (b): larger, since 91 < 99",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Meera says, 'Doing the same thing to both sides of 15 + 8 = 23 keeps the equality when we add or subtract, but multiplying can break it.' Is she fully right? Test multiplication by 4.",
+     "a": "She is right about adding and subtracting but wrong about multiplying. Multiplying both sides by 4 gives (15 + 8) × 4 = 92 and 23 × 4 = 92, still equal. Dividing also keeps equality.",
+     "s": [
+      [
+       "Says she is partly right: add and subtract keep equality",
+       1
+      ],
+      [
+       "Tests multiplication by 4: 92 = 92",
+       1
+      ],
+      [
+       "States that multiplication and division also keep the equality",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which operation undoes the effect of adding 19 to a number?",
+     "a": "Subtracting 19",
+     "o": [
+      "Subtracting 19",
+      "Adding 19 again",
+      "Multiplying by 19",
+      "Dividing by 19"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "It is known that 543 - 210 + 35 - (-12) = 380. Without evaluating the left side, find 543 - 210 + 35. State what you did to both sides.",
+     "a": "Add (-12) to both sides to remove the term -(-12): 543 - 210 + 35 = 380 + (-12) = 368.",
+     "s": [
+      [
+       "Adds (-12) to both sides to remove the term",
+       1
+      ],
+      [
+       "Value 368",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Solve 3x + 5 = 50 in two ways.\n(a) Use trial and error with at least three trials, showing the LHS each time.\n(b) Solve it again by doing the same operation on both sides.\n(c) Which method would you prefer for 3x + 5 = 51, and why?",
+     "a": "(a) x = 10 gives 35, x = 20 gives 65, x = 15 gives 50, so x = 15. (b) 3x = 45, x = 15. (c) The second: 51 gives 3x = 46 and x = 46/3, which no whole-number trial can find.",
+     "s": [
+      [
+       "Part (a): three trials with correct LHS values",
+       1
+      ],
+      [
+       "Part (a): reaches x = 15",
+       1
+      ],
+      [
+       "Part (b): subtracts 5 from both sides to get 3x = 45",
+       1
+      ],
+      [
+       "Part (b): divides by 3 to get x = 15",
+       1
+      ],
+      [
+       "Part (c): chooses the systematic method with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is trial and error often a poor way to solve 5x - 4 = 7?",
+     "a": "Its solution 11/5 is not a whole number",
+     "o": [
+      "Its solution 11/5 is not a whole number",
+      "The equation has no solution at all",
+      "5 × 2 - 4 already equals 7",
+      "The RHS must first be divided by 5"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "It is known that (5/7) × 21 × 14 × (3/4) = 315/2. Find (5/7) × 21 × 14 without multiplying it out.\n(a) What do you do to both sides?\n(b) Carry it out.\n(c) Check your result by direct multiplication and say why the first method is allowed.",
+     "a": "(a) Divide both sides by 3/4, which means multiplying by 4/3. (b) (315/2) × (4/3) = 210. (c) Directly: (5/7) × 21 = 15 and 15 × 14 = 210. It is allowed because the same operation on both sides keeps the equality and division undoes multiplication.",
+     "s": [
+      [
+       "Part (a): divides both sides by 3/4",
+       1
+      ],
+      [
+       "Part (b): multiplies by the reciprocal 4/3",
+       1
+      ],
+      [
+       "Part (b): gets 210",
+       1
+      ],
+      [
+       "Part (c): verifies 210 directly",
+       1
+      ],
+      [
+       "Part (c): justifies with inverse operations and equality kept",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To solve 6n + 1 = 277 by trial and error, Arun starts with n = 10, 20, 30 and is still far from 277. Give a quicker way and find n.",
+     "a": "Use inverse operations: subtract 1 from both sides to get 6n = 276, then divide by 6 to get n = 46. Check: 6 × 46 + 1 = 277.",
+     "s": [
+      [
+       "Subtracts 1 and divides by 6 instead of guessing",
+       1
+      ],
+      [
+       "Finds n = 46",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Statements about solving equations:\nStatement 1: Subtracting a number undoes adding the same number.\nStatement 2: Dividing both sides of an equation by a number changes its solution.\nStatement 3: Trial and error can be inefficient.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Bhavna's savings jar holds ₹110. She puts in ₹30 at the end of every month and wants to buy a school bag costing ₹350.\n(a) Write an expression for the money in the jar after m months.\n(b) Frame the equation for the bag's price and try m = 5 to see how far she is.\n(c) Find, by any method, the month in which the jar holds exactly ₹350.\n(d) On the day of that 8th deposit the shop raises the price to ₹380, before she can buy. Should she buy at once or wait? Decide with a reason.",
+     "a": "(a) 110 + 30m. (b) 110 + 30m = 350; m = 5 gives 260, still short. (c) 30m = 240, m = 8. (d) With the jar at ₹350 and the price ₹380 she is short by ₹30, so she waits one more month (m = 9 gives exactly ₹380).",
+     "s": [
+      [
+       "Part (a): 110 + 30m",
+       1
+      ],
+      [
+       "Part (b): frames 110 + 30m = 350 and finds 260 at m = 5",
+       1
+      ],
+      [
+       "Part (c): m = 8",
+       1
+      ],
+      [
+       "Part (d): ₹350 < ₹380; waits until month 9 (₹380)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Priya tries the equation 3n + 2 = 98. For n = 20 the LHS is 62, for n = 30 it is 92 and for n = 40 it is 122. Where must the solution lie?",
+     "a": "Between n = 30 and n = 40",
+     "o": [
+      "Between n = 30 and n = 40",
+      "Between n = 20 and n = 30",
+      "Above n = 40",
+      "Below n = 20"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If 17 × 29 × 13 × 6 × 9 = 346086, then 17 × 29 × 13 × 6 = 346086 ÷ 9.\nReason (R): Multiplication and division are inverse operations.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.3",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To bring the unknown terms of 8p + 3 = 3p + 28 to one side, the right first step is to",
+     "a": "subtract 3p from both sides",
+     "o": [
+      "subtract 3p from both sides",
+      "subtract 3 from the left side only",
+      "add 3p to the right side only",
+      "divide the left side by 8"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 9k = 5k and check your answer.",
+     "a": "Subtract 5k from both sides: 4k = 0, so k = 0. Check: 9(0) = 0 and 5(0) = 0, so LHS = RHS.",
+     "s": [
+      [
+       "Gets 4k = 0 and k = 0",
+       1
+      ],
+      [
+       "Checks by substitution",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ravi must solve 24(x + 3) + 60 = 300. He notices that 24, 60 and 300 are all divisible by 12. What simpler equation can he use?",
+     "a": "Divide both sides by 12: 2(x + 3) + 5 = 25",
+     "o": [
+      "Divide both sides by 12: 2(x + 3) + 5 = 25",
+      "Divide only 24 by 12: 2(x + 3) + 60 = 300",
+      "Divide only 300 by 12: 24(x + 3) + 60 = 25",
+      "Subtract 12 from each number"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The prize money of the Class 7 science fair was shared equally among 12 group members and each member received ₹45. The group now debates sharing the same total among fewer members, but every member must receive a whole number of rupees.\n(a) Frame an equation for the total amount m and solve it.\n(b) If only 10 members share the same total, how much does each get?\n(c) How much would each get if 11 members shared it?\n(d) Which of 10 and 11 members can the group choose? Justify.",
+     "a": "(a) m/12 = 45, m = 45 × 12 = 540. (b) 540/10 = ₹54. (c) 540/11 = about ₹49.09, not a whole number. (d) 10 members: each gets a whole ₹54, while 11 members would get ₹49.09.",
+     "s": [
+      [
+       "Part (a): m/12 = 45 and m = 540",
+       1
+      ],
+      [
+       "Part (b): ₹54 each",
+       1
+      ],
+      [
+       "Part (c): about ₹49.09 each",
+       1
+      ],
+      [
+       "Part (d): chooses 10 because 540/11 is not whole",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each equation in Column I with the right first step in Column II.\nColumn I: 1. 4x - 9 = 31   2. m/8 = 5   3. 6y = 72   4. 9y + 2 = 5y + 14\nColumn II: A. Multiply both sides by 8   B. Add 9 to both sides   C. Divide both sides by 6   D. Subtract 5y from both sides",
+     "a": "1-B, 2-A, 3-C, 4-D",
+     "o": [
+      "1-B, 2-A, 3-C, 4-D",
+      "1-A, 2-B, 3-C, 4-D",
+      "1-B, 2-C, 3-A, 4-D",
+      "1-D, 2-A, 3-C, 4-B"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Teena says, 'To solve 3(x - 2) = 15 I can either divide both sides by 3 first, or expand the bracket first, and I will get the same x.' Is she right? Show both ways.",
+     "a": "Yes. Dividing first: x - 2 = 5, so x = 7. Expanding first: 3x - 6 = 15, 3x = 21, x = 7. Both are equal operations on both sides, so the solution is the same.",
+     "s": [
+      [
+       "Verdict: Teena is right",
+       1
+      ],
+      [
+       "Divide-first way gives x = 7",
+       1
+      ],
+      [
+       "Expand-first way gives x = 7",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three students solved 6y - 5 = 2y + 19 and got different answers. Anil got y = 6. Beena wrote 6y + 2y = 19 + 5 and got y = 3. Chitra wrote 6y - 2y = 19 - 5 and got y = 7/2. In the exam, a student has time for only one extra step at the end: either substitute her answer in the original equation, or redo the whole solution.\n(a) Solve the equation correctly.\n(b) Check Beena's answer by substituting it in both sides.\n(c) What exact slip did Chitra make?\n(d) Which extra step should a student choose, and why?",
+     "a": "(a) 4y = 24, y = 6. (b) LHS = 6(3) - 5 = 13; RHS = 2(3) + 19 = 25; they differ, so y = 3 is wrong. (c) She wrote 19 - 5 on the right instead of 19 + 5 (moving -5 across should give +5). (d) Substitute: it takes two quick multiplications, exposes both slips as unequal sides (as in (b)), whereas redoing the work may repeat the same habit.",
+     "s": [
+      [
+       "Part (a): y = 6",
+       1
+      ],
+      [
+       "Part (b): 13 and 25 are unequal",
+       1
+      ],
+      [
+       "Part (c): 19 - 5 instead of 19 + 5",
+       1
+      ],
+      [
+       "Part (d): chooses substitution with the reason",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 6x - 14 = 40.\n(a) State the first step and the equation it gives.\n(b) Find x and check it in the original equation.",
+     "a": "(a) Add 14 to both sides: 6x = 54. (b) x = 9; check 6(9) - 14 = 40, equal to the RHS.",
+     "s": [
+      [
+       "Part (a): adds 14 to both sides to get 6x = 54",
+       1
+      ],
+      [
+       "Part (b): x = 9 with substitution check",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 30 - z = 11 and check.",
+     "a": "Remove 30: -z = 11 - 30 = -19, so z = 19. Check: 30 - 19 = 11.",
+     "s": [
+      [
+       "Gets -z = -19",
+       1
+      ],
+      [
+       "z = 19 with check",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From 7a = 56, the book writes the next step as",
+     "a": "a = 56 ÷ 7",
+     "o": [
+      "a = 56 ÷ 7",
+      "a = 56 × 7",
+      "a = 56 - 7",
+      "a = 7 ÷ 56"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Solve 4(9 - 3n) = -24.\n(b) Solve 7(y + 1) = 3(y - 3) + 4.\n(c) For (b), say why substituting y = -3 into both sides is a good check.",
+     "a": "(a) 36 - 12n = -24, -12n = -60, n = 5. (b) 7y + 7 = 3y - 9 + 4 = 3y - 5; 4y = -12; y = -3. (c) LHS = 7(-2) = -14 and RHS = 3(-6) + 4 = -14, so both sides agree; a slip anywhere would make them differ.",
+     "s": [
+      [
+       "Part (a): expands to 36 - 12n = -24",
+       1
+      ],
+      [
+       "Part (a): n = 5",
+       1
+      ],
+      [
+       "Part (b): expands both sides correctly",
+       1
+      ],
+      [
+       "Part (b): y = -3",
+       1
+      ],
+      [
+       "Part (c): checks -14 = -14 and says why checking catches slips",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If m/12 = 7, then m equals",
+     "a": "7 × 12 = 84",
+     "o": [
+      "7 × 12 = 84",
+      "7 ÷ 12",
+      "7 + 12 = 19",
+      "12 - 7 = 5"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The equation 5u - 6 = 4u + 8 has the solution u = 14.\nReason (R): A solution of an equation can be checked by substituting it in the equation.",
+     "a": "A and R are both true, but R is not the correct explanation of A.",
+     "o": [
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve -6w = -15. Write the answer as a fraction in lowest terms.",
+     "a": "Divide both sides by -6: w = -15 ÷ -6 = 15/6 = 5/2.",
+     "s": [
+      [
+       "Divides both sides by -6",
+       1
+      ],
+      [
+       "Gets w = 5/2 in lowest terms",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 8p + 3 = 3p + 28.\n(a) Write the equation after subtracting 3p from both sides.\n(b) Find p.",
+     "a": "(a) 5p + 3 = 28. (b) 5p = 25, so p = 5.",
+     "s": [
+      [
+       "Part (a): 5p + 3 = 28",
+       1
+      ],
+      [
+       "Part (b): p = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To get 4x alone on the left side of 4x - 9 = 31, you should",
+     "a": "add 9 to both sides",
+     "o": [
+      "add 9 to both sides",
+      "subtract 9 from both sides",
+      "divide both sides by 9",
+      "multiply both sides by 4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Kiran solves 5u - 6 = 4u + 8 and gets u = 14. How can he be sure the answer is right?",
+     "a": "Put u = 14 in the original equation; both sides give 64",
+     "o": [
+      "Put u = 14 in the original equation; both sides give 64",
+      "Put u = 14 only in the last line of his working",
+      "Notice that 14 is a whole number",
+      "Notice that 14 is greater than 8"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Solve 5(m + 3) - 7 = 3m - 2. Show each step and check.",
+     "a": "5m + 15 - 7 = 3m - 2, so 5m + 8 = 3m - 2. Subtract 3m: 2m + 8 = -2. Subtract 8: 2m = -10. m = -5. Check: LHS = 5(-2) - 7 = -17; RHS = 3(-5) - 2 = -17.",
+     "s": [
+      [
+       "Expands the bracket: 5m + 8 = 3m - 2",
+       1
+      ],
+      [
+       "Collects unknowns on one side: 2m + 8 = -2",
+       1
+      ],
+      [
+       "Isolates 2m = -10",
+       1
+      ],
+      [
+       "Finds m = -5",
+       1
+      ],
+      [
+       "Checks both sides equal -17",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about solving equations.\nStatement 1: To remove the factor 5 from 5x = 11, multiply the other side by 5.\nStatement 2: 2y + 7 = 21 can be written as 2y = 21 - 7.\nStatement 3: u/15 = 6 can be written as u = 6 × 15.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 only",
+      "1 and 2 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Solve 15(x + 2) + 90 = 300 by expanding the bracket first, and check your answer.",
+     "a": "15x + 30 + 90 = 300, so 15x + 120 = 300, 15x = 180, x = 12. Check: 15(14) + 90 = 210 + 90 = 300.",
+     "s": [
+      [
+       "Expands: 15x + 30 + 90 = 300",
+       1
+      ],
+      [
+       "Solves to x = 12",
+       1
+      ],
+      [
+       "Checks by substitution",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write an equation with the unknown on both sides whose solution is y = 4. Solve it step by step to show that y = 4 comes out.",
+     "a": "Example: 5y + 2 = 2y + 14. Subtract 2y: 3y + 2 = 14. Subtract 2: 3y = 12. Divide by 3: y = 4. Any correct equation with the unknown on both sides and correct working is accepted.",
+     "s": [
+      [
+       "Writes an equation with y on both sides",
+       1
+      ],
+      [
+       "Collects terms with correct steps",
+       1
+      ],
+      [
+       "Reaches y = 4",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.4",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each story in Column I with its equation in Column II.\nColumn I: 1. ₹25 a plate plus ₹50 delivery, total ₹500   2. Two numbers add to 84 and one is five times the other   3. A number increased by 45 equals ten times itself   4. ₹60 fixed plus ₹14 per km, fare ₹228\nColumn II: A. 14k + 60 = 228   B. x + 45 = 10x   C. 25p + 50 = 500   D. n + 5n = 84",
+     "a": "1-C, 2-D, 3-B, 4-A",
+     "o": [
+      "1-C, 2-D, 3-B, 4-A",
+      "1-A, 2-D, 3-B, 4-C",
+      "1-C, 2-B, 3-D, 4-A",
+      "1-D, 2-C, 3-B, 4-A"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The first step in solving a word problem with an equation is to",
+     "a": "name the unknown with a letter-number",
+     "o": [
+      "name the unknown with a letter-number",
+      "guess a value and see if it fits",
+      "check the answer in the story",
+      "divide the total by the number of items"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A shopkeeper says, 'Pencils at ₹8 each plus a ₹50 bag fee came to ₹42 in all.' Show that this bill is impossible.",
+     "a": "8p + 50 = 42 gives 8p = -8, so p = -1. A number of pencils cannot be negative. Also the bag fee alone (₹50) is already more than ₹42.",
+     "s": [
+      [
+       "Frames 8p + 50 = 42",
+       1
+      ],
+      [
+       "Solves p = -1",
+       1
+      ],
+      [
+       "Concludes the number of pencils cannot be negative",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "After solving the equation for a story problem, the last thing to do is to",
+     "a": "check the value against the facts in the story",
+     "o": [
+      "check the value against the facts in the story",
+      "multiply it by the first number given",
+      "write it without units",
+      "change it to a fraction"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A magic trick says: think of a number, add 5, multiply by 3, subtract 6. Kavya's final answer is 33.\n(a) Write the equation using x for her number.\n(b) Find her number.",
+     "a": "(a) 3(x + 5) - 6 = 33, i.e. 3x + 9 = 33. (b) 3x = 24, x = 8.",
+     "s": [
+      [
+       "Part (a): 3(x + 5) - 6 = 33",
+       1
+      ],
+      [
+       "Part (b): x = 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The sum of two numbers is 90 and one is four times the other. Find both numbers.",
+     "a": "Let the smaller be n: n + 4n = 90, so 5n = 90, n = 18 and the other is 72.",
+     "s": [
+      [
+       "Frames n + 4n = 90",
+       1
+      ],
+      [
+       "Finds 18 and 72",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An auto charges a fixed ₹60 plus ₹14 for every kilometre, and the fare was ₹228. Sonal wrote 60k + 14 = 228 for the distance k. What is wrong?",
+     "a": "₹60 was multiplied by k and 14 added once",
+     "o": [
+      "₹60 was multiplied by k and 14 added once",
+      "₹60 and ₹14 should be added, then multiplied by k",
+      "The 14 should be divided by 60 first",
+      "The equation is right, only the letter is different"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Imran has ₹2400 and saves ₹300 every month. Zoya has ₹3000 and saves ₹250 every month. Which equation finds the month m when their savings are equal?",
+     "a": "2400 + 300m = 3000 + 250m",
+     "o": [
+      "2400 + 300m = 3000 + 250m",
+      "2400 + 250m = 3000 + 300m",
+      "2400 + 3000 = 300m + 250m",
+      "2400 + 300 = 3000 + 250"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A Hyderabad school plans a picnic with a budget of ₹2000. Caterer A charges ₹40 a plate and ₹120 fixed for decoration. Caterer B charges ₹36 a plate and ₹400 fixed. Eight teachers will attend along with the students.\n(a) How many people can Caterer A feed within ₹2000? Frame the equation and solve it.\n(b) How many students can come if A is chosen?\n(c) For how many people do A and B cost exactly the same?\n(d) The school expects 45 people at first, and a bigger event of 90 people later. Which caterer should it choose for each size? Give the costs.",
+     "a": "(a) 40p + 120 = 2000, p = 47. (b) 47 - 8 = 39 students. (c) 40p + 120 = 36p + 400, p = 70. (d) For 45: A costs ₹1920, B ₹2020, so A. For 90: A ₹3720, B ₹3640, so B. At 70 they are equal (₹2920); B charges ₹4 less per plate, so beyond 70 B keeps getting cheaper.",
+     "s": [
+      [
+       "Part (a): 47 people",
+       1
+      ],
+      [
+       "Part (b): 39 students",
+       1
+      ],
+      [
+       "Part (c): p = 70",
+       1
+      ],
+      [
+       "Part (d): A for 45, B for 90, with costs",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life story that can be modelled by 40n + 90 = 450, say what n means, and solve it.",
+     "a": "Example: a school hires a stall: ₹90 set-up fee plus ₹40 per child; the total bill is ₹450; n is the number of children. 40n = 360, n = 9. Any consistent story is accepted.",
+     "s": [
+      [
+       "Says what n stands for",
+       1
+      ],
+      [
+       "Story has fixed 90, rate 40 and total 450",
+       1
+      ],
+      [
+       "Solves n = 9",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At the Annual Day magic show, the magician asks each volunteer to think of a whole number n from 1 to 20, multiply it by 4, add 20 and then divide by 2. The volunteer announces the final answer. Two volunteers announce 46 and 52.\n(a) Write the final answer as an expression in n.\n(b) Find the number thought of by the volunteer who said 46.\n(c) Find the number for the answer 52.\n(d) The magician says one volunteer broke the rule. Which one, and how could he tell without solving?",
+     "a": "(a) (4n + 20) ÷ 2 = 2n + 10. (b) 2n + 10 = 46, n = 18. (c) 2n + 10 = 52, n = 21, which is outside 1 to 20. (d) The volunteer who said 52: for n from 1 to 20, 2n + 10 only ranges from 12 to 50, and 52 is above 50.",
+     "s": [
+      [
+       "Part (a): 2n + 10",
+       1
+      ],
+      [
+       "Part (b): n = 18",
+       1
+      ],
+      [
+       "Part (c): n = 21",
+       1
+      ],
+      [
+       "Part (d): 52 is above the largest possible answer 50",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bakery charges ₹30 for each cake box and a fixed ₹40 for delivery. What is the cost of b boxes?",
+     "a": "30b + 40",
+     "o": [
+      "30b + 40",
+      "30(b + 40)",
+      "70b",
+      "30 + 40b"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Imran has ₹2400 and saves ₹300 a month; Zoya has ₹3000 and saves ₹250 a month.\n(a) Frame the equation for the month m when they have equal savings.\n(b) Solve it.\n(c) How much does each have then?\n(d) Who has more after 6 months?",
+     "a": "(a) 2400 + 300m = 3000 + 250m. (b) 50m = 600, m = 12. (c) Each has ₹6000. (d) Imran ₹4200, Zoya ₹4500, so Zoya has more after 6 months.",
+     "s": [
+      [
+       "Part (a): frames the equation",
+       1
+      ],
+      [
+       "Part (b): m = 12",
+       1
+      ],
+      [
+       "Part (c): ₹6000 each",
+       1
+      ],
+      [
+       "Part (d): computes 4200 and 4500",
+       1
+      ],
+      [
+       "Part (d): Zoya has more",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Class 7B hires a bus for a trip to Golconda Fort. The bus company charges a fixed ₹500 plus ₹40 for every student. The class has a budget of ₹2,100. Isha says, '40 students can go, because 40 × 40 = 1600 and 1600 + 500 = 2100.' Is she right?",
+     "a": "Yes. The equation is 40n + 500 = 2100, so 40n = 1600 and n = 40. Her working is the check: 40 × 40 + 500 = 2100, exactly the budget. She is right, and no money is left over.",
+     "s": [
+      [
+       "Verdict: Isha is right",
+       1
+      ],
+      [
+       "Frames 40n + 500 = 2100",
+       1
+      ],
+      [
+       "Solves n = 40 and confirms the total is exactly ₹2100",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If the sum of two numbers is 84 and one is five times the other, the numbers are 14 and 70.\nReason (R): If the smaller number is n, the larger is 5n, and n + 5n = 84 gives 6n = 84.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "'Three times a number, increased by 5, gives 26.' Which equation says this?",
+     "a": "3n + 5 = 26",
+     "o": [
+      "3n + 5 = 26",
+      "3(n + 5) = 26",
+      "n + 3 + 5 = 26",
+      "3n = 26 + 5"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A trick: think of a number, add 7, multiply by 5, subtract 10. Preeti's answer is 60.\n(a) Write the expression after each step using x.\n(b) Frame and solve the equation.\n(c) Give a rule to get the starting number from any final answer F and test it on 60.",
+     "a": "(a) x + 7; 5(x + 7) = 5x + 35; 5x + 25. (b) 5x + 25 = 60, x = 7. (c) x = (F - 25) ÷ 5; for F = 60: 35 ÷ 5 = 7.",
+     "s": [
+      [
+       "Part (a): expressions after each step",
+       1
+      ],
+      [
+       "Part (b): frames 5x + 25 = 60",
+       1
+      ],
+      [
+       "Part (b): x = 7",
+       1
+      ],
+      [
+       "Part (c): rule (F - 25) ÷ 5",
+       1
+      ],
+      [
+       "Part (c): tests it on 60 to get 7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A notebook costs ₹12 less than a geometry box, and together they cost ₹158.\n(a) Taking the geometry box as g rupees, frame the equation.\n(b) Find the price of each.",
+     "a": "(a) g + (g - 12) = 158. (b) 2g = 170, so box ₹85 and notebook ₹73.",
+     "s": [
+      [
+       "Part (a): g + (g - 12) = 158",
+       1
+      ],
+      [
+       "Part (b): ₹85 and ₹73",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A courier charges a fixed ₹45 plus ₹12 for every kilogram. The bill for a parcel is ₹177. Frame an equation and find the weight of the parcel.",
+     "a": "12w + 45 = 177, 12w = 132, w = 11 kg.",
+     "s": [
+      [
+       "Frames 12w + 45 = 177",
+       1
+      ],
+      [
+       "Solves w = 11 kg",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about solving word problems.\nStatement 1: The unknown must always be named x.\nStatement 2: The solution should be checked against the story, not only in the equation.\nStatement 3: In a problem about the number of friends invited, an answer of 13.5 is acceptable.\nWhich of the statements are correct?",
+     "a": "2 only",
+     "o": [
+      "2 only",
+      "1 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A ribbon of 120 m is cut into two pieces and one piece is 18 m longer than the other.\n(a) Why can one letter-number be used for both pieces?\n(b) Find the length of each piece.",
+     "a": "(a) The longer piece is described by the shorter one, x + 18, so a single unknown x is enough. (b) x + (x + 18) = 120, 2x = 102, x = 51; pieces are 51 m and 69 m.",
+     "s": [
+      [
+       "Part (a): longer piece expressed as x + 18 using one unknown",
+       1
+      ],
+      [
+       "Part (b): 51 m and 69 m",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.5",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Tuition Centre X charges ₹200 registration and ₹50 per session. Centre Y first charged ₹300 registration and ₹50 per session, but later changed to ₹300 registration and ₹45 per session. Ishita will choose one centre. She is sure of attending 15 sessions but may go on to 24.\n(a) With Y's first fee, frame the equation for the two fees to be equal after s sessions and show what it leads to.\n(b) What does that tell you about the two centres for any number of sessions?\n(c) With Y's new fee, after how many sessions are the fees equal?\n(d) With Y's new fee, find both fees at 15 sessions and at 24 sessions, and advise Ishita which centre to join.",
+     "a": "(a) 200 + 50s = 300 + 50s, which leads to 200 = 300, false. (b) They are never equal; X is always ₹100 cheaper. (c) 200 + 50s = 300 + 45s, 5s = 100, s = 20. (d) At 15 sessions X costs ₹950 and Y ₹975 (X saves ₹25). At 24 sessions X costs ₹1400 and Y ₹1380 (Y saves ₹20). X is the safer advice, since she is sure of 15 sessions and Y saves only ₹20 even if she reaches 24; Y is acceptable if she is confident of 24. A justified choice earns the mark.",
+     "s": [
+      [
+       "Part (a): 200 = 300 is false",
+       1
+      ],
+      [
+       "Part (b): never equal; X ₹100 cheaper",
+       1
+      ],
+      [
+       "Part (c): s = 20",
+       1
+      ],
+      [
+       "Part (d): 950 v 975 and 1400 v 1380 with a justified advice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Asha starts from 4x = 20. She subtracts 3 from both sides and then multiplies both sides by 2, getting 2(4x - 3) = 34. Without expanding, what is the solution of her final equation?",
+     "a": "x = 5",
+     "o": [
+      "x = 5",
+      "x = 17",
+      "x = 34",
+      "x = 20"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the same operation is done on both sides of an equation, the new equation has",
+     "a": "the same solution as before",
+     "o": [
+      "the same solution as before",
+      "a solution that is double the old one",
+      "a solution that is always zero",
+      "no solution that can be found"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these equations has no solution?",
+     "a": "x + 4 = x + 5",
+     "o": [
+      "x + 4 = x + 5",
+      "x + 4 = 2x + 4",
+      "x + 4 = 5 - x",
+      "4x = x + 4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Start from 2z = 18, which has the solution z = 9.\n(a) Add 5 to both sides and write the new equation.\n(b) Multiply the new equation by 3 on both sides. Write the equation and state its solution without solving.",
+     "a": "(a) 2z + 5 = 23. (b) 6z + 15 = 69; the solution is still z = 9.",
+     "s": [
+      [
+       "Part (a): 2z + 5 = 23",
+       1
+      ],
+      [
+       "Part (b): 6z + 15 = 69 with solution z = 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write an equation of the form ax + b = c whose solution is x = -2.\n(b) Show by substitution that -2 satisfies it.",
+     "a": "(a) Example: 5x + 4 = -6. (b) LHS = 5(-2) + 4 = -6 = RHS. Any correct equation is accepted.",
+     "s": [
+      [
+       "Part (a): writes a valid equation of the form ax + b = c",
+       1
+      ],
+      [
+       "Part (b): substitutes -2 and shows LHS = RHS",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these equations has the solution y = 5?",
+     "a": "y + 2 = 7",
+     "o": [
+      "y + 2 = 7",
+      "y + 2 = 5",
+      "2y = 5",
+      "y - 2 = 7"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about equations.\nStatement 1: Multiplying both sides of 4n = 28 by 2 changes the solution from 7 to 14.\nStatement 2: Adding n to both sides of an equation changes its solution.\nStatement 3: The equation x + 4 = x + 5 has no solution.\nWhich of the statements are correct?",
+     "a": "3 only",
+     "o": [
+      "3 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A trick: think of a number, add 6, multiply by 4, subtract 4 times the number you started with, then divide by 8. The answer is always 3.\n(a) Write the expression after each step using x.\n(b) Explain why the answer is always 3.\n(c) Design a similar trick whose answer is always 7 and prove it.",
+     "a": "(a) x; x + 6; 4x + 24; 24; 3. (b) After multiplying, 4x + 24; subtracting 4x removes the unknown and leaves 24, and 24 ÷ 8 = 3 for every x. (c) Think of x, multiply by 5, add 15, divide by 5, subtract x, add 4: (5x + 15)/5 - x + 4 = x + 3 - x + 4 = 7.",
+     "s": [
+      [
+       "Part (a): expressions after each step",
+       2
+      ],
+      [
+       "Part (b): the x cancels so the result is always 3",
+       1
+      ],
+      [
+       "Part (c): designs a trick with steps",
+       1
+      ],
+      [
+       "Part (c): proves it gives 7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that 2(x + 1) = 2x + 5 cannot have a solution.",
+     "a": "Expand: 2x + 2 = 2x + 5. Subtracting 2x from both sides gives 2 = 5, which is false for every x, so no value of x works.",
+     "s": [
+      [
+       "Expands the bracket",
+       1
+      ],
+      [
+       "Subtracts 2x from both sides to get 2 = 5",
+       1
+      ],
+      [
+       "Concludes there is no solution",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "For each equation say whether it has a solution, and solve it if it does:\n(i) 5x + 3 = 5x + 8\n(ii) 4x + 2 = 2x + 10\n(iii) 3x - 2 = x + 6\nThen explain how you can tell that (i) has no solution without trying any values.",
+     "a": "(i) No solution: subtracting 5x gives 3 = 8, false. (ii) 2x = 8, x = 4. (iii) 2x = 8, x = 4. The unknown parts on both sides of (i) are identical, so only the numbers 3 and 8 are compared, and they differ.",
+     "s": [
+      [
+       "Part (i): no solution with the 3 = 8 reason",
+       1
+      ],
+      [
+       "Part (ii): x = 4",
+       1
+      ],
+      [
+       "Part (iii): x = 4",
+       1
+      ],
+      [
+       "Explanation: unknown terms are the same on both sides",
+       1
+      ],
+      [
+       "Explanation: remaining numbers 3 and 8 are unequal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Divya says, 'The equation 6n + 12 = 54 has the same solution as n + 2 = 9, because it comes from n + 2 = 9 by multiplying both sides by 6.' Is she right?",
+     "a": "Yes. Multiplying both sides of n + 2 = 9 by 6 gives 6n + 12 = 54, and the same operation on both sides keeps the solution. Check: n + 2 = 9 gives n = 7, and 6n + 12 = 54 gives 6n = 42, n = 7.",
+     "s": [
+      [
+       "Verdict: Divya is right",
+       1
+      ],
+      [
+       "Shows 6(n + 2) = 54 is the same as 6n + 12 = 54",
+       1
+      ],
+      [
+       "Solves both to n = 7",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Do 3x + 2 = 14 and 5x - 4 = 14 have the same solution? Solve both to decide.",
+     "a": "No. 3x + 2 = 14 gives 3x = 12, x = 4, while 5x - 4 = 14 gives 5x = 18, x = 18/5. The solutions differ, so one equation is not made from the other by the same operation on both sides.",
+     "s": [
+      [
+       "Solves 3x + 2 = 14 to get x = 4",
+       1
+      ],
+      [
+       "Solves 5x - 4 = 14 to get 18/5 and says they differ",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a class game, groups start from u = 6 and must change the equation by doing the same thing to both sides. The steps are: (1) multiply both sides by 5, (2) subtract 8 from both sides, (3) add u to both sides. Group P ends with 6u - 8 = 22 + u. Group Q ends with 6u - 8 = 23 + u.\n(a) Write the equation after step (1) and after step (2).\n(b) Write the equation that step (3) gives.\n(c) Test u = 6 in both groups' final equations.\n(d) The teacher can award the chain only to a correct group. Which group should get it, and what slip did the other make?",
+     "a": "(a) 5u = 30, then 5u - 8 = 22. (b) 6u - 8 = 22 + u. (c) P: 36 - 8 = 28 and 22 + 6 = 28, equal. Q: 28 and 23 + 6 = 29, unequal. (d) Group P; Group Q wrote 23 instead of 22 (slip in the right-hand number), so the solution u = 6 is lost.",
+     "s": [
+      [
+       "Part (a): 5u = 30 and 5u - 8 = 22",
+       1
+      ],
+      [
+       "Part (b): 6u - 8 = 22 + u",
+       1
+      ],
+      [
+       "Part (c): P gives 28 = 28, Q gives 28 and 29",
+       1
+      ],
+      [
+       "Part (d): awards P and names Q's slip",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Each equation in Column I is changed by the operation on both sides shown with it. Match it to the new equation in Column II.\nColumn I: 1. 4n = 28, add 6   2. 4n + 6 = 34, divide by 2   3. 2n + 3 = 17, subtract 3   4. n + 2 = 9, multiply by -1\nColumn II: A. 2n + 3 = 17   B. 2n = 14   C. -n - 2 = -9   D. 4n + 6 = 34",
+     "a": "1-D, 2-A, 3-B, 4-C",
+     "o": [
+      "1-D, 2-A, 3-B, 4-C",
+      "1-A, 2-D, 3-B, 4-C",
+      "1-D, 2-B, 3-A, 4-C",
+      "1-C, 2-A, 3-B, 4-D"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The equations n + 2 = 9 and 4n = 28 have the same solution.\nReason (R): Two equations with the same solution must have the same Left Hand Side.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shopkeeper models a bill by the equation 60x + 45 = 345. Which story fits this equation?",
+     "a": "x kg of apples at ₹60 a kg plus a ₹45 packing fee make a bill of ₹345",
+     "o": [
+      "x kg of apples at ₹60 a kg plus a ₹45 packing fee make a bill of ₹345",
+      "x kg of apples at ₹45 a kg plus a ₹60 packing fee make a bill of ₹345",
+      "(x + 45) kg of apples at ₹60 a kg make a bill of ₹345",
+      "x kg of apples at ₹60 a kg less a ₹45 discount make a bill of ₹345"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Give one equation with no solution and explain in a line why no value can satisfy it.",
+     "a": "Example: y + 8 = y + 9. Eight more than a number can never equal nine more than the same number.",
+     "s": [
+      [
+       "Gives a valid no-solution equation",
+       1
+      ],
+      [
+       "Reason: the two sides differ by a fixed amount for every value",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A chain starts from x = 9. Add 4 to both sides, then multiply both sides by 3. Write the final equation and state its solution without solving it, giving the reason.",
+     "a": "x + 4 = 13, then 3(x + 4) = 39, i.e. 3x + 12 = 39. Its solution is still x = 9, because the same operation on both sides keeps the solution unchanged.",
+     "s": [
+      [
+       "Writes the final equation 3(x + 4) = 39",
+       1
+      ],
+      [
+       "States x = 9 with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Starting from x = -2, build three different equations using different operations on both sides. Show that each has the solution -2.",
+     "a": "Example: x = -2 then x + 7 = 5 then 4x + 28 = 20 then 4x + 28 - x = 20 - x. Each is checked by putting x = -2 (e.g. 4(-2) + 28 = 20). Any three valid equations with checks are accepted.",
+     "s": [
+      [
+       "Builds three equations by valid operations",
+       1
+      ],
+      [
+       "Uses at least two different operations",
+       1
+      ],
+      [
+       "Checks that -2 satisfies each",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which equation has the solution x = -2?",
+     "a": "3x + 1 = -5",
+     "o": [
+      "3x + 1 = -5",
+      "3x + 1 = 5",
+      "3x - 1 = -5",
+      "-3x + 1 = -5"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Teacher sees '5k + 10 = 60, so k + 10 = 12'. What went wrong?",
+     "a": "Only 5k and 60 were divided by 5; the 10 was left as it was",
+     "o": [
+      "Only 5k and 60 were divided by 5; the 10 was left as it was",
+      "The equation should be solved by subtracting 60 first",
+      "5k cannot be divided by 5",
+      "12 should have been 60 - 10"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Aarav solves 6a + 1 = 2a - 7 as '6a + 2a = -7 + 1, 8a = -6'. Find the mistake and give the correct answer.",
+     "a": "The term 2a should have been subtracted and 1 taken from -7 as well: 6a - 2a = -7 - 1, so 4a = -8 and a = -2.",
+     "s": [
+      [
+       "Names the wrong inverse for 2a and 1",
+       1
+      ],
+      [
+       "Correct a = -2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): k = 11 is not a solution of 5k + 10 = 60.\nReason (R): Putting k = 11 makes the LHS 65, which is not equal to the RHS 60.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find and fix the mistake: '4x + 2 = -10, so x + 2 = -10/4, x = -9/2'.",
+     "a": "Only 4x and -10 were divided by 4; the 2 was left. Correct: 4x = -12, so x = -3.",
+     "s": [
+      [
+       "Identifies that 2 was not divided",
+       1
+      ],
+      [
+       "Corrected solution x = -3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The surest way to find out whether a solved value of x is correct is to",
+     "a": "substitute it in the original equation",
+     "o": [
+      "substitute it in the original equation",
+      "check that it is a whole number",
+      "see that it is smaller than the RHS",
+      "repeat the same steps again"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Moitra solves 13 - 4c = 9 and says c = 5.5. Show that this cannot be right, and find the correct value.",
+     "a": "13 - 4(5.5) = 13 - 22 = -9, which is not 9. Correct: 4c = 13 - 9 = 4, so c = 1.",
+     "s": [
+      [
+       "Substitutes c = 5.5 into the LHS",
+       1
+      ],
+      [
+       "Gets -9, not 9",
+       1
+      ],
+      [
+       "Correct c = 1",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student solves 3t - 6 = 12 like this: 't - 6 = 12 - 3, t - 6 = 9, t = 15'.\n(a) Describe the mistake.\n(b) Give the correct solution of the equation.",
+     "a": "(a) Only 3t was divided by 3; the 6 stayed as it was, and 3 was subtracted from 12 instead of dividing 12 by 3. (b) 3t = 18, t = 6; check 3(6) - 6 = 12.",
+     "s": [
+      [
+       "Part (a): names the partial division and the 12 - 3",
+       1
+      ],
+      [
+       "Part (b): correct t = 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rahul solves 3p + 4 = 19 as '3p = 19 + 4 = 23, so p = 23/3'. To check, he writes '3 × 23/3 = 23 = 23, so I am right.' Do you agree?",
+     "a": "No. He checked in his own wrong line 3p = 23, not in the original equation. In 3p + 4 = 19, p = 23/3 gives 23 + 4 = 27, not 19. The right step is 3p = 19 - 4 = 15, so p = 5.",
+     "s": [
+      [
+       "Verdict: disagree, he checked in his own line",
+       1
+      ],
+      [
+       "Shows 3(23/3) + 4 = 27, not 19",
+       1
+      ],
+      [
+       "Correct solution p = 5",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Decide whether each solution is right or wrong. Correct the wrong ones.\n(i) 6m + 12 = 60, so m + 12 = 10, m = -2.\n(ii) 10k + 15 = 45, so 2k + 3 = 9, 2k = 6, k = 3.\n(iii) 5j - 3 = 8j + 6, so 5j = 8j + 3, -3j = 3, j = -1.",
+     "a": "(i) Wrong: only 6m and 60 were divided by 6; 6m = 48, m = 8. (ii) Right: every term was divided by 5. (iii) Wrong: moving -3 to the RHS must give +3, so the RHS is 8j + 6 + 3 = 8j + 9, not 8j + 3; then -3j = 9 and j = -3.",
+     "s": [
+      [
+       "(i) marked wrong with the reason",
+       1
+      ],
+      [
+       "(i) corrected to m = 8",
+       1
+      ],
+      [
+       "(ii) marked right with the reason",
+       1
+      ],
+      [
+       "(iii) marked wrong with the reason",
+       1
+      ],
+      [
+       "(iii) corrected to j = -3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A homework app shows these solutions. P: 4q + 2 = 50, so 4q = 50 + 2, q = 13. Q: 7 - 2r = 1, so 2r = 7 - 1, r = 3. R: 3t + 9 = 21, so t + 9 = 7, t = -2. A teacher suggests using the app anyway if it is right most of the time, but every student who copies a wrong output loses marks.\n(a) Which outputs are wrong?\n(b) Check P's answer and give the correct q.\n(c) Give the correct t for R.\n(d) Should the school approve the app as it is, or only after the fault is fixed? Justify using the kinds of slip you found.",
+     "a": "(a) P and R are wrong; Q is right. (b) 4(13) + 2 = 54, not 50; correct q = 12. (c) 3t = 12, t = 4. (d) Not as it is: two of three outputs are wrong, and the slips are systematic (adding instead of subtracting when moving a term, and dividing only one term), so they would repeat on many equations. Approve only after the fault is fixed.",
+     "s": [
+      [
+       "Part (a): P and R wrong, Q right",
+       1
+      ],
+      [
+       "Part (b): 54 vs 50 and q = 12",
+       1
+      ],
+      [
+       "Part (c): t = 4",
+       1
+      ],
+      [
+       "Part (d): not approved as is, naming the two repeating slip types",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Dev solved 5(2n - 3) = 4n + 9 like this: '10n - 3 = 4n + 9; 10n + 4n = 9 + 3; 14n = 12; n = 6/7'.\n(a) Point out his two mistakes.\n(b) Solve the equation correctly.\n(c) Check it.",
+     "a": "(a) 5 × (-3) should be -15, not -3; and 4n should be subtracted from both sides, not added. (b) 10n - 15 = 4n + 9, 6n = 24, n = 4. (c) LHS = 5 × 5 = 25; RHS = 16 + 9 = 25.",
+     "s": [
+      [
+       "Mistake 1: the bracket not fully expanded",
+       1
+      ],
+      [
+       "Mistake 2: 4n added instead of subtracted",
+       1
+      ],
+      [
+       "Correct working to 6n = 24",
+       1
+      ],
+      [
+       "n = 4",
+       1
+      ],
+      [
+       "Check gives 25 on both sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In 5y + 3 = 18, a student writes 5y = 18 + 3. The correct step is",
+     "a": "5y = 18 - 3",
+     "o": [
+      "5y = 18 - 3",
+      "5y = 3 - 18",
+      "y = 18 - 3",
+      "5y + 3 = 18 + 3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Dividing both sides of 3m - 6 = 15 by 3 correctly gives",
+     "a": "m - 2 = 5",
+     "o": [
+      "m - 2 = 5",
+      "m - 6 = 5",
+      "m - 2 = 15",
+      "m - 6 = 15"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about correcting solutions.\nStatement 1: To divide an equation by a number, every term on both sides must be divided.\nStatement 2: Checking by substitution is needed only when the answer is a fraction.\nStatement 3: Removing +4 from the LHS puts +4 on the RHS.\nWhich of the statements are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "2 only",
+      "1 and 3 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student solves 9w - 2w = 21 and writes 11w = 21. What is the mistake and what is the correct value of w?",
+     "a": "Like terms 9w and -2w were added as if both were positive; 9w - 2w = 7w. So 7w = 21 and w = 3.",
+     "s": [
+      [
+       "Identifies the sign slip in combining 9w - 2w",
+       1
+      ],
+      [
+       "w = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Solve 4(q + 2) = 3q + 17 and check your answer.",
+     "a": "4q + 8 = 3q + 17, so q = 17 - 8 = 9. Check: LHS = 4 × 11 = 44, RHS = 27 + 17 = 44.",
+     "s": [
+      [
+       "Expands the bracket to 4q + 8",
+       1
+      ],
+      [
+       "q = 9",
+       1
+      ],
+      [
+       "Checks both sides give 44",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a short wrong solution of 5p + 3 = 28 that contains one mistake, name the mistake, and then write the correct solution.",
+     "a": "Example wrong: 5p = 28 + 3 = 31, p = 31/5. Mistake: +3 was added to the RHS instead of subtracted. Correct: 5p = 25, p = 5.",
+     "s": [
+      [
+       "Wrong solution has exactly one clear slip",
+       1
+      ],
+      [
+       "Names the slip",
+       1
+      ],
+      [
+       "Correct solution p = 5",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Pooja solves 9 - 2k = 3 as '2k = 9 + 3, so k = 6'.\n(a) What slip did she make?\n(b) Show by substitution that k = 6 fails and find the correct k.",
+     "a": "(a) She added 3 to 9; to keep the equality 2k must equal 9 - 3. (b) 9 - 2(6) = -3, not 3. Correct: 2k = 9 - 3 = 6, k = 3.",
+     "s": [
+      [
+       "Part (a): added 3 instead of subtracting it",
+       1
+      ],
+      [
+       "Part (b): shows -3 and finds k = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Aman and Bela solve 5(x + 2) - 4 = 3x + 12 in a class test. Aman writes: 5x + 2 - 4 = 3x + 12, 5x - 2 = 3x + 12, 5x + 3x = 12 + 2, 8x = 14, x = 7/4. Bela writes: 5x + 10 - 4 = 3x + 12, 5x + 6 = 3x + 12, 5x + 3x = 12 - 6, 8x = 6, x = 3/4.\n(a) State the step where Aman first goes wrong.\n(b) State the step where Bela first goes wrong.\n(c) Solve the equation correctly.\n(d) The teacher gives marks for method. Whose working deserves more marks, and why? Back it up using a check.",
+     "a": "(a) The first line: 2 was not multiplied by 5. Aman also adds 3x instead of subtracting it later. (b) Moving 3x: it should be subtracted (5x - 3x), not added. (c) 5x + 6 = 3x + 12, 2x = 6, x = 3. (d) Bela: her expansion is right and she makes one slip, while Aman makes two slips (the bracket and the 3x). Check: x = 7/4 gives 59/4 against 69/4; x = 3/4 gives 39/4 against 57/4; both answers fail.",
+     "s": [
+      [
+       "Part (a): Aman's expansion of the bracket",
+       1
+      ],
+      [
+       "Part (b): Bela adding 3x instead of subtracting",
+       1
+      ],
+      [
+       "Part (c): x = 3",
+       1
+      ],
+      [
+       "Part (d): Bela, with two-slips versus one-slip and the checks",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Nitin solves 5(m + 2) = 3m + 16 and writes 5m + 2 = 3m + 16 as his first line. What is wrong?",
+     "a": "2 was not multiplied by 5",
+     "o": [
+      "2 was not multiplied by 5",
+      "3m should have been multiplied by 5",
+      "The bracket should be dropped altogether",
+      "The 16 should go inside the bracket"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The solution of 11 - 3a = 5 is",
+     "a": "a = 2",
+     "o": [
+      "a = 2",
+      "a = 1/2",
+      "a = -2",
+      "a = 16/3"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 3x + 8 = 7x + 2 by Brahmagupta's formula and check the answer.\n(a) Find x.\n(b) Check by substitution.",
+     "a": "(a) x = (2 - 8) ÷ (3 - 7) = (-6) ÷ (-4) = 3/2. (b) LHS = 3(3/2) + 8 = 25/2, RHS = 7(3/2) + 2 = 25/2.",
+     "s": [
+      [
+       "Part (a): x = 3/2",
+       1
+      ],
+      [
+       "Part (b): both sides give 25/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The English word 'algebra' comes from",
+     "a": "al-jabr in Al-Khwarizmi's book",
+     "o": [
+      "al-jabr in Al-Khwarizmi's book",
+      "yāvat-tāvat in Brahmagupta's book",
+      "bījagaṇita in Bhāskarāchārya's book",
+      "rūpa in the Bakhśhāli Manuscript"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use Brahmagupta's formula to solve 6x + 5 = 2x + 25.\n(a) Write down A, B, C and D.\n(b) Find x.",
+     "a": "(a) A = 6, B = 5, C = 2, D = 25. (b) x = (25 - 5) ÷ (6 - 2) = 5.",
+     "s": [
+      [
+       "Part (a): A = 6, B = 5, C = 2, D = 25",
+       1
+      ],
+      [
+       "Part (b): x = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Four sisters share a prize in Pune. The second gets three times the first; the third gets twice as much as the second; the fourth gets five times as much as the third. The total is ₹360.\n(a) Write each sister's share using x for the first.\n(b) Frame and solve the equation.\n(c) State each share and check the total.",
+     "a": "(a) x, 3x, 6x, 30x. (b) 40x = 360, x = 9. (c) ₹9, ₹27, ₹54, ₹270; 9 + 27 + 54 + 270 = 360.",
+     "s": [
+      [
+       "Part (a): x, 3x, 6x, 30x",
+       2
+      ],
+      [
+       "Part (b): 40x = 360 and x = 9",
+       1
+      ],
+      [
+       "Part (c): shares 9, 27, 54, 270",
+       1
+      ],
+      [
+       "Part (c): total checks to 360",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Kamal wants to solve 7x + 9 = 3x + 25 with Brahmagupta's formula. Which calculation gives x?",
+     "a": "(25 - 9) ÷ (7 - 3)",
+     "o": [
+      "(25 - 9) ÷ (7 - 3)",
+      "(9 - 25) ÷ (7 - 3)",
+      "(25 + 9) ÷ (7 + 3)",
+      "(25 - 9) ÷ (7 + 3)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Name two Indian mathematicians mentioned in the chapter and state one contribution of each to solving equations.",
+     "a": "Any two: Aryabhata (499 CE) proposed a systematic way to solve single-unknown problems; Brahmagupta (628 CE) outlined it in Brāhmasphuṭasiddhānta and gave the formula for Ax + B = Cx + D; Bhāskarāchārya (1150 CE) wrote Bījgaṇita with the horses problem.",
+     "s": [
+      [
+       "Names two mathematicians correctly",
+       1
+      ],
+      [
+       "Gives a correct contribution for each",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which mathematician explained, in Chapter 18 of Brāhmasphuṭasiddhānta (628 CE), how to add, subtract and multiply unknown numbers using letters?",
+     "a": "Brahmagupta",
+     "o": [
+      "Brahmagupta",
+      "Al-Khwarizmi",
+      "Bhāskarāchārya",
+      "Aryabhata"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For equations of the form Ax + B = Cx + D, Brahmagupta's formula gives x as",
+     "a": "(D - B) ÷ (A - C)",
+     "o": [
+      "(D - B) ÷ (A - C)",
+      "(B - D) ÷ (A - C)",
+      "(D + B) ÷ (A + C)",
+      "(D - B) ÷ (A + C)"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Seema tries Brahmagupta's formula on 4x + 3 = 4x + 9 and finds that A and C are the same number. What should she conclude?",
+     "a": "The formula cannot be used here",
+     "o": [
+      "The formula cannot be used here",
+      "x = 6, because 9 - 3 = 6",
+      "x = 0, because the x terms cancel",
+      "x = 6/4, by dividing 9 - 3 by 4"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each ancient Indian symbol or sign in Column I with its meaning in Column II.\nColumn I: 1. yā   2. rū   3. a dot over a number   4. kā\nColumn II: A. a known quantity (rūpa)   B. the number is negative   C. first letter of kālaka (black), another unknown   D. short for yāvat-tāvat, 'as much as needed'",
+     "a": "1-D, 2-A, 3-B, 4-C",
+     "o": [
+      "1-D, 2-A, 3-B, 4-C",
+      "1-A, 2-D, 3-B, 4-C",
+      "1-D, 2-A, 3-C, 4-B",
+      "1-B, 2-A, 3-D, 4-C"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sara says, 'Brahmagupta's formula gives x = 4 for 9x + 4 = 5x + 20.' Is she right? Check it.",
+     "a": "Yes. With A = 9, B = 4, C = 5, D = 20: x = (20 - 4) ÷ (9 - 5) = 16 ÷ 4 = 4. Check: 9(4) + 4 = 40 and 5(4) + 20 = 40.",
+     "s": [
+      [
+       "Verdict: Sara is right",
+       1
+      ],
+      [
+       "Applies the formula correctly to get 4",
+       1
+      ],
+      [
+       "Checks 40 = 40",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a Chennai apartment, overhead Tank A holds 300 litres and gains 45 litres every minute. Tank B holds 1200 litres and gains 15 litres every minute. Tank C holds 500 litres and also gains 45 litres every minute. The caretaker compares the tanks after t minutes using Brahmagupta's formula.\n(a) Write Tank A's and Tank B's contents after t minutes as an equation of the form Ax + B = Cx + D.\n(b) Use the formula to find when A and B hold the same amount.\n(c) Check by finding the amount in each tank at that time.\n(d) Will Tanks A and C ever hold the same amount? Use the formula to decide and explain what it means for the caretaker.",
+     "a": "(a) 45t + 300 = 15t + 1200. (b) t = (1200 - 300) ÷ (45 - 15) = 30. (c) 300 + 1350 = 1650 and 1200 + 450 = 1650 litres. (d) No: A = C = 45, so the formula cannot be used and 300 + 45t = 500 + 45t gives 300 = 500, false. Tank C always holds 200 litres more.",
+     "s": [
+      [
+       "Part (a): 45t + 300 = 15t + 1200",
+       1
+      ],
+      [
+       "Part (b): t = 30",
+       1
+      ],
+      [
+       "Part (c): 1650 litres each",
+       1
+      ],
+      [
+       "Part (d): never equal since A = C; C always 200 litres ahead",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The English word 'algebra' comes from the Sanskrit word bīja.\nReason (R): The word bīja means seed.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Hari uses the formula as x = (B - D) ÷ (A - C) on 2x + 3 = 4x + 5 and gets x = 1. Show that this cannot be the solution and say what he should have done.",
+     "a": "With x = 1: LHS = 2 + 3 = 5 but RHS = 4 + 5 = 9, so the sides are not equal. He used B - D instead of D - B; the correct value is (5 - 3) ÷ (2 - 4) = -1, and 2(-1) + 3 = 1 = 4(-1) + 5.",
+     "s": [
+      [
+       "Substitutes x = 1 to get 5 and 9",
+       1
+      ],
+      [
+       "Names the slip: B - D instead of D - B",
+       1
+      ],
+      [
+       "Correct x = -1 with check",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The word bīja, from which the old Indian name for algebra comes, means",
+     "a": "seed",
+     "o": [
+      "seed",
+      "balance",
+      "unknown",
+      "calculation"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A museum card prints an old problem in ancient Indian notation. Its two lines read: 'yā 5 rū 3' and below it 'yā 2 rū 15'. A second card shows the same lines, but with a dot over the 15. The curator wants a puzzle for children whose answer is a positive number of coins.\n(a) Write the first card's problem as a modern equation.\n(b) Solve it with Brahmagupta's formula.\n(c) Write and solve the second card's equation.\n(d) Which card should the curator choose for the children, and what do the answers show about the dot?",
+     "a": "(a) 5x + 3 = 2x + 15. (b) x = (15 - 3) ÷ (5 - 2) = 4. (c) With the dot, the RHS is 2x - 15, so 5x + 3 = 2x - 15 and x = (-15 - 3) ÷ (5 - 2) = -6. (d) The first card, whose answer is 4 coins (positive); the dot marks a negative number and changes the answer from 4 to -6.",
+     "s": [
+      [
+       "Part (a): 5x + 3 = 2x + 15",
+       1
+      ],
+      [
+       "Part (b): x = 4",
+       1
+      ],
+      [
+       "Part (c): 5x + 3 = 2x - 15 and x = -6",
+       1
+      ],
+      [
+       "Part (d): chooses card 1 and explains the dot's effect",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two farmers are equally rich. Gopal has ₹1800 and 5 goats. Hari has 11 goats and owes ₹900 to the cooperative. Every goat has the same price.\n(a) Frame the equation with x as the price of a goat.\n(b) Solve it.\n(c) Solve it again with Brahmagupta's formula after writing it as 11x - 900 = 5x + 1800, treating the debt as a negative amount.\n(d) Check that both farmers are equally rich.",
+     "a": "(a) 1800 + 5x = 11x - 900. (b) 2700 = 6x, x = 450. (c) A = 11, B = -900, C = 5, D = 1800: x = (1800 + 900) ÷ (11 - 5) = 450. (d) 1800 + 2250 = 4050 and 11 × 450 - 900 = 4050.",
+     "s": [
+      [
+       "Part (a): frames the equation",
+       1
+      ],
+      [
+       "Part (b): x = 450",
+       1
+      ],
+      [
+       "Part (c): formula with B = -900 gives 450",
+       2
+      ],
+      [
+       "Part (d): 4050 for each farmer",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the history in this chapter.\nStatement 1: Al-Khwarizmi's book was called Hisab al-jabr wal-muqabala, meaning 'calculation by restoring and balancing'.\nStatement 2: In ancient Indian notation, known quantities were written with rū.\nStatement 3: Brahmagupta's formula is for equations of the form Ax + B = Cx + D.\nWhich of the statements are correct?",
+     "a": "1, 2 and 3",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "1 and 3 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 5x + 2 in ancient Indian notation using yā and rū.\n(b) How would 5x - 2 look different?",
+     "a": "(a) yā 5 rū 2. (b) The same, but with a dot over the 2 to show that it is negative.",
+     "s": [
+      [
+       "Part (a): yā 5 rū 2",
+       1
+      ],
+      [
+       "Part (b): a dot over the 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "For 3x + B = x + 8, Brahmagupta's formula is to give x = -2. Find the number B and check it.",
+     "a": "x = (8 - B) ÷ (3 - 1) = -2, so 8 - B = -4 and B = 12. Check: 3(-2) + 12 = 6 and -2 + 8 = 6.",
+     "s": [
+      [
+       "Sets up (8 - B) ÷ 2 = -2",
+       1
+      ],
+      [
+       "Finds B = 12",
+       1
+      ],
+      [
+       "Checks that both sides give 6",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The chapter calls algebra bījagaṇita, 'seed mathematics'. Explain in two lines why the word seed suits an unknown number.",
+     "a": "A tree is hidden inside a seed, and the answer to a problem is hidden inside an unknown number. Solving the problem, step by step, is like helping the tree grow.",
+     "s": [
+      [
+       "Compares the unknown to the seed holding the tree",
+       1
+      ],
+      [
+       "Links solving step by step to the tree growing",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

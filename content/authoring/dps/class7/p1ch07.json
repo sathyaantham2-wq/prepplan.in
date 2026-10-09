@@ -1,0 +1,2829 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "A Tale of Three Intersecting Lines"
+ },
+ "source_code": "gegp107",
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A rangoli triangle ABC is equilateral with perimeter 27 cm. Ritu draws a second triangle ABD on the same base AB with two arcs of radius 12 cm, one from A and one from B, meeting at D. The perimeter of triangle ABD is ___ cm.",
+     "a": "33"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Kavya's compass opens to at most 6 cm. She gets orders for equilateral triangles of side 45 mm, 62 mm, 5.8 cm and 0.07 m, each to be built by the two-arc method (arc radius equal to the side). How many of the orders can she build?",
+     "a": "2",
+     "o": [
+      "2",
+      "1",
+      "3",
+      "4"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A triangle has vertices A, B and U. (a) List every different way of writing the name of the triangle using these three letters (any order is allowed). (b) The angle at B is to be written with three letters. List all its names.",
+     "a": "(a) ABU, AUB, BAU, BUA, UAB, UBA: six names, because the vertices of a triangle can be written in any order. (b) ABU and UBA: the vertex B must be the middle letter, and the other two letters can be swapped.",
+     "s": [
+      [
+       "Part (a): lists all six orderings of A, B, U",
+       1
+      ],
+      [
+       "Part (b): ABU and UBA only, since the middle letter is the vertex",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "O is the centre of a circle and P, Q, R, S are four points on the circle, no two of them at opposite ends of a diameter. Sonal forms triangles that have O as one vertex and two of the four points as the other two. How many such triangles can she form, each of which is isosceles because its two sides from O are radii?",
+     "a": "6",
+     "o": [
+      "6",
+      "4",
+      "8",
+      "12"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Radha draws AB = 6.5 cm with a ruler only and marks C so that AC = 6.5 cm. She then measures BC and gets 6.2 cm. Which description of her triangle is correct?",
+     "a": "Isosceles with AB = AC; C must be moved until BC is also 6.5 cm for an equilateral triangle",
+     "o": [
+      "Isosceles with AB = AC; C must be moved until BC is also 6.5 cm for an equilateral triangle",
+      "Equilateral, since BC is only 0.3 cm short of 6.5 cm and such a gap is too small to count",
+      "Scalene, since the sides measure 6.5 cm, 6.5 cm and 6.2 cm and these are not all equal",
+      "Isosceles with AB = BC, since the base and the measured side are the nearest in length"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements about triangles and their construction.\nStatement 1: In triangle ABC, the names angle BAC and angle CAB both stand for the angle at A.\nStatement 2: If P and Q are two points on a circle with centre O and the points O, P and Q are not in one line, then triangle OPQ is isosceles.\nStatement 3: To fix the third vertex C of an equilateral triangle on the base AB = 4 cm, one arc of radius 4 cm drawn from A is enough.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: In triangle PQR, angle QPR and angle PQR are two names for the same angle, because both are written with the letters P, Q and R. Give the verdict and the reason.",
+     "a": "False. The middle letter of an angle's name is its vertex: angle QPR is at P and angle PQR is at Q, so they are different angles. (It is only the name of the triangle that may list P, Q, R in any order.)",
+     "s": [
+      [
+       "Verdict: false",
+       1
+      ],
+      [
+       "Reason: the middle letter marks the vertex, so one angle is at P and the other at Q",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two equilateral triangles ABC and ABD, each of side 4 cm, are drawn on opposite sides of the common base AB, using the two crossing points of the same pair of 4 cm arcs. A thread is run along AC, CB, BD and DA only. The length of the thread is",
+     "a": "16 cm",
+     "o": [
+      "16 cm",
+      "12 cm",
+      "20 cm",
+      "8 cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two circles of radius 5 cm with centres A and B, where AB = 5 cm, cross at exactly two points.\nReason (R): Joining either crossing point to A and to B gives an equilateral triangle.",
+     "a": "Both A and R are true, but R is not the correct explanation of A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) An equilateral triangle has perimeter 19.5 cm. Find its side. (b) Using that side, Deepa draws the base AB and an arc from A with the compass at the side length, but by mistake sets the compass to 6 cm for the arc from B. The arcs cross at C. Name triangle ABC by its sides and give all three lengths.",
+     "a": "(a) 19.5 / 3 = 6.5 cm. (b) AB = 6.5 cm and AC = 6.5 cm (arc from A), but BC = 6 cm (arc from B), so the triangle is isosceles with sides 6.5, 6.5 and 6 cm; it is not equilateral.",
+     "s": [
+      [
+       "Part (a): side 6.5 cm",
+       1
+      ],
+      [
+       "Part (b): AB = AC = 6.5 cm, BC = 6 cm, so isosceles and not equilateral",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "A triangle ABC is built by the arc method. Match each construction in Column I with the result in Column II.\nColumn I: 1. An equilateral triangle of perimeter 21 cm  2. AB = 4 cm with arcs of 6 cm from A and from B  3. AB = 5 cm, an arc of 5 cm from A, and C then marked by eye on that arc  4. Two circles of radius 4 cm with centres A and B, AB = 4 cm, crossing at C and D\nColumn II: A. Each arc must have radius 7 cm  B. Isosceles with perimeter 16 cm  C. Only AC is fixed, so BC may need many trials  D. Both triangles ABC and ABD are equilateral, with perimeter 12 cm each",
+     "a": "1-A, 2-B, 3-C, 4-D",
+     "o": [
+      "1-A, 2-B, 3-C, 4-D",
+      "1-B, 2-A, 3-C, 4-D",
+      "1-A, 2-C, 3-B, 4-D",
+      "1-A, 2-B, 3-D, 4-C"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "O is the centre of a circle of radius 3 cm, and P and Q are two points on the circle (not in line with O, and PQ is not 3 cm). (a) What are the lengths of OP and OQ? (b) What kind of triangle is OPQ by its sides, and why?",
+     "a": "(a) OP = OQ = 3 cm, since both are radii. (b) Triangle OPQ is isosceles because two of its sides, OP and OQ, are equal.",
+     "s": [
+      [
+       "Part (a): both radii equal 3 cm",
+       1
+      ],
+      [
+       "Part (b): names it isosceles because two sides are equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Three points K, L and M lie on one straight line, with L between K and M, KL = 3 cm and LM = 4 cm. (a) Find KM. (b) Can K, L and M be the vertices of a triangle? Say what the 'triangle' KLM looks like.",
+     "a": "(a) KM = 3 + 4 = 7 cm. (b) No. With the three points on a line, the 'sides' KL and LM lie along KM, so the figure is just a straight line segment and encloses no region; there is no triangle.",
+     "s": [
+      [
+       "Part (a): KM = 7 cm",
+       1
+      ],
+      [
+       "Part (b): no triangle, the figure collapses to a straight segment",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A worksheet answer key reads: 'On AB = 4 cm, two arcs of radius 4 cm cross at two points. Only the point above AB gives an equilateral triangle; the point below AB is not 4 cm from both A and B.' Mark this key as correct or incorrect, and justify your mark.",
+     "a": "Incorrect. The two circles of radius 4 cm centred at A and B cut each other at two points, and each is 4 cm from A and 4 cm from B. The point below AB therefore gives AC = BC = AB = 4 cm, an equilateral triangle on the other side of AB, so the key is wrong to reject it.",
+     "s": [
+      [
+       "Verdict: the key is incorrect",
+       1
+      ],
+      [
+       "Says the arcs meet at two points, one on each side of AB",
+       1
+      ],
+      [
+       "Shows the lower point is also 4 cm from A and B, so its triangle is equilateral",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A triangle ABC has perimeter 20 cm, base AB = 8 cm and AC = BC. (a) Write the construction notes (the base, the radius of the arc from A, the radius of the arc from B) that a student would follow to draw it. (b) The student's partner draws arcs of 10 cm from both A and B on the same base AB = 8 cm. Name that triangle by its sides and give its perimeter.",
+     "a": "(a) AC + BC = 20 - 8 = 12 cm and AC = BC, so each is 6 cm. Notes: draw AB = 8 cm; from A draw an arc of radius 6 cm; from B draw an arc of radius 6 cm; join the crossing point C to A and B. (b) The sides are AB = 8 cm, AC = 10 cm and BC = 10 cm: isosceles, perimeter 28 cm.",
+     "s": [
+      [
+       "Part (a): each equal side is (20 - 8) / 2 = 6 cm",
+       1
+      ],
+      [
+       "Part (a): notes with base 8 cm and two 6 cm arcs from the ends",
+       1
+      ],
+      [
+       "Part (b): isosceles with sides 8, 10, 10 and perimeter 28 cm",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no triangle ABC on the base AB = 5 cm, built by an arc of radius r1 from A and an arc of radius r2 from B with r1 different from r2, can be equilateral. What kind of triangle is it when r1 = 5 cm and r2 = 3 cm?",
+     "a": "The crossing point C lies on both arcs, so AC = r1 and BC = r2. An equilateral triangle needs AC = BC (and both equal to AB = 5 cm), but r1 and r2 are different, so AC and BC differ and the triangle cannot be equilateral. For r1 = 5 and r2 = 3: AC = AB = 5 cm and BC = 3 cm, so exactly two sides are equal and the triangle is isosceles.",
+     "s": [
+      [
+       "C is on both arcs, so AC = r1 and BC = r2",
+       1
+      ],
+      [
+       "An equilateral triangle needs AC = BC, which different radii rule out",
+       1
+      ],
+      [
+       "r1 = 5, r2 = 3 gives sides 5, 5, 3: isosceles",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two students were told: 'Construct an isosceles triangle ABC with base AB = 5 cm, equal sides AC = BC and perimeter 17 cm.' Sita draws AB = 5 cm and two arcs of radius 5 cm, from A and from B. Ravi draws AB = 5 cm and two arcs of radius 6 cm, from A and from B. (a) Find the length of each equal side that the task needs. (b) Whose triangle meets the task? What kind of triangle did the other student get, and what is its perimeter? (c) Write the construction steps with the compass settings for the correct student. (d) Explain why the crossing point of the arcs must be 6 cm from both A and B.",
+     "a": "(a) (17 - 5) / 2 = 6 cm. (b) Ravi: his sides are 5, 6, 6 with perimeter 17 cm. Sita's sides are 5, 5, 5: an equilateral triangle of perimeter 15 cm, which misses the task. (c) Draw AB = 5 cm; set the compass to 6 cm and draw an arc from A; with the same setting draw an arc from B so that it cuts the first arc; call the crossing point C and join AC and BC. (d) C lies on the arc centred at A, so AC = 6 cm, and on the arc centred at B, so BC = 6 cm.",
+     "s": [
+      [
+       "Part (a): equal side 6 cm",
+       1
+      ],
+      [
+       "Part (b): Ravi meets the task; Sita's triangle is equilateral with perimeter 15 cm",
+       2
+      ],
+      [
+       "Part (c): base 5 cm, two arcs of 6 cm from the ends, join the crossing point",
+       1
+      ],
+      [
+       "Part (d): the crossing point lies on both arcs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two circles of the same radius 5 cm have centres A and B, and AB = 5 cm. They cross at C and D. (a) Show that triangle ABC is equilateral. (b) Arjun says that triangle ABD is smaller than triangle ABC because D is on the other side of AB. Test his claim. (c) Siya says that triangle ACD is equilateral because AC = AD. Is she right? Say what the construction fixes and what it does not fix.",
+     "a": "(a) AC and BC are radii of the circles centred at A and B, so AC = BC = 5 cm, and AB = 5 cm; all three sides are equal. (b) Arjun is wrong: AD and BD are also radii, so AD = BD = 5 cm = AB and triangle ABD has the same side lengths as ABC; it is the same size, only on the other side of AB. (c) Siya is wrong. The construction fixes AC = AD = 5 cm (radii of the circle at A), so ACD is isosceles, but it does not fix CD. For ACD to be equilateral CD would have to be 5 cm; a careful drawing gives CD of about 8.7 cm.",
+     "s": [
+      [
+       "Part (a): AC = BC = AB = 5 cm, so equilateral",
+       2
+      ],
+      [
+       "Part (b): AD = BD = 5 cm, so ABD is the same size as ABC",
+       1
+      ],
+      [
+       "Part (c): AC = AD gives only an isosceles triangle; CD is not fixed by the radii (about 8.7 cm in a careful drawing)",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The craft club of a school in Madurai must cut 12 equilateral card flags of side 8 cm. Ananya marks the third vertex with a ruler only: she draws AB = 8 cm, marks C with AC = 8 cm and then checks BC, needing about 6 tries of 30 seconds each for every flag. Using a compass takes 90 seconds per flag. The 12 flags can be shared by 3 groups of 4 flags each. The club owns one ruler per group but only one compass, and passing the compass from one group to the next costs 5 minutes each time.\n(a) State the radius of the arcs drawn from A and from B for one flag, and what you draw first.\n(b) Explain why the crossing point of the arcs is exactly 8 cm from both A and B.\n(c) Find the total time in minutes if the three groups work at the same time with rulers, and the total time if the one compass is used by group 1, then group 2, then group 3 (two hand-overs).\n(d) Which method should the club choose for finishing quickly, and what else would you weigh before deciding?",
+     "a": "(a) Radius 8 cm for both arcs; first the base AB = 8 cm. (b) The point lies on the arc centred at A and on the arc centred at B, so it is 8 cm from each. (c) Ruler: each group makes 4 flags x 6 x 30 s = 720 s = 12 minutes, in parallel. Compass: 12 x 90 s = 18 minutes + 2 x 5 = 10 minutes = 28 minutes. (d) The rulers finish in 12 minutes against 28, so on time alone the club should use rulers in parallel; against that, ruler-made flags may not have BC exactly 8 cm, so a club that values accuracy over time might still choose the compass for a few model flags.",
+     "s": [
+      [
+       "Part (a): radius 8 cm, base drawn first",
+       1
+      ],
+      [
+       "Part (b): crossing point lies on both arcs",
+       1
+      ],
+      [
+       "Part (c): 12 minutes for rulers and 28 minutes for the shared compass",
+       1
+      ],
+      [
+       "Part (d): chooses rulers in parallel on time (12 against 28) and names accuracy of the third side as the trade-off",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A garden designer in Jaipur plans a circular pond with centre O and radius 6 m. Two lamp posts P and Q stand on the edge of the pond, and a cable is laid along OP, PQ and QO at ₹450 per metre. The committee has a budget of ₹8,600 and wants the stretch PQ to be at least 7 m so that a bench fits there.\n(a) If PQ = 8 m, what kind of triangle by its sides is OPQ, and why?\n(b) If PQ = 6 m, what kind of triangle is OPQ?\n(c) Find the cable cost when PQ = 6 m and when PQ = 8 m.\n(d) The designer can choose PQ = 6, 7 or 8 m. Which choice meets both the budget and the bench requirement? Show the cost.",
+     "a": "(a) OP = OQ = 6 m (radii), so OPQ is isosceles. (b) All three sides are 6 m, so OPQ is equilateral. (c) PQ = 6: perimeter 18 m, cost 18 x 450 = ₹8,100. PQ = 8: perimeter 20 m, cost ₹9,000. (d) PQ = 6 fails the 7 m bench; PQ = 8 costs ₹9,000, over ₹8,600; PQ = 7 m gives perimeter 19 m and cost 19 x 450 = ₹8,550, within budget and at least 7 m, so choose 7 m.",
+     "s": [
+      [
+       "Part (a): OP and OQ are radii so isosceles",
+       1
+      ],
+      [
+       "Part (b): all sides 6 m so equilateral",
+       1
+      ],
+      [
+       "Part (c): costs of ₹8,100 and ₹9,000",
+       1
+      ],
+      [
+       "Part (d): chooses PQ = 7 m with cost ₹8,550 against both constraints",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A teacher asks for a triangle with base AB = 8 cm, perimeter 21 cm and no two sides equal. Which pair of arc radii (from A, from B) should a student use?",
+     "a": "6 cm and 7 cm",
+     "o": [
+      "6 cm and 7 cm",
+      "6.5 cm and 6.5 cm",
+      "5 cm and 8 cm",
+      "7 cm and 7 cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The arc from A has radius 12 cm, the base is AB = 9 cm and the finished triangle has perimeter 30 cm, so the arc from B must have radius ___ cm.",
+     "a": "9"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Mira wants a triangle with sides 6 cm, 7 cm and 9 cm. She draws AB = 6 cm and then, from A, an arc of radius 7 cm and another arc of radius 9 cm. (a) What is her mistake? (b) How should the second arc be drawn so that the crossing point is the third vertex?",
+     "a": "(a) Both arcs are centred at A, so they are circles about the same centre with different radii (7 cm and 9 cm); such circles never cross, so there is no third vertex. (b) The 9 cm arc should be centred at B, so that C is 7 cm from A and 9 cm from B (or the 7 cm arc at B and 9 cm at A).",
+     "s": [
+      [
+       "Part (a): both arcs are about the same centre A with different radii, so they never cross",
+       1
+      ],
+      [
+       "Part (b): the second arc is drawn from B so the crossing point is 7 cm from A and 9 cm from B",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On a base AB = 7 cm, Sheetal draws an arc of 3 cm from A and an arc of 5 cm from B. They cross at C above AB and at D below AB. She says triangle ABD can also be used. Which statement is true about triangle ABD?",
+     "a": "AD = 3 cm and BD = 5 cm, so it is scalene with sides 7, 3 and 5 cm",
+     "o": [
+      "AD = 3 cm and BD = 5 cm, so it is scalene with sides 7, 3 and 5 cm",
+      "AD = BD, so it is isosceles",
+      "AD = 5 cm and BD = 3 cm, because D is on the other side",
+      "It is not a triangle, because only one crossing point is valid"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four students wrote a construction record for a triangle with sides 5 cm, 7 cm and 8 cm. Which record is correct?",
+     "a": "Base AB = 8 cm; arc of 5 cm centred at A; arc of 7 cm centred at B; C is where they cross",
+     "o": [
+      "Base AB = 8 cm; arc of 5 cm centred at A; arc of 7 cm centred at B; C is where they cross",
+      "Base AB = 5 cm; arcs of 7 cm and 8 cm, both centred at A; C is where they cross",
+      "Base AB = 7 cm; arcs of 5 cm and 5 cm centred at A and at B; C is where they cross",
+      "Base AB = 8 cm; arc of 7 cm centred at A; arc of 8 cm centred at B; C is where they cross"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about constructing a triangle when its three sides are given.\nStatement 1: The longest of the three given lengths must always be chosen as the base.\nStatement 2: Drawing the full circles is not necessary; arcs that cross are enough to find the third vertex.\nStatement 3: For a triangle with sides 5 cm, 6 cm and 7 cm, taking the 5 cm side as the base needs arcs of 6 cm and 7 cm, and taking the 7 cm side as the base needs arcs of 5 cm and 6 cm.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sahil needs a triangle with sides 4 cm, 5 cm and 6 cm. He draws AB = 4 cm, then a short arc of radius 5 cm from A and a short arc of radius 6 cm from B, but the two short arcs end before they meet. What is the correct next step?",
+     "a": "Extend both arcs further, since the full circles of radius 5 cm and 6 cm do cross",
+     "o": [
+      "Extend both arcs further, since the full circles of radius 5 cm and 6 cm do cross",
+      "Redraw the arcs with radii of 3 cm and 4 cm so that they meet sooner",
+      "Decide that no triangle has sides 4 cm, 5 cm and 6 cm, since the arcs failed to meet",
+      "Make the base AB longer, since the sides must be adjusted until the arcs meet"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Any one of the three given lengths may be chosen as the base in the construction of a triangle from its sides.\nReason (R): The two arcs drawn from the ends of the base always have the same radius.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tailor has four triangular flags with sides (in cm): A 12, 12, 9; B 12, 9, 7; C 9, 9, 9; D 7, 7, 12. For how many of them will the two arcs have different radii whichever side is taken as the base?",
+     "a": "1",
+     "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A model of a plot has real sides 1.2 m, 1.5 m and 2.0 m. It is drawn on paper at a scale of 1 cm for every 0.5 m. (a) Find the three sides of the drawing. (b) Taking the longest side of the drawing as the base, give the two arc radii.",
+     "a": "(a) 1.2 / 0.5 = 2.4 cm, 1.5 / 0.5 = 3 cm, 2.0 / 0.5 = 4 cm. (b) Base 4 cm; arcs of 2.4 cm and 3 cm from its two ends.",
+     "s": [
+      [
+       "Part (a): drawing sides 2.4 cm, 3 cm and 4 cm",
+       1
+      ],
+      [
+       "Part (b): 4 cm base with arcs of 2.4 cm and 3 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A triangle has perimeter 15 cm and two of its sides are 4 cm and 5 cm. (a) Find the third side. (b) Zoya's compass opens to at most 5.5 cm. Which side can she take as the base so that both arcs fit in her compass?",
+     "a": "(a) 15 - 4 - 5 = 6 cm. (b) Base 6 cm needs arcs of 4 cm and 5 cm, both within 5.5 cm. Base 5 cm needs arcs of 4 cm and 6 cm, and base 4 cm needs arcs of 5 cm and 6 cm; each needs 6 cm, which is too much. So only the 6 cm side can be the base.",
+     "s": [
+      [
+       "Part (a): third side is 6 cm",
+       1
+      ],
+      [
+       "Part (b): only the 6 cm base, whose arcs are 4 cm and 5 cm; the other bases need a 6 cm arc",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: For a triangle with sides 5 cm, 7 cm and 7 cm, the two arcs have equal radii only if the 5 cm side is taken as the base. Give the verdict and the reason.",
+     "a": "True. With the 5 cm side as base the arcs are 7 cm and 7 cm, equal. With a 7 cm side as base the arcs are 5 cm and 7 cm, which are not equal. So equal arcs occur only on the 5 cm base.",
+     "s": [
+      [
+       "Verdict: true",
+       1
+      ],
+      [
+       "Reason: base 5 needs arcs 7 and 7, but base 7 needs arcs 5 and 7",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "On a base AB = 6 cm, Naveen draws full circles of radius 4 cm centred at A and radius 5 cm centred at B. They cross at C above AB and at D below AB. (a) Using any three of the four points A, B, C, D, how many triangles can be named, and which of them have sides 6, 4 and 5 cm? (b) What do the radii tell you about triangles ACD and BCD, and which side of triangle ACD is not fixed by the radii?",
+     "a": "(a) Four triangles: ABC, ABD, ACD and BCD. Triangles ABC and ABD have sides 6, 4 and 5 cm. (b) AC = AD = 4 cm (radii of the circle at A), so ACD is isosceles; BC = BD = 5 cm (radii of the circle at B), so BCD is isosceles. In ACD the side CD is not fixed by the radii.",
+     "s": [
+      [
+       "Part (a): four triangles; ABC and ABD have sides 6, 4, 5",
+       1
+      ],
+      [
+       "Part (b): ACD and BCD are isosceles; CD is not fixed by the radii",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A student's answer to 'Does it matter which arc is drawn from A?' for a triangle with sides 6, 4 and 5 cm on the base AB = 6 cm reads: Sentence 1: 'If I swap the 4 cm and 5 cm arcs, the triangle still has sides 6, 4 and 5 cm.' Sentence 2: 'After swapping, the third vertex C lands at the same place.' Mark each sentence right or wrong, give your reason, and say how you would mark the answer as a whole.",
+     "a": "Partly right. Either way C is 4 cm from one end and 5 cm from the other, so the sides are 6, 4 and 5 cm. But the two crossing points are different (mirror positions about the middle of AB), so C is not at the same place.",
+     "s": [
+      [
+       "Verdict: right about the sides, wrong about the place",
+       1
+      ],
+      [
+       "Reason: C is the right distance from each end in both cases",
+       1
+      ],
+      [
+       "Says the two arrangements give different crossing points, so C is not at the same place",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A construction record reads: 'Base AB = 7 cm; arc of 5 cm from A; arc of 5 cm from B; join the crossing point C to A and B.' (a) Write the three-sides question this record answers and name the triangle by its sides. (b) Write a second record, with a different base, that answers the same question. (c) Why do both records give a triangle with the same three sides?",
+     "a": "(a) 'Construct a triangle with sides 7 cm, 5 cm and 5 cm'; AC = BC = 5 cm and AB = 7 cm, so it is isosceles. (b) Base AB = 5 cm; arc of 5 cm from A and arc of 7 cm from B (or the 7 cm arc from A and the 5 cm arc from B); join the crossing point. (c) In both records the vertex C is at distances 5, 5 and 7 cm from the ends in the same set of three lengths; the base only decides which side is drawn first and which two are drawn as arcs.",
+     "s": [
+      [
+       "Part (a): question for sides 7, 5, 5 and the name isosceles",
+       1
+      ],
+      [
+       "Part (b): base 5 cm with arcs of 5 cm and 7 cm",
+       1
+      ],
+      [
+       "Part (c): the set of three side lengths is unchanged, only the choice of base differs",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A teacher draws the triangle with sides 3 cm, 4 cm and 5 cm on the board, taking the 5 cm side as the base. She then draws triangles whose sides are 2 times and 3 times as long, each on its longest side as base. (a) Give the arc radii for the 3-4-5 triangle and for the 6-8-10 triangle. (b) Predict, without constructing, the base and arc radii for the triangle whose sides are 3 times as long. (c) For the 3-4-5 triangle, find the sum of the two arc radii and the perimeter; then predict both for the triangle that is 3 times as long.",
+     "a": "(a) 3-4-5: base 5 cm, arcs 3 cm and 4 cm. 6-8-10: base 10 cm, arcs 6 cm and 8 cm. (b) Sides 9, 12, 15: base 15 cm, arcs 9 cm and 12 cm. (c) 3-4-5: radii sum 3 + 4 = 7 cm and perimeter 12 cm. For 3 times as long both are multiplied by 3: radii sum 21 cm and perimeter 36 cm (check: 9 + 12 = 21 and 9 + 12 + 15 = 36).",
+     "s": [
+      [
+       "Part (a): radii 3, 4 on base 5 and radii 6, 8 on base 10",
+       1
+      ],
+      [
+       "Part (b): base 15 cm with arcs 9 cm and 12 cm",
+       1
+      ],
+      [
+       "Part (c): 7 and 12 for the first triangle; 21 and 36 for the one 3 times as long",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Maya constructs a triangle with sides 4 cm, 5 cm and 6 cm on base AB = 4 cm with an arc of 5 cm from A and an arc of 6 cm from B. She says: 'C could be anywhere on the 5 cm arc, so my triangle is not fixed.' (a) Explain why C is fixed once the second arc is drawn. (b) How many positions of C are possible if full circles are drawn, and where do they lie? (c) Compare triangles ABC and ABD, where C and D are the two positions: give their sides and perimeters. (d) Her friend builds the triangle on base AB = 5 cm with arcs 4 cm and 6 cm. Does the friend get the same side lengths? Explain.",
+     "a": "(a) C must be 5 cm from A and 6 cm from B, so it lies on both arcs; the arcs meet at a definite crossing point. (b) Two positions, one on each side of AB, where the two circles cross. (c) Both triangles have sides 4, 5 and 6 cm, so the perimeter of each is 15 cm. (d) Yes: the friend's vertex is again 4 cm from one end and 6 cm from the other at base 5, so the sides are 4, 5 and 6 cm; the base choice changes the set-up, not the sides.",
+     "s": [
+      [
+       "Part (a): C lies on both arcs so it is fixed at the crossing",
+       1
+      ],
+      [
+       "Part (b): two positions, one each side of AB",
+       1
+      ],
+      [
+       "Part (c): both have sides 4, 5, 6 and perimeter 15 cm",
+       2
+      ],
+      [
+       "Part (d): same sides, the base only changes the set-up",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Maya, Nitin and Omar all construct the triangle with sides 4 cm, 6 cm and 7 cm. Maya takes the 7 cm side as base, Nitin takes the 4 cm side and Omar takes the 6 cm side. (a) Write each student's two arc radii and check that each triangle has perimeter 17 cm. (b) Find the sum of the two arc radii for each student and say who has the smallest sum. (c) Pooja says: 'Nitin's arcs are the longest, so his triangle is the biggest.' Is she right?",
+     "a": "(a) Maya: base 7, arcs 4 and 6 (7 + 4 + 6 = 17). Nitin: base 4, arcs 6 and 7 (4 + 6 + 7 = 17). Omar: base 6, arcs 4 and 7 (6 + 4 + 7 = 17). (b) Sums: Maya 10 cm, Nitin 13 cm, Omar 11 cm; Maya has the smallest. (c) Pooja is wrong: the radii sum equals the perimeter minus the base, so it changes with the base chosen; all three triangles have sides 4, 6, 7 and perimeter 17.",
+     "s": [
+      [
+       "Part (a): the three pairs of radii and perimeter 17 each",
+       2
+      ],
+      [
+       "Part (b): sums 10, 13, 11; Maya smallest",
+       2
+      ],
+      [
+       "Part (c): Pooja is wrong, the radii sum is perimeter minus base so it depends on the base",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Mr Rathore, a carpenter in Jodhpur, makes triangular corner shelves. Shelf X has sides 30 cm, 40 cm and 50 cm. Shelf Y has sides 30 cm, 30 cm and 40 cm. He first draws each shelf on paper at a scale of 1 cm for every 10 cm. His compass can open to at most 4.5 cm.\n(a) What are the sides of the drawing of shelf X?\n(b) If the 4 cm side of the drawing of X is taken as the base, which two arc radii are needed?\n(c) What kind of triangle is shelf Y by its sides, and which radii are needed if its 4 cm side is the base?\n(d) Which side of shelf X should he take as base so that his compass can be used, and why?",
+     "a": "(a) 3 cm, 4 cm and 5 cm. (b) 3 cm and 5 cm. (c) Isosceles; arcs of 3 cm and 3 cm. (d) With base 5 cm the arcs are 3 cm and 4 cm, both within 4.5 cm; with base 4 cm he needs 5 cm, and with base 3 cm he needs 4 cm and 5 cm, so he must take the 5 cm side as base.",
+     "s": [
+      [
+       "Part (a): 3 cm, 4 cm and 5 cm",
+       1
+      ],
+      [
+       "Part (b): arcs of 3 cm and 5 cm",
+       1
+      ],
+      [
+       "Part (c): isosceles with radii 3 cm and 3 cm",
+       1
+      ],
+      [
+       "Part (d): chooses the 5 cm base because the other arcs, 3 cm and 4 cm, fit the compass",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three friends fix poles A, B and C in a field and join them with rope at ₹35 per metre. They have three layouts: Layout 1 has sides 8 m, 6 m and 7 m; Layout 2 has sides 8 m, 5 m and 5 m; Layout 3 has sides 8 m, 4 m and 5 m. On their plan, 1 cm stands for 1 m. The compass they have opens only up to 6.5 cm, and the budget is ₹700. They also want two ropes of equal length so that one pre-cut length can serve twice.\n(a) Name each layout's triangle by its sides.\n(b) For Layout 2, taking 8 m as the base, what are the two arc radii on the plan?\n(c) Which layout can the compass not draw, and why?\n(d) Which layout should they choose when all three conditions (compass, budget, two equal ropes) matter? Give the cost, and say what they give up compared with the cheapest drawable layout.",
+     "a": "(a) Layout 1 scalene, Layout 2 isosceles, Layout 3 scalene. (b) 5 cm and 5 cm. (c) Layout 1: whichever side is the base, an arc of 7 cm or 8 cm is needed, more than 6.5 cm. (d) Layout 2: drawable, ₹630 (under ₹700) and has two equal 5 m ropes. Layout 3 costs 17 x 35 = ₹595, which is ₹35 cheaper, but it has no equal ropes; so they pay ₹35 more for the equal pair.",
+     "s": [
+      [
+       "Part (a): scalene, isosceles, scalene",
+       1
+      ],
+      [
+       "Part (b): radii 5 cm and 5 cm",
+       1
+      ],
+      [
+       "Part (c): Layout 1 needs an arc of 7 cm or more",
+       1
+      ],
+      [
+       "Part (d): Layout 2 at ₹630, and the ₹35 extra against Layout 3 is the price of the equal ropes",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Mani takes the longest length of each set (in cm) as the base and the other two as the radii of circles centred at its two ends. For which set do the two circles touch at exactly one point?",
+     "a": "6, 9, 15",
+     "o": [
+      "6, 9, 15",
+      "6, 8, 15",
+      "7, 9, 15",
+      "5, 11, 14"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two sides of a triangle measure 6.5 cm and 11 cm. The smallest whole number of centimetres the third side can have is ___.",
+     "a": "5"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The village V, the temple T and the lake L are joined by straight paths. V to T is 4 km, T to L is 3000 m and L to V is 2 km. A student writes: '3000 is more than 4 + 2, so no triangle is possible.' (a) What is wrong with her comparison? (b) Does a triangle exist? Show the comparison you use.",
+     "a": "(a) The lengths are in different units: 3000 m is 3 km, so she compared 3000 with 6 as if both were in the same unit. (b) In km the lengths are 4, 3 and 2; the longest, 4, is less than 3 + 2 = 5, so the triangle inequality holds and a triangle exists.",
+     "s": [
+      [
+       "Part (a): the lengths are in different units, 3000 m = 3 km",
+       1
+      ],
+      [
+       "Part (b): 4 < 3 + 2 = 5, so a triangle exists",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rahul walks from home H to the post office P (450 m) and then to school S (380 m). The direct road HS is a straight line and H, P and S are not in one line. Which length could the road HS have?",
+     "a": "790 m",
+     "o": [
+      "790 m",
+      "830 m",
+      "900 m",
+      "60 m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The lengths 6 cm, 9 cm and 15 cm can be the sides of a triangle.\nReason (R): 6 + 9 = 15, so the direct path of 15 cm between two vertices would be exactly as long as the roundabout path through the third vertex.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A map app gives the straight-road distances between three towns P, Q and R as PQ = 14 km, QR = 9 km and PR = 23 km. Which conclusion is right?",
+     "a": "No triangle: 14 + 9 = 23, so the circles would only touch and the figure flattens into a line",
+     "o": [
+      "No triangle: 14 + 9 = 23, so the circles would only touch and the figure flattens into a line",
+      "A triangle exists: each of 14 and 9 is less than the longest distance, 23",
+      "A triangle exists: the route through Q equals the direct road, which is allowed",
+      "No triangle: the longest road should be at least twice the shortest one"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A surveyor's sketch of triangle ABC reads AB = 9 m, BC = 5 m and CA = 3 m. (a) Show that the three readings cannot all be right. (b) She measures CA again and gets 4 m, while AB = 9 m and BC = 5 m stay as they were. Does a triangle exist now? Explain.",
+     "a": "(a) The direct path AB = 9 m is longer than the roundabout path through C, 5 + 3 = 8 m, so no triangle has these sides. (b) No. Now 5 + 4 = 9, which equals AB; the two smaller lengths only add up to the longest, so the circles touch at one point and the figure flattens into a line.",
+     "s": [
+      [
+       "Part (a): 9 is more than 5 + 3 = 8, so the readings fail",
+       1
+      ],
+      [
+       "Part (b): 5 + 4 = 9 equals AB, so the circles only touch and there is no triangle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about the triangle inequality.\nStatement 1: If the longest of three lengths is less than the sum of the other two, a triangle with those sides exists.\nStatement 2: If the two shorter lengths add up to exactly the longest length, a triangle with those three sides still exists.\nStatement 3: The lengths 3 cm, 3 cm and 7 cm do not satisfy the triangle inequality.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Circles of radius 4 cm and r cm are drawn with centres A and B, where AB = 9 cm. For which value of r do the two circles cross at two points?",
+     "a": "r = 6",
+     "o": [
+      "r = 6",
+      "r = 5",
+      "r = 3",
+      "r = 14"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A triangle has sides 8 cm, 8 cm and x cm, where x is a whole number of centimetres. (a) How many values of x are possible? (b) For how many of these values is the triangle isosceles with exactly two equal sides, and for which x is it equilateral?",
+     "a": "(a) x must be more than 0 and less than 8 + 8 = 16, so x = 1, 2, ..., 15: fifteen values. (b) x = 8 gives an equilateral triangle; the other 14 values give an isosceles triangle with exactly two equal sides.",
+     "s": [
+      [
+       "Part (a): 0 < x < 16 gives 15 whole numbers",
+       1
+      ],
+      [
+       "Part (b): equilateral only for x = 8, so 14 isosceles with exactly two equal sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Two sides of a triangle are given in Column I (in cm). Match each with the range of the third side x (in cm) in Column II.\nColumn I: 1. 6 and 6  2. 4 and 9  3. 10 and 10.5  4. 2.5 and 3\nColumn II: A. 0 < x < 12  B. 5 < x < 13  C. 0.5 < x < 5.5  D. 0.5 < x < 20.5",
+     "a": "1-A, 2-B, 3-D, 4-C",
+     "o": [
+      "1-A, 2-B, 3-D, 4-C",
+      "1-B, 2-A, 3-D, 4-C",
+      "1-A, 2-B, 3-C, 4-D",
+      "1-D, 2-B, 3-A, 4-C"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ritu tests whether 9 cm, 14 cm and 24 cm can be the sides of a triangle and writes: '9 < 14 + 24 true; 14 < 9 + 24 true; 24 is more than 9 + 14 = 23, but only by 1, which is close enough, so a triangle exists.' (a) What is wrong with her last step? (b) What is the correct conclusion?",
+     "a": "(a) Being close is not enough: the longest length must be less than the sum of the other two, and 24 is not less than 23. (b) The lengths fail the triangle inequality, so no triangle exists with sides 9 cm, 14 cm and 24 cm.",
+     "s": [
+      [
+       "Part (a): the third comparison fails, since 24 is not less than 23; close is not enough",
+       1
+      ],
+      [
+       "Part (b): no triangle exists",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Why is it enough to compare only the longest length with the sum of the other two when we test the triangle inequality?",
+     "a": "Each of the other two lengths is no longer than the longest, so it is automatically less than the longest plus the remaining length; only the longest can fail.",
+     "s": [
+      [
+       "Says the shorter lengths are not longer than the longest",
+       1
+      ],
+      [
+       "Concludes the other two comparisons are automatically true",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A student's working for 'Which values of x make a triangle with sides 6 cm, 6 cm and x cm?' reads: Step 1: 'x must be less than 6 + 6 = 12, and x = 12 is allowed because 6 + 6 = 12 shows the circles meet.' Step 2: 'x must be more than 0.' Step 3: 'So 0 < x ≤ 12.' Find the faulty step, explain the fault and write the correct range.",
+     "a": "Step 1 is faulty. When x = 12 the two smaller lengths add up to exactly the longest (6 + 6 = 12), so the circles only touch at one point and there is no triangle; the longest must be strictly less than the sum of the other two. Step 2 is fine. The correct range is 0 < x < 12.",
+     "s": [
+      [
+       "Finds that Step 1 is the faulty step",
+       1
+      ],
+      [
+       "Explains that at x = 12 the circles touch and no triangle forms",
+       1
+      ],
+      [
+       "Gives the corrected range 0 < x < 12",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A set of three lengths has smallest 5 cm and longest 14 cm. The middle length m cm is a whole number between 5 and 14. (a) Write the m for which the circles on the 14 cm base touch. (b) Write one m for which the circles cross at two points and one m for which they do not meet. Give the reason for each.",
+     "a": "(a) m = 9, because 5 + 9 = 14. (b) Crossing at two points: any whole number from 10 to 14, for example m = 12, since 5 + 12 = 17 is more than 14. Not meeting: any whole number from 5 to 8, for example m = 7, since 5 + 7 = 12 is less than 14.",
+     "s": [
+      [
+       "Part (a): m = 9 since 5 + 9 = 14",
+       1
+      ],
+      [
+       "Part (b): a valid m from 10 to 14 with the sum above 14",
+       1
+      ],
+      [
+       "Part (b): a valid m from 5 to 8 with the sum below 14",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that if a triangle has perimeter 40 cm, none of its sides can be 20 cm or longer. Use this to find the greatest whole-number length its longest side can have, and give one such triangle.",
+     "a": "If one side were L cm with L at least 20, the other two sides would add up to 40 - L, which is at most 20 and so not more than L. The longest side must be less than the sum of the other two, so this is impossible. Hence every side is less than 20 cm, and the greatest whole number is 19: the other two add up to 21, which is more than 19, for example 19, 11 and 10 (19 + 11 + 10 = 40, and 11 + 10 = 21 > 19).",
+     "s": [
+      [
+       "Shows the other two sides add to 40 - L, at most L when L is at least 20",
+       1
+      ],
+      [
+       "Concludes every side is less than 20 cm, so the greatest whole number is 19",
+       1
+      ],
+      [
+       "Gives a valid example such as 19, 11, 10",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Mala has four sticks of lengths 4 cm, 7 cm, 9 cm and 12 cm and picks three at a time. (a) How many different choices of three sticks are there? (b) Test each choice and say which can form a triangle. (c) Which choice gives the triangle with the greatest perimeter, and what is it? (d) She decides to keep the 4 cm and 12 cm sticks and to add one more from the other two. Which one works, and why does the other fail?",
+     "a": "(a) Four choices: {4, 7, 9}, {4, 7, 12}, {4, 9, 12}, {7, 9, 12}. (b) {4, 7, 9}: 9 < 11 yes. {4, 7, 12}: 4 + 7 = 11 < 12 no. {4, 9, 12}: 12 < 13 yes. {7, 9, 12}: 12 < 16 yes. (c) {7, 9, 12} with perimeter 28 cm. (d) The 9 cm stick works since 4 + 9 = 13 is more than 12; the 7 cm stick fails since 4 + 7 = 11 is less than 12.",
+     "s": [
+      [
+       "Part (a): four choices",
+       1
+      ],
+      [
+       "Part (b): {4,7,12} fails, the other three pass, each with its comparison",
+       2
+      ],
+      [
+       "Part (c): {7, 9, 12}, perimeter 28 cm",
+       1
+      ],
+      [
+       "Part (d): 9 cm works (13 > 12), 7 cm fails (11 < 12)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Anand wants an isosceles triangle with perimeter 34 cm whose two equal sides are s cm each, with s a whole number. The third side is then 34 - 2s. (a) Test s = 10. (b) Test s = 8. (c) Test every s from 1 to 16 using the third side 34 - 2s and list the values of s that give a triangle. (d) Anand also wants the third side to be longer than each equal side. Which of the values from (c) are left?",
+     "a": "(a) s = 10: third side 14; the longest is 14 and 10 + 10 = 20 > 14, so a triangle exists. (b) s = 8: third side 18; 8 + 8 = 16 < 18, so no triangle. (c) A triangle needs the third side to be positive and less than 2s: this holds for s = 9, 10, ..., 16 (s = 9 gives third side 16 < 18; s = 8 gives 18 > 16 fails), eight values. (d) The third side 34 - 2s must be more than s: s = 9 (16), s = 10 (14) and s = 11 (12) work; s = 12 gives 10, which is shorter. So 9, 10 and 11.",
+     "s": [
+      [
+       "Part (a): s = 10 works, 10 + 10 > 14",
+       1
+      ],
+      [
+       "Part (b): s = 8 fails, 8 + 8 < 18",
+       1
+      ],
+      [
+       "Part (c): the eight values 9 to 16",
+       2
+      ],
+      [
+       "Part (d): 9, 10 and 11",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a school in Pune the main gate G, library L and canteen C are to be the corners of a triangular garden. A surveyor measures GL = 60 m, LC = 50 m and the direct path GC = 115 m. A second look shows that any one of the three tape readings could be wrong by up to 6 m, but no more, and no reading is more likely to be wrong than another. Re-measuring costs ₹4 for every metre of path measured, and the school will re-measure just one path first.\n(a) Compare the route from G to C through L with the direct path.\n(b) If the other two readings are right, in what range must each single reading lie for a triangle to exist?\n(c) With an error of at most 6 m, which of the three readings could be the faulty one?\n(d) Which path should be re-measured first? Give the three costs and your choice with a reason.",
+     "a": "(a) Via L: 60 + 50 = 110 m, less than the direct 115 m, so the readings cannot be right. (b) GC must be less than 110 m (and more than 10 m); GL must be more than 65 m (and less than 165 m); LC must be more than 55 m (and less than 175 m). (c) All three: GC could really be 109 m, GL 66 m or LC 56 m, each within 6 m of the reading. (d) Re-measuring GC costs 115 x 4 = ₹460, GL costs ₹240 and LC costs ₹200. Each reading is equally likely to be the faulty one, so start with the cheapest, LC at ₹200; if the three readings still fail the check, re-measure the next.",
+     "s": [
+      [
+       "Part (a): 110 m via L against 115 m direct, so the readings fail",
+       1
+      ],
+      [
+       "Part (b): GC < 110, GL > 65, LC > 55",
+       1
+      ],
+      [
+       "Part (c): each of the three could be the faulty reading within 6 m",
+       1
+      ],
+      [
+       "Part (d): costs 460, 240, 200 and a reasoned choice of LC first",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a craft class four groups each get three straws and must form a triangle. Group A has 8 cm, 9 cm and 15 cm. Group B has 7 cm, 11 cm and 18 cm. Group C has 6 cm, 10 cm and 12 cm. Group D has 5 cm, 5 cm and 10 cm. The teacher keeps these spare straws: 3 cm, 9 cm, 10 cm and 12 cm.\n(a) Which groups can form a triangle?\n(b) For each group that cannot, name what the circles on its longest side do.\n(c) Group D keeps its two 5 cm straws and swaps only the 10 cm straw. Between which two lengths must the new straw lie?\n(d) Which spare straw should Group D take if it wants the triangle with the largest perimeter? Give the perimeter.",
+     "a": "(a) A (8 + 9 = 17 > 15) and C (6 + 10 = 16 > 12). (b) B: 7 + 11 = 18, so the circles touch; D: 5 + 5 = 10, so they touch. (c) More than 0 cm and less than 10 cm. (d) 3 cm and 9 cm work; 10 cm and 12 cm do not. The 9 cm straw gives 5 + 5 + 9 = 19 cm, larger than 5 + 5 + 3 = 13 cm, so take the 9 cm straw.",
+     "s": [
+      [
+       "Part (a): groups A and C",
+       1
+      ],
+      [
+       "Part (b): B and D each have circles that touch because the two smaller lengths add to the longest",
+       1
+      ],
+      [
+       "Part (c): the new straw is less than 10 cm",
+       1
+      ],
+      [
+       "Part (d): picks the 9 cm straw with perimeter 19 cm after ruling out 10 and 12",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "On a base AB the angle at A is 47°. Pooja wants the angle at B, on the same side, to be a multiple of 10 degrees so that a triangle exists. The greatest such angle is ___ degrees.",
+     "a": "130"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A workshop has four cards. Card 1: sides 6 cm and 4 cm with included angle 175°. Card 2: sides 6 cm and 4 cm with included angle 180°. Card 3: angles 80° and 99° on a 5 cm base. Card 4: angles 80° and 100° on a 5 cm base. For how many cards can a triangle be constructed? (Cards 3 and 4 have both angles on the same side of the base.)",
+     "a": "2",
+     "o": [
+      "2",
+      "3",
+      "1",
+      "4"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A triangle with angles 50° and 60° drawn on a 4 cm base and one drawn on a 9 cm base have the same third angle.\nReason (R): The third angle is fixed by the two given angles, and the length of the included side plays no part in it.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Anita draws the arm from A making 65° with AB. She wants the arm from B, on the same side, to make the greatest whole-number angle with BA for which the two arms still meet. Which angle should she use?",
+     "a": "114°",
+     "o": [
+      "114°",
+      "115°",
+      "25°",
+      "65°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sana draws angles of 70° and 60° at the two ends of a 3 cm base, on the same side, and finds that the arms do not seem to meet on her page. She thinks a longer base would help. What is the correct advice?",
+     "a": "They meet on any base, since 70 + 60 = 130 is under 180; extend the arms",
+     "o": [
+      "They meet on any base, since 70 + 60 = 130 is under 180; extend the arms",
+      "A longer base helps, because the arms then start farther apart",
+      "A shorter base helps, because the arms then start closer together",
+      "They never meet, because both angles are acute and so stay apart"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements about constructing triangles.\nStatement 1: Two sides with an included angle of any measure greater than 0° and less than 180° can always be used to draw a triangle.\nStatement 2: If one of two given angles is 90° or more, no triangle exists with those two angles.\nStatement 3: The length of the included side decides whether a triangle exists when two angles are given.\nWhich of the statements are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "2 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four students each try to draw a triangle on a base using these pairs of angles at its two ends (on the same side): 50° and 129°; 90° and 89°; 100° and 80°; 120° and 59°. For how many pairs does a triangle exist?",
+     "a": "3",
+     "o": [
+      "3",
+      "4",
+      "2",
+      "1"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On a base AB the angle at A is fixed at 50°. Arpit increases the angle B at the other end, on the same side, through 40°, 80°, 120° and 129°. What happens to the third angle of the triangle, and for what value of B does the triangle stop existing?",
+     "a": "The third angle shrinks (90°, 50°, 10°, 1°); no triangle once B reaches 130°",
+     "o": [
+      "The third angle shrinks (90°, 50°, 10°, 1°); no triangle once B reaches 130°",
+      "The third angle stays at 90° because A is fixed; no triangle once B reaches 180°",
+      "The third angle grows (50°, 90°, 130°, 140°); no triangle once B reaches 90°",
+      "The third angle shrinks (90°, 50°, 10°, 1°); no triangle once B reaches 180°"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Dev must construct triangle PQR with PQ = 6 cm, PR = 3.5 cm and angle P = 70°. He draws PQ = 6 cm, marks R at a distance of 3.5 cm from P anywhere above PQ with a ruler, and joins QR. His protractor then shows angle P = 52°. (a) Why does this happen? (b) What should he have drawn at P before marking R?",
+     "a": "(a) The 3.5 cm length only fixes how far R is from P; R can lie anywhere at that distance, so the angle between PQ and PR is not controlled. (b) He should first draw an arm at P making 70° with PQ and then mark R on that arm with PR = 3.5 cm.",
+     "s": [
+      [
+       "Part (a): the length only fixes the distance of R from P, so the angle is uncontrolled",
+       1
+      ],
+      [
+       "Part (b): draw the 70 degree arm at P first and mark R on it at 3.5 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: On a base, angles of 91° at A and 88° at B (both on the same side) give a triangle, even though the angle at A is more than a right angle. Give the verdict and the third angle.",
+     "a": "True. The two angles add to 91 + 88 = 179°, which is less than 180°, so the arms meet. A single angle of 90° or more does not stop a triangle; only the sum matters. The third angle is 180 - 179 = 1°.",
+     "s": [
+      [
+       "Verdict: true, because the sum 179 is less than 180",
+       1
+      ],
+      [
+       "Third angle 1 degree",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two rods of 30 cm and 40 cm are hinged at one end and a string joins their free ends. The rods are opened to an angle θ. (a) For every θ from 1° to 179°, a triangle is formed. Between which two lengths must the string length lie? (b) What happens when θ = 180°?",
+     "a": "(a) The string is the third side of a triangle with sides 30 and 40, so it is more than 40 - 30 = 10 cm and less than 30 + 40 = 70 cm. (b) At 180° the rods lie in one straight line, the three points are collinear and there is no triangle; the free ends are 70 cm apart, the largest the distance can be.",
+     "s": [
+      [
+       "Part (a): string between 10 cm and 70 cm",
+       1
+      ],
+      [
+       "Part (b): at 180° the points lie on a line, so no triangle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Farhan has to draw a triangle with angle A = 112° and angle B = 75° on the same side of a base AB. Reading the wrong scale of his protractor, he draws angle A = 68° instead. (a) Do his drawn angles give a triangle, and what will he wrongly conclude? (b) Do the intended angles give a triangle? Explain.",
+     "a": "(a) 68 + 75 = 143, which is less than 180, so the arms meet and he gets a triangle; he will wrongly conclude that the data allow a triangle. (b) The intended angles add up to 112 + 75 = 187, which is more than 180, so the arms never meet and no triangle exists.",
+     "s": [
+      [
+       "Part (a): 68 + 75 = 143 < 180, so his drawing meets and he wrongly concludes it is possible",
+       1
+      ],
+      [
+       "Part (b): 112 + 75 = 187 > 180, so no triangle exists",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two angles of a triangle are 62° and 85°, with an included side of 5 cm. (a) Does a triangle exist? Show the check. (b) If the included side is changed to 9 cm, does your answer change, and what is the third angle?",
+     "a": "(a) 62 + 85 = 147, which is less than 180, so a triangle exists. (b) No change: the side length does not affect existence or the third angle, which is 180 - 147 = 33°.",
+     "s": [
+      [
+       "Part (a): the sum 147 is less than 180 so it exists",
+       1
+      ],
+      [
+       "Part (b): the length plays no part and the third angle is 33°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Two students answer 'Two sides of a triangle are 3 cm and 4 cm. For which included angles can the triangle be drawn?' Pranav says: 'Every angle from 1° to 179°; at 180° the three points lie on one line.' Qasim says: 'Only angles below 90°, because the second arm must lean towards the first side.' Who is right? Give a reason for Pranav's two ends and a case that disproves Qasim.",
+     "a": "Pranav is right. For any included angle from 1° to 179° the second arm leaves the first at an angle, so the point on it at the given distance, joined to the other end, gives a triangle. At 180° the arm continues the first side in a straight line and the three points are collinear. Qasim is wrong: an obtuse angle such as 120° between the sides also gives a triangle (the book constructs 3 cm, 120°, 8 cm).",
+     "s": [
+      [
+       "Verdict that Pranav is right",
+       1
+      ],
+      [
+       "Reason: any angle below 180° makes the joined ends form a triangle; 180° makes them collinear",
+       1
+      ],
+      [
+       "Counter-case to Qasim: an obtuse included angle such as 120° still gives a triangle",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that there is no triangle with angles 125° and 70° on a base of any length. Use the line through A parallel to the line from B.",
+     "a": "At A the angle is 125°, so the parallel line from B would make an angle of 180 - 125 = 55° at B. The angle at B is 70°, which is 55° or more, so the line from B leans away more than the parallel line and never meets the line from A. The sum 125 + 70 = 195 is more than 180.",
+     "s": [
+      [
+       "Finds the angle of the parallel line, 55°",
+       1
+      ],
+      [
+       "Shows 70° is not less than 55° so the lines do not meet",
+       1
+      ],
+      [
+       "Confirms with the sum 195 which is not less than 180",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write the data for a triangle in which two angles are given on a base, one of them is obtuse, and the third angle is exactly 1°. Then change one of your two angles by 1° so that the triangle becomes impossible, and say why.",
+     "a": "For example 100° and 79° on a 6 cm base: they add to 179°, so a triangle exists and the third angle is 180 - 179 = 1°. Raising 79° to 80° makes the sum 100 + 80 = 180°, so the arm from B is parallel to the arm from A and the two never meet; no triangle exists.",
+     "s": [
+      [
+       "A valid pair adding to 179° with one angle above 90°, such as 100° and 79°",
+       1
+      ],
+      [
+       "Checks the third angle is 1°",
+       1
+      ],
+      [
+       "Raises one angle by 1° to make the sum 180°, so the arms are parallel and there is no triangle",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Triangle XYZ is to be constructed with XY = 6.5 cm, angle X = 60° and angle Y = x° on the same side of XY. (a) Write the range of whole-number values of x for which a triangle exists. (b) Write the third angle Z in terms of x. (c) For x = 75, 100 and 119 find angle Z and name each triangle by its angles. (d) Explain what happens to the arms from X and Y when x = 120.",
+     "a": "(a) 60 + x must be less than 180, so x is from 1 to 119. (b) Z = 180 - 60 - x = 120 - x. (c) x = 75: Z = 45, angles 60, 75, 45, acute-angled. x = 100: Z = 20, angles 60, 100, 20, obtuse-angled. x = 119: Z = 1, angles 60, 119, 1, obtuse-angled. (d) At x = 120 the angles at the base add to 180°, so the arm from Y is parallel to the arm from X and they never meet; no angle Z exists.",
+     "s": [
+      [
+       "Part (a): x less than 120",
+       1
+      ],
+      [
+       "Part (b): Z = 120 - x",
+       1
+      ],
+      [
+       "Part (c): Z = 45, 20 and 1 with acute, obtuse, obtuse",
+       2
+      ],
+      [
+       "Part (d): the sum 180 makes the arms parallel so they never meet",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two students propose a rule for angles drawn at the ends of a base (on the same side). Rule B: 'A triangle exists only when the two angles add up to less than 180°.' Rule C: 'A triangle fails to exist only when both angles are 90° or more; in every other case it exists.' Test both rules on these data sets: (i) 100° and 85°; (ii) 60° and 119°; (iii) 90° and 90°; (iv) 95° and 80°. (a) What does Rule B say for each set? (b) What does Rule C say for each set? (c) Which rule is reliable, and where does the other rule fail?",
+     "a": "(a) Rule B: (i) 185, no triangle; (ii) 179, triangle; (iii) 180, no triangle; (iv) 175, triangle. (b) Rule C: (i) only one angle is 90° or more, so it says a triangle exists; (ii) says it exists; (iii) both are 90° or more, so it says no triangle; (iv) says it exists. (c) Rule B is reliable. Rule C fails on 100° and 85°: it says a triangle exists but the sum is 185°, so the arms never meet. Two angles of 90° or more do rule a triangle out, but a triangle can also fail when only one angle is that large.",
+     "s": [
+      [
+       "Part (a): Rule B verdicts no, yes, no, yes with the sums 185, 179, 180, 175",
+       2
+      ],
+      [
+       "Part (b): Rule C verdicts yes, yes, no, yes",
+       1
+      ],
+      [
+       "Part (c): Rule B is reliable",
+       1
+      ],
+      [
+       "Part (c): Rule C fails for 100° and 85° because one large angle plus 85° can still reach 180° or more",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tent-maker in Manali cuts triangular shade flaps. Each flap has a 6 m seam as base and two angles at the ends of the seam, on the same side. Design D1 uses 55° and 65° and costs ₹300; D2 uses 85° and 100° and costs ₹250; D3 uses 70° and 100° and costs ₹240; D4 uses 40° and 120° and costs ₹260. A flap whose third corner is sharper than 20° cannot be stitched, and the tent-maker takes the cheapest design that can be stitched.\n(a) Which designs give a triangle at all?\n(b) Find the third angle of each design that gives a triangle.\n(c) Which designs can be stitched?\n(d) Which design should the tent-maker take, and at what cost?",
+     "a": "(a) D1 (55 + 65 = 120), D3 (170) and D4 (160); D2 is impossible because 85 + 100 = 185. (b) D1: 60°; D3: 10°; D4: 20°. (c) D1 and D4; D3 has a corner of 10°, sharper than 20°. (d) D4 at ₹260, cheaper than D1 at ₹300.",
+     "s": [
+      [
+       "Part (a): D1, D3 and D4; D2 sums to 185",
+       1
+      ],
+      [
+       "Part (b): third angles 60°, 10° and 20°",
+       1
+      ],
+      [
+       "Part (c): D1 and D4 can be stitched, D3 cannot",
+       1
+      ],
+      [
+       "Part (d): D4 at ₹260 as the cheapest stitchable design",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two surveyors stand at points A and B, 80 m apart on a straight river bank, and both sight a tree T on the far side. The surveyor at A reads angle TAB = 48°. The surveyor at B takes three trial readings for angle TBA: 100°, 125° or 135°. The village will accept a survey only if the angle at the tree, angle ATB, is at least 20°.\n(a) What is the greatest whole-number reading of angle TBA that allows a triangle to exist?\n(b) Can the reading 135° be correct? Why?\n(c) For the reading 125°, find angle ATB.\n(d) Which of the three readings can the village accept? Give a reason.",
+     "a": "(a) Angle B must be less than 180 - 48 = 132°, so 131°. (b) No: 48 + 135 = 183, which is 180 or more, so the lines from A and B never meet. (c) 180 - 48 - 125 = 7°. (d) Only 100°: it gives angle ATB = 180 - 48 - 100 = 32°, which is at least 20°. The 125° reading gives only 7° and the 135° reading gives no triangle.",
+     "s": [
+      [
+       "Part (a): 131°",
+       1
+      ],
+      [
+       "Part (b): 135 is not less than 132, the sum exceeds 180",
+       1
+      ],
+      [
+       "Part (c): angle ATB is 7°",
+       1
+      ],
+      [
+       "Part (d): accepts only the 100° reading, which gives 32°, and rejects 125° (7°) and 135° (no triangle)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The exterior angle at vertex C of triangle ABC (side BC extended to D) is 140°. Which pair of values for the interior angles at A and B is possible?",
+     "a": "A = 80° and B = 60°",
+     "o": [
+      "A = 80° and B = 60°",
+      "A = 80° and B = 70°",
+      "A = 60° and B = 40°",
+      "A = 90° and B = 60°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If all three angles of a triangle are equal, each angle measures 60°.\nReason (R): An exterior angle of a triangle equals the sum of the two opposite interior angles.",
+     "a": "Both A and R are true, but R is not the correct explanation of A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a gable frame ABC, side BC is extended to D and the exterior angle ACD measures 114°. Angle A is twice angle B. What is angle B?",
+     "a": "38°",
+     "o": [
+      "38°",
+      "76°",
+      "57°",
+      "66°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two angles of a triangle are 38° and 47°. The exterior angle at the third vertex, formed by extending one side, is ___ degrees.",
+     "a": "85"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements about angles of a triangle.\nStatement 1: The sum of the three angles of any triangle is 180°.\nStatement 2: An exterior angle of a triangle equals the sum of its two opposite interior angles.\nStatement 3: A triangle can have at most one angle of 90° or more.\nWhich of the statements are correct?",
+     "a": "1, 2 and 3",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each triangle situation in Column I with the angle asked for in Column II.\nColumn I: 1. Two angles are 54° and 66°; the third angle  2. Exterior angle 140° at C and the interior angle at A is 85°; the interior angle at B  3. Exterior angle 100° at a vertex; the interior angle at that vertex  4. A right-angled triangle with one acute angle 28°; the other acute angle\nColumn II: A. 62°  B. 60°  C. 80°  D. 55°",
+     "a": "1-B, 2-D, 3-C, 4-A",
+     "o": [
+      "1-B, 2-D, 3-C, 4-A",
+      "1-B, 2-C, 3-D, 4-A",
+      "1-A, 2-D, 3-C, 4-B",
+      "1-D, 2-B, 3-C, 4-A"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "At vertex C of a triangular signboard, the exterior angle formed by extending BC is exactly twice the interior angle at C. What is the exterior angle?",
+     "a": "120°",
+     "o": [
+      "120°",
+      "90°",
+      "60°",
+      "100°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle ABC, angle A = 54° and angle B = 61°, and side BC is extended to D. (a) Find the exterior angle ACD in two ways: first by finding angle C from the angle sum, then by using the exterior angle property. (b) Why do the two ways agree?",
+     "a": "(a) Way 1: C = 180 - 54 - 61 = 65°, so ACD = 180 - 65 = 115°. Way 2: ACD = A + B = 54 + 61 = 115°. (b) Both come from the same two facts: the three angles of the triangle add to 180°, and ACB and ACD lie on a straight line and add to 180°; so ACD = 180 - ACB = A + B.",
+     "s": [
+      [
+       "Part (a): 115° by both ways",
+       1
+      ],
+      [
+       "Part (b): the angle sum and the straight line together give ACD = A + B",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: A triangle can have an exterior angle of 80° at one vertex while the two interior angles not at that vertex are 50° and 40°. Give the verdict and the reason.",
+     "a": "False. The exterior angle must equal the sum of the two opposite interior angles. Here those are 50° and 40°, which add to 90°, not 80°. (Equivalently the interior angle at that vertex is 100°, and 100 + 50 + 40 = 190, which is more than 180°.)",
+     "s": [
+      [
+       "Verdict: false",
+       1
+      ],
+      [
+       "Reason: the exterior angle would have to be 50 + 40 = 90 degrees, or the angles add to 190",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Mohan extends side BC of triangle ABC to D and measures angle ABC = 48° and the exterior angle ACD = 115°. Which of these is correct?",
+     "a": "Angle BAC = 67° and angle ACB = 65°",
+     "o": [
+      "Angle BAC = 67° and angle ACB = 65°",
+      "Angle BAC = 65° and angle ACB = 67°",
+      "Angle BAC = 115° and angle ACB = 65°",
+      "Angle BAC = 67° and angle ACB = 115°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A paper triangle has its three corners torn off and the torn corners are placed side by side with their points together. (a) What do the three torn corners together form, and what does this show? (b) Two torn corners measure 58° and 67°. What must the third measure? A student measures it as 59°; what does this tell you?",
+     "a": "(a) They fit together to form a straight angle, which shows that the three angles of a triangle add up to 180°. (b) The third corner must be 180 - 58 - 67 = 55°. A reading of 59° gives a total of 58 + 67 + 59 = 184°, so the measurement (or the tearing) is off by 4°.",
+     "s": [
+      [
+       "Part (a): the corners form a straight angle, so the sum is 180°",
+       1
+      ],
+      [
+       "Part (b): the third is 55°, and 59° is a measuring error since the total would be 184°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle ABC, side AB is extended beyond B and side BC is extended beyond C. The exterior angle at B measures 118° and the exterior angle at C measures 130°. (a) Find the interior angles at B and at C. (b) Find angle A and name the triangle by its angles.",
+     "a": "(a) Interior B = 180 - 118 = 62° and interior C = 180 - 130 = 50°. (b) Angle A = 180 - 62 - 50 = 68°; all three angles (68, 62, 50) are below 90°, so the triangle is acute-angled.",
+     "s": [
+      [
+       "Part (a): interior angles 62° and 50°",
+       1
+      ],
+      [
+       "Part (b): A = 68° and acute-angled",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle ABC, angle B = 38° and angle C = 64°. A line XY is drawn through A parallel to BC. (a) Find angle XAB and angle YAC and say why. (b) Use them to find angle BAC.",
+     "a": "(a) Angle XAB = 38° (alternate to angle B with AB as transversal) and angle YAC = 64° (alternate to angle C with AC as transversal), because XY is parallel to BC. (b) XAB, BAC and YAC together form a straight angle, so BAC = 180 - 38 - 64 = 78°.",
+     "s": [
+      [
+       "Part (a): XAB = 38° and YAC = 64° as alternate angles",
+       1
+      ],
+      [
+       "Part (b): BAC = 180 - 38 - 64 = 78°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that an exterior angle of a triangle can never be smaller than either of its two opposite interior angles.",
+     "a": "The exterior angle equals the sum of the two opposite interior angles. Each interior angle is more than 0°, so the sum is larger than either one of them. So the exterior angle is greater than each opposite interior angle and cannot be smaller.",
+     "s": [
+      [
+       "States exterior angle = sum of the two opposite interior angles",
+       1
+      ],
+      [
+       "Notes each interior angle is greater than 0°, so the sum is larger than each",
+       1
+      ],
+      [
+       "Concludes the exterior angle cannot be smaller than either",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Karan's argument has three steps. Step 1: 'The exterior angle at a vertex equals 180° minus the interior angle there.' Step 2: 'An interior angle of a triangle can have any measure from just above 0° to just below 180°.' Step 3: 'So an exterior angle can also have any measure between 0° and 180°.' Is the argument valid? Support your answer with a small and a large example.",
+     "a": "Yes. The exterior angle is 180° minus the interior angle at that vertex, and an interior angle can be any measure between 0° and 180°. For example, interior angle 170° gives an exterior angle of 10°, and interior angle 15° gives an exterior angle of 165° (with the other two angles making up the rest).",
+     "s": [
+      [
+       "Verdict that he is right",
+       1
+      ],
+      [
+       "Reason: exterior = 180° minus the interior angle, which can be any value from 0° to 180°",
+       1
+      ],
+      [
+       "Gives a small and a large exterior angle with their triangles",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write the three angles of a triangle in which the exterior angle at one vertex is 150° and the largest angle is 100°. Show how you found them.",
+     "a": "The interior angle at that vertex is 180 - 150 = 30°. The other two angles add up to the exterior angle, 150°. The largest angle, 100°, cannot be the 30° one, so it is one of the other two, and the last angle is 150 - 100 = 50°. The angles are 100°, 50° and 30°, and 100 + 50 + 30 = 180°.",
+     "s": [
+      [
+       "Interior angle at that vertex is 180 - 150 = 30°",
+       1
+      ],
+      [
+       "The other two angles add to 150°, so the largest 100° is one of them and the last is 50°",
+       1
+      ],
+      [
+       "Checks the sum 100 + 50 + 30 = 180°",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In triangle ABC, angle A = 64° and angle B = 51°. Side BC is extended beyond C to D and side CA is extended beyond A to E. (a) Find the interior angle C. (b) Find the exterior angles ACD and EAB. (c) Show that each exterior angle equals the sum of the two interior angles not at its vertex. (d) Imran says the exterior angle at C is 65°, 'because the angle sum leaves 65° for the third angle'. Where is his confusion?",
+     "a": "(a) C = 180 - 64 - 51 = 65°. (b) ACD = 180 - 65 = 115° and EAB = 180 - 64 = 116°. (c) ACD = 115 = 64 + 51 = A + B, and EAB = 116 = 51 + 65 = B + C. (d) 65° is the interior angle at C; the exterior angle ACD lies on the straight line with it, so it is 180 - 65 = 115°.",
+     "s": [
+      [
+       "Part (a): C = 65°",
+       1
+      ],
+      [
+       "Part (b): ACD = 115° and EAB = 116°",
+       2
+      ],
+      [
+       "Part (c): each exterior angle equals the sum of the other two interior angles",
+       1
+      ],
+      [
+       "Part (d): he gave the interior angle; the exterior angle is 180 - 65 = 115°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In the proof of the angle sum property a pupil draws a line XY through vertex A of triangle ABC and writes: 'Angle XAB = angle ABC and angle YAC = angle ACB because they are alternate angles. XAB + BAC + YAC = 180° because they lie along a straight line. So A + B + C = 180°.' (a) What must be true of XY for her first sentence to hold? (b) Name the pair of parallel lines and the transversal that give angle XAB = angle ABC. (c) Another pupil draws XY so that angle XAB = 52°, while angle ABC = 50°. Is her XY parallel to BC? What goes wrong with her proof? (d) Use the correct proof to find the third angle of a triangle whose other two angles are 68° and 49°.",
+     "a": "(a) XY must be parallel to BC. (b) The parallel lines are XY and BC; AB is the transversal. (c) No: for a parallel line angle XAB would have to equal angle ABC = 50°, but it is 52°. The alternate-angle step fails, so she cannot replace XAB by B; the three angles at A still add to 180° but they are not A, B and C. (d) 180 - 68 - 49 = 63°.",
+     "s": [
+      [
+       "Part (a): XY parallel to BC",
+       1
+      ],
+      [
+       "Part (b): XY and BC parallel with AB as the transversal",
+       1
+      ],
+      [
+       "Part (c): not parallel since 52° is not 50°, so the alternate-angle step fails",
+       2
+      ],
+      [
+       "Part (d): 63°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A signboard maker in Surat is choosing a triangular bracket. Design 1 has angles 38° and 77° and a third angle. Design 2 has an exterior angle of 128° at one vertex and an opposite interior angle of 49°. Design 3 has an exterior angle of 135° at one vertex and an opposite interior angle of 60°. Base costs are Rs 200, Rs 150 and Rs 215 for Designs 1, 2 and 3. Every degree of the largest angle above 70° needs a reinforcing clamp at Rs 15 per degree. The stand takes a bracket only if its largest angle is less than 80°, and because her protractor can be off by 2°, she accepts a design only if its largest angle is at least 3° below 80°, then picks the cheapest total cost.\n(a) Find the third angle of Design 1 and its largest angle.\n(b) For Design 2 find the other opposite interior angle, the interior angle at the vertex of the exterior angle, and the largest angle.\n(c) Find the three angles of Design 3.\n(d) Which design should she choose? Give the total cost of each design that passes her rule.",
+     "a": "(a) 180 - 38 - 77 = 65 degrees; the largest angle is 77 degrees. (b) The other opposite interior angle is 128 - 49 = 79 degrees and the interior angle at that vertex is 180 - 128 = 52 degrees, so the angles are 49, 79 and 52 and the largest is 79 degrees. (c) The other opposite interior angle is 135 - 60 = 75 degrees and the interior angle at that vertex is 180 - 135 = 45 degrees: the angles are 60, 75 and 45. (d) Design 2 has largest angle 79 degrees, only 1 degree below 80, so it fails her 3 degree rule although its cost would be 150 + 9 x 15 = Rs 285. Design 1 costs 200 + 7 x 15 = Rs 305 (largest 77, which is 3 below 80). Design 3 costs 215 + 5 x 15 = Rs 290 (largest 75). She should choose Design 3 at Rs 290.",
+     "s": [
+      [
+       "Part (a): third angle 65 degrees, largest 77 degrees",
+       1
+      ],
+      [
+       "Part (b): other angle 79, interior 52, largest 79 degrees",
+       1
+      ],
+      [
+       "Part (c): 60, 75 and 45 degrees",
+       1
+      ],
+      [
+       "Part (d): excludes Design 2 by the 3 degree rule and picks Design 3 at Rs 290 against Rs 305 for Design 1",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A flag-maker in Jaipur has three templates for a triangular flag ABC, each described by the angles at B and at C. Template T1 has B = 48° and C = 72° and costs ₹40; T2 has B = 55° and C = 62° and costs ₹46; T3 has B = 35° and C = 80° and costs ₹52. A line XY is drawn through A parallel to BC for the top piping. The buyer accepts a template only if the top angle at A is at least 62° and the exterior angle at C (BC extended) is at most 110°, and then takes the cheapest accepted template.\n(a) For T1, find angle XAB and angle YAC and say why they take these values.\n(b) Find the angle at A for each template.\n(c) Find the exterior angle at C for each template.\n(d) Which template should the buyer take, and at what cost?",
+     "a": "(a) XAB = 48° and YAC = 72°, because XY is parallel to BC and these are alternate angles to B and C. (b) A = 180 - 48 - 72 = 60° for T1, 180 - 55 - 62 = 63° for T2, 180 - 35 - 80 = 65° for T3. (c) The exterior angle at C equals A + B: T1 60 + 48 = 108°, T2 63 + 55 = 118°, T3 65 + 35 = 100°. (d) T1 fails (A = 60° is below 62°), T2 fails (118° is above 110°), only T3 passes, so the buyer takes T3 at ₹52, even though it is the dearest.",
+     "s": [
+      [
+       "Part (a): 48° and 72° as alternate angles with XY parallel to BC",
+       1
+      ],
+      [
+       "Part (b): A = 60°, 63° and 65°",
+       1
+      ],
+      [
+       "Part (c): exterior angles 108°, 118° and 100°",
+       1
+      ],
+      [
+       "Part (d): only T3 passes both rules, cost ₹52",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In triangle ABC the angle at B is 118°. The altitude from A meets the line CB extended beyond B at D. The angle ABD is ___ degrees.",
+     "a": "62"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Triangle PQR has its right angle at Q in items 1 and 2, and an angle of 120° at Q in items 3 and 4. Match each altitude in Column I with what it is in Column II.\nColumn I: 1. Altitude from P to QR (right angle at Q)  2. Altitude from R to PQ (right angle at Q)  3. Altitude from P to QR (angle Q = 120°)  4. Altitude from Q to PR (angle Q = 120°)\nColumn II: A. A segment inside the triangle, meeting PR  B. The side RQ  C. The side PQ  D. A segment outside the triangle, meeting QR extended beyond Q",
+     "a": "1-C, 2-B, 3-D, 4-A",
+     "o": [
+      "1-C, 2-B, 3-D, 4-A",
+      "1-B, 2-C, 3-D, 4-A",
+      "1-C, 2-B, 3-A, 4-D",
+      "1-C, 2-D, 3-B, 4-A"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these triangles (given by their angles) has exactly one altitude lying wholly inside it, the other two lying outside it?",
+     "a": "120°, 30°, 30°",
+     "o": [
+      "120°, 30°, 30°",
+      "90°, 45°, 45°",
+      "60°, 60°, 60°",
+      "80°, 50°, 50°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sana tries to draw the altitude from A to BC in a triangle whose angle B is 108°. With the ruler along BC she slides the set square towards A, but the upright edge reaches A beyond the end B of the base. She says: 'So A has no altitude to BC.' What is the right response?",
+     "a": "An altitude exists: extend BC beyond B and slide the set square along it until the upright edge touches A",
+     "o": [
+      "An altitude exists: extend BC beyond B and slide the set square along it until the upright edge touches A",
+      "She is right, because an altitude must meet the base between its end points B and C",
+      "An altitude exists, but it is the side AB, because the angle at B is so large",
+      "An altitude exists only if she redraws the triangle so that angle B is acute"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In triangle ABC the angle at A is 35° and the angle at B is 40°. From which vertex is the altitude the only one of the three altitudes that lies wholly inside the triangle?",
+     "a": "C",
+     "o": [
+      "C",
+      "A",
+      "B",
+      "All three altitudes lie inside"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements about altitudes.\nStatement 1: If an altitude of a triangle lies outside it, the triangle must be right-angled.\nStatement 2: In a right-angled triangle, the two sides that meet at the right angle are themselves altitudes of the triangle.\nStatement 3: In a triangle with angles 30°, 60° and 90°, the altitude from the vertex of the 90° angle is one of the sides of the triangle.\nWhich of the statements are correct?",
+     "a": "2 only",
+     "o": [
+      "2 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In triangle ABC, Leela draws the altitude AD to BC and measures it as 4.8 cm. Tom says: 'So the height of the triangle is 4.8 cm, whichever side we take as the base.' What is the correct response?",
+     "a": "Not necessarily: the height depends on the base, so for base AC she must draw the altitude from B",
+     "o": [
+      "Not necessarily: the height depends on the base, so for base AC she must draw the altitude from B",
+      "Correct: a triangle has one height, found by dropping the altitude from the top vertex",
+      "Correct: the three altitudes of a triangle are always equal in length",
+      "Not necessarily: but the height to AC is always found by halving 4.8 cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In an obtuse-angled triangle, two of the three altitudes lie outside the triangle.\nReason (R): In an obtuse-angled triangle, the altitude from the vertex of the obtuse angle also lies outside the triangle.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle ABC, the altitude AD meets BC at D between B and C. Angle B = 62° and angle C = 48°. (a) Find angle BAD and angle DAC. (b) Check that they agree with angle BAC found from the angle sum of triangle ABC.",
+     "a": "(a) In triangle ABD, angle D = 90°, so BAD = 180 - 90 - 62 = 28°. In triangle ADC, DAC = 180 - 90 - 48 = 42°. (b) Angle BAC from the angle sum = 180 - 62 - 48 = 70°, and BAD + DAC = 28 + 42 = 70°, so they agree.",
+     "s": [
+      [
+       "Part (a): BAD = 28° and DAC = 42°",
+       1
+      ],
+      [
+       "Part (b): both ways give angle BAC = 70°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Flag F1 has angles 30°, 60° and 90°. Flag F2 has angles 20°, 40° and 120°. (a) For which flag can the heights to all three sides be drawn with a ruler and set square without extending any side? (b) For the other flag, at which vertices must a side be extended to draw the altitude?",
+     "a": "(a) Flag F1: in a right-angled triangle two altitudes are sides and the third lies inside, so no side needs extending. (b) Flag F2 has an obtuse angle of 120°; the altitudes from the vertices with 20° and 40° fall outside, so a side must be extended for those two (the altitude from the 120° vertex lies inside).",
+     "s": [
+      [
+       "Part (a): F1, since its two altitudes are sides and the third is inside",
+       1
+      ],
+      [
+       "Part (b): the 20° and 40° vertices of F2 need an extended side",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle ABC, the altitude BE drawn from B to AC turns out to be exactly the side BA. (a) Which angle of the triangle must be 90°? (b) Name the other altitude of the triangle that is also a side.",
+     "a": "(a) BE lies along BA, so the foot E is the point A, and BA is perpendicular to AC; the angle at A is 90°. (b) The altitude from C to AB is the side CA, since CA is perpendicular to AB.",
+     "s": [
+      [
+       "Part (a): the angle at A is 90 degrees, since BA is perpendicular to AC",
+       1
+      ],
+      [
+       "Part (b): the altitude from C is the side CA",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A paper triangle is folded so that the base lies along itself and the crease passes through the top vertex. Justify why the crease is perpendicular to the base.",
+     "a": "The two parts of the base overlap exactly, so the two angles the crease makes with the base are equal. They also form a straight angle of 180°, so each is 90° and the crease is perpendicular, hence an altitude.",
+     "s": [
+      [
+       "Says the two angles at the crease are equal because the base folds onto itself",
+       1
+      ],
+      [
+       "Says they form a straight angle so each is 90°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Arjun draws a line AD from vertex A to the base BC (D on BC) and measures angle ADB = 80° and angle ABC = 55°. (a) Find angle BAD in his figure. (b) If AD were a true altitude, what would angle BAD be, and by how many degrees is his line off?",
+     "a": "(a) Angle BAD = 180 - 80 - 55 = 45°. (b) For a true altitude angle ADB = 90°, so angle BAD = 180 - 90 - 55 = 35°; his line makes angle BAD 45°, which is 10° off.",
+     "s": [
+      [
+       "Part (a): angle BAD = 45 degrees",
+       1
+      ],
+      [
+       "Part (b): the true value is 35 degrees, so his line is 10 degrees off",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A teacher says: 'The foot of the altitude from a vertex of a triangle lies on the opposite side of the triangle itself.' Is this always, sometimes or never true? Give an example for each case that you find.",
+     "a": "Sometimes. In an acute-angled triangle (for example 60°, 70°, 50°) all three feet lie on the sides, and in a right-angled triangle they also lie on the sides (two feet are at the right-angle vertex). In an obtuse-angled triangle (for example 110°, 35°, 35°) the altitudes from the two acute vertices meet the extended sides beyond the obtuse vertex, so those feet are not on the sides.",
+     "s": [
+      [
+       "Verdict: sometimes, not always",
+       1
+      ],
+      [
+       "Example where the feet lie on the sides, such as an acute or right-angled triangle",
+       1
+      ],
+      [
+       "Example where it fails, an obtuse-angled triangle, with the reason",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In triangle DEF the angle at E is 130°. Show that the perpendicular from D cannot meet the side EF between E and F.",
+     "a": "Suppose it met EF at G between E and F. Then triangle DEG would have angle G = 90° and angle E = 130°, which together make 220°, more than 180°. That cannot happen, so G lies beyond E on the extended side.",
+     "s": [
+      [
+       "Supposes the foot G is between E and F",
+       1
+      ],
+      [
+       "Finds angles 90 and 130 in triangle DEG adding to 220°",
+       1
+      ],
+      [
+       "Concludes this is impossible by the angle sum so the foot is outside",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Describe an acute-angled triangle by its three angles and say where all three altitudes lie. Then change the angles, keeping the sum 180°, so that two altitudes fall outside, and say what kind of triangle you made.",
+     "a": "Acute: 60°, 70°, 50°; all three altitudes lie inside the triangle. Changed: 110°, 35°, 35°; the angle 110° is obtuse, so the altitudes from the two acute vertices fall outside on extended sides. The triangle is obtuse-angled.",
+     "s": [
+      [
+       "An acute set adding to 180° with all altitudes inside",
+       1
+      ],
+      [
+       "An obtuse set adding to 180°",
+       1
+      ],
+      [
+       "Says the two altitudes from the acute vertices fall outside and names it obtuse-angled",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In triangle XYZ, angle Y = 124° and angle X = 36°. (a) Find angle Z. (b) For each of the three altitudes say whether it lies inside the triangle or outside, and give the reason. (c) Let P be the foot of the altitude from X on the line ZY. Find angle XYP. (d) In the right-angled triangle XPY, find angle YXP.",
+     "a": "(a) Z = 180 - 124 - 36 = 20°. (b) The altitude from Y lies inside the triangle. The altitudes from X and from Z lie outside, because the angle at Y is obtuse and their feet fall beyond Y on the extended sides ZY and XY. (c) X, Y, P: P lies on ZY extended beyond Y, so angle XYP = 180 - 124 = 56°. (d) In triangle XPY, angle YXP = 180 - 90 - 56 = 34°.",
+     "s": [
+      [
+       "Part (a): Z = 20°",
+       1
+      ],
+      [
+       "Part (b): inside from Y; outside from X and Z because Y is obtuse",
+       2
+      ],
+      [
+       "Part (c): angle XYP = 56°",
+       1
+      ],
+      [
+       "Part (d): angle YXP = 34°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Show that a triangle cannot have all three of its altitudes outside it. (b) How many altitudes lie outside a triangle with an angle of 100°? (c) How many lie outside a triangle with an angle of 90°? (d) The angles of a triangle are 110°, 40° and 30°. State from which vertex the altitude lies inside it, and from which vertices it lies outside.",
+     "a": "(a) Altitudes lie outside only because of an obtuse angle, and a triangle cannot have two obtuse angles, since two angles of 90° or more already add to 180° or more. So at most two altitudes can lie outside. (b) Two: the altitudes from the two acute-angled vertices. (c) None: two altitudes are sides of the triangle and the third lies inside. (d) The altitude from the 110° vertex lies inside; the altitudes from the vertices with 40° and 30° lie outside.",
+     "s": [
+      [
+       "Part (a): outside altitudes come from an obtuse angle and a triangle has at most one",
+       2
+      ],
+      [
+       "Part (b): two",
+       1
+      ],
+      [
+       "Part (c): none, two are sides and one is inside",
+       1
+      ],
+      [
+       "Part (d): inside from the 110° vertex, outside from the 40° and 30° vertices",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For the annual-day decoration, Mrs Devi cuts triangular flags. To find the height of flag ABC she folds the paper so that the side BC lies along itself, with the crease passing through A and meeting BC at D. Flag PQR has a right angle at Q. Flag XYZ has angle Y = 118°. With a set square, an altitude that lies inside a flag takes her 1 minute to draw and measure, but one that needs a side extended takes 2 minutes. She has only 4 minutes to record heights on flag XYZ.\n(a) What is the crease AD called, and what angle does it make with BC?\n(b) In flag PQR, does the altitude from Q to PR lie inside the flag or along a side?\n(c) For flag XYZ, how many altitudes need a side extended?\n(d) What is the greatest number of heights of flag XYZ she can record in 4 minutes? Show the times.",
+     "a": "(a) AD is an altitude and it makes 90° with BC. (b) Inside the flag, because the foot of the perpendicular from Q lies between P and R on the hypotenuse PR. (c) Two: the altitudes from X and Z need a side extended because the angle at Y is obtuse. (d) The altitude from Y (inside) takes 1 minute, each of the other two takes 2 minutes. All three would take 1 + 2 + 2 = 5 minutes, more than 4, so she cannot record all three; any two fit (Y with one other takes 3 minutes, the two outside ones take exactly 4), so the greatest number is 2.",
+     "s": [
+      [
+       "Part (a): altitude, 90°",
+       1
+      ],
+      [
+       "Part (b): inside the flag, since the foot lies between P and R on the hypotenuse",
+       1
+      ],
+      [
+       "Part (c): two altitudes need a side extended",
+       1
+      ],
+      [
+       "Part (d): 1 + 2 + 2 = 5 minutes exceeds 4, so the greatest number of heights is 2",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A panchayat has three triangular plots. Plot 1 has angles 55°, 60° and 65°. Plot 2 has angles 90°, 40° and 50°. Plot 3 has angles 140°, 25° and 15° at its corners R, T and Y respectively. In Plot 3 a well is to be dug at the foot of a perpendicular. Well A is the foot of the perpendicular from R to the side TY, which needs a 14 m pipe. Well B is the foot of the perpendicular from T to the line RY, which needs an 8 m pipe and also a strip of the neighbour's land costing ₹600. Pipe costs ₹150 per metre. The panchayat rule: a well whose foot lies outside the plot's own boundary is allowed only if it costs at least ₹200 less in total than the choice whose foot lies inside. The panchayat wants the cheapest well that its rule allows.\n(a) In which plot are two of the altitudes sides of the plot?\n(b) In Plot 3, how many altitudes have their foot outside the plot?\n(c) Why does the foot in Well B lie outside the plot?\n(d) Find the total cost of each choice and say which the panchayat should accept, with the reason.",
+     "a": "(a) Plot 2, which has a right angle. (b) Two, those from T and Y. (c) The angle at R is 140°, which is obtuse, so the perpendicular from T meets the line RY beyond R, outside the plot. (d) Well A (foot inside, on TY): 14 x 150 = ₹2,100. Well B (foot outside): 8 x 150 + 600 = ₹1,800. The saving is 2,100 - 1,800 = ₹300, which is at least ₹200, so the outside foot is allowed and the panchayat should accept Well B.",
+     "s": [
+      [
+       "Part (a): Plot 2",
+       1
+      ],
+      [
+       "Part (b): two altitudes, from T and Y",
+       1
+      ],
+      [
+       "Part (c): the foot is beyond R on the extended line since the angle at R is obtuse",
+       1
+      ],
+      [
+       "Part (d): costs ₹2,100 and ₹1,800, saving ₹300 is at least ₹200, so accepts Well B",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Every triangle that has an angle of 50° is acute-angled.\nReason (R): A triangle can have at most one angle that is 90° or more.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The smallest whole number of degrees that the largest angle of any triangle can measure is ___.",
+     "a": "60"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tile-maker needs an obtuse-angled triangular tile whose other two angles are both less than 45°. Which set of angles does she choose?",
+     "a": "110°, 40°, 30°",
+     "o": [
+      "110°, 40°, 30°",
+      "100°, 45°, 35°",
+      "95°, 50°, 35°",
+      "80°, 50°, 50°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In triangle ABC, side BC is extended to D. The exterior angle ACD measures 100° and angle ABC measures 55°. Hari says: 'The exterior angle is obtuse, so the triangle is obtuse-angled.' Which name by angles is correct?",
+     "a": "Acute-angled, since the angles are 55°, 45° and 80°",
+     "o": [
+      "Acute-angled, since the angles are 55°, 45° and 80°",
+      "Obtuse-angled, since the exterior angle is 100°",
+      "Right-angled, since 100° is close to a right angle",
+      "It cannot be named without the third side"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Mira sketches four cards with these angle sets: Card 1: 90°, 60°, 40°. Card 2: 120°, 35°, 25°. Card 3: 59°, 60°, 61°. Card 4: 100°, 50°, 30°. How many of the cards can be real acute-angled triangles?",
+     "a": "1",
+     "o": [
+      "1",
+      "2",
+      "3",
+      "0"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about types of triangles.\nStatement 1: A triangle can have a right angle and an obtuse angle together if its third angle is small enough.\nStatement 2: A triangle in which two angles are 25° and 65° is acute-angled.\nStatement 3: A triangle with angles 59°, 60° and 61° is acute-angled.\nWhich of the statements are correct?",
+     "a": "3 only",
+     "o": [
+      "3 only",
+      "1 only",
+      "1 and 3 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "One angle of a triangular steel plate is 50°, and another angle B is obtuse. What is the greatest whole number of degrees that B can measure?",
+     "a": "129°",
+     "o": [
+      "129°",
+      "130°",
+      "139°",
+      "90°"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each triangle in Column I with its description in Column II.\nColumn I: 1. Two angles 52° and 38°  2. An exterior angle of 70° whose opposite interior angles are 30° and 40°  3. Two angles 61° and 62°  4. Three equal angles\nColumn II: A. Right-angled  B. Obtuse-angled  C. Acute-angled, largest angle 62°  D. Acute-angled, every angle 60°",
+     "a": "1-A, 2-B, 3-C, 4-D",
+     "o": [
+      "1-A, 2-B, 3-C, 4-D",
+      "1-B, 2-A, 3-C, 4-D",
+      "1-A, 2-B, 3-D, 4-C",
+      "1-C, 2-B, 3-A, 4-D"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: An isosceles triangle cannot be obtuse-angled. Give the verdict and a reason that uses a triangle you can describe.",
+     "a": "False. Take AB = AC = 4 cm with the angle at A equal to 130°. Two sides are equal, so it is isosceles, and one angle is more than 90°, so it is obtuse-angled. Naming by sides and naming by angles are separate classifications.",
+     "s": [
+      [
+       "Verdict: false",
+       1
+      ],
+      [
+       "Reason: an example such as sides 4 cm and 4 cm with a 130 degree angle between them",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Mira's box has these sets of side lengths in cm: (5, 5, 8), (3, 4, 9), (7, 7, 14), (4, 6, 9) and (6, 6, 6). (a) Which of the sets can be the sides of a triangle? (b) Name each triangle that can be formed by its sides.",
+     "a": "(a) (5, 5, 8): 8 < 10, yes. (3, 4, 9): 3 + 4 = 7 < 9, no. (7, 7, 14): 7 + 7 = 14, not less than 14, no. (4, 6, 9): 9 < 10, yes. (6, 6, 6): 6 < 12, yes. So three sets form triangles. (b) (5, 5, 8) is isosceles, (4, 6, 9) is scalene and (6, 6, 6) is equilateral.",
+     "s": [
+      [
+       "Part (a): (5,5,8), (4,6,9) and (6,6,6) pass; (3,4,9) and (7,7,14) fail",
+       1
+      ],
+      [
+       "Part (b): isosceles, scalene and equilateral",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle ABC, side BA is extended beyond A and the exterior angle formed at A is 135°. Angle C is 45°. (a) Find angle B. (b) Find the interior angle at A and name the triangle by its angles.",
+     "a": "(a) The exterior angle at A equals the sum of the two opposite interior angles: B + 45 = 135, so B = 90°. (b) The interior angle at A is 180 - 135 = 45°. The angles are 45°, 90° and 45°, so the triangle is right-angled.",
+     "s": [
+      [
+       "Part (a): B = 135 - 45 = 90 degrees",
+       1
+      ],
+      [
+       "Part (b): interior angle A = 45 degrees, right-angled",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular sheet is cut along one diagonal into two triangles. (a) Name each triangle by its angles and give the reason. (b) One of the cut triangles has an angle of 35°. Find its third angle.",
+     "a": "(a) Each triangle contains a corner of the rectangle, which is 90°, so both are right-angled. (b) The angles are 90° and 35°, so the third angle is 180 - 90 - 35 = 55°.",
+     "s": [
+      [
+       "Part (a): both right-angled because each has a 90° corner of the rectangle",
+       1
+      ],
+      [
+       "Part (b): third angle 55°",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rahul measures one angle of a triangular tile as 91°. His friend says: 'Only 1° more than a right angle, so we may still call it a right-angled tile.' (a) What is the correct name by angles? (b) What can you say about the other two angles of the tile?",
+     "a": "(a) Obtuse-angled, because 91° is more than 90°; a right-angled triangle needs an angle of exactly 90°. (b) The other two angles add up to 180 - 91 = 89°, so each is less than 89°; both are acute.",
+     "s": [
+      [
+       "Part (a): obtuse-angled since 91 is more than 90",
+       1
+      ],
+      [
+       "Part (b): they add to 89 degrees, so each is below 89 and acute",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A worksheet states a rule: 'If two angles of a triangle are both acute, the triangle is acute-angled.' Give a counter-example in which the triangle is right-angled and another in which it is obtuse-angled, and say what the rule should be.",
+     "a": "Counter-example 1: angles 40° and 50° are both acute, but the third angle is 180 - 90 = 90°, so the triangle is right-angled. Counter-example 2: angles 30° and 40° are both acute, but the third angle is 110°, so the triangle is obtuse-angled. The correct rule: a triangle is acute-angled only if all three angles are acute, so the third angle must also be checked.",
+     "s": [
+      [
+       "A counter-example giving a right-angled triangle (two acute angles adding to 90°)",
+       1
+      ],
+      [
+       "A counter-example giving an obtuse-angled triangle (two acute angles adding to less than 90°)",
+       1
+      ],
+      [
+       "States the corrected rule: all three angles acute",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that the exterior angle at the vertex of the obtuse angle of a triangle can never be obtuse or right-angled. Give an example with numbers.",
+     "a": "The exterior angle at a vertex is 180° minus the interior angle there. At the obtuse vertex the interior angle is more than 90°, so the exterior angle is less than 180 - 90 = 90°, which means it is acute and can be neither right nor obtuse. Example: interior angle 130° gives exterior angle 50°.",
+     "s": [
+      [
+       "States exterior angle = 180° minus the interior angle at that vertex",
+       1
+      ],
+      [
+       "Interior angle above 90° gives exterior angle below 90°, so not right or obtuse",
+       1
+      ],
+      [
+       "Gives a numerical example such as 130° and 50°",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a pair of angles drawn at the ends of a base (same side) that make a right-angled triangle although neither of the two given angles is 90°, and a pair that make an obtuse-angled triangle although neither of the two given angles is obtuse. Show the third angle in each case.",
+     "a": "Right-angled: 35° and 55°; they add to 90°, so the third angle is 180 - 90 = 90°. Obtuse-angled: 30° and 40°; both are acute and add to 70°, so the third angle is 180 - 70 = 110°, which is obtuse.",
+     "s": [
+      [
+       "A pair of acute angles adding to exactly 90°, such as 35° and 55°",
+       1
+      ],
+      [
+       "A pair of acute angles adding to less than 90°, such as 30° and 40°",
+       1
+      ],
+      [
+       "The third angles 90° and 110° are shown",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Priya claims: 'An equilateral triangle can be made right-angled or obtuse-angled if its sides are long enough.' Use the fact that all three angles of an equilateral triangle are equal. (a) Show that the three equal angles cannot each be 90°. (b) Show that they cannot each be more than 90°. (c) Find what each angle must be, and name every equilateral triangle by its angles. (d) Her friend Zoya says: 'Then no isosceles triangle can be right-angled either.' Test Zoya's claim by describing the construction of a triangle with AB = BC = 4.5 cm and angle B = 90°, and say what it shows. (e) Give your verdict on Priya's claim and on Zoya's claim.",
+     "a": "(a) Three angles of 90° would add up to 270°, not 180°. (b) Three equal angles above 90° would add up to more than 270°, not 180°. (c) Each angle is 180 / 3 = 60°, so every equilateral triangle is acute-angled whatever its side. (d) Draw AB = 4.5 cm, make a 90° angle at B and mark C on the new arm with BC = 4.5 cm; join AC. The triangle has two equal sides (AB and BC) and a right angle, so an isosceles triangle can be right-angled. (e) Priya is wrong (every equilateral triangle is acute-angled) and Zoya is wrong (the construction in (d) gives an isosceles right-angled triangle).",
+     "s": [
+      [
+       "Part (a): 3 x 90 = 270, not 180",
+       1
+      ],
+      [
+       "Part (b): more than 270, so not possible",
+       1
+      ],
+      [
+       "Part (c): each angle 60°, so always acute-angled",
+       1
+      ],
+      [
+       "Part (d): construction with AB = BC = 4.5 cm and 90° at B, giving an isosceles right-angled triangle",
+       1
+      ],
+      [
+       "Part (e): both claims are wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A triangle has angles 50°, k° and (130 - k)° with k a whole number. (a) For which values of k is it right-angled? (b) For which values of k is it acute-angled? (c) Explain why k = 40 and k = 90 give the same triangle by its angles. (d) For k = 130 what goes wrong? (e) For how many whole-number values of k from 1 to 129 is the triangle obtuse-angled?",
+     "a": "(a) Right-angled when k = 90 (angles 50, 90, 40) or 130 - k = 90, that is k = 40 (angles 50, 40, 90). (b) Acute-angled when both k and 130 - k are below 90, that is k from 41 to 89. (c) For k = 40 the angles are 50, 40, 90 and for k = 90 they are 50, 90, 40: the same three angles in a different order. (d) 130 - k = 0, so there is no third angle and no triangle. (e) 129 whole numbers minus the 2 right-angled values and the 49 acute values (41 to 89) leaves 78 obtuse.",
+     "s": [
+      [
+       "Part (a): k = 40 and k = 90",
+       1
+      ],
+      [
+       "Part (b): k from 41 to 89",
+       1
+      ],
+      [
+       "Part (c): same angles in a different order",
+       1
+      ],
+      [
+       "Part (d): the third angle would be 0",
+       1
+      ],
+      [
+       "Part (e): 129 - 2 - 49 = 78",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A surveyor's register lists the corner angles of four plots. Plot A: 48, 67, 65°. Plot B: 90, 28, 62°. Plot C: 22, 31, 127°. Plot D: 55, 60, 75°. The clerk suspects that one entry was typed wrongly. The office can pay for only one re-measurement (₹500), and the clerk will use it on a plot that the angle-sum check has shown to be wrong.\n(a) Which plot's entry cannot be right, and what is its angle sum?\n(b) Classify plots A, B and C by their angles.\n(c) If the angles 60 and 75 for Plot D are correct, what should the first angle be, and what kind of triangle is Plot D then?\n(d) Where should the clerk send the surveyor, and what does the angle-sum check not tell her about plots A, B and C?",
+     "a": "(a) Plot D: 55 + 60 + 75 = 190, not 180°. (b) A acute-angled, B right-angled, C obtuse-angled. (c) 180 - 60 - 75 = 45°; Plot D is then acute-angled. (d) To Plot D, the only plot the check has shown to be wrong. For A, B and C the sum is 180°, so the check does not catch them, but a sum of 180° cannot prove that each separate entry is right.",
+     "s": [
+      [
+       "Part (a): Plot D with sum 190",
+       1
+      ],
+      [
+       "Part (b): acute, right, obtuse",
+       1
+      ],
+      [
+       "Part (c): 45° and acute-angled",
+       1
+      ],
+      [
+       "Part (d): sends the surveyor to Plot D only, and notes that a sum of 180 does not prove A, B and C right",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Mr Iqbal's art class cuts five triangular cards and measures two angles of each. Card P has sides 10 cm, 10 cm, 10 cm and angles 60° and 60°. Card Q has sides 9 cm, 9 cm, 14 cm and angles 39° and 39°. Card R has sides 8 cm, 10 cm, 12 cm and angles 41.4° and 55.8°. Card S has sides 6 cm, 8 cm, 10 cm and angles 36.9° and 53.1°. Card T has sides 7 cm, 8 cm, 9 cm and angles 48.2° and 58.4°.\n(a) Classify each card by its sides.\n(b) Find the third angle of each card and classify each card by its angles.\n(c) Which card has two altitudes that are its own sides?\n(d) For a display the teacher wants a card that is both acute-angled and scalene, with a border costing ₹3 per cm of perimeter, and she wants the cheapest border. Which card should she pick, and what is the border cost?",
+     "a": "(a) P equilateral, Q isosceles, R scalene, S scalene, T scalene. (b) Third angles: P 60°, Q 102°, R 82.8°, S 90°, T 73.4°; so P acute, Q obtuse, R acute, S right, T acute. (c) Card S. (d) The acute scalene cards are R (perimeter 30 cm, border ₹90) and T (perimeter 24 cm, border ₹72); she wants the cheapest border, so she picks T for ₹72.",
+     "s": [
+      [
+       "Part (a): equilateral, isosceles, scalene, scalene, scalene",
+       1
+      ],
+      [
+       "Part (b): third angles 60, 102, 82.8, 90, 73.4 and acute, obtuse, acute, right, acute",
+       1
+      ],
+      [
+       "Part (c): Card S, the right-angled one",
+       1
+      ],
+      [
+       "Part (d): chooses T with border ₹72 against ₹90 for R",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

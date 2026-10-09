@@ -1,0 +1,2859 @@
+{
+  "kind": "dps_pack",
+  "subject": {
+    "code": "MATH",
+    "class": 7,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 3,
+    "name": "Finding Common Ground"
+  },
+  "source_code": "gegp203",
+  "concepts": [
+    {
+      "code": "C7M-3.1",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The HCF of 24 and 36 is 12.\nReason (R): 24 and 36 are both even numbers.",
+          "a": "A and R are both true, but R is not the correct explanation of A.",
+          "o": [
+            "A and R are both true, but R is not the correct explanation of A.",
+            "A and R are both true, and R is the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Kavitha's drawing room is 18 ft by 30 ft. The tile shop sells square tiles of side 6 ft at Rs 500 each, 3 ft at Rs 110 each, 2 ft at Rs 60 each, and 4 ft at Rs 200 each. Whole tiles only, no cutting. (a) Which of the four sizes fit the floor exactly? (b) How many tiles does each fitting size need? (c) What does each fitting size cost in all? (d) Kavitha wants the lowest bill but also few tiles to lay. Which size would you advise, and why?",
+          "a": "(a) 6, 3 and 2 ft fit; 4 ft does not divide 18. (b) 15, 60 and 135 tiles. (c) Rs 7,500; Rs 6,600; Rs 8,100. (d) 3 ft at Rs 6,600 is cheapest, Rs 900 less than 6 ft, though it needs 60 tiles against 15; accept 6 ft only if laying effort is argued to be worth Rs 900.",
+          "s": [
+            [
+              "Part (a): 6, 3, 2 fit and 4 does not divide 18",
+              1
+            ],
+            [
+              "Part (b): 15, 60, 135 tiles",
+              1
+            ],
+            [
+              "Part (c): Rs 7,500, 6,600, 8,100",
+              1
+            ],
+            [
+              "Part (d): a justified choice using cost and number of tiles",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Another name for the highest common factor of two numbers is the",
+          "a": "greatest common divisor",
+          "o": [
+            "greatest common divisor",
+            "lowest common multiple",
+            "least common factor",
+            "greatest common multiple"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Sameeksha's cousin Nikhil has a 20 ft by 45 ft hall and wants the biggest square tiles of whole-foot side. Which side should he buy?",
+          "a": "5 ft",
+          "o": [
+            "5 ft",
+            "1 ft",
+            "15 ft",
+            "180 ft"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "In the jump game the treasures lie on 40 and 56. (a) List every jump size that lands on both. (b) Which is the longest? (c) How many jumps of that size reach each treasure? (d) Explain why a jump of 3 can never land on 40.",
+          "a": "(a) 1, 2, 4, 8. (b) 8. (c) 40/8 = 5 jumps and 56/8 = 7 jumps. (d) 40 is not a multiple of 3, so 3 is not a factor of 40.",
+          "s": [
+            [
+              "Part (a): lists 1, 2, 4 and 8",
+              1
+            ],
+            [
+              "Part (b): longest jump 8",
+              1
+            ],
+            [
+              "Part (c): 5 and 7 jumps",
+              1
+            ],
+            [
+              "Part (d): 3 is not a factor of 40",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that no square tile with a whole-foot side bigger than 1 ft can cover a 20 ft by 33 ft floor exactly.",
+          "a": "A tile of side s fits only if s divides both 20 and 33. 20 has factors 1,2,4,5,10,20 and 33 has 1,3,11,33. The only common factor is 1.",
+          "s": [
+            [
+              "Says the side must divide both lengths",
+              1
+            ],
+            [
+              "Lists factors of 20 and 33",
+              1
+            ],
+            [
+              "Concludes only 1 ft works, so bigger tiles cannot",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "q": "Match each pair of treasure numbers with its longest jump size.\nColumn I: 1. 15 and 25  2. 16 and 24  3. 13 and 17  4. 36 and 60\nColumn II: a. 1  b. 5  c. 8  d. 12",
+          "a": "1-b, 2-c, 3-a, 4-d",
+          "o": [
+            "1-b, 2-c, 3-a, 4-d",
+            "1-b, 2-c, 3-d, 4-a",
+            "1-c, 2-b, 3-a, 4-d",
+            "1-a, 2-c, 3-b, 4-d"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Why can the HCF of two numbers never be more than the smaller number? Use 15 and 40 to show it.",
+          "a": "A common factor must divide the smaller number, and a factor of a number cannot exceed it. For 15 and 40 the HCF is 5, below 15.",
+          "s": [
+            [
+              "Reasons that a factor cannot exceed the smaller number",
+              1
+            ],
+            [
+              "Illustrates with HCF 5 for 15 and 40",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A florist has 54 red and 90 white balloons and makes identical bunches of one colour only, using the fewest bunches. How many balloons go in a bunch?",
+          "a": "18",
+          "o": [
+            "18",
+            "9",
+            "6",
+            "270"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Write the HCF of (a) 11 and 13 and (b) 14 and 42. For (b), say why you need not list any factors.",
+          "a": "(a) 1. (b) 14, because 14 is itself a factor of 42, so the highest common factor is the smaller number.",
+          "s": [
+            [
+              "Part (a): HCF 1 for two primes",
+              1
+            ],
+            [
+              "Part (b): 14, using that it divides 42",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the HCF of 32 and 48 by listing factors. (b) Zoya says 8 is a common factor of 32 and 48 so it is their HCF. Reply to her.",
+          "a": "(a) 32: 1,2,4,8,16,32; 48: 1,2,3,4,6,8,12,16,24,48; HCF 16. (b) 8 is a common factor, but 16 is higher, so 8 is not the HCF.",
+          "s": [
+            [
+              "Part (a): HCF 16 from the two factor lists",
+              1
+            ],
+            [
+              "Part (b): separates a common factor from the highest one",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which list holds ALL the common factors of 18 and 45?",
+          "a": "1, 3 and 9",
+          "o": [
+            "1, 3 and 9",
+            "1, 3, 9 and 18",
+            "3 and 9 only",
+            "1, 2, 3, 5, 6 and 9"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Treasures lie on 21 and 35. Starting from 0, the longest jump size that lands on both is",
+          "a": "7",
+          "o": [
+            "7",
+            "105",
+            "14",
+            "1"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: The HCF of 9 and 25 is 1.\nStatement 2: The HCF of two numbers is always smaller than both of them.\nStatement 3: If the longest jump landing on two numbers is 1, the numbers have no common factor greater than 1.\nWhich of the statements are correct?",
+          "a": "1 and 3 only",
+          "o": [
+            "1 and 3 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "3 only"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Deepa says: 'The longest jump from 0 that lands on both 36 and 90 is 9, which is also their HCF.' Is she right? Give a reason.",
+          "a": "No. A jump of 9 does land on both, but 18 is a longer jump that also lands on both (36 = 2 x 18, 90 = 5 x 18). The longest such jump is the highest common factor, 18, not 9.",
+          "s": [
+            [
+              "Verdict: she is not right",
+              1
+            ],
+            [
+              "Shows a jump of 18 also lands on 36 and 90",
+              1
+            ],
+            [
+              "Longest jump is the highest common factor, 18",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using 18 and 24, state the difference between a common factor and the highest common factor.",
+          "a": "The common factors of 18 and 24 are 1, 2, 3 and 6; the highest of these, 6, is the HCF.",
+          "s": [
+            [
+              "Lists all common factors 1, 2, 3, 6",
+              1
+            ],
+            [
+              "Names 6 as the highest of them",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Make up a problem about cutting two ropes of 90 cm and 150 cm into equal pieces with nothing left, and solve it for the longest piece.",
+          "a": "Problem: Two ropes, 90 cm and 150 cm, are cut into equal pieces as long as possible with no waste. HCF(90,150)=30, so each piece is 30 cm; 3 + 5 = 8 pieces.",
+          "s": [
+            [
+              "Frames a cutting situation needing a common factor",
+              1
+            ],
+            [
+              "Finds HCF 30",
+              1
+            ],
+            [
+              "Interprets as 30 cm pieces and 8 pieces",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Ravi packs 96 apples and 144 oranges into gift baskets. Each basket has one kind of fruit only, and every basket has the same number of fruits. (a) Find the largest basket size. (b) How many baskets does that need? (c) The supplier's boxes hold at most 40 fruits. What is the largest allowed basket size and how many baskets then?",
+          "a": "(a) HCF(96,144) = 48. (b) 2 + 3 = 5 baskets. (c) Common factors are the factors of 48; the largest not above 40 is 24, giving 4 + 6 = 10 baskets.",
+          "s": [
+            [
+              "Part (a): HCF 48",
+              1
+            ],
+            [
+              "Part (b): 5 baskets",
+              1
+            ],
+            [
+              "Part (c): sees allowed sizes are factors of 48 up to 40",
+              1
+            ],
+            [
+              "Part (c): picks 24",
+              1
+            ],
+            [
+              "Part (c): 10 baskets",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A hall floor is 27 ft by 45 ft. (a) List the common factors of 27 and 45. (b) How many square tiles of the largest whole-foot side are needed?",
+          "a": "(a) 1, 3, 9. (b) Side 9 ft: (27/9) x (45/9) = 3 x 5 = 15 tiles.",
+          "s": [
+            [
+              "Part (a): lists the common factors 1, 3 and 9",
+              1
+            ],
+            [
+              "Part (b): picks side 9 and counts 3 x 5 = 15 tiles",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Two fences of lengths 45 m and 75 m are to have posts at equal gaps, with a post at each end of each fence. The gap must be a whole number of metres and the same on both fences. The contractor offers posts of three kinds: gap 15 m (post costs Rs 600), gap 5 m (Rs 150) and gap 3 m (Rs 100); a gap of 2 m was also asked about. (a) Which gaps among 2, 3, 5 and 15 are possible on both fences? (b) How many posts does each possible gap need for the two fences together? (c) What is the cost for each? (d) Should the school choose the largest gap? Recommend a gap.",
+          "a": "(a) 3, 5, 15 (2 does not divide 45). (b) 42, 26 and 10 posts. (c) Rs 4,200; Rs 3,900; Rs 6,000. (d) No: the 5 m gap costs least at Rs 3,900, Rs 2,100 less than the 15 m gap.",
+          "s": [
+            [
+              "Part (a): 3, 5, 15 are common factors; 2 is not",
+              1
+            ],
+            [
+              "Part (b): 42, 26, 10 posts",
+              1
+            ],
+            [
+              "Part (c): Rs 4,200, 3,900, 6,000",
+              1
+            ],
+            [
+              "Part (d): recommends 5 m with the cost comparison",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-3.2",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is the prime factorisation of 252?",
+          "a": "2 x 2 x 3 x 3 x 7",
+          "o": [
+            "2 x 2 x 3 x 3 x 7",
+            "2 x 2 x 3 x 3 x 3 x 7",
+            "2 x 2 x 3 x 3 x 7 x 7",
+            "2 x 3 x 3 x 3 x 7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 200 as a product of primes and say how many factors it has. (b) Use the primes to explain why 16 is not a factor of 200.",
+          "a": "(a) 200 = 2 x 2 x 2 x 5 x 5; it has 12 factors (1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 200). (b) 16 needs four 2s but 200 has only three.",
+          "s": [
+            [
+              "Part (a): primes and 12 factors",
+              1
+            ],
+            [
+              "Part (b): 16 needs four 2s, 200 has three",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Meher conjectures: 'The product of any two primes is odd.' Find a counterexample and explain what it shows.",
+          "a": "2 x 3 = 6 is even (also 2 x 2 = 4). So the conjecture is false; one counterexample is enough to disprove it. The prime 2 is even.",
+          "s": [
+            [
+              "Gives a counterexample such as 2 x 3 = 6",
+              1
+            ],
+            [
+              "States the conjecture is therefore false",
+              1
+            ],
+            [
+              "Explains that one example is enough",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that 7 x 7 x 11 cannot be the prime factorisation of an even number.",
+          "a": "7 x 7 x 11 = 539, which is odd. A product of odd primes is odd, and an even number must have 2 as a prime factor, so 539 cannot be even.",
+          "s": [
+            [
+              "Computes 539",
+              1
+            ],
+            [
+              "Notes it is odd, built from odd primes",
+              1
+            ],
+            [
+              "Links even numbers to the prime 2",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Pooja has 180 beads and wants to string them in rows of equal length. (a) Write 180 as a product of primes. (b) List all the factors of 180. (c) Is the number of factors odd or even? (d) A row must have from 5 to 30 beads. List the possible row lengths and say how many.",
+          "a": "(a) 2 x 2 x 3 x 3 x 5. (b) 1, 2, 3, 4, 5, 6, 9, 10, 12, 15, 18, 20, 30, 36, 45, 60, 90, 180. (c) 18 factors, even. (d) 5, 6, 9, 10, 12, 15, 18, 20, 30: nine row lengths.",
+          "s": [
+            [
+              "Part (a): prime factorisation",
+              1
+            ],
+            [
+              "Part (b): all 18 factors",
+              2
+            ],
+            [
+              "Part (c): 18, even",
+              1
+            ],
+            [
+              "Part (d): nine lengths from 5 to 30",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using 660 = 2 x 2 x 3 x 5 x 11, which of these is NOT a factor of 660?",
+          "a": "2 x 2 x 2 x 11",
+          "o": [
+            "2 x 2 x 2 x 11",
+            "2 x 2 x 3 x 5 x 11",
+            "2 x 2 x 3 x 5 x 1",
+            "2 x 2 x 5 x 11"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 128 and 143 as products of primes. (b) Which number is bigger, which has more primes, and what does this say about 'bigger numbers have longer factorisations'?",
+          "a": "(a) 128 = 2 x 2 x 2 x 2 x 2 x 2 x 2 (seven primes); 143 = 11 x 13 (two primes). (b) 143 is bigger but has fewer primes, so it is a counterexample.",
+          "s": [
+            [
+              "Part (a): both factorisations",
+              1
+            ],
+            [
+              "Part (b): bigger 143, fewer primes, counterexample",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain the words 'conjecture' and 'counterexample' as used in this chapter.",
+          "a": "A conjecture is a claim made without proof or checking. A counterexample is an example for which the claim is false, and one is enough to disprove a conjecture.",
+          "s": [
+            [
+              "Defines conjecture",
+              1
+            ],
+            [
+              "Defines counterexample and its power",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Rahul says: 'Every even number greater than 2 has 2 among its prime factors, and the 2 appears exactly once.' Is he right? Test it on 18, 50 and 40 and give a reason.",
+          "a": "Partly right. The first part holds: 18 = 2 x 3 x 3, 50 = 2 x 5 x 5 and 40 = 2 x 2 x 2 x 5 all contain 2, since an even number is divisible by 2. The second part is wrong: 40 has three 2s.",
+          "s": [
+            [
+              "Verdict: partly right",
+              1
+            ],
+            [
+              "Tests 18, 50 and 40",
+              1
+            ],
+            [
+              "Keeps the first part with its reason and rejects 'exactly once' using 40",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For a wedding in Jaipur, 252 guests will sit at tables with the same number of guests at every table. The hall allows 6 to 20 guests per table, and the caterer charges Rs 300 to set each table. The family wants a comfortable seating but has a budget of about Rs 7,000 for tables. (a) Write 252 as a product of primes. (b) List every allowed number of guests per table. (c) Find the number of tables and the setting cost for each choice. (d) Which choice would you recommend, and why?",
+          "a": "(a) 2 x 2 x 3 x 3 x 7. (b) 6, 7, 9, 12, 14, 18. (c) 42 tables Rs 12,600; 36 Rs 10,800; 28 Rs 8,400; 21 Rs 6,300; 18 Rs 5,400; 14 Rs 4,200. (d) Only 12, 14 and 18 per table are within Rs 7,000; 12 per table (Rs 6,300) is within budget with the least crowding, while 14 or 18 save more money but seat guests closer.",
+          "s": [
+            [
+              "Part (a): prime factorisation",
+              1
+            ],
+            [
+              "Part (b): the six allowed sizes",
+              1
+            ],
+            [
+              "Part (c): tables and cost for each",
+              1
+            ],
+            [
+              "Part (d): a choice within budget with reason",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: A bigger number always has more primes in its factorisation.\nStatement 2: Splitting 18 as 2 x 9 or as 3 x 6 ends with the primes 2, 3 and 3 either way.\nStatement 3: A product of some of the prime factors of a number is itself a prime factor of that number.\nWhich of the statements are correct?",
+          "a": "2 only",
+          "o": [
+            "2 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1 and 3 only"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Is 2 x 2 x 13 a factor of 2 x 2 x 2 x 3 x 3 x 13? If so, what is the other factor and what is the number?",
+          "a": "Yes, since its primes sit inside the larger product. The other factor is 2 x 3 x 3 = 18, and the number is 52 x 18 = 936.",
+          "s": [
+            [
+              "Part (a): yes because every prime is available",
+              1
+            ],
+            [
+              "Part (b): other factor 18 and number 936",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 27 is not a factor of 504.\nReason (R): The prime factorisation 2 x 2 x 2 x 3 x 3 x 7 of 504 has only two 3s, while 27 needs three.",
+          "a": "A and R are both true, and R is the correct explanation of A.",
+          "o": [
+            "A and R are both true, and R is the correct explanation of A.",
+            "A and R are both true, but R is not the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Use the division method on 756. (a) Write its prime factorisation. (b) How many times does each prime occur? (c) Decide which of 16, 27, 36, 42 and 49 are factors of 756, using only the primes. (d) State the rule you used.",
+          "a": "(a) 756 = 2 x 2 x 3 x 3 x 3 x 7. (b) 2 twice, 3 three times, 7 once. (c) 27, 36 and 42 are factors; 16 needs four 2s and 49 needs two 7s. (d) A number is a factor if its primes fit inside the primes of 756 with enough copies of each.",
+          "s": [
+            [
+              "Part (a): correct factorisation",
+              1
+            ],
+            [
+              "Part (b): counts of each prime",
+              1
+            ],
+            [
+              "Part (c): identifies 27, 36, 42",
+              2
+            ],
+            [
+              "Part (d): states the subpart rule",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The prime factorisation of the prime number 29 is",
+          "a": "29 itself",
+          "o": [
+            "29 itself",
+            "1 x 29",
+            "29 x 29",
+            "not possible to write"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Given 495 = 3 x 3 x 5 x 11, Hari groups it as (3 x 11) x __ to show 33 is a factor. What goes in the blank?",
+          "a": "3 x 5 = 15",
+          "o": [
+            "3 x 5 = 15",
+            "3 x 3 x 5 = 45",
+            "5 x 11 = 55",
+            "3 x 5 x 11 = 165"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 468 as a product of primes. (b) Show that 2 x 3 x 13 = 78 is a factor of 468 and find what it must be multiplied by.",
+          "a": "(a) 468 = 2 x 2 x 3 x 3 x 13. (b) Regrouping 468 = (2 x 3 x 13) x (2 x 3), so 468 = 78 x 6.",
+          "s": [
+            [
+              "Part (a): 2 x 2 x 3 x 3 x 13",
+              1
+            ],
+            [
+              "Part (b): regroups the primes to get 78 x 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Priya splits 140 as 14 x 10, Arjun as 4 x 35 and Maya as 2 x 70, and each keeps going until only primes are left. What do they find?",
+          "a": "All three end with 2, 2, 5 and 7 in some order",
+          "o": [
+            "All three end with 2, 2, 5 and 7 in some order",
+            "Only Maya is right since she began with a prime",
+            "Priya's primes differ because 14 and 10 are composite",
+            "Arjun gets two 7s because 35 is odd"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Reordering 126 = 2 x 3 x 3 x 7 as (3 x 7) x (2 x 3) shows that",
+          "a": "21 is a factor of 126 and 126 = 21 x 6",
+          "o": [
+            "21 is a factor of 126 and 126 = 21 x 6",
+            "6 is a prime factor of 126",
+            "21 is not a factor since it is not prime",
+            "126 has only these four factors"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "In the maths club, Anil conjectures: 'Every number has an even number of factors.' Seema tests the numbers 16, 36, 40 and 49 to decide whether the club may display this on the notice board. (a) Find the number of factors of 16 and of 40. (b) Find the number of factors of 36 and of 49. (c) Does the conjecture stand? Name a counterexample. (d) What do the numbers with an odd count of factors have in common, and what should the notice board say?",
+          "a": "(a) 16 has 5 and 40 has 8. (b) 36 has 9 and 49 has 3. (c) No; 16 (or 36 or 49) has an odd number of factors. (d) 16, 36 and 49 are squares of 4, 6 and 7; the board should say the claim is false and mention the odd count for squares seen so far.",
+          "s": [
+            [
+              "Part (a): 5 and 8",
+              1
+            ],
+            [
+              "Part (b): 9 and 3",
+              1
+            ],
+            [
+              "Part (c): conjecture fails, counterexample",
+              1
+            ],
+            [
+              "Part (d): squares noticed, board wording",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-3.3",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To get the HCF from prime factorisations, each common prime is taken",
+          "a": "its smallest count among the numbers",
+          "o": [
+            "its smallest count among the numbers",
+            "its largest count among the numbers",
+            "the number of times it is in the first number",
+            "one time only, whatever the counts are"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A stationer has 264 pencils and 396 erasers and packs them in identical sets of one kind only, using as few sets as possible. (a) Write 264 and 396 as products of primes. (b) Find the biggest set size. (c) How many sets in all? (d) A school asks for sets of 33. Is that possible, and how many sets would it be?",
+          "a": "(a) 264 = 2x2x2x3x11 and 396 = 2x2x3x3x11. (b) 2x2x3x11 = 132. (c) 2 + 3 = 5 sets. (d) 33 = 3x11 divides 132, so yes: 8 + 12 = 20 sets.",
+          "s": [
+            [
+              "Part (a): both factorisations",
+              1
+            ],
+            [
+              "Part (b): HCF 132",
+              1
+            ],
+            [
+              "Part (c): 5 sets",
+              1
+            ],
+            [
+              "Part (d): 33 divides both",
+              1
+            ],
+            [
+              "Part (d): 20 sets",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ishan says: 'The HCF of 2x2x7x7 and 2x7x7x7 is 2x2x7x7x7 = 1372.' Is he right? Explain which counts he must have chosen.",
+          "a": "No. He took the larger count of each prime (two 2s, three 7s), which gives the LCM, 1372. The HCF takes the smaller counts: one 2 and two 7s, so 2 x 7 x 7 = 98.",
+          "s": [
+            [
+              "Verdict: he is not right",
+              1
+            ],
+            [
+              "Identifies that larger counts give the LCM",
+              1
+            ],
+            [
+              "Takes smaller counts to get HCF 98",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The HCF of 54 and 81 is 27.\nReason (R): 54 = 2 x 3 x 3 x 3 and 81 = 3 x 3 x 3 x 3, so the smaller count of 3s is three.",
+          "a": "A and R are both true, and R is the correct explanation of A.",
+          "o": [
+            "A and R are both true, and R is the correct explanation of A.",
+            "A and R are both true, but R is not the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "In the Class 7 sports meet, three sections have 36, 48 and 60 students. Each team has students of one section only and every team has the same number of students. The entry fee is Rs 150 per team and the school can spend at most Rs 4,000 on entry fees. The teacher would also like as many students as possible to captain a team, one captain per team. (a) Find the largest possible team size using prime factorisation. (b) How many teams does each team size 12, 6 and 4 give? (c) Find the entry fee for each. (d) Which team size should the teacher choose, and why?",
+          "a": "(a) 36 = 2x2x3x3, 48 = 2x2x2x2x3, 60 = 2x2x3x5; HCF 12. (b) 12, 24 and 36 teams. (c) Rs 1,800, Rs 3,600, Rs 5,400. (d) Size 4 costs more than Rs 4,000; of 12 and 6, size 6 gives 24 captains for Rs 3,600, within budget, so recommend 6 (size 12 gives only 12 captains).",
+          "s": [
+            [
+              "Part (a): HCF 12 by primes",
+              1
+            ],
+            [
+              "Part (b): 12, 24, 36 teams",
+              1
+            ],
+            [
+              "Part (c): Rs 1,800, 3,600, 5,400",
+              1
+            ],
+            [
+              "Part (d): picks 6 using budget and captains",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Kavya writes 198 = 2 x 3 x 3 x 11 and 252 = 2 x 2 x 3 x 3 x 7. Her HCF should be",
+          "a": "18",
+          "o": [
+            "18",
+            "36",
+            "6",
+            "2772"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The HCF of 2 x 3 x 3 x 5 x 5 and 2 x 2 x 3 x 5 x 7 is",
+          "a": "30",
+          "o": [
+            "30",
+            "6300",
+            "60",
+            "15"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: The HCF of 2 x 2 x 5 x 7 and 2 x 5 x 5 x 11 is 2 x 5 = 10.\nStatement 2: Two composite numbers can still have an HCF of 1.\nStatement 3: The HCF of three numbers uses only primes that occur in all three.\nWhich of the statements are correct?",
+          "a": "1, 2 and 3",
+          "o": [
+            "1, 2 and 3",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1 and 3 only"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the HCF of 60, 90 and 150 using prime factorisation. (b) State how many 2s, 3s and 5s it has and why each count is the smallest present.",
+          "a": "(a) 60 = 2x2x3x5, 90 = 2x3x3x5, 150 = 2x3x5x5; HCF = 2 x 3 x 5 = 30. (b) One 2, one 3, one 5: 90 and 150 each have only one 2, 60 and 150 only one 3, 60 and 90 only one 5.",
+          "s": [
+            [
+              "Part (a): factorises all three and gets 30",
+              1
+            ],
+            [
+              "Part (b): gives the counts with the minimum reason",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Jyoti must find all common factors of 156 and 234. (a) Find the HCF by prime factorisation. (b) List every common factor. (c) How many are there? (d) Explain why prime factorisation is safer than listing the factors of both numbers.",
+          "a": "(a) 156 = 2x2x3x13, 234 = 2x3x3x13, HCF = 2x3x13 = 78. (b) 1, 2, 3, 6, 13, 26, 39, 78. (c) 8. (d) Listing needs 12 factors of each and one missed factor changes the answer; the primes give the HCF directly.",
+          "s": [
+            [
+              "Part (a): HCF 78",
+              1
+            ],
+            [
+              "Part (b): the eight common factors",
+              1
+            ],
+            [
+              "Part (c): eight",
+              1
+            ],
+            [
+              "Part (d): a reasoned comparison of reliability",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the HCF of 36 and 100 by primes, and say why it must be a factor of both numbers.",
+          "a": "36 = 2x2x3x3 and 100 = 2x2x5x5, so HCF = 2x2 = 4. It is built from a subpart of each factorisation, so it divides both.",
+          "s": [
+            [
+              "Finds HCF 4",
+              1
+            ],
+            [
+              "Says it is a subpart of both factorisations",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Sahil writes 84 = 6 x 14 and 126 = 9 x 14 and says 'the HCF is 14'. What is the actual HCF of 84 and 126?",
+          "a": "42",
+          "o": [
+            "42",
+            "14",
+            "84",
+            "3"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which pair of numbers has an HCF of 1?",
+          "a": "35 and 66",
+          "o": [
+            "35 and 66",
+            "35 and 49",
+            "66 and 99",
+            "35 and 55"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the HCF of 169 and 221 from 169 = 13 x 13 and 221 = 13 x 17. (b) Why does the HCF contain only one 13?",
+          "a": "(a) 13. (b) 221 has just one 13, and the HCF can use no more 13s than the number with fewer of them.",
+          "s": [
+            [
+              "Part (a): HCF 13",
+              1
+            ],
+            [
+              "Part (b): minimum count of 13 is one",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write two numbers above 100 whose HCF is 2 x 3 x 5 = 30. Show their prime factorisations and check the HCF.",
+          "a": "For example 150 = 2x3x5x5 and 210 = 2x3x5x7. The common primes are 2, 3, 5 once each, so HCF = 30.",
+          "s": [
+            [
+              "Chooses two numbers over 100 containing 2, 3 and 5",
+              1
+            ],
+            [
+              "Writes their factorisations",
+              1
+            ],
+            [
+              "Checks the HCF is exactly 30",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "q": "Match each pair with its HCF.\nColumn I: 1. 56 and 90  2. 144 and 168  3. 91 and 120  4. 135 and 225\nColumn II: a. 1  b. 2  c. 24  d. 45",
+          "a": "1-b, 2-c, 3-a, 4-d",
+          "o": [
+            "1-b, 2-c, 3-a, 4-d",
+            "1-b, 2-a, 3-c, 4-d",
+            "1-c, 2-b, 3-a, 4-d",
+            "1-b, 2-c, 3-d, 4-a"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the HCF of 48 and 72. (b) Every common factor of 48 and 72 divides the HCF. Use this to list all the common factors.",
+          "a": "(a) 48 = 2x2x2x2x3, 72 = 2x2x2x3x3, HCF = 2x2x2x3 = 24. (b) Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.",
+          "s": [
+            [
+              "Part (a): HCF 24",
+              1
+            ],
+            [
+              "Part (b): lists the eight common factors",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The hostel mess in Pune packs 252 laddus and 378 barfis in gift boxes. Each box holds only one sweet, and all boxes carry the same number of sweets. Boxes come in four sizes: 126 sweets at Rs 90 per box, 63 sweets at Rs 40, 42 sweets at Rs 35 and 21 sweets at Rs 15. (a) Write 252 and 378 as products of primes and find the largest possible box size. (b) How many boxes does each size need in all? (c) What does each size cost? (d) The warden wants low cost but also few boxes to carry. Which size do you recommend and why?",
+          "a": "(a) 252 = 2x2x3x3x7, 378 = 2x3x3x3x7, HCF 126. (b) 5, 10, 15, 30 boxes. (c) Rs 450, Rs 400, Rs 525, Rs 450. (d) 63 per box is cheapest at Rs 400; 126 per box needs only 5 boxes for Rs 50 more. Accept either with a clear reason.",
+          "s": [
+            [
+              "Part (a): factorisations and the largest size 126",
+              1
+            ],
+            [
+              "Part (b): 5, 10, 15, 30 boxes",
+              1
+            ],
+            [
+              "Part (c): Rs 450, 400, 525, 450",
+              1
+            ],
+            [
+              "Part (d): choice with cost against boxes carried",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that 18 cannot be the HCF of 126 = 2x3x3x7 and 210 = 2x3x5x7.",
+          "a": "18 = 2x3x3 needs two 3s, but 210 has only one 3, so 18 does not divide 210 and is not a common factor. The HCF is 2x3x7 = 42.",
+          "s": [
+            [
+              "Writes 18 as 2x3x3",
+              1
+            ],
+            [
+              "Shows 210 has only one 3",
+              1
+            ],
+            [
+              "Gives the true HCF 42",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 396 and 540 as products of primes. (b) Find their HCF.",
+          "a": "(a) 396 = 2x2x3x3x11 and 540 = 2x2x3x3x3x5. (b) HCF = 2x2x3x3 = 36.",
+          "s": [
+            [
+              "Part (a): both factorisations",
+              1
+            ],
+            [
+              "Part (b): HCF 36 from the common subpart",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-3.4",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about the common multiples of 9 and 15 is true?",
+          "a": "Endlessly many; the first is 45",
+          "o": [
+            "Endlessly many; the first is 45",
+            "There is a largest one, namely 45",
+            "The first one is 135, the product",
+            "The only one is 45, the LCM"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A shop sells pens in boxes of 9 and pencils in boxes of 12. Ananya wants equal numbers of pens and pencils. What is the smallest equal number she can buy?",
+          "a": "36",
+          "o": [
+            "36",
+            "3",
+            "108",
+            "72"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "At a bus stand in Nashik, route A buses leave every 18 minutes and route B buses every 24 minutes. Both leave together at 7:00 a.m. The manager wants to add a route C. A C-bus every 30 minutes costs Rs 2,000 a day more to run than a C-bus every 36 minutes. The manager dislikes all three leaving together because the stand gets crowded, and watches the period from 7:00 a.m. to 1:00 p.m. (a) After how many minutes do A and B next leave together? (b) How many times do A and B leave together from 7:00 a.m. to 10:00 a.m., counting 7:00 a.m. (c) How many times do all three leave together from 7:00 a.m. to 1:00 p.m., counting both ends, for a C-bus every 30 minutes and for every 36 minutes? (d) Which C-route do you recommend, and why?",
+          "a": "(a) LCM(18,24) = 72 minutes. (b) At 0, 72 and 144 minutes: 3 times. (c) Every 30: LCM 360, so 2 times; every 36: LCM 72, so 6 times. (d) Every 30 minutes gives only 2 crowded departures against 6 for an extra Rs 2,000 a day; accept the 36-minute route only if the cost saving is argued to outweigh 4 more crowded departures.",
+          "s": [
+            [
+              "Part (a): 72 minutes",
+              1
+            ],
+            [
+              "Part (b): 3 times",
+              1
+            ],
+            [
+              "Part (c): 2 and 6 times",
+              1
+            ],
+            [
+              "Part (d): a choice that weighs Rs 2,000 against crowding",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The LCM of 2 x 2 x 3 and 2 x 3 x 3 x 5 is",
+          "a": "180",
+          "o": [
+            "180",
+            "6",
+            "1080",
+            "60"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Meera is buying diyas in packs of 18 at Rs 45 a pack and rangoli colour sachets in packs of 12 at Rs 30 a pack. She wants the same number of diyas and sachets and needs at least 100 of each. The shop offers Rs 150 off if she buys 144 of each. Her budget is Rs 600. (a) What is the smallest equal number of diyas and sachets she could buy with no minimum? (b) What is the smallest equal number that is at least 100? (c) How many packs of each, and what is the cost, for that number? (d) Is it worth taking the 144 offer? Decide.",
+          "a": "(a) LCM(18,12) = 36. (b) Multiples of 36: 108 is the first at least 100. (c) 6 diya packs and 9 sachet packs cost 270 + 270 = Rs 540. (d) 144 needs 8 and 12 packs: 360 + 360 = Rs 720, less Rs 150 = Rs 570, within the budget; it gives 36 more of each for Rs 30 more, so it is worth taking unless she does not need extras.",
+          "s": [
+            [
+              "Part (a): LCM 36",
+              1
+            ],
+            [
+              "Part (b): 108",
+              1
+            ],
+            [
+              "Part (c): 6 and 9 packs, Rs 540",
+              1
+            ],
+            [
+              "Part (d): Rs 570 against Rs 540 with a decision",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the LCM of 40 and 100 using primes. (b) Why does it contain three 2s but only two 5s?",
+          "a": "(a) 40 = 2x2x2x5 and 100 = 2x2x5x5, LCM = 2x2x2x5x5 = 200. (b) 40 has three 2s and 100 has two 5s; the LCM needs the larger count of each prime so that both numbers fit inside it.",
+          "s": [
+            [
+              "Part (a): LCM 200",
+              1
+            ],
+            [
+              "Part (b): uses the greater count of each prime",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Gauri says: 'Every common multiple of 8 and 12 is a multiple of 24, and 24 is the only common multiple below 100.' Test it on 48, 72 and 96 and say whether she is right.",
+          "a": "Partly right. 48 = 2x24, 72 = 3x24 and 96 = 4x24 are common multiples and all are multiples of the LCM 24, so the first part holds. But the second part is false: 48, 72 and 96 are also common multiples below 100.",
+          "s": [
+            [
+              "Verdict: partly right",
+              1
+            ],
+            [
+              "Tests 48, 72, 96",
+              1
+            ],
+            [
+              "Keeps the first part and rejects the 'only one below 100' part",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is a common multiple of 12 and 18 but NOT their LCM?",
+          "a": "72",
+          "o": [
+            "72",
+            "36",
+            "54",
+            "48"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For 10 and 15, find the HCF and the LCM and say which is a factor of both numbers and which is a multiple of both.",
+          "a": "HCF = 5, a factor of both; LCM = 30, a multiple of both.",
+          "s": [
+            [
+              "States HCF 5 as a common factor",
+              1
+            ],
+            [
+              "States LCM 30 as a common multiple",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Dev says: 'The LCM of two numbers is always bigger than both of them.' Find a counterexample with 5 and 15 and explain.",
+          "a": "The LCM of 5 and 15 is 15, which is not bigger than 15. When one number is a factor of the other, the LCM is the larger number, so the statement is false.",
+          "s": [
+            [
+              "Verdict: the claim is false",
+              1
+            ],
+            [
+              "Counterexample: LCM of 5 and 15 is 15",
+              1
+            ],
+            [
+              "Explains the factor case",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Three joggers start together at 5:30 a.m. from the school gate. They complete a round in 12, 15 and 20 minutes. (a) Write the three numbers as products of primes. (b) After how many minutes are all three at the gate together again? (c) At what time is this? (d) How many times in the first 4 hours after the start are they at the gate together, not counting the start?",
+          "a": "(a) 12 = 2x2x3, 15 = 3x5, 20 = 2x2x5. (b) LCM = 2x2x3x5 = 60 minutes. (c) 6:30 a.m. (d) 240 / 60 = 4 times.",
+          "s": [
+            [
+              "Part (a): three factorisations",
+              1
+            ],
+            [
+              "Part (b): LCM 60",
+              1
+            ],
+            [
+              "Part (c): 6:30 a.m.",
+              1
+            ],
+            [
+              "Part (d): 240 / 60 = 4 times",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two temple bells ring every 15 minutes and every 25 minutes. They ring together at 6:00 a.m. When do they next ring together?",
+          "a": "7:15 a.m.",
+          "o": [
+            "7:15 a.m.",
+            "6:05 a.m.",
+            "6:40 a.m.",
+            "12:15 p.m."
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Mahi lays two borders. One uses tiles 18 cm long and the other uses tiles 24 cm long, placed end to end, and both borders must have the same length. (a) Find the shortest length both can make. (b) How many tiles of each kind does that need? (c) The borders must be at least 200 cm. Find the shortest length now. (d) How many tiles of each kind in (c)?",
+          "a": "(a) LCM of 18 and 24 is 72 cm. (b) 4 tiles and 3 tiles. (c) Multiples of 72 are 72, 144, 216, so 216 cm. (d) 216/18 = 12 and 216/24 = 9 tiles.",
+          "s": [
+            [
+              "Part (a): LCM 72",
+              1
+            ],
+            [
+              "Part (b): 4 and 3 tiles",
+              1
+            ],
+            [
+              "Part (c): next multiple 216 cm",
+              2
+            ],
+            [
+              "Part (d): 12 and 9 tiles",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) List the first four multiples of 15 and of 20. (b) Use the lists to find the LCM of 15 and 20.",
+          "a": "(a) 15, 30, 45, 60 and 20, 40, 60, 80. (b) The first number in both lists is 60, so the LCM is 60.",
+          "s": [
+            [
+              "Part (a): both lists of four multiples",
+              1
+            ],
+            [
+              "Part (b): picks the first common multiple 60",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The LCM of 14 and 21 is 42.\nReason (R): 14 and 21 are both multiples of 7.",
+          "a": "A and R are both true, but R is not the correct explanation of A.",
+          "o": [
+            "A and R are both true, but R is not the correct explanation of A.",
+            "A and R are both true, and R is the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the LCM of 9, 15 and 25 using primes. (b) Show that 450 is a common multiple of the three but not the lowest.",
+          "a": "(a) 9 = 3x3, 15 = 3x5, 25 = 5x5, LCM = 3x3x5x5 = 225. (b) 450 = 2 x 225 so each divides it, but 225 is smaller.",
+          "s": [
+            [
+              "Part (a): LCM 225",
+              1
+            ],
+            [
+              "Part (b): 450 = 2 x 225, a larger common multiple",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: Two numbers have endlessly many common multiples.\nStatement 2: The LCM of two co-prime numbers is smaller than their product.\nStatement 3: The LCM of 8 and 20 is 20.\nWhich of the statements are correct?",
+          "a": "1 only",
+          "o": [
+            "1 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "3 only"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that 80 cannot be the LCM of 15 and 20, although it is a multiple of 20.",
+          "a": "80 divided by 15 leaves a remainder of 5, so 80 is not a multiple of 15 and not a common multiple at all. The LCM is 60.",
+          "s": [
+            [
+              "Notes 80 is a multiple of 20",
+              1
+            ],
+            [
+              "Shows 80 is not a multiple of 15",
+              1
+            ],
+            [
+              "States the LCM is 60",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The LCM of 16 and 24 is",
+          "a": "48",
+          "o": [
+            "48",
+            "8",
+            "384",
+            "96"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 56 and 98 as products of primes. (b) Build their LCM.",
+          "a": "(a) 56 = 2x2x2x7 and 98 = 2x7x7. (b) Three 2s and two 7s: 2x2x2x7x7 = 392.",
+          "s": [
+            [
+              "Part (a): both factorisations",
+              1
+            ],
+            [
+              "Part (b): LCM 392 using the highest counts",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-3.5",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The HCF of 2n and 2n + 2 is 2 for every counting number n.\nReason (R): Both 2n and 2n + 2 are even numbers.",
+          "a": "A and R are both true, but R is not the correct explanation of A.",
+          "o": [
+            "A and R are both true, but R is not the correct explanation of A.",
+            "A and R are both true, and R is the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If n is a counting number, the HCF of n and 9n is",
+          "a": "n",
+          "o": [
+            "n",
+            "9",
+            "9n",
+            "1"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Mr. Bose has four sections of Class 7: A with 44 students, B with 45, C with 46 and D with 48. For a quiz he picks two sections. Each team must hold students of one section only, every team must have the same number of students, and he wants the biggest teams so that there are the fewest teams to score. (a) Without listing factors, state the HCF for the pairs A and B and for B and C, and give the reason. (b) State the HCF for A and C. (c) Find the HCF for A with D and for B with D. (d) Which pair of sections should he choose and how many teams will there be?",
+          "a": "(a) A and B, and B and C, are consecutive numbers, so the HCF is 1. (b) 44 and 46 are consecutive even numbers, so 2. (c) HCF(44,48) = 4 and HCF(45,48) = 3. (d) Sections A and D give teams of 4: 11 + 12 = 23 teams, fewer than the 31 teams from B and D.",
+          "s": [
+            [
+              "Part (a): both pairs consecutive, HCF 1",
+              1
+            ],
+            [
+              "Part (b): consecutive evens give 2",
+              1
+            ],
+            [
+              "Part (c): 4 and 3",
+              1
+            ],
+            [
+              "Part (d): chooses A and D with 23 teams",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Sana claims: 'The HCF of n and n + 3 is 3 when n is a multiple of 3, and 1 otherwise.' Test it on the pairs (9, 12), (10, 13) and (7, 10) and decide whether it is right.",
+          "a": "Yes. HCF(9,12) = 3, HCF(10,13) = 1 and HCF(7,10) = 1. A common factor divides the difference 3, so it is 1 or 3, and it is 3 exactly when 3 divides n.",
+          "s": [
+            [
+              "Verdict: she is right",
+              1
+            ],
+            [
+              "Tests the three pairs",
+              1
+            ],
+            [
+              "Reason: common factor divides the difference 3",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The HCF of any two consecutive odd numbers is",
+          "a": "1",
+          "o": [
+            "1",
+            "2",
+            "the smaller number",
+            "the product of the numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) What is the LCM of 12 and 60? (b) What is the LCM of n and 9n? Say what your answers show.",
+          "a": "(a) 60. (b) 9n. When one number is a factor of the other, the LCM is the larger number.",
+          "s": [
+            [
+              "Part (a): 60",
+              1
+            ],
+            [
+              "Part (b): 9n and the factor rule",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Take the numbers 18 and 42. (a) Find their HCF. (b) Double both numbers and find the new HCF. (c) Triple the original numbers and find the HCF. (d) Predict the HCF if both original numbers are multiplied by 10, and explain with prime factorisations why the pattern holds.",
+          "a": "(a) 6. (b) 36 and 84 have HCF 12. (c) 54 and 126 have HCF 18. (d) 60. Multiplying both numbers by k adds the factor k to both factorisations, so k appears in the largest common subpart and the HCF is multiplied by k.",
+          "s": [
+            [
+              "Part (a): HCF 6",
+              1
+            ],
+            [
+              "Part (b): HCF 12",
+              1
+            ],
+            [
+              "Part (c): HCF 18",
+              1
+            ],
+            [
+              "Part (d): predicts 60",
+              1
+            ],
+            [
+              "Part (d): explains the extra common factor",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The maths club wants to put one statement about multiples of 5 on its poster. Anil's draft says: 'The HCF of two multiples of 5 is exactly 5.' Priya suggests: 'The HCF of two multiples of 5 is at least 5.' The club tests both with the pairs (35, 60) and (20, 50) and also looks at the LCM of (15, 20). (a) Find the HCF of each tested pair. (b) Does Anil's draft survive? Name the pair that decides it. (c) Does Priya's statement survive the tests? (d) Which wording should go on the poster, and what better rule connects the HCF to the multipliers?",
+          "a": "(a) HCF(35,60) = 5 and HCF(20,50) = 10. (b) No; (20, 50) has HCF 10, a counterexample. (c) Yes; both HCFs are at least 5. (d) Priya's wording; the better rule is that the HCF of 5a and 5b is 5 times the HCF of a and b (35 = 5x7, 60 = 5x12, HCF 5 x 1).",
+          "s": [
+            [
+              "Part (a): 5 and 10",
+              1
+            ],
+            [
+              "Part (b): Anil's draft fails because of (20, 50)",
+              1
+            ],
+            [
+              "Part (c): at least 5 holds",
+              1
+            ],
+            [
+              "Part (d): chooses Priya and states 5 x HCF of multipliers",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "q": "Match each pair or type of pair with the statement about its HCF.\nColumn I: 1. two consecutive odd numbers  2. two consecutive even numbers  3. n and 8n  4. two multiples of 6\nColumn II: a. HCF is 2  b. HCF is 1  c. HCF is n, the smaller number  d. HCF is at least 6",
+          "a": "1-b, 2-a, 3-c, 4-d",
+          "o": [
+            "1-b, 2-a, 3-c, 4-d",
+            "1-a, 2-b, 3-c, 4-d",
+            "1-b, 2-a, 3-d, 4-c",
+            "1-c, 2-a, 3-b, 4-d"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Without listing factors, find the HCF of 13 and 91. (b) State the general rule for n and kn.",
+          "a": "(a) 91 = 7 x 13, so 13 is a factor of 91 and the HCF is 13. (b) The HCF of n and kn is n.",
+          "s": [
+            [
+              "Part (a): 13 because one number is a multiple of the other",
+              1
+            ],
+            [
+              "Part (b): HCF of n and kn is n",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State the HCF and the LCM of the consecutive numbers 17 and 18.",
+          "a": "HCF = 1 and LCM = 17 x 18 = 306.",
+          "s": [
+            [
+              "HCF 1",
+              1
+            ],
+            [
+              "LCM 306 equals the product",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The HCF of 45 and 75 is 15. Rajni doubles both numbers to get 90 and 150. Their HCF is",
+          "a": "30",
+          "o": [
+            "30",
+            "15",
+            "60",
+            "45"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the HCF of 9 x 8 and 9 x 20 by finding the HCF of 8 and 20 first. (b) Check by writing 72 and 180 as products of primes.",
+          "a": "(a) HCF(8,20) = 4, so the HCF is 9 x 4 = 36. (b) 72 = 2x2x2x3x3 and 180 = 2x2x3x3x5, HCF = 2x2x3x3 = 36.",
+          "s": [
+            [
+              "Part (a): multiplier idea gives 36",
+              1
+            ],
+            [
+              "Part (b): primes agree with 36",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the HCF of 14 and 16, and of 40 and 42. (b) Explain in a line why consecutive even numbers always give the same HCF.",
+          "a": "(a) Both are 2. (b) A common factor divides the difference 2, so it is 1 or 2, and 2 divides both even numbers.",
+          "s": [
+            [
+              "Part (a): HCF 2 in both cases",
+              1
+            ],
+            [
+              "Part (b): common factor divides the difference 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Ritu studies pairs of consecutive odd numbers: (9, 11), (15, 17) and (21, 23). (a) Find the HCF of each pair. (b) Find the LCM of each pair. (c) State what you notice about the HCF and the LCM. (d) Predict the HCF and LCM of 99 and 101 and explain why your prediction must be true.",
+          "a": "(a) 1, 1, 1. (b) 99, 255, 483. (c) The HCF is 1 and the LCM equals the product. (d) HCF 1 and LCM 9999: the difference is 2 and both are odd, so the HCF cannot be 2 and must be 1; with HCF 1 the LCM is the product.",
+          "s": [
+            [
+              "Part (a): all HCFs 1",
+              1
+            ],
+            [
+              "Part (b): 99, 255, 483",
+              1
+            ],
+            [
+              "Part (c): HCF 1 and LCM = product",
+              1
+            ],
+            [
+              "Part (d): predicts 1 and 9999",
+              1
+            ],
+            [
+              "Part (d): reasons from the difference 2 and oddness",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write one pair of multiples of 9 whose HCF is exactly 9, and another pair whose HCF is 27. Show the multipliers you chose.",
+          "a": "For HCF 9: 9 x 4 = 36 and 9 x 7 = 63 (multipliers 4 and 7 are co-prime). For HCF 27: 9 x 6 = 54 and 9 x 9 = 81 (HCF of 6 and 9 is 3, so 9 x 3 = 27).",
+          "s": [
+            [
+              "First pair with co-prime multipliers",
+              1
+            ],
+            [
+              "Second pair with multipliers having HCF 3",
+              1
+            ],
+            [
+              "Checks both HCFs",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that two consecutive numbers cannot have an HCF of 2.",
+          "a": "A common factor of n and n + 1 divides their difference 1, so it can only be 1. A common factor of 2 would need both numbers to be even, but consecutive numbers include an odd one.",
+          "s": [
+            [
+              "Common factor divides the difference 1",
+              1
+            ],
+            [
+              "So the HCF can only be 1",
+              1
+            ],
+            [
+              "Notes one of two consecutive numbers is odd",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: The HCF of two even numbers is always 2.\nStatement 2: The LCM of two consecutive numbers is smaller than their product.\nStatement 3: If both of two numbers are tripled, their HCF is also tripled.\nWhich of the statements are correct?",
+          "a": "3 only",
+          "o": [
+            "3 only",
+            "1 and 3 only",
+            "2 and 3 only",
+            "1 only"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If m and n are two different primes, their LCM is",
+          "a": "m x n",
+          "o": [
+            "m x n",
+            "less than m x n",
+            "m + n",
+            "the larger of m and n"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two even numbers, such as 12 and 36, always have an HCF that is",
+          "a": "at least 2",
+          "o": [
+            "at least 2",
+            "exactly 2",
+            "equal to 1",
+            "an odd number"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A sweet shop has 35 laddus and 36 pedas and packs identical sets of one kind only. What is the largest possible set size?",
+          "a": "1",
+          "o": [
+            "1",
+            "35",
+            "36",
+            "6"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-3.6",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A cloth merchant in Surat has two bolts of cloth. The HCF of their lengths is 14 m and the LCM is 420 m. One bolt is 84 m long. He plans to cut both bolts into pieces of equal length with nothing left over. Pieces of 14 m sell at Rs 90 each and pieces of 7 m sell at Rs 40 each. (a) Find the length of the other bolt. (b) Show that the HCF and LCM of the two lengths are really 14 and 420. (c) How many pieces does he get if the pieces are as long as possible? (d) Which piece length gives him more money, and by how much?",
+          "a": "(a) 14 x 420 / 84 = 70 m. (b) 84 = 2x2x3x7 and 70 = 2x5x7, HCF = 14 and LCM = 2x2x3x5x7 = 420. (c) 6 + 5 = 11 pieces. (d) 11 x 90 = Rs 990 against 22 x 40 = Rs 880, so 14 m pieces earn Rs 110 more; 7 m pieces suit a customer who needs short lengths.",
+          "s": [
+            [
+              "Part (a): 70 m using the product rule",
+              1
+            ],
+            [
+              "Part (b): primes confirm 14 and 420",
+              1
+            ],
+            [
+              "Part (c): 11 pieces",
+              1
+            ],
+            [
+              "Part (d): Rs 990 against Rs 880, Rs 110 more",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Find two numbers whose HCF is 5 and LCM is 60. Say how you used the product rule.",
+          "a": "Their product is 5 x 60 = 300. The numbers 15 and 20 give 300, with HCF 5 and LCM 60. (5 and 60 also work.)",
+          "s": [
+            [
+              "Finds the product 300",
+              1
+            ],
+            [
+              "Gives a valid pair such as 15 and 20",
+              1
+            ],
+            [
+              "Checks HCF 5 and LCM 60",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The HCF of two numbers is 6 and their LCM is 360. If one number is 24, the other is",
+          "a": "90",
+          "o": [
+            "90",
+            "15",
+            "60",
+            "144"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For a Diwali show, two lamps blink every 18 seconds and every 30 seconds, starting together. A third lamp will blink either every 45 seconds (cost Rs 300) or every 36 seconds (cost Rs 200). The show lasts 6 minutes. The committee wants all three lamps to blink together at least twice after the start, but would like to save money. (a) Use a division table to find when the first two lamps next blink together. (b) Check that HCF x LCM equals 18 x 30. (c) Priya says the three-lamp LCM for 18, 30, 45 is the product divided by the HCF. Test her. (d) How many times do all three blink together after the start in 360 seconds with each choice, and which lamp do you recommend?",
+          "a": "(a) Divisors 2, 3 leave 3 and 5, so HCF 6 and LCM 6 x 3 x 5 = 90 seconds. (b) 6 x 90 = 540 = 18 x 30. (c) HCF of 18, 30, 45 is 3, so 24300 / 3 = 8100, but the true LCM is 90; Priya is wrong for three numbers. (d) The 45 s lamp gives LCM 90, so 4 joint blinks; the 36 s lamp gives LCM 180, so 2 joint blinks. Both meet the target of two; the 36 s lamp saves Rs 100 and the 45 s lamp gives twice as many joint blinks; accept either with a reason.",
+          "s": [
+            [
+              "Part (a): 90 seconds from the table",
+              1
+            ],
+            [
+              "Part (b): 540 on both sides",
+              1
+            ],
+            [
+              "Part (c): 8100 against the true 90",
+              1
+            ],
+            [
+              "Part (d): 4 and 2 joint blinks with a reasoned choice",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the division method for two numbers, we stop dividing when",
+          "a": "the two numbers left have no common prime factor",
+          "o": [
+            "the two numbers left have no common prime factor",
+            "the two numbers left are both 1",
+            "one of the numbers left becomes prime",
+            "the divisor reaches 10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Divide 126 and 198 by 2, by 3 and by 3 again, which leaves 7 and 11. (a) Find the HCF. (b) Find the LCM.",
+          "a": "(a) The divisors are 2, 3, 3, so HCF = 18. (b) LCM = 18 x 7 x 11 = 1386.",
+          "s": [
+            [
+              "Part (a): multiplies the divisors to get 18",
+              1
+            ],
+            [
+              "Part (b): multiplies by the last row, 1386",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Meena divides 210 and 330 by 2, then 3, then 5 and gets 7 and 11 in the last row. Her HCF and LCM are",
+          "a": "30 and 2310",
+          "o": [
+            "30 and 2310",
+            "30 and 77",
+            "10 and 2310",
+            "2310 and 30"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Imran finds the HCF and LCM of 216 and 360 by dividing both numbers by 24 first, getting 9 and 15, and then by 3, getting 3 and 5. (a) What HCF and LCM does he get? (b) Suppose he had stopped after dividing by 24. What HCF would he have written? (c) Why would that be wrong? (d) Is his two-step table a valid alternative to dividing by primes one at a time?",
+          "a": "(a) HCF = 24 x 3 = 72 and LCM = 72 x 3 x 5 = 1080. (b) 24. (c) 9 and 15 still share the factor 3, so a bigger common factor remains. (d) Yes, any common factor may be divided out, provided the last row has no common prime factor.",
+          "s": [
+            [
+              "Part (a): HCF 72 and LCM 1080",
+              2
+            ],
+            [
+              "Part (b): 24",
+              1
+            ],
+            [
+              "Part (c): 9 and 15 share 3",
+              1
+            ],
+            [
+              "Part (d): valid when the last row is co-prime",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two numbers have HCF 12 and product 720. Their LCM is",
+          "a": "60",
+          "o": [
+            "60",
+            "708",
+            "8640",
+            "732"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The LCM of 21 and 35 is 105.\nReason (R): The HCF of 21 and 35 is 7, and 21 x 35 divided by 7 gives the LCM.",
+          "a": "A and R are both true, and R is the correct explanation of A.",
+          "o": [
+            "A and R are both true, and R is the correct explanation of A.",
+            "A and R are both true, but R is not the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Isha says: 'For three numbers the LCM is their product divided by their HCF.' Test this with 4, 6 and 10 and give your verdict.",
+          "a": "HCF of 4, 6, 10 is 2 and the product is 240, so the rule gives 120. The true LCM is 60, so Isha's rule fails for three numbers; the product rule is for two numbers.",
+          "s": [
+            [
+              "Computes HCF 2 and product 240, giving 120",
+              1
+            ],
+            [
+              "Finds the true LCM 60",
+              1
+            ],
+            [
+              "Verdict: the rule does not extend to three numbers",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "For 168 and 252 the division table has divisors 2, 2, 3, 7 and ends with the last row 2 and 3. (a) Find the HCF. (b) Find the LCM. (c) Check that HCF x LCM equals the product. (d) Show a shorter table that starts by dividing both numbers by 28.",
+          "a": "(a) 2 x 2 x 3 x 7 = 84. (b) 84 x 2 x 3 = 504. (c) 84 x 504 = 42336 = 168 x 252. (d) 168/28 = 6 and 252/28 = 9; dividing by 3 gives 2 and 3, so HCF = 28 x 3 = 84 and LCM = 84 x 2 x 3 = 504.",
+          "s": [
+            [
+              "Part (a): HCF 84",
+              1
+            ],
+            [
+              "Part (b): LCM 504",
+              1
+            ],
+            [
+              "Part (c): both sides 42336",
+              1
+            ],
+            [
+              "Part (d): divides by 28 then 3",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The HCF of two numbers is 9 and their LCM is 270. One number is 54. (a) Find the other number. (b) Confirm using prime factorisations.",
+          "a": "(a) 9 x 270 / 54 = 45. (b) 54 = 2x3x3x3 and 45 = 3x3x5: HCF 3x3 = 9, LCM 2x3x3x3x5 = 270.",
+          "s": [
+            [
+              "Part (a): 45",
+              1
+            ],
+            [
+              "Part (b): primes confirm HCF 9 and LCM 270",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: In the division method the LCM is the product of the divisors only.\nStatement 2: HCF x LCM equals the product for any two counting numbers.\nStatement 3: The LCM of two numbers is never more than their product.\nWhich of the statements are correct?",
+          "a": "2 and 3 only",
+          "o": [
+            "2 and 3 only",
+            "1 and 2 only",
+            "1 and 3 only",
+            "3 only"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For 18 and 27 the product is 486. Explain why 486 is a common multiple of both, and what this says about their LCM.",
+          "a": "486 = 18 x 27 is a multiple of 18 (27 times) and of 27 (18 times). The LCM is the lowest common multiple, so it cannot exceed 486; here it is 54.",
+          "s": [
+            [
+              "Shows the product is a multiple of each",
+              1
+            ],
+            [
+              "Concludes the LCM is at most the product",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the division method, the HCF is found by multiplying",
+          "a": "all the divisors used",
+          "o": [
+            "all the divisors used",
+            "the numbers in the last row",
+            "the first row numbers",
+            "the divisors and the last row together"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Divide 144 and 240 directly by their common factor 48 and find the HCF and LCM. (b) Verify that HCF x LCM equals the product of the numbers.",
+          "a": "(a) 144/48 = 3 and 240/48 = 5 have no common factor, so HCF = 48 and LCM = 48 x 3 x 5 = 720. (b) 48 x 720 = 34560 = 144 x 240.",
+          "s": [
+            [
+              "Part (a): HCF 48 and LCM 720",
+              1
+            ],
+            [
+              "Part (b): both sides 34560",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For 20 and 30, write the HCF, the LCM and the product, and show how they are related.",
+          "a": "HCF = 10, LCM = 60, product = 600, and 10 x 60 = 600.",
+          "s": [
+            [
+              "HCF 10 and LCM 60",
+              1
+            ],
+            [
+              "Shows HCF x LCM = 600 = product",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Kabir divides 72 and 108 by 12 and gets 6 and 9, then stops. A friend says he must go on. What are the correct HCF and LCM?",
+          "a": "36 and 216",
+          "o": [
+            "36 and 216",
+            "12 and 648",
+            "36 and 6",
+            "3 and 216"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that two numbers with HCF 8 cannot have LCM 100.",
+          "a": "The LCM of two numbers is a multiple of each number, and each number is a multiple of the HCF 8, so the LCM must be a multiple of 8. 100 / 8 leaves a remainder of 4, so it is impossible.",
+          "s": [
+            [
+              "States the LCM is a multiple of the HCF",
+              1
+            ],
+            [
+              "Shows 100 is not a multiple of 8",
+              1
+            ],
+            [
+              "Concludes the pair cannot exist",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "rev": true
+        }
+      ]
+    },
+    {
+      "code": "C7M-3.7",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Teena says: 'The smallest number of sweets I can pack exactly into boxes of 8 or exactly into boxes of 14 is 56.' Is she right? Check it.",
+          "a": "Yes. 56 = 7 x 8 = 4 x 14. The common multiples of 8 and 14 are 56, 112, ..., so 56 is the lowest; it is the LCM.",
+          "s": [
+            [
+              "Verdict: she is right",
+              1
+            ],
+            [
+              "Checks 56 is a multiple of both",
+              1
+            ],
+            [
+              "Argues nothing smaller is common (LCM 56)",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Before an annual day, the school hall in Kochi holds some chairs. Arranged in rows of 6, or of 8, or of 9, there are always 5 chairs left over. The hall has between 250 and 450 chairs. Chairs are rented at Rs 10 each per day. The guest list has 360 people, and the school can spend at most Rs 4,000 on chair rent. (a) Find the LCM of 6, 8 and 9. (b) Write the chair counts that leave remainder 5 in the form of a multiple plus 5. (c) List those counts from 250 to 450. (d) Which count can the school use for the guests and the budget, and why not the others?",
+          "a": "(a) 72. (b) 72k + 5. (c) 293, 365 and 437. (d) 365: it seats 360 guests and costs Rs 3,650; 293 is too few, and 437 costs Rs 4,370, above Rs 4,000.",
+          "s": [
+            [
+              "Part (a): LCM 72",
+              1
+            ],
+            [
+              "Part (b): 72k + 5",
+              1
+            ],
+            [
+              "Part (c): 293, 365, 437",
+              1
+            ],
+            [
+              "Part (d): chooses 365 with the two limits",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A community kitchen in Indore has 150 apples and 210 bananas to give out as fruit packs for 30 families. Each pack has only one kind of fruit and every pack has the same number of fruits. Bags are available for packs of 30 fruits (Rs 12 a bag), 15 fruits (Rs 7), 10 fruits (Rs 5) and 5 fruits (Rs 3). The kitchen wants every family to get at least one pack and to keep the bag cost low. (a) Find the largest pack size possible. (b) How many packs does each of the four sizes give in all? (c) What does each size cost in bags? (d) Which size should the kitchen choose, and why?",
+          "a": "(a) HCF(150,210) = 30. (b) 12, 24, 36 and 72 packs. (c) Rs 144, Rs 168, Rs 180 and Rs 216. (d) Sizes 30 and 15 give fewer than 30 packs, so some families would get nothing; of 10 and 5, size 10 gives 36 packs (enough) for Rs 180, Rs 36 less than size 5.",
+          "s": [
+            [
+              "Part (a): HCF 30",
+              1
+            ],
+            [
+              "Part (b): 12, 24, 36, 72 packs",
+              1
+            ],
+            [
+              "Part (c): Rs 144, 168, 180, 216",
+              1
+            ],
+            [
+              "Part (d): picks size 10 using the 30-family need and cost",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A shepherd counts his goats at three gates. They pass equally through 4 gates at the first crossing, 5 gates at the second and 6 gates at the third. He has more than 100 but fewer than 150 goats. (a) Find the LCM of 4, 5 and 6. (b) List the multiples of it below 150. (c) How many goats does he have? (d) How many goats pass through each gate at each crossing?",
+          "a": "(a) LCM = 60. (b) 60 and 120. (c) Only 120 lies between 100 and 150. (d) 30 per gate, then 24, then 20.",
+          "s": [
+            [
+              "Part (a): LCM 60",
+              1
+            ],
+            [
+              "Part (b): 60 and 120",
+              1
+            ],
+            [
+              "Part (c): 120",
+              1
+            ],
+            [
+              "Part (d): 30, 24 and 20 per gate",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the smallest number divisible by 4, 6 and 10. (b) Use it to find the smallest number above 3 that leaves remainder 3 when divided by each of 4, 6 and 10.",
+          "a": "(a) LCM = 60. (b) 60 + 3 = 63.",
+          "s": [
+            [
+              "Part (a): 60",
+              1
+            ],
+            [
+              "Part (b): adds the remainder to get 63",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Say whether the HCF or the LCM is needed: (a) the biggest square tile that fits a floor; (b) the next time two buses leave together.",
+          "a": "(a) HCF, since the tile side must divide both floor sides. (b) LCM, since the time must be a multiple of both gaps.",
+          "s": [
+            [
+              "Part (a): HCF with reason",
+              1
+            ],
+            [
+              "Part (b): LCM with reason",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A packer arranges mangoes in groups of 6, or of 8, or of 10, and each time 4 mangoes are left over. There are more than 100 and fewer than 200 mangoes. (a) Find the LCM of 6, 8 and 10. (b) Describe every possible number of mangoes in the form of a multiple plus a remainder. (c) How many mangoes are there? (d) Check your answer for each group size.",
+          "a": "(a) LCM = 120. (b) 120k + 4 (4, 124, 244, ...). (c) 124 is the only one between 100 and 200. (d) 124 = 6 x 20 + 4 = 8 x 15 + 4 = 10 x 12 + 4.",
+          "s": [
+            [
+              "Part (a): LCM 120",
+              1
+            ],
+            [
+              "Part (b): multiples of 120 plus 4",
+              1
+            ],
+            [
+              "Part (c): 124",
+              1
+            ],
+            [
+              "Part (d): remainder 4 for 6, 8 and 10",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that no number from 110 to 160 is divisible by both 18 and 27.",
+          "a": "The LCM of 18 and 27 is 54, so numbers divisible by both are multiples of 54: 54, 108, 162. 108 is below 110 and 162 is above 160, so none lies in the range.",
+          "s": [
+            [
+              "Finds LCM 54",
+              1
+            ],
+            [
+              "Lists the multiples 108 and 162",
+              1
+            ],
+            [
+              "Shows both fall outside 110 to 160",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: To cut two lengths into the longest equal pieces with nothing left, use the HCF.\nStatement 2: To find when two repeating events happen together again, use the LCM.\nStatement 3: A number that leaves remainder 4 on dividing by both 6 and 8 must be a multiple of 24.\nWhich of the statements are correct?",
+          "a": "1 and 2 only",
+          "o": [
+            "1 and 2 only",
+            "1 and 3 only",
+            "2 and 3 only",
+            "3 only"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write a word problem about two flashing lamps that needs the LCM of 12 and 16, then solve it.",
+          "a": "Two lamps flash every 12 s and every 16 s and start together; they flash together again after LCM(12,16) = 48 s.",
+          "s": [
+            [
+              "States a lamp situation with both gaps",
+              1
+            ],
+            [
+              "Finds LCM 48",
+              1
+            ],
+            [
+              "Interprets as 48 seconds",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these leaves remainder 3 when divided by each of 4, 6 and 9?",
+          "a": "39",
+          "o": [
+            "39",
+            "36",
+            "40",
+            "63"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The smallest number above 7 that leaves remainder 7 when divided by 9 and by 12 is 43.\nReason (R): 9 and 12 are both multiples of 3.",
+          "a": "A and R are both true, but R is not the correct explanation of A.",
+          "o": [
+            "A and R are both true, but R is not the correct explanation of A.",
+            "A and R are both true, and R is the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three traffic lights near a school change every 48, 72 and 108 seconds, and all changed together just now. They next change together after",
+          "a": "432 seconds",
+          "o": [
+            "432 seconds",
+            "12 seconds",
+            "108 seconds",
+            "3888 seconds"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "q": "Match each situation with its answer.\nColumn I: 1. largest square tile for a 24 ft by 40 ft floor  2. buses leave every 12 and 20 minutes together, next together  3. largest cube for an 18 x 24 x 30 cm box  4. smallest number above 2 leaving remainder 2 when divided by 6 and 8\nColumn II: a. 8 ft  b. 60 minutes  c. 6 cm  d. 26",
+          "a": "1-a, 2-b, 3-c, 4-d",
+          "o": [
+            "1-a, 2-b, 3-c, 4-d",
+            "1-b, 2-a, 3-c, 4-d",
+            "1-a, 2-b, 3-d, 4-c",
+            "1-c, 2-b, 3-a, 4-d"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two ropes of 72 m and 90 m are cut into equal pieces of the greatest length with nothing wasted. (a) How long is each piece? (b) How many pieces are there in all?",
+          "a": "(a) HCF(72,90) = 18 m. (b) 72/18 + 90/18 = 4 + 5 = 9 pieces.",
+          "s": [
+            [
+              "Part (a): HCF 18 m",
+              1
+            ],
+            [
+              "Part (b): 4 + 5 = 9 pieces",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A box measures 20 cm by 30 cm by 45 cm. Savita wants to fill it exactly with equal cubes. The largest cube that works has side",
+          "a": "5 cm",
+          "o": [
+            "5 cm",
+            "10 cm",
+            "15 cm",
+            "1 cm"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Three alarm clocks ring every 8, 12 and 15 minutes. They ring together at 6:00 a.m. (a) After how many minutes do they ring together again? (b) At what time is that?",
+          "a": "(a) LCM(8,12,15) = 120 minutes. (b) 8:00 a.m.",
+          "s": [
+            [
+              "Part (a): LCM 120",
+              1
+            ],
+            [
+              "Part (b): 8:00 a.m.",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the shortest length that two different strip sizes can both make, we use the",
+          "a": "LCM of the strip sizes",
+          "o": [
+            "LCM of the strip sizes",
+            "HCF of the strip sizes",
+            "difference of the strip sizes",
+            "sum of the strip sizes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A number is divisible by both 6 and 15. (a) What is the least such number? (b) Is 60 acceptable if the number must not be divisible by 20? Explain.",
+          "a": "(a) LCM(6,15) = 30. (b) No, 60 = 3 x 20 is divisible by 20; 30 is not, so 30 is acceptable.",
+          "s": [
+            [
+              "Part (a): 30",
+              1
+            ],
+            [
+              "Part (b): rejects 60 because it is divisible by 20",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The smallest number divisible by 5, 6 and 8 is",
+          "a": "120",
+          "o": [
+            "120",
+            "240",
+            "24",
+            "30"
+          ]
+        }
+      ]
+    }
+  ]
+}

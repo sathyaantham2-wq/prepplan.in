@@ -1,0 +1,2542 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 4,
+  "name": "Exploring Algebraic Identities"
+ },
+ "source_code": "iemh104",
+ "concepts": [
+  {
+   "code": "C9M-4.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square courtyard has side (3m + 5) metres. Its area, written as an expanded expression in square metres, is:",
+     "a": "9m^2 + 30m + 25",
+     "o": [
+      "9m^2 + 30m + 25",
+      "9m^2 + 25",
+      "9m^2 + 15m + 25",
+      "9m^2 + 30m + 10"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shopkeeper in Indore finds 98^2 as (100 - 2)^2 using an identity. The value she gets is:",
+     "a": "9604",
+     "o": [
+      "9604",
+      "9600",
+      "9996",
+      "10404"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a = -7 and b = 4, the value of (a + b)^2 - (a^2 + b^2) is:",
+     "a": "-56",
+     "o": [
+      "-56",
+      "56",
+      "-28",
+      "-112"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tanvi writes (x - 4)^2 = x^2 - 16. Putting x = 6 gives 4 on the left and 20 on the right. What does this show?",
+     "a": "The statement fails for x = 6, so it is not an identity; the term -8x is missing",
+     "o": [
+      "The statement fails for x = 6, so it is not an identity; the term -8x is missing",
+      "The statement holds at x = 4, and one value that works makes it an identity",
+      "The statement fails only because 6 is not a length, so it holds for lengths",
+      "The statement is correct because (x - 4)^2 means x^2 - 4^2"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: x^2 - 1 = 24 is an equation, because it is true only for x = 5 or x = -5.\nStatement 2: (a + b)^2 = a^2 + 2ab + b^2 holds only when a and b are lengths of line segments, since it was shown with a square.\nStatement 3: (a + b)^2 = a^2 + b^2 happens exactly when a = 0 or b = 0.\nWhich statements are correct?",
+     "a": "1 and 3 only. Statement 2 is false: the book also checked negative and rational values and proved the identity with the distributive property, so it holds for all numbers.",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For a = 10 and b = 2, (a + b)^2 is larger than a^2 + b^2 by 40.\nReason (R): (a + b)^2 - (a^2 + b^2) = 2ab for every a and b.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. With a = 10 and b = 2, 2ab = 40, so the identity gives exactly the gap 144 - 104 = 40.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If a + b = 9 and a^2 + b^2 = 45, then ab = ___.",
+     "a": "18"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each expression in Column I with its expansion in Column II.\nColumn I: 1. (2p + q)^2  2. (2p - q)^2  3. (p + 2q)^2  4. (p - 2q)^2\nColumn II: a. 4p^2 - 4pq + q^2  b. 4p^2 + 4pq + q^2  c. p^2 + 4pq + 4q^2  d. p^2 - 4pq + 4q^2",
+     "a": "1-b, 2-a, 3-c, 4-d",
+     "o": [
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-b, 2-a, 3-d, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student finds that (a + b)^2 is smaller than a^2 + b^2 for her pair of numbers. Which pair could she have used?",
+     "a": "a = -6, b = 2",
+     "o": [
+      "a = -6, b = 2",
+      "a = 6, b = 2",
+      "a = -6, b = -2",
+      "a = 0, b = 5"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: for positive numbers a and b, (a - b)^2 is always smaller than (a + b)^2. Give the reason.",
+     "a": "True. (a + b)^2 - (a - b)^2 = (a^2 + 2ab + b^2) - (a^2 - 2ab + b^2) = 4ab, which is positive when a and b are positive.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: the difference of the two expansions is 4ab > 0",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use an identity to find 197^2. (b) Check your answer by looking only at the last digit.",
+     "a": "(a) 197^2 = (200 - 3)^2 = 40000 - 1200 + 9 = 38809. (b) The last digit of 197^2 comes from 7^2 = 49, which ends in 9, and 38809 ends in 9.",
+     "s": [
+      [
+       "Part (a): (200 - 3)^2 = 38809",
+       1
+      ],
+      [
+       "Part (b): last digit 9 from 7^2 matches",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) For a = -5 and b = -8, find (a + b)^2 and a^2 + b^2. (b) Use the difference to say what the term 2ab tells you here.",
+     "a": "(a) (a + b)^2 = (-13)^2 = 169 and a^2 + b^2 = 25 + 64 = 89. (b) The difference is 80 = 2ab = 2(-5)(-8), which is positive because a and b have the same sign, so (a + b)^2 is the larger.",
+     "s": [
+      [
+       "Part (a): 169 and 89",
+       1
+      ],
+      [
+       "Part (b): difference 80 equals 2ab, positive for same signs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Classify each as an identity or only an equation, giving a test value for the one that is not an identity: (i) (x + 1)^2 = x^2 + 2x + 1  (ii) (x + 1)^2 = x^2 + 1.",
+     "a": "(i) It is an identity: it is true for all x. (ii) It is only an equation: at x = 1 the left side is 4 and the right side is 2, and it is true only when x = 0.",
+     "s": [
+      [
+       "Classifies (i) as an identity and (ii) as only an equation",
+       1
+      ],
+      [
+       "Test value x = 1 giving 4 and 2 (or solves x = 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Take the three consecutive numbers 19, 20 and 21 and add the squares of the smallest and the largest, then subtract twice the middle square. (b) Say which term of the algebra cancels so that the answer stays the same for every middle number n.",
+     "a": "(a) 361 + 441 - 2 x 400 = 802 - 800 = 2. (b) (n - 1)^2 + (n + 1)^2 = 2n^2 + 2, and the n terms (-2n and +2n) cancel, leaving 2n^2 + 2; taking away 2n^2 leaves 2.",
+     "s": [
+      [
+       "Part (a): 802 - 800 = 2",
+       1
+      ],
+      [
+       "Part (b): the -2n and +2n cancel, 2n^2 is subtracted",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Anil says, 'Since the expansion of (a + b)^2 adds the extra term 2ab, (a + b)^2 is always bigger than a^2 + b^2.' Test his claim with a = -1 and b = 3 and say when he is right.",
+     "a": "He is not right in general. For a = -1, b = 3: (a + b)^2 = 4 but a^2 + b^2 = 1 + 9 = 10, so (a + b)^2 is smaller. The gap is 2ab, which is positive only when ab > 0 (same signs); for ab < 0 it is smaller and for ab = 0 they are equal.",
+     "s": [
+      [
+       "Tests a = -1, b = 3 and gets 4 and 10",
+       1
+      ],
+      [
+       "Concludes the claim fails because 2ab can be negative",
+       1
+      ],
+      [
+       "States the condition: bigger exactly when ab > 0",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation involving a square plot whose area is described by (x + 4)^2 = x^2 + 8x + 16, and say what each of the three terms stands for in your situation.",
+     "a": "Sample: a square vegetable plot of side x metres is made bigger by adding 4 m to each side. The new area is (x + 4)^2. The term x^2 is the old plot, 8x is the two strips each of 4 m by x m, and 16 is the 4 m by 4 m corner square.",
+     "s": [
+      [
+       "Situation with a square of side x + 4",
+       1
+      ],
+      [
+       "Names x^2 as the original square and 8x as two strips",
+       1
+      ],
+      [
+       "Names 16 as the corner square",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that (a + b)^2 + (a - b)^2 = 2(a^2 + b^2), and use it to find 20^2 + 6^2 from (a + b)^2 + (a - b)^2 with a = 13, b = 7.",
+     "a": "(a + b)^2 + (a - b)^2 = (a^2 + 2ab + b^2) + (a^2 - 2ab + b^2) = 2a^2 + 2b^2. For a = 13, b = 7: 20^2 + 6^2 = 400 + 36 = 436 = 2(169 + 49) = 436.",
+     "s": [
+      [
+       "Expands both squares",
+       1
+      ],
+      [
+       "Adds so the 2ab terms cancel to give 2(a^2 + b^2)",
+       1
+      ],
+      [
+       "Checks with 13 and 7: 436 on both sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Expand (2.5p + 1.5q)^2. (b) Check your expansion for p = 2 and q = 4. (c) Use (10 + 0.2)^2 to find 10.2^2 and explain why the middle term is the one that most often goes missing.",
+     "a": "(a) (2.5p)^2 + 2(2.5p)(1.5q) + (1.5q)^2 = 6.25p^2 + 7.5pq + 2.25q^2. (b) 2.5(2) + 1.5(4) = 11 and 11^2 = 121; the expansion gives 25 + 60 + 36 = 121. (c) 10.2^2 = 100 + 2(10)(0.2) + 0.04 = 104.04. The middle term 2ab is easy to drop because it is a product of the two parts, not a square of either.",
+     "s": [
+      [
+       "Part (a): 6.25p^2 + 7.5pq + 2.25q^2",
+       2
+      ],
+      [
+       "Part (b): both sides are 121",
+       1
+      ],
+      [
+       "Part (c): 104.04 using the identity",
+       1
+      ],
+      [
+       "Part (c): says the middle term 2ab is the dropped one",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A square cloth of side (a + b) cm is cut into four pieces: a square of side a, a square of side b and two rectangles a cm by b cm. (a) Write the area of each piece. (b) For a = 12 and b = 5, find the four areas and check that they add up to the area of the whole cloth. (c) Tara cuts away the two rectangles and says the rest has area (a + b)^2 - 2ab. Find this area for a = 12, b = 5 and say which expression for it is quicker. (d) Explain why the whole cloth has a larger area than a^2 + b^2.",
+     "a": "(a) a^2, b^2, ab and ab. (b) 144, 25, 60, 60 add to 289 = 17^2. (c) 289 - 120 = 169; it equals a^2 + b^2 = 144 + 25, which is quicker. (d) The two rectangles of area ab each are extra, so the whole is larger by 2ab = 120.",
+     "s": [
+      [
+       "Part (a): a^2, b^2, ab, ab",
+       1
+      ],
+      [
+       "Part (b): 144, 25, 60, 60 sum to 289 = 17^2",
+       1
+      ],
+      [
+       "Part (c): 169 and a^2 + b^2",
+       2
+      ],
+      [
+       "Part (d): the extra 2ab from the two rectangles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a mental-maths round at a Pune school, Arjun must square numbers using identities and no calculator. He splits 62 as 60 + 2 and 98 as 100 - 2. For his first answer he writes 60^2 + 2^2 = 3604 and is told it is wrong. The judge also warns that each answer must be given within 20 seconds, so the way a number is split matters.\n(a) Find the correct value of 62^2 using the identity. (b) Find 98^2 using (100 - 2)^2. (c) By how much is Arjun's 3604 wrong, and which term did he leave out? (d) For 49^2 he can split 50 - 1 or 40 + 9. Work both, then say which split he should choose and why.",
+     "a": "(a) 62^2 = 3600 + 240 + 4 = 3844. (b) 98^2 = 10000 - 400 + 4 = 9604. (c) 3844 - 3604 = 240; he left out the middle term 2ab = 2 x 60 x 2. (d) Both give 2401: 2500 - 100 + 1 and 1600 + 720 + 81. He should choose 50 - 1 because its middle term (100) and the squares are easy to do in the head, while 720 and 81 need more work.",
+     "s": [
+      [
+       "Part (a): 3844",
+       1
+      ],
+      [
+       "Part (b): 9604",
+       1
+      ],
+      [
+       "Part (c): 240 and the missing term 2ab",
+       1
+      ],
+      [
+       "Part (d): both give 2401 and chooses 50 - 1 with a reason",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school in Nagpur has a square garden of side 18 m. The management plans to extend each of its four sides by the same length d metres, keeping it a square, and the extra turf is charged at Rs 60 per square metre of new area. Plan P uses d = 4 m. The trustees have set a budget of Rs 9,000 for the extra turf.\n(a) Find the extra area for Plan P. (b) Write the extra area for any d as an expression and say what the terms stand for. (c) Find the cost of Plan P. (d) Does Plan P stay within the budget? Find the largest whole number d that does, and give the cost for that d.",
+     "a": "(a) 22^2 - 18^2 = 484 - 324 = 160 sq m. (b) (18 + d)^2 - 18^2 = 36d + d^2: two strips of 18 m by d m and a corner square d by d. (c) 160 x 60 = Rs 9,600. (d) Plan P exceeds Rs 9,000. For d = 3 the extra area is 108 + 9 = 117 sq m, costing Rs 7,020, within budget; d = 4 costs Rs 9,600, so the largest allowed d is 3.",
+     "s": [
+      [
+       "Part (a): 160 sq m",
+       1
+      ],
+      [
+       "Part (b): 36d + d^2 with meaning of terms",
+       1
+      ],
+      [
+       "Part (c): Rs 9,600",
+       1
+      ],
+      [
+       "Part (d): d = 3 and Rs 7,020, Plan P over budget",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-4.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of a square tile is 64m^2 + 48m + 9 square centimetres. Its side, in centimetres, is:",
+     "a": "8m + 3",
+     "o": [
+      "8m + 3",
+      "8m + 9",
+      "4m + 3",
+      "8m - 3"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tailor writes the area of a cloth panel as 75a^2 - 60ab + 12b^2. Taking out the common factor first and then using an identity, the area equals:",
+     "a": "3(5a - 2b)^2",
+     "o": [
+      "3(5a - 2b)^2",
+      "3(5a + 2b)^2",
+      "3(25a - 4b)^2",
+      "(5a - 2b)^2"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square tile of area 16y^2 - 24y + 9 square units is cut from a sheet. A student claims its side is (4y + 3) units. The correct side is:",
+     "a": "(4y - 3) units, because the middle term is negative",
+     "o": [
+      "(4y - 3) units, because the middle term is negative",
+      "(4y + 3) units, because 16y^2 and 9 are both positive",
+      "(8y - 3) units, because 16y^2 has 8y as its root",
+      "(4y - 9) units, because the constant is the square of 9"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A designer wants the expression 9x^2 - kx + 16 to be a perfect square, with k a positive number. The value of k must be:",
+     "a": "24",
+     "o": [
+      "24",
+      "12",
+      "48",
+      "144"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these expressions is NOT a perfect square of a binomial?",
+     "a": "9x^2 + 12x + 16",
+     "o": [
+      "9x^2 + 12x + 16",
+      "x^2 + 10x + 25",
+      "4x^2 - 12x + 9",
+      "25x^2 - 30x + 9"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: In 36x^2 + 12x + 1, the values to compare with a^2 + 2ab + b^2 are a = 36x and b = 1.\nStatement 2: Writing x^2 + 4x + 4 as (x + 2)^2 shows that (x + 2) is a factor of x^2 + 4x + 4.\nStatement 3: The identity (a - b)^2 = a^2 - 2ab + b^2 can be used to find factors in the same way as (a + b)^2 = a^2 + 2ab + b^2.\nWhich statements are correct?",
+     "a": "2 and 3 only. Statement 1 is false: 36x^2 = (6x)^2, so a = 6x and b = 1.",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 25p^2 + 30pq + 9q^2 = (5p + 3q)^2.\nReason (R): 25p^2 - 30pq + 9q^2 = (5p - 3q)^2.",
+     "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. R is a separate fact obtained by replacing b with -b; A follows from the identity for (a + b)^2 with a = 5p and b = 3q, not from R.",
+     "o": [
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "25a^2 - 60ab + 36b^2 = (5a - ___ b)^2.",
+     "a": "6"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 9s^2 + 16t^2 - 24st = (3s + 4t)^2. Give the reason or the correct form.",
+     "a": "False. (3s + 4t)^2 = 9s^2 + 24st + 16t^2 has +24st. Since the middle term here is -24st, the correct form is (3s - 4t)^2.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: the sign of the middle term decides (3s - 4t)^2",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Factorise 8x^2 + 24x + 18 by taking out a common factor first. (b) Check by putting x = 1 in both the original and the factorised form.",
+     "a": "(a) 8x^2 + 24x + 18 = 2(4x^2 + 12x + 9) = 2(2x + 3)^2. (b) Original: 8 + 24 + 18 = 50. Factorised: 2(5)^2 = 50.",
+     "s": [
+      [
+       "Part (a): 2(2x + 3)^2",
+       1
+      ],
+      [
+       "Part (b): both values are 50",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Factorise 100 - 60y + 9y^2. (b) Show that writing the answer as (3y - 10)^2 instead is also correct.",
+     "a": "(a) 100 - 60y + 9y^2 = 10^2 - 2(10)(3y) + (3y)^2 = (10 - 3y)^2. (b) (3y - 10)^2 = 9y^2 - 60y + 100, the same expression, because squaring a negative number gives the same result as squaring its opposite.",
+     "s": [
+      [
+       "Part (a): (10 - 3y)^2",
+       1
+      ],
+      [
+       "Part (b): (3y - 10)^2 expands to the same expression",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student looks at 50p^2 + 60pq + 18q^2 and cannot find a term whose square is 50p^2. Give a reason for taking out 2 first and show the result.",
+     "a": "Neither 50 nor 18 is the square of a whole number, so a and b are hard to find directly. Taking out the common factor 2 leaves 25p^2 + 30pq + 9q^2 = (5p + 3q)^2, so the expression is 2(5p + 3q)^2.",
+     "s": [
+      [
+       "Reason: 50 and 18 are not perfect squares but 2 is a common factor",
+       1
+      ],
+      [
+       "2(5p + 3q)^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Evaluate 478^2 - 2(478)(78) + 78^2 without squaring 478. Name the identity you used.",
+     "a": "The expression has the form a^2 - 2ab + b^2 with a = 478, b = 78, so it equals (478 - 78)^2 = 400^2 = 160000. The identity is (a - b)^2 = a^2 - 2ab + b^2.",
+     "s": [
+      [
+       "Names (a - b)^2 = a^2 - 2ab + b^2 with a = 478, b = 78",
+       1
+      ],
+      [
+       "160000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Ritu says, '2x^2 - 12x + 18 = 2(x - 3)^2.' Check her claim by working the factorisation yourself.",
+     "a": "Ritu is right. Taking out 2 gives 2(x^2 - 6x + 9), and x^2 - 6x + 9 = x^2 - 2(x)(3) + 3^2 = (x - 3)^2. So the expression is 2(x - 3)^2.",
+     "s": [
+      [
+       "Takes out the common factor 2",
+       1
+      ],
+      [
+       "Recognises x^2 - 6x + 9 as a^2 - 2ab + b^2 with a = x, b = 3",
+       1
+      ],
+      [
+       "Concludes Ritu is correct: 2(x - 3)^2",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that x^2 + 6x + 10 cannot be written as (x + b)^2 for any number b.",
+     "a": "(x + b)^2 = x^2 + 2bx + b^2. Matching 6x gives 2b = 6, so b = 3, and then b^2 = 9. But the constant in the expression is 10, not 9, so no b works.",
+     "s": [
+      [
+       "Expands (x + b)^2 = x^2 + 2bx + b^2",
+       1
+      ],
+      [
+       "Finds b = 3 from the middle term",
+       1
+      ],
+      [
+       "Shows b^2 = 9 differs from 10",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a three-term expression in p and q, with 3 as a common factor, that factorises as 3(2p - 5q)^2. Show the expansion you used.",
+     "a": "3(2p - 5q)^2 = 3[(2p)^2 - 2(2p)(5q) + (5q)^2] = 3(4p^2 - 20pq + 25q^2) = 12p^2 - 60pq + 75q^2.",
+     "s": [
+      [
+       "Expands (2p - 5q)^2 as 4p^2 - 20pq + 25q^2",
+       1
+      ],
+      [
+       "Multiplies by 3",
+       1
+      ],
+      [
+       "12p^2 - 60pq + 75q^2",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Factorise 18x^2 + 48xy + 32y^2. (b) Check the result for x = 2 and y = 1. (c) Is (6x + 8y)^2 the same as your answer? Give a reason.",
+     "a": "(a) 18x^2 + 48xy + 32y^2 = 2(9x^2 + 24xy + 16y^2) = 2(3x + 4y)^2. (b) Original: 72 + 96 + 32 = 200; factorised: 2(10)^2 = 200. (c) No. (6x + 8y)^2 = [2(3x + 4y)]^2 = 4(3x + 4y)^2, which is twice the original; for x = 2, y = 1 it is 400, not 200.",
+     "s": [
+      [
+       "Part (a): common factor 2 and 2(3x + 4y)^2",
+       2
+      ],
+      [
+       "Part (b): both sides 200",
+       1
+      ],
+      [
+       "Part (c): says no and shows (6x + 8y)^2 = 4(3x + 4y)^2",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Take four consecutive squares n^2, (n + 1)^2, (n + 2)^2 and (n + 3)^2. Add the smallest and the largest and subtract the other two. (a) Try n = 2. (b) Predict the answer for n = 7 and check it. (c) Prove the pattern for every n. (d) Say which terms of n cancel.",
+     "a": "(a) 4 + 25 - 9 - 16 = 4. (b) The prediction is 4; check: 49 + 100 - 64 - 81 = 4. (c) n^2 + (n^2 + 6n + 9) - (n^2 + 2n + 1) - (n^2 + 4n + 4) = 4. (d) The n^2 terms cancel (2n^2 against 2n^2) and so do the n terms (6n against 2n + 4n), leaving 9 - 1 - 4 = 4.",
+     "s": [
+      [
+       "Part (a): 4",
+       1
+      ],
+      [
+       "Part (b): predicts 4 and checks with 49, 100, 64, 81",
+       1
+      ],
+      [
+       "Part (c): expands all four squares and simplifies to 4",
+       2
+      ],
+      [
+       "Part (d): names the n^2 and n terms that cancel",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A marble workshop in Jaipur sells two models of square slab. Model A has area 25x^2 - 40x + 16 square decimetres and costs Rs 40 per square decimetre. Model B has area 9x^2 + 30x + 25 square decimetres and costs Rs 36 per square decimetre. Here x is a whole number chosen by the buyer. A temple committee needs a slab whose side is at least 15 decimetres.\n(a) Find the side of each model in terms of x. (b) For x = 3, find the side of each model and say whether either meets the need. (c) For x = 4, find the two areas and the difference between them. (d) Find the cost of each model at x = 4 and advise the committee which to buy, with a reason.",
+     "a": "(a) Model A side 5x - 4; Model B side 3x + 5. (b) x = 3: A has side 11 and B has side 14; neither reaches 15. (c) x = 4: A has side 16 and area 256; B has side 17 and area 289; the difference is 33 sq dm. (d) A costs 256 x 40 = Rs 10,240 and B costs 289 x 36 = Rs 10,404. Both meet the need; A is Rs 164 cheaper, B gives a 1 dm longer side. Either can be defended: A if cost matters, B if a 17 dm side is wanted.",
+     "s": [
+      [
+       "Part (a): 5x - 4 and 3x + 5",
+       1
+      ],
+      [
+       "Part (b): 11 and 14, neither is enough",
+       1
+      ],
+      [
+       "Part (c): 256, 289 and difference 33",
+       1
+      ],
+      [
+       "Part (d): Rs 10,240 and Rs 10,404 with a reasoned choice",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tailor in Surat cuts two identical square patches from one piece of cloth for a school banner. The total area of the two patches is 98m^2 + 56mn + 8n^2 square centimetres, where m and n are whole numbers fixed by the design. The piece of cloth she has is 2000 square centimetres in area. She wants to keep m = 3 and make n as large as possible.\n(a) Take out the common factor and write the area of one patch. (b) Factorise it to find the side of one patch. (c) For m = 3 and n = 5, find the side and the total area of the two patches. (d) Will n = 6 fit in the cloth? Decide the largest n she can use.",
+     "a": "(a) 98m^2 + 56mn + 8n^2 = 2(49m^2 + 28mn + 4n^2), so one patch has area 49m^2 + 28mn + 4n^2. (b) 49m^2 + 28mn + 4n^2 = (7m + 2n)^2, so the side is 7m + 2n. (c) Side = 21 + 10 = 31 cm; total area = 2 x 961 = 1922 sq cm. (d) For n = 6 the side is 33 and the total is 2 x 1089 = 2178 sq cm, more than 2000, so it does not fit. The largest n is 5.",
+     "s": [
+      [
+       "Part (a): common factor 2",
+       1
+      ],
+      [
+       "Part (b): side 7m + 2n",
+       1
+      ],
+      [
+       "Part (c): 31 cm and 1922 sq cm",
+       1
+      ],
+      [
+       "Part (d): 2178 > 2000 so n = 5",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-4.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find 132^2, Neha writes (100 + 30 + 2)^2 and uses (a + b + c)^2. The sum of the three cross terms 2ab + 2bc + 2ca for these numbers is:",
+     "a": "6520",
+     "o": [
+      "6520",
+      "3260",
+      "10904",
+      "17424"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A clerk finds 65^2 from a^2 = (a + b)(a - b) + b^2 by taking b = 5. The value she gets is:",
+     "a": "4225",
+     "o": [
+      "4225",
+      "4200",
+      "4205",
+      "4125"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a = 2, b = -3 and c = 4, the sum 2ab + 2bc + 2ca equals:",
+     "a": "-20",
+     "o": [
+      "-20",
+      "20",
+      "-10",
+      "10"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A stall owner works out 47 x 53 as (50 - 3)(50 + 3). Using a^2 - b^2, her answer is:",
+     "a": "2491",
+     "o": [
+      "2491",
+      "2509",
+      "2500",
+      "2481"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If x + y = 15 and x^2 - y^2 = 45, then x - y equals:",
+     "a": "3",
+     "o": [
+      "3",
+      "30",
+      "60",
+      "675"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The square of 75 can be found as (75 + 5)(75 - 5) + 5^2 = 80 x 70 + 25.\nStatement 2: The expression a^2 - b^2 can be written as the product (a + b)(a - b).\nStatement 3: (a + b + c)^2 has three squared terms and three cross terms, each cross term with coefficient 2.\nWhich statements are correct?",
+     "a": "1, 2 and 3. All three statements are correct: 80 x 70 + 25 = 5625 = 75^2; a^2 - b^2 factorises as (a + b)(a - b); and (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca.",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "1 and 3 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If a + b + c = 0, then a^2 + b^2 + c^2 = -2(ab + bc + ca).\nReason (R): (a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca) for all numbers a, b and c.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. Putting a + b + c = 0 on the left of the identity gives 0 = a^2 + b^2 + c^2 + 2(ab + bc + ca), which rearranges to the assertion.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Using a^2 - b^2 = (a + b)(a - b), 73^2 - 27^2 = ___.",
+     "a": "4600"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each product in Column I with its value in Column II. Each value can be found as a difference of two squares.\nColumn I: 1. 41 x 59  2. 48 x 52  3. 37 x 43  4. 105 x 95\nColumn II: a. 2419  b. 2496  c. 1591  d. 9975",
+     "a": "1-a, 2-b, 3-c, 4-d",
+     "o": [
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-c, 2-b, 3-a, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: the square of every whole number ending in 5 ends in 25. Give the reason.",
+     "a": "True. A number ending in 5 is 10k + 5, and by Sridharacharya's method (10k + 5)^2 = (10k + 10)(10k) + 25 = 100k(k + 1) + 25, which always ends in 25.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: (10k + 5)^2 = 100k(k + 1) + 25",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (p + 2q - r)^2. (b) Check your expansion for p = 1, q = 2, r = 3.",
+     "a": "(a) p^2 + 4q^2 + r^2 + 4pq - 2pr - 4qr. (b) (1 + 4 - 3)^2 = 4, and 1 + 16 + 9 + 8 - 6 - 24 = 4.",
+     "s": [
+      [
+       "Part (a): p^2 + 4q^2 + r^2 + 4pq - 2pr - 4qr",
+       1
+      ],
+      [
+       "Part (b): both sides equal 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Factorise 81m^2 - 49n^2. (b) A square sheet of side 9m cm has a square of side 7n cm cut from one corner. Use (a) to find the area left for m = 5 and n = 6.",
+     "a": "(a) 81m^2 - 49n^2 = (9m)^2 - (7n)^2 = (9m + 7n)(9m - 7n). (b) 9m = 45 and 7n = 42, so the area left is (45 + 42)(45 - 42) = 87 x 3 = 261 square cm.",
+     "s": [
+      [
+       "Part (a): (9m + 7n)(9m - 7n)",
+       1
+      ],
+      [
+       "Part (b): 87 x 3 = 261",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In the method a^2 = (a + b)(a - b) + b^2, why is b = 2 a sensible choice for 88^2? Carry out the calculation.",
+     "a": "Taking b = 2 makes a + b = 90, a round number that is easy to multiply. Then 88^2 = (88 + 2)(88 - 2) + 2^2 = 90 x 86 + 4 = 7740 + 4 = 7744.",
+     "s": [
+      [
+       "Reason: a + b = 90 is a round number",
+       1
+      ],
+      [
+       "7744",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "By grouping a + b + c as (a + b) + c, explain why the cross terms 2ab, 2bc and 2ca all appear in (a + b + c)^2.",
+     "a": "(a + b + c)^2 = [(a + b) + c]^2 = (a + b)^2 + 2(a + b)c + c^2. Expanding (a + b)^2 gives a^2 + 2ab + b^2 and 2(a + b)c gives 2ac + 2bc, so all three cross terms appear.",
+     "s": [
+      [
+       "Writes [(a + b) + c]^2 = (a + b)^2 + 2(a + b)c + c^2",
+       1
+      ],
+      [
+       "Expands to show 2ab, 2bc and 2ca",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rani says, '99^2 - 1 = (99 + 1)(99 - 1) = 100 x 98 = 9800, so 99^2 = 9800.' Which part of her work is right and what is her error?",
+     "a": "Her factorisation is right: a^2 - b^2 with a = 99, b = 1 gives 100 x 98 = 9800, which is 99^2 - 1. Her error is in the last step: she forgot to add the 1 back, so 99^2 = 9800 + 1 = 9801.",
+     "s": [
+      [
+       "Accepts 99^2 - 1 = 9800 as correct",
+       1
+      ],
+      [
+       "Identifies the missing + 1",
+       1
+      ],
+      [
+       "States 99^2 = 9801",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that a^2 - b^2 can never equal 2 when a and b are whole numbers.",
+     "a": "a^2 - b^2 = (a + b)(a - b). The two factors differ by 2b, an even number, so they are both even or both odd. Both odd gives an odd product and both even gives a product divisible by 4. Since 2 is neither odd nor a multiple of 4, no whole numbers a and b work.",
+     "s": [
+      [
+       "Writes a^2 - b^2 as (a + b)(a - b)",
+       1
+      ],
+      [
+       "Shows the factors are both odd or both even",
+       1
+      ],
+      [
+       "Concludes the product is odd or a multiple of 4, never 2",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Choose two numbers whose product is easy to find as 80^2 - 7^2. Write the two numbers and find the product.",
+     "a": "80^2 - 7^2 = (80 + 7)(80 - 7), so the numbers are 87 and 73. The product is 6400 - 49 = 6351.",
+     "s": [
+      [
+       "Writes the numbers 87 and 73 using (80 + 7)(80 - 7)",
+       1
+      ],
+      [
+       "Evaluates 80^2 - 7^2 = 6400 - 49",
+       1
+      ],
+      [
+       "6351",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Expand (2p - 3q + r)^2 using the identity for the square of three terms.",
+     "a": "a = 2p, b = -3q, c = r. The squares are 4p^2, 9q^2 and r^2. The cross terms are 2(2p)(-3q) = -12pq, 2(-3q)(r) = -6qr and 2(r)(2p) = 4pr. So the result is 4p^2 + 9q^2 + r^2 - 12pq - 6qr + 4pr.",
+     "s": [
+      [
+       "Squares 4p^2, 9q^2, r^2",
+       1
+      ],
+      [
+       "Cross terms with correct signs",
+       1
+      ],
+      [
+       "Full expansion",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Use Sridharacharya's method to find 35^2 and 65^2. (b) Notice the pattern in the last two digits and in the digits before them, then predict 95^2 and 115^2. (c) Prove that (10k + 5)^2 = 100k(k + 1) + 25 for every whole number k.",
+     "a": "(a) 35^2 = 40 x 30 + 25 = 1225; 65^2 = 70 x 60 + 25 = 4225. (b) The last two digits are 25 and the digits before are k(k + 1): 3 x 4 = 12 and 6 x 7 = 42. So 95^2 = 9025 (9 x 10 = 90) and 115^2 = 13225 (11 x 12 = 132). (c) (10k + 5)^2 = (10k + 10)(10k) + 25 = 100k(k + 1) + 25.",
+     "s": [
+      [
+       "Part (a): 1225 and 4225",
+       1
+      ],
+      [
+       "Part (b): the pattern k(k + 1) before 25",
+       1
+      ],
+      [
+       "Part (b): 9025 and 13225",
+       1
+      ],
+      [
+       "Part (c): applies a^2 = (a + b)(a - b) + b^2 with a = 10k + 5, b = 5",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Three numbers x, y, z have x + y + z = 12 and xy + yz + zx = 47. (a) Use (x + y + z)^2 to find x^2 + y^2 + z^2. (b) Check with x = 3, y = 4, z = 5. (c) For another triple, x + y + z = 15 and x^2 + y^2 + z^2 = 83; find xy + yz + zx. (d) Explain why the identity lets you find one of these two sums from the other without knowing x, y, z.",
+     "a": "(a) 144 = x^2 + y^2 + z^2 + 94, so x^2 + y^2 + z^2 = 50. (b) 3 + 4 + 5 = 12, 12 + 20 + 15 = 47, and 9 + 16 + 25 = 50. (c) 225 = 83 + 2(xy + yz + zx), so xy + yz + zx = 71. (d) (x + y + z)^2 = (x^2 + y^2 + z^2) + 2(xy + yz + zx) links the three sums, so any two give the third.",
+     "s": [
+      [
+       "Part (a): 50 from 144 - 94",
+       1
+      ],
+      [
+       "Part (b): 12, 47 and 50 verified",
+       1
+      ],
+      [
+       "Part (c): 71",
+       2
+      ],
+      [
+       "Part (d): the identity links the three sums",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school quiz on the history of mathematics recalls that Sridharacharya, in 750 CE, proposed a quick way to square numbers: a^2 = (a + b)(a - b) + b^2, with b chosen to make one factor a round number. Students are asked to use it for four numbers.\n(a) Find 45^2 with b = 5. (b) Find 87^2 with a suitable b. (c) Find 96^2 and say why b = 4 is the natural choice. (d) For 123^2, one student takes b = 3 and another takes b = 23. Work both and say which method you would recommend for mental calculation, and why.",
+     "a": "(a) 45^2 = 50 x 40 + 25 = 2025. (b) b = 3: 87^2 = 90 x 84 + 9 = 7569. (c) 96^2 = 100 x 92 + 16 = 9216; with b = 4 the factor 96 + 4 is 100. (d) b = 3: 126 x 120 + 9 = 15120 + 9 = 15129. b = 23: 146 x 100 + 529 = 14600 + 529 = 15129. Both are correct. b = 3 needs the product 126 x 120 but only the small square 9; b = 23 gives an easy product but needs 23^2 = 529. Either can be recommended with a reason; the smaller b is usually easier overall.",
+     "s": [
+      [
+       "Part (a): 2025",
+       1
+      ],
+      [
+       "Part (b): 7569",
+       1
+      ],
+      [
+       "Part (c): 9216 and the round factor 100",
+       1
+      ],
+      [
+       "Part (d): both give 15129 with a reasoned recommendation",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A community hall in Coimbatore paints a square notice board of side (a + b + c) cm, divided into three squares of sides a, b and c, and six rectangles (two each of a by b, b by c and c by a). Here a = 20, b = 15 and c = 5. The committee plans to paint the three squares red at Rs 0.30 per square cm and all the rectangles blue at Rs 0.20 per square cm, and has Rs 350 to spend on paint.\n(a) Find the side and the area of the whole board using the identity. (b) Find the total area of the three squares and of the six rectangles. (c) Find the cost of the red-and-blue plan. (d) Is the plan within the budget? If not, say whether painting the whole board blue fits the budget and by how much.",
+     "a": "(a) Side = 40 cm; area = 1600 sq cm. (b) Squares: 400 + 225 + 25 = 650; rectangles: 2(300 + 75 + 100) = 950; 650 + 950 = 1600. (c) Cost = 650 x 0.30 + 950 x 0.20 = 195 + 190 = Rs 385. (d) Rs 385 is more than Rs 350, so the plan is over budget by Rs 35. Painting all blue costs 1600 x 0.20 = Rs 320, within budget with Rs 30 left.",
+     "s": [
+      [
+       "Part (a): side 40 cm and area 1600",
+       1
+      ],
+      [
+       "Part (b): 650 and 950",
+       1
+      ],
+      [
+       "Part (c): Rs 385",
+       1
+      ],
+      [
+       "Part (d): over by Rs 35; all blue Rs 320 fits",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-4.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A kit holds 1 x^2-tile, 9 x-tiles and 20 unit tiles, and all of them are laid out to form one rectangle. Its sides are:",
+     "a": "(x + 4) and (x + 5)",
+     "o": [
+      "(x + 4) and (x + 5)",
+      "(x + 3) and (x + 6)",
+      "(x + 2) and (x + 10)",
+      "(x + 9) and (x + 20)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular patio has area x^2 - 5x - 24 square metres. Its factors are:",
+     "a": "(x - 8)(x + 3)",
+     "o": [
+      "(x - 8)(x + 3)",
+      "(x + 8)(x - 3)",
+      "(x - 6)(x + 4)",
+      "(x - 8)(x - 3)"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expansion of (3x + 4)(2x + 5), the coefficient of x is:",
+     "a": "23",
+     "o": [
+      "23",
+      "15",
+      "8",
+      "20"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To arrange tiles for x^2 + 7x + 12, a student splits 7x as 2x + 5x. What happens?",
+     "a": "The 12 unit tiles cannot fill the corner as a 2 by 5 array, so no rectangle forms",
+     "o": [
+      "The 12 unit tiles cannot fill the corner as a 2 by 5 array, so no rectangle forms",
+      "A rectangle forms with sides x + 2 and x + 5, since 2 + 5 = 7",
+      "A rectangle forms but 2 unit tiles are left over",
+      "A rectangle forms with sides x + 12 and x + 1"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these quadratics CANNOT be written as (x + a)(x + b) with whole-number a and b?",
+     "a": "x^2 + 5x + 7",
+     "o": [
+      "x^2 + 5x + 7",
+      "x^2 + 7x + 12",
+      "x^2 - x - 20",
+      "x^2 + 2x - 15"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: For x^2 + 7x + 12, the conditions a + b = 7 and ab = 12 are met only by a = 3, b = 4 or a = 4, b = 3.\nStatement 2: (px + a)(qx + b) = pqx^2 + (pb + aq)x + ab.\nStatement 3: For x^2 - 5x + 6, the two constants a and b satisfy a + b = -5 and ab = -6.\nWhich statements are correct?",
+     "a": "1 and 2 only. Statement 3 is false: ab = +6, not -6, which is why both constants are negative (-2 and -3).",
+     "o": [
+      "1 and 2 only",
+      "1 only",
+      "2 and 3 only",
+      "1 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): x^2 - 5x + 6 = (x - 2)(x - 3).\nReason (R): This is because for this expression a + b = -5 and ab = -6.",
+     "a": "The Assertion is true but the Reason is false. The assertion is true, but ab is +6 (from (-2)(-3)), not -6, so the reason is false.",
+     "o": [
+      "The Assertion is true but the Reason is false.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If x^2 + kx - 28 factorises as (x + 7)(x - 4), then k = ___.",
+     "a": "3"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: x^2 + 11x + 30 = (x + 3)(x + 10), because 3 x 10 = 30. Give the reason or correction.",
+     "a": "False. 3 x 10 = 30 matches the constant, but 3 + 10 = 13, not 11, so (x + 3)(x + 10) = x^2 + 13x + 30. The correct pair is 5 and 6 (5 + 6 = 11, 5 x 6 = 30).",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: the pair must also add to 11, and 5 and 6 do",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Factorise x^2 - 13x + 36. (b) Check your factors by putting x = 10 in both the trinomial and the product.",
+     "a": "(a) a + b = -13 and ab = 36 give a = -4, b = -9, so x^2 - 13x + 36 = (x - 4)(x - 9). (b) At x = 10 the trinomial is 100 - 130 + 36 = 6 and the product is 6 x 1 = 6.",
+     "s": [
+      [
+       "Part (a): (x - 4)(x - 9)",
+       1
+      ],
+      [
+       "Part (b): both values are 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) How many x^2-tiles, x-tiles and unit tiles are needed to make a rectangle of sides (x + 2) and (x + 6)? (b) Say how the x-tiles and the unit tiles are arranged around the x^2-tile.",
+     "a": "(a) (x + 2)(x + 6) = x^2 + 8x + 12, so 1 x^2-tile, 8 x-tiles and 12 unit tiles. (b) 2 x-tiles go on one side of the x^2-tile and 6 on the other (2 + 6 = 8), and the 12 unit tiles fill the corner as a 2 by 6 array.",
+     "s": [
+      [
+       "Part (a): 1, 8 and 12",
+       1
+      ],
+      [
+       "Part (b): 2 and 6 x-tiles with a 2 by 6 unit array",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (3x + 2)(x + 5). (b) Which two products add up to give the coefficient of x?",
+     "a": "(a) 3x^2 + 17x + 10. (b) The coefficient 17 is 3 x 5 + 2 x 1 = 15 + 2: the first term of one bracket times the constant of the other, plus the constant of the first times the x-coefficient of the other.",
+     "s": [
+      [
+       "Part (a): 3x^2 + 17x + 10",
+       1
+      ],
+      [
+       "Part (b): 15 and 2 as the two cross products",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Why can the pair a = 2, b = 15 not be used to factorise x^2 + 11x + 30? Give the pair that works.",
+     "a": "Both conditions must hold. 2 x 15 = 30 matches the constant, but 2 + 15 = 17, not 11. The pair 5 and 6 has sum 11 and product 30, so x^2 + 11x + 30 = (x + 5)(x + 6).",
+     "s": [
+      [
+       "Says a + b = 17 fails the condition a + b = 11",
+       1
+      ],
+      [
+       "Gives 5 and 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Hari says, 'x^2 - 5x + 6 = (x + 2)(x + 3), because 2 x 3 = 6.' Test his claim with x = 1 and give the correct factors.",
+     "a": "He is wrong. At x = 1 the trinomial is 1 - 5 + 6 = 2, but (1 + 2)(1 + 3) = 12. His product expands to x^2 + 5x + 6. The middle term is -5x, so a + b = -5 with ab = 6, which gives -2 and -3: x^2 - 5x + 6 = (x - 2)(x - 3).",
+     "s": [
+      [
+       "Test at x = 1: 2 against 12",
+       1
+      ],
+      [
+       "Notes the sign of the middle term is wrong",
+       1
+      ],
+      [
+       "(x - 2)(x - 3)",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that x^2 + 6x + 10 cannot be written as (x + a)(x + b) with whole numbers a and b.",
+     "a": "(x + a)(x + b) = x^2 + (a + b)x + ab, so we need a + b = 6 and ab = 10. The whole-number pairs with product 10 are (1, 10), (2, 5), (-1, -10) and (-2, -5), with sums 11, 7, -11 and -7. None equals 6, so no such factorisation exists.",
+     "s": [
+      [
+       "States the conditions a + b = 6 and ab = 10",
+       1
+      ],
+      [
+       "Lists the pairs with product 10 and their sums",
+       1
+      ],
+      [
+       "Concludes none has sum 6",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a quadratic trinomial that factorises as (x - 7)(x + 4). State the values of a + b and ab that you matched.",
+     "a": "With a = -7 and b = 4: a + b = -3 and ab = -28, so the trinomial is x^2 + (a + b)x + ab = x^2 - 3x - 28.",
+     "s": [
+      [
+       "Identifies a = -7 and b = 4",
+       1
+      ],
+      [
+       "a + b = -3 and ab = -28",
+       1
+      ],
+      [
+       "x^2 - 3x - 28",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Factorise 6x^2 + 19x + 15 by splitting the x term into two parts whose product is 6 x 15, and show the check.",
+     "a": "Split 19x as 10x + 9x (10 x 9 = 90 = 6 x 15 and 10 + 9 = 19): 6x^2 + 10x + 9x + 15 = 2x(3x + 5) + 3(3x + 5) = (2x + 3)(3x + 5). Check: 2(5) + 3(3) = 10 + 9 = 19.",
+     "s": [
+      [
+       "Splits 19x as 10x + 9x using product 90",
+       1
+      ],
+      [
+       "Groups to get (2x + 3)(3x + 5)",
+       1
+      ],
+      [
+       "Checks the middle coefficient 19",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A rectangular playground has area x^2 + 13x + 40 square metres. (a) Factorise to find possible expressions for its length and breadth. (b) Write the perimeter in terms of x. (c) For x = 12, find the area from the dimensions and from the trinomial, and the perimeter.",
+     "a": "(a) a + b = 13 and ab = 40 give 5 and 8, so the sides are (x + 8) and (x + 5) metres. (b) Perimeter = 2(x + 8 + x + 5) = 4x + 26 metres. (c) For x = 12 the sides are 20 m and 17 m; area 20 x 17 = 340, and the trinomial gives 144 + 156 + 40 = 340; perimeter 4(12) + 26 = 74 m.",
+     "s": [
+      [
+       "Part (a): (x + 8) and (x + 5)",
+       2
+      ],
+      [
+       "Part (b): 4x + 26",
+       1
+      ],
+      [
+       "Part (c): 340 from both ways and perimeter 74",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The book shows (x + 3)(x + 4) = x^2 + 7x + 12 and (x + 6)(x + 7) = x^2 + 13x + 42. (a) State the general product (x + a)(x + b). (b) Use it to expand (x + 8)(x + 9) and (x - 8)(x - 9). (c) Explain which term of the two answers changes sign and why the constant term does not.",
+     "a": "(a) (x + a)(x + b) = x^2 + (a + b)x + ab. (b) (x + 8)(x + 9) = x^2 + 17x + 72 and (x - 8)(x - 9) = x^2 - 17x + 72. (c) The x-term changes sign because a + b changes from 17 to -17, but the constant is ab = (-8)(-9) = 72, a product of two negatives and so positive, the same as 8 x 9.",
+     "s": [
+      [
+       "Part (a): x^2 + (a + b)x + ab",
+       1
+      ],
+      [
+       "Part (b): both expansions correct",
+       2
+      ],
+      [
+       "Part (c): sum changes sign, product of two negatives stays positive",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A teacher in a Chennai school gives groups tile kits. Each kit has one big square tile (area x^2), some rods (each of area x) and 24 small unit squares, and a group must lay all tiles in one rectangle with no gaps. Kit A has 11 rods, Kit B has 10 rods and Kit C has 9 rods.\n(a) Find the sides of the rectangle for Kit A. (b) Find the sides for Kit B. (c) Can Kit C form a rectangle? Give the reason. (d) The teacher can only add rods to Kit C, not remove them. What is the smallest number of rods to add so that it forms a rectangle, and what are the sides then?",
+     "a": "(a) a + b = 11 and ab = 24 give 3 and 8: sides (x + 3) and (x + 8). (b) a + b = 10 and ab = 24 give 4 and 6: sides (x + 4) and (x + 6). (c) No. The pairs of whole numbers with product 24 add to 25, 14, 11 or 10, never 9. (d) The next possible rod count above 9 is 10 (pair 4 and 6), so add 1 rod; the sides are (x + 4) and (x + 6). Removing is not possible anyway, since no pair gives a sum below 10.",
+     "s": [
+      [
+       "Part (a): (x + 3) and (x + 8)",
+       1
+      ],
+      [
+       "Part (b): (x + 4) and (x + 6)",
+       1
+      ],
+      [
+       "Part (c): sums 25, 14, 11, 10, never 9",
+       1
+      ],
+      [
+       "Part (d): add 1 rod, sides (x + 4) and (x + 6)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A farmer in Karnal has a rectangular field of area 6x^2 + 19x + 15 square metres, where x is a whole number of metres set by the survey. Fencing wire costs Rs 85 per metre, and the farmer can spend at most Rs 9,500 on the fence around the whole field.\n(a) Factorise the area to find the length and breadth in terms of x. (b) For x = 10, find the two sides and check the area both ways. (c) Find the fencing cost for x = 10. (d) Is x = 10 affordable? Find the largest whole number x for which the fencing cost stays within Rs 9,500 and give that field's area.",
+     "a": "(a) 6x^2 + 19x + 15 = (2x + 3)(3x + 5). (b) For x = 10 the sides are 23 m and 35 m; area 23 x 35 = 805, and 600 + 190 + 15 = 805. (c) Perimeter = 2(23 + 35) = 116 m, so the cost is 116 x 85 = Rs 9,860. (d) Rs 9,860 exceeds Rs 9,500, so x = 10 is not affordable. For x = 9 the sides are 21 and 32, perimeter 106 m, cost Rs 9,010, within the limit; the area is 21 x 32 = 672 sq m.",
+     "s": [
+      [
+       "Part (a): (2x + 3)(3x + 5)",
+       1
+      ],
+      [
+       "Part (b): 23, 35 and area 805 both ways",
+       1
+      ],
+      [
+       "Part (c): Rs 9,860",
+       1
+      ],
+      [
+       "Part (d): x = 9, cost Rs 9,010, area 672",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-4.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A sculptor casts a cube of volume 27a^3 + 54a^2b + 36ab^2 + 8b^3 cubic units. The edge of the cube is:",
+     "a": "(3a + 2b) units",
+     "o": [
+      "(3a + 2b) units",
+      "(3a + 8b) units",
+      "(9a + 2b) units",
+      "(27a + 8b) units"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cube-shaped water tank has edge 103 cm. Writing 103 as 100 + 3 and using (a + b)^3, its volume in cubic centimetres is:",
+     "a": "1092727",
+     "o": [
+      "1092727",
+      "1090027",
+      "1092700",
+      "1000027"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A solid cube of edge 3p cm has a cubical corner of edge 2 cm removed. The volume left, 27p^3 - 8, factorises as:",
+     "a": "(3p - 2)(9p^2 + 6p + 4)",
+     "o": [
+      "(3p - 2)(9p^2 + 6p + 4)",
+      "(3p - 2)(9p^2 - 6p + 4)",
+      "(3p + 2)(9p^2 - 6p + 4)",
+      "(3p - 2)^3"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Three numbers have sum 9 and xy + yz + zx = 26. The value of x^3 + y^3 + z^3 - 3xyz is:",
+     "a": "27",
+     "o": [
+      "27",
+      "261",
+      "234",
+      "3"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The expansion of (m - 2)^3 is:",
+     "a": "m^3 - 6m^2 + 12m - 8",
+     "o": [
+      "m^3 - 6m^2 + 12m - 8",
+      "m^3 - 8",
+      "m^3 - 6m^2 - 12m - 8",
+      "m^3 - 6m^2 + 6m - 8"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: x^3 + y^3 = (x + y)(x^2 + xy + y^2).\nStatement 2: A cube of edge a + b splits into two cubes and six cuboids, three of size a x a x b and three of size a x b x b.\nStatement 3: (a - b)^3 = a^3 - 3a^2b - 3ab^2 - b^3.\nWhich statements are correct?",
+     "a": "2 only. Statement 1 is false (the middle term of the second factor is -xy) and Statement 3 is false (the signs of (a - b)^3 alternate: + - + -).",
+     "o": [
+      "2 only",
+      "1 only",
+      "1 and 3 only",
+      "3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 + xy + yz + zx).\nReason (R): (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx) = x^3 + y^3 + z^3 - 3xyz.",
+     "a": "The Assertion is false but the Reason is true. The second factor must have -xy - yz - zx, as in the reason; the assertion has the wrong signs, so it is false.",
+     "o": [
+      "The Assertion is false but the Reason is true.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If x + y = 7 and xy = 12, then x^3 + y^3 = ___.",
+     "a": "91"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each expression in Column I with its equal in Column II.\nColumn I: 1. x^3 - 8  2. x^3 + 8  3. (x + 2)^3  4. (x - 2)^3\nColumn II: a. x^3 + 6x^2 + 12x + 8  b. (x + 2)(x^2 - 2x + 4)  c. x^3 - 6x^2 + 12x - 8  d. (x - 2)(x^2 + 2x + 4)",
+     "a": "1-d, 2-b, 3-a, 4-c",
+     "o": [
+      "1-d, 2-b, 3-a, 4-c",
+      "1-b, 2-d, 3-a, 4-c",
+      "1-d, 2-b, 3-c, 4-a",
+      "1-a, 2-c, 3-b, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: x^3 - y^3 = (x - y)(x^2 - xy + y^2). Test with x = 3, y = 1 and give the reason or correction.",
+     "a": "False. The middle sign is wrong: x^3 - y^3 = (x - y)(x^2 + xy + y^2). For x = 3, y = 1 the true value is 27 - 1 = 26 = 2(9 + 3 + 1), whereas 2(9 - 3 + 1) = 14.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Correction: the second factor is x^2 + xy + y^2, checked by 26 against 14",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (2k + 1)^3. (b) Put k = 10 to find 21^3.",
+     "a": "(a) (2k)^3 + 3(2k)^2(1) + 3(2k)(1)^2 + 1 = 8k^3 + 12k^2 + 6k + 1. (b) 8000 + 1200 + 60 + 1 = 9261.",
+     "s": [
+      [
+       "Part (a): 8k^3 + 12k^2 + 6k + 1",
+       1
+      ],
+      [
+       "Part (b): 9261",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cube of edge a + b is split into two cubes and six cuboids. (a) For a = 3 and b = 2 find the volume of each of the two cubes and the total volume of the three cuboids of size a x a x b and the three of size a x b x b. (b) Show that these four volumes add up to the volume of the whole cube.",
+     "a": "(a) The cubes are 27 and 8; the three a x a x b cuboids total 3 x 18 = 54, and the three a x b x b cuboids total 3 x 12 = 36. (b) 27 + 8 + 54 + 36 = 125 = 5^3, the volume of the cube of edge 5.",
+     "s": [
+      [
+       "Part (a): 27, 8, 54 and 36",
+       1
+      ],
+      [
+       "Part (b): sum 125 = 5^3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The book asks us to predict (x + y)(x^2 - xy + y^2). (a) Predict it. (b) Check your prediction for x = 5 and y = 2.",
+     "a": "(a) The prediction is x^3 + y^3. (b) (5 + 2)(25 - 10 + 4) = 7 x 19 = 133 and 125 + 8 = 133.",
+     "s": [
+      [
+       "Part (a): x^3 + y^3",
+       1
+      ],
+      [
+       "Part (b): both sides are 133",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cube-shaped drum has edge 99 cm. Use (100 - 1)^3 to find its volume, and say how many of the four terms are subtracted.",
+     "a": "(100 - 1)^3 = 1000000 - 3(10000)(1) + 3(100)(1) - 1 = 1000000 - 30000 + 300 - 1 = 970299 cubic cm. Two of the four terms (30000 and 1) are subtracted.",
+     "s": [
+      [
+       "970299",
+       1
+      ],
+      [
+       "Identifies the signs + - + - so two terms are subtracted",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sia says, 'If x + y + z = 0 then x^3 + y^3 + z^3 = 3xyz.' Test her claim on 4, -1 and -3 and explain why it is always true.",
+     "a": "Sia is right. The numbers add to 0. Their cubes: 64 - 1 - 27 = 36, and 3xyz = 3(4)(-1)(-3) = 36. In general x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx), and when x + y + z = 0 the right side is 0.",
+     "s": [
+      [
+       "Checks 4, -1, -3: both sides 36",
+       1
+      ],
+      [
+       "Uses the factorised identity",
+       1
+      ],
+      [
+       "Concludes the right side is 0 when the sum is 0",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up a situation about a cube of edge (x + 2) cm for the identity (x + 2)^3 = x^3 + 6x^2 + 12x + 8, and say what each of the four terms stands for.",
+     "a": "Sample: a cube of clay of edge x cm is wrapped with a 2 cm layer on all sides to make a cube of edge (x + 2). The term x^3 is the original cube, 6x^2 is the three slabs, each x by x by 2, 12x is the three rods 2 by 2 by x, and 8 is the 2 by 2 by 2 corner cube.",
+     "s": [
+      [
+       "Situation with a cube of edge x + 2",
+       1
+      ],
+      [
+       "x^3 as the cube and 6x^2 as three slabs of size x by x by 2",
+       1
+      ],
+      [
+       "12x as three rods and 8 as the small cube",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write 27m^3 - 54m^2n + 36mn^2 - 8n^3 in the form (a - b)^3, giving a and b, and check the middle terms.",
+     "a": "27m^3 = (3m)^3 and 8n^3 = (2n)^3, so a = 3m and b = 2n. Then 3a^2b = 3(9m^2)(2n) = 54m^2n and 3ab^2 = 3(3m)(4n^2) = 36mn^2, which match. So the expression is (3m - 2n)^3.",
+     "s": [
+      [
+       "Identifies a = 3m and b = 2n",
+       1
+      ],
+      [
+       "Checks 3a^2b = 54m^2n and 3ab^2 = 36mn^2",
+       1
+      ],
+      [
+       "(3m - 2n)^3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Use x^3 + y^3 = (x + y)(x^2 - xy + y^2) to show that 1001 = 10^3 + 1 is divisible by 11, and use the other factor to find its three prime factors.",
+     "a": "10^3 + 1^3 = (10 + 1)(100 - 10 + 1) = 11 x 91, so 1001 is divisible by 11. The other factor 91 = 7 x 13, so 1001 = 7 x 11 x 13.",
+     "s": [
+      [
+       "Applies the identity with x = 10, y = 1",
+       1
+      ],
+      [
+       "Gets 11 x 91",
+       1
+      ],
+      [
+       "Factorises 91 = 7 x 13",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Three numbers x, y, z have x + y + z = 12, x^2 + y^2 + z^2 = 50 and xyz = 60. (a) Use (x + y + z)^2 to find xy + yz + zx. (b) Use the cube identity to find x^3 + y^3 + z^3. (c) Check with x = 3, y = 4, z = 5.",
+     "a": "(a) 144 = 50 + 2(xy + yz + zx), so xy + yz + zx = 47. (b) x^3 + y^3 + z^3 - 3xyz = (x + y + z)(50 - 47) = 12 x 3 = 36, so x^3 + y^3 + z^3 = 36 + 3(60) = 216. (c) 3 + 4 + 5 = 12, 9 + 16 + 25 = 50, 3 x 4 x 5 = 60 and 27 + 64 + 125 = 216.",
+     "s": [
+      [
+       "Part (a): 47",
+       1
+      ],
+      [
+       "Part (b): 36 from the factorised identity",
+       1
+      ],
+      [
+       "Part (b): 216",
+       1
+      ],
+      [
+       "Part (c): all four values verified",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A cube of edge a + b is built from two cubes and six cuboids. For a = 5 and b = 3: (a) find the volumes of the two cubes; (b) find the volume of each cuboid of size a x a x b and each of size a x b x b; (c) show the eight pieces add up to 8^3; (d) Kunal says all six cuboids have the same volume. Is he right?",
+     "a": "(a) 125 and 27. (b) a x a x b = 75 and a x b x b = 45. (c) 125 + 27 + 3(75) + 3(45) = 152 + 225 + 135 = 512 = 8^3. (d) No. Three cuboids are 75 each and the other three are 45 each, so the six are not equal unless a = b.",
+     "s": [
+      [
+       "Part (a): 125 and 27",
+       1
+      ],
+      [
+       "Part (b): 75 and 45",
+       1
+      ],
+      [
+       "Part (c): 512 = 8^3",
+       2
+      ],
+      [
+       "Part (d): says no, three of 75 and three of 45",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A sweet shop in Kolkata packs a cube of sandesh of edge 8 cm in a cube-shaped box. Foam padding fills the space between the sandesh and the box. Box P has a 1 cm foam layer on every side, so its outer edge is (x + 2) cm where x = 8. Box Q has a 0.5 cm layer on every side, so its outer edge is (x + 1) cm. Foam costs Rs 0.05 per cubic cm.\n(a) Write the volume of foam in Box P as an expression in x. (b) Find the foam volume for P with x = 8. (c) Find the foam volume for Q with x = 8, using the cube identity. (d) Find the foam cost for each box and recommend one for a shop that sends sweets by train, giving a reason.",
+     "a": "(a) (x + 2)^3 - x^3 = 6x^2 + 12x + 8. (b) 6(64) + 12(8) + 8 = 384 + 96 + 8 = 488 cubic cm. (c) Q's outer edge is 9 cm, and the foam is (x + 1)^3 - x^3 = 3x^2 + 3x + 1 = 192 + 24 + 1 = 217 cubic cm. (d) P costs 488 x 0.05 = Rs 24.40 and Q costs 217 x 0.05 = Rs 10.85. Q is cheaper by Rs 13.55; for a long train journey the thicker layer in P protects the sweets better. Either choice can be defended; the key is giving the cost against protection.",
+     "s": [
+      [
+       "Part (a): 6x^2 + 12x + 8",
+       1
+      ],
+      [
+       "Part (b): 488",
+       1
+      ],
+      [
+       "Part (c): 217",
+       1
+      ],
+      [
+       "Part (d): Rs 24.40 and Rs 10.85 with a reasoned recommendation",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A carpenter in Jaipur has a solid wooden cube of edge 12 cm. To make a corner stand he saws off a cubical corner of edge y cm, so the wood left has volume x^3 - y^3 with x = 12. The stand needs at least 1600 cubic cm of wood left.\n(a) Find the volume left for y = 4. (b) Factorise x^3 - y^3 and use the factors to confirm your answer for y = 4. (c) Write the volume left for a cube of edge 3p with a corner of edge 2 cut off, and find it for p = 4 by the factors. (d) Find the largest whole number y that keeps at least 1600 cubic cm and say how much wood is left.",
+     "a": "(a) 1728 - 64 = 1664 cubic cm. (b) x^3 - y^3 = (x - y)(x^2 + xy + y^2) = 8 x (144 + 48 + 16) = 8 x 208 = 1664. (c) 27p^3 - 8 = (3p - 2)(9p^2 + 6p + 4); for p = 4 it is 10 x (144 + 24 + 4) = 10 x 172 = 1720, matching 27 x 64 - 8. (d) For y = 5 the wood left is 1728 - 125 = 1603, which is at least 1600; for y = 6 it is 1728 - 216 = 1512, which is not. So y = 5 and 1603 cubic cm remain.",
+     "s": [
+      [
+       "Part (a): 1664",
+       1
+      ],
+      [
+       "Part (b): (x - y)(x^2 + xy + y^2) giving 1664",
+       1
+      ],
+      [
+       "Part (c): factorisation and 1720",
+       1
+      ],
+      [
+       "Part (d): y = 5 with 1603 left",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-4.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Assuming the denominator is not zero, (x^2 - 9)/(x^2 + x - 12) simplifies to:",
+     "a": "(x + 3)/(x + 4)",
+     "o": [
+      "(x + 3)/(x + 4)",
+      "(x + 3)/(x - 4)",
+      "(x - 3)/(x + 4)",
+      "3/4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular hall has area 3x^2 + 14x + 8 square metres and breadth (x + 4) metres. Its length, in metres, is:",
+     "a": "3x + 2",
+     "o": [
+      "3x + 2",
+      "3x + 4",
+      "x + 2",
+      "3x + 8"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The expression (x^2 - 7x + 12)/(5x^2 + 5x - 100) simplifies to (x - 3)/(5(x + 5)). For which value of x is the original expression undefined but the simplified one still defined?",
+     "a": "x = 4",
+     "o": [
+      "x = 4",
+      "x = -5",
+      "x = 3",
+      "x = 0"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square playground of side 40 m has a path of width s metres all round it. The area of the path, in square metres, is:",
+     "a": "160s + 4s^2",
+     "o": [
+      "160s + 4s^2",
+      "80s + s^2",
+      "160s + s^2",
+      "40s + 4s^2"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which simplification is valid for every x for which the expression is defined?",
+     "a": "(3x + 6)/(x + 2) = 3",
+     "o": [
+      "(3x + 6)/(x + 2) = 3",
+      "(x + 6)/(x + 2) = 3",
+      "(x^2 + 4)/(x + 2) = x + 2",
+      "(x + 9)/9 = x + 1"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: After cancelling x - 4 in (x^2 - 7x + 12)/(5x^2 + 5x - 100), the result (x - 3)/(5(x + 5)) is equal to the original expression for every x, including x = 4.\nStatement 2: To factorise x^2 - 7x + 12 we need two numbers a and b with a + b = 7 and ab = 12.\nStatement 3: The common factor 5 of 5x^2 + 5x - 100 is taken out first, and then a + b = 1 and ab = -20 give 5 and -4.\nWhich statements are correct?",
+     "a": "3 only. Statement 1 is false (x = 4 makes the original undefined) and Statement 2 is false (a + b = -7, giving -3 and -4).",
+     "o": [
+      "3 only",
+      "1 only",
+      "2 and 3 only",
+      "1 and 2 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The expression (x^2 - 7x + 12)/(5x^2 + 5x - 100), even after it simplifies to (x - 3)/(5(x + 5)), still cannot be evaluated at x = -5.\nReason (R): x + 5 is a factor of the denominator 5(x - 4)(x + 5), which is 0 at x = -5, and no cancelling removes it.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. The denominator is zero at x = -5 and x + 5 is not a factor of the numerator, so it cannot be cancelled.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For every x with 4x^2 - 1 not zero, (12x^2 - 3)/(4x^2 - 1) is the constant ___.",
+     "a": "3"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: (x^2 - 25)/(x - 5) = x + 5 holds only for x not equal to 5. Give the reason.",
+     "a": "True. x^2 - 25 = (x + 5)(x - 5), and the factor x - 5 may be cancelled only when it is not zero. At x = 5 the left side is 0/0, which is undefined, while x + 5 equals 10.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: x - 5 is zero at x = 5, so it cannot be cancelled there",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Simplify (9p^2 - 12pq + 4q^2)/(9p^2 - 4q^2), assuming the denominator is not zero. (b) Find its value for p = 4 and q = 3 and check it in the original.",
+     "a": "(a) The numerator is (3p - 2q)^2 and the denominator is (3p + 2q)(3p - 2q), so the result is (3p - 2q)/(3p + 2q). (b) (12 - 6)/(12 + 6) = 1/3. In the original: (144 - 144 + 36)/(144 - 36) = 36/108 = 1/3.",
+     "s": [
+      [
+       "Part (a): (3p - 2q)/(3p + 2q)",
+       1
+      ],
+      [
+       "Part (b): 1/3 from both forms",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular tray has area 5a^2 - 45b^2 square units. (a) Factorise it completely. (b) Find the area for a = 10 and b = 2 from the factors and check by direct substitution.",
+     "a": "(a) 5a^2 - 45b^2 = 5(a^2 - 9b^2) = 5(a + 3b)(a - 3b). (b) 5(16)(4) = 320, and 5(100) - 45(4) = 500 - 180 = 320.",
+     "s": [
+      [
+       "Part (a): 5(a + 3b)(a - 3b)",
+       1
+      ],
+      [
+       "Part (b): 320 from both",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Simplify (x^2 - 4)/(x^2 - 5x + 6). (b) State the values of x for which the original expression is undefined.",
+     "a": "(a) x^2 - 4 = (x - 2)(x + 2) and x^2 - 5x + 6 = (x - 2)(x - 3), so it equals (x + 2)/(x - 3). (b) The original is undefined when the denominator is zero, that is at x = 2 and x = 3.",
+     "s": [
+      [
+       "Part (a): (x + 2)/(x - 3)",
+       1
+      ],
+      [
+       "Part (b): x = 2 and x = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why a rational expression may be simplified only after saying that the denominator is not zero. Use (x^2 - 16)/(x - 4) in your answer.",
+     "a": "Division by zero is not defined. (x^2 - 16)/(x - 4) = (x + 4)(x - 4)/(x - 4) = x + 4 only for x not equal to 4; at x = 4 the original is 0/0 and has no value, while x + 4 equals 8.",
+     "s": [
+      [
+       "States that the cancelled factor must not be zero",
+       1
+      ],
+      [
+       "Uses x = 4: the original is undefined but x + 4 = 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rohan simplifies (x^2 + 5x + 6)/(x^2 + x - 2) by cancelling x + 2 and writes, 'It equals (x + 3)/(x - 1) for all x.' Which part is right and which part needs correcting?",
+     "a": "The cancelling is right: the numerator is (x + 2)(x + 3) and the denominator is (x + 2)(x - 1), giving (x + 3)/(x - 1). The words 'for all x' are wrong: the cancelled factor x + 2 must not be zero and the denominator must not be zero, so the result holds only for x not equal to -2 and x not equal to 1.",
+     "s": [
+      [
+       "Accepts the factorisation and the result (x + 3)/(x - 1)",
+       1
+      ],
+      [
+       "Rejects 'for all x'",
+       1
+      ],
+      [
+       "Names the excluded values -2 and 1",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a rational expression, with a quadratic on top and a quadratic below, that simplifies to (x + 3)/(x - 5) after cancelling the factor x - 2. State the values of x that must be excluded.",
+     "a": "Multiply top and bottom of (x + 3)/(x - 5) by (x - 2): (x + 3)(x - 2)/((x - 5)(x - 2)) = (x^2 + x - 6)/(x^2 - 7x + 10). The values x = 2 and x = 5 make the denominator zero, so they are excluded.",
+     "s": [
+      [
+       "Top and bottom multiplied by x - 2",
+       1
+      ],
+      [
+       "(x^2 + x - 6)/(x^2 - 7x + 10)",
+       1
+      ],
+      [
+       "Excludes x = 2 and x = 5",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Simplify (2x^2 + 7x + 3)/(2x^2 - 5x - 3), assuming the denominator is not zero.",
+     "a": "Numerator: 2x^2 + 6x + x + 3 = (2x + 1)(x + 3). Denominator: 2x^2 - 6x + x - 3 = (2x + 1)(x - 3). Cancelling the common factor 2x + 1, which is not zero because the denominator is not zero, gives (x + 3)/(x - 3).",
+     "s": [
+      [
+       "Numerator (2x + 1)(x + 3)",
+       1
+      ],
+      [
+       "Denominator (2x + 1)(x - 3)",
+       1
+      ],
+      [
+       "Cancels 2x + 1 to get (x + 3)/(x - 3)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Simplify (x^3 - 8)/(x^2 - 4) using suitable identities, and check the result at x = 4.",
+     "a": "x^3 - 8 = (x - 2)(x^2 + 2x + 4) and x^2 - 4 = (x - 2)(x + 2). Cancelling x - 2 (not zero) gives (x^2 + 2x + 4)/(x + 2). At x = 4: (16 + 8 + 4)/6 = 28/6 = 14/3, and the original is 56/12 = 14/3.",
+     "s": [
+      [
+       "Factorises with the cube and square identities",
+       1
+      ],
+      [
+       "Cancels x - 2 to get (x^2 + 2x + 4)/(x + 2)",
+       1
+      ],
+      [
+       "Checks x = 4: both 14/3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A square playground of side 40 m has a path of width s metres around it. (a) Write the side of the playground plus the path. (b) Find the area of the path as an expression in s. (c) Factorise your answer. (d) Use the factorised form to find the area of the path for s = 2, and check it from the expanded form.",
+     "a": "(a) 40 + 2s metres. (b) (40 + 2s)^2 - 40^2 = 1600 + 160s + 4s^2 - 1600 = 160s + 4s^2. (c) 4s^2 + 160s = 4s(s + 40). (d) 4(2)(42) = 336 square metres, and 160(2) + 4(4) = 336.",
+     "s": [
+      [
+       "Part (a): 40 + 2s",
+       1
+      ],
+      [
+       "Part (b): 160s + 4s^2",
+       2
+      ],
+      [
+       "Part (c): 4s(s + 40)",
+       1
+      ],
+      [
+       "Part (d): 336 from both forms",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Simplify (2x^2 - x - 10)/(4x^2 - 25). (b) Check the result at x = 3 in both forms. (c) State two values of x at which the original is undefined. (d) A student cancels the x^2 terms and the numbers separately to get (2 - 1 - 10)/(4 - 25). Say why this is wrong, using x = 3.",
+     "a": "(a) 2x^2 - x - 10 = (2x - 5)(x + 2) and 4x^2 - 25 = (2x - 5)(2x + 5), so the result is (x + 2)/(2x + 5). (b) Original: (18 - 3 - 10)/(36 - 25) = 5/11; simplified: 5/11. (c) x = 5/2 and x = -5/2 (the denominator is zero). (d) Cancelling terms is not cancelling common factors; at x = 3 it gives -9/-21 = 3/7, which is not the true value 5/11.",
+     "s": [
+      [
+       "Part (a): (x + 2)/(2x + 5)",
+       2
+      ],
+      [
+       "Part (b): 5/11 both ways",
+       1
+      ],
+      [
+       "Part (c): 5/2 and -5/2",
+       1
+      ],
+      [
+       "Part (d): says terms are not factors and uses 5/11 against 3/7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A cricket club in Hyderabad prepares two practice lawns. Lawn L has area x^2 + 9x + 20 square metres and Lawn M has area x^2 + x - 20 square metres, where x is a whole number of metres greater than 4. The club wants the ratio of the area of L to the area of M to be a whole number, and the two lawns together must not exceed 300 square metres.\n(a) Factorise both areas. (b) Simplify the ratio L : M as a single rational expression and state the value of x that must be excluded. (c) Find all whole x greater than 4 for which the ratio is a whole number. (d) Which of these values should the club choose, and what are the two areas?",
+     "a": "(a) x^2 + 9x + 20 = (x + 4)(x + 5) and x^2 + x - 20 = (x + 5)(x - 4). (b) The ratio is (x + 4)/(x - 4), after cancelling x + 5, which is not zero; x = 4 (and x = -5) is excluded. (c) (x + 4)/(x - 4) = 1 + 8/(x - 4), so x - 4 must divide 8: x = 5, 6, 8 or 12, giving ratios 9, 5, 3 and 2. (d) The total area is 2x^2 + 10x: for x = 12 it is 408 (over 300), for x = 8 it is 208 (allowed). So x = 8: L has 156 and M has 52 square metres, ratio 3.",
+     "s": [
+      [
+       "Part (a): (x + 4)(x + 5) and (x + 5)(x - 4)",
+       1
+      ],
+      [
+       "Part (b): (x + 4)/(x - 4) with the exclusion",
+       1
+      ],
+      [
+       "Part (c): x = 5, 6, 8, 12",
+       1
+      ],
+      [
+       "Part (d): x = 8 with 156 and 52",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A housing society in Pune plans a cuboid water tank. Its volume is 4t^3 - 36t cubic metres and its base has area t^2 - 9 square metres, where t is a whole number greater than 3. The tank must hold at least 300 cubic metres, and the roof of the pump room allows a tank height of at most 22 metres.\n(a) Factorise the volume completely. (b) Divide the volume by the base area, simplifying the rational expression, to get the height in terms of t. (c) For t = 5 find the volume from the factors and check it by substitution. (d) Which whole value of t should the society choose? Test t = 4, 5 and 6.",
+     "a": "(a) 4t^3 - 36t = 4t(t^2 - 9) = 4t(t - 3)(t + 3). (b) (4t^3 - 36t)/(t^2 - 9) = 4t(t - 3)(t + 3)/((t - 3)(t + 3)) = 4t, with t not equal to 3 or -3. (c) For t = 5: 20 x 2 x 8 = 320, and 4(125) - 36(5) = 500 - 180 = 320. (d) t = 4: volume 112 (too small). t = 5: volume 320 and height 20, which meets both limits. t = 6: height 24 (exceeds 22). So t = 5.",
+     "s": [
+      [
+       "Part (a): 4t(t - 3)(t + 3)",
+       1
+      ],
+      [
+       "Part (b): height 4t with the excluded values",
+       1
+      ],
+      [
+       "Part (c): 320 both ways",
+       1
+      ],
+      [
+       "Part (d): rejects t = 4 and t = 6 and chooses t = 5",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}
