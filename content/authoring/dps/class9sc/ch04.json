@@ -321,8 +321,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "A runner on a straight lane is noted from a tree T taken as reference point (right positive): +10 m at 0 s, +30 m at 5 s, +30 m at 10 s, -20 m at 15 s, -20 m at 20 s and 0 m at 25 s.\n(i) Find the change in position in each 5 s interval.\n(ii) State the intervals in which she is at rest.\n(iii) Between which instants does she cross T?\n(iv) At 25 s her reading is 0 m. Is she at rest at that instant? Explain.",
-     "a": "(i) +20 m, 0 m, -50 m, 0 m, +20 m. (ii) 5-10 s and 15-20 s (no change in position). (iii) Between 10 s and 15 s, as the sign goes from + to -. (iv) Not necessarily: 0 m means she is at T at that instant, but her reading was -20 m at 20 s and 0 m at 25 s, so her position was changing; rest requires the position to stay unchanged over time.",
+     "q": "A runner on a straight lane is noted from a tree T taken as reference point (right positive): +10 m at 0 s, +30 m at 5 s, +30 m at 10 s, -20 m at 15 s, -20 m at 20 s and 0 m at 25 s.\n(i) Find the change in position in each 5 s interval.\n(ii) State the intervals in which she is at rest.\n(iii) Between which instants does she cross T?\n(iv) Is she at rest from 20 s to 25 s? Explain.",
+     "a": "(i) +20 m, 0 m, -50 m, 0 m, +20 m. (ii) 5-10 s and 15-20 s (no change in position). (iii) Between 10 s and 15 s, as the sign goes from + to -. (iv) No: her reading changed from -20 m at 20 s to 0 m at 25 s, so her position changed during the interval; rest requires the position to stay unchanged over time.",
      "s": [
       [
        "Changes +20, 0, -50, 0, +20 m",
@@ -337,7 +337,7 @@
        1
       ],
       [
-       "Reading 0 m at an instant is not rest; position was changing",
+       "Not at rest from 20 s to 25 s; position changed by +20 m",
        1
       ]
      ]
@@ -801,11 +801,11 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "A delivery rider's warehouse W is at 0 m on a straight road (east positive). Three customers live at D1 = +600 m, D2 = +1000 m and D3 = +300 m. Route A is W to D1 to D2 to D3 and back to W. Route B is W to D2 to D3 to D1 and back to W. The bike's running cost is Rs 2.5 per km. The parcel for D2 is ice cream that melts quickly.\n(a) Find the total distance of Route A.\n(b) Find the displacement of the rider for the whole of Route A.\n(c) Find the total distance of Route B and its extra running cost over Route A.\n(d) Which route would you choose, and what do you give up?",
-     "a": "(a) 600 + 400 + 700 + 300 = 2000 m. (b) 0 m, since the rider returns to W. (c) 1000 + 700 + 300 + 600 = 2600 m; extra = 600 m = 0.6 km x Rs 2.5 = Rs 1.5. (d) Either, if justified: Route B costs Rs 1.50 more but delivers the ice cream first; Route A saves Rs 1.50 but the ice cream travels longer before delivery.",
+     "q": "A delivery rider's warehouse W is at 0 m on a straight road (east positive). Three customers live at D1 = -600 m (west of W), D2 = +1000 m and D3 = +300 m. Route A is W to D1 to D2 to D3 and back to W. Route B is W to D2 to D1 to D3 and back to W. The bike's running cost is Rs 2.5 per km. The parcel for D2 is ice cream that melts quickly.\n(a) Find the total distance of Route A.\n(b) Find the displacement of the rider for the whole of Route A.\n(c) Find the total distance of Route B and its extra running cost over Route A.\n(d) How far does the ice cream travel before delivery on each route? Which route would you choose, and what do you give up?",
+     "a": "(a) 600 + 1600 + 700 + 300 = 3200 m. (b) 0 m, since the rider returns to W. (c) 1000 + 1600 + 900 + 300 = 3800 m; extra = 600 m = 0.6 km x Rs 2.5 = Rs 1.50. (d) On Route A the ice cream travels 600 + 1600 = 2200 m before delivery; on Route B only 1000 m. Either route is acceptable if justified: Route B delivers the ice cream 1200 m sooner but costs Rs 1.50 more; Route A saves Rs 1.50 but the ice cream travels 2200 m before it is delivered.",
      "s": [
       [
-       "Part (a): 2000 m",
+       "Part (a): 3200 m",
        1
       ],
       [
@@ -813,11 +813,11 @@
        1
       ],
       [
-       "Part (c): 2600 m and Rs 1.50 extra",
+       "Part (c): 3800 m and Rs 1.50 extra",
        1
       ],
       [
-       "Part (d): a choice with the trade-off named",
+       "Part (d): 2200 m versus 1000 m, and a choice with the trade-off named",
        1
       ]
      ],
@@ -1118,19 +1118,19 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "Two cyclists start together from places 42 km apart on a straight road and ride towards each other, one at 12 km/h and the other at 9 km/h. (i) How fast are they closing the gap together? (ii) After how long do they meet? (iii) How far has each travelled by then?",
-     "a": "(i) Together they cover 12 + 9 = 21 km every hour. (ii) 42 / 21 = 2 h. (iii) The first has travelled 12 x 2 = 24 km and the second 9 x 2 = 18 km (24 + 18 = 42 km).",
+     "q": "A cyclist covers the first 18 km of a ride at 12 km/h and the next 6 km at 6 km/h. Her friend says the average speed is the mean of the two speeds, 9 km/h. (i) Find the time taken for each part. (ii) Find the average speed for the whole ride. (iii) Is the friend right?",
+     "a": "(i) 18/12 = 1.5 h and 6/6 = 1 h. (ii) Total distance 24 km in 2.5 h gives 24/2.5 = 9.6 km/h. (iii) No: average speed is total distance divided by total time (9.6 km/h), not the mean of the two speeds (9 km/h), because the time spent at each speed is different.",
      "s": [
       [
-       "Combined 21 km each hour",
+       "Times 1.5 h and 1 h",
        1
       ],
       [
-       "Meeting time 2 h",
+       "Average speed 9.6 km/h",
        1
       ],
       [
-       "Distances 24 km and 18 km",
+       "Friend is wrong; total distance over total time, unequal times",
        1
       ]
      ]
@@ -1567,7 +1567,7 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "A truck at 72 km/h slows to 36 km/h in 25 s on a straight road. (i) Find its average acceleration in m/s^2. (ii) State its direction relative to the velocity. (iii) If this acceleration stays constant, find its velocity 10 s later.",
+     "q": "A truck at 72 km/h slows to 36 km/h in 25 s on a straight road. (i) Find its average acceleration in m/s^2. (ii) State its direction relative to the velocity. (iii) If this acceleration stays constant, find its velocity 10 s after that (35 s after it began slowing).",
      "a": "(i) 72 km/h = 20 m/s and 36 km/h = 10 m/s, so a = (10 - 20)/25 = -0.4 m/s^2. (ii) Opposite to the velocity, as the speed decreases. (iii) 10 + (-0.4)(10) = 6 m/s.",
      "s": [
       [
@@ -1650,7 +1650,7 @@
      "t": "long_answer",
      "m": 4,
      "q": "A science club drops a ball from a high balcony. A camera shows the ball falling straight down and the club ignores air. They record its motion with the release point as the origin and the downward direction as positive. A member suggests that taking upward as positive would be more natural.\n(a) Find the velocity of the ball 2.5 s after release.\n(b) After how much time does its velocity reach 34.3 m/s?\n(c) If upward were taken as positive, what would be the acceleration and the velocity at 2.5 s?\n(d) Which positive direction should the club choose for its record, and what does the other choice cost?",
-     "a": "(a) 9.8 x 2.5 = 24.5 m/s downward. (b) 34.3 / 9.8 = 3.5 s. (c) The acceleration would be -9.8 m/s^2 and the velocity -24.5 m/s. (d) Either is acceptable if kept the same throughout: downward positive makes the falling readings positive but heights above the ground then become negative; upward positive suits heights but makes the velocity and acceleration negative.",
+     "a": "(a) 9.8 x 2.5 = 24.5 m/s downward. (b) 34.3 / 9.8 = 3.5 s. (c) The acceleration would be -9.8 m/s^2 and the velocity -24.5 m/s. (d) Either is acceptable if kept the same throughout: downward positive makes the falling readings positive but heights above the release point then become negative; upward positive suits heights but makes the velocity and acceleration negative.",
      "s": [
       [
        "Part (a): 24.5 m/s",
@@ -2237,8 +2237,8 @@
      "d": "Hard",
      "t": "assertion_reason",
      "m": 1,
-     "q": "Assertion (A): A car braking from 30 m/s at -4 m/s^2 travels 112.5 m before stopping.\nReason (R): The kinematic equations are valid only when the acceleration is constant.",
-     "a": "Both A and R are true but R is not the correct explanation of A. A is true since s = 900/8 = 112.5 m. R is also true, but it is a condition for using the equations, not the reason for the value 112.5 m.",
+     "q": "Assertion (A): A car braking from 20 m/s at -2.5 m/s^2 travels 80 m before stopping.\nReason (R): The car takes 8 s to stop.",
+     "a": "Both A and R are true but R is not the correct explanation of A. A is true since s = 400/5 = 80 m. R is also true (t = 20/2.5 = 8 s), but the stopping time is a separate result from the same data; it does not give the distance 80 m.",
      "o": [
       "Both A and R are true but R is not the correct explanation of A",
       "Both A and R are true and R is the correct explanation of A",

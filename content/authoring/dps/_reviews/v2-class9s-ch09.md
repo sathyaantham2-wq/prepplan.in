@@ -1,0 +1,31 @@
+# Review v2: Class 9 Social Science ch09 (iest109), content/authoring/dps/class9s/ch09.json
+
+Verdict: FIX BEFORE LOADING (1 HIGH, 5 MEDIUM, 7 LOW). One case study has an indeterminate key; everything else recomputes correctly.
+
+## What was checked
+- Structure: 6 concepts (9.1-9.6), 20 questions each, 45 marks each, all Hard (16) / Hardest (4). Per concept: 1 assertion_reason, 1 two-statement multi_statement, 4-5 mcq, 0-1 match, 1 fill_blank, 8 short, 4 long. Every mark scheme sums to the question's marks.
+- Every number was recomputed in Python before reading the stated answer (samosa revenue/profit 600/600/480 and 240/360/336; shoe counts 7,200/6,000/2,400 and values; Diwali TV revenues and profits 24,75,000 both plans, 5,85,000 vs 4,95,000; Josephs totals 7/15/22 and revenues; cold-storage supply 7/15/22; Harpreet profits 30,000/36,000 and 3,00,000/2,25,000/2,62,500; school-bag gaps and 4,000 vs 9,000; tomato equilibrium, gaps and the 25 kg / Rs 1,000 expectation; hotel 4,800, 1,44,000, 2,40,000, 1,20,000, 1,68,000, break-even 60%; park 80 families, 3,00,000, 4,50,000, Rs 1,250 vs Rs 500; sanitiser 360 and 0.50; wheat 24,000 loss / 36,000 gain). All agree with the keys, except the indeterminate item below.
+- Programmatic: for all 27 mcq, 3 match, 6 AR, 6 multi_statement the keyed text is exactly one of its four options (key at o[0], the loader convention); no duplicate options inside a question; no option names another option by letter or position; AR option order differs between items but the loader shuffles. Match keys checked pair by pair against the pages. MS keys vary (1 and 3 only; 2 and 3 only; all three; 3 only; 2 only; 1 and 2 only). AR outcomes vary (both-explains x2, both-not-explains x2, A true R false x1, A false R true x1).
+- Facts traced to pages 001-026 of iest109: every definition, example and list (determinants, related goods, hotel tariff factors, regulators, mask and sanitiser cases, price floor/ceiling, limits of intervention) is in the book. No fact from outside the book was found.
+
+## HIGH
+1. C9S-9.5 Q7 (onion market, flood): the stem says that before the flood "the supply was equal to the demand at each of these prices" (1,000/900/800/700 at Rs 30/40/50/60). Then every one of the four prices is an equilibrium, so the key "(a) Rs 30 before the flood" and the "66.7 per cent rise" in (b) (base Rs 30) are arbitrary; a student who names Rs 50 or Rs 60 is equally right and gets a different percentage. Fix: give a pre-flood supply that equals demand at only one price (an upward-sloping supply that crosses the demand column once), or ask only for the post-flood equilibrium and gap.
+
+## MEDIUM
+1. Expected-value and probability reasoning is not in this book: 9.4 Q6 (tomatoes, "each seller sells the fraction demanded of the amount offered", an invented rationing rule) and 9.5 Q20 (50% / 70% chance, break-even 60%). The numbers are right and the choice is two-sided, but these are maths-class tasks inside a social-science paper, and in 9.4 Q6 the hold-out is dominated in expectation, so the "decision" is nearly one-sided. Also 9.3 Q13(d) key adds "lose less to spoilage" and 9.1 Q4/Q19 and 9.6 Q14 rely on profit/revenue/cost-per-person arithmetic the chapter never teaches (only "revenue" is in a margin definition). Keep a few, trim the rest or note them as scope-light.
+2. Easy-in-disguise items labelled Hard (single step, answer is a sentence or sum from the page): 9.1 Q2, Q8, Q17, Q18; 9.2 Q1, Q4, Q14; 9.3 Q1, Q2, Q3, Q4 (all three statements verbatim); 9.4 Q3, Q9, Q10, Q20; 9.5 Q2, Q3, Q9, Q19; 9.6 Q1 (absurd distractor "always raises the price of every good"), Q11, Q15, Q19. About 22 of 120. All six fill_blank items and most 1-mark mcq are of this kind. They are valid; relabel a few to the easier band or add a second step.
+3. Repeated ideas and settings. 9.1: "market curve is flatter" tested in Q7(iii), Q12, Q14, Q19(c); three-buyer mango table in Q1, Q7, Q12, Q14, Q20. 9.4: the Rs 40 mango gap of 32 kg appears in Q4, Q7, Q9 (Q19 and Q7 also repeat the 35 kg gap); the notebook table is used in Q8, Q12, Q14, Q20. 9.5: the face-mask story in Q1, Q8, Q14, Q15, Q17, Q18, Q19 (seven items); the 40 per cent hotel cut in Q3, Q4, Q10, Q14, Q20; Rs 8,000 vs Rs 1,500 in Q2, Q9, Q11. 9.6: the park-fund idea in Q5, Q12, Q14, Q19; the sanitiser cap in Q4, Q7, Q18; the wheat Rs 20 / Rs 30 example in Q6, Q11, Q20; price floor in Q16 and Q17 (Q17 is the same point as Q16). Vary the settings and drop duplicates (e.g. 9.5 Q19, 9.6 Q17, 9.4 Q9, 9.1 Q18).
+4. Items not self-contained: 9.4 Q14 opens "In the same notebook market" and 9.4 Q20 uses a notebook market defined only in Q12; if drawn into a paper without Q12 they read oddly. State the market in each stem (Q20 gives its two numbers, so it is answerable, Q14 likewise, so this is limited to wording).
+5. 9.4 Q2 carries the `figure` tag but the "figure" is described in words; a blueprint slot that asks for a figure question will give a paper with no figure. Drop the tag or supply the figure.
+
+## LOW
+1. 9.4 Q15 key is the longest option (80 against 72/70/79 characters), a mild cue.
+2. 9.3 Q13: demand "18, 12 and 6 kg" at "the same three prices" is only resolved by the Law of Demand (prices listed ascending); say "at Rs 50, Rs 100 and Rs 150 respectively".
+3. Strawman claim checks and true/false: 9.3 Q11 (Neha), 9.6 Q8 (Aman, "always work fairly"), 9.5 Q4 statement 1 ("until the next academic year"), 9.1 Q17, 9.3 Q1. They rest on real misconceptions, so tolerable, but the verdict mix is mostly No/False.
+4. 9.1 Q12 claim check ("Rohit is right") is nearly a restatement of the book's own line and easy.
+5. 9.2 Q11 uses "petrol cars" where the book's exercise says diesel cars; the complement logic is the same and the key is sound.
+6. 9.6 Q10 (AR): A is an inference from the compliance paragraph rather than a book statement; R explains it, but a strict reader could call it "not the explanation". Acceptable.
+7. 9.4 Q1(iii) / 9.4 Q15: the "sellers also gain" and "unsold stock pulls the price" lines are reasonable inferences from Table 9.3, not wording in the book.
+
+## Not found
+Wrong keys other than 9.5 Q7(a); a second defensible option in any mcq/match/AR/MS; answers given away in case-study stems; positional option references; facts beyond the book; format breaks.

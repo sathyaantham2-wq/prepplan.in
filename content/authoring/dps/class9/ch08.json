@@ -20,13 +20,13 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Meena stacks oranges for a fruit display. The top row has 1 orange, the next row has 2, the next 3, and so on, each row one more than the row above. How many oranges does she need for 8 rows?",
-     "a": "36",
+     "q": "Meena stacks oranges for a fruit display. The top row has 1 orange, the next row has 2, the next 3, and so on, each row one more than the row above. She has exactly 66 oranges and builds rows until they run out. How many oranges are in the last row?",
+     "a": "11",
      "o": [
-      "36",
-      "28",
-      "45",
-      "64"
+      "11",
+      "12",
+      "10",
+      "33"
      ],
      "tags": [
       "scenario"
@@ -99,8 +99,8 @@
      "d": "Hard",
      "t": "fill_blank",
      "m": 1,
-     "q": "The sum of the first 12 odd numbers is ___ .",
-     "a": "144"
+     "q": "The sum of the 6th to the 12th odd numbers (both included) is ___ .",
+     "a": "119"
     },
     {
      "b": "Apply",
@@ -130,7 +130,7 @@
       "1 + 2 + 3 + ... + 13",
       "1 + 2 + 3 + ... + 12",
       "1 + 2 + 3 + ... + 14",
-      "13 x 7, the product of its factors"
+      "1 + 2 + 3 + ... + 7 + 13"
      ]
     },
     {
@@ -902,7 +902,7 @@
      "d": "Hard",
      "t": "assertion_reason",
      "m": 1,
-     "q": "Assertion (A): For s1 = 4 and s_n = s_(n-1)(s_(n-1) - 1), the first three terms 4, 12, 132 have neither a constant difference nor a constant ratio.\nReason (R): A recursive rule describes a sequence by relating each term to the earlier terms.",
+     "q": "Assertion (A): For s1 = 4 and s_n = s_(n-1)(s_(n-1) - 1), the first three terms 4, 12, 132 have neither a constant difference nor a constant ratio.\nReason (R): The terms 4, 12 and 132 are all multiples of 4.",
      "a": "A and R are both true, but R is not the correct explanation of A.",
      "o": [
       "A and R are both true, but R is not the correct explanation of A.",
@@ -924,7 +924,7 @@
      "d": "Hard",
      "t": "match",
      "m": 1,
-     "q": "Match each recursive rule in Column I with its 4th term in Column II.\nColumn I: 1. t1 = 2, t_n = t_(n-1) + 5  2. t1 = 2, t_n = 2 t_(n-1)  3. t1 = 1, t2 = 2, t_n = t_(n-1) + t_(n-2)  4. T1 = 1, T2 = 2, T3 = 4, T_n = T_(n-1) + T_(n-2) + T_(n-3)\nColumn II: a. 5  b. 7  c. 16  d. 17",
+     "q": "Match each recursive rule in Column I with its 4th term in Column II.\nColumn I: 1. t1 = 2, t_n = t_(n-1) + 5  2. t1 = 2, t_n = 2 t_(n-1)  3. t1 = 1, t2 = 2, t_n = t_(n-1) + t_(n-2)  4. T1 = 1, T2 = 3, T_n = T_(n-1) + T_(n-2)\nColumn II: a. 5  b. 7  c. 16  d. 17",
      "a": "1-d, 2-c, 3-a, 4-b",
      "o": [
       "1-d, 2-c, 3-a, 4-b",
@@ -1030,15 +1030,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Let T1 = 1, T2 = 1, T3 = 2 and T_n = T_(n-1) + T_(n-2) + T_(n-3) for n >= 4. (a) Find T4 to T7. (b) Using them, find the position of the first term greater than 50.",
-     "a": "(a) T4 = 4, T5 = 7, T6 = 13, T7 = 24. (b) T8 = T7 + T6 + T5 = 24 + 13 + 7 = 44 and T9 = 44 + 24 + 13 = 81, so the first term above 50 is T9 = 81, in the 9th position.",
+     "q": "Let t1 = 2, t2 = 3 and t_n = t_(n-1) + t_(n-2) for n >= 3. (a) Find t3 to t7. (b) Using them, find the position of the first term greater than 50.",
+     "a": "(a) t3 = 5, t4 = 8, t5 = 13, t6 = 21, t7 = 34. (b) t8 = t7 + t6 = 34 + 21 = 55, which is greater than 50, while t7 = 34 is not, so the first term above 50 is t8 = 55, in the 8th position.",
      "s": [
       [
-       "Part (a): 4, 7, 13, 24",
+       "Part (a): 5, 8, 13, 21, 34",
        1
       ],
       [
-       "Part (b): T8 = 44, T9 = 81, so position 9",
+       "Part (b): t8 = 55, so position 8",
        1
       ]
      ]
@@ -1073,8 +1073,8 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "The recursive rule is u1 = 1 and u_n = 2u_(n-1) + 3. Show that 133 is not a term.",
-     "a": "The terms are 1, 5, 13, 29, 61, 125, 253, ... and they keep increasing. Since 125 < 133 < 253 and nothing lies between the 6th term 125 and the 7th term 253, 133 is not a term.",
+     "q": "The recursive rule is u1 = 1 and u_n = 2u_(n-1) + 3. Show that 130 is not a term.",
+     "a": "The terms are 1, 5, 13, 29, 61, 125, 253, ... and they keep increasing. Since 125 < 130 < 253 and nothing lies between the 6th term 125 and the 7th term 253, 130 is not a term.",
      "s": [
       [
        "Lists the terms up to 125 and 253",
@@ -1085,7 +1085,7 @@
        1
       ],
       [
-       "Concludes 133 lies between two terms so is not one",
+       "Concludes 130 lies between two terms so is not one",
        1
       ]
      ],
@@ -1616,8 +1616,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "A software engineer in Hyderabad has two job offers. Offer A pays Rs 4,50,000 in year 1 and raises the salary by Rs 30,000 every year. Offer B pays Rs 5,10,000 in year 1 and raises it by Rs 18,000 every year. (a) What does each offer pay in year 6? (b) In year 4, which offer pays more and by how much? (c) Does each offer pay exactly Rs 6,60,000 in some year? (d) She plans to stay with the firm for either 4 years or 10 years. Use your answers to say which offer suits each plan.",
-     "a": "(a) A: 4,50,000 + 5 x 30,000 = 6,00,000. B: 5,10,000 + 5 x 18,000 = 6,00,000; the two are equal. (b) A pays 5,40,000 and B pays 5,64,000, so B pays Rs 24,000 more. (c) A: 4,50,000 + (n - 1) x 30,000 = 6,60,000 gives n = 8, so year 8. B: (n - 1) x 18,000 = 1,50,000 gives n - 1 = 8.33..., so never exactly. (d) The offers are equal in year 6; B pays more in years 1 to 5 and A pays more from year 7. For 4 years Offer B is better; for 10 years Offer A is better (year 10: A pays 7,20,000 and B 6,72,000).",
+     "q": "A software engineer in Hyderabad has two job offers. Offer A pays Rs 4,50,000 in year 1 and raises the salary by Rs 30,000 every year. Offer B pays Rs 5,10,000 in year 1 and raises it by Rs 18,000 every year. (a) What does each offer pay in year 6? (b) In year 4, which offer pays more and by how much? (c) Does each offer pay exactly Rs 6,60,000 in some year? (d) She plans to stay with the firm for either 4 years or 10 years and will judge each plan by the salary paid in her final year of that plan. Use your answers to say which offer suits each plan.",
+     "a": "(a) A: 4,50,000 + 5 x 30,000 = 6,00,000. B: 5,10,000 + 5 x 18,000 = 6,00,000; the two are equal. (b) A pays 5,40,000 and B pays 5,64,000, so B pays Rs 24,000 more. (c) A: 4,50,000 + (n - 1) x 30,000 = 6,60,000 gives n = 8, so year 8. B: (n - 1) x 18,000 = 1,50,000 gives n - 1 = 8.33..., so never exactly. (d) The offers are equal in year 6; B pays more in years 1 to 5 and A pays more from year 7. Judged by the final-year salary, for the 4-year plan Offer B is better (year 4: B 5,64,000 against A 5,40,000) and for the 10-year plan Offer A is better (year 10: A 7,20,000 against B 6,72,000).",
      "s": [
       [
        "Part (a): equal at Rs 6,00,000",
@@ -1632,7 +1632,7 @@
        1
       ],
       [
-       "Part (d): B for 4 years, A for 10 years, using the year 6 crossover",
+       "Part (d): by final-year salary, B for 4 years and A for 10 years, using the year 6 crossover",
        1
       ]
      ],
@@ -1645,8 +1645,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "Priya designs rangoli patterns. Stage 1 uses 7 dots and each later stage uses 5 more dots than the one before. She has 500 dots. (a) How many dots does Stage 20 need? (b) Which stage needs 177 dots? (c) She plots the points (stage, dots) and joins them in a line. What value does the line reach if she extends it back to stage 0? (d) She can make one large pattern or two identical smaller ones from her 500 dots. Using the rule for the nth stage, find the biggest stage for each choice and advise her.",
-     "a": "(a) 7 + 19 x 5 = 102. (b) 7 + (n - 1) x 5 = 177 gives n = 35. (c) The nth term is 5n + 2, so at stage 0 the line gives 2. (d) One pattern: 5n + 2 <= 500 gives n <= 99.6, so Stage 99 with 497 dots. Two identical patterns: 2(5n + 2) <= 500 gives n <= 49.6, so Stage 49 with 247 dots each (494 used). One Stage 99 pattern is far larger, while two Stage 49 patterns give a pair; a reasoned choice using these figures is expected.",
+     "q": "Priya designs rangoli patterns. Stage 1 uses 7 dots and each later stage uses 5 more dots than the one before. She has 500 dots. (a) How many dots does Stage 20 need? (b) Which stage needs 177 dots? (c) She plots the points (stage, dots) and joins them in a line. What value does the line reach if she extends it back to stage 0? (d) The club wants either one large pattern for the courtyard, or two identical patterns, one for each of its two gates, each of at least Stage 40. Using the rule for the nth stage, find the biggest stage for each choice and say whether the two-gate plan is possible.",
+     "a": "(a) 7 + 19 x 5 = 102. (b) 7 + (n - 1) x 5 = 177 gives n = 35. (c) The nth term is 5n + 2, so at stage 0 the line gives 2. (d) One pattern: 5n + 2 <= 500 gives n <= 99.6, so Stage 99 with 497 dots. Two identical patterns: 2(5n + 2) <= 500 gives n <= 49.6, so Stage 49 with 247 dots each (494 used). Since 49 >= 40, the two-gate plan is possible, using 494 dots; the single courtyard pattern can reach Stage 99 with 497 dots. She should choose the pair if both gates need a pattern, and the one large pattern only if the courtyard alone is to be decorated.",
      "s": [
       [
        "Part (a): 102 dots",
@@ -1661,7 +1661,7 @@
        1
       ],
       [
-       "Part (d): Stage 99 for one pattern, Stage 49 for two, with a justified advice",
+       "Part (d): Stage 99 for one pattern, Stage 49 for two (at least 40, so possible), with advice matching the club's need",
        1
       ]
      ],
@@ -1966,11 +1966,11 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "Write a sum of consecutive natural numbers that you can evaluate as S70 - S29, and find its value.",
-     "a": "S70 - S29 = 30 + 31 + ... + 70. S70 = 70 x 71 / 2 = 2485 and S29 = 29 x 30 / 2 = 435, so the sum is 2485 - 435 = 2050.",
+     "q": "Write 30 + 31 + ... + 70 as a difference of two sums S_n of consecutive natural numbers, and find its value.",
+     "a": "30 + 31 + ... + 70 = S70 - S29. S70 = 70 x 71 / 2 = 2485 and S29 = 29 x 30 / 2 = 435, so the sum is 2485 - 435 = 2050.",
      "s": [
       [
-       "Names the sum 30 + 31 + ... + 70",
+       "Writes the sum as S70 - S29",
        1
       ],
       [
@@ -2165,8 +2165,8 @@
      "d": "Hard",
      "t": "multi_statement",
      "m": 1,
-     "q": "Consider the following statements.\nStatement 1: The list 1, -1, 1, -1, 1, ... is a GP with common ratio -1.\nStatement 2: The recursive rule t1 = 3, t_n = 10 t_(n-1) gives the GP 3, 30, 300, 3000, ... .\nStatement 3: In the Sierpinski triangle, the number of black triangles at each stage is three times the number at the previous stage.\nWhich of the statements are correct?",
-     "a": "1, 2 and 3",
+     "q": "Consider the following statements.\nStatement 1: The list 1, -1, 1, -1, 1, ... is a GP with common ratio -1.\nStatement 2: The recursive rule t1 = 3, t_n = 10 t_(n-1) gives the GP 3, 30, 300, 3000, ... .\nStatement 3: In the Sierpinski triangle, the number of black triangles at each stage is four times the number at the previous stage.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
      "o": [
       "1, 2 and 3",
       "1 and 2 only",
@@ -2325,19 +2325,19 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "Ria says: 'The area of the black region in the Sierpinski triangle keeps decreasing, so the number of black triangles must also keep decreasing.' Is she right?",
-     "a": "No. The number of black triangles increases as 1, 3, 9, 27, ... because each triangle is replaced by three, while the area falls as 1, 3/4, (3/4)^2, ... because each new triangle is smaller. The two quantities move in opposite directions.",
+     "q": "Arjun says: 'At Stage 3 of the Sierpinski carpet there are 512 squares, so the black area is 512/729 of the original, which is the same as 8/9 of it.' Is he right?",
+     "a": "No. The number of squares at Stage 3 is 8^3 = 512 and each is 1/729 of the original square, so the area is 512/729, about 0.70. It is not 8/9, which is about 0.89: 8/9 is the fraction kept after one stage only. After 3 stages the fraction is (8/9)^3 = 512/729.",
      "s": [
       [
-       "Verdict: Ria is wrong",
+       "Verdict: Arjun is wrong",
        1
       ],
       [
-       "Gives the increasing count 1, 3, 9, 27",
+       "Finds the area 512/729 (about 0.70) from 8^3 squares each 1/729 of the original",
        1
       ],
       [
-       "Gives the decreasing area (3/4)^n and says they move in opposite directions",
+       "Explains 8/9 is the one-stage fraction and Stage 3 gives (8/9)^3",
        1
       ]
      ],

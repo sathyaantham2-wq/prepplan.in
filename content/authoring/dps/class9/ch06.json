@@ -486,13 +486,13 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "Four students quote approximations for pi: Asha uses 22/7, Binu uses the square root of 10, Charu uses 3.125 and Dhruv uses 3.1416. Taking pi = 3.14159265, whose value lies closest to it?",
-     "a": "Dhruv's value, 3.1416",
+     "q": "Archimedes showed that 3 10/71 < pi < 3 1/7, that is, 3.1408 (to four places) < pi < 3.1429. Which of these values cannot be pi according to these bounds?",
+     "a": "3.14, because it is less than 3 10/71",
      "o": [
-      "Dhruv's value, 3.1416",
-      "Asha's value, 22/7",
-      "Binu's value, root 10",
-      "Charu's value, 3.125"
+      "3.14, because it is less than 3 10/71",
+      "3.1416, which lies between 3 10/71 and 3 1/7",
+      "3.1420, which lies between 3 10/71 and 3 1/7",
+      "3.1428, which lies between 3 10/71 and 3 1/7"
      ],
      "tags": [
       "scenario"
@@ -599,8 +599,8 @@
      "d": "Hard",
      "t": "fill_blank",
      "m": 1,
-     "q": "In Madhava's series pi/4 = 1 - 1/3 + 1/5 - 1/7 + ..., the 10th term is -1/___.",
-     "a": "19"
+     "q": "A tablet from Mesopotamia uses the rule that the perimeter of a circle is 3 1/8 times its diameter. By this rule a circular pond of diameter 24 m has a perimeter of ___ m.",
+     "a": "75"
     },
     {
      "b": "Analyse",
@@ -608,14 +608,14 @@
      "t": "short_answer",
      "m": 2,
      "q": "True or False: Since pi is irrational, if a fraction is close to pi, another fraction can always be found that is even closer. Give a reason.",
-     "a": "True. An irrational number has no 'best fraction'; 22/7 is close but 355/113 is closer, and the process can go on without end.",
+     "a": "True. Pi is irrational, so no fraction equals it exactly and every fraction leaves a gap; a closer fraction always exists (22/7 is close, 355/113 is closer).",
      "s": [
       [
        "States True",
        1
       ],
       [
-       "Says pi has no best fraction, with 355/113 closer than 22/7 as an example",
+       "Says pi is irrational so every fraction leaves a gap, with 355/113 closer than 22/7 as an example",
        1
       ]
      ],
@@ -642,19 +642,19 @@
      ]
     },
     {
-     "b": "Understand",
+     "b": "Apply",
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Pi Day is on March 14 (3-14) and Pi Approximation Day on 22 July (22-7). (a) Which approximation does each date suggest? (b) Which of the two is closer to pi = 3.14159265? Show the two differences.",
-     "a": "(a) 3-14 suggests 3.14 and 22-7 suggests 22/7. (b) 3.14 differs from pi by about 0.00159 and 22/7 by about 0.00126, so 22/7 is closer.",
+     "q": "A rope circle has a diameter of 113 cm. (a) Find its circumference using 355/113 and using 22/7. (b) Taking the true circumference as 113 x 3.14159265 = 355.00 cm (nearest hundredth), which rule is closer and by how much does the other one miss?",
+     "a": "(a) 113 x 355/113 = 355 cm and 113 x 22/7 = 355.14 cm. (b) 355/113 is closer: it matches 355.00 cm, while 22/7 overshoots by about 0.14 cm.",
      "s": [
       [
-       "Part (a): 3.14 and 22/7",
+       "Part (a): 355 cm and 355.14 cm",
        1
       ],
       [
-       "Part (b): differences 0.00159 and 0.00126 and the conclusion that 22/7 is closer",
+       "Part (b): 355/113 is closer and 22/7 overshoots by about 0.14 cm",
        1
       ]
      ]
@@ -726,7 +726,7 @@
      "t": "short_answer",
      "m": 3,
      "q": "Show that pi cannot be exactly equal to Aryabhata's value 3.1416 (that is, 62832/20000), even though the value is correct to four decimal places.",
-     "a": "If pi = 62832/20000, then pi would be a ratio of two integers. But pi is irrational (Lambert, 1761) and cannot be written as a ratio of integers. Also, pi = 3.14159265... differs from 3.1416 in the sixth decimal, so 3.1416 is only an approximation, the 'asanna' value.",
+     "a": "If pi = 62832/20000, then pi would be a ratio of two integers. But pi is irrational (Lambert, 1761) and cannot be written as a ratio of integers. Also, pi = 3.14159265... differs from 3.1416 in the fifth decimal, so 3.1416 is only an approximation, the 'asanna' value.",
      "s": [
       [
        "Writes 3.1416 as the ratio 62832/20000",
@@ -771,23 +771,23 @@
      ]
     },
     {
-     "b": "Evaluate",
+     "b": "Analyse",
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "Ravi adds the first five terms of Madhava's series, 1 - 1/3 + 1/5 - 1/7 + 1/9, and multiplies by 4. Find his estimate of pi and its error. Is it a better estimate than 22/7?",
-     "a": "The five-term sum is 0.8349 and 4 x 0.8349 = 3.3397. The error is 3.3397 - 3.1416 = 0.198. The error of 22/7 is only 0.00126, so five terms are far worse than 22/7.",
+     "q": "A regular hexagon is inscribed in a circle of radius 7 cm. (a) Find the perimeter of the hexagon and its ratio to the diameter. (b) Explain why the circumference of the circle is more than this perimeter, so that pi is more than the ratio you found. (c) Is the Mesopotamian value 3 1/8 consistent with this? Give a reason.",
+     "a": "(a) A regular hexagon has sides equal to the radius, so the perimeter is 6 x 7 = 42 cm and 42/14 = 3. (b) Each side is a straight chord, which is shorter than the arc it cuts off, so the circle is longer than 42 cm and pi > 3. (c) Yes: 3 1/8 = 3.125 is more than 3.",
      "s": [
       [
-       "Estimate 3.3397",
+       "Part (a): perimeter 42 cm and ratio 3",
        1
       ],
       [
-       "Error about 0.198",
+       "Part (b): chord shorter than arc, so pi > 3",
        1
       ],
       [
-       "Compares with the error 0.00126 of 22/7 and concludes it is worse",
+       "Part (c): 3.125 > 3, consistent",
        1
       ]
      ]
@@ -827,8 +827,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "The chapter dates Archimedes to 250 BCE, Zu Chongzhi to 480 CE, Aryabhata to 499 CE and Brahmagupta to 628 CE. (a) How many years separate Archimedes from Zu Chongzhi? (b) The chapter says 355/113 stayed the most accurate value for over 800 years. Before what year, at the earliest, was it still the best? (c) How many years separate Aryabhata from Brahmagupta? (d) Aryabhata's word 'asanna' is said to suggest the ratio is not a simple fraction. Judge whether the chapter claims Aryabhata proved pi is irrational, and say who showed it and when.",
-     "a": "(a) 250 BCE to 480 CE is 250 + 480 = 730 years (there is no year 0). (b) 480 + 800 = 1280 CE, so it was the best until at least about 1280 CE. (c) 628 - 499 = 129 years. (d) No. The chapter says only that he 'regarded' or 'suggested' this; Lambert showed that pi is irrational in 1761.",
+     "q": "Treat BCE years as negative numbers and ignore the missing year 0. The chapter dates Archimedes to 250 BCE, Zu Chongzhi to 480 CE and Aryabhata to 499 CE. (a) How many years separate Archimedes from Zu Chongzhi? (b) The chapter says 355/113 stayed the most accurate value for over 800 years. Until at least what year was it still the best? (c) Archimedes trapped pi between 3 10/71 and 3 1/7. Find the width of that interval as a fraction. (d) Aryabhata's word 'asanna' is said to suggest the ratio is not a simple fraction. Judge whether the chapter claims Aryabhata proved pi is irrational, and say who showed it and when.",
+     "a": "(a) 250 + 480 = 730 years (BCE years taken as negative, year 0 ignored). (b) 480 + 800 = 1280, so it was the best until at least about 1280 CE. (c) 3 1/7 - 3 10/71 = 1/7 - 10/71 = (71 - 70)/497 = 1/497. (d) No. The chapter says only that he 'regarded' or 'suggested' this; Lambert showed that pi is irrational in 1761.",
      "s": [
       [
        "Part (a): 730 years",
@@ -839,7 +839,7 @@
        1
       ],
       [
-       "Part (c): 129 years",
+       "Part (c): width 1/497",
        1
       ],
       [
@@ -954,13 +954,13 @@
      "d": "Hard",
      "t": "mcq",
      "m": 1,
-     "q": "On a track the lane width is 1.22 m, each curved part is a semicircle, and there are two bends. Taking pi = 3.1416, how much further than the runner in the first lane does a runner in the second lane run on the two bends, if each runs at the same distance from her inner border?",
-     "a": "7.67 m",
+     "q": "A window is a rectangle 1.4 m wide and 2.1 m high, topped by a semicircular arch whose diameter is the 1.4 m width. Taking pi = 22/7, the length of the whole outline, including the bottom edge, is",
+     "a": "7.8 m",
      "o": [
-      "7.67 m",
-      "3.83 m",
-      "1.22 m",
-      "2.44 m"
+      "7.8 m",
+      "10.0 m",
+      "6.4 m",
+      "9.2 m"
      ],
      "tags": [
       "scenario"
@@ -1041,7 +1041,7 @@
      "d": "Hard",
      "t": "match",
      "m": 1,
-     "q": "Match each item in Column A with its length in Column B (use pi = 22/7).\nColumn A: 1. Semicircle of radius 14 cm; 2. Quarter circle of radius 21 cm; 3. Arc of 120 degrees on a circle of radius 10.5 cm; 4. Perimeter of a sector of 90 degrees and radius 14 cm.\nColumn B: (a) 22 cm; (b) 33 cm; (c) 44 cm; (d) 50 cm.",
+     "q": "Match each item in Column A with its length in Column B (use pi = 22/7).\nColumn A: 1. Semicircle of radius 14 cm; 2. Arc of a quarter circle of radius 21 cm; 3. Arc of 120 degrees on a circle of radius 10.5 cm; 4. Perimeter of a sector of 90 degrees and radius 14 cm.\nColumn B: (a) 22 cm; (b) 33 cm; (c) 44 cm; (d) 50 cm.",
      "a": "1-c, 2-b, 3-a, 4-d",
      "o": [
       "1-c, 2-b, 3-a, 4-d",
@@ -1133,15 +1133,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "A track has two straights of 84.39 m each and two semicircular bends. A runner keeps 0.3 m from the inner border of the first lane, whose inner semicircle has radius 36.5 m. (a) Find the total distance she runs in a lap, with pi = 3.1416. (b) Is it a 400 m lap?",
-     "a": "(a) The straights give 2 x 84.39 = 168.78 m. The bends form one circle of radius 36.8 m, with circumference 2 x 3.1416 x 36.8 = 231.22 m. Total = 400.0 m. (b) Yes, it is a 400 m lap.",
+     "q": "A garden is a rectangle 20 m by 14 m with a semicircle added on each 14 m side (pi = 22/7). (a) Find its perimeter. (b) Find the cost of edging it at Rs 120 per metre.",
+     "a": "(a) The two straight sides give 2 x 20 = 40 m, and the two semicircles of diameter 14 m make one circle of circumference 22/7 x 14 = 44 m, so the perimeter is 84 m. (b) 84 x 120 = Rs 10,080.",
      "s": [
       [
-       "Part (a): 168.78 m and 231.22 m",
+       "Part (a): 40 m and 44 m, giving 84 m",
        1
       ],
       [
-       "Part (b): total 400 m",
+       "Part (b): Rs 10,080",
        1
       ]
      ]
@@ -1223,19 +1223,19 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "On a track with a lane width of 1.22 m, the runners in lanes 1, 2 and 3 run at the same distance from the inner border of their lane. With pi = 3.1416, find the extra distance run on the two bends by lane 2 compared with lane 1, by lane 3 compared with lane 2, and by lane 3 compared with lane 1. What does this say about the stagger?",
-     "a": "Each lane's bend radius is 1.22 m bigger than the one inside it, and the two bends make a circle, so the extra run is 2 pi x 1.22 = 7.67 m for lane 2 over lane 1 and for lane 3 over lane 2, and 2 pi x 2.44 = 15.33 m for lane 3 over lane 1. The same stagger of 7.67 m is needed between every pair of adjacent lanes.",
+     "q": "A flower bed is a sector of radius 14 m with an angle of 135 degrees. It is fenced along its arc and its two straight edges at Rs 45 per metre. A semicircular bed of the same radius is also to be fenced. Taking pi = 22/7, find the fencing cost of each and how much less the sector costs.",
+     "a": "Sector arc = 135/360 x 2 x 22/7 x 14 = 33 m, so its perimeter is 33 + 28 = 61 m and its fencing costs 61 x 45 = Rs 2,745. The semicircle has perimeter 22/7 x 14 + 28 = 72 m and costs 72 x 45 = Rs 3,240. The sector costs Rs 495 less.",
      "s": [
       [
-       "7.67 m for lane 2 over lane 1",
+       "Sector arc 33 m and perimeter 61 m",
        1
       ],
       [
-       "7.67 m for lane 3 over lane 2 and 15.33 m for lane 3 over lane 1",
+       "Costs Rs 2,745 and Rs 3,240",
        1
       ],
       [
-       "Concludes the same stagger between adjacent lanes",
+       "Difference Rs 495",
        1
       ]
      ]
@@ -1489,15 +1489,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "An isosceles trapezium has parallel sides of 32 cm and 14 cm, and each slanting side is 15 cm. (a) Find its height. (b) Find its area.",
-     "a": "(a) The ends stick out (32 - 14)/2 = 9 cm on each side, so the height is root(15 squared - 9 squared) = 12 cm. (b) Area = 1/2 x (32 + 14) x 12 = 276 square cm.",
+     "q": "An isosceles trapezium has parallel sides of 30 cm and 12 cm, and each slanting side is 15 cm. (a) Find its height. (b) Find its area.",
+     "a": "(a) The ends stick out (30 - 12)/2 = 9 cm on each side, so the height is root(15 squared - 9 squared) = 12 cm. (b) Area = 1/2 x (30 + 12) x 12 = 252 square cm.",
      "s": [
       [
        "Part (a): 9 cm projection and height 12 cm",
        1
       ],
       [
-       "Part (b): area 276 square cm",
+       "Part (b): area 252 square cm",
        1
       ]
      ]
@@ -1828,7 +1828,7 @@
       "She gets about 77.8 square cm, far from the true area, which is 6 square cm with s = 6",
       "She still gets 6 square cm, because s only scales the answer",
       "She gets 12 square cm, which is double the true area of 6 square cm",
-      "She gets 36 square cm, which is the area of a square of side 6 cm"
+      "She gets 6,048 square cm, the product under the square root, because she forgets to take the root"
      ],
      "tags": [
       "scenario"
@@ -2193,11 +2193,11 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "A cyclic plot ABCD has sides AB = 39 m, BC = 52 m, CD = 25 m and DA = 60 m. A seller prices it at Rs 5,000 per square metre and says that the area is the product of the averages of opposite sides, (39 + 25)/2 x (52 + 60)/2. A surveyor will measure the diagonal AC for a fee of Rs 30,000. (a) Find the semi-perimeter and the area by Brahmagupta's formula. (b) By how much does the seller's rule overstate the area, and by how much money? (c) The surveyor finds AC = 65 m. Show that angles B and D are right angles and use the two triangles to confirm the area. (d) Should the buyer pay the surveyor, and what price should he offer?",
-     "a": "(a) s = 88 m and the area is root(49 x 36 x 63 x 28) = 1,764 square m. (b) The seller's rule gives 32 x 56 = 1,792, an overstatement of 28 square m, which is Rs 1,40,000. (c) 39 squared + 52 squared = 65 squared and 25 squared + 60 squared = 65 squared, so by the converse of the Baudhayana-Pythagoras theorem, B and D are right angles; the areas are 1/2 x 39 x 52 + 1/2 x 25 x 60 = 1,014 + 750 = 1,764. (d) Yes. Paying Rs 30,000 can save Rs 1,40,000; the buyer should offer Rs 5,000 x 1,764 = Rs 88,20,000.",
+     "q": "A plot ABCD has sides AB = 39 m, BC = 52 m, CD = 25 m and DA = 60 m. The seller says it is cyclic, prices it at Rs 5,000 per square metre and says that the area is the product of the averages of opposite sides, (39 + 25)/2 x (52 + 60)/2. A surveyor will measure the diagonal AC for a fee of Rs 30,000. (a) If the seller's claim of a cyclic plot holds, find the semi-perimeter and the area by Brahmagupta's formula. (b) By how much does the seller's rule overstate the area, and by how much money? (c) The surveyor finds AC = 65 m. Show that angles B and D are right angles, so the plot really is cyclic, and use the two triangles to confirm the area. (d) Should the buyer pay the surveyor, and what price should he offer?",
+     "a": "(a) s = 88 m and the area is root(49 x 36 x 63 x 28) = 1,764 square m. (b) The seller's rule gives 32 x 56 = 1,792, an overstatement of 28 square m, which is Rs 1,40,000. (c) 39 squared + 52 squared = 65 squared and 25 squared + 60 squared = 65 squared, so by the converse of the Baudhayana-Pythagoras theorem, B and D are right angles, opposite angles add to 180 degrees and the plot is cyclic; the areas are 1/2 x 39 x 52 + 1/2 x 25 x 60 = 1,014 + 750 = 1,764. (d) Yes. Brahmagupta's 1,764 square m holds only if the cyclic claim is true, and only the diagonal reading proves it; Rs 30,000 is small beside the Rs 1,40,000 at stake. With the claim proved, the buyer should offer Rs 5,000 x 1,764 = Rs 88,20,000.",
      "s": [
       [
-       "Part (a): s = 88 and area 1,764 square m",
+       "Part (a): s = 88 and area 1,764 square m (if cyclic)",
        1
       ],
       [
@@ -2205,11 +2205,11 @@
        1
       ],
       [
-       "Part (c): right angles by the converse of the theorem and 1,014 + 750 = 1,764",
+       "Part (c): right angles by the converse, so cyclic, and 1,014 + 750 = 1,764",
        1
       ],
       [
-       "Part (d): pays the surveyor because Rs 30,000 < Rs 1,40,000, and offers Rs 88,20,000",
+       "Part (d): pays because the cyclic claim is unverified until AC is read and the fee is small beside Rs 1,40,000; offers Rs 88,20,000",
        1
       ]
      ],
@@ -2487,19 +2487,19 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "Lata says: 'The minor segment cut off by a chord that makes 90 degrees at the centre has the same area as the sector with the same 90 degrees.' Test her claim with a circle of radius 10 cm and pi = 3.14.",
-     "a": "She is wrong. The sector has area 3.14 x 100 / 4 = 78.5 square cm. The segment is the sector minus the triangle formed by the two radii and the chord, which is 1/2 x 10 x 10 = 50 square cm, so the segment is 28.5 square cm. The segment is smaller.",
+     "q": "Lata says: 'The minor segment cut off by a chord that makes 90 degrees at the centre has the same area as the sector with the same 90 degrees.' Test her claim with a circle of radius 12 cm and pi = 3.14.",
+     "a": "She is wrong. The sector has area 3.14 x 144 / 4 = 113.04 square cm. The segment is the sector minus the triangle formed by the two radii and the chord, which is 1/2 x 12 x 12 = 72 square cm, so the segment is 41.04 square cm. The segment is smaller.",
      "s": [
       [
        "Verdict: the claim is wrong",
        1
       ],
       [
-       "Sector area 78.5 square cm",
+       "Sector area 113.04 square cm",
        1
       ],
       [
-       "Segment is the sector minus the 50 square cm triangle, giving 28.5",
+       "Segment is the sector minus the 72 square cm triangle, giving 41.04",
        1
       ]
      ],
