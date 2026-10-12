@@ -340,6 +340,11 @@ function MyPaper() {
             subjects: Array<ProfileSubject>
           }>
         }) => {
+          // F132: a Civil Services student has her own New paper screen.
+          if (data.profile.board === 'CIVILS') {
+            void navigate({ to: '/civil-paper' })
+            return
+          }
           // Every subject offered for her board + class, not just the ones she pre-selected
           // during profile setup -- picking a subject now happens right here, at generation
           // time, instead of being locked in earlier.

@@ -104,6 +104,34 @@ export const questionsRepository = {
       .limit(limit)
       .execute()
   },
+  // F132: every approved one-mark objective question of one civil-tagged subject, in random order,
+  // with the concept and chapter it sits under (the paper spreads across both). Unlike
+  // findEligibleForSlot there is no Bloom or difficulty filter -- a civil paper is a plain run of
+  // one-mark questions.
+  async listCivilCandidates(
+    db: Db,
+    params: {
+      subjectId: string
+      types: Array<QuestionType>
+      tag: string
+      excludeQuestionIds: Array<string>
+    },
+  ) {
+    let query = db
+      .selectFrom('questions as q')
+      .innerJoin('concepts as c', 'c.id', 'q.concept_id')
+      .innerJoin('chapters as ch', 'ch.id', 'c.chapter_id')
+      .select(['q.id as id', 'q.concept_id as concept_id', 'c.chapter_id as chapter_id'])
+      .where('ch.subject_id', '=', params.subjectId)
+      .where('q.status', '=', 'approved')
+      .where('q.marks', '=', 1)
+      .where('q.type', 'in', params.types)
+      .where(sql<boolean>`q.tags @> ARRAY[${params.tag}]::text[]`)
+    if (params.excludeQuestionIds.length > 0) {
+      query = query.where('q.id', 'not in', params.excludeQuestionIds)
+    }
+    return query.orderBy(sql`random()`).execute()
+  },
   // F066/F068: drill questions are drawn live (never cached, unlike F067's refresher/examples)
   // and restricted to objective types so the drill can score itself instantly with no AI/human
   // grading step -- a subjective question here would break "scored immediately" (F068's AC).
