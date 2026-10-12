@@ -247,6 +247,23 @@ export function AppShell({
   const isAdmin =
     (session?.user as { role?: string } | undefined)?.role === 'admin'
 
+  // F132: a Civil Services student's "Generate Paper" is /civil-paper, not /my-paper. Only the
+  // student variant needs her board, so a parent's screens make no extra request.
+  const [isCivilStudent, setIsCivilStudent] = useState(false)
+  useEffect(() => {
+    if (variant !== 'student') return
+    let cancelled = false
+    fetch('/api/students/me/profile')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: { profile?: { board?: string } } | null) => {
+        if (!cancelled) setIsCivilStudent(data?.profile?.board === 'CIVILS')
+      })
+      .catch(() => {})
+    return () => {
+      cancelled = true
+    }
+  }, [variant])
+
   const items: Array<{
     key: AppShellActive
     label: string
@@ -262,7 +279,7 @@ export function AppShell({
             key: 'generate',
             label: 'Generate Paper',
             shortLabel: 'Generate',
-            href: '/my-paper',
+            href: isCivilStudent ? '/civil-paper' : '/my-paper',
             icon: <GenerateIcon />,
           },
           {

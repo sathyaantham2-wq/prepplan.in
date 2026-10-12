@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { Check, GraduationCap, Landmark, Lock, Users } from 'lucide-react'
+import { GraduationCap, Landmark, Lock, Users } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { ThemeToggle } from '../components/theme-toggle'
-import { cn } from '../lib/utils'
 import { signOut, useSession } from '../lib/auth-client'
 import { PageLoading } from '../components/page-loading'
+import { Tile } from '../components/tile'
 
 // Classes shown in the class list even before their content is loaded.
 const PLANNED_CLASSES = [6, 7, 8, 9, 10, 11, 12]
@@ -50,50 +50,6 @@ interface Profile {
   board: string
   profile_complete: boolean
   subject_ids: Array<string>
-}
-
-// A shared look for both the board tiles and the class tiles: an elevated card that lifts on
-// hover and gains a glowing ring once selected -- the "3D, professional" tile style requested to
-// replace the old plain <select> dropdowns.
-function Tile({
-  selected,
-  disabled,
-  onClick,
-  children,
-  className,
-}: {
-  selected: boolean
-  disabled?: boolean
-  onClick: () => void
-  children: React.ReactNode
-  className?: string
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-      aria-pressed={selected}
-      className={cn(
-        'group relative flex flex-col items-center justify-center gap-2 rounded-xl border bg-card p-5 text-center',
-        'shadow-[0_1px_2px_rgba(0,0,0,0.06),0_1px_1px_rgba(0,0,0,0.04)] transition-all duration-200 ease-out',
-        !disabled &&
-          'hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_12px_24px_-8px_rgba(0,0,0,0.18)] cursor-pointer',
-        !disabled && 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-        selected &&
-          'border-primary ring-2 ring-primary/50 shadow-[0_12px_24px_-8px_rgba(0,0,0,0.22)] -translate-y-1',
-        disabled && 'cursor-not-allowed opacity-50',
-        className,
-      )}
-    >
-      {selected && (
-        <span className="absolute -right-2 -top-2 flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md">
-          <Check className="size-3.5" strokeWidth={3} />
-        </span>
-      )}
-      {children}
-    </button>
-  )
 }
 
 // Board + class picker: the second step of setting up her profile. Not a dropdown any more (user

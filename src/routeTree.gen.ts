@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ChooseBoardRouteImport } from './routes/choose-board'
+import { Route as CivilPaperRouteImport } from './routes/civil-paper'
 import { Route as DeleteAccountRouteImport } from './routes/delete-account'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
@@ -87,6 +88,7 @@ import { Route as ApiNudgesIdRouteImport } from './routes/api/nudges/$id'
 import { Route as ApiNudgesTodayRouteImport } from './routes/api/nudges/today'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
+import { Route as ApiPapersGenerateCivilRouteImport } from './routes/api/papers/generate-civil'
 import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
 import { Route as ApiPrivacyDeleteSelfRouteImport } from './routes/api/privacy/delete-self'
 import { Route as ApiPrivacyExportRouteImport } from './routes/api/privacy/export'
@@ -160,6 +162,11 @@ const IndexRoute = IndexRouteImport.update({
 const ChooseBoardRoute = ChooseBoardRouteImport.update({
   id: '/choose-board',
   path: '/choose-board',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CivilPaperRoute = CivilPaperRouteImport.update({
+  id: '/civil-paper',
+  path: '/civil-paper',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeleteAccountRoute = DeleteAccountRouteImport.update({
@@ -546,6 +553,11 @@ const ApiPapersGenerateRoute = ApiPapersGenerateRouteImport.update({
   path: '/generate',
   getParentRoute: () => ApiPapersRoute,
 } as any)
+const ApiPapersGenerateCivilRoute = ApiPapersGenerateCivilRouteImport.update({
+  id: '/generate-civil',
+  path: '/generate-civil',
+  getParentRoute: () => ApiPapersRoute,
+} as any)
 const ApiPrivacyDeleteRoute = ApiPrivacyDeleteRouteImport.update({
   id: '/api/privacy/delete',
   path: '/api/privacy/delete',
@@ -893,6 +905,7 @@ const ApiAttemptsIdScanPagesPageIdExtractRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
@@ -969,6 +982,7 @@ export interface FileRoutesByFullPath {
   '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
+  '/api/papers/generate-civil': typeof ApiPapersGenerateCivilRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
@@ -1037,6 +1051,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
@@ -1113,6 +1128,7 @@ export interface FileRoutesByTo {
   '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
+  '/api/papers/generate-civil': typeof ApiPapersGenerateCivilRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
@@ -1182,6 +1198,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
@@ -1258,6 +1275,7 @@ export interface FileRoutesById {
   '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
+  '/api/papers/generate-civil': typeof ApiPapersGenerateCivilRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
@@ -1328,6 +1346,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/choose-board'
+    | '/civil-paper'
     | '/delete-account'
     | '/generate'
     | '/home'
@@ -1404,6 +1423,7 @@ export interface FileRouteTypes {
     | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
+    | '/api/papers/generate-civil'
     | '/api/privacy/delete'
     | '/api/privacy/delete-self'
     | '/api/privacy/export'
@@ -1472,6 +1492,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/choose-board'
+    | '/civil-paper'
     | '/delete-account'
     | '/generate'
     | '/home'
@@ -1548,6 +1569,7 @@ export interface FileRouteTypes {
     | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
+    | '/api/papers/generate-civil'
     | '/api/privacy/delete'
     | '/api/privacy/delete-self'
     | '/api/privacy/export'
@@ -1616,6 +1638,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/choose-board'
+    | '/civil-paper'
     | '/delete-account'
     | '/generate'
     | '/home'
@@ -1692,6 +1715,7 @@ export interface FileRouteTypes {
     | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
+    | '/api/papers/generate-civil'
     | '/api/privacy/delete'
     | '/api/privacy/delete-self'
     | '/api/privacy/export'
@@ -1761,6 +1785,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ChooseBoardRoute: typeof ChooseBoardRoute
+  CivilPaperRoute: typeof CivilPaperRoute
   DeleteAccountRoute: typeof DeleteAccountRoute
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
@@ -1856,6 +1881,13 @@ declare module '@tanstack/react-router' {
       path: '/choose-board'
       fullPath: '/choose-board'
       preLoaderRoute: typeof ChooseBoardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/civil-paper': {
+      id: '/civil-paper'
+      path: '/civil-paper'
+      fullPath: '/civil-paper'
+      preLoaderRoute: typeof CivilPaperRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/delete-account': {
@@ -2388,6 +2420,13 @@ declare module '@tanstack/react-router' {
       path: '/generate'
       fullPath: '/api/papers/generate'
       preLoaderRoute: typeof ApiPapersGenerateRouteImport
+      parentRoute: typeof ApiPapersRoute
+    }
+    '/api/papers/generate-civil': {
+      id: '/api/papers/generate-civil'
+      path: '/generate-civil'
+      fullPath: '/api/papers/generate-civil'
+      preLoaderRoute: typeof ApiPapersGenerateCivilRouteImport
       parentRoute: typeof ApiPapersRoute
     }
     '/api/privacy/delete': {
@@ -3039,11 +3078,13 @@ const ApiPapersIdRouteWithChildren = ApiPapersIdRoute._addFileChildren(
 interface ApiPapersRouteChildren {
   ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
   ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
+  ApiPapersGenerateCivilRoute: typeof ApiPapersGenerateCivilRoute
 }
 
 const ApiPapersRouteChildren: ApiPapersRouteChildren = {
   ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
   ApiPapersGenerateRoute: ApiPapersGenerateRoute,
+  ApiPapersGenerateCivilRoute: ApiPapersGenerateCivilRoute,
 }
 
 const ApiPapersRouteWithChildren = ApiPapersRoute._addFileChildren(
@@ -3242,6 +3283,7 @@ const ApiSyllabusConceptsRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ChooseBoardRoute: ChooseBoardRoute,
+  CivilPaperRoute: CivilPaperRoute,
   DeleteAccountRoute: DeleteAccountRoute,
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,

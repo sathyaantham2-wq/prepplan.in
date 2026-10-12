@@ -9,6 +9,7 @@ import { Route as StudentsRoute } from './api/students'
 import { Route as StudentByIdRoute } from './api/students/$id'
 import { Route as StudentLoginRoute } from './api/students/$id/login'
 import { Route as GenerateRoute } from './api/papers/generate'
+import { Route as GenerateCivilRoute } from './api/papers/generate-civil'
 import { Route as PaperByIdRoute } from './api/papers/$id'
 import { Route as TrackerRoute } from './api/tracker/$studentId'
 import { Route as AttemptsRoute } from './api/attempts'
@@ -515,6 +516,50 @@ describe('cross-household access is denied on every route it was checked against
       'F096 fixture question (alternate)',
     ]).toContain(body.question.text)
     expect(body.question.text).not.toBe(before.text)
+  })
+
+  // F132: the Civil Services generator takes no student or paper id from the caller at all (a
+  // student always generates as herself), so the sweep is about who may call it.
+  it('POST /api/papers/generate-civil by a parent -> 403 (student-only)', async () => {
+    const response = await handlerFor(
+      GenerateCivilRoute,
+      'POST',
+    )({
+      request: request(parentA.cookie, {
+        question_count: 10,
+        subject_codes: ['POLITY'],
+        student_id: studentAId,
+      }),
+    })
+    expect(response.status).toBe(403)
+  })
+
+  it('POST /api/papers/generate-civil by a school (non-CIVILS) student -> 403, nothing created', async () => {
+    const response = await handlerFor(
+      GenerateCivilRoute,
+      'POST',
+    )({
+      request: request(studentB.cookie, {
+        question_count: 10,
+        subject_codes: ['POLITY'],
+        student_id: studentAId,
+      }),
+    })
+    expect(response.status).toBe(403)
+  })
+
+  it('T01: POST /api/papers/generate-civil without a session -> 401', async () => {
+    const response = await handlerFor(
+      GenerateCivilRoute,
+      'POST',
+    )({
+      request: new Request('http://localhost/test', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ question_count: 10, subject_codes: ['POLITY'] }),
+      }),
+    })
+    expect(response.status).toBe(401)
   })
 
   it('T01: an unauthenticated request is rejected before any data is touched', async () => {
