@@ -1,0 +1,8 @@
+# Fixed: ncert_polity4
+
+Changed ids (49): 1-01, 1-05, 1-06, 1-09, 1-10, 1-12, 1-13, 1-17, 2-02, 2-03, 2-04, 2-05, 2-07, 2-09, 2-12, 2-20, 3-02, 3-04, 3-06, 3-11, 3-14, 3-16, 4-01, 4-03, 4-04, 4-06, 4-09, 5-01, 5-03, 5-05, 5-07, 5-13, 5-16, 5-20, 6-04, 6-05, 6-06, 6-07, 6-08, 6-13, 6-17, 6-19, 7-01, 7-04, 7-05, 7-10, 7-12, 7-17, 7-19
+
+HIGH: 3-14 (s4 replaced by a clear row swap), 6-07 (s2 as upper limits), 6-17 replaced. MEDIUM: 3-16, 7-17, 7-12, 5-03/5-20, 6-06, 2-03 note, longest-key tell (35 direct: key longest in 7), statement-1-true tell (57 of 63 -> 42), near-duplicates 1-17, 5-05, 6-19, 7-19, 3-11, 1-09, 1-12, 5-07 replaced. Not changed: LOW 4-03/4-07/1-10/7-01 weak distractors, 6-15/4-17 trivia, 3-12 s4.
+
+## Final polish pass (fp124, 2026-10-12): within-pack repeats and lk02b copy
+Changed ids (CS-POL-ncp4-): 1-09 (statement 3 now the Indian Independence Act making the Assembly sovereign, Laxmikanth Ch.2 p.41; the Commonwealth line is gone), 1-12 (rebuilt on the 1946 election results and the unfilled princely seats, Ch.2 p.40; 114 days / 60 countries / Rs 64 lakh no longer reused), 4-15 (Ombudsman spread p.722, key All four), 4-18 (RTI safeguards p.154, key 'does not explain'), 5-19 (Swiss triple citizenship p.977, key 'I correct, II incorrect'), 6-12 (India's democracy in practice, Class 9 pp.149-150, 96.8 crore falsifier), 7-16 (statement 1 now 'institutions under strain', p.155). 6-18 was left as it was; the repeat with 6-12 was removed by changing 6-12. 5-06/5-19, 7-07/7-16, 6-12/6-18 and 4-12/4-15/4-18 no longer repeat. Validator 0 problems; dup-check at 0.78: 0 hits.

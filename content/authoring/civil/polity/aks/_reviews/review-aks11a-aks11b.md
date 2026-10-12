@@ -1,0 +1,93 @@
+# Review: aks11a + aks11b (AKS ch11 Union Legislature)
+
+
+## SUMMARY (written last; per-concept detail below)
+Verdict: aks11a = FAIL (1 HIGH), aks11b = FAIL (1 HIGH). Everything else keys correctly: all 200 items were answered cold and recomputed; 198 have exactly one defensible answer; key and each `Statement n is correct/incorrect` line in `e` agree on all `which` items; every `w` line matches its option order; check-civil-pack.py: 0 problems on both; aks-coverage.py --chapter 11: 394 facts, 381 covered, 13 skipped, 0 uncovered (skips: aks11a 12, aks11b 1, all legitimate verify-conflict/time-bound, max 11% in any concept).
+
+| Pack | HIGH | MEDIUM | LOW |
+|---|---|---|---|
+| aks11a | 1: 075 | 5 items + 5 repetition clusters: 018, 073, 099, (003/013/019), (024/030/037/040), (043/053/060), (045/051/056), (064/066/076), (086/093/095/099), (101/107/115/119), (102/109/110/116), (105/114/117/118), (048/057/058) | 001, 012, 022, 036, 042, 047, 064, 077, 091, 096, 105, 106, 109/110/116 |
+| aks11b | 1: 037 | 016, 026, 033, 040, 049, 059, 072, 079, 074/075/078 (fi mismatch), repetition clusters (RS permanence, Anglo-Indian, 543 split, Money Bill 14 days, breach/contempt) | 004, 009, 018, 021, 029, 039, 047, 048, 057, 065, 067, 071, 073 |
+
+Must fix before load:
+1. aks11a-075 stmt 4 (Speaker's Money Bill certificate "can be questioned in a court") is not clearly false after the 2018 Aadhaar judgment; replace the statement.
+2. aks11b-037 stmt 2 ("Parliament can amend the Constitution in just two ways") is defensible as true under Art 368 and contradicts aks11a-007/017; drop or hedge with "According to Laxmikanth, three ways".
+Should fix: aks11b-040 explanation numbers (E mislabels the List-II numbers), aks11b-079 / aks11a-018 duplicate pair, aks11a-099 / aks11b-059 / aks11b-016 / aks11a-018 Statement-I/II causality, aks11a-073 fi=[] and notes page tag, aks11b-026 (State List 59 / Union List 98 figures), aks11b-033 vs aks11a-007 consistency.
+Format mix per concept is 5 direct / 9 which / 3 how-many / 2 Statement-I/II / 1 match (25/45/15/10/5 %), against the 2020-26 column (direct 26, which 48, how-many 12, Statement-I/II 6): matches the brief; Statement-I/II slightly above the trend, no case-study items (3% in trend): acceptable. Key shapes vary; direct key is the longest option in 0-2 of 5 per concept (within the 1/3 rule).
+Near-copies of lk23/lk24 (dup-check): none >= 0.7 except option text in aks11a-040 (0.86, "Lowered the voting age from 21 to 18") and aks11a-104 option (0.70); aks11b-075 stmt 1 is 0.71 to a lk24 COPU line (different committee). Cross-pack: aks11a-029 stmt 2 / aks11b-072 stmt 2 (543 = 524 + 19), aks11a-007 / aks11b-034 (ratification fraction, deliberately varied), aks11a-018 / aks11b-079 (identical Statement pair) are the a-vs-b overlaps.
+Verify-flag handling: A11-008, 035, 058, 084, 082, 091, 126, 191, 197, 541, 594, 597, 605, 637, 645, 647, 690, 694 are all tested in a corrected/hedged form except the two HIGHs above (694 via aks11a-075, 633-related via aks11b-037); 027, 048, 062, 117, 118, 142, 143, 150, 156, 161, 195, 543, 612 are skipped, correctly.
+aks11b-034 ("two-thirds" false option): sound item, see its entry under AKS-11.8.
+
+Coverage detail: aks-coverage.py --chapter 11 -> 394 facts, 381 covered, 13 skipped, 0 uncovered. Skips: aks11a 12 (027,048,062,117,118,142,143,150,156,161,195,543), aks11b 1 (612). All carry legitimate reasons (verify-conflict/time-bound). Max per concept well under 12%.
+
+## aks11a / AKS-11.1 (items 001-020)
+- No HIGH found. Keys recomputed cold; 001-020 each have exactly one defensible answer.
+- MED 018: Statement-II ("one-third retire every second year, so never wholly renewed") is close to a restatement of Statement-I (not subject to dissolution), the brief's "never let II restate I" rule; and the same idea (staggered retirement/never dissolved) is also tested in 014 and 018 (cap 2 ok).
+- LOW 001: wrong-option note says the PM "must be a member of one House" (PM can be a non-member up to six months, Art 75(5)); wording only.
+- LOW 012: statement 3 (UT members chosen by an electoral college specially constituted) follows Laxmikanth p.328 literally; in the Representation of the People Act the college for Delhi/Puducherry/J&K is simply that UT's assembly. Defensible as written.
+- MED (AKS-11.1) the 2003 elector-rule relaxation / elector registration is tested in 003, 013 (stmt 3) and 019: three items, cap is 2.
+
+## aks11a / AKS-11.2 (021-040)
+- No HIGH. All keys recomputed (021 Art 90 effective majority + 14 days; 028 all four true incl. President's appointee, Art 91(1); 029 key 2,4 -- stmt 3 "gap due to vacancies" is false in real law (543 is the number of constituencies), sound use of verify fact 058; 036 candidate oath has two limbs only per Third Schedule Form III-A, duties clause belongs to the member's oath, sound but fine-print).
+- MED: Anglo-Indian nomination history is tested in 024, 030, 037 (stmt 3), 040 (B, C): four items; 550/552 ceiling also in 023, 034, 040. Cap 2 per idea exceeded.
+- LOW 036: trap rests on the candidate-vs-member oath distinction; fair (Laxmikanth p.332 vs p.334) but the stem title "qualifications" and fi 075 (notes treat the duties clause as part of the oath) can mislead; explanation handles it.
+- LOW 022 W1: "Article 91 only lets the House decide who presides if the rules do not" is loosely phrased but harmless.
+
+## aks11a / AKS-11.3 (041-060)
+- No HIGH. Keys recomputed: 041, 042 (2026 per Laxmikanth), 043, 044 (Rs 500), 045 (60 days / 4 days), 046 (key 1,2,3), 047 (1,3,4), 048 (1,3), 049, 050 (3,4), 051 (2,4), 052 (all), 053 (1,2), 054 (1,3), 055 (two), 056 (three), 057 (one), 058, 059, 060 all correct with a single defensible option.
+- Verify facts handled well: 082 (appointing authority) avoided and 'statutory body' used instead; 084 freeze tested only via 2026 extension (the 'till 2000' wording not tested); 091 corrected (STV is candidate based, 048 stmt 4 false); 117/118 skipped legitimately.
+- LOW 042: add "according to Laxmikanth": legally the 84th Amendment froze readjustment until the first census after 2026, so a bare "up to which year" is time-bound shorthand.
+- LOW 047 stmt 3: "delimitation ... follows the Indian Constitution" is the notes' loose wording (J&K UT is delimited under the Delimitation Act 2002 via the 2019 Reorganisation Act); acceptable as the only reading that makes 3 true, but hedge with "according to the notes".
+- MED: repetition. Absence-60-days rule in 045, 051, 056; Article 103 in 043, 053, 060; FPTP vs PR in 048, 057, 058.
+
+## aks11a / AKS-11.4 (061-080)
+- HIGH 075 (howmany): statement 4 "His decision that a Bill is a Money Bill can be questioned in a court of law" is keyed FALSE ("final ... cannot be questioned", Laxmikanth). In real law this is NOT clearly false: Art 110(3) makes the Speaker's decision final, but the Supreme Court in K.S. Puttaswamy (Aadhaar), 2018 treated the certification as open to (limited) judicial review, and Rojer Mathew (2019) referred the question to a larger bench; inventory A11-694 flags it "disputed". A candidate who knows the case can defensibly count statement 4 as correct, giving "Only two" instead of the key "Only one". Falsifier rule violated. Fix: drop statement 4 (replace by a clean false statement, e.g. "the Speaker's certificate is needed only on a Money Bill after Rajya Sabha returns it") or rewrite as "Art 110(3) makes his decision final". 069 stmt 1 ("decision is final, he certifies") is safe.
+- MED 073: fi is EMPTY and pg=[89] points to the notes page, but none of the four statements (Mavalankar/Ayyangar, precedence, no separate oath, GoI Act 1935 renaming) is in the notes (grep of ch11.txt: no Mavalankar/precedence); they are Laxmikanth ch23 p.338-339 additions. Keys are right (1,2,4; stmt 3 false: no separate oath) but metadata is misleading; the loader/page-tag check should cite the Laxmikanth pages, not notes p.89.
+- MED repetition: Speaker tenure / re-election / whole life of the House appears in 064, 066 and 076; Speaker's vote during removal in 067, 079 (plus 039 in AKS-11.2); Pro Tem in 072, 077, 078.
+- LOW 064: options 0 and 2 differ only in "until the new House meets" vs "until it elects its Speaker"; fair (Art 94 proviso; Laxmikanth p.340) but a fine-print distinction.
+- LOW 077 stmt 2 ("by convention takes no major decision") is practice, not in Laxmikanth; harmless.
+- All other keys verified: 061 (President for Speaker, Speaker for Deputy), 062, 063, 065 (54.3 -> 55; Art 100(3)), 066 (1,2,3), 067 (1,2,4), 068 (1,3,4), 069 (1,3), 070 (1,3,4), 071 (1,3), 072 (all), 074 (1,2,3; 50 members), 076 (three), 077 (two), 078, 079, 080.
+
+## aks11a / AKS-11.5 (081-100)
+- No HIGH. All 20 keys recomputed (081 Speaker/ten; 082 both Houses incl. nominated, no states; 083 Supreme Court; 084 presiding officer; 085 Deputy Chairman; 086 1,2,4; 087 1,3,4; 088 1,2; 089 all four (Art 67(b), 92(2)); 090 1,3; 091 1,3,4; 092 1,2,4 (stmt 3 correct-form of verify fact 191: removal is Art 90(c) not 92); 093 1,4 (stmt 3 correct-form of 197: panel is under the Rules, not Art 91); 094 1,2; 095 two; 096 three; 097 one; 098; 099; 100).
+- MED 099: Statement-II ("panel is meant for temporary absence, not vacancy") is essentially a restatement of Statement-I ("panel cannot preside when both offices are vacant"). Brief forbids II restating I; the "explains" key is therefore weak/guessable. Also the same absence-vs-vacancy panel idea occurs in 086 (stmt 3), 093 (stmt 4), 095 (stmts 1, 3) and 099: four items, cap is 2 (and 035 and 027 in AKS-11.2 repeat it again).
+- LOW 091 stmt 2 is a flipped copy of lk23-508 (dup-check 0.60); acceptable as a false statement but re-angle if cheap.
+- LOW 096 stmt 4 ("political appointee who changes with the government") is a tell for the false statement; 094 stmt 4 same.
+
+## aks11a / AKS-11.6 (101-120)
+- No HIGH. Keys recomputed: 101 (1977 Act), 102 (convention), 103 (Art 114; Art 266(3) not offered so single answer), 104 (deemed passed after 14 days), 105 (1 Feb, earlier last working day of Feb), 106 (all four), 107 (2,3,4), 108 (1,2,3), 109 (2,4), 110 (1,2), 111 (1,3,4), 112 (1,2), 113 (1,2,4), 114 (1,2,4), 115 (two), 116 (three), 117 (one), 118 (II explains I: Laxmikanth p.369 says purpose is to avoid a Vote on Account), 119, 120.
+- MED repetition (cap 2): Leader of Opposition statutory status/1977/Cabinet rank in 101, 107, 115, 119; whips in 102, 109, 110, 116; Budget date (1 Feb / last working day of Feb) in 105, 114, 117, 118.
+- LOW 105 W4 says 31 January "is the day the Budget session begins, with the Economic Survey": loose (Laxmikanth p.369: session advanced to 31 Jan; Survey is presented a few days before). Not a key problem.
+- LOW 109 stmt 4, 110 (one/two/three-line gradations), 116 stmt 2, 106 stmt 4: rest on the notes/practice only (inventory says not in Laxmikanth); keyed the safe way round (false statements invert the order, e.g. "three-line is the mildest"), acceptable.
+- LOW 112: stmt 2 is true only for tax Finance Bills (Art 117(1)) and Money Bills; it is worded "dealing with taxation", so fine; a Finance Bill (II) under Art 117(3) can start in either House.
+
+## aks11b / AKS-11.7 (001-020)
+- No HIGH. Keys recomputed: 001 (Fiscal Policy Strategy Statement; the other options are not FRBM statements), 002 (2,3,4; stmt 1 false: Art 112 says "annual financial statement", the word "budget" is not used), 003 (1,2), 004 (1924/Acworth), 005 (1,2,4), 006 (three; Laxmikanth p.363-364 lists flexibility and assured contribution), 007 match, 008 (1,3,4), 009, 010 (guillotine), 011 (1,3,4), 012 (two), 013 (1,2,3), 014 (1,2,3; Laxmikanth p.370 token grant), 015 (excess grant), 016, 017 (2,3,4), 018 (75 days), 019 (all four), 020 (all four).
+- MED 016 (Statement-I/II): II (amount cannot be stated with the usual details) arguably describes the definition of the vote of credit rather than explaining why it works as a blank cheque; "both correct, II does not explain I" is a defensible reading. Reword II to a clear cause, or make it clearly non-explanatory.
+- LOW 018 W lines ("60 days is not the period fixed by the 1931 Act") are tautological; weak distractor explanations (also 004 W1).
+- LOW 009: II is the cause of I, ok, but both are the same fact (merger) stated twice; the pair is easy.
+
+## aks11b / AKS-11.8 (021-040)
+- HIGH 037 (howmany): statement 2 "Parliament can amend the Constitution in just two ways: by special majority, and by special majority with ratification of the States" is keyed FALSE ("three ways", Laxmikanth). In real law Article 368 prescribes exactly those two procedures; the "simple majority" changes (Arts 2-4, 169, 240, salaries, procedure) are expressly outside Art 368 / "not deemed an amendment", which is exactly what the same author's aks11a-007 and aks11a-017 say ("outside Article 368, ordinary law"). So statement 2 is defensible as TRUE; with it true the count is two ("Only two") not one. Two defensible answers; the pack also contradicts itself (aks11a-007 treats such changes as not an Art 368 amendment). Fix: delete stmt 2 or rewrite as "According to Laxmikanth, Parliament can amend the Constitution in three ways".
+- MED 040 (match): explanation numbering is wrong. E says "Government Assurances ... (1); Subordinate Legislation (2); Petitions (3); PAC (4)" while the List-II numbering and key are A-3, B-4, C-2, D-1. Key correct, explanation mislabelled.
+- MED 026: stmt 2 asserts the State List is "66 originally, 59 now" (Laxmikanth's figure) and stmt 1 the Union List at 98; the official present counts are 61 (State List) and 100 (Union List entries). It is hedged ("in Laxmikanth's count") so one answer survives, but it tests a figure real law contradicts (inventory A11-605 says do not test). Prefer testing only 66 originally / Concurrent 47 to 52.
+- MED 033: stmts 3 and 4 call Art 169 and MPs' salaries "matters amendable by simple majority", which conflicts with aks11a-007/017 (these lie outside Art 368). Rephrase "can be changed by ordinary law".
+- 034 (user-flagged): SOUND. Stmt 1 "ratification by two-thirds of the State Legislatures" is a deliberate false near-miss; the true rule is not less than one-half of the States (Art 368(2) proviso; Laxmikanth ch11 p.194, ch23 p.373), so it is false in real law and in the sources. Stmt 2 (President's election, Union-State legislative distribution, Supreme Court/HCs) and stmt 4 (Art 368 itself) are true; stmt 3 (FRs need ratification) false. Exactly one answer (2 and 4). The half/two-thirds/three-fourths trio is tested across aks11a-007 (half, true), aks11a-017 (three-fourths, false) and 034 (two-thirds, false): a fair knowledge trap, not a reading trick; only the repetition count (three items on the ratification fraction across the two packs) is high.
+- LOW 021: add that 98 is Laxmikanth's count (stem already says so); 029 stmts 1-2 are absurd false statements (tell); 039 W1 and W2 are identical text; 036 stmt 2 "Parliament selects the Executive" is the notes' loose phrasing.
+- Verified OK: 022, 023, 024, 025, 027 (Art 249/253/356), 028 (Art 123), 030, 031 (Motion of Thanks, cut motion, vital issue; calling attention is not "passed"), 032, 035, 036, 038, 039.
+
+## aks11b / AKS-11.9 (041-060)
+- No HIGH. Keys recomputed: 041 (40 days), 042 (Attorney General; privileges do not extend to the President, Laxmikanth p.378), 043, 044 (Art 122), 045 (Art 231 common High Court), 046 (1,3,4; CAG removed like a Supreme Court judge, Art 148), 047 (2,3; stmt 1 is the corrected form of verify fact 647: nominated MPs are excluded from the Presidential college, and Act is 1952), 048 (1,2,4; Art 169 needs the Assembly's resolution), 049 (2,3,4), 050 (all), 051 (1,2), 052 (2,3), 053 (2,3,4), 054 (1,2,3), 055 (two), 056 (three), 057 (one), 058, 059, 060.
+- MED 049 stmt 1 uses the tell-word "only" ("belong only to individual members") on the false statement while true statements avoid it (brief rule on tell-words).
+- MED 059 (Statement-I/II): II is the definition that restates I ("contempt is wider" vs "breach is a direct violation, contempt covers anything even where no specific privilege is violated"); no genuine explanation/causality, guessable. Also the breach-vs-contempt idea is in 053, 056, 059, 060 (four) -- cap 2; arrest immunity (40 days, civil only) in 041, 052, 055, 060.
+- LOW 048 stmt 1 ("highest deliberative body") is notes-only fluff, not in Laxmikanth; harmless since true. LOW 057 stmt 4 (privileges of the US Congress) is an obviously absurd false statement.
+- LOW 047 stmt 3 wording "deputy presiding office" but lists the Speaker too; tidy to "presiding officers".
+
+## aks11b / AKS-11.10 (061-080)
+- No HIGH. Keys recomputed: 061 (238), 062 (14 days), 063 (six months), 064 (104th), 065 (Speaker), 066 (1,2,4), 067 (2,3), 068 (1,3,4), 069 (2,3; Laxmikanth Table 23.4: Money Bill only by a Minister), 070 (all four), 071 (1,3), 072 (1,2,4), 073 (1,2), 074 (1,3,4), 075 (two: PAC 22 = 15+7 and Estimates 30 all LS true; COPU also 22 = 15+7 so stmt 3 false; PAC chair from Opposition since 1967, Laxmikanth p.396), 076 (three), 077 (one), 078, 079, 080.
+- MED 079 is a near copy of aks11a-018 (same Statement-I "Rajya Sabha never dissolved", Statement-II "one-third retire every second year", same key) -- duplicate, and the "explains" causality is weak in both. 066 (stmts 1-3) repeats the same idea once more; RS permanence is now tested in aks11a-014, 018, aks11b-066, 079 (four times across the pair, brief cap 2).
+- MED 072 (stmt 2) and aks11a-029 (stmt 2) both test 543 = 524 + 19 (dup-check 0.60); also 550 = 530 + 20 in aks11a-023, aks11b-072, 080; Anglo-Indian end in aks11a-024, 030, 037, 040, aks11b-064, 072: six items across the pair. Money Bill 14 days in aks11a-104, 113, aks11b-062, 068, 080 (five); six-month gap in 063, 071, 080.
+- MED fi mismatch: 075 (PAC/Estimates/COPU membership), 078 (consultative committees) and 074 (stmts 2-4) cite fi=[A11-687] only, but they test Laxmikanth ch24 facts not in the inventory. The coverage tool is satisfied but fi does not describe what is tested; pg=[101] (notes) is also not where these facts live.
+- LOW 065 W2 asserts "the Speaker's decision cannot be questioned even before the President" as settled; after the 2018 Aadhaar judgment this is arguable. The key (Speaker, Art 110(3), final) is unaffected; soften the wording.
+- LOW 073 stmt 1: "remain effective on approval by the Rajya Sabha alone" omits the later Lok Sabha approval requirement (30 days after it first sits); it mirrors Laxmikanth p.377, acceptable.
+- LOW 071 / 067: only three statements and an absurd false statement ("gap up to one year"), easy items.

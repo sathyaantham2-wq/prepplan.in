@@ -1,0 +1,1376 @@
+{
+ "kind": "civil_pack",
+ "subject": {
+  "code": "POLITY",
+  "name": "Polity",
+  "board": "CIVILS",
+  "class": 0
+ },
+ "source": {
+  "publisher": "Study notes",
+  "title": "Polity study notes (AKS v2)",
+  "edition": "v2",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "A",
+  "chapter_no": 9,
+  "name": "Basic Structure of the Constitution",
+  "blurb": "The basic structure doctrine, the landmark cases from Golak Nath to Anjum Kadari, and the interpretive doctrines of severability, eclipse, waiver, pith and substance, nexus, colourable legislation, precedent, repugnancy, prospective overruling and harmonious construction.",
+  "source_code": "aks09",
+  "order_index": 209
+ },
+ "scope_in": [
+  {
+   "item": "Meaning and origin of the basic structure doctrine",
+   "pages": "57"
+  },
+  {
+   "item": "Landmark cases table Golak Nath to Anjum Kadari",
+   "pages": "57-58"
+  },
+  {
+   "item": "Other constitutional doctrines",
+   "pages": "58"
+  },
+  {
+   "item": "Quick case summary, bench, timeline, examples and exam trap",
+   "pages": "59"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Case-to-element mapping of the notes for Kesavananda, Bommai, Chandra Kumar, Coelho, Madras Bar and Puttaswamy",
+   "reason": "differs from Laxmikanth Table 12.1; tested only in the Laxmikanth form, introduced with 'according to Laxmikanth'"
+  },
+  {
+   "item": "Year of Waman Rao (1981 in the notes)",
+   "reason": "Laxmikanth gives 1980; only the 24 April 1973 cut-off is tested"
+  },
+  {
+   "item": "Case names for colourable legislation and repugnancy (State of West Bengal v. Union of India)",
+   "reason": "doubtful attribution; doctrines tested without the case"
+  },
+  {
+   "item": "Harmonious construction applied in Kesavananda",
+   "reason": "Laxmikanth credits FR-DPSP harmony to Minerva Mills"
+  }
+ ],
+ "skipped": [
+  {
+   "fid": "A09-057",
+   "reason": "verify-conflict"
+  },
+  {
+   "fid": "A09-060",
+   "reason": "verify-conflict"
+  },
+  {
+   "fid": "A09-064",
+   "reason": "verify-conflict"
+  },
+  {
+   "fid": "A09-024",
+   "reason": "untestable"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "AKS-09.1",
+   "name": "Basic structure doctrine and the landmark cases (Golak Nath to Puttaswamy)",
+   "description": "Meaning and origin of the doctrine, and the cases that shaped it with their issue, holding and elements.",
+   "idea": "Parliament's wide power under Article 368 stops short of the basic structure, a judge-made doctrine laid down in Kesavananda and refined case by case.",
+   "rule": "The doctrine is not a textual provision; it grew from judicial interpretation to stop frequent amendments eroding the Constitution's core, balancing flexibility against supremacy. Golak Nath (1967) held that an amendment is 'law' under Article 13 and that Fundamental Rights cannot be amended; Kesavananda (1973) overruled it, upheld the 24th Amendment and held Parliament cannot alter the basic structure. Indira Gandhi v. Raj Narain (1975) struck down the 39th Amendment provision on the Prime Minister's election; Minerva Mills (1980) struck down the 42nd Amendment's Article 368 clauses; Waman Rao applied the doctrine to amendments after 24 April 1973. Bommai made Article 356 justiciable, Chandra Kumar protected High Court review over tribunals, Coelho tested Ninth Schedule laws, Madras Bar struck down the National Tax Tribunal structure and Puttaswamy recognised privacy as part of life and liberty.",
+   "example": "A State dismissed under Article 356 can cite Bommai: the President's satisfaction is justiciable.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following best describes the legal character of the 'basic structure' of the Constitution?",
+     "a": "A doctrine evolved by judges that limits the amending power under Article 368",
+     "o": [
+      "A doctrine evolved by judges that limits the amending power under Article 368",
+      "A clause inserted into Article 368 by the 24th Amendment Act to restrain Parliament's amending power",
+      "A Directive Principle that obliges Parliament to preserve the Preamble while it amends the Constitution",
+      "A schedule of protected features appended to the Constitution by the Constituent Assembly itself"
+     ],
+     "e": "The Constitution nowhere uses the phrase; the doctrine is a judicial innovation, developed case by case to stop the core identity of the Constitution from being eroded by sweeping amendments (p.59). The 24th Amendment actually asserted Parliament's power to amend Fundamental Rights.",
+     "w": [
+      "The 24th Amendment declared Parliament's power to abridge Fundamental Rights; it did not create the doctrine.",
+      "The doctrine is judge-made and is not a Directive Principle.",
+      "No schedule of protected features exists in the Constitution."
+     ],
+     "tr": [
+      "textual vs judicial",
+      "24th Amendment"
+     ],
+     "sk": "recall",
+     "pg": [
+      57,
+      59
+     ],
+     "fi": [
+      "A09-001",
+      "A09-002",
+      "A09-074"
+     ],
+     "id": "CS-POL-aks09-001"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "In which case did the Supreme Court first authoritatively lay down that Parliament may amend any part of the Constitution, Fundamental Rights included, but may not alter its basic structure?",
+     "a": "Kesavananda Bharati (1973)",
+     "o": [
+      "Kesavananda Bharati (1973)",
+      "Golak Nath v. State of Punjab (1967)",
+      "Minerva Mills Ltd. v. Union of India (1980)",
+      "Shankari Prasad v. Union of India (1951)"
+     ],
+     "e": "Kesavananda (1973) upheld the 24th Amendment Act, so Parliament can abridge Fundamental Rights, but it laid down that the constituent power under Article 368 cannot alter the basic structure (also in Laxmikanth p.198).",
+     "w": [
+      "Golak Nath held that Fundamental Rights could not be amended at all.",
+      "Minerva Mills applied the doctrine in 1980; it did not originate it.",
+      "Shankari Prasad (1951) held Parliament could amend Fundamental Rights without any such limit."
+     ],
+     "tr": [
+      "first vs later application"
+     ],
+     "sk": "recall",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-003",
+      "A09-010",
+      "A09-011"
+     ],
+     "id": "CS-POL-aks09-002"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Golak Nath (1967) the Supreme Court reversed its earlier position and treated a constitutional amendment as 'law', so that it would be void if it violated a Fundamental Right. The Article whose meaning of 'law' was in issue is",
+     "a": "Article 13",
+     "o": [
+      "Article 13",
+      "Article 368",
+      "Article 31C",
+      "Article 32"
+     ],
+     "e": "Golak Nath held that an amendment is a 'law' within Article 13 and hence void if it abridged a Fundamental Right; Parliament replied with the 24th Amendment, which amended Articles 13 and 368 (also in Laxmikanth p.198).",
+     "w": [
+      "Article 368 is the amending provision; the dispute was whether Article 13's 'law' covers an amendment under it.",
+      "Article 31C protects certain DPSP laws; it was not the Article whose scope of 'law' was in issue.",
+      "Article 32 is the remedy for enforcing Fundamental Rights."
+     ],
+     "tr": [
+      "13 vs 368"
+     ],
+     "sk": "recall",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-007"
+     ],
+     "id": "CS-POL-aks09-003"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "The clauses of Article 368 that the Supreme Court invalidated in Minerva Mills (1980), which declared Parliament's amending power free of limits and beyond challenge in any court, had been inserted by the",
+     "a": "42nd Amendment Act, 1976",
+     "o": [
+      "42nd Amendment Act, 1976",
+      "24th Amendment Act, 1971",
+      "39th Amendment Act, 1975",
+      "44th Amendment Act (1978)"
+     ],
+     "e": "The 42nd Amendment (1976) amended Article 368 to declare no limitation on Parliament's constituent power; Minerva Mills struck this down as it excluded judicial review (Laxmikanth p.199).",
+     "w": [
+      "The 24th Amendment affirmed the power to amend Fundamental Rights and made assent obligatory; it was not the provision struck down.",
+      "The 39th Amendment kept the Prime Minister's and Speaker's election disputes out of the courts (Indira Gandhi case).",
+      "The 44th Amendment did not insert these clauses."
+     ],
+     "tr": [
+      "24th vs 42nd"
+     ],
+     "sk": "recall",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-018",
+      "A09-019"
+     ],
+     "id": "CS-POL-aks09-004"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "A State Government dismissed by a proclamation under Article 356 challenges the President's satisfaction before the Supreme Court. Which ruling, which also treated federalism as part of the basic structure, best supports the claim that such satisfaction is open to judicial scrutiny?",
+     "a": "S.R. Bommai v. Union of India (1994)",
+     "o": [
+      "S.R. Bommai v. Union of India (1994)",
+      "Indira Gandhi v. Raj Narain (1975)",
+      "L. Chandra Kumar v. Union of India (1997)",
+      "I.R. Coelho v. State of Tamil Nadu (2007)"
+     ],
+     "e": "Bommai dealt with misuse of President's Rule, declared federalism a basic-structure element and held the President's satisfaction justiciable (Laxmikanth p.202 lists federalism for it).",
+     "w": [
+      "Indira Gandhi v. Raj Narain concerned the election of the Prime Minister.",
+      "Chandra Kumar concerned tribunals under Articles 323A and 323B.",
+      "Coelho concerned the Ninth Schedule."
+     ],
+     "tr": [
+      "case-issue match"
+     ],
+     "sk": "application",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-025",
+      "A09-026"
+     ],
+     "id": "CS-POL-aks09-005"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the Golak Nath case (1967):\n\n1. The amendment under attack was the Seventeenth, of 1964, which added certain State Acts to the Ninth Schedule.\n2. The Court gave Fundamental Rights a 'transcendental and immutable' position, which Parliament could not abridge or take away.\n3. It was later overruled in Kesavananda Bharati (1973).\n4. It followed Shankari Prasad and Sajjan Singh in holding that an amendment is not 'law' within Article 13.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 2 and 3 only",
+     "o": [
+      "1, 2 and 3 only",
+      "1, 2 and 4 only",
+      "1, 2, 3 and 4",
+      "1 and 3 only"
+     ],
+     "e": "Statement 1 is correct: this was the amendment under challenge (Laxmikanth p.198). Statement 2 is correct: it called them 'transcendental and immutable' (Laxmikanth p.198). Statement 3 is correct: Kesavananda overruled Golak Nath (Laxmikanth p.198). Statement 4 is incorrect: it reversed those decisions; it held an amendment is 'law' under Article 13.",
+     "w": [
+      "'1, 2 and 4 only' includes statement 4, which is incorrect and leaves out statement 3, which is correct: p.57",
+      "'1, 2, 3 and 4' includes statement 4, which is incorrect: p.57",
+      "'1 and 3 only' leaves out statement 2, which is correct: p.57"
+     ],
+     "tr": [
+      "reversal of earlier stand"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-005",
+      "A09-006",
+      "A09-007",
+      "A09-008"
+     ],
+     "id": "CS-POL-aks09-006"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the Kesavananda Bharati case (1973):\n\n1. The ruling validated the 1971 amendment that changed Articles 13 and 368 to assert Parliament's power over Fundamental Rights.\n2. The 1973 ruling is popularly known as the Fundamental Rights Case.\n3. The Court held that Fundamental Rights are beyond Parliament's power to abridge, as all of them form part of the basic structure.\n4. Parliament's constituent power was held not to reach the essential framework of the Constitution.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 2 and 4 only",
+     "o": [
+      "1, 2 and 4 only",
+      "1, 2 and 3 only",
+      "2, 3 and 4 only",
+      "1 and 2 only"
+     ],
+     "e": "Statement 1 is correct: The Court upheld it (Laxmikanth p.198). Statement 2 is correct: Laxmikanth Table 12.1, p.200. Statement 3 is incorrect: Parliament may abridge Fundamental Rights, but not one that forms part of the basic structure (Laxmikanth p.198). Statement 4 is correct: This is the core of the doctrine (Laxmikanth p.198).",
+     "w": [
+      "'1, 2 and 3 only' includes statement 3, which is incorrect and leaves out statement 4, which is correct: p.198",
+      "'2, 3 and 4 only' includes statement 3, which is incorrect and leaves out statement 1, which is correct: p.198",
+      "'1 and 2 only' leaves out statement 4, which is correct: p.198"
+     ],
+     "tr": [
+      "abridge any FR"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-010",
+      "A09-011"
+     ],
+     "id": "CS-POL-aks09-007"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about Indira Gandhi v. Raj Narain (1975):\n\n1. A clause of the 39th Amendment Act shielding the election disputes of the Prime Minister and the Speaker from the courts was struck down.\n2. The Court held that free and fair elections are not a part of democracy.\n3. The Court held that equality before law does not extend to a Prime Minister, being a political executive.\n\nWhich of the statements given above is/are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "2 only",
+      "1 and 2 only",
+      "1 and 3 only"
+     ],
+     "e": "Statement 1 is correct: It was beyond the amending power as it affected the basic structure (Laxmikanth p.198-199). Statement 2 is incorrect: Free and fair elections are implied in democracy (Laxmikanth p.201). Statement 3 is incorrect: It reaffirmed equality before law even for political executives.",
+     "w": [
+      "'2 only' includes statement 2, which is incorrect and leaves out statement 1, which is correct: p.198",
+      "'1 and 2 only' includes statement 2, which is incorrect: p.198",
+      "'1 and 3 only' includes statement 3, which is incorrect: p.198"
+     ],
+     "tr": [
+      "equality for executives"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-014",
+      "A09-015",
+      "A09-016"
+     ],
+     "id": "CS-POL-aks09-008"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the Minerva Mills case (1980):\n\n1. The Court also invalidated the 42nd Amendment's widening of Article 31C to cover all the Directive Principles.\n2. The Court held that harmony between Fundamental Rights and Directive Principles is a matter of policy and not a basic feature.\n3. It held that a limited amending power is itself a basic feature that Parliament cannot convert into an unlimited one.\n4. It held that judicial review may be excluded by a constitutional amendment passed with the special majority.\n\nWhich of the statements given above is/are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 4 only",
+      "1 and 2 only",
+      "1, 3 and 4 only"
+     ],
+     "e": "Statement 1 is correct: (the Article 31C point is also settled real law). Statement 2 is incorrect: Harmony and balance between them was listed as a basic feature (Laxmikanth p.201). Statement 3 is correct: It held that a limited amending power is itself a basic feature that Parliament cannot convert into an unlimited one (Laxmikanth p.199). Statement 4 is incorrect: Judicial review is a basic feature and cannot be excluded even by amendment (Laxmikanth p.199).",
+     "w": [
+      "'1 and 4 only' includes statement 4, which is incorrect and leaves out statement 3, which is correct: p.57",
+      "'1 and 2 only' includes statement 2, which is incorrect and leaves out statement 3, which is correct: p.57",
+      "'1, 3 and 4 only' includes statement 4, which is incorrect: p.57"
+     ],
+     "tr": [
+      "FR-DPSP harmony",
+      "judicial review"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-018",
+      "A09-020",
+      "A09-021"
+     ],
+     "id": "CS-POL-aks09-009"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the Waman Rao and Coelho cases:\n\n1. Waman Rao dealt with the validity of Ninth Schedule laws placed there after the Kesavananda judgement.\n2. The cut-off date used in Waman Rao is the date of the Kesavananda Bharati judgement.\n3. Coelho is popularly known as the Ninth Schedule case.\n4. Coelho allows Ninth Schedule laws enacted after 24 April 1973 to be tested against the basic structure.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 2, 3 and 4",
+     "o": [
+      "1, 2, 3 and 4",
+      "1, 3 and 4 only",
+      "2, 3 and 4 only",
+      "1, 2 and 4 only"
+     ],
+     "e": "Statement 1 is correct: Waman Rao dealt with the validity of Ninth Schedule laws placed there after the Kesavananda judgement (Laxmikanth p.199). Statement 2 is correct: 24 April 1973 is that date (Laxmikanth p.199). Statement 3 is correct: Laxmikanth Table 12.1 p.202. Statement 4 is correct: the post-Kesavananda cut-off applies (real law).",
+     "w": [
+      "'1, 3 and 4 only' leaves out statement 2, which is correct: p.199",
+      "'2, 3 and 4 only' leaves out statement 1, which is correct: p.199",
+      "'1, 2 and 4 only' leaves out statement 3, which is correct: p.199"
+     ],
+     "tr": [
+      "cut-off date"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-022",
+      "A09-023",
+      "A09-031",
+      "A09-032"
+     ],
+     "id": "CS-POL-aks09-010"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the Bommai and Chandra Kumar cases:\n\n1. Bommai concerned the misuse of President's Rule under Article 356.\n2. Bommai held that the President's satisfaction under Article 356 is beyond judicial review.\n3. Chandra Kumar concerned the exclusion of High Court jurisdiction under Articles 323A and 323B.\n4. Chandra Kumar held that tribunals are substitutes for the High Courts and the Supreme Court.\n\nWhich of the statements given above is/are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "3 and 4 only",
+      "2 and 3 only",
+      "1, 2 and 3 only"
+     ],
+     "e": "Statement 1 is correct: Bommai concerned the misuse of President's Rule under Article 356. Statement 2 is incorrect: it held the satisfaction justiciable. Statement 3 is correct: Chandra Kumar concerned the exclusion of High Court jurisdiction under Articles 323A and 323B. Statement 4 is incorrect: tribunals are supplemental, not substitutes.",
+     "w": [
+      "'3 and 4 only' includes statement 4, which is incorrect and leaves out statement 1, which is correct: p.57",
+      "'2 and 3 only' includes statement 2, which is incorrect and leaves out statement 1, which is correct: p.57",
+      "'1, 2 and 3 only' includes statement 2, which is incorrect: p.57"
+     ],
+     "tr": [
+      "justiciable",
+      "supplemental vs substitute"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-025",
+      "A09-026",
+      "A09-028",
+      "A09-029"
+     ],
+     "id": "CS-POL-aks09-011"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the Madras Bar Association and Puttaswamy cases:\n\n1. In Madras Bar Association (2014) the Court upheld the National Tax Tribunal Act as preserving judicial independence.\n2. Puttaswamy decided whether privacy is a fundamental right.\n3. Puttaswamy recognised the Right to Privacy as intrinsic to life and liberty.\n4. The Puttaswamy judgement was delivered in 2012.\n\nWhich of the statements given above is/are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 3 only",
+      "3 only",
+      "1 and 2 only"
+     ],
+     "e": "Statement 1 is incorrect: it struck down the tribunal structure as diluting judicial independence. Statement 2 is correct: Puttaswamy decided whether privacy is a fundamental right. Statement 3 is correct: privacy lies in Article 21. Statement 4 is incorrect: it was delivered in 2017.",
+     "w": [
+      "'1 and 3 only' includes statement 1, which is incorrect and leaves out statement 2, which is correct: p.57",
+      "'3 only' leaves out statement 2, which is correct: p.57",
+      "'1 and 2 only' includes statement 1, which is incorrect and leaves out statement 3, which is correct: p.57"
+     ],
+     "tr": [
+      "year",
+      "upheld vs struck down"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-034",
+      "A09-035",
+      "A09-037",
+      "A09-038"
+     ],
+     "id": "CS-POL-aks09-012"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "According to Laxmikanth's table on the evolution of the basic structure, consider the following statements:\n\n1. Kesavananda Bharati is credited with separation of powers and the federal character of the Constitution.\n2. Minerva Mills is credited with free and fair elections.\n3. Bommai is credited with unity and integrity of the nation and social justice.\n4. The element listed against Chandra Kumar is the High Courts' powers under Articles 226 and 227.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 3 and 4 only",
+     "o": [
+      "1, 3 and 4 only",
+      "2, 3 and 4 only",
+      "1, 2 and 4 only",
+      "3 and 4 only"
+     ],
+     "e": "Statement 1 is correct: Table 12.1, p.200. Statement 2 is incorrect: that element is credited to the Indira Gandhi case; Minerva Mills has limited amending power, judicial review, FR-DPSP harmony. Statement 3 is correct: Table 12.1, p.202. Statement 4 is correct: Table 12.1, p.202.",
+     "w": [
+      "'2, 3 and 4 only' includes statement 2, which is incorrect and leaves out statement 1, which is correct: p.200",
+      "'1, 2 and 4 only' includes statement 2, which is incorrect and leaves out statement 3, which is correct: p.200",
+      "'3 and 4 only' leaves out statement 1, which is correct: p.200"
+     ],
+     "tr": [
+      "case-element mapping"
+     ],
+     "sk": "recall",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-013",
+      "A09-027",
+      "A09-030"
+     ],
+     "id": "CS-POL-aks09-013"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about elements associated with decided cases:\n\n1. According to Laxmikanth, Golak Nath gave Fundamental Rights a 'transcendental and immutable' position that Parliament cannot abridge or take away.\n2. Puttaswamy is associated with federalism and the parliamentary system as the elements it affirmed.\n3. According to Laxmikanth's table, Coelho (the Ninth Schedule case) lists rule of law, separation of powers, judicial review and equality among its elements.\n4. According to Laxmikanth's table, S.R. Bommai (1994) is credited with federalism, secularism, democracy, unity and integrity of the nation, social justice and judicial review.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 3 and 4 only",
+     "o": [
+      "1, 3 and 4 only",
+      "2, 3 and 4 only",
+      "3 and 4 only",
+      "1 and 3 only"
+     ],
+     "e": "Statement 1 is correct: Laxmikanth p.198 says Golak Nath (1967) gave Fundamental Rights a 'transcendental and immutable' position that Parliament cannot abridge or take away. Statement 2 is incorrect: It linked individual dignity, autonomy and liberty to privacy. Statement 3 is correct: Table 12.1, p.202-203. Statement 4 is correct: Table 12.1, p.202.",
+     "w": [
+      "'2, 3 and 4 only' includes statement 2, which is incorrect and leaves out statement 1, which is correct: p.57",
+      "'3 and 4 only' leaves out statement 1, which is correct: p.57",
+      "'1 and 3 only' leaves out statement 4, which is correct: p.57"
+     ],
+     "tr": [
+      "case-element mapping"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-009",
+      "A09-039",
+      "A09-033",
+      "A09-026"
+     ],
+     "id": "CS-POL-aks09-014"
+    },
+    {
+     "f": "howmany",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the basic structure doctrine:\n\n1. The doctrine balances constitutional flexibility, meaning the power to amend, against constitutional supremacy, meaning preservation of foundational values.\n2. The phrase 'basic structure' is used in the text of Article 368.\n3. It was first authoritatively articulated in Golak Nath (1967).\n4. It arose to prevent the Constitution's core identity from being eroded by frequent and sweeping amendments.\n\nHow many of the statements given above are correct?",
+     "a": "Only two",
+     "o": [
+      "Only two",
+      "None",
+      "Only one",
+      "Only three"
+     ],
+     "e": "Statement 1 is correct: The doctrine balances constitutional flexibility, meaning the power to amend, against constitutional supremacy, meaning preservation of foundational values. Statement 2 is incorrect: the Constitution nowhere uses it. Statement 3 is incorrect: Kesavananda (1973). Statement 4 is correct: . So exactly 2 statement(s) are correct.",
+     "w": [
+      "'None' miscounts: exactly 2 of the 4 statements are correct.",
+      "'Only one' miscounts: exactly 2 of the 4 statements are correct.",
+      "'Only three' miscounts: exactly 2 of the 4 statements are correct."
+     ],
+     "tr": [
+      "textual vs judicial"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-003",
+      "A09-004",
+      "A09-002",
+      "A09-074"
+     ],
+     "id": "CS-POL-aks09-015"
+    },
+    {
+     "f": "howmany",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "According to Laxmikanth's table and the usual attribution, consider the following statements:\n\n1. Indira Gandhi v. Raj Narain is credited with rule of law and the principle of equality.\n2. Minerva Mills is credited with harmony and balance between Fundamental Rights and Directive Principles.\n3. Indira Gandhi v. Raj Narain is credited with harmony and balance between Fundamental Rights and Directive Principles.\n4. Madras Bar Association is credited with judicial review and the powers of the High Courts under Articles 226 and 227.\n\nHow many of the statements given above are correct?",
+     "a": "Only three",
+     "o": [
+      "Only three",
+      "Only one",
+      "Only two",
+      "All four"
+     ],
+     "e": "Statement 1 is correct: Table 12.1, p.200-201. Statement 2 is correct: Table 12.1, p.201. Statement 3 is incorrect: that is a Minerva Mills element. Statement 4 is correct: Table 12.1, p.203. So exactly 3 statement(s) are correct.",
+     "w": [
+      "'Only one' miscounts: exactly 3 of the 4 statements are correct.",
+      "'Only two' miscounts: exactly 3 of the 4 statements are correct.",
+      "'All four' miscounts: exactly 3 of the 4 statements are correct."
+     ],
+     "tr": [
+      "case-element mapping"
+     ],
+     "sk": "recall",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-017",
+      "A09-021",
+      "A09-036"
+     ],
+     "id": "CS-POL-aks09-016"
+    },
+    {
+     "f": "howmany",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the Kesavananda Bharati case and the cases around it:\n\n1. Kesavananda was heard by a 13-judge bench, the largest in Indian judicial history.\n2. It was decided by the narrowest majority, 7:6.\n3. Golak Nath (1967) was decided before Kesavananda Bharati (1973).\n4. Indira Gandhi v. Raj Narain (1975) was decided before Minerva Mills (1980).\n\nHow many of the statements given above are correct?",
+     "a": "All four",
+     "o": [
+      "All four",
+      "None",
+      "Only two",
+      "Only three"
+     ],
+     "e": "Statement 1 is correct: Kesavananda was heard by a 13-judge bench, the largest in Indian judicial history. Statement 2 is correct: It was decided by the narrowest majority, 7:6. Statement 3 is correct: Golak Nath (1967) was decided before Kesavananda Bharati (1973) (Laxmikanth p.198). Statement 4 is correct: Laxmikanth p.198-199. So exactly 4 statement(s) are correct.",
+     "w": [
+      "'None' miscounts: exactly 4 of the 4 statements are correct.",
+      "'Only two' miscounts: exactly 4 of the 4 statements are correct.",
+      "'Only three' miscounts: exactly 4 of the 4 statements are correct."
+     ],
+     "tr": [
+      "bench strength",
+      "chronology"
+     ],
+     "sk": "two_step",
+     "pg": [
+      59
+     ],
+     "fi": [
+      "A09-070",
+      "A09-071",
+      "A09-072"
+     ],
+     "id": "CS-POL-aks09-017"
+    },
+    {
+     "f": "stmt12",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Consider the following statements:\n\nStatement-I: The Supreme Court in Minerva Mills struck down the Article 368 clauses that declared Parliament's amending power unlimited.\nStatement-II: The invalidated clauses placed every amendment beyond challenge in any court, and judicial review is a basic feature of the Constitution.\n\nWhich one of the following is correct in respect of the above statements?",
+     "a": "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+     "o": [
+      "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+      "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+      "Statement-I is correct but Statement-II is incorrect",
+      "Statement-I is incorrect but Statement-II is correct"
+     ],
+     "e": "Statement-I is correct: and. Statement-II is correct: . The clauses excluded judicial review, which is a basic feature, so the ground in II is the reason for I (Laxmikanth p.199).",
+     "w": [
+      "Rejected: Statement-II does give the reason for Statement-I. The clauses excluded judicial review, which is a basic feature, so the ground in II is the reason for I (Laxmikanth p.199).",
+      "Rejected: Statement-II is correct, not incorrect. The clauses excluded judicial review, which is a basic feature, so the ground in II is the reason for I (Laxmikanth p.199).",
+      "Rejected: Statement-I is correct, not incorrect. The clauses excluded judicial review, which is a basic feature, so the ground in II is the reason for I (Laxmikanth p.199)."
+     ],
+     "tr": [
+      "limited power"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-019",
+      "A09-020"
+     ],
+     "id": "CS-POL-aks09-018"
+    },
+    {
+     "f": "stmt12",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Consider the following statements:\n\nStatement-I: According to Laxmikanth, Golak Nath (1967) held Fundamental Rights to have a 'transcendental and immutable' position that Parliament cannot take away.\nStatement-II: Golak Nath was later overruled in Kesavananda Bharati (1973).\n\nWhich one of the following is correct in respect of the above statements?",
+     "a": "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+     "o": [
+      "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+      "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+      "Statement-I is correct but Statement-II is incorrect",
+      "Statement-I is incorrect but Statement-II is correct"
+     ],
+     "e": "Statement-I is correct: Laxmikanth p.198. Statement-II is correct: Kesavananda Bharati (1973) overruled Golak Nath. Both are correct (Laxmikanth p.198); the later overruling is a subsequent event and is not the reason Golak Nath held Fundamental Rights beyond Parliament's reach.",
+     "w": [
+      "Rejected: Statement-II is true but does not give the reason for Statement-I. Both are correct (Laxmikanth p.198); the later overruling is a subsequent event and is not the reason Golak Nath held Fundamental Rights beyond Parliament's reach.",
+      "Rejected: Statement-II is correct, not incorrect. Both are correct (Laxmikanth p.198); the later overruling is a subsequent event and is not the reason Golak Nath held Fundamental Rights beyond Parliament's reach.",
+      "Rejected: Statement-I is correct, not incorrect. Both are correct (Laxmikanth p.198); the later overruling is a subsequent event and is not the reason Golak Nath held Fundamental Rights beyond Parliament's reach."
+     ],
+     "tr": [
+      "two cases"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-009",
+      "A09-012"
+     ],
+     "id": "CS-POL-aks09-019"
+    },
+    {
+     "f": "match",
+     "t": "match",
+     "m": 1,
+     "q": "Match the case in List-I with the subject it concerned in List-II.\n\nList-I\nA. Golak Nath (1967)\nB. Indira Gandhi v. Raj Narain (1975)\nC. L. Chandra Kumar (1997)\nD. Madras Bar Association (2014)\n\nList-II\n1. Constitutional validity of the National Tax Tribunal Act\n2. Exclusion of High Court jurisdiction under Articles 323A and 323B\n3. Challenge to the Seventeenth Amendment Act placing State Acts in the Ninth Schedule\n4. Amendment shielding the Prime Minister's election disputes from every court",
+     "a": "A-3, B-4, C-2, D-1",
+     "o": [
+      "A-3, B-4, C-2, D-1",
+      "A-4, B-3, C-2, D-1",
+      "A-3, B-4, C-1, D-2",
+      "A-2, B-4, C-3, D-1"
+     ],
+     "e": "Golak Nath challenged the 17th Amendment (Laxmikanth p.198); Indira Gandhi concerned the PM's election under the 39th Amendment (p.198-199); Chandra Kumar concerned Articles 323A/323B; Madras Bar examined the National Tax Tribunal Act.",
+     "w": [
+      "A and B are interchanged: the 17th Amendment belongs to Golak Nath and the PM's election to the 1975 case.",
+      "C and D are interchanged: tribunals under 323A/B belong to Chandra Kumar, the NTT Act to Madras Bar.",
+      "A and C are wrongly paired: Golak Nath did not deal with tribunals."
+     ],
+     "tr": [
+      "issue swap"
+     ],
+     "sk": "elimination",
+     "pg": [
+      57
+     ],
+     "fi": [
+      "A09-005",
+      "A09-014",
+      "A09-028",
+      "A09-034"
+     ],
+     "id": "CS-POL-aks09-020"
+    }
+   ]
+  },
+  {
+   "code": "AKS-09.2",
+   "name": "Recent cases and the other constitutional doctrines",
+   "description": "Navtej and Anjum Kadari, the interpretive doctrines (severability, eclipse, waiver, pith and substance, nexus, colourable legislation, precedent, repugnancy, prospective overruling, harmonious construction), bench and timeline.",
+   "idea": "Courts use named doctrines to decide whether and how far a law survives, and each is tied to an illustrative case.",
+   "rule": "Severability strikes down only the invalid part (Gopalan, Section 14). Eclipse makes a pre-Constitution law dormant, reviving it when the inconsistency is removed (Dhakras). Waiver does not apply to Fundamental Rights (Olga Tellis). Pith and substance saves a law whose true nature lies in the enacting legislature's field (Prafulla Kumar Mukherjee). Territorial nexus allows extra-territorial reach with a real connection (Chamarbaugwalla). Colourable legislation strikes down indirect circumvention of competence. Precedent binds lower courts; under Article 254 a repugnant State law is void, except as Article 254(2) provides. Prospective overruling was applied in Golak Nath; harmonious construction reads provisions together. Kesavananda was a 13-judge bench decided 7:6.",
+   "example": "A pre-1950 law conflicting with Article 19(1)(g) was revived once an amendment removed the conflict (eclipse).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Navtej Singh Johar v. Union of India (2018), a Constitution Bench examined the constitutionality of which provision before decriminalising consensual homosexual acts between adults?",
+     "a": "Section 377 of the Indian Penal Code",
+     "o": [
+      "Section 377 of the Indian Penal Code",
+      "Section 124A of the Indian Penal Code",
+      "Section 497 of the Indian Penal Code",
+      "Section 66A of the Information Technology Act"
+     ],
+     "e": "Navtej tested Section 377 IPC and reaffirmed equality, dignity and freedom of expression as constitutional core values. The other provisions named were challenged in separate cases. (Section 377 IPC has since been replaced in the new criminal code, but the case concerned the IPC provision.)",
+     "w": [
+      "Section 124A is the sedition provision and was not the subject of Navtej.",
+      "Section 497 dealt with adultery and was examined in a separate case.",
+      "Section 66A of the IT Act was the subject of a different free-speech challenge."
+     ],
+     "tr": [
+      "provision swap"
+     ],
+     "sk": "recall",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-040"
+     ],
+     "id": "CS-POL-aks09-021"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "A.K. Gopalan v. State of Madras (1950) is cited for the doctrine of severability. Which provision of the Preventive Detention Act, 1950 did the Supreme Court strike down there, leaving the rest of the Act in force?",
+     "a": "Section 14, for violating Article 22",
+     "o": [
+      "Section 14, for violating Article 22",
+      "Section 3, for violating Article 21",
+      "Section 7, for violating Article 19",
+      "Section 12, for violating Article 14"
+     ],
+     "e": "Only Section 14 was struck down, for violating Article 22; the remainder of the Act was upheld, which illustrates severability.",
+     "w": [
+      "The power-to-detain provision was not the one struck down, and Article 21 was not the ground.",
+      "Section 7 was not struck down and Article 19 was not the ground.",
+      "Section 12 was not struck down and Article 14 was not the ground."
+     ],
+     "tr": [
+      "section and article"
+     ],
+     "sk": "recall",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-046",
+      "A09-047"
+     ],
+     "id": "CS-POL-aks09-022"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Allahabad High Court in March 2024 struck down the Madarsa education statute on several grounds, including violation of a principle it treated as part of the basic structure; the Supreme Court later set that judgement aside. The principle was",
+     "a": "secularism",
+     "o": [
+      "secularism",
+      "federalism",
+      "the separation of powers",
+      "the independence of the judiciary"
+     ],
+     "e": "The High Court held that the Act violated secularism (basic structure) and Articles 14, 21 and 21-A, and was ultra vires Section 22 of the UGC Act, 1956. The statute is the Uttar Pradesh Board of Madarsa Education Act, 2004; the Supreme Court set the High Court's judgement aside.",
+     "w": [
+      "Federalism was not the ground the High Court relied on.",
+      "The separation of powers was not the ground the High Court relied on.",
+      "Judicial independence was not the ground the High Court relied on."
+     ],
+     "tr": [
+      "whose reasoning"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-043",
+      "A09-044",
+      "A09-045"
+     ],
+     "id": "CS-POL-aks09-023"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "A person signs an agreement promising not to approach any court if the State violates a Fundamental Right against him. Which doctrine would be applied to hold that he cannot validly give up that right?",
+     "a": "Waiver, which does not extend to Fundamental Rights",
+     "o": [
+      "Waiver, which does not extend to Fundamental Rights",
+      "Eclipse, which revives a law once its inconsistency is removed",
+      "Territorial nexus, which requires a real link between a State and the subject-matter",
+      "Severability, which saves the valid portions of a partly invalid law"
+     ],
+     "e": "A person may voluntarily give up a legal right, but Fundamental Rights cannot be surrendered by individual choice; Olga Tellis (1985) held that the right to life and liberty cannot be waived.",
+     "w": [
+      "Eclipse concerns pre-Constitution laws, not private agreements.",
+      "Territorial nexus concerns the reach of State laws, not private agreements.",
+      "Severability concerns separating the valid and invalid parts of a law."
+     ],
+     "tr": [
+      "waiver"
+     ],
+     "sk": "application",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-050"
+     ],
+     "id": "CS-POL-aks09-024"
+    },
+    {
+     "f": "direct",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Prafulla Kumar Mukherjee v. Bank of Commerce (1947) the Bengal Money Lenders Act, 1940 was upheld under pith and substance despite its incidental effect on promissory notes. Under the present Seventh Schedule, promissory notes belong to the",
+     "a": "Union List",
+     "o": [
+      "Union List",
+      "State List",
+      "Concurrent List",
+      "residuary field lying outside all three Lists"
+     ],
+     "e": "The incidental encroachment was on a Union List subject (promissory notes), while the Act's main purpose, money-lending, lay within the enacting legislature's field.",
+     "w": [
+      "Money-lending is the State subject; promissory notes are not.",
+      "Promissory notes are not on the Concurrent List.",
+      "Promissory notes are covered by an entry, so they are not residuary."
+     ],
+     "tr": [
+      "incidental encroachment"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-053"
+     ],
+     "id": "CS-POL-aks09-025"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about two recent landmark cases:\n\n1. Navtej Singh Johar (2018) tested the constitutionality of Section 377 of the IPC.\n2. In Navtej the Court reaffirmed equality, dignity and freedom of expression, and emphasised constitutional morality.\n3. Anjum Kadari concerned the validity of the Uttar Pradesh Board of Madarsa Education Act, 2004.\n4. The Supreme Court set aside the Allahabad High Court's March 2024 judgement that had struck down that Act.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 2, 3 and 4",
+     "o": [
+      "1, 2, 3 and 4",
+      "1, 3 and 4 only",
+      "1, 2 and 4 only",
+      "2, 3 and 4 only"
+     ],
+     "e": "Statement 1 is correct: Navtej Singh Johar (2018) tested the constitutionality of Section 377 of the IPC. Statement 2 is correct: In Navtej the Court reaffirmed equality, dignity and freedom of expression, and emphasised constitutional morality. Statement 3 is correct: the statute challenged. Statement 4 is correct: The Supreme Court set aside the Allahabad High Court's March 2024 judgement that had struck down that Act.",
+     "w": [
+      "'1, 3 and 4 only' leaves out statement 2, which is correct: p.58",
+      "'1, 2 and 4 only' leaves out statement 3, which is correct: p.58",
+      "'2, 3 and 4 only' leaves out statement 1, which is correct: p.58"
+     ],
+     "tr": [
+      "all correct"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-040",
+      "A09-041",
+      "A09-042",
+      "A09-043",
+      "A09-044"
+     ],
+     "id": "CS-POL-aks09-026"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about constitutional doctrines:\n\n1. Under the doctrine of eclipse, a pre-Constitution law inconsistent with a Fundamental Right is dormant and revives automatically if the inconsistency is removed.\n2. Under the doctrine of severability, when part of a law is unconstitutional the entire law falls.\n3. In Bhikaji Narain Dhakras (1955) a law conflicting with Article 19(1)(g) became operative again after an amendment removed the conflict.\n4. In A.K. Gopalan (1950) the doctrine of eclipse was applied to save Section 14 of the Preventive Detention Act, 1950.\n\nWhich of the statements given above is/are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1 only",
+      "3 and 4 only"
+     ],
+     "e": "Statement 1 is correct: Under the doctrine of eclipse, a pre-Constitution law inconsistent with a Fundamental Right is dormant and revives automatically if the inconsistency is removed. Statement 2 is incorrect: Only the invalid part is struck down and the rest remains in force. Statement 3 is correct: (the amendment was the First Amendment of 1951). Statement 4 is incorrect: Section 14 was struck down for violating Article 22 and the rest of the Act was upheld; Gopalan illustrates severability.",
+     "w": [
+      "'2 and 3 only' includes statement 2, which is incorrect and leaves out statement 1, which is correct: p.58",
+      "'1 only' leaves out statement 3, which is correct: p.58",
+      "'3 and 4 only' includes statement 4, which is incorrect and leaves out statement 1, which is correct: p.58"
+     ],
+     "tr": [
+      "eclipse vs severability"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-046",
+      "A09-048",
+      "A09-049"
+     ],
+     "id": "CS-POL-aks09-027"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about waiver and pith and substance:\n\n1. A person may validly waive a Fundamental Right if he does so voluntarily.\n2. Olga Tellis (1985) held that a person cannot waive the right to life and liberty.\n3. Under pith and substance, a law is valid if its main purpose lies within the enacting legislature's field, even if it incidentally touches the other legislature's subjects.\n4. Under pith and substance, an incidental encroachment on the other legislature's subjects renders the law invalid.\n\nWhich of the statements given above is/are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "3 and 4 only",
+      "3 only",
+      "2 and 4 only"
+     ],
+     "e": "Statement 1 is incorrect: Fundamental Rights cannot be surrendered by individual choice. Statement 2 is correct: Olga Tellis (1985) held that a person cannot waive the right to life and liberty. Statement 3 is correct: Under pith and substance, a law is valid if its main purpose lies within the enacting legislature's field, even if it incidentally touches the other legislature's subjects. Statement 4 is incorrect: incidental encroachment does not invalidate the law.",
+     "w": [
+      "'3 and 4 only' includes statement 4, which is incorrect and leaves out statement 2, which is correct: p.58",
+      "'3 only' leaves out statement 2, which is correct: p.58",
+      "'2 and 4 only' includes statement 4, which is incorrect and leaves out statement 3, which is correct: p.58"
+     ],
+     "tr": [
+      "incidental encroachment"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-050",
+      "A09-051",
+      "A09-052"
+     ],
+     "id": "CS-POL-aks09-028"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about territorial nexus and colourable legislation:\n\n1. Under territorial nexus a State law can apply to persons or events outside the State if there is a sufficient real connection with the State.\n2. The doctrine of territorial nexus is confined to tax laws.\n3. The doctrine of colourable legislation permits a legislature to do indirectly what it cannot do directly, if the law in form falls within its competence.\n4. A law that appears to be within a legislature's competence but in substance exceeds it is struck down as colourable.\n\nWhich of the statements given above is/are correct?",
+     "a": "1 and 4 only",
+     "o": [
+      "1 and 4 only",
+      "2 and 4 only",
+      "1, 3 and 4 only",
+      "1 only"
+     ],
+     "e": "Statement 1 is correct: Under territorial nexus a State law can apply to persons or events outside the State if there is a sufficient real connection with the State. Statement 2 is incorrect: it is not limited to tax laws. Statement 3 is incorrect: the doctrine rests on the maxim that what cannot be done directly cannot be done indirectly, so a law's form does not save it (Laxmikanth p.926-927). Statement 4 is correct: A law that appears to be within a legislature's competence but in substance exceeds it is struck down as colourable.",
+     "w": [
+      "'2 and 4 only' includes statement 2, which is incorrect and leaves out statement 1, which is correct: p.58",
+      "'1, 3 and 4 only' includes statement 3, which is incorrect: p.58",
+      "'1 only' leaves out statement 4, which is correct: p.58"
+     ],
+     "tr": [
+      "maxim reversed"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-054",
+      "A09-056"
+     ],
+     "id": "CS-POL-aks09-029"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about precedent and repugnancy:\n\n1. Decisions of the Supreme Court bind all courts in India, as Article 141 provides.\n2. Decisions of a High Court bind the Supreme Court, which ensures consistency in the legal system.\n3. Where a Union law and a State law on a Concurrent List subject conflict, the Union law ordinarily prevails and the State law is void to the extent of the repugnancy (Article 254(1)).\n4. Under Article 254(2), a State law on a Concurrent subject that received the President's assent prevails in that State, although Parliament may override it later.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 3 and 4 only",
+     "o": [
+      "1, 3 and 4 only",
+      "1, 2 and 3 only",
+      "2, 3 and 4 only",
+      "3 and 4 only"
+     ],
+     "e": "Statement 1 is correct: Laxmikanth p.203 (footnote 6). Statement 2 is incorrect: binding force runs from higher to lower courts. Statement 3 is correct: real law. Statement 4 is correct: real law.",
+     "w": [
+      "'1, 2 and 3 only' includes statement 2, which is incorrect and leaves out statement 4, which is correct: p.203",
+      "'2, 3 and 4 only' includes statement 2, which is incorrect and leaves out statement 1, which is correct: p.203",
+      "'3 and 4 only' leaves out statement 1, which is correct: p.203"
+     ],
+     "tr": [
+      "Article 254(2)"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-058",
+      "A09-059"
+     ],
+     "id": "CS-POL-aks09-030"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements:\n\n1. Prospective overruling applies a new ruling only to future cases, leaving past transactions undisturbed.\n2. Harmonious construction interprets two apparently conflicting provisions together so as to give effect to both.\n3. Harmonious construction presumes the framers intended two provisions to conflict, so the later one prevails.\n\nWhich of the statements given above is/are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "2 only"
+     ],
+     "e": "Statement 1 is correct: Prospective overruling applies a new ruling only to future cases, leaving past transactions undisturbed. Statement 2 is correct: Harmonious construction interprets two apparently conflicting provisions together so as to give effect to both. Statement 3 is incorrect: it presumes the framers intended no real contradiction.",
+     "w": [
+      "'2 and 3 only' includes statement 3, which is incorrect and leaves out statement 1, which is correct: p.58",
+      "'1 and 3 only' includes statement 3, which is incorrect and leaves out statement 2, which is correct: p.58",
+      "'2 only' leaves out statement 1, which is correct: p.58"
+     ],
+     "tr": [
+      "presumption"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-061",
+      "A09-063"
+     ],
+     "id": "CS-POL-aks09-031"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about landmark basic-structure cases:\n\n1. Kesavananda Bharati was heard by an 11-judge bench.\n2. Kesavananda was decided by a 7:6 majority.\n3. Waman Rao held that Ninth Schedule laws inserted after 24 April 1973 are subject to basic structure review.\n4. According to Laxmikanth's table, Indira Gandhi v. Raj Narain is credited with free and fair elections and judicial review.\n\nWhich of the statements given above is/are correct?",
+     "a": "2, 3 and 4 only",
+     "o": [
+      "2, 3 and 4 only",
+      "1, 2 and 4 only",
+      "2 and 3 only",
+      "1, 3 and 4 only"
+     ],
+     "e": "Statement 1 is incorrect: it was a 13-judge bench. Statement 2 is correct: Kesavananda was decided by a 7:6 majority. Statement 3 is correct: Waman Rao held that Ninth Schedule laws inserted after 24 April 1973 are subject to basic structure review (Laxmikanth p.199). Statement 4 is correct: Table 12.1, p.200-201.",
+     "w": [
+      "'1, 2 and 4 only' includes statement 1, which is incorrect and leaves out statement 3, which is correct: p.59",
+      "'2 and 3 only' leaves out statement 4, which is correct: p.59",
+      "'1, 3 and 4 only' includes statement 1, which is incorrect and leaves out statement 2, which is correct: p.59"
+     ],
+     "tr": [
+      "bench size"
+     ],
+     "sk": "recall",
+     "pg": [
+      59
+     ],
+     "fi": [
+      "A09-067",
+      "A09-069",
+      "A09-070",
+      "A09-071"
+     ],
+     "id": "CS-POL-aks09-032"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the sequence of events:\n\n1. Sajjan Singh (1964) preceded Golak Nath (1967).\n2. The 24th Amendment Act (1971) was enacted before the Golak Nath decision.\n3. The 42nd Amendment (1976) was Parliament's reaction to the doctrine of basic structure.\n4. The 39th Amendment Act (1975), part of which was struck down in Indira Gandhi v. Raj Narain, was enacted before that decision.\n\nWhich of the statements given above is/are correct?",
+     "a": "1, 3 and 4 only",
+     "o": [
+      "1, 3 and 4 only",
+      "1, 2 and 4 only",
+      "3 and 4 only",
+      "1 and 3 only"
+     ],
+     "e": "Statement 1 is correct: Laxmikanth p.198. Statement 2 is incorrect: It was Parliament's reaction to Golak Nath. Statement 3 is correct: Laxmikanth p.199. Statement 4 is correct: Laxmikanth p.198-199.",
+     "w": [
+      "'1, 2 and 4 only' includes statement 2, which is incorrect and leaves out statement 3, which is correct: p.198",
+      "'3 and 4 only' leaves out statement 1, which is correct: p.198",
+      "'1 and 3 only' leaves out statement 4, which is correct: p.198"
+     ],
+     "tr": [
+      "sequence"
+     ],
+     "sk": "two_step",
+     "pg": [
+      59
+     ],
+     "fi": [
+      "A09-072"
+     ],
+     "id": "CS-POL-aks09-033"
+    },
+    {
+     "f": "which",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about the basic structure:\n\n1. The right to property under Article 300A is among the accepted elements of the basic structure.\n2. Free and fair elections are an accepted element.\n3. Rule of law is an accepted element.\n4. Independence of the judiciary is an accepted element.\n\nWhich of the statements given above is/are correct?",
+     "a": "2, 3 and 4 only",
+     "o": [
+      "2, 3 and 4 only",
+      "1, 2 and 3 only",
+      "1, 2, 3 and 4",
+      "3 and 4 only"
+     ],
+     "e": "Statement 1 is incorrect: it is not in Laxmikanth's list of twenty elements. Statement 2 is correct: Laxmikanth p.200. Statement 3 is correct: Laxmikanth p.200. Statement 4 is correct: Laxmikanth p.200.",
+     "w": [
+      "'1, 2 and 3 only' includes statement 1, which is incorrect and leaves out statement 4, which is correct: p.200",
+      "'1, 2, 3 and 4' includes statement 1, which is incorrect: p.200",
+      "'3 and 4 only' leaves out statement 2, which is correct: p.200"
+     ],
+     "tr": [
+      "property"
+     ],
+     "sk": "recall",
+     "pg": [
+      59
+     ],
+     "fi": [
+      "A09-073"
+     ],
+     "id": "CS-POL-aks09-034"
+    },
+    {
+     "f": "howmany",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements:\n\n1. In Chamarbaugwalla (1957) a Bombay law was upheld under territorial nexus despite some activities outside the State.\n2. In Navtej Singh Johar the Court upheld Section 377 IPC for consensual acts between adults.\n3. The High Court in Anjum Kadari held the Madarsa Act ultra vires Section 22 of the UGC Act, 1956.\n4. Olga Tellis held that the right to life and liberty cannot be waived.\n\nHow many of the statements given above are correct?",
+     "a": "Only three",
+     "o": [
+      "Only three",
+      "Only one",
+      "Only two",
+      "All four"
+     ],
+     "e": "Statement 1 is correct: In Chamarbaugwalla (1957) a Bombay law was upheld under territorial nexus despite some activities outside the State. Statement 2 is incorrect: it decriminalised them. Statement 3 is correct: The High Court in Anjum Kadari held the Madarsa Act ultra vires Section 22 of the UGC Act, 1956. Statement 4 is correct: . So exactly 3 statement(s) are correct.",
+     "w": [
+      "'Only one' miscounts: exactly 3 of the 4 statements are correct.",
+      "'Only two' miscounts: exactly 3 of the 4 statements are correct.",
+      "'All four' miscounts: exactly 3 of the 4 statements are correct."
+     ],
+     "tr": [
+      "upheld vs struck down"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-041",
+      "A09-045",
+      "A09-051",
+      "A09-055"
+     ],
+     "id": "CS-POL-aks09-035"
+    },
+    {
+     "f": "howmany",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements:\n\n1. Golak Nath held that Fundamental Rights cannot be amended by Parliament, and was later overruled.\n2. Kesavananda introduced the doctrine that Parliament can amend any part but not the basic structure.\n3. Minerva Mills held that a limited amending power is not a basic feature.\n4. Puttaswamy (2017) treated the Right to Privacy as a statutory right lying outside Article 21.\n\nHow many of the statements given above are correct?",
+     "a": "Only two",
+     "o": [
+      "Only two",
+      "None",
+      "Only one",
+      "Only three"
+     ],
+     "e": "Statement 1 is correct: Golak Nath held that Fundamental Rights cannot be amended by Parliament, and was later overruled. Statement 2 is correct: Kesavananda introduced the doctrine that Parliament can amend any part but not the basic structure. Statement 3 is incorrect: A limited amending power is a basic feature. Statement 4 is incorrect: The Court recognised privacy as intrinsic to life and liberty under Article 21. So exactly 2 statement(s) are correct.",
+     "w": [
+      "'None' miscounts: exactly 2 of the 4 statements are correct (see the statement-by-statement check in the explanation).",
+      "'Only one' miscounts: exactly 2 of the 4 statements are correct (see the statement-by-statement check in the explanation).",
+      "'Only three' miscounts: exactly 2 of the 4 statements are correct (see the statement-by-statement check in the explanation)."
+     ],
+     "tr": [
+      "privacy"
+     ],
+     "sk": "two_step",
+     "pg": [
+      57,
+      59
+     ],
+     "fi": [
+      "A09-065",
+      "A09-066",
+      "A09-068",
+      "A09-038"
+     ],
+     "id": "CS-POL-aks09-036"
+    },
+    {
+     "f": "howmany",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements:\n\n1. Kesavananda (1973) came before Indira Gandhi v. Raj Narain (1975).\n2. Minerva Mills (1980) came before Kesavananda (1973).\n3. Golak Nath (1967) was decided after Kesavananda.\n4. Bommai (1994) was decided before Minerva Mills (1980).\n\nHow many of the statements given above are correct?",
+     "a": "Only one",
+     "o": [
+      "Only one",
+      "None",
+      "Only two",
+      "All four"
+     ],
+     "e": "Statement 1 is correct: Laxmikanth p.198. Statement 2 is incorrect: Minerva Mills came seven years later. Statement 3 is incorrect: Golak Nath (1967) was decided six years before Kesavananda (1973). Statement 4 is incorrect: Bommai came fourteen years after. So exactly 1 statement(s) are correct.",
+     "w": [
+      "'None' miscounts: exactly 1 of the 4 statements are correct.",
+      "'Only two' miscounts: exactly 1 of the 4 statements are correct.",
+      "'All four' miscounts: exactly 1 of the 4 statements are correct."
+     ],
+     "tr": [
+      "sequence"
+     ],
+     "sk": "two_step",
+     "pg": [
+      59
+     ],
+     "fi": [
+      "A09-072",
+      "A09-066"
+     ],
+     "id": "CS-POL-aks09-037"
+    },
+    {
+     "f": "stmt12",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Consider the following statements:\n\nStatement-I: Prospective overruling applies the new ruling only to future cases.\nStatement-II: Prospective overruling was first applied in India in Kesavananda Bharati (1973).\n\nWhich one of the following is correct in respect of the above statements?",
+     "a": "Statement-I is correct but Statement-II is incorrect",
+     "o": [
+      "Statement-I is correct but Statement-II is incorrect",
+      "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+      "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+      "Statement-I is incorrect but Statement-II is correct"
+     ],
+     "e": "Statement-I is correct: Prospective overruling applies the new ruling only to future cases. Statement-II is incorrect: the example is Golak Nath (1967), whose ruling curtailing the amending power had prospective effect only.",
+     "w": [
+      "Statement-II is incorrect, so it cannot explain Statement-I.",
+      "Statement-II is incorrect, so the pair cannot both be correct.",
+      "Statement-I is correct, so it cannot be called incorrect."
+     ],
+     "tr": [
+      "Golak Nath vs Kesavananda"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-061",
+      "A09-062"
+     ],
+     "id": "CS-POL-aks09-038"
+    },
+    {
+     "f": "stmt12",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Consider the following statements:\n\nStatement-I: A State law on a Concurrent List subject that conflicts with a Union law is void, whether or not it received the President's assent.\nStatement-II: A State law on a Concurrent subject that received the President's assent prevails in that State, though Parliament may later override it.\n\nWhich one of the following is correct in respect of the above statements?",
+     "a": "Statement-I is incorrect but Statement-II is correct",
+     "o": [
+      "Statement-I is incorrect but Statement-II is correct",
+      "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+      "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+      "Statement-I is correct but Statement-II is incorrect"
+     ],
+     "e": "Statement-I is incorrect: Article 254(2) makes an exception for a State law that received the President's assent. Statement-II is correct: (real lawstates only the general rule).",
+     "w": [
+      "Statement-I is incorrect, so it cannot be explained by Statement-II.",
+      "Statement-I is incorrect, so the pair cannot both be correct.",
+      "Statement-I is the incorrect one, not Statement-II."
+     ],
+     "tr": [
+      "Article 254(2)"
+     ],
+     "sk": "two_step",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-059"
+     ],
+     "id": "CS-POL-aks09-039"
+    },
+    {
+     "f": "match",
+     "t": "match",
+     "m": 1,
+     "q": "Match each doctrine in List-I with the case that illustrates it in List-II.\n\nList-I\nA. Severability\nB. Eclipse\nC. Pith and substance\nD. Territorial nexus\n\nList-II\n1. R.M.D. Chamarbaugwalla v. Union of India (1957)\n2. Prafulla Kumar Mukherjee v. Bank of Commerce (1947)\n3. A.K. Gopalan v. State of Madras (1950)\n4. Bhikaji Narain Dhakras v. State of M.P. (1955)",
+     "a": "A-3, B-4, C-2, D-1",
+     "o": [
+      "A-3, B-4, C-2, D-1",
+      "A-4, B-3, C-2, D-1",
+      "A-3, B-4, C-1, D-2",
+      "A-2, B-4, C-3, D-1"
+     ],
+     "e": "Severability: Gopalan, where only Section 14 fell; eclipse: Dhakras, where the law revived after the amendment; pith and substance: Prafulla Kumar Mukherjee, the Bengal Money Lenders Act; territorial nexus: Chamarbaugwalla. Chamarbaugwalla is also known for severability, but only it fits territorial nexus among the options, so the allocation is unique.",
+     "w": [
+      "A and B are interchanged: Gopalan illustrates severability and Dhakras eclipse.",
+      "C and D are interchanged: Prafulla Kumar Mukherjee illustrates pith and substance and Chamarbaugwalla territorial nexus.",
+      "A and C are interchanged: Gopalan illustrates severability, Prafulla Kumar Mukherjee pith and substance."
+     ],
+     "tr": [
+      "case swap"
+     ],
+     "sk": "elimination",
+     "pg": [
+      58
+     ],
+     "fi": [
+      "A09-047",
+      "A09-049",
+      "A09-053",
+      "A09-055"
+     ],
+     "id": "CS-POL-aks09-040"
+    }
+   ]
+  }
+ ]
+}
