@@ -43,11 +43,16 @@ let sharedDb: Db | null = null
  * calling createDb() per request. Created lazily on first use and never destroyed -- there is no
  * per-request `finally { await db.destroy() }` for this one; the pool outlives any single
  * request and is meant to.
+ *
+ * `max` is deliberately small: every Vercel function instance holds its own pool, so the project's
+ * connection ceiling is (instances x max). With 8 here plus 4 for auth, two instances exhausted
+ * the 15-connection session pooler (EMAXCONNSESSION, 2026-10-13: logins failing, app slow).
+ * Pair this with the transaction-mode pooler (port 6543) in DATABASE_URL.
  */
 export function getSharedDb(): Db {
   sharedDb ??= new Kysely<DB>({
     dialect: new PostgresDialect({
-      pool: attachErrorHandler(new Pool({ connectionString: env.DATABASE_URL, max: 8 })),
+      pool: attachErrorHandler(new Pool({ connectionString: env.DATABASE_URL, max: 2 })),
     }),
   })
   return sharedDb
