@@ -254,14 +254,16 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(
     page.getByText(new RegExp(`${tag} question`)).first(),
   ).toBeVisible()
-  const rights = page.getByLabel(/A\. right/)
-  const count = await rights.count()
-  expect(count).toBe(10)
+  // One question per page: step through all ten with Next, answering each.
+  await expect(page.getByText(/Question 1 of 10/)).toBeVisible()
   // Let the saved-answer load settle so it cannot overwrite the first clicks.
   await page.waitForTimeout(700)
-  for (let i = 0; i < count; i++) {
-    await rights.nth(i).click()
-    await expect(rights.nth(i)).toBeChecked()
+  for (let i = 0; i < 10; i++) {
+    const right = page.getByLabel(/A\. right/)
+    await expect(right).toHaveCount(1)
+    await right.click()
+    await expect(right).toBeChecked()
+    if (i < 9) await page.getByRole('button', { name: 'Next' }).click()
   }
   await page.waitForTimeout(1000)
   await page.getByRole('button', { name: 'Review & submit' }).click()
