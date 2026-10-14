@@ -73,6 +73,7 @@ export function levelFor(q: CivilQuestion): { bloom: Bloom; difficulty: Tier } {
   return { bloom: 'Apply', difficulty: 'Hard' }
 }
 
+/* eslint-disable @typescript-eslint/no-unnecessary-condition -- validates untrusted JSON, so the declared types are deliberately not trusted */
 export function validateCivilPack(file: CivilPack): Array<string> {
   const p: Array<string> = []
   if (file.kind !== 'civil_pack') p.push('kind must be "civil_pack"')
@@ -98,6 +99,7 @@ export function validateCivilPack(file: CivilPack): Array<string> {
   }
   return p
 }
+/* eslint-enable @typescript-eslint/no-unnecessary-condition */
 
 function shuffled<T>(items: Array<T>, seed: string): Array<T> {
   const keyed = items.map((item, i) => ({ item, k: createHash('sha256').update(`${seed}|${i}`).digest('hex') }))

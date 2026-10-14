@@ -244,7 +244,10 @@ test('written answers can be typed, spoken or photographed', async ({ page }) =>
   await page.goto(`/attempt/${openAttemptId}`, { waitUntil: 'networkidle' })
   await page.waitForTimeout(800)
 
-  await expect(page.getByRole('button', { name: 'Photo of my answer' })).toHaveCount(2)
+  // One question per page: Q1 is the multiple-choice one, the written questions are Q2 and Q3.
+  await expect(page.getByRole('button', { name: 'Photo of my answer' })).toHaveCount(0)
+  await page.getByRole('button', { name: 'Next' }).click()
+  await expect(page.getByRole('button', { name: 'Photo of my answer' })).toHaveCount(1)
   await page.getByLabel('Your answer').first().fill('typed working')
   await expect(page.getByLabel('Your answer').first()).toHaveValue('typed working')
 
