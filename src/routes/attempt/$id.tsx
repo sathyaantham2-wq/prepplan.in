@@ -550,30 +550,35 @@ function Attempt() {
 
   return (
     <div className="attempt-compact mx-auto max-w-3xl p-3 sm:p-4">
-      <div className="mb-2 flex flex-wrap items-center gap-2">
-        <DownloadPaperButton paperId={data.paper.id} title={data.paper.title} />
-        {/* F050: wrote it on the printed paper instead? Photograph the pages. */}
-        <a href={`/scan/${id}`} className="no-print">
-          <Button type="button" variant="outline" size="sm">
-            <Camera />
-            Wrote it on paper? Upload photos
-          </Button>
-        </a>
-      </div>
-      <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-        <div>
-          <h1 className="text-base font-bold leading-tight">
-            {data.paper.title}
-          </h1>
-          <p className="text-caption text-muted-foreground">
-            {data.student.name} ·{' '}
-            {data.student.class === 0
-              ? 'Competitive exam'
-              : `Class ${data.student.class}`}{' '}
-            · {data.paper.total_marks} marks
-          </p>
+      {/* One slim row: download, photos, then the clock and theme. The paper title and the
+          student line are kept for screen readers only. */}
+      <h1 className="sr-only">{data.paper.title}</h1>
+      <p className="sr-only">
+        {data.student.name} ·{' '}
+        {data.student.class === 0
+          ? 'Competitive exam'
+          : `Class ${data.student.class}`}{' '}
+        · {data.paper.total_marks} marks
+      </p>
+      <div className="mb-2 flex items-center justify-between gap-2 no-print">
+        <div className="flex items-center gap-2">
+          <DownloadPaperButton
+            paperId={data.paper.id}
+            title={data.paper.title}
+            iconOnly
+          />
+          {/* F050: wrote it on the printed paper instead? Photograph the pages. */}
+          <a
+            href={`/scan/${id}`}
+            aria-label="Wrote it on paper? Upload photos"
+            title="Wrote it on paper? Upload photos"
+          >
+            <Button type="button" variant="outline" size="icon" tabIndex={-1}>
+              <Camera />
+            </Button>
+          </a>
         </div>
-        <div className="flex items-center gap-3 no-print">
+        <div className="flex items-center gap-3">
           <span
             className={
               remainingSeconds !== null && remainingSeconds <= 0
