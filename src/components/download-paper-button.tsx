@@ -12,9 +12,12 @@ import { pdfFileName } from '../lib/pdf/file-name'
 export function DownloadPaperButton({
   paperId,
   title,
+  iconOnly = false,
 }: {
   paperId: string
   title: string
+  /** Just the icon (with an accessible name), for tight headers. */
+  iconOnly?: boolean
 }) {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -49,12 +52,21 @@ export function DownloadPaperButton({
       <Button
         type="button"
         variant="outline"
-        size="sm"
+        size={iconOnly ? 'icon' : 'sm'}
         disabled={busy}
         onClick={() => void download()}
+        aria-label={
+          iconOnly
+            ? busy
+              ? 'Preparing your PDF'
+              : 'Download this paper as PDF'
+            : undefined
+        }
+        title={iconOnly ? 'Download this paper as PDF' : undefined}
       >
-        <Download />
-        {busy ? 'Preparing your PDF…' : 'Download this paper as PDF'}
+        <Download className={busy && iconOnly ? 'animate-pulse' : undefined} />
+        {!iconOnly &&
+          (busy ? 'Preparing your PDF…' : 'Download this paper as PDF')}
       </Button>
       {error && (
         <span className="text-small text-destructive" role="alert">
