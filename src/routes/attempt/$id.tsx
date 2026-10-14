@@ -549,8 +549,8 @@ function Attempt() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl p-4 sm:p-8">
-      <div className="mb-4 flex flex-wrap items-center gap-2">
+    <div className="attempt-compact mx-auto max-w-3xl p-3 sm:p-4">
+      <div className="mb-2 flex flex-wrap items-center gap-2">
         <DownloadPaperButton paperId={data.paper.id} title={data.paper.title} />
         {/* F050: wrote it on the printed paper instead? Photograph the pages. */}
         <a href={`/scan/${id}`} className="no-print">
@@ -560,10 +560,12 @@ function Attempt() {
           </Button>
         </a>
       </div>
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
         <div>
-          <h1 className="text-h1">{data.paper.title}</h1>
-          <p className="text-small text-muted-foreground">
+          <h1 className="text-base font-bold leading-tight">
+            {data.paper.title}
+          </h1>
+          <p className="text-caption text-muted-foreground">
             {data.student.name} ·{' '}
             {data.student.class === 0
               ? 'Competitive exam'
@@ -590,7 +592,7 @@ function Attempt() {
       {mode === 'answering' && (
         <>
           {/* One question per page, on every screen size. The palette is the way to jump. */}
-          <div className="mb-4 flex flex-wrap gap-1.5 no-print" aria-label="Questions">
+          <div className="mb-2 flex flex-wrap gap-1 no-print" aria-label="Questions">
             {data.questions.map((pq, i) => {
               const state = isBlank(pq)
                 ? 'text-muted-foreground'
@@ -605,7 +607,7 @@ function Attempt() {
                   }${isBlank(pq) ? ', blank' : ', answered'}`}
                   aria-current={i === qIndex ? 'true' : undefined}
                   className={
-                    'text-small relative flex h-9 min-w-9 items-center justify-center rounded-md border px-2 ' +
+                    'text-caption relative flex h-7 min-w-7 items-center justify-center rounded-md border px-1.5 ' +
                     state +
                     (i === qIndex ? ' ring-2 ring-primary' : '')
                   }
@@ -627,11 +629,11 @@ function Attempt() {
             const parts = splitStatements(q.text)
             return (
               <div key={q.paper_question_id}>
-                <p className="text-small text-muted-foreground mb-2">
+                <p className="text-caption text-muted-foreground mb-1">
                   {q.section} · Question {qIndex + 1} of {data.questions.length}
                 </p>
-                <Card>
-                  <CardHeader>
+                <Card className="gap-2 py-3">
+                  <CardHeader className="gap-1 px-3">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         <span className="q-badge">Q{q.position}</span>
@@ -648,12 +650,12 @@ function Attempt() {
                         {flagged.has(q.paper_question_id) ? 'Marked' : 'Mark to review'}
                       </Button>
                     </div>
-                    <div className="question-text mt-3 space-y-2">
+                    <div className="question-text mt-1 space-y-1">
                       {parts.intro && (
                         <p className="whitespace-pre-line">{parts.intro}</p>
                       )}
                       {parts.statements.length > 0 && (
-                        <ol className="space-y-2">
+                        <ol className="space-y-1">
                           {parts.statements.map((s) => (
                             <li key={s.label} className="flex gap-2">
                               <span className="shrink-0 font-semibold">{s.label}</span>
@@ -668,7 +670,7 @@ function Attempt() {
                     </div>
                     {q.hint && <CardDescription>Hint: {q.hint}</CardDescription>}
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="px-3">
                     {/* Any objective type that carries options gets the radio list, not
                         just 'mcq': assertion_reason, match and multi_statement are already
                         objective in scoring.ts (compared, never AI-graded) and already
@@ -734,7 +736,7 @@ function Attempt() {
             )
           })()}
 
-          <div className="mt-6 flex items-center justify-between gap-2 no-print">
+          <div className="mt-3 flex items-center justify-between gap-2 no-print">
             <Button
               type="button"
               variant="outline"
@@ -754,7 +756,7 @@ function Attempt() {
             )}
           </div>
           {qIndex < data.questions.length - 1 && (
-            <div className="mt-3 text-right no-print">
+            <div className="mt-1 text-right no-print">
               <Button
                 type="button"
                 variant="ghost"
