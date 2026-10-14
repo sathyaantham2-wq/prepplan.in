@@ -570,13 +570,6 @@ function Attempt() {
               : `Class ${data.student.class}`}{' '}
             · {data.paper.total_marks} marks
           </p>
-          {data.chapters.length > 0 && (
-            <p className="text-small text-muted-foreground">
-              {data.chapters
-                .map((c) => `Ch ${c.chapter_no}: ${c.name}`)
-                .join(' · ')}
-            </p>
-          )}
         </div>
         <div className="flex items-center gap-3 no-print">
           <span
