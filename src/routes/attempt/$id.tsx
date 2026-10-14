@@ -14,6 +14,7 @@ import { AnswerReview } from '../../components/answer-review'
 import { WrittenAnswerInput } from '../../components/written-answer-input'
 import { useSession } from '../../lib/auth-client'
 import { playCoinSound } from '../../lib/reward-sound'
+import { splitStatements } from '../../lib/split-statements'
 import { DownloadPaperButton } from '../../components/download-paper-button'
 import { ReportProblem } from '../../components/report-problem'
 import { PageLoading } from '../../components/page-loading'
@@ -127,6 +128,8 @@ function Attempt() {
     Partial<Record<string, string>>
   >({})
   const [now, setNow] = useState(() => Date.now())
+  // One question per page: index into data.questions.
+  const [qIndex, setQIndex] = useState(0)
   const saveTimers = useRef<
     Partial<Record<string, ReturnType<typeof setTimeout>>>
   >({})
@@ -539,7 +542,11 @@ function Attempt() {
   }
 
   const blanks = data.questions.filter(isBlank)
-  const sections = [...new Set(data.questions.map((q) => q.section))]
+  function goTo(i: number) {
+    setQIndex(Math.max(0, Math.min(i, data!.questions.length - 1)))
+    setMode('answering')
+    window.scrollTo({ top: 0 })
+  }
 
   return (
     <div className="mx-auto max-w-3xl p-4 sm:p-8">
@@ -589,142 +596,182 @@ function Attempt() {
 
       {mode === 'answering' && (
         <>
-          <div className="mb-4 flex flex-wrap gap-2 no-print">
-            {sections.map((s) => (
-              <a
-                key={s}
-                href={`#section-${s}`}
-                className="text-small rounded-full border px-3 py-1 hover:bg-accent"
-              >
-                {s}
-              </a>
-            ))}
+          {/* One question per page, on every screen size. The palette is the way to jump. */}
+          <div className="mb-4 flex flex-wrap gap-1.5 no-print" aria-label="Questions">
+            {data.questions.map((pq, i) => {
+              const state = isBlank(pq)
+                ? 'text-muted-foreground'
+                : 'border-primary/60 bg-accent'
+              return (
+                <button
+                  key={pq.paper_question_id}
+                  type="button"
+                  onClick={() => goTo(i)}
+                  aria-label={`Question ${pq.position}${
+                    flagged.has(pq.paper_question_id) ? ', marked to review' : ''
+                  }${isBlank(pq) ? ', blank' : ', answered'}`}
+                  aria-current={i === qIndex ? 'true' : undefined}
+                  className={
+                    'text-small relative flex h-9 min-w-9 items-center justify-center rounded-md border px-2 ' +
+                    state +
+                    (i === qIndex ? ' ring-2 ring-primary' : '')
+                  }
+                >
+                  {pq.position}
+                  {flagged.has(pq.paper_question_id) && (
+                    <span
+                      className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-primary"
+                      aria-hidden="true"
+                    />
+                  )}
+                </button>
+              )
+            })}
           </div>
 
-          <div className="space-y-6">
-            {sections.map((section) => (
-              <div key={section}>
-                <h2 id={`section-${section}`} className="text-h3 mb-3">
-                  {section}
-                </h2>
-                <div className="space-y-4">
-                  {data.questions
-                    .filter((q) => q.section === section)
-                    .map((q) => (
-                      <Card key={q.paper_question_id}>
-                        <CardHeader>
-                          <div className="flex items-start justify-between gap-4">
-                            <div className="flex items-start gap-3">
-                              <span className="q-badge">Q{q.position}</span>
-                              <CardTitle className="question-text">
-                                {q.text}
-                              </CardTitle>
-                            </div>
-                            <div className="flex items-center gap-2 shrink-0">
-                              <span className="text-caption text-muted-foreground font-semibold">
-                                {q.marks} {q.marks === 1 ? 'mark' : 'marks'}
-                              </span>
-                              <Button
-                                type="button"
-                                variant={
-                                  flagged.has(q.paper_question_id)
-                                    ? 'default'
-                                    : 'outline'
-                                }
-                                size="sm"
-                                onClick={() => toggleFlag(q.paper_question_id)}
-                              >
-                                {flagged.has(q.paper_question_id)
-                                  ? 'Marked'
-                                  : 'Mark to review'}
-                              </Button>
-                            </div>
-                          </div>
-                          {q.hint && (
-                            <CardDescription>Hint: {q.hint}</CardDescription>
-                          )}
-                        </CardHeader>
-                        <CardContent>
-                          {/* Any objective type that carries options gets the radio list, not
-                              just 'mcq': assertion_reason, match and multi_statement are already
-                              objective in scoring.ts (compared, never AI-graded) and already
-                              render their options in the PDF templates, but this screen used to
-                              drop them into the free-text box, so a student saw four options on
-                              the printed paper and none on screen. */}
-                          {q.options.length > 0 ? (
-                            <div className="space-y-2">
-                              {q.options.map((opt) => (
-                                <label key={opt.label} className="option-tile">
-                                  <input
-                                    type="radio"
-                                    name={q.paper_question_id}
-                                    checked={
-                                      answers[q.paper_question_id]
-                                        ?.selected_option === opt.label
-                                    }
-                                    onChange={() =>
-                                      saveAnswer(q.paper_question_id, {
-                                        selected_option: opt.label,
-                                      })
-                                    }
-                                  />
-                                  <span
-                                    className="option-letter"
-                                    aria-hidden="true"
-                                  >
-                                    {opt.label}
-                                  </span>
-                                  <span className="answer-text">
-                                    <span className="sr-only">
-                                      {opt.label}.{' '}
-                                    </span>
-                                    {opt.text}
-                                  </span>
-                                </label>
-                              ))}
-                            </div>
-                          ) : (
-                            <WrittenAnswerInput
-                              attemptId={id}
-                              paperQuestionId={q.paper_question_id}
-                              value={
-                                answers[q.paper_question_id]?.response_text ??
-                                ''
+          {(() => {
+            const q = data.questions[qIndex]
+            const parts = splitStatements(q.text)
+            return (
+              <div key={q.paper_question_id}>
+                <p className="text-small text-muted-foreground mb-2">
+                  {q.section} · Question {qIndex + 1} of {data.questions.length}
+                </p>
+                <Card>
+                  <CardHeader>
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="q-badge">Q{q.position}</span>
+                        <span className="text-caption text-muted-foreground font-semibold">
+                          {q.marks} {q.marks === 1 ? 'mark' : 'marks'}
+                        </span>
+                      </div>
+                      <Button
+                        type="button"
+                        variant={flagged.has(q.paper_question_id) ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => toggleFlag(q.paper_question_id)}
+                      >
+                        {flagged.has(q.paper_question_id) ? 'Marked' : 'Mark to review'}
+                      </Button>
+                    </div>
+                    <div className="question-text mt-3 space-y-2">
+                      {parts.intro && (
+                        <p className="whitespace-pre-line">{parts.intro}</p>
+                      )}
+                      {parts.statements.length > 0 && (
+                        <ol className="space-y-2">
+                          {parts.statements.map((s) => (
+                            <li key={s.label} className="flex gap-2">
+                              <span className="shrink-0 font-semibold">{s.label}</span>
+                              <span className="whitespace-pre-line">{s.text}</span>
+                            </li>
+                          ))}
+                        </ol>
+                      )}
+                      {parts.tail && (
+                        <p className="whitespace-pre-line">{parts.tail}</p>
+                      )}
+                    </div>
+                    {q.hint && <CardDescription>Hint: {q.hint}</CardDescription>}
+                  </CardHeader>
+                  <CardContent>
+                    {/* Any objective type that carries options gets the radio list, not
+                        just 'mcq': assertion_reason, match and multi_statement are already
+                        objective in scoring.ts (compared, never AI-graded) and already
+                        render their options in the PDF templates, but this screen used to
+                        drop them into the free-text box, so a student saw four options on
+                        the printed paper and none on screen. */}
+                    {q.options.length > 0 ? (
+                      <div className="space-y-2">
+                        {q.options.map((opt) => (
+                          <label key={opt.label} className="option-tile">
+                            <input
+                              type="radio"
+                              name={q.paper_question_id}
+                              checked={
+                                answers[q.paper_question_id]?.selected_option ===
+                                opt.label
                               }
-                              onChange={(text) =>
+                              onChange={() =>
                                 saveAnswer(q.paper_question_id, {
-                                  response_text: text,
+                                  selected_option: opt.label,
                                 })
                               }
                             />
-                          )}
-                          <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-                            {q.concept_name ? (
-                              <p className="text-caption text-muted-foreground">
-                                Concept: {q.concept_name}
-                              </p>
-                            ) : (
-                              <span />
-                            )}
-                            <ReportProblem
-                              attemptId={id}
-                              paperQuestionId={q.paper_question_id}
-                              reported={reported.has(q.paper_question_id)}
-                              onReported={markReported}
-                              reasons={['question_error', 'unclear', 'other']}
-                            />
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                </div>
+                            <span className="option-letter" aria-hidden="true">
+                              {opt.label}
+                            </span>
+                            <span className="answer-text">
+                              <span className="sr-only">{opt.label}. </span>
+                              {opt.text}
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+                    ) : (
+                      <WrittenAnswerInput
+                        attemptId={id}
+                        paperQuestionId={q.paper_question_id}
+                        value={answers[q.paper_question_id]?.response_text ?? ''}
+                        onChange={(text) =>
+                          saveAnswer(q.paper_question_id, { response_text: text })
+                        }
+                      />
+                    )}
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                      {q.concept_name ? (
+                        <p className="text-caption text-muted-foreground">
+                          Concept: {q.concept_name}
+                        </p>
+                      ) : (
+                        <span />
+                      )}
+                      <ReportProblem
+                        attemptId={id}
+                        paperQuestionId={q.paper_question_id}
+                        reported={reported.has(q.paper_question_id)}
+                        onReported={markReported}
+                        reasons={['question_error', 'unclear', 'other']}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-            ))}
-          </div>
+            )
+          })()}
 
-          <Button className="mt-6" onClick={() => setMode('reviewing')}>
-            Review & submit
-          </Button>
+          <div className="mt-6 flex items-center justify-between gap-2 no-print">
+            <Button
+              type="button"
+              variant="outline"
+              disabled={qIndex === 0}
+              onClick={() => goTo(qIndex - 1)}
+            >
+              Previous
+            </Button>
+            {qIndex < data.questions.length - 1 ? (
+              <Button type="button" onClick={() => goTo(qIndex + 1)}>
+                Next
+              </Button>
+            ) : (
+              <Button type="button" onClick={() => setMode('reviewing')}>
+                Review & submit
+              </Button>
+            )}
+          </div>
+          {qIndex < data.questions.length - 1 && (
+            <div className="mt-3 text-right no-print">
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={() => setMode('reviewing')}
+              >
+                Review & submit
+              </Button>
+            </div>
+          )}
         </>
       )}
 
@@ -740,8 +787,10 @@ function Attempt() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-6 gap-2">
-              {data.questions.map((q) => (
-                <div
+              {data.questions.map((q, i) => (
+                <button
+                  type="button"
+                  onClick={() => goTo(i)}
                   key={q.paper_question_id}
                   className={
                     'text-small flex h-9 items-center justify-center rounded-md border ' +
@@ -760,7 +809,7 @@ function Attempt() {
                   }
                 >
                   {q.position}
-                </div>
+                </button>
               ))}
             </div>
             {submitError && (
