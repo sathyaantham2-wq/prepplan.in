@@ -1,6 +1,6 @@
 import type { Db } from '../db/connection'
 import { auditLogRepository } from '../db/repositories'
-import { autoConfirmAttempt } from './adaptive/auto-confirm'
+import { autoConfirmAttempt, releaseUnmarkedToStudent } from './adaptive/auto-confirm'
 import { reviewDisputedAnswer } from './ai-grading'
 import { AiCapReachedError, StudentSpendCapReachedError, enforceStudentSpendBudget } from './ai-metering'
 import { confirmEvaluation } from './evaluation'
@@ -205,6 +205,11 @@ export async function loadReview(
     .filter((r) => !isObjectiveType(r.type))
     .every((r) => r.ai_marks !== null)
   const canReview = written.length > 0 && aiMarkedAll
+  // A student with no parent account can never be "checked by a parent": hand the unmarked
+  // answers to her own review instead (and rescue papers that were already stuck this way).
+  if (!canReview && written.length > 0 && (await releaseUnmarkedToStudent(db, evaluation.id, attempt.student_id))) {
+    return loadReview(db, attempt)
+  }
   return {
     state: canReview ? 'review' : 'waiting_for_parent',
     evaluation_id: evaluation.id,
