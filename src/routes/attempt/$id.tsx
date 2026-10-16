@@ -130,6 +130,8 @@ function Attempt() {
   const [now, setNow] = useState(() => Date.now())
   // One question per page: index into data.questions.
   const [qIndex, setQIndex] = useState(0)
+  // The marked paper after submitting is paged the same way: one question per page.
+  const [rIndex, setRIndex] = useState(0)
   const saveTimers = useRef<
     Partial<Record<string, ReturnType<typeof setTimeout>>>
   >({})
@@ -318,13 +320,15 @@ function Attempt() {
   if (data.attempt.status !== 'in_progress' || submitted) {
     if (result?.evaluated) {
       return (
-        <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-8">
+        <div className="attempt-compact mx-auto max-w-2xl space-y-3 p-3 sm:p-4">
           <DownloadPaperButton
             paperId={data.paper.id}
             title={data.paper.title}
           />
-          <h1 className="text-h1">Well done, {data.student.name}</h1>
-          <p className="text-body">
+          <h1 className="text-base font-bold leading-tight">
+            Well done, {data.student.name}
+          </h1>
+          <p className="text-small">
             You scored {result.score} out of {result.total_marks} (
             {Math.round(result.percentage)}%).
           </p>
@@ -368,8 +372,46 @@ function Attempt() {
               data.questions still holds the text/options/her saved answer from the earlier
               GET /api/attempts/:id fetch -- merged here by paper_question_id, not re-fetched. */}
           <div className="space-y-3">
-            <h2 className="text-h3">Your answers</h2>
-            {data.questions.map((q) => {
+            <div
+              className="flex flex-wrap gap-1 no-print"
+              aria-label="Your answers"
+            >
+              {data.questions.map((pq, i) => {
+                const sc = result.questions.find(
+                  (x) => x.paper_question_id === pq.paper_question_id,
+                )
+                const ok =
+                  sc != null && sc.marks_max > 0
+                    ? sc.marks_awarded >= sc.marks_max
+                    : null
+                return (
+                  <button
+                    key={pq.paper_question_id}
+                    type="button"
+                    onClick={() => {
+                      setRIndex(i)
+                      window.scrollTo({ top: 0 })
+                    }}
+                    aria-label={`Question ${pq.position}${
+                      ok === null ? '' : ok ? ', correct' : ', not fully correct'
+                    }`}
+                    aria-current={i === rIndex ? 'true' : undefined}
+                    className={
+                      'text-caption flex h-7 min-w-7 items-center justify-center rounded-md border px-1.5 ' +
+                      (ok === null
+                        ? 'text-muted-foreground'
+                        : ok
+                          ? 'border-green-600/60 bg-green-500/10 text-green-700 dark:text-green-400'
+                          : 'border-destructive/60 bg-destructive/10 text-destructive') +
+                      (i === rIndex ? ' ring-2 ring-primary' : '')
+                    }
+                  >
+                    {pq.position}
+                  </button>
+                )
+              })}
+            </div>
+            {[data.questions[rIndex]].map((q) => {
               const scored = result.questions.find(
                 (r) => r.paper_question_id === q.paper_question_id,
               )
@@ -403,14 +445,14 @@ function Attempt() {
                     : '(blank)'
                   : savedText || '(blank)'
               return (
-                <Card key={q.paper_question_id}>
-                  <CardHeader>
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-start gap-3">
+                <Card key={q.paper_question_id} className="gap-2 py-3">
+                  <CardHeader className="gap-1 px-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
                         <span className="q-badge">Q{q.position}</span>
-                        <CardTitle className="question-text">
-                          {q.text}
-                        </CardTitle>
+                        <span className="text-caption text-muted-foreground">
+                          Question {rIndex + 1} of {data.questions.length}
+                        </span>
                       </div>
                       {scored && (
                         <span
@@ -425,8 +467,41 @@ function Attempt() {
                         </span>
                       )}
                     </div>
+                    <div className="question-text mt-1 space-y-1">
+                      {(() => {
+                        const parts = splitStatements(q.text)
+                        return (
+                          <>
+                            {parts.intro && (
+                              <p className="whitespace-pre-line">
+                                {parts.intro}
+                              </p>
+                            )}
+                            {parts.statements.length > 0 && (
+                              <ol className="space-y-1">
+                                {parts.statements.map((st) => (
+                                  <li key={st.label} className="flex gap-2">
+                                    <span className="shrink-0 font-semibold">
+                                      {st.label}
+                                    </span>
+                                    <span className="whitespace-pre-line">
+                                      {st.text}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ol>
+                            )}
+                            {parts.tail && (
+                              <p className="whitespace-pre-line">
+                                {parts.tail}
+                              </p>
+                            )}
+                          </>
+                        )
+                      })()}
+                    </div>
                   </CardHeader>
-                  <CardContent className="space-y-3">
+                  <CardContent className="space-y-2 px-3">
                     <div
                       className={
                         correct === false
@@ -525,6 +600,29 @@ function Attempt() {
                 </Card>
               )
             })}
+            <div className="flex items-center justify-between gap-2 no-print">
+              <Button
+                type="button"
+                variant="outline"
+                disabled={rIndex === 0}
+                onClick={() => {
+                  setRIndex(rIndex - 1)
+                  window.scrollTo({ top: 0 })
+                }}
+              >
+                Previous
+              </Button>
+              <Button
+                type="button"
+                disabled={rIndex >= data.questions.length - 1}
+                onClick={() => {
+                  setRIndex(rIndex + 1)
+                  window.scrollTo({ top: 0 })
+                }}
+              >
+                Next
+              </Button>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-3">
