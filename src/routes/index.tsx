@@ -33,9 +33,18 @@ function Home() {
   const shareInstallOffer = useInstallOffer(SHARE_INSTALL_OFFER_KEY)
   const [fromShare, setFromShare] = useState(false)
   useEffect(() => {
-    setFromShare(
-      new URLSearchParams(window.location.search).get('source') === 'share',
-    )
+    const params = new URLSearchParams(window.location.search)
+    setFromShare(params.get('source') === 'share')
+    // The Google round trip reports failure as /?error=<code>; without this the page showed
+    // nothing at all and the student did not know what went wrong.
+    const code = params.get('error')
+    if (code) {
+      setError(
+        code === 'account_not_linked'
+          ? 'This email already has a PrepPlan account. Please sign in with your email and password.'
+          : 'Google sign-in did not complete. Please try again, or use your email and password.',
+      )
+    }
   }, [])
   // Owner decision 2026-10-02: new sign-ups are students only. Existing parent accounts still
   // sign in here; auth.ts's before-hook refuses any other signup_type over HTTP.
