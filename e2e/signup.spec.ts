@@ -19,7 +19,6 @@ test('student sign-up needs no email confirmation and lands on profile setup', a
     await page.fill('#email', email)
     await page.fill('#password', 'correcthorsebatterystaple')
     await page.fill('#confirm-password', 'correcthorsebatterystaple')
-    await page.getByRole('checkbox').check()
     await page.getByRole('button', { name: 'Sign up' }).click()
 
     await page.waitForURL('**/profile-setup')

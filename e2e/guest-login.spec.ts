@@ -14,9 +14,6 @@ test('a guest is signed in with one tap and lands on profile setup', async ({ pa
     await page.waitForTimeout(2000)
 
     const guestButton = page.getByRole('button', { name: 'Try as guest' })
-    // Not until the declaration is ticked.
-    await expect(guestButton).toBeDisabled()
-    await page.getByRole('checkbox').check()
     await expect(guestButton).toBeEnabled()
     await guestButton.click()
 
