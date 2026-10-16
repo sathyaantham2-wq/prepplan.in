@@ -143,6 +143,24 @@ export async function createEvaluation(db: Db, attemptId: string) {
       }
     }
 
+    // A written question left completely blank needs no AI and no person: nothing was written, so
+    // it is 0, exactly like a blank multiple-choice question. (Until 2026-10-16 it was sent to the
+    // AI with an empty answer, came back "needs manual marking", and held the WHOLE paper for a
+    // parent -- which a student-only account does not have.) A photographed answer counts as
+    // written even before its text has been read.
+    if (!(answer?.response_text ?? '').trim() && !answer?.image_ref) {
+      anyAutoScored = true
+      return {
+        paper_question_id: slot.id,
+        marks_awarded: 0,
+        marks_max: slot.marks,
+        ai_marks: 0,
+        error_type: 'Not Attempted',
+        ai_error_type: 'Not Attempted',
+        feedback: templateFeedback('Not Attempted', conceptName),
+      }
+    }
+
     const stepMarks = await questionStepMarksRepository.listByQuestion(
       db,
       slot.question_id,
