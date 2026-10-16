@@ -166,6 +166,10 @@ export const auth = betterAuth({
     },
   },
   account: {
+    // Someone who signed up with email + password and later taps "Continue with Google" (same
+    // address) used to hit `account_not_linked` and could not sign in. Google has verified that
+    // address, so it is safe to link the two sign-in methods onto the one account.
+    accountLinking: { enabled: true, trustedProviders: ['google'] },
     modelName: 'accounts',
     fields: {
       userId: 'user_id',

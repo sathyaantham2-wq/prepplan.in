@@ -43,8 +43,6 @@ function Home() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [guardianOk, setGuardianOk] = useState(false)
-  const [guestOk, setGuestOk] = useState(false)
   const [guestBusy, setGuestBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -169,10 +167,6 @@ function Home() {
           setError('The two passwords do not match.')
           return
         }
-        if (!guardianOk) {
-          setError('Please confirm that your parent or guardian agrees.')
-          return
-        }
         const result = await signUp.email({
           name,
           email,
@@ -279,17 +273,14 @@ function Home() {
                         minLength={8}
                       />
                     </div>
-                    <Label className="items-start">
-                      <input
-                        type="checkbox"
-                        className="mt-0.5"
-                        checked={guardianOk}
-                        onChange={(e) => setGuardianOk(e.target.checked)}
-                      />
-                      <span className="text-small font-normal">
-                        My parent or guardian agrees to my using PrepPlan.
-                      </span>
-                    </Label>
+                    <p className="text-caption text-muted-foreground">
+                      By signing up you confirm that your parent or guardian
+                      agrees to your using PrepPlan. See our{' '}
+                      <Link to="/privacy" className="underline">
+                        Privacy Policy
+                      </Link>
+                      .
+                    </p>
                   </>
                 )}
                 {error && (
@@ -328,26 +319,19 @@ function Home() {
                     Just looking around? Try PrepPlan as a guest, with no email or
                     password. Your progress stays on this device.
                   </p>
-                  <Label className="items-start">
-                    <input
-                      type="checkbox"
-                      className="mt-0.5"
-                      checked={guestOk}
-                      onChange={(e) => setGuestOk(e.target.checked)}
-                    />
-                    <span className="text-small font-normal">
-                      My parent or guardian agrees to my using PrepPlan.
-                    </span>
-                  </Label>
                   <Button
                     type="button"
                     variant="outline"
                     className="w-full"
-                    disabled={!guestOk || guestBusy}
+                    disabled={guestBusy}
                     onClick={() => void handleGuest()}
                   >
                     {guestBusy ? 'Please wait…' : 'Try as guest'}
                   </Button>
+                  <p className="text-caption text-muted-foreground">
+                    By continuing you confirm that your parent or guardian
+                    agrees to your using PrepPlan.
+                  </p>
                 </div>
               </>
             )}
