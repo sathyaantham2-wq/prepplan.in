@@ -66,7 +66,10 @@ function Home() {
   // (the "Cannot update a component while rendering" warning) that a useEffect avoids.
   useEffect(() => {
     if (isPending || !session) return
-    if (role === 'parent' || role === 'teacher' || role === 'admin') {
+    if (role === 'admin') {
+      // An admin has the admin console only: no student onboarding, no parent or student screens.
+      navigate({ to: '/admin' })
+    } else if (role === 'parent' || role === 'teacher') {
       fetch('/api/students')
         .then((r) => r.json())
         .then((students: Array<unknown>) => {
@@ -378,6 +381,10 @@ function Home() {
         <p className="text-small text-muted-foreground mt-6 text-center">
           <Link to="/privacy" className="hover:underline">
             Privacy policy
+          </Link>
+          {' · '}
+          <Link to="/about" className="hover:underline">
+            About PrepPlan
           </Link>
           {' · '}
           <Link to="/delete-account" className="hover:underline">

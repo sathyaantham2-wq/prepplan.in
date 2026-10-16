@@ -1,11 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { Button } from '../../components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card'
 import { Input } from '../../components/ui/input'
-import { ThemeToggle } from '../../components/theme-toggle'
-import { useSession } from '../../lib/auth-client'
-import { PageLoading } from '../../components/page-loading'
+import { AdminPage, Notice, Panel, Pill } from '../../components/admin/admin-ui'
 
 export const Route = createFileRoute('/admin/videos')({ component: AdminVideos })
 
@@ -35,33 +32,36 @@ interface Concept {
 
 type Draft = { url: string; title: string }
 
+/** YouTube thumbnail for a pasted link, or null when the link is not a recognisable YouTube one. */
+function thumbnail(url: string): string | null {
+  const m = url.match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([\w-]{11})/)
+  return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : null
+}
+
 // Students see a "Watch" link under any concept they are weak in, if it has a video here.
 function AdminVideos() {
-  const { data: session, isPending } = useSession()
-  const navigate = useNavigate()
-  const role = (session?.user as { role?: string } | undefined)?.role
-
   const [subjects, setSubjects] = useState<Array<Subject>>([])
   const [subjectId, setSubjectId] = useState('')
   const [chapters, setChapters] = useState<Array<Chapter>>([])
   const [concepts, setConcepts] = useState<Array<Concept>>([])
   const [drafts, setDrafts] = useState<Record<string, Draft>>({})
+  const [loadError, setLoadError] = useState<string | null>(null)
+  const [onlyMissing, setOnlyMissing] = useState(false)
   const [status, setStatus] = useState<Record<string, string>>({})
 
   useEffect(() => {
-    if (isPending) return
-    if (!session || role !== 'admin') {
-      navigate({ to: '/' })
-      return
-    }
     fetch('/api/admin/subjects')
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error('Could not load subjects.')
+        return r.json()
+      })
       .then((list: Array<Subject>) => {
         const withChapters = list.filter((s) => s.chapter_count > 0)
         setSubjects(withChapters)
         if (withChapters.length > 0) setSubjectId(withChapters[0].id)
       })
-  }, [isPending, session, role, navigate])
+      .catch((e: Error) => setLoadError(e.message))
+  }, [])
 
   useEffect(() => {
     if (!subjectId) return
@@ -99,60 +99,77 @@ function AdminVideos() {
     setStatus((s) => ({ ...s, [concept.id]: 'Saved' }))
   }
 
-  if (isPending || !session || role !== 'admin') {
-    return <PageLoading />
-  }
+  const pct = concepts.length > 0 ? Math.round((withVideo / concepts.length) * 100) : 0
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 p-4 sm:p-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-h1">Concept videos</h1>
-          <p className="text-body text-muted-foreground">
-            Add a YouTube link for each concept. Students see it under concepts they need to improve.
-          </p>
-        </div>
-        <ThemeToggle />
-      </div>
+    <AdminPage
+      title="Concept videos"
+      description="Add a YouTube link for each concept. Students see it under concepts they need to improve."
+      actions={
+        subjects.length > 1 ? (
+          <select
+            aria-label="Subject"
+            className="border-input bg-card flex h-9 max-w-xs rounded-md border px-3 text-sm shadow-xs"
+            value={subjectId}
+            onChange={(e) => setSubjectId(e.target.value)}
+          >
+            {subjects.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.name} (Class {s.class}, {s.board})
+              </option>
+            ))}
+          </select>
+        ) : undefined
+      }
+    >
+      {loadError && <Notice tone="bad">{loadError}</Notice>}
 
-      {subjects.length > 1 && (
-        <select
-          aria-label="Subject"
-          className="border-input flex h-9 w-full max-w-xs rounded-md border bg-transparent px-3 text-sm shadow-xs"
-          value={subjectId}
-          onChange={(e) => setSubjectId(e.target.value)}
-        >
-          {subjects.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.name} (Class {s.class}, {s.board})
-            </option>
-          ))}
-        </select>
-      )}
-      <p className="text-small text-muted-foreground">
-        {withVideo} of {concepts.length} concepts have a video.
-      </p>
+      <Panel>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="text-small text-muted-foreground">
+            {withVideo} of {concepts.length} concepts have a video.
+          </p>
+          <label className="text-small flex items-center gap-2">
+            <input type="checkbox" checked={onlyMissing} onChange={(e) => setOnlyMissing(e.target.checked)} />
+            Only concepts without a video
+          </label>
+        </div>
+        <div className="bg-muted mt-2 h-2 overflow-hidden rounded-full" role="img" aria-label={`${pct}% of concepts have a video`}>
+          <div className="bar-grad h-full rounded-full" style={{ width: `${pct}%` }} />
+        </div>
+      </Panel>
+
+      {subjectId && concepts.length === 0 && !loadError && <Notice>No concepts found for this subject.</Notice>}
 
       {chapters.map((chapter) => {
-        const rows = concepts.filter((c) => c.chapter_id === chapter.id)
+        const all = concepts.filter((c) => c.chapter_id === chapter.id)
+        const rows = onlyMissing ? all.filter((c) => !c.video_url) : all
         if (rows.length === 0) return null
         return (
-          <Card key={chapter.id}>
-            <CardHeader>
-              <CardTitle className="text-h3">
-                {chapter.part} Ch {chapter.chapter_no}: {chapter.name}
-              </CardTitle>
-              <CardDescription>{rows.length} concepts</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
+          <Panel
+            key={chapter.id}
+            title={`${chapter.part} Ch ${chapter.chapter_no}: ${chapter.name}`}
+            subtitle={`${all.filter((c) => c.video_url).length} of ${all.length} concepts have a video`}
+          >
+            <div className="space-y-3">
               {rows.map((concept) => {
                 const draft = drafts[concept.id] ?? { url: '', title: '' }
                 const changed = draft.url.trim() !== (concept.video_url ?? '') || draft.title.trim() !== (concept.video_title ?? '')
+                const thumb = concept.video_url ? thumbnail(concept.video_url) : null
                 return (
-                  <div key={concept.id} className="space-y-2 rounded-md border p-3">
-                    <p className="text-body">
-                      <span className="text-small text-muted-foreground">{concept.code}</span> {concept.name}
-                    </p>
+                  <div key={concept.id} className="border-border bg-background/40 space-y-2 rounded-xl border p-3">
+                    <div className="flex items-start gap-3">
+                      {thumb && (
+                        <img src={thumb} alt="" loading="lazy" className="h-12 w-20 shrink-0 rounded-md object-cover" />
+                      )}
+                      <p className="text-body min-w-0 flex-1">
+                        <span className="text-small text-muted-foreground">{concept.code}</span> {concept.name}
+                        {concept.video_title && (
+                          <span className="text-small text-muted-foreground block truncate">{concept.video_title}</span>
+                        )}
+                      </p>
+                      <Pill tone={concept.video_url ? 'good' : 'default'}>{concept.video_url ? 'Video set' : 'No video'}</Pill>
+                    </div>
                     <div className="grid gap-2 sm:grid-cols-[2fr_1fr_auto]">
                       <Input
                         aria-label={`Video link for ${concept.name}`}
@@ -171,17 +188,20 @@ function AdminVideos() {
                       </Button>
                     </div>
                     {status[concept.id] && (
-                      <p className="text-small text-muted-foreground" role="status">
+                      <p
+                        className={`text-small ${status[concept.id].startsWith('Not saved') ? 'text-[var(--bad)]' : 'text-muted-foreground'}`}
+                        role="status"
+                      >
                         {status[concept.id]}
                       </p>
                     )}
                   </div>
                 )
               })}
-            </CardContent>
-          </Card>
+            </div>
+          </Panel>
         )
       })}
-    </div>
+    </AdminPage>
   )
 }

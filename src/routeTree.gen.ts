@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ChooseBoardRouteImport } from './routes/choose-board'
 import { Route as CivilPaperRouteImport } from './routes/civil-paper'
 import { Route as DeleteAccountRouteImport } from './routes/delete-account'
@@ -27,6 +29,7 @@ import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminActivityRouteImport } from './routes/admin/activity'
 import { Route as AdminAdaptiveRouteImport } from './routes/admin/adaptive'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
@@ -66,6 +69,7 @@ import { Route as ApiAdaptivePlanRouteImport } from './routes/api/adaptive/plan'
 import { Route as ApiAdminAiStatusRouteImport } from './routes/api/admin/ai-status'
 import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage'
 import { Route as ApiAdminMasterySettingsRouteImport } from './routes/api/admin/mastery-settings'
+import { Route as ApiAdminOverviewRouteImport } from './routes/api/admin/overview'
 import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/product-funnel'
 import { Route as ApiAdminQuestionReportsRouteImport } from './routes/api/admin/question-reports'
 import { Route as ApiAdminStudentActivityRouteImport } from './routes/api/admin/student-activity'
@@ -159,6 +163,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChooseBoardRoute = ChooseBoardRouteImport.update({
   id: '/choose-board',
   path: '/choose-board',
@@ -245,60 +259,65 @@ const DotwellKnownAssetlinksDotjsonRoute =
     path: '/.well-known/assetlinks.json',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminActivityRoute = AdminActivityRouteImport.update({
-  id: '/admin/activity',
-  path: '/admin/activity',
-  getParentRoute: () => rootRouteImport,
+  id: '/activity',
+  path: '/activity',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminAdaptiveRoute = AdminAdaptiveRouteImport.update({
-  id: '/admin/adaptive',
-  path: '/admin/adaptive',
-  getParentRoute: () => rootRouteImport,
+  id: '/adaptive',
+  path: '/adaptive',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminBlueprintsRoute = AdminBlueprintsRouteImport.update({
-  id: '/admin/blueprints',
-  path: '/admin/blueprints',
-  getParentRoute: () => rootRouteImport,
+  id: '/blueprints',
+  path: '/blueprints',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminCoverageRoute = AdminCoverageRouteImport.update({
-  id: '/admin/coverage',
-  path: '/admin/coverage',
-  getParentRoute: () => rootRouteImport,
+  id: '/coverage',
+  path: '/coverage',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminFunnelRoute = AdminFunnelRouteImport.update({
-  id: '/admin/funnel',
-  path: '/admin/funnel',
-  getParentRoute: () => rootRouteImport,
+  id: '/funnel',
+  path: '/funnel',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminQuestionsRoute = AdminQuestionsRouteImport.update({
-  id: '/admin/questions',
-  path: '/admin/questions',
-  getParentRoute: () => rootRouteImport,
+  id: '/questions',
+  path: '/questions',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminReportsRoute = AdminReportsRouteImport.update({
-  id: '/admin/reports',
-  path: '/admin/reports',
-  getParentRoute: () => rootRouteImport,
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminSyllabusRoute = AdminSyllabusRouteImport.update({
-  id: '/admin/syllabus',
-  path: '/admin/syllabus',
-  getParentRoute: () => rootRouteImport,
+  id: '/syllabus',
+  path: '/syllabus',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminUsageRoute = AdminUsageRouteImport.update({
-  id: '/admin/usage',
-  path: '/admin/usage',
-  getParentRoute: () => rootRouteImport,
+  id: '/usage',
+  path: '/usage',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminUsersRoute = AdminUsersRouteImport.update({
-  id: '/admin/users',
-  path: '/admin/users',
-  getParentRoute: () => rootRouteImport,
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminVideosRoute = AdminVideosRouteImport.update({
-  id: '/admin/videos',
-  path: '/admin/videos',
-  getParentRoute: () => rootRouteImport,
+  id: '/videos',
+  path: '/videos',
+  getParentRoute: () => AdminRoute,
 } as any)
 const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
   id: '/api/attempts',
@@ -438,6 +457,11 @@ const ApiAdminAiUsageRoute = ApiAdminAiUsageRouteImport.update({
 const ApiAdminMasterySettingsRoute = ApiAdminMasterySettingsRouteImport.update({
   id: '/api/admin/mastery-settings',
   path: '/api/admin/mastery-settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminOverviewRoute = ApiAdminOverviewRouteImport.update({
+  id: '/api/admin/overview',
+  path: '/api/admin/overview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminProductFunnelRoute = ApiAdminProductFunnelRouteImport.update({
@@ -904,6 +928,8 @@ const ApiAttemptsIdScanPagesPageIdExtractRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/choose-board': typeof ChooseBoardRoute
   '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
@@ -954,12 +980,14 @@ export interface FileRoutesByFullPath {
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/admin/': typeof AdminIndexRoute
   '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
+  '/api/admin/overview': typeof ApiAdminOverviewRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
   '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
@@ -1050,6 +1078,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/choose-board': typeof ChooseBoardRoute
   '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
@@ -1100,12 +1129,14 @@ export interface FileRoutesByTo {
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/admin': typeof AdminIndexRoute
   '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
+  '/api/admin/overview': typeof ApiAdminOverviewRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
   '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
@@ -1197,6 +1228,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/choose-board': typeof ChooseBoardRoute
   '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
@@ -1247,12 +1280,14 @@ export interface FileRoutesById {
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/admin/': typeof AdminIndexRoute
   '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
+  '/api/admin/overview': typeof ApiAdminOverviewRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
   '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
@@ -1345,6 +1380,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/admin'
     | '/choose-board'
     | '/civil-paper'
     | '/delete-account'
@@ -1395,12 +1432,14 @@ export interface FileRouteTypes {
     | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/admin/'
     | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
     | '/api/admin/ai-status'
     | '/api/admin/ai-usage'
     | '/api/admin/mastery-settings'
+    | '/api/admin/overview'
     | '/api/admin/product-funnel'
     | '/api/admin/question-reports'
     | '/api/admin/student-activity'
@@ -1491,6 +1530,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/choose-board'
     | '/civil-paper'
     | '/delete-account'
@@ -1541,12 +1581,14 @@ export interface FileRouteTypes {
     | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/admin'
     | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
     | '/api/admin/ai-status'
     | '/api/admin/ai-usage'
     | '/api/admin/mastery-settings'
+    | '/api/admin/overview'
     | '/api/admin/product-funnel'
     | '/api/admin/question-reports'
     | '/api/admin/student-activity'
@@ -1637,6 +1679,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/admin'
     | '/choose-board'
     | '/civil-paper'
     | '/delete-account'
@@ -1687,12 +1731,14 @@ export interface FileRouteTypes {
     | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/admin/'
     | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
     | '/api/admin/ai-status'
     | '/api/admin/ai-usage'
     | '/api/admin/mastery-settings'
+    | '/api/admin/overview'
     | '/api/admin/product-funnel'
     | '/api/admin/question-reports'
     | '/api/admin/student-activity'
@@ -1784,6 +1830,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRouteWithChildren
   ChooseBoardRoute: typeof ChooseBoardRoute
   CivilPaperRoute: typeof CivilPaperRoute
   DeleteAccountRoute: typeof DeleteAccountRoute
@@ -1801,17 +1849,6 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
   DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
-  AdminActivityRoute: typeof AdminActivityRoute
-  AdminAdaptiveRoute: typeof AdminAdaptiveRoute
-  AdminBlueprintsRoute: typeof AdminBlueprintsRoute
-  AdminCoverageRoute: typeof AdminCoverageRoute
-  AdminFunnelRoute: typeof AdminFunnelRoute
-  AdminQuestionsRoute: typeof AdminQuestionsRoute
-  AdminReportsRoute: typeof AdminReportsRoute
-  AdminSyllabusRoute: typeof AdminSyllabusRoute
-  AdminUsageRoute: typeof AdminUsageRoute
-  AdminUsersRoute: typeof AdminUsersRoute
-  AdminVideosRoute: typeof AdminVideosRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
@@ -1840,6 +1877,7 @@ export interface RootRouteChildren {
   ApiAdminAiStatusRoute: typeof ApiAdminAiStatusRoute
   ApiAdminAiUsageRoute: typeof ApiAdminAiUsageRoute
   ApiAdminMasterySettingsRoute: typeof ApiAdminMasterySettingsRoute
+  ApiAdminOverviewRoute: typeof ApiAdminOverviewRoute
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
   ApiAdminQuestionReportsRoute: typeof ApiAdminQuestionReportsRoute
   ApiAdminStudentActivityRoute: typeof ApiAdminStudentActivityRoute
@@ -1874,6 +1912,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/choose-board': {
@@ -1995,82 +2047,89 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DotwellKnownAssetlinksDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/activity': {
       id: '/admin/activity'
-      path: '/admin/activity'
+      path: '/activity'
       fullPath: '/admin/activity'
       preLoaderRoute: typeof AdminActivityRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/adaptive': {
       id: '/admin/adaptive'
-      path: '/admin/adaptive'
+      path: '/adaptive'
       fullPath: '/admin/adaptive'
       preLoaderRoute: typeof AdminAdaptiveRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/blueprints': {
       id: '/admin/blueprints'
-      path: '/admin/blueprints'
+      path: '/blueprints'
       fullPath: '/admin/blueprints'
       preLoaderRoute: typeof AdminBlueprintsRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/coverage': {
       id: '/admin/coverage'
-      path: '/admin/coverage'
+      path: '/coverage'
       fullPath: '/admin/coverage'
       preLoaderRoute: typeof AdminCoverageRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/funnel': {
       id: '/admin/funnel'
-      path: '/admin/funnel'
+      path: '/funnel'
       fullPath: '/admin/funnel'
       preLoaderRoute: typeof AdminFunnelRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/questions': {
       id: '/admin/questions'
-      path: '/admin/questions'
+      path: '/questions'
       fullPath: '/admin/questions'
       preLoaderRoute: typeof AdminQuestionsRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/reports': {
       id: '/admin/reports'
-      path: '/admin/reports'
+      path: '/reports'
       fullPath: '/admin/reports'
       preLoaderRoute: typeof AdminReportsRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/syllabus': {
       id: '/admin/syllabus'
-      path: '/admin/syllabus'
+      path: '/syllabus'
       fullPath: '/admin/syllabus'
       preLoaderRoute: typeof AdminSyllabusRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/usage': {
       id: '/admin/usage'
-      path: '/admin/usage'
+      path: '/usage'
       fullPath: '/admin/usage'
       preLoaderRoute: typeof AdminUsageRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/users': {
       id: '/admin/users'
-      path: '/admin/users'
+      path: '/users'
       fullPath: '/admin/users'
       preLoaderRoute: typeof AdminUsersRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/videos': {
       id: '/admin/videos'
-      path: '/admin/videos'
+      path: '/videos'
       fullPath: '/admin/videos'
       preLoaderRoute: typeof AdminVideosRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/api/attempts': {
       id: '/api/attempts'
@@ -2266,6 +2325,13 @@ declare module '@tanstack/react-router' {
       path: '/api/admin/mastery-settings'
       fullPath: '/api/admin/mastery-settings'
       preLoaderRoute: typeof ApiAdminMasterySettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/overview': {
+      id: '/api/admin/overview'
+      path: '/api/admin/overview'
+      fullPath: '/api/admin/overview'
+      preLoaderRoute: typeof ApiAdminOverviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/admin/product-funnel': {
@@ -2880,6 +2946,38 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AdminRouteChildren {
+  AdminActivityRoute: typeof AdminActivityRoute
+  AdminAdaptiveRoute: typeof AdminAdaptiveRoute
+  AdminBlueprintsRoute: typeof AdminBlueprintsRoute
+  AdminCoverageRoute: typeof AdminCoverageRoute
+  AdminFunnelRoute: typeof AdminFunnelRoute
+  AdminQuestionsRoute: typeof AdminQuestionsRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminSyllabusRoute: typeof AdminSyllabusRoute
+  AdminUsageRoute: typeof AdminUsageRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  AdminVideosRoute: typeof AdminVideosRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminActivityRoute: AdminActivityRoute,
+  AdminAdaptiveRoute: AdminAdaptiveRoute,
+  AdminBlueprintsRoute: AdminBlueprintsRoute,
+  AdminCoverageRoute: AdminCoverageRoute,
+  AdminFunnelRoute: AdminFunnelRoute,
+  AdminQuestionsRoute: AdminQuestionsRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminSyllabusRoute: AdminSyllabusRoute,
+  AdminUsageRoute: AdminUsageRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  AdminVideosRoute: AdminVideosRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 interface ApiAttemptsIdScanPagesPageIdRouteChildren {
   ApiAttemptsIdScanPagesPageIdExtractRoute: typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
@@ -3282,6 +3380,8 @@ const ApiSyllabusConceptsRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRouteWithChildren,
   ChooseBoardRoute: ChooseBoardRoute,
   CivilPaperRoute: CivilPaperRoute,
   DeleteAccountRoute: DeleteAccountRoute,
@@ -3299,17 +3399,6 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
   DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
-  AdminActivityRoute: AdminActivityRoute,
-  AdminAdaptiveRoute: AdminAdaptiveRoute,
-  AdminBlueprintsRoute: AdminBlueprintsRoute,
-  AdminCoverageRoute: AdminCoverageRoute,
-  AdminFunnelRoute: AdminFunnelRoute,
-  AdminQuestionsRoute: AdminQuestionsRoute,
-  AdminReportsRoute: AdminReportsRoute,
-  AdminSyllabusRoute: AdminSyllabusRoute,
-  AdminUsageRoute: AdminUsageRoute,
-  AdminUsersRoute: AdminUsersRoute,
-  AdminVideosRoute: AdminVideosRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
@@ -3338,6 +3427,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminAiStatusRoute: ApiAdminAiStatusRoute,
   ApiAdminAiUsageRoute: ApiAdminAiUsageRoute,
   ApiAdminMasterySettingsRoute: ApiAdminMasterySettingsRoute,
+  ApiAdminOverviewRoute: ApiAdminOverviewRoute,
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
   ApiAdminQuestionReportsRoute: ApiAdminQuestionReportsRoute,
   ApiAdminStudentActivityRoute: ApiAdminStudentActivityRoute,

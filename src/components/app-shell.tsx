@@ -169,22 +169,6 @@ function LeaderboardIcon() {
     </svg>
   )
 }
-function ReportsIcon() {
-  return (
-    <svg
-      width="17"
-      height="17"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5" />
-    </svg>
-  )
-}
 function SignOutIcon() {
   return (
     <svg
@@ -246,6 +230,11 @@ export function AppShell({
   const { data: session } = useSession()
   const isAdmin =
     (session?.user as { role?: string } | undefined)?.role === 'admin'
+  // An admin lives in the admin console only (2026-10-16): the parent and student screens are not for
+  // that account, so any page that mounts this shell sends it to /admin.
+  useEffect(() => {
+    if (isAdmin) window.location.replace('/admin')
+  }, [isAdmin])
 
   // F132: a Civil Services student's "Generate Paper" is /civil-paper, not /my-paper. Only the
   // student variant needs her board, so a parent's screens make no extra request.
@@ -346,25 +335,6 @@ export function AppShell({
             href: '/settings',
             icon: <SettingsIcon />,
           },
-          // F129: the student "Report a problem" queue -- admins only.
-          ...(isAdmin
-            ? [
-                {
-                  key: 'reports' as const,
-                  label: 'Question reports',
-                  shortLabel: 'Reports',
-                  href: '/admin/reports',
-                  icon: <ReportsIcon />,
-                },
-                {
-                  key: 'activity' as const,
-                  label: 'Student activity',
-                  shortLabel: 'Activity',
-                  href: '/admin/activity',
-                  icon: <ProgressIcon />,
-                },
-              ]
-            : []),
         ]
 
   const [mobileOpen, setMobileOpen] = useState(false)

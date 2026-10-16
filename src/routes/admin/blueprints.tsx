@@ -1,16 +1,8 @@
 import { useEffect, useState } from 'react'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '../../components/ui/card'
+import { createFileRoute } from '@tanstack/react-router'
+import { AdminPage, Notice, Panel, StatTile } from '../../components/admin/admin-ui'
 import { Button } from '../../components/ui/button'
 import { Label } from '../../components/ui/label'
-import { ThemeToggle } from '../../components/theme-toggle'
-import { useSession } from '../../lib/auth-client'
-import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/blueprints')({
   component: AdminBlueprints,
@@ -46,10 +38,6 @@ function newSection(): SectionForm & { key: number } {
  * added so far match it, live, before they submit.
  */
 function AdminBlueprints() {
-  const { data: session, isPending } = useSession()
-  const navigate = useNavigate()
-  const role = (session?.user as { role?: string } | undefined)?.role
-
   const [subjects, setSubjects] = useState<Array<Subject>>([])
   const [subjectId, setSubjectId] = useState('')
   const [name, setName] = useState('')
@@ -71,15 +59,10 @@ function AdminBlueprints() {
   const [created, setCreated] = useState<{ id: string; total_marks: number } | null>(null)
 
   useEffect(() => {
-    if (isPending) return
-    if (!session || role !== 'admin') {
-      navigate({ to: '/' })
-      return
-    }
     fetch('/api/syllabus/subjects?board=CBSE&class=7')
       .then((r) => r.json())
       .then(setSubjects)
-  }, [isPending, session, role, navigate])
+  }, [])
 
   const sectionsTotal = sections.reduce((sum, s) => sum + s.count * s.marks_per_question, 0)
   const totalsMatch = sectionsTotal === targetTotal
@@ -140,31 +123,25 @@ function AdminBlueprints() {
     }
   }
 
-  if (isPending || !session || role !== 'admin') {
-    return <PageLoading />
-  }
-
   return (
-    <div className="mx-auto max-w-2xl p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-h1">Blueprint builder</h1>
-          <p className="text-body text-muted-foreground">
-            Enter your school's real paper pattern so mocks match it.
-          </p>
-        </div>
-        <div className="no-print">
-          <ThemeToggle />
-        </div>
+    <AdminPage
+      title="Blueprint builder"
+      description="Enter your school's real paper pattern so mocks match it."
+    >
+      <div className="grid grid-cols-3 gap-3">
+        <StatTile label="Sections" value={sections.length} />
+        <StatTile
+          label="Section marks"
+          value={`${sectionsTotal} / ${targetTotal}`}
+          tone={totalsMatch ? 'good' : 'bad'}
+        />
+        <StatTile label="Bloom targets" value={`${bloomTotal} / 100`} tone={bloomMatches ? 'good' : 'bad'} />
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">New blueprint</CardTitle>
-        </CardHeader>
-        <CardContent>
+      <Panel title="New blueprint">
+        <div>
           <form onSubmit={submit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid gap-3 sm:grid-cols-2">
               <div className="space-y-1.5">
                 <Label htmlFor="subject">Subject</Label>
                 <select
@@ -233,7 +210,7 @@ function AdminBlueprints() {
                 </span>
               </div>
               {sections.map((s) => (
-                <div key={s.key} className="space-y-2 rounded-md border p-3">
+                <div key={s.key} className="border-border bg-muted/20 space-y-2 rounded-xl border p-3">
                   <div className="grid grid-cols-3 gap-2">
                     <input
                       className="border-input col-span-3 flex h-8 w-full rounded-md border bg-transparent px-2 text-sm"
@@ -315,7 +292,7 @@ function AdminBlueprints() {
                   {bloomTotal} / 100{bloomMatches ? ' ✓' : ''}
                 </span>
               </div>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {BLOOM_LEVELS.map((level) => (
                   <div key={level} className="space-y-1">
                     <Label className="text-small">{level}</Label>
@@ -337,16 +314,8 @@ function AdminBlueprints() {
               </div>
             </div>
 
-            {error && (
-              <p className="text-small text-destructive" role="alert">
-                {error}
-              </p>
-            )}
-            {created && (
-              <p className="text-small text-muted-foreground">
-                Created — total {created.total_marks} marks.
-              </p>
-            )}
+            {error && <Notice tone="bad">{error}</Notice>}
+            {created && <Notice tone="good">Created — total {created.total_marks} marks.</Notice>}
 
             <Button
               type="submit"
@@ -355,8 +324,8 @@ function AdminBlueprints() {
               {submitting ? 'Creating…' : 'Create blueprint'}
             </Button>
           </form>
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+      </Panel>
+    </AdminPage>
   )
 }

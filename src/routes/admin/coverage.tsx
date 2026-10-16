@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { Card, CardContent } from '../../components/ui/card'
+import { createFileRoute } from '@tanstack/react-router'
+import { AdminPage, Notice, Panel, Pill, StatTile } from '../../components/admin/admin-ui'
 import { Label } from '../../components/ui/label'
-import { ThemeToggle } from '../../components/theme-toggle'
-import { useSession } from '../../lib/auth-client'
 import { STATUS } from '../../components/charts/palette'
-import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/coverage')({
   component: AdminCoverage,
@@ -62,28 +59,20 @@ function cellStyle(cell: CoverageCell): { background: string; color: string } {
  * legend spells out what the two tint states mean rather than relying on color alone.
  */
 function AdminCoverage() {
-  const { data: session, isPending } = useSession()
-  const navigate = useNavigate()
-  const role = (session?.user as { role?: string } | undefined)?.role
-
   const [subjects, setSubjects] = useState<Array<Subject>>([])
   const [subjectId, setSubjectId] = useState('')
   const [grids, setGrids] = useState<Array<ConceptGrid> | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
   useEffect(() => {
-    if (isPending) return
-    if (!session || role !== 'admin') {
-      navigate({ to: '/' })
-      return
-    }
     fetch('/api/syllabus/subjects?board=CBSE&class=7')
       .then((r) => r.json())
       .then((data: Array<Subject>) => {
         setSubjects(data)
         if (data.length === 1) setSubjectId(data[0].id)
       })
-  }, [isPending, session, role, navigate])
+      .catch(() => setLoadError('Could not load the subjects.'))
+  }, [])
 
   useEffect(() => {
     setGrids(null)
@@ -98,146 +87,119 @@ function AdminCoverage() {
       .catch((err: Error) => setLoadError(err.message))
   }, [subjectId])
 
-  if (isPending || !session || role !== 'admin') {
-    return <PageLoading />
-  }
-
   const totalShortfallCells =
-    grids?.reduce(
-      (sum, g) => sum + g.cells.filter((c) => c.shortfall).length,
-      0,
-    ) ?? 0
+    grids?.reduce((sum, g) => sum + g.cells.filter((c) => c.shortfall).length, 0) ?? 0
+  const totalEmptyCells = grids?.reduce((sum, g) => sum + g.empty_cells, 0) ?? 0
+  const concepts = grids?.length ?? 0
+  const incomplete = grids?.filter((g) => g.cells.some((c) => c.shortfall)).length ?? 0
 
   return (
-    <div className="mx-auto max-w-4xl p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-h1">Bloom × difficulty coverage</h1>
-          <p className="text-body text-muted-foreground">
-            Approved question count vs. target, per concept. Sorted
-            worst-covered first — this is the report a targeted generation batch
-            (F116) should be driven from.
-          </p>
+    <AdminPage
+      title="Bloom × difficulty coverage"
+      description="Approved question count vs. target, per concept. Sorted worst-covered first — this is the report a targeted generation batch (F116) should be driven from."
+      actions={
+        <div className="flex items-center gap-2">
+          <Label htmlFor="subject">Subject</Label>
+          <select
+            id="subject"
+            className="border-input bg-card flex h-9 min-w-44 rounded-md border px-3 text-sm shadow-xs"
+            value={subjectId}
+            onChange={(e) => setSubjectId(e.target.value)}
+          >
+            <option value="">Select a subject</option>
+            {subjects.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.name}
+              </option>
+            ))}
+          </select>
         </div>
-        <div className="no-print">
-          <ThemeToggle />
-        </div>
-      </div>
-
-      <Card className="mb-6">
-        <CardContent className="pt-6">
-          <div className="max-w-xs space-y-1.5">
-            <Label htmlFor="subject">Subject</Label>
-            <select
-              id="subject"
-              className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-              value={subjectId}
-              onChange={(e) => setSubjectId(e.target.value)}
-            >
-              <option value="">Select a subject</option>
-              {subjects.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </CardContent>
-      </Card>
-
-      {loadError && (
-        <p className="text-small text-destructive mb-4" role="alert">
-          {loadError}
-        </p>
-      )}
+      }
+    >
+      {loadError && <Notice tone="bad">{loadError}</Notice>}
+      {!subjectId && !loadError && <Notice>Select a subject to see its coverage grid.</Notice>}
+      {subjectId && !grids && !loadError && <Notice>Loading the coverage grid…</Notice>}
 
       {grids && (
         <>
-          <div className="text-small text-muted-foreground mb-3 flex items-center gap-4">
-            <span>{grids.length} concepts</span>
-            <span className="flex items-center gap-1.5">
-              <span
-                className="inline-block h-2.5 w-2.5 rounded-full"
-                style={{ background: STATUS.critical }}
-              />
-              Empty cell
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span
-                className="inline-block h-2.5 w-2.5 rounded-full"
-                style={{ background: STATUS.warning }}
-              />
-              Below target ({totalShortfallCells} cells across all concepts)
-            </span>
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <StatTile label="Concepts" value={concepts} />
+            <StatTile label="Concepts below target" value={incomplete} tone={incomplete ? 'warn' : 'good'} />
+            <StatTile label="Empty cells" value={totalEmptyCells} tone={totalEmptyCells ? 'bad' : 'good'} />
+            <StatTile label="Cells below target" value={totalShortfallCells} tone={totalShortfallCells ? 'warn' : 'good'} />
           </div>
 
-          <div className="space-y-2">
-            {grids.map((grid) => (
-              <details
-                key={grid.concept_id}
-                className="border-border rounded-lg border"
-              >
-                <summary className="cursor-pointer px-4 py-3 text-body font-medium">
-                  {grid.concept_name}
-                  <span className="text-small text-muted-foreground ml-2 font-normal">
-                    target {grid.target_question_count} — {grid.empty_cells}{' '}
-                    empty cell{grid.empty_cells === 1 ? '' : 's'}
-                  </span>
-                </summary>
-                <div className="overflow-x-auto px-4 pb-4">
-                  <table className="text-small w-full border-collapse">
-                    <thead>
-                      <tr>
-                        <th className="text-muted-foreground p-1.5 text-left font-normal">
-                          Difficulty \ Bloom
-                        </th>
-                        {BLOOM_LEVELS.map((b) => (
-                          <th
-                            key={b}
-                            className="text-muted-foreground p-1.5 text-left font-normal"
-                          >
-                            {b}
+          <Panel
+            title="Concepts"
+            subtitle="Open a concept to see its grid."
+            action={
+              <div className="text-small text-muted-foreground flex flex-wrap items-center gap-3">
+                <span className="flex items-center gap-1.5">
+                  <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: STATUS.critical }} />
+                  Empty cell
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: STATUS.warning }} />
+                  Below target ({totalShortfallCells} cells across all concepts)
+                </span>
+              </div>
+            }
+          >
+            {grids.length === 0 && <Notice>This subject has no concepts yet.</Notice>}
+            <div className="space-y-2">
+              {grids.map((grid) => (
+                <details key={grid.concept_id} className="border-border rounded-xl border">
+                  <summary className="text-body flex cursor-pointer flex-wrap items-center gap-x-2 gap-y-1 px-4 py-3 font-medium">
+                    {grid.concept_name}
+                    <span className="text-small text-muted-foreground font-normal">
+                      target {grid.target_question_count} — {grid.empty_cells} empty cell
+                      {grid.empty_cells === 1 ? '' : 's'}
+                    </span>
+                    {grid.empty_cells > 0 && <Pill tone="bad">{grid.empty_cells} empty</Pill>}
+                  </summary>
+                  <div className="overflow-x-auto px-4 pb-4">
+                    <table className="text-small w-full min-w-[520px] border-collapse tabular-nums">
+                      <thead>
+                        <tr>
+                          <th className="text-muted-foreground p-1.5 text-left font-normal">
+                            Difficulty \ Bloom
                           </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {DIFFICULTIES.map((difficulty) => (
-                        <tr key={difficulty}>
-                          <th className="p-1.5 text-left font-medium">
-                            {difficulty}
-                          </th>
-                          {BLOOM_LEVELS.map((bloom) => {
-                            const cell = grid.cells.find(
-                              (c) =>
-                                c.bloom === bloom &&
-                                c.difficulty === difficulty,
-                            )
-                            if (!cell)
-                              return <td key={bloom} className="p-1.5" />
-                            const style = cellStyle(cell)
-                            return (
-                              <td
-                                key={bloom}
-                                className="rounded p-1.5"
-                                style={{ background: style.background }}
-                              >
-                                <span style={{ color: style.color }}>
-                                  {cell.count}/{cell.target}
-                                </span>
-                              </td>
-                            )
-                          })}
+                          {BLOOM_LEVELS.map((b) => (
+                            <th key={b} className="text-muted-foreground p-1.5 text-left font-normal">
+                              {b}
+                            </th>
+                          ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </details>
-            ))}
-          </div>
+                      </thead>
+                      <tbody>
+                        {DIFFICULTIES.map((difficulty) => (
+                          <tr key={difficulty} className="border-border border-t">
+                            <th className="p-1.5 text-left font-medium">{difficulty}</th>
+                            {BLOOM_LEVELS.map((bloom) => {
+                              const cell = grid.cells.find(
+                                (c) => c.bloom === bloom && c.difficulty === difficulty,
+                              )
+                              if (!cell) return <td key={bloom} className="p-1.5" />
+                              const style = cellStyle(cell)
+                              return (
+                                <td key={bloom} className="rounded p-1.5" style={{ background: style.background }}>
+                                  <span style={{ color: style.color }}>
+                                    {cell.count}/{cell.target}
+                                  </span>
+                                </td>
+                              )
+                            })}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </Panel>
         </>
       )}
-    </div>
+    </AdminPage>
   )
 }
