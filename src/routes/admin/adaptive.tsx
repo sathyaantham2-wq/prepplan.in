@@ -1,18 +1,9 @@
 import { useEffect, useState } from 'react'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { Button } from '../../components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../../components/ui/card'
+import { AdminPage, Notice, Panel, Pill, StatTile } from '../../components/admin/admin-ui'
 import { Input } from '../../components/ui/input'
 import { Label } from '../../components/ui/label'
-import { ThemeToggle } from '../../components/theme-toggle'
-import { useSession } from '../../lib/auth-client'
-import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/adaptive')({ component: AdminAdaptive })
 
@@ -115,10 +106,6 @@ function Fields({
 
 // Everything the adaptive learning engine uses is set here, and every change is audit logged.
 function AdminAdaptive() {
-  const { data: session, isPending } = useSession()
-  const navigate = useNavigate()
-  const role = (session?.user as { role?: string } | undefined)?.role
-
   const [config, setConfig] = useState<Json | null>(null)
   const [defaults, setDefaults] = useState<Json | null>(null)
   const [message, setMessage] = useState<string | null>(null)
@@ -134,22 +121,18 @@ function AdminAdaptive() {
   }
 
   useEffect(() => {
-    if (isPending) return
-    if (!session || role !== 'admin') {
-      navigate({ to: '/' })
-      return
-    }
     fetch('/api/admin/mastery-settings')
       .then((r) => r.json())
       .then((d: { config: Json; defaults: Json }) => {
         setConfig(d.config)
         setDefaults(d.defaults)
       })
+      .catch(() => setError('Could not load the settings.'))
     void loadSubjects()
     fetch('/api/admin/ai-status')
       .then((r) => r.json())
       .then(setAi)
-  }, [isPending, session, role, navigate])
+  }, [])
 
   async function testAi() {
     setAiTest('Testing…')
@@ -215,33 +198,34 @@ function AdminAdaptive() {
     await loadSubjects()
   }
 
-  if (isPending || !session || role !== 'admin' || !config) {
-    return <PageLoading />
-  }
+  const active = subjects.filter((x) => x.is_active).length
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 p-4 sm:p-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-h1">Adaptive learning settings</h1>
-          <p className="text-body text-muted-foreground">
-            Subjects, mastery rules and question weightage.{' '}
-            <a href="/admin/videos" className="text-primary underline-offset-4 hover:underline">
-              Concept videos
-            </a>
-          </p>
-        </div>
-        <ThemeToggle />
+    <AdminPage
+      title="Adaptive learning settings"
+      description="Subjects, mastery rules and question weightage."
+      actions={
+        <a href="/admin/videos" className="text-primary text-small underline-offset-4 hover:underline">
+          Concept videos
+        </a>
+      }
+    >
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <StatTile label="Subjects" value={subjects.length} />
+        <StatTile label="Active subjects" value={active} tone="good" />
+        <StatTile
+          label="AI provider"
+          value={ai ? (ai.provider === null ? 'None' : ai.provider === 'gemini' ? 'Gemini' : 'Claude') : '…'}
+          tone={ai && ai.provider === null ? 'bad' : 'default'}
+        />
+        <StatTile label="Setting groups" value={config ? Object.values(config).filter((v) => typeof v === 'object').length : 0} />
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">AI provider</CardTitle>
-          <CardDescription>
-            Set ANTHROPIC_API_KEY or GEMINI_API_KEY in the deployment settings (see .env.example). Keys are never shown here.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
+      <Panel
+        title="AI provider"
+        subtitle="Set ANTHROPIC_API_KEY or GEMINI_API_KEY in the deployment settings (see .env.example). Keys are never shown here."
+      >
+        <div className="space-y-3">
           {ai && (
             <p className="text-body">
               {ai.provider === null
@@ -251,39 +235,39 @@ function AdminAdaptive() {
             </p>
           )}
           {ai && (
-            <p className="text-small text-muted-foreground">
-              Anthropic key: {ai.anthropic_key_set ? 'set' : 'not set'} · Gemini key: {ai.gemini_key_set ? 'set' : 'not set'}
-              {ai.forced ? ` · forced to ${ai.forced}` : ''}
+            <p className="text-small text-muted-foreground flex flex-wrap items-center gap-2">
+              <Pill tone={ai.anthropic_key_set ? 'good' : 'default'}>Anthropic key: {ai.anthropic_key_set ? 'set' : 'not set'}</Pill>
+              <Pill tone={ai.gemini_key_set ? 'good' : 'default'}>Gemini key: {ai.gemini_key_set ? 'set' : 'not set'}</Pill>
+              {ai.forced ? <Pill tone="warn">forced to {ai.forced}</Pill> : null}
             </p>
           )}
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Button type="button" variant="outline" disabled={!ai?.provider} onClick={() => void testAi()}>
               Test connection
             </Button>
             {aiTest && <span className="text-small text-muted-foreground" role="status">{aiTest}</span>}
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </Panel>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">Subjects</CardTitle>
-          <CardDescription>
-            Students choose from the active subjects of their class. Switching a subject off hides it; nothing is deleted.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
+      <Panel
+        title="Subjects"
+        subtitle="Students choose from the active subjects of their class. Switching a subject off hides it; nothing is deleted."
+      >
+        <div className="space-y-3">
+          {subjects.length === 0 && <Notice>No subjects yet. Add one below.</Notice>}
           {subjects.map((s) => (
-            <div key={s.id} className="flex flex-wrap items-center gap-3 rounded-md border p-3">
+            <div key={s.id} className="border-border bg-muted/20 flex flex-wrap items-center gap-3 rounded-xl border p-3">
               <Input
                 aria-label={`Name of ${s.name}`}
-                className="max-w-56"
+                className="w-full sm:max-w-56"
                 defaultValue={s.name}
                 onBlur={(e) => void renameSubject(s, e.target.value)}
               />
               <span className="text-small text-muted-foreground">
                 {s.board} · Class {s.class} · {s.code} · {s.chapter_count} chapters
               </span>
+              <Pill tone={s.is_active ? 'good' : 'default'}>{s.is_active ? 'Active' : 'Off'}</Pill>
               <Button
                 type="button"
                 size="sm"
@@ -295,7 +279,7 @@ function AdminAdaptive() {
               </Button>
             </div>
           ))}
-          <form onSubmit={addSubject} className="grid gap-3 rounded-md border p-3 sm:grid-cols-5">
+          <form onSubmit={addSubject} className="border-border grid gap-3 rounded-xl border border-dashed p-3 sm:grid-cols-5">
             <Input aria-label="Board" value={form.board} onChange={(e) => setForm({ ...form, board: e.target.value })} required />
             <Input
               aria-label="Class"
@@ -310,59 +294,58 @@ function AdminAdaptive() {
             <Input aria-label="Subject code" placeholder="Code" value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value })} required />
             <Button type="submit">Add subject</Button>
           </form>
-        </CardContent>
-      </Card>
+        </div>
+      </Panel>
 
-      {Object.entries(config).map(([group, value]) => {
-        if (typeof value !== 'object') return null
-        return (
-          <Card key={group}>
-            <CardHeader>
-              <CardTitle className="text-h3">{GROUP_TITLES[group] ?? group}</CardTitle>
-            </CardHeader>
-            <CardContent>
+      {!config && !error && <Notice>Loading mastery settings…</Notice>}
+
+      {config &&
+        Object.entries(config).map(([group, value]) => {
+          if (typeof value !== 'object') return null
+          return (
+            <Panel key={group} title={GROUP_TITLES[group] ?? group}>
               <Fields
                 value={value as Json}
                 path={[group]}
                 onChange={(path, v) => setConfig((c) => (c ? setPath(c, path, v) : c))}
               />
-            </CardContent>
-          </Card>
-        )
-      })}
+            </Panel>
+          )
+        })}
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">Other</CardTitle>
-        </CardHeader>
-        <CardContent className="grid gap-3 sm:grid-cols-2">
-          {(['correctCredit', 'weakPriorityFloorPercent'] as const).map((key) => (
-            <div key={key} className="space-y-1.5">
-              <Label htmlFor={`cfg-${key}`}>{key}</Label>
-              <Input
-                id={`cfg-${key}`}
-                type="number"
-                step="any"
-                value={config[key] as number}
-                onChange={(e) => setConfig((c) => (c ? setPath(c, [key], Number(e.target.value)) : c))}
-              />
-            </div>
-          ))}
-        </CardContent>
-      </Card>
+      {config && (
+        <Panel title="Other">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {(['correctCredit', 'weakPriorityFloorPercent'] as const).map((key) => (
+              <div key={key} className="space-y-1.5">
+                <Label htmlFor={`cfg-${key}`}>{key}</Label>
+                <Input
+                  id={`cfg-${key}`}
+                  type="number"
+                  step="any"
+                  value={config[key] as number}
+                  onChange={(e) => setConfig((c) => (c ? setPath(c, [key], Number(e.target.value)) : c))}
+                />
+              </div>
+            ))}
+          </div>
+        </Panel>
+      )}
 
-      {error && (
-        <p className="text-small text-destructive" role="alert">
-          {error}
+      {error && <Notice tone="bad">{error}</Notice>}
+      {message && (
+        <p className="text-small text-muted-foreground" role="status">
+          {message}
         </p>
       )}
-      {message && <p className="text-small text-muted-foreground" role="status">{message}</p>}
-      <div className="flex gap-3">
-        <Button onClick={() => void saveConfig()}>Save settings</Button>
-        <Button variant="outline" onClick={() => defaults && setConfig(defaults)}>
-          Reset to defaults
-        </Button>
-      </div>
-    </div>
+      {config && (
+        <div className="flex flex-wrap gap-3">
+          <Button onClick={() => void saveConfig()}>Save settings</Button>
+          <Button variant="outline" onClick={() => defaults && setConfig(defaults)}>
+            Reset to defaults
+          </Button>
+        </div>
+      )}
+    </AdminPage>
   )
 }

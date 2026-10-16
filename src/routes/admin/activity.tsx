@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { Card, CardContent } from '../../components/ui/card'
-import { ThemeToggle } from '../../components/theme-toggle'
-import { useSession } from '../../lib/auth-client'
-import { PageLoading } from '../../components/page-loading'
+import { createFileRoute } from '@tanstack/react-router'
+import { AdminPage, BarChart, Notice, Panel, StatTile } from '../../components/admin/admin-ui'
+import { Button } from '../../components/ui/button'
 import type { ActivityReport } from '../../lib/student-activity'
 
 export const Route = createFileRoute('/admin/activity')({
@@ -33,22 +31,14 @@ function formatLastSeen(iso: string | null): string {
  * Admin: how many students use the web app and for how many minutes (2026-10-03 request). No
  * tab06 screen names this, same standalone-admin-screen pattern as /admin/funnel and
  * /admin/usage. Minutes are active time from the in-app pings, not time with a tab merely open.
+ * The admin layout route guards the page; the API enforces the admin role on the server.
  */
 function AdminActivity() {
-  const { data: session, isPending } = useSession()
-  const navigate = useNavigate()
-  const role = (session?.user as { role?: string } | undefined)?.role
-
   const [days, setDays] = useState<number>(30)
   const [report, setReport] = useState<ActivityReport | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
   useEffect(() => {
-    if (isPending) return
-    if (!session || role !== 'admin') {
-      navigate({ to: '/' })
-      return
-    }
     setLoadError(null)
     fetch(`/api/admin/student-activity?days=${days}`)
       .then(async (r) => {
@@ -57,149 +47,104 @@ function AdminActivity() {
       })
       .then(setReport)
       .catch((err: Error) => setLoadError(err.message))
-  }, [isPending, session, role, navigate, days])
+  }, [days])
 
-  if (isPending || !session || role !== 'admin') {
-    return <PageLoading />
-  }
-
-  const maxMinutes = report
-    ? Math.max(1, ...report.daily.map((d) => d.minutes))
-    : 1
+  const first = report?.daily[0]?.day
+  const last = report?.daily[report.daily.length - 1]?.day
 
   return (
-    <div className="mx-auto max-w-4xl p-8">
-      <div className="mb-6 flex items-center justify-between gap-4">
-        <div>
-          <h1 className="text-h1">Student activity</h1>
-          <p className="text-body text-muted-foreground">
-            Students using the web app and the minutes they spend in it.
-          </p>
+    <AdminPage
+      title="Student activity"
+      description="Students using the web app and the minutes they spend in it."
+      actions={
+        <div className="flex gap-1.5" role="group" aria-label="Time window">
+          {WINDOWS.map((w) => (
+            <Button
+              key={w}
+              type="button"
+              size="sm"
+              variant={days === w ? 'default' : 'outline'}
+              onClick={() => setDays(w)}
+            >
+              Last {w} days
+            </Button>
+          ))}
         </div>
-        <div className="no-print">
-          <ThemeToggle />
-        </div>
-      </div>
-
-      <div className="mb-4 flex gap-2" role="group" aria-label="Time window">
-        {WINDOWS.map((w) => (
-          <button
-            key={w}
-            type="button"
-            onClick={() => setDays(w)}
-            className={
-              'rounded-md border px-3 py-1.5 text-sm font-medium ' +
-              (days === w
-                ? 'border-primary bg-primary text-primary-foreground'
-                : 'border-input')
-            }
-          >
-            Last {w} days
-          </button>
-        ))}
-      </div>
-
-      {loadError && (
-        <p className="text-small text-destructive mb-4" role="alert">
-          {loadError}
-        </p>
-      )}
+      }
+    >
+      {loadError && <Notice tone="bad">{loadError}</Notice>}
+      {!report && !loadError && <Notice>Loading student activity…</Notice>}
 
       {report && (
-        <div className="space-y-4">
-          <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            <Stat label="Students with a login" value={report.students_with_login} />
-            <Stat label="Active today" value={report.active_today} />
-            <Stat label="Active, last 7 days" value={report.active_7d} />
-            <Stat
-              label={`Active, last ${report.window_days} days`}
-              value={report.active_window}
-            />
-            <Stat label="Total time" value={formatMinutes(report.total_minutes)} />
-            <Stat
+        <>
+          <dl className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+            <StatTile label="Students with a login" value={report.students_with_login} />
+            <StatTile label="Active today" value={report.active_today} tone="good" />
+            <StatTile label="Active, last 7 days" value={report.active_7d} />
+            <StatTile label={`Active, last ${report.window_days} days`} value={report.active_window} />
+            <StatTile label="Total time" value={formatMinutes(report.total_minutes)} />
+            <StatTile
               label="Average per active day"
               value={formatMinutes(report.avg_minutes_per_active_day)}
             />
           </dl>
 
-          <p className="text-small text-muted-foreground">
+          <Notice>
             {report.tracking_since
               ? `Time is measured from ${report.tracking_since}; earlier use was not recorded.`
               : 'No activity recorded yet. Time is measured from the moment students next use the app.'}
-          </p>
+          </Notice>
 
-          <Card>
-            <CardContent className="pt-6">
-              <h2 className="text-h3 mb-3">Minutes per day</h2>
-              <ul className="space-y-1">
-                {report.daily.map((d) => (
-                  <li key={d.day} className="flex items-center gap-3 text-small">
-                    <span className="text-muted-foreground w-24 shrink-0">
-                      {d.day}
-                    </span>
-                    <span
-                      className="bg-primary/70 h-3 rounded-sm"
-                      style={{ width: `${(d.minutes / maxMinutes) * 55}%`, minWidth: d.minutes > 0 ? 3 : 0 }}
-                      aria-hidden="true"
-                    />
-                    <span>
-                      {formatMinutes(d.minutes)} · {d.active_students} student
-                      {d.active_students === 1 ? '' : 's'}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Panel title="Minutes per day" subtitle="Active minutes across all students">
+              <BarChart data={report.daily.map((d) => d.minutes)} labelFirst={first} labelLast={last} />
+            </Panel>
+            <Panel title="Active students per day" subtitle="Students with any recorded time">
+              <BarChart
+                data={report.daily.map((d) => d.active_students)}
+                color="var(--chart-2)"
+                labelFirst={first}
+                labelLast={last}
+              />
+            </Panel>
+          </div>
 
-          <Card>
-            <CardContent className="overflow-x-auto pt-6">
-              <h2 className="text-h3 mb-3">Each student</h2>
-              <table className="w-full text-left text-small">
-                <thead className="text-muted-foreground">
-                  <tr>
-                    <th className="py-1 pr-3 font-medium">Student</th>
-                    <th className="py-1 pr-3 font-medium">Class</th>
-                    <th className="py-1 pr-3 font-medium">Today</th>
-                    <th className="py-1 pr-3 font-medium">
-                      Last {report.window_days} days
-                    </th>
-                    <th className="py-1 pr-3 font-medium">Days active</th>
-                    <th className="py-1 pr-3 font-medium">Papers submitted</th>
-                    <th className="py-1 font-medium">Last seen</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {report.students.map((s) => (
-                    <tr key={s.student_id} className="border-t">
-                      <td className="py-1.5 pr-3">{s.name}</td>
-                      <td className="py-1.5 pr-3">{s.class}</td>
-                      <td className="py-1.5 pr-3">{formatMinutes(s.minutes_today)}</td>
-                      <td className="py-1.5 pr-3">
-                        {formatMinutes(s.minutes_in_window)}
-                      </td>
-                      <td className="py-1.5 pr-3">{s.active_days}</td>
-                      <td className="py-1.5 pr-3">{s.papers_submitted}</td>
-                      <td className="py-1.5">{formatLastSeen(s.last_seen_at)}</td>
+          <Panel title="Each student">
+            {report.students.length === 0 ? (
+              <Notice>No students yet.</Notice>
+            ) : (
+              <div className="-mx-4 overflow-x-auto sm:-mx-5">
+                <table className="text-small w-full min-w-[640px] text-left tabular-nums">
+                  <thead className="text-muted-foreground bg-muted/50 text-caption uppercase">
+                    <tr>
+                      <th className="px-4 py-2 font-semibold sm:px-5">Student</th>
+                      <th className="px-3 py-2 font-semibold">Class</th>
+                      <th className="px-3 py-2 font-semibold">Today</th>
+                      <th className="px-3 py-2 font-semibold">Last {report.window_days} days</th>
+                      <th className="px-3 py-2 font-semibold">Days active</th>
+                      <th className="px-3 py-2 font-semibold">Papers submitted</th>
+                      <th className="px-3 py-2 font-semibold">Last seen</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </CardContent>
-          </Card>
-        </div>
+                  </thead>
+                  <tbody>
+                    {report.students.map((s) => (
+                      <tr key={s.student_id} className="border-border even:bg-muted/30 hover:bg-muted/60 border-t">
+                        <td className="px-4 py-2 font-medium sm:px-5">{s.name}</td>
+                        <td className="px-3 py-2">{s.class}</td>
+                        <td className="px-3 py-2">{formatMinutes(s.minutes_today)}</td>
+                        <td className="px-3 py-2">{formatMinutes(s.minutes_in_window)}</td>
+                        <td className="px-3 py-2">{s.active_days}</td>
+                        <td className="px-3 py-2">{s.papers_submitted}</td>
+                        <td className="px-3 py-2 whitespace-nowrap">{formatLastSeen(s.last_seen_at)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Panel>
+        </>
       )}
-    </div>
-  )
-}
-
-function Stat({ label, value }: { label: string; value: number | string }) {
-  return (
-    <Card>
-      <CardContent className="pt-6">
-        <dt className="text-small text-muted-foreground">{label}</dt>
-        <dd className="text-h2 mt-1">{value}</dd>
-      </CardContent>
-    </Card>
+    </AdminPage>
   )
 }

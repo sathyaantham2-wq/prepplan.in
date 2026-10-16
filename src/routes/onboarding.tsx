@@ -65,10 +65,12 @@ function Onboarding() {
 
   useEffect(() => {
     if (isPending) return
-    if (
-      !session ||
-      (role !== 'parent' && role !== 'teacher' && role !== 'admin')
-    ) {
+    if (role === 'admin') {
+      // No "add a student" for the admin account: it has the admin console only.
+      navigate({ to: '/admin' })
+      return
+    }
+    if (!session || (role !== 'parent' && role !== 'teacher')) {
       navigate({ to: '/' })
       return
     }
@@ -112,11 +114,7 @@ function Onboarding() {
     await load()
   }
 
-  if (
-    isPending ||
-    !session ||
-    (role !== 'parent' && role !== 'teacher' && role !== 'admin')
-  ) {
+  if (isPending || !session || (role !== 'parent' && role !== 'teacher')) {
     return <PageLoading />
   }
 

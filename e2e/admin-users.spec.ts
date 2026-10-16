@@ -71,15 +71,13 @@ test('admin users screen lists accounts and can deactivate/reactivate one', asyn
   await expect(page.getByRole('heading', { name: 'Users' })).toBeVisible()
   await expect(page.getByText(secondParentEmail)).toBeVisible()
 
-  const secondRow = page
-    .locator('[data-slot="card"]')
-    .filter({ hasText: 'E2E second parent' })
+  const secondRow = page.getByRole('row').filter({ hasText: 'E2E second parent' })
   const patchResponsePromise = page.waitForResponse(
     (r) => r.request().method() === 'PATCH' && r.url().includes('/api/households/users/') && r.ok(),
   )
   await secondRow.getByRole('button', { name: 'Deactivate' }).click()
   await patchResponsePromise
 
-  await expect(page.getByText(`${secondParentEmail} — parent — deactivated`)).toBeVisible()
+  await expect(secondRow.getByText('Deactivated')).toBeVisible()
   await expect(secondRow.getByRole('button', { name: 'Reactivate' })).toBeVisible()
 })
