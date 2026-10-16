@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+import type { CSSProperties, PointerEvent as ReactPointerEvent } from 'react'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { ThemeToggle } from '../components/theme-toggle'
 import { SUPPORT_EMAIL } from '../lib/legal'
@@ -19,11 +21,15 @@ export const Route = createFileRoute('/about')({
 })
 
 const btnPrimary =
-  'bg-primary !text-primary-foreground inline-flex min-h-11 items-center justify-center rounded-full px-6 text-[0.95rem] font-semibold no-underline shadow-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none'
+  'bg-primary !text-primary-foreground inline-flex min-h-12 items-center justify-center rounded-full px-7 text-[0.95rem] font-semibold no-underline shadow-[0_4px_0_0_var(--edge),0_16px_28px_-12px_var(--glow)] transition-transform hover:-translate-y-0.5 active:translate-y-0.5 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none'
 const btnQuiet =
-  '!text-foreground hover:bg-accent inline-flex min-h-11 items-center justify-center rounded-full px-5 text-[0.95rem] font-medium no-underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none'
-const section = 'mx-auto w-full max-w-5xl px-4 py-14 sm:py-20'
+  '!text-foreground border-border bg-card inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-[0.95rem] font-semibold no-underline transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none'
+const wrap = 'mx-auto w-full max-w-5xl px-4'
 const eyebrow = 'field-label text-primary mb-3 block'
+
+function prefersReducedMotion() {
+  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
 
 function Logo() {
   return (
@@ -51,151 +57,282 @@ function Logo() {
   )
 }
 
-// Hero illustration: one marked paper whose lost marks split into two reasons.
-function PaperSplit() {
+/* ---------- Hero: a floating stack of exam sheets (CSS 3D) ---------- */
+
+function TopSheetArt() {
   return (
-    <svg
-      viewBox="0 0 360 300"
-      role="img"
-      aria-label="A marked paper with two lost marks: one because the topic was not known, one because the answer stopped too early"
-      className="h-auto w-full max-w-[420px]"
-    >
-      <rect x="40" y="14" width="200" height="262" rx="16" fill="var(--card)" stroke="var(--border)" strokeWidth="2" />
-      <rect x="40" y="14" width="200" height="262" rx="16" fill="var(--p-yellow)" opacity="0.35" />
-      <rect x="62" y="38" width="90" height="10" rx="5" fill="var(--ink-blue)" opacity="0.8" />
-      {[70, 100, 130, 160, 190, 220].map((y, i) => (
-        <rect key={y} x="62" y={y} width={i % 2 ? 130 : 156} height="7" rx="3.5" fill="var(--muted-foreground)" opacity="0.35" />
+    <svg viewBox="0 0 252 328" aria-hidden="true">
+      <rect x="22" y="26" width="96" height="11" rx="5.5" fill="var(--ink-blue)" opacity="0.85" />
+      <rect x="196" y="24" width="34" height="14" rx="7" fill="var(--p-yellow)" stroke="var(--border)" />
+      {[66, 96, 126, 156, 186, 216].map((y, i) => (
+        <rect key={y} x="22" y={y} width={[208, 188, 200, 170, 196, 120][i]} height="8" rx="4" fill="var(--muted-foreground)" opacity="0.3" />
       ))}
-      <circle cx="214" cy="73" r="15" fill="var(--bad-bg)" stroke="var(--bad)" strokeWidth="2" />
-      <path d="M208 67l12 12M220 67l-12 12" stroke="var(--bad)" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="214" cy="163" r="15" fill="var(--bad-bg)" stroke="var(--bad)" strokeWidth="2" />
-      <path d="M208 157l12 12M220 157l-12 12" stroke="var(--bad)" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M232 73 C262 73 268 52 292 52" stroke="var(--bad)" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <path d="M232 163 C262 163 268 214 292 214" stroke="var(--bad)" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <rect x="276" y="22" width="80" height="62" rx="14" fill="var(--p-blue)" stroke="var(--ink-blue)" strokeWidth="2" />
-      <text x="316" y="49" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--accent-foreground)">Knowledge</text>
-      <text x="316" y="66" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--accent-foreground)">gap</text>
-      <rect x="276" y="184" width="80" height="62" rx="14" fill="var(--p-peach)" stroke="var(--ink-blue)" strokeWidth="2" />
-      <text x="316" y="211" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--foreground)">Delivery</text>
-      <text x="316" y="228" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--foreground)">habit</text>
+      {/* knowledge gap: a wrong working, crossed out */}
+      <path d="M18 100 C 70 90, 130 112, 214 100" stroke="var(--bad)" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M18 106 C 80 98, 140 116, 214 106" stroke="var(--bad)" strokeWidth="1.6" fill="none" strokeLinecap="round" opacity="0.6" />
+      {/* delivery habit: the answer stops short */}
+      <path d="M124 218 v18" stroke="var(--bad)" strokeWidth="3" strokeLinecap="round" />
+      <path d="M136 222 H 206" stroke="var(--muted-foreground)" strokeWidth="2.5" strokeDasharray="2 7" strokeLinecap="round" opacity="0.6" />
+      {/* connectors */}
+      <path d="M214 103 C 250 100, 268 78, 300 52" stroke="var(--ink-blue)" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+      <circle cx="214" cy="103" r="3.5" fill="var(--bad)" />
+      <path d="M124 236 C 110 270, 60 290, 6 292" stroke="var(--ink-blue)" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+      <circle cx="124" cy="236" r="3.5" fill="var(--bad)" />
     </svg>
   )
 }
 
-function StepIcon({ n }: { n: 1 | 2 | 3 }) {
-  const common = {
-    width: 56,
-    height: 56,
-    viewBox: '0 0 56 56',
-    fill: 'none',
-    stroke: 'currentColor',
-    strokeWidth: 2.2,
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
-    'aria-hidden': true,
-  }
-  if (n === 1)
-    return (
-      <svg {...common}>
-        <rect x="14" y="8" width="28" height="40" rx="5" />
-        <path d="M20 18h16M20 26h16M20 34h9" />
-      </svg>
-    )
-  if (n === 2)
-    return (
-      <svg {...common}>
-        <path d="M12 42l4-12 20-20 8 8-20 20-12 4Z" />
-        <path d="M32 14l8 8" />
-      </svg>
-    )
+function SheetStack() {
+  const tints = ['var(--p-blue)', 'var(--p-pink)', 'var(--p-mint)', 'transparent']
   return (
-    <svg {...common}>
-      <circle cx="26" cy="26" r="14" />
-      <path d="M36 36l10 10" />
-      <path d="M20 26l4 4 8-9" />
+    <div className="about-float">
+      <div className="about-rig">
+        <div className="about-floor" aria-hidden="true" />
+        {tints.map((t, i) => (
+          <div key={i} className="about-sheet" style={{ '--i': i, '--tint': t } as CSSProperties}>
+            {i === 3 ? <TopSheetArt /> : null}
+          </div>
+        ))}
+        <div
+          className="about-chip3d"
+          style={{ '--tone': 'var(--p-blue)', '--z': '150px', right: 'clamp(-38%, calc((100vw - var(--w)) * -0.12 - 8px), -12%)', top: '-2%' } as CSSProperties}
+        >
+          <span className="size-2.5 rounded-full" style={{ background: 'var(--ink-blue)' }} aria-hidden="true" />
+          Knowledge gap
+        </div>
+        <div
+          className="about-chip3d"
+          style={{ '--tone': 'var(--p-peach)', '--z': '100px', left: 'clamp(-40%, calc((100vw - var(--w)) * -0.14 - 4px), -14%)', bottom: '4%', animationDelay: '-2.4s' } as CSSProperties}
+        >
+          <span className="size-2.5 rounded-full" style={{ background: 'var(--bad)' }} aria-hidden="true" />
+          Delivery habit
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ---------- Two reasons: tilting glass cards ---------- */
+
+function PuzzleArt() {
+  return (
+    <svg viewBox="0 0 220 150" className="h-auto w-full max-w-[250px]" aria-hidden="true">
+      <ellipse cx="104" cy="136" rx="84" ry="9" fill="var(--glow)" />
+      <g stroke="var(--ink-blue)" strokeWidth="2.5" strokeLinejoin="round">
+        <rect x="26" y="22" width="56" height="56" rx="10" fill="var(--p-blue)" />
+        <rect x="86" y="22" width="56" height="56" rx="10" fill="var(--p-mint)" />
+        <rect x="26" y="82" width="56" height="56" rx="10" fill="var(--p-pink)" />
+        <circle cx="82" cy="50" r="9" fill="var(--p-blue)" />
+      </g>
+      <rect x="86" y="82" width="56" height="56" rx="10" fill="none" stroke="var(--ink-blue)" strokeWidth="2.5" strokeDasharray="6 7" opacity="0.6" />
+      <text x="114" y="119" textAnchor="middle" fontSize="26" fontWeight="800" fill="var(--ink-blue)" opacity="0.6">?</text>
+      <g transform="translate(150 6) rotate(14 28 28)" stroke="var(--ink-blue)" strokeWidth="2.5" strokeLinejoin="round">
+        <rect x="0" y="0" width="56" height="56" rx="10" fill="var(--p-yellow)" />
+        <circle cx="0" cy="28" r="9" fill="var(--p-yellow)" />
+      </g>
     </svg>
+  )
+}
+
+function PenArt() {
+  return (
+    <svg viewBox="0 0 220 150" className="h-auto w-full max-w-[250px]" aria-hidden="true">
+      <ellipse cx="108" cy="136" rx="84" ry="9" fill="var(--glow)" />
+      <rect x="14" y="18" width="192" height="108" rx="14" fill="var(--popover)" stroke="var(--border)" strokeWidth="2" />
+      {[44, 74].map((y) => (
+        <path key={y} d={`M32 ${y} H190`} stroke="var(--muted-foreground)" strokeWidth="3" strokeLinecap="round" opacity="0.28" />
+      ))}
+      <path d="M32 104 C 44 92, 54 116, 66 102 S 88 92, 98 104 S 116 114, 124 104" stroke="var(--ink-blue)" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+      <path d="M140 104 H186" stroke="var(--muted-foreground)" strokeWidth="3" strokeDasharray="1 9" strokeLinecap="round" opacity="0.6" />
+      <g transform="rotate(38 148 60)">
+        <rect x="136" y="2" width="20" height="62" rx="8" fill="var(--p-peach)" stroke="var(--ink-blue)" strokeWidth="2.5" />
+        <rect x="136" y="2" width="20" height="14" rx="6" fill="var(--p-pink)" stroke="var(--ink-blue)" strokeWidth="2.5" />
+        <path d="M137 64 L146 84 L155 64 Z" fill="var(--p-yellow)" stroke="var(--ink-blue)" strokeWidth="2.5" strokeLinejoin="round" />
+      </g>
+      <circle cx="128" cy="104" r="5" fill="var(--bad)" opacity="0.85" />
+    </svg>
+  )
+}
+
+function TiltCard({ children, tone }: { children: React.ReactNode; tone: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  function move(e: ReactPointerEvent<HTMLDivElement>) {
+    const el = ref.current
+    if (!el || prefersReducedMotion()) return
+    const r = el.getBoundingClientRect()
+    const x = (e.clientX - r.left) / r.width
+    const y = (e.clientY - r.top) / r.height
+    el.style.setProperty('--ry', String((x - 0.5) * 14))
+    el.style.setProperty('--rx', String((0.5 - y) * 12))
+    el.style.setProperty('--mx', `${x * 100}%`)
+    el.style.setProperty('--my', `${y * 100}%`)
+  }
+  function reset() {
+    const el = ref.current
+    if (!el) return
+    el.style.setProperty('--ry', '0')
+    el.style.setProperty('--rx', '0')
+  }
+  return (
+    <div className="[perspective:1000px]">
+      <div
+        ref={ref}
+        onPointerMove={move}
+        onPointerLeave={reset}
+        onPointerCancel={reset}
+        className="about-tilt glass border-border rounded-[28px] border p-7 shadow-[0_30px_60px_-34px_var(--glow)] [touch-action:pan-y]"
+        style={{ backgroundImage: `linear-gradient(150deg, color-mix(in oklab, ${tone} 70%, transparent), transparent 70%)` }}
+      >
+        <div className="about-spec" aria-hidden="true" />
+        {children}
+      </div>
+    </div>
+  )
+}
+
+/* ---------- Three steps: isometric tiles joined by a self-drawing path ---------- */
+
+function IsoTile({ kind, tone }: { kind: 'paper' | 'pencil' | 'lens'; tone: string }) {
+  return (
+    <svg viewBox="0 0 160 140" className="h-auto w-[150px] sm:w-[168px]" aria-hidden="true">
+      <ellipse cx="80" cy="118" rx="64" ry="14" fill="var(--glow)" />
+      <polygon points="11,55 80,95 80,117 11,77" style={{ fill: `color-mix(in oklab, ${tone} 70%, var(--ink-blue))` }} />
+      <polygon points="149,55 80,95 80,117 149,77" style={{ fill: `color-mix(in oklab, ${tone} 85%, var(--ink-blue))`, opacity: 0.85 }} />
+      <polygon points="80,15 149,55 80,95 11,55" style={{ fill: tone }} stroke="var(--ink-blue)" strokeOpacity="0.5" strokeWidth="1.5" strokeLinejoin="round" />
+      <g transform="translate(80 55) matrix(0.866 0.5 -0.866 0.5 0 0)" stroke="var(--ink-blue)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        {kind === 'paper' ? (
+          <g>
+            <rect x="-22" y="-30" width="44" height="60" rx="5" fill="var(--popover)" />
+            <path d="M-13 -16H13M-13 -6H13M-13 4H13M-13 14H2" fill="none" strokeWidth="3.5" opacity="0.7" />
+          </g>
+        ) : null}
+        {kind === 'pencil' ? (
+          <g transform="rotate(-38)">
+            <rect x="-40" y="-8" width="12" height="16" rx="3" fill="var(--p-pink)" />
+            <rect x="-28" y="-8" width="46" height="16" fill="var(--p-yellow)" />
+            <polygon points="18,-8 40,0 18,8" fill="var(--popover)" />
+            <polygon points="33,-3 40,0 33,3" fill="var(--ink-blue)" />
+          </g>
+        ) : null}
+        {kind === 'lens' ? (
+          <g>
+            <path d="M10 10 L30 30" strokeWidth="7" fill="none" />
+            <circle cx="-6" cy="-6" r="20" fill="var(--popover)" strokeWidth="4.5" />
+            <path d="M-14 -6 l6 7 12 -14" fill="none" stroke="var(--good)" strokeWidth="4.5" />
+          </g>
+        ) : null}
+      </g>
+    </svg>
+  )
+}
+
+function Connector({ delay }: { delay: string }) {
+  const d = { '--d': delay } as CSSProperties
+  return (
+    <>
+      <svg viewBox="0 0 96 40" className="mt-16 hidden h-10 w-24 shrink-0 lg:block" fill="none" aria-hidden="true" style={d}>
+        <path d="M2 24 C 26 -6, 62 50, 90 16" pathLength={1} className="about-draw" stroke="var(--ink-blue)" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M82 12 L91 15 L86 24" pathLength={1} className="about-draw" stroke="var(--ink-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <svg viewBox="0 0 40 64" className="h-16 w-10 shrink-0 lg:hidden" fill="none" aria-hidden="true" style={d}>
+        <path d="M20 2 C 2 18, 38 40, 20 58" pathLength={1} className="about-draw" stroke="var(--ink-blue)" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M13 50 L20 60 L28 51" pathLength={1} className="about-draw" stroke="var(--ink-blue)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </>
   )
 }
 
 const steps = [
-  {
-    n: 1 as const,
-    title: 'Get a syllabus-exact paper',
-    body: 'Pick the class, subject and chapters. PrepPlan builds a paper from questions that each belong to a concept in your syllabus, with a fair mix of easy, medium and harder questions.',
-  },
-  {
-    n: 2 as const,
-    title: 'Attempt it your way',
-    body: 'Answer on screen, or write on paper like in the real exam and photograph your pages. No tricks, no hints while you write.',
-  },
-  {
-    n: 3 as const,
-    title: 'See exactly why marks were lost',
-    body: 'Every answer is marked question by question. Each lost mark is explained in plain words and labelled as a knowledge gap or a delivery habit. Once marked, you see the correct answer beside yours.',
-  },
+  { kind: 'paper' as const, tone: 'var(--p-blue)', title: 'Take a paper', line: 'Built from your syllabus.' },
+  { kind: 'pencil' as const, tone: 'var(--p-yellow)', title: 'Write it your way', line: 'On screen or on paper.' },
+  { kind: 'lens' as const, tone: 'var(--p-mint)', title: 'See why', line: 'Every lost mark gets a reason.' },
 ]
+
+function Steps() {
+  const ref = useRef<HTMLOListElement>(null)
+  const [drawn, setDrawn] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (prefersReducedMotion() || typeof IntersectionObserver === 'undefined') {
+      setDrawn(true)
+      return
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setDrawn(true)
+          io.disconnect()
+        }
+      },
+      { threshold: 0.25 },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+  return (
+    <ol
+      ref={ref}
+      className={`mt-12 flex flex-col items-center lg:flex-row lg:items-start lg:justify-between ${drawn ? 'about-drawn' : ''}`}
+    >
+      {steps.flatMap((s, i) => {
+        const item = (
+          <li key={s.title} className="flex flex-col items-center text-center">
+            <div className="about-iso" style={{ '--d': `${i * -1.7}s` } as CSSProperties}>
+              <IsoTile kind={s.kind} tone={s.tone} />
+            </div>
+            <h3 className="text-h3 mt-2">
+              <span className="sr-only">Step {i + 1}: </span>
+              {s.title}
+            </h3>
+            <p className="text-muted-foreground mt-1">{s.line}</p>
+          </li>
+        )
+        return i < steps.length - 1 ? [item, <Connector key={`c${i}`} delay={`${0.2 + i * 1.0}s`} />] : [item]
+      })}
+    </ol>
+  )
+}
+
+/* ---------- What is inside: floating glass chips ---------- */
 
 const subjects = [
-  'Mathematics · Classes 6 to 12',
-  'Science · Classes 6 to 9',
-  'Social Science · Classes 6 to 9',
-  'Geography · Class 10',
-  'UPSC Civil Services Prelims · Indian Polity',
-]
-
-const principles = [
-  {
-    title: 'Every question has a reason to exist',
-    body: 'Each question is tied to a concept in your chapter. Nothing is added that your exam will not test.',
-  },
-  {
-    title: 'Fair marking you can question',
-    body: 'The AI marks generously and explains each mark. If you disagree, you can question it, and after marking you can always see the correct answer and learn from it.',
-  },
-  {
-    title: 'No tutor that just solves it',
-    body: 'PrepPlan will not hand you the answer while you are attempting. The point is to find out what you can really do.',
-  },
-  {
-    title: 'Nothing is quietly deleted',
-    body: 'Questions are retired, never erased, and your past results stay on record so your progress is honest over the years.',
-  },
-  {
-    title: 'Your data stays yours',
-    body: 'A student signs up herself, with a parent or guardian agreeing. She decides when to share her chapter progress with a parent.',
-  },
-]
-
-const faqs = [
-  {
-    q: 'Does PrepPlan replace my teacher or my school tests?',
-    a: 'No. It is practice that shows you where your marks are going, so the time you spend with your teacher and your books goes to the right place.',
-  },
-  {
-    q: 'Which classes and subjects can I practise?',
-    a: 'CBSE Mathematics for Classes 6 to 12, Science for Classes 6 to 9, Social Science for Classes 6 to 9 and Geography for Class 10. For competitive study there is UPSC Civil Services Prelims Indian Polity.',
-  },
-  {
-    q: 'What is the difference between a knowledge gap and a delivery habit?',
-    a: 'A knowledge gap means you did not know or could not do the topic. A delivery habit means you knew it but lost the mark anyway, for example by stopping the answer too early or leaving out a step.',
-  },
-  {
-    q: 'Can I write on paper instead of typing?',
-    a: 'Yes. Write your answers on paper and photograph them, or answer on screen. Either way, each answer is marked question by question.',
-  },
-  {
-    q: 'What if I think a mark is wrong?',
-    a: 'You can question it and have it looked at again. If you still disagree, you can set that question aside so it does not count against you.',
-  },
-  {
-    q: 'Can I use it on my phone?',
-    a: 'Yes. PrepPlan works in any browser at www.prepplan.in, and there is an Android app.',
-  },
+  { name: 'Mathematics', note: 'Classes 6 to 12', tone: 'var(--p-blue)', r: -12 },
+  { name: 'Science', note: 'Classes 6 to 9', tone: 'var(--p-mint)', r: 8 },
+  { name: 'Social Science', note: 'Classes 6 to 9', tone: 'var(--p-pink)', r: -6 },
+  { name: 'Geography', note: 'Class 10', tone: 'var(--p-yellow)', r: 10 },
+  { name: 'Indian Polity', note: 'UPSC Civil Services Prelims', tone: 'var(--p-peach)', r: -9 },
 ]
 
 function AboutPage() {
+  const stageRef = useRef<HTMLDivElement>(null)
+  function heroMove(e: ReactPointerEvent<HTMLElement>) {
+    const el = stageRef.current
+    if (!el || prefersReducedMotion()) return
+    const r = e.currentTarget.getBoundingClientRect()
+    const x = Math.max(-1, Math.min(1, ((e.clientX - r.left) / r.width - 0.5) * 2))
+    const y = Math.max(-1, Math.min(1, ((e.clientY - r.top) / r.height - 0.5) * 2))
+    el.style.setProperty('--tx', x.toFixed(3))
+    el.style.setProperty('--ty', y.toFixed(3))
+  }
+  function heroLeave() {
+    stageRef.current?.style.setProperty('--tx', '0')
+    stageRef.current?.style.setProperty('--ty', '0')
+  }
+
   return (
-    <div className="text-foreground min-h-screen overflow-x-clip scroll-smooth">
+    <div className="text-foreground relative min-h-screen overflow-x-clip scroll-smooth">
+      <div className="about-grain" aria-hidden="true" />
+      {/* gradient mesh */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            'radial-gradient(46% 34% at 12% 8%, var(--p-blue), transparent 70%), radial-gradient(40% 30% at 92% 12%, var(--p-pink), transparent 70%), radial-gradient(40% 28% at 70% 38%, var(--p-yellow), transparent 70%), radial-gradient(44% 26% at 10% 62%, var(--p-mint), transparent 70%), radial-gradient(40% 24% at 90% 82%, var(--p-peach), transparent 70%)',
+          opacity: 0.75,
+        }}
+      />
       <a
         href="#main"
         className="bg-primary text-primary-foreground sr-only z-50 rounded-md px-3 py-2 focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
@@ -204,14 +341,9 @@ function AboutPage() {
       </a>
 
       <header className="glass border-border sticky top-0 z-40 border-b">
-        <div className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between gap-2 px-4">
+        <div className={`${wrap} flex h-14 items-center justify-between gap-2`}>
           <Logo />
           <div className="flex items-center gap-1">
-            <nav aria-label="Page sections" className="hidden items-center md:flex">
-              <a href="#how" className={btnQuiet}>How it works</a>
-              <a href="#inside" className={btnQuiet}>What is inside</a>
-              <a href="#faq" className={btnQuiet}>Questions</a>
-            </nav>
             <ThemeToggle />
             <Link to="/" className={`${btnPrimary} !min-h-9 !px-4`}>
               Sign in
@@ -220,207 +352,22 @@ function AboutPage() {
         </div>
       </header>
 
-      <main id="main">
-        {/* Hero */}
-        <div className="relative">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10"
-            style={{
-              background:
-                'radial-gradient(60% 70% at 15% 0%, var(--p-blue), transparent 70%), radial-gradient(50% 60% at 95% 20%, var(--p-pink), transparent 70%), radial-gradient(40% 50% at 60% 100%, var(--p-yellow), transparent 70%)',
-              opacity: 0.7,
-            }}
-          />
-          <section className="mx-auto grid w-full max-w-5xl items-center gap-10 px-4 py-14 sm:py-24 md:grid-cols-[1.15fr_1fr]">
-            <div className="rise-in">
-              <span className={eyebrow}>Practice that tells you why</span>
-              <h1 className="display-title text-[2.1rem] leading-[1.1] sm:text-5xl">
-                Which marks did she lose because she did not know it, and which because she{' '}
-                <span className="grad-text">stopped writing too early?</span>
-              </h1>
-              <p className="text-muted-foreground mt-5 max-w-xl text-lg leading-relaxed">
-                PrepPlan makes syllabus-exact practice papers, marks every answer question by
-                question, and tells you the real reason behind each lost mark, so you fix the right
-                thing.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link to="/" className={btnPrimary}>
-                  Get started
-                </Link>
-                <Link to="/" className={btnQuiet}>
-                  Sign in
-                </Link>
-              </div>
-            </div>
-            <div className="rise-in flex justify-center md:justify-end">
-              <PaperSplit />
-            </div>
-          </section>
-        </div>
-
-        {/* Problem */}
-        <section className={section}>
-          <span className={eyebrow}>Why PrepPlan exists</span>
-          <h2 className="text-h1 max-w-2xl">Two very different reasons a mark goes missing</h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
-            Most practice only says right or wrong, and a total. But a lost mark can mean two
-            opposite things, and they need opposite fixes.
-          </p>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <div className="rise-in bg-card border-border rounded-2xl border p-6 shadow-sm">
-              <div className="bg-[var(--p-blue)] text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold">
-                Knowledge gap
-              </div>
-              <h3 className="text-h3">She did not know it</h3>
-              <p className="text-muted-foreground mt-2 leading-relaxed">
-                The concept itself is shaky. More careful writing will not help. She needs to go
-                back to the chapter and learn it again.
-              </p>
-            </div>
-            <div className="rise-in bg-card border-border rounded-2xl border p-6 shadow-sm">
-              <div className="bg-[var(--p-peach)] text-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold">
-                Delivery habit
-              </div>
-              <h3 className="text-h3">She knew it, and still lost it</h3>
-              <p className="text-muted-foreground mt-2 leading-relaxed">
-                A skipped step, a missing unit, an answer that stopped one line too soon. Re-reading
-                the chapter will not help. She needs to change how she writes.
-              </p>
-            </div>
-          </div>
-          <p className="bg-secondary text-secondary-foreground mt-6 rounded-2xl p-5 text-lg leading-relaxed">
-            Ordinary practice cannot tell these apart. PrepPlan is built to answer exactly that
-            question for every lost mark.
-          </p>
-        </section>
-
-        {/* How it works */}
-        <section id="how" className="scroll-mt-16 bg-[var(--muted)]/50">
-          <div className={section}>
-            <span className={eyebrow}>How it works</span>
-            <h2 className="text-h1 max-w-2xl">Three steps, from paper to clear next move</h2>
-            <ol className="stagger mt-10 grid gap-5 md:grid-cols-3">
-              {steps.map((s) => (
-                <li key={s.n} className="bg-card border-border relative rounded-2xl border p-6 shadow-sm">
-                  <div className="text-primary mb-4 flex items-center justify-between">
-                    <StepIcon n={s.n} />
-                    <span className="display-title text-muted-foreground text-4xl" aria-hidden="true">
-                      {s.n}
-                    </span>
-                  </div>
-                  <h3 className="text-h3">
-                    <span className="sr-only">Step {s.n}: </span>
-                    {s.title}
-                  </h3>
-                  <p className="text-muted-foreground mt-2 leading-relaxed">{s.body}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        {/* What is inside */}
-        <section id="inside" className={`${section} scroll-mt-16`}>
-          <span className={eyebrow}>What is inside</span>
-          <h2 className="text-h1 max-w-2xl">Built on your syllabus, written like your exam</h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
-            Questions follow the NCERT textbooks chapter by chapter, and are written the way school
-            exam papers ask them. For Civil Services, Indian Polity questions follow the current UPSC
-            Prelims pattern: multi-statement, how-many and Statement-I/Statement-II.
-          </p>
-          <ul className="mt-8 flex flex-wrap gap-3" aria-label="Subjects available">
-            {subjects.map((s, i) => (
-              <li
-                key={s}
-                className="border-border text-foreground rounded-full border px-4 py-2 text-sm font-semibold"
-                style={{ background: ['var(--p-blue)', 'var(--p-mint)', 'var(--p-pink)', 'var(--p-yellow)', 'var(--p-peach)'][i] }}
-              >
-                {s}
-              </li>
-            ))}
-          </ul>
-          <p className="text-muted-foreground mt-4 text-sm">CBSE, NCERT-based. More classes and subjects follow over time.</p>
-        </section>
-
-        {/* Principles */}
-        <section className="bg-[var(--muted)]/50">
-          <div className={section}>
-            <span className={eyebrow}>What we promise</span>
-            <h2 className="text-h1 max-w-2xl">Practice you can trust</h2>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {principles.map((p) => (
-                <div key={p.title} className="bg-card border-border rounded-2xl border p-6 shadow-sm">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mb-3" aria-hidden="true">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="m8 12 3 3 5-6" />
-                  </svg>
-                  <h3 className="text-h3">{p.title}</h3>
-                  <p className="text-muted-foreground mt-2 leading-relaxed">{p.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Students / parents */}
-        <section className={section}>
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="grad-surface rounded-2xl p-7">
-              <h2 className="text-h2">For students</h2>
-              <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed">
-                <li>Know whether to revise the chapter or fix how you write.</li>
-                <li>See the correct answer next to yours once it is marked.</li>
-                <li>Question a mark you disagree with.</li>
-                <li>Practise as often as you like.</li>
-              </ul>
-            </div>
-            <div className="bg-card border-border rounded-2xl border p-7 shadow-sm">
-              <h2 className="text-h2">For parents</h2>
-              <ul className="text-muted-foreground mt-4 list-disc space-y-2 pl-5 leading-relaxed">
-                <li>Your child signs up herself, and you agree as parent or guardian.</li>
-                <li>She can share her chapter progress with you, for example on WhatsApp.</li>
-                <li>No ads, no tracking code, and your child&apos;s data is never sold.</li>
-                <li>Read the details in our <Link to="/privacy" className="text-primary underline">privacy policy</Link>.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section id="faq" className="scroll-mt-16 bg-[var(--muted)]/50">
-          <div className={`${section} max-w-3xl`}>
-            <span className={eyebrow}>Questions</span>
-            <h2 className="text-h1">Honest answers</h2>
-            <div className="mt-8 space-y-3">
-              {faqs.map((f) => (
-                <details key={f.q} className="bg-card border-border group rounded-xl border px-5 py-4 shadow-sm">
-                  <summary className="flex min-h-6 cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">
-                    {f.q}
-                    <span className="text-primary text-xl transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-                  </summary>
-                  <p className="text-muted-foreground mt-3 leading-relaxed">{f.a}</p>
-                </details>
-              ))}
-            </div>
-            <p className="text-muted-foreground mt-6 text-sm">
-              Something else? Write to{' '}
-              <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary underline">
-                {SUPPORT_EMAIL}
-              </a>
-              .
+      <main id="main" className="relative z-[2]">
+        {/* 1. Hero */}
+        <section
+          onPointerMove={heroMove}
+          onPointerLeave={heroLeave}
+          className={`${wrap} grid items-center gap-6 pt-10 pb-16 sm:pt-16 md:grid-cols-[1.05fr_1fr] md:gap-4 md:pb-24`}
+        >
+          <div className="rise-in text-center md:text-left">
+            <h1 className="display-title text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-7xl">
+              Did she not know it, or{' '}
+              <span className="grad-text">stop writing too early?</span>
+            </h1>
+            <p className="text-muted-foreground mx-auto mt-6 max-w-md text-lg leading-relaxed md:mx-0">
+              PrepPlan marks every answer and tells you the real reason behind each lost mark.
             </p>
-          </div>
-        </section>
-
-        {/* Closing CTA */}
-        <section className={section}>
-          <div className="grad-surface rounded-3xl px-6 py-12 text-center sm:px-12">
-            <h2 className="display-title text-3xl sm:text-4xl">Find out why the marks went</h2>
-            <p className="text-muted-foreground mx-auto mt-3 max-w-lg text-lg">
-              Take one paper and see which lost marks were knowledge and which were habit.
-            </p>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 md:justify-start">
               <Link to="/" className={btnPrimary}>
                 Get started
               </Link>
@@ -429,13 +376,94 @@ function AboutPage() {
               </Link>
             </div>
           </div>
+          <div ref={stageRef} className="about-stage rise-in" role="img" aria-label="A floating stack of exam sheets with a knowledge gap and a delivery habit marked on the top sheet">
+            <SheetStack />
+          </div>
+        </section>
+
+        {/* 2. Two reasons */}
+        <section className={`${wrap} py-16 sm:py-24`}>
+          <div className="text-center">
+            <span className={eyebrow}>A lost mark has two possible causes</span>
+            <h2 className="display-title text-4xl sm:text-5xl">Two reasons, one answer</h2>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <TiltCard tone="var(--p-blue)">
+              <div className="about-pop flex flex-col items-center text-center">
+                <PuzzleArt />
+                <h3 className="text-h2 mt-4">Knowledge gap</h3>
+                <p className="text-muted-foreground mt-1.5 max-w-xs">She did not know it, so back to the chapter.</p>
+              </div>
+            </TiltCard>
+            <TiltCard tone="var(--p-peach)">
+              <div className="about-pop flex flex-col items-center text-center">
+                <PenArt />
+                <h3 className="text-h2 mt-4">Delivery habit</h3>
+                <p className="text-muted-foreground mt-1.5 max-w-xs">She knew it, but stopped a line short.</p>
+              </div>
+            </TiltCard>
+          </div>
+        </section>
+
+        {/* 3. Three steps */}
+        <section className={`${wrap} py-16 sm:py-24`}>
+          <div className="text-center">
+            <span className={eyebrow}>How it works</span>
+            <h2 className="display-title text-4xl sm:text-5xl">Three steps</h2>
+          </div>
+          <Steps />
+        </section>
+
+        {/* 4. What is inside */}
+        <section className={`${wrap} py-16 sm:py-24`}>
+          <div className="text-center">
+            <span className={eyebrow}>CBSE, NCERT-based</span>
+            <h2 className="display-title text-4xl sm:text-5xl">What is inside</h2>
+          </div>
+          <ul className="mt-14 flex flex-wrap justify-center gap-x-6 gap-y-8 [perspective:900px]" aria-label="Subjects available">
+            {subjects.map((s, i) => (
+              <li key={s.name} className="about-iso" style={{ '--d': `${i * -1.3}s` } as CSSProperties}>
+                <div
+                  className="glass border-border rounded-3xl border px-6 py-4 text-center"
+                  style={
+                    {
+                      backgroundImage: `linear-gradient(145deg, color-mix(in oklab, ${s.tone} 85%, transparent), color-mix(in oklab, ${s.tone} 25%, transparent))`,
+                      transform: `rotateX(10deg) rotateY(${s.r}deg)`,
+                      boxShadow:
+                        'inset 0 1px 0 var(--highlight), 0 4px 0 0 color-mix(in oklab, var(--foreground) 14%, transparent), 0 30px 36px -18px var(--glow), 0 12px 16px -10px rgb(30 30 60 / 0.25)',
+                    }
+                  }
+                >
+                  <div className="text-h3">{s.name}</div>
+                  <div className="text-small text-muted-foreground mt-0.5">{s.note}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* 5. Closing */}
+        <section className="relative overflow-hidden py-12 sm:py-20">
+          <div className={`${wrap} relative flex min-h-[440px] flex-col items-center justify-center text-center sm:min-h-[640px]`}>
+            <div className="about-orb" aria-hidden="true" />
+            <h2 className="display-title relative max-w-lg text-4xl sm:text-5xl">Find out why the marks went.</h2>
+            <div className="relative mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Link to="/" className={btnPrimary}>
+                Get started
+              </Link>
+              <Link to="/" className={btnQuiet}>
+                Sign in
+              </Link>
+            </div>
+            <p className="relative mt-5 text-sm font-medium">No ads. Your data is never sold.</p>
+          </div>
         </section>
       </main>
 
-      <footer className="border-border border-t">
-        <div className="text-muted-foreground mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm">
-          <span>PrepPlan · www.prepplan.in</span>
-          <span className="flex flex-wrap gap-x-4 gap-y-1">
+      <footer className="border-border glass relative z-[2] border-t">
+        <div className={`${wrap} text-muted-foreground flex flex-wrap items-center justify-between gap-3 py-5 text-sm`}>
+          <span>PrepPlan</span>
+          <span className="flex flex-wrap gap-x-5 gap-y-1">
             <Link to="/privacy" className="hover:underline">Privacy policy</Link>
             <Link to="/" className="hover:underline">Sign in</Link>
             <a href={`mailto:${SUPPORT_EMAIL}`} className="hover:underline">{SUPPORT_EMAIL}</a>
