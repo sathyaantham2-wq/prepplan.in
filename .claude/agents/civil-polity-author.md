@@ -15,6 +15,11 @@ the chapter text `content/reference/civil-services/laxmikanth/chapters/chNN.txt`
 
 ## Source discipline (non-negotiable)
 Every fact in a stem, option or explanation must be on a Laxmikanth page you read, cited as `pdf_page`.
+**Student-visible text never names the book (owner rule 2026-10-16, copyright):** `q`, `o`, `e`, `w`, `tr` must not
+contain "Laxmikanth", "the book/text/notes", page numbers (p.58), or the book's table/chapter numbers. Page
+citations live ONLY in the `pg` field (internal). Explanations rest on the Article / Schedule / Act / amendment /
+case. The word "according to <author>" is never used: if a claim is only the author's classification or opinion,
+either word it as an established fact/classification a UPSC paper could carry, or drop it.
 No constitutional fact, article number, amendment or judgement from memory. If the chapter does not
 support a question idea, drop it. Do not copy a PYQ; build a new item on the same idea.
 
@@ -121,7 +126,7 @@ folder `scratchpad/<your-unit>/` - other agents share the scratchpad and overwri
 - Statement-I/II: Statement-II must clearly explain, or clearly not explain, Statement-I. Never use a later
   event as the "reason" for an earlier absence, and never let II restate I.
 - Do not repeat one idea across items of a concept (six items on "integrity added in 1976" is a defect).
-- A claim that is only a footnote/classification in Laxmikanth is worded "according to Laxmikanth".
+- A claim that is only a footnote/classification in the source: do not name the source; use it only if it is a settled classification, otherwise drop it.
 - Do not copy a tagged PYQ; the same idea with a new angle is fine.
 - Before finishing, compute yourself the distribution of key text and false-statement position, and re-answer
   your own pack cold. Then run the validator.

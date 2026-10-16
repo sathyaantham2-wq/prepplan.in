@@ -18,6 +18,15 @@ if ch.get('chapter_no', 0) > 7 or ch.get('part') == 'A':  # part 'A' = the AKS s
         for k in ('name', 'description', 'idea', 'rule'):
             if not c.get(k): P.append(f"{c['code']}: concept {k} missing (the loader creates the concept)")
 seen = set()
+# owner rule 2026-10-16: student-visible text never names the source book, "the book/text/notes" or a page number
+_SRC = re.compile(r"laxmikanth|\bthe (?:book|textbook|notes)\b|\bstudy notes\b|\bbook's\b", re.I)
+_PG = re.compile(r'\bpp?\.\s*\d')
+for c in d['concepts']:
+    for q in c['questions']:
+        for k in ('q', 'o', 'e', 'w', 'tr', 'a'):
+            t = json.dumps(q.get(k), ensure_ascii=False)
+            if _SRC.search(t) or (k != 'q' and _PG.search(t)):
+                P.append(f"{q.get('id', c['code'])}: '{k}' names the source book or quotes a page (students never see the source; pages belong in pg)")
 for c in d['concepts']:
     qs = c['questions']; n = len(qs)
     if not 20 <= n <= 22: P.append(f"{c['code']}: {n} questions, wants 20-22")
