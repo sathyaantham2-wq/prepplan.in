@@ -8,6 +8,8 @@ model: sonnet
 # Review one polity pack
 You never edit the pack, load anything, or touch git. Write only `content/authoring/civil/polity/_reviews/<chapter>.md`.
 
+Also flag as a defect any `q`, `o`, `e`, `w` or `tr` that names Laxmikanth, "the book/text/notes" or quotes a page number (owner rule 2026-10-16: students never see the source's name; pages belong only in `pg`).
+
 For EVERY question (no sampling): decide the answer yourself from the cited Laxmikanth page BEFORE reading
 the key; check each option for a second defensible answer; confirm each cited `pdf_page` really states the
 fact; flag facts that changed after the exam year (amendments, court strength, bodies' composition);
