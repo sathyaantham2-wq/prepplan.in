@@ -27,6 +27,15 @@ for c in d['concepts']:
             t = json.dumps(q.get(k), ensure_ascii=False)
             if _SRC.search(t) or (k != 'q' and _PG.search(t)):
                 P.append(f"{q.get('id', c['code'])}: '{k}' names the source book or quotes a page (students never see the source; pages belong in pg)")
+# metadata too (owner rule 2026-10-16): the source book's name never appears in scope records, concept text or the source row
+_META = re.compile(r"laxmikanth|\bthe chapter\b|\bthe book\b", re.I)
+for k, v in d.items():
+    if k != 'concepts' and _META.search(json.dumps(v, ensure_ascii=False)):
+        P.append(f"metadata '{k}' names the source book or says 'the chapter/the book'")
+for c in d['concepts']:
+    for k, v in c.items():
+        if k != 'questions' and _META.search(json.dumps(v, ensure_ascii=False)):
+            P.append(f"{c['code']}: concept {k} names the source book or says 'the chapter/the book'")
 for c in d['concepts']:
     qs = c['questions']; n = len(qs)
     if not 20 <= n <= 22: P.append(f"{c['code']}: {n} questions, wants 20-22")
