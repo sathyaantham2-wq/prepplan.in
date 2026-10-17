@@ -152,7 +152,7 @@ export function ScoreBar({ score }: { score: number | null }) {
   )
 }
 
-function ChevronIcon({ open }: { open: boolean }) {
+export function ChevronIcon({ open }: { open: boolean }) {
   return (
     <svg
       width="16"
@@ -220,7 +220,7 @@ function AdviceNote({ advice }: { advice: StudyAdvice }) {
  * exactly what she is looking at -- the chapter, the few concepts in it with the most to gain, or
  * a single concept.
  */
-function SubjectChapters({ subject }: { subject: SubjectView }) {
+export function SubjectChapters({ subject }: { subject: SubjectView }) {
   const [openChapter, setOpenChapter] = useState<string | null>(null)
   const [openConcept, setOpenConcept] = useState<string | null>(null)
   const chapter = subject.chapters.find((c) => c.chapter_id === openChapter)
