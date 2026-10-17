@@ -8,7 +8,17 @@ import {
   CardHeader,
   CardTitle,
 } from '../components/ui/card'
-import { AdaptiveOverview } from '../components/adaptive-overview'
+import {
+  ContinueCard,
+  MarksStory,
+  NextActions,
+  RewardsCard,
+  ShareCard,
+  SubjectCards,
+  TodayCard,
+  WeekCard,
+} from '../components/student-home/student-home-parts'
+import type { StudentHomeData } from '../components/student-home/student-home-parts'
 import type { AdaptiveOverviewData } from '../components/adaptive-overview'
 import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
@@ -70,6 +80,7 @@ function StudentHome() {
 
   const [dashboard, setDashboard] = useState<StudentDashboard | null>(null)
   const [overview, setOverview] = useState<AdaptiveOverviewData | null>(null)
+  const [home, setHome] = useState<StudentHomeData | null>(null)
   const [loading, setLoading] = useState(true)
   const [papers, setPapers] = useState<Array<PaperListItem> | null>(null)
   const [sharing, setSharing] = useState<SharingState | null>(null)
@@ -96,6 +107,10 @@ function StudentHome() {
     fetch('/api/adaptive/overview')
       .then((r) => (r.ok ? r.json() : null))
       .then(setOverview)
+    fetch('/api/students/me/home')
+      .then((r) => (r.ok ? r.json() : null))
+      .then(setHome)
+      .catch(() => setHome(null))
     // An error response is a JSON object too, so each fetch checks .ok before treating the body
     // as data -- an error body stored as `papers` would crash the .filter() below.
     fetch('/api/student-dashboard')
@@ -248,27 +263,21 @@ function StudentHome() {
     ''
   const pendingInvites = sharing?.invites ?? []
 
+  const streak = dashboard?.streak_days ?? 0
+  // Her half-done paper has its own card above, so the list below does not repeat it.
+  const continueId = home?.in_progress?.attempt_id ?? null
+
   return (
     <AppShell variant="student" active="home">
-      <div className="mx-auto max-w-3xl p-4 sm:p-8">
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h1 className="text-h1">
-              {firstName ? `Hi, ${firstName}` : 'Your progress'}
-            </h1>
-            <p className="text-body text-muted-foreground">
-              {overview &&
-                `${overview.student.class === 0 ? 'Competitive exam' : `Class ${overview.student.class}`} · ${overview.student.board === 'CIVILS' ? 'Civil Services / UPSC' : overview.student.board} · `}
-              {dashboard && dashboard.streak_days > 0
-                ? `🔥 ${dashboard.streak_days} day streak — keep it going!`
-                : 'Practice today to start a streak.'}
-            </p>
-          </div>
-          {/* Sign out moved to the sidebar (reachable from every page now). Make a paper stays
-            as the page's primary call to action even though Generate Paper is also in the nav. */}
-          <a href="/my-paper" className="no-print">
-            <Button>Make a paper</Button>
-          </a>
+      <div className="mx-auto max-w-6xl p-4 sm:p-8">
+        <div className="mb-6">
+          <h1 className="text-h1">
+            {firstName ? `Hi, ${firstName}` : 'Your progress'}
+          </h1>
+          <p className="text-body text-muted-foreground">
+            {overview &&
+              `${overview.student.class === 0 ? 'Competitive exam' : `Class ${overview.student.class}`} · ${overview.student.board === 'CIVILS' ? 'Civil Services' : overview.student.board}`}
+          </p>
         </div>
 
         {/* A pending request needs her answer, so it goes first; the "already sharing with"
@@ -318,39 +327,27 @@ function StudentHome() {
           </Card>
         )}
 
-        {overview ? (
-          <div className="mb-4">
-            <AdaptiveOverview data={overview} afterRecommended={papersCard} />
-          </div>
-        ) : (
-          papersCard && <div className="mb-4">{papersCard}</div>
-        )}
-
         {loading && !overview && <PageSkeleton />}
 
-        {dashboard && (
-          <div className="space-y-4">
-            {dashboard.today_focus && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-h3">Today's focus</CardTitle>
-                  <CardDescription>
-                    A good concept to practice next.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-body">
-                    {dashboard.today_focus.concept_name}
-                  </p>
-                </CardContent>
-              </Card>
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="stagger min-w-0 space-y-6">
+            {overview && <TodayCard next={overview.recommended_next} />}
+            <WeekCard home={home} streak={streak} className="lg:hidden" />
+            {home?.in_progress && <ContinueCard item={home.in_progress} />}
+            {home && <MarksStory story={home.marks_story} />}
+            {overview && <NextActions data={overview} />}
+            {overview && <SubjectCards subjects={overview.subjects} />}
+            {papersCard && continueId === null && papersCard}
+            {papersCard && continueId !== null && (
+              <details className="group">
+                <summary className="text-small text-muted-foreground cursor-pointer list-none">
+                  All papers to attempt
+                </summary>
+                <div className="mt-3">{papersCard}</div>
+              </details>
             )}
 
-            {/* The separate "Chapter mastery" rings card that stood here was removed 2026-10-02:
-                "Your subjects" above now shows a ring per chapter, from the same mastery score
-                as everything else on this page. This card drew the same chapters from the older
-                concept-status percentage, so one chapter could show two different numbers. */}
-            {dashboard.recent_improvements.length > 0 && (
+            {dashboard && dashboard.recent_improvements.length > 0 && (
               <Card>
                 <CardHeader>
                   <CardTitle className="text-h3">Recent wins</CardTitle>
@@ -364,31 +361,39 @@ function StudentHome() {
                 </CardContent>
               </Card>
             )}
-          </div>
-        )}
 
-        {sharing?.linkedTo && (
-          <Card className="mt-4">
-            <CardContent className="flex flex-wrap items-center justify-between gap-3 pt-6">
-              <p className="text-body">
-                {sharing.linkedTo.guardian_name} (
-                {sharing.linkedTo.guardian_role}) can see your progress.
-              </p>
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => void stopSharing()}
-              >
-                Stop sharing
-              </Button>
-            </CardContent>
-            {sharingError && pendingInvites.length === 0 && (
-              <p className="text-small text-destructive px-6 pb-4" role="alert">
-                {sharingError}
-              </p>
+            {sharing?.linkedTo && (
+              <Card>
+                <CardContent className="flex flex-wrap items-center justify-between gap-3 pt-6">
+                  <p className="text-body">
+                    {sharing.linkedTo.guardian_name} (
+                    {sharing.linkedTo.guardian_role}) can see your progress.
+                  </p>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => void stopSharing()}
+                  >
+                    Stop sharing
+                  </Button>
+                </CardContent>
+                {sharingError && pendingInvites.length === 0 && (
+                  <p className="text-small text-destructive px-6 pb-4" role="alert">
+                    {sharingError}
+                  </p>
+                )}
+              </Card>
             )}
-          </Card>
-        )}
+          </div>
+
+          <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
+            <WeekCard home={home} streak={streak} className="hidden lg:block" />
+            <RewardsCard home={home} />
+            {overview && (
+              <ShareCard name={overview.student.name} subjects={overview.subjects} />
+            )}
+          </aside>
+        </div>
       </div>
     </AppShell>
   )

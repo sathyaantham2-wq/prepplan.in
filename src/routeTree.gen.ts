@@ -138,6 +138,7 @@ import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
+import { Route as ApiStudentsMeHomeRouteImport } from './routes/api/students/me/home'
 import { Route as ApiStudentsMeLeaderboardOptInRouteImport } from './routes/api/students/me/leaderboard-opt-in'
 import { Route as ApiStudentsMeProfileRouteImport } from './routes/api/students/me/profile'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
@@ -815,6 +816,11 @@ const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   path: '/login',
   getParentRoute: () => ApiStudentsIdRoute,
 } as any)
+const ApiStudentsMeHomeRoute = ApiStudentsMeHomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => ApiStudentsMeRoute,
+} as any)
 const ApiStudentsMeLeaderboardOptInRoute =
   ApiStudentsMeLeaderboardOptInRouteImport.update({
     id: '/leaderboard-opt-in',
@@ -1056,6 +1062,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/home': typeof ApiStudentsMeHomeRoute
   '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
@@ -1205,6 +1212,7 @@ export interface FileRoutesByTo {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/home': typeof ApiStudentsMeHomeRoute
   '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
@@ -1356,6 +1364,7 @@ export interface FileRoutesById {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/home': typeof ApiStudentsMeHomeRoute
   '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
@@ -1508,6 +1517,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/home'
     | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
@@ -1657,6 +1667,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/home'
     | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
@@ -1807,6 +1818,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/home'
     | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
@@ -2810,6 +2822,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiStudentsIdLoginRouteImport
       parentRoute: typeof ApiStudentsIdRoute
     }
+    '/api/students/me/home': {
+      id: '/api/students/me/home'
+      path: '/home'
+      fullPath: '/api/students/me/home'
+      preLoaderRoute: typeof ApiStudentsMeHomeRouteImport
+      parentRoute: typeof ApiStudentsMeRoute
+    }
     '/api/students/me/leaderboard-opt-in': {
       id: '/api/students/me/leaderboard-opt-in'
       path: '/leaderboard-opt-in'
@@ -3293,11 +3312,13 @@ const ApiStudentsIdRouteWithChildren = ApiStudentsIdRoute._addFileChildren(
 )
 
 interface ApiStudentsMeRouteChildren {
+  ApiStudentsMeHomeRoute: typeof ApiStudentsMeHomeRoute
   ApiStudentsMeLeaderboardOptInRoute: typeof ApiStudentsMeLeaderboardOptInRoute
   ApiStudentsMeProfileRoute: typeof ApiStudentsMeProfileRoute
 }
 
 const ApiStudentsMeRouteChildren: ApiStudentsMeRouteChildren = {
+  ApiStudentsMeHomeRoute: ApiStudentsMeHomeRoute,
   ApiStudentsMeLeaderboardOptInRoute: ApiStudentsMeLeaderboardOptInRoute,
   ApiStudentsMeProfileRoute: ApiStudentsMeProfileRoute,
 }
