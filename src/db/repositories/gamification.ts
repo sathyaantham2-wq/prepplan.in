@@ -1,3 +1,4 @@
+import { sql } from 'kysely'
 import type { Selectable } from 'kysely'
 import type { Db } from '../connection'
 import type { DB } from '../types'
@@ -26,3 +27,35 @@ export const studentPointsLedgerRepository = {
 }
 
 export type StudentPointsLedgerRow = Selectable<DB['student_points_ledger']>
+
+// Coin spending (2026-10-24). Append-only like the ledger -- insert and read, no update/delete.
+// The purchase itself (balance check + lock) lives in src/lib/rewards.ts unlockItem().
+const student_unlocks = createScopedRepository('student_unlocks', 'student_id')
+export const studentUnlocksRepository = {
+  list: student_unlocks.list,
+  insert: student_unlocks.insert,
+  async keys(db: Db, studentId: string) {
+    const rows = await db
+      .selectFrom('student_unlocks')
+      .select('item_key')
+      .where('student_id', '=', studentId)
+      .where('kind', '=', 'paper_theme')
+      .execute()
+    return new Set(rows.map((r) => r.item_key))
+  },
+  /** Earned coins (ledger) minus coins spent on unlocks. */
+  async spendableCoins(db: Db, studentId: string) {
+    const { rows } = await sql<{ coins: string }>`
+      select (
+        (select coalesce(sum(coins), 0) from student_points_ledger where student_id = ${studentId})
+        - (select coalesce(sum(price_coins), 0) from student_unlocks where student_id = ${studentId})
+      )::text as coins`.execute(db)
+    return Number(rows.at(0)?.coins ?? 0)
+  },
+  /** Row lock on the student: serialises concurrent purchases for the same student. */
+  async lockStudent(db: Db, studentId: string) {
+    await db.selectFrom('students').select('id').where('id', '=', studentId).forUpdate().executeTakeFirstOrThrow()
+  },
+}
+
+export type StudentUnlockRow = Selectable<DB['student_unlocks']>

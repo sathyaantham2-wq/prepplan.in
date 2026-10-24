@@ -12,7 +12,10 @@ import { Label } from '../components/ui/label'
 import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
 import { DEFAULT_THEME } from '../lib/pdf/themes'
+import { PaperStylePicker } from '../components/paper-style'
 import { PageLoading } from '../components/page-loading'
+import { TopicSearchBox } from '../components/topic-search-box'
+import type { TopicSubject, TopicSuggestion } from '../lib/topic-search'
 import {
   InstallAppDialog,
   useInstallOffer,
@@ -310,6 +313,14 @@ function MyPaper() {
   }
   const installOffer = useInstallOffer(INSTALL_OFFER_KEY)
   const [showInstall, setShowInstall] = useState(false)
+  // Topic search: the subjects, chapters and concepts she can practise, from the same overview
+  // the home screen uses (ids, names and numbers only -- no question text, no answers).
+  const [topicSubjects, setTopicSubjects] = useState<Array<TopicSubject>>([])
+  // A chapter picked from the search that belongs to another subject: applied once that
+  // subject's chapters have loaded (the subject effect reads it).
+  const pendingChapterRef = useRef<string | null>(null)
+  const [focusGenerate, setFocusGenerate] = useState(false)
+  const generateButtonRef = useRef<HTMLButtonElement>(null)
   const [installAsked, setInstallAsked] = useState(false)
   // No F-number covers the adaptive layer itself yet (see memory examprep_adaptive_learning.md).
   // The theme picker was removed from this screen at the user's request -- every paper from here
@@ -322,6 +333,9 @@ function MyPaper() {
   const [questionCount, setQuestionCount] =
     useState<(typeof QUESTION_COUNT_OPTIONS)[number]>(10)
   const [questionType, setQuestionType] = useState<QuestionType>('combined')
+  // Paper style: the default is always free; the others are unlocked with coins (/rewards). The
+  // server falls back to the default for any theme she has not unlocked.
+  const [theme, setTheme] = useState<string>(DEFAULT_THEME)
 
   useEffect(() => {
     if (isPending) return
@@ -365,6 +379,53 @@ function MyPaper() {
   }, [isPending, session, role, navigate, search.subject])
 
   useEffect(() => {
+    if (isPending || !session || role !== 'student') return
+    fetch('/api/adaptive/overview')
+      .then((r) => (r.ok ? r.json() : null))
+      .then(
+        (
+          data: {
+            subjects: Array<{
+              subject_id: string
+              subject_name: string
+              has_content: boolean
+              chapters: Array<{
+                chapter_id: string
+                chapter_name: string
+                part: string
+                chapter_no: number
+                concepts: Array<{ concept_id: string; concept_name: string }>
+              }>
+            }>
+          } | null,
+        ) => {
+          if (!data) return
+          setTopicSubjects(
+            data.subjects
+              .filter((s) => s.has_content)
+              .map((s) => ({
+                id: s.subject_id,
+                name: s.subject_name,
+                chapters: s.chapters.map((c) => ({
+                  id: c.chapter_id,
+                  name: c.chapter_name,
+                  part: c.part,
+                  chapterNo: c.chapter_no,
+                  concepts: c.concepts.map((k) => ({
+                    id: k.concept_id,
+                    name: k.concept_name,
+                  })),
+                })),
+              })),
+          )
+        },
+      )
+      .catch(() => {
+        // The search box is a shortcut; the normal controls still work without it.
+      })
+  }, [isPending, session, role])
+
+  useEffect(() => {
     setPlan(null)
     setChapterIds(null)
     setAllChapters([])
@@ -372,12 +433,15 @@ function MyPaper() {
     fetch(`/api/syllabus/chapters?subject_id=${subjectId}`)
       .then((r) => r.json())
       .then((data: Array<ChapterChoice>) => setAllChapters(data))
-    const linkedChapters = linkedFocusUsed.current
-      ? []
-      : idList(search.chapters)
-    const linkedConcepts = linkedFocusUsed.current
-      ? []
-      : idList(search.concepts)
+    const pickedChapter = pendingChapterRef.current
+    pendingChapterRef.current = null
+    const linkedChapters = pickedChapter
+      ? [pickedChapter]
+      : linkedFocusUsed.current
+        ? []
+        : idList(search.chapters)
+    const linkedConcepts =
+      pickedChapter || linkedFocusUsed.current ? [] : idList(search.concepts)
     linkedFocusUsed.current = true
     setFocus(linkedConcepts)
     if (linkedChapters.length > 0) setChapterIds(linkedChapters)
@@ -440,6 +504,31 @@ function MyPaper() {
     if (next.length > 0)
       void loadPlan(subjectId, next, questionCount, questionType)
   }
+
+  // A suggestion from the search box: same result as choosing the subject and then ticking that
+  // one chapter. Nothing is generated; the Generate button just receives focus once the plan has
+  // loaded, so it is one tap away.
+  function selectTopic(s: TopicSuggestion) {
+    setFocusGenerate(true)
+    setExpandedParts((prev) => new Set(prev).add(s.part))
+    if (s.subjectId === subjectId) {
+      setFocus([])
+      setChapterIds([s.chapterId])
+      void loadPlan(subjectId, [s.chapterId], questionCount, questionType)
+    } else {
+      pendingChapterRef.current = s.chapterId
+      setSubjectId(s.subjectId)
+    }
+  }
+
+  useEffect(() => {
+    if (!focusGenerate || loadingPlan || !plan || starting) return
+    const button = generateButtonRef.current
+    if (!button || button.disabled) return
+    button.focus({ preventScroll: true })
+    button.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+    setFocusGenerate(false)
+  }, [focusGenerate, loadingPlan, plan, starting])
 
   function selectAllChapters() {
     const all = allChapters.map((c) => c.id)
@@ -509,7 +598,7 @@ function MyPaper() {
           ...(focusConceptIds.length > 0
             ? { concept_ids: focusConceptIds }
             : {}),
-          theme: DEFAULT_THEME,
+          theme,
           adaptive_question_count: questionCount,
           adaptive_question_type: questionType,
         }),
@@ -623,6 +712,7 @@ function MyPaper() {
                   column below that -- 4 items never fit one line on a phone or portrait tablet
                   without becoming unreadable, so this is "single line" on desktop, gracefully
                   wrapped everywhere narrower. */}
+              <TopicSearchBox subjects={topicSubjects} onSelect={selectTopic} />
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="space-y-1">
                   <Label
@@ -704,6 +794,7 @@ function MyPaper() {
                     Your questions are written in the style of school exams: multiple choice, short and long answers, and case studies.
                   </p>
                 )}
+                <PaperStylePicker value={theme} onChange={setTheme} />
               </div>
 
               {/* Only the no-chapters-selected guard remains here now -- the plan-summary
@@ -952,6 +1043,7 @@ function MyPaper() {
                   Reset
                 </Button>
                 <Button
+                  ref={generateButtonRef}
                   disabled={starting || loadingPlan || !readyToGenerate}
                   onClick={handleGenerate}
                 >

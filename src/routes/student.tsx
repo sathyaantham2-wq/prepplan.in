@@ -10,15 +10,18 @@ import {
 } from '../components/ui/card'
 import {
   ContinueCard,
-  MarksStory,
-  NextActions,
-  RewardsCard,
+  HomeTiles,
+  LeaderboardCard,
+  MarkMap,
+  MissionCard,
+  RecentPapers,
   ShareCard,
   SubjectCards,
-  TodayCard,
   WeekCard,
 } from '../components/student-home/student-home-parts'
-import type { StudentHomeData } from '../components/student-home/student-home-parts'
+import type { StudentHomeData } from '../lib/student-home-types'
+import { WeeklyCardPrompt } from '../components/weekly-card'
+import { Flame } from 'lucide-react'
 import type { AdaptiveOverviewData } from '../components/adaptive-overview'
 import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
@@ -240,6 +243,7 @@ function StudentHome() {
                 ) : (
                   <Button
                     size="sm"
+                    className="min-h-11"
                     disabled={startingId === p.id}
                     onClick={() => void startOrResume(p)}
                   >
@@ -271,9 +275,17 @@ function StudentHome() {
     <AppShell variant="student" active="home">
       <div className="mx-auto max-w-6xl p-4 sm:p-8">
         <div className="mb-6">
-          <h1 className="text-h1">
-            {firstName ? `Hi, ${firstName}` : 'Your progress'}
-          </h1>
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-h1">
+              {firstName ? `Hi, ${firstName}` : 'Your progress'}
+            </h1>
+            {streak > 0 && (
+              <span className="bg-card border-border text-caption inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-semibold">
+                <Flame className="size-4 text-[var(--chart-5)]" aria-hidden="true" />
+                {streak} day streak
+              </span>
+            )}
+          </div>
           <p className="text-body text-muted-foreground">
             {overview &&
               `${overview.student.class === 0 ? 'Competitive exam' : `Class ${overview.student.class}`} · ${overview.student.board === 'CIVILS' ? 'Civil Services' : overview.student.board}`}
@@ -331,36 +343,23 @@ function StudentHome() {
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
           <div className="stagger min-w-0 space-y-6">
-            {overview && <TodayCard next={overview.recommended_next} />}
-            <WeekCard home={home} streak={streak} className="lg:hidden" />
+            {home && <MissionCard home={home} />}
             {home?.in_progress && <ContinueCard item={home.in_progress} />}
-            {home && <MarksStory story={home.marks_story} />}
-            {overview && <NextActions data={overview} />}
+            {home && <HomeTiles home={home} />}
+            {home && <MarkMap home={home} />}
             {overview && <SubjectCards subjects={overview.subjects} />}
+            {home && <RecentPapers papers={home.recent_papers} />}
             {papersCard && continueId === null && papersCard}
             {papersCard && continueId !== null && (
               <details className="group">
-                <summary className="text-small text-muted-foreground cursor-pointer list-none">
+                <summary className="text-small text-muted-foreground flex min-h-11 cursor-pointer list-none items-center">
                   All papers to attempt
                 </summary>
                 <div className="mt-3">{papersCard}</div>
               </details>
             )}
 
-            {dashboard && dashboard.recent_improvements.length > 0 && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-h3">Recent wins</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="text-body list-inside list-disc">
-                    {dashboard.recent_improvements.map((c) => (
-                      <li key={c.concept_id}>{c.concept_name}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
+            <WeekCard home={home} streak={streak} className="lg:hidden" />
 
             {sharing?.linkedTo && (
               <Card>
@@ -387,11 +386,12 @@ function StudentHome() {
           </div>
 
           <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
-            <WeekCard home={home} streak={streak} className="hidden lg:block" />
-            <RewardsCard home={home} />
+            {home && <LeaderboardCard home={home} />}
+            <WeeklyCardPrompt />
             {overview && (
               <ShareCard name={overview.student.name} subjects={overview.subjects} />
             )}
+            <WeekCard home={home} streak={streak} className="hidden lg:block" />
           </aside>
         </div>
       </div>

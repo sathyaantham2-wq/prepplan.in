@@ -234,6 +234,9 @@ export const Route = createFileRoute('/api/papers/generate')({
             ? `${plan.subject_name} ${plan.is_initial_assessment ? 'first assessment' : 'practice'}`
             : undefined,
           student_id: student.id,
+          // A student can only use the default theme or one she has unlocked with coins; any
+          // other value quietly becomes the default rather than an error.
+          enforce_theme_unlock: auth.role === 'student',
           recentUsageWindowDays: parsed.data.recent_usage_window_days,
         })
 

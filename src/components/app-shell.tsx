@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
 import { SoundToggle } from './sound-toggle'
 import { ShareAppButton } from './share-app-button'
+import { ProfileMenu } from './profile-menu'
 import { signOut, useSession } from '../lib/auth-client'
 
 // A persistent sidebar shell, in two variants -- 'parent' (the original: Home/Generate
@@ -80,25 +81,6 @@ function GenerateIcon() {
     </svg>
   )
 }
-// Re-added 2026-09-24: /papers-attempted now exists (student variant only -- the parent-facing
-// "Paper library" from tab06 is still unbuilt, so 'My Papers' stays left out of that branch below).
-function PapersIcon() {
-  return (
-    <svg
-      width="17"
-      height="17"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-      <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z" />
-    </svg>
-  )
-}
 function ProgressIcon() {
   return (
     <svg
@@ -130,42 +112,6 @@ function SettingsIcon() {
     >
       <circle cx="12" cy="12" r="3" />
       <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
-    </svg>
-  )
-}
-function DrillsIcon() {
-  return (
-    <svg
-      width="17"
-      height="17"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <circle cx="12" cy="12" r="5" />
-      <circle cx="12" cy="12" r="1" />
-    </svg>
-  )
-}
-function LeaderboardIcon() {
-  return (
-    <svg
-      width="17"
-      height="17"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M8 21h8M12 17v4" />
-      <path d="M7 4h10v6a5 5 0 0 1-10 0Z" />
-      <path d="M7 6H4a1 1 0 0 0-1 1v1a3 3 0 0 0 3 3M17 6h3a1 1 0 0 1 1 1v1a3 3 0 0 1-3 3" />
     </svg>
   )
 }
@@ -262,15 +208,9 @@ export function AppShell({
   }> =
     variant === 'student'
       ? [
-          // Generate Paper first -- it's her default landing page now (owner decision
-          // 2026-09-23), not /student ("Your progress"), which stays one click away as "Home".
-          {
-            key: 'generate',
-            label: 'Generate Paper',
-            shortLabel: 'Generate',
-            href: isCivilStudent ? '/civil-paper' : '/my-paper',
-            icon: <GenerateIcon />,
-          },
+          // Owner decision 2026-10-24: a student's nav is just Home and Generate Paper. Papers
+          // Attempted, Practice Drills and Leaderboard are reached from the Home page and count as
+          // children of Home (see highlightKey below).
           {
             key: 'home',
             label: 'Home',
@@ -279,25 +219,11 @@ export function AppShell({
             icon: <HomeIcon />,
           },
           {
-            key: 'papers',
-            label: 'Papers Attempted',
-            shortLabel: 'Papers',
-            href: '/papers-attempted',
-            icon: <PapersIcon />,
-          },
-          {
-            key: 'drills',
-            label: 'Practice Drills',
-            shortLabel: 'Drills',
-            href: '/remediation',
-            icon: <DrillsIcon />,
-          },
-          {
-            key: 'leaderboard',
-            label: 'Leaderboard',
-            shortLabel: 'Ranks',
-            href: '/leaderboard',
-            icon: <LeaderboardIcon />,
+            key: 'generate',
+            label: 'Generate Paper',
+            shortLabel: 'Generate',
+            href: isCivilStudent ? '/civil-paper' : '/my-paper',
+            icon: <GenerateIcon />,
           },
         ]
       : [
@@ -337,6 +263,13 @@ export function AppShell({
           },
         ]
 
+  const isStudent = variant === 'student'
+  // Pages that hang off the student's Home highlight Home.
+  const highlightKey: AppShellActive | null =
+    isStudent &&
+    (active === 'papers' || active === 'drills' || active === 'leaderboard')
+      ? 'home'
+      : active
   const [mobileOpen, setMobileOpen] = useState(false)
   const [signingOut, setSigningOut] = useState(false)
 
@@ -364,7 +297,11 @@ export function AppShell({
     }
   }
 
-  const account = (
+  const account = isStudent ? (
+    <div className="border-border border-t pt-3">
+      <ProfileMenu layout="sidebar" displayName={displayName} />
+    </div>
+  ) : (
     <div className="border-border space-y-3 border-t pt-4">
       <div className="flex items-center justify-between px-1">
         <span className="text-caption text-muted-foreground">
@@ -391,16 +328,6 @@ export function AppShell({
             <SignOutIcon />
             {signingOut ? 'Signing out…' : 'Sign out'}
           </button>
-          {/* F098: students have no Settings tab (five is the most the phone bar fits), but
-              account deletion must be reachable in the app. */}
-          {variant === 'student' && (
-            <a
-              href="/settings"
-              className="text-muted-foreground hover:text-foreground ml-3 inline-flex items-center align-middle text-xs whitespace-nowrap"
-            >
-              Settings
-            </a>
-          )}
         </div>
       </div>
     </div>
@@ -435,10 +362,10 @@ export function AppShell({
         <a
           key={item.key}
           href={item.href}
-          aria-current={item.key === active ? 'page' : undefined}
+          aria-current={item.key === highlightKey ? 'page' : undefined}
           onClick={() => setMobileOpen(false)}
           className={
-            item.key === active
+            item.key === highlightKey
               ? 'nav-active flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold'
               : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors'
           }
@@ -457,24 +384,28 @@ export function AppShell({
           "Dynamic sidebar" per the user's 2026-09-23 request. */}
       <div className="no-print glass border-border sticky top-0 z-30 flex items-center justify-between border-b p-3 lg:hidden">
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-            className="text-muted-foreground hover:bg-accent hover:text-accent-foreground flex size-9 shrink-0 items-center justify-center rounded-md"
-          >
-            <MenuIcon />
-          </button>
+          {!isStudent && (
+            <button
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+              className="text-muted-foreground hover:bg-accent hover:text-accent-foreground flex size-9 shrink-0 items-center justify-center rounded-md"
+            >
+              <MenuIcon />
+            </button>
+          )}
           {logo}
         </div>
-        <div className="flex items-center">
-          <ShareAppButton />
-          <SoundToggle />
-          <ThemeToggle />
-        </div>
+        {!isStudent && (
+          <div className="flex items-center">
+            <ShareAppButton />
+            <SoundToggle />
+            <ThemeToggle />
+          </div>
+        )}
       </div>
 
-      {mobileOpen && (
+      {mobileOpen && !isStudent && (
         <div
           className="fixed inset-0 z-30 bg-black/40 lg:hidden"
           onClick={() => setMobileOpen(false)}
@@ -483,7 +414,7 @@ export function AppShell({
       )}
 
       <div
-        className={`no-print glass border-border fixed inset-y-0 left-0 z-40 flex w-[260px] overflow-y-auto overscroll-contain max-w-[80vw] shrink-0 flex-col border-r p-[18px] pt-7 transition-transform duration-200 lg:sticky lg:top-0 lg:h-screen lg:w-[232px] lg:max-w-none lg:translate-x-0 ${
+        className={`no-print glass border-border ${isStudent ? 'hidden lg:flex' : 'flex'} fixed inset-y-0 left-0 z-40 w-[260px] overflow-y-auto overscroll-contain max-w-[80vw] shrink-0 flex-col border-r p-[18px] pt-7 transition-transform duration-200 lg:sticky lg:top-0 lg:h-screen lg:w-[232px] lg:max-w-none lg:translate-x-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -511,32 +442,65 @@ export function AppShell({
           behind the menu button. The drawer stays for account/sign out and the theme toggle.
           lg:hidden (display:none) also keeps it out of the accessibility tree on desktop, so each
           nav link still has exactly one accessible match there. */}
-      <nav
-        aria-label="Main"
-        className="no-print glass border-border fixed inset-x-0 bottom-0 z-20 flex border-t pb-[env(safe-area-inset-bottom)] lg:hidden"
-      >
-        {items.map((item) => (
+      {isStudent ? (
+        <nav
+          aria-label="Main"
+          className="no-print glass border-border fixed inset-x-0 bottom-0 z-20 flex items-end border-t pb-[env(safe-area-inset-bottom)] lg:hidden"
+        >
           <a
-            key={item.key}
-            href={item.href}
-            aria-current={item.key === active ? 'page' : undefined}
-            className={`flex min-w-0 flex-1 flex-col items-center gap-1 px-1 py-2 text-[11px] leading-none ${
-              item.key === active
+            href="/student"
+            aria-current={highlightKey === 'home' ? 'page' : undefined}
+            className={`flex min-h-14 min-w-0 flex-1 flex-col items-center justify-center gap-1 text-[11px] leading-none ${
+              highlightKey === 'home'
                 ? 'text-primary font-semibold'
                 : 'text-muted-foreground'
             }`}
           >
-            <span
-              className={`flex h-7 w-12 items-center justify-center rounded-full ${
-                item.key === active ? 'nav-active' : ''
+            <HomeIcon />
+            Home
+          </a>
+          {/* The centre button goes straight to a new paper. A "Scan my answers" choice is left
+              out on purpose: the only scan route is /scan/$attemptId, which needs an existing
+              attempt, so there is no standalone entry to link to. */}
+          <div className="flex flex-1 justify-center">
+            <a
+              href={isCivilStudent ? '/civil-paper' : '/my-paper'}
+              aria-label="New paper"
+              className="grad-surface -mt-6 flex size-14 items-center justify-center rounded-full text-3xl leading-none font-bold shadow-lg"
+            >
+              +
+            </a>
+          </div>
+          <ProfileMenu layout="tab" displayName={displayName} />
+        </nav>
+      ) : (
+        <nav
+          aria-label="Main"
+          className="no-print glass border-border fixed inset-x-0 bottom-0 z-20 flex border-t pb-[env(safe-area-inset-bottom)] lg:hidden"
+        >
+          {items.map((item) => (
+            <a
+              key={item.key}
+              href={item.href}
+              aria-current={item.key === highlightKey ? 'page' : undefined}
+              className={`flex min-w-0 flex-1 flex-col items-center gap-1 px-1 py-2 text-[11px] leading-none ${
+                item.key === highlightKey
+                  ? 'text-primary font-semibold'
+                  : 'text-muted-foreground'
               }`}
             >
-              {item.icon}
-            </span>
-            <span className="max-w-full truncate">{item.shortLabel}</span>
-          </a>
-        ))}
-      </nav>
+              <span
+                className={`flex h-7 w-12 items-center justify-center rounded-full ${
+                  item.key === highlightKey ? 'nav-active' : ''
+                }`}
+              >
+                {item.icon}
+              </span>
+              <span className="max-w-full truncate">{item.shortLabel}</span>
+            </a>
+          ))}
+        </nav>
+      )}
     </div>
   )
 }

@@ -11,15 +11,12 @@
 // burst, not any franchise's character, logo or typeface. "Doodle Journal" never references the
 // franchise its name might evoke -- its ornament is an original hand-drawn-style squiggle.
 import { withTelugu } from './fonts'
+import { DEFAULT_THEME, PAPER_THEMES, isKnownTheme } from './theme-keys'
+import type { PaperTheme } from './theme-keys'
 
-export const PAPER_THEMES = ['Clean School', 'Doodle Journal', 'Manga'] as const
-export type PaperTheme = (typeof PAPER_THEMES)[number]
-
-export const DEFAULT_THEME: PaperTheme = 'Clean School'
-
-export function isKnownTheme(value: string | null | undefined): value is PaperTheme {
-  return (PAPER_THEMES as readonly string[]).includes(value ?? '')
-}
+// The names live in theme-keys.ts (no font import) so seed scripts run by plain Node can use them.
+export { DEFAULT_THEME, PAPER_THEMES, isKnownTheme }
+export type { PaperTheme }
 
 // One short, factual line per theme for any screen that lets someone pick one (parent's
 // /generate, student's /my-paper) -- describes the pack's actual ornament above rather than

@@ -338,7 +338,8 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(
     page.getByText('This paper asks only about this concept.'),
   ).toBeVisible()
-  await page.getByRole('link', { name: 'Papers Attempted' }).click()
+  // 2026-10-24: Papers Attempted left the sidebar (it hangs off Home now), so open it by URL.
+  await page.goto('/papers-attempted')
   await page.waitForURL('**/papers-attempted')
   await expect(
     page.getByRole('heading', { name: 'Papers attempted' }),

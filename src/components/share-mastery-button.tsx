@@ -10,9 +10,11 @@ import { masteryShareText, whatsAppUrl } from '../lib/mastery-share'
 export function ShareMasteryButton({
   studentName,
   subjects,
+  label = 'Share my progress',
 }: {
   studentName: string
   subjects: Array<SubjectView>
+  label?: string
 }) {
   const [copied, setCopied] = useState(false)
 
@@ -39,13 +41,13 @@ export function ShareMasteryButton({
   }
 
   return (
-    <Button variant="outline" size="sm" onClick={() => void handleShare()}>
+    <Button variant="outline" size="sm" className="min-h-11" onClick={() => void handleShare()}>
       {copied ? (
         <Check className="mr-1.5 size-4" />
       ) : (
         <Share2 className="mr-1.5 size-4" />
       )}
-      {copied ? 'Copied' : 'Share my progress'}
+      {copied ? 'Copied' : label}
     </Button>
   )
 }

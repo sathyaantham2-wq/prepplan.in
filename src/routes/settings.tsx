@@ -12,6 +12,7 @@ import { Label } from '../components/ui/label'
 import { AppShell } from '../components/app-shell'
 import { useSession, signOut } from '../lib/auth-client'
 import { PageLoading } from '../components/page-loading'
+import { MyExamsSection } from '../components/my-exams-section'
 
 export const Route = createFileRoute('/settings')({ component: Settings })
 
@@ -222,6 +223,8 @@ function StudentSettings() {
     <AppShell variant="student" active="settings">
       <div className="mx-auto max-w-2xl p-4 sm:p-8">
         <h1 className="text-h1 mb-6">Settings</h1>
+
+        <MyExamsSection />
 
         <Card className="mb-4">
           <CardHeader>

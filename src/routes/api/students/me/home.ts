@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../../lib/session'
 import { resolveEnabledStudent } from '../../../../lib/access'
 import { getSharedDb } from '../../../../db/connection'
-import { getStudentHome } from '../../../../db/repositories'
+import { buildStudentHome } from '../../../../lib/student-home'
 import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 /**
@@ -19,7 +19,7 @@ export const Route = createFileRoute('/api/students/me/home')({
         const db = getSharedDb()
         const student = await resolveEnabledStudent(db, auth.id)
         if (student instanceof Response) return student
-        return Response.json(await getStudentHome(db, student.id), { headers: { 'cache-control': 'no-store' } })
+        return Response.json(await buildStudentHome(db, student.id), { headers: { 'cache-control': 'no-store' } })
       },
     },
   },
