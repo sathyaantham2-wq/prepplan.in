@@ -1,7 +1,7 @@
 import type { Db } from '../db/connection'
 import { studentUnlocksRepository } from '../db/repositories'
-import { DEFAULT_THEME, PAPER_THEMES, isKnownTheme } from './pdf/themes'
-import type { PaperTheme } from './pdf/themes'
+import { DEFAULT_THEME, PAPER_THEMES, isKnownTheme } from './pdf/theme-keys'
+import type { PaperTheme } from './pdf/theme-keys'
 
 // Coins are earned (student_points_ledger, 1 coin per point) and spent here, on unlocking paper
 // themes (owner-approved 2026-10-24). Points stay a pure score and are never reduced.
