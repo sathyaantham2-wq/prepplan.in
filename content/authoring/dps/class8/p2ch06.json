@@ -1,0 +1,2472 @@
+{
+  "kind": "dps_pack",
+  "subject": {
+    "code": "MATH8",
+    "class": 8,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 6,
+    "name": "Algebra Play"
+  },
+  "source_code": "hegp206",
+  "concepts": [
+    {
+      "code": "C8M-6.1",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Four friends invent tricks for a 'Mind Reader' stall, where the reader announces the answer before hearing anything. Which trick can be used, because it ends at the same number for every starting number?",
+          "a": "Multiply by 3, add 9, divide by 3, subtract the starting number",
+          "o": [
+            "Multiply by 3, add 9, divide by 3, subtract the starting number",
+            "Multiply by 3, add 9, divide by 3, subtract 3",
+            "Double it, add 10, halve it, subtract double the starting number",
+            "Add 6, double it, subtract the starting number"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "For Reading Week, Tara will run a 'Mind Reader' stall and must print one of two cards. On both cards the reader announces the answer before the visitor speaks.\nCard A: think of a number, add 7, multiply by 3, subtract 6, divide by 3, subtract the number you first thought of.\nCard B: think of a number, multiply by 3, add 15, subtract three times the number you first thought of.\nAt last year's stall many visitors forgot to do any 'divide' step.\n(a) Write Card A as an expression in x and simplify it.\n(b) Write the expression a visitor gets on Card A if she leaves out 'divide by 3'. What does she say if she started with 8?\n(c) Show that Card B gives the same answer for every starting number, and say what it is.\n(d) Which card should Tara print? Justify using your answers.",
+          "a": "(a) (3(x + 7) − 6) ÷ 3 − x = (3x + 15) ÷ 3 − x = x + 5 − x = 5. (b) 3(x + 7) − 6 − x = 3x + 15 − x = 2x + 15. Starting with 8 she says 31 (8 → 15 → 45 → 39 → 31). (c) 3x + 15 − 3x = 15 for every x. (d) Card B. Card A works only if the divide step is done: a visitor who skips it says 2x + 15, which is 15 or more for every whole number, so it never matches the announced 5. Card B has no divide step to forget and still gives the same answer, 15, to everyone.",
+          "s": [
+            [
+              "Part (a): simplifies Card A to 5",
+              1
+            ],
+            [
+              "Part (b): 2x + 15, so a start of 8 gives 31",
+              1
+            ],
+            [
+              "Part (c): 3x + 15 − 3x = 15 for every x",
+              1
+            ],
+            [
+              "Part (d): chooses Card B, because Card A's answer changes with x when the divide step is skipped and Card B has none",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: In the trick 'think of a number, add 3, multiply by 4, subtract 12, divide by 4', everyone ends with 3. Give a reason.",
+          "a": "False. The expression is (4(x + 3) − 12) ÷ 4 = (4x + 12 − 12) ÷ 4 = x. Each person ends with the number she started with, so the result depends on the starting number. For example, starting with 10 gives 13, 52, 40, 10.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Simplifies to x (the starting number), with a check",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Think of a number. Multiply it by 6. Add 18. Divide by 3. Subtract twice the number you first thought of. Whatever the starting number, the final answer is ___. (Write the number in digits.)",
+          "a": "6"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each trick (starting number x) with the result it gives.\nColumn A:\n1. Double it, add 8, halve it, subtract x\n2. Add 8, double it, halve it, subtract x\n3. Double it, add 8, subtract x\n4. Add 8, double it, subtract x\nColumn B:\n(P) x + 16\n(Q) 4\n(R) 8\n(S) x + 8",
+          "a": "1-Q, 2-R, 3-S, 4-P",
+          "o": [
+            "1-Q, 2-R, 3-S, 4-P",
+            "1-R, 2-Q, 3-S, 4-P",
+            "1-Q, 2-R, 3-P, 4-S",
+            "1-R, 2-Q, 3-P, 4-S"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Kiran's trick: think of a number, add 9, multiply by 2, subtract the number you first thought of, subtract 18. Kiran claims: 'My trick has no division step, so the answer must depend on the starting number.' Is Kiran right? Test both his conclusion and his reason.",
+          "a": "Partly right. The expression is 2(x + 9) − x − 18 = 2x + 18 − x − 18 = x, so the answer is the starting number and does depend on it: his conclusion is right. His reason is wrong: whether the answer depends on x is decided by whether x cancels, not by whether there is a division. For example, 'multiply by 2, add 6, subtract 2x' has no division and always gives 6.",
+          "s": [
+            [
+              "Simplifies the trick to x",
+              1
+            ],
+            [
+              "Conclusion right: the answer depends on the start",
+              1
+            ],
+            [
+              "Reason wrong: what matters is whether x cancels, shown with a trick without division that gives a fixed answer",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The trick 'think of a number, add 7, double it, subtract 14' ends at the same number whatever number you start with.\nReason (R): The expression for this trick simplifies to 2x, where x is the starting number.",
+          "a": "A is false but R is true",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A trick reads: think of a number, add 4, multiply by 3, subtract 6, divide by 3, subtract the number you first thought of.\n(a) Write the expression after each step and simplify the final one.\n(b) Check the trick by doing it with the starting number 15.\n(c) Neel does the steps 'subtract 6' and 'multiply by 3' in the opposite order. Find his final expression. Is his answer still the same for every starting number?\n(d) Shreya instead does 'subtract the number you first thought of' just before 'divide by 3'. Show that her final answer now depends on the starting number.",
+          "a": "(a) x + 4; 3x + 12; 3x + 6; x + 2; x + 2 − x = 2. (b) 15 → 19 → 57 → 51 → 17 → 2. (c) x + 4 → x − 2 → 3x − 6 → x − 2 → −2. His answer is still fixed, but it is −2, not 2. (d) After 'subtract 6' she has 3x + 6; subtracting x gives 2x + 6, and dividing by 3 gives (2x + 6) ÷ 3, which still contains x. For example, x = 0 gives 2 and x = 3 gives 4.",
+          "s": [
+            [
+              "Part (a): each step written, final value 2",
+              1
+            ],
+            [
+              "Part (b): 19, 57, 51, 17, 2",
+              1
+            ],
+            [
+              "Part (c): x − 2, 3x − 6, x − 2, final −2, still fixed",
+              1
+            ],
+            [
+              "Part (d): reaches (2x + 6) ÷ 3",
+              1
+            ],
+            [
+              "Part (d): shows two starting numbers give different answers",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Sonal's trick: think of a number, add 6, multiply by 2, subtract the number you first thought of. She writes 2x + 6 − x = x + 6 and says the answer depends on the starting number.\n(a) Find her mistake and write the correct expression.\n(b) Is her conclusion still right? What does someone who starts with 5 get?",
+          "a": "(a) She multiplied only x by 2. The correct expression is 2(x + 6) − x = 2x + 12 − x = x + 12. (b) Yes, the answer still depends on the start, because x does not cancel. Starting with 5 gives 5 + 12 = 17 (5 → 11 → 22 → 17).",
+          "s": [
+            [
+              "Part (a): 2(x + 6) − x = x + 12; she did not double the 6",
+              1
+            ],
+            [
+              "Part (b): conclusion right; starting with 5 gives 17",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "In Gauri's act a volunteer thinks of a number, adds 3, multiplies by 5, subtracts 15 and says the result aloud. Gauri then names the starting number at once. Which rule does she use in her head on the number she hears?",
+          "a": "Divide it by 5",
+          "o": [
+            "Divide it by 5",
+            "Add 15, then divide by 5",
+            "Subtract 15, then divide by 5",
+            "Divide by 5, then subtract 3"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For the Maths Club assembly, two teachers suggest tricks.\nTrick A: think of a number, add 5, multiply by 4, subtract 8, divide by 2, then say your answer.\nTrick B: think of a number, multiply by 3, add 21, divide by 3, subtract the number you first thought of.\nThe club wants one act where the magician announces the answer before the volunteer speaks, and another where the magician hears the answer and names the starting number.\n(a) Simplify both tricks.\n(b) Decide which trick fits each act. In the second act a volunteer says 50; find her starting number.\n(c) For the second act the magician must name the starting number within a second or two. A club member suggests changing 'subtract 8' in Trick A to 'subtract 20'. Should the club use Trick A as it is or the changed version? Decide, showing what each version needs the magician to do when a volunteer says 50.",
+          "a": "(a) A: (4(x + 5) − 8) ÷ 2 = (4x + 12) ÷ 2 = 2x + 6. B: (3x + 21) ÷ 3 − x = x + 7 − x = 7. (b) Trick B always gives 7, so it fits the 'announce first' act. Trick A gives 2x + 6, which changes with x, so it fits the 'name the starting number' act: 2x + 6 = 50 gives x = 22. (c) The changed version: (4(x + 5) − 20) ÷ 2 = 4x ÷ 2 = 2x, so the magician only halves what she hears: 50 gives 25. Trick A as it is gives 2x + 6, so she must subtract 6 and then halve: 50 gives 22. Both work, but the changed version needs one step instead of two, so it is the better choice for naming the number quickly.",
+          "s": [
+            [
+              "Part (a): A is 2x + 6 and B is 7",
+              1
+            ],
+            [
+              "Part (b): B for announcing, A for naming; 2x + 6 = 50 gives 22",
+              1
+            ],
+            [
+              "Part (c): changed version gives 2x (50 → 25, one step) against 2x + 6 (50 → 22, two steps); choose the changed version",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A trick reads: think of a number, multiply by 4, add 10, divide by 2, subtract 5. Then say your answer aloud.\n(a) Simplify the trick as an expression in x.\n(b) Ravi says 46. What number did he start with?",
+          "a": "(a) (4x + 10) ÷ 2 − 5 = 2x + 5 − 5 = 2x. (b) 2x = 46, so x = 23. The final answer is always double the starting number, so halving it gives the starting number.",
+          "s": [
+            [
+              "Part (a): simplifies to 2x",
+              1
+            ],
+            [
+              "Part (b): 2x = 46 gives 23",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "A trick reads: think of a number x, multiply by 4, add 8, divide by 2, subtract 2x.\nStatement 1: Just after the step 'divide by 2', the expression is 2x + 4.\nStatement 2: If the last step were 'subtract x' instead, the result would still be the same for every starting number.\nStatement 3: If 'add 8' were changed to 'add 18', the final answer would be 9 for every starting number.\nWhich of the statements are correct?",
+          "a": "1 and 3 only",
+          "o": [
+            "1 and 3 only",
+            "1 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Mukta writes only the algebra of a trick: x → 5x → 5x + 20 → x + 4 → 4.\n(a) Write the four instructions in words that match these steps.\n(b) Check the trick with the starting number 9.\n(c) Say which single instruction you would change, and how, so that the final answer is 6.",
+          "a": "(a) Think of a number; multiply it by 5; add 20; divide by 5; subtract the number you first thought of. (b) 9 → 45 → 65 → 13 → 13 − 9 = 4. (c) Add 30 instead of 20: (5x + 30) ÷ 5 − x = 6.",
+          "s": [
+            [
+              "Part (a): the instructions multiply by 5, add 20, divide by 5, subtract the starting number",
+              1
+            ],
+            [
+              "Part (b): 45, 65, 13, 4",
+              1
+            ],
+            [
+              "Part (c): add 30 instead of 20, giving 6",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A trick is drawn as a row of boxes, each box acting on the number that comes out of the one before:\nx → [× 4] → [+ 24] → [ ? ] → [− x] → 6\nThe answer is 6 for every starting number.\n(a) What must the missing box do? Show that your box works.\n(b) Riya swaps the first two boxes, so she adds 24 before multiplying by 4, and keeps the rest. Find her final expression. Is it still the same for everyone?\n(c) In the original row the box [− x] is changed to [− 2x]. A volunteer now says 1. What number did she start with?",
+          "a": "(a) Divide by 4: (4x + 24) ÷ 4 − x = x + 6 − x = 6. (b) (x + 24) × 4 = 4x + 96; ÷ 4 gives x + 24; − x gives 24. It is still the same for everyone, but it is 24, not 6. (c) (4x + 24) ÷ 4 − 2x = x + 6 − 2x = 6 − x. So 6 − x = 1 gives x = 5.",
+          "s": [
+            [
+              "Part (a): the missing box is ÷ 4, giving 6",
+              1
+            ],
+            [
+              "Part (b): x + 24 − x = 24, still fixed but 24",
+              1
+            ],
+            [
+              "Part (c): 6 − x = 1, so she started with 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Asha writes her trick as: x, then 4x, then 4x + 12, then (dividing by 4) x + 12, then (subtracting x) 12. Her friends follow the same steps with real numbers and all get 3. What went wrong in Asha's working?",
+          "a": "(4x + 12) ÷ 4 is x + 3, not x + 12",
+          "o": [
+            "(4x + 12) ÷ 4 is x + 3, not x + 12",
+            "4x + 12 should have been 4(x + 12)",
+            "Subtracting x should leave x + 12",
+            "The trick needs x to be a whole number"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Two tricks use the same steps in a different order.\nTrick P: think of a number, multiply by 6, add 9, divide by 3, subtract twice the starting number.\nTrick Q: think of a number, add 9, multiply by 6, divide by 3, subtract twice the starting number.\n(a) Simplify both tricks.\n(b) Explain why the 9 has a different effect in the two tricks.\n(c) In Trick Q, what number should be added instead of 9 so that Q gives the same final answer as P?\n(d) Keeping the first three steps of Trick P, what should the last step subtract so that the final answer is always the starting number plus 3?",
+          "a": "(a) P: (6x + 9) ÷ 3 − 2x = 2x + 3 − 2x = 3. Q: 6(x + 9) ÷ 3 − 2x = (6x + 54) ÷ 3 − 2x = 2x + 18 − 2x = 18. (b) In P the 9 is only divided by 3, giving 3. In Q the 9 is multiplied by 6 and then divided by 3, so it is doubled to 18. (c) In Q the added number ends up doubled, so add 1.5: 2 × 1.5 = 3. (d) After three steps P has 2x + 3; subtracting x (the starting number once) gives x + 3.",
+          "s": [
+            [
+              "Part (a): P simplifies to 3",
+              1
+            ],
+            [
+              "Part (a): Q simplifies to 18",
+              1
+            ],
+            [
+              "Part (b): in Q the 9 is multiplied by 6 then divided by 3, so it is doubled",
+              1
+            ],
+            [
+              "Part (c): add 1.5",
+              1
+            ],
+            [
+              "Part (d): subtract the starting number once, giving x + 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A trick reads: think of a whole number, add 5, multiply by 4, subtract the number you first thought of, subtract 20, and say the result.\n(a) Write the trick as an expression in x and simplify it.\n(b) Leela says 57 and Arun says 50. Find Leela's starting number, and explain how the magician knows at once that Arun made a slip.",
+          "a": "(a) 4(x + 5) − x − 20 = 4x + 20 − x − 20 = 3x. (b) 3x = 57 gives x = 19 (check: 19 → 24 → 96 → 77 → 57). Every correct answer is 3 times a whole number, so it is a multiple of 3. 50 is not a multiple of 3, so Arun must have slipped somewhere.",
+          "s": [
+            [
+              "Part (a): simplifies to 3x",
+              1
+            ],
+            [
+              "Part (b): Leela started with 19; 50 is not a multiple of 3, so Arun slipped",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Neha's trick: think of a number, multiply by 10, add 30, divide by 5, subtract twice the starting number. She has tried it only with whole numbers and always got 6. Her friend starts with 2.5. What happens?",
+          "a": "She also gets 6, because x cancels for any number",
+          "o": [
+            "She also gets 6, because x cancels for any number",
+            "She gets 6.5, because the extra half is left over at the end",
+            "She gets 3, because 2.5 is halved twice",
+            "The trick cannot be done with 2.5"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A trick reads: think of a number x, multiply it by 3, add a number k, subtract the number you first thought of. Show that no choice of k can make the final answer the same for every starting number. Then change the last step so that the final answer is always k.",
+          "a": "The expression is 3x + k − x = 2x + k. The term 2x does not depend on k, so changing k never removes it, and different starting numbers give different answers (for x = 1 and x = 2 the answers differ by 2). Changing the last step to 'subtract three times the number you first thought of' gives 3x + k − 3x = k.",
+          "s": [
+            [
+              "Simplifies to 2x + k",
+              1
+            ],
+            [
+              "Explains that 2x stays whatever k is, so the answer changes with x",
+              1
+            ],
+            [
+              "Changes the last step to subtract 3x, giving k",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Meera says: 'If the last step of a trick is subtract the number you first thought of, the answer is always the same for everyone.'\n(a) Test her rule on the trick: think of a number, multiply by 2, add 6, subtract the number you first thought of.\n(b) Say what the last step of this trick should be so that the answer is the same for everyone, and give that answer.",
+          "a": "(a) 2x + 6 − x = x + 6, which still contains x (a start of 1 gives 7, a start of 4 gives 10). So her rule is wrong: the last step must remove all the x that is left, not just one x. (b) Subtract twice the number you first thought of: 2x + 6 − 2x = 6 for everyone.",
+          "s": [
+            [
+              "Part (a): x + 6 still depends on x, so the rule fails",
+              1
+            ],
+            [
+              "Part (b): subtract twice the starting number, giving 6",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.2",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Arjun claims: 'If we leave out the step add 9 from the date trick, we only have to subtract 120 instead of 165 at the end, and decoding still works.' Test his claim with algebra and check it with 26 January.",
+          "a": "Yes, he is right. Without 'add 9': 5M, 5M + 6, 20M + 24, then × 5 gives 100M + 120, and adding the day gives 100M + 120 + D. Subtracting 120 leaves 100M + D, which decodes as before. Check: 26 January gives 100 + 120 + 26 = 246; 246 − 120 = 126, so day 26, month 1.",
+          "s": [
+            [
+              "Finds 100M + 120 + D",
+              1
+            ],
+            [
+              "Checks with 26 January: 246, then 126",
+              1
+            ],
+            [
+              "Verdict: claim correct, since subtracting 120 leaves 100M + D",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Shubham changes the step 'add 9' in the date trick to 'add 11'; every other step stays the same (month × 5, add 6, × 4, add 11, × 5, add the day). What must he now subtract from the final total before reading off the month and day?",
+          "a": "175",
+          "o": [
+            "175",
+            "167",
+            "205",
+            "155"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In the date trick (month × 5, add 6, × 4, add 9, × 5, add the day) Kavya's friend reports 1070.\n(a) Kavya subtracts 165, gets 905, and reads it as 'day 90 of month 5'. Explain why this reading must be wrong and give the correct date.\n(b) For which days of the month does the number left after subtracting 165 have 0 as its tens digit? Explain using 100M + D.",
+          "a": "(a) The number left is 100M + D, and a day is at most 31, so the day always fills the last two digits (as 01 to 31) and the month is what comes before them. Day 90 is impossible. 905 means M = 9 and D = 05: 5 September. (b) 100M ends in 00, so the last two digits of 100M + D are just D. The tens digit is 0 exactly when D is less than 10, that is, for the days 1 to 9.",
+          "s": [
+            [
+              "Part (a): the last two digits are the day; 905 is 5 September",
+              1
+            ],
+            [
+              "Part (b): days 1 to 9, because the last two digits of 100M + D are D",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Shubham's cousin does the date trick (month × 5, add 6, × 4, add 9, × 5, add the day) but admits she added her day twice at the end. She reports 1177. Which date did she think of?",
+          "a": "6 October",
+          "o": [
+            "6 October",
+            "12 October",
+            "24 October",
+            "6 May"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "In a class activity, four students do the date trick (month × 5, add 6, × 4, add 9, × 5, add the day) and the teacher writes their dates and totals:\nAnu, 14 August: 979\nBen, 3 February: 368\nChitra, 29 November: 1294\nDev, 21 May: 566\n(a) Which student's total is wrong? What should it have been?\n(b) Mukta, who sees only the totals, decodes Dev's 566 in the usual way. Which date does she announce?\n(c) Dev says he skipped one of the two 'add' steps (add 6 or add 9) but cannot remember which. Using only his total 566, decide which step he skipped and which date Mukta should announce. Justify.",
+          "a": "(a) Anu: 800 + 165 + 14 = 979; Ben: 200 + 165 + 3 = 368; Chitra: 1100 + 165 + 29 = 1294, all correct. Dev should have 500 + 165 + 21 = 686, so his 566 is wrong. (b) 566 − 165 = 401: Mukta announces 1 April. (c) Skipping 'add 6' gives 5M, 20M, 20M + 9, 100M + 45 + D, so Mukta should subtract 45: 566 − 45 = 521, which is 21 May. Skipping 'add 9' gives 20M + 24, then 100M + 120 + D: 566 − 120 = 446 would mean day 46 of April, not a date. So he skipped 'add 6', and Mukta should announce 21 May (which matches the teacher's list).",
+          "s": [
+            [
+              "Part (a): Dev is wrong; correct total 686",
+              1
+            ],
+            [
+              "Part (b): 401, so 1 April",
+              1
+            ],
+            [
+              "Part (c): skipping add 6 gives 100M + 45 + D and 21 May; skipping add 9 gives day 46, impossible; so add 6 was skipped",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: In the date trick, if a friend's final total ends in 0, her day must be a multiple of 10. Give a reason.",
+          "a": "False. The total is 100M + 165 + D. 100M ends in 00, so the last digit comes from 165 + D, which ends in 0 only when D ends in 5. The day must be 5, 15 or 25 (for example 5 June gives 770), never 10, 20 or 30 (10 June gives 775).",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Shows the last digit comes from 165 + D, so the day ends in 5",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the date trick, if a friend stops just before 'add the day', her number is always a multiple of 5.\nReason (R): Every step of the date trick multiplies the previous result by 5.",
+          "a": "A is true but R is false",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Tanvi does the date trick but adds 6 after multiplying by 4 instead of before (so: month × 5, × 4, add 6, add 9, × 5, add the day).\n(a) Write her final expression in M and D.\n(b) Her birthday is 20 June. What date does Mukta announce if she subtracts 165 as usual?\n(c) What should Mukta subtract to decode Tanvi's version correctly?",
+          "a": "(a) 5M, 20M, 20M + 6, 20M + 15, 100M + 75, so 100M + 75 + D. (b) 600 + 75 + 20 = 695; 695 − 165 = 530, so Mukta announces 30 May. (c) Subtract 75: 695 − 75 = 620, which gives 20 June.",
+          "s": [
+            [
+              "Part (a): 100M + 75 + D",
+              1
+            ],
+            [
+              "Part (b): total 695, wrongly read as 30 May",
+              1
+            ],
+            [
+              "Part (c): subtract 75",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Rohan changes the date trick so that 'add 9' becomes 'add 2'; the other steps stay as they are (month × 5, add 6, × 4, add 2, × 5, add the day). For his birthday, 14 November, his final total is ___. (Write the number in digits.)",
+          "a": "1244"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Ritu does the date trick but tells her result twice.\n(a) After 'add 9' she says 213. Which month was she born in?\n(b) She then multiplies by 5, adds her day, and says 1081. Find her day without starting again from the month.",
+          "a": "(a) After 'add 9' the expression is 20M + 33, so 20M = 180 and M = 9: September. (b) 213 × 5 = 1065, and 1081 − 1065 = 16. She was born on 16 September.",
+          "s": [
+            [
+              "Part (a): 20M + 33 = 213 gives M = 9",
+              1
+            ],
+            [
+              "Part (b): 1081 − 1065 = 16",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Shubham makes his own version of the date trick: multiply the month by 5, add 8, multiply by 4, add 7, multiply by 5, add the day.\n(a) Write the expression after each step.\n(b) What number must he subtract from a final total to decode it?\n(c) A friend's total is 1417. Find her date.\n(d) For the same date, how much larger is the total in Shubham's version than in the original trick? Explain why this is the same for every date.\n(e) A friend using the original trick and a friend using Shubham's version both report 496. Find both dates, and explain why a shared total like this is possible only when the original-trick date is the 31st of a month.",
+          "a": "(a) 5M; 5M + 8; 20M + 32; 20M + 39; 100M + 195; 100M + 195 + D. (b) 195. (c) 1417 − 195 = 1222, so the day is 22 and the month is 12: 22 December. (d) 195 − 165 = 30 more. Both totals are 100M + D plus a fixed number, so the gap is always 195 − 165 = 30. (e) Original: 496 − 165 = 331, so 31 March. Shubham's: 496 − 195 = 301, so 1 March. For the totals to match, 100M + D in the original must be 30 more than in Shubham's version. A month apart would need the days to differ by 70 or more, which is impossible, so the month is the same and the days differ by 30: the only way is the 31st against the 1st.",
+          "s": [
+            [
+              "Part (a): each step, ending in 100M + 195 + D",
+              1
+            ],
+            [
+              "Part (b): subtract 195",
+              1
+            ],
+            [
+              "Part (c): 22 December",
+              1
+            ],
+            [
+              "Part (d): 30 more for every date, as both are 100M + D plus a constant",
+              1
+            ],
+            [
+              "Part (e): 31 March and 1 March; same month needed, so only the 31st and the 1st differ by 30",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the date trick (month M × 5, add 6, × 4, add 9, × 5, add the day D).\nStatement 1: Every date in December gives a larger total than every date in November.\nStatement 2: The result just after 'add 9' is an odd number for every month.\nStatement 3: Subtracting 165 from the final total always leaves a three-digit number.\nWhich of the statements are correct?",
+          "a": "1 and 2 only",
+          "o": [
+            "1 and 2 only",
+            "2 only",
+            "1 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Mehul does the date trick but adds the day right after 'add 9' and then multiplies by 5.\n(a) Write his final expression in M and D.\n(b) His date is 26 January. Find his total and the date Mukta announces when she subtracts 165 as usual.",
+          "a": "(a) 5(20M + 33 + D) = 100M + 165 + 5D. (b) 100 + 165 + 130 = 395. Mukta gets 395 − 165 = 230 and announces '30 February', which is not even a real date. The day was multiplied by 5, so it no longer sits in the last two digits on its own.",
+          "s": [
+            [
+              "Part (a): 100M + 165 + 5D",
+              1
+            ],
+            [
+              "Part (b): 395, decoded wrongly as 30 February",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Hari, born on 3 June, notices patterns in the date trick (month × 5, add 6, × 4, add 9, × 5, add the day) while trying it with his family.\n(a) Find the totals for 3 June and 10 June.\n(b) Hari predicts: 'Two dates with the same day number exactly one month apart always have totals that differ by 100.' Check this with 3 June and 3 July and explain it using 100M + 165 + D.\n(c) His sister's total is 107 more than Hari's. Without decoding from scratch, find her date and say how the patterns give it.\n(d) Hari proposes a quick rule: 'Two people were born in the same month exactly when their totals differ by less than 100.' Decide whether the rule is reliable, using 31 May and 1 June, and state a rule that always works.",
+          "a": "(a) 3 June: 600 + 165 + 3 = 768. 10 June: 775. (b) 3 July gives 868, which is 100 more. One month later raises M by 1, which adds 100 through 100M, while D and 165 stay the same. So the prediction is right. (c) 107 = 100 + 7: one month later and 7 days later, so 10 July. Check: 875 − 165 = 710. (d) Not reliable. 31 May gives 696 and 1 June gives 766: the totals differ by only 70, yet the months are different. A rule that always works: subtract 165 from each total and compare what is left before the last two digits (the value of M in 100M + D); the months are the same exactly when these match.",
+          "s": [
+            [
+              "Part (a): 768 and 775",
+              1
+            ],
+            [
+              "Part (b): 868, a gap of 100 because M rises by 1 in 100M",
+              1
+            ],
+            [
+              "Part (c): 107 = 100 + 7, so 10 July",
+              1
+            ],
+            [
+              "Part (d): rule fails (696 and 766 differ by 70 across two months); compare M after subtracting 165",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Mukta knows only that her friend's birthday is in March. Her friend does the date trick (month × 5, add 6, × 4, add 9, × 5, add the day). Between which two numbers must the friend's total lie?",
+          "a": "466 and 496",
+          "o": [
+            "466 and 496",
+            "301 and 331",
+            "465 and 495",
+            "366 and 396"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Show that the three multiplications in the date trick (× 5, × 4, × 5) turn the month M into 100M.\n(b) Suppose a trick produced 10M + D instead of 100M + D. Using the dates 11 February and 21 January, show why such a trick could not be decoded.",
+          "a": "(a) 5 × 4 × 5 = 100, so M is multiplied by 100 (the added numbers become the 165). (b) 10 × 2 + 11 = 31 and 10 × 1 + 21 = 31. Two different dates give the same number, because a day can need two digits and then overlaps the tens place where 10M sits. With 100M the day always fits in the last two digits.",
+          "s": [
+            [
+              "Part (a): 5 × 4 × 5 = 100",
+              1
+            ],
+            [
+              "Part (b): both dates give 31, so the day overlaps the month's digits",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Aditi was born on 10 May. Her friend Bhavna, born later in the same year, does the same date trick, and Bhavna's total is exactly 205 more than Aditi's. When was Bhavna born?",
+          "a": "15 July",
+          "o": [
+            "15 July",
+            "30 October",
+            "5 July",
+            "15 June"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "In the date trick the final total is 100M + 165 + D.\n(a) Find the totals for 31 January and 1 February.\n(b) Explain, using 100M + D, why the totals jump by 70 here although the dates are only one day apart.\n(c) Find the jump between 30 April and 1 May (April has 30 days).\n(d) In a year when February has 28 days, which change from the last day of a month to the 1st of the next month (within the same year) gives the biggest jump in total? Give the jump and justify.",
+          "a": "(a) 31 January: 100 + 165 + 31 = 296. 1 February: 200 + 165 + 1 = 366. (b) Moving to the next month adds 100 through 100M, but the day falls from 31 to 1, which takes away 30. So the total rises by 100 − 30 = 70. (c) 30 April: 400 + 165 + 30 = 595. 1 May: 500 + 165 + 1 = 666. The jump is 71 (100 − 29). (d) From the last day L of a month to the 1st of the next, the total rises by 100 − (L − 1). This is biggest when L is smallest, so 28 February to 1 March: 393 to 466, a jump of 73 (a 30-day month gives 71 and a 31-day month gives 70).",
+          "s": [
+            [
+              "Part (a): 296 and 366",
+              1
+            ],
+            [
+              "Part (b): +100 for the month, −30 for the day",
+              1
+            ],
+            [
+              "Part (c): 595 and 666, jump 71",
+              1
+            ],
+            [
+              "Part (d): jump = 100 − (last day − 1), largest for the shortest month",
+              1
+            ],
+            [
+              "Part (d): 28 February to 1 March, 393 to 466, jump 73",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the date trick, two different dates can never give the same final total.\nReason (R): The total is 100M + 165 + D, and since D is at most 31 it never reaches into the hundreds, where 100M sits.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Lakshmi says her birthday is on the 18th of some month and that her date-trick total is 1288. Without finding the month, show that she has made a mistake.",
+          "a": "The total is 100M + 165 + D. 100M is even and 165 is odd, so 100M + 165 is odd. Adding D = 18, an even number, keeps it odd. So the total for any date on the 18th is odd, and 1288 is even. Her total cannot be right. (In fact a total is even only when the day is odd.)",
+          "s": [
+            [
+              "Writes the total as 100M + 165 + 18",
+              1
+            ],
+            [
+              "100M even, 165 odd, 18 even, so the total is odd",
+              1
+            ],
+            [
+              "Concludes 1288 (even) is impossible",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.3",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Lata's 3-row number pyramid card (each number is the sum of the two directly below it) got smudged. Still readable: the top is 31, the left number of the middle row is 14, and the right number of the bottom row is 6. What is the left number of the bottom row?",
+          "a": "3",
+          "o": [
+            "3",
+            "8",
+            "11",
+            "17"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Meera claims: 'If the bottom row of a 4-row pyramid holds four consecutive numbers, the top is always 8 times the smallest number plus 12.' Test her claim with algebra and check it with 5, 6, 7, 8.",
+          "a": "Yes, she is right. With bottom row n, n + 1, n + 2, n + 3, the top is n + 3(n + 1) + 3(n + 2) + (n + 3) = n + 3n + 3 + 3n + 6 + n + 3 = 8n + 12. Check: 5, 6, 7, 8 gives 11, 13, 15 → 24, 28 → 52, and 8 × 5 + 12 = 52.",
+          "s": [
+            [
+              "Writes the top as n + 3(n + 1) + 3(n + 2) + (n + 3)",
+              1
+            ],
+            [
+              "Simplifies to 8n + 12",
+              1
+            ],
+            [
+              "Checks 52 and gives the verdict: claim correct",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Tanu stacks number blocks into a 4-row pyramid: each block shows the sum of the two blocks directly below it. Her bottom row reads 2, 5, 1, 6. Without building the middle rows, what number goes on the top block?",
+          "a": "26",
+          "o": [
+            "26",
+            "20",
+            "14",
+            "30"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider number pyramids with bottom row a, b, c (3 rows) or a, b, c, d (4 rows).\nStatement 1: In a 4-row pyramid, the second row from the top is a + 2b + c and b + 2c + d.\nStatement 2: In a 4-row pyramid whose four bottom numbers are all equal to k, the top is 4k.\nStatement 3: In a 3-row pyramid, if the middle number of the bottom row is odd, the top is always odd.\nWhich of the statements are correct?",
+          "a": "1 only",
+          "o": [
+            "1 only",
+            "1 and 2 only",
+            "1 and 3 only",
+            "2 and 3 only"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Two 4-row number pyramids use the same four numbers: pyramid A has bottom row 6, 1, 2, 9 and pyramid B has bottom row 1, 6, 9, 2.\n(a) Find both tops using a + 3b + 3c + d.\n(b) Explain why B's top is so much larger.\n(c) Show that no arrangement of 6, 1, 2, 9 gives a top larger than B's.\n(d) Show that no arrangement gives a top smaller than A's.\n(e) Explain why swapping the two middle numbers of any bottom row never changes the top.",
+          "a": "(a) A: 6 + 3 + 6 + 9 = 24. B: 1 + 18 + 27 + 2 = 48. (b) The two middle places count three times and the ends only once. B puts the two largest numbers, 6 and 9, in the middle. (c) The top is (ends) + 3 × (middles) = 18 + 2 × (middles), since all four add to 18. It is largest when the middles add to the most, 9 + 6 = 15, giving 18 + 30 = 48. (d) It is smallest when the middles add to the least, 1 + 2 = 3, giving 18 + 6 = 24, which is A's arrangement. (e) b and c both have coefficient 3, so swapping them leaves 3b + 3c unchanged.",
+          "s": [
+            [
+              "Part (a): tops 24 and 48",
+              1
+            ],
+            [
+              "Part (b): middles count three times; B puts 6 and 9 there",
+              1
+            ],
+            [
+              "Part (c): top = 18 + 2 × (middle sum); largest 48",
+              1
+            ],
+            [
+              "Part (d): smallest 24 with 1 and 2 in the middle",
+              1
+            ],
+            [
+              "Part (e): b and c have the same coefficient 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: In a 4-row number pyramid, increasing the first bottom number by 3 changes the top by exactly as much as increasing the second bottom number by 1. Give a reason.",
+          "a": "True. The top is a + 3b + 3c + d. Adding 3 to a adds 3 to the top; adding 1 to b adds 3 × 1 = 3 to the top. For example, bottom 2, 2, 6, 1 has top 27; 5, 2, 6, 1 and 2, 3, 6, 1 both have top 30.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Uses a + 3b + 3c + d: a counts once, b three times, so both add 3",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "In a school 'pyramid relay', each team writes four numbers as the bottom row of a 4-row number pyramid (each number is the sum of the two below it) and reports the top. The scorer's sheet shows:\nRed: 3, 2, 4, 1, top 22\nBlue: 5, 0, 2, 6, top 17\nGreen: 2, 4, 4, 2, top 20\nYellow: 1, 5, 3, 7, top 32\n(a) Which team's top is wrong? Give the correct top.\n(b) Show that the wrong top is exactly what the expression a + 2b + 2c + d gives for that team, and say what mistake this expression makes.\n(c) In the final round each team may rearrange its own four numbers in any order. Which team can reach the largest top, and what is it? Justify without listing every arrangement.",
+          "a": "(a) Using a + 3b + 3c + d: Red 3 + 6 + 12 + 1 = 22, Blue 5 + 0 + 6 + 6 = 17, Yellow 1 + 15 + 9 + 7 = 32, all right. Green: 2 + 12 + 12 + 2 = 28, not 20. (b) Green used a + 2b + 2c + d: 2 + 8 + 8 + 2 = 20, counting the middle numbers twice instead of three times. (c) The top is (sum of all four) + 2 × (sum of the two middle numbers), so each team puts its two largest numbers in the middle. Red 10 + 2 × 7 = 24, Blue 13 + 2 × 11 = 35, Green 12 + 2 × 8 = 28, Yellow 16 + 2 × 12 = 40. Yellow can reach 40, the largest.",
+          "s": [
+            [
+              "Part (a): Green is wrong; correct top 28",
+              1
+            ],
+            [
+              "Part (b): a + 2b + 2c + d gives Green's 20; it counts the middle numbers twice instead of three times",
+              1
+            ],
+            [
+              "Part (c): largest numbers in the middle; Yellow reaches 40 (Red 24, Blue 35, Green 28)",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a 4-row number pyramid the top is 40 and the two numbers just below the top are 18 and 22. The bottom row is 1, p, q, 3. Then p = ___. (Write the number in digits.)",
+          "a": "5"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that a 3-row number pyramid whose two bottom corner numbers are both odd can never have an odd top, whatever whole number is in the middle.",
+          "a": "The top is a + 2b + c. If a and c are both odd, a + c is even (odd + odd = even). 2b is even for every whole number b. So the top, (a + c) + 2b, is even + even, which is even. It can never be odd. Example: 3, 8, 5 gives 3 + 16 + 5 = 24.",
+          "s": [
+            [
+              "Uses top = a + 2b + c",
+              1
+            ],
+            [
+              "a + c even and 2b even",
+              1
+            ],
+            [
+              "Concludes the top is always even",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The bottom row of a 3-row number pyramid is 9, 4, 7. Ravi may add 5 to exactly one of these numbers. Which choice makes the top number as large as possible?",
+          "a": "Add 5 to the 4 in the middle",
+          "o": [
+            "Add 5 to the 4 in the middle",
+            "Add 5 to the 9, the largest number",
+            "Add 5 to the 7 on the right",
+            "All three choices give the same top"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Ashwin has a 3-row number pyramid with bottom row a, b, c. He adds a new number d at the right end of the bottom row and builds a 4-row pyramid.\n(a) Write the new top in terms of a, b, c, d.\n(b) Find, in terms of the letters, how much the top increases.\n(c) Check your answer to (b) with the bottom row 4, 3, 5 and d = 2 by finding both tops.\n(d) Explain why the increase is exactly the top of the 3-row pyramid with bottom row b, c, d.",
+          "a": "(a) a + 3b + 3c + d. (b) (a + 3b + 3c + d) − (a + 2b + c) = b + 2c + d. (c) Old top: 4 + 6 + 5 = 15. New top: 4 + 9 + 15 + 2 = 30. Increase 15, and b + 2c + d = 3 + 10 + 2 = 15. (d) In the 4-row pyramid, the two entries just below the top are the tops of the two 3-row pyramids on a, b, c and on b, c, d. So the new top is the old top plus the top of the pyramid on b, c, d, which is b + 2c + d.",
+          "s": [
+            [
+              "Part (a): a + 3b + 3c + d",
+              1
+            ],
+            [
+              "Part (b): increase b + 2c + d",
+              1
+            ],
+            [
+              "Part (c): 15 and 30, increase 15 matches",
+              1
+            ],
+            [
+              "Part (d): the new top is the sum of the tops of the pyramids on a, b, c and b, c, d",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Kabir knows that the top of a 3-row pyramid is a + 2b + c. For a 4-row pyramid with bottom row a, b, c, d he just adds the new number and writes the top as a + 2b + c + d.\n(a) Test his expression with the bottom row 1, 1, 1, 1 by building the pyramid.\n(b) Write the correct expression, working up from the row below the top.",
+          "a": "(a) Rows: 1, 1, 1, 1 → 2, 2, 2 → 4, 4 → 8. His expression gives 1 + 2 + 1 + 1 = 5, not 8, so it is wrong. (b) The two numbers just below the top are the tops of the 3-row pyramids on a, b, c and on b, c, d, that is a + 2b + c and b + 2c + d. Their sum is a + 3b + 3c + d.",
+          "s": [
+            [
+              "Part (a): building gives 8, his expression gives 5",
+              1
+            ],
+            [
+              "Part (b): (a + 2b + c) + (b + 2c + d) = a + 3b + 3c + d",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each pyramid with the expression for its top number.\nColumn A:\n1. 3 rows, bottom row x, 2x, 3x\n2. 4 rows, bottom row x, 1, 1, x\n3. 3 rows, bottom row x, x + 1, x + 2\n4. 4 rows, bottom row 1, x, x, 1\nColumn B:\n(P) 6x + 2\n(Q) 4x + 4\n(R) 8x\n(S) 2x + 6",
+          "a": "1-R, 2-S, 3-Q, 4-P",
+          "o": [
+            "1-R, 2-S, 3-Q, 4-P",
+            "1-R, 2-P, 3-Q, 4-S",
+            "1-Q, 2-S, 3-R, 4-P",
+            "1-R, 2-S, 3-P, 4-Q"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A craft teacher builds a 4-row pyramid of cardboard boxes, each box showing the sum of the two boxes below it. The bottom row is 3, 5, 8, 13, four Virahānka-Fibonacci numbers in a row (1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, ...).\n(a) Fill in the other three rows.\n(b) Every entry is a Virahānka-Fibonacci number. How many places after the last bottom number (13) does the top come in the sequence?\n(c) For a 3-row pyramid with bottom row 5, 8, 13, find the top with a + 2b + c and say how many places after 13 it comes.\n(d) For the display wall the teacher wants one more pyramid whose top is exactly 377 (the sequence goes on 233, 377, 610, ...). Should she build the 3-row pyramid on 55, 89, 144 or the 4-row pyramid on 34, 55, 89, 144? Decide using the expressions and the patterns from (b) and (c).",
+          "a": "(a) 8, 13, 21; then 21, 34; top 55. (b) After 13 come 21, 34, 55, so the top is 3 places after the last bottom number. (c) 5 + 16 + 13 = 34, which is 2 places after 13 (21, 34). (d) The 3-row pyramid: 55 + 2 × 89 + 144 = 377, which is 2 places after 144 (233, 377), as (c) predicts. The 4-row pyramid: 34 + 3 × 55 + 3 × 89 + 144 = 610, 3 places after 144, as (b) predicts. So she should build the 3-row pyramid.",
+          "s": [
+            [
+              "Part (a): rows 8, 13, 21 / 21, 34 / 55",
+              1
+            ],
+            [
+              "Part (b): 3 places after 13",
+              1
+            ],
+            [
+              "Part (c): top 34, 2 places after 13",
+              1
+            ],
+            [
+              "Part (d): 3-row gives 377 and 4-row gives 610, so she builds the 3-row pyramid",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A puzzle card says: 'The top of my 3-row number pyramid is 40. The two corner numbers of the bottom row are equal, and the middle number of the bottom row is 2 more than a corner number.' What is the middle number of the bottom row?",
+          "a": "11",
+          "o": [
+            "11",
+            "9",
+            "12",
+            "18"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Three Virahānka-Fibonacci numbers in a row (each number is the sum of the two before it) can be written p, q, p + q. They form the bottom row of a 3-row number pyramid.\n(a) Write the middle row and the top in terms of p and q.\n(b) Show that every number in the middle row and the top is also a Virahānka-Fibonacci number.\n(c) Use (a) to find the top when the bottom row is 21, 34, 55, without building the pyramid.",
+          "a": "(a) Middle row: p + q and q + (p + q) = p + 2q. Top: (p + q) + (p + 2q) = 2p + 3q. (b) The sequence continues p, q, p + q, then q + (p + q) = p + 2q, then (p + q) + (p + 2q) = 2p + 3q. So p + q, p + 2q and 2p + 3q are the next three terms. (c) 2 × 21 + 3 × 34 = 42 + 102 = 144.",
+          "s": [
+            [
+              "Part (a): middle row p + q, p + 2q; top 2p + 3q",
+              1
+            ],
+            [
+              "Part (b): these are the next terms of the sequence",
+              1
+            ],
+            [
+              "Part (c): top 144",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the tops of the 3-row pyramids with bottom rows 10, 1, 10 and 1, 10, 1.\n(b) The second row uses much larger numbers in the middle, yet the tops are equal. Explain why, using a + 2b + c.",
+          "a": "(a) 10 + 2 + 10 = 22 and 1 + 20 + 1 = 22. (b) The top is a + 2b + c. Going from 10, 1, 10 to 1, 10, 1, each end loses 9, so the ends lose 9 + 9 = 18; the middle gains 9, and since it counts twice the top gains 2 × 9 = 18. The loss and the gain cancel, so the top stays 22.",
+          "s": [
+            [
+              "Part (a): both tops 22",
+              1
+            ],
+            [
+              "Part (b): ends lose 9 + 9 = 18, the middle gains 2 × 9 = 18",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Reversing the order of the bottom row of a 4-row number pyramid never changes the top number.\nReason (R): In a 4-row pyramid the numbers 1, 3, 3 and 1 that multiply the bottom entries in the top expression add up to 8.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a 4-row number pyramid the second row from the bottom is 7, 12, 9.\n(a) Find the top.\n(b) The first number of the bottom row is 2. Find the rest of the bottom row, and check the top with a + 3b + 3c + d.",
+          "a": "(a) 7 + 12 = 19, 12 + 9 = 21, top 40 (or 7 + 2 × 12 + 9 = 40). (b) 2 + b = 7 gives b = 5; 5 + c = 12 gives c = 7; 7 + d = 9 gives d = 2. Bottom row 2, 5, 7, 2, and 2 + 15 + 21 + 2 = 40, which matches.",
+          "s": [
+            [
+              "Part (a): top 40",
+              1
+            ],
+            [
+              "Part (b): bottom row 2, 5, 7, 2 and a + 3b + 3c + d = 40",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The bottom row of a 3-row number pyramid is p, 4, q.\n(a) Write the middle row and the top in terms of p and q.\n(b) The top is 20. Find p + q, and give one pair of whole numbers p and q that fits.",
+          "a": "(a) Middle row: p + 4 and 4 + q. Top: (p + 4) + (4 + q) = p + q + 8. (b) p + q + 8 = 20, so p + q = 12; for example p = 5, q = 7 (top 9 + 11 = 20).",
+          "s": [
+            [
+              "Part (a): middle row p + 4, 4 + q and top p + q + 8",
+              1
+            ],
+            [
+              "Part (b): p + q = 12 with a valid pair",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.4",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Lata's 3-row number pyramid (each number is the sum of the two directly below it) has top 70. Its bottom row is 15, c, 9, and the middle row is still empty. What number goes in the left box of the middle row?",
+          "a": "38",
+          "o": [
+            "38",
+            "23",
+            "32",
+            "46"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The bottom row of a 3-row number pyramid is 7, b, 2b and the top is 63.\n(a) Form an equation in b and solve it.\n(b) Complete the middle row and check the top.",
+          "a": "(a) Top = 7 + 2b + 2b = 4b + 7 = 63, so 4b = 56 and b = 14. (b) Bottom row 7, 14, 28; middle row 21, 42; top 63.",
+          "s": [
+            [
+              "Part (a): 4b + 7 = 63, b = 14",
+              1
+            ],
+            [
+              "Part (b): middle row 21, 42, top 63",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each puzzle with the value of its unknown.\nColumn A:\n1. A 4-row pyramid has bottom row c, 1, 1, c and top 40.\n2. A 3-row pyramid has bottom row 5, b, 9 and top 40.\n3. An algebra-grid row reads circle + circle + circle + square = 30, and the square stands for 6; c is the circle.\n4. A 2-row pyramid has top 70 and bottom row 15 + c, c + 9.\nColumn B:\n(P) 23\n(Q) 13\n(R) 17\n(S) 8",
+          "a": "1-R, 2-Q, 3-S, 4-P",
+          "o": [
+            "1-R, 2-Q, 3-S, 4-P",
+            "1-R, 2-S, 3-Q, 4-P",
+            "1-P, 2-Q, 3-S, 4-R",
+            "1-R, 2-Q, 3-P, 4-S"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In an algebra grid:\nRow 1: circle + square + square = 26\nRow 2: circle + circle + square = 31\n(a) By comparing the two rows, find how much bigger the circle is than the square.\n(b) Find both values.",
+          "a": "(a) Row 2 has one more circle and one less square than Row 1, and its total is 5 more, so circle − square = 5. (b) Circle = square + 5. Row 1: square + 5 + 2 × square = 26, so 3 × square = 21, square = 7 and circle = 12. Check Row 2: 12 + 12 + 7 = 31.",
+          "s": [
+            [
+              "Part (a): circle is 5 more than the square",
+              1
+            ],
+            [
+              "Part (b): square 7, circle 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Asha is setting two-row algebra-grid puzzles for a class quiz (each shape stands for a whole number, each row adds up to the number at its end). A puzzle is fair only if every shape's value can be found from it. Which puzzle is fair?",
+          "a": "Row 1: circle + square = 14; Row 2: circle + square + square = 19",
+          "o": [
+            "Row 1: circle + square = 14; Row 2: circle + square + square = 19",
+            "Row 1: circle + square = 14; Row 2: circle + circle + square + square = 28",
+            "Row 1: circle + square + square = 19; Row 2: square + circle + square = 19",
+            "Row 1: circle + circle + square = 23; Row 2: circle + circle + circle + circle + square + square = 46"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "In an algebra grid, no shape appears twice in a row.\nRow 1: circle + square = 13\nRow 2: square + triangle = 17\nRow 3: circle + triangle = 20\nFind the value of each shape. Explain your method.",
+          "a": "Adding all three rows counts each shape twice: 2 × (circle + square + triangle) = 13 + 17 + 20 = 50, so circle + square + triangle = 25. Then circle = 25 − 17 = 8, triangle = 25 − 13 = 12, square = 25 − 20 = 5. Check: 8 + 5 = 13, 5 + 12 = 17, 8 + 12 = 20.",
+          "s": [
+            [
+              "Adds the rows: each shape counted twice, total 50",
+              1
+            ],
+            [
+              "Sum of the three shapes is 25",
+              1
+            ],
+            [
+              "Circle 8, square 5, triangle 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "At a maths fair, Kabir's stall shows one calendar page: a month of 31 days whose 1st is a Wednesday, with weeks running Sunday to Saturday (so the Saturdays are the 4th, 11th, 18th and 25th). Visitors circle a 2 × 2 block and report its sum. Four visitors report 40, 66, 100 and 116.\n(a) One of the four sums can be ruled out without looking at the page at all, because it cannot be written in the form 4a + 16 for any whole number a. Which one, and why?\n(b) Find the blocks for 40 and 100.\n(c) Show that 116 is also impossible on this page, although it passes the test in (a).\n(d) To stop impossible reports, Kabir will print one rule on his sign. Rule X: 'The sum must be a multiple of 4.' Rule Y: 'The sum must be a multiple of 4 from 20 to 108.' Which rule should he print? Justify, and say whether that rule stops every impossible sum.",
+          "a": "(a) 66: every block sum is 4a + 16, a multiple of 4, and 66 is not. (b) 40: 4a = 24, a = 6, block 6, 7, 13, 14. 100: 4a = 84, a = 21, block 21, 22, 28, 29. (c) 116 gives a = 25, a Saturday, in the last column, so 26 is not beside it (and 33 is past the month's end). (d) Rule Y. The smallest block is 1, 2, 8, 9 (sum 20), and the largest top-left date is 23 (it needs a + 8 ≤ 31, and 23 is a Thursday), giving 4 × 23 + 16 = 108; Rule X would still allow sums like 116 or 124. Rule Y does not stop every impossible sum: 32, 60 and 88 would need a = 4, 11 or 18, which are Saturdays.",
+          "s": [
+            [
+              "Part (a): 66, not a multiple of 4",
+              1
+            ],
+            [
+              "Part (b): blocks starting at 6 and at 21",
+              1
+            ],
+            [
+              "Part (c): a = 25 is a Saturday, so no block",
+              1
+            ],
+            [
+              "Part (d): Rule Y (sums run from 20 to 108), though 32, 60 and 88 still slip through because 4, 11, 18 are Saturdays",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A 3-row number pyramid with top 45 and bottom row 10, c, 16 cannot be completed using whole numbers.\nReason (R): The top of this pyramid is 10 + 2c + 16, so for a whole number c the top minus 26 must be an even number.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: A 3-row number pyramid has top 50, and the two numbers in its middle row are equal. Then the two corner numbers of the bottom row must be equal, and each must be 25 minus the middle number of the bottom row. Give a reason.",
+          "a": "True. With bottom row a, b, c the middle row is a + b and b + c, and these add to the top 50. If they are equal, each is 25. Then a + b = 25 and b + c = 25, so a = 25 − b and c = 25 − b: the corners are equal. Example: 4, 21, 4 gives middle row 25, 25 and top 50.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Middle row 25 and 25, so a + b = b + c = 25 gives a = c = 25 − b",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Ritu picks a 2 × 2 block on a calendar page (seven days to a row) with top-left date a, and tells you only the sum of one diagonal.\n(a) Show that both diagonals of any such block have the same sum, and write it in terms of a.\n(b) Ritu's diagonal sum is 46. Find her block.\n(c) Show that the sum of all four dates is always twice a diagonal sum, and check it for Ritu's block.\n(d) Her brother says his diagonal sum is 41. Show that this is impossible.\n(e) Explain why the sum of the two dates in any row of the block is always odd.",
+          "a": "(a) a + (a + 8) = 2a + 8 and (a + 1) + (a + 7) = 2a + 8. (b) 2a + 8 = 46, so a = 19: block 19, 20, 26, 27. (c) 4a + 16 = 2(2a + 8). For Ritu: 19 + 20 + 26 + 27 = 92 = 2 × 46. (d) 2a + 8 = 41 gives a = 16.5, not a date. (Every diagonal sum 2a + 8 is even.) (e) A row is a and a + 1 (or a + 7 and a + 8): the sum is 2a + 1 (or 2a + 15), always odd.",
+          "s": [
+            [
+              "Part (a): both diagonals 2a + 8",
+              1
+            ],
+            [
+              "Part (b): a = 19, block 19, 20, 26, 27",
+              1
+            ],
+            [
+              "Part (c): 4a + 16 = 2(2a + 8); 92 = 2 × 46",
+              1
+            ],
+            [
+              "Part (d): a = 16.5, not a whole number",
+              1
+            ],
+            [
+              "Part (e): row sums 2a + 1 and 2a + 15 are odd",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Neel circles a 2 × 2 block of dates on a calendar page (seven days to a row) and tells you only that the two dates in the top row of his block add up to 39. What is the bottom-right date of his block?",
+          "a": "27",
+          "o": [
+            "27",
+            "26",
+            "20",
+            "46"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Meena notices that the sum of a 2 × 2 calendar block is always 4 times some date. She claims: 'That date is always one of the four dates in the block.' Is she right? Use algebra and an example.",
+          "a": "No. The sum is 4a + 16 = 4(a + 4), so it is 4 times a + 4. The block holds a, a + 1, a + 7 and a + 8, and a + 4 is none of them (it lies between a + 1 and a + 7). Example: the block 5, 6, 12, 13 has sum 36 = 4 × 9, and 9 is not in the block. The number a + 4 is the average of the four dates.",
+          "s": [
+            [
+              "Writes the sum as 4(a + 4)",
+              1
+            ],
+            [
+              "Shows a + 4 is not among a, a + 1, a + 7, a + 8, with an example",
+              1
+            ],
+            [
+              "Verdict: claim wrong",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a 3-row number pyramid the top is 45 and the left number of the middle row is 20. The bottom row reads 8, then two unknown numbers. What is the right-hand number of the bottom row?",
+          "a": "13",
+          "o": [
+            "13",
+            "25",
+            "12",
+            "17"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A stationery shop shows its prices as an algebra grid; the same item always has the same price.\nBill 1: pen + pen + eraser = Rs 34\nBill 2: pen + eraser + eraser = Rs 26\nBill 3: eraser + sharpener + sharpener = Rs 22\n(a) By comparing Bills 1 and 2, find how much more a pen costs than an eraser.\n(b) Find the price of a pen and of an eraser.\n(c) Find the price of a sharpener.\n(d) The shop offers Pack X (one pen, one eraser and one sharpener) for Rs 25 and Pack Y (two pens) for Rs 26. A customer wants the pack that saves more compared with buying the same items one by one. Which pack should she choose? Justify.",
+          "a": "(a) Bill 1 has one more pen and one less eraser than Bill 2, and costs Rs 8 more, so a pen costs Rs 8 more than an eraser. (b) Pen = eraser + 8. Bill 2: eraser + 8 + 2 × eraser = 26, so eraser = Rs 6 and pen = Rs 14. (c) 6 + 2 × sharpener = 22, so sharpener = Rs 8. (d) Pack X: bought singly, 14 + 6 + 8 = Rs 28, so it saves Rs 3. Pack Y: 2 × 14 = Rs 28 singly, so it saves Rs 2. She should choose Pack X.",
+          "s": [
+            [
+              "Part (a): pen costs Rs 8 more",
+              1
+            ],
+            [
+              "Part (b): pen Rs 14, eraser Rs 6",
+              1
+            ],
+            [
+              "Part (c): sharpener Rs 8",
+              1
+            ],
+            [
+              "Part (d): Pack X saves Rs 3 and Pack Y saves Rs 2, so Pack X",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A 4-row number pyramid has bottom row 2, x, x + 3, 4 and top 75. Then x = ___. (Write the number in digits.)",
+          "a": "10"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In an algebra grid each row adds up to the number at its end.\nRow 1: square + triangle + triangle = 26\nRow 2: square + square + triangle = 22\nRow 3: square + triangle + circle = 23\n(a) Without finding the square or the triangle separately, find square + triangle.\n(b) Find the circle, and then the square and the triangle.",
+          "a": "(a) Adding Rows 1 and 2 gives three squares and three triangles = 48, so square + triangle = 16. (b) Row 3: 16 + circle = 23, so circle = 7. Row 1 is (square + triangle) + triangle = 16 + triangle = 26, so triangle = 10, and square = 6. Check Row 2: 6 + 6 + 10 = 22.",
+          "s": [
+            [
+              "Part (a): adds the rows to get 3 × (square + triangle) = 48, so 16",
+              1
+            ],
+            [
+              "Part (b): circle 7, triangle 10, square 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A 4-row number pyramid has bottom row 3, x, y, 5 and top 83.\n(a) Write the top in terms of x and y.\n(b) Find x + y.\n(c) The number just above 3 and x is 17. Find x and y.\n(d) Complete the pyramid and check the top.\n(e) Shreya says the top alone is enough to fill this pyramid. Show that she is wrong by giving a different bottom row 3, x, y, 5 with top 83.",
+          "a": "(a) 3 + 3x + 3y + 5 = 8 + 3(x + y). (b) 8 + 3(x + y) = 83, so 3(x + y) = 75 and x + y = 25. (c) 3 + x = 17, so x = 14 and y = 25 − 14 = 11. (d) Second row 17, 25, 16; third row 42, 41; top 83. (e) The top fixes only x + y = 25. For example x = 15, y = 10: 3 + 45 + 30 + 5 = 83 as well, so a second clue is needed.",
+          "s": [
+            [
+              "Part (a): 8 + 3(x + y)",
+              1
+            ],
+            [
+              "Part (b): x + y = 25",
+              1
+            ],
+            [
+              "Part (c): x = 14, y = 11",
+              1
+            ],
+            [
+              "Part (d): rows 17, 25, 16 / 42, 41 / 83",
+              1
+            ],
+            [
+              "Part (e): another pair such as 15 and 10 gives 83",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider 2 × 2 blocks of dates on a calendar page with seven days to a row; the top-left date is a.\nStatement 1: The bottom-right date minus the bottom-left date is always 7.\nStatement 2: Two different 2 × 2 blocks on the same page can have the same sum.\nStatement 3: If one block's sum is 12 more than another's, its top-left date is 3 more.\nWhich of the statements are correct?",
+          "a": "3 only",
+          "o": [
+            "3 only",
+            "1 and 3 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "On the August 2025 calendar page the 1st is a Friday and the weeks run Sunday to Saturday, so the Saturdays are the 2nd, 9th, 16th, 23rd and 30th. Ravi says he chose a 2 × 2 block whose dates add up to 52. Show that he must have made a mistake.",
+          "a": "The sum is 4a + 16 = 52, so 4a = 36 and a = 9. The block would be 9, 10, 16, 17. But 9 August is a Saturday, the last column, so 10 is not beside it; it starts the next row. No 2 × 2 block has 9 as its top-left date, so a sum of 52 is impossible on this page.",
+          "s": [
+            [
+              "Solves 4a + 16 = 52 to get a = 9",
+              1
+            ],
+            [
+              "Notes that 9 August is a Saturday, in the last column",
+              1
+            ],
+            [
+              "Concludes no such block exists",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In an algebra grid, each row adds up to the number at its end.\nRow 1: triangle + triangle + triangle = 33\nRow 2: triangle + square + square = 25\nRow 3: square + square + circle = 20\n(a) Find the triangle and the square.\n(b) Find the circle.",
+          "a": "(a) 3 × triangle = 33, so triangle = 11. Then 11 + 2 × square = 25, so square = 7. (b) 7 + 7 + circle = 20, so circle = 6.",
+          "s": [
+            [
+              "Part (a): triangle 11, square 7",
+              1
+            ],
+            [
+              "Part (b): circle 6",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.5",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A puzzle says: 'The largest (2-digit) × (1-digit) product that can be made from my three different digits is 288.' Which set of digits is it?",
+          "a": "2, 3 and 9",
+          "o": [
+            "2, 3 and 9",
+            "4, 6 and 8",
+            "3, 6 and 9",
+            "2, 4 and 7"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Digits 2, 5 and 9 are to be placed in a (2-digit) × (1-digit) multiplication, each used once.\n(a) Write all six products, grouped in pairs with the same multiplier, and keep the larger of each pair.\n(b) Compare the three survivors and find the largest product.",
+          "a": "(a) Multiplier 2: 59 × 2, 95 × 2 (keep 95 × 2 = 190). Multiplier 5: 29 × 5, 92 × 5 (keep 92 × 5 = 460). Multiplier 9: 25 × 9, 52 × 9 (keep 52 × 9 = 468). (b) 95 × 2 is clearly smallest. 52 × 9 = 450 + 18 and 92 × 5 = 450 + 10, so 52 × 9 = 468 is the largest.",
+          "s": [
+            [
+              "Part (a): six products in three pairs; 95 × 2, 92 × 5, 52 × 9 kept",
+              1
+            ],
+            [
+              "Part (b): 52 × 9 = 468 is the largest",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Riya claims: 'The only thing that matters is to make the largest digit the multiplier. The other two digits can go in either order.' Test her claim with the digits 2, 5 and 9.",
+          "a": "No. With 9 as the multiplier, 52 × 9 = 468 but 25 × 9 = 225. The order matters a lot: the larger of the two remaining digits must be the tens digit. In fact 25 × 9 = 225 is even smaller than 92 × 5 = 460, which does not use 9 as the multiplier at all.",
+          "s": [
+            [
+              "Finds 52 × 9 = 468 and 25 × 9 = 225",
+              1
+            ],
+            [
+              "Shows 25 × 9 loses even to 92 × 5 = 460",
+              1
+            ],
+            [
+              "Verdict: claim wrong; the other two digits must be in decreasing order",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "On the class board, four students each wrote a (2-digit) × (1-digit) product made from their own three different digit cards, each card used once. Which student wrote the largest product possible for his or her own cards?",
+          "a": "62 × 9",
+          "o": [
+            "62 × 9",
+            "83 × 5",
+            "47 × 9",
+            "91 × 7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Rahul's digit cards are 2, 5 and an unknown digit k, all different and non-zero.\n(a) If k is greater than 5, write the largest product in terms of k.\n(b) The largest product is 416. Find k.\n(c) Check that 82 × 5 is smaller than your answer in (b).\n(d) If instead k lies between 2 and 5, write the largest product in terms of k and find it for k = 4.\n(e) If k = 1, what is the largest product, and which digit is the multiplier?",
+          "a": "(a) k is the largest digit, so the product is 52 × k. (b) 52 × k = 416 gives k = 8. (c) 82 × 5 = 410, which is less than 416. (d) Now 5 is the largest digit and k is the middle one: k2 × 5 = (10k + 2) × 5 = 50k + 10. For k = 4: 42 × 5 = 210. (e) 5 is the largest and 2 the middle digit: 21 × 5 = 105, with 5 as the multiplier.",
+          "s": [
+            [
+              "Part (a): 52 × k",
+              1
+            ],
+            [
+              "Part (b): k = 8",
+              1
+            ],
+            [
+              "Part (c): 410 < 416",
+              1
+            ],
+            [
+              "Part (d): 50k + 10, giving 210",
+              1
+            ],
+            [
+              "Part (e): 21 × 5 = 105",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For the digits 2, 5 and 8, the arrangement 85 × 2 gives the largest product, because 85 is the largest 2-digit number that can be made.\nReason (R): In qp × r = (10 × q × r) + (p × r), the 1-digit multiplier r multiplies both of the other digits.",
+          "a": "A is false but R is true",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Anu says: 'For the digits 3, 7 and 9, the largest product is 97 × 3, because we should make the largest possible 2-digit number.'\n(a) Compare 97 × 3 with 73 × 9.\n(b) Explain, by expanding, why Anu's idea fails.",
+          "a": "(a) 97 × 3 = 291 and 73 × 9 = 657, so 73 × 9 is much larger. (b) 97 × 3 = (9 × 10 × 3) + (7 × 3) and 73 × 9 = (7 × 10 × 9) + (3 × 9). The multiplier multiplies both digits of the 2-digit number, so the largest digit does more work as the multiplier: 630 + 27 beats 270 + 21.",
+          "s": [
+            [
+              "Part (a): 291 against 657",
+              1
+            ],
+            [
+              "Part (b): expansion shows the multiplier multiplies both digits",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Kiran's digit cards are 2, 6 and 8, and her largest (2-digit) × (1-digit) product is 62 × 8 = 496. The game lets her swap exactly one of her cards for a 9 before she plays again. Which swap gives her the largest new best product?",
+          "a": "Swap the 2 for the 9",
+          "o": [
+            "Swap the 2 for the 9",
+            "Swap the 6 for the 9",
+            "Swap the 8 for the 9",
+            "Every swap gives the same best product"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A puzzle magazine prints: 'I chose three different non-zero digits, and one of them is 8. The largest (2-digit) × (1-digit) product I can make with them is 504.' Let the digits be p < q < r, so the largest product is qp × r.\n(a) Explain why 8 cannot be the smallest digit p.\n(b) Show that 8 cannot be the middle digit q.\n(c) Find the three digits.\n(d) The editor wants to shorten the clue by dropping 'one of them is 8', keeping only 'the largest product is 504'. Would the puzzle still have exactly one answer? Decide, and justify by checking which 1-digit multipliers can give 504.",
+          "a": "(a) If 8 were the smallest, the other two digits would both have to be larger than 8, but only 9 is. (b) If 8 were the middle digit, r would be 9 and the product would be (the 2-digit number with tens digit 8) × 9. That number = 504 ÷ 9 = 56, which does not start with 8. So 8 is not the middle digit. (c) So r = 8 and qp = 504 ÷ 8 = 63: the digits are 3, 6 and 8. (d) Yes, it still has one answer. The largest product has the form qp × r, with r the largest digit and q > p. Only 9, 8, 7 and 6 can be the multiplier (504 ÷ 5 is not whole and 504 ÷ 4 = 126 has three digits). 504 ÷ 9 = 56 (tens digit smaller than units digit, so not the best order), 504 ÷ 7 = 72 (uses 7 twice), 504 ÷ 6 = 84 (digits larger than the multiplier). Only 504 ÷ 8 = 63 works, so the digits must be 3, 6 and 8.",
+          "s": [
+            [
+              "Part (a): needs two digits larger than 8; only 9 exists",
+              1
+            ],
+            [
+              "Part (b): 504 ÷ 9 = 56 does not start with 8",
+              1
+            ],
+            [
+              "Part (c): digits 3, 6, 8",
+              1
+            ],
+            [
+              "Part (d): yes; of the multipliers 9, 8, 7, 6 only 8 (63 × 8) fits the largest-product form",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Let p < q < r be three different non-zero digits. Show that an arrangement with the smallest digit p as the multiplier can never give the largest product.",
+          "a": "With p as the multiplier the best is rq × p = (10 × r × p) + (q × p). Compare it with rp × q = (10 × r × q) + (p × q). The second terms are equal (q × p = p × q). The first terms are 10rp and 10rq, and since q > p, 10rq is larger. So rp × q always beats rq × p, and qr × p is smaller still. A product with p as the multiplier can never be the largest.",
+          "s": [
+            [
+              "Expands rq × p and rp × q",
+              1
+            ],
+            [
+              "Second terms equal; 10rq > 10rp because q > p",
+              1
+            ],
+            [
+              "Concludes p as multiplier never gives the largest",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Using any three different non-zero digits, each once, the largest (2-digit) × (1-digit) product that can possibly be made is ___. (Write the number in digits.)",
+          "a": "783"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "With 9 as the multiplier, the other two digits q and p (q > p) can be written as qp × 9 or as pq × 9.\n(a) Show that qp × 9 − pq × 9 = 81 × (q − p).\n(b) Use (a) to find, without multiplying either product, how much larger 83 × 9 is than 38 × 9.",
+          "a": "(a) qp × 9 − pq × 9 = 9 × [(10q + p) − (10p + q)] = 9 × 9(q − p) = 81(q − p). (b) q = 8 and p = 3, so the difference is 81 × 5 = 405. (Check: 747 − 342 = 405.)",
+          "s": [
+            [
+              "Part (a): 9 × 9(q − p) = 81(q − p)",
+              1
+            ],
+            [
+              "Part (b): 81 × 5 = 405",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Tara's digit cards are 3, 7 and a hidden card d, which she says is larger than 7. Without knowing d, which arrangement must give her largest (2-digit) × (1-digit) product?",
+          "a": "73 × d",
+          "o": [
+            "73 × d",
+            "d3 × 7",
+            "d7 × 3",
+            "37 × d"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Arjun has the digits 1, 8, 9 and Bina has 4, 5, 6.\n(a) Find the largest product for each.\n(b) For each set, find the second-largest product, rp × q, and the gap between the best and the second-best.\n(c) Using qp × r = (10 × q × r) + (p × r) and rp × q = (10 × r × q) + (p × q), show that the gap is always p × (r − q).\n(d) Choose three different non-zero digits that make this gap as large as possible. Give the gap and justify your choice.",
+          "a": "(a) Arjun: 81 × 9 = 729. Bina: 54 × 6 = 324. (b) Arjun: 91 × 8 = 728, gap 1. Bina: 64 × 5 = 320, gap 4. (c) The first terms 10qr and 10rq are equal, so the gap is p × r − p × q = p × (r − q). Arjun 1 × 1 = 1, Bina 4 × 1 = 4. (d) Take r = 9 to make r − q large, but q must be bigger than p. With q = p + 1 the gap is p × (8 − p): p = 3 gives 15, p = 4 gives 16, p = 5 gives 15. So 4, 5, 9 gives the largest gap, 16: 54 × 9 = 486 and 94 × 5 = 470.",
+          "s": [
+            [
+              "Part (a): 729 and 324",
+              1
+            ],
+            [
+              "Part (b): 728 and 320, gaps 1 and 4",
+              1
+            ],
+            [
+              "Part (c): equal first terms, gap p × (r − q)",
+              1
+            ],
+            [
+              "Part (d): chooses 4, 5, 9 with gap 16",
+              1
+            ],
+            [
+              "Part (d): justifies by trying p × (8 − p), which is largest at p = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Three different non-zero digits p, q and r, with p < q < r, are placed in a (2-digit) × (1-digit) multiplication.\nStatement 1: rq × p is always less than rp × q.\nStatement 2: In the largest product, the tens digit of the 2-digit number is the middle-sized digit q.\nStatement 3: The products qp × r and rp × q always differ by p × (r − q).\nWhich of the statements are correct?",
+          "a": "1, 2 and 3",
+          "o": [
+            "1, 2 and 3",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1 only"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find the largest (2-digit) × (1-digit) product for the digits 1, 2 and 3.\n(b) Neha says: 'For three consecutive digits n, n + 1, n + 2, the largest product is always the 2-digit number with tens digit n + 1 and units digit n, times n + 2.' Decide whether she is right, using the general rule, and check her rule with 5, 6, 7.",
+          "a": "(a) 21 × 3 = 63 (the nearest rival, 31 × 2, is 62). (b) She is right. The rule says the largest digit, n + 2, is the multiplier and the other two go in decreasing order, so n + 1 is the tens digit and n the units digit. For 5, 6, 7 this gives 65 × 7 = 455, which beats the rival 75 × 6 = 450.",
+          "s": [
+            [
+              "Part (a): 21 × 3 = 63",
+              1
+            ],
+            [
+              "Part (b): right, because n + 2 is the multiplier and n + 1, n go in decreasing order; 65 × 7 = 455",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "In the school quiz 'Digit Duel', each contestant gets three digit cards and must make the largest (2-digit) × (1-digit) product. A contestant scores only if the product is the largest possible for those cards. The scorer's sheet shows:\nAsha: cards 3, 6, 7; wrote 63 × 7 = 441\nBilal: cards 2, 8, 9; wrote 92 × 8 = 736\nChetan: cards 1, 4, 5; wrote 41 × 5 = 205\n(a) Which contestant did not make the largest product? What was his best product?\n(b) Bilal says he followed the rule 'make the largest digit the multiplier'. Did he? Expand 92 × 8 and 82 × 9 to show why his arrangement loses.\n(c) In the final, one contestant gets the cards 4, 6, 9 and the other gets 5, 6, 8; the larger best product wins. Chetan may choose first. Which set should he take? Justify with the rule, without listing all six arrangements.",
+          "a": "(a) Asha: 63 × 7 = 441 beats 73 × 6 = 438, correct. Chetan: 41 × 5 = 205 beats 51 × 4 = 204, correct. Bilal: his best is 82 × 9 = 738, so his 92 × 8 = 736 is not the largest. (b) No: he used 8, not 9, as the multiplier. 92 × 8 = (90 × 8) + (2 × 8) = 720 + 16, while 82 × 9 = (80 × 9) + (2 × 9) = 720 + 18. The tens parts are equal, and the units digit 2 is multiplied by 9 instead of 8, so 82 × 9 wins by 2. (c) By the rule, 4, 6, 9 gives 64 × 9 = 576 and 5, 6, 8 gives 65 × 8 = 520. Chetan should take 4, 6, 9, even though 5, 6, 8 has the larger smallest digit.",
+          "s": [
+            [
+              "Part (a): Bilal; best 82 × 9 = 738",
+              1
+            ],
+            [
+              "Part (b): he used 8 as multiplier; 720 + 16 against 720 + 18",
+              1
+            ],
+            [
+              "Part (c): 64 × 9 = 576 beats 65 × 8 = 520, so he takes 4, 6, 9",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two classmates argue about the digits 2, 6 and 9. Mohan says 92 × 6 is larger because 92 is the bigger 2-digit number; Leela says 62 × 9 is larger. Without multiplying fully, which reason settles the argument correctly?",
+          "a": "Both contain 6 × 9 × 10; then 2 × 9 beats 2 × 6",
+          "o": [
+            "Both contain 6 × 9 × 10; then 2 × 9 beats 2 × 6",
+            "92 is larger than 62, so it gives the smaller product",
+            "9 is the largest digit, so it must go in the tens place",
+            "They use the same digits, so the two products are really equal"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Kavi's three digit cards are 7, 5 and a third card d, all different and non-zero.\n(a) For which values of d is 7 the multiplier in Kavi's largest product?\n(b) Write Kavi's largest product when d = 3 and when d = 8.\n(c) Kavi's largest product turns out to be 378. Find d, and show that no other value of d gives 378.",
+          "a": "(a) 7 is the multiplier when it is the largest digit, so d is 1, 2, 3, 4 or 6. (b) d = 3: 53 × 7 = 371. d = 8: 75 × 8 = 600. (c) If d < 5, the multiplier is 7, the tens digit is 5 and the units digit is d: (50 + d) × 7 = 350 + 7d = 378, so d = 4. If d = 6 the product is 65 × 7 = 455. If d > 7 the product is 75 × d, and 378 ÷ 75 is not a whole number. So d = 4 (54 × 7 = 378).",
+          "s": [
+            [
+              "Part (a): d = 1, 2, 3, 4 or 6",
+              1
+            ],
+            [
+              "Part (b): 371 and 600",
+              1
+            ],
+            [
+              "Part (c): 350 + 7d = 378 gives d = 4; d = 6 and d > 7 cannot give 378",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: For the digits 1, 7 and 8, using 7 instead of 8 as the multiplier (with the other two digits in the best order) makes the product smaller by more than 10. Give a reason.",
+          "a": "False. With 8 as the multiplier the best is 71 × 8 = 568; with 7 as the multiplier it is 81 × 7 = 567. The loss is only 1. Expanding: 71 × 8 = (70 × 8) + (1 × 8) and 81 × 7 = (80 × 7) + (1 × 7); the tens parts are both 560, so only 8 against 7 for the units digit 1 differs.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "568 against 567: equal tens parts 560, so the loss is only 1",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.6",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Kunal claims: 'In the reverse-and-subtract trick, the answer is always a multiple of 9, and whenever the starting 2-digit number is odd it is also a multiple of 18.' Test both parts of his claim.",
+          "a": "Partly right. The difference is 9 × (difference of the digits), so it is always a multiple of 9: first part correct. It is a multiple of 18 only when the digit difference is even, which needs both digits odd or both even. An odd number only has an odd units digit; the tens digit may be even. Example: 43 is odd, 43 − 34 = 9, not a multiple of 18. Second part wrong.",
+          "s": [
+            [
+              "First part correct: difference is 9 × (digit difference)",
+              1
+            ],
+            [
+              "A multiple of 18 needs an even digit difference",
+              1
+            ],
+            [
+              "Counter-example such as 43 giving 9; verdict partly right",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For every 2-digit number with different non-zero digits, the number plus its reverse is a multiple of 11.\nReason (R): For every such number, the larger of the number and its reverse minus the smaller is a multiple of 9.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "rev": true,
+          "q": "At a maths fair, visitors pick a 2-digit number with two different non-zero digits, reverse it and subtract the smaller number from the larger. Which of these results could NOT have been reported by any visitor?",
+          "a": "81",
+          "o": [
+            "81",
+            "72",
+            "45",
+            "18"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Trick D: reverse a 2-digit number, subtract the smaller from the larger, divide by 9. Trick S: reverse it, add the two numbers, divide by 11. (Digits different and non-zero.)\n(a) Show that Trick D's quotient is the difference of the digits.\n(b) Show that Trick S's quotient is the sum of the digits.\n(c) Find both quotients for 75.\n(d) Show that the two quotients always add up to twice the larger digit.\n(e) A friend reports a quotient of 3 from Trick D and 11 from Trick S. Find every number she could have chosen.",
+          "a": "(a) For tens digit a > units digit b: (10a + b) − (10b + a) = 9(a − b), so the quotient is a − b (and b − a if b is larger). (b) (10a + b) + (10b + a) = 11(a + b), so the quotient is a + b. (c) 75 − 57 = 18, quotient 2; 75 + 57 = 132, quotient 12. (d) If the larger digit is a: (a − b) + (a + b) = 2a. For 75: 2 + 12 = 14 = 2 × 7. (e) Larger − smaller = 3 and sum = 11 give digits 7 and 4, so 74 or 47.",
+          "s": [
+            [
+              "Part (a): 9(a − b), quotient a − b",
+              1
+            ],
+            [
+              "Part (b): 11(a + b), quotient a + b",
+              1
+            ],
+            [
+              "Part (c): 2 and 12",
+              1
+            ],
+            [
+              "Part (d): (a − b) + (a + b) = 2a",
+              1
+            ],
+            [
+              "Part (e): 74 or 47",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: The sum of any 3-digit number and its two cyclic digit-rotations is divisible by 3 as well as by 37. Give a reason.",
+          "a": "True. With digits a, b, c the sum is (100a + 10b + c) + (100b + 10c + a) + (100c + 10a + b) = 111(a + b + c). Since 111 = 3 × 37, the sum is 3 × 37 × (a + b + c), divisible by both. Example: 258 gives 1665 = 3 × 555 = 37 × 45.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Shows the sum is 111(a + b + c) and 111 = 3 × 37",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Lina picks an even 2-digit number with different non-zero digits that is larger than its reverse. She subtracts the reverse from her number and gets 27. Which of these could be Lina's number?",
+          "a": "74",
+          "o": [
+            "74",
+            "58",
+            "63",
+            "41"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A school makes 6-digit locker codes by writing a student's 3-digit roll number twice: roll number 254 gets the code 254254. The office checks that a code is genuine by dividing it by 7, then 11, then 13 and seeing that the roll number comes back.\n(a) Show that 254254 = 254 × 1001 and explain why the check returns 254.\n(b) A clerk types 317318 by mistake. Show that it fails at the first step by finding its remainder on division by 7.\n(c) For the code 481481, show that one division by 1001 does the same job as the three divisions.\n(d) To save time, a clerk proposes replacing the three divisions with one look: 'check that the first three digits match the last three'. Using the mistyped codes 317318 and 317324, decide whether the clerk's check is as safe as the divisions, and recommend which the office should use.",
+          "a": "(a) 254 × 1001 = 254000 + 254 = 254254. Since 1001 = 7 × 11 × 13, dividing by 7, 11 and 13 divides by 1001 and leaves 254. (b) 317318 = 317317 + 1 = 317 × 1001 + 1, and 317 × 1001 is a multiple of 7, so the remainder is 1. (c) 481481 ÷ 1001 = 481, the roll number, because 7 × 11 × 13 = 1001. (d) The halves check rejects both: 317 ≠ 318 and 317 ≠ 324. The divisions also reject both (317318 = 317 × 1001 + 1 and 317324 = 317 × 1001 + 7 are not multiples of 1001). In fact a 6-digit number is a multiple of 1001 exactly when it is abc × 1001 = abcabc, so the two checks accept exactly the same codes. The halves check is just as safe and much quicker, so the office should use it.",
+          "s": [
+            [
+              "Part (a): 254 × 1001 and 1001 = 7 × 11 × 13",
+              1
+            ],
+            [
+              "Part (b): remainder 1",
+              1
+            ],
+            [
+              "Part (c): 481481 ÷ 1001 = 481",
+              1
+            ],
+            [
+              "Part (d): both checks reject 317318 and 317324; a 6-digit multiple of 1001 is exactly abcabc, so the quicker halves check is as safe",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Statement 1: Writing a 3-digit number abc twice to form abcabc multiplies it by 1000.\nStatement 2: In Mukta's trick (reverse a 2-digit number, subtract the smaller from the larger, divide by 9), the quotient equals the difference between the two digits.\nStatement 3: The sum of a 3-digit number and its two cyclic digit-rotations is always divisible by 111.\nWhich of the statements are correct?",
+          "a": "2 and 3 only",
+          "o": [
+            "2 and 3 only",
+            "1 and 2 only",
+            "3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Pallavi adds a 3-digit number to its two cyclic digit-rotations and says the total is 2000. Show that she has made a mistake.",
+          "a": "The total is always 111(a + b + c), a multiple of 111. But 111 × 18 = 1998 and 111 × 19 = 2109, so 2000 lies between two multiples of 111 and is not one. (It is also not divisible by 37, since 37 × 54 = 1998.) So her total is wrong.",
+          "s": [
+            [
+              "Total is 111(a + b + c)",
+              1
+            ],
+            [
+              "1998 and 2109 are consecutive multiples of 111",
+              1
+            ],
+            [
+              "Concludes 2000 is impossible",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Arun does two tricks in a row on a 2-digit number whose digits differ by at least 2: first he subtracts the smaller of the number and its reverse from the larger; then he adds the result to its own reverse.\n(a) Carry this out for 82 and for 53.\n(b) Explain, using 9 × (difference of the digits), why the final answer is the same for every such number.",
+          "a": "(a) 82 − 28 = 54, then 54 + 45 = 99. 53 − 35 = 18, then 18 + 81 = 99. (b) The first result is 9k, where k is the difference of the digits (2 to 8): 18, 27, 36, 45, 54, 63 or 72. Each of these has digits adding up to 9 (9k = 10(k − 1) + (10 − k)). A 2-digit number plus its reverse is 11 × (sum of its digits), so the final answer is always 11 × 9 = 99.",
+          "s": [
+            [
+              "Part (a): 54 then 99, and 18 then 99",
+              1
+            ],
+            [
+              "Part (b): 9k has digit sum 9, so adding its reverse gives 11 × 9 = 99",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Meena adds a 3-digit number to its two cyclic digit-rotations and announces a total of 1998. Without knowing her number, what can you be sure of?",
+          "a": "Her digits add up to 18",
+          "o": [
+            "Her digits add up to 18",
+            "Her digits add up to 54",
+            "Her number must be 666",
+            "Her digits add up to 9"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Repeating a 3-digit number abc gives the 6-digit number abcabc.\n(a) Show that abcabc = abc × 1001.\n(b) List every whole number from 2 to 200 that divides every number of the form abcabc, and explain why there are no others.\n(c) Without long division, find 618618 ÷ 77.\n(d) Ravi says: 'abcabc is always divisible by 1001 but never by 2.' Test his claim.\n(e) Is abcabc always divisible by 3? Justify with an example.",
+          "a": "(a) abcabc = abc × 1000 + abc = abc × 1001. (b) 1001 = 7 × 11 × 13, so its divisors from 2 to 200 are 7, 11, 13, 77, 91 and 143; each divides abc × 1001. No other number works: 100100 = 100 × 1001 and 101101 = 101 × 1001, and 100 and 101 share no common factor, so a number dividing both must divide 1001. (c) 618618 = 618 × 7 × 11 × 13, and 77 = 7 × 11, so the result is 618 × 13 = 8034. (d) The first part is right, the second is wrong: 124124 = 124 × 1001 is even, because 124 is even. (e) No. 1001 is not a multiple of 3 (1 + 0 + 0 + 1 = 2), so abcabc is divisible by 3 only when abc is. Example: 100100 has digit sum 2, so it is not divisible by 3, while 123123 is.",
+          "s": [
+            [
+              "Part (a): abc × 1000 + abc",
+              1
+            ],
+            [
+              "Part (b): 7, 11, 13, 77, 91, 143, from 1001 = 7 × 11 × 13",
+              1
+            ],
+            [
+              "Part (c): 618 × 13 = 8034",
+              1
+            ],
+            [
+              "Part (d): claim fails, e.g. 124124 is even",
+              1
+            ],
+            [
+              "Part (e): not always; 100100 is not divisible by 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Match each clue with what it tells you.\nColumn A:\n1. A 2-digit number minus its reverse (larger minus smaller) is 72.\n2. A 2-digit number plus its reverse is 132.\n3. A 3-digit number plus its two cyclic digit-rotations is 1554.\n4. A 3-digit number is written twice; the 6-digit number divided by 7 and then by 11 gives 4407.\nColumn B:\n(P) The digits add up to 14.\n(Q) The number is 339.\n(R) The digits differ by 8.\n(S) The digits add up to 12.",
+          "a": "1-R, 2-S, 3-P, 4-Q",
+          "o": [
+            "1-R, 2-S, 3-P, 4-Q",
+            "1-R, 2-P, 3-S, 4-Q",
+            "1-S, 2-R, 3-P, 4-Q",
+            "1-R, 2-S, 3-Q, 4-P"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Ishaan reverses 47 but subtracts the larger number from the smaller: 47 − 74 = −27. He says the trick has 'failed' because the answer is negative.\n(a) Is his answer still a multiple of 9, and what does it tell you about the digits of 47?\n(b) Show with algebra that (10a + b) − (10b + a) is a multiple of 9 whichever number is larger.",
+          "a": "(a) Yes: −27 = 9 × (−3). The trick has not failed: the size of the result, 27 = 9 × 3, still gives the difference of the digits, 7 − 4 = 3; only the sign shows he subtracted the other way. (b) (10a + b) − (10b + a) = 9a − 9b = 9(a − b). Whether a − b is positive or negative, 9(a − b) is a multiple of 9. Subtracting the other way only changes the sign.",
+          "s": [
+            [
+              "Part (a): −27 = 9 × (−3), and 27 ÷ 9 = 3 is still the digit difference",
+              1
+            ],
+            [
+              "Part (b): 9(a − b) for either order",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Riya picks a 2-digit number with different non-zero digits, adds it to its reverse, and gets 132. Which statement must be true?",
+          "a": "The digits of her number add up to 12",
+          "o": [
+            "The digits of her number add up to 12",
+            "Her number must have been 66",
+            "The digits of her number differ by 12",
+            "Her number itself is a multiple of 11"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "At a school fete, a magician asks visitors to pick a 3-digit number with no zero digit, write its two cyclic digit-rotations (for 123 these are 231 and 312), and add all three. His assistant records:\nAli, 123: total 666\nBeena, 246: total 1332\nCyrus, 789: total 2664\nDiya, 356: total 1564\n(a) Use the fact that the total is 111 × (sum of the digits) to find which visitor added wrongly, and give her correct total.\n(b) The magician claims he can tell each visitor the sum of her digits from the total alone. How? Find it from Diya's correct total.\n(c) He now wants every visitor's total to be divisible by 9. Which numbers should visitors be allowed to pick? Justify.",
+          "a": "(a) Ali 111 × 6 = 666, Beena 111 × 12 = 1332, Cyrus 111 × 24 = 2664, all correct. Diya: 111 × 14 = 1554, not 1564. (b) He divides the total by 111: 1554 ÷ 111 = 14, the sum of 3, 5 and 6. (c) The total is 111 × (digit sum) = 3 × 37 × (digit sum). 111 holds only one factor 3 and 37 is not a multiple of 3, so the total is divisible by 9 exactly when the digit sum is a multiple of 3. Visitors should pick numbers whose digits add up to a multiple of 3 (for example 123: 666 = 9 × 74; but 124 gives 777, not a multiple of 9).",
+          "s": [
+            [
+              "Part (a): Diya; correct total 1554",
+              1
+            ],
+            [
+              "Part (b): divide by 111; digit sum 14",
+              1
+            ],
+            [
+              "Part (c): total divisible by 9 exactly when the digit sum is a multiple of 3, with a check",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For a 2-digit number with different non-zero digits, the reverse-and-add trick divided by 11 gives one quotient, and the reverse-and-subtract trick (larger minus smaller) divided by 9 gives another.\n(a) Show that the two quotients are either both even or both odd.\n(b) Kiran says his quotients were 12 and 5. Without trying any numbers, show that he made a mistake.",
+          "a": "(a) The quotients are a + b and the difference of a and b (a − b or b − a). Their sum is 2a or 2b, which is even, so they are both even or both odd. (b) 12 is even and 5 is odd, so they cannot come from the same number. (Indeed a + b = 12 and a difference of 5 would make a digit 8.5.)",
+          "s": [
+            [
+              "Part (a): a + b and a − b add to an even number, so same parity",
+              1
+            ],
+            [
+              "Part (b): 12 even and 5 odd, so impossible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A 3-digit number uses the digits 4, 7 and one more digit. The number and its two cyclic digit-rotations add up to 1776. The missing digit is ___. (Write the digit.)",
+          "a": "5"
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "reverse"
+          ],
+          "q": "The equation 9(a − b) = 54 describes one run of a digit trick on a 2-digit number with tens digit a and units digit b (both non-zero).\n(a) Write the steps of the trick in words.\n(b) Give one number that produces 54, and show the working.\n(c) How many 2-digit numbers can this equation describe? List them.",
+          "a": "(a) Choose a 2-digit number, reverse its digits, and subtract the reversed number from the original. (b) For example 71: 71 − 17 = 54. (c) a − b = 6 with both digits non-zero and a the tens digit: 71, 82 and 93, so 3 numbers.",
+          "s": [
+            [
+              "Part (a): reverse and subtract the reverse from the number",
+              1
+            ],
+            [
+              "Part (b): a valid example such as 71 − 17 = 54",
+              1
+            ],
+            [
+              "Part (c): 71, 82, 93, so 3 numbers",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) A 2-digit number has tens digit a and units digit b, with a > b. Show that the number minus its reverse is 9(a − b).\n(b) Find every 2-digit number with non-zero digits and a > b for which this difference is 63.",
+          "a": "(a) (10a + b) − (10b + a) = 9a − 9b = 9(a − b). (b) 9(a − b) = 63, so a − b = 7. With non-zero digits: a = 8, b = 1 or a = 9, b = 2, giving 81 and 92 (81 − 18 = 63, 92 − 29 = 63).",
+          "s": [
+            [
+              "Part (a): 9(a − b)",
+              1
+            ],
+            [
+              "Part (b): a − b = 7, so 81 and 92",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

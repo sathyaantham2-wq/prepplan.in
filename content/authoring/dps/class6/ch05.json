@@ -1,0 +1,2633 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH6",
+  "class": 6,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 5,
+  "name": "Prime Time"
+ },
+ "source_code": "fegp105",
+ "concepts": [
+  {
+   "code": "C6M-5.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Grumpy places treasures on 18 and 42. Jumpy starts at 0 and may use any one jump size. Which is the largest jump size that lands on both treasures?",
+     "a": "6",
+     "o": [
+      "6",
+      "3",
+      "9",
+      "7"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an idli-vada game, 'idli' is said for multiples of 4 and 'vada' for multiples of 6. At which number is 'idli-vada' said for the first time?",
+     "a": "12",
+     "o": [
+      "12",
+      "24",
+      "10",
+      "36"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A class plays the idli-vada game from 1 to 120 with 'idli' for multiples of 3 and 'vada' for multiples of 5. How many times is 'idli-vada' said?",
+     "a": "8",
+     "o": [
+      "8",
+      "15",
+      "24",
+      "40"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a game, 'idli' goes with multiples of 6 and 'vada' with a larger number. Nobody ever said just 'vada'. Which of these could the larger number be?",
+     "a": "12",
+     "o": [
+      "12",
+      "9",
+      "10",
+      "14"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A perfect number equals half the sum of all its factors. Ravi says 6 is not perfect because he listed only 2 and 3 as its factors and got a sum of 5. What did he overlook?",
+     "a": "He left out 1 and 6; with them the sum is 12, which is twice 6.",
+     "o": [
+      "He left out 1 and 6; with them the sum is 12, which is twice 6.",
+      "He should have added the multiples 12 and 18 of 6 as well.",
+      "He should not count 3, because 3 is not a factor of 6.",
+      "He should have compared the sum 5 with 6 itself, and 5 is smaller."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The common factors of 20 and 28 are 1, 2 and 4.\nStatement 2: 75 is a multiple of 25, so it is also a multiple of 50.\nStatement 3: The common factors of 4, 8 and 12 are 1, 2, 3 and 4.\nWhich statements are correct?",
+     "a": "1 only. Statement 2 is false because 75 is not a multiple of 50 (75 is 25 x 3), and Statement 3 is false because 3 does not divide 4 or 8.",
+     "o": [
+      "1 only",
+      "2 only",
+      "1 and 3 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Treasures placed on 28 and 70 can both be reached with jump sizes 1, 2, 7 and 14.\nReason (R): A jump size lands on a number exactly when it is a factor of that number.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. The factors of 28 are 1, 2, 4, 7, 14, 28 and of 70 are 1, 2, 5, 7, 10, 14, 35, 70, so the sizes that are factors of both are 1, 2, 7 and 14.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the idli-vada game with 'idli' for multiples of 4 and 'vada' for multiples of 6, played from 1 to 100, the children say 'idli-vada' ___ times.",
+     "a": "8"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each pair of treasure positions in Column I with the jump sizes, other than 1, that land on both treasures in Column II.\nColumn I: 1. 15 and 30  2. 28 and 70  3. 20 and 28  4. 35 and 50\nColumn II: a. 5 only  b. 2 and 4  c. 3, 5 and 15  d. 2, 7 and 14",
+     "a": "1-c, 2-d, 3-b, 4-a",
+     "o": [
+      "1-c, 2-d, 3-b, 4-a",
+      "1-c, 2-b, 3-d, 4-a",
+      "1-a, 2-d, 3-b, 4-c",
+      "1-d, 2-c, 3-a, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) List the common factors of 18 and 48. (b) Grumpy places treasures on 18 and 48 and Jumpy wants a jump size bigger than 2. Which sizes can he use?",
+     "a": "(a) The factors of 18 are 1, 2, 3, 6, 9, 18 and of 48 are 1, 2, 3, 4, 6, 8, 12, 16, 24, 48, so the common factors are 1, 2, 3 and 6. (b) Sizes bigger than 2 from this list are 3 and 6.",
+     "s": [
+      [
+       "Part (a): 1, 2, 3, 6",
+       1
+      ],
+      [
+       "Part (b): 3 and 6 only",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) In an idli-vada game with 6 and 8, find the first number at which 'idli-vada' is said. (b) How many times is it said when the game is played up to 200?",
+     "a": "(a) The multiples of 6 are 6, 12, 18, 24 and of 8 are 8, 16, 24, so the first common multiple is 24. (b) 'Idli-vada' is said at 24, 48, 72, 96, 120, 144, 168 and 192, which is 8 times.",
+     "s": [
+      [
+       "Part (a): 24",
+       1
+      ],
+      [
+       "Part (b): 8 times (24 to 192)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student wrote: 'The factors of 12 are 12, 24, 36, 48, ...'. Say what she has listed instead, and write the correct first four numbers of that list and the full list of factors of 12.",
+     "a": "She listed the multiples of 12, not its factors. The multiples start 12, 24, 36, 48; the factors of 12 are 1, 2, 3, 4, 6 and 12, all of which divide 12 exactly.",
+     "s": [
+      [
+       "Identifies the list as multiples, not factors",
+       1
+      ],
+      [
+       "Gives factors 1, 2, 3, 4, 6, 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a game 'idli' is said for multiples of 5 and 'vada' for multiples of 12. Will anyone say just 'vada' before saying 'idli-vada'? Give the first number at which this happens and why.",
+     "a": "Yes, at 12. 12 is a multiple of 12 but not of 5, so only 'vada' is said. 'Idli-vada' has to wait until 60, the first number that is a multiple of both.",
+     "s": [
+      [
+       "Names 12 as the first 'vada' only",
+       1
+      ],
+      [
+       "Reason: 12 is not a multiple of 5; first common multiple is 60",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'Since 1 is a factor of every number, 1 is the only common factor of any two numbers.' Give your verdict and a reason.",
+     "a": "False. Many pairs share more: 12 and 18 have the common factors 1, 2, 3 and 6, so 1 is only the common factor that is always there, not always the only one.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Counter-example such as 12 and 18 with common factors 1, 2, 3, 6",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dev says, 'In any idli-vada game with two different numbers, the first number at which both are said together is the product of the two numbers.' Test his claim with the pair 4 and 6 and say what you find.",
+     "a": "The claim is not right in general. For 4 and 6 the multiples are 4, 8, 12 and 6, 12, so 'idli-vada' is first said at 12, which is less than 4 x 6 = 24. It does match the product for a pair like 3 and 5 (first at 15), so it holds only for some pairs.",
+     "s": [
+      [
+       "Finds 12 as the first common multiple of 4 and 6",
+       1
+      ],
+      [
+       "Compares with 24 and rejects 'always'",
+       1
+      ],
+      [
+       "Shows a pair such as 3 and 5 where it does equal the product",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a treasure-hunt situation of your own, with two treasure positions, in which exactly three jump sizes (counting 1) land on both treasures. Show the working.",
+     "a": "Sample: treasures on 9 and 27. The factors of 9 are 1, 3, 9 and of 27 are 1, 3, 9, 27, so exactly the jump sizes 1, 3 and 9 land on both. (Any valid pair, such as 9 and 18, earns full marks.)",
+     "s": [
+      [
+       "Gives two valid positions",
+       1
+      ],
+      [
+       "Lists the factors of both",
+       1
+      ],
+      [
+       "Shows exactly three common factors",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Anshu and Guna play the idli-vada game with two numbers, both less than 10 and both more than 1. The first time anybody says 'idli-vada' is after 70. Find the two numbers and the number at which it is first said.",
+     "a": "The numbers are 8 and 9. The first common multiple of 8 and 9 is 72, as 8, 16, ..., 72 and 9, 18, ..., 72. Every other pair below 10 meets at 70 or earlier: for example 7 and 9 meet at 63 and 7 and 8 at 56.",
+     "s": [
+      [
+       "Lists the multiples of 8 and 9",
+       1
+      ],
+      [
+       "Finds 72 as the first common multiple",
+       1
+      ],
+      [
+       "Rules out other pairs such as 7 and 9, or 7 and 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The idli-vada game is played from 1 to 150 with 'idli' for multiples of 3 and 'vada' for multiples of 5. Find (i) how many times 'idli' is said, including 'idli-vada', (ii) how many times 'vada' is said, including 'idli-vada', (iii) how many times 'idli-vada' is said, (iv) how many numbers get only 'idli' and how many get only 'vada', (v) how many numbers are said as plain numbers.",
+     "a": "(i) 150 / 3 = 50. (ii) 150 / 5 = 30. (iii) the common multiples are the multiples of 15: 150 / 15 = 10. (iv) only 'idli' = 50 - 10 = 40 and only 'vada' = 30 - 10 = 20. (v) numbers with some word = 40 + 20 + 10 = 70, so plain numbers = 150 - 70 = 80.",
+     "s": [
+      [
+       "Idli count 50",
+       1
+      ],
+      [
+       "Vada count 30",
+       1
+      ],
+      [
+       "Idli-vada count 10 from multiples of 15",
+       1
+      ],
+      [
+       "Only idli 40 and only vada 20",
+       1
+      ],
+      [
+       "Plain numbers 80",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A number is perfect when the sum of all its factors is twice the number. Test 6, 8, 12 and 20. For each, list the factors, give the sum, and compare it with twice the number. Which is perfect, and for the others say whether the sum falls short of or goes past twice the number.",
+     "a": "6: factors 1, 2, 3, 6, sum 12 = 2 x 6, so perfect. 8: factors 1, 2, 4, 8, sum 15, which falls short of 16. 12: factors 1, 2, 3, 4, 6, 12, sum 28, which goes past 24. 20: factors 1, 2, 4, 5, 10, 20, sum 42, which goes past 40. Only 6 is perfect.",
+     "s": [
+      [
+       "6 is perfect: sum 12 equals 12",
+       1
+      ],
+      [
+       "8: sum 15 falls short of 16",
+       1
+      ],
+      [
+       "12: sum 28 goes past 24",
+       1
+      ],
+      [
+       "20: sum 42 goes past 40",
+       1
+      ],
+      [
+       "Concludes only 6 is perfect",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a school fair in Nashik, a stall plays the treasure game. Two treasures are placed on two numbers and a child picks one jump size from 2 to 12 (1 is not allowed), starting at 0. A child wins a Rs 50 prize if that jump size lands on both treasures. The stall owner has four pairs in mind: A (48 and 60), B (45 and 70), C (30 and 45) and D (35 and 64). She expects 44 children, so each of the 11 jump sizes is picked by exactly 4 children, and she can spend at most Rs 600 on prizes but wants at least 6 children to win.\n(a) How many of the allowed jump sizes win for pair A? (b) Find the number of winning sizes for pairs B, C and D. (c) Find the number of winners and the prize money for each of the four pairs. (d) Which pair should she use? Justify using your answers.",
+     "a": "(a) The common factors of 48 and 60 are 1, 2, 3, 4, 6, 12, so the allowed winners are 2, 3, 4, 6, 12: 5 sizes. (b) B: 5 only, 1 size; C: 3 and 5 (15 is too big), 2 sizes; D: none, 0 sizes. (c) Winners = sizes x 4: A 20 winners, Rs 1,000; B 4 winners, Rs 200; C 8 winners, Rs 400; D 0 winners, Rs 0. (d) Pair C: it costs Rs 400, within Rs 600, and gives 8 winners, at least 6. A is over budget, B gives only 4 winners, and D can never be won.",
+     "s": [
+      [
+       "Part (a): 5 winning sizes for pair A",
+       1
+      ],
+      [
+       "Part (b): 1, 2 and 0 for B, C and D",
+       1
+      ],
+      [
+       "Part (c): winners 20, 4, 8, 0 and prizes Rs 1,000, 200, 400, 0",
+       1
+      ],
+      [
+       "Part (d): chooses C and rules out A, B and D with the numbers",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For Annual Day, Mr Joseph plans a clapping game for 200 children in a hall. Children count from 1 to 200. On multiples of 6 they say 'idli' and on multiples of 8 they say 'vada', and when both apply they stand up and say 'idli-vada'. He is also considering using 5 for 'idli' and 8 for 'vada'. He wants the children to stand at least 5 times but no more than 6 times.\n(a) For the first plan, at which number do the children first stand, and how many times do they stand in all? (b) For the second plan, at which number do they first stand? (c) How many times do they stand in the second plan? (d) Which plan would you advise? State the trade-off using your numbers.",
+     "a": "(a) The first common multiple of 6 and 8 is 24, and the children stand at 24, 48, ..., 192: 8 times. (b) In the second plan the first common multiple of 5 and 8 is 40. (c) They stand at 40, 80, 120, 160 and 200: 5 times. (d) The first plan makes them stand 8 times, more than the limit of 6, so it is ruled out. The second plan stands them 5 times, which meets 'at least 5' and 'no more than 6'. Advise the second plan; the trade-off is the long wait until the first stand, at 40 instead of 24.",
+     "s": [
+      [
+       "Part (a): 24 and 8 times",
+       1
+      ],
+      [
+       "Part (b): 40",
+       1
+      ],
+      [
+       "Part (c): 5 times",
+       1
+      ],
+      [
+       "Part (d): second plan, since 8 exceeds the limit of 6 and 5 fits; names the wait of 40 against 24",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-5.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Guna has to pack figs for different orders. Only one of these numbers of figs can be laid out in a rectangle in no other way than a single row. Which one?",
+     "a": "53",
+     "o": [
+      "53",
+      "51",
+      "57",
+      "91"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tara runs the Sieve of Eratosthenes on 1 to 100 but stops after crossing out the multiples of 2, 3 and 5. Which uncrossed number is still not a prime?",
+     "a": "91",
+     "o": [
+      "91",
+      "79",
+      "83",
+      "89"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tokens numbered 41 to 50 are shared: Ria takes the prime-numbered tokens and Tara takes the composite-numbered ones. How many more tokens does Tara get than Ria?",
+     "a": "4",
+     "o": [
+      "4",
+      "7",
+      "3",
+      "5"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A lock needs a number that is the product of three different primes, each used exactly once. Which number would work?",
+     "a": "66",
+     "o": [
+      "66",
+      "84",
+      "72",
+      "100"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair of twin primes, both lying between 55 and 65, differ by exactly 2?",
+     "a": "59 and 61",
+     "o": [
+      "59 and 61",
+      "57 and 59",
+      "61 and 67",
+      "55 and 57"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The number 1 is composite because it can be written as 1 x 1.\nStatement 2: The seven numbers 90, 91, 92, 93, 94, 95 and 96 are all composite.\nStatement 3: The only two consecutive whole numbers that are both prime are 2 and 3.\nWhich statements are correct?",
+     "a": "2 and 3 only. Statement 1 is false because 1 has just one factor, so it is neither prime nor composite.",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "1 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 51 is a prime number because it is odd and is not a multiple of 2 or 5.\nReason (R): A number is prime only when it has exactly two factors, 1 and itself.",
+     "a": "The Assertion is false but the Reason is true. 51 = 3 x 17, so it has the extra factors 3 and 17 and is composite.",
+     "o": [
+      "The Assertion is false but the Reason is true.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The smallest number that must be added to 90 to reach a prime number is ___.",
+     "a": "7"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each number in Column I with the description in Column II.\nColumn I: 1. 1  2. 2  3. 91  4. 29\nColumn II: a. composite, though not a multiple of 2, 3 or 5  b. neither prime nor composite  c. the only even prime  d. a prime between 25 and 30",
+     "a": "1-b, 2-c, 3-a, 4-d",
+     "o": [
+      "1-b, 2-c, 3-a, 4-d",
+      "1-c, 2-b, 3-a, 4-d",
+      "1-b, 2-c, 3-d, 4-a",
+      "1-a, 2-c, 3-b, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) List all the primes between 80 and 100. (b) Find the gap between each pair of successive primes in your list and say which gap is larger.",
+     "a": "(a) 83, 89 and 97. (b) The gaps are 89 - 83 = 6 and 97 - 89 = 8, so the gap between 89 and 97 is larger.",
+     "s": [
+      [
+       "Part (a): 83, 89, 97",
+       1
+      ],
+      [
+       "Part (b): gaps 6 and 8, larger is 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Count the factors of 36 and of 37. (b) Say which of the two can be arranged in a rectangle only as a single row, and link this to the count.",
+     "a": "(a) 36 has 9 factors (1, 2, 3, 4, 6, 9, 12, 18, 36) and 37 has 2 (1 and 37). (b) 37 can only be a single row, 1 x 37, because it has just two factors, which makes it prime; 36 has more than two factors, so it is composite and fits several rectangles.",
+     "s": [
+      [
+       "Part (a): 9 factors and 2 factors",
+       1
+      ],
+      [
+       "Part (b): 37 is prime so only 1 x 37; links to exactly two factors",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Mohit crosses out only the multiples of 2, 3 and 5 on the 1 to 100 chart and claims every uncrossed number left (other than 2, 3 and 5) is prime. Name the numbers that prove him wrong and say which number he must circle and use next.",
+     "a": "The numbers 49, 77 and 91 are left uncrossed but are composite (7 x 7, 7 x 11, 7 x 13). The next uncrossed number is 7, so he must circle 7 and cross out its multiples.",
+     "s": [
+      [
+       "Names 49, 77 and 91 with their factors",
+       1
+      ],
+      [
+       "States 7 is circled next and its multiples are crossed out",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A number N less than 20 has exactly two factors, and Riya says the number 1 should be on the list of such N because 1 x 1 = 1. How many such N are there, and what is wrong with Riya's claim?",
+     "a": "The numbers with exactly two factors below 20 are the primes 2, 3, 5, 7, 11, 13, 17 and 19: 8 numbers. The number 1 has only one factor, itself (1 x 1 = 1 repeats the same factor), so it does not have exactly two factors and is not on the list.",
+     "s": [
+      [
+       "Counts the 8 primes below 20",
+       1
+      ],
+      [
+       "Explains that 1 has just one factor, so it is not on the list",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: '2 and 3 are the only two consecutive whole numbers that are both prime.' Give your verdict and the reason.",
+     "a": "True. Of any two consecutive numbers one is even; an even number bigger than 2 has the factor 2 and is composite, so only the pair (2, 3) can have both prime.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: one of two consecutive numbers is even and bigger than 2 means composite",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Karan claims, 'There is a run of seven composite numbers in a row below 100.' Test his claim and show how you know each number in your run is composite.",
+     "a": "He is right. The run 90, 91, 92, 93, 94, 95, 96 works: 90 and 92, 94, 96 are even, 91 = 7 x 13, 93 = 3 x 31, 95 = 5 x 19. Each has a factor other than 1 and itself, and 97 is prime, so the run ends there.",
+     "s": [
+      [
+       "Names a run of seven such as 90 to 96",
+       1
+      ],
+      [
+       "Gives a factor for each odd member (91, 93, 95)",
+       1
+      ],
+      [
+       "Concludes the claim is true",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no three-digit number made using each of the digits 6, 8 and 5 exactly once can be prime.",
+     "a": "The six numbers are 685, 658, 865, 856, 586 and 568. Those ending in 5 are multiples of 5, and those ending in 6 or 8 are even and bigger than 2. So every one of them has a factor other than 1 and itself.",
+     "s": [
+      [
+       "Lists or describes all arrangements by last digit",
+       1
+      ],
+      [
+       "Ending in 5 is a multiple of 5",
+       1
+      ],
+      [
+       "Ending in 6 or 8 is even and bigger than 2, so composite",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Find all pairs of different primes below 20 whose sum is 24, and explain why the prime 2 cannot be in any such pair.",
+     "a": "The pairs are 5 and 19, 7 and 17, 11 and 13. For 2 the partner would be 22, which is even and composite, so 2 cannot be used.",
+     "s": [
+      [
+       "Finds all three pairs",
+       1
+      ],
+      [
+       "Checks that 2 would need 22",
+       1
+      ],
+      [
+       "Says 22 is composite so 2 fails",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Run the Sieve of Eratosthenes on the numbers 1 to 50. (i) Which number is crossed out first and why? (ii) How many numbers are crossed out as multiples of 2 after circling 2? (iii) Which numbers are newly crossed out when the multiples of 3 are dealt with after 2, and how many are there? (iv) How many numbers are circled at the end? (v) How many composite numbers are there from 1 to 50?",
+     "a": "(i) 1 is crossed out first because it is neither prime nor composite. (ii) 4, 6, ..., 50 gives 24 numbers. (iii) Only the odd multiples of 3 are new: 9, 15, 21, 27, 33, 39 and 45, which is 7 numbers. (iv) The circled primes up to 50 are 15 in all. (v) Composite numbers = 50 - 15 - 1 = 34.",
+     "s": [
+      [
+       "1 crossed first, neither prime nor composite",
+       1
+      ],
+      [
+       "24 multiples of 2 crossed",
+       1
+      ],
+      [
+       "7 new numbers for 3 (9 to 45)",
+       1
+      ],
+      [
+       "15 primes circled",
+       1
+      ],
+      [
+       "34 composites",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Justify: 'All even numbers are composite.' (i) Say whether the statement is true and name the exception. (ii) Explain with factors why every other even number is composite. (iii) Write the last digits a prime bigger than 5 cannot have, with reasons. (iv) Check your rule on the primes between 30 and 50. (v) How many even primes are there below 100?",
+     "a": "(i) The statement is false because 2 is even and prime. (ii) An even number n bigger than 2 has the factors 1, 2 and n, which is more than two factors. (iii) A prime above 5 cannot end in 0, 2, 4, 6 or 8 (even, so divisible by 2) or in 5 (a multiple of 5). (iv) The primes 31, 37, 41, 43, 47 all end in 1, 3, 7 or 9. (v) Only one, the number 2.",
+     "s": [
+      [
+       "False, with 2 as the exception",
+       1
+      ],
+      [
+       "Even numbers above 2 have at least 3 factors",
+       1
+      ],
+      [
+       "Rules out 0, 2, 4, 5, 6, 8 with reasons",
+       1
+      ],
+      [
+       "Checks 31, 37, 41, 43, 47",
+       1
+      ],
+      [
+       "Only one even prime",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Neeta's class does the Sieve of Eratosthenes on a chart of 1 to 100. She circles 2, 3 and 5 and crosses out their multiples, and the teacher then asks questions. The teacher wants primes only up to some number N and Neeta has time to deal with the multiples of 2, 3 and 5 only.\n(a) After this, how many numbers other than 1 are left uncrossed and not circled? (b) How many of those are not prime, and which are they? (c) What does she do next, and what is the result for the numbers left? (d) For N = 40, 60 and 100, say whether she can stop after 5 and still get a correct list of primes up to N.",
+     "a": "(a) The numbers left are 7, 11, 13, ... , 97, which is 25 numbers. (b) Three of them are composite: 49 = 7 x 7, 77 = 7 x 11, 91 = 7 x 13. (c) She circles 7 and crosses out 49, 77 and 91, after which the 22 remaining numbers are all prime. (d) For N = 40 she can stop, since the smallest composite left is 49 which is above 40. For N = 60 and N = 100 she cannot stop, because 49 is below both.",
+     "s": [
+      [
+       "Part (a): 25 numbers",
+       1
+      ],
+      [
+       "Part (b): 3 composites 49, 77, 91",
+       1
+      ],
+      [
+       "Part (c): circles 7 and crosses 49, 77, 91; 22 primes remain",
+       1
+      ],
+      [
+       "Part (d): stop for 40; not for 60 or 100, with the reason 49",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school dance team of n students must stand in rows of equal length, with each row holding 4 to 8 students and at least 3 rows. The costume for each student costs Rs 350 and the budget is Rs 15,000. The coach is thinking of team sizes 36, 40, 47 and 48 and wants the size within budget that gives the most different formations.\n(a) Which of the four sizes cannot stand in any rectangle at all except a single line? (b) For 40 students, list every formation (rows and students per row) that follows the rules. (c) How many formations follow the rules for 36 and for 48? (d) Taking cost into account, which team size would you recommend and why?",
+     "a": "(a) 47, because it is prime with only the factors 1 and 47. (b) 10 rows of 4, 8 rows of 5 and 5 rows of 8. (c) 36 gives 2 formations (9 rows of 4 and 6 rows of 6) and 48 gives 3 (12 rows of 4, 8 rows of 6 and 6 rows of 8). (d) 48 costs Rs 16,800, over the budget; 36 costs Rs 12,600 with 2 formations and 40 costs Rs 14,000 with 3 formations. Recommend 40: it is within budget and has 3 formations, more than the 2 of size 36.",
+     "s": [
+      [
+       "Part (a): 47 as prime",
+       1
+      ],
+      [
+       "Part (b): the three formations for 40",
+       1
+      ],
+      [
+       "Part (c): 2 formations for 36 and 3 for 48",
+       1
+      ],
+      [
+       "Part (d): 48 over budget; recommends 40 as within budget with 3 formations against 2",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-5.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Grumpy wants a pair of treasure numbers that is safe when a jump size of 1 is not allowed. Which pair should he pick?",
+     "a": "16 and 27",
+     "o": [
+      "16 and 27",
+      "14 and 35",
+      "21 and 49",
+      "22 and 55"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an idli-vada game, 'idli' goes to the multiples of one number and 'vada' to the multiples of another. For which pair is the first 'idli-vada' said exactly at the product of the two numbers?",
+     "a": "8 and 15",
+     "o": [
+      "8 and 15",
+      "6 and 15",
+      "10 and 25",
+      "9 and 12"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "One treasure is on 24. Jumpy must pick a jump size bigger than 1 that lands on both treasures. For which position of the second treasure is this impossible?",
+     "a": "35",
+     "o": [
+      "35",
+      "51",
+      "18",
+      "46"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Treasures are placed on 30 and 415. A child claims they are safe because 415 is so much bigger than 30. Which jump size proves the child wrong?",
+     "a": "5",
+     "o": [
+      "5",
+      "3",
+      "2",
+      "83"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Anshu notices that for one pair of numbers in the idli-vada game the first 'idli-vada' is said earlier than the product of the two numbers. What can he conclude about the pair?",
+     "a": "The two numbers share a common factor bigger than 1, so they are not co-prime.",
+     "o": [
+      "The two numbers share a common factor bigger than 1, so they are not co-prime.",
+      "The two numbers are co-prime, because they meet early.",
+      "Both numbers must be even numbers.",
+      "One number must be a multiple of the other."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: Two numbers can be co-prime even when neither of them is a prime, as with 4 and 9.\nStatement 2: Two even numbers can be co-prime if one of them is large enough.\nStatement 3: Any two different prime numbers are co-prime.\nWhich statements are correct?",
+     "a": "1 and 3 only. Statement 2 is false because two even numbers always share the factor 2.",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The numbers 17 and 69 are co-prime.\nReason (R): The number 69 is not a prime number.",
+     "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. 69 = 3 x 23 is indeed composite, but 17 and 69 are co-prime because the only common factor is 1, and a composite number can be co-prime with another number.",
+     "o": [
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In an idli-vada game with 9 and 14, the first time 'idli-vada' is said is at the number ___.",
+     "a": "126"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) List the factors of 20 and of 55 and say whether the pair is co-prime. (b) If not, name the jump sizes, other than 1, that reach both treasures.",
+     "a": "(a) The factors of 20 are 1, 2, 4, 5, 10, 20 and of 55 are 1, 5, 11, 55, so they share 1 and 5 and are not co-prime. (b) The only jump size other than 1 is 5.",
+     "s": [
+      [
+       "Part (a): lists factors and says not co-prime",
+       1
+      ],
+      [
+       "Part (b): jump size 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the first number at which 'idli-vada' is said for the pair 7 and 10 and for the pair 8 and 10. (b) Compare each with the product of the pair and say which pair is co-prime.",
+     "a": "(a) For 7 and 10 the first is 70 and for 8 and 10 it is 40. (b) 7 x 10 = 70 equals the first common multiple, so 7 and 10 are co-prime; 8 x 10 = 80 is bigger than 40, so 8 and 10 are not co-prime (they share 2).",
+     "s": [
+      [
+       "Part (a): 70 and 40",
+       1
+      ],
+      [
+       "Part (b): product comparison, 7 and 10 co-prime, 8 and 10 not",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write two numbers, neither of them a prime, that are co-prime, and show with their factors that they are.",
+     "a": "Sample: 8 and 15. The factors of 8 are 1, 2, 4, 8 and of 15 are 1, 3, 5, 15; both are composite and the only common factor is 1.",
+     "s": [
+      [
+       "Gives two composite numbers",
+       1
+      ],
+      [
+       "Shows the only common factor is 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sunil says, 'The pair 34 and 51 is safe, since one number is even and the other is odd.' Test his reasoning and give the verdict.",
+     "a": "He is wrong. 34 = 2 x 17 and 51 = 3 x 17, so 17 is a common factor and a jump of 17 reaches both treasures. Being one even and one odd does not stop numbers from sharing a factor.",
+     "s": [
+      [
+       "Finds the common factor 17",
+       1
+      ],
+      [
+       "States the pair is not safe and the even-odd idea fails",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'If two numbers are both odd, they must be co-prime.' Give your verdict and a reason.",
+     "a": "False. 15 and 21 are both odd but they share the factor 3, so they are not co-prime.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Counter-example such as 15 and 21 with common factor 3",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Meera claims, 'Two even numbers can never be co-prime, and two odd numbers can never be co-prime either.' Decide how much of this is right, with examples.",
+     "a": "Partly right. Two even numbers always share the factor 2, so the first half is right (for example 4 and 6). The second half is wrong: 9 and 25 are both odd and their factors 1, 3, 9 and 1, 5, 25 share only 1, so they are co-prime.",
+     "s": [
+      [
+       "First half right, with the reason (factor 2)",
+       1
+      ],
+      [
+       "Second half wrong with an odd co-prime pair such as 9 and 25",
+       1
+      ],
+      [
+       "Gives the overall verdict: partly right",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that Grumpy can never make a safe pair by choosing a number n bigger than 1 and its double 2n.",
+     "a": "Both n and 2n are divisible by n, because 2n = n x 2. Since n is bigger than 1, the jump size n lands on both treasures, so the pair has a common factor other than 1 and is never safe. For example 7 and 14 share 7.",
+     "s": [
+      [
+       "Notes n is a factor of n",
+       1
+      ],
+      [
+       "Notes n is a factor of 2n because 2n = n x 2",
+       1
+      ],
+      [
+       "Concludes a common factor bigger than 1 exists, with an example",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "From the numbers 12, 25, 35, 49 and 56, form every pair and list the pairs that are co-prime. Show the common factor that stops each of the other pairs.",
+     "a": "Co-prime pairs: 12 and 25, 12 and 35, 12 and 49, 25 and 49, 25 and 56. Not co-prime: 12 and 56 (2), 25 and 35 (5), 35 and 49 (7), 35 and 56 (7), 49 and 56 (7).",
+     "s": [
+      [
+       "Lists the five co-prime pairs",
+       1
+      ],
+      [
+       "Gives the common factors for the pairs that fail",
+       1
+      ],
+      [
+       "Checks all ten pairs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Decide whether each of these pairs is co-prime, giving the common factor that stops it or saying that the only common factor is 1: (i) 24 and 35, (ii) 45 and 28, (iii) 36 and 81, (iv) 26 and 45, (v) 34 and 85.",
+     "a": "(i) 24 and 35: co-prime, only common factor 1. (ii) 45 and 28: co-prime. (iii) 36 and 81: not co-prime, 3 (and 9) divide both. (iv) 26 and 45: co-prime. (v) 34 and 85: not co-prime, 17 divides both.",
+     "s": [
+      [
+       "24 and 35 co-prime",
+       1
+      ],
+      [
+       "45 and 28 co-prime",
+       1
+      ],
+      [
+       "36 and 81 not co-prime, with a common factor",
+       1
+      ],
+      [
+       "26 and 45 co-prime",
+       1
+      ],
+      [
+       "34 and 85 not co-prime, common factor 17",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Find the first number at which 'idli-vada' would be said, and compare it with the product of the two numbers, for these pairs: (i) 4 and 9, (ii) 6 and 15, (iii) 8 and 15. (iv) A pair has one number 12, and its first common multiple equals the product 84; find the other number and check that the two are co-prime. (v) Asha says that for 10 and 25 the first common multiple is 250 because it is 'always the product'. Correct her.",
+     "a": "(i) 36, which equals 4 x 9 = 36. (ii) 30, which is less than 90. (iii) 120, which equals 8 x 15 = 120. (iv) 84 / 12 = 7; 12 and 7 have only the common factor 1, so they are co-prime. (v) Asha is wrong: the first common multiple of 10 and 25 is 50, because they share the factor 5; the product is the first common multiple only for co-prime pairs.",
+     "s": [
+      [
+       "4 and 9: 36 equals the product",
+       1
+      ],
+      [
+       "6 and 15: 30 less than 90",
+       1
+      ],
+      [
+       "8 and 15: 120 equals the product",
+       1
+      ],
+      [
+       "Other number 7 and co-prime check",
+       1
+      ],
+      [
+       "Corrects Asha: 50, since 10 and 25 are not co-prime",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a Diwali display in Jaipur two strings of lights start together at time 0. String A blinks every a seconds and string B every b seconds, and the display is special whenever both blink at the same second. The show lasts 300 seconds. The organiser is choosing among the pairs (6, 10), (7, 10) and (9, 10), and does not count the start at time 0, and wants the first shared blink to come after 50 seconds and at least 3 shared blinks in the show; among the pairs that meet both conditions he wants the one with the most shared blinks.\n(a) Which of the three pairs are co-prime? (b) Find the first shared blink for each pair. (c) Find the number of shared blinks in 300 seconds for each pair. (d) Which pair would you recommend, and why are the other two not chosen?",
+     "a": "(a) 7 and 10, and 9 and 10 are co-prime; 6 and 10 share 2. (b) The first shared blinks are at 30, 70 and 90 seconds; for the co-prime pairs these equal 7 x 10 and 9 x 10. (c) In 300 seconds there are 10, 4 and 3 shared blinks. (d) The pair (6, 10) is out because its first shared blink is at 30 s, before 50 s. Both (7, 10) and (9, 10) meet the two conditions, and (7, 10) has more shared blinks (4 against 3), so recommend (7, 10); (9, 10) is not chosen because it gives fewer shared blinks.",
+     "s": [
+      [
+       "Part (a): 7 and 10, 9 and 10 are co-prime",
+       1
+      ],
+      [
+       "Part (b): 30, 70, 90",
+       1
+      ],
+      [
+       "Part (c): 10, 4, 3",
+       1
+      ],
+      [
+       "Part (d): rules out (6, 10), picks (7, 10) for 4 shared blinks against 3",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Four sections of Class 6 have 36 (A), 40 (B), 45 (C) and 35 (D) students. For a quiz, two sections are paired and each is split into teams of one common size, with no student left over, and the size must be between 3 and 8. Each team gets a trophy that costs Rs 80, and the budget is Rs 1,500. The school wants teams as small as possible, and among the choices within budget it wants the most students taking part.\n(a) Which pair of sections has no team size at all that fits both? (b) Which team sizes fit sections A and B, and which fit A and C? (c) For the smallest team size that fits A and B, find the number of teams and the trophy cost. (d) Which pair of sections and team size would you choose, given the budget? Justify.",
+     "a": "(a) A and D, because 36 and 35 are co-prime. (b) A and B can use team size 4 only (common factors 1, 2, 4) and A and C can use size 3 only (common factors 1, 3, 9). (c) At size 4 there are 9 + 10 = 19 teams costing 19 x 80 = Rs 1,520, which is over the budget. (d) The next smallest size is 5, which fits B and C (17 teams, Rs 1,360), C and D (16 teams, Rs 1,280) and B and D (15 teams, Rs 1,200), all within budget. The school wants the most students within budget, so choose B and C with team size 5: 85 students, 17 teams, Rs 1,360. C and D involve 80 students and B and D only 75.",
+     "s": [
+      [
+       "Part (a): A and D",
+       1
+      ],
+      [
+       "Part (b): size 4 for A and B, size 3 for A and C",
+       1
+      ],
+      [
+       "Part (c): 19 teams and Rs 1,520, over budget",
+       1
+      ],
+      [
+       "Part (d): B and C with size 5, supported by 85 students against 80 and 75 and the cost within budget",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-5.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Dev splits 105 = 3 x 35 and 130 = 2 x 65 and says the two numbers are co-prime because no piece appears in both splits. Full prime factorisation shows that 105 and 130 actually share which prime?",
+     "a": "5",
+     "o": [
+      "5",
+      "2",
+      "13",
+      "None, so they are co-prime"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A number has a prime factorisation with one 2, three 3s and one 5. Which number is it?",
+     "a": "270",
+     "o": [
+      "270",
+      "180",
+      "90",
+      "810"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A storekeeper wants to pack 504 pens into boxes of 48 with none left over. Using the prime factorisations 504 = 2 x 2 x 2 x 3 x 3 x 7 and 48 = 2 x 2 x 2 x 2 x 3, what should he conclude?",
+     "a": "He cannot, because 48 needs four 2s but 504 has only three.",
+     "o": [
+      "He cannot, because 48 needs four 2s but 504 has only three.",
+      "He can, because the primes 2 and 3 of 48 both appear in 504.",
+      "He can, because 504 is bigger than 48.",
+      "He cannot, because 48 is not a prime number."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four students break 60 down in four different ways, each time carrying on until only primes remain. What will they find?",
+     "a": "Every student gets two 2s, one 3 and one 5, possibly written in a different order.",
+     "o": [
+      "Every student gets two 2s, one 3 and one 5, possibly written in a different order.",
+      "Each student can get a different set of primes depending on the first split.",
+      "Every student gets the same primes but in exactly the same order.",
+      "Only the students who split 60 as 6 x 10 reach all the primes."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these writes 360 as a product of primes and nothing else?",
+     "a": "2 x 2 x 2 x 3 x 3 x 5",
+     "o": [
+      "2 x 2 x 2 x 3 x 3 x 5",
+      "2 x 3 x 4 x 15",
+      "2 x 2 x 3 x 3 x 5 x 5",
+      "8 x 9 x 5"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The prime factorisation of a prime number such as 7 is just 7.\nStatement 2: Splitting 36 as 4 x 9 or as 6 x 6 and breaking each piece down fully always leaves two 2s and two 3s.\nStatement 3: The number 1 has the prime factorisation 1 x 1.\nWhich statements are correct?",
+     "a": "1 and 2 only. Statement 3 is false because 1 is not divisible by any prime, so it has no prime factorisation.",
+     "o": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number 36 can be written as a product of primes in only one way, apart from the order of the factors.\nReason (R): Splitting 36 as 4 x 9 and as 6 x 6 leads to different sets of primes.",
+     "a": "The Assertion is true but the Reason is false. Both splits end in 2 x 2 x 3 x 3, so the set of primes is the same.",
+     "o": [
+      "The Assertion is true but the Reason is false.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Without multiplying out 54 x 45, the prime 3 occurs ___ times in its prime factorisation.",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each number in Column I with its prime factorisation in Column II.\nColumn I: 1. 84  2. 90  3. 126  4. 150\nColumn II: a. 2 x 3 x 3 x 7  b. 2 x 3 x 5 x 5  c. 2 x 2 x 3 x 7  d. 2 x 3 x 3 x 5",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-d, 2-c, 3-b, 4-a",
+      "1-a, 2-d, 3-c, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the prime factorisation of 392 by first writing 392 = 8 x 49. (b) Start with a different split, 392 = 4 x 98, and say what prime factorisation you get.",
+     "a": "(a) 8 = 2 x 2 x 2 and 49 = 7 x 7, so 392 = 2 x 2 x 2 x 7 x 7. (b) 4 = 2 x 2 and 98 = 2 x 7 x 7, so 392 = 2 x 2 x 2 x 7 x 7, the same primes the same number of times.",
+     "s": [
+      [
+       "Part (a): 2 x 2 x 2 x 7 x 7",
+       1
+      ],
+      [
+       "Part (b): same result from the other split",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write the prime factorisations of 45 and 24, and from them write the factorisation of 45 x 24 without multiplying. (b) Multiply the primes back and state the product.",
+     "a": "(a) 45 = 3 x 3 x 5 and 24 = 2 x 2 x 2 x 3, so 45 x 24 = 2 x 2 x 2 x 3 x 3 x 3 x 5. (b) Multiplying back gives 8 x 27 x 5 = 1080.",
+     "s": [
+      [
+       "Part (a): combined factorisation",
+       1
+      ],
+      [
+       "Part (b): 1080",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use prime factorisation to decide whether 440 is divisible by 22. (b) Decide whether it is divisible by 33, and say what is missing if it is not.",
+     "a": "(a) 440 = 2 x 2 x 2 x 5 x 11 and 22 = 2 x 11, which is included, so 440 is divisible by 22. (b) 33 = 3 x 11, but 440 has no factor 3, so it is not divisible by 33.",
+     "s": [
+      [
+       "Part (a): yes, 2 x 11 is included",
+       1
+      ],
+      [
+       "Part (b): no, the prime 3 is missing",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Guna wrote 63 = 3 x 3 x 7 and Anshu wrote 63 = 3 x 7 x 3. Explain why these are not two different prime factorisations.",
+     "a": "They have the same primes with the same counts: two 3s and one 7. Multiplication can be done in any order, so only the order of writing differs.",
+     "s": [
+      [
+       "Same primes occurring the same number of times",
+       1
+      ],
+      [
+       "Multiplication can be done in any order",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'A number whose prime factorisation has two 2s and one 3 is divisible by 8.' Give your verdict and a reason.",
+     "a": "False. 8 = 2 x 2 x 2 needs three 2s in the factorisation, but this number has only two. For example 2 x 2 x 3 = 12, and 12 is not divisible by 8.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: 8 needs three 2s; 12 is a counterexample",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dev writes 72 = 8 x 9 and 55 = 5 x 11 and says, 'No piece is common, so 72 and 55 are co-prime.' Examine his conclusion and his method.",
+     "a": "His conclusion is right but his method does not prove it. A split such as 8 x 9 does not list every factor, so a missing common piece proves nothing. The factorisations 72 = 2 x 2 x 2 x 3 x 3 and 55 = 5 x 11 have no common prime, which does show they are co-prime.",
+     "s": [
+      [
+       "Says the conclusion is correct",
+       1
+      ],
+      [
+       "Says the method is not enough since splits do not show all factors",
+       1
+      ],
+      [
+       "Proves it with full factorisations having no common prime",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A number has the prime factorisation 3 x 3 x 5 x 7. Show that it cannot be divisible by 10 or by 4.",
+     "a": "10 = 2 x 5 needs a prime 2, but the number has no 2, so 10 is not included. 4 = 2 x 2 needs two 2s, and the number has none. So it is divisible by neither 10 nor 4 (the number is 315).",
+     "s": [
+      [
+       "Explains 10 needs a 2",
+       1
+      ],
+      [
+       "Explains 4 needs two 2s",
+       1
+      ],
+      [
+       "Concludes neither divides, since the number has no 2",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a number that is divisible by 12 but not by 8, and prove both parts using prime factorisation.",
+     "a": "Sample: 84 = 2 x 2 x 3 x 7. 12 = 2 x 2 x 3 is included, so 84 is divisible by 12. 8 = 2 x 2 x 2 needs three 2s but 84 has only two, so 84 is not divisible by 8.",
+     "s": [
+      [
+       "A valid number with its factorisation",
+       1
+      ],
+      [
+       "Shows 12 is included",
+       1
+      ],
+      [
+       "Shows 8 is not included because of the number of 2s",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Three primes, all less than 30, have the product 1,001. Find them and show that no other three primes can give 1,001.",
+     "a": "1,001 = 7 x 143 = 7 x 11 x 13, so the primes are 7, 11 and 13. Since the prime factorisation of a number is unique apart from order, no other set of primes can multiply to 1,001.",
+     "s": [
+      [
+       "Splits 1,001 to reach 7 x 11 x 13",
+       1
+      ],
+      [
+       "Checks 7, 11 and 13 are prime and multiply back",
+       1
+      ],
+      [
+       "Uses uniqueness for no other set",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Without multiplying the numbers first where possible, find the prime factorisation of (i) 126, (ii) 405, (iii) 2,310 and (iv) 48 x 75. (v) The number with one 2, one 3, one 5 and two 7s is Rhea's number. Find it, and say using its factorisation which of 21, 35, 49 and 4 divide it.",
+     "a": "(i) 126 = 2 x 3 x 3 x 7. (ii) 405 = 3 x 3 x 3 x 3 x 5. (iii) 2,310 = 2 x 3 x 5 x 7 x 11. (iv) 48 = 2 x 2 x 2 x 2 x 3 and 75 = 3 x 5 x 5, so 48 x 75 = 2 x 2 x 2 x 2 x 3 x 3 x 5 x 5. (v) 2 x 3 x 5 x 7 x 7 = 1,470. 21 = 3 x 7, 35 = 5 x 7 and 49 = 7 x 7 are all included in its factorisation, so they divide it; 4 = 2 x 2 needs two 2s but it has one, so 4 does not.",
+     "s": [
+      [
+       "126 correct",
+       1
+      ],
+      [
+       "405 correct",
+       1
+      ],
+      [
+       "2,310 correct",
+       1
+      ],
+      [
+       "48 x 75 by combining the two factorisations",
+       1
+      ],
+      [
+       "1,470, and 21, 35, 49 divide it but 4 does not",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The number 1,260 has the prime factorisation 2 x 2 x 3 x 3 x 5 x 7. Using this, decide without long division whether 1,260 is divisible by (i) 28, (ii) 35, (iii) 24, (iv) 45. (v) For the divisor 28, find the quotient from the primes left over.",
+     "a": "(i) 28 = 2 x 2 x 7 is included, so yes. (ii) 35 = 5 x 7 is included, so yes. (iii) 24 = 2 x 2 x 2 x 3 needs three 2s but 1,260 has two, so no. (iv) 45 = 3 x 3 x 5 is included, so yes. (v) Removing 2 x 2 x 7 leaves 3 x 3 x 5 = 45, so 1,260 / 28 = 45.",
+     "s": [
+      [
+       "28 divides, with the primes matched",
+       1
+      ],
+      [
+       "35 divides",
+       1
+      ],
+      [
+       "24 does not, the third 2 is missing",
+       1
+      ],
+      [
+       "45 divides",
+       1
+      ],
+      [
+       "Quotient 45 from the leftover primes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A Chennai firm packs 1,260 pencils and 1,800 crayons. It wants to use one box size for both items, with every box full and nothing left over. The candidate box sizes are 24, 28, 30, 35, 36 and 45. A box of 30 costs Rs 14, a box of 36 costs Rs 16 and a box of 45 costs Rs 22.\n(a) Write the prime factorisations of 1,260 and 1,800. (b) Which candidate sizes divide both numbers? (c) For each size that works, find the number of boxes needed in all. (d) Find the total cost for each working size and recommend one.",
+     "a": "(a) 1,260 = 2 x 2 x 3 x 3 x 5 x 7 and 1,800 = 2 x 2 x 2 x 3 x 3 x 5 x 5. (b) Only 30, 36 and 45 are included in both factorisations; 24 needs three 2s which 1,260 lacks, and 28 and 35 need a 7 which 1,800 lacks. (c) Size 30: 42 + 60 = 102 boxes; size 36: 35 + 50 = 85; size 45: 28 + 40 = 68. (d) Costs: 102 x 14 = Rs 1,428; 85 x 16 = Rs 1,360; 68 x 22 = Rs 1,496. Size 36 is cheapest, so recommend 36; size 45 uses the fewest boxes but costs the most.",
+     "s": [
+      [
+       "Part (a): both factorisations",
+       1
+      ],
+      [
+       "Part (b): 30, 36, 45 with the reason the others fail",
+       1
+      ],
+      [
+       "Part (c): 102, 85, 68 boxes",
+       1
+      ],
+      [
+       "Part (d): costs Rs 1,428, 1,360, 1,496 and recommends 36",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a school quiz, a pair of numbers is shown and the team must say whether they are co-prime. Rhea splits 84 = 4 x 21 and 90 = 5 x 18 and says they are co-prime, since no piece appears in both. Her partner Jay says full prime factorisation is safer. There are 10 pairs in 360 seconds; a splitting check takes 20 seconds and a full prime factorisation of a pair takes 45 seconds.\n(a) Write the prime factorisations of 84 and 90. (b) Is Rhea right? Name the common primes. (c) Using prime factorisation, decide whether 77 and 130 are co-prime. (d) They split all 10 pairs first, and splitting finds a common piece for 6 of them. How many of the other 4 pairs can they then settle by full factorisation, and how would you use the leftover time?",
+     "a": "(a) 84 = 2 x 2 x 3 x 7 and 90 = 2 x 3 x 3 x 5. (b) No. The common primes are 2 and 3, so the numbers are not co-prime (6 divides both). (c) 77 = 7 x 11 and 130 = 2 x 5 x 13 have no common prime, so they are co-prime. (d) Splitting takes 10 x 20 = 200 s, leaving 160 s, enough for 3 full factorisations (135 s) with 25 s to spare. The pairs already settled by a common piece are certainly not co-prime; the 4th unsettled pair cannot be fully checked, so spend the spare 25 s on quick checks of that pair, and note that a split-only 'co-prime' answer is unreliable. Any sensible plan with these numbers is accepted.",
+     "s": [
+      [
+       "Part (a): both factorisations",
+       1
+      ],
+      [
+       "Part (b): not right, common primes 2 and 3",
+       1
+      ],
+      [
+       "Part (c): 77 and 130 are co-prime with primes shown",
+       1
+      ],
+      [
+       "Part (d): 160 s left, 3 pairs checked, a plan for the fourth",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-5.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A warehouse has 5,436 bulbs. Without long division, what can the manager say about packing them with none left over?",
+     "a": "They fit exactly in boxes of 4 but not in boxes of 8.",
+     "o": [
+      "They fit exactly in boxes of 4 but not in boxes of 8.",
+      "They fit exactly in boxes of 8 but not in boxes of 4.",
+      "They fit exactly in boxes of both 4 and 8.",
+      "They fit in neither boxes of 4 nor boxes of 8."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A calendar maker must decide which of these years will have a 29 February. Which one will?",
+     "a": "2400",
+     "o": [
+      "2400",
+      "2100",
+      "1900",
+      "2022"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meena says, 'A number ending in 2 is divisible by 4, because 12 is a multiple of 4.' Which number shows that her rule about the last digit is wrong?",
+     "a": "22",
+     "o": [
+      "22",
+      "32",
+      "12",
+      "52"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number 7,2d4 is written with a missing digit d. Which of these digits makes the number divisible by 8?",
+     "a": "2",
+     "o": [
+      "2",
+      "1",
+      "3",
+      "5"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tara has 7,845 marbles and shares them in groups of 10, in groups of 5 and in groups of 2, in three separate attempts. How many marbles are left over in the three attempts, in that order?",
+     "a": "5, 0 and 1",
+     "o": [
+      "5, 0 and 1",
+      "5, 5 and 1",
+      "0, 0 and 1",
+      "5, 0 and 0"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: Any number whose last digit is even is divisible by 4.\nStatement 2: Any number whose last digit is 5 is divisible by 10.\nStatement 3: If a number is divisible by both 5 and 8, it is divisible by 10.\nWhich statements are correct?",
+     "a": "3 only. Statement 1 fails for 22 and Statement 2 fails for 15; a number divisible by 8 is even and one divisible by 5 ends in 0 or 5, so it must end in 0.",
+     "o": [
+      "3 only",
+      "1 only",
+      "1 and 3 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number 1,324 is divisible by 4, but 1,234 is not.\nReason (R): Divisibility by 4 depends on the number formed by the last two digits, and 24 is divisible by 4 while 34 is not.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. 1,324 = 4 x 331, while 1,234 leaves a remainder of 2 when divided by 4.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The digit that replaces d so that 4,56d is divisible by both 5 and 8 is ___.",
+     "a": "0"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each number in Column I with the statement about it in Column II.\nColumn I: 1. 7,236  2. 5,480  3. 3,125  4. 6,018\nColumn II: a. divisible by each of 2, 4, 5, 8 and 10  b. divisible by 2 and 4 but not by 5 or 8  c. divisible by 5 but not by 2  d. divisible by 2 but not by 4 or 5",
+     "a": "1-b, 2-a, 3-c, 4-d",
+     "o": [
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-a, 3-d, 4-c",
+      "1-c, 2-a, 3-b, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Which of the years 1900, 2000, 2026 and 2032 are leap years? (b) How many leap years are there from 2001 to 2100, both included?",
+     "a": "(a) 2000 (a multiple of 400) and 2032 (a multiple of 4, not of 100) are leap years; 1900 is a multiple of 100 but not of 400, and 2026 is not a multiple of 4. (b) The multiples of 4 from 2004 to 2100 are 25, but 2100 is a multiple of 100 and not of 400, so there are 24 leap years.",
+     "s": [
+      [
+       "Part (a): 2000 and 2032",
+       1
+      ],
+      [
+       "Part (b): 24 after removing 2100",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the remainders when 2,345 and 1,111 are divided by 10, by 5 and by 2. (b) A number leaves remainder 7 when divided by 10. Without dividing, what remainders does it leave on division by 5 and by 2?",
+     "a": "(a) 2,345 leaves 5, 0, 1 and 1,111 leaves 1, 1, 1. (b) Since 10 is a multiple of 5 and of 2, a remainder of 7 means the last digit is 7: the remainder on division by 5 is 2 and on division by 2 is 1.",
+     "s": [
+      [
+       "Part (a): remainders 5, 0, 1 and 1, 1, 1",
+       1
+      ],
+      [
+       "Part (b): remainders 2 and 1 from the last digit 7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena finds that 16 is divisible by 8 but 26 is not, so the last digit cannot decide divisibility by 8. She then suggests looking at the last two digits. Use 116 and 216 to show her suggestion also fails, and say how many last digits should be used.",
+     "a": "116 and 216 have the same last two digits, 16. But 216 = 8 x 27 is divisible by 8, while 116 is not (116 = 8 x 14 + 4). So the last two digits cannot decide; the last three digits should be used.",
+     "s": [
+      [
+       "Uses 116 and 216 (same last two digits, different outcomes)",
+       1
+      ],
+      [
+       "States that the last three digits are used",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Guna says he does not need to test 7,640 against all of 2, 4, 5, 8 and 10 separately: checking only two of them is enough to be sure it is divisible by all five. Name one pair of these numbers that is enough, and explain how the other three follow.",
+     "a": "One valid pair is 8 with 5 (8 with 10 also works). Divisibility by 8 gives divisibility by 4 and by 2, since 8 contains 4 and 2. A number divisible by 2 and by 5 is divisible by 10. (With the pair 8 and 10: 10 gives 2 and 5, and 8 gives 4.)",
+     "s": [
+      [
+       "Names a valid pair: 8 with 5, or 8 with 10",
+       1
+      ],
+      [
+       "Explains how the remaining three follow",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'Every year that is a multiple of 100 is not a leap year.' Give your verdict and a reason.",
+     "a": "False. A year that is a multiple of 100 is a leap year when it is also divisible by 400; 2000 and 2400 are examples, while 1900 and 2100 are not.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Counter-example 2000 or 2400 with the rule about 400",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Aman claims, 'A number is divisible by 8 whenever the number formed by its last two digits is divisible by 8.' Test it with 1,624 and 116 and give your verdict.",
+     "a": "The claim is not right in general. For 1,624 the last two digits 24 are divisible by 8 and so is 624, so 1,624 is divisible by 8. For 116 the last two digits 16 are divisible by 8, but 116 / 8 leaves a remainder of 4. The last three digits are needed.",
+     "s": [
+      [
+       "1,624 works",
+       1
+      ],
+      [
+       "116 fails despite 16 being divisible by 8",
+       1
+      ],
+      [
+       "Concludes three digits are needed for 8",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no number ending in 5 can be divisible by 2, 4, 8 or 10.",
+     "a": "A number ending in 5 is odd, and the even-number test needs the last digit 0, 2, 4, 6 or 8, so it is not divisible by 2. Any multiple of 4, 8 or 10 is even, so a number that is not even cannot be a multiple of any of them.",
+     "s": [
+      [
+       "Last digit 5 is not in 0, 2, 4, 6, 8",
+       1
+      ],
+      [
+       "So not divisible by 2",
+       1
+      ],
+      [
+       "Multiples of 4, 8 and 10 are all even",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a four-digit number that is divisible by 4 and by 5 but not by 8, and prove each part with the divisibility tests.",
+     "a": "Sample: 1,220. It ends in 0, so it is divisible by 5 (and 10 and 2). The last two digits 20 are divisible by 4, so 1,220 is divisible by 4. The last three digits 220 divided by 8 leave a remainder of 4, so it is not divisible by 8.",
+     "s": [
+      [
+       "A valid four-digit number",
+       1
+      ],
+      [
+       "Proves 5 and 4 with the tests",
+       1
+      ],
+      [
+       "Shows 220 is not divisible by 8",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Which of 3,640, 4,376, 9,200, 12,500 and 6,880 are divisible by all of 2, 4, 5, 8 and 10? Give the reason that rules out each of the others.",
+     "a": "The numbers 3,640, 9,200 and 6,880 are divisible by all five: each ends in 0 and its last three digits (640, 200, 880) are divisible by 8. 4,376 ends in 6, so it is not divisible by 5 or 10; 12,500 has last three digits 500, which leave a remainder of 4 on division by 8.",
+     "s": [
+      [
+       "Names 3,640, 9,200 and 6,880",
+       1
+      ],
+      [
+       "Rules out 4,376 because it does not end in 0 or 5",
+       1
+      ],
+      [
+       "Rules out 12,500 using 500 and 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Find the remainders when each number is divided by (a) 10, (b) 5 and (c) 2, for (i) 463, (ii) 1,980, (iii) 2,375 and (iv) 5,046. (v) A number leaves remainder 4 when divided by 5 and is even. What is its remainder when divided by 10, and why?",
+     "a": "(i) 463: 3, 3, 1. (ii) 1,980: 0, 0, 0. (iii) 2,375: 5, 0, 1. (iv) 5,046: 6, 1, 0. (v) The remainder on division by 10 is 4: the last digit is 4 or 9 to leave remainder 4 on division by 5, and being even rules out 9.",
+     "s": [
+      [
+       "463: 3, 3, 1",
+       1
+      ],
+      [
+       "1,980: 0, 0, 0",
+       1
+      ],
+      [
+       "2,375: 5, 0, 1",
+       1
+      ],
+      [
+       "5,046: 6, 1, 0",
+       1
+      ],
+      [
+       "(v) Remainder 4, using last digit 4 or 9 and even",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Justify with examples: (i) A number divisible by 8 is also divisible by 4 and by 2. (ii) The converse for 4 and 8 is false. (iii) Divisibility by 2 does not give divisibility by 4. (iv) Divisibility by 5 does not give divisibility by 10. (v) A number divisible by both 2 and 5 is divisible by 10.",
+     "a": "(i) 8 = 2 x 4 = 2 x 2 x 2, so every multiple of 8 is a multiple of 4 and of 2, for example 64. (ii) 12 is divisible by 4 but not by 8. (iii) 6 is divisible by 2 but not by 4. (iv) 15 is divisible by 5 but not by 10. (v) A number divisible by 2 ends in an even digit and one divisible by 5 ends in 0 or 5, so it ends in 0 and is divisible by 10, for example 70.",
+     "s": [
+      [
+       "Multiples of 8 are multiples of 4 and 2",
+       1
+      ],
+      [
+       "12 for 4 but not 8",
+       1
+      ],
+      [
+       "6 for 2 but not 4",
+       1
+      ],
+      [
+       "15 for 5 but not 10",
+       1
+      ],
+      [
+       "Both 2 and 5 force a last digit 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A Bengaluru school holds its Sports Day on 29 February, and insists that it must always fall on 29 February. Two schedules are being compared for the years 2092 to 2120, both included. Schedule P holds the event in every leap year. Schedule Q holds it every 4 years starting from 2092.\n(a) Which of 2092, 2096, 2100 and 2104 are leap years? (b) How many Sports Days does Schedule P hold in the period? (c) How many does Schedule Q hold on paper, and for which year is there a problem? (d) Which schedule would you recommend, and what does it cost you?",
+     "a": "(a) 2092, 2096 and 2104 are leap years; 2100 is not, since it is a multiple of 100 but not of 400. (b) Schedule P holds 7: 2092, 2096, 2104, 2108, 2112, 2116 and 2120. (c) Schedule Q has 8 years on paper (2092, 2096, ..., 2120), but 2100 has no 29 February, so Q breaks the school's rule. (d) Schedule P, because it is the only one that always lands on 29 February; the cost is an 8-year gap from 2096 to 2104.",
+     "s": [
+      [
+       "Part (a): 2092, 2096, 2104 are leap, 2100 is not",
+       1
+      ],
+      [
+       "Part (b): 7 events",
+       1
+      ],
+      [
+       "Part (c): 8 on paper and the problem at 2100",
+       1
+      ],
+      [
+       "Part (d): recommends Schedule P and names the 8-year gap as the cost",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A wholesaler in Surat has 24,580 pencils. Retailers want them in packs of 2, 4, 5, 8 or 10 with none left over. A pack of 8 sells for Rs 52 and a pack of 10 sells for Rs 64. To make packs of 8 work, she can buy a few extra pencils at Rs 5 each.\n(a) Without long division, for which of the pack sizes 2, 4, 5, 8 and 10 is there no pencil left over? (b) How many pencils are left over when she makes packs of 8, and how many must she buy to have none left? (c) How many packs and how much money does she make from packs of 8, after paying for the extra pencils? (d) Compare with selling in packs of 10 and decide which she should choose.",
+     "a": "(a) The number ends in 0, so 2, 5 and 10 divide it; the last two digits 80 are divisible by 4; the last three digits 580 leave a remainder of 4 on division by 8, so only 8 leaves pencils over. (b) 4 are left over, so she must buy 4 more (24,584 / 8 = 3,073). (c) 3,073 packs x Rs 52 = Rs 1,59,796, less 4 x Rs 5 = Rs 20, which gives Rs 1,59,776. (d) Packs of 10 give 2,458 x Rs 64 = Rs 1,57,312, which is Rs 2,464 less, so packs of 8 earn more, although packs of 10 need no extra buying and are simpler. Recommending packs of 8 on earnings is the expected choice; a reasoned preference for 10 is also accepted.",
+     "s": [
+      [
+       "Part (a): 2, 4, 5 and 10 work; 8 does not",
+       1
+      ],
+      [
+       "Part (b): 4 left over, buy 4",
+       1
+      ],
+      [
+       "Part (c): 3,073 packs and Rs 1,59,776",
+       1
+      ],
+      [
+       "Part (d): compares with Rs 1,57,312 and decides",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-5.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A teacher shows the numbers 14, 21, 35 and 39 and asks which reason correctly makes one number special. Which statement is correct?",
+     "a": "39 is special because it is the only number that is not a multiple of 7.",
+     "o": [
+      "39 is special because it is the only number that is not a multiple of 7.",
+      "14 is special because it is the only multiple of 7.",
+      "35 is special because it is the only composite number.",
+      "21 is special because it is the only multiple of 3."
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ria needs a set of four numbers that has exactly one prime number in it. Which set should she choose?",
+     "a": "15, 21, 27, 29",
+     "o": [
+      "15, 21, 27, 29",
+      "11, 13, 15, 17",
+      "9, 15, 25, 35",
+      "1, 4, 6, 8"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four friends have ID numbers 56, 72, 91 and 104. Three of the numbers share the property of being divisible by 8. Which number is the odd one out?",
+     "a": "91",
+     "o": [
+      "91",
+      "56",
+      "72",
+      "104"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A game says: 'Pick the number in 49, 77, 91, 105 that shares a prime factor with 30.' It is the only one of the four set apart by that property. Which number is it?",
+     "a": "105",
+     "o": [
+      "105",
+      "49",
+      "77",
+      "91"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the set 11, 17, 23, 39, the number 39 is special. Which of these descriptions does NOT single out 39?",
+     "a": "It is the only odd number.",
+     "o": [
+      "It is the only odd number.",
+      "It is the only multiple of 3.",
+      "It is the only number with more than two factors.",
+      "It is the only number that has 13 as a factor."
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements about the numbers 15, 21, 28 and 33.\nStatement 1: A number in a set can be special for only one reason.\nStatement 2: 28 is special because it is the only multiple of 4.\nStatement 3: 21 is special because it is the only multiple of 7.\nWhich statements are correct?",
+     "a": "2 only. Statement 1 is false because 28 is special both as the only even number and as the only multiple of 4; Statement 3 is false because 28 is also a multiple of 7.",
+     "o": [
+      "2 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the set 7, 11, 13, 21, the number 21 is the special one.\nReason (R): 21 is a multiple of 7.",
+     "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. 21 is special because it is the only composite number, whereas 7 is also a multiple of 7 and stays prime.",
+     "o": [
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the set 33, 51, 57, 61, the number ___ is special because it is the only prime.",
+     "a": "61"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each set of numbers in Column I with the special number and reason in Column II.\nColumn I: 1. 7, 11, 13, 21  2. 8, 12, 20, 25  3. 6, 15, 21, 28  4. 9, 15, 33, 46\nColumn II: a. 21, the only composite  b. 25, the only odd number  c. 28, the only number that is not a multiple of 3  d. 46, the only even number",
+     "a": "1-a, 2-b, 3-c, 4-d",
+     "o": [
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-c, 2-b, 3-a, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) In the set 12, 18, 25, 30, give two different reasons why 25 is special. (b) If 30 is replaced by 27, do your reasons still hold? Is 25 still special?",
+     "a": "(a) 25 is the only odd number, and it is the only number that is not a multiple of 6. (b) Neither reason holds now, since 27 is also odd and also not a multiple of 6. But 25 is still special in 12, 18, 25, 27 because it is the only multiple of 5.",
+     "s": [
+      [
+       "Part (a): only odd; only non-multiple of 6",
+       1
+      ],
+      [
+       "Part (b): reasons fail with 27, but 25 is the only multiple of 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Which of 49, 51, 53 and 57 is a prime? (b) Use your answer to describe what is special about that number in the set.",
+     "a": "(a) 53 is prime; 49 = 7 x 7, 51 = 3 x 17 and 57 = 3 x 19. (b) 53 is the only prime in the set, and the other three are all composite.",
+     "s": [
+      [
+       "Part (a): 53 with factors of the others",
+       1
+      ],
+      [
+       "Part (b): the only prime, others composite",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write a set of four numbers in which exactly one number is special because it is the only multiple of 7. Explain how you know.",
+     "a": "Sample: 14, 9, 10, 16. Only 14 is a multiple of 7 (14 = 7 x 2); 9, 10 and 16 leave remainders when divided by 7. Any valid set earns full marks.",
+     "s": [
+      [
+       "A valid set of four numbers",
+       1
+      ],
+      [
+       "Shows the other three are not multiples of 7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Which number is special in the set 16, 24, 40, 51 because it is not divisible by 8? Show the divisibility check for the others.",
+     "a": "51 is special. 16 = 8 x 2, 24 = 8 x 3 and 40 = 8 x 5 are divisible by 8, while 51 is odd and so not divisible by 8.",
+     "s": [
+      [
+       "Names 51",
+       1
+      ],
+      [
+       "Checks 16, 24 and 40 as multiples of 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'In the set 10, 21, 33, 39, the number 10 is special because it is the only even number and also the only multiple of 5.' Give your verdict and the reason.",
+     "a": "True. 21, 33 and 39 are odd, so 10 is the only even number, and none of them ends in 0 or 5, so 10 is also the only multiple of 5.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Checks both reasons against 21, 33 and 39",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Gurupreet says, 'In the set 9, 12, 15, 20, the number 20 is special because it is the only multiple of 5.' Examine her reason and say whether 20 is special for any other reason.",
+     "a": "Her reason is wrong, because 15 is also a multiple of 5. But 20 is still special: 9, 12 and 15 are multiples of 3 and 20 is not, so it is the only number that is not a multiple of 3.",
+     "s": [
+      [
+       "Rejects the reason using 15",
+       1
+      ],
+      [
+       "Finds 9, 12, 15 as multiples of 3",
+       1
+      ],
+      [
+       "Concludes 20 is special as the only non-multiple of 3",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that in the set 14, 22, 35, 46 no number can be special for being the only composite number, and find a different reason that makes 35 special.",
+     "a": "All four numbers are composite: 14 = 2 x 7, 22 = 2 x 11, 35 = 5 x 7, 46 = 2 x 23, so nobody is the only composite. But 14, 22 and 46 are even and 35 is odd, so 35 is the only odd number.",
+     "s": [
+      [
+       "Shows each of the four is composite",
+       1
+      ],
+      [
+       "Concludes nobody is the only composite",
+       1
+      ],
+      [
+       "35 is the only odd number",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make up a set of four numbers in which 22 is special because it is the only multiple of 11, and show that the other three are not multiples of 11.",
+     "a": "Sample: 14, 22, 25, 39. 22 = 11 x 2. The others are not multiples of 11: 14 = 11 + 3, 25 = 22 + 3 and 39 = 33 + 6 leave remainders on division by 11.",
+     "s": [
+      [
+       "A set containing 22",
+       1
+      ],
+      [
+       "Shows 22 is a multiple of 11",
+       1
+      ],
+      [
+       "Shows the other three are not",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "The numbers 30, 42, 70 and 105 each have three different prime factors. Use their prime factorisations to show that 70 is the only one not divisible by 3 and 105 is the only one not divisible by 2.",
+     "a": "30 = 2 x 3 x 5, 42 = 2 x 3 x 7, 70 = 2 x 5 x 7 and 105 = 3 x 5 x 7. The prime 3 is in 30, 42 and 105 but not in 70. The prime 2 is in 30, 42 and 70 but not in 105.",
+     "s": [
+      [
+       "The four prime factorisations",
+       1
+      ],
+      [
+       "3 is missing only from 70",
+       1
+      ],
+      [
+       "2 is missing only from 105",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Find the special number in each set and give a reason: (i) 16, 24, 40, 51; (ii) 17, 19, 23, 27; (iii) 35, 55, 65, 72; (iv) 30, 45, 60, 77; (v) 10, 14, 22, 33.",
+     "a": "(i) 51, the only number not divisible by 8. (ii) 27, the only composite number. (iii) 72, the only number that is not a multiple of 5. (iv) 77, the only number that is not a multiple of 3. (v) 33, the only odd number.",
+     "s": [
+      [
+       "Set (i): 51 with reason",
+       1
+      ],
+      [
+       "Set (ii): 27 with reason",
+       1
+      ],
+      [
+       "Set (iii): 72 with reason",
+       1
+      ],
+      [
+       "Set (iv): 77 with reason",
+       1
+      ],
+      [
+       "Set (v): 33 with reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Karan says, 'In every set of four numbers there is exactly one special number.' Using only the properties prime or composite, and multiples of 3, 4, 5, 7 and 8, test this with the set 14, 21, 25, 40. (i) Show that 21 is special and give the reason. (ii) Show that 40 is special and give two reasons. (iii) Say whether Karan is right. (iv) Name a number in the set that is not special for the properties used. (v) Say how to change the question so that it has one answer.",
+     "a": "(i) 21 is the only multiple of 3. (ii) 40 is the only multiple of 4 and also the only multiple of 8. (iii) Karan is wrong, since the set has two special numbers, 21 and 40. (iv) 14 shares the property of being even with 40 and being a multiple of 7 with 21, so it is not special for those. (v) State the property in the question, for example 'which number is the only multiple of 4?'",
+     "s": [
+      [
+       "21 as the only multiple of 3",
+       1
+      ],
+      [
+       "40 as the only multiple of 4 or 8",
+       1
+      ],
+      [
+       "Karan is wrong: two special numbers",
+       1
+      ],
+      [
+       "14 or 25 is not special for the properties used",
+       1
+      ],
+      [
+       "Fixes the question by naming the property",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In a mystery-number game, the host picks a secret number from 40 to 60, both included, and the guessers may ask one yes-or-no question before they must start guessing. The four questions on offer are: 'Is it prime?', 'Is it a multiple of 4?', 'Is it a multiple of 5?' and 'Is it even?'. The guessers want the question that leaves the shortest list in the worst case.\n(a) List the primes from 40 to 60. (b) List the multiples of 4 and the multiples of 5 in that range. (c) For each of the four questions, find how many numbers could remain after a 'yes' and after a 'no'. (d) Which question should they ask, and why?",
+     "a": "(a) The primes are 41, 43, 47, 53 and 59. (b) The multiples of 4 are 40, 44, 48, 52, 56, 60 and the multiples of 5 are 40, 45, 50, 55, 60. (c) Out of 21 numbers: prime has 5 yes and 16 no; multiple of 4 has 6 and 15; multiple of 5 has 5 and 16; even has 11 and 10. (d) The worst cases are 16, 15, 16 and 11, so 'Is it even?' is best because it leaves at most 11 numbers, whereas 'Is it prime?' may look attractive for its short 'yes' list but leaves 16 after a 'no'.",
+     "s": [
+      [
+       "Part (a): 41, 43, 47, 53, 59",
+       1
+      ],
+      [
+       "Part (b): both lists",
+       1
+      ],
+      [
+       "Part (c): the yes and no counts for all four questions",
+       1
+      ],
+      [
+       "Part (d): chooses 'even' by the worst case 11",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a school fair in Pune, raffle tickets are numbered 1 to 100. A prime-numbered ticket wins Rs 50. A ticket divisible by 8 wins Rs 40, and a ticket divisible by 10 wins Rs 30, but a ticket qualifying for more than one prize gets only the larger prize. The prize budget is Rs 2,000. The organiser also wants to give Rs 20 to every ticket divisible by 4 that has not already won.\n(a) How many tickets win each of the Rs 50, Rs 40 and Rs 30 prizes? (b) What is the total prize money? (c) How many tickets would win the extra Rs 20 prize, and what would the total become? (d) Is the extra prize affordable? She may change the amount of the extra prize but not the number of winners; recommend the largest whole-rupee amount she can pay.",
+     "a": "(a) Primes up to 100 number 25, so 25 tickets win Rs 50; tickets divisible by 8 number 12, so 12 win Rs 40; tickets divisible by 10 number 10, but 40 and 80 are also divisible by 8 and get Rs 40, so 8 win Rs 30. (b) 25 x 50 + 12 x 40 + 8 x 30 = 1,250 + 480 + 240 = Rs 1,970. (c) Multiples of 4 number 25; removing the 12 multiples of 8 and the 3 multiples of 10 that also divide by 4 (20, 60, 100) leaves 10 new winners, costing Rs 200 and raising the total to Rs 2,170. (d) Rs 2,170 is over the Rs 2,000 budget, since only Rs 2,000 - Rs 1,970 = Rs 30 is spare. With 10 winners she can pay at most Rs 30 / 10 = Rs 3 each, so recommend an extra prize of Rs 3 per winning ticket.",
+     "s": [
+      [
+       "Part (a): 25, 12 and 8 winners",
+       1
+      ],
+      [
+       "Part (b): Rs 1,970",
+       1
+      ],
+      [
+       "Part (c): 10 new winners and Rs 2,170",
+       1
+      ],
+      [
+       "Part (d): over budget; spare Rs 30 shared among 10 winners gives Rs 3 each",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

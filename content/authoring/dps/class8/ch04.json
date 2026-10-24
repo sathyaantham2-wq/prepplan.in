@@ -1,0 +1,2664 @@
+{
+  "kind": "dps_pack",
+  "subject": {
+    "code": "MATH8",
+    "class": 8,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 4,
+    "name": "Quadrilaterals"
+  },
+  "source_code": "hegp104",
+  "concepts": [
+    {
+      "code": "C8M-4.1",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A carpenter wants to make a rectangular frame by passing a thread round the ends of two thin wooden strips. One strip is 90 cm long. Which choice will certainly give a rectangle?",
+          "a": "A second 90 cm strip, the two joined at their 45 cm marks",
+          "o": [
+            "A second 90 cm strip, the two joined at their 45 cm marks",
+            "A strip of any length, the two joined at right angles at their midpoints",
+            "A second 90 cm strip, the two joined at right angles anywhere",
+            "A 45 cm strip, joined to the middle of the 90 cm strip at one of its ends"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In rectangle PQRS the diagonals meet at O. The three sides of triangle POQ add up to 23 cm, and side PQ is 9 cm. So diagonal QS is ___ cm long. (Write the number in digits.)",
+          "a": "14"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Rectangle ABCD has its diagonals meeting at O. The angle AOB between the diagonals is 40 degrees more than the angle AOD. What is angle OAD?",
+          "a": "55 degrees",
+          "o": [
+            "55 degrees",
+            "35 degrees",
+            "70 degrees",
+            "110 degrees"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A wall shelf has the shape of quadrilateral ABCD, with angle A = angle B = 90 degrees at the two corners along the wall edge AB.\n(a) Using AB as a transversal, explain why AD is parallel to BC.\n(b) The carpenter says, 'Two right angles are enough, so the shelf is a rectangle.' Give a set of angles for C and D that proves him wrong, and say why they are possible.",
+          "a": "(a) AB is a transversal to AD and BC, and the angles on the same side of it add to 90 + 90 = 180 degrees, so AD is parallel to BC. (b) For example angle C = 70 degrees and angle D = 110 degrees. The four angles add to 90 + 90 + 70 + 110 = 360 degrees, so such a quadrilateral can exist, but it does not have all four angles 90 degrees, so it is not a rectangle. (Any pair C, D adding to 180 other than 90 and 90 is correct.)",
+          "s": [
+            [
+              "Part (a): angles on the same side of transversal AB add to 180, so AD is parallel to BC",
+              1
+            ],
+            [
+              "Part (b): a valid pair such as 70 and 110 degrees with the 360 degree check, so not a rectangle",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Measuring the diagonals of 50 different rectangles and finding them equal each time proves that every rectangle has equal diagonals.\nReason (R): A statement formed by measuring examples is a conjecture: we may be highly confident of it but cannot be sure it always holds.",
+          "a": "A is false but R is true",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: A quadrilateral in which all four angles are 90 degrees must have its opposite sides equal.\nStatement 2: A quadrilateral whose two diagonals are equal in length must be a rectangle.\nStatement 3: Side AD of rectangle ABCD is parallel to side BC because angle A + angle B = 180 degrees, with AB as the transversal.\nWhich of the statements are correct?",
+          "a": "1 and 3 only",
+          "o": [
+            "1 and 3 only",
+            "1 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Neha says, 'Any quadrilateral whose opposite sides are parallel and equal is a rectangle.' Which of these would show that Neha is wrong?",
+          "a": "A parallelogram with angles of 70 and 110 degrees",
+          "o": [
+            "A parallelogram with angles of 70 and 110 degrees",
+            "A square whose two diagonals cross at 90 degrees",
+            "A 4 cm by 9 cm frame with right-angled corners",
+            "A quadrilateral whose four angles are each 90 degrees"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "PQRS is a quadrilateral with all four angles 90 degrees, and the diagonal QS is drawn. A student writes 'triangle QPS is congruent to triangle RSQ'.\n(a) Write the correct congruence statement.\n(b) Explain what is wrong with the student's statement.",
+          "a": "(a) Triangle QPS is congruent to triangle SRQ (Q matches S, P matches R, S matches Q). (b) The order of letters must pair corresponding parts. The student's order pairs P (a 90 degree angle) with S, but angle RSQ is only a part of the right angle at S; the right angle at P must be paired with the right angle at R.",
+          "s": [
+            [
+              "Part (a): writes triangle QPS congruent to triangle SRQ",
+              1
+            ],
+            [
+              "Part (b): explains that the 90 degree angle at P must match the 90 degree angle at R, which the student's order breaks",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In rectangle ABCD the diagonals meet at O. Diagonal BD makes an angle of 27 degrees with side BC (angle OBC = 27 degrees). What is angle AOB?",
+          "a": "54 degrees",
+          "o": [
+            "54 degrees",
+            "126 degrees",
+            "63 degrees",
+            "27 degrees"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "In rectangle ABCD the diagonals meet at O and angle AOB = 40 degrees. Match each angle with its measure.\nColumn A: (1) angle BOC (2) angle OAB (3) angle OAD (4) angle ADC\nColumn B: (a) 20 degrees (b) 90 degrees (c) 140 degrees (d) 70 degrees",
+          "a": "1-c, 2-d, 3-a, 4-b",
+          "o": [
+            "1-c, 2-d, 3-a, 4-b",
+            "1-c, 2-a, 3-d, 4-b",
+            "1-d, 2-c, 3-a, 4-b",
+            "1-c, 2-d, 3-b, 4-a"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: A carpenter measures the two diagonals of a door frame and finds them exactly equal. This alone guarantees that the frame is a rectangle. Give a reason.",
+          "a": "False. Equal diagonals are not enough: they must also bisect each other. Two equal strips crossing away from their midpoints (for example one cut 40 cm and 60 cm by the crossing point) give a quadrilateral that is not a rectangle, because the diagonals of every rectangle bisect each other.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Explains that the diagonals must also bisect each other, with a crossing that is not at the midpoints as the counter-case",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In rectangle KLMN the diagonals meet at O, and diagonal KM makes an angle of 34 degrees with side KL.\n(a) Find the angle KM makes with side KN.\n(b) Find the acute angle between the two diagonals.",
+          "a": "(a) Angle K is 90 degrees, so angle MKN = 90 - 34 = 56 degrees. (b) OK = OL (half of equal diagonals), so angle OLK = 34 degrees and angle KOL = 180 - 68 = 112 degrees. The acute angle between the diagonals is 180 - 112 = 68 degrees.",
+          "s": [
+            [
+              "Part (a): 56 degrees from the 90 degree corner",
+              1
+            ],
+            [
+              "Part (b): uses OK = OL to get angle KOL = 112 degrees and the acute angle 68 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ravi joins two 10 cm sticks at their midpoints so that the angle between them is only 25 degrees, and runs a thread round the ends. He says, 'This is still a rectangle, even though the sticks are nowhere near 90 degrees to each other.' Is Ravi right? Support your answer by finding a corner angle of the thread figure.",
+          "a": "Yes, Ravi is right. The half-sticks are all 5 cm, so the four triangles at the joint are isosceles. With apex 25 degrees the base angles are (180 - 25) / 2 = 77.5 degrees; with apex 155 degrees the base angles are (180 - 155) / 2 = 12.5 degrees. Each corner is made of one angle of each kind: 77.5 + 12.5 = 90 degrees. Equal diagonals that bisect each other always give a rectangle, whatever the angle between them.",
+          "s": [
+            [
+              "Gives the verdict that Ravi is right",
+              1
+            ],
+            [
+              "Finds the base angles 77.5 and 12.5 degrees from the isosceles triangles",
+              1
+            ],
+            [
+              "Adds them to 90 degrees and states the angle between the diagonals does not matter",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A mason marking out a rectangular room has only a measuring tape, no set-square.\n(a) Which definition of a rectangle can he use, and what must he measure?\n(b) Why is checking that both pairs of opposite sides are equal not enough?",
+          "a": "(a) A rectangle is a quadrilateral whose diagonals are equal and bisect each other, so he measures both diagonals (equal) and checks that they cross at their midpoints. (b) A parallelogram that is not a rectangle, for example one with sides 4 m, 5 m, 4 m, 5 m and an angle of 30 degrees, also has equal opposite sides, so equal opposite sides do not force right angles.",
+          "s": [
+            [
+              "Part (a): uses equal diagonals that bisect each other and says what to measure",
+              1
+            ],
+            [
+              "Part (b): gives a parallelogram with equal opposite sides that is not a rectangle",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A welder has made a gate frame ABCD with all four corners at 90 degrees. He measures diagonal AC as 2.6 m and finds that O, where the diagonals cross, is 1.2 m from corner B. What should he conclude?",
+          "a": "One reading is wrong, since OB must be 1.3 m",
+          "o": [
+            "One reading is wrong, since OB must be 1.3 m",
+            "BD is 2.4 m, so this frame has unequal diagonals",
+            "BD is 2.5 m, halfway between 2.4 m and 2.6 m",
+            "OD is also 1.2 m, so the frame is still fine"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A frame-maker says her quadrilateral ABCD has all four angles equal to 90 degrees, with AB = 40 cm, BC = 25 cm, CD = 38 cm and DA = 25 cm. Show that such a quadrilateral cannot exist.",
+          "a": "Join BD. In triangles BAD and DCB, angle A = angle C = 90 degrees and BD is common. Angle ABD + angle DBC = 90 and, in triangle BCD, angle BDC + angle DBC = 90, so angle ABD = angle BDC. By AAS, triangle BAD is congruent to triangle DCB, so AB = CD. But AB = 40 cm and CD = 38 cm, so the four right angles and these sides cannot go together.",
+          "s": [
+            [
+              "Sets up triangles BAD and DCB with the right angles and the common side",
+              1
+            ],
+            [
+              "Shows angle ABD = angle BDC and concludes congruence by AAS",
+              1
+            ],
+            [
+              "Deduces AB = CD, which contradicts 40 cm and 38 cm",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "In rectangle WXYZ the diagonals meet at O, and angle XOY is 3 times angle WOX.\n(a) Find angle WOX and angle XOY.\n(b) Find angle OWX.\n(c) Find angle OXY and check that angle WXY comes to 90 degrees.",
+          "a": "(a) Angles WOX and XOY form a straight angle, so 4 x angle WOX = 180, giving angle WOX = 45 degrees and angle XOY = 135 degrees. (b) OW = OX, so angle OWX = (180 - 45) / 2 = 67.5 degrees. (c) OX = OY, so angle OXY = (180 - 135) / 2 = 22.5 degrees. Angle WXY = angle OXW + angle OXY = 67.5 + 22.5 = 90 degrees.",
+          "s": [
+            [
+              "Part (a): 45 and 135 degrees from the straight angle",
+              1
+            ],
+            [
+              "Part (b): 67.5 degrees from the isosceles triangle OWX",
+              1
+            ],
+            [
+              "Part (c): 22.5 degrees and the check 67.5 + 22.5 = 90",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Some farmers mark the base of a house with two equal ropes pegged so that they cross at their midpoints; the four rope ends are the corners of the base. A farmer in Jharkhand uses two ropes, each 14 m long. The owner wants the longer walls to be such that each rope makes an angle of 35 degrees with a longer wall at its corner.\n(a) At what angle must the ropes cross, measured on the side of a shorter wall?\n(b) Find the angle each rope makes with a shorter wall, and check the corner angle.\n(c) The helper has run short of time and offers two quick ways: way 1, two 14 m ropes pegged to cross at the 6 m mark of one and the 7 m mark of the other; way 2, a 14 m rope and a 12 m rope, each pegged at its own midpoint. Which way, if either, gives a rectangular base? Justify both.",
+          "a": "(a) The triangle on a longer wall has two 7 m sides and base angles of 35 degrees, so its angle at the crossing is 180 - 70 = 110 degrees. The angle on the side of a shorter wall is 180 - 110 = 70 degrees. (b) That triangle is isosceles with apex 70 degrees, so each rope makes (180 - 70) / 2 = 55 degrees with a shorter wall; the corner is 35 + 55 = 90 degrees. (c) Neither. In way 1 the ropes are equal but the 14 m rope crossed at its 6 m mark is cut into 6 m and 8 m, so the diagonals do not bisect each other; the diagonals of every rectangle do. In way 2 the ropes bisect each other but are unequal (14 m and 12 m), while the diagonals of a rectangle are always equal; this gives only a parallelogram. Both conditions, equal and bisecting, are needed together.",
+          "s": [
+            [
+              "Part (a): finds 110 degrees on the longer wall and hence 70 degrees",
+              1
+            ],
+            [
+              "Part (b): finds 55 degrees and checks 35 + 55 = 90",
+              1
+            ],
+            [
+              "Part (c): rejects both ways, way 1 because the diagonals do not bisect each other and way 2 because they are unequal",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A student draws quadrilateral ABCD with diagonals AC and BD meeting at O. She records: OA = OB = OC = OD = 9 cm, angle OAB = 40 degrees and angle OBC = 45 degrees.\n(a) Explain why ABCD must be a rectangle.\n(b) Using triangle AOB, find angle OBA and angle AOB.\n(c) Hence find what angle OBC must be, and show that her record cannot be fully right.\n(d) Suppose instead the 45 degree reading is right and the 40 degree reading is wrong. Find angle OAB and angle AOB in that case.\n(e) Her teacher measures angle AOD and gets 80 degrees. Which of her two angle readings was wrong? Justify.",
+          "a": "(a) AC = 9 + 9 = 18 cm and BD = 9 + 9 = 18 cm, so the diagonals are equal, and O is the midpoint of both, so they bisect each other. A quadrilateral whose diagonals are equal and bisect each other is a rectangle. (b) OA = OB, so angle OBA = angle OAB = 40 degrees and angle AOB = 180 - 80 = 100 degrees. (c) Angle ABC = 90 degrees, so angle OBC = 90 - 40 = 50 degrees, not 45 degrees; the two angle readings cannot both be right. (d) OB = OC, so angle OCB = 45 degrees and angle BOC = 180 - 90 = 90 degrees; then angle AOB = 180 - 90 = 90 degrees and angle OAB = (180 - 90) / 2 = 45 degrees. (e) Angle AOD = 80 degrees gives angle AOB = 180 - 80 = 100 degrees, which matches (b), where angle OAB = 40 degrees. So the 40 degree reading is right and the 45 degree reading of angle OBC was wrong; it should be 50 degrees.",
+          "s": [
+            [
+              "Part (a): equal diagonals (18 cm) that bisect each other, so a rectangle",
+              1
+            ],
+            [
+              "Part (b): angle OBA = 40 and angle AOB = 100 degrees",
+              1
+            ],
+            [
+              "Part (c): angle OBC must be 50 degrees, so 45 cannot be right",
+              1
+            ],
+            [
+              "Part (d): angle AOB = 90 and angle OAB = 45 degrees",
+              1
+            ],
+            [
+              "Part (e): angle AOB = 100 matches the 40 degree reading, so the 45 degree reading was wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "In rectangle ABCD the diagonals meet at O. Diagonal AC makes with side AD an angle twice the angle it makes with side AB (angle OAD = 2 x angle OAB). Diagonal BD is 14 cm long.\n(a) Find angle OAB and angle OAD.\n(b) Find angle AOB and angle AOD.\n(c) Show that triangle AOD is equilateral.\n(d) Find the lengths of AD and BC.\n(e) Explain why, in this rectangle, side AD is exactly half of a diagonal.",
+          "a": "(a) Angle OAB + angle OAD = 90, so 3 x angle OAB = 90: angle OAB = 30 degrees, angle OAD = 60 degrees. (b) OA = OB, so angle OBA = 30 and angle AOB = 180 - 60 = 120 degrees; angle AOD = 180 - 120 = 60 degrees. (c) OA = OD, so angle ODA = angle OAD = 60 degrees; all three angles of triangle AOD are 60 degrees, so it is equilateral. (d) OD = 14 / 2 = 7 cm, so AD = 7 cm, and BC = AD = 7 cm (opposite sides of a rectangle). (e) AD equals OD, and OD is half of BD because the diagonals bisect each other.",
+          "s": [
+            [
+              "Part (a): 30 and 60 degrees",
+              1
+            ],
+            [
+              "Part (b): 120 and 60 degrees",
+              1
+            ],
+            [
+              "Part (c): all angles of triangle AOD are 60 degrees",
+              1
+            ],
+            [
+              "Part (d): AD = BC = 7 cm",
+              1
+            ],
+            [
+              "Part (e): links AD = OD with the diagonals bisecting each other",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A workshop in Saharanpur makes wooden photo frames. For each frame the checker measures the two diagonals and where they cross.\nFrame A: diagonals 50 cm and 50 cm, crossing at the midpoint of both, one angle between them 74 degrees.\nFrame B: diagonals 50 cm and 48 cm, crossing at the midpoint of both.\nFrame C: diagonals 50 cm and 50 cm, crossing 20 cm from one end of the first diagonal and at the midpoint of the second.\nFrame D: diagonals 46 cm and 46 cm, crossing at the midpoint of both at 90 degrees.\n(a) Which frames are certainly rectangles?\n(b) Give the reason frame B is not a rectangle.\n(c) In frame A, find the angle a diagonal makes with the side opposite the 74 degree angle.\n(d) A customer orders frames that are rectangles but not squares. Which frames can be sent? Justify.",
+          "a": "(a) Frames A and D: their diagonals are equal and bisect each other. (b) The diagonals of a rectangle are always equal; 50 cm and 48 cm are not. (c) The triangle on that side has two 25 cm sides and apex 74 degrees, so the angle is (180 - 74) / 2 = 53 degrees. (d) Only frame A. Frame D's diagonals are equal, bisect each other and meet at 90 degrees, which makes it a square; frames B and C are not rectangles.",
+          "s": [
+            [
+              "Part (a): A and D, with the equal-and-bisecting test",
+              1
+            ],
+            [
+              "Part (b): a rectangle's diagonals must be equal",
+              1
+            ],
+            [
+              "Part (c): 53 degrees from the isosceles triangle",
+              1
+            ],
+            [
+              "Part (d): sends only frame A, ruling out D as a square",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.2",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "ABCD is a square floor tile whose diagonals meet at O. Measured from O, the distances to corners A, B and C add up to 21 cm.\n(a) Find the length of diagonal BD, naming the properties you use.\n(b) Without measuring, find angle AOB, naming the pair of congruent triangles you use.",
+          "a": "(a) The diagonals of a square are equal and bisect each other, so OA = OB = OC. Each is 21 / 3 = 7 cm, and BD = 2 x 7 = 14 cm. (b) Triangles AOB and COB are congruent by SSS (OA = OC, AB = CB, OB common), so angle AOB = angle COB. Together they make a straight angle, so angle AOB = 90 degrees.",
+          "s": [
+            [
+              "Part (a): OA = OB = OC = 7 cm from equal, bisecting diagonals, so BD = 14 cm",
+              1
+            ],
+            [
+              "Part (b): SSS congruence of triangles AOB and COB and the straight angle, giving 90 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A sign-maker welds two 30 cm rods at their midpoints at right angles and runs a wire round the four ends. He then replaces one rod with a 36 cm rod, still welded at its midpoint and at right angles to the other. What shape does the wire make now?",
+          "a": "A rhombus that is not a square",
+          "o": [
+            "A rhombus that is not a square",
+            "A rectangle that is not a square",
+            "Still a square, since the rods meet at 90 degrees",
+            "A kite that is not a rhombus"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A tile has two diagonals of 12 cm each that cut each other into equal halves, and one angle between the diagonals is 88 degrees. Which conclusion is correct?",
+          "a": "A rectangle that is not a square",
+          "o": [
+            "A rectangle that is not a square",
+            "A square, as 88 degrees is close enough to 90 degrees",
+            "Only a rhombus, since its diagonals bisect each other",
+            "Not a rectangle, as the diagonals do not meet at 90 degrees"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "ABCD is a square whose diagonals meet at O. A point P lies on OB, between O and B, so that angle OAP = 20 degrees. Then angle APB = ___ degrees. (Write the number in digits.)",
+          "a": "110"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangle ABCD measures 6 cm by 10 cm and its diagonals meet at O.\n(a) Name one diagonal property that a square has and this rectangle does not.\n(b) Use congruent triangles to show why this rectangle cannot have that property.",
+          "a": "(a) The diagonals of a square meet at 90 degrees; this rectangle's do not. (b) If they met at 90 degrees, then in triangles AOB and COB we would have OA = OC (diagonals bisect each other), OB common and angle AOB = angle COB = 90 degrees, so the triangles would be congruent by SAS and AB = CB. But AB = 6 cm and BC = 10 cm, so the diagonals cannot be perpendicular.",
+          "s": [
+            [
+              "Part (a): names diagonals meeting at 90 degrees",
+              1
+            ],
+            [
+              "Part (b): SAS argument forcing AB = BC, contradicting 6 cm and 10 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A rectangular photo frame PQRS whose two diagonals cross at right angles must be a square.\nReason (R): If the diagonals of a quadrilateral bisect each other at right angles, all four of its sides are equal.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: In a square the diagonals bisect each other at 90 degrees, but they need not be equal.\nStatement 2: A quadrilateral whose diagonals are equal and bisect each other at 90 degrees is a square.\nStatement 3: A diagonal of a square divides it into two triangles, each with angles 45, 45 and 90 degrees.\nWhich of the statements are correct?",
+          "a": "2 and 3 only",
+          "o": [
+            "2 and 3 only",
+            "3 only",
+            "1 and 2 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A frame is already known to be a rectangle. Which single extra measurement proves that it is a square?",
+          "a": "Its diagonals cross each other at 90 degrees",
+          "o": [
+            "Its diagonals cross each other at 90 degrees",
+            "Its two diagonals are equal in length",
+            "Its opposite sides are parallel to each other",
+            "Its diagonals cut each other into equal halves"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "CASE is a square, and U and V are the midpoints of its sides CA and CE.\n(a) Find the angles of triangle CUV.\n(b) X is the midpoint of side SE, so triangle EVX is just like triangle CUV. Use this to find angle UVX.",
+          "a": "(a) CU = CV (halves of equal sides) and angle C = 90 degrees, so angle CUV = angle CVU = (180 - 90) / 2 = 45 degrees. (b) In the same way angle EVX = 45 degrees. Angles CVU, UVX and EVX make a straight angle on side CE, so angle UVX = 180 - 45 - 45 = 90 degrees.",
+          "s": [
+            [
+              "Part (a): 45, 45 and 90 degrees from CU = CV",
+              1
+            ],
+            [
+              "Part (b): uses the straight angle at V to get 90 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Priya draws a Venn diagram with one closed curve for all rectangles and another for all rhombuses, both inside a curve for all parallelograms. Where must she place the set of squares?",
+          "a": "Where the rectangle and rhombus curves overlap",
+          "o": [
+            "Where the rectangle and rhombus curves overlap",
+            "Inside the rectangle curve but outside the rhombus curve",
+            "Inside the rhombus curve but outside the rectangle curve",
+            "Inside the parallelogram curve but outside both others"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A tile has all four sides 8 cm. One diagonal makes an angle of 40 degrees with a side at a corner. Which description is correct?",
+          "a": "A rhombus with angles 80 and 100 degrees",
+          "o": [
+            "A rhombus with angles 80 and 100 degrees",
+            "A square, since all four sides are equal",
+            "A rhombus with angles 40 and 140 degrees",
+            "A rhombus with angles 45 and 135 degrees"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: A quadrilateral whose two diagonals are equal and cross at 90 degrees must be a square. Give a reason.",
+          "a": "False. The diagonals must also bisect each other. For example, two 10 cm sticks crossing at 90 degrees, one at its midpoint (5 cm and 5 cm) and the other at its 3 cm mark (3 cm and 7 cm), have equal, perpendicular diagonals, but the four triangles at the crossing are not all congruent, so the sides are not all equal; the shape is a kite, not a square.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Explains that the diagonals must also bisect each other, with a crossing away from a midpoint as the counter-example",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "ABCD is a square whose diagonals meet at O. Ritu says, 'Triangle AOB is equilateral, because OA = OB and the diagonals are equal.' Is Ritu right? Give two reasons from the angles of the triangle.",
+          "a": "No. Angle AOB = 90 degrees, because the diagonals of a square bisect each other at right angles, while every angle of an equilateral triangle is 60 degrees. Also angles OAB and OBA are 45 degrees each, not 60 degrees. OA = OB only makes it isosceles.",
+          "s": [
+            [
+              "Uses angle AOB = 90 degrees to reject the claim",
+              1
+            ],
+            [
+              "Uses the 45 degree base angles (OA = OB gives isosceles only)",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Meena says, 'The diagonals of a square bisect its angles. So any quadrilateral whose diagonals bisect its angles must be a square.' Do you agree? Give a reason and an example.",
+          "a": "No. The first sentence is true, but it does not work backwards. The diagonals of a rhombus also bisect its angles. For example, a rhombus with angles 50, 130, 50 and 130 degrees: each diagonal cuts the 50 degree angles into 25 + 25 and the 130 degree angles into 65 + 65, yet it has no right angle, so it is not a square.",
+          "s": [
+            [
+              "Gives the verdict that Meena's conclusion is wrong",
+              1
+            ],
+            [
+              "Names the rhombus as a quadrilateral whose diagonals also bisect its angles",
+              1
+            ],
+            [
+              "Gives a definite non-square example with its angles",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "PQRS is a square and diagonal PR is drawn. A point T on side QR is joined to P so that angle TPR = 15 degrees.\n(a) Find angle QPT.\n(b) Find angle PTQ.\n(c) Find angle PTR.",
+          "a": "(a) The diagonal bisects the 90 degree angle at P, so angle QPR = 45 degrees and angle QPT = 45 - 15 = 30 degrees. (b) In triangle PQT, angle Q = 90 degrees, so angle PTQ = 180 - 90 - 30 = 60 degrees. (c) Angles PTQ and PTR form a straight angle on QR, so angle PTR = 180 - 60 = 120 degrees.",
+          "s": [
+            [
+              "Part (a): 30 degrees using the 45 degree half-angle",
+              1
+            ],
+            [
+              "Part (b): 60 degrees from triangle PQT",
+              1
+            ],
+            [
+              "Part (c): 120 degrees from the straight angle",
+              1
+            ]
+          ],
+          "tags": [
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Arun says he drew a quadrilateral whose diagonals are equal, bisect each other and cross at 90 degrees, and that two of its sides measure 5 cm and 7 cm. Show that this is impossible.",
+          "a": "Let the quadrilateral be ABCD with diagonals meeting at O. Since the diagonals are equal and bisect each other, OA = OB = OC = OD. The four triangles AOB, BOC, COD and DOA each have two of these equal sides with a 90 degree angle between them, so they are congruent by SAS. Therefore AB = BC = CD = DA, and all four sides are equal. Sides of 5 cm and 7 cm cannot both occur.",
+          "s": [
+            [
+              "Notes that the four half-diagonals are equal",
+              1
+            ],
+            [
+              "Shows the four triangles at O are congruent by SAS",
+              1
+            ],
+            [
+              "Concludes all sides are equal, contradicting 5 cm and 7 cm",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "CASE is a square of side 12 cm.\n(a) U, V, W, X are the midpoints of sides CA, AS, SE, EC. Show that the four corner triangles (such as CUX) are congruent.\n(b) Deduce that UVWX has four equal sides.\n(c) Find the angles of each corner triangle.\n(d) Show that every angle of UVWX is 90 degrees and name UVWX.\n(e) Now take points P, Q, R, T on CA, AS, SE, EC with CP = AQ = SR = ET = 4 cm. Show that PQRT is also a square.",
+          "a": "(a) Each corner triangle has two 6 cm sides with the 90 degree corner between them, so they are congruent by SAS. (b) Their third sides UV, VW, WX, XU are corresponding parts, so they are equal. (c) Each is isosceles with a right angle: 90, 45 and 45 degrees. (d) At U, the two 45 degree angles and angle XUV make a straight angle, so angle XUV = 90 degrees; the same holds at V, W and X. All sides equal and all angles 90 degrees: UVWX is a square. (e) Each corner triangle now has legs 4 cm and 8 cm with a right angle between them, so all four are congruent by SAS and PQ = QR = RT = TP. At P the two triangles meet with angles that are the two different acute angles of the same right triangle, which add to 90 degrees, so angle TPQ = 180 - 90 = 90 degrees; similarly at Q, R and T. So PQRT is a square.",
+          "s": [
+            [
+              "Part (a): SAS congruence of the corner triangles",
+              1
+            ],
+            [
+              "Part (b): equal sides of UVWX as corresponding parts",
+              1
+            ],
+            [
+              "Part (c): 90, 45, 45 degrees",
+              1
+            ],
+            [
+              "Part (d): 90 degree angles from the straight angle, named a square",
+              1
+            ],
+            [
+              "Part (e): congruent 4-8 right triangles, acute angles adding to 90, so PQRT is a square",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A carpenter asks three apprentices to make a square frame by running a thread round the ends of two strips, AC and BD, crossing at O. Each makes one mistake.\nWorker P: two 40 cm strips joined at their midpoints, but at 70 degrees.\nWorker Q: two 40 cm strips crossing at 90 degrees, at the midpoint of BD but at the 15 cm mark of AC (OA = 15 cm, OC = 25 cm).\nWorker R: a 40 cm strip AC and a 32 cm strip BD, joined at their midpoints at 90 degrees.\n(a) For P, find the two angles each strip makes with the sides at a corner, and name P's shape.\n(b) For Q, show that triangles AOB and AOD are congruent, and say what this tells you about angle A.\n(c) For Q, show that angle A is not 90 degrees.\n(d) For R, show that all four sides are equal, and explain why it is still not a square.\n(e) For each worker, state the one change that turns the frame into a square.",
+          "a": "(a) The half-strips are all 20 cm, so the triangles at O are isosceles. With apex 70 degrees the base angles are (180 - 70) / 2 = 55 degrees, and with apex 110 degrees they are (180 - 110) / 2 = 35 degrees; each strip makes 55 degrees with one side and 35 degrees with the other. The corners are 55 + 35 = 90 degrees, so P is a rectangle that is not a square. (b) OB = OD = 20 cm, OA is common and angle AOB = angle AOD = 90 degrees, so the triangles are congruent by SAS. So angle OAB = angle OAD: AC cuts angle A into two equal parts. (c) In triangle AOB, OA = 15 cm and OB = 20 cm are unequal, so it is not isosceles and angle OAB is not equal to angle OBA. Since angle AOB = 90 degrees, angle OAB + angle OBA = 90 degrees, so angle OAB is not 45 degrees, and angle A = 2 x angle OAB is not 90 degrees. (d) The four triangles at O each have two half-strips of 20 cm and 16 cm with a right angle between them, so they are congruent by SAS and all four sides are equal. But the diagonals of a square are equal, and here they are 40 cm and 32 cm, so R is a rhombus that is not a square. (e) P: turn the strips to cross at 90 degrees. Q: move the crossing to the 20 cm mark (midpoint) of AC. R: replace the 32 cm strip with a 40 cm strip.",
+          "s": [
+            [
+              "Part (a): 55 and 35 degrees, and P is a rectangle, not a square",
+              1
+            ],
+            [
+              "Part (b): SAS congruence of AOB and AOD, so AC bisects angle A",
+              1
+            ],
+            [
+              "Part (c): OA and OB unequal, so angle OAB is not 45 and angle A is not 90 degrees",
+              1
+            ],
+            [
+              "Part (d): four congruent triangles give equal sides, but unequal diagonals rule out a square",
+              1
+            ],
+            [
+              "Part (e): one correct change for each of P, Q and R",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A tile shop in Jaipur lists its four-sided tiles by their diagonals.\nTile K: diagonals 20 cm and 20 cm, crossing at the midpoint of both at 90 degrees.\nTile L: diagonals 20 cm and 20 cm, crossing at the midpoint of both at 60 degrees.\nTile M: diagonals 20 cm and 16 cm, crossing at the midpoint of both at 90 degrees.\nTile N: diagonals 20 cm and 20 cm at 90 degrees, crossing 8 cm from one end of the first diagonal and at the midpoint of the second.\n(a) A customer needs square tiles. Decide which tile to sell, with the reason.\n(b) Explain why tile N is not even a rectangle.\n(c) Find the two angles that a diagonal of tile L makes with the sides at a corner.\n(d) The shop says tile M has four equal sides. Is it a square? Justify.",
+          "a": "(a) Tile K: its diagonals are equal, bisect each other and cross at 90 degrees, which gives a square. (b) The diagonals of a rectangle bisect each other; tile N's first diagonal is cut into 8 cm and 12 cm. (c) The triangles at the crossing are isosceles with apex 60 degrees (base angles 60 degrees) and apex 120 degrees (base angles 30 degrees), so a diagonal makes 60 degrees with one side and 30 degrees with the other. (d) Not a square. Its four sides are equal (the four triangles at the crossing are congruent by SAS), but a square's diagonals are equal and tile M's are 20 cm and 16 cm, so it is a rhombus that is not a square.",
+          "s": [
+            [
+              "Part (a): chooses tile K with the diagonal reason",
+              1
+            ],
+            [
+              "Part (b): diagonals of a rectangle must bisect each other",
+              1
+            ],
+            [
+              "Part (c): 60 and 30 degrees",
+              1
+            ],
+            [
+              "Part (d): not a square because its diagonals are unequal",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A school garden is a square ABCD with a straight path along diagonal BD. The gardener lays a second straight path from corner A to a point E on side BC, so that angle BAE = 25 degrees. The two paths cross at F, where a bench will stand.\n(a) Find angle AEB.\n(b) Find angle AFB, the angle between the two paths at the bench.\n(c) The headmistress wants the new path to cross path BD at exactly 90 degrees. What must angle BAE be, and where will point E then lie? Justify.",
+          "a": "(a) In triangle ABE, angle B = 90 degrees, so angle AEB = 180 - 90 - 25 = 65 degrees. (b) Diagonal BD bisects angle B, so angle ABF = 45 degrees. In triangle ABF, angle AFB = 180 - 25 - 45 = 110 degrees. (c) For angle AFB = 90 degrees, angle BAE = 180 - 90 - 45 = 45 degrees. A line from A at 45 degrees to AB is the diagonal AC (the diagonals of a square bisect its angles), so E must be corner C and the new path is the other diagonal; this fits, as the diagonals of a square cross at 90 degrees.",
+          "s": [
+            [
+              "Part (a): 65 degrees",
+              1
+            ],
+            [
+              "Part (b): 110 degrees using the 45 degree half-angle",
+              1
+            ],
+            [
+              "Part (c): 45 degrees, so E is at C and the path is diagonal AC",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.3",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A carpenter cuts a four-sided wooden board ABCD in which corners A, B and C are equal. He draws diagonal BD and measures angle ADB = 35 degrees and angle BDC = 25 degrees. What is each of the three equal corners?",
+          "a": "100 degrees",
+          "o": [
+            "100 degrees",
+            "120 degrees",
+            "60 degrees",
+            "90 degrees"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: A quadrilateral can have all four of its angles acute.\nStatement 2: A quadrilateral can have two obtuse angles and two right angles.\nStatement 3: A quadrilateral can have three acute angles.\nWhich of the statements are correct?",
+          "a": "3 only",
+          "o": [
+            "3 only",
+            "2 and 3 only",
+            "1 and 3 only",
+            "2 only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The angles of quadrilateral ABCD, in order, are (x + 15), (2x - 10), (x + 25) and (2x + 30) degrees.\n(a) Find x and the four angles.\n(b) Show that no two angles next to each other add to 180 degrees, and say what this tells you about the opposite sides of ABCD.",
+          "a": "(a) 6x + 60 = 360, so x = 50, and the angles are 65, 90, 75 and 130 degrees. (b) The adjacent pairs give 65 + 90 = 155, 90 + 75 = 165, 75 + 130 = 205 and 130 + 65 = 195; none is 180. If a pair of opposite sides were parallel, the two angles between them on one side would add to 180 degrees, so no pair of opposite sides of ABCD is parallel.",
+          "s": [
+            [
+              "Part (a): x = 50 and the angles 65, 90, 75, 130 degrees",
+              1
+            ],
+            [
+              "Part (b): checks the four adjacent sums and concludes no opposite sides are parallel",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The angles P, Q, R and S of quadrilateral PQRS, taken in order, are in the ratio 2 : 3 : 3 : 4. Which of its pairs of opposite sides are parallel?",
+          "a": "Only PQ and SR",
+          "o": [
+            "Only PQ and SR",
+            "Only PS and QR",
+            "Both pairs, so it is a parallelogram",
+            "Neither pair of opposite sides"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In quadrilateral ABCD, angle A = angle C, and angle B = angle D = angle A + 40 degrees. Diagonal BD cuts angle B into two equal parts. So angle ABD = ___ degrees. (Write the number in digits.)",
+          "a": "55"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A quadrilateral cannot have all four of its angles obtuse.\nReason (R): Every quadrilateral has at least one acute angle.",
+          "a": "A is true but R is false",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A table top is a quadrilateral ABCD with angle A = 95 degrees and angle B = 80 degrees. Side CD is extended beyond D, and the angle between this extension and side DA is 70 degrees. What is angle C?",
+          "a": "75 degrees",
+          "o": [
+            "75 degrees",
+            "115 degrees",
+            "105 degrees",
+            "110 degrees"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Kiran draws both diagonals of a quadrilateral and gets four triangles. He adds 4 x 180 = 720 degrees and says the angle sum of a quadrilateral is 720 degrees.\n(a) Which angles has he wrongly included?\n(b) Correct his working to get the true sum.",
+          "a": "(a) He has included the four angles around the point where the diagonals cross; they are not angles of the quadrilateral. (b) Those four angles make a full turn of 360 degrees, so the quadrilateral's angles add to 720 - 360 = 360 degrees.",
+          "s": [
+            [
+              "Part (a): identifies the angles at the crossing point",
+              1
+            ],
+            [
+              "Part (b): subtracts 360 to get 360 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Tara's frame ABCD is meant to be a parallelogram. She measures its corners in order as angle A = 70, angle B = 110, angle C = 80 and angle D = 110 degrees, and she knows exactly one reading is wrong. Which reading is wrong, and what should it be?",
+          "a": "Angle C; it should be 70 degrees",
+          "o": [
+            "Angle C; it should be 70 degrees",
+            "Angle A; it should be 60 degrees",
+            "Angle B; it should be 100 degrees",
+            "None; the four readings already fit a parallelogram"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Three angles of each quadrilateral are given. Match each with its fourth angle.\nColumn A: (1) 75, 105, 75 degrees (2) 120, 60, 90 degrees (3) 130, 40, 70 degrees (4) 95, 85, 115 degrees\nColumn B: (a) 65 degrees (b) 105 degrees (c) 90 degrees (d) 120 degrees",
+          "a": "1-b, 2-c, 3-d, 4-a",
+          "o": [
+            "1-b, 2-c, 3-d, 4-a",
+            "1-b, 2-d, 3-c, 4-a",
+            "1-c, 2-b, 3-d, 4-a",
+            "1-b, 2-c, 3-a, 4-d"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In quadrilateral PQRS the diagonal PR is drawn. Angle QPR = 40, angle RPS = 35, angle QRP = 50 and angle PRS = 60 degrees. What is angle Q + angle S?",
+          "a": "175 degrees",
+          "o": [
+            "175 degrees",
+            "185 degrees",
+            "180 degrees",
+            "150 degrees"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: If three angles of a quadrilateral are each 90 degrees, then its opposite sides must be equal. Give a reason.",
+          "a": "True. The fourth angle is 360 - 3 x 90 = 90 degrees, so all four angles are right angles. A quadrilateral with all angles 90 degrees is a rectangle, and the opposite sides of a rectangle are equal.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Finds the fourth angle 90 degrees and uses the rectangle's equal opposite sides",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A surveyor writes down four possible sets of corner angles for a plot. Which set could really be the angles of a four-sided plot?",
+          "a": "60, 90, 100, 110 degrees",
+          "o": [
+            "60, 90, 100, 110 degrees",
+            "70, 90, 100, 110 degrees",
+            "90, 90, 90, 100 degrees",
+            "120, 120, 60, 80 degrees"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In quadrilateral ABCD, angle A = angle C = 110 degrees and angle B = 3 x angle D.\n(a) Find angle B and angle D.\n(b) Diagonal AC makes angle DAC = 70 degrees. Find angle DCA.",
+          "a": "(a) Angle B + angle D = 360 - 220 = 140, so 4 x angle D = 140: angle D = 35 degrees and angle B = 105 degrees. (b) In triangle ADC, angle DCA = 180 - 35 - 70 = 75 degrees.",
+          "s": [
+            [
+              "Part (a): angle D = 35 and angle B = 105 degrees",
+              1
+            ],
+            [
+              "Part (b): angle DCA = 75 degrees from triangle ADC",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Two angles of a quadrilateral are right angles. What must the other two angles add up to? Show why.\n(b) Give one such quadrilateral in which the other two angles are not right angles, stating all four angles.",
+          "a": "(a) 360 - 90 - 90 = 180 degrees. (b) For example, angles 90, 90, 60 and 120 degrees (60 + 120 = 180). Any pair adding to 180 other than 90 and 90 is correct.",
+          "s": [
+            [
+              "Part (a): 180 degrees from the angle sum",
+              1
+            ],
+            [
+              "Part (b): a valid set such as 90, 90, 60, 120",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Quadrilateral ABCD is dented: corner C is pushed in towards A, so the figure looks like an arrowhead with its tip at A. The angle inside the figure at C is more than 180 degrees, and diagonal AC lies inside the figure while diagonal BD lies outside it. Ali says, 'The angles add up to 360 degrees only for ordinary quadrilaterals like rectangles; this dented one must have a different total.' Is Ali right? Justify, using a diagonal.",
+          "a": "No. Diagonal AC lies inside the figure and splits it into triangles ABC and ADC. Angle A is made of angles BAC and CAD, and the inside angle at C is made of angles BCA and ACD, while angles B and D each belong to one triangle. So the four angles of ABCD are exactly the six angles of the two triangles, and they add to 180 + 180 = 360 degrees, as for any quadrilateral.",
+          "s": [
+            [
+              "Gives the verdict that Ali is wrong",
+              1
+            ],
+            [
+              "Uses diagonal AC, the one inside the figure, to split it into two triangles",
+              1
+            ],
+            [
+              "Shows the six triangle angles make up the four angles, giving 180 + 180 = 360 degrees",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check",
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Sonu says he has drawn a quadrilateral whose angles are 2x, 3x, 4x and 5x degrees, and whose smallest angle is 60 degrees. Show that his quadrilateral cannot exist.",
+          "a": "If the smallest angle 2x is 60, then x = 30 and the angles are 60, 90, 120 and 150 degrees. Their sum is 420 degrees. But the angles of every quadrilateral add up to 360 degrees, so no such quadrilateral exists. (With a sum of 360 the angles would be 2x + 3x + 4x + 5x = 14x = 360, which does not give a smallest angle of 60.)",
+          "s": [
+            [
+              "Finds x = 30 and the four angles",
+              1
+            ],
+            [
+              "Adds them to get 420 degrees",
+              1
+            ],
+            [
+              "Concludes it contradicts the 360 degree angle sum",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student's working for the angles of quadrilateral ABCD reads: 90 + 2x + x + (x + 30) = 360, where the four terms are angles A, B, C and D in that order.\n(a) Write, in words, the angle facts about ABCD that lead to this equation.\n(b) Find the four angles.\n(c) Is any pair of opposite sides of ABCD parallel? Check using the angles.",
+          "a": "(a) For example: angle A is a right angle, angle B is twice angle C, and angle D is 30 degrees more than angle C. (b) 4x + 120 = 360, so x = 60: angle A = 90, angle B = 120, angle C = 60 and angle D = 90 degrees. (c) Yes, exactly one pair. Angle B + angle C = 120 + 60 = 180 degrees, so with BC as a transversal, AB is parallel to DC (also angle D + angle A = 180). But angle A + angle B = 210 degrees, so AD is not parallel to BC.",
+          "s": [
+            [
+              "Part (a): angle facts that match each term of the equation",
+              1
+            ],
+            [
+              "Part (b): x = 60 and the angles 90, 120, 60, 90 degrees",
+              1
+            ],
+            [
+              "Part (c): AB parallel to DC from 120 + 60 = 180, and AD not parallel to BC",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A surveyor in Nashik measures all four corners of four plots, each a quadrilateral ABCD, with the corners in order.\nPlot 1: 88, 92, 95, 85 degrees.\nPlot 2: 110, 70, 115, 75 degrees.\nPlot 3: 100, 80, 100, 80 degrees.\nPlot 4: 110, 80, 105, 70 degrees.\n(a) Which records cannot be correct?\n(b) In plot 2 only angle D was misread. What is the true angle D?\n(c) Show that plot 3 has both pairs of opposite sides parallel.\n(d) Plot 4 has fences AB and DC that are known to be parallel, and only one corner was misread. Which corners can the surveyor trust, which must he measure again, and what could the true angles be?",
+          "a": "(a) Plots 2 and 4: their angles add to 370 and 365 degrees, not 360. (b) 360 - (110 + 70 + 115) = 360 - 295 = 65 degrees. (c) Angle A + angle B = 100 + 80 = 180 degrees, so with AB as a transversal AD is parallel to BC; angle B + angle C = 80 + 100 = 180 degrees, so with BC as a transversal AB is parallel to DC. (d) With AB parallel to DC, angle A + angle D and angle B + angle C must each be 180 degrees. A + D = 110 + 70 = 180, so A and D fit and can be trusted; B + C = 80 + 105 = 185, so B or C was misread and both must be measured again. Either B = 180 - 105 = 75 degrees (angles 110, 75, 105, 70) or C = 180 - 80 = 100 degrees (angles 110, 80, 100, 70); both sets add to 360 degrees, so the data alone cannot decide which.",
+          "s": [
+            [
+              "Part (a): plots 2 and 4, by adding the angles",
+              1
+            ],
+            [
+              "Part (b): 65 degrees",
+              1
+            ],
+            [
+              "Part (c): both pairs of adjacent sums are 180, so both pairs of opposite sides are parallel",
+              1
+            ],
+            [
+              "Part (d): trusts A and D, re-measures B and C, and gives both possible sets",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "(a) Meera proves the angle sum of quadrilateral SOME by drawing diagonal SM. She writes: 'Triangle SEM has angles adding to 180 degrees and triangle SOM has angles adding to 180 degrees, so the angles of SOME add up to 360 degrees.' Her teacher says one step is missing. Write the missing step.\nIn quadrilateral ABCD, AB is parallel to DC. Angle A is 30 degrees more than angle D, and angle C is twice angle B.\n(b) Find angles A and D.\n(c) Find angles B and C.\n(d) Diagonal AC is drawn with angle CAD = 40 degrees. Find angle ACD in two ways, from triangle ACD and from the parallel sides, and show that the two answers agree.\n(e) Show that AD is not parallel to BC.",
+          "a": "(a) She must say how the six triangle angles make the four angles of SOME: the diagonal SM splits angle S into angle ESM + angle MSO and angle M into angle EMS + angle SMO, while angles E and O are whole angles of the triangles. So the six angles together are exactly angles S, O, M and E, and their sum is 180 + 180 = 360 degrees. (b) AB is parallel to DC, so angle A + angle D = 180 degrees (AD is a transversal). With A = D + 30: 2D + 30 = 180, so angle D = 75 and angle A = 105 degrees. (c) Angle B + angle C = 180 degrees (BC is a transversal), and C = 2B, so 3B = 180: angle B = 60 and angle C = 120 degrees. (d) From triangle ACD: angle ACD = 180 - 75 - 40 = 65 degrees. From the parallel sides: angle BAC = 105 - 40 = 65 degrees, and angle ACD = angle BAC as alternate angles (AB parallel to DC, AC a transversal), so angle ACD = 65 degrees. The two agree. (e) Angle A + angle B = 105 + 60 = 165 degrees, not 180, so with AB as a transversal, AD and BC are not parallel.",
+          "s": [
+            [
+              "Part (a): the diagonal splits angles S and M, so the six angles are exactly the four angles",
+              1
+            ],
+            [
+              "Part (b): angle D = 75 and angle A = 105 degrees",
+              1
+            ],
+            [
+              "Part (c): angle B = 60 and angle C = 120 degrees",
+              1
+            ],
+            [
+              "Part (d): 65 degrees from the triangle and 65 degrees by alternate angles",
+              1
+            ],
+            [
+              "Part (e): 105 + 60 = 165, not 180, so AD is not parallel to BC",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A farmer's field PQRS has angle P = 2 x angle S, angle Q = angle S + 30 degrees and angle R = 90 degrees.\n(a) Find angle S.\n(b) Find angles P and Q.\n(c) Which pair of opposite sides of the field is parallel? Give the reason.\n(d) A fence runs along diagonal PR with angle SPR = 50 degrees. Find angle PRS and angle QPR.\n(e) Find angle PRQ and use it to check angle R.",
+          "a": "(a) 2S + (S + 30) + 90 + S = 360, so 4S = 240 and angle S = 60 degrees. (b) Angle P = 120 and angle Q = 90 degrees. (c) PQ and SR: with PS as a transversal, angle P + angle S = 120 + 60 = 180 degrees (and also angle Q + angle R = 180 with QR as transversal), so PQ is parallel to SR. (d) In triangle PRS, angle PRS = 180 - 60 - 50 = 70 degrees; angle QPR = 120 - 50 = 70 degrees. (e) In triangle PQR, angle PRQ = 180 - 70 - 90 = 20 degrees, and angle R = 70 + 20 = 90 degrees, as given.",
+          "s": [
+            [
+              "Part (a): angle S = 60 degrees",
+              1
+            ],
+            [
+              "Part (b): P = 120 and Q = 90 degrees",
+              1
+            ],
+            [
+              "Part (c): PQ parallel to SR, angles on one side of a transversal add to 180",
+              1
+            ],
+            [
+              "Part (d): angle PRS = 70 and angle QPR = 70 degrees",
+              1
+            ],
+            [
+              "Part (e): angle PRQ = 20 degrees and the check 70 + 20 = 90",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A school is laying a four-sided flower bed ABCD against the corner of a wall, so angle A must be 90 degrees. Angles B and D are to be equal. Two designs are proposed.\nDesign X: angle C is 30 degrees more than angle B.\nDesign Y: angle C is twice angle B.\nA stone bench will stand in corner C and needs a corner angle of at least 100 degrees. A lamp post will stand in each of corners B and D, and each post needs a corner angle of at least 70 degrees.\n(a) Find angles B, C and D in design X.\n(b) Find angles B, C and D in design Y.\n(c) Decide which design the school should use, and check that its angles add to 360 degrees.",
+          "a": "(a) 90 + B + (B + 30) + B = 360, so 3B = 240: B = D = 80 degrees and C = 110 degrees. (b) 90 + B + 2B + B = 360, so 4B = 270: B = D = 67.5 degrees and C = 135 degrees. (c) Both designs give the bench enough room (110 and 135 degrees are both at least 100 degrees), and design Y gives it more. But design Y's corners B and D are only 67.5 degrees, less than the 70 degrees each lamp post needs, while design X gives 80 degrees. So the school should use design X. Check: 90 + 80 + 110 + 80 = 360 degrees.",
+          "s": [
+            [
+              "Part (a): B = D = 80 and C = 110 degrees",
+              1
+            ],
+            [
+              "Part (b): B = D = 67.5 and C = 135 degrees",
+              1
+            ],
+            [
+              "Part (c): both meet the bench need, only X meets the lamp-post need, so X; with the 360 degree check",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.4",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A shop in Pune has a folding steel gate made of strips that form parallelograms. In one parallelogram ABCD the sides are AB = 30 cm and BC = 20 cm. When the gate is half open, angle A is 60 degrees and the two diagonals, measured to the nearest 0.1 cm, are BD = 26.5 cm and AC = 43.6 cm. A rivet holds the strips where the diagonals cross, at O.\n(a) Find the other three angles of ABCD.\n(b) Find OA and OB.\n(c) As the gate opens further, at what angle A do the two diagonals become equal, and what shape is ABCD then?\n(d) Rahul says, 'However far the gate is opened, the rivet O is always the same distance from A as from C, but it is never the same distance from all four corners.' Judge each half of his claim.",
+          "a": "(a) Adjacent angles add to 180 degrees and opposite angles are equal: angle B = 120, angle C = 60, angle D = 120 degrees. (b) The diagonals of a parallelogram bisect each other: OA = 43.6 / 2 = 21.8 cm and OB = 26.5 / 2 = 13.25 cm. (c) When angle A = 90 degrees; then all angles are 90 degrees and ABCD is a rectangle, whose diagonals are equal. (d) Rahul is partly right. The first half is true: the diagonals of every parallelogram bisect each other, so OA = OC (and OB = OD) in every position. The second half is wrong: at 60 degrees O is 21.8 cm from A and C but only 13.25 cm from B and D, yet when angle A reaches 90 degrees the diagonals are equal, so O is then the same distance from all four corners.",
+          "s": [
+            [
+              "Part (a): 120, 60, 120 degrees",
+              1
+            ],
+            [
+              "Part (b): OA = 21.8 cm and OB = 13.25 cm",
+              1
+            ],
+            [
+              "Part (c): at 90 degrees, a rectangle",
+              1
+            ],
+            [
+              "Part (d): partly right; OA = OC always, but at 90 degrees (a rectangle) O is equidistant from all four corners",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A tailor's paper template ABCD has diagonals AC = 24 cm and BD = 16 cm crossing at O, with OA = OC = 12 cm, OB = OD = 8 cm and angle AOB = 70 degrees. What is the template?",
+          "a": "A parallelogram that is neither a rectangle nor a rhombus",
+          "o": [
+            "A parallelogram that is neither a rectangle nor a rhombus",
+            "A rhombus, because its diagonals cut each other in half",
+            "A rectangle, because each diagonal is cut into equal halves",
+            "A kite, because its two diagonals have different lengths"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In parallelogram EASY, angle E = (3x + 10) degrees and angle S = (5x - 30) degrees. Then angle A = ___ degrees. (Write the number in digits.)",
+          "a": "110"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A parallelogram whose two diagonals are equal in length is a rectangle.\nReason (R): The diagonals of every parallelogram are equal in length.",
+          "a": "A is true but R is false",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In parallelogram ABCD, angle A is 40 degrees less than angle B.\n(a) Find all four angles.\n(b) Diagonal AC makes an angle of 30 degrees with AB. Find angle ACD and angle ACB.",
+          "a": "(a) Angle A + angle B = 180 and angle B - angle A = 40, so angle B = 110 and angle A = 70 degrees; angle C = 70 and angle D = 110 degrees. (b) AB is parallel to DC, so angle ACD = angle CAB = 30 degrees (alternate angles). In triangle ABC, angle ACB = 180 - 110 - 30 = 40 degrees.",
+          "s": [
+            [
+              "Part (a): 70, 110, 70, 110 degrees",
+              1
+            ],
+            [
+              "Part (b): 30 degrees by alternate angles and 40 degrees from triangle ABC",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Parallelogram ABCD has its diagonals meeting at O. The three sides of triangle AOB add up to 25 cm and those of triangle BOC add up to 27 cm. If AB = 9 cm, how long is BC?",
+          "a": "11 cm",
+          "o": [
+            "11 cm",
+            "9 cm",
+            "2 cm",
+            "16 cm"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: Every rectangle is a parallelogram.\nStatement 2: A parallelogram with one right angle has all four angles right angles.\nStatement 3: The diagonals of a parallelogram cross at their midpoints even when they are unequal.\nWhich of the statements are correct?",
+          "a": "1, 2 and 3",
+          "o": [
+            "1, 2 and 3",
+            "1 and 2 only",
+            "1 and 3 only",
+            "2 and 3 only"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: A quadrilateral with one pair of opposite sides parallel and the other pair of opposite sides equal must be a parallelogram. Give a reason.",
+          "a": "False. An isosceles trapezium has one pair of parallel sides and its other two sides equal, but those equal sides are not parallel, so it is not a parallelogram.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Gives the isosceles trapezium as the counter-example",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In parallelogram PQRS the diagonals meet at O. A student wants to prove OP = OR by showing that triangles POQ and ROS are congruent. Which statement gives the correct vertex order and a condition he may use?",
+          "a": "Triangle POQ is congruent to triangle ROS, by ASA",
+          "o": [
+            "Triangle POQ is congruent to triangle ROS, by ASA",
+            "Triangle POQ is congruent to triangle SOR, by ASA",
+            "Triangle POQ is congruent to triangle ROS, by SSS",
+            "Triangle POQ is congruent to triangle RSO, by AAS"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "In parallelogram PQRS, angle P = 65 degrees, the diagonals PR = 12 cm and QS = 9 cm meet at O. Match each quantity with its value.\nColumn A: (1) angle Q (2) angle R (3) OR (4) OQ\nColumn B: (a) 4.5 cm (b) 115 degrees (c) 6 cm (d) 65 degrees",
+          "a": "1-b, 2-d, 3-c, 4-a",
+          "o": [
+            "1-b, 2-d, 3-c, 4-a",
+            "1-d, 2-b, 3-c, 4-a",
+            "1-b, 2-d, 3-a, 4-c",
+            "1-d, 2-b, 3-a, 4-c"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Lata writes: 'Draw diagonal BD of parallelogram ABCD. Triangles ABD and CDB are congruent by SSS, so the opposite sides AB and CD are equal.'\n(a) What is wrong with her reasoning?\n(b) Which equal parts should she use instead, and which congruence condition do they give?",
+          "a": "(a) Her argument goes round in a circle: to use SSS she must already know AB = CD and AD = CB, which is what she is trying to prove. (b) Opposite angles A and C are equal, and since AD is parallel to BC with transversal BD, the alternate angles ADB and CBD are equal; with them the triangles ABD and CDB are congruent by AAS, so AB = CD and AD = CB.",
+          "s": [
+            [
+              "Part (a): explains that SSS assumes what is to be proved",
+              1
+            ],
+            [
+              "Part (b): uses the opposite angles and alternate angles to get AAS",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Mohan draws AB = 6 cm and AD = 4.5 cm with angle DAB = 50 degrees, then a line through D parallel to AB and a line through B parallel to AD, meeting at C. He draws diagonal BD and measures angle ABD = 48 degrees. Without measuring again, what are angles BDC and CBD?",
+          "a": "BDC = 48 and CBD = 82 degrees",
+          "o": [
+            "BDC = 48 and CBD = 82 degrees",
+            "BDC = 82 and CBD = 48 degrees",
+            "BDC = 48 and CBD = 48 degrees",
+            "BDC = 132 and CBD = 82 degrees"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In parallelogram WXYZ the diagonals meet at O, with OW = (2x + 1) cm, OY = (3x - 4) cm and OX = (x + 4) cm.\n(a) Find x.\n(b) Find the length of diagonal XZ.",
+          "a": "(a) The diagonals bisect each other, so OW = OY: 2x + 1 = 3x - 4, giving x = 5. (b) OX = 5 + 4 = 9 cm and OZ = OX, so XZ = 2 x 9 = 18 cm. (Diagonal WY = 22 cm, so the diagonals are unequal and WXYZ is not a rectangle.)",
+          "s": [
+            [
+              "Part (a): x = 5 from OW = OY",
+              1
+            ],
+            [
+              "Part (b): XZ = 18 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A railway signal frame ABCD has both pairs of opposite sides parallel, with AB = 80 cm and BC = 50 cm. Its diagonals cross at O. Diagonal AC measures 102 cm, and the perimeter of triangle AOB is 174 cm. Which statement about the frame is correct?",
+          "a": "It is a parallelogram but not a rectangle, since BD = 86 cm",
+          "o": [
+            "It is a parallelogram but not a rectangle, since BD = 86 cm",
+            "It is a rectangle, since BD = 102 cm",
+            "It is a parallelogram but not a rectangle, since BD = 43 cm",
+            "It cannot be named without measuring BD directly"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Explain why the diagonals of a parallelogram need not be equal, using a parallelogram you can describe.\n(b) Name the special parallelogram in this chapter whose diagonals are always equal, and the extra condition it has.",
+          "a": "(a) In a parallelogram with sides 4 cm and 5 cm and angles 30 and 150 degrees, constructing and measuring shows the diagonal joining the 30 degree corners is about 8.7 cm while the one joining the 150 degree corners is about 2.5 cm; the proofs give only that the diagonals bisect each other, not that they are equal. (b) The rectangle, whose angles are all 90 degrees.",
+          "s": [
+            [
+              "Part (a): a clear unequal-diagonal parallelogram and that only bisection is guaranteed",
+              1
+            ],
+            [
+              "Part (b): the rectangle, with all angles 90 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Gopal fixes a rivet at O, where the diagonals of a parallelogram-shaped frame ABCD cross. He finds that O is 7 cm from corner A and also 7 cm from corner B. He says, 'Then ABCD must be a rectangle.' Is he right? Justify, and if angle OAB = 32 degrees, find angle AOD.",
+          "a": "Yes. The diagonals of a parallelogram bisect each other, so OC = OA = 7 cm and OD = OB = 7 cm. Then AC = 14 cm = BD: the diagonals are equal and bisect each other, so ABCD is a rectangle. In triangle AOB, OA = OB, so angle OBA = 32 degrees and angle AOB = 180 - 64 = 116 degrees; angle AOD = 180 - 116 = 64 degrees.",
+          "s": [
+            [
+              "Gives the verdict that Gopal is right",
+              1
+            ],
+            [
+              "Uses bisecting diagonals to get AC = BD = 14 cm, so equal and bisecting diagonals",
+              1
+            ],
+            [
+              "Finds angle AOB = 116 and angle AOD = 64 degrees",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Show that no parallelogram can have angles of 70, 110, 80 and 100 degrees in order, even though they add up to 360 degrees.",
+          "a": "In a parallelogram the opposite angles are equal, so the 1st and 3rd angles would be equal; here they are 70 and 80 degrees. Also adjacent angles must add to 180 degrees, but 110 + 80 = 190 degrees. Adding up to 360 is needed for every quadrilateral but is not enough for a parallelogram, so these angles cannot belong to one.",
+          "s": [
+            [
+              "Uses opposite angles equal: 70 is not 80",
+              1
+            ],
+            [
+              "Uses adjacent angles adding to 180: 110 + 80 = 190",
+              1
+            ],
+            [
+              "Concludes that a sum of 360 alone does not make a parallelogram",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "In parallelogram ABCD, diagonal AC is drawn with angle BAC = 35 degrees and angle CAD = 40 degrees.\n(a) Find angle ACB and angle ACD, naming the property used.\n(b) Find angle B.\n(c) AB = 8 cm. Name the triangle that is congruent to triangle ABC, with the vertices in the correct order and the condition, and say which side of it equals AB.",
+          "a": "(a) AD is parallel to BC, so angle ACB = angle CAD = 40 degrees; AB is parallel to DC, so angle ACD = angle BAC = 35 degrees (alternate angles). (b) Angle A = 35 + 40 = 75 degrees, so angle B = 180 - 75 = 105 degrees. (c) Triangle ABC is congruent to triangle CDA by ASA: angle BAC = angle DCA (35 degrees), AC is common, and angle BCA = angle DAC (40 degrees). So CD = AB = 8 cm.",
+          "s": [
+            [
+              "Part (a): 40 and 35 degrees by alternate angles",
+              1
+            ],
+            [
+              "Part (b): angle B = 105 degrees",
+              1
+            ],
+            [
+              "Part (c): triangle ABC congruent to triangle CDA by ASA, so CD = 8 cm",
+              1
+            ]
+          ],
+          "tags": [
+            "figure"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Pooja says, 'In a parallelogram, the diagonals bisect each other and they also bisect the angles of the parallelogram.' Which part of her statement is correct? Justify both parts.",
+          "a": "Only the first part. The diagonals of every parallelogram bisect each other (the triangles on opposite sides of the crossing are congruent by ASA). They do not bisect the angles in general: in a parallelogram with sides 4 cm and 5 cm, the diagonal from a 30 degree corner does not cut it into two 15 degree angles: if diagonal AC bisected angle A, then angle CAB = angle CAD = angle ACB (alternate angles), so triangle ABC would be isosceles with BA = BC, which fails when the sides are 4 cm and 5 cm. Diagonals bisect the angles only in special parallelograms such as the rhombus and square.",
+          "s": [
+            [
+              "Gives the verdict: partly right, first part only",
+              1
+            ],
+            [
+              "Justifies that the diagonals bisect each other",
+              1
+            ],
+            [
+              "Explains that angle bisection holds only for special cases like the rhombus",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "LAMP is a parallelogram (sides LA, AM, MP, PL) whose diagonals LM and AP meet at O. A straight rod is fixed through O; it meets side LA at X and side MP at Y.\n(a) Show that triangles OXL and OYM are congruent, naming the condition and the facts you use.\n(b) Deduce that O is the midpoint of the rod XY.\n(c) Deduce that LX = MY.\n(d) If LA = 15 cm and LX = 6 cm, find YP.\n(e) A student says, 'So any rod through O cuts LA and MP at their midpoints.' Judge this using (d).",
+          "a": "(a) OL = OM, because the diagonals of a parallelogram bisect each other. LA is parallel to MP and LM is a transversal, so angle OLX = angle OMY (alternate angles). Angle LOX = angle MOY (vertically opposite angles). So triangles OXL and OYM are congruent by ASA. (b) Corresponding parts give OX = OY, so O is the midpoint of XY. (c) Corresponding parts also give LX = MY. (d) MP = LA = 15 cm (opposite sides) and MY = LX = 6 cm, so YP = 15 - 6 = 9 cm. (e) The student is wrong. In (d) the rod passes through O but X is 6 cm from L, while the midpoint of LA is 7.5 cm from L. What is always true is LX = MY, not that X and Y are midpoints.",
+          "s": [
+            [
+              "Part (a): OL = OM, alternate angles and vertically opposite angles, so ASA",
+              1
+            ],
+            [
+              "Part (b): OX = OY",
+              1
+            ],
+            [
+              "Part (c): LX = MY",
+              1
+            ],
+            [
+              "Part (d): YP = 9 cm",
+              1
+            ],
+            [
+              "Part (e): rejects the claim, since LX = 6 cm is not half of 15 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "In parallelogram ABCD, angle B = 110 degrees. The bisector of angle A meets side DC at E.\n(a) Find angles A, C and D.\n(b) Find angle DAE and angle AED, naming the property used.\n(c) Find angle AEC.\n(d) The bisector of angle B meets the bisector of angle A at G. Find angle AGB.\n(e) Show that the answer to (d) is the same for every parallelogram.",
+          "a": "(a) Angle A = 180 - 110 = 70 degrees, angle C = 70 degrees and angle D = 110 degrees. (b) Angle DAE = 70 / 2 = 35 degrees. AB is parallel to DC with transversal AE, so angle AED = angle EAB = 35 degrees (alternate angles). (c) Angle AEC = 180 - 35 = 145 degrees (linear pair). (d) In triangle AGB, angle GAB = 35 and angle GBA = 55 degrees, so angle AGB = 180 - 90 = 90 degrees. (e) Angle A + angle B = 180 always, so half of each adds to 90, and angle AGB = 180 - 90 = 90 degrees in every parallelogram.",
+          "s": [
+            [
+              "Part (a): 70, 70, 110 degrees",
+              1
+            ],
+            [
+              "Part (b): 35 and 35 degrees with alternate angles",
+              1
+            ],
+            [
+              "Part (c): 145 degrees",
+              1
+            ],
+            [
+              "Part (d): 90 degrees",
+              1
+            ],
+            [
+              "Part (e): half of a 180 degree pair is 90 in every parallelogram",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A stage-set maker in Kolkata has three wooden frames, each a quadrilateral ABCD.\nFrame P: sides in order 60, 40, 60, 40 cm; angles in order 75, 105, 75, 105 degrees.\nFrame Q: sides in order 60, 40, 60, 40 cm; angles all 90 degrees.\nFrame R: angles in order A = 80, B = 100, C = 85, D = 95 degrees (sides not measured).\n(a) Which frames are parallelograms, and which of them is also a rectangle?\n(b) Use the angles of frame R to find which pair of its sides is parallel, and explain why R is not a parallelogram.\n(c) The designer needs a leaning frame (no right angles) in which both pairs of opposite sides are parallel, so that panels can slide along either pair. Decide which frame to use and justify.",
+          "a": "(a) P and Q: in each, the adjacent angles add to 180 degrees, so both pairs of opposite sides are parallel. Q, with all angles 90 degrees, is also a rectangle. (b) Angle A + angle B = 180, so with AB as transversal AD is parallel to BC. But angle B + angle C = 185, not 180, so AB is not parallel to DC; only one pair is parallel, so R is a trapezium, not a parallelogram. (c) Frame P: it is a parallelogram with no right angle. Q has right angles, and R has only one pair of parallel sides.",
+          "s": [
+            [
+              "Part (a): P and Q are parallelograms, Q is a rectangle",
+              1
+            ],
+            [
+              "Part (b): AD parallel to BC from 80 + 100 = 180, and 100 + 85 = 185 rules out a parallelogram",
+              1
+            ],
+            [
+              "Part (c): chooses P, ruling out Q and R",
+              2
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.5",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The diagonals of rhombus ABCD meet at O. The three sides of triangle AOB add up to 24 cm, side AB is 10 cm, and OA is 2 cm longer than OB. So diagonal BD is ___ cm long. (Write the number in digits.)",
+          "a": "12"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rhombus-shaped earring PQRS has thin wires along both diagonals, crossing at O. The wire PR makes an angle of 38 degrees with side PQ. What is angle PQR?",
+          "a": "104 degrees",
+          "o": [
+            "104 degrees",
+            "52 degrees",
+            "76 degrees",
+            "128 degrees"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The diagonals of a rhombus meet at 90 degrees.\nReason (R): Every rhombus is a parallelogram.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "On a geoboard, Nisha places two rubber bands of equal length so that they are perpendicular and cut each other into equal halves, and joins their ends. She then stretches one band 2 units further at each end, keeping the crossing where it was. What shape does she now have?",
+          "a": "A rhombus that is not a square",
+          "o": [
+            "A rhombus that is not a square",
+            "A rectangle that is not a square",
+            "A kite that is not a rhombus",
+            "A square, larger than before"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: Two equilateral triangles of side 5 cm joined along a side form a rhombus with angles of 60 and 120 degrees.\nStatement 2: The diagonals of a rhombus are always equal in length.\nStatement 3: A rhombus with one angle of 90 degrees need not be a square.\nWhich of the statements are correct?",
+          "a": "1 only",
+          "o": [
+            "1 only",
+            "1 and 3 only",
+            "2 only",
+            "1 and 2 only"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: A frame made of four 25 cm rods, with one corner fixed at exactly 90 degrees, must be a square. Give a reason.",
+          "a": "True. Four equal sides make it a rhombus, and a rhombus is a parallelogram, so the angles next to the 90 degree corner are 180 - 90 = 90 degrees and the opposite corner is also 90 degrees. All angles 90 degrees and all sides equal is a square.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Uses the rhombus angle properties to show every angle is 90 degrees",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Four 15 cm rods are hinged at their ends to make a frame, which is then pushed so that its angles change. Which statement stays true however it is pushed?",
+          "a": "Its opposite angles stay equal to each other",
+          "o": [
+            "Its opposite angles stay equal to each other",
+            "Its two diagonals stay equal in length",
+            "Its corner angles all stay at 90 degrees",
+            "Its diagonals stop cutting each other in half"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A welder makes a parallelogram-shaped frame ABCD in which two sides next to each other are equal: AB = BC = 70 cm.\n(a) Show that ABCD is a rhombus.\n(b) His helper reports that the two diagonals are 1 m each and cross at 70 degrees. Explain why this report cannot be right.",
+          "a": "(a) The opposite sides of a parallelogram are equal, so CD = AB = 70 cm and DA = BC = 70 cm. All four sides are equal, so ABCD is a rhombus. (b) The diagonals of a rhombus always cross at 90 degrees, so they cannot cross at 70 degrees. (Also, equal diagonals that bisect each other would make it a rectangle, and a rhombus that is a rectangle is a square, whose diagonals again cross at 90 degrees.)",
+          "s": [
+            [
+              "Part (a): opposite sides of a parallelogram are equal, so all four sides are 70 cm",
+              1
+            ],
+            [
+              "Part (b): a rhombus's diagonals must cross at 90 degrees, not 70",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Both diagonals of rhombus GAME are drawn and meet at O, making eight triangles in the figure (four small ones at O and four large ones). How many of the other triangles are congruent to triangle GOA?",
+          "a": "3",
+          "o": [
+            "3",
+            "1",
+            "7",
+            "2"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In rhombus ABCD the diagonals meet at O, and angle OAB is 3 times angle OBA.\n(a) Find angle OAB and angle OBA.\n(b) Find angle BAD and angle ABC.",
+          "a": "(a) The diagonals meet at 90 degrees, so angle OAB + angle OBA = 90, giving 4 x angle OBA = 90: angle OBA = 22.5 and angle OAB = 67.5 degrees. (b) The diagonals bisect the angles, so angle BAD = 2 x 67.5 = 135 degrees and angle ABC = 2 x 22.5 = 45 degrees (and 135 + 45 = 180).",
+          "s": [
+            [
+              "Part (a): 67.5 and 22.5 degrees",
+              1
+            ],
+            [
+              "Part (b): 135 and 45 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A craft teacher crosses a 12 cm strip and a 9 cm strip at right angles. The 12 cm strip is cut into two equal halves at the crossing, but the 9 cm strip is crossed at its 3 cm mark. What does a thread round the four ends form?",
+          "a": "A kite that is not a rhombus",
+          "o": [
+            "A kite that is not a rhombus",
+            "A rhombus, since the strips cross at 90 degrees",
+            "A parallelogram, since one strip is halved",
+            "A rectangle, since the strips cross at 90 degrees"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Hari says, 'A rhombus counts as a parallelogram only when its angles are 90 degrees.'\n(a) Is he right?\n(b) Give the reason, using the angles a diagonal makes with the sides.",
+          "a": "(a) No. Every rhombus is a parallelogram. (b) In rhombus GAME, the diagonal AE makes four equal angles with the sides, so angle GAE = angle AEM; these are alternate angles, so EM is parallel to GA, and similarly GE is parallel to AM. Both pairs of opposite sides are parallel whatever the angles are.",
+          "s": [
+            [
+              "Part (a): verdict that Hari is wrong",
+              1
+            ],
+            [
+              "Part (b): equal alternate angles made by the diagonal give both pairs of parallel sides",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In rhombus ABCD, angle A is twice angle B.\n(a) Find angles A and B.\n(b) The side of the rhombus is 9 cm. Which diagonal can you find without measuring, and how long is it? Explain.",
+          "a": "(a) Angle A + angle B = 180, so 3 x angle B = 180: angle B = 60 and angle A = 120 degrees. (b) Diagonal AC. In triangle ABC, AB = BC = 9 cm and angle B = 60 degrees, so the other two angles are (180 - 60) / 2 = 60 degrees each; the triangle is equilateral and AC = 9 cm.",
+          "s": [
+            [
+              "Part (a): A = 120 and B = 60 degrees",
+              1
+            ],
+            [
+              "Part (b): AC = 9 cm from the equilateral triangle ABC",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Sunita says, 'Any quadrilateral whose diagonals are perpendicular to each other must be a rhombus.' Do you agree? Give a counter-example if you disagree, and say what extra condition would make her statement correct.",
+          "a": "No. A kite's diagonals are perpendicular, but a kite need not be a rhombus: for example, a kite with sides 5, 5, 8, 8 cm (AB = BC = 5 cm, CD = DA = 8 cm) has perpendicular diagonals but unequal sides. If the perpendicular diagonals also bisect each other, the four triangles at the crossing are congruent (SAS) and all sides are equal, so it is a rhombus.",
+          "s": [
+            [
+              "Gives the verdict: disagrees",
+              1
+            ],
+            [
+              "Gives a kite with unequal sides as a counter-example",
+              1
+            ],
+            [
+              "States the missing condition: the diagonals must also bisect each other",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Prakash says that in his rhombus PQRS, diagonal PR makes an angle of 35 degrees with side PQ and an angle of 40 degrees with side PS. Show that this cannot be right, and find what angle P would be if the 35 degree measurement is correct.",
+          "a": "In a rhombus, triangles PQR and PSR are congruent by SSS (PQ = PS, QR = SR, PR common), so angle QPR = angle SPR: a diagonal of a rhombus bisects the angle at each end. The two parts at P would have to be equal, but 35 and 40 degrees are not. If the 35 degree part is correct, angle P = 2 x 35 = 70 degrees.",
+          "s": [
+            [
+              "States that the diagonal bisects the angle (with the SSS reason)",
+              1
+            ],
+            [
+              "Points out 35 and 40 degrees cannot both be right",
+              1
+            ],
+            [
+              "Finds angle P = 70 degrees",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "ABCD is a rhombus whose diagonals AC and BD meet at O.\n(a) Show that triangles AOB and COB are congruent, naming the condition and the rhombus properties you use.\n(b) Deduce that BD is perpendicular to AC.\n(c) Rohan says the same proof shows that the diagonals of every parallelogram are perpendicular. Which step fails for a parallelogram that is not a rhombus, and why?",
+          "a": "(a) AB = CB (all sides of a rhombus are equal), AO = CO (the diagonals of a rhombus bisect each other) and BO is common, so triangle AOB is congruent to triangle COB by SSS. (b) So angle AOB = angle COB. These two angles make a straight angle, so each is 90 degrees, and BD is perpendicular to AC. (c) Step (a) fails: it uses AB = CB, two sides next to each other. In a parallelogram only opposite sides need be equal; with AB = 6 cm and BC = 9 cm, say, the triangles are not congruent, so the right angle does not follow.",
+          "s": [
+            [
+              "Part (a): SSS with AB = CB, AO = CO and BO common",
+              1
+            ],
+            [
+              "Part (b): equal angles on a straight line, so 90 degrees",
+              1
+            ],
+            [
+              "Part (c): the step AB = CB fails, since adjacent sides of a parallelogram need not be equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Rani's working for a rhombus ABCD whose diagonals meet at O reads:\nLine 1: angle OAB = 180 - 90 - 35 = 55 degrees\nLine 2: angle BAD = 2 x 55 = 110 degrees\nLine 3: angle ABC = 180 - 110 = 70 degrees\n(a) Write the question this working answers: which angle was given as 35 degrees?\n(b) Name the rhombus property used in each line.\n(c) Find angle ADB by a different route from Rani's.",
+          "a": "(a) The question gave angle OBA (the angle diagonal BD makes with side AB) as 35 degrees and asked for angles BAD and ABC. (b) Line 1: the diagonals of a rhombus meet at 90 degrees (with the angle sum of triangle AOB). Line 2: a diagonal of a rhombus bisects the angles at its ends. Line 3: adjacent angles of a rhombus add up to 180 degrees. (c) In triangle ABD, AB = AD (sides of a rhombus), so angle ADB = angle ABD = 35 degrees. (Or: angle ADC = angle ABC = 70 degrees and BD bisects it.)",
+          "s": [
+            [
+              "Part (a): angle OBA = 35 degrees was given",
+              1
+            ],
+            [
+              "Part (b): the right angle at O, the bisected angle, and adjacent angles adding to 180",
+              1
+            ],
+            [
+              "Part (c): angle ADB = 35 degrees by another route, such as the isosceles triangle ABD",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "ABCD is a rhombus with angle BAD = 70 degrees; its diagonals meet at O. A point P lies on diagonal AC between A and O, and P is joined to B and to D so that angle ABP = 20 degrees.\n(a) Show that triangles ABP and ADP are congruent, naming the condition and the rhombus property you use.\n(b) Deduce that PB = PD, and find angle ADP.\n(c) Find angle APB.\n(d) Find angle BPD, the angle at P on the side facing C.\n(e) Show that triangles BPO and DPO are congruent, and hence give a new reason why AC is perpendicular to BD.",
+          "a": "(a) AB = AD (sides of a rhombus), AP is common, and angle BAP = angle DAP = 70 / 2 = 35 degrees, because a diagonal of a rhombus bisects the angles at its ends. So the triangles are congruent by SAS. (b) Corresponding parts give PB = PD and angle ADP = angle ABP = 20 degrees. (c) In triangle ABP, angle APB = 180 - 35 - 20 = 125 degrees. (d) Angle BPC = 180 - 125 = 55 degrees (linear pair on AC); in the same way angle DPC = 55 degrees, so angle BPD = 55 + 55 = 110 degrees. (e) PB = PD, angle BPO = angle DPO = 55 degrees, and PO is common, so the triangles are congruent by SAS. So angle POB = angle POD; they make a straight angle on BD, so each is 90 degrees, and AC is perpendicular to BD.",
+          "s": [
+            [
+              "Part (a): SAS with AB = AD, AP common and the bisected 35 degree angles",
+              1
+            ],
+            [
+              "Part (b): PB = PD and angle ADP = 20 degrees",
+              1
+            ],
+            [
+              "Part (c): angle APB = 125 degrees",
+              1
+            ],
+            [
+              "Part (d): angle BPD = 110 degrees",
+              1
+            ],
+            [
+              "Part (e): SAS on BPO and DPO, so equal angles on a straight line are 90 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Two cardboard copies of an isosceles triangle with sides 10 cm, 10 cm and 7 cm are joined along a pair of equal sides.\n(a) They are joined along their 7 cm sides. Name the quadrilateral and justify.\n(b) They are joined along a 10 cm side so that one is flipped over that side onto the other side of it. Name the quadrilateral and justify.\n(c) They are joined along a 10 cm side with one triangle turned half a turn, so that its 7 cm side is opposite the other's 7 cm side. Name the quadrilateral and justify.\n(d) Which of the quadrilaterals in (a) to (c) have perpendicular diagonals?\n(e) In the kite of (b), the joining side is one diagonal. What does it do to the other diagonal? Explain.",
+          "a": "(a) A rhombus: the four outer sides are all 10 cm. (b) A kite: going round, the sides are 10, 7, 7, 10 cm, so two pairs of adjacent sides are equal and not all four are equal. (c) A parallelogram: the sides in order are 10, 7, 10, 7 cm, so the opposite sides are equal, and a quadrilateral with equal opposite sides is a parallelogram (draw a diagonal; the two triangles are congruent by SSS, giving equal alternate angles). (d) The rhombus in (a) and the kite in (b). (e) It bisects the other diagonal (the one joining the two free corners of the triangles) at 90 degrees: in a kite, the diagonal through the two corners where equal sides meet is the perpendicular bisector of the other diagonal (the triangles on either side of the crossing are congruent by SAS).",
+          "s": [
+            [
+              "Part (a): rhombus, four 10 cm sides",
+              1
+            ],
+            [
+              "Part (b): kite, sides 10, 7, 7, 10",
+              1
+            ],
+            [
+              "Part (c): parallelogram from equal opposite sides",
+              1
+            ],
+            [
+              "Part (d): the rhombus and the kite",
+              1
+            ],
+            [
+              "Part (e): it is the perpendicular bisector of the other diagonal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "In rhombus ABCD the diagonals meet at O, with angle DAC = (2x + 5) degrees and angle BAC = (3x - 10) degrees.\n(a) Find x, naming the property used.\n(b) Find angle A and angle B.\n(c) Find angle ABD.\n(d) AO = (y + 6) cm and OC = (2y - 1) cm. Find y and the length of AC.\n(e) Could diagonal BD also be as long as AC? Justify.",
+          "a": "(a) The diagonals of a rhombus bisect its angles, so 2x + 5 = 3x - 10, giving x = 15 (each part 35 degrees). (b) Angle A = 70 degrees and angle B = 180 - 70 = 110 degrees. (c) Angle ABD = 110 / 2 = 55 degrees. (d) The diagonals of a rhombus bisect each other, so y + 6 = 2y - 1, giving y = 7; AO = 13 cm and AC = 26 cm. (e) No. If BD were also 26 cm, the diagonals would be equal and bisect each other, so ABCD would be a rectangle; a rhombus that is a rectangle is a square, with all angles 90 degrees. But angle A = 70 degrees, so BD cannot equal AC.",
+          "s": [
+            [
+              "Part (a): x = 15 from the angle-bisecting diagonal",
+              1
+            ],
+            [
+              "Part (b): 70 and 110 degrees",
+              1
+            ],
+            [
+              "Part (c): 55 degrees",
+              1
+            ],
+            [
+              "Part (d): y = 7 and AC = 26 cm from the bisecting diagonals",
+              1
+            ],
+            [
+              "Part (e): equal diagonals would make it a square, but angle A is 70 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A jaali (stone screen) maker in Ahmedabad prepares quadrilateral openings by crossing two iron bars as diagonals. His order sheet reads:\nDesign J1: bars 18 cm and 12 cm, crossing at the midpoint of both at 90 degrees; the 18 cm bar makes an angle of 33.7 degrees with each side at its ends.\nDesign J2: bars 18 cm and 18 cm, crossing at the midpoint of both at 90 degrees.\nDesign J3: bars 18 cm and 12 cm, crossing at the midpoint of both at 70 degrees.\n(a) Which designs give a rhombus?\n(b) Name the shape of J3, with a reason.\n(c) Find all four angles of J1, and the angle the 12 cm bar makes with each side.\n(d) The customer wants openings with no right-angled corner, but whose bars cross at right angles so they can be welded crosswise. Decide which design to make and justify.",
+          "a": "(a) J1 and J2: their diagonals bisect each other at 90 degrees, so the four triangles at the crossing are congruent (SAS) and all sides are equal. (b) A parallelogram that is not a rhombus: its diagonals bisect each other but are not perpendicular. (c) The 18 cm bar bisects the corners at its ends, so those corners are 2 x 33.7 = 67.4 degrees; the other two corners are 180 - 67.4 = 112.6 degrees. The 12 cm bar makes 90 - 33.7 = 56.3 degrees with each side. (d) J1. J2 is a square (equal diagonals bisecting at 90 degrees), so it has right-angled corners; J3's bars do not cross at 90 degrees.",
+          "s": [
+            [
+              "Part (a): J1 and J2",
+              1
+            ],
+            [
+              "Part (b): parallelogram, diagonals bisect but are not perpendicular",
+              1
+            ],
+            [
+              "Part (c): 67.4, 112.6 degrees and 56.3 degrees",
+              1
+            ],
+            [
+              "Part (d): chooses J1, ruling out the square J2 and J3",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A paper-craft teacher in Bhopal folds a sheet in half and then in half again, and makes one straight cut across the folded corner at the centre. When the sheet is opened, the two creases cross at 90 degrees at the centre of the sheet, and the hole has its four corners on the creases: 6 cm on either side of the centre along one crease and 4 cm on either side along the other.\n(a) Treating the lines joining opposite corners of the hole as its diagonals, give their lengths and say where and at what angle they cross.\n(b) Name the shape of the hole and justify.\n(c) What cut, measured along each crease from the centre, would give a square hole with diagonals of 10 cm? Justify.\n(d) For a lantern, the teacher wants the hole as tall as possible (longest diagonal), but a bulb holder 7 cm wide must pass through it along its shorter diagonal. She can cut 6 cm and 4 cm, or 7 cm and 3 cm. Decide which cut to use and justify.",
+          "a": "(a) 12 cm and 8 cm; they cross at the centre, which is the midpoint of both, at 90 degrees. (b) A rhombus that is not a square. The diagonals bisect each other at 90 degrees, so the four triangles at the centre (each with arms of 6 cm and 4 cm and a right angle between them) are congruent by SAS and all four sides are equal; the diagonals are unequal, so it is not a square. (c) 5 cm along each crease: the diagonals are then 10 cm and 10 cm, equal and bisecting each other at 90 degrees, which gives a square. (d) The 6 cm and 4 cm cut. The 7 cm and 3 cm cut would be taller (diagonals 14 cm and 6 cm), but its shorter diagonal, 6 cm, is less than the 7 cm the bulb holder needs. The 6 cm and 4 cm cut gives a shorter diagonal of 8 cm, which is enough, so it is the tallest hole that works.",
+          "s": [
+            [
+              "Part (a): diagonals 12 cm and 8 cm, bisecting each other at 90 degrees",
+              1
+            ],
+            [
+              "Part (b): rhombus, by SAS on the four triangles, not a square as the diagonals are unequal",
+              1
+            ],
+            [
+              "Part (c): 5 cm along each crease, equal diagonals bisecting at 90 degrees",
+              1
+            ],
+            [
+              "Part (d): chooses 6 cm and 4 cm, since the taller cut's 6 cm diagonal is too narrow",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.6",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Kite ABCD has AB = BC and CD = DA, with angle ABC = 70 degrees and angle BAD = 120 degrees. Ritu says angle BCD must also be 70 degrees. What are angles BCD and ADC really?",
+          "a": "BCD = 120 and ADC = 50 degrees",
+          "o": [
+            "BCD = 120 and ADC = 50 degrees",
+            "BCD = 70 and ADC = 100 degrees",
+            "BCD = 120 and ADC = 70 degrees",
+            "BCD = 50 and ADC = 120 degrees"
+          ],
+          "tags": [
+            "scenario",
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: If one diagonal of a quadrilateral is perpendicular to the other, the quadrilateral must be a kite. Give a reason.",
+          "a": "False. Perpendicular diagonals are not enough. In a kite, one diagonal is also the perpendicular bisector of the other. Two sticks crossing at right angles with neither cut into halves (for example, one crossed at its 3 cm mark out of 10 cm and the other at its 2 cm mark out of 9 cm) give a quadrilateral in which neither diagonal bisects the other, so it is not a kite.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Explains that one diagonal must also bisect the other, with a crossing that bisects neither",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A carpenter measures the corners of a table top PQRS, in order, as P = 72, Q = 108, R = 100 and S = 80 degrees. Which description fits the table top?",
+          "a": "A trapezium with PS parallel to QR, not isosceles",
+          "o": [
+            "A trapezium with PS parallel to QR, not isosceles",
+            "A trapezium with PQ parallel to SR, not isosceles",
+            "An isosceles trapezium with PS parallel to QR",
+            "A parallelogram, since its angles add up to 360"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Take a trapezium to mean a quadrilateral with at least one pair of parallel opposite sides, and a kite to mean a quadrilateral ABCD with AB = BC and CD = DA. Consider the following statements.\nStatement 1: Every parallelogram is also a trapezium.\nStatement 2: A rhombus is a kite.\nStatement 3: Every kite is a rhombus.\nWhich of the statements are correct?",
+          "a": "1 and 2 only",
+          "o": [
+            "1 and 2 only",
+            "2 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Kite ABCD has AB = BC and CD = DA; its diagonals meet at O. Angle BAC = 50 degrees and angle DAC = 25 degrees.\n(a) Find angle ABC.\n(b) Find angle ADC.",
+          "a": "(a) Diagonal BD is perpendicular to AC, so angle AOB = 90 degrees and angle ABO = 180 - 90 - 50 = 40 degrees. BD bisects angle B, so angle ABC = 80 degrees. (b) In triangle AOD, angle ADO = 180 - 90 - 25 = 65 degrees, and BD bisects angle D, so angle ADC = 130 degrees.",
+          "s": [
+            [
+              "Part (a): 80 degrees using the right angle at O and the bisected angle B",
+              1
+            ],
+            [
+              "Part (b): 130 degrees in the same way",
+              1
+            ]
+          ],
+          "tags": [
+            "figure"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In trapezium PQRS, side PQ is parallel to side SR. Diagonal PR makes angle QPR = 35 degrees, and angle S = 105 degrees. So angle SPR = ___ degrees. (Write the number in digits.)",
+          "a": "40"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In kite ABCD with AB = BC = 5 cm and CD = DA = 8 cm, the diagonal AC bisects angle BAD.\nReason (R): Triangle ABC is isosceles with AB = BC, so angle BAC = angle BCA.",
+          "a": "A is false but R is true",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two cardboard copies of a right-angled triangle whose two shorter sides are both 6 cm are joined edge to edge, along sides of equal length, without overlapping. Which list gives every quadrilateral that can be made this way?",
+          "a": "A square and a parallelogram with angles of 45 and 135 degrees",
+          "o": [
+            "A square and a parallelogram with angles of 45 and 135 degrees",
+            "Only a square, joined along the longest sides",
+            "A square and a kite that is not a rhombus",
+            "A square, a rectangle that is not a square, and a parallelogram"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Each frame is made by crossing two strips and running a thread round their ends. Match each frame with its shape.\nColumn A: (1) strips 10 cm and 10 cm, crossing at the midpoint of both at 70 degrees (2) strips 10 cm and 6 cm, crossing at the midpoint of both at 90 degrees (3) strips 10 cm and 6 cm, crossing at the midpoint of both at 70 degrees (4) strips 10 cm and 6 cm crossing at 90 degrees, the 10 cm strip at its midpoint and the 6 cm strip at its 2 cm mark\nColumn B: (a) kite that is not a rhombus (b) parallelogram that is not a rhombus or rectangle (c) rectangle that is not a square (d) rhombus that is not a square",
+          "a": "1-c, 2-d, 3-b, 4-a",
+          "o": [
+            "1-c, 2-d, 3-b, 4-a",
+            "1-d, 2-c, 3-b, 4-a",
+            "1-c, 2-b, 3-d, 4-a",
+            "1-c, 2-d, 3-a, 4-b"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "UVWX is an isosceles trapezium with UV parallel to XW and UX = VW. Angle X = 112 degrees.\n(a) Find angle U.\n(b) Find angles V and W, naming the property used.",
+          "a": "(a) Angles U and X lie between the parallel sides on the same side of UX, so angle U = 180 - 112 = 68 degrees. (b) In an isosceles trapezium the angles at each end of a parallel side are equal, so angle V = angle U = 68 degrees and angle W = angle X = 112 degrees.",
+          "s": [
+            [
+              "Part (a): 68 degrees from angles between parallel sides adding to 180",
+              1
+            ],
+            [
+              "Part (b): V = 68 and W = 112 degrees from the isosceles trapezium property",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two cardboard copies of a triangle with sides 5 cm, 8 cm and 11 cm are joined along their 11 cm sides, one flipped over that side so that it lies on the other side of it. Which quadrilateral is formed?",
+          "a": "A kite with sides 5, 5, 8 and 8 cm",
+          "o": [
+            "A kite with sides 5, 5, 8 and 8 cm",
+            "A parallelogram with sides 5, 8, 5, 8 cm",
+            "A rhombus with all sides 8 cm",
+            "A trapezium with sides 5, 8, 11, 11 cm"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A builder checks a window frame. Which single finding guarantees that the frame is a rectangle?",
+          "a": "All four of its corner angles are equal",
+          "o": [
+            "All four of its corner angles are equal",
+            "Its two diagonals are equal to each other in length",
+            "Its two diagonals are perpendicular",
+            "Two of its corners are right angles"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The same two 5-8-11 cm triangles are now joined along their 8 cm sides, with one triangle turned half a turn so that each 5 cm side lies opposite the other triangle's 5 cm side.\n(a) Write the four sides of the quadrilateral in order.\n(b) Name the quadrilateral and justify.",
+          "a": "(a) 11, 5, 11, 5 cm. (b) A parallelogram: both pairs of opposite sides are equal. Drawing the joining side as a diagonal, the two triangles are congruent (SSS), so the alternate angles at its ends are equal and both pairs of opposite sides are parallel.",
+          "s": [
+            [
+              "Part (a): sides 11, 5, 11, 5 cm",
+              1
+            ],
+            [
+              "Part (b): parallelogram, justified by equal opposite sides and alternate angles",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Quadrilateral ABCD is a kite (AB = BC and CD = DA) and also a trapezium, with AB parallel to DC.\n(a) Show that angle B = angle D.\n(b) Hence name the quadrilateral, with a reason.",
+          "a": "(a) In a kite, angle A = angle C (triangles ABD and CBD are congruent by SSS). AB is parallel to DC, so angle A + angle D = 180 degrees (AD a transversal) and angle B + angle C = 180 degrees (BC a transversal). So angle D = 180 - angle A and angle B = 180 - angle C = 180 - angle A, giving angle B = angle D. (b) A rhombus. Both pairs of opposite angles are equal, so ABCD is a parallelogram and its opposite sides are equal: AB = CD. With AB = BC and CD = DA, all four sides are equal.",
+          "s": [
+            [
+              "Part (a): uses angle A = angle C and the two co-interior pairs to get angle B = angle D",
+              1
+            ],
+            [
+              "Part (b): a parallelogram with AB = BC, so all sides equal: a rhombus",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "ABCD is a trapezium with AB parallel to DC, and angle A is 3 times angle D.\n(a) Find angles A and D.\n(b) If angle C = 70 degrees, find angle B.",
+          "a": "(a) Angle A + angle D = 180 (between the parallel sides, on the same side of AD), so 4 x angle D = 180: angle D = 45 and angle A = 135 degrees. (b) Angle B + angle C = 180, so angle B = 110 degrees.",
+          "s": [
+            [
+              "Part (a): D = 45 and A = 135 degrees",
+              1
+            ],
+            [
+              "Part (b): B = 110 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ravi says, 'In a kite, the two diagonals bisect each other at right angles, just like in a rhombus.' How much of his statement is correct? Explain with kite ABCD, where AB = BC and CD = DA.",
+          "a": "Partly right. The diagonals of a kite do meet at right angles, and diagonal BD bisects AC (triangles AOB and COB are congruent by SAS, giving AO = OC and right angles at O). But AC does not in general bisect BD: in a kite with AB = BC = 5 cm and CD = DA = 12 cm, B is much nearer the crossing point than D. Only when all four sides are equal (a rhombus) do both diagonals bisect each other.",
+          "s": [
+            [
+              "Gives the verdict: partly right",
+              1
+            ],
+            [
+              "Confirms the right angle and that BD bisects AC",
+              1
+            ],
+            [
+              "Explains that AC need not bisect BD except in a rhombus",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Shreya says her isosceles trapezium UVWX, with UV parallel to XW and UX = VW, has angle U = 70 degrees and angle W = 100 degrees. Show that these two measurements cannot both be right.",
+          "a": "Angles U and X are between the parallel sides on the same side of UX, so angle X = 180 - 70 = 110 degrees. In an isosceles trapezium the angles at each end of a parallel side are equal, so angle W = angle X = 110 degrees. This contradicts 100 degrees. (Equally, angle V = angle U = 70, and angle V + angle W should be 180, but 70 + 100 = 170.)",
+          "s": [
+            [
+              "Finds angle X = 110 degrees",
+              1
+            ],
+            [
+              "Uses the isosceles property: angle W = angle X",
+              1
+            ],
+            [
+              "States the contradiction with 100 degrees",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "ABCD is a trapezium with AB parallel to DC. Its angles are angle A = (2x + 10) degrees, angle D = (3x - 40) degrees and angle B = (x + 30) degrees.\n(a) Find x, and angles A and D.\n(b) Find angles B and C.\n(c) Is ABCD an isosceles trapezium? Justify using its angles.",
+          "a": "(a) AB is parallel to DC, so angle A + angle D = 180 degrees (AD is a transversal): 5x - 30 = 180, so x = 42. Angle A = 94 degrees and angle D = 86 degrees. (b) Angle B = 42 + 30 = 72 degrees, and angle B + angle C = 180, so angle C = 108 degrees. (c) No. In an isosceles trapezium the angles at the two ends of a parallel side are equal, but at the ends of AB they are 94 and 72 degrees (and at the ends of DC, 86 and 108 degrees). So its non-parallel sides AD and BC cannot be equal.",
+          "s": [
+            [
+              "Part (a): x = 42, angle A = 94 and angle D = 86 degrees",
+              1
+            ],
+            [
+              "Part (b): angle B = 72 and angle C = 108 degrees",
+              1
+            ],
+            [
+              "Part (c): not isosceles, since the angles at the ends of a parallel side differ",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For Uttarayan in Ahmedabad, a kite-maker builds a frame ABCD with AB = BC = 25 cm and CD = DA = 44 cm. The spine runs along diagonal BD and a cross-stick along diagonal AC, which measures 37.2 cm. He sets angle ABC = 96 degrees, and angle ADC comes out as 50 degrees.\n(a) Find angle BAD.\n(b) Find angle ABD and angle BAC.\n(c) Where along the cross-stick, and at what angle, must the spine cross it?\n(d) To save string he wants the cross-stick to cross the spine at the spine's midpoint as well. Can he keep these side lengths? Justify.",
+          "a": "(a) Angles A and C are equal, so angle BAD = (360 - 96 - 50) / 2 = 107 degrees. (b) The spine BD bisects angle B, so angle ABD = 48 degrees; the diagonals are perpendicular, so angle BAC = 180 - 90 - 48 = 42 degrees. (c) At the middle of the cross-stick, 37.2 / 2 = 18.6 cm from A, and at 90 degrees, since BD is the perpendicular bisector of AC. (d) No. If each diagonal bisected the other, the frame would be a parallelogram; a parallelogram with AB = BC has all four sides equal (a rhombus). But AB = 25 cm and DA = 44 cm, so the spine's midpoint cannot be the crossing point.",
+          "s": [
+            [
+              "Part (a): 107 degrees",
+              1
+            ],
+            [
+              "Part (b): 48 and 42 degrees",
+              1
+            ],
+            [
+              "Part (c): 18.6 cm from A, at 90 degrees",
+              1
+            ],
+            [
+              "Part (d): no, since bisecting diagonals with AB = BC would force a rhombus",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Tanvi writes this proof for kite ABCD (AB = BC, CD = DA) whose diagonals meet at O:\nStep 1: In triangles AOB and COB, AB = CB, angle ABO = angle CBO, and BO is common, so they are congruent by SAS.\nStep 2: So AO = CO, and angle AOB = angle COB = 90 degrees, as they make a straight angle.\n(a) Which fact in Step 1 has Tanvi used without proving it?\n(b) Prove that fact, naming the triangles and the congruence condition.\n(c) With your step added first, is the proof complete, or does it go round in a circle? Explain.\n(d) Tanvi's friend tries the same steps with triangles BOA and DOA to prove BO = DO. Which step breaks, and why?\n(e) In kite PQRS (PQ = QR, RS = SP) the diagonals meet at T, angle QPR = 38 degrees and angle RPS = 52 degrees. Find angle PQS and angle QRS.",
+          "a": "(a) That angle ABO = angle CBO, that is, that diagonal BD bisects angle B. (b) In triangles ABD and CBD, AB = CB, AD = CD and BD is common, so they are congruent by SSS, and angle ABD = angle CBD. (c) It is complete and not circular: the new step uses only the given sides, and Steps 1 and 2 then use its result, not the result they are proving. (d) Step 1 breaks: it would need AB = AD, two sides that meet at A, but in a kite AB = BC and AD = DC, so AB need not equal AD; the triangles need not be congruent, and AC need not bisect BD. (e) Diagonal QS is perpendicular to PR, so in triangle PQT, angle PQT = 180 - 90 - 38 = 52 degrees; so angle PQS = 52 degrees. Angle QRS = angle QPS (the kite's equal pair of angles) = 38 + 52 = 90 degrees.",
+          "s": [
+            [
+              "Part (a): angle ABO = angle CBO was not proved",
+              1
+            ],
+            [
+              "Part (b): SSS congruence of triangles ABD and CBD",
+              1
+            ],
+            [
+              "Part (c): complete, not circular, as the new step uses only the given sides",
+              1
+            ],
+            [
+              "Part (d): the step fails because AB need not equal AD",
+              1
+            ],
+            [
+              "Part (e): angle PQS = 52 and angle QRS = 90 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A building inspector's checklist has five statements about quadrilaterals. Say whether each is true or false, with a one-line justification.\n(a) A quadrilateral whose diagonals bisect each other at 90 degrees must be a square.\n(b) If both pairs of opposite angles of a quadrilateral are equal, both pairs of opposite sides are parallel.\n(c) An isosceles trapezium can have four different angles.\n(d) A kite in which all four angles are equal must be a square.\n(e) A quadrilateral with two right angles at the ends of one side has a pair of parallel sides.",
+          "a": "(a) False: such diagonals give a rhombus; it is a square only if the diagonals are also equal. (b) True: if angle A = angle C and angle B = angle D, then 2A + 2B = 360, so A + B = 180, which makes AD parallel to BC; similarly A + D = 180 makes AB parallel to DC. (c) False: the angles at each end of a parallel side are equal, so it has at most two different angles. (d) True: equal angles are 90 degrees each, so it is a rectangle; with AB = BC its adjacent sides are equal, so all sides are equal and it is a square. (e) True: if angle A = angle B = 90 degrees, then with AB as a transversal the angles on the same side add to 180 degrees, so AD is parallel to BC and the quadrilateral is a trapezium.",
+          "s": [
+            [
+              "Part (a): false, a rhombus",
+              1
+            ],
+            [
+              "Part (b): true, A + B = 180 gives parallel sides",
+              1
+            ],
+            [
+              "Part (c): false, angles pair up equally",
+              1
+            ],
+            [
+              "Part (d): true, a rectangle with equal adjacent sides",
+              1
+            ],
+            [
+              "Part (e): true, the two right angles add to 180, so the sides are parallel",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "An irrigation canal in Punjab has a cross-section that is an isosceles trapezium ABCD: the water surface AB is parallel to the bed DC, and the two banks AD and BC are equal. The angle inside the canal between the bed and bank AD is angle D = 118 degrees.\n(a) Find angle C.\n(b) Find the angles at the top corners A and B.\n(c) To reduce erosion, an engineer wants each bank to make an angle of 55 degrees with the water surface. What must the bed angles become?\n(d) A contractor proposes a canal with bed angles of 118 degrees at D and 125 degrees at C, the surface still parallel to the bed. Find its top angles, and decide whether its two banks can be equal. Justify.",
+          "a": "(a) In an isosceles trapezium the angles at each end of a parallel side are equal, so angle C = 118 degrees. (b) Angles A and D are between the parallel sides on the same side of AD, so angle A = 180 - 118 = 62 degrees; likewise angle B = 62 degrees. (c) If angle A = angle B = 55 degrees, then angle D = angle C = 180 - 55 = 125 degrees. (d) Angle A = 180 - 118 = 62 degrees and angle B = 180 - 125 = 55 degrees. The banks cannot be equal: if they were, the trapezium would be isosceles and the angles at the ends of the bed would be equal, but 118 and 125 degrees are not.",
+          "s": [
+            [
+              "Part (a): 118 degrees",
+              1
+            ],
+            [
+              "Part (b): 62 degrees each",
+              1
+            ],
+            [
+              "Part (c): 125 degrees each",
+              1
+            ],
+            [
+              "Part (d): top angles 62 and 55 degrees, and the banks cannot be equal",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    }
+  ]
+}
