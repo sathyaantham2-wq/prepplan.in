@@ -1,0 +1,2485 @@
+{
+  "kind": "dps_pack",
+  "subject": {
+    "code": "MATH6",
+    "class": 6,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 10,
+    "name": "The Other Side of Zero"
+  },
+  "source_code": "fegp110",
+  "concepts": [
+    {
+      "code": "C6M-10.1",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a Shimla hostel the lift stops at floors numbered from -7 to +7, and the ground floor is 0. Aarti lives on Floor -3, Binod on Floor +1, Chetna on Floor -7 and Dev on Floor 0. All four must go to the common room on Floor +2. Who needs the most '+' presses?",
+          "a": "Chetna, on Floor -7 (9 presses)",
+          "o": [
+            "Chetna, on Floor -7 (9 presses)",
+            "Aarti, on Floor -3 (5 presses)",
+            "Binod, on Floor +1 (1 press)",
+            "Dev, on Floor 0 (2 presses)"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A hostel lift attendant lists the floors -16, -4, 5 and -11. A new helper orders them by the size of the digits (4, 5, 11, 16) and writes -4, 5, -11, -16. The attendant needs the floors from the lowest to the highest. Which list is correct?",
+          "a": "-16, -11, -4, 5",
+          "o": [
+            "-16, -11, -4, 5",
+            "-4, -11, -16, 5",
+            "5, -4, -11, -16",
+            "-4, -11, 5, -16"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Rahul says, 'Floor -15 is higher than Floor -9, because 15 is bigger than 9.' Which reply is correct?",
+          "a": "Floor -15 is further below the ground than Floor -9, so -15 < -9",
+          "o": [
+            "Floor -15 is further below the ground than Floor -9, so -15 < -9",
+            "He is right, because the sign does not change which number is bigger",
+            "He is right on the floors but wrong on a number line, where -15 is on the right",
+            "He is wrong because two negative numbers cannot be compared at all"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The lift in a Kochi office tower serves every floor from Floor -4 up to Floor +4, one floor at a time. How many floors lie strictly between the lowest and the highest floors it serves?",
+          "a": "7",
+          "o": [
+            "7",
+            "8",
+            "6",
+            "3"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The lift is on Floor -6. A guest asks first for Floor +2 and then wants to go on to Floor -1. Which presses does the attendant make?",
+          "a": "'+' 8 times, then '-' 3 times",
+          "o": [
+            "'+' 8 times, then '-' 3 times",
+            "'+' 4 times, then '-' 3 times",
+            "'+' 8 times, then '-' 1 time",
+            "'+' 2 times, then '-' 1 time"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Read the statements.\nStatement 1: Every negative number is less than 0 and also less than every positive number.\nStatement 2: Zero is the smallest positive number, because it is the floor just above Floor -1.\nStatement 3: The integers go on without an end both above 0 and below 0.\nWhich statements are correct?",
+          "a": "1 and 3 only. Statement 2 is false: zero is neither positive nor negative, so it cannot be the smallest positive number.",
+          "o": [
+            "1 and 3 only",
+            "2 and 3 only",
+            "1 and 2 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): -20 < -3.\nReason (R): For negative numbers, the larger the number written after the minus sign, the further below zero the number lies.",
+          "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. Floor -20 is 17 floors lower than Floor -3, so the Reason is exactly why the Assertion holds.",
+          "o": [
+            "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+            "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+            "The Assertion is true but the Reason is false.",
+            "The Assertion is false but the Reason is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The integers strictly between -9 and 6, leaving out 0, number ___.",
+          "a": "13"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each description in Column I with its value in Column II.\nColumn I: 1. The additive inverse of the sum 4 + (-13)  2. The number of integers strictly between -3 and 4  3. The floor reached from Floor -2 by pressing '+' four times and '-' once  4. The smallest of -3, -8, -1 and -5\nColumn II: a. +1  b. 6  c. +9  d. -8",
+          "a": "1-c, 2-b, 3-a, 4-d",
+          "o": [
+            "1-c, 2-b, 3-a, 4-d",
+            "1-a, 2-b, 3-c, 4-d",
+            "1-c, 2-a, 3-b, 4-d",
+            "1-c, 2-b, 3-d, 4-a"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: Between any two different integers there is always at least one other integer. Give the reason or the correction.",
+          "a": "False. Neighbouring integers such as -4 and -3 have no integer between them, just as two neighbouring floors have no floor between them.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "Reason: -4 and -3 are neighbouring floors with nothing between",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A mall has floors numbered -7, +3, -12, 0 and -1. (a) Write them in increasing order. (b) Use your list to find how many '+' presses take a person from the lowest floor to the highest.",
+          "a": "(a) -12, -7, -1, 0, 3. (b) From -12 to +3 she must go up 12 floors to reach 0 and 3 more, so 15 presses, that is 3 - (-12) = 15.",
+          "s": [
+            [
+              "Part (a): -12, -7, -1, 0, 3",
+              1
+            ],
+            [
+              "Part (b): 15 presses from the first and last of the list",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Bela's Building of Fun has six floors above the ground floor and five floors below it. (a) How many floors does the lift serve, counting the ground floor? (b) A lift attendant goes from the lowest floor to the highest and straight back, one floor per press. How many presses is that?",
+          "a": "(a) 6 + 5 + 1 = 12 floors, numbered -5 to +6. (b) Going up from -5 to +6 takes 11 presses and coming back another 11, so 22 presses.",
+          "s": [
+            [
+              "Part (a): 12 floors including Floor 0",
+              1
+            ],
+            [
+              "Part (b): 11 up and 11 down makes 22",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Nisha writes: '-4 < -3 but Floor -4 has the bigger number of floors below the ground.' (a) Why is -4 less than -3? (b) What does the 4 in -4 tell you about the position of the floor?",
+          "a": "(a) Floor -4 is lower than Floor -3, so -4 < -3 (equivalently -3 > -4). (b) The 4 says the floor is 4 floors below the ground floor, one more floor below than Floor -3, so a bigger digit after the minus sign means lower.",
+          "s": [
+            [
+              "Part (a): Floor -4 is lower than Floor -3",
+              1
+            ],
+            [
+              "Part (b): the digit counts floors below ground, so a bigger digit is lower",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) A lift starts on Floor 0, moves +7 and then moves +(-12). Write the single movement from the start to the end and its additive inverse. (b) In terms of lift presses, why is 0 its own inverse?",
+          "a": "(a) 7 + (-12) = -5, so the lift ends on Floor -5; the single movement is -5 and its additive inverse is +5, which would bring the lift back to the start. (b) Pressing nothing (0) leaves the floor unchanged, and 0 + 0 = 0, so 0 cancels itself.",
+          "s": [
+            [
+              "Part (a): single movement -5 and inverse +5",
+              1
+            ],
+            [
+              "Part (b): 0 + 0 = 0, so 0 cancels itself",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Amrita says, 'If a lift were tall enough it would reach the lowest integer, so there is a smallest integer.' Test her claim and say whether it is right.",
+          "a": "No. Take any floor, say -1000: pressing '-' once more reaches -1001, which is lower, and the same can be done from -1001 and so on. The negative integers keep going down without an end, so there is no smallest integer.",
+          "s": [
+            [
+              "Starts from a floor such as -1000 and finds -1001 below it",
+              1
+            ],
+            [
+              "Sees that this can be repeated without end",
+              1
+            ],
+            [
+              "Concludes the claim is wrong: no smallest integer",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write one real-life situation in which -8 is used and one in which +8 is used, and say what 0 means in each situation.",
+          "a": "Sample: -8 is a basement level 8 floors below the ground floor of a car park and +8 is a room on the 8th floor above it; 0 is the ground floor, the reference point from which the floors are counted. A second pair could be 8 metres below and above sea level, with 0 as sea level.",
+          "s": [
+            [
+              "A situation with -8 stating what the minus means",
+              1
+            ],
+            [
+              "A matching situation with +8",
+              1
+            ],
+            [
+              "States what 0 means as the reference point",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "In a hostel, Rohan's room is on Floor -2, Sana's on Floor +3 and Tarun's on Floor -5. (a) Write the rooms from lowest to highest. (b) Find the presses Tarun needs to reach Sana's floor and the presses Rohan needs. (c) By how many presses does Tarun's journey exceed Rohan's?",
+          "a": "(a) -5 (Tarun), -2 (Rohan), +3 (Sana). (b) Tarun: 3 - (-5) = 8 presses; Rohan: 3 - (-2) = 5 presses. (c) 8 - 5 = 3 more presses, the 3 floors between -5 and -2.",
+          "s": [
+            [
+              "Part (a): Tarun, Rohan, Sana in that order",
+              1
+            ],
+            [
+              "Part (b): 8 and 5",
+              1
+            ],
+            [
+              "Part (c): 3 more",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Aarti lives on Floor -3, Binod on Floor +2 and Chetna on Floor -6 of one building. (a) Write the three floors from lowest to highest. (b) Find the presses Aarti and Chetna each need to reach Binod's floor. (c) If instead all three meet on Aarti's floor, find the movement Binod and Chetna need. (d) Which meeting floor needs fewer presses in all, and by how many?",
+          "a": "(a) -6, -3, +2. (b) Aarti 2 - (-3) = 5; Chetna 2 - (-6) = 8; total 13 presses. (c) Binod 2 -> -3 is -5 (5 presses down); Chetna -6 -> -3 is +3. Total 5 + 3 = 8 presses. (d) Meeting on Aarti's floor needs 13 - 8 = 5 fewer presses.",
+          "s": [
+            [
+              "Part (a): -6, -3, +2",
+              1
+            ],
+            [
+              "Part (b): 5 and 8, total 13",
+              1
+            ],
+            [
+              "Part (c): -5 for Binod and +3 for Chetna, total 8",
+              2
+            ],
+            [
+              "Part (d): Aarti's floor, 5 fewer",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A quiz card gives the integers -17, 5, -8, 0 and -21. (a) Write them in decreasing order. (b) Explain with floors why -21 < -17 although 21 > 17. (c) How many integers lie strictly between -21 and -17, and how many strictly between -17 and -8? (d) Which of the two gaps is wider? Why is -21 below -17 although 21 is greater than 17?",
+          "a": "(a) 5, 0, -8, -17, -21. (b) Floor -21 is 21 floors below ground, 4 floors lower than Floor -17, so it is the lower floor and the smaller number. (c) Between -21 and -17: -20, -19, -18, so 3; between -17 and -8: -16 to -9, so 8. (d) The gap from -17 to -8 is wider (8 against 3). The digits only count floors below the ground, so a larger digit means lower: -21 is 21 floors down, -17 is 17 floors down, so it is 21 - 17 = 4 steps lower, with 3 integers between. From -17 to -8 the steps are 17 - 8 = 9, with 8 integers between.",
+          "s": [
+            [
+              "Part (a): 5, 0, -8, -17, -21",
+              1
+            ],
+            [
+              "Part (b): -21 is 4 floors lower than -17",
+              1
+            ],
+            [
+              "Part (c): 3 and 8",
+              2
+            ],
+            [
+              "Part (d): the wider gap is between -17 and -8, digits count depth",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A hospital in Nagpur has a lift between the basement and the upper floors. The pharmacy can be placed on Floor -1 or on Floor +2. Daily visitors who come to the pharmacy start from three places: 60 from the entrance on Floor 0, 30 from the wards on Floor +5 and 50 from the car park on Floor -3. Each visitor presses once per floor travelled.\n(a) By how many floors do Floor -3 and Floor +5 differ? (b) For a pharmacy on Floor -1, find the total floors travelled by the 60 entrance visitors, the 30 ward visitors and the 50 car park visitors. (c) Find the same total for a pharmacy on Floor +2. (d) The manager wants the smaller total, the nurses want the longest single trip kept small. Which floor would you choose, and why?",
+          "a": "(a) 5 - (-3) = 8 floors. (b) Floor -1: 60 x 1 + 30 x 6 + 50 x 2 = 60 + 180 + 100 = 340. (c) Floor +2: 60 x 2 + 30 x 3 + 50 x 5 = 120 + 90 + 250 = 460. (d) Floor -1 gives 120 fewer floors travelled in all (340 against 460), but its longest single trip is 6 floors (from Floor +5) against 5 floors (from Floor -3) for Floor +2. Either choice is acceptable if it is justified: Floor -1 for the total, Floor +2 for the shorter worst case.",
+          "s": [
+            [
+              "Part (a): 8 floors",
+              1
+            ],
+            [
+              "Part (b): 340 for Floor -1",
+              1
+            ],
+            [
+              "Part (c): 460 for Floor +2",
+              1
+            ],
+            [
+              "Part (d): chooses a floor and weighs total 340 v 460 against longest trip 6 v 5",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A shop owner in a Chandigarh mall can rent space on one of four floors. Floor -3 costs Rs 25,000 a month, Floor -1 costs Rs 40,000, Floor +1 costs Rs 55,000 and Floor +4 costs Rs 30,000. Her customers all enter on Floor 0 and press the lift once for each floor they must travel.\n(a) Write the four floors in increasing order and find how many '+' presses take someone from the lowest to the highest of them. (b) How many presses does a customer need to reach each floor from Floor 0? (c) Which floors can be dropped because another floor is cheaper and needs no more presses? (d) Choose between the floors that remain and justify your choice using rent and presses.",
+          "a": "(a) -3, -1, +1, +4; from -3 to +4 is 7 presses. (b) Floor -3: 3, Floor -1: 1, Floor +1: 1, Floor +4: 4. (c) Floor +1 (Rs 55,000, 1 press) is beaten by Floor -1 (Rs 40,000, 1 press); Floor +4 (Rs 30,000, 4 presses) is beaten by Floor -3 (Rs 25,000, 3 presses). So drop +1 and +4. (d) Floor -3 saves Rs 15,000 a month but customers press 2 more floors; Floor -1 is easier to reach. Either is acceptable with a reason, such as Rs 15,000 a month saved against 2 extra presses for every customer.",
+          "s": [
+            [
+              "Part (a): -3, -1, +1, +4 and 7 presses",
+              1
+            ],
+            [
+              "Part (b): 3, 1, 1, 4",
+              1
+            ],
+            [
+              "Part (c): drops Floor +1 and Floor +4 with the comparison",
+              1
+            ],
+            [
+              "Part (d): chooses Floor -3 or Floor -1 using Rs 15,000 against 2 presses",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C6M-10.2",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a Bhopal mall Pooja is on Floor -4. She presses '+' six times by mistake and then presses '-' nine times to correct herself. Which floor does she reach?",
+          "a": "Floor -7",
+          "o": [
+            "Floor -7",
+            "Floor +11",
+            "Floor -19",
+            "Floor -1"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a mine, the ground level is 0 and the lift is waiting at the level 90 m below ground. It has to reach the stores at 40 m above ground. Which movement does the lift need?",
+          "a": "+130 m",
+          "o": [
+            "+130 m",
+            "-130 m",
+            "+50 m",
+            "-50 m"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Rima wants to rewrite the subtraction (-3) - (+8) as an addition without changing its value. Which does she write?",
+          "a": "(-3) + (-8)",
+          "o": [
+            "(-3) + (-8)",
+            "(-3) + (+8)",
+            "(+3) + (-8)",
+            "(-3) - (-8)"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Sunita subtracts a negative integer from a positive integer many times, each time with different numbers. What will she always find about the answer?",
+          "a": "It is positive, since it equals a positive number plus a positive number",
+          "o": [
+            "It is positive, since it equals a positive number plus a positive number",
+            "It is negative, because there are two minus signs in the expression",
+            "It can be positive or negative, as with a positive minus a positive",
+            "It is zero when the two numbers have the same size"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "On an unmarked number line Kabir marks 70 and then draws an arrow of length 95 pointing to the left from 70. Where does the arrow end?",
+          "a": "25 to the left of 0, that is -25",
+          "o": [
+            "25 to the left of 0, that is -25",
+            "25 to the right of 0, that is +25",
+            "165 to the left of 0, that is -165",
+            "165 to the right of 0, that is +165"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Read the statements.\nStatement 1: (+40) - (-50) = -10, because the two minus signs make the answer smaller.\nStatement 2: Subtracting -200 from +2000 gives the same value as adding +200 to +2000.\nStatement 3: Writing (-3) - (+8) as (-3) + (-8) does not change its value.\nWhich statements are correct?",
+          "a": "2 and 3 only. Statement 1 is false: (+40) - (-50) = 40 + 50 = +90, a movement of +90 as from Level -50 up to Level +40.",
+          "o": [
+            "2 and 3 only",
+            "1 and 3 only",
+            "1 and 2 only",
+            "3 only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The movement needed to go from Floor 9 to Floor 3 is -6.\nReason (R): Movement needed = Starting Floor - Target Floor.",
+          "a": "The Assertion is true but the Reason is false. The Reason is false: the rule is Target Floor - Starting Floor = 3 - 9 = -6, which is why the Assertion holds.",
+          "o": [
+            "The Assertion is true but the Reason is false.",
+            "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+            "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+            "The Assertion is false but the Reason is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The value of (-64) - (-91) is ___.",
+          "a": "27"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: (-12) - (-5) is greater than (-12) + (-5). Give the reason.",
+          "a": "True. (-12) - (-5) = (-12) + 5 = -7, while (-12) + (-5) = -17, and -7 lies to the right of -17.",
+          "s": [
+            [
+              "Verdict: True",
+              1
+            ],
+            [
+              "Reason: -7 compared with -17, since subtracting -5 is adding 5",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A mine lift is at the level 70 m below ground. (a) It first goes down a further 85 m. Write the addition and find the level. (b) From there it must reach the level 110 m above ground. Find the movement needed.",
+          "a": "(a) (-70) + (-85) = -155, so the lift is at the level 155 m below ground. (b) Movement = Target - Starting = 110 - (-155) = +265, that is 265 m upward.",
+          "s": [
+            [
+              "Part (a): (-70) + (-85) = -155",
+              1
+            ],
+            [
+              "Part (b): 110 - (-155) = +265",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A lift starts at Floor -2 and the attendant presses +9 and then -14. (a) What single press gives the same result as the two presses together? (b) On which floor does the lift end?",
+          "a": "(a) (+9) + (-14) = -5, so one press of -5 does the same. (b) Target Floor = (-2) + (-5) = -7.",
+          "s": [
+            [
+              "Part (a): combined movement is -5",
+              1
+            ],
+            [
+              "Part (b): ends on Floor -7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "On an unmarked number line only 0 is marked. A student marks the point 140 and then moves 90 steps to the left of it, landing on the point 50. (a) Write this as an addition. (b) Write the matching subtraction that gives the movement.",
+          "a": "(a) 140 + (-90) = 50. (b) Movement = Target - Starting, so 50 - 140 = -90.",
+          "s": [
+            [
+              "Part (a): 140 + (-90) = 50",
+              1
+            ],
+            [
+              "Part (b): 50 - 140 = -90 as Target - Starting",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Rewrite (-8) - (-2) as an addition of the inverse. (b) Evaluate it, and say how far, and in which direction, it moves a lift that starts on Floor -8.",
+          "a": "(a) Subtracting -2 is adding its inverse +2, so (-8) + (+2). (b) The value is -6; the lift starts on Floor -8 and moves up 2 floors to Floor -6.",
+          "s": [
+            [
+              "Part (a): (-8) + (+2)",
+              1
+            ],
+            [
+              "Part (b): -6, a movement of 2 floors upward",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Meera says, 'If I add a negative number to any number, my answer is always negative.' Test her claim with numbers of your own and say whether she is right.",
+          "a": "No. Take 5 + (-2): starting on Floor 5 and pressing -2 reaches Floor 3, which is positive. The claim holds only when the starting number is negative or the negative number is bigger in size than the starting positive number, as in (-4) + (-2) = -6 or 1 + (-7) = -6.",
+          "s": [
+            [
+              "A counter-example such as 5 + (-2) = 3",
+              1
+            ],
+            [
+              "Says the answer is positive here, so the claim fails",
+              1
+            ],
+            [
+              "States when a negative sum does appear",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Aman says, 'Target Floor - Starting Floor gives the same movement as Target Floor + (the inverse of the Starting Floor).' Check it with (a) Target -1, Start -2 and (b) Target -1, Start +3, and say if he is right.",
+          "a": "Yes, he is right. (a) (-1) - (-2) = +1 and (-1) + (+2) = +1. (b) (-1) - (+3) = -4 and (-1) + (-3) = -4. Subtracting a number gives the same result as adding its inverse.",
+          "s": [
+            [
+              "Case (a): +1 both ways",
+              1
+            ],
+            [
+              "Case (b): -4 both ways",
+              1
+            ],
+            [
+              "Concludes he is right: subtracting equals adding the inverse",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write a lift story that matches the expression (-2) + (+9) + (-4), and find where the lift ends.",
+          "a": "Sample: A lift attendant starts on Floor -2 (a basement). A customer presses +9, which takes it up to Floor +7, and the next customer presses -4, which takes it down to Floor +3. So (-2) + 9 + (-4) = +3 and the lift ends on Floor +3.",
+          "s": [
+            [
+              "A story with start Floor -2 and the two presses in order",
+              1
+            ],
+            [
+              "Each press correctly described as up 9 and down 4",
+              1
+            ],
+            [
+              "Ends on Floor +3",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "In a mine the lift moves along a shaft from Level -200 to Level +180, measured in metres. A crew at Level -145 must reach the tool store at Level +60. (a) Find the movement needed. (b) Write it as a missing-addend sum. (c) The lift goes from the ground to -145, then to +60, then to -200; find each movement and the total distance travelled. (d) Show that the sum of the three movements equals the Target - Start for the whole trip.",
+          "a": "(a) 60 - (-145) = +205 m. (b) (-145) + ? = 60, so ? = 205. (c) Ground to -145: -145; -145 to +60: +205; +60 to -200: -260; distance = 145 + 205 + 260 = 610 m. (d) (-145) + 205 + (-260) = -200, and Target - Start = -200 - 0 = -200.",
+          "s": [
+            [
+              "Part (a): +205",
+              1
+            ],
+            [
+              "Part (b): (-145) + ? = 60",
+              1
+            ],
+            [
+              "Part (c): the three movements and 610 m",
+              2
+            ],
+            [
+              "Part (d): -200 in both ways",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Using a lift, a number line or an unmarked number line, evaluate (a) (-140) + (-65), (b) 120 - (-80), (c) (-75) - (-160) and (d) (-75) + (+160). (e) Pritam says (c) and (d) must differ because (c) has two minus signs. Decide whether he is right.",
+          "a": "(a) -205. (b) 120 + 80 = 200. (c) 85. (d) 85. (e) He is wrong: subtracting -160 is the same as adding +160, so (c) and (d) both equal 85. The extra minus sign just turns the subtraction into an addition of the inverse.",
+          "s": [
+            [
+              "Part (a): -205",
+              1
+            ],
+            [
+              "Part (b): 200",
+              1
+            ],
+            [
+              "Parts (c) and (d): 85 each",
+              2
+            ],
+            [
+              "Part (e): subtracting a negative = adding the positive",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A mine in Rajasthan has a stores level at +30 m, ground at 0 and an ore pit at -120 m. A lift cabin has enough charge for 1,500 m of travel before it must be recharged at ground level. Plan P: each trip goes from ground to the pit, loads 3 tonnes worth Rs 11,000 and takes it up to the stores, then returns to ground. Plan Q: each trip goes from ground to a shallow pit at -45 m, loads 2 tonnes worth Rs 5,000, goes to the stores and returns to ground.\n(a) Write the three movements in one trip of Plan P and find the distance of that trip. (b) Find the distance of one trip of Plan Q. (c) How many whole trips can each plan make on one charge? (d) Compare the tonnes and the rupees per charge and recommend one plan.",
+          "a": "(a) -120, then +150, then -30; distance 120 + 150 + 30 = 300 m. (b) 45 + 75 + 30 = 150 m. (c) P: 1500 / 300 = 5 trips; Q: 1500 / 150 = 10 trips. (d) P carries 5 x 3 = 15 tonnes worth Rs 55,000; Q carries 10 x 2 = 20 tonnes worth Rs 50,000. P gives Rs 5,000 more value per charge, Q brings 5 tonnes more; either plan can be recommended if the reason refers to the figures.",
+          "s": [
+            [
+              "Part (a): movements -120, +150, -30 and 300 m",
+              1
+            ],
+            [
+              "Part (b): 150 m",
+              1
+            ],
+            [
+              "Part (c): 5 trips and 10 trips",
+              1
+            ],
+            [
+              "Part (d): compares 15 t / Rs 55,000 with 20 t / Rs 50,000 and chooses",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A lift log in a Mumbai tower lists a starting floor, a target floor and the movement for each trip. Row 1: start +5, target -4, movement recorded -9. Row 2: start -3, target +5, movement recorded +2. Row 3: start -9, target -2, movement recorded -11. The supervisor finds that some rows do not add up. The log has 40 rows, 14 of which start on a negative floor, and checking one row by hand takes 3 minutes.\n(a) Check Row 1. (b) Find the correct movement for Row 2. (c) Find the correct movement for Row 3 and say what the clerk did wrong. (d) Should the supervisor recheck all 40 rows or only the 14 that start on a negative floor? Use the minutes and the pattern of mistakes in your answer.",
+          "a": "(a) (-4) - (+5) = -9, so Row 1 is correct. (b) 5 - (-3) = +8, not +2 (the clerk worked out 5 - 3). (c) (-2) - (-9) = +7, not -11 (the clerk worked out -2 - 9); both slips come from treating a negative starting floor as positive. (d) All 40 rows take 120 minutes and the 14 negative-start rows take 42 minutes, saving 78 minutes. Rechecking the 14 is justified because both errors came from negative starts, but Row 1 shows a positive start can be correct, so a few positive-start rows should be sampled too. Either choice is acceptable if argued from these figures.",
+          "s": [
+            [
+              "Part (a): Row 1 correct, -9",
+              1
+            ],
+            [
+              "Part (b): +8",
+              1
+            ],
+            [
+              "Part (c): +7 and the sign slip on the starting floor",
+              1
+            ],
+            [
+              "Part (d): 120 against 42 minutes, with the pattern of mistakes",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C6M-10.3",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A lift attendant's pocket holds 11 green and 7 red tokens, and he began on the ground floor with an empty pocket. He then presses '+' three more times, taking three more green tokens. Where is the lift now?",
+          "a": "Floor +7",
+          "o": [
+            "Floor +7",
+            "Floor +4",
+            "Floor +18",
+            "Floor -7"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "With tokens, Shreya works out (-2) - (+7). She starts with 2 red tokens. After adding the zero pairs she needs and removing the 7 green tokens, how many tokens of which colour are left?",
+          "a": "9 red tokens, so the value is -9",
+          "o": [
+            "9 red tokens, so the value is -9",
+            "5 red tokens, so the value is -5",
+            "9 green tokens, so the value is +9",
+            "5 green tokens, so the value is +5"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Ritu has 8 red tokens and removes 3 of them, saying (-8) - (-3) = -5. Tarun puts 3 green tokens with the 8 red ones, cancels three zero pairs and says (-8) + (+3) = -5. Whose working is right?",
+          "a": "Both are right, because removing 3 red leaves 5 red, as does cancelling 3 pairs",
+          "o": [
+            "Both are right, because removing 3 red leaves 5 red, as does cancelling 3 pairs",
+            "Only Ritu is right, because Tarun's tokens show an addition",
+            "Only Tarun is right, because removing tokens changes the value",
+            "Neither is right, because the answer must be positive"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Priya has a pile of 5 green tokens. The teacher adds 4 zero pairs to it. Which statement is true about the new pile?",
+          "a": "Its value is still +5 though it now has 9 green and 4 red tokens",
+          "o": [
+            "Its value is still +5 though it now has 9 green and 4 red tokens",
+            "Its value is now +9 because it has 9 green tokens",
+            "Its value is now +1 because 5 - 4 = 1",
+            "Its value is now 0 because a zero pair was added"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "To work out (+3) - (-7) with tokens, a student starts with 3 green tokens. What is the least number of zero pairs she must put in before she can take away 7 red tokens?",
+          "a": "7",
+          "o": [
+            "7",
+            "4",
+            "3",
+            "10"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Read the statements.\nStatement 1: A green token and a red token together have the value zero.\nStatement 2: To find (+5) - (+6), one extra zero pair is needed because only 5 green tokens are present; the result is -1.\nStatement 3: Every subtraction done with tokens needs at least one zero pair to be put in first.\nWhich statements are correct?",
+          "a": "1 and 2 only. Statement 3 is false: (+5) - (+4) and (-7) - (-5) need no extra zero pair.",
+          "o": [
+            "1 and 2 only",
+            "1 and 3 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): With tokens, (+5) - (+6) needs an extra zero pair before the subtraction can be done.\nReason (R): Each red token stands for one press of the '-' button.",
+          "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. Both are true, but the extra pair is needed because only 5 green tokens are present to remove 6 of them, not because of what a red token stands for.",
+          "o": [
+            "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+            "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+            "The Assertion is true but the Reason is false.",
+            "The Assertion is false but the Reason is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A pocket holds 17 green and 25 red tokens, and the lift attendant began on the ground floor with an empty pocket, so he is now on Floor ___.",
+          "a": "-8"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each pile of tokens in Column I with its value in Column II.\nColumn I: 1. 9 green and 4 red  2. 3 green and 10 red  3. 6 green and 6 red  4. 5 red only\nColumn II: a. -7  b. 0  c. +5  d. -5",
+          "a": "1-c, 2-a, 3-b, 4-d",
+          "o": [
+            "1-c, 2-a, 3-b, 4-d",
+            "1-a, 2-c, 3-b, 4-d",
+            "1-c, 2-a, 3-d, 4-b",
+            "1-b, 2-a, 3-c, 4-d"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: To find (-8) - (-3) with tokens, extra zero pairs must be added because the subtraction involves negative numbers. Give the reason or the correction.",
+          "a": "False. The pile already has 8 red tokens and only 3 have to be removed, so no zero pair is needed; 5 red tokens remain and (-8) - (-3) = -5.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "Correction: 8 red tokens are enough to remove 3, leaving -5",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The pocket of a lift attendant holds 7 green and 12 red tokens; he began on the ground floor with an empty pocket. (a) How many zero pairs can be removed, and what is left? (b) State the floor of the lift and the addition this shows.",
+          "a": "(a) Seven zero pairs can be removed, leaving 5 red tokens. (b) The lift is on Floor -5, which shows (+7) + (-12) = -5.",
+          "s": [
+            [
+              "Part (a): 7 zero pairs and 5 red tokens left",
+              1
+            ],
+            [
+              "Part (b): Floor -5 from (+7) + (-12)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Describe, with tokens, how to find (+3) - (-5), stating how many zero pairs you add. (b) Check the answer by turning the subtraction into an addition.",
+          "a": "(a) Start with 3 green tokens and add 5 zero pairs, giving 8 green and 5 red tokens; take away the 5 red tokens, leaving 8 green, so the result is +8. (b) Subtracting -5 is adding +5, and (+3) + (+5) = +8.",
+          "s": [
+            [
+              "Part (a): 5 zero pairs, 5 red removed, +8 left",
+              1
+            ],
+            [
+              "Part (b): (+3) + (+5) = +8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find (-2) - (+7) with tokens and say how many zero pairs you put in. (b) Show that (-2) + (-7) gives the same value.",
+          "a": "(a) Start with 2 red tokens, add 7 zero pairs to get 7 green and 9 red; removing the 7 green leaves 9 red, so the value is -9. (b) Putting 2 red and 7 red together gives 9 red, so (-2) + (-7) = -9 as well.",
+          "s": [
+            [
+              "Part (a): 7 zero pairs and -9",
+              1
+            ],
+            [
+              "Part (b): 2 red with 7 red makes 9 red, -9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Anil starts with 5 green tokens and adds 3 zero pairs. (a) How many tokens of each colour does he now have? (b) Why has the value of his pile not changed?",
+          "a": "(a) 8 green and 3 red tokens. (b) Each green-red pair is worth 0, so the pile's value is still 8 - 3 = 5, the same as at the start.",
+          "s": [
+            [
+              "Part (a): 8 green and 3 red",
+              1
+            ],
+            [
+              "Part (b): each pair is worth zero, value stays +5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Karan says, 'In a subtraction with tokens, the number of zero pairs I must add is always the number I am subtracting.' Test this with (+5) - (+6), (+4) - (-6) and (-7) - (-5).",
+          "a": "He is partly right. For (+4) - (-6) six pairs are needed, which equals the number subtracted (6). For (+5) - (+6) only 1 pair is needed (6 needed, 5 present), not 6. For (-7) - (-5) none are needed. The number of pairs equals the tokens needed minus the tokens already present of that colour, when that is positive.",
+          "s": [
+            [
+              "(+4) - (-6): 6 pairs, the claim fits",
+              1
+            ],
+            [
+              "(+5) - (+6): 1 pair and (-7) - (-5): 0 pairs, so it fails",
+              1
+            ],
+            [
+              "States the correct rule: needed minus present",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Meena says she can make a pile worth +5 from 7 green and 3 red tokens by removing zero pairs only. Show that this cannot be done.",
+          "a": "Removing zero pairs removes equal numbers of green and red tokens. From 7 green and 3 red, three pairs can be removed, leaving 4 green. The value stays 7 - 3 = +4 whatever pairs are removed, and removing zero pairs never changes the value, so +5 is impossible.",
+          "s": [
+            [
+              "Removes 3 zero pairs leaving 4 green",
+              1
+            ],
+            [
+              "The value stays +4 because zero pairs are worth 0",
+              1
+            ],
+            [
+              "Concludes +5 cannot be reached",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write a subtraction of integers whose token solution needs exactly four zero pairs and gives the answer -7, and describe the tokens at each stage.",
+          "a": "Sample: (-3) - (+4). Start with 3 red tokens. Add 4 zero pairs: 4 green and 7 red. Take away the 4 green tokens. 7 red tokens remain, so (-3) - (+4) = -7.",
+          "s": [
+            [
+              "A valid subtraction needing 4 zero pairs",
+              1
+            ],
+            [
+              "Describes the tokens after adding the pairs",
+              1
+            ],
+            [
+              "Removes the right tokens and reaches -7",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "After an hour a lift attendant's pocket has 13 green and 19 red tokens; he began the hour on the ground floor with an empty pocket. (a) On which floor is he? (b) He gives 4 red tokens back to the box. Write the subtraction and the new value. (c) He is then asked to give back 15 green tokens. How many zero pairs must he put in, and what is left? (d) Write the subtraction for part (c) and check it by adding an inverse.",
+          "a": "(a) 13 - 19 = -6, Floor -6. (b) (-6) - (-4) = -2 (13 green, 15 red). (c) He has 13 green but must give 15, so 2 zero pairs are put in: 15 green and 17 red; after removing 15 green, 17 red remain, value -17. (d) (-2) - (+15) = -17, and (-2) + (-15) = -17.",
+          "s": [
+            [
+              "Part (a): Floor -6",
+              1
+            ],
+            [
+              "Part (b): (-6) - (-4) = -2",
+              1
+            ],
+            [
+              "Part (c): 2 zero pairs and -17",
+              2
+            ],
+            [
+              "Part (d): (-2) - (+15) = -17 checked with (-2) + (-15)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "(a) Use tokens to find (+3) - (-5) and (-4) - (-7), saying how many zero pairs each needs. (b) Add the inverse to check each answer. (c) Explain why the first needs 5 pairs and the second only 3. (d) For (-125) - (-340), which is quicker, tokens or adding the inverse? Give the value.",
+          "a": "(a) (+3) - (-5): 5 pairs, +8. (-4) - (-7): 4 red are present, 7 needed, so 3 pairs; 3 green remain, +3. (b) 3 + 5 = 8 and -4 + 7 = 3. (c) The first starts with no red tokens, so all 5 must be supplied; the second already has 4 of the 7 red needed. (d) Adding the inverse is quicker, as tokens would need 215 pairs: (-125) + 340 = +215.",
+          "s": [
+            [
+              "Part (a): 5 pairs with +8, 3 pairs with +3",
+              2
+            ],
+            [
+              "Part (b): both checked with the inverse",
+              1
+            ],
+            [
+              "Part (c): pairs = needed minus present",
+              1
+            ],
+            [
+              "Part (d): +215 using the inverse",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A school fair token game has a box that still holds 30 green and 30 red tokens. A team can finish its card only if the box can give the zero pairs it needs. Team Lotus holds 24 green and 31 red tokens and draws the card 'subtract (+38)'. Team Kamal holds 40 green and 52 red and draws 'subtract (+55)'. Team Champa holds 10 green and 5 red and draws 'subtract (-27)'.\n(a) How many zero pairs does Lotus need? (b) What is Kamal's final value? (c) How many zero pairs does Champa need, and what is its final value? (d) Which team or teams can the box serve, and which would you serve? Justify.",
+          "a": "(a) Lotus needs 38 - 24 = 14 pairs. (b) Kamal starts at 40 - 52 = -12; (-12) - (+55) = -67. (c) Champa needs 27 - 5 = 22 pairs; the final value is 5 + 27 = +32. (d) The needs are 14, 15 and 22; the box allows 30 pairs. Lotus and Kamal together need 29 and fit; any pair including Champa needs 36 or 37 and does not. So the box serves either Lotus with Kamal (two teams) or Champa alone. Either is acceptable if justified, for example serving two teams rather than one.",
+          "s": [
+            [
+              "Part (a): 14 pairs",
+              1
+            ],
+            [
+              "Part (b): -67",
+              1
+            ],
+            [
+              "Part (c): 22 pairs and +32",
+              1
+            ],
+            [
+              "Part (d): totals 29, 36, 37 against 30, and a justified choice",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Three students find (-6) - (+4) with tokens. Asha starts with 6 red tokens, adds 4 zero pairs and removes 4 green tokens. Bhanu starts with 6 red tokens and removes 4 red tokens. Charu starts with 6 red tokens, adds 6 zero pairs and removes 4 green tokens. Each says her pile is the answer.\n(a) What is the value of Asha's final pile, and what is the least number of pairs needed? (b) What subtraction has Bhanu actually solved, and what is its value? (c) Find Charu's final pile and decide if her answer is right. (d) Which method would you teach to a classmate who must later do (-6) - (+4000), and why?",
+          "a": "(a) Asha is left with 10 red tokens, value -10; the least number of pairs needed is 4. (b) Bhanu removed negative tokens, so she solved (-6) - (-4) = -2. (c) Charu has 6 green and 12 red, removes 4 green, leaving 2 green and 12 red, value -10, so she is right. (d) Asha's method is better for a large number: the pairs needed are just those the pile lacks, so Charu's habit of adding extra pairs would mean handling thousands of unnecessary tokens. Charu's way is still safe when a student is unsure how many are needed. A reasoned preference for either can earn the mark.",
+          "s": [
+            [
+              "Part (a): -10 and 4 pairs",
+              1
+            ],
+            [
+              "Part (b): (-6) - (-4) = -2",
+              1
+            ],
+            [
+              "Part (c): 2 green and 12 red, -10, correct",
+              1
+            ],
+            [
+              "Part (d): compares just-enough pairs with extra pairs for a large number",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C6M-10.4",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Imran's account opens the week with Rs 350. He receives a credit of Rs 275 and then two debits, Rs 400 and Rs 260. His balance now is:",
+          "a": "-Rs 35",
+          "o": [
+            "-Rs 35",
+            "+Rs 35",
+            "Rs 225",
+            "Rs 1,285"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a geographical cross section, point P is 450 m above sea level and point Q is 320 m below sea level. What is the vertical distance between them?",
+          "a": "770 m",
+          "o": [
+            "770 m",
+            "130 m",
+            "450 m",
+            "320 m"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a hill town the night temperature is -3 degrees Celsius. By noon it has risen 9 degrees and by the next midnight it has fallen 14 degrees from its noon value. The midnight temperature is:",
+          "a": "-8 degrees Celsius",
+          "o": [
+            "-8 degrees Celsius",
+            "+8 degrees Celsius",
+            "-2 degrees Celsius",
+            "-20 degrees Celsius"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Four towns report dawn temperatures of -3, -11, 2 and 0 degrees Celsius. Which reading is exactly 8 degrees below the town that reports -3?",
+          "a": "-11 degrees Celsius",
+          "o": [
+            "-11 degrees Celsius",
+            "+5 degrees Celsius",
+            "-5 degrees Celsius",
+            "+11 degrees Celsius"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "After a debit, Farida's balance reads -Rs 120. Which statement about her account is correct?",
+          "a": "A credit of Rs 200 would bring the balance to +Rs 80",
+          "o": [
+            "A credit of Rs 200 would bring the balance to +Rs 80",
+            "She has Rs 120 in the bank, so a credit of Rs 200 gives Rs 320",
+            "A credit of Rs 200 would make the balance -Rs 320",
+            "The balance cannot change until the account is closed"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Read the statements.\nStatement 1: In a bank passbook, a debit is written as a positive number because the payment is a positive amount of money.\nStatement 2: On the Celsius scale, -5 degrees is warmer than -2 degrees, since 5 is greater than 2.\nStatement 3: A reading of -4 degrees Celsius is 4 degrees below the freezing point of water.\nWhich statements are correct?",
+          "a": "3 only. Statements 1 and 2 are false: a debit is negative, and -5 is colder than -2 because it lies further below zero.",
+          "o": [
+            "3 only",
+            "1 and 3 only",
+            "2 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A mountain 500 m high and a trench 500 m deep are both described by +500 m.\nReason (R): Heights above sea level are positive integers and depths below sea level are negative integers.",
+          "a": "The Assertion is false but the Reason is true. The Reason is true, which is why the trench is -500 m and the Assertion is false.",
+          "o": [
+            "The Assertion is false but the Reason is true.",
+            "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+            "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+            "The Assertion is true but the Reason is false."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "At 6 a.m. a village in Ladakh records -4 degrees Celsius and at 2 p.m. it records 11 degrees Celsius. The rise in temperature is ___ degrees.",
+          "a": "15"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: In one week a shopkeeper's credits total Rs 13,500 and her debits total Rs 16,500. She began the week with Rs 2,000, a positive balance, yet she ends the week with a negative balance. Give the reason or the correction.",
+          "a": "True. The change over the week is 13,500 - 16,500 = -Rs 3,000, and the closing balance is 2,000 + (-3,000) = -Rs 1,000, which is negative even though she began positive.",
+          "s": [
+            [
+              "Verdict: True",
+              1
+            ],
+            [
+              "Reason: opening balance 2,000 plus the change -3,000 gives -1,000",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A cross section shows point A at 620 m above sea level and point B at 380 m below sea level. (a) Write the two heights as integers. (b) Find the vertical movement needed to go from A down to B.",
+          "a": "(a) A = +620 and B = -380. (b) Movement = Target - Starting = (-380) - (+620) = -1000, a drop of 1000 m.",
+          "s": [
+            [
+              "Part (a): +620 and -380",
+              1
+            ],
+            [
+              "Part (b): -1000, a fall of 1000 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Sunita's account holds Rs 1,200. She pays debits of Rs 800 and Rs 650 and then receives a credit of Rs 300. (a) Find the balance after each entry. (b) After which entry is the balance negative, and what might a bank do then?",
+          "a": "(a) 1200 - 800 = 400; 400 - 650 = -250; -250 + 300 = 50. (b) After the Rs 650 debit the balance is -Rs 250; some banks allow this temporarily but may charge interest or a fee.",
+          "s": [
+            [
+              "Part (a): 400, -250, 50",
+              1
+            ],
+            [
+              "Part (b): negative after the Rs 650 debit, a fee or interest may be charged",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A table for Leh gives -9 degrees Celsius at 5 a.m., -1 at noon and -6 at 6 p.m. (a) Find the change in temperature from 5 a.m. to noon. (b) Find the change from noon to 6 p.m. and say whether the town got warmer or colder.",
+          "a": "(a) (-1) - (-9) = +8 degrees. (b) (-6) - (-1) = -5 degrees, so it got colder by 5 degrees.",
+          "s": [
+            [
+              "Part (a): +8",
+              1
+            ],
+            [
+              "Part (b): -5, colder",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A farmer's account has Rs 20,000. (a) He buys seeds for Rs 45,000 now; find the balance. (b) After the harvest he receives Rs 70,000. Find the balance and give one reason a negative balance in between is risky.",
+          "a": "(a) 20000 - 45000 = -25000, so the balance is -Rs 25,000. (b) -25000 + 70000 = +Rs 45,000. A negative balance can be risky because the bank may charge interest or a fee until the account is positive again.",
+          "s": [
+            [
+              "Part (a): -Rs 25,000",
+              1
+            ],
+            [
+              "Part (b): +Rs 45,000 and the risk of interest or a fee",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Gita says, 'The order of the credits and debits makes no difference to my account.' Test this with a balance of Rs 100, a credit of Rs 200 and a debit of Rs 250, done in each order, and say how far she is right.",
+          "a": "She is partly right. Credit first: 100 + 200 = 300, then 300 - 250 = 50. Debit first: 100 - 250 = -150, then -150 + 200 = 50. The final balance is Rs 50 either way, but in the second order the account is negative for a while, which may bring a fee.",
+          "s": [
+            [
+              "Final balance is +50 in both orders",
+              1
+            ],
+            [
+              "Second order dips to -150",
+              1
+            ],
+            [
+              "Verdict: right about the final balance, wrong about 'no difference'",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "At noon the temperature in a Himalayan town is 12 degrees Celsius and it falls by 5 degrees every hour. Show that at 3 p.m. it cannot be above the freezing point of water.",
+          "a": "In 3 hours it falls 3 x 5 = 15 degrees, so the 3 p.m. temperature is 12 + (-15) = -3 degrees Celsius. Water freezes at 0 degrees Celsius, so -3 is below it, and the temperature cannot be above freezing.",
+          "s": [
+            [
+              "Total fall of 15 degrees",
+              1
+            ],
+            [
+              "12 + (-15) = -3",
+              1
+            ],
+            [
+              "Compares with 0 degrees Celsius, the freezing point",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write a passbook story, with credits and debits, that matches the expression 500 + 300 - 450 - 600, and say what the answer means for the account.",
+          "a": "Sample: A stall owner has Rs 500, receives a credit of Rs 300, then pays debits of Rs 450 and Rs 600. 500 + 300 - 450 - 600 = -250, so the account is Rs 250 overdrawn (a negative balance).",
+          "s": [
+            [
+              "A story with the credits and debits in the right order",
+              1
+            ],
+            [
+              "Total -250 computed",
+              1
+            ],
+            [
+              "Interprets -250 as a negative balance",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A cross section has five points: A at +850 m, B at +200 m, C at -150 m, D at -720 m and E at +40 m, all measured from sea level. (a) Write the points in decreasing order of height. (b) Find the vertical distance between the highest and lowest points. (c) Find the vertical distance between B and C. (d) A survey drill goes from A to D; how many metres of it are above sea level and how many below?",
+          "a": "(a) A, B, E, C, D (850, 200, 40, -150, -720). (b) 850 - (-720) = 1570 m. (c) 200 - (-150) = 350 m. (d) 850 m above sea level and 720 m below, 1570 m in all.",
+          "s": [
+            [
+              "Part (a): A, B, E, C, D",
+              1
+            ],
+            [
+              "Part (b): 1570 m",
+              1
+            ],
+            [
+              "Part (c): 350 m",
+              1
+            ],
+            [
+              "Part (d): 850 m above and 720 m below",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A shop's account starts at Rs 0 and records these entries in order: credit 4,000; debit 2,500; debit 3,200; credit 1,800; debit 900. (a) Find the balance after each entry. (b) After which entries is the balance negative? (c) Check the last balance by adding all the credits and all the debits. (d) What credit is needed to bring the final balance to zero?",
+          "a": "(a) 4000, 1500, -1700, 100, -800. (b) After the third entry (-1700) and the last (-800). (c) Credits 5800, debits 6600, so 5800 - 6600 = -800. (d) A credit of Rs 800.",
+          "s": [
+            [
+              "Part (a): 4000, 1500, -1700, 100, -800",
+              2
+            ],
+            [
+              "Part (b): third and last entries",
+              1
+            ],
+            [
+              "Part (c): 5800 - 6600 = -800",
+              1
+            ],
+            [
+              "Part (d): Rs 800",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A hill town records these temperatures in degrees Celsius on a winter day: 6 a.m. -6; 9 a.m. -1; noon 7; 3 p.m. 9; 6 p.m. 2; 9 p.m. -5. The school can hold its outdoor assembly either at 9 a.m. or at 6 p.m. Of its 120 students, 43 travel by a bus that leaves at 5 p.m.\n(a) By how much did the temperature rise from 6 a.m. to noon? (b) Which two readings differ by 14 degrees? (c) How much warmer is the 6 p.m. reading than the 9 a.m. reading? (d) Recommend a slot, using the temperatures and the students who travel by bus.",
+          "a": "(a) 7 - (-6) = 13 degrees. (b) 3 p.m. (9) and 9 p.m. (-5), since 9 - (-5) = 14. (c) 2 - (-1) = 3 degrees warmer. (d) 6 p.m. is 3 degrees warmer and above freezing (2 degrees), but 43 of the 120 students would miss the bus and only 77 could stay; 9 a.m. is below freezing (-1 degree) but everyone can attend. Either slot can be chosen with this reasoning.",
+          "s": [
+            [
+              "Part (a): 13",
+              1
+            ],
+            [
+              "Part (b): 3 p.m. and 9 p.m.",
+              1
+            ],
+            [
+              "Part (c): 3 degrees warmer",
+              1
+            ],
+            [
+              "Part (d): weighs 3 degrees warmer and above freezing against 43 students missing the bus",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A shopkeeper's account opens a week with Rs 5,000. Entries are: Monday credit 3,500; Tuesday debit 6,200; Wednesday credit 4,100; Thursday debit 5,300; Friday credit 6,800. She must also pay a supplier the full Rs 9,000, once, after that day's entry; any discount comes back later as a separate cash refund and is not part of the account balance. The supplier gives 8% off if she pays on Monday, 4% off if on Wednesday and nothing if on Friday. The bank charges Rs 150 for each day-end on which the balance is negative.\n(a) Find the balance at the end of Thursday if there were no supplier payment. (b) If she pays on Monday, find the lowest day-end balance and the number of negative days. (c) Find the discount minus bank charges for Monday, Wednesday and Friday payments. (d) Which day would you advise, considering your answers?",
+          "a": "(a) 5000 + 3500 - 6200 + 4100 - 5300 = 1100. (b) Paying on Monday the balances are -500, -6700, -2600, -7900, -1100: the lowest is -7,900 and all 5 days are negative. (c) Monday: 720 - 750 = -30; Wednesday: 360 - 450 = -90 (3 negative days); Friday: 0 - 150 = -150 (1 negative day). (d) Monday has the best net result (only Rs 30 lost against Rs 150 for Friday) but runs the balance down to -Rs 7,900; Friday costs Rs 120 more but keeps the account positive until the last day. Either choice with these figures is acceptable.",
+          "s": [
+            [
+              "Part (a): 1,100",
+              1
+            ],
+            [
+              "Part (b): -7,900 and 5 negative days",
+              1
+            ],
+            [
+              "Part (c): -30, -90, -150",
+              1
+            ],
+            [
+              "Part (d): weighs a Rs 120 saving against a very negative balance",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C6M-10.5",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a 3 by 3 border integer square, the top row reads 7, a blank and -4. The border sum is 2. What number goes in the blank?",
+          "a": "-1",
+          "o": [
+            "-1",
+            "1",
+            "5",
+            "-9"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "At a fair, Hari plays the amazing grid on the rows 2 5 8 / -3 0 3 / -8 -5 -2. He circles 2 in the first row first column, strikes out its row and column, then circles the 3 in the second row and third column. What total will he reach after his last circle?",
+          "a": "0",
+          "o": [
+            "0",
+            "2",
+            "-5",
+            "5"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A border square has the top row 9, a, -2 and the bottom row -5, b, 1, and both rows have the border sum 4. What is the value of b - a?",
+          "a": "11",
+          "o": [
+            "11",
+            "5",
+            "-11",
+            "1"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A museum label says, 'This coin was struck 150 years after 80 BCE.' There is no year 0. The year is:",
+          "a": "71 CE",
+          "o": [
+            "71 CE",
+            "70 CE",
+            "230 CE",
+            "70 BCE"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A puzzle card asks for three integers with sum -8. Which set of three does NOT work?",
+          "a": "-2, -4, -5",
+          "o": [
+            "-2, -4, -5",
+            "-3, -3, -2",
+            "4, -6, -6",
+            "-12, 5, -1"
+          ],
+          "tags": [
+            "scenario"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Read the statements.\nStatement 1: In a border integer square the top row, the bottom row, the left column and the right column all give the same border sum.\nStatement 2: In the amazing grid 2 5 8 / -3 0 3 / -8 -5 -2, circling different numbers on different plays still gives the same total.\nStatement 3: A border sum can be negative, for example -3.\nWhich statements are correct?",
+          "a": "1, 2 and 3. All three are true: every selection in the grid in Statement 2 totals 0, and a border sum of -3 is possible, for example with the top row 4, -1, -6.",
+          "o": [
+            "1, 2 and 3",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1 and 3 only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the grid 2 5 8 / -3 0 3 / -8 -5 -2, any selection of one number from each row and column totals 0.\nReason (R): A border integer square puzzle with several blank cells can often be completed in more than one way.",
+          "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion. Both are true, but the second is about a different puzzle and does not explain why the amazing grid always totals 0.",
+          "o": [
+            "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+            "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+            "The Assertion is true but the Reason is false.",
+            "The Assertion is false but the Reason is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two of three integers on a puzzle card are -15 and 9, and the three add up to -8. The third integer is ___.",
+          "a": "-2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each puzzle in Column I with its answer in Column II.\nColumn I: 1. Border sum with top row 4, -1, -3  2. Total in the grid 5 8 11 / -1 2 5 / -7 -4 -1  3. The year 320 years after 680 BCE  4. Smallest sum on two dice with faces -1, 2, -3, 4, -5, 6\nColumn II: a. 6  b. 0  c. 360 BCE  d. -10",
+          "a": "1-b, 2-a, 3-c, 4-d",
+          "o": [
+            "1-b, 2-a, 3-c, 4-d",
+            "1-a, 2-b, 3-c, 4-d",
+            "1-b, 2-a, 3-d, 4-c",
+            "1-c, 2-a, 3-b, 4-d"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: Whichever numbers you write in a grid, the amazing-grid game always ends with the same total. Give the reason or the correction.",
+          "a": "False. In the grid 1 2 / 3 9, circling 1 and 9 gives 10 but circling 2 and 3 gives 5. The total stays fixed only for grids arranged with a pattern, such as 5 8 11 / -1 2 5 / -7 -4 -1.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "Counter-example: 1 + 9 = 10 but 2 + 3 = 5; only patterned grids are amazing",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A 3 by 3 border square has top row 6, -9, 4 and bottom row -2, 5, -2. (a) Find the border sum. (b) The left column is 6, a blank, -2 and the right column is 4, a blank, -2. Find the two blanks.",
+          "a": "(a) 6 + (-9) + 4 = 1 and -2 + 5 + (-2) = 1, so the border sum is 1. (b) Left: 6 + x + (-2) = 1 so x = -3; right: 4 + y + (-2) = 1 so y = -1.",
+          "s": [
+            [
+              "Part (a): border sum 1",
+              1
+            ],
+            [
+              "Part (b): -3 and -1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A border square has only its top-left corner, 3, filled in, and the border sum is 0. (a) Write two different top rows that begin with 3 and add up to 0. (b) Why does a puzzle with fewer given numbers usually have more ways to be completed?",
+          "a": "(a) For example 3, -1, -2 and 3, -5, 2, since 3 - 1 - 2 = 0 and 3 - 5 + 2 = 0. (b) Each blank is free until a given number or a sum condition fixes it, so fewer given numbers leave more blanks free to take several values.",
+          "s": [
+            [
+              "Part (a): two valid rows with sum 0",
+              1
+            ],
+            [
+              "Part (b): fewer givens leave more free blanks",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) List the integers strictly between -30 and -23 in increasing order. (b) Show that there are as many integers strictly between -7 and 0 as in your list.",
+          "a": "(a) -29, -28, -27, -26, -25, -24. (b) The integers between -7 and 0 are -6, -5, -4, -3, -2, -1, which are also 6; both gaps have width 7.",
+          "s": [
+            [
+              "Part (a): -29 to -24",
+              1
+            ],
+            [
+              "Part (b): 6 integers in both",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A sequence begins -52, -45, -38, -31, -24, ... (a) Write the next three terms. (b) Which is the first term that is not negative?",
+          "a": "(a) The common step is +7, so the next terms are -17, -10, -3. (b) The next term after -3 is -3 + 7 = 4, which is the first non-negative term.",
+          "s": [
+            [
+              "Part (a): -17, -10, -3",
+              1
+            ],
+            [
+              "Part (b): 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ravi says, 'In the grid 5 8 11 / -1 2 5 / -7 -4 -1 every complete selection of one number from each row and each column totals 6.' Test it with three different selections and decide whether he is right.",
+          "a": "Yes, he is right. The selection 5, 2, -1 gives 6; 11, 2, -7 gives 6; and 8, -1, -1 gives 6. The reason is that each row is the row above shifted by a fixed amount, so every selection adds the same row amounts (5 - 1 - 7 = -3) and the same column steps (0 + 3 + 6 = 9), giving 6.",
+          "s": [
+            [
+              "Three selections giving 6 each",
+              1
+            ],
+            [
+              "Verdict: Ravi is right",
+              1
+            ],
+            [
+              "Explains the pattern of rows and columns",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Two dice both have faces -1, 2, -3, 4, -5, 6. Show that a sum of 11 cannot be rolled.",
+          "a": "Without a 6 on either die the largest sum is 4 + 4 = 8, so a 6 is needed. With a 6 on one die the other must show 5, but the faces are -1, 2, -3, 4, -5 and 6, and there is no 5. So 11 cannot be rolled.",
+          "s": [
+            [
+              "Without a 6 the largest sum is 8",
+              1
+            ],
+            [
+              "With a 6 the other face would need to be 5",
+              1
+            ],
+            [
+              "There is no 5 on the die, so 11 is impossible",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Make a 3 by 3 border integer square whose border sum is 2 and whose corners are 5 (top left), -1 (top right), -2 (bottom left) and 4 (bottom right). Fill in the four middle cells and show the check for all four sides.",
+          "a": "Top: 5 + t + (-1) = 2, so t = -2. Bottom: -2 + u + 4 = 2, so u = 0. Left: 5 + l + (-2) = 2, so l = -1. Right: -1 + r + 4 = 2, so r = -1. Check: 5 - 2 - 1 = 2; -2 + 0 + 4 = 2; 5 - 1 - 2 = 2; -1 - 1 + 4 = 2.",
+          "s": [
+            [
+              "Finds the four middle cells -2, 0, -1, -1",
+              1
+            ],
+            [
+              "Writes the filled square with corners in place",
+              1
+            ],
+            [
+              "Shows all four sides add to 2",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "The sum of two positive integers is always positive. For each case below say whether the answer is always positive, always negative, or can be either, with one example: (a) positive - negative, (b) positive + negative, (c) negative + negative, (d) negative - negative, (e) negative - positive, (f) negative + positive.",
+          "a": "(a) Always positive: 3 - (-3) = 6. (b) Either: 5 + (-2) = 3 and 2 + (-5) = -3. (c) Always negative: (-2) + (-6) = -8. (d) Either: (-2) - (-6) = 4 and (-6) - (-2) = -4. (e) Always negative: (-2) - 6 = -8. (f) Either: (-2) + 6 = 4 and (-6) + 2 = -4.",
+          "s": [
+            [
+              "Cases (a) and (e): always positive and always negative with examples",
+              2
+            ],
+            [
+              "Case (c): always negative with an example",
+              1
+            ],
+            [
+              "Cases (b), (d), (f): either, with two examples",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A border square has corners 8 (top left), -5 (top right), 3 (bottom left) and 6 (bottom right). (a) For border sum 1 find the four middle cells. (b) Check that each side adds to 1. (c) Find the middle cell of the top row when the border sum is -4. (d) Explain why changing the border sum by -5 changes every middle cell by -5.",
+          "a": "(a) Top: 1 - 8 + 5 = -2; bottom: 1 - 3 - 6 = -8; left: 1 - 8 - 3 = -10; right: 1 + 5 - 6 = 0. (b) 8 - 2 - 5 = 1; 3 - 8 + 6 = 1; 8 - 10 + 3 = 1; -5 + 0 + 6 = 1. (c) -4 - 8 + 5 = -7. (d) A middle cell is the border sum minus its two corners, and the corners do not change, so lowering the sum by 5 lowers each middle cell by 5 (-2 to -7 here).",
+          "s": [
+            [
+              "Part (a): -2, -8, -10, 0",
+              2
+            ],
+            [
+              "Part (b): all four sides give 1",
+              1
+            ],
+            [
+              "Part (c): -7",
+              1
+            ],
+            [
+              "Part (d): middle = sum minus corners, corners fixed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "At a school fair a stall rolls two dice, each with faces -1, 2, -3, 4, -5, 6, and adds the numbers. Out of the 36 possible pairs of faces, the stall owner counts the pairs that give each sum. She offers two prize rules. Rule A: Rs 50 if the sum is 1. Rule B: Rs 100 if the sum is -6.\n(a) Find the smallest and the largest sum that can be rolled. (b) How many of the 36 pairs give a sum of 1, and how many give -6? (c) If all 36 pairs came up once each, how much prize money would each rule pay out? (d) Which rule would you choose for the stall? Use your answers.",
+          "a": "(a) Smallest (-5) + (-5) = -10, largest 6 + 6 = 12. (b) Sum 1: (2, -1), (-1, 2), (4, -3), (-3, 4), (6, -5), (-5, 6), that is 6 pairs. Sum -6: (-3, -3), (-1, -5), (-5, -1), that is 3 pairs. (c) Rule A: 6 x 50 = Rs 300; Rule B: 3 x 100 = Rs 300. (d) The payout is equal, so the choice rests on style: Rule A gives small prizes often (6 of 36), Rule B gives bigger prizes rarely (3 of 36). Either may be chosen with a reason.",
+          "s": [
+            [
+              "Part (a): -10 and 12",
+              1
+            ],
+            [
+              "Part (b): 6 and 3 pairs",
+              1
+            ],
+            [
+              "Part (c): Rs 300 each",
+              1
+            ],
+            [
+              "Part (d): notes equal payout and chooses on frequency against size",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A teacher has the grid 5 8 11 / -1 2 5 / -7 -4 -1, where every complete selection of one number from each row and column adds up to 6. A student, Dev, swaps the 8 and the -4 to make the grid 5 -4 11 / -1 2 5 / -7 8 -1, with the same nine numbers.\n(a) In Dev's grid, find the total for the selection 5, 2, -1 (the main diagonal). (b) Find the total for the selection 11, -1, 8 (top right, middle left, bottom middle). (c) Find the total for the selection -4, -1, -1 (top middle, middle left, bottom right). (d) Is the magic of an amazing grid in the numbers, the way they are arranged, or both? Use your three totals.",
+          "a": "(a) 5 + 2 + (-1) = 6. (b) 11 + (-1) + 8 = 18. (c) -4 + (-1) + (-1) = -6. (d) Dev's grid has the same nine numbers as the original but gives different totals (6, 18, -6), so the arrangement matters: the original numbers alone do not make the grid amazing. The numbers matter too, since a pattern needs suitable values, so 'both' is also a fair answer if explained.",
+          "s": [
+            [
+              "Part (a): 6",
+              1
+            ],
+            [
+              "Part (b): 18",
+              1
+            ],
+            [
+              "Part (c): -6",
+              1
+            ],
+            [
+              "Part (d): same numbers give different totals, so arrangement matters",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C6M-10.6",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Nine Chapters on Mathematical Art were completed by the first or second century CE; take the latest date, 200 CE. The Bakhshali manuscript is from about 300 CE and Brahmagupta's Brahma-sphuta-siddhanta is from 628 CE. A student says the Nine Chapters were completed 328 years before Brahmagupta and after the Bakhshali manuscript. Which reply is correct?",
+          "a": "They were completed at most 428 years before Brahmagupta, and before the Bakhshali manuscript",
+          "o": [
+            "They were completed at most 428 years before Brahmagupta, and before the Bakhshali manuscript",
+            "They were completed at most 428 years before Brahmagupta, and after the Bakhshali manuscript",
+            "The student is right: 328 years before Brahmagupta and after the Bakhshali manuscript",
+            "They were completed at most 328 years before Brahmagupta, and before the Bakhshali manuscript"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Take the dates of Kautilya's Arthashastra as exactly 300 BCE and Brahmagupta's work as exactly 628 CE. There is no year 0. How many years lie between them?",
+          "a": "927",
+          "o": [
+            "927",
+            "928",
+            "328",
+            "1,000"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student uses Brahmagupta's rule for adding a positive and a negative number to find (-17) + 9. Which working is correct?",
+          "a": "Subtract 9 from 17 to get 8 and keep the sign of 17, so -8",
+          "o": [
+            "Subtract 9 from 17 to get 8 and keep the sign of 17, so -8",
+            "Subtract 9 from 17 to get 8 and use the sign of 9, so +8",
+            "Add 17 and 9 to get 26 and keep the minus sign, so -26",
+            "Subtract 17 from 9 to get -8 and then change its sign, so +8"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A merchant's ledger entry needs (-4) - (-9). Using Brahmagupta's rule for subtracting a negative number, he should work out:",
+          "a": "(-4) + 9 = 5",
+          "o": [
+            "(-4) + 9 = 5",
+            "(-4) + (-9) = -13",
+            "4 + 9 = 13",
+            "(-4) - 9 = -13"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student says, 'A page of the Bakhshali manuscript shows minus seven as -7, just like a modern book.' What would the page really show?",
+          "a": "The number 7 followed by a special symbol",
+          "o": [
+            "The number 7 followed by a special symbol",
+            "A special symbol followed by the number 7",
+            "The number 7 on a red rod",
+            "A minus sign followed by 7, exactly as today"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Read the statements.\nStatement 1: Brahmagupta's work of 628 CE treated positive numbers, negative numbers and zero as equally valid numbers and gave rules for operating on them.\nStatement 2: Once negative numbers reached Europe they were accepted at once by every European mathematician.\nStatement 3: Brahmagupta's rules were the first time anyone anywhere had used negative numbers.\nWhich statements are correct?",
+          "a": "1 only. Statement 2 is false because Lazare Carnot, a French mathematician of the 18th century, still called negative numbers absurd, and Statement 3 is false because accounting works in China and India used them earlier.",
+          "o": [
+            "1 only",
+            "1 and 3 only",
+            "2 and 3 only",
+            "3 only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): By Brahmagupta's rule, (-9) + 4 = -5.\nReason (R): To add a positive number and a negative number, subtract the smaller number (without sign) from the greater and place the sign of the greater number.",
+          "a": "Both Assertion and Reason are true, and the Reason explains the Assertion. Here 9 - 4 = 5 and the greater number, 9, is negative, so the result is -5.",
+          "o": [
+            "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+            "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+            "The Assertion is true but the Reason is false.",
+            "The Assertion is false but the Reason is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Using Brahmagupta's rules, (-35) - (-35) + (-6) = ___.",
+          "a": "-6"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: To find 3 + (-8), Brahmagupta's rule subtracts 3 from 8 and gives the result the sign of the number written first, so the answer is +5. Give the reason or the correction.",
+          "a": "False. The rule uses the sign of the greater number (without sign), and that is 8, which is negative. So 3 + (-8) = -(8 - 3) = -5.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "Correction: the sign of the greater number, 8, is negative, so the answer is -5",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Use Brahmagupta's rule for adding a positive and a negative number. (a) Find (-24) + 15 and 24 + (-15). (b) State which sign each answer takes and why.",
+          "a": "(a) (-24) + 15 = -9 and 24 + (-15) = +9. (b) The size is 24 - 15 = 9 in both, and the sign is that of the greater number: negative for 24 taken as -24, positive for 24.",
+          "s": [
+            [
+              "Part (a): -9 and +9",
+              1
+            ],
+            [
+              "Part (b): the sign of the greater number is used",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Take Kautilya's Arthashastra as 300 BCE, the Bakhshali manuscript as 300 CE and Brahmagupta as 628 CE, with no year 0. (a) In which year was it 700 years before Brahmagupta's work? (b) How many years after the manuscript is Brahmagupta?",
+          "a": "(a) Going back 627 years from 628 CE reaches 1 CE and one more year reaches 1 BCE (no year 0), so 700 years back is 73 BCE. (b) 628 - 300 = 328 years.",
+          "s": [
+            [
+              "Part (a): 73 BCE after allowing for no year 0",
+              1
+            ],
+            [
+              "Part (b): 328",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says, 'The first known use of negative numbers was in measuring temperatures below freezing, and the Bakhshali manuscript wrote a negative number with the minus sign in front, as we do.' (a) Correct the first part. (b) Correct the second part.",
+          "a": "No, both parts are wrong. (a) The first known uses were in accounting (for example the Nine Chapters with red and black rods). (b) The Bakhshali manuscript wrote a negative number with a special symbol placed after the number, not before it.",
+          "s": [
+            [
+              "Part (a): the first known use was in accounting",
+              1
+            ],
+            [
+              "Part (b): a special symbol after the number, not a minus sign before it",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Use Brahmagupta's rules on zero to find (-8) - 0 and 0 - (-8). (b) What does the second answer show about 0 - a number?",
+          "a": "(a) (-8) - 0 = -8 and 0 - (-8) = 8. (b) Subtracting a number from zero gives the number's inverse: the inverse of -8 is 8.",
+          "s": [
+            [
+              "Part (a): -8 and 8",
+              1
+            ],
+            [
+              "Part (b): 0 - a number gives its inverse",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ishita says, 'Brahmagupta invented negative numbers in 628 CE; before him nobody used them.' Test this with what the chapter says about earlier works and say if she is right.",
+          "a": "No. The Nine Chapters (completed by the first or second century CE) used rods for positive and negative numbers, Kautilya's Arthashastra (c. 300 BCE) recognised negative balances and the Bakhshali manuscript (c. 300 CE) wrote negatives with a symbol, all before 628 CE. What Brahmagupta gave was the first general treatment with rules for all numbers including zero.",
+          "s": [
+            [
+              "Names two earlier uses with dates",
+              1
+            ],
+            [
+              "Concludes the claim is wrong",
+              1
+            ],
+            [
+              "States what Brahmagupta actually did",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Dev says, 'Brahmagupta's rule for adding a positive and a negative number gives the same answers as walking on a number line.' Test it on (-14) + 6, 4 + (-9) and (-7) + 12, and say whether he is right.",
+          "a": "Yes, he is right. (-14) + 6: rule gives 14 - 6 = 8 with the sign of the greater, -8; the number line from -14 moving 6 right ends at -8. 4 + (-9): rule gives -5; from 4 moving 9 left ends at -5. (-7) + 12: rule gives +5; from -7 moving 12 right ends at 5.",
+          "s": [
+            [
+              "(-14) + 6 = -8 by both methods",
+              1
+            ],
+            [
+              "4 + (-9) = -5 by both methods",
+              1
+            ],
+            [
+              "(-7) + 12 = 5 by both methods and concludes yes",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Make up a lift story for each of these rules of Brahmagupta: (i) the sum of a number and its inverse is zero, and (ii) the sum of any number and zero is the same number.",
+          "a": "Sample (i): A lift is on Floor 6 and the attendant presses -6, so (6) + (-6) = 0 and it is back on the ground floor. Sample (ii): A lift is on Floor -4 and the attendant presses nothing, 0, so (-4) + 0 = -4 and it stays where it is.",
+          "s": [
+            [
+              "A story for rule (i) with a number and its inverse",
+              1
+            ],
+            [
+              "A story for rule (ii) with 0 as the movement",
+              1
+            ],
+            [
+              "Both end with the correct floor",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Work through these in order, naming the Brahmagupta rule you use at each step: (a) (-18) + (-27). (b) 14 + (-31). (c) Use (a) and (b) to find (b's value) - (a's value). (d) Add to the answer of (c) the value of 6 - 15. (e) Find the number that must be added to the answer of (d) to give zero.",
+          "a": "(a) -45: the sum of two negatives is negative, add the sizes. (b) -17: subtract 14 from 31 and use the sign of the greater, negative. (c) (-17) - (-45) = -17 + 45 = 28: subtracting a negative is adding the positive. (d) 6 - 15 = -9 (a larger positive from a smaller one is negative), and 28 + (-9) = 19. (e) -19: a number plus its inverse is zero.",
+          "s": [
+            [
+              "Part (a): -45 with the rule for two negatives",
+              1
+            ],
+            [
+              "Part (b): -17 with the sign of the greater",
+              1
+            ],
+            [
+              "Part (c): 28 by adding the positive",
+              1
+            ],
+            [
+              "Part (d): -9 and then 19",
+              1
+            ],
+            [
+              "Part (e): -19 as the inverse of 19",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Mina says, 'Brahmagupta added nothing new in 628 CE, because Indian accounts already used negative numbers earlier.' (a) Name two earlier works and say what each did, with its date. (b) State what Brahmagupta did that neither of them did. (c) Decide whether Mina is right, using the number of years between the Bakhshali manuscript and Brahmagupta.",
+          "a": "(a) Kautilya's Arthashastra (c. 300 BCE) wrote on credit and debit and recognised that an account balance could be negative; the Bakhshali manuscript (c. 300 CE) used negative numbers in accounts, writing them with a symbol after the number. (b) Brahmagupta (628 CE) gave the first general treatment of positive numbers, negative numbers and zero on an equal footing as numbers, with explicit rules for operations on all of them. (c) Mina is only partly right: negatives were used in accounts 328 years before him (628 - 300), but accounting use is not a treatment of them as numbers with rules, so his work was new.",
+          "s": [
+            [
+              "Part (a): two earlier works with dates and what each did",
+              2
+            ],
+            [
+              "Part (b): equal-footing treatment of all numbers with explicit rules",
+              1
+            ],
+            [
+              "Part (c): 328 years, and judges Mina partly right",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A trader's ledger starts with a balance of 40 units. She records a receipt of 25 units, then a payment of 70 units, then another receipt of 12 units. She writes the balance after each entry using Brahmagupta's rules. Her friend suggests an alternative: when a payment is larger than the balance, write 'balance 0, owes 5' in a separate column instead of writing a negative number.\n(a) Find the balance after the receipt of 25. (b) Find the balance after the payment, and say which of Brahmagupta's addition rules gives it. (c) Find the balance after the last receipt. (d) Compare the signed method with her friend's separate-column method for the last step, and say which you would prefer.",
+          "a": "(a) 40 + 25 = 65, the sum of two positives. (b) 65 + (-70): subtract 65 from 70 to get 5 and use the sign of the greater, so -5 (rule for a positive and a negative). (c) (-5) + 12 = +7, since 12 - 5 = 7 with the sign of the greater, positive. (d) With signed numbers the last step is one addition, -5 + 12 = 7; the separate column needs her to remember to take the 5 owed from the receipt of 12 (12 - 5 = 7), a second step that is easy to forget. The separate column may feel simpler to read for someone who dislikes negative numbers, so either choice is acceptable if justified.",
+          "s": [
+            [
+              "Part (a): 65",
+              1
+            ],
+            [
+              "Part (b): -5 using the positive-and-negative rule",
+              1
+            ],
+            [
+              "Part (c): +7",
+              1
+            ],
+            [
+              "Part (d): compares one signed step with the extra step of the separate column",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Class 6 is making one poster for a school history corner and has space for only one source about negative numbers. The sources are P, Kautilya's Arthashastra (c. 300 BCE), Q, the Nine Chapters on Mathematical Art (completed by the first or second century CE) and R, Brahmagupta's Brahma-sphuta-siddhanta (628 CE). The poster is for a lesson on the rules for adding and subtracting, and only one date can be printed on it.\n(a) A copy of Source P was made 500 years after it was written; in which year, with no year 0? (b) Which source used red and black rods in a way like the green and red tokens of the class? (c) Which source gave rules for working with zero as well as positive and negative numbers? (d) Choose the source for the poster, state the date to print, and give two reasons that fit a lesson on the rules.",
+          "a": "(a) 300 BCE to 1 CE is 300 years and a further 200 years reaches 201 CE. (b) The Nine Chapters. (c) Brahmagupta's Brahma-sphuta-siddhanta. (d) Source R, dated 628 CE: it gave explicit rules for adding and subtracting positive numbers, negative numbers and zero, which is what the lesson teaches, whereas Source P only recognised a negative balance and Source Q used rods in accounting without stated rules.",
+          "s": [
+            [
+              "Part (a): 201 CE",
+              1
+            ],
+            [
+              "Part (b): the Nine Chapters",
+              1
+            ],
+            [
+              "Part (c): Brahmagupta",
+              1
+            ],
+            [
+              "Part (d): Source R, 628 CE, with two reasons about stated rules for addition and subtraction",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    }
+  ]
+}

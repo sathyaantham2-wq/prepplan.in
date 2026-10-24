@@ -63,3 +63,23 @@ Nothing is loaded to production yet: the owner runs `scripts/load-dps-class7.sh 
 `load-dps-class9.sh`) with the production DATABASE_URL; the old easy grid is not yet retired (a separate step,
 retire never delete). The daily Backup workflow fails because secrets PROD_DATABASE_URL and BACKUP_PASSPHRASE
 are not set in GitHub; set them before loading.
+
+
+## Update 2026-10-24
+
+**In production (loaded, old grid retired, status only):** Class 7 and Class 9 (all subjects, 2026-10-22/23), Class 6 Science (12 ch), Class 6 Social Science (14 ch), Class 8 Maths (14 ch), Class 8 Science (13 ch) and Class 8 Social Science Part I (7 ch) + Part II ch 1-7. Every concept of those sets holds at least 20 approved DPS questions. The three concepts C7S-6.6, C9M-2.6 and C9SC-7.3 kept their old questions because a DPS stem collided with an old stem. Undo lists (the ids retired in each run): `content/authoring/dps/_undo/` (the Class 7/9 list there is a rebuilt superset; see its README).
+
+**Written and reviewed, not yet loaded:** Class 8 Social Science Part II ch 8 (183 q; first review done, 4 HIGH, fix pass was interrupted by the usage limit). Class 8 SST Part II ch 8's old questions are still the live ones.
+
+**Not started or unverified:** Class 6 Maths (10 files from an earlier session; v5-class6-ch02 had 1 HIGH, re-verify before any load), Class 10 Maths (14 ch), Class 10 Social Science (7 ch), Class 11 Maths (14 ch), Class 12 Maths (13 ch).
+
+**Loader and review rules learned in this stretch (all came from real review findings):**
+- `load-dps-pack.ts --check` now rejects a key that is word-for-word another option (the loader marks `o[0]` correct, so the key must be listed first).
+- A fill_blank must have ONE natural answer and must not be answerable from the stem; single words copied from the page always have synonyms, so prefer a computed integer whose inputs both come from the chapter.
+- Never ask for N things when the book states fewer; never use a figure's values or a flow chart's order that the extracted text scrambled; never ask for article numbers where they are scope_out.
+- The correct option must not sit at one length every time: aim for about 25% longest, 25% shortest, 50% middle. "Never longest or shortest" is as guessable as "always longest".
+- No page citations in stems or keys. Case-study decisions must be settled by the data (no ties, no values-choices).
+
+**Civil Services (Polity), 2026-10-24:** the production database still named the source book in 564 question stems, 2,093 explanations, concept and scope text and the `sources` row, because the 2026-10-16 debrand migration had been committed but never applied. It was applied to production on 2026-10-24 (`scripts/apply-civil-debrand.ts` and `apply-civil-debrand-meta.ts`); a backup of the changed rows was taken first. Two remaining direct page references were fixed by hand (one question retired, one reworded) and the two pack files corrected so a reload cannot bring them back.
+
+Operational: `scripts/retire-old-dps.ts` now writes a timestamped, set-named undo list so a later run can never overwrite an earlier one (it did once, on 2026-10-23).

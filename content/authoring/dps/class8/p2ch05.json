@@ -1,0 +1,2607 @@
+{
+  "kind": "dps_pack",
+  "subject": {
+    "code": "MATH8",
+    "class": 8,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 5,
+    "name": "Tales by Dots and Lines"
+  },
+  "source_code": "hegp205",
+  "concepts": [
+    {
+      "code": "C8M-5.1",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Six rice bags at a ration shop weigh 24, 25, 25, 26, 27 and 29 kg, so their mean is 26 kg. A seventh bag weighing 33 kg is unloaded. What is the mean weight of the seven bags?",
+          "a": "27 kg",
+          "o": [
+            "27 kg",
+            "29.5 kg",
+            "31.5 kg",
+            "26 kg"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The marks of four students are 11, 14, 17 and 26.\n(a) Find the total distance from 16 of the marks below 16, and the total distance from 16 of the marks above 16. Is 16 the balancing point of the data?\n(b) Using (a), say whether the mean is more or less than 16, then find the mean and check that it balances.",
+          "a": "(a) Below 16: (16 - 11) + (16 - 14) = 5 + 2 = 7. Above 16: (17 - 16) + (26 - 16) = 1 + 10 = 11. The two totals are unequal, so 16 is not the balancing point. (b) More distance lies above 16, so the centre must move up: the mean is more than 16. Mean = 68/4 = 17. Check: below 17 the distances are 6 + 3 = 9, above 17 the distance is 9, so 17 balances.",
+          "s": [
+            [
+              "Part (a): totals 7 below and 11 above, so 16 is not the centre",
+              1
+            ],
+            [
+              "Part (b): mean is more than 16; mean 17, with 9 = 9 on both sides",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If a value greater than the mean is removed from a data set, the mean of the remaining values is less than the old mean.\nReason (R): The total distance from the mean of the values below it equals the total distance from the mean of the values above it.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rain gauge recorded 4, 7, 9, 12, 15 and 20 mm on six days, so the median is 10.5 mm. One more day's reading is included and the median of the seven readings becomes 12 mm. Which of these could the new reading be?",
+          "o": [
+            "16 mm",
+            "11 mm",
+            "10.5 mm",
+            "8 mm"
+          ],
+          "a": "16 mm"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Gauri claims: 'Including a value greater than the median never lowers the median, and it always raises it.' Test both halves of her claim on two data sets, each time including the value 20:\nSet P: 6, 8, 8, 8, 13\nSet Q: 6, 8, 10, 13, 15\nThen give your verdict on the claim.",
+          "a": "Set P: median 8. After including 20 the data is 6, 8, 8, 8, 13, 20 and the median is (8 + 8)/2 = 8, unchanged. Set Q: median 10. After including 20 the data is 6, 8, 10, 13, 15, 20 and the median is (10 + 13)/2 = 11.5, which is higher. Verdict: partly right. The first half is correct: in neither set did the median fall, because a value above the median adds one more value on the upper side. The second half is wrong: Set P shows the median can stay the same when the middle values repeat, so 'always raises' fails.",
+          "s": [
+            [
+              "Set P: median stays 8 after including 20",
+              1
+            ],
+            [
+              "Set Q: median rises from 10 to 11.5",
+              1
+            ],
+            [
+              "Verdict partly right: 'never lowers' holds, 'always raises' fails for Set P",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The data 5, 9, 10, 16 has mean 10. One more value is included and the mean becomes 12. The value included is ___. (Write the number in digits.)",
+          "a": "20"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A family's electricity bills for five months were Rs 1,240, Rs 1,180, Rs 1,320, Rs 1,450 and Rs 1,060; their mean is Rs 1,250. One bill turns out to be the neighbour's and is removed. The mean of the other four bills is Rs 1,267.50. Which bill was removed?",
+          "o": [
+            "Rs 1,180",
+            "Rs 1,060",
+            "Rs 1,240",
+            "Rs 1,320"
+          ],
+          "a": "Rs 1,180"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "A data set has mean 30. Consider these statements.\nI. Removing a value equal to 30 leaves the mean unchanged.\nII. Including the two values 34 and 24 together raises the mean.\nIII. Including the three values 28, 27 and 35 together leaves the mean unchanged.\nWhich of the statements are correct?",
+          "a": "I and III only",
+          "o": [
+            "I and III only",
+            "I only",
+            "II and III only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: A data set has mean 40. If the two values 52 and 31 are included together, the mean increases. Give a reason.",
+          "a": "True. 52 is 12 above the mean and 31 is 9 below it. The extra distance above (12) is more than the extra distance below (9), so the balance shifts upward and the mean increases. (For example, if the data had 4 values, the sum would be 160 and the new mean (160 + 83)/6 = 40.5.)",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Compares the distances 12 above and 9 below, so the balance moves up",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "Class 8B has 30 students. Their mean height is 148.4 cm and their median height is 149 cm. In July three new students join the class, with heights 146 cm, 151 cm and 150 cm.\n(a) For each new student, say whether the height is above or below the old mean, and by how many cm.\n(b) Without finding the new mean, decide whether the class mean goes up, goes down or stays the same.\n(c) Find the new mean height of the 33 students, correct to one decimal place.\n(d) The class teacher says, 'Two of the three are taller than the old median, so the median must go up.' Decide whether the information given is enough to support her statement.",
+          "a": "(a) 146 cm is 2.4 cm below; 151 cm is 2.6 cm above; 150 cm is 1.6 cm above. (b) Total distance above = 2.6 + 1.6 = 4.2 cm, below = 2.4 cm, so the balance shifts up and the mean goes up. (c) Old total = 148.4 x 30 = 4452 cm; new total = 4452 + 146 + 151 + 150 = 4899 cm; new mean = 4899/33 = 148.5 cm (148.45...). (d) Not enough. The median cannot go down, but whether it rises depends on the middle heights of the old class, which are not given. If the 15th and 16th heights were both 149 cm, the new median (17th of 33) is still 149 cm; if they were 148 cm and 150 cm, it becomes 150 cm. So her word 'must' is not supported.",
+          "s": [
+            [
+              "Part (a): 2.4 below, 2.6 above, 1.6 above",
+              1
+            ],
+            [
+              "Part (b): 4.2 above against 2.4 below, so the mean goes up",
+              1
+            ],
+            [
+              "Part (c): 4899/33 = 148.5 cm",
+              1
+            ],
+            [
+              "Part (d): not enough information; the median may stay 149 or rise, so 'must' is not supported",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Six parcels weigh 3, 5, 6, 8, 9 and 11 kg; their mean is 7 kg.\n(a) Which one parcel must be removed so that the mean of the remaining five is 7.4 kg?\n(b) Explain, using the balancing idea, why the parcel removed had to be lighter than 7 kg.",
+          "a": "(a) The five remaining must total 7.4 x 5 = 37 kg; the six total 42 kg, so the parcel removed weighs 42 - 37 = 5 kg. (b) The mean went up from 7 to 7.4. Removing a value below the mean takes away distance on the lower side, so the centre moves up; removing a value above 7 would have lowered the mean.",
+          "s": [
+            [
+              "Part (a): 42 - 37 = 5 kg parcel removed",
+              1
+            ],
+            [
+              "Part (b): the mean rose, which happens only when a value below the mean is removed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Five friends scored 1, 3, 4, 9 and 13 in a quiz. Arjun wants the 'centre' of the scores: the number for which the total distance of the scores below it equals the total distance of the scores above it. Which number is it?",
+          "a": "6",
+          "o": [
+            "6",
+            "4",
+            "7",
+            "7.5"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "The data 15, 18, 21 has median 18. Show that no single value, however large, can be included so that the median of the four values becomes 22.",
+          "a": "With four values the median is the average of the 2nd and 3rd values when sorted. Whatever value v is included, the 2nd value is at most 18 and the 3rd value is at most 21 (if v is 21 or more, the sorted data is 15, 18, 21, v). So the new median is at most (18 + 21)/2 = 19.5. A very large v only sits at the end; it cannot push the middle past 18 and 21. Since 19.5 is less than 22, no single value can make the median 22.",
+          "s": [
+            [
+              "States the new median is the average of the 2nd and 3rd of four sorted values",
+              1
+            ],
+            [
+              "Shows the 2nd value is at most 18 and the 3rd at most 21, so the median is at most 19.5",
+              1
+            ],
+            [
+              "Concludes 22 is impossible because a large value only goes to the end",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A data set of 8 values has mean 50.\n(a) Two values are included together, one of them 58, and the mean stays 50. Find the other value.\n(b) Instead, three values are included: two less than 50 and one equal to 65, and the mean stays 50. Give one possible pair for the two smaller values, and state the condition every such pair must satisfy.\n(c) Explain why including three values that are all greater than 50 can never keep the mean at 50.\n(d) Instead, only the single value 74 is included. Find the new mean, correct to two decimal places.",
+          "a": "(a) 58 is 8 above 50, so the other must be 8 below: 42. (b) 65 is 15 above 50, so the two smaller values must together be 15 below 50, that is, their sum must be 2 x 50 - 15 = 85 with each less than 50; for example 45 and 40 (5 + 10 = 15). (c) Each value adds distance on the upper side and none adds distance on the lower side, so the balance can only move up; the mean must rise. (d) Old total = 50 x 8 = 400; new total = 474; new mean = 474/9 = 52.67.",
+          "s": [
+            [
+              "Part (a): the other value is 42",
+              1
+            ],
+            [
+              "Part (b): a valid pair such as 45 and 40",
+              1
+            ],
+            [
+              "Part (b): condition: the two values sum to 85 (their distances below 50 total 15)",
+              1
+            ],
+            [
+              "Part (c): all distances are on the upper side, so the mean must rise",
+              1
+            ],
+            [
+              "Part (d): 474/9 = 52.67",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Six runners' scores in a school sports test, in order, are 31, 35, 40, 44, 52 and 58, so the median is 42. A latecomer takes the test and scores 47. What is the new median of the seven scores?",
+          "a": "44",
+          "o": [
+            "44",
+            "42",
+            "45.5",
+            "47"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The data 12, 15, 18, 23, 32 has mean 20. Mira removes 32 from her copy; Kabir removes 12 from his copy.\n(a) Without calculating, whose new mean is higher? Give the reason.\n(b) Find both new means and the difference between them.",
+          "a": "(a) Kabir's. He removed a value below the mean, which raises the mean; Mira removed a value above the mean, which lowers it. (b) Mira: 68/4 = 17. Kabir: 88/4 = 22. Difference = 22 - 17 = 5.",
+          "s": [
+            [
+              "Part (a): Kabir's, because removing a value below the mean raises it and removing one above lowers it",
+              1
+            ],
+            [
+              "Part (b): 17 and 22, difference 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Dhruv claims: 'If one value below the mean is removed from a data set and one value above the mean is included in its place, the new mean must be higher than the old mean.' Test his claim on the data 6, 9, 12, 13 by replacing 9 with 10.5, and then say whether it holds for every data set.",
+          "a": "Old mean = 40/4 = 10. Replacing 9 (below 10) with 10.5 (above 10) gives 6, 10.5, 12, 13, with total 41.5 and mean 41.5/4 = 10.375, which is higher. Verdict: Dhruv is right for every data set. The number of values stays the same, and the total changes by (new value - removed value); the new value is above the mean and the removed one is below it, so this change is positive. The same count with a bigger total always gives a bigger mean.",
+          "s": [
+            [
+              "Old mean 10; new data 6, 10.5, 12, 13",
+              1
+            ],
+            [
+              "New mean 10.375, higher than 10",
+              1
+            ],
+            [
+              "Verdict right in general: same count, total rises by (new - removed) > 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A school kabaddi squad has seven players weighing 48, 52, 55, 57, 58, 61 and 68 kg. A reserve player weighing 54 kg is to replace exactly one of them.\n(a) Find the mean and the median weight of the present squad.\n(b) Find the new mean and median if the reserve replaces the 68 kg player.\n(c) Which player must the reserve replace so that the mean weight falls by exactly 1 kg? Show your working.\n(d) The coach wants the median to stay as it is now. Which players could the reserve replace? Give a reason.",
+          "a": "(a) Total = 399 kg, mean = 399/7 = 57 kg; median (4th of 48, 52, 55, 57, 58, 61, 68) = 57 kg. (b) Total = 399 - 68 + 54 = 385 kg, mean = 55 kg; sorted 48, 52, 54, 55, 57, 58, 61, median = 55 kg. (c) A fall of 1 kg in the mean is a fall of 7 kg in the total, so the player replaced weighs 54 + 7 = 61 kg. (d) The 48, 52 or 55 kg player. Swapping a weight below 57 for 54 (also below 57) keeps three weights below 57 and three above, so 57 stays in the middle; replacing 57 or any heavier player puts four weights below 57 and makes the median 55.",
+          "s": [
+            [
+              "Part (a): mean 57 kg and median 57 kg",
+              1
+            ],
+            [
+              "Part (b): mean 55 kg and median 55 kg",
+              1
+            ],
+            [
+              "Part (c): total must fall by 7 kg",
+              1
+            ],
+            [
+              "Part (c): the 61 kg player is replaced",
+              1
+            ],
+            [
+              "Part (d): the 48, 52 or 55 kg player, with the below/above count reason",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "Rekha timed five laps of the school track: 62, 58, 65, 60 and 70 seconds. Their mean is 63 s. She then ran a sixth lap in 57 s and wrote in her notebook: 'New mean = (63 + 57) / 2 = 60 s.'\n(a) Explain what is wrong with her method.\n(b) Find the correct mean of the six laps.\n(c) Find the median of the six laps.\n(d) Her coach will pick her for the relay if either the mean or the median of all her laps is under 61 s. She may run one more (seventh) lap; she has never run a lap faster than 57 s. Should she ask to run it? Justify using what each measure needs.",
+          "a": "(a) She averaged the old mean with one new value, as if the old mean were a single lap. The old mean stands for five laps, so the 57 s lap is only one of six values; the mean must be total time divided by 6. (b) Total = 315 + 57 = 372 s, mean = 372/6 = 62 s. (c) Sorted: 57, 58, 60, 62, 65, 70, so the median is (60 + 62)/2 = 61 s. (d) Yes. For the seven-lap mean to be under 61 s the total must be under 61 x 7 = 427 s, so the seventh lap must be under 427 - 372 = 55 s, faster than she has ever run. But the seven-lap median is the 4th value: any seventh lap of 60 s or less makes it 60 s, and a lap between 60 s and 61 s makes it that lap time. So any lap under 61 s, which she has managed three times already (57, 58, 60), gets her picked through the median.",
+          "s": [
+            [
+              "Part (a): the old mean represents five laps, so averaging it with one value is wrong",
+              1
+            ],
+            [
+              "Part (b): 372/6 = 62 s",
+              1
+            ],
+            [
+              "Part (c): median (60 + 62)/2 = 61 s",
+              1
+            ],
+            [
+              "Part (d): Yes; the mean needs a lap under 55 s, but any lap under 61 s brings the median under 61 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "The marks of a class have mean 25 and median 22, and no two students have the same marks. A late student's mark of 24 is included. What happens to the mean and the median?",
+          "o": [
+            "The mean falls and the median rises",
+            "Both the mean and the median rise",
+            "Both the mean and the median fall",
+            "The mean rises and the median falls"
+          ],
+          "a": "The mean falls and the median rises"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The data 4, 9, 12, 15, 21, 30, 33 has median 15.\n(a) Exactly two values are to be removed and the median must stay 15. What rule must the two removed values follow?\n(b) Would removing 4 and 9 keep the median at 15? Find the new median.",
+          "a": "(a) Remove one value from below 15 and one from above 15 (not 15 itself), so 15 still has the same number of values on each side. (b) No. Removing 4 and 9 leaves 12, 15, 21, 30, 33, whose median is 21.",
+          "s": [
+            [
+              "Part (a): one value below 15 and one above 15",
+              1
+            ],
+            [
+              "Part (b): No; new median 21",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.2",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: If every value in a data set of 12 values is increased by 5, the mean of the data set increases by 60. Give the reason or the corrected statement.",
+          "a": "False. The total increases by 12 x 5 = 60, but the total is then divided by the same 12 values, so the mean increases by 60/12 = 5. Corrected statement: the mean increases by 5 (and the total by 60).",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Corrects it: the total rises by 60 but the mean rises by only 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A PT teacher measured the heights of 32 students and found the mean to be 151.6 cm. Later she noticed that all of them had worn school shoes, and each pair adds 1.5 cm to a student's height. What is the correct mean height?",
+          "a": "150.1 cm",
+          "o": [
+            "150.1 cm",
+            "153.1 cm",
+            "151.6 cm",
+            "103.6 cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The mean of the first 40 odd numbers 1, 3, 5, ..., 79 is 40.\nReason (R): The mean of the first 40 odd numbers is double the mean of the first 40 counting numbers 1, 2, 3, ..., 40, which is 20.5.",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ],
+          "a": "A is true but R is false"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Let x1, x2, x3, ..., xn be n values whose mean is a.\n(a) Show, using algebra, that if every value is multiplied by 4 and then 7 is subtracted from it, the new mean is 4a - 7.\n(b) Use (a) to find the new mean when this rule is applied to the data 12, 15, 9, 20, 14.\n(c) Apply the rule to each value and check your answer to (b) directly.\n(d) Find the new mean if the steps are done in the other order (subtract 7 first, then multiply by 4), and say why it differs from (b).",
+          "a": "(a) New mean = [(4x1 - 7) + (4x2 - 7) + ... + (4xn - 7)]/n = [4(x1 + x2 + ... + xn) - 7n]/n = 4(x1 + ... + xn)/n - 7n/n = 4a - 7. (b) Old mean = 70/5 = 14, so the new mean = 4 x 14 - 7 = 49. (c) New data 41, 53, 29, 73, 49; total 245; mean 245/5 = 49, which matches. (d) (14 - 7) x 4 = 28. In this order the 7 is also multiplied by 4, so 28 is subtracted from 4a instead of 7: 4(a - 7) = 4a - 28.",
+          "s": [
+            [
+              "Part (a): writes the new mean as a sum over n and separates 4(x1 + ... + xn)/n",
+              1
+            ],
+            [
+              "Part (a): simplifies to 4a - 7",
+              1
+            ],
+            [
+              "Part (b): old mean 14, new mean 49",
+              1
+            ],
+            [
+              "Part (c): new values 41, 53, 29, 73, 49 with mean 49",
+              1
+            ],
+            [
+              "Part (d): 28, because the 7 is also multiplied by 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A fruit seller sells a mean of 18 kg of mangoes a day at Rs 60 per kg. Every day she also earns a fixed Rs 40 for home delivery. What are her mean daily takings?",
+          "a": "Rs 1,120",
+          "o": [
+            "Rs 1,120",
+            "Rs 3,480",
+            "Rs 1,080",
+            "Rs 1,800"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If every value in a data set is increased by 6, the median also increases by 6.\nReason (R): If every value in a data set is increased by 6, the mean increases by 6.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The mean length of 8 ribbons is 1.35 m.\n(a) Write the mean length in centimetres.\n(b) A tailor cuts 12 cm off every ribbon. Find the new mean length in centimetres and the new total length of the 8 ribbons.",
+          "a": "(a) Multiplying every length by 100 multiplies the mean by 100: 1.35 x 100 = 135 cm. (b) Subtracting 12 cm from every ribbon subtracts 12 from the mean: 135 - 12 = 123 cm. New total = 123 x 8 = 984 cm.",
+          "s": [
+            [
+              "Part (a): 135 cm",
+              1
+            ],
+            [
+              "Part (b): new mean 123 cm and new total 984 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A data set has mean 20. The same change is made to every value. Which change does NOT give a new mean of 30?",
+          "a": "Add 5, then multiply by 2",
+          "o": [
+            "Add 5, then multiply by 2",
+            "Add 10",
+            "Multiply by 1.5",
+            "Multiply by 2, then subtract 10"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Imran claims: 'If every value in any data set is increased by Rs 10, the mean also increases by 10%.' Test his claim on the amounts Rs 40, Rs 50 and Rs 90, and then give your verdict, saying for which data sets it would happen to work.",
+          "a": "Old mean = 180/3 = Rs 60. Adding Rs 10 to every value adds Rs 10 to the mean, so the new mean is Rs 70. The rise is 10 out of 60, which is about 16.7%, not 10%. Verdict: Imran is wrong. Adding a fixed amount raises the mean by that amount, not by that percentage; a rise of Rs 10 is 10% only when the old mean is Rs 100. (A 10% rise of every value would mean multiplying every value by 1.1.)",
+          "s": [
+            [
+              "Old mean Rs 60 and new mean Rs 70",
+              1
+            ],
+            [
+              "The rise is 10/60, about 16.7%, not 10%",
+              1
+            ],
+            [
+              "Verdict wrong: adding 10 adds 10 to the mean; it is 10% only when the old mean is 100",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "A data set has mean 12. Match each change made to every value with the new mean.\nColumn A:\n1. Add 3 to every value\n2. Multiply every value by 3\n3. Subtract 3 from every value\n4. Multiply every value by 3, then subtract 3\nColumn B:\n(P) 9\n(Q) 33\n(R) 15\n(S) 36",
+          "a": "1-R, 2-S, 3-P, 4-Q",
+          "o": [
+            "1-R, 2-S, 3-P, 4-Q",
+            "1-R, 2-Q, 3-P, 4-S",
+            "1-S, 2-R, 3-P, 4-Q",
+            "1-R, 2-S, 3-Q, 4-P"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A school weather club recorded the noon temperature for six days: 21, 19, 24, 18, 22 and 22 degrees C. A week later they found that their thermometer always showed 1.5 degrees C more than the true temperature.\n(a) Find the mean of the recorded temperatures.\n(b) Find the correct mean without correcting each reading. State the rule you used.\n(c) Find the correct median temperature.\n(d) Before finding the fault, the club had printed a poster saying 'Typical noon temperature: 21.5 degrees C' and 'Hottest minus coldest day: 6 degrees C'. Which of the two lines must be reprinted? Justify using your answers.",
+          "a": "(a) Total = 126, mean = 126/6 = 21 degrees C. (b) Subtracting the same number from every value subtracts it from the mean: 21 - 1.5 = 19.5 degrees C. (c) Sorted recorded values 18, 19, 21, 22, 22, 24 give median (21 + 22)/2 = 21.5; every value falls by 1.5 and the order is unchanged, so the correct median is 20 degrees C. (d) Only the 'typical temperature' line. 21.5 degrees C was the recorded median; the correct median is 20 degrees C, so that line is wrong. The hottest (24) and coldest (18) readings both fall by 1.5 to 22.5 and 16.5, so their difference stays 22.5 - 16.5 = 6 degrees C, and that line is still correct.",
+          "s": [
+            [
+              "Part (a): mean 21 degrees C",
+              1
+            ],
+            [
+              "Part (b): 19.5 degrees C, using 'subtract k from every value, subtract k from the mean'",
+              1
+            ],
+            [
+              "Part (c): recorded median 21.5, correct median 20 degrees C",
+              1
+            ],
+            [
+              "Part (d): reprint only the typical-temperature line (20, not 21.5); the difference stays 6 since both ends drop by 1.5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "A data set has mean a. The same steps are applied to every value. Consider these statements.\nI. Subtracting 4 from every value and then adding 4 to every value leaves the mean as a.\nII. 'Multiply by 3, then add 3' gives the same new mean as 'add 1, then multiply by 3'.\nIII. 'Halve, then add 5' gives the same new mean as 'add 5, then halve'.\nWhich of the statements are correct?",
+          "a": "I and II only",
+          "o": [
+            "I and II only",
+            "I only",
+            "II and III only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Five friends have Rs 40, Rs 55, Rs 60, Rs 70 and Rs 75; the mean is Rs 60. Their grandmother gives each of them Rs 15 more.\n(a) By how much does the total amount increase?\n(b) Use the fair-share idea of the mean to explain why each friend's fair share rises by exactly Rs 15, and state the new mean.",
+          "a": "(a) The total rises by 5 x 15 = Rs 75. (b) If the money were pooled and shared equally, the extra Rs 75 would be split among the same 5 friends, so each share grows by 75/5 = Rs 15. The new mean is 60 + 15 = Rs 75.",
+          "s": [
+            [
+              "Part (a): total rises by Rs 75",
+              1
+            ],
+            [
+              "Part (b): Rs 75 shared among 5 gives Rs 15 more each; new mean Rs 75",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Every value in a data set was multiplied by 4 and then increased by 2, and the new mean is 50. Tara works back as 50 / 4 - 2 = 10.5 and says the old mean was 10.5. Which statement is correct?",
+          "o": [
+            "12, because 2 must be subtracted before dividing by 4",
+            "10.5, because her order of undoing the steps is right",
+            "13, because 2 must be added back before dividing by 4",
+            "12.5, because the added 2 makes no difference to it"
+          ],
+          "a": "12, because 2 must be subtracted before dividing by 4"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "The data 10, 16, 22 has mean 16. Each value is changed by one fixed rule and the new mean is 28. Ravi says the rule was 'add 12'. Sita says the rule was 'multiply by 2, then subtract 4'.\n(a) Show that both rules give a new mean of 28.\n(b) Write the new data under each rule.\n(c) Can the new mean alone tell us which rule was used? What else in the new data would tell them apart?",
+          "a": "(a) Add 12: 16 + 12 = 28. Multiply by 2 then subtract 4: 2 x 16 - 4 = 28. (b) Ravi's rule: 22, 28, 34. Sita's rule: 16, 28, 40. (c) No, both give mean 28. The gaps differ: adding 12 keeps the gaps between values at 6 (the values only slide along), while multiplying by 2 doubles the gaps to 12.",
+          "s": [
+            [
+              "Part (a): both rules give 28 from the old mean 16",
+              1
+            ],
+            [
+              "Part (b): 22, 28, 34 and 16, 28, 40",
+              1
+            ],
+            [
+              "Part (c): No; adding keeps gaps of 6, doubling makes gaps of 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A tuition centre has five batches whose monthly fees are Rs 1,200, Rs 1,350, Rs 1,500, Rs 1,650 and Rs 1,800. To pay a new teacher, the mean fee must rise to at least Rs 1,620. Three plans are proposed.\nPlan A: raise every fee by Rs 150.\nPlan B: raise every fee by 8%.\nPlan C: raise every fee by 5% and then add Rs 50.\n(a) Find the old mean fee and the new mean fee under Plan A.\n(b) Without working out each new fee, find the new mean fee under Plan B and under Plan C.\n(c) Find how much more the Rs 1,200 batch would pay each month under each plan.\n(d) Parents of the lowest-fee batch ask for the smallest possible increase for their batch. Which plan should the centre choose so that it still meets the Rs 1,620 target? Justify.",
+          "a": "(a) Old mean = 7500/5 = Rs 1,500. Plan A: 1500 + 150 = Rs 1,650. (b) Plan B multiplies every fee by 1.08, so the mean becomes 1500 x 1.08 = Rs 1,620. Plan C multiplies by 1.05 and then adds 50, so the mean becomes 1500 x 1.05 + 50 = Rs 1,625. (c) Plan A: Rs 150. Plan B: 1200 x 0.08 = Rs 96. Plan C: 1200 x 1.05 + 50 = 1310, so Rs 110. (d) Plan B. All three plans reach a mean of at least Rs 1,620 (1,650, 1,620 and 1,625), and among them Plan B gives the Rs 1,200 batch the smallest increase, Rs 96 against Rs 110 and Rs 150. It meets the target exactly, with no margin, but the target says 'at least', so it is enough.",
+          "s": [
+            [
+              "Part (a): old mean Rs 1,500, Plan A Rs 1,650",
+              1
+            ],
+            [
+              "Part (b): Plan B Rs 1,620 and Plan C Rs 1,625 from the mean",
+              1
+            ],
+            [
+              "Part (c): increases Rs 150, Rs 96 and Rs 110",
+              1
+            ],
+            [
+              "Part (d): Plan B: meets the target and gives the smallest increase (Rs 96)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Nine students recorded how many times they rode their cycles in one week: 0, 1, 1, 2, 2, 3, 4, 5, 9.\n(a) Find the mean and the median for this week.\n(b) Next week every student rides 2 more times than this week. Without listing the new data, find next week's mean and median.",
+          "a": "(a) Total = 27, mean = 27/9 = 3; median (5th value) = 2. (b) Adding 2 to every value adds 2 to the mean and, since the order does not change, to the middle value too: mean 5, median 4.",
+          "s": [
+            [
+              "Part (a): mean 3 and median 2",
+              1
+            ],
+            [
+              "Part (b): mean 5 and median 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "(a) By pairing the first and last numbers, the second and second-last, and so on, find the mean of the 30 counting numbers 1, 2, 3, ..., 30.\n(b) Use (a) to find the mean of the first 30 multiples of 6: 6, 12, 18, ..., 180.\n(c) Use (a) to find the mean of the 30 numbers 5, 11, 17, ..., 179 (each is 1 less than a multiple of 6).\n(d) Ali says, 'Multiplying by 6 moves the mean up by 6, so the mean in (b) is 6 more than the mean in (a).' Find the real difference and explain his mistake.",
+          "a": "(a) The pairs 1 + 30, 2 + 29, ..., 15 + 16 are 15 pairs, each summing to 31; total = 465, mean = 465/30 = 15.5. (b) Each multiple is 6 times a counting number, so the mean is 6 x 15.5 = 93. (c) Each number is 6n - 1, so the mean is 6 x 15.5 - 1 = 92. (d) Real difference = 93 - 15.5 = 77.5, not 6. Ali confused multiplying with adding: adding 6 to every value raises the mean by 6, but multiplying every value by 6 multiplies the mean by 6.",
+          "s": [
+            [
+              "Part (a): 15 pairs of 31, mean 15.5",
+              1
+            ],
+            [
+              "Part (b): 6 x 15.5 = 93",
+              1
+            ],
+            [
+              "Part (c): 93 - 1 = 92",
+              1
+            ],
+            [
+              "Part (d): real difference 77.5",
+              1
+            ],
+            [
+              "Part (d): Ali used the adding rule for a multiplying change",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A test was marked out of 40 and the class mean was 26. The teacher converts every mark to a mark out of 100 by multiplying it by 2.5, and then adds 3 grace marks to every converted mark. What is the new class mean?",
+          "a": "68",
+          "o": [
+            "68",
+            "72.5",
+            "65",
+            "29"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Data set P is 3, 7, 8, 14 and data set Q is 103, 107, 108, 114.\n(a) Find the mean of P, and use it to write the mean of Q without adding the values of Q.\n(b) Compare the total distance of the values below the mean, and above the mean, in P and in Q. What does this show about where the mean sits?",
+          "a": "(a) Mean of P = 32/4 = 8. Every value of Q is 100 more, so the mean of Q is 108. (b) In P: below 5 + 1 = 6, above 6. In Q: below 5 + 1 = 6, above 6. The distances are exactly the same, so the mean keeps the same position relative to the data; the whole picture has just slid 100 along.",
+          "s": [
+            [
+              "Part (a): mean of P 8, mean of Q 108",
+              1
+            ],
+            [
+              "Part (b): distances 6 and 6 in both, so the mean's relative position is unchanged",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "reverse"
+          ],
+          "q": "Write a real-life situation in which the new mean of a data set is found by the rule: new mean = 12 x old mean + 500. Say what each value stands for, what the 12 and the 500 mean, and find the new mean when the old mean is 250.",
+          "a": "Example: In a class, each student saves the same amount every month all year, and the mean monthly saving is Rs 250. At the end of the year every student also gets Rs 500 as a Diwali gift and adds it to her savings. Each student's yearly total = 12 x monthly saving + 500, so the mean yearly total = 12 x 250 + 500 = Rs 3,500.",
+          "s": [
+            [
+              "A situation in which every value is multiplied by 12",
+              1
+            ],
+            [
+              "The same 500 is added to every value",
+              1
+            ],
+            [
+              "New mean 12 x 250 + 500 = 3,500",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.3",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "In a science test, Section 8A (30 students) had a mean of 62 marks and Section 8B (20 students) had a mean of 72 marks. Neha says, 'The mean for all 50 students together is (62 + 72)/2 = 67.' Check her claim by working out the totals, and explain when her shortcut would give the right answer.",
+          "a": "Total for 8A = 62 x 30 = 1860; total for 8B = 72 x 20 = 1440. Total for all 50 = 3300, so the mean is 3300/50 = 66. Verdict: Neha is wrong; the mean is 66, not 67. Her shortcut treats both sections as if they had the same number of students, but 8A has more students, so its lower mean pulls the combined mean closer to 62. The shortcut works only when the two groups have equal numbers.",
+          "s": [
+            [
+              "Totals 1860 and 1440",
+              1
+            ],
+            [
+              "Combined mean 3300/50 = 66",
+              1
+            ],
+            [
+              "Verdict wrong: the sections differ in size; the shortcut works only for equal groups",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The mean of the five numbers 7, 12, x, 9, 15 is 10.4, so x = ___. (Write the number in digits.)",
+          "a": "9"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "The mean of 6 numbers is 15, and five of them add up to 70. Consider these statements.\nI. The sixth number is 15, the same as the mean.\nII. If the sixth number had been 26, the mean would have been 16.\nIII. If a seventh number, 22, is included, the mean of the seven numbers is 16.\nWhich of the statements are correct?",
+          "a": "II and III only",
+          "o": [
+            "II and III only",
+            "I only",
+            "I and III only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Seven parcels on a delivery van have a mean weight of 18 kg. One parcel is delivered, and the mean weight of the six left on the van is 17 kg.\n(a) Find the total weight on the van before and after the delivery.\n(b) Find the weight of the parcel delivered, and say why it had to be heavier than 18 kg.",
+          "a": "(a) Before: 18 x 7 = 126 kg. After: 17 x 6 = 102 kg. (b) The parcel delivered weighed 126 - 102 = 24 kg. The mean fell when it was removed, and removing a value lowers the mean only when that value is above the mean, so it had to be heavier than 18 kg.",
+          "s": [
+            [
+              "Part (a): totals 126 kg and 102 kg",
+              1
+            ],
+            [
+              "Part (b): 24 kg, above the mean because removing it lowered the mean",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A cricket coach wrote down the scores of 8 batters and their mean, 34 runs. One score got smudged. The other seven are 28, 41, 19, 52, 30, 37 and 25. What was the smudged score?",
+          "a": "40",
+          "o": [
+            "40",
+            "6",
+            "34",
+            "33"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario",
+            "figure"
+          ],
+          "q": "A dot plot on a number line from 0 to 20 shows one dot above 4, two dots above 6, one dot above 9 and one dot above 13. One more dot is missing. The mean of all six values is 8. Above which number should the missing dot be drawn?",
+          "a": "10",
+          "o": [
+            "10",
+            "18",
+            "8",
+            "6"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The mean of four numbers is 15 and three of them are 12, 14 and 20, so the fourth number is 15, the same as the mean.\nReason (R): The total of a data set equals its mean multiplied by the number of values.",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ],
+          "a": "A is false but R is true"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: The mean of six test scores is 9, and the mean of five of those scores is 8. So the sixth score is 14. Give a reason.",
+          "a": "True. The six scores total 9 x 6 = 54 and the five scores total 8 x 5 = 40, so the sixth score is 54 - 40 = 14. (It is not 9 - 8 = 1: the means cannot simply be subtracted, because they are shares of different totals.)",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Totals 54 and 40, so the sixth score is 14",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A school library counts its student visitors each day. For one week the register shows: Monday 52, Tuesday 38, Wednesday (smudged), Thursday 45, Friday 61, Saturday 40. The mean for the six days is 47.\n(a) Find Wednesday's count.\n(b) Find the median number of visitors for the six days.\n(c) The library will get a new book rack if the mean over seven days (these six days and Sunday, a reading-fair day) is at least 48 visitors. Find the least number of visitors needed on Sunday.\n(d) The fair organiser expects about 56 visitors on Sunday, but rain is forecast, and on rainy days about 1 in 10 of the expected visitors usually stay away. Should the librarian tell the students that the rack is as good as certain? Give a reason with numbers.",
+          "a": "(a) Six-day total = 47 x 6 = 282. Known days add up to 52 + 38 + 45 + 61 + 40 = 236, so Wednesday = 282 - 236 = 46. (b) Sorted: 38, 40, 45, 46, 52, 61, so the median is (45 + 46)/2 = 45.5. (c) Seven-day total needed = 48 x 7 = 336, so Sunday needs at least 336 - 282 = 54 visitors. (d) No. 56 is only 2 more than the 54 needed. If 1 in 10 stay away because of rain, about 56 - 5.6 = 50.4, that is about 50, will come, which is short of 54. The rack is possible but not certain; she would need about 60 expected visitors (54 is 9/10 of 60) to be safe even with rain.",
+          "s": [
+            [
+              "Part (a): Wednesday 46",
+              1
+            ],
+            [
+              "Part (b): median 45.5",
+              1
+            ],
+            [
+              "Part (c): at least 54 visitors on Sunday",
+              1
+            ],
+            [
+              "Part (d): No; with rain about 50 come, below 54, so it is not certain",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "The mean of 20 values was found to be 64. Later it was found that the value 85 had been copied as 58, and the value 47 had been copied as 74. What is the correct mean?",
+          "a": "64",
+          "o": [
+            "64",
+            "62.65",
+            "65.35",
+            "61.3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two numbers are missing from the list 4, 10, ___, ___, 9, 13. The mean of all six numbers is 7.\n(a) Find the sum of the two missing numbers.\n(b) If both missing numbers must be counting numbers, how many possibilities are there? (Count 1 and 5 as different from 5 and 1.)",
+          "a": "(a) Total = 7 x 6 = 42; known numbers add up to 36, so the two missing numbers add up to 6. (b) The pairs are (1, 5), (2, 4), (3, 3), (4, 2), (5, 1): 5 possibilities.",
+          "s": [
+            [
+              "Part (a): the missing numbers add up to 6",
+              1
+            ],
+            [
+              "Part (b): 5 possibilities listed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "After 9 innings in a school cricket series, Smriti's mean score was 42 runs.\n(a) Find her total runs after 9 innings.\n(b) After her 10th innings her mean rose to 45. How many runs did she score in the 10th innings?\n(c) In the 11th innings she scored 12. Find her mean after 11 innings.\n(d) Her coach says, 'You will need a century in the 12th innings to bring your mean back to 45.' Is the coach right? Show your working.",
+          "a": "(a) 42 x 9 = 378 runs. (b) Total after 10 innings = 45 x 10 = 450, so the 10th innings = 450 - 378 = 72 runs. (c) Total = 462, mean = 462/11 = 42 runs. (d) For a mean of 45 after 12 innings she needs 45 x 12 = 540 runs, so the 12th innings needs 540 - 462 = 78 runs. The coach is wrong: 78 runs is enough; she does not need 100.",
+          "s": [
+            [
+              "Part (a): 378 runs",
+              1
+            ],
+            [
+              "Part (b): 72 runs",
+              1
+            ],
+            [
+              "Part (c): 462/11 = 42",
+              1
+            ],
+            [
+              "Part (d): needs 540 in all, so 78 in the 12th innings",
+              1
+            ],
+            [
+              "Part (d): coach wrong; 78, not a century, is enough",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "The mean weight of a group of friends is 38 kg. One more friend, who weighs 44 kg, joins them. What is the new mean weight of the group?",
+          "a": "Cannot be found from this data",
+          "o": [
+            "Cannot be found from this data",
+            "41 kg, halfway between 38 and 44",
+            "38 kg, since one friend changes nothing",
+            "39 kg, as the mean rises by 1 kg"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "The mean of five counting numbers is 4. Four of them are 6, 7, 3 and 5. Show that the fifth number cannot be a counting number, and say what this tells you about the data given.",
+          "a": "The total of five numbers with mean 4 must be 4 x 5 = 20. The four known numbers already add up to 6 + 7 + 3 + 5 = 21, so the fifth number would be 20 - 21 = -1, which is not a counting number. So the data cannot be correct as written: either the mean or one of the four numbers has been recorded wrongly.",
+          "s": [
+            [
+              "Total needed 20",
+              1
+            ],
+            [
+              "Known four add up to 21, so the fifth would be -1",
+              1
+            ],
+            [
+              "Concludes -1 is not a counting number, so the data has an error",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Match each situation with the missing value.\nColumn A:\n1. Four values have mean 10; a fifth value is included and the mean becomes 11. The fifth value is\n2. Five values have mean 12; one value is removed and the mean of the rest is 13. The value removed is\n3. Six values have mean 9; the value 14 is replaced by a new value and the mean becomes 10. The new value is\n4. Three values have mean 20; two of them have mean 24. The third value is\nColumn B:\n(P) 12\n(Q) 15\n(R) 8\n(S) 20",
+          "o": [
+            "1-Q, 2-R, 3-S, 4-P",
+            "1-R, 2-Q, 3-S, 4-P",
+            "1-Q, 2-R, 3-P, 4-S",
+            "1-Q, 2-S, 3-R, 4-P"
+          ],
+          "a": "1-Q, 2-R, 3-S, 4-P"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The numbers 21, 24, 26, x and 9 have mean 20.\n(a) Find x and the median of the five numbers.\n(b) A sixth number equal to x is now included. Find the new mean and the new median, and say which of the two moved.",
+          "a": "(a) Total = 20 x 5 = 100; the known four add up to 80, so x = 20. Sorted: 9, 20, 21, 24, 26, so the median is 21. (b) The new value 20 equals the mean, so the mean stays 20. Sorted: 9, 20, 20, 21, 24, 26, so the median is (20 + 21)/2 = 20.5. Only the median moved (down from 21), because 20 is below the old median.",
+          "s": [
+            [
+              "Part (a): x = 20 and median 21",
+              1
+            ],
+            [
+              "Part (b): mean stays 20, median falls to 20.5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "In a plastic-bottle recycling drive, Classes 6 to 10 of a school collected bottles. The notice board shows a mean of 84 bottles per class, but Class 9's number is torn off. The others are: Class 6: 62, Class 7: 75, Class 8: 99, Class 10: 103.\n(a) Find Class 9's count.\n(b) Classes 11 and 12 then join the drive, and the mean for all seven classes becomes 88. Find the total collected by Classes 11 and 12 together.\n(c) Class 12 collected 14 bottles more than Class 11. Find each class's count.\n(d) Every class that collected more than the seven-class mean gets a certificate. How many classes get one? Name them.",
+          "a": "(a) Five-class total = 84 x 5 = 420; known = 62 + 75 + 99 + 103 = 339; Class 9 = 420 - 339 = 81. (b) Seven-class total = 88 x 7 = 616, so Classes 11 and 12 together = 616 - 420 = 196. (c) Class 11 = (196 - 14)/2 = 91, Class 12 = 105. (d) Above 88 are Class 8 (99), Class 10 (103), Class 11 (91) and Class 12 (105): 4 classes. Class 9 (81), Class 6 and Class 7 do not.",
+          "s": [
+            [
+              "Part (a): Class 9 collected 81",
+              1
+            ],
+            [
+              "Part (b): Classes 11 and 12 together 196",
+              1
+            ],
+            [
+              "Part (c): Class 11 91, Class 12 105",
+              1
+            ],
+            [
+              "Part (d): 4 classes: 8, 10, 11 and 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "The data 14, 31, 9, 26, 40, 22, q has median 26.\n(a) Which of these could be q: 20, 26, 35, 50? Explain.\n(b) If instead we were told the mean is 24, how many values could q take? Find it.\n(c) Use (a) and (b) to say how finding an unknown value from the median differs from finding it from the mean.",
+          "a": "(a) Sorted without q: 9, 14, 22, 26, 31, 40. With q there are 7 values and the median is the 4th. If q is 22 or less, the 4th value is 22; if q is between 22 and 26, the 4th value is q itself, so the median is q, not 26; if q is 26 or more, the 4th value is 26. So 26, 35 and 50 work, and 20 does not. (b) Total = 24 x 7 = 168; the six known values add up to 142, so q = 26: only one value. (c) The mean fixes the unknown exactly because it uses the total, while the median only needs the unknown to lie on the correct side of the middle, so many values are possible.",
+          "s": [
+            [
+              "Part (a): 26, 35 and 50 work; 20 makes the median 22",
+              1
+            ],
+            [
+              "Part (b): q = 168 - 142 = 26, a single value",
+              1
+            ],
+            [
+              "Part (c): mean gives one value from the total; median allows a whole range",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A cricketer's mean score over 5 matches is 16 runs. After the sixth match his mean over all 6 matches is 18 runs. How many runs did he score in the sixth match?",
+          "o": [
+            "28",
+            "20",
+            "34",
+            "18"
+          ],
+          "a": "28"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A survey recorded 16 values with mean 45. Later two mistakes were found: one value written as 63 should have been 36, and a value of 27 had been left out completely, so the true data has 17 values.\n(a) Find the recorded total.\n(b) Find the correct total of the 17 values.\n(c) Find the correct mean, correct to two decimal places.\n(d) Priya says, 'The total did not change, so the mean is still 45.' Explain her mistake.",
+          "a": "(a) 45 x 16 = 720. (b) 720 - 63 + 36 + 27 = 720. (c) 720/17 = 42.35. (d) The total is the same, but it is now shared among 17 values instead of 16, so the mean falls from 720/16 = 45 to 720/17 = 42.35. Priya forgot that the number of values changed.",
+          "s": [
+            [
+              "Part (a): recorded total 720",
+              1
+            ],
+            [
+              "Part (b): correct total 720 after both corrections",
+              1
+            ],
+            [
+              "Part (c): 720/17 = 42.35",
+              1
+            ],
+            [
+              "Part (d): the count changed from 16 to 17",
+              1
+            ],
+            [
+              "Part (d): same total over more values gives a smaller mean",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The mean of 6, 11, 8, y, 14, 9 is 10.\n(a) Find y.\n(b) Check your answer using the balancing idea: compare the total distance of the values below 10 with the total distance of the values above 10.",
+          "a": "(a) Total = 10 x 6 = 60; the known values add up to 48, so y = 12. (b) Below 10: 6, 8, 9 are at distances 4 + 2 + 1 = 7. Above 10: 11, 14, 12 are at distances 1 + 4 + 2 = 7. The totals are equal, so 10 is the balancing point and y = 12 is right.",
+          "s": [
+            [
+              "Part (a): y = 12",
+              1
+            ],
+            [
+              "Part (b): distances 7 below and 7 above",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.4",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "In a dart game, 20 students each kept throwing until they hit the bull's eye. The table shows how many throws they needed.\nThrows: 1, 2, 3, 4, 5, 6, 7\nStudents: 0, 1, 0, 3, 6, 8, 2\nWhich description of the data is correct?",
+          "o": [
+            "Minimum 2, mean 5.3, median 5.5",
+            "Minimum 2, mean 5.3, median 6",
+            "Minimum 2, mean 5.3, median 5",
+            "Minimum 1, mean 5.3, median 5.5"
+          ],
+          "a": "Minimum 2, mean 5.3, median 5.5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a class of 20 pupils, 1 pupil has no siblings, 6 have 1 sibling, 7 have 2 siblings, 4 have 3 siblings and 2 have 4 siblings. The mean number of siblings per pupil is ___. (Write the number in digits.)",
+          "a": "2"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In a frequency table with 36 values in all, the median is the average of the 18th and the 19th values when the data is sorted.\nReason (R): The median of data in a frequency table is the value in the middle row of the table.",
+          "a": "A is true but R is false",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Karan claims: 'If every frequency in a frequency table is doubled, neither the mean nor the median changes.' Test his claim on the table: value 10 with frequency 2, value 20 with frequency 3, value 30 with frequency 1. Then give your verdict.",
+          "a": "Original: total = 20 + 60 + 30 = 110 over 6 values, mean = 18.33; the 3rd and 4th values are both 20, so the median is 20. Doubled (frequencies 4, 6, 2): total = 220 over 12 values, mean = 18.33; the 6th and 7th values are both 20, so the median is 20. Verdict: Karan is right. Doubling every frequency doubles both the total and the count, so the mean is unchanged, and every value simply appears twice as often in the sorted list, so the middle is unchanged.",
+          "s": [
+            [
+              "Original table: mean 18.33 and median 20",
+              1
+            ],
+            [
+              "Doubled table: mean 18.33 and median 20",
+              1
+            ],
+            [
+              "Verdict: right, since total and count both double and the sorted list keeps the same middle",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Twenty students' quiz marks are: 5 marks (1 student), 6 (3 students), 7 (5), 8 (6), 9 (4), 10 (1). Consider these statements.\nI. The total of all the marks is 152, so the mean is 7.6.\nII. The median is 7.5, halfway between the lowest mark 5 and the highest mark 10.\nIII. Exactly half of the students scored more than the mean.\nWhich of the statements are correct?",
+          "o": [
+            "I only",
+            "I and II only",
+            "I and III only",
+            "I, II and III"
+          ],
+          "a": "I only"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "In a ring-toss stall at a school fair, each of 30 students kept throwing until a ring landed on the peg. The organiser noted how many throws each needed:\nThrows: 1, 2, 3, 4, 5, 6\nStudents: 2, 3, 7, 9, 5, 4\n(a) Find the total number of throws made by all 30 students.\n(b) Find the mean number of throws.\n(c) Find the median number of throws, showing the running totals.\n(d) A prize is given to every student who needed fewer throws than the mean. How many students get a prize, and what fraction of the 30 is that?",
+          "a": "(a) 1x2 + 2x3 + 3x7 + 4x9 + 5x5 + 6x4 = 2 + 6 + 21 + 36 + 25 + 24 = 114 throws. (b) 114/30 = 3.8 throws. (c) Running totals: 2, 5, 12, 21, 26, 30. The median is the average of the 15th and 16th values; both lie in the '4 throws' group (positions 13 to 21), so the median is 4. (d) Fewer than 3.8 means 1, 2 or 3 throws: 2 + 3 + 7 = 12 students, which is 12/30 = 2/5 of the students.",
+          "s": [
+            [
+              "Part (a): 114 throws",
+              1
+            ],
+            [
+              "Part (b): mean 3.8",
+              1
+            ],
+            [
+              "Part (c): running totals and median 4",
+              1
+            ],
+            [
+              "Part (d): 12 students, 2/5 of them",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A frequency table of 20 values reads: value 1 (frequency 5), value 2 (frequency 8), value 3 (frequency 7). Its median is 2. Five more values, all equal to 3, are added. What is the median of the 25 values?",
+          "a": "2",
+          "o": [
+            "2",
+            "3",
+            "2.5",
+            "2.28"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "A frequency table shows: value 2 (frequency 3), value 4 (frequency 5), value 6 (frequency 8), value 8 (frequency 4). Consider these statements.\nI. The total of all 20 values is 106.\nII. The median is 6.\nIII. The mean is less than the median.\nWhich of the statements are correct?",
+          "a": "I, II and III",
+          "o": [
+            "I, II and III",
+            "I and II only",
+            "II only",
+            "I and III only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: In a frequency table, the median is always the value that has the largest frequency. Give a reason or a counter-example.",
+          "a": "False. Counter-example: values 1, 2, 3, 4 with frequencies 6, 1, 4, 5 (16 values). The value with the largest frequency is 1. Running totals are 6, 7, 11, 16, so the 8th and 9th values are both 3 and the median is 3, not 1.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Gives a valid counter-example with the median worked out by running totals",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A frequency table shows: value 1 (frequency 3), value 2 (frequency f), value 3 (frequency 5), value 4 (frequency 2). The mean is 2.4.\n(a) Find f.\n(b) Use your value of f to find the median.",
+          "a": "(a) Total of values = 3 + 2f + 15 + 8 = 26 + 2f and the count is 10 + f. So (26 + 2f)/(10 + f) = 2.4, giving 26 + 2f = 24 + 2.4f, so 0.4f = 2 and f = 5. (b) Frequencies 3, 5, 5, 2 (15 values); running totals 3, 8, 13, 15. The median is the 8th value, which is 2.",
+          "s": [
+            [
+              "Part (a): equation (26 + 2f)/(10 + f) = 2.4 solved to f = 5",
+              1
+            ],
+            [
+              "Part (b): 15 values, the 8th is 2, so the median is 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Two sections took the same 5-mark quiz. Each has 25 students.\nMarks: 0, 1, 2, 3, 4, 5\nSection 8A: 1, 2, 4, 8, 6, 4\nSection 8B: 3, 3, 3, 4, 7, 5\n(a) Find the mean mark of each section.\n(b) Find the median mark of each section.\n(c) In each section, how many students scored more than their own section's mean?\n(d) The teacher says, '8B's mean is lower mainly because of its three students who scored 0.' Test this: find 8B's mean if those three had scored 2 each, and compare it with 8A's mean.",
+          "a": "(a) 8A: 0 + 2 + 8 + 24 + 24 + 20 = 78, mean 78/25 = 3.12. 8B: 0 + 3 + 6 + 12 + 28 + 25 = 74, mean 74/25 = 2.96. (b) Both medians are the 13th value. 8A running totals 1, 3, 7, 15: the 13th is 3. 8B running totals 3, 6, 9, 13: the 13th is 3. Both medians are 3. (c) 8A: more than 3.12 means 4 or 5 marks: 6 + 4 = 10 students. 8B: more than 2.96 means 3, 4 or 5: 4 + 7 + 5 = 16 students. (d) 8B's total would rise by 3 x 2 = 6 to 80, mean 80/25 = 3.2, which is higher than 8A's 3.12. So the teacher's statement is supported: those three low scores pull 8B's mean below 8A's.",
+          "s": [
+            [
+              "Part (a): means 3.12 and 2.96",
+              1
+            ],
+            [
+              "Part (b): both medians 3",
+              1
+            ],
+            [
+              "Part (c): 10 students in 8A and 16 in 8B",
+              1
+            ],
+            [
+              "Part (d): 8B's new total 80, mean 3.2",
+              1
+            ],
+            [
+              "Part (d): 3.2 is above 3.12, so the teacher is supported",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Over 30 school days a student noted how late the bus was: 0 minutes on 9 days, 5 minutes on 7 days, 10 minutes on 6 days, 15 minutes on 4 days and 20 minutes on 4 days. What was the median delay?",
+          "a": "5 minutes",
+          "o": [
+            "5 minutes",
+            "10 minutes",
+            "0 minutes",
+            "7.83 minutes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A frequency table shows value 1 with frequency 10, value 2 with frequency 8 and value 9 with frequency 2. Lalitha finds the mean as (1 + 2 + 9)/3 = 4.\n(a) Find the correct mean.\n(b) Explain why her answer is too high.",
+          "a": "(a) Total = 1 x 10 + 2 x 8 + 9 x 2 = 10 + 16 + 18 = 44 over 20 values; mean = 44/20 = 2.2. (b) Her method counts each value once, so the rare value 9 (only 2 times) gets the same weight as 1 (10 times). The large value is over-counted, which pulls her answer up.",
+          "s": [
+            [
+              "Part (a): mean 2.2",
+              1
+            ],
+            [
+              "Part (b): she ignored frequencies, so the rare large value 9 was over-weighted",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "A frequency table shows value 3 with frequency 6, value 4 with frequency 2 and value 5 with frequency x, where x is a whole number (it may be 0). Show that the mean of this data can never be 3.2.",
+          "a": "With x = 0 the mean is (18 + 8)/8 = 26/8 = 3.25, which is already above 3.2. Every value of 5 added is greater than the current mean, and including a value greater than the mean raises the mean, so as x grows the mean only rises above 3.25. So the mean is at least 3.25 and can never be 3.2. (Algebra agrees: (26 + 5x)/(8 + x) = 3.2 gives 1.8x = -0.4, which is not a whole number.)",
+          "s": [
+            [
+              "Mean with x = 0 is 3.25",
+              1
+            ],
+            [
+              "Each extra 5 is above the mean, so the mean only rises",
+              1
+            ],
+            [
+              "Concludes the mean is never below 3.25, so 3.2 is impossible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A librarian asked 30 students how many books each read last month:\nBooks: 0, 1, 2, 3, 4\nStudents: 2, 4, 6, 10, 8\nArun was asked to find the mean and median. He wrote: 'There are 5 rows. The middle row is 2 books, so the median is 2. Mean = (0 + 1 + 2 + 3 + 4)/5 = 2.'\n(a) Find the correct mean.\n(b) Find the correct median using running totals.\n(c) Explain what is wrong with Arun's method for the median.\n(d) The librarian gives a badge to every student who read more books than the median. How many students would get a badge if she used Arun's median, and how many with the correct one?",
+          "a": "(a) Total = 0 + 4 + 12 + 30 + 32 = 78 books; mean = 78/30 = 2.6. (b) Running totals 2, 6, 12, 22, 30. The median is the average of the 15th and 16th values, both in the '3 books' group (positions 13 to 22), so the median is 3. (c) He took the middle row of the table, which ignores how many students are in each row; the median is the middle student, found from the running totals. (d) With Arun's median 2: more than 2 books means 3 or 4, so 10 + 8 = 18 badges. With the correct median 3: only the 4-book readers, 8 badges. Arun's error would give 10 extra badges.",
+          "s": [
+            [
+              "Part (a): mean 2.6",
+              1
+            ],
+            [
+              "Part (b): running totals and median 3",
+              1
+            ],
+            [
+              "Part (c): the middle row ignores the frequencies; the middle student is needed",
+              1
+            ],
+            [
+              "Part (d): 18 badges with Arun's median, 8 with the correct one",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A frequency table reads: value 1 (frequency 2), value 2 (4), value 3 (7), value 4 (4), value 5 (3). Its median is 3. Which change would NOT change the median?",
+          "a": "Moving both value-1 students to value 2",
+          "o": [
+            "Moving both value-1 students to value 2",
+            "Adding 8 extra students with value 5",
+            "Adding 9 extra students with value 1",
+            "Removing all seven students who have value 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "figure"
+          ],
+          "q": "A dot plot shows the number of pets owned by 20 children. Above 0 there are 5 dots, above 1 there are 7 dots, above 2 there are 4 dots, above 3 there is 1 dot and above 4 there are 3 dots.\n(a) Find the mean number of pets.\n(b) Find the median number of pets.",
+          "a": "(a) Total = 0 x 5 + 1 x 7 + 2 x 4 + 3 x 1 + 4 x 3 = 30; mean = 30/20 = 1.5. (b) Running totals 5, 12, 16, 17, 20. The 10th and 11th values are both 1, so the median is 1.",
+          "s": [
+            [
+              "Part (a): mean 1.5",
+              1
+            ],
+            [
+              "Part (b): median 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Twenty students noted how many hours of TV they watched on Sunday: 0 hours (3 students), 1 hour (5), 2 hours (6), 3 hours (4), 4 hours (2).\n(a) Find the median.\n(b) Some more students, each of whom watched 4 hours, are added to the survey. Find the least number of such students needed to make the median 3, and show that one fewer is not enough.",
+          "a": "(a) Running totals 3, 8, 14, 18, 20. The 10th and 11th values are both 2, so the median is 2. (b) The values up to 2 hours fill positions 1 to 14, so the middle position(s) must be beyond 14. With 9 more students there are 29 values and the median is the 15th, which is 3. With 8 more students there are 28 values and the median is the average of the 14th (2) and 15th (3), which is 2.5. So the least number is 9.",
+          "s": [
+            [
+              "Part (a): median 2",
+              1
+            ],
+            [
+              "Part (b): middle position must pass 14; with 9 added the 15th of 29 is 3",
+              1
+            ],
+            [
+              "Part (b): with 8 added the median is 2.5, so 9 is the least",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "At a school fair, 45 tickets were sold at Rs 20, 30 tickets at Rs 50 and 25 tickets at Rs 100. What was the mean price of a ticket sold?",
+          "a": "Rs 49",
+          "o": [
+            "Rs 49",
+            "Rs 56.67",
+            "Rs 50",
+            "Rs 1,633.33"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A frequency table has values 10, 20, 30 and 40, and its running totals of frequency are 8, 15, 29 and 35.\n(a) Find the median.\n(b) Find the frequency of each value and then the mean. Is the mean more or less than the median?",
+          "a": "(a) There are 35 values, so the median is the 18th. Positions 16 to 29 have the value 30, so the median is 30. (b) Frequencies: 8, 15 - 8 = 7, 29 - 15 = 14, 35 - 29 = 6. Total = 80 + 140 + 420 + 240 = 880; mean = 880/35 = 25.14, which is less than the median.",
+          "s": [
+            [
+              "Part (a): the 18th value, 30",
+              1
+            ],
+            [
+              "Part (b): frequencies 8, 7, 14, 6; mean 25.14, less than the median",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A shop sold 40 school T-shirts in March. The sizes sold were: size 28 (6 shirts), size 30 (10), size 32 (14), size 34 (7), size 36 (3).\n(a) Find the mean size sold.\n(b) Find the median size sold.\n(c) In April the shop sold exactly the same numbers of each size, except that size 36 sold 13 shirts instead of 3. Find the mean and the median size for April.\n(d) The shopkeeper's rule is: 'I will order size 36 in bulk for May only if April's mean size is above 32 and at least a quarter of April's customers bought size 36.' Use your April figures to decide whether he should place the bulk order, and say how close the decision is.",
+          "a": "(a) Total = 28x6 + 30x10 + 32x14 + 34x7 + 36x3 = 168 + 300 + 448 + 238 + 108 = 1262; mean = 1262/40 = 31.55. (b) Running totals 6, 16, 30, 37, 40. The 20th and 21st values are both 32, so the median is 32. (c) April: 50 shirts, total = 1262 + 36 x 10 = 1622, mean = 1622/50 = 32.44. Running totals 6, 16, 30, 37, 50; the 25th and 26th values are both 32, so the median is still 32. (d) Yes, but only just. April's mean size is 32.44, which is above 32, and 13 of the 50 April customers bought size 36, which is 13/50 = 26%, just above a quarter (25%, that is 12.5 shirts). Had one fewer size 36 shirt been sold (12 of 49, about 24.5%), the second condition would have failed. Note that the median stayed at 32, so the higher mean comes only from the extra size 36 shirts.",
+          "s": [
+            [
+              "Part (a): mean 31.55",
+              1
+            ],
+            [
+              "Part (b): median 32",
+              1
+            ],
+            [
+              "Part (c): April mean 32.44",
+              1
+            ],
+            [
+              "Part (c): April median still 32",
+              1
+            ],
+            [
+              "Part (d): both conditions met (32.44 > 32 and 13/50 = 26% >= 25%), so order, though only just",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.5",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "A canteen manager keeps a spreadsheet. Row 1 holds the headings. Column A lists the items: A2 Samosa, A3 Idli, A4 Poha, A5 Dosa, A6 Upma. Columns B, C, D, E, F and G hold the number of plates sold on Monday, Tuesday, Wednesday, Thursday, Friday and Saturday. Match each formula with what it calculates.\nColumn A:\n1. =SUM(B2:G2)\n2. =AVERAGE(B2:B6)\n3. =SUM(E2:E6)\n4. =AVERAGE(B5:G5)\nColumn B:\n(P) Mean number of Dosa plates sold per day\n(Q) Total plates of all items sold on Thursday\n(R) Total Samosa plates sold in the week\n(S) Mean plates sold per item on Monday",
+          "a": "1-R, 2-S, 3-Q, 4-P",
+          "o": [
+            "1-R, 2-S, 3-Q, 4-P",
+            "1-R, 2-P, 3-Q, 4-S",
+            "1-Q, 2-S, 3-R, 4-P",
+            "1-R, 2-S, 3-P, 4-Q"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A sports teacher's spreadsheet has headings in row 1 and students' names in column A from row 2 onwards. Columns B, C, D, E and F hold the scores in the 100 m race, long jump, high jump, shot put and relay. Kiran is the 9th student in the list. Which cell holds Kiran's shot put score?",
+          "o": [
+            "E10",
+            "E9",
+            "D10",
+            "10E"
+          ],
+          "a": "E10"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A teacher types =SUM(C4:C18) in a cell of her marks sheet. This formula adds ___ values. (Write the number in digits.)",
+          "a": "15"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a spreadsheet, cells B2 to B6 hold 12, 15, 9, 20 and 14, and cell B7 holds the formula =AVERAGE(B2:B6).\n(a) What number does B7 show?\n(b) Kavya then changes B4 from 9 to 19. Without adding all the numbers again, find what B7 shows now.",
+          "a": "(a) Sum = 70 over 5 cells, so B7 shows 14. (b) The sum rises by 10 to 80, and the range still has 5 cells, so the average rises by 10/5 = 2: B7 shows 16.",
+          "s": [
+            [
+              "Part (a): 14",
+              1
+            ],
+            [
+              "Part (b): the sum rises by 10 over 5 cells, so B7 shows 16",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A class teacher's sheet has 30 students' names in A2 to A31 and their Maths marks in column D, next to their names. Which formula gives the class average in Maths?",
+          "a": "=AVERAGE(D2:D31)",
+          "o": [
+            "=AVERAGE(D2:D31)",
+            "=SUM(D2:D31)",
+            "=AVERAGE(D2:D30)",
+            "=AVERAGE(B2:G2)"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When every cell from C2 to C21 holds a number, the formulas =AVERAGE(C2:C21) and =SUM(C2:C21)/20 give the same result.\nReason (R): The range C2:C21 contains 20 cells, and an average is the sum of the values divided by the number of values.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A marks sheet has 30 students in rows 2 to 31, with Hindi marks in column B and English marks in column C. The sheet shows =SUM(B2:B31) = 966 and =SUM(C2:C31) = 981. Divya claims, 'For this sheet, to find which subject has the higher class average, I need not find the averages; I can just compare these two sums.' Check her claim and say when it would fail.",
+          "a": "Averages: Hindi 966/30 = 32.2, English 981/30 = 32.7, so English is higher, which is the same answer as comparing 981 with 966. Verdict: Divya is right for this sheet, because both ranges have the same number of cells (30), so dividing both sums by 30 keeps their order. It would fail if the two ranges had different numbers of values, for example a sum over 30 marks compared with a sum over 25 marks.",
+          "s": [
+            [
+              "Finds the averages 32.2 and 32.7",
+              1
+            ],
+            [
+              "Notes the order is the same as the sums, because both ranges have 30 cells",
+              1
+            ],
+            [
+              "States she is right here but the method fails when the ranges have different counts",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A sheet holds the Telugu marks of 22 students in C2:C23. To show the class average in C25, the teacher types =SUM(C2:C23)/23.\n(a) What is wrong with her formula, and will the number shown be too big or too small?\n(b) Write two different formulas that would show the correct class average.",
+          "a": "(a) The range C2:C23 holds 22 marks (rows 2 to 23), but she divides the sum by 23, so the result is too small. (b) =AVERAGE(C2:C23), or =SUM(C2:C23)/22.",
+          "s": [
+            [
+              "Part (a): 22 cells, not 23, so dividing by 23 makes the average too small",
+              1
+            ],
+            [
+              "Part (b): =AVERAGE(C2:C23) and =SUM(C2:C23)/22",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A sheet lists 22 students in rows 2 to 23, with Maths marks in column E. To show the class average below the last student, the teacher types =AVERAGE(E2:E22) in cell E24. What is wrong?",
+          "a": "It leaves out the last student's mark",
+          "o": [
+            "It leaves out the last student's mark",
+            "It includes the heading in row 1",
+            "It should use SUM in place of AVERAGE here",
+            "It averages a row, not a column"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about a spreadsheet in which each row is a student and each column is a subject.\nI. The range B3:G3 describes 6 cells, all in row 3.\nII. The formula =SUM(B3:G3) gives the total marks of one subject for the whole class.\nIII. The formula =AVERAGE(B7:D7) adds B7 and D7 and divides by 2.\nWhich of the statements are correct?",
+          "a": "I only",
+          "o": [
+            "I only",
+            "I and II only",
+            "I and III only",
+            "II and III only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "An eco-club records the kilograms of waste paper collected by four houses over five weeks. Row 1 holds headings, rows 2 to 5 hold Red, Blue, Green and Yellow houses, and columns B to F hold Weeks 1 to 5:\nRed: 12, 15, 9, 14, 10\nBlue: 8, 11, 16, 13, 14\nGreen: 14, 10, 11, 9, 20\nYellow: 10, 13, 12, 15, 11\n(a) Write the formula to type in G2 for Red's five-week total, and give its value.\n(b) Write the formula to type in D6 for the average collected per house in Week 3, and give its value.\n(c) Which house collected the most paper in the five weeks?\n(d) Blue house says Green won only because of its one big week (Week 5) and asks the club to give the trophy to the house with the highest average over Weeks 1 to 4 instead. Write the formula for Green's Weeks 1 to 4 average, find which house would win under Blue's rule, and decide whether the club should switch rules.",
+          "a": "(a) =SUM(B2:F2); 12 + 15 + 9 + 14 + 10 = 60 kg. (b) =AVERAGE(D2:D5); (9 + 16 + 11 + 12)/4 = 12 kg. (c) Totals: Red 60, Blue 62, Green 64, Yellow 61, so Green collected the most. (d) =AVERAGE(B4:E4) gives (14 + 10 + 11 + 9)/4 = 11 for Green. The Weeks 1 to 4 averages are Red 50/4 = 12.5, Blue 48/4 = 12, Green 11 and Yellow 50/4 = 12.5, so Red and Yellow would tie and Blue still would not win. The club should keep the five-week total: Blue's rule throws away a full week of real collections and does not even give a single winner, while the five-week total (Green 64) uses all the data.",
+          "s": [
+            [
+              "Part (a): =SUM(B2:F2), value 60",
+              1
+            ],
+            [
+              "Part (b): =AVERAGE(D2:D5), value 12",
+              1
+            ],
+            [
+              "Part (c): Green with 64 kg",
+              1
+            ],
+            [
+              "Part (d): =AVERAGE(B4:E4) = 11; Red and Yellow tie at 12.5 under Blue's rule, so keep the five-week total",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a marks sheet each row is a student and each column is a subject. Nagesh is in row 3, and his six subject marks are in B3 to G3: 44, 38, 41, 35, 40, 37. Column B holds 44, 30, 26, 39, 33, 28 in rows 3 to 8. To get Nagesh's total, the teacher types =SUM(B3:B8).\n(a) What number does her formula show, and what does that number really stand for?\n(b) Write the correct formula and the total it shows.",
+          "a": "(a) It shows 44 + 30 + 26 + 39 + 33 + 28 = 200. That is the total of the column-B subject marks of the six students in rows 3 to 8, not Nagesh's total. (b) =SUM(B3:G3), because Nagesh's marks lie along row 3; it shows 44 + 38 + 41 + 35 + 40 + 37 = 235.",
+          "s": [
+            [
+              "Part (a): 200, the column-B marks of six different students",
+              1
+            ],
+            [
+              "Part (b): =SUM(B3:G3), showing 235",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A class sheet lists 22 students in rows 2 to 23, with Odia marks in column B and Telugu marks in column C. The sheet shows =SUM(B2:B23) = 678 and =SUM(C2:C23) = 721.\n(a) Find the class average in each subject, to two decimal places.\n(b) A new student joins and is entered in row 24 with Odia 40 and Telugu 25. Write the new formula for the Odia total.\n(c) Find the new class average in each subject.\n(d) Did the new student change which subject has the higher class average?\n(e) Show that no Telugu mark for the new student could have made the two new class averages equal (Odia staying 40).",
+          "a": "(a) Odia 678/22 = 30.82; Telugu 721/22 = 32.77. (b) =SUM(B2:B24). (c) Odia (678 + 40)/23 = 718/23 = 31.22; Telugu (721 + 25)/23 = 746/23 = 32.43. (d) No, Telugu is still higher. (e) Equal averages over 23 students need equal totals, so the Telugu total would have to be 718. The other 22 Telugu marks already add up to 721, so the new mark would have to be 718 - 721 = -3, which is impossible.",
+          "s": [
+            [
+              "Part (a): 30.82 and 32.77",
+              1
+            ],
+            [
+              "Part (b): =SUM(B2:B24)",
+              1
+            ],
+            [
+              "Part (c): 31.22 and 32.43",
+              1
+            ],
+            [
+              "Part (d): No, Telugu is still higher",
+              1
+            ],
+            [
+              "Part (e): needs a Telugu mark of -3, so impossible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A teacher's sheet has headings in row 1, students in rows 2 to 7 and subjects in columns B (Hindi), C (English), D (Maths) and E (Science):\nAnu: 34, 28, 40, 36\nBala: 25, 31, 22, 27\nChitra: 38, 35, 39, 33\nDev: 29, 26, 31, 30\nEsha: 40, 37, 35, 38\nFaiz: 22, 30, 27, 24\n(a) Write the formula for Chitra's total and give its value.\n(b) Write the formula for the class average in Maths and give its value, to two decimal places.\n(c) Using only the SUM of each column, decide whether the class average in English is greater than in Hindi.\n(d) Bala's Maths mark is then corrected from 22 to 32. Without adding the column again, find the new class average in Maths.\n(e) After the correction, which subject has the highest class average, and by how much is it ahead of the next one (to two decimal places)?",
+          "a": "(a) =SUM(B4:E4) = 38 + 35 + 39 + 33 = 145. (b) =AVERAGE(D2:D7) = 194/6 = 32.33. (c) =SUM(B2:B7) = 188 and =SUM(C2:C7) = 187; both columns have 6 marks, so English (187) is not greater than Hindi (188). (d) The Maths sum rises by 10 to 204, so the average is 204/6 = 34. (e) Hindi 188/6 = 31.33, English 187/6 = 31.17, Science 188/6 = 31.33, Maths 34. Maths is highest, ahead of Hindi and Science by 34 - 31.33 = 2.67.",
+          "s": [
+            [
+              "Part (a): =SUM(B4:E4), value 145",
+              1
+            ],
+            [
+              "Part (b): =AVERAGE(D2:D7), value 32.33",
+              1
+            ],
+            [
+              "Part (c): sums 188 and 187 over equal counts, so English is not greater",
+              1
+            ],
+            [
+              "Part (d): new Maths average 34",
+              1
+            ],
+            [
+              "Part (e): Maths highest, 2.67 ahead of Hindi and Science",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A cell holds =AVERAGE(C2:C9) and shows 42. A new value, 51, is typed into C10, and the formula is changed to =AVERAGE(C2:C10). What will the cell show now?",
+          "o": [
+            "43",
+            "46.5",
+            "42",
+            "48.375"
+          ],
+          "a": "43"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "Every cell from B2 to B5 holds a number. Ravi says his sheet shows =SUM(B2:B5) as 100 and =AVERAGE(B2:B5) as 30. Show that both results cannot be correct, and find what the average must be if the sum is correct.",
+          "a": "B2:B5 has 4 cells, so the average must be the sum divided by 4. If the sum is 100, the average must be 100/4 = 25, not 30. If the average were 30, the sum would have to be 30 x 4 = 120, not 100. So the two results contradict each other; with sum 100 the average is 25.",
+          "s": [
+            [
+              "Counts 4 cells in B2:B5",
+              1
+            ],
+            [
+              "Shows average 30 needs sum 120, or sum 100 gives average 25",
+              1
+            ],
+            [
+              "Concludes the two results contradict; correct average 25",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "Rohan logs his daily steps in a sheet. Cells B2 to G2 hold Monday to Saturday: 6800, 7200, 8100, 7600, 6900 and 8400. H2 held Sunday's steps, and I2 holds =AVERAGE(B2:H2), which showed 7600. Then H2 was deleted by mistake.\n(a) How many cells does the range B2:H2 contain?\n(b) Work backwards to find the number that was in H2.\n(c) Next week Rohan's doctor wants I2 to show at least 8000. If Monday to Saturday stay exactly as this week, what is the least Sunday count he needs?\n(d) Rohan has never walked more than 9500 steps in a day. Can he reach the target by changing only Sunday? If not, and he walks 9500 on Sunday, how many extra steps must he add on each of Monday to Saturday (the same number each day)?",
+          "a": "(a) 7 cells (B, C, D, E, F, G, H). (b) Total = 7600 x 7 = 53200; Monday to Saturday add up to 45000, so H2 was 53200 - 45000 = 8200. (c) Total needed = 8000 x 7 = 56000, so Sunday needs 56000 - 45000 = 11000 steps. (d) No, 11000 is more than his best of 9500. With 9500 on Sunday the total is 54500, which is 1500 short; spread over 6 days that is 1500/6 = 250 extra steps each day.",
+          "s": [
+            [
+              "Part (a): 7 cells",
+              1
+            ],
+            [
+              "Part (b): H2 was 8200",
+              1
+            ],
+            [
+              "Part (c): at least 11000 on Sunday",
+              1
+            ],
+            [
+              "Part (d): No; 250 extra steps each day from Monday to Saturday",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "tags": [
+            "scenario"
+          ],
+          "q": "In a marks sheet, cell D4 holds Ashwin's English mark (Ashwin is in row 4; English is column D). Which formula does NOT use Ashwin's English mark?",
+          "a": "=SUM(E4:G4)",
+          "o": [
+            "=SUM(E4:G4)",
+            "=SUM(B4:G4)",
+            "=AVERAGE(D2:D9)",
+            "=SUM(D3:D6)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a marks sheet, column D holds English marks, students are listed from row 2, and row 1 holds headings.\n(a) Say in words what =SUM(D2:D6) calculates.\n(b) Write the formula for the average English mark of the students in rows 10 to 23, and say how many marks it averages.",
+          "a": "(a) The total English marks of the first five students (rows 2 to 6). (b) =AVERAGE(D10:D23); it averages 14 marks (rows 10 to 23).",
+          "s": [
+            [
+              "Part (a): total English marks of the first five students",
+              1
+            ],
+            [
+              "Part (b): =AVERAGE(D10:D23), averaging 14 marks",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Cell G2 holds =SUM(B2:F2) and shows 185. Cell H2 holds =AVERAGE(B2:F2).\n(a) What does H2 show?\n(b) C2 is then changed from 40 to 28. What do G2 and H2 show now?",
+          "a": "(a) B2:F2 has 5 cells, so H2 shows 185/5 = 37. (b) The sum falls by 12: G2 shows 173 and H2 shows 173/5 = 34.6.",
+          "s": [
+            [
+              "Part (a): 37",
+              1
+            ],
+            [
+              "Part (b): G2 173 and H2 34.6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "reverse"
+          ],
+          "q": "Describe a spreadsheet in which a person would type =AVERAGE(C2:C13). Say what row 1, the rows 2 to 13 and column C hold, how many values the formula averages, and what its answer would tell the person.",
+          "a": "Example: a farmer records rainfall at his village. Row 1 holds headings, rows 2 to 13 are the months January to December and column C holds the rainfall in mm for each month of 2025. =AVERAGE(C2:C13) averages 12 values and gives the mean monthly rainfall for 2025.",
+          "s": [
+            [
+              "A layout where rows 2 to 13 are 12 related entries and column C holds one kind of number",
+              1
+            ],
+            [
+              "States the formula averages 12 values",
+              1
+            ],
+            [
+              "Says what the result means in the situation",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.6",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "tags": [
+            "figure"
+          ],
+          "q": "A line graph shows the number of visitors to a school library each year: 2019: 120, 2020: 150, 2021: 240, 2022: 270, 2023: 290. The 2024 point is to be added so that the 2023 to 2024 segment is exactly as steep as the steepest segment so far. The 2024 value must be ___. (Write the number in digits.)",
+          "a": "380"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "figure"
+          ],
+          "q": "A line graph shows the average number of rainy days in each month for two towns. The horizontal axis shows the months January to December; the vertical axis shows days, from 0 to 30. Town U is shown by circles joined by lines, Town V by triangles joined by lines. The plotted points are:\nTown U: Jan 1, Feb 1, Mar 2, Apr 3, May 6, Jun 20, Jul 25, Aug 23, Sep 14, Oct 7, Nov 3, Dec 1\nTown V: Jan 4, Feb 2, Mar 2, Apr 3, May 4, Jun 5, Jul 6, Aug 7, Sep 15, Oct 14, Nov 16, Dec 10\n(a) Find the average number of rainy days in a year for each town. Which town has more, and by how many?\n(b) In which months does Town V's line lie above Town U's? What does this suggest about when each town's rainy season comes?",
+          "a": "(a) Town U: 1 + 1 + 2 + 3 + 6 + 20 + 25 + 23 + 14 + 7 + 3 + 1 = 106 days. Town V: 4 + 2 + 2 + 3 + 4 + 5 + 6 + 7 + 15 + 14 + 16 + 10 = 88 days. Town U has 18 more. (b) January, February and September to December (the lines meet in March and April). Town U's rainy season is June to August, while Town V's rainy days come mostly from September to December.",
+          "s": [
+            [
+              "Part (a): 106 and 88, Town U has 18 more",
+              1
+            ],
+            [
+              "Part (b): Jan, Feb, Sep to Dec; U rainy in Jun to Aug, V in Sep to Dec",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The monthly rainfall of 5 cities for all 12 months would need 60 columns as a clustered-column graph. Drawn instead as a line graph with one line for each city, it contains ___ line segments in all. (Write the number in digits.)",
+          "a": "55"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The monthly average rainfall of a city for June is found by averaging the June rainfall totals of several years.\nReason (R): Line graphs are generally used to show how data changes over time.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check",
+            "figure"
+          ],
+          "q": "A line graph shows the number of e-rickshaws registered each year in a state and in two of its cities. The points are:\nState total: 2021: 4,000; 2022: 6,500; 2023: 9,000\nCity X: 2021: 1,500; 2022: 2,800; 2023: 4,100\nCity Y: 2021: 1,200; 2022: 1,900; 2023: 2,600\nMeena looks at the graph and says, 'Cities X and Y are the only places in the state with e-rickshaws.' Check her claim using the data for every year, and say what the graph does tell us.",
+          "a": "X + Y: 2021: 2,700; 2022: 4,700; 2023: 6,700. The state totals are 4,000, 6,500 and 9,000, which are larger every year (by 1,300, 1,800 and 2,300). So her claim is wrong: e-rickshaws were also registered in other places in the state, which are simply not shown as separate lines.",
+          "s": [
+            [
+              "Adds X and Y for the years: 2,700, 4,700, 6,700",
+              1
+            ],
+            [
+              "Compares with the state totals and finds a gap every year",
+              1
+            ],
+            [
+              "Verdict: claim wrong; other places are registered but not shown on the graph",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario",
+            "figure"
+          ],
+          "q": "A line graph shows the number of solar water heaters sold by a dealer each year: 2016: 40, 2017: 55, 2018: 120, 2019: 150, 2020: 140, 2021: 310, 2022: 330. Which of these is a pair of consecutive years in which the sales more than doubled?",
+          "a": "2020 to 2021",
+          "o": [
+            "2020 to 2021",
+            "2018 to 2019",
+            "2021 to 2022",
+            "2016 to 2018"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: A line graph of a town's monthly maximum temperature is almost flat from July to September. So the temperature in that town was about the same on every day from July to September. Give a reason.",
+          "a": "False. Each point is only the highest temperature recorded in that month. A flat line shows that the three monthly maximums were similar; it says nothing about the other days, which could have been much cooler and could have varied a lot.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Each point is a monthly maximum, so a flat line only means the maximums were similar, not every day",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match",
+            "figure"
+          ],
+          "q": "A shopkeeper drew a line graph of the average number of customers visiting his shop and the average number actually buying something on each day of the week:\nVisiting: Mon 18, Tue 21, Wed 12, Thu 16, Fri 24, Sat 30, Sun 42\nBuying: Mon 9, Tue 12, Wed 8, Thu 10, Fri 15, Sat 18, Sun 27\nMatch each description with the day it fits.\nColumn A:\n1. The visiting line falls from the day before\n2. Exactly half the visitors bought something\n3. The buying line rises most steeply from the day before\n4. The visiting line rises by 8 from the day before\nColumn B:\n(P) Friday\n(Q) Monday\n(R) Wednesday\n(S) Sunday",
+          "a": "1-R, 2-Q, 3-S, 4-P",
+          "o": [
+            "1-R, 2-Q, 3-S, 4-P",
+            "1-R, 2-Q, 3-P, 4-S",
+            "1-Q, 2-R, 3-S, 4-P",
+            "1-S, 2-Q, 3-R, 4-P"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study",
+            "figure"
+          ],
+          "q": "A line graph shows the monthly maximum temperature (degrees C) of two towns in 2024. The horizontal axis shows the months January to December; the vertical axis runs from 15 to 45 degrees C. Town P is shown by circles joined by lines, Town Q by squares joined by lines. The plotted points are:\nTown P: Jan 20, Feb 24, Mar 29, Apr 35, May 39, Jun 40, Jul 35, Aug 34, Sep 34, Oct 31, Nov 26, Dec 22\nTown Q: Jan 31, Feb 32, Mar 33, Apr 34, May 33, Jun 30, Jul 29, Aug 29, Sep 30, Oct 31, Nov 31, Dec 31\n(a) In which month does Town P reach its highest monthly maximum, and what is it?\n(b) Between which two consecutive months does Town P's line rise most steeply? By how many degrees?\n(c) After its peak, between which two consecutive months does Town P's line fall most steeply? (If there is a tie, name both.)\n(d) A family wants to spend May and June in whichever town has the lower monthly maximum, and December and January in whichever town has the higher monthly maximum. Can one town meet both wishes? Justify with the data.",
+          "a": "(a) June, 40 degrees C. (b) The month-to-month rises are 4, 5, 6, 4 and 1 degrees from January to June, so the steepest rise is from March to April, by 6 degrees C. (c) From June the month-to-month falls are 5 (June to July), 1, 0, 3, 5 (October to November) and 4 (November to December); the steepest falls are June to July and October to November, 5 degrees C each. (d) Yes, Town Q meets both. In May and June Town Q's maximums (33 and 30) are lower than Town P's (39 and 40); in December and January Town Q's maximums (31 and 31) are higher than Town P's (22 and 20). The lines cross twice in the year, so Town Q is cooler in summer but warmer in winter.",
+          "s": [
+            [
+              "Part (a): June, 40 degrees C",
+              1
+            ],
+            [
+              "Part (b): March to April, 6 degrees C",
+              1
+            ],
+            [
+              "Part (c): June to July and October to November, 5 degrees C each",
+              1
+            ],
+            [
+              "Part (d): Town Q: lower in May-June (33, 30 vs 39, 40) and higher in Dec-Jan (31, 31 vs 22, 20)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario",
+            "figure"
+          ],
+          "q": "A line graph shows the percentage of households in a village using LPG and using firewood as their main cooking fuel:\nLPG: 2015: 20, 2017: 35, 2019: 55, 2021: 70, 2023: 85\nFirewood: 2015: 75, 2017: 60, 2019: 40, 2021: 26, 2023: 12\nWhich statement is a valid inference from this graph?",
+          "o": [
+            "LPG users outnumbered firewood users in 2019, 2021 and 2023",
+            "Every household used either LPG or firewood as its main fuel in 2019",
+            "LPG use rose by the same amount in every two-year step shown",
+            "No household in the village will use firewood after 2025"
+          ],
+          "a": "LPG users outnumbered firewood users in 2019, 2021 and 2023"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "tags": [
+            "figure"
+          ],
+          "q": "A line graph shows the monthly average rainfall (mm) of two towns:\nTown R: Jan 10, Feb 5, Mar 8, Apr 20, May 60, Jun 450, Jul 700, Aug 520, Sep 260, Oct 120, Nov 40, Dec 15\nTown S: Jan 30, Feb 15, Mar 12, Apr 20, May 35, Jun 40, Jul 70, Aug 110, Sep 120, Oct 280, Nov 420, Dec 200\nConsider these statements.\nI. Town R's peak month is August and Town S's is November.\nII. In every month Town R gets more rain than Town S.\nIII. Both towns have their lowest rainfall in a month from January to March.\nWhich of the statements are correct?",
+          "a": "III only",
+          "o": [
+            "III only",
+            "I and III only",
+            "II and III only",
+            "I only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A newspaper has the daily air-quality reading of 3 cities for a whole year (365 days).\n(a) Riya says a clustered-column graph with one cluster per day would need 365 columns. Find the correct number and explain her slip.\n(b) If the data is drawn as a line graph instead, how many points and how many line segments would each city's line have? Give one reason why the line graph is the better choice here.",
+          "a": "(a) Each of the 365 clusters has one column per city, so 365 x 3 = 1095 columns. Riya counted the clusters, not the columns. (b) Each line has 365 points joined by 364 line segments. Three lines are far lighter than 1095 columns, so each city's change over the year can be followed and the cities compared, while the columns would be crowded and hard to read.",
+          "s": [
+            [
+              "Part (a): 1095 columns; she counted clusters, not columns",
+              1
+            ],
+            [
+              "Part (b): 365 points and 364 segments per line; a line graph is uncluttered and shows change over time",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "tags": [
+            "figure"
+          ],
+          "q": "A shopkeeper drew a line graph of the average number of customers visiting his shop and the average number actually buying something on each day of the week:\nVisiting: Mon 18, Tue 21, Wed 12, Thu 16, Fri 24, Sat 30, Sun 42\nBuying: Mon 9, Tue 12, Wed 8, Thu 10, Fri 15, Sat 18, Sun 27\n(a) On which day did the most visitors leave without buying anything? How many?\n(b) Find the mean number of visitors per day and the mean number of buyers per day over the week (to two decimal places).\n(c) Find the fraction of visitors who bought something on Sunday and on Wednesday.\n(d) The shopkeeper says, 'Sunday is my best day not only for visitors but also for turning visitors into buyers.' Decide whether the data supports both parts of his statement, giving reasons.",
+          "a": "(a) Gaps: Mon 9, Tue 9, Wed 4, Thu 6, Fri 9, Sat 12, Sun 15. Sunday, 15 visitors. (b) Visitors total 163, mean 163/7 = 23.29; buyers total 99, mean 99/7 = 14.14. (c) Sunday 27/42 = 9/14 (about 0.64); Wednesday 8/12 = 2/3 (about 0.67). (d) Only the first part is supported. Sunday has by far the most visitors (42), but the fraction who buy is higher on Wednesday (2/3) than on Sunday (9/14), so Sunday is not the best day for turning visitors into buyers.",
+          "s": [
+            [
+              "Part (a): Sunday, 15 visitors",
+              1
+            ],
+            [
+              "Part (b): means 23.29 and 14.14",
+              1
+            ],
+            [
+              "Part (c): Sunday 9/14 and Wednesday 2/3",
+              1
+            ],
+            [
+              "Part (d): first part supported, Sunday has the most visitors",
+              1
+            ],
+            [
+              "Part (d): second part not supported, Wednesday's fraction 2/3 beats Sunday's 9/14",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "figure"
+          ],
+          "q": "A line graph shows a town's monthly water supply in lakh litres, with points at Jan 42, Feb 40, Mar 38, Apr 35, May 33, Jun 30, Jul 34, Aug 37, Sep 39, Oct 41, Nov 43, Dec 44.\n(a) Find the total supply for the year.\n(b) Find the mean monthly supply, and name the months in which the supply was above the mean.",
+          "a": "(a) 42 + 40 + 38 + 35 + 33 + 30 + 34 + 37 + 39 + 41 + 43 + 44 = 456 lakh litres. (b) Mean = 456/12 = 38 lakh litres. Above 38: January, February, September, October, November and December.",
+          "s": [
+            [
+              "Part (a): 456 lakh litres",
+              1
+            ],
+            [
+              "Part (b): mean 38; Jan, Feb, Sep, Oct, Nov, Dec above it",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible",
+            "figure"
+          ],
+          "q": "A line graph shows, year by year, the worldwide number of objects launched into space and the numbers launched by Country A and Country B. Priya reads one year from the graph as: worldwide 2,000; Country A 1,500; Country B 700. Show that her reading must be wrong, and say which kind of value she should re-read.",
+          "a": "The worldwide count includes the launches of every country, so it must be at least the sum of any two countries' counts. Country A + Country B = 1,500 + 700 = 2,200, which is more than 2,000. That cannot happen, so at least one reading is wrong; she should re-read the scale for these points (one of the three values has been misread).",
+          "s": [
+            [
+              "States the worldwide count includes both countries, so it is at least A + B",
+              1
+            ],
+            [
+              "A + B = 2,200, which is more than 2,000",
+              1
+            ],
+            [
+              "Concludes the reading is impossible and a value must be re-read from the scale",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study",
+            "figure"
+          ],
+          "q": "Anika measured the height of a bean plant at the end of each week and drew a line graph. Her points are: Week 1: 3 cm, Week 2: 5 cm, Week 3: 8 cm, Week 4: 12 cm, Week 5: 17 cm.\n(a) Find the increase in height in each week from Week 1 to Week 5. Which segment of the graph is steepest?\n(b) Describe how the steepness of the line changes from week to week.\n(c) If the pattern of increases continues, predict the heights at the end of Week 6 and Week 7.\n(d) The plant must be moved to a bigger pot as soon as its height passes 25 cm. At the end of which week should Anika move it, if the pattern holds?",
+          "a": "(a) Increases: 2, 3, 4 and 5 cm. The Week 4 to Week 5 segment (5 cm) is steepest. (b) Each segment is steeper than the one before, because the weekly increase grows by 1 cm each week. (c) Week 6: 17 + 6 = 23 cm; Week 7: 23 + 7 = 30 cm. (d) At the end of Week 7: at Week 6 it is only 23 cm, and it first passes 25 cm at Week 7 (30 cm).",
+          "s": [
+            [
+              "Part (a): increases 2, 3, 4, 5; Week 4 to 5 steepest",
+              1
+            ],
+            [
+              "Part (b): each segment steeper than the last, the increase grows by 1 cm a week",
+              1
+            ],
+            [
+              "Part (c): 23 cm and 30 cm",
+              1
+            ],
+            [
+              "Part (d): end of Week 7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "tags": [
+            "scenario",
+            "figure"
+          ],
+          "q": "A line graph shows only the monthly maximum temperature of a city: Jan 18, Feb 21, Mar 28, Apr 34, May 38, Jun 36, Jul 33, Aug 32, Sep 32, Oct 30, Nov 25, Dec 20 (degrees C). Which statement can NOT be concluded from this graph?",
+          "a": "The coldest night of the year was in January",
+          "o": [
+            "The coldest night of the year was in January",
+            "The highest monthly maximum came in May",
+            "The monthly maximum rose every month from January to May",
+            "The monthly maximum fell from June to July"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Explain how the 'monthly average rainfall for July' of a city, shown on a line graph, is worked out from rainfall records.\n(b) A city's July rainfall in four years was 610 mm, 540 mm, 720 mm and 650 mm. What value would the graph show for July?",
+          "a": "(a) The total rainfall in July is recorded for several years, and these July totals are averaged. (b) (610 + 540 + 720 + 650)/4 = 2520/4 = 630 mm.",
+          "s": [
+            [
+              "Part (a): the July totals of several years are averaged",
+              1
+            ],
+            [
+              "Part (b): 630 mm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "reverse"
+          ],
+          "q": "Make up a table of monthly sales (January to June) for two shops, A and B, whose line graph would show all of these: Shop A's line rises steadily, Shop B's line stays flat, and the two lines cross between March and April. Explain how your numbers produce each feature.",
+          "a": "Example: Shop A: 20, 30, 40, 50, 60, 70; Shop B: 45, 45, 45, 45, 45, 45. Shop A rises by the same 10 each month, so its line rises steadily. Shop B is the same every month, so its line is flat. In March A (40) is below B (45) and in April A (50) is above B, so the lines cross between March and April.",
+          "s": [
+            [
+              "A table in which Shop A rises steadily",
+              1
+            ],
+            [
+              "Shop B's values are equal every month",
+              1
+            ],
+            [
+              "A is below B in March and above B in April, explained as the crossing",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "tags": [
+            "figure"
+          ],
+          "q": "A line graph shows the number of new rooftop solar connections each year in a district and in two of its blocks, P and Q:\nDistrict: 2019: 1,800; 2020: 2,400; 2021: 4,000; 2022: 6,500; 2023: 8,800; 2024: 9,600\nBlock P: 600; 900; 1,500; 2,800; 4,100; 4,300\nBlock Q: 500; 700; 1,200; 1,900; 2,600; 2,900\n(a) By how many did the yearly new connections grow from 2019 to 2024 in Block P and in Block Q? Which block's line rises more over the six years?\n(b) Between which two consecutive years is the district line steepest?\n(c) What fraction of the district's new connections were in Block P in 2019? Was Block P's share larger or smaller in 2024?\n(d) A reporter writes, 'The district line is much less steep from 2023 to 2024 than from 2022 to 2023, so fewer new connections were made in 2024 than in 2023.' Find the mistake and correct the statement.",
+          "a": "(a) Block P: 4,300 - 600 = 3,700. Block Q: 2,900 - 500 = 2,400. Block P's line rises more. (b) Yearly rises: 600, 1,600, 2,500, 2,300, 800, so 2021 to 2022 is steepest. (c) 600/1,800 = 1/3 in 2019. In 2024 it is 4,300/9,600, about 0.45, which is larger than 1/3. (d) A less steep rising segment means a smaller increase, not a decrease. New connections still went up, from 8,800 to 9,600; only the increase was smaller (800 against 2,300). Correct: 'More new connections were made in 2024 than in 2023, but the increase was much smaller.'",
+          "s": [
+            [
+              "Part (a): growth 3,700 in P and 2,400 in Q; P rises more",
+              1
+            ],
+            [
+              "Part (b): 2021 to 2022 (a rise of 2,500)",
+              1
+            ],
+            [
+              "Part (c): 1/3 in 2019, larger (about 0.45) in 2024",
+              1
+            ],
+            [
+              "Part (d): a less steep rise is a smaller increase, not a fall",
+              1
+            ],
+            [
+              "Part (d): corrected statement with 9,600 > 8,800 and rises 800 vs 2,300",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario",
+            "figure"
+          ],
+          "q": "A line graph shows the number of passengers using a metro station each month. The vertical axis is labelled 0, 500, 1,000, 1,500, 2,000, 2,500 and 3,000, with 4 equally spaced unlabelled gridlines between each pair of labels. The point for June lies exactly on the third gridline above the 1,500 label. How many passengers used the station in June?",
+          "o": [
+            "1,800",
+            "1,875",
+            "1,530",
+            "1,650"
+          ],
+          "a": "1,800"
+        }
+      ]
+    }
+  ]
+}

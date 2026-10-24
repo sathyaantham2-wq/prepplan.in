@@ -111,6 +111,12 @@ export function validatePack(file: PackFile): Array<string> {
         if (q.m !== 1) problems.push(`${where}: ${q.t} is worth 1 mark`)
         if (!q.o || q.o.length !== 4) problems.push(`${where}: ${q.t} needs 4 options`)
         else if (new Set(q.o.map((x) => x.trim())).size !== 4) problems.push(`${where}: options are not distinct`)
+        // The loader marks o[0] as the correct option. An answer that is word for word another
+        // option means the key was put in the wrong place and would load as a wrong answer.
+        const norm = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase()
+        if (q.o && q.o.slice(1).some((x) => norm(x) === norm(q.a))) {
+          problems.push(`${where}: the answer matches option ${q.o.slice(1).findIndex((x) => norm(x) === norm(q.a)) + 2}, but the correct option must be listed first (or two options differ only in case or spacing)`)
+        }
         if (q.s) problems.push(`${where}: ${q.t} has step marks`)
         if (q.t === 'match') {
           matchCount++

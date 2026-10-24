@@ -1,0 +1,2516 @@
+{
+  "kind": "dps_pack",
+  "subject": {
+    "code": "MATH8",
+    "class": 8,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 3,
+    "name": "A Story of Numbers"
+  },
+  "source_code": "hegp103",
+  "concepts": [
+    {
+      "code": "C8M-3.1",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two Stone Age herders, Meena and Kabir, keep one stick for each of their cows. They lay the sticks side by side, one Meena stick against one Kabir stick. When Kabir's sticks run out, 7 of Meena's sticks are still unpaired. What can they conclude without using any number names?",
+          "a": "Kabir needs 7 more cows to match Meena",
+          "o": [
+            "Kabir needs 7 more cows to match Meena",
+            "Meena must give Kabir 7 cows to make the herds equal",
+            "Meena needs 7 more cows to match Kabir",
+            "They cannot compare herds without number names"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A goatherd has 40 goats and keeps one stick for each. In the evening, as each goat walks in through the gate, he moves one stick from his left pile to his right pile.\n(a) After the last goat is in, 2 sticks are still in the left pile. Then he remembers that one goat walked in, slipped out and walked in again, and he moved a stick both times. How many goats are really missing?\n(b) That night a kid is born. What should he do with his sticks so that tomorrow evening's check still works?",
+          "a": "(a) 38 sticks were moved, but one goat was paired with two of them, so only 37 different goats came in: 3 goats are missing, not 2. (b) He should add one stick to his bundle for the new kid, so that the bundle again holds exactly one stick for each animal.",
+          "s": [
+            [
+              "Part (a): 3 goats missing, since one goat took two sticks and only 37 different goats came in",
+              1
+            ],
+            [
+              "Part (b): adds one stick for the kid to keep the one-to-one mapping",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Raju counts the 12 mangoes in a basket by pointing at each mango and saying the letters a, b, c, ... in order. He misses no mango, but he points at one mango twice. On which letter does he stop?",
+          "a": "m",
+          "o": [
+            "m",
+            "l",
+            "n",
+            "k"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Kavya says: 'Keeping one pebble for each person never runs out, so it is the best way for the organisers to count the 5,000 people at a village fair.' Is she right? Check both parts of her claim.",
+          "a": "Partly right. The first part is true: the pebble method is an unending standard sequence, so one more pebble can always be added. The conclusion is wrong: counting 5,000 people needs 5,000 pebbles, as many objects as there are people, which is very hard to collect, carry and keep. Never running out is not the same as being easy to count with.",
+          "s": [
+            [
+              "Agrees that the pebble method never runs out",
+              1
+            ],
+            [
+              "Points out that 5,000 pebbles are needed, one per person, which is not convenient",
+              1
+            ],
+            [
+              "Gives the verdict: partly right, never running out does not make it the best",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Asha makes a counting song with five words in the order sun, moon, star, river, hill. Her brother uses the same five words in the order moon, sun, star, hill, river. Each of them counts the same 4 eggs with their own order. What happens?",
+          "a": "Asha stops on 'river' and her brother on 'hill'",
+          "o": [
+            "Asha stops on 'river' and her brother on 'hill'",
+            "Both of them stop on 'river'",
+            "Asha stops on 'river' and her brother on 'star'",
+            "Both of them stop on 'hill'"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Ishita makes her own number system from the twelve month names in calendar order, January to December. Each time her count reaches December she puts one pebble aside and starts again from January. A count that ends with 3 pebbles aside and the word May stands for ___.",
+          "a": "41"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Two Stone Age families, the Hills and the Rivers, each keep one stick for each cow they own. To compare herds they lay the two bundles side by side and pair the sticks one with one. When the River bundle runs out, 8 Hill sticks are still unpaired.\n(a) Which family has more cows, and how many more cows does the other family need to match it?\n(b) The Hills now give 3 cows to the Rivers, and each family changes its bundle to match its new herd. How many sticks are left unpaired now, and in whose bundle?\n(c) After (b), how many more cows should the Hills give the Rivers so that the herds become equal?\n(d) Next year the River bundle is lost in a flood, but the Hill bundle is safe and matches the Hill herd. Decide whether the families can still find who has more cows without making a new bundle, and explain how.",
+          "a": "(a) The Hills have more; the Rivers need 8 more cows. (b) Each cow given away takes one stick from the Hills and adds one to the Rivers, so the unpaired sticks fall by 2 per cow: 8 - 6 = 2, still in the Hill bundle. (c) 1 more cow, which brings the 2 unpaired sticks to 0. (d) Yes. The Hill sticks stand for the Hill cows, so the River cows can be paired one by one with Hill sticks as they pass: if River cows remain when the sticks run out, the Rivers have more; if sticks remain, the Hills have more; if both run out together, the herds are equal.",
+          "s": [
+            [
+              "Part (a): the Hills have more; the Rivers need 8 more",
+              1
+            ],
+            [
+              "Part (b): 2 unpaired sticks, in the Hill bundle",
+              1
+            ],
+            [
+              "Part (c): 1 more cow",
+              1
+            ],
+            [
+              "Part (d): yes, by pairing the River cows directly with the Hill sticks",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A museum shows two exhibits. One is a clay tablet covered with written number symbols, with no record of how its people spoke their numbers. The other is a bundle of counting sticks from another people, with no written symbols. A guide says: 'The tablet's people surely had spoken names for their smaller numbers, and the stick people surely had written numerals as well.' Which judgement matches the history of number systems?",
+          "a": "Only the first claim holds: written numerals always came with names, but some peoples had objects and names only",
+          "o": [
+            "Only the first claim holds: written numerals always came with names, but some peoples had objects and names only",
+            "Both claims hold, since every people used objects, names and written symbols together, as the Chinese did",
+            "Only the second claim holds, since names were invented only after the written symbols, to read them aloud",
+            "Neither claim holds, since a written system could exist with no names at all for its numbers, even small ones"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Riya says: 'XIV and 14 are two different numbers, because they are written differently.'\n(a) Is she right?\n(b) Use the word 'numeral' to explain your answer.",
+          "a": "(a) No, they are the same number. (b) A numeral is a symbol of a written number system. XIV is the numeral for this number in the Roman system and 14 is its numeral in the Hindu system: two numerals, one number.",
+          "s": [
+            [
+              "Part (a): states that they are the same number",
+              1
+            ],
+            [
+              "Part (b): explains that XIV and 14 are numerals of two different written systems for that one number",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If two children count the same basket of eggs correctly, using the same standard sequence of names in its fixed order, they stop on the same name.\nReason (R): Counting is a one-to-one mapping between the objects and the standard sequence, taken in the order of the sequence.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three groups choose a standard sequence to count 20 books. Group X uses the names of the seven days of the week, Group Y uses the letters a to z, and Group Z cuts one notch on a stick for each book. Which groups can finish the count with their own sequence?",
+          "a": "Y and Z only",
+          "o": [
+            "Y and Z only",
+            "Z only",
+            "X, Y and Z",
+            "Y only"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Dev counts 7 coins by touching each coin once and saying a, b, d, e, f, g, h, because he forgot the letter c. In the a-to-z system the letter he stops on stands for a number. Which number does his count give, and which rule of counting did he break? What would a correct count end on?",
+          "a": "He stops on h, the 8th letter, so his count says 8 coins. He broke the rule that the standard sequence must be taken in its fixed order without skipping: because he skipped c, the 3rd coin was paired with d and every later coin moved one letter on, so the 7th coin was paired with h. A correct count pairs the 7 coins with a, b, c, d, e, f, g and ends on g, which stands for 7.",
+          "s": [
+            [
+              "Finds that h stands for 8",
+              1
+            ],
+            [
+              "Names the broken rule: the sequence must be followed in order without skipping",
+              1
+            ],
+            [
+              "States that a correct count ends on g, which stands for 7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A herder with one stick for each goat wants to put his goats into pens, 6 goats to a pen, without using any number names.\n(a) Describe how he can use his sticks to find the number of full pens.\n(b) His bundle has 29 sticks. How many full pens does he get, and how many goats are left over?",
+          "a": "(a) He makes groups of sticks matching the 6 goats of a pen (one group for each pen) until fewer sticks than a full group remain; the groups are the full pens and the sticks left over are the goats without a full pen. (b) 29 = 6 + 6 + 6 + 6 + 5, so 4 full pens and 5 goats left over.",
+          "s": [
+            [
+              "Part (a): describes grouping the sticks into groups of the pen size and looking at what is left",
+              1
+            ],
+            [
+              "Part (b): 4 full pens and 5 goats left over",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements about the three ways of counting: sticks, the sounds of the letters a to z, and written symbols like the Roman numerals.\nStatement 1: Keeping one stick per object gives a standard sequence that never runs out.\nStatement 2: The letter sounds a to z can count any collection, however large, because letters are quick to say.\nStatement 3: Roman numerals can write numbers as large as we like without ever introducing a new symbol.\nWhich of the statements are correct?",
+          "a": "1 only",
+          "o": [
+            "1 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1 and 3 only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A teacher proposes using the 40 pupils of her class as a standard sequence. To count a pile of books, one pupil stands up for each book, in whatever order the pupils happen to rise, and the last pupil to stand gives the count. Show that this cannot serve as a number system, giving two reasons, and say what change would make it work for piles of up to 40 books.",
+          "a": "First, the pupils have no fixed order: counting the same 12 books twice, the twelfth pupil to rise can be a different child each time, so a pupil's name does not stand for one number. Second, the sequence ends at 40, so a pile of 41 or more books cannot be counted; it is not unending. If the pupils always rise in a fixed order, for example in roll-number order, the last pupil standing gives the count for any pile of up to 40 books.",
+          "s": [
+            [
+              "Explains that without a fixed order the same pile can end on different pupils",
+              1
+            ],
+            [
+              "Points out that the sequence runs out after 40",
+              1
+            ],
+            [
+              "Fixes the order (such as roll-number order) to make it work up to 40",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A library labels its shelves with letter strings in this order: the single letters a, b, ..., z for 1 to 26, then every two-letter string in dictionary order, aa, ab, ..., az, ba, bb, ..., zz, for the numbers that follow.\n(a) Which number does the label af stand for?\n(b) Which number does ca stand for?\n(c) Write the label for shelf 100.\n(d) Which number does zz stand for?\n(e) The library has 400 shelves now and will add 300 more next year. It wants no label longer than two letters. Can this scheme manage after the expansion, and how many more shelves could then be added before a three-letter label is needed?",
+          "a": "(a) aa to az are 27 to 52, so af = 26 + 6 = 32. (b) The a-block holds 26 labels and the b-block 26 more, ending at 26 + 52 = 78, so ca = 79. (c) 100 - 78 = 22 and the 22nd letter is v, so shelf 100 is cv. (d) There are 26 x 26 = 676 two-letter strings, so zz = 26 + 676 = 702. (e) Yes, just: after the expansion there are 400 + 300 = 700 shelves, and two-letter labels last up to zz = 702, so 700 fits. Only 702 - 700 = 2 more shelves can be added before a three-letter label is needed.",
+          "s": [
+            [
+              "Part (a): af stands for 32",
+              1
+            ],
+            [
+              "Part (b): ca stands for 79",
+              1
+            ],
+            [
+              "Part (c): shelf 100 is cv",
+              1
+            ],
+            [
+              "Part (d): zz stands for 702",
+              1
+            ],
+            [
+              "Part (e): 700 is within 702, so it manages, with only 2 shelves to spare",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: The stick method cannot be used to count a herd of 500 cows, because it is not an unending standard sequence. Give a reason.",
+          "a": "False. The stick method is an unending standard sequence: one more stick can always be added. Its real drawback is convenience, since counting 500 cows needs 500 sticks.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Explains that sticks never run out and that the real difficulty is needing as many sticks as cows",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A teacher counts children with the letter sounds a to z, one letter per child. Give one advantage this has over keeping one stick per child when counting the 18 children of a queue, and one drawback that shows up when counting the 60 children of an assembly.",
+          "a": "Advantage: saying letters is quick and needs no sticks to carry, and the 18 children end on 'r'. Drawback: the letters stop at z, the 26th, so 34 of the 60 children are left with no name, while sticks would never run out.",
+          "s": [
+            [
+              "Gives an advantage: quick and convenient, with the queue ending on 'r'",
+              1
+            ],
+            [
+              "Gives the drawback: the sequence ends at 26, so 60 children cannot be counted",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A school bus attendant must check every day that all the children who got on also got off. Method L: he says one letter, a, b, c, ..., for each child who boards, and says the letters again from a as the children get off. Method S: he drops one bead into a box for each child who boards and takes one bead out for each child who gets off. Bus 1 never carries more than 24 children; Bus 2 carries up to 40.\n(a) On Bus 1, 23 children board, and at school his letters stop at u. How many children are still on the bus?\n(b) On Bus 2, 31 children board. Why does Method L fail, and which child is the first to be left without a letter?\n(c) Using Method S on Bus 2, 3 beads remain after the children get off at school, but he knows that 2 children got off at an earlier stop without his taking out beads. How many children are still on the bus?\n(d) He wants to carry as little as possible but never fail a check. Which method should he use on each bus? Justify.",
+          "a": "(a) 23 children boarded, so the boarding count ended on w. At school he stopped on u, the 21st letter, so 21 got off and 23 - 21 = 2 are still on the bus. (b) The letters end at z, the 26th, so the 27th child to board has no letter, and the count of 31 cannot be made. (c) The 3 beads stand for 3 children who were not seen getting off at school; 2 of them got off earlier, so 1 child is still on the bus. (d) Method L on Bus 1, because 24 children never pass z and there is nothing to carry; Method S on Bus 2, because the letters run out after 26 and the beads never run out.",
+          "s": [
+            [
+              "Part (a): 2 children still on Bus 1, since u is the 21st letter",
+              1
+            ],
+            [
+              "Part (b): letters end at 26, so the 27th child has none",
+              1
+            ],
+            [
+              "Part (c): 1 child still on Bus 2",
+              1
+            ],
+            [
+              "Part (d): letters on Bus 1, beads on Bus 2, with reasons",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Two Stone Age villages trade sacks of grain, and neither has number names. Village A keeps one stick for each of its sacks and Village B does the same.\n(a) Devise a way to find, with sticks only, the total number of sacks of the two villages.\n(b) Devise a way to find how many more sacks one village has than the other.\n(c) Each sack is traded for 3 baskets of fish. Devise a way to make a bundle with one stick per basket of fish that Village B should receive for all its sacks.\n(d) Village A must share its sacks equally among 4 families. Devise a way to do this with sticks, and say how leftover sacks show up.\n(e) Village A has 23 sacks and Village B has 15. Give the result of each of (a) to (d).",
+          "a": "(a) Put the two bundles together into one bundle: it has one stick per sack of both villages. (b) Pair one A stick with one B stick until one bundle runs out; the unpaired sticks show how many more sacks the other village has. (c) For each stick in B's bundle, lay down 3 new sticks; the new bundle has one stick per basket. (d) Deal A's sticks one at a time to 4 heaps, round and round; when fewer than 4 sticks remain, each heap shows one family's share and the sticks left over are the sacks that cannot be shared equally. (e) Total 23 + 15 = 38 sacks; A has 23 - 15 = 8 more; B receives 15 x 3 = 45 baskets; each family gets 5 sacks, with 3 sacks left over (23 = 4 x 5 + 3).",
+          "s": [
+            [
+              "Part (a): joins the two bundles",
+              1
+            ],
+            [
+              "Part (b): pairs the sticks one to one and reads the unpaired ones",
+              1
+            ],
+            [
+              "Part (c): lays 3 new sticks for each stick of B",
+              1
+            ],
+            [
+              "Part (d): deals the sticks into 4 heaps and reads the leftover",
+              1
+            ],
+            [
+              "Part (e): 38, 8 more, 45 baskets, 5 each with 3 left over",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-3.2",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements about the oldest known tally records.\nStatement 1: The Lebombo bone has 29 notches and is older than the Ishango bone.\nStatement 2: Each notch on these bones stood for a group of five objects.\nStatement 3: The notches on the Ishango bone are arranged in columns.\nWhich of the statements are correct?",
+          "a": "1 and 3 only",
+          "o": [
+            "1 and 3 only",
+            "1 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The Gumulgal of Australia named 1 to 6 as urapon, ukasar, ukasar-urapon, ukasar-ukasar, ukasar-ukasar-urapon, ukasar-ukasar-ukasar. The Bushmen of South Africa named them xa, t'oa, 'quo, t'oa-t'oa, t'oa-t'oa-t'a, t'oa-t'oa-t'oa.\n(a) A Bushman trader says he has t'oa-t'oa-t'oa baskets. Give the Gumulgal name for the same count.\n(b) Which numbers from 1 to 6 have a name of more than one word in BOTH lists?",
+          "a": "(a) t'oa-t'oa-t'oa is three twos, that is 6, so the Gumulgal name is ukasar-ukasar-ukasar. (b) 4, 5 and 6. The Gumulgal name for 3 is ukasar-urapon, but the Bushmen name for 3, 'quo, is a single word.",
+          "s": [
+            [
+              "Part (a): ukasar-ukasar-ukasar, since the count is 6",
+              1
+            ],
+            [
+              "Part (b): 4, 5 and 6, leaving out 3 because 'quo is one word",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A shopkeeper tallies sales with one stroke per sale, but replaces every complete group of 5 strokes by one new symbol. By noon his record shows 9 symbols and 4 strokes. He then makes 3 more sales and tidies the record. What does it show now?",
+          "a": "10 symbols and 2 strokes",
+          "o": [
+            "10 symbols and 2 strokes",
+            "9 symbols and 7 strokes",
+            "10 symbols and 3 strokes",
+            "11 symbols and 2 strokes"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Carry the Gumulgal way of counting in twos (urapon = 1, ukasar = 2) past 6. Work out each of the following and give the answer as a Gumulgal-style name, without using Hindu numerals in your working.\n(a) (ukasar-ukasar-ukasar-ukasar-ukasar-urapon) + (ukasar-ukasar-urapon)\n(b) (ukasar-ukasar-ukasar-ukasar-ukasar-urapon) - (ukasar-ukasar-ukasar-ukasar)\n(c) (ukasar-urapon) x (ukasar-ukasar-ukasar)\n(d) (ukasar-ukasar-ukasar-ukasar-ukasar-ukasar) / (ukasar-ukasar-ukasar)\n(e) Both numbers in (a) end in urapon, yet the answer has no urapon. Explain why.",
+          "a": "(a) Five ukasars and two ukasars give seven ukasars, and the two urapons make one more ukasar: ukasar said 8 times (16). (b) Taking four ukasars from five ukasar and an urapon leaves ukasar-urapon (3). (c) ukasar-ukasar-ukasar copies of ukasar-urapon means two copies for each ukasar, six copies in all: six ukasars and six urapons. The six urapons pair into three more ukasars, so the product is ukasar said 9 times (3 x 6 = 18). (d) Six ukasars split into groups of three ukasars give 2 groups: ukasar (2). (e) Two urapons together make one ukasar, so they are regrouped into an ukasar and no urapon is left.",
+          "s": [
+            [
+              "Part (a): ukasar said 8 times",
+              1
+            ],
+            [
+              "Part (b): ukasar-urapon",
+              1
+            ],
+            [
+              "Part (c): ukasar said 9 times",
+              1
+            ],
+            [
+              "Part (d): ukasar",
+              1
+            ],
+            [
+              "Part (e): two urapons regroup into one ukasar",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cook keeps count of chapatis with strokes on a slate. After four upright strokes she draws the fifth as a slanting line across the four, then starts a new bundle. Which idea from the history of number systems does her habit match?",
+          "a": "Replacing every 5 marks, too many to see at a glance, by a new sign",
+          "o": [
+            "Replacing every 5 marks, too many to see at a glance, by a new sign",
+            "Counting in twos as the Gumulgal did, with a new word for each pair",
+            "Using a place value system with base 5, one position for each bundle",
+            "Making a one-to-one mapping that stops working after 4 objects"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Counting in twos is carried past 6 in the Gumulgal way (urapon = 1, ukasar = 2). A basket holds ukasar-ukasar-ukasar-ukasar-ukasar-urapon mangoes. Written in the same way and fully regrouped, the name for twice as many mangoes has ___ words.",
+          "a": "11"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A shop owner designs a tally in which every complete group of k strokes is replaced by one new symbol. He wants any bunch of strokes left over on the slate to be readable at a single glance, but he also wants k as large as possible, so that fewer symbols are needed.\n(a) Which value of k should he choose?\n(b) Explain your choice using the largest number of strokes that can ever be left over.",
+          "a": "(a) k = 5. (b) After all complete groups of k are replaced, between 0 and k - 1 strokes are left over. Most people cannot tell the size of a group of 5 or more objects at a single glance, so at most 4 strokes may ever be left: k - 1 must be at most 4, so k is at most 5. The largest choice is 5, which is the group of 5 marks that tally users replaced by a new symbol.",
+          "s": [
+            [
+              "Part (a): k = 5",
+              1
+            ],
+            [
+              "Part (b): the leftover is at most k - 1, which must not exceed 4, the at-a-glance limit",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the Gumulgal number names, the name for 6 has more words than the name for 5.\nReason (R): The Gumulgal formed their number names by counting in twos.",
+          "a": "A is false but R is true",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Sana says: 'The Ishango bone must be the oldest known tally record, because its notches are arranged so neatly in columns.' Test her claim using what is known about the Ishango and Lebombo bones.",
+          "a": "No. The Ishango bone is dated 20,000 to 35,000 years old, while the Lebombo bone, with 29 notches, is estimated at about 44,000 years old, so the Lebombo bone is older. How neatly notches are arranged says nothing about the age of a bone; the age comes from dating it.",
+          "s": [
+            [
+              "Gives the age of the Ishango bone, 20,000 to 35,000 years",
+              1
+            ],
+            [
+              "Gives the Lebombo bone's age of about 44,000 years, so it is older",
+              1
+            ],
+            [
+              "Rejects the claim, since the arrangement of notches does not decide age",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The keeper of a village well records the pots of water drawn each day with one stroke per pot, but he replaces every complete group of 5 strokes by a single new symbol. In one week the record shows Monday 27 pots, Tuesday 31 pots and Wednesday 18 pots. The panchayat suggests adding one more symbol for a complete group of 10 pots, but the keeper says a new symbol is worth learning only if it cuts the record for these three days by at least one third.\n(a) How many marks (symbols and strokes) does Tuesday's record have now?\n(b) How many marks do the three days take with his method, and how many would a plain tally take?\n(c) How many marks would the three days take if a symbol for 10 is added (tens first, then fives, then strokes)?\n(d) Should the keeper adopt the symbol for 10 by his own rule? Justify with your numbers.",
+          "a": "(a) 31 = 6 groups of 5 and 1 more, so 6 symbols and 1 stroke: 7 marks. (b) Monday 5 + 2 = 7, Tuesday 7, Wednesday 3 + 3 = 6, so 20 marks; a plain tally needs 27 + 31 + 18 = 76 strokes. (c) Monday 27 = 2 tens, 1 five, 2 strokes (5 marks); Tuesday 31 = 3 tens, 1 stroke (4 marks); Wednesday 18 = 1 ten, 1 five, 3 strokes (5 marks): 14 marks. (d) No. The saving is 20 - 14 = 6 marks, but one third of 20 is about 6.7, so the cut falls just short of his rule, though the record is shorter.",
+          "s": [
+            [
+              "Part (a): 7 marks for Tuesday",
+              1
+            ],
+            [
+              "Part (b): 20 marks against 76 strokes",
+              1
+            ],
+            [
+              "Part (c): 14 marks with a symbol for 10",
+              1
+            ],
+            [
+              "Part (d): no, since a saving of 6 is less than one third of 20",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A traveller hears a Bakairi speaker of South America say 'ahage tokale' for a count of birds, where tokale is 1 and ahage is 2, and a Gumulgal speaker of Australia say 'ukasar-ukasar-urapon' for a count of fish. How do the two counts compare?",
+          "a": "The fish are 2 more than the birds",
+          "o": [
+            "The fish are 2 more than the birds",
+            "The two counts are equal, both 3",
+            "The birds are more, as ahage is longer",
+            "The fish are 1 more than the birds"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A group counts with body parts in a fixed order: left little finger 1, the other left fingers 2 to 5 (ending at the left thumb), left wrist 6, left elbow 7, left shoulder 8, neck 9, right shoulder 10, right elbow 11, right wrist 12, right thumb 13, and the other right fingers 14 to 17 (ending at the right little finger).\n(a) A boy counts 13 deer but by mistake starts from the right little finger and moves the other way. On which body part does he stop, and what number would an elder who knows the usual order read from it?\n(b) Which rule of counting did he break? For how many deer would his mistake have given the right answer?",
+          "a": "(a) Going backwards, the k-th body part he touches is the one numbered 18 - k in the usual order, so the 13th is number 5, the left thumb; the elder reads 5 deer instead of 13. (b) He broke the rule that the standard sequence must be followed in its fixed order. The two directions meet only where k = 18 - k, that is k = 9 (the neck), so only a count of 9 deer would come out right.",
+          "s": [
+            [
+              "Part (a): stops at the left thumb, which the elder reads as 5",
+              1
+            ],
+            [
+              "Part (b): broke the fixed-order rule; only a count of 9 (the neck) is unaffected",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the Gumulgal system as they actually used it, a fisher adds a catch of ukasar-ukasar-urapon fish to a catch of ukasar-urapon fish. What name would he give the total catch?",
+          "a": "ras",
+          "o": [
+            "ras",
+            "ukasar-ukasar-ukasar-ukasar",
+            "ukasar-ukasar-ukasar-urapon",
+            "ukasar-ukasar-ukasar"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A school museum corner shows replicas of two notched bones with these cards.\nBone X: found in South Africa; 29 notches; estimated to be about 44,000 years old; may have served as a tally stick or a lunar calendar.\nBone Y: found in the Democratic Republic of Congo; notches arranged in columns; dated 20,000 to 35,000 years old.\n(a) Which known bones are X and Y?\n(b) A student copies Bone X's record with sticks, one stick for each notch. How many sticks does she need, and in what way is a tally different from counting with sticks?\n(c) A visitor says: 'Bone X shows that its maker knew a spoken name for twenty-nine.' Evaluate this claim.\n(d) A guide says: 'The columns on Bone Y prove that it counted objects and not days.' Evaluate this claim.\n(e) The class wants to record this year's 1345 visitors with one notch each, as on Bone X. State the drawback, and name the idea that later number systems used to overcome it.",
+          "a": "(a) X is the Lebombo bone and Y is the Ishango bone. (b) 29 sticks. A tally works exactly like counting with sticks, one item per object, except that a mark is cut instead of a stick being added. (c) Not supported. In a tally one notch is made for each object and the final collection of marks itself stands for the number, so no number name is needed to make or read it; the bone tells us nothing about the maker's words. (d) Not supported. The arrangement in columns is thought possibly to indicate a calendar, which would mean counting days, so the columns cannot prove the opposite; the bone's purpose is not known for certain. (e) It would need 1345 notches, as many marks as visitors, which is slow to make and to read. Later systems counted in groups of a fixed size and used a word or symbol for each group.",
+          "s": [
+            [
+              "Part (a): Lebombo and Ishango",
+              1
+            ],
+            [
+              "Part (b): 29 sticks; a mark replaces a stick",
+              1
+            ],
+            [
+              "Part (c): rejects the claim, since a tally needs no number names",
+              1
+            ],
+            [
+              "Part (d): rejects the claim, since the columns may indicate a calendar",
+              1
+            ],
+            [
+              "Part (e): 1345 marks, overcome by counting in groups of a fixed size",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: In a system that counts only in groups of 5, with one symbol for a group of 5 and a stroke for each 1 left over, the number 1345 needs exactly 269 marks. Give a reason, and say what this shows about counting in groups of one size.",
+          "a": "True. 1345 = 269 x 5 with nothing left over, so it is written with 269 symbols for 5 and no strokes. Even so, 269 marks is far too many: counting in groups of a single size becomes cumbersome for large numbers.",
+          "s": [
+            [
+              "States True, since 1345 = 269 x 5 with no remainder",
+              1
+            ],
+            [
+              "Notes that 269 marks shows a single group size is cumbersome for large numbers",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A forest people count in groups of 5 and 20: the word 'hand' means 5, the word 'man' (all fingers and toes) means 20, and there are words for 1 to 4. A trader hears the count 'one man, three hands and four'. How many goods is that?",
+          "a": "39",
+          "o": [
+            "39",
+            "54",
+            "29",
+            "134"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A Gumulgal elder owns 5 goats, his neighbour owns 8 and his cousin owns 11.\n(a) Give the Gumulgal name for each herd, as the Gumulgal actually counted.\n(b) Can the neighbour and the cousin find out who has more goats from these names alone? Explain.\n(c) How can they still find out who has more, without any number names?",
+          "a": "(a) 5 is ukasar-ukasar-urapon; 8 and 11 are both ras, since any number above 6 was ras. (b) No: both herds are called ras, so the names do not show which is larger. (c) They can make a one-to-one mapping, pairing one of the neighbour's goats with one of the cousin's until one herd runs out. The cousin's herd has goats left unpaired (3 of them), so the cousin has more.",
+          "s": [
+            [
+              "Part (a): ukasar-ukasar-urapon, ras and ras",
+              1
+            ],
+            [
+              "Part (b): no, since both are ras",
+              1
+            ],
+            [
+              "Part (c): pairs the goats one to one and sees the cousin has goats left over",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: Even if the Ishango bone is as old as the oldest date given for it, the Lebombo bone is still at least 9,000 years older. Give a reason, and find the greatest number of years by which the Lebombo bone could be older.",
+          "a": "True. The Ishango bone is dated 20,000 to 35,000 years old and the Lebombo bone about 44,000 years old. Even at 35,000 years the difference is 44,000 - 35,000 = 9,000 years. The greatest difference comes from the youngest date: 44,000 - 20,000 = 24,000 years.",
+          "s": [
+            [
+              "States True, since 44,000 - 35,000 = 9,000",
+              1
+            ],
+            [
+              "Finds the greatest difference, 24,000 years",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "The Bushmen of South Africa named 2 as t'oa, 4 as t'oa-t'oa and 6 as t'oa-t'oa-t'oa, counting in twos just as the Gumulgal did with ukasar (2) and urapon (1). A record made by carrying the Bushmen's counting in twos past 6 reads: t'oa said 7 times. Write a real situation this record could describe, find the number, and give its Gumulgal-style name carried past 6 as well as the name a Gumulgal speaker of that time would actually have used.",
+          "a": "For example: a Bushman herder and a Gumulgal trader count the same flock of goats, and the herder's count is t'oa said 7 times. Seven twos make 7 x 2 = 14 goats. Carried past 6, the Gumulgal-style name is ukasar said 7 times. But the Gumulgal called any number greater than 6 ras, so the trader would actually have said ras.",
+          "s": [
+            [
+              "Writes a sensible situation for the record",
+              1
+            ],
+            [
+              "Finds 14 and the name ukasar said 7 times",
+              1
+            ],
+            [
+              "Gives ras as the name actually used, since 14 is greater than 6",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "At a school kabaddi match three scorers record the same team's points in different ways. Scorer A makes one stroke per point. Scorer B counts in twos with Gumulgal-style words carried past 6 (urapon = 1, ukasar = 2), so 5 is ukasar-ukasar-urapon. Scorer C draws one symbol for every complete group of 5 points and one stroke for each point left over. The team ends the first match with 36 points.\n(a) How many strokes does Scorer A's record have, and how many words does Scorer B's name for 36 have?\n(b) How many marks does Scorer C's record have?\n(c) For which scores from 1 to 10 does Scorer B use fewer marks than Scorer C?\n(d) Next season each raid's points (never more than 4) are written down separately, and the match totals (up to about 60) on a board. The organisers want the shorter record in each place. Which scorer's method should be used for the raids and which for the totals? Justify.",
+          "a": "(a) 36 strokes; 36 = 18 twos, so ukasar is said 18 times: 18 words. (b) 36 = 7 fives and 1, so 7 symbols and 1 stroke: 8 marks. (c) B uses n/2 words rounded up and C uses fives plus leftover strokes: for 2, 3 and 4, B needs 1, 2, 2 marks against C's 2, 3, 4. At 1, 8 and 9 they tie, and at 5, 6, 7 and 10 C is shorter. So only 2, 3 and 4. (d) Scorer B for the raids, since a raid scores at most 4 and B is never longer than C up to 4 (shorter for 2, 3, 4); Scorer C for the totals, since for large scores C is far shorter (for 58: C 14 marks, B 29, A 58).",
+          "s": [
+            [
+              "Part (a): 36 strokes and 18 words",
+              1
+            ],
+            [
+              "Part (b): 8 marks",
+              1
+            ],
+            [
+              "Part (c): only the scores 2, 3 and 4",
+              1
+            ],
+            [
+              "Part (d): B for raids and C for totals, using (c) and the large-score counts",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-3.3",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Add LXXVIII and LVII without converting them to Hindu numerals.\n(a) Collect the like symbols of the two numerals.\n(b) Regroup them, starting with the smallest symbols, and write the sum as a Roman numeral.",
+          "a": "(a) LL (one L from each), XX (both from LXXVIII), VV (one V from each) and IIIII (three Is from LXXVIII and two from LVII). (b) IIIII makes V, so there are VVV; two Vs make X, leaving V and giving XXX; two Ls make C. The sum is CXXXV.",
+          "s": [
+            [
+              "Part (a): collects LL, XX, VV and IIIII",
+              1
+            ],
+            [
+              "Part (b): regroups to CXXXV",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements about the Roman landmark numbers I, V, X, L, C, D and M.\nStatement 1: When Roman numerals are added, every 2 Cs are regrouped as one D.\nStatement 2: Each landmark number after I is either 5 times or 2 times the one before it.\nStatement 3: People using the Roman system did not always write 40 as XL; sometimes they wrote XXXX.\nWhich of the statements are correct?",
+          "a": "2 and 3 only",
+          "o": [
+            "2 and 3 only",
+            "1 and 2 only",
+            "3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When 2387 is written in Roman numerals by grouping it into landmark numbers, largest first, the numeral has ___ symbols.",
+          "a": "12"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The foundation stone of an old library shows the year MDCCLXXVIII. A second stone, laid exactly 45 years later for a new wing, shows its year in Roman numerals grouped largest first. What does the second stone read?",
+          "a": "MDCCCXXIII",
+          "o": [
+            "MDCCCXXIII",
+            "MDCCCXVIII",
+            "MDCCCXXXIII",
+            "MDCCCXIII"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student says he added two Roman numerals, each made only of the symbols X, V and I and written largest first with no shorter forms (so 40 is XXXX and 9 is VIIII), and got the one-symbol answer D. Show that this is impossible.",
+          "a": "With only X, V and I written largest first, a numeral can have at most four Xs (five Xs would have been written as L), at most one V (two Vs would be X) and at most four Is (five Is would be V). So the largest such numeral is XXXXVIIII = 40 + 5 + 4 = 49. Two such numerals add up to at most 49 + 49 = 98, which is less than C, let alone D = 500. So the sum can never be D.",
+          "s": [
+            [
+              "Finds the largest such numeral, XXXXVIIII = 49",
+              1
+            ],
+            [
+              "Shows two of them add to at most 98",
+              1
+            ],
+            [
+              "Concludes that 98 is less than 500, so D is impossible",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each product of Roman landmark numbers with its value written as a Roman numeral.\nColumn A: 1. V x V   2. X x X   3. L x X   4. L x L\nColumn B: a. C   b. MMD   c. XXV   d. D",
+          "a": "1-c, 2-a, 3-d, 4-b",
+          "o": [
+            "1-c, 2-a, 3-d, 4-b",
+            "1-a, 2-c, 3-d, 4-b",
+            "1-c, 2-a, 3-b, 4-d",
+            "1-d, 2-a, 3-c, 4-b"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Multiplying two numbers written in Roman numerals is much harder than adding them.\nReason (R): The product of two Roman landmark numbers, such as V x V, is not always a landmark number.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An old cattle register records the cows of one farm as XXXXVII and the cows of another farm as XLVII. What can a reader conclude?",
+          "a": "Both farms have 47 cows",
+          "o": [
+            "Both farms have 47 cows",
+            "The first has 47 cows, the second 67",
+            "The first has 47 cows, the second 57",
+            "XXXXVII is not a Roman numeral"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 2005 and 2050 in Roman numerals by grouping into landmark numbers, largest first.\n(b) Ravi says: 'Without a symbol for 0, the Roman numerals for 2005 and 2050 could be confused, just as 205 and 250 would both look like 25 if we dropped the 0 from our numerals.' Is he right? Explain.",
+          "a": "(a) 2005 = 1000 + 1000 + 5 = MMV and 2050 = 1000 + 1000 + 50 = MML. (b) No. A Roman symbol has the same value wherever it stands: V is always 5 and L is always 50, so MMV and MML are different and cannot be confused, and nothing marks the missing hundreds or tens. In our numerals the value of a digit depends on its position, so dropping the 0 would shift the 5 into another place; that is why we need 0 and the Romans did not.",
+          "s": [
+            [
+              "Part (a): MMV and MML",
+              1
+            ],
+            [
+              "Part (b): no, since Roman symbols do not depend on position, unlike our digits",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A shop had DCCCXV notebooks at the start of the term and has CCLXXVIII left now. The clerk wants to write down how many were sold. Which numeral, when added to CCLXXVIII by collecting like symbols and regrouping, gives back DCCCXV?",
+          "a": "DXXXVII",
+          "o": [
+            "DXXXVII",
+            "DXXVII",
+            "DCXXXVII",
+            "DLXXXVII"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Add XL and XXVII by first rewriting XL in the longer form XXXX, then collecting like symbols and regrouping.\n(b) A student instead collects the symbols of XL and XXVII as they stand, getting L, XXX, V and II, that is LXXXVII. Explain why this is wrong.",
+          "a": "(a) XXXX + XXVII gives XXXXXX, V and II. Five Xs make L, so the sum is LXVII (67). (b) In XL the X is written before the L to show 10 less than 50, so it must be taken away, not added. Collecting it as an extra X counts 10 + 50 instead of 50 - 10, which gives 87 instead of 67.",
+          "s": [
+            [
+              "Part (a): LXVII",
+              1
+            ],
+            [
+              "Part (b): the X in XL means 10 less than 50, so it cannot be collected as an added X",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ishaan says: 'In the Roman system, a numeral with more symbols can stand for a smaller number than a numeral with fewer symbols.' Check his claim with an example of your own, and explain why this can happen.",
+          "a": "Yes, he is right. For example, LXXXVIII has 8 symbols and stands for 50 + 10 + 10 + 10 + 5 + 1 + 1 + 1 = 88, while C has 1 symbol and stands for 100. This happens because a single landmark symbol such as C stands for a large group, so the number of symbols depends on how the number breaks into landmark numbers, not on its size.",
+          "s": [
+            [
+              "Gives a correct pair of numerals, such as LXXXVIII = 88 and C = 100",
+              1
+            ],
+            [
+              "Shows the longer numeral is the smaller number",
+              1
+            ],
+            [
+              "Explains that one landmark symbol stands for a whole group, so length does not show size; verdict: the claim is right",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A Roman clerk works out LX x L by splitting LX into L and X, multiplying each part by L, and regrouping the result largest first. Which numeral does he get?",
+          "a": "MMM",
+          "o": [
+            "MMM",
+            "MMD",
+            "MMMD",
+            "MMDL"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A stall at a school fair records its token sales in Roman numerals, grouping each number into landmark numbers, largest first.\nDay 1: CCCLXVII\nDay 2: CCLXXXVI\nDay 3: DXXV\nThe stall had set a target of MCC tokens for the whole fair, which runs for four days.\n(a) On which of the first three days were the most tokens sold? A volunteer says it was Day 1 because its numeral is the longest. Is he right?\n(b) Add the sales of Day 1 and Day 2 by collecting like symbols and regrouping. Write the answer as a Roman numeral.\n(c) Add Day 3 to your answer in (b) to get the total for the first three days.\n(d) On Day 4, the last day of the fair, the stall sells only XXV more tokens. Add them to your answer in (c) and decide whether the stall reached its target for the fair.",
+          "a": "(a) Day 3: DXXV is 525, more than Day 1 (367) and Day 2 (286), though it has the fewest symbols, so the volunteer is wrong. (b) CCCCC, LL, XXXX, VV, III; VV makes X, giving XXXXX, which makes L; LLL gives C and L; six Cs give D and C. Sum: DCLIII (653). (c) DCLIII + DXXV: DD, C, L, XX, V, III; DD makes M, giving MCLXXVIII (1178). (d) MCLXXVIII + XXV gives M, C, L, XXXX, VV, III. VV makes X, so XXXXX makes L, and LL makes C: MCCIII (1203). After three days the stall was 22 short of MCC, but the four-day total MCCIII is just above MCC, so the target for the fair was reached, by 3 tokens.",
+          "s": [
+            [
+              "Part (a): Day 3, and the volunteer is wrong",
+              1
+            ],
+            [
+              "Part (b): DCLIII",
+              1
+            ],
+            [
+              "Part (c): MCLXXVIII",
+              1
+            ],
+            [
+              "Part (d): MCCIII, so the target MCC is just reached",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A shepherd's tally records his flock with Roman symbols that were never regrouped: six Cs, two Ls, six Xs, two Vs and seven Is.\n(a) What number does the record stand for?\n(b) Rewrite it largest first, saying each regrouping you make.\n(c) His neighbour's record reads DCCLXXII. Whose flock is larger, and why is the comparison easy only after (b)?",
+          "a": "(a) 600 + 100 + 60 + 10 + 7 = 777. (b) Seven Is: five make V, leaving II and three Vs. Three Vs: two make X, leaving V and seven Xs. Seven Xs: five make L, leaving XX and three Ls. Three Ls: two make C, leaving L and seven Cs. Seven Cs: five make D, leaving CC. The numeral is DCCLXXVII. (c) The shepherd's flock is larger: DCCLXXVII and DCCLXXII agree up to LXX, then VII is more than II (777 against 772). Two numerals written largest first can be compared symbol by symbol from the left; an unregrouped pile of symbols cannot.",
+          "s": [
+            [
+              "Part (a): 777",
+              1
+            ],
+            [
+              "Part (b): regroups step by step to DCCLXXVII",
+              1
+            ],
+            [
+              "Part (c): the shepherd's flock is larger by comparing symbol by symbol, which needs the largest-first form",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A Roman numeral is written by grouping into landmark numbers, largest first, and has exactly 3 symbols.\n(a) What is the largest number it can stand for?\n(b) What is the smallest number greater than 1000 that it can stand for? Explain why no smaller one works.",
+          "a": "(a) The largest symbol is M, so three Ms, MMM, gives 3000. (b) Any number above 1000 needs an M as its first symbol, since three symbols without M give at most DCC = 700. The other two symbols are then as small as possible, two Is: MII = 1002. MI (1001) has only 2 symbols, and every other choice of two symbols after M is larger than II.",
+          "s": [
+            [
+              "Part (a): MMM = 3000",
+              1
+            ],
+            [
+              "Part (b): MII = 1002, with the reason that M is needed and II is the smallest pair",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: When two Roman numerals that contain only the symbols X and I are added by collecting like symbols, the sum never needs regrouping. Give a reason with an example.",
+          "a": "False. Collecting can give five or more Xs or five or more Is, which must be regrouped: for example XXX + XX gives XXXXX, which regroups into L, and III + II gives IIIII, which regroups into V.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Gives an example such as XXX + XX = XXXXX = L where regrouping is needed",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "(a) Write 1673 in Roman numerals by grouping into landmark numbers, largest first, and count the symbols.\n(b) A system counts only in groups of 10, with a symbol for 10 and a stroke for each 1 left over. How many marks does 1673 need there?\n(c) Use (a) and (b) to explain why the Roman system was efficient for writing numbers.\n(d) A trader sold 1673 bricks on each of two days. Add your numeral from (a) to itself by collecting like symbols and regrouping.\n(e) Use (d) to explain why the Roman system was nevertheless inconvenient for arithmetic.",
+          "a": "(a) 1673 = 1000 + 500 + 100 + 50 + 10 + 10 + 1 + 1 + 1: MDCLXXIII, 9 symbols. (b) 1673 = 167 tens and 3, so 167 + 3 = 170 marks. (c) Grouping by the whole sequence of landmark numbers needs 9 symbols where one group size needs 170. (d) Collected: MM, DD, CC, LL, XXXX, IIIIII. Five Is make V, leaving I; two Ls make C, giving CCC; two Ds make M, giving MMM. The sum is MMMCCCXXXXVI (3346). (e) Even this one addition needed three regroupings, and they were not alike: five Is made a V, but two Ls made a C and two Ds made an M, so every symbol has to be checked against its own rule; multiplication and division are much harder still.",
+          "s": [
+            [
+              "Part (a): MDCLXXIII, 9 symbols",
+              1
+            ],
+            [
+              "Part (b): 170 marks",
+              1
+            ],
+            [
+              "Part (c): compares 9 with 170 to show the efficiency of landmark numbers",
+              1
+            ],
+            [
+              "Part (d): obtains MMMCCCXXXXVI",
+              1
+            ],
+            [
+              "Part (e): explains that the regroupings follow different rules, making arithmetic hard",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A village library, which keeps its records in Roman numerals grouped largest first, already has LXXXV books and needs at least DCCC books in all. Donor P offers two lots, CCCLXII and CCCLXVI books, free of cost. Donor Q offers one lot of DCCCXII books, but the library must pay for its transport.\n(a) Add P's two lots by collecting like symbols and regrouping.\n(b) Add the library's own LXXXV books to your answer in (a).\n(c) Add LXXXV to Q's lot.\n(d) The library committee will spend money only if the free offer does not bring it to DCCC books. Which offer should it take? Justify with your numerals.",
+          "a": "(a) CCCCCC, LL, XX, V, III; LL makes C, giving seven Cs, and five Cs make D: DCCXXVIII (728). (b) DCCXXVIII + LXXXV gives D, CC, L, XXXXX, VV, III; XXXXX makes L and LL makes C; VV makes X: DCCCXIII (813). (c) DCCCXII + LXXXV gives D, CCC, L, XXXX, V, II: DCCCLXXXXVII (897). (d) Donor P. With P the library has DCCCXIII, which is more than DCCC, so the free offer is enough and no money need be spent, even though Q would give more books (DCCCLXXXXVII).",
+          "s": [
+            [
+              "Part (a): DCCXXVIII",
+              1
+            ],
+            [
+              "Part (b): DCCCXIII",
+              1
+            ],
+            [
+              "Part (c): DCCCLXXXXVII",
+              1
+            ],
+            [
+              "Part (d): takes P's offer, since DCCCXIII already passes DCCC",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Write a real-life situation that needs the product XII x V. Then find the product without converting to Hindu numerals, by splitting XII into its landmark numbers, and write it as a Roman numeral.",
+          "a": "For example: a Roman baker packs 12 loaves in each basket and fills 5 baskets; how many loaves does he pack? XII = X + I + I, so XII x V = (X x V) + (I x V) + (I x V) = L + V + V. VV makes X, so the answer is LX loaves (60).",
+          "s": [
+            [
+              "Writes a sensible situation of 12 taken 5 times",
+              1
+            ],
+            [
+              "Splits XII and finds L, V and V",
+              1
+            ],
+            [
+              "Regroups VV into X to get LX",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Multiply CCXI by VI without converting to Hindu numerals.\n(a) Split each numeral into its landmark numbers.\n(b) List every product of one landmark number from CCXI with one from VI, as a Roman numeral.\n(c) Collect all the products.\n(d) Regroup to get the answer as a Roman numeral.\n(e) Check your answer by converting, and say which step made this harder than multiplying in a system where the product of two landmark numbers is always a landmark number.",
+          "a": "(a) CCXI = C + C + X + I and VI = V + I. (b) C x V = D (twice), C x I = C (twice), X x V = L, X x I = X, I x V = V, I x I = I. (c) DD, CC, L, X, V, I. (d) DD makes M, so the answer is MCCLXVI. (e) 211 x 6 = 1266 = MCCLXVI. The hard step is (b): C x V gives D but V x V would give XXV, so each product has to be worked out and rewritten, and then regrouped by changing group sizes.",
+          "s": [
+            [
+              "Part (a): splits into C + C + X + I and V + I",
+              1
+            ],
+            [
+              "Part (b): lists the eight products correctly",
+              1
+            ],
+            [
+              "Part (c): collects DD, CC, L, X, V, I",
+              1
+            ],
+            [
+              "Part (d): MCCLXVI",
+              1
+            ],
+            [
+              "Part (e): checks 211 x 6 = 1266 and names the product step as the hard part",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-3.4",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An Egyptian carving shows these symbols scattered in no particular order: 4 strokes for 1, one symbol for 100,000, 2 symbols for 10 and 6 symbols for 1000. Which number does the carving stand for?",
+          "a": "106024",
+          "o": [
+            "106024",
+            "16024",
+            "1624",
+            "100624"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: The landmark numbers of a base-n system are n to the power 0, n, n squared, n cubed, and so on.\nStatement 2: 1, 2, 4, 8, 16 are the first five landmark numbers of a base-2 system.\nStatement 3: 3, 9, 27, 81 are the first four landmark numbers of a base-3 system.\nWhich of the statements are correct?",
+          "a": "1 and 2 only",
+          "o": [
+            "1 and 2 only",
+            "1, 2 and 3",
+            "2 and 3 only",
+            "1 only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each sequence of landmark numbers with the correct description.\nColumn A: 1. 1, 3, 9, 27, ...   2. 1, 2, 6, 24, 120, ...   3. 1, 10, 60, 600, 3600, ...   4. 1, 6, 36, 216, ...\nColumn B: a. base-6 system   b. not a base: the factors go 10, 6, 10, 6   c. base-3 system   d. not a base: the factor grows by one at each step",
+          "a": "1-c, 2-d, 3-b, 4-a",
+          "o": [
+            "1-c, 2-d, 3-b, 4-a",
+            "1-c, 2-b, 3-d, 4-a",
+            "1-a, 2-d, 3-b, 4-c",
+            "1-c, 2-d, 3-a, 4-b"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 389 in the base-5 system by grouping it into the landmark numbers 125, 25, 5 and 1, largest first. How many symbols does it use?\n(b) How many symbols does 389 need in the Egyptian system? Which system writes 389 more briefly?",
+          "a": "(a) 389 = 3 x 125 + 0 x 25 + 2 x 5 + 4 x 1 (375 + 10 + 4), so 3 + 2 + 4 = 9 symbols. (b) In Egyptian numerals 389 = 3 hundreds, 8 tens and 9 ones, that is 3 + 8 + 9 = 20 symbols. The base-5 system is briefer here, 9 symbols against 20.",
+          "s": [
+            [
+              "Part (a): 3 of 125, 2 of 5 and 4 of 1, 9 symbols",
+              1
+            ],
+            [
+              "Part (b): 20 Egyptian symbols, so the base-5 numeral is briefer",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a base-n number system, the second and the fourth landmark numbers add up to 130. The third landmark number of this system is ___.",
+          "a": "25"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A teacher challenges her class to find a number that needs exactly as many symbols in the base-5 system (landmark numbers 1, 5, 25, 125, grouped largest first) as in Egyptian numerals. Which of these numbers meets the challenge?",
+          "a": "115",
+          "o": [
+            "115",
+            "125",
+            "60",
+            "101"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An Egyptian scribe is paid one copper piece for every symbol he carves. Which of these temple records earns him the most?",
+          "a": "698",
+          "o": [
+            "698",
+            "40213",
+            "5807",
+            "1990"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: The base-5 system built in the chapter, with a symbol for each of the landmark numbers 1, 5, 25, 125, 625, ..., can represent every whole number, including 0. Give a reason.",
+          "a": "False. Every positive whole number can be grouped into the landmark numbers 1, 5, 25, 125, ..., but 0 cannot be represented: there is nothing to group and the system has no symbol for zero.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Explains that 0 has no symbol, though every positive number can be grouped",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Pari says: 'The Roman landmark numbers 1, 5, 10, 50, 100, 500, 1000 include 10, 100 and 1000, so the Roman system is a base-10 system, just like the Egyptian one.' Is she right? Use the definition of a base-n system.",
+          "a": "No. In a base-n system the first landmark number is 1 and every next one is the current one multiplied by the same fixed number n. In the Roman sequence the factors are 5 (1 to 5), 2 (5 to 10), 5, 2, 5, 2, which are not all the same, so it has no base. The Egyptian landmarks 1, 10, 100, 1000 are each 10 times the previous one, so only the Egyptian system is base-10. Containing some powers of 10 is not enough.",
+          "s": [
+            [
+              "States the definition: start at 1 and multiply by the same n each time",
+              1
+            ],
+            [
+              "Shows the Roman factors alternate 5, 2, 5, 2",
+              1
+            ],
+            [
+              "Concludes she is wrong; only the Egyptian system is base-10",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The Egyptian number system is a base-10 system.\nReason (R): The Egyptian system has a different symbol for each of its landmark numbers.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) The third landmark number of a base-n system is 64. Find n.\n(b) Find the fifth landmark number of the same system.",
+          "a": "(a) The landmark numbers are 1, n, n squared, ..., so the third one is n squared. n x n = 64 gives n = 8. (b) The fifth landmark number is 8 to the power 4 = 8 x 8 x 8 x 8 = 4096.",
+          "s": [
+            [
+              "Part (a): uses third landmark = n squared to get n = 8",
+              1
+            ],
+            [
+              "Part (b): 8 to the power 4 = 4096",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A base-5 record has symbols for 1, 5, 25 and 125, but none for 625. Every number is grouped largest first, and no symbol may be written 5 or more times. What is the largest number this record can show?",
+          "a": "624",
+          "o": [
+            "624",
+            "620",
+            "625",
+            "500"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A base-5 record uses one symbol each for 1, 5, 25 and 125. It shows two symbols for 125, one symbol for 25, no symbol for 5 and four symbols for 1. Find the number it stands for, write a real situation in which someone could have made this record, and find how many more objects must be added until the record first needs a symbol for 625.",
+          "a": "2 x 125 + 1 x 25 + 4 x 1 = 250 + 25 + 4 = 279. For example: a shepherd records the 279 sheep he took to the market. The next landmark number after 125 is 5 x 125 = 625, so 625 - 279 = 346 more sheep must be added before the record first needs a symbol for 625 (at 345 more, 624 still needs none).",
+          "s": [
+            [
+              "Finds 279",
+              1
+            ],
+            [
+              "Writes a sensible situation for 279 objects",
+              1
+            ],
+            [
+              "Finds the next landmark 625 and the 346 objects still needed",
+              1
+            ]
+          ],
+          "tags": [
+            "reverse"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A base-5 system uses the symbols a for 1, b for 5, c for 25, d for 125 and e for 625. A numeral in it has one e, two d, no c, four b and three a. Which number does it stand for?",
+          "a": "898",
+          "o": [
+            "898",
+            "12043",
+            "1243",
+            "923"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A museum displays three Egyptian records of grain sacks, described here by the number of each symbol.\nStorehouse A: 2 symbols for 1000, 7 for 100, none for 10, 6 strokes for 1.\nStorehouse B: 1 symbol for 10,000, 3 for 100, 6 for 10, 2 strokes.\nStorehouse C: 8 symbols for 1000, 9 for 100, 9 for 10, 9 strokes.\n(a) Which number does Storehouse A's record stand for?\n(b) Which record uses the most symbols, and does it belong to the storehouse with the most sacks?\n(c) One more sack is added to Storehouse C. Write the new record and say how many symbols it uses.\n(d) Copies are kept on small tablets with room for at most 20 symbols. Next week Storehouse A receives 95 more sacks. Will A's new record still fit on one tablet? Show the new record.",
+          "a": "(a) 2000 + 700 + 6 = 2706. (b) C uses 8 + 9 + 9 + 9 = 35 symbols (A uses 15, B uses 12). C has 8999 sacks, but B has more, 10,362, using only 12 symbols, so no. (c) 8999 + 1 = 9000: the 9 strokes and the new one make a 10, the ten 10s make a 100, the ten 100s make a 1000, giving 9 symbols for 1000 and nothing else: 9 symbols. (d) Yes. Adding 9 tens and 5 strokes to A's record: 6 + 5 = 11 strokes make 1 ten and 1 stroke; 0 + 9 + 1 = 10 tens make 1 hundred; 7 + 1 = 8 hundreds. The new record is 2 symbols for 1000, 8 for 100, none for 10 and 1 stroke (2801), only 11 symbols, fewer than before.",
+          "s": [
+            [
+              "Part (a): 2706",
+              1
+            ],
+            [
+              "Part (b): C with 35 symbols, but B has more sacks",
+              1
+            ],
+            [
+              "Part (c): 9 symbols for 1000, 9 symbols in all",
+              1
+            ],
+            [
+              "Part (d): yes, the new record 2801 uses 11 symbols",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 1706 in Egyptian numerals (say how many of each symbol) and in Roman numerals, grouping largest first in both.\n(b) Which needs more symbols, and why?",
+          "a": "(a) Egyptian: one symbol for 1000, seven for 100, none for 10 and six strokes, 14 symbols. Roman: 1706 = 1000 + 500 + 100 + 100 + 5 + 1, MDCCVI, 6 symbols. (b) The Egyptian numeral needs more because it has landmarks only at powers of 10; the Roman system also has landmarks at 5, 50 and 500, so a 7 or a 6 in a place needs fewer symbols.",
+          "s": [
+            [
+              "Part (a): 14 Egyptian symbols and MDCCVI",
+              1
+            ],
+            [
+              "Part (b): explains the Roman landmarks 5, 50, 500 make it shorter here",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Build a base-4 system in the same way as the base-5 system of the chapter.\n(a) List its first five landmark numbers.\n(b) Represent 100 in it, grouping largest first, and count the symbols.\n(c) Represent 255 in it and count the symbols.\n(d) Represent 256 in it and count the symbols.\n(e) Explain why the number of symbols drops so sharply from 255 to 256.",
+          "a": "(a) 1, 4, 16, 64, 256. (b) 100 = 1 x 64 + 2 x 16 + 1 x 4 + 0 x 1: 1 + 2 + 1 = 4 symbols. (c) 255 = 3 x 64 + 3 x 16 + 3 x 4 + 3 x 1 = 192 + 48 + 12 + 3: 12 symbols. (d) 256 is itself the fifth landmark number, so 1 symbol. (e) 255 uses the most each symbol can occur, 3 times, at every landmark. Adding 1 makes 4 of the smallest landmark, which regroup into the next, and so on up the line until everything becomes one 256.",
+          "s": [
+            [
+              "Part (a): 1, 4, 16, 64, 256",
+              1
+            ],
+            [
+              "Part (b): 100 with 4 symbols",
+              1
+            ],
+            [
+              "Part (c): 255 with 12 symbols",
+              1
+            ],
+            [
+              "Part (d): 256 with 1 symbol",
+              1
+            ],
+            [
+              "Part (e): explains the chain of regrouping from 255 to 256",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Arun says: 'The landmark numbers of a base-n system are the powers of n, so the second landmark number of a base-6 system is 36.' Check both parts of his statement.",
+          "a": "Partly right. The landmark numbers are indeed the powers of n, but they start from n to the power 0, which is 1. So the base-6 landmarks are 1, 6, 36, 216, ...; the second landmark number is 6, and 36 is the third.",
+          "s": [
+            [
+              "Agrees that the landmark numbers are powers of n",
+              1
+            ],
+            [
+              "Points out that they start from n to the power 0 = 1",
+              1
+            ],
+            [
+              "Corrects the second landmark to 6 (36 is the third); verdict partly right",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write the landmark numbers of a base-3 system up to 81.\n(b) Represent 50 in this system, grouping largest first, and count its symbols.",
+          "a": "(a) 1, 3, 9, 27, 81. (b) 50 is less than 81, so start at 27: 50 = 1 x 27 + 2 x 9 + 1 x 3 + 2 x 1 (27 + 18 + 3 + 2), which uses 1 + 2 + 1 + 2 = 6 symbols.",
+          "s": [
+            [
+              "Part (a): 1, 3, 9, 27, 81",
+              1
+            ],
+            [
+              "Part (b): 1 of 27, 2 of 9, 1 of 3, 2 of 1, 6 symbols",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Meera invents a number system with a base, but keeps the base secret. She tells her friends that their class strength is 'two of the third landmark number, one of the second and three of the first', and that the class has 39 students.\n(a) Without using the number 39, explain which bases are ruled out by the words 'three of the first'.\n(b) Test the bases that remain, using the landmark numbers of each, to find her base.\n(c) Write 70 in her system, grouping largest first.\n(d) Meera now wants the system, base 4 or base 5, that writes the number 120 with fewer symbols. Which should she choose? Show the groupings.",
+          "a": "(a) In base 2 or base 3, two or three of the first landmark number would make one of the next, so a numeral grouped largest first could never show three of the first. The base must be at least 4. (b) In base 4 the landmarks are 1, 4, 16: 2 x 16 + 1 x 4 + 3 = 39, which fits. In base 5 they are 1, 5, 25: 2 x 25 + 5 + 3 = 58, and larger bases give more, so the base is 4. (c) 70 = 1 x 64 + 0 x 16 + 1 x 4 + 2 x 1: one of 64, one of 4 and two of 1, 4 symbols. (d) Base 4: 120 = 1 x 64 + 3 x 16 + 2 x 4, which is 6 symbols. Base 5: 120 = 4 x 25 + 4 x 5, which is 8 symbols. She should choose base 4.",
+          "s": [
+            [
+              "Part (a): bases 2 and 3 are ruled out, since three of the first would regroup",
+              1
+            ],
+            [
+              "Part (b): base 4, since 2 x 16 + 4 + 3 = 39",
+              1
+            ],
+            [
+              "Part (c): one 64, one 4 and two 1s",
+              1
+            ],
+            [
+              "Part (d): base 4, with 6 symbols against 8",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Justify the statement: 'When a number is written in the base-5 system by grouping into landmark numbers largest first, no symbol is ever used 5 or more times.'\n(a) Show the grouping of 1987 into 625, 125, 25, 5 and 1, largest first.\n(b) Count how many times each symbol is used, and the total number of symbols.\n(c) Explain why, at each step, fewer than 5 of a landmark number can be left.\n(d) A student groups 1987 smallest first and writes 397 fives and 2 ones. Is this a correct base-5 numeral? Explain.\n(e) Conclude whether the statement is true.",
+          "a": "(a) 1987 = 3 x 625 (1875), leaving 112; 0 x 125; 4 x 25 (100), leaving 12; 2 x 5, leaving 2; 2 x 1. (b) 625 three times, 125 none, 25 four times, 5 twice, 1 twice: 11 symbols. (c) If 5 or more of a landmark were left, 5 of them would make the next landmark number, which we would already have taken, since we take as many of each larger landmark as possible. (d) No. 397 fives contain 79 groups of 5 fives, that is 79 of the 25s, which must be regrouped further; the numeral must use the largest landmarks first. (e) The statement is true: each symbol is used at most 4 times.",
+          "s": [
+            [
+              "Part (a): 3 of 625, 0 of 125, 4 of 25, 2 of 5, 2 of 1",
+              1
+            ],
+            [
+              "Part (b): 11 symbols, none used more than 4 times",
+              1
+            ],
+            [
+              "Part (c): explains that 5 of a landmark make the next one",
+              1
+            ],
+            [
+              "Part (d): rejects 397 fives because they must be regrouped",
+              1
+            ],
+            [
+              "Part (e): concludes the statement is true",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-3.5",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A scribe adds two Egyptian records. The first has 3 symbols for 100, 8 for 10 and 7 strokes; the second has 4 symbols for 100, 6 for 10 and 5 strokes. After regrouping, what does the sum show?",
+          "a": "8 hundreds, 5 tens and 2 strokes",
+          "o": [
+            "8 hundreds, 5 tens and 2 strokes",
+            "7 hundreds, 14 tens and 12 strokes",
+            "7 hundreds, 5 tens and 2 strokes",
+            "8 hundreds, 4 tens and 2 strokes"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements about regrouping when numerals are added.\nStatement 1: In Egyptian addition, every 10 of one symbol regroup into one symbol of the next landmark number.\nStatement 2: In Roman addition, 5 Is regroup into a V, but 2 Vs regroup into an X.\nStatement 3: In the base-5 system, 5 of any landmark number regroup into one of the next.\nWhich of the statements are correct?",
+          "a": "1, 2 and 3",
+          "o": [
+            "1, 2 and 3",
+            "1 and 3 only",
+            "1 and 2 only",
+            "3 only"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Nisha adds two numerals in a base-4 system that has symbols for 1, 4, 16 and 64. After collecting like symbols she has 3 of 16, 6 of 4 and 5 of 1. She regroups so that no symbol appears 4 or more times. What does her numeral show?",
+          "a": "1 of 64, 3 of 4 and 1 of 1",
+          "o": [
+            "1 of 64, 3 of 4 and 1 of 1",
+            "1 of 64, 1 of 16, 3 of 4 and 1 of 1",
+            "3 of 16, 2 of 4 and 1 of 1",
+            "1 of 64, 2 of 4 and 1 of 1"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: When an Egyptian numeral (written by grouping largest first) is multiplied by 10, no regrouping is ever needed. Give a reason.",
+          "a": "True. Multiplying by 10 turns each symbol into the symbol of the next landmark number (a 10 becomes a 100, a 100 becomes a 1000, and so on), so each symbol keeps the same count. Since no symbol appeared 10 or more times before, none does after, so nothing needs regrouping.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Explains that each symbol moves to the next landmark with the same count, which stays below 10",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A scribe's record shows 12 symbols for 10 and 4 strokes. Show that a numeral written by grouping into Egyptian landmark numbers, largest first, can never contain 10 or more of one symbol, and rewrite the scribe's record correctly.",
+          "a": "When grouping largest first, we take as many of each larger landmark number as possible. If 10 or more of one symbol were left, 10 of them would make the next landmark number, which would already have been taken. So no symbol can appear 10 or more times. In the record, 10 of the 12 tens make one 100, leaving 2 tens: the correct record is 1 symbol for 100, 2 for 10 and 4 strokes, that is 124.",
+          "s": [
+            [
+              "Explains that 10 of a symbol make the next landmark number",
+              1
+            ],
+            [
+              "Concludes that grouping largest first leaves fewer than 10 of each",
+              1
+            ],
+            [
+              "Rewrites the record as 1 hundred, 2 tens, 4 strokes (124)",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "On a decimal abacus each line stands for a power of 10 and a counter just above a line counts 5 of that line. If the line for 100 has 3 counters on it and 1 counter above it, the line for 10 is empty, and the line for 1 has 4 counters on it and 1 counter above it, the number shown is ___.",
+          "a": "809"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): To multiply an Egyptian numeral by 10, each symbol can simply be replaced by the symbol of the next landmark number.\nReason (R): In the Egyptian system, the product of two landmark numbers is sometimes not a landmark number.",
+          "a": "A is true but R is false",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An Egyptian numeral has 2 symbols for 1000, 5 symbols for 10 and 3 strokes.\n(a) Use the distributive property to multiply it by the symbol for 100, and say which symbols the product has.\n(b) Write the number before and after the multiplication in Hindu numerals.",
+          "a": "(a) Each part is multiplied by 100: each 1000 becomes 100,000, each 10 becomes 1000 and each stroke becomes 100. The product has 2 symbols for 100,000, 5 for 1000 and 3 for 100. (b) Before: 2053. After: 205300.",
+          "s": [
+            [
+              "Part (a): 2 symbols for 100,000, 5 for 1000 and 3 for 100",
+              1
+            ],
+            [
+              "Part (b): 2053 and 205300",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An Egyptian scribe has symbols only for 1, 10, 100, and so on up to 10,000,000. A record shows 4 symbols for 10,000,000, 3 symbols for 100,000 and 2 symbols for 10. The king orders the amount to be multiplied by 100 and written again, without inventing any new symbol. How many symbols for 10,000,000 does the new record have?",
+          "a": "403",
+          "o": [
+            "403",
+            "400",
+            "7",
+            "43"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Lata says: 'Adding numbers in the Egyptian system works just like adding in our Hindu system: ten of one landmark make one of the next.' Test her claim by adding, in Egyptian symbols, 2 thousands, 6 hundreds, 9 tens and 8 strokes to 1 thousand, 5 hundreds, 4 tens and 7 strokes, and compare with the column addition 2698 + 1547.",
+          "a": "Yes, she is right. Collecting: 3 thousands, 11 hundreds, 13 tens, 15 strokes. Ten strokes make a ten: 5 strokes, 14 tens. Ten tens make a hundred: 4 tens, 12 hundreds. Ten hundreds make a thousand: 2 hundreds, 4 thousands. The sum is 4 thousands, 2 hundreds, 4 tens, 5 strokes = 4245. Column addition gives 2698 + 1547 = 4245 with the same carries of 1 from each column, because both systems regroup ten of a landmark into one of the next.",
+          "s": [
+            [
+              "Collects the symbols: 3 thousands, 11 hundreds, 13 tens, 15 strokes",
+              1
+            ],
+            [
+              "Regroups ten for one at each landmark to get 4245",
+              1
+            ],
+            [
+              "Compares the carries with column addition and agrees with Lata",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student multiplies pairs of landmark numbers of the base-5 system (1, 5, 25, 125, ...) and writes down four results. Which result must contain a mistake?",
+          "a": "62500",
+          "o": [
+            "62500",
+            "15625",
+            "3125",
+            "78125"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "A base-5 system uses a for 1, b for 5, c for 25, d for 125, e for 625 and f for 3125. Match each product with its single-symbol answer.\nColumn A: 1. b x b   2. b x c   3. c x c   4. c x d\nColumn B: a. e   b. c   c. f   d. d",
+          "a": "1-b, 2-d, 3-a, 4-c",
+          "o": [
+            "1-b, 2-d, 3-a, 4-c",
+            "1-b, 2-a, 3-d, 4-c",
+            "1-d, 2-b, 3-a, 4-c",
+            "1-b, 2-d, 3-c, 4-a"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Compare and analyse multiplying by 5 in two systems.\n(a) A base-5 system uses a for 1, b for 5, c for 25, d for 125. Multiply the numeral '3 c, 2 b, 1 a' by b and give the answer in symbols.\n(b) Multiply LXXXVI by V in Roman numerals by multiplying each landmark of LXXXVI by V.\n(c) Collect and regroup your answer to (b) into a Roman numeral.\n(d) Check that both answers stand for the same number.\n(e) Explain why one method needed no regrouping and the other did.",
+          "a": "(a) Each symbol moves up one landmark: 3 d, 2 c, 1 b. (b) L x V = CCL, each X x V = L (three times), V x V = XXV, I x V = V. (c) Collected: CC, L, LLL, XX, V, V. LLLL make CC and VV make X: CCCCXXX. (d) 3 x 125 + 2 x 25 + 5 = 430, and CCCCXXX = 400 + 30 = 430; also 86 x 5 = 430. (e) In a base system the product of two landmark numbers is always a landmark number, so b times any symbol is the next symbol. In the Roman system V x V and L x V are not landmark numbers, so the products must be rewritten and regrouped.",
+          "s": [
+            [
+              "Part (a): 3 d, 2 c, 1 b",
+              1
+            ],
+            [
+              "Part (b): lists the products CCL, L, L, L, XXV, V",
+              1
+            ],
+            [
+              "Part (c): regroups to CCCCXXX",
+              1
+            ],
+            [
+              "Part (d): shows both equal 430",
+              1
+            ],
+            [
+              "Part (e): explains that products of landmarks are landmarks only in a base system",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "On a decimal abacus each line stands for a power of 10, and a counter just above a line counts 5 of that line.\n(a) Describe the counters needed to show 4782.\n(b) How many counters does this use in all, and how many symbols would the Egyptian numeral for 4782 use?",
+          "a": "(a) Line for 1000: 4 counters on it. Line for 100: 1 counter above and 2 on it. Line for 10: 1 counter above and 3 on it. Line for 1: 2 counters on it. (b) 4 + 3 + 4 + 2 = 13 counters, against 4 + 7 + 8 + 2 = 21 Egyptian symbols.",
+          "s": [
+            [
+              "Part (a): describes the four lines correctly, using counters above for the 7 and the 8",
+              1
+            ],
+            [
+              "Part (b): 13 counters against 21 symbols",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "From the 11th century, even merchants who wrote in Roman numerals calculated on a decimal abacus: each line stands for 1, 10, 100 or 1000, and a counter just above a line counts 5 of that line.\n(a) A merchant sets up MCCCXXXVIII on the abacus. Describe the counters line by line.\n(b) He then adds DCCLXIV. On which lines must ten counters be carried to the next line, and what is the total, written in Roman numerals?",
+          "a": "(a) MCCCXXXVIII is 1338: line 1000, 1 counter on it; line 100, 3 on it; line 10, 3 on it; line 1, 1 counter above and 3 on it. (b) DCCLXIV is 764. Line 1: 8 + 4 = 12, so ten are carried, leaving 2; line 10: 3 + 6 + 1 = 10, carried, leaving none; line 100: 3 + 7 + 1 = 11, carried, leaving 1; line 1000: 1 + 1 = 2. Carries happen on the lines for 1, 10 and 100, and the total 2102 is MMCII.",
+          "s": [
+            [
+              "Part (a): 1 on line 1000, 3 on 100, 3 on 10, and 1 above with 3 on line 1",
+              1
+            ],
+            [
+              "Part (b): carries on the lines for 1, 10 and 100; total MMCII",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Kabir says: 'An Egyptian scribe with symbols for 1, 10, 100, and so on up to 10,000,000 can write every number up to 99,999,999, so the Egyptian system never needed another symbol.' Check both parts of his claim.",
+          "a": "Partly right. With 8 symbols (1 up to 10,000,000), each used at most 9 times, the largest number is 9 x (1 + 10 + 100 + ... + 10,000,000) = 99,999,999, written with 9 x 8 = 72 symbols, so the first part is true. But the very next number, 100,000,000, would need ten symbols for 10,000,000, which regroup into a new landmark number, so a brand new symbol is needed, and the same happens at every higher power of 10. The system can never stop inventing symbols, so the conclusion is wrong.",
+          "s": [
+            [
+              "Confirms that 99,999,999 is the largest number with these 8 symbols",
+              1
+            ],
+            [
+              "Shows that 100,000,000 needs a new symbol, and so does every higher power of 10",
+              1
+            ],
+            [
+              "Gives the verdict: partly right",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Two traders use a base-5 system with symbols a for 1, b for 5, c for 25, d for 125 and f for 3125 (e stands for 625). Trader P is owed '2 d, 4 c, 4 b' for one sack of spices and Trader Q offers a sack for '3 d'.\n(a) Without converting to Hindu numerals, decide which price is higher, and by how much.\n(b) A buyer takes P's sack and another bundle priced '1 d, 1 c, 3 b, 4 a'. Add the two prices, regrouping 5 of a symbol into one of the next.\n(c) The buyer then orders 5 such pairs of items, so the bill is the answer to (b) multiplied by b. Write the bill in symbols.\n(d) Trader Q offers the same 5 pairs for '4 e, 1 d' plus a delivery charge of '3 c'. Without converting to Hindu numerals, decide which offer is cheaper, and by how much.",
+          "a": "(a) Adding 1 b to '2 d, 4 c, 4 b' makes 5 b = 1 c, then 5 c = 1 d, giving 3 d. So Q's price is higher by 1 b (5). (b) Collected: 3 d, 5 c, 7 b, 4 a. 7 b = 1 c and 2 b, giving 6 c = 1 d and 1 c. Total: 4 d, 1 c, 2 b, 4 a (539). (c) Each symbol moves up one landmark: 4 e, 1 d, 2 c, 4 b (2695). (d) Q's total is 4 e, 1 d, 3 c. Both bills have 4 e and 1 d; P's bill then has 2 c, 4 b, and adding 1 b to it makes 5 b = 1 c, giving 3 c. So P's bill is cheaper by 1 b (2695 against 2700), even though Q's main price looked lower.",
+          "s": [
+            [
+              "Part (a): Q's price is higher by 1 b",
+              1
+            ],
+            [
+              "Part (b): 4 d, 1 c, 2 b, 4 a",
+              1
+            ],
+            [
+              "Part (c): 4 e, 1 d, 2 c, 4 b",
+              1
+            ],
+            [
+              "Part (d): P's offer is cheaper by 1 b",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A base-5 system uses a for 1, b for 5, c for 25 and d for 125.\n(a) Add '3 c, 4 b, 2 a' and '1 c, 3 b, 4 a' by collecting like symbols.\n(b) Regroup your answer so that no symbol appears 5 or more times.",
+          "a": "(a) 4 c, 7 b, 6 a. (b) 6 a = 1 b and 1 a, giving 8 b; 8 b = 1 c and 3 b, giving 5 c; 5 c = 1 d. The sum is 1 d, 3 b, 1 a (125 + 15 + 1 = 141 = 97 + 44).",
+          "s": [
+            [
+              "Part (a): 4 c, 7 b, 6 a",
+              1
+            ],
+            [
+              "Part (b): regroups to 1 d, 3 b, 1 a",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "An Egyptian numeral has 2 symbols for 100, 3 for 10 and 4 strokes. It is to be multiplied by 12, written as one symbol for 10 and 2 strokes.\n(a) Use the distributive property to split the product into three simpler products.\n(b) Find the product of the numeral and the symbol for 10.\n(c) Find the sum of the two products by a stroke (the numeral taken twice).\n(d) Add the results of (b) and (c) and regroup.\n(e) Check your answer in Hindu numerals.",
+          "a": "(a) numeral x (10 + 1 + 1) = numeral x 10 + numeral x 1 + numeral x 1. (b) Each symbol moves up one landmark: 2 thousands, 3 hundreds and 4 tens. (c) Twice the numeral: 4 hundreds, 6 tens and 8 strokes. (d) Total: 2 thousands, 7 hundreds, 10 tens and 8 strokes; ten tens make a hundred, giving 2 thousands, 8 hundreds and 8 strokes. (e) 234 x 12 = 2808, which matches.",
+          "s": [
+            [
+              "Part (a): splits using the distributive property",
+              1
+            ],
+            [
+              "Part (b): 2 thousands, 3 hundreds, 4 tens",
+              1
+            ],
+            [
+              "Part (c): 4 hundreds, 6 tens, 8 strokes",
+              1
+            ],
+            [
+              "Part (d): regroups to 2 thousands, 8 hundreds, 8 strokes",
+              1
+            ],
+            [
+              "Part (e): checks 234 x 12 = 2808",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Two partners at a cloth market keep their accounts on decimal abacuses. Each line stands for 1, 10, 100 or 1000, and a counter just above a line counts 5 of that line.\nPartner A's morning board: line 1000 has 1 counter on it; line 100 has 1 above and 1 on it; line 10 has 1 above and 4 on it; line 1 has 2 on it.\nPartner A's afternoon board: line 100 has 3 on it; line 10 has 1 above and 2 on it; line 1 has 1 above and 1 on it.\n(a) What are A's morning and afternoon takings?\n(b) A brings both boards together line by line. On which lines must ten be carried to the next line?\n(c) What is A's total for the day, and how many counters does his final board use?\n(d) Partner B's board for the day shows 2 counters on line 1000, nothing on line 100, 1 above and 2 on line 10, and 1 on line 1. B says: 'My board has fewer counters than yours, so I took less money today.' Is B right? Justify.",
+          "a": "(a) Morning: 1000 + 600 + 90 + 2 = 1692. Afternoon: 300 + 70 + 6 = 376. (b) Line 1: 2 + 6 = 8, no carry. Line 10: 9 + 7 = 16, so ten are carried, leaving 6. Line 100: 6 + 3 + 1 = 10, so ten are carried, leaving none. Line 1000: 1 + 1 = 2. Carries happen only on the lines for 10 and 100. (c) 2 on line 1000, none on line 100, 6 on line 10 and 8 on line 1: 2068. The board shows 2 on line 1000, 1 above and 1 on line 10, and 1 above and 3 on line 1: 8 counters. (d) No. B's board reads 2000 + 70 + 1 = 2071 with only 6 counters, yet 2071 is 3 more than 2068. A counter above a line is worth 5 of that line, and lines are worth different amounts, so the number of counters does not decide who took more; the lines must be read from the top.",
+          "s": [
+            [
+              "Part (a): 1692 and 376",
+              1
+            ],
+            [
+              "Part (b): carries only on the lines for 10 and 100",
+              1
+            ],
+            [
+              "Part (c): 2068, with 8 counters",
+              1
+            ],
+            [
+              "Part (d): no, B took 2071, which is 3 more, though his board has fewer counters",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-3.6",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A copy of a Mesopotamian tablet, written in base 60 with our numerals standing for the groups, shows three groups from left to right: (1) (12) (30). Which number does it stand for?",
+          "a": "4350",
+          "o": [
+            "4350",
+            "11230",
+            "250",
+            "750"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements about early place value systems.\nStatement 1: In the Mesopotamian system, one position can hold any number up to and including 60.\nStatement 2: The Mayans marked an empty position with a placeholder symbol shaped like a seashell.\nStatement 3: Chinese rod numerals used a special symbol for zero from the start.\nWhich of the statements are correct?",
+          "a": "2 only",
+          "o": [
+            "2 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the Mesopotamian base-60 place value system, 7384 is grouped into powers of 60 and written with the three groups (2) (___) (4).",
+          "a": "3"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: In the Mesopotamian numeral (20) (20), the two groups of 20 stand for different amounts. Give the reason and the number the numeral stands for.",
+          "a": "True. In a place value system the position decides the landmark number: the left (20) stands for 20 sixties, that is 1200, and the right (20) for 20 ones. The numeral stands for 1200 + 20 = 1220.",
+          "s": [
+            [
+              "States True, because the position decides the landmark number",
+              1
+            ],
+            [
+              "Finds 20 x 60 + 20 = 1220",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A coin in a museum shows a Mayan numeral with three levels: the top level has 2 dots, the middle level 1 bar and 3 dots, and the bottom level 1 bar. A dot is 1, a bar is 5, and the levels from the bottom stand for 1, 20 and 360. What number does the coin show?",
+          "a": "885",
+          "o": [
+            "885",
+            "965",
+            "1962",
+            "990"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Even after the placeholder came into use, a later Mesopotamian numeral for 120 could be mistaken for the numeral for 2.\nReason (R): The Mesopotamian placeholder was used mainly in the middle of a numeral and not at its end.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A Mesopotamian scribe writes two groups, (1) (1), but the spacing between groups is careless and blanks are not marked.\n(a) What number does it stand for if the two groups are in neighbouring positions, and what if an empty 60s position has been lost between them?\n(b) Why can the Hindu numerals 11 and 101 never be confused in the same way?",
+          "a": "(a) Neighbouring positions: 1 x 60 + 1 = 61. With an empty 60s position between them: 1 x 3600 + 0 x 60 + 1 = 3601. (b) The Hindu system writes one digit in every position and marks an empty position with the digit 0, so 101 shows its empty tens place and 11 does not.",
+          "s": [
+            [
+              "Part (a): 61 and 3601",
+              1
+            ],
+            [
+              "Part (b): one digit in every position, with 0 marking the empty place",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "The same three digits 1, 0, 5 (written left to right, with 0 as an empty place) are read in four different place value systems. Match each system with the number the digits stand for.\nColumn A: 1. Mesopotamian (positions 3600, 60, 1)   2. Mayan (positions 360, 20, 1)   3. Chinese rod numerals (positions 100, 10, 1)   4. A base-8 system (positions 64, 8, 1)\nColumn B: a. 105   b. 69   c. 3605   d. 365",
+          "a": "1-c, 2-d, 3-a, 4-b",
+          "o": [
+            "1-c, 2-d, 3-a, 4-b",
+            "1-d, 2-c, 3-a, 4-b",
+            "1-c, 2-a, 3-d, 4-b",
+            "1-c, 2-d, 3-b, 4-a"
+          ],
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student writes a number in the Mesopotamian system as (2) (75) (64). Show that this cannot be a proper Mesopotamian numeral, and rewrite it correctly.",
+          "a": "In base 60 no position can hold 60 or more, because 60 of a power of 60 make the next power. Here 64 ones = 1 sixty and 4 ones, giving (2) (76) (4). Then 76 sixties = 1 three-thousand-six-hundred and 16 sixties, giving (3) (16) (4). Check: 2 x 3600 + 75 x 60 + 64 = 11764 and 3 x 3600 + 16 x 60 + 4 = 11764.",
+          "s": [
+            [
+              "States that a position cannot hold 60 or more",
+              1
+            ],
+            [
+              "Regroups 64 ones and then 76 sixties",
+              1
+            ],
+            [
+              "Writes (3) (16) (4) and checks 11764",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Our units of time still use the Mesopotamian base 60: 1 hour = 60 minutes and 1 minute = 60 seconds.\n(a) A train journey lasts 9876 seconds. Express it in hours, minutes and seconds.\n(b) Write 9876 as a Mesopotamian numeral, and say what each group stands for.",
+          "a": "(a) 9876 = 2 x 3600 + 2676, and 2676 = 44 x 60 + 36, so 2 hours 44 minutes 36 seconds. (b) (2) (44) (36): 2 groups of 3600 (hours), 44 sixties (minutes) and 36 ones (seconds).",
+          "s": [
+            [
+              "Part (a): 2 hours 44 minutes 36 seconds",
+              1
+            ],
+            [
+              "Part (b): (2) (44) (36), linking each group to 3600, 60 and 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Chinese rod numerals, the units, hundreds and ten-thousands are written in zong form, and the tens and thousands in heng form; an empty place is left blank. A rod numeral shows, from left to right, the digit 7, a blank, the digit 2 and the digit 8, the 8 being the units. In which form is the 7 written, and what number is shown?",
+          "a": "heng, and the number is 7028",
+          "o": [
+            "heng, and the number is 7028",
+            "zong, and the number is 7028",
+            "heng, and the number is 728",
+            "zong, and the number is 728"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Mohan says: 'The Mayan system is a base-20 system, because its second landmark number is 20.' Test his claim using the Mayan landmark positions 1, 20 and 360.",
+          "a": "No. In a base-20 system every landmark number is 20 times the previous one, so after 1 and 20 the third would be 20 x 20 = 400. The Mayan third landmark number is 360, which is 18 x 20, not 20 x 20. So the Mayan system is only almost a base-20 system; the second landmark being 20 is not enough.",
+          "s": [
+            [
+              "States that in base 20 the third landmark would be 400",
+              1
+            ],
+            [
+              "Notes the Mayan third landmark is 360, not 400",
+              1
+            ],
+            [
+              "Concludes the claim is wrong: it is only almost base-20",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write 3030 as a sum of digits times landmark numbers in the Hindu number system, and say what job each 0 does.\n(b) If the Hindu system had no symbol for 0 and left gaps instead, how could 3030, 303 and 33 be confused?",
+          "a": "(a) 3030 = (3) x 1000 + (0) x 100 + (3) x 10 + (0) x 1. Each 0 is a placeholder that shows there are no hundreds and no ones, so each 3 sits in its correct place. (b) All three would be written with two 3s and gaps of uncertain size (3 _ 3 _, 3 _ 3, 33), and a gap at the end or a narrow gap could not be seen, so they could be read as the same number.",
+          "s": [
+            [
+              "Part (a): writes the expansion and explains 0 as a placeholder",
+              1
+            ],
+            [
+              "Part (b): explains that without 0 the gaps cannot be seen reliably, so the numerals look alike",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Suppose humans had 8 fingers and wrote numbers in a base-8 place value system with Hindu-style digits.\n(a) List the first four landmark numbers of base 8.\n(b) Which digits would be needed, and why is there no digit 8?\n(c) Group 100 into the landmark numbers of base 8 and write its base-8 numeral.\n(d) Group 100 into the landmark numbers of base 5 and write its base-5 numeral.\n(e) Explain why the numeral '400' in (d) does not stand for four hundred.",
+          "a": "(a) 1, 8, 64, 512. (b) 0 to 7; eight of any landmark make the next landmark, so a position never holds 8. (c) 100 = 1 x 64 + 4 x 8 + 4 x 1, so the numeral is 144. (d) 100 = 4 x 25 + 0 x 5 + 0 x 1, so the numeral is 400. (e) In base 5 the positions stand for 25, 5 and 1, so '400' means 4 x 25 = 100; the same digits mean four hundred only in base 10.",
+          "s": [
+            [
+              "Part (a): 1, 8, 64, 512",
+              1
+            ],
+            [
+              "Part (b): digits 0 to 7, since 8 of a landmark make the next",
+              1
+            ],
+            [
+              "Part (c): 144",
+              1
+            ],
+            [
+              "Part (d): 400",
+              1
+            ],
+            [
+              "Part (e): explains that the positions are 25, 5, 1 in base 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A museum shows three Mayan numerals. In each, the lowest level counts 1s, the level above it 20s and the level above that 360s; a dot is 1, a bar is 5 and a shell is 0.\nNumeral P: top level 1 bar and 2 dots; middle level a shell; bottom level 3 bars and 4 dots.\nNumeral Q has only two levels: upper level 3 dots; lower level 2 bars.\nNumeral R: top level 1 dot; middle level 1 dot; bottom level a shell.\n(a) What number does Q stand for?\n(b) What number does R stand for, and why is the shell needed in it?\n(c) What number does P stand for?\n(d) Some visitors believe the Mayan system is a true base-20 system and read the third level as 400s. The museum will put a warning sign beside the one numeral that such a visitor misreads by the most. Which numeral gets the sign? Justify with numbers.",
+          "a": "(a) 3 x 20 + 10 = 70. (b) 1 x 360 + 1 x 20 + 0 = 380; the shell shows that the 1s level is empty, so the dots are read as one 360 and one 20, not as 20 + 1. (c) 7 x 360 + 0 x 20 + 19 = 2520 + 19 = 2539. (d) Numeral P. Q has no third level, so the visitor reads it correctly as 70. R would be read as 400 + 20 = 420, off by 40. P would be read as 7 x 400 + 19 = 2819, off by 7 x 40 = 280, the largest error, because the error is 40 for every unit on the third level.",
+          "s": [
+            [
+              "Part (a): 70",
+              1
+            ],
+            [
+              "Part (b): 380, with the shell marking the empty 1s level",
+              1
+            ],
+            [
+              "Part (c): 2539",
+              1
+            ],
+            [
+              "Part (d): P, misread by 280, against 40 for R and none for Q",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a base-2 place value system that uses the word ukasar for the digit 1 and urapon for the digit 0, which number is written 'ukasar urapon ukasar ukasar'?",
+          "a": "11",
+          "o": [
+            "11",
+            "13",
+            "7",
+            "4"
+          ],
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Raghav says: 'The Indian zero did the same job as the Mesopotamian placeholder, and no more.' Check his claim.",
+          "a": "Partly right. Like the Mesopotamian placeholder, the Indian 0 marks an empty position, and unlike it, it is used at the end of a numeral too. But in Indian mathematics 0 was also a number in its own right: Aryabhata used its arithmetic properties (0 added to a number leaves it the same, 0 times any number is 0) in 499 CE, and Brahmagupta codified 0 as a number in 628 CE. So 'no more' is wrong.",
+          "s": [
+            [
+              "Agrees that the Indian 0 also works as a placeholder",
+              1
+            ],
+            [
+              "Explains that 0 was also treated as a number, with Aryabhata's or Brahmagupta's use",
+              1
+            ],
+            [
+              "Gives the verdict: partly right",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In Chinese rod numerals the units, hundreds and ten-thousands are written in zong form and the tens and thousands in heng form; an empty place is left blank.\n(a) For the number 52013, say which form each digit is written in and where the blank goes.\n(b) Why does alternating the two forms make a rod numeral easier to read?",
+          "a": "(a) 5 (ten-thousands) in zong form, 2 (thousands) in heng form, a blank for the hundreds, 1 (tens) in heng form and 3 (units) in zong form. (b) Neighbouring places are written in different forms, so a reader can tell where one digit ends and the next begins, and can tell the places apart even without careful spacing.",
+          "s": [
+            [
+              "Part (a): zong 5, heng 2, blank hundreds, heng 1, zong 3",
+              1
+            ],
+            [
+              "Part (b): neighbouring digits look different, so the places can be told apart",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A merchant records the amount 7203 in three systems: the Mesopotamian base-60 system (using a placeholder in the middle of a numeral, as the later Mesopotamians did), the Egyptian system and the Hindu system.\n(a) Group 7203 into powers of 60 and write the Mesopotamian groups, showing where the placeholder is needed.\n(b) How many symbols does the Egyptian numeral for 7203 use?\n(c) His next amount is 7200. Explain the trouble a Mesopotamian scribe would have writing it, and how the Hindu numeral avoids it.\n(d) Suppose the Hindu numerals have not yet reached the merchant, so he must choose between the Egyptian and the Mesopotamian systems. He cares most that no numeral can ever be misread, even if it takes more symbols. Which should he choose? Justify using 7203 and 7200.",
+          "a": "(a) 7203 = (2) x 3600 + (0) x 60 + 3, so (2) (placeholder) (3): the placeholder marks the empty 60s position. (b) 7 symbols for 1000, 2 for 100 and 3 strokes: 12 symbols. (c) 7200 = (2) x 3600 + 0 x 60 + 0, so both lower positions are empty. The placeholder was used mainly in the middle and not at the end, so the numeral could look like plain (2), which is 2. The Hindu numeral 7200 writes 0 in both empty places, so it can be read only one way. (d) The Egyptian system. Every Egyptian symbol carries its own landmark number, so 7203 (12 symbols) and 7200 (9 symbols) can each be read in only one way, wherever the symbols stand. The Mesopotamian numerals are shorter, but 7200 could be misread as 2, which breaks his main condition.",
+          "s": [
+            [
+              "Part (a): (2) (placeholder) (3)",
+              1
+            ],
+            [
+              "Part (b): 12 symbols",
+              1
+            ],
+            [
+              "Part (c): 7200 could look like 2 without end placeholders; the Hindu 0 removes this",
+              1
+            ],
+            [
+              "Part (d): Egyptian, because its symbols cannot be misread, though longer than the Mesopotamian numerals",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Form a base-2 place value system using the word ukasar for the digit 1 and urapon for the digit 0.\n(a) Write the first five landmark numbers (positions) of base 2.\n(b) Write 6 in this system.\n(c) Write 13 in this system.\n(d) How many words does 13 take here, and how many in the Gumulgal way of counting in twos carried past 6 (ukasar for 2, urapon for 1, added up)?\n(e) The Gumulgal had to call every number above 6 ras. Explain why this base-2 system never needs such a word.",
+          "a": "(a) 1, 2, 4, 8, 16. (b) 6 = 1 x 4 + 1 x 2 + 0 x 1: ukasar ukasar urapon. (c) 13 = 1 x 8 + 1 x 4 + 0 x 2 + 1 x 1: ukasar ukasar urapon ukasar. (d) 4 words here; the Gumulgal-style name is ukasar said 6 times and urapon, 7 words. (e) Here the words are digits whose position gives their value, so a new position can always be added for the next power of 2 and any number can be written with just two words; the Gumulgal names simply added up 2s and 1s, so they grew longer and longer, and the Gumulgal stopped naming after 6.",
+          "s": [
+            [
+              "Part (a): 1, 2, 4, 8, 16",
+              1
+            ],
+            [
+              "Part (b): ukasar ukasar urapon",
+              1
+            ],
+            [
+              "Part (c): ukasar ukasar urapon ukasar",
+              1
+            ],
+            [
+              "Part (d): 4 words against 7",
+              1
+            ],
+            [
+              "Part (e): explains that place value lets two digits write any number",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

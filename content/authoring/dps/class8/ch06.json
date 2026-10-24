@@ -1,0 +1,2588 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH8",
+  "class": 8,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "We Distribute, Yet Things Multiply"
+ },
+ "source_code": "hegp106",
+ "concepts": [
+  {
+   "code": "C8M-6.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A school hall has 34 rows with 18 chairs in each row. For Annual Day, 2 more rows are added and 3 more chairs are placed in every row, so there are 36 rows of 21 chairs. Without multiplying 36 × 21, how many chairs are added in all?",
+     "a": "144 chairs",
+     "o": [
+      "144 chairs",
+      "138 chairs",
+      "108 chairs",
+      "6 chairs"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use Identity 1, (a + m)(b + n) = ab + mb + an + mn, to expand (a − 3)(b + 5).\n(b) Hence find by how much the product 40 × 26 changes when 40 is decreased by 3 and 26 is increased by 5. Do not multiply 37 × 31 directly.",
+     "a": "(a) Taking m = −3 and n = 5: (a − 3)(b + 5) = ab − 3b + 5a − 15. (b) The change is 5a − 3b − 15 = 5 × 40 − 3 × 26 − 15 = 200 − 78 − 15 = 107, so the product increases by 107 (1040 becomes 1147).",
+     "s": [
+      [
+       "Part (a): ab − 3b + 5a − 15",
+       1
+      ],
+      [
+       "Part (b): substitutes a = 40, b = 26 to get an increase of 107",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If one number in a product is increased by 1 and the other is decreased by 1, the product never changes.\nReason (R): For any numbers a and b, (a + 1)(b − 1) = ab + b − a − 1.",
+     "a": "A is false but R is true",
+     "o": [
+      "A is false but R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true but R is false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular vegetable bed is 15 m long and 9 m wide. The gardener shortens the length by 2 m and widens it by 3 m. Using Identity 1, what happens to its area?",
+     "a": "It increases by 21 sq m",
+     "o": [
+      "It increases by 21 sq m",
+      "It increases by 27 sq m",
+      "It increases by 1 sq m",
+      "It decreases by 6 sq m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Riya claims: 'If both numbers in a product ab are decreased by 1, the product decreases by a + b + 1, just as it increases by a + b + 1 when both are increased by 1.' Test her claim using Identity 1 and check it with 12 × 8.",
+     "a": "No. (a − 1)(b − 1) = ab − b − a + 1, so the product decreases by a + b − 1, not a + b + 1. Check: 12 × 8 = 96 and 11 × 7 = 77, a decrease of 19 = 12 + 8 − 1, while her rule predicts 21. The +1 at the end has the opposite effect: (−1) × (−1) = +1 adds back 1.",
+     "s": [
+      [
+       "Expands (a − 1)(b − 1) = ab − a − b + 1",
+       1
+      ],
+      [
+       "Checks with 12 × 8: decrease 19, not 21",
+       1
+      ],
+      [
+       "Verdict: claim wrong, decrease is a + b − 1 because (−1)(−1) = +1",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Given 63 × 41 = 2583. Using Identity 1 with m = 2 and n = −1, without multiplying again, 65 × 40 = 2583 + ___ . (Write the number in digits.)",
+     "a": "17"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A product ab is changed by increasing a by 3 and decreasing b by 2.\n(a) Use Identity 1 to write the change in the product as an expression in a and b.\n(b) Show that the product does not change when a = 6 and b = 6, by working out both products.\n(c) Find two more pairs of counting numbers a and b for which the product does not change, and check one of them by multiplying.\n(d) Show that for a = 7 and b = 7 the product does change, and say by how much.\n(e) Explain, using the change expression, why a must be a multiple of 3 whenever the product stays unchanged and b is a counting number.",
+     "a": "(a) (a + 3)(b − 2) = ab − 2a + 3b − 6, so the change is 3b − 2a − 6. (b) 6 × 6 = 36 and 9 × 4 = 36; the change is 18 − 12 − 6 = 0. (c) For example a = 9, b = 8 (12 × 6 = 72 = 9 × 8) and a = 12, b = 10 (15 × 8 = 120 = 12 × 10); any pair with 3b = 2a + 6 works. (d) 10 × 5 = 50 and 7 × 7 = 49, so it increases by 1; the expression gives 21 − 14 − 6 = 1. (e) The change is zero only when 3b = 2a + 6, that is 2a = 3b − 6 = 3(b − 2). So 2a is a multiple of 3, and since 2 is not, a must be a multiple of 3.",
+     "s": [
+      [
+       "Part (a): change 3b − 2a − 6",
+       1
+      ],
+      [
+       "Part (b): both products 36, change 0",
+       1
+      ],
+      [
+       "Part (c): two valid pairs such as (9, 8) and (12, 10), one checked",
+       1
+      ],
+      [
+       "Part (d): change of +1 (50 against 49)",
+       1
+      ],
+      [
+       "Part (e): 2a = 3(b − 2), so a is a multiple of 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: For any numbers, (a + m)(b + n) − ab = an + bm + mn.\nStatement 2: If both a and b are increased by 2, the product ab increases by 2a + 2b + 2.\nStatement 3: a(b + 8) = ab + 8a is an identity because both sides are equal for every value of a and b.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: For any numbers a and b, increasing a by 4 and b by 3 raises the product ab by more than increasing a by 3 and b by 4 does, exactly when b is greater than a. Give a reason.",
+     "a": "True. By Identity 1, (a + 4)(b + 3) = ab + 4b + 3a + 12 and (a + 3)(b + 4) = ab + 3b + 4a + 12. The first change minus the second is (4b + 3a + 12) − (3b + 4a + 12) = b − a, which is positive exactly when b > a. For example, a = 10, b = 20: 14 × 23 = 322 and 13 × 24 = 312.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Finds both changes and their difference b − a, positive exactly when b > a",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two vendors pack boxes: one packs 34 boxes of 66 bangles, the other 36 boxes of 63 bangles. Writing 36 × 63 as (34 + 2)(66 − 3), which vendor packs more bangles, and by how many?",
+     "a": "The 36 × 63 vendor, by 24",
+     "o": [
+      "The 36 × 63 vendor, by 24",
+      "The 34 × 66 vendor, by 24",
+      "The 36 × 63 vendor, by 30",
+      "The 34 × 66 vendor, by 6"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school auditorium has 28 rows with 32 seats in each row (896 seats). Every year for the next five years the school will add 2 more rows and put 1 more seat in every row.\n(a) Use Identity 1 to show that in any year, if there are a rows of b seats at the start, the year's change in seats is a + 2b + 2.\n(b) Find the change in the first year and in the second year.\n(c) Without working out each year separately, predict the change in the fifth year. Explain from the expression a + 2b + 2 why the yearly change keeps growing by the same amount.\n(d) A clerk says that after five years the hall will have 38 rows of 37 seats, that is 1,406 seats. Check his figure by adding the five yearly changes to 896.",
+     "a": "(a) (a + 2)(b + 1) = ab + 2b + a + 2, so the change is a + 2b + 2. (b) Year 1: a = 28, b = 32, change = 28 + 64 + 2 = 94 seats. Year 2: a = 30, b = 33, change = 30 + 66 + 2 = 98 seats. (c) Each year a rises by 2 and b by 1, so a + 2b + 2 rises by 2 + 2 × 1 = 4. The changes are 94, 98, 102, 106, 110, so the fifth-year change is 110 seats. (d) 94 + 98 + 102 + 106 + 110 = 510, and 896 + 510 = 1,406. This matches 38 × 37 = 1,406, so the clerk is right.",
+     "s": [
+      [
+       "Part (a): change a + 2b + 2 from Identity 1",
+       1
+      ],
+      [
+       "Part (b): 94 and 98 seats",
+       1
+      ],
+      [
+       "Part (c): change grows by 4 each year (a up 2, 2b up 2); fifth year 110",
+       1
+      ],
+      [
+       "Part (d): total change 510, 896 + 510 = 1,406 confirms the clerk",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi checks the statement (a − 2)(b + 3) = ab − 6 by putting a = 0 and b = 0. Both sides come to −6, so he calls it an identity.\n(a) Test the statement with a = 1 and b = 1.\n(b) Is it an identity? Write the correct expansion.",
+     "a": "(a) Left side: (1 − 2)(1 + 3) = −4; right side: 1 − 6 = −5. They differ. (b) No. An identity must hold for every value of the letter-numbers, and one failure is enough to reject it. The correct expansion is ab + 3a − 2b − 6.",
+     "s": [
+      [
+       "Part (a): −4 against −5",
+       1
+      ],
+      [
+       "Part (b): not an identity, correct form ab + 3a − 2b − 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each change to the product ab with the change in the product that it causes.\nColumn A:\n1. a increased by 2, b increased by 3\n2. a decreased by 2, b increased by 3\n3. a increased by 2, b decreased by 3\n4. a decreased by 2, b decreased by 3\nColumn B:\n(P) 2b − 3a − 6\n(Q) 3a + 2b + 6\n(R) 6 − 3a − 2b\n(S) 3a − 2b − 6",
+     "a": "1-Q, 2-S, 3-P, 4-R",
+     "o": [
+      "1-Q, 2-S, 3-P, 4-R",
+      "1-Q, 2-P, 3-S, 4-R",
+      "1-Q, 2-S, 3-R, 4-P",
+      "1-S, 2-Q, 3-P, 4-R"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In a monthly calendar (7 days to a row), Meena marks a 3-by-3 block of dates. She multiplies the two corner dates on each diagonal: for the block whose top-left date is 3, she gets 3 × 19 and 5 × 17.\n(a) Find both products and their difference.\n(b) If the top-left date is a, write the four corner dates.\n(c) Use the distributive property to show that the difference is the same for every such block.",
+     "a": "(a) 3 × 19 = 57 and 5 × 17 = 85; the difference is 28. (b) a, a + 2, a + 14 and a + 16 (each row adds 7, two rows add 14). (c) (a + 2)(a + 14) = a² + 14a + 2a + 28 = a² + 16a + 28, and a(a + 16) = a² + 16a. The difference is always 28.",
+     "s": [
+      [
+       "Part (a): 57 and 85, difference 28",
+       1
+      ],
+      [
+       "Part (b): corners a, a + 2, a + 14, a + 16",
+       1
+      ],
+      [
+       "Part (c): expands both products and shows the difference is 28",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rehan puts p = 1 and q = 1 into each statement below. Both sides come to 12 every time, so he calls all four of them identities. Which one really is an identity, true for every value of p and q?",
+     "a": "(p + 2)(q + 3) = pq + 3p + 2q + 6",
+     "o": [
+      "(p + 2)(q + 3) = pq + 3p + 2q + 6",
+      "(p + 2)(q + 3) = pq + 2p + 3q + 6",
+      "(p + 2)(q + 3) = (p + 3)(q + 2)",
+      "(p + 2)(q + 3) = 4pq + p + q + 6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (a − u)(b − v).\n(b) Starting from 50 × 30 = 1500, use your expansion to find 48 × 27.",
+     "a": "(a) (a − u)(b − v) = ab − ub − av + uv. (b) With a = 50, u = 2, b = 30, v = 3: 1500 − 2 × 30 − 50 × 3 + 2 × 3 = 1500 − 60 − 150 + 6 = 1296.",
+     "s": [
+      [
+       "Part (a): ab − ub − av + uv",
+       1
+      ],
+      [
+       "Part (b): 48 × 27 = 1296 with the working",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school canteen sells 120 samosas a day at Rs 15 each, so it takes in Rs 1,800. Each samosa costs the canteen Rs 6 to make, so it earns Rs 9 on each one. Two plans are suggested.\nPlan X: raise the price by Rs 2; sales are expected to fall by 10 samosas.\nPlan Y: cut the price by Rs 1; sales are expected to rise by 15 samosas.\n(a) Use Identity 1 on 15 × 120 to find the change in daily takings under each plan.\n(b) The manager's assistant writes the change in takings for Plan X as 2 × 120 − 10 × 15 = Rs 90. Find his mistake.\n(c) The daily profit now is 9 × 120. Use Identity 1 to find the change in daily profit under each plan.\n(d) Which plan should the canteen adopt? Justify, explaining why the plan that brings in more money is not the better one.",
+     "a": "(a) X: (15 + 2)(120 − 10) changes takings by 2 × 120 − 10 × 15 − 20 = +Rs 70. Y: (15 − 1)(120 + 15) changes takings by −120 + 15 × 15 − 15 = +Rs 90. (b) He left out the product of the two changes, (+2) × (−10) = −20; the change is Rs 70, not Rs 90. (c) Profit per samosa becomes 11 under X and 8 under Y. X: (9 + 2)(120 − 10) − 9 × 120 = 240 − 90 − 20 = +Rs 130. Y: (9 − 1)(120 + 15) − 9 × 120 = −120 + 135 − 15 = Rs 0. (d) Plan X. Plan Y brings in Rs 90 more, but it also means making 15 more samosas at Rs 6 each, which costs exactly Rs 90, so profit does not change. Plan X takes in less extra money but sells 10 fewer samosas, saving Rs 60 on making them, and profit rises by Rs 130.",
+     "s": [
+      [
+       "Part (a): +Rs 70 for X and +Rs 90 for Y",
+       1
+      ],
+      [
+       "Part (b): names the missing product (+2)(−10) = −20",
+       1
+      ],
+      [
+       "Part (c): profit change +Rs 130 for X and Rs 0 for Y",
+       1
+      ],
+      [
+       "Part (d): chooses X; Y's extra Rs 90 is used up by the cost of 15 more samosas",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "The change (a + 4)(b − 3) − ab = 4b − 3a − 12 is worked out with a = 20 and b = 15.\n(a) Find the value of the change.\n(b) Write a real-life situation that this calculation describes, saying what a, b, +4 and −3 stand for.\n(c) Check your answer by finding both products directly.",
+     "a": "(a) 4 × 15 − 3 × 20 − 12 = 60 − 60 − 12 = −12. (b) For example: an orchard has 20 rows of 15 mango saplings; the farmer makes 4 more rows but plants 3 fewer saplings in each row. (c) 24 × 12 = 288 and 20 × 15 = 300, so there are 12 saplings fewer, matching −12.",
+     "s": [
+      [
+       "Part (a): change −12",
+       1
+      ],
+      [
+       "Part (b): a sensible situation naming what a, b, +4 and −3 mean",
+       1
+      ],
+      [
+       "Part (c): 288 against 300 confirms −12",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use Identity 1 to expand (a + 0.5)(b + 0.5).\n(b) Starting from 10 × 20 = 200, use your expansion to find 10.5 × 20.5 without long multiplication.",
+     "a": "(a) (a + 0.5)(b + 0.5) = ab + 0.5b + 0.5a + 0.25. (b) With a = 10 and b = 20: 200 + 0.5 × 20 + 0.5 × 10 + 0.25 = 200 + 10 + 5 + 0.25 = 215.25.",
+     "s": [
+      [
+       "Part (a): ab + 0.5b + 0.5a + 0.25",
+       1
+      ],
+      [
+       "Part (b): 10.5 × 20.5 = 215.25 with the working",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Without finding the full products, decide which is larger in each pair, and by how much.\n(i) 23 × 37 or 27 × 33 (ii) 41 × 59 or 44 × 56\n(a) Write 23 × 37 as (27 − 4)(33 + 4) and use Identity 1 to compare the products in (i).\n(b) Compare the products in (ii) in the same way.\n(c) In each pair the two numbers have the same sum. Use (a − k)(b + k) with a ≤ b and k a counting number to explain why moving the two numbers further apart always makes the product smaller.",
+     "a": "(a) (27 − 4)(33 + 4) = 27 × 33 + 4 × 27 − 4 × 33 − 16 = 27 × 33 + 108 − 132 − 16 = 27 × 33 − 40. So 27 × 33 is larger, by 40 (891 against 851). (b) (44 − 3)(56 + 3) = 44 × 56 + 3 × 44 − 3 × 56 − 9 = 44 × 56 + 132 − 168 − 9 = 44 × 56 − 45. So 44 × 56 is larger, by 45. (c) (a − k)(b + k) = ab + ak − bk − k² = ab + k(a − b) − k². Since a ≤ b, k(a − b) is zero or negative, and −k² is negative, so the change is always negative: the product falls.",
+     "s": [
+      [
+       "Part (a): expansion of (27 − 4)(33 + 4)",
+       1
+      ],
+      [
+       "Part (a): 27 × 33 larger by 40",
+       1
+      ],
+      [
+       "Part (b): 44 × 56 larger by 45",
+       1
+      ],
+      [
+       "Part (c): change is k(a − b) − k²",
+       1
+      ],
+      [
+       "Part (c): both parts are negative or zero when a ≤ b, so the product falls",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A photo 12 cm wide and 18 cm tall is mounted on card that sticks out 2 cm beyond the photo on every side, so the card is 4 cm wider and 4 cm taller. By how much is the card's area greater than the photo's?",
+     "a": "136 sq cm",
+     "o": [
+      "136 sq cm",
+      "120 sq cm",
+      "64 sq cm",
+      "16 sq cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-6.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: Multiplying (2x + 3) by (x − 4) gives four products of one term by one term, so the simplest form of (2x + 3)(x − 4) has four terms. Give a reason.",
+     "a": "False. The four products are 2x², −8x, 3x and −12, but −8x and 3x are like terms and combine to −5x. The simplest form is 2x² − 5x − 12, which has three terms.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Shows −8x + 3x = −5x and gives 2x² − 5x − 12",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular poster is (3a + 2) cm long and (a + 5) cm wide. Which expression gives its area in simplest form?",
+     "a": "3a² + 17a + 10 sq cm",
+     "o": [
+      "3a² + 17a + 10 sq cm",
+      "3a² + 10 sq cm",
+      "3a² + 15a + 10 sq cm",
+      "3a² + 17a + 7 sq cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tara multiplies (x + 2y − 1) by (x + 3), writing every product of one term by one term before she combines anything. How many products does she write, and how many terms are left in the simplest form?",
+     "a": "6 products, 5 terms after combining",
+     "o": [
+      "6 products, 5 terms after combining",
+      "5 products, 5 terms after combining",
+      "6 products, 6 terms after combining",
+      "6 products, 4 terms after combining"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular hall floor is (2x + 3) m long and (x + 4) m wide. Two carpets are offered, and either one fits inside the floor.\nCarpet P: (2x − 1) m by (x + 1) m, price Rs 4,000.\nCarpet Q: (x + 3) m by (x + 3) m, price Rs 9,000.\nWhatever part of the floor the carpet does not cover is tiled at Rs 500 per sq m.\n(a) Expand the area of the hall floor.\n(b) Find, in simplest form, the area left uncovered if Carpet P is used.\n(c) Find, in simplest form, the area left uncovered if Carpet Q is used.\n(d) For this hall x = 3. Which carpet gives the lower total cost (carpet plus tiling)? Show the totals.",
+     "a": "(a) (2x + 3)(x + 4) = 2x² + 8x + 3x + 12 = 2x² + 11x + 12. (b) Carpet P: (2x − 1)(x + 1) = 2x² + x − 1, so uncovered = 2x² + 11x + 12 − 2x² − x + 1 = 10x + 13. (c) Carpet Q: (x + 3)(x + 3) = x² + 6x + 9, so uncovered = x² + 5x + 3. (d) With x = 3, P leaves 43 sq m: 4,000 + 43 × 500 = Rs 25,500. Q leaves 9 + 15 + 3 = 27 sq m: 9,000 + 27 × 500 = Rs 22,500. Carpet Q is cheaper overall even though it costs more to buy.",
+     "s": [
+      [
+       "Part (a): 2x² + 11x + 12",
+       1
+      ],
+      [
+       "Part (b): 10x + 13",
+       1
+      ],
+      [
+       "Part (c): x² + 5x + 3",
+       1
+      ],
+      [
+       "Part (d): Rs 25,500 against Rs 22,500, chooses Carpet Q",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: (a − b)(a² + ab + b²) = a³ − b³.\nStatement 2: In the expansion of (x + 1)(x² + x + 1), the x² terms combine to give 2x².\nStatement 3: −(x − 4)(x + 1) = −x² + 3x + 4.\nWhich of the statements are correct?",
+     "a": "1, 2 and 3",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Kiran says that for some number n, (n + 1)(n + 2) − n(n + 3) equals 5. Show that this is impossible, whatever number n is.",
+     "a": "(n + 1)(n + 2) = n² + 2n + n + 2 = n² + 3n + 2, and n(n + 3) = n² + 3n. Subtracting, n² and 3n cancel and the result is 2. So the expression equals 2 for every n (it is an identity) and can never be 5. For example, n = 4 gives 30 − 28 = 2.",
+     "s": [
+      [
+       "Expands (n + 1)(n + 2) = n² + 3n + 2",
+       1
+      ],
+      [
+       "Expands n(n + 3) and subtracts to get 2",
+       1
+      ],
+      [
+       "Concludes the value is always 2, never 5",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (3p − 2)(p + 4q − 5) and write it in simplest form.\n(b) Name the two terms you combined and say why they could be combined.",
+     "a": "(a) 3p × p + 3p × 4q + 3p × (−5) − 2 × p − 2 × 4q − 2 × (−5) = 3p² + 12pq − 15p − 2p − 8q + 10 = 3p² + 12pq − 17p − 8q + 10. (b) −15p and −2p were combined into −17p, because they have exactly the same letter-number p (they are like terms).",
+     "s": [
+      [
+       "Part (a): 3p² + 12pq − 17p − 8q + 10",
+       1
+      ],
+      [
+       "Part (b): −15p and −2p combined, as like terms with the same letter-number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When (2m − 3)(m² + 4m − 1) is expanded and like terms are combined, the coefficient of m² is ___ .",
+     "a": "5"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a multiplication table, the entry in row r and column c is r × c. A 3-by-3 frame is drawn with middle entry pq, so its corners are (p − 1)(q − 1), (p − 1)(q + 1), (p + 1)(q − 1) and (p + 1)(q + 1). What is the sum of the four corner entries?",
+     "a": "4pq",
+     "o": [
+      "4pq",
+      "4pq + 4",
+      "4pq − 4",
+      "4pq + 4p + 4q"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Expand (a − b)(a² + ab + b²), showing every product of one term by one term, and say which terms cancel.\n(b) Expand (a − b)(a³ + a²b + ab² + b³) in the same way.\n(c) Together with (a − b)(a + b) = a² − b², describe the pattern, and write the next product in the pattern with its simplified result.\n(d) Check your answer to (c) by putting a = 2 and b = 1 into both sides.",
+     "a": "(a) a³ + a²b + ab² − a²b − ab² − b³; the pairs a²b, −a²b and ab², −ab² cancel, leaving a³ − b³. (b) a⁴ + a³b + a²b² + ab³ − a³b − a²b² − ab³ − b⁴ = a⁴ − b⁴, since every middle term appears once with + and once with −. (c) The second bracket has one more term each time (powers of a going down, powers of b going up), and the result is the next power of a minus the same power of b. Next: (a − b)(a⁴ + a³b + a²b² + ab³ + b⁴) = a⁵ − b⁵. (d) Left: (2 − 1)(16 + 8 + 4 + 2 + 1) = 31; right: 32 − 1 = 31.",
+     "s": [
+      [
+       "Part (a): a³ − b³ with the cancelling pairs named",
+       1
+      ],
+      [
+       "Part (b): a⁴ − b⁴",
+       1
+      ],
+      [
+       "Part (c): describes the pattern",
+       1
+      ],
+      [
+       "Part (c): writes (a − b)(a⁴ + a³b + a²b² + ab³ + b⁴) = a⁵ − b⁵",
+       1
+      ],
+      [
+       "Part (d): both sides 31",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When (2x + 3)(x − 4) + 5x is simplified, the answer has no x term.\nReason (R): In (2x + 3)(x − 4), the products 2x × (−4) and 3 × x are like terms, and together they give −5x.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the product −(3k − 2)(2k + 5) in simplest form.",
+     "a": "(3k − 2)(2k + 5) = 6k² + 15k − 4k − 10 = 6k² + 11k − 10. The minus sign in front changes every sign: −6k² − 11k + 10.",
+     "s": [
+      [
+       "Expands (3k − 2)(2k + 5) = 6k² + 11k − 10",
+       1
+      ],
+      [
+       "Applies the minus sign: −6k² − 11k + 10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ishaan expands (a + 2b)(a − b + 3) and simplifies it fully. Which of these terms does NOT appear in his final answer?",
+     "a": "−ab",
+     "o": [
+      "−ab",
+      "ab",
+      "−2b²",
+      "6b"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "(a) Expand (x + 3)(x² − x + 2) and simplify.\n(b) Name the like terms you combined.\n(c) Check your answer by putting x = 2 into both the product and your simplified form.",
+     "a": "(a) x³ − x² + 2x + 3x² − 3x + 6 = x³ + 2x² − x + 6. (b) −x² and 3x² gave 2x²; 2x and −3x gave −x. (c) Product: (2 + 3)(4 − 2 + 2) = 5 × 4 = 20. Simplified form: 8 + 8 − 2 + 6 = 20. They agree.",
+     "s": [
+      [
+       "Part (a): x³ + 2x² − x + 6",
+       1
+      ],
+      [
+       "Part (b): names both pairs of like terms",
+       1
+      ],
+      [
+       "Part (c): both give 20 at x = 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each product with its simplest form.\nColumn A:\n1. (2x − 1)(x + 3)\n2. (2x + 1)(x − 3)\n3. (2x − 1)(x − 3)\n4. (2x + 3)(x − 1)\nColumn B:\n(a) 2x² − 7x + 3\n(b) 2x² + x − 3\n(c) 2x² + 5x − 3\n(d) 2x² − 5x − 3",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-b, 2-d, 3-a, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (20 + x)(30 + y).\n(b) Use your expansion with suitable values of x and y to find 24 × 37 as a sum of four simple products.",
+     "a": "(a) 600 + 20y + 30x + xy. (b) x = 4, y = 7: 600 + 20 × 7 + 30 × 4 + 4 × 7 = 600 + 140 + 120 + 28 = 888.",
+     "s": [
+      [
+       "Part (a): 600 + 20y + 30x + xy",
+       1
+      ],
+      [
+       "Part (b): x = 4, y = 7 giving 888",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Neha expands (3a − 2)(a + 4) and gets 3a² + 10a − 8. Arjun gets 3a² + 14a − 8. Who is right, and why?",
+     "a": "Neha; 12a and −2a combine to 10a",
+     "o": [
+      "Neha; 12a and −2a combine to 10a",
+      "Arjun; 12a and 2a combine to 14a",
+      "Neither; it is 3a² − 8, cross terms cancel",
+      "Neither; −2 × 4 makes the last term +8"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A rectangular garden holds three square flower beds, each of side s m, placed side by side in one row. A path w m wide runs all round the outside of the beds and also between each pair of neighbouring beds (so there are two strips of path between the beds). Everything that is not a bed is path.\n(a) Write the length and the width of the garden in terms of s and w.\n(b) Expand the area of the whole garden.\n(c) Find the area of the path in simplest form.\n(d) Find the path area when s = 4 and w = 1.5, and check it by finding the garden and bed areas directly.\n(e) Tiling costs Rs 350 per sq m. Find the cost of tiling the path.",
+     "a": "(a) Length = w + s + w + s + w + s + w = 3s + 4w; width = w + s + w = s + 2w. (b) (3s + 4w)(s + 2w) = 3s² + 6sw + 4sw + 8w² = 3s² + 10sw + 8w². (c) The beds cover 3s², so the path is 10sw + 8w². (d) 10 × 4 × 1.5 + 8 × 2.25 = 60 + 18 = 78 sq m. Check: garden 18 × 7 = 126 sq m, beds 3 × 16 = 48 sq m, 126 − 48 = 78 sq m. (e) 78 × 350 = Rs 27,300.",
+     "s": [
+      [
+       "Part (a): length 3s + 4w, width s + 2w",
+       1
+      ],
+      [
+       "Part (b): 3s² + 10sw + 8w²",
+       1
+      ],
+      [
+       "Part (c): path 10sw + 8w²",
+       1
+      ],
+      [
+       "Part (d): 78 sq m, checked as 126 − 48",
+       1
+      ],
+      [
+       "Part (e): Rs 27,300",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Dev says: 'When I multiply a two-term expression by a three-term expression, I always write 6 products, and so the answer always has 6 terms.' Test both parts of his claim using (a + b)(c + d + e) and (x + 1)(x² + 2x + 3).",
+     "a": "Partly right. (a + b)(c + d + e) = ac + ad + ae + bc + bd + be: 6 products and 6 terms, since no two are like terms. (x + 1)(x² + 2x + 3) also gives 6 products, x³ + 2x² + 3x + x² + 2x + 3, but 2x² and x² combine, and 3x and 2x combine, leaving x³ + 3x² + 5x + 3, only 4 terms. So '6 products' is always right, but the number of terms in the answer can be fewer when like terms appear.",
+     "s": [
+      [
+       "Shows (a + b)(c + d + e) has 6 products and 6 terms",
+       1
+      ],
+      [
+       "Shows (x + 1)(x² + 2x + 3) simplifies to 4 terms",
+       1
+      ],
+      [
+       "Verdict: partly right, 6 products always but terms can combine",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "(y + 5)(y² − 2y + 3) = y³ + 3y² − ___ y + 15. Write the missing number in digits.",
+     "a": "7"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (2a/3)(6a − 9b + 3/4).\n(b) Can any two terms of your answer be added into one term? Give a reason.",
+     "a": "(a) (2a/3) × 6a = 4a², (2a/3) × 9b = 6ab and (2a/3) × (3/4) = a/2, so the product is 4a² − 6ab + a/2. (b) No. The letter-numbers a², ab and a are all different, so no two of the terms are like terms.",
+     "s": [
+      [
+       "Part (a): 4a² − 6ab + a/2",
+       1
+      ],
+      [
+       "Part (b): no like terms, since a², ab and a differ",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A sweet shop packs chocolates in trays of different sizes. A tray of size k has (k + 2) rows with (2k + 1) chocolates in each row. A size-5 tray holds 77 chocolates.\n(a) Expand the number of chocolates in a size-k tray.\n(b) Show that a tray of size k + 1 holds 4k + 7 more chocolates than a tray of size k.\n(c) Starting from 77, use part (b) to find how many chocolates trays of sizes 6, 7 and 8 hold, without expanding again. Explain why each jump is 4 more than the one before.\n(d) A new label printed for the shop reads 'Party tray, size 7: 150 chocolates'. Is there any tray size that holds exactly 150 chocolates? Use part (c) to decide whether the label can be right.",
+     "a": "(a) (k + 2)(2k + 1) = 2k² + k + 4k + 2 = 2k² + 5k + 2. (b) A size k + 1 tray has (k + 3) rows of (2k + 3): 2k² + 3k + 6k + 9 = 2k² + 9k + 9. The difference is (2k² + 9k + 9) − (2k² + 5k + 2) = 4k + 7. (c) From size 5 to 6 the jump is 4 × 5 + 7 = 27, giving 104; from 6 to 7 it is 31, giving 135; from 7 to 8 it is 35, giving 170. Each time k goes up by 1, 4k + 7 goes up by 4. (d) No. Size 7 holds 135 and size 8 holds 170, and the number of chocolates only grows with the size, so no tray holds exactly 150. The label is wrong; a size-7 tray should say 135.",
+     "s": [
+      [
+       "Part (a): 2k² + 5k + 2",
+       1
+      ],
+      [
+       "Part (b): difference 4k + 7 shown by expanding",
+       1
+      ],
+      [
+       "Part (c): 104, 135, 170, with jumps growing by 4",
+       1
+      ],
+      [
+       "Part (d): 150 lies between 135 and 170, so the label is wrong (size 7 holds 135)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-6.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Anu claims: 'To multiply any 3-digit number by 1001, just write the number twice; for example 572 × 1001 = 572572.' Use 1001 = 1000 + 1 to decide whether her claim is right, and test whether the same trick works for the 4-digit number 2,345.",
+     "a": "Yes, for 3-digit numbers she is right. N × 1001 = N × 1000 + N. For a 3-digit N, N × 1000 ends in three zeros, so adding N just fills those three places: 572000 + 572 = 572572, with no carrying. For 2,345 the number has four digits, so it overlaps the 3,000 place: 2345000 + 2345 = 2347345, which is not 2,345 written twice. Her claim holds because she limited it to 3-digit numbers.",
+     "s": [
+      [
+       "Writes N × 1001 = N × 1000 + N",
+       1
+      ],
+      [
+       "Explains why a 3-digit N fills the three zeros without carrying",
+       1
+      ],
+      [
+       "Shows 2,345 × 1001 = 2347345, so the trick needs a 3-digit number; verdict Yes",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A school orders 11 cartons of paper with 2,736 sheets in each. Using the one-line rule for multiplying by 11, how many sheets does it receive?",
+     "a": "30,096",
+     "o": [
+      "30,096",
+      "29,096",
+      "2,91,096",
+      "27,360"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write 99 as 100 − 1 and find 4,738 × 99.\n(b) Without multiplying again, say how much greater 4,738 × 101 is than 4,738 × 99, and find 4,738 × 101.",
+     "a": "(a) 4738 × 100 − 4738 = 473800 − 4738 = 469062. (b) 101 is 2 more than 99, so the product is greater by 2 × 4738 = 9476: 469062 + 9476 = 478538 (check: 473800 + 4738 = 478538).",
+     "s": [
+      [
+       "Part (a): 469062",
+       1
+      ],
+      [
+       "Part (b): greater by 9476, giving 478538",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When 6,857 × 11 is found with the one-line rule (adding neighbouring digits and carrying), the hundreds digit of the product is ___ .",
+     "a": "4"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A billing clerk at a stationery shop uses quick rules to write this bill.\nNotebooks: 101 pieces at Rs 83 each, written as Rs 8,383\nFiles: 11 pieces at Rs 286 each, written as Rs 2,046\nMarkers: 1001 pieces at Rs 65 each, written as Rs 65,065\nHe found the files line with the one-line rule for multiplying by 11 (write the neighbouring-digit sums of 286), but made a slip in applying it.\n(a) Check the notebooks line using 101 = 100 + 1.\n(b) Find 286 × 11 correctly with the one-line rule, showing every carry, and say what the clerk did wrong.\n(c) Check the markers line using 1001 = 1000 + 1, and find the correct total of the bill.\n(d) By how much did the clerk undercharge? Explain, from the carries in (b), why the error is exactly this amount.",
+     "a": "(a) 83 × 100 + 83 = 8300 + 83 = Rs 8,383, correct. (b) The sums are 2, (2 + 8) = 10, (8 + 6) = 14, 6. Units 6; tens 14 gives 4, carry 1; hundreds 10 + 1 = 11 gives 1, carry 1; thousands 2 + 1 = 3. So 286 × 11 = 3,146. The clerk kept only the last digit of each sum (2, 0, 4, 6) and never carried. (c) 65 × 1000 + 65 = Rs 65,065, correct. Total = 8,383 + 3,146 + 65,065 = Rs 76,594. (d) His total is Rs 75,494, so he undercharged by Rs 1,100. He dropped a carry of 1 into the hundreds place (worth 100) and a carry of 1 into the thousands place (worth 1,000): 100 + 1,000 = 1,100.",
+     "s": [
+      [
+       "Part (a): notebooks Rs 8,383 confirmed",
+       1
+      ],
+      [
+       "Part (b): 286 × 11 = 3,146 with carries; clerk dropped the carries",
+       1
+      ],
+      [
+       "Part (c): markers confirmed; correct total Rs 76,594",
+       1
+      ],
+      [
+       "Part (d): undercharged Rs 1,100 = carries worth 100 and 1,000",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A warehouse has 101 racks, each holding 3,946 bolts. Without long multiplication, how many bolts are there in all?",
+     "a": "3,98,546",
+     "o": [
+      "3,98,546",
+      "3,97,546",
+      "43,406",
+      "39,49,946"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: For any counting number N, the number 99 × N + N always ends in at least two zeros. Give a reason.",
+     "a": "True. By the distributive property, 99 × N + N = (99 + 1) × N = 100 × N, and any counting number multiplied by 100 ends in two zeros. For example, 99 × 37 + 37 = 3663 + 37 = 3700.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Shows 99N + N = 100N by the distributive property",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 6,215 × 99 = 6,15,285.\nReason (R): To multiply a number by 99, multiply it by 100 and then add the number once.",
+     "a": "A is true but R is false",
+     "o": [
+      "A is true but R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Let dcba be a 4-digit number (d thousands, c hundreds, b tens, a units).\n(a) Write dcba × 1001 as dcba × 1000 + dcba, and show which digits get added in each place of the product.\n(b) Use this to find 5,867 × 1001, showing any carrying.\n(c) Use 999 = 1000 − 1 to find 5,867 × 999.\n(d) Without multiplying again, explain why your answers to (b) and (c) must add up to 5,867 × 2000, and check that they do.",
+     "a": "(a) dcba000 + dcba: the units, tens and hundreds of the product are a, b, c; the thousands place gets a + d; then c, b, d follow. The product reads d c b (a + d) c b a, before carrying. (b) 5 8 6 (7 + 5) 8 6 7: the 12 in the thousands place leaves 2 and carries 1 into the 6, so 5,867 × 1001 = 5872867 (check: 5867000 + 5867). (c) 5867000 − 5867 = 5861133. (d) 1001 + 999 = 2000, so by the distributive property 5867 × 1001 + 5867 × 999 = 5867 × 2000 = 11734000. Check: 5872867 + 5861133 = 11734000.",
+     "s": [
+      [
+       "Part (a): shows the places d c b (a + d) c b a",
+       1
+      ],
+      [
+       "Part (b): 5872867 with the carry shown",
+       1
+      ],
+      [
+       "Part (c): 5861133",
+       1
+      ],
+      [
+       "Part (d): uses 1001 + 999 = 2000 and the distributive property",
+       1
+      ],
+      [
+       "Part (d): checks the sum 11734000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Priya uses the rule 'put the sum of the two digits in the middle' and writes 58 × 11 = 5138.\n(a) Find 58 × 11 correctly.\n(b) Explain, using 58 × 11 = 580 + 58, what went wrong.",
+     "a": "(a) 638. (b) 580 + 58: the tens place gets 8 + 5 = 13, which is 1 hundred and 3 tens. Priya wrote all of 13 in the middle instead of keeping 3 and carrying 1 to the hundreds, so the hundreds digit should be 5 + 1 = 6.",
+     "s": [
+      [
+       "Part (a): 638",
+       1
+      ],
+      [
+       "Part (b): the middle sum 13 needs a carry of 1 to the hundreds",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each product with its value.\nColumn A:\n1. 467 × 11\n2. 467 × 101\n3. 467 × 99\n4. 467 × 999\nColumn B:\n(a) 46233\n(b) 466533\n(c) 5137\n(d) 47167",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A paper mill packs 10,001 sheets in each crate. How many sheets are there in 125 crates?",
+     "a": "12,50,125",
+     "o": [
+      "12,50,125",
+      "12,51,250",
+      "1,25,125",
+      "12,50,000"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A student's rough work shows only this line: 5,63,400 + 5,634.\n(a) Which multiplication was the student doing? Explain.\n(b) Find the answer.\n(c) Write a short real-life problem that this multiplication solves.",
+     "a": "(a) 5,63,400 is 5,634 × 100, and adding 5,634 once more gives 5,634 × (100 + 1), so the student was finding 5,634 × 101. (b) 563400 + 5634 = 569034. (c) For example: a bakery bakes 5,634 biscuits a day; how many does it bake in 101 days? Answer 5,69,034.",
+     "s": [
+      [
+       "Part (a): identifies 5,634 × 101 from 100 + 1",
+       1
+      ],
+      [
+       "Part (b): 569034",
+       1
+      ],
+      [
+       "Part (c): a sensible problem for 5,634 × 101",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use 1001 = 1000 + 1 to find 3,407 × 1001.\n(b) Use 999 = 1000 − 1 to find 3,407 × 999, and check that the two answers differ by 2 × 3,407.",
+     "a": "(a) 3407000 + 3407 = 3410407. (b) 3407000 − 3407 = 3403593. The difference 3410407 − 3403593 = 6814 = 2 × 3407, as expected because 1001 − 999 = 2.",
+     "s": [
+      [
+       "Part (a): 3410407",
+       1
+      ],
+      [
+       "Part (b): 3403593 and the difference 6814 = 2 × 3407",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: 4,082 × 11 = 44,902.\nStatement 2: 56 × 999 = 56,000 − 56 = 55,944.\nStatement 3: Multiplying a number by 101 shifts it one place to the left and adds the number once.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school needs at least 100 packets of chart paper. Two suppliers make offers.\nSupplier A: sells only in a lot of 99 packets, at Rs 248 a packet, delivered free.\nSupplier B: sells only in a lot of 101 packets, at Rs 243 a packet, plus Rs 600 for delivery.\nA local shop will sell single packets at Rs 260 each.\n(a) Find the cost of Supplier A's lot using 99 = 100 − 1.\n(b) Find the total cost of Supplier B's lot using 101 = 100 + 1.\n(c) Which way of getting at least 100 packets costs the school less? Justify with the totals.",
+     "a": "(a) 248 × 100 − 248 = 24800 − 248 = Rs 24,552. (b) 243 × 100 + 243 = Rs 24,543, plus Rs 600 delivery = Rs 25,143. (c) Lot A has only 99 packets, so the school must buy 1 more from the local shop: 24,552 + 260 = Rs 24,812. Lot B gives 101 packets for Rs 25,143. Supplier A plus one shop packet is cheaper, by Rs 331.",
+     "s": [
+      [
+       "Part (a): Rs 24,552",
+       1
+      ],
+      [
+       "Part (b): Rs 25,143",
+       1
+      ],
+      [
+       "Part (c): A + one shop packet = Rs 24,812, cheaper than Rs 25,143",
+       2
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "11² = 121, 11³ = 1331 and 11⁴ = 14641. Ravi wants 11⁵ = 14641 × 11. He writes the neighbouring-digit sums 1, 5, 10, 10, 5, 1 side by side and gets 15101051.\n(a) Find 14641 × 11 correctly with the one-line rule, showing the carries.\n(b) Use 14641 × 11 = 146410 + 14641 to explain why a sum of 10 cannot be written whole in one place.",
+     "a": "(a) From the right: 1; 4 + 1 = 5; 6 + 4 = 10, write 0 carry 1; 4 + 6 + 1 = 11, write 1 carry 1; 1 + 4 + 1 = 6; 1. So 11⁵ = 161051. (b) In 146410 + 14641 each place can hold only one digit. When the digits in a place add to 10, that is 1 of the next place and 0 of this one, so 0 is written and 1 is carried left. Ravi's 15101051 has eight digits, but 14641 × 11 is less than 15000 × 11 = 165000, so it has only six.",
+     "s": [
+      [
+       "Part (a): 161051 with both carries shown",
+       1
+      ],
+      [
+       "Part (b): a place sum of 10 becomes 0 with a carry of 1 to the next place",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which product equals 42,90,286?",
+     "a": "4,286 × 1001",
+     "o": [
+      "4,286 × 1001",
+      "4,286 × 10001",
+      "4,286 × 101",
+      "4,286 × 11"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Brahmagupta's khanda-gunanam (multiplication by parts) breaks the multiplier into parts whose sum equals it, multiplies by each part and adds the results.\n(a) Break 1001 into two parts that make 748 × 1001 quick, and find the product.\n(b) Show that breaking 1001 as 500 + 501 also gives the right product.\n(c) Explain why the first way is the better choice.",
+     "a": "(a) 1001 = 1000 + 1: 748 × 1000 + 748 × 1 = 748000 + 748 = 748748. (b) 748 × 500 = 374000 and 748 × 501 = 374748; 374000 + 374748 = 748748. (c) Both are correct by the distributive property, but multiplying by 1000 and by 1 needs no real working, while 500 and 501 still need full multiplications. A good choice of parts is what makes the method fast.",
+     "s": [
+      [
+       "Part (a): 748000 + 748 = 748748",
+       1
+      ],
+      [
+       "Part (b): 374000 + 374748 = 748748",
+       1
+      ],
+      [
+       "Part (c): explains that 1000 + 1 needs no real multiplication",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A housing society has 11 towers with 101 flats in each tower. At present each flat pays Rs 999 a month for upkeep. The society needs at least Rs 11,10,000 a month.\n(a) Find the number of flats in one step.\n(b) Find the monthly collection at Rs 999 per flat.\n(c) Is this enough? Find the shortfall or the surplus.\n(d) What is the smallest whole number of rupees per flat that would be enough? Justify.\n(e) Someone suggests Rs 1,001 per flat instead. Find that collection using 1001 = 1000 + 1.",
+     "a": "(a) 11 × 101 = 1010 + 101 = 1111 flats. (b) 1111 × 999 = 1111000 − 1111 = Rs 11,09,889. (c) No; it is short by 11,10,000 − 11,09,889 = Rs 111. (d) Rs 1,000: 1111 × 1000 = Rs 11,11,000, which is enough, while Rs 999 falls short, so no smaller whole amount works. (e) 1111000 + 1111 = Rs 11,12,111.",
+     "s": [
+      [
+       "Part (a): 1111 flats",
+       1
+      ],
+      [
+       "Part (b): Rs 11,09,889",
+       1
+      ],
+      [
+       "Part (c): short by Rs 111",
+       1
+      ],
+      [
+       "Part (d): Rs 1,000 with Rs 11,11,000",
+       1
+      ],
+      [
+       "Part (e): Rs 11,12,111",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Using 11 = 10 + 1, explain why a 3-digit number cba multiplied by 11 has the digits c, (c + b), (b + a), a when none of these sums is more than 9.\n(b) Use this to write 243 × 11 in one line.",
+     "a": "(a) cba × 11 = cba0 + cba. Adding place by place: units a + 0 = a, tens b + a, hundreds c + b, thousands c + 0 = c. With no sum above 9 there is no carrying, so the digits are c, (c + b), (b + a), a. (b) 2, (2 + 4), (4 + 3), 3 = 2673.",
+     "s": [
+      [
+       "Part (a): shows the place-by-place sums of cba0 + cba",
+       1
+      ],
+      [
+       "Part (b): 2673",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-6.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square plot has sides of 53 m. Without squaring 53 in full, find its area.",
+     "a": "2,809 sq m",
+     "o": [
+      "2,809 sq m",
+      "2,509 sq m",
+      "2,659 sq m",
+      "2,800 sq m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square floor tile has sides of 9.8 cm. Using (10 − 0.2)², what is the area of one tile?",
+     "a": "96.04 sq cm",
+     "o": [
+      "96.04 sq cm",
+      "99.96 sq cm",
+      "96 sq cm",
+      "104.04 sq cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A square sheet of paper has side a cm. Two strips, each a cm long and b cm wide, are marked on it: one along the top edge and one along the right-hand edge. Both marked strips are cut away, leaving a square of side (a − b) cm in the bottom-left corner. Ravi says the area left is a² − 2ab, because two strips of area ab each were removed.\n(a) Explain why the area left is a² − ab − ab + b², and not a² − 2ab.\n(b) Hence write Identity 1B.\n(c) Use this with a = 40 and b = 3 to find 37².",
+     "a": "(a) Removing two a-by-b strips takes away 2ab, but the b-by-b corner square lies in both strips, so it has been taken away twice. It must be added back once: a² − ab − ab + b². (b) (a − b)² = a² − 2ab + b². (c) 37² = 40² − 2 × 40 × 3 + 3² = 1600 − 240 + 9 = 1369.",
+     "s": [
+      [
+       "Part (a): explains the corner square is removed twice and added back",
+       1
+      ],
+      [
+       "Part (b): (a − b)² = a² − 2ab + b²",
+       1
+      ],
+      [
+       "Part (c): 37² = 1369",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (4m + 7)² using Identity 1A.\n(b) Put m = 10 in your answer to find 47².",
+     "a": "(a) (4m)² + 2 × 4m × 7 + 7² = 16m² + 56m + 49. (b) 1600 + 560 + 49 = 2209, and indeed 4 × 10 + 7 = 47.",
+     "s": [
+      [
+       "Part (a): 16m² + 56m + 49",
+       1
+      ],
+      [
+       "Part (b): 47² = 2209",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: (a − b)² = a² − b² for all numbers a and b.\nStatement 2: 51² = 2601, because (50 + 1)² = 2500 + 100 + 1.\nStatement 3: (−2a + 3)² = 4a² − 12a + 9.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school's square assembly ground has sides of 96 m. Paving costs Rs 50 per sq m. Two plans to enlarge it are proposed.\nPlan 1: lengthen every side by 4 m, keeping it square.\nPlan 2: lengthen only one pair of opposite sides by 8 m, making a 96 m by 104 m rectangle.\nThe school can spend at most Rs 39,000 on paving the extra area that is added, and wants as much extra area as it can get within that.\n(a) Find the present area using (100 − 4)².\n(b) Use Identity 1A to find the extra area under Plan 1.\n(c) Find the extra area under Plan 2.\n(d) Which plan should the school choose? Justify with the costs.",
+     "a": "(a) 100² − 2 × 100 × 4 + 4² = 10000 − 800 + 16 = 9216 sq m. (b) (96 + 4)² = 96² + 2 × 96 × 4 + 4², so the extra area is 768 + 16 = 784 sq m. (c) 96 × 104 = 9984 sq m, so the extra area is 9984 − 9216 = 768 sq m. (d) Plan 1 gives more area but costs 784 × 50 = Rs 39,200, over the limit. Plan 2 costs 768 × 50 = Rs 38,400, within it. So the school should choose Plan 2.",
+     "s": [
+      [
+       "Part (a): 9216 sq m",
+       1
+      ],
+      [
+       "Part (b): 784 sq m from 2ab + b²",
+       1
+      ],
+      [
+       "Part (c): 768 sq m",
+       1
+      ],
+      [
+       "Part (d): Plan 1 costs Rs 39,200 (over), chooses Plan 2 at Rs 38,400",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two numbers have a sum of 11 and a product of 24. Using (a + b)² = a² + 2ab + b², the sum of their squares is ___ .",
+     "a": "73"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sunil says: '(a + b)² is always greater than a² + b², because (a + b)² has the extra term 2ab.' Test his claim with a = 5, b = −2 and with a = 5, b = 0, and say exactly when he is right for integers a and b.",
+     "a": "No. With a = 5, b = −2: (a + b)² = 3² = 9, but a² + b² = 25 + 4 = 29, so it is smaller. With b = 0 both are 25, equal. (a + b)² − (a² + b²) = 2ab, so (a + b)² is greater only when ab is positive, that is when a and b are both positive or both negative.",
+     "s": [
+      [
+       "Shows 9 < 29 for a = 5, b = −2",
+       1
+      ],
+      [
+       "Shows equality when b = 0",
+       1
+      ],
+      [
+       "Verdict: false in general; greater only when ab > 0",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: (−x − 5)² = −(x + 5)² = −x² − 10x − 25. Give a reason.",
+     "a": "False. −x − 5 = −(x + 5), and squaring a number and its negative gives the same result: (−x − 5)² = (x + 5)² = x² + 10x + 25. A square of any number is never negative, so the minus sign cannot stay outside.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Shows (−x − 5)² = x² + 10x + 25",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 99² = 9801.\nReason (R): 99 × 101 = 100² − 1² = 9999.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The side of a square plot is increased from 30 m to 34 m. Riya says the area grows by 4² = 16 sq m. By how much does the area actually grow?",
+     "a": "256 sq m",
+     "o": [
+      "256 sq m",
+      "16 sq m",
+      "240 sq m",
+      "136 sq m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Use Identity 1A or 1B, whichever is quicker, to find each square. Show the split you choose.\n(a) 503² (b) 89² (c) 296² (d) 1004²\n(e) Rahul found 89² as (80 + 9)². Show his working and explain which split of 89 is quicker, and why.",
+     "a": "(a) (500 + 3)² = 250000 + 3000 + 9 = 253009. (b) (90 − 1)² = 8100 − 180 + 1 = 7921. (c) (300 − 4)² = 90000 − 2400 + 16 = 87616. (d) (1000 + 4)² = 1000000 + 8000 + 16 = 1008016. (e) (80 + 9)² = 6400 + 1440 + 81 = 7921, the same answer. (90 − 1)² is quicker because 90² is easy, 2 × 90 × 1 = 180 is easy, and 1² = 1, while Rahul had to work out 2 × 80 × 9 and 9².",
+     "s": [
+      [
+       "Part (a): 253009",
+       1
+      ],
+      [
+       "Part (b): 7921",
+       1
+      ],
+      [
+       "Part (c): 87616",
+       1
+      ],
+      [
+       "Part (d): 1008016",
+       1
+      ],
+      [
+       "Part (e): Rahul's 7921 and why (90 − 1) is quicker",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand (3x − 2y)² and (2y − 3x)².\n(b) Explain why the two results must be the same.",
+     "a": "(a) (3x − 2y)² = 9x² − 12xy + 4y² and (2y − 3x)² = 4y² − 12xy + 9x², the same three terms. (b) 2y − 3x = −(3x − 2y), and a number and its negative have the same square.",
+     "s": [
+      [
+       "Part (a): both equal 9x² − 12xy + 4y²",
+       1
+      ],
+      [
+       "Part (b): one bracket is the negative of the other, so the squares match",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each square with its expansion.\nColumn A:\n1. (2x + 3)²\n2. (2x − 3)²\n3. (3x + 2)²\n4. (3x − 2)²\nColumn B:\n(a) 9x² − 12x + 4\n(b) 4x² − 12x + 9\n(c) 9x² + 12x + 4\n(d) 4x² + 12x + 9",
+     "a": "1-d, 2-b, 3-c, 4-a",
+     "o": [
+      "1-d, 2-b, 3-c, 4-a",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-d, 2-a, 3-c, 4-b",
+      "1-b, 2-d, 3-a, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Amit squares a whole number that ends in 5 and says his answer is 4,875. Writing the number as 10k + 5, where k is a whole number, show that the square of a number ending in 5 can never end in 75. Check with 45².",
+     "a": "By Identity 1A, (10k + 5)² = 100k² + 2 × 10k × 5 + 25 = 100k² + 100k + 25 = 100(k² + k) + 25. 100(k² + k) ends in at least two zeros, so the square always ends in 25, never in 75. Amit's answer must be wrong. Check: k = 4 gives 1600 + 400 + 25 = 2025 = 45².",
+     "s": [
+      [
+       "Expands (10k + 5)² = 100k² + 100k + 25",
+       1
+      ],
+      [
+       "Writes it as 100(k² + k) + 25, so it always ends in 25",
+       1
+      ],
+      [
+       "Checks 45² = 2025 and rejects 4,875",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is NOT equal to 59²?",
+     "a": "60² − 1²",
+     "o": [
+      "60² − 1²",
+      "3600 − 120 + 1",
+      "(50 + 9)²",
+      "2500 + 900 + 81"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 75² using (70 + 5)².\n(b) Find 75² again using (80 − 5)², and check that both ways agree.",
+     "a": "(a) 4900 + 2 × 70 × 5 + 25 = 4900 + 700 + 25 = 5625. (b) 6400 − 2 × 80 × 5 + 25 = 6400 − 800 + 25 = 5625. Both give 5625.",
+     "s": [
+      [
+       "Part (a): 5625 by Identity 1A",
+       1
+      ],
+      [
+       "Part (b): 5625 by Identity 1B, agreeing",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Pattern 1 says 2(a² + b²) = (a + b)² + (a − b)².\n(a) Check it for a = −3, b = 5.\n(b) Check it for a = 1/2, b = 3/2.\n(c) Explain why it must hold for all numbers, not only counting numbers.",
+     "a": "(a) Left: 2(9 + 25) = 68. Right: (2)² + (−8)² = 4 + 64 = 68. (b) Left: 2(1/4 + 9/4) = 2 × 10/4 = 5. Right: (2)² + (−1)² = 4 + 1 = 5. (c) It comes from adding Identities 1A and 1B, which follow from the distributive property; that property holds for negative numbers and fractions as well, so the pattern holds for them too.",
+     "s": [
+      [
+       "Part (a): both sides 68",
+       1
+      ],
+      [
+       "Part (b): both sides 5",
+       1
+      ],
+      [
+       "Part (c): follows from 1A + 1B, which rest on distributivity for all numbers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two brothers each own two square fields, one of side 23 m and one of side 17 m. They pool all four fields and re-divide the land into just two square fields: one of side 40 m and one of side 6 m. Land in the village is valued at Rs 500 per sq m.\n(a) Find the total area of the four fields.\n(b) Use Pattern 1 to show that the two new fields have exactly the same total area.\n(c) Find the area of the 40 m field using Identity 1A with 40 = 23 + 17.\n(d) The elder brother takes the 40 m field. Is the division fair without any payment? If not, who should pay whom, and how much, so that each ends up with land of equal value?",
+     "a": "(a) 2(23² + 17²) = 2(529 + 289) = 1636 sq m. (b) By Pattern 1, 2(23² + 17²) = (23 + 17)² + (23 − 17)² = 40² + 6² = 1600 + 36 = 1636 sq m. (c) 23² + 2 × 23 × 17 + 17² = 529 + 782 + 289 = 1600 sq m. (d) Not fair: each brother should have 818 sq m, but the elder gets 1600 sq m, 782 sq m more than his share (782 is exactly 2 × 23 × 17). He should pay his younger brother 782 × 500 = Rs 3,91,000.",
+     "s": [
+      [
+       "Part (a): 1636 sq m",
+       1
+      ],
+      [
+       "Part (b): 40² + 6² = 1636 by Pattern 1",
+       1
+      ],
+      [
+       "Part (c): 1600 sq m with the cross term 782",
+       1
+      ],
+      [
+       "Part (d): elder pays younger Rs 3,91,000 for 782 sq m",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Using Identity 1B, 99.5² = (100 − 0.5)² = 10000 − ___ + 0.25. Write the missing number in digits.",
+     "a": "100"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use Identity 1A to show that (n + 1)² is always 2n + 1 more than n².\n(b) Given 64² = 4096, find 65² and 66² by adding, without squaring either number.",
+     "a": "(a) (n + 1)² = n² + 2 × n × 1 + 1² = n² + 2n + 1, so it is 2n + 1 more than n². (b) 65² = 4096 + (2 × 64 + 1) = 4096 + 129 = 4225; 66² = 4225 + (2 × 65 + 1) = 4225 + 131 = 4356.",
+     "s": [
+      [
+       "Part (a): (n + 1)² = n² + 2n + 1",
+       1
+      ],
+      [
+       "Part (b): 65² = 4225 and 66² = 4356",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Write (a − b)² as (a + (−b))² and use Identity 1A to obtain Identity 1B.\n(b) Use Identity 1B to expand (5p − 2q/3)².\n(c) Expand (5p − 2q/3)(5p − 2q/3) with the distributive property and confirm you get the same answer.\n(d) Check your answer by putting p = 1 and q = 3 into both the bracket form and the expanded form.\n(e) Meera wrote (5p − 2q/3)² = 25p² − 4q²/9. Name her mistake.",
+     "a": "(a) (a + (−b))² = a² + 2 × a × (−b) + (−b)² = a² − 2ab + b². (b) (5p)² − 2 × 5p × (2q/3) + (2q/3)² = 25p² − (20/3)pq + (4/9)q². (c) 25p² − (10/3)pq − (10/3)pq + (4/9)q², and the two like terms give −(20/3)pq, the same answer. (d) Bracket: (5 − 2)² = 9. Expanded: 25 − 20 + 4 = 9. (e) She dropped the cross term −(20/3)pq and also wrote −4q²/9 instead of +4q²/9; a square of (−2q/3) is positive.",
+     "s": [
+      [
+       "Part (a): derives a² − 2ab + b²",
+       1
+      ],
+      [
+       "Part (b): 25p² − (20/3)pq + (4/9)q²",
+       1
+      ],
+      [
+       "Part (c): distributive expansion agrees",
+       1
+      ],
+      [
+       "Part (d): both give 9",
+       1
+      ],
+      [
+       "Part (e): names the missing cross term and the wrong sign on the last term",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-6.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use Identity 1C, (a + b)(a − b) = a² − b², to find 94 × 106.\n(b) Find 95 × 105 the same way, and say by how much it is greater than 94 × 106.",
+     "a": "(a) (100 − 6)(100 + 6) = 10000 − 36 = 9964. (b) (100 − 5)(100 + 5) = 10000 − 25 = 9975, which is 36 − 25 = 11 more than 9964.",
+     "s": [
+      [
+       "Part (a): 9964",
+       1
+      ],
+      [
+       "Part (b): 9975, greater by 11",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 25² − 24² = 1, because 25 and 24 differ by 1.\nReason (R): For all numbers a and b, (a + b)(a − b) = a² − b².",
+     "a": "A is false but R is true",
+     "o": [
+      "A is false but R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true but R is false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two square rangoli boards have sides of 68 cm and 32 cm. Without squaring either side, find how much more area the bigger board has.",
+     "a": "3,600 sq cm",
+     "o": [
+      "3,600 sq cm",
+      "1,296 sq cm",
+      "5,648 sq cm",
+      "3,200 sq cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Identity 1C says a² − b² = (a + b)(a − b).\n(a) Write 60 as 30 × 2. Find whole numbers a and b with a + b = 30 and a − b = 2, and check that a² − b² = 60.\n(b) Write 45 as the difference of two squares in two different ways, checking each.\n(c) Show that every odd number 2k + 1 equals (k + 1)² − k².\n(d) Find 73² − 27² without squaring either number. Then use the factor pair 92 × 50 to write the same number as the difference of two other squares, and check it.",
+     "a": "(a) a = 16, b = 14: 16² − 14² = 256 − 196 = 60. (b) For example 45 = 45 × 1 gives 23² − 22² = 529 − 484 = 45; 45 = 15 × 3 gives 9² − 6² = 81 − 36 = 45 (also 9 × 5 gives 7² − 2²). (c) (k + 1)² − k² = k² + 2k + 1 − k² = 2k + 1. (d) 73² − 27² = (73 + 27)(73 − 27) = 100 × 46 = 4600. With a + b = 92 and a − b = 50, a = 71 and b = 21: 71² − 21² = 5041 − 441 = 4600.",
+     "s": [
+      [
+       "Part (a): 16² − 14² = 60",
+       1
+      ],
+      [
+       "Part (b): two correct ways for 45",
+       1
+      ],
+      [
+       "Part (c): (k + 1)² − k² = 2k + 1",
+       1
+      ],
+      [
+       "Part (d): 73² − 27² = 100 × 46 = 4600",
+       1
+      ],
+      [
+       "Part (d): 4600 = 71² − 21², checked",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Rohan squares 298 by Sridharacharya's method, a² = (a + b)(a − b) + b², but he chooses b so that one of the two factors is 290. Complete his line: 298² = 306 × 290 + ___ . (Write the number in digits.)",
+     "a": "64"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square garden of side 75.5 m has a square pond of side 24.5 m in one corner. Without squaring either side, find the area of the garden that is not pond.",
+     "a": "5,100 sq m",
+     "o": [
+      "5,100 sq m",
+      "2,601 sq m",
+      "51 sq m",
+      "4,900 sq m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school has three square play areas with sides of 48 m, 52 m and 103 m. It will grow grass on all three at Rs 15 per sq m.\n(a) Use Sridharacharya's method, a² = (a + b)(a − b) + b², with b = 2 to find the area of the 48 m play area.\n(b) Find the areas of the 52 m and the 103 m play areas the same way, choosing a convenient b for each.\n(c) Find the total area and the cost of grassing all three.\n(d) Ben finds the area of the 52 m play area with b = 7, as 59 × 45 + 49. Is his answer correct? Is his choice of b a good one? Justify, and state what makes a choice of b convenient.",
+     "a": "(a) 48² = 50 × 46 + 4 = 2300 + 4 = 2304 sq m. (b) 52² = 54 × 50 + 4 = 2704 sq m (b = 2); 103² = 106 × 100 + 9 = 10609 sq m (b = 3). (c) 2304 + 2704 + 10609 = 15617 sq m; 15617 × 15 = Rs 2,34,255. (d) His answer is correct, because the identity holds for every b: 59 × 45 = 2655 and 2655 + 49 = 2704. But b = 7 is a poor choice: neither 59 nor 45 is a round number, so 59 × 45 needs a full multiplication. A convenient b makes a + b or a − b a multiple of 10 or 100 and keeps b² small, as b = 2 does (54 × 50 + 4).",
+     "s": [
+      [
+       "Part (a): 2304 sq m",
+       1
+      ],
+      [
+       "Part (b): 2704 sq m and 10609 sq m",
+       1
+      ],
+      [
+       "Part (c): 15617 sq m and Rs 2,34,255",
+       1
+      ],
+      [
+       "Part (d): Ben's 2704 is correct but b = 7 is inconvenient; a good b makes a factor round",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Two consecutive odd numbers can be written as (n − 1) and (n + 1), where n is an even number of at least 2. Show that their product is never a perfect square.",
+     "a": "(n − 1)(n + 1) = n² − 1, which is 1 less than the square n². The square just before n² is (n − 1)² = n² − 2n + 1, and since n is at least 2, 2n − 1 is more than 1, so (n − 1)² is less than n² − 1. The product lies strictly between two consecutive squares, so it cannot be a square. Example: 7 × 9 = 63 lies between 49 and 64.",
+     "s": [
+      [
+       "Uses Identity 1C: product = n² − 1",
+       1
+      ],
+      [
+       "Shows (n − 1)² = n² − 2n + 1 < n² − 1 for n ≥ 2",
+       1
+      ],
+      [
+       "Concludes it lies between consecutive squares, so it is not a square",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: 45 × 55 = 50² − 5² = 2475.\nStatement 2: 43 × 45 = 44² + 1 = 1937.\nStatement 3: Sridharacharya's identity a² = (a + b)(a − b) + b² is true only when b is smaller than a.\nWhich of the statements are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 7.5² − 2.5² is exactly twice 5². Give a reason.",
+     "a": "True. By Identity 1C, 7.5² − 2.5² = (7.5 + 2.5)(7.5 − 2.5) = 10 × 5 = 50, and 2 × 5² = 2 × 25 = 50. (It is not equal to (7.5 − 2.5)² = 25, which is a common slip.)",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Uses (7.5 + 2.5)(7.5 − 2.5) = 50 = 2 × 25",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rohan wants 87² quickly by Sridharacharya's method, a² = (a + b)(a − b) + b². Which choice is both correct and convenient?",
+     "a": "b = 3, giving 90 × 84 + 9",
+     "o": [
+      "b = 3, giving 90 × 84 + 9",
+      "b = 3, giving 90 × 84 − 9",
+      "b = 7, giving 94 × 80 + 7",
+      "b = 13, giving 100 × 74 + 13"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A square card has side a. A smaller square of side b is cut from one corner, leaving an L-shaped piece. The L-shape is cut along a line into two rectangles: one is a by (a − b) and the other is b by (a − b). The second rectangle is moved and placed against the end of the first.\n(a) Write the area of the L-shape in two ways: from the squares, and from the two rectangles.\n(b) What single rectangle do the two pieces form, and which identity does this show?",
+     "a": "(a) From the squares: a² − b². From the rectangles: a(a − b) + b(a − b). (b) Placed end to end along their common side (a − b), they form one rectangle of length (a + b) and width (a − b). So a² − b² = (a + b)(a − b), Identity 1C.",
+     "s": [
+      [
+       "Part (a): a² − b² and a(a − b) + b(a − b)",
+       1
+      ],
+      [
+       "Part (b): rectangle (a + b) by (a − b), showing Identity 1C",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "(a) Write 50² − 7² as the product of two whole numbers that add up to 100.\n(b) Find the product without long multiplication.\n(c) Write a real-life problem that this product answers.",
+     "a": "(a) By Identity 1C, 50² − 7² = (50 + 7)(50 − 7) = 57 × 43. (b) 2500 − 49 = 2451. (c) For example: a school buys 57 boxes of chalk with 43 sticks in each; how many sticks does it buy? Answer 2,451.",
+     "s": [
+      [
+       "Part (a): 57 and 43",
+       1
+      ],
+      [
+       "Part (b): 2451",
+       1
+      ],
+      [
+       "Part (c): a sensible problem for 57 × 43",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meera writes 101² − 99² = (101 − 99)² = 4. Which correction is right?",
+     "a": "400, as it equals 200 × 2",
+     "o": [
+      "400, as it equals 200 × 2",
+      "4, her working is correct",
+      "2, as it equals 101 − 99",
+      "200, as it equals 101 + 99"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the product (4x − 5y)(4x + 5y).\n(b) Put x = 5 and y = 2 in both the product and your answer, and check that they agree.",
+     "a": "(a) By Identity 1C, (4x)² − (5y)² = 16x² − 25y². (b) Product: (20 − 10)(20 + 10) = 10 × 30 = 300. Answer: 16 × 25 − 25 × 4 = 400 − 100 = 300.",
+     "s": [
+      [
+       "Part (a): 16x² − 25y²",
+       1
+      ],
+      [
+       "Part (b): both give 300",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For a craft fair, students make square photo frames: each frame is a square board with a square window cut out of its middle, and the wood in a frame is the board's area minus the window's area.\nFrame P: board 27 cm, window 23 cm\nFrame Q: board 31 cm, window 19 cm\nFrame R: board 26.5 cm, window 23.5 cm\n(a) Use Identity 1C to find the wood in Frame P.\n(b) Find the wood in Frames Q and R the same way.\n(c) In all three frames, board side + window side = 50 cm. Use this to predict the wood in a frame with board 28.25 cm and window 21.75 cm without squaring.\n(d) A helper notices that Q's border (6 cm wide) is 3 times P's (2 cm wide) and Q uses 3 times the wood. He concludes: 'The wood in a frame always grows in proportion to its border width.' Test this with a frame of board 40 cm and window 34 cm, and give your verdict.",
+     "a": "(a) 27² − 23² = (27 + 23)(27 − 23) = 50 × 4 = 200 sq cm. (b) Q: 50 × 12 = 600 sq cm; R: 50 × 3 = 150 sq cm. (c) The wood is 50 × (board − window) = 50 × 6.5 = 325 sq cm. (d) The border of the 40 cm frame is 3 cm, 1.5 times P's, so his rule predicts 1.5 × 200 = 300 sq cm. But 40² − 34² = 74 × 6 = 444 sq cm. So the rule is false in general. The wood is (board + window) × (board − window); it grows in proportion to the border width only while board + window stays the same, as it does (50) for P, Q and R.",
+     "s": [
+      [
+       "Part (a): 200 sq cm",
+       1
+      ],
+      [
+       "Part (b): 600 and 150 sq cm",
+       1
+      ],
+      [
+       "Part (c): 50 × 6.5 = 325 sq cm",
+       1
+      ],
+      [
+       "Part (d): 444 not 300; proportional only when board + window is fixed",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Kavya says: 'Because a² − b² = (a + b)(a − b), the difference of the squares of two consecutive numbers is always their sum, and the difference of the squares of two numbers that differ by 2 is always twice their sum minus 2.' Test both parts of her claim with 15 and 14, and with 15 and 13, and give your verdict.",
+     "a": "Partly right. For consecutive numbers a − b = 1, so a² − b² = (a + b) × 1 = a + b: 15² − 14² = 225 − 196 = 29 = 15 + 14. For numbers that differ by 2, a² − b² = (a + b) × 2, which is twice their sum with nothing taken away: 15² − 13² = 225 − 169 = 56 = 2 × 28, not 2 × 28 − 2 = 54. The first part is always true; the second is wrong because of the extra 'minus 2'.",
+     "s": [
+      [
+       "15² − 14² = 29 = 15 + 14, from a − b = 1",
+       1
+      ],
+      [
+       "15² − 13² = 56 = 2 × 28, not 54",
+       1
+      ],
+      [
+       "Verdict: partly right; first part true, second should be twice the sum",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Without squaring either number, 8.7² − 1.3² = ___ . (Write the number in digits.)",
+     "a": "74"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Explain why a² = (a + b)(a − b) + b² is true for all numbers a and b.\n(b) Use it with a convenient b to find 46².",
+     "a": "(a) By Identity 1C, (a + b)(a − b) = a² − b². Adding b² to both sides gives (a + b)(a − b) + b² = a². (b) b = 4: 46² = 50 × 42 + 16 = 2100 + 16 = 2116.",
+     "s": [
+      [
+       "Part (a): adds b² to both sides of Identity 1C",
+       1
+      ],
+      [
+       "Part (b): 46² = 2116",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Take three numbers n − 2, n, n + 2. Square the middle one and subtract the product of the other two.\n(a) Do this for n = 7 and for n = 12.\n(b) Prove that the result is always the same, whatever n is.\n(c) Now take n − k, n, n + k. What is n² − (n − k)(n + k)? Prove it.\n(d) Use (c) to find 1000² − 997 × 1003 without multiplying.\n(e) A classmate writes 49 × 51 = 2501. Use (c) to show that this must be wrong and give the correct value.",
+     "a": "(a) n = 7: 49 − 5 × 9 = 49 − 45 = 4. n = 12: 144 − 10 × 14 = 144 − 140 = 4. (b) (n − 2)(n + 2) = n² − 4, so n² − (n² − 4) = 4 always. (c) (n − k)(n + k) = n² − k², so n² − (n − k)(n + k) = k². (d) n = 1000, k = 3: the answer is 3² = 9. (e) With n = 50 and k = 1, 50² − 49 × 51 = 1, so 49 × 51 = 2500 − 1 = 2499. The product must be less than 2500, so 2501 is impossible.",
+     "s": [
+      [
+       "Part (a): 4 in both cases",
+       1
+      ],
+      [
+       "Part (b): proves the result is 4",
+       1
+      ],
+      [
+       "Part (c): proves the result is k²",
+       1
+      ],
+      [
+       "Part (d): 9",
+       1
+      ],
+      [
+       "Part (e): 49 × 51 = 2499, less than 50²",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-6.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Arun simplifies 4(x − 2) + 3(x + 5) as 4x − 2 + 3x + 5 = 7x + 3. What went wrong, and what is the correct answer?",
+     "a": "Brackets half multiplied; correct is 7x + 7",
+     "o": [
+      "Brackets half multiplied; correct is 7x + 7",
+      "Sign slip with the −2; the correct answer is 7x + 23",
+      "Unlike terms were added; correct is 10x",
+      "There is no mistake; 7x + 3 is correct"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a tile pattern, Step n is an (n + 2)-by-(n + 2) square of tiles with the middle n-by-n square left empty. After simplifying (n + 2)² − n², the number of tiles in Step 25 is ___ .",
+     "a": "104"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: Mohan's simplification (3p − 4q)² = 9p² − 16q² is correct. Give the reason or the correction.",
+     "a": "False. Mohan squared each term and dropped the cross term. By Identity 1B, (3p − 4q)² = 9p² − 2 × 3p × 4q + 16q² = 9p² − 24pq + 16q².",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Gives 9p² − 24pq + 16q², naming the missing cross term",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A square photo frame is made from four identical rectangular wooden strips, each a cm by b cm (a smaller than b), arranged in a pinwheel around a square hole. The outer edge of the frame is a square of side (a + b) cm, and the hole is a square of side (b − a) cm.\n(a) Write the area of the hole as the outer square minus the four strips.\n(b) Write it a second way from the side of the hole, and show by expanding that the two expressions are equal.\n(c) For strips 4 cm by 13 cm, find the area of the hole by both methods.\n(d) A shop sells three sets of strips: X (4 cm by 13 cm), Y (5 cm by 15 cm) and Z (3 cm by 14 cm). A square photo of side 9.5 cm must fit in the hole. Which set fits the photo using the least wood? Justify.",
+     "a": "(a) (a + b)² − 4ab. (b) (b − a)². Expanding: (a + b)² − 4ab = a² + 2ab + b² − 4ab = a² − 2ab + b², and (b − a)² = b² − 2ab + a², the same. (c) 17² − 4 × 52 = 289 − 208 = 81 sq cm, and (13 − 4)² = 9² = 81 sq cm. (d) The holes are X: 9 cm, Y: 10 cm, Z: 11 cm, so X is too small for a 9.5 cm photo. The wood used is 4ab: Y uses 300 sq cm and Z uses 168 sq cm. Set Z fits and uses less wood, so choose Z.",
+     "s": [
+      [
+       "Part (a): (a + b)² − 4ab",
+       1
+      ],
+      [
+       "Part (b): (b − a)² and the expansions agree",
+       1
+      ],
+      [
+       "Part (c): 81 sq cm both ways",
+       1
+      ],
+      [
+       "Part (d): rejects X (9 cm hole), chooses Z (168 sq cm of wood against 300)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study",
+      "figure"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sana claims that (2q + 3)(2q − 1) is a multiple of 4 for every whole number q. Expand the product and test her claim, checking with q = 1.",
+     "a": "No. (2q + 3)(2q − 1) = 4q² − 2q + 6q − 3 = 4q² + 4q − 3 = 4(q² + q) − 3. That is 3 less than a multiple of 4 (so it leaves remainder 1 on division by 4), and it is never a multiple of 4. Check: q = 1 gives 5 × 1 = 5.",
+     "s": [
+      [
+       "Expands to 4q² + 4q − 3",
+       1
+      ],
+      [
+       "Writes it as 4(q² + q) − 3",
+       1
+      ],
+      [
+       "Checks q = 1 (5) and concludes the claim is false",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Three students write expressions for the same count of circles: (k + 1)² − 1, k(k + 2) and k² + k + 1. Only expressions that are equal for every k can describe the same count. Which expression does not match the others?",
+     "a": "k² + k + 1",
+     "o": [
+      "k² + k + 1",
+      "(k + 1)² − 1",
+      "k(k + 2)",
+      "None; all three match"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Each line in Column A is a wrong simplification. Match it with the mistake in Column B.\nColumn A:\n1. 5w² + 6w = 11w²\n2. (a + 3)(b + 2) = ab + 6\n3. −2(4p − 3) = −8p − 6\n4. 2y(3y × 4z) = 6y² × 8yz\nColumn B:\n(P) Left out the products a × 2 and 3 × b\n(Q) Multiplied 2y into both factors of a product\n(R) Combined terms with different letter-numbers\n(S) Forgot that (−2) × (−3) = +6",
+     "a": "1-R, 2-P, 3-S, 4-Q",
+     "o": [
+      "1-R, 2-P, 3-S, 4-Q",
+      "1-P, 2-R, 3-S, 4-Q",
+      "1-R, 2-Q, 3-S, 4-P",
+      "1-R, 2-P, 3-Q, 4-S"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "One number leaves remainder 2 when divided by 5, and another leaves remainder 4. Write them as 5a + 2 and 5b + 4.\n(a) Expand (5a + 2)(5b + 4).\n(b) Use your expansion to find the remainder when their product is divided by 5. Check with 7 and 9.",
+     "a": "(a) 25ab + 20a + 10b + 8. (b) 25ab + 20a + 10b + 8 = 5(5ab + 4a + 2b + 1) + 3, so the remainder is 3. Check: 7 × 9 = 63 = 5 × 12 + 3.",
+     "s": [
+      [
+       "Part (a): 25ab + 20a + 10b + 8",
+       1
+      ],
+      [
+       "Part (b): remainder 3, checked with 63",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The numbers of tiles in Steps 1, 2 and 3 of a tile pattern are 8, 15 and 24. Three students each give a rule for the number of tiles in Step n:\nRiya: (n + 1)(n + 3)  Sam: (n + 2)² − 1  Tia: n² + 4n + 3\n(a) Check that each rule gives 8, 15 and 24 for Steps 1, 2 and 3.\n(b) Expand Riya's and Sam's rules to show that all three are equivalent.\n(c) Find the number of tiles in Step 20.\n(d) Use Sam's form to explain why the number of tiles is always 1 less than a square number.\n(e) Can some step have exactly 99 tiles? Exactly 100 tiles? Justify using (d).",
+     "a": "(a) Riya: 2 × 4 = 8, 3 × 5 = 15, 4 × 6 = 24. Sam: 9 − 1, 16 − 1, 25 − 1. Tia: 1 + 4 + 3 = 8, 4 + 8 + 3 = 15, 9 + 12 + 3 = 24. (b) (n + 1)(n + 3) = n² + 3n + n + 3 = n² + 4n + 3; (n + 2)² − 1 = n² + 4n + 4 − 1 = n² + 4n + 3. (c) 21 × 23 = 483 tiles. (d) Sam's form is (n + 2)² − 1: a square number minus 1. (e) 99 = 10² − 1, so n + 2 = 10 and Step 8 has 99 tiles (9 × 11 = 99). 100 would need 101 to be a square number, which it is not, so no step has 100 tiles.",
+     "s": [
+      [
+       "Part (a): all three checked for Steps 1 to 3",
+       1
+      ],
+      [
+       "Part (b): both expand to n² + 4n + 3",
+       1
+      ],
+      [
+       "Part (c): 483",
+       1
+      ],
+      [
+       "Part (d): (n + 2)² − 1 is one less than a square",
+       1
+      ],
+      [
+       "Part (e): Step 8 has 99; 100 impossible as 101 is not a square",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 3(x + 4) − 3x equals 12 for every value of x.\nReason (R): Two expressions are equal if they take the same value for one chosen value of the letter-number.",
+     "a": "A is true but R is false",
+     "o": [
+      "A is true but R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false but R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For two consecutive numbers m and m + 1, by how much does the square of their sum exceed the sum of their squares?",
+     "a": "2m² + 2m",
+     "o": [
+      "2m² + 2m",
+      "2m + 1",
+      "1",
+      "4m² + 4m + 1"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Leela writes: (y − 3)(y + 7) = y² + 7y − 3y − 21 = y² + 4y − 21.\n(a) Check each step and say whether there is a mistake.\n(b) Verify her final answer by putting y = 2 into both the product and her answer.",
+     "a": "(a) There is no mistake: y × y = y², y × 7 = 7y, (−3) × y = −3y, (−3) × 7 = −21, and 7y − 3y = 4y. (b) Product: (−1)(9) = −9. Her answer: 4 + 8 − 21 = −9. They agree.",
+     "s": [
+      [
+       "Part (a): every step correct, no mistake",
+       1
+      ],
+      [
+       "Part (b): both give −9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements.\nStatement 1: (k + 2)(k + 3) − (k² + 5k) is always 5.\nStatement 2: The square of any odd number is 1 more than a multiple of 8.\nStatement 3: (n + 4)² − (n + 2)² is a multiple of 8 for every whole number n.\nWhich of the statements are correct?",
+     "a": "2 only",
+     "o": [
+      "2 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A rectangular sheet is p cm long and s cm wide. A strip r cm wide is cut off along one long edge, and another strip r cm wide along one short edge. The two strips share an r-by-r corner square.\n(a) Write the area left as one product.\n(b) Write it a second way as the whole sheet minus the two strips, explaining why +r² appears.\n(c) Find the area left when p = 12, s = 8 and r = 2.5, using both expressions.",
+     "a": "(a) (p − r)(s − r). (b) ps − pr − sr + r². The strips have areas pr and sr, but the r-by-r corner is in both strips, so subtracting both removes it twice; r² is added back once. (c) (12 − 2.5)(8 − 2.5) = 9.5 × 5.5 = 52.25 sq cm, and 96 − 30 − 20 + 6.25 = 52.25 sq cm.",
+     "s": [
+      [
+       "Part (a): (p − r)(s − r)",
+       1
+      ],
+      [
+       "Part (b): ps − pr − sr + r² with the reason for + r²",
+       1
+      ],
+      [
+       "Part (c): 52.25 sq cm both ways",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Add two numbers a and b, then multiply the sum by the average of the two numbers.\n(a) Write an expression for the result and show that it equals half of a² + 2ab + b².\n(b) Check with a = 6 and b = 10.",
+     "a": "(a) (a + b) × (a + b)/2 = (a + b)²/2 = (a² + 2ab + b²)/2, half the square of the sum. (b) 16 × 8 = 128, and (36 + 120 + 100)/2 = 256/2 = 128.",
+     "s": [
+      [
+       "Part (a): (a + b)(a + b)/2 = (a² + 2ab + b²)/2",
+       1
+      ],
+      [
+       "Part (b): both give 128",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Gauri simplifies (1/3)(9t − 6) − 2 as 3t − 6 − 2 = 3t − 8. Which correction is right?",
+     "a": "3t − 4; −6 also needs to be divided by 3",
+     "o": [
+      "3t − 4; −6 also needs to be divided by 3",
+      "3t − 8; her working has no mistake",
+      "3t; the two −2 terms cancel out",
+      "9t − 8; 9t should not have been divided by 3"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Find each product. Use Identity 1A, 1B or 1C where one fits, or the distributive property where none does, and name what you used.\n(i) (q − 2)(q + 9)\n(ii) (5a − 3b)(5a + 3b)\n(iii) −(3y + 2)(2y + 5)\n(iv) (4x + 3y)²\n(v) Gita says (iii) could have been done with Identity 1A, because both brackets contain only + signs. Is she right? Justify.",
+     "a": "(i) Distributive property (none of 1A, 1B, 1C fits, as 2 and 9 differ): q² + 9q − 2q − 18 = q² + 7q − 18. (ii) Identity 1C: 25a² − 9b². (iii) Distributive property: (3y + 2)(2y + 5) = 6y² + 15y + 4y + 10 = 6y² + 19y + 10, so the product is −6y² − 19y − 10. (iv) Identity 1A: 16x² + 24xy + 9y². (v) No. Identity 1A is for the square of one bracket, (a + b)(a + b). In (iii) the two brackets are different, 3y + 2 and 2y + 5, so 1A does not apply; the + signs do not matter.",
+     "s": [
+      [
+       "Part (i): q² + 7q − 18 by the distributive property",
+       1
+      ],
+      [
+       "Part (ii): 25a² − 9b² by Identity 1C",
+       1
+      ],
+      [
+       "Part (iii): −6y² − 19y − 10",
+       1
+      ],
+      [
+       "Part (iv): 16x² + 24xy + 9y² by Identity 1A",
+       1
+      ],
+      [
+       "Part (v): Gita is wrong; 1A needs the same bracket twice",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Expand and simplify (n + 1)² + (n − 1)² − 2.\n(b) What does your answer tell you about the result for every whole number n? Check with n = 5.",
+     "a": "(a) n² + 2n + 1 + n² − 2n + 1 − 2 = 2n². (b) The result is always twice a square number. Check: 6² + 4² − 2 = 36 + 16 − 2 = 50 = 2 × 5².",
+     "s": [
+      [
+       "Part (a): 2n²",
+       1
+      ],
+      [
+       "Part (b): always twice a square; n = 5 gives 50",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two students find the area of the same region of a figure, one as x(x + 2y) − 3xy and the other as x(x − y). When x = 9 and y = 4, the area is ___ square units.",
+     "a": "45"
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "(a) Describe in words a pattern of square tiles whose Step n has n² + 3n tiles, and give the counts for Steps 1, 2 and 3.\n(b) Describe a second way of seeing your pattern that gives a different-looking expression.\n(c) Show that the two expressions are equivalent.",
+     "a": "(a) For example: Step n is a rectangle of tiles n rows tall and n + 3 tiles wide. Steps 1, 2, 3 have 4, 10 and 18 tiles. (b) The same rectangle seen as an n-by-n square with 3 extra columns of n tiles each: n² + 3n; the first way gives n(n + 3). (c) n(n + 3) = n² + 3n by the distributive property.",
+     "s": [
+      [
+       "Part (a): a valid pattern with counts 4, 10, 18",
+       1
+      ],
+      [
+       "Part (b): a second view giving another expression",
+       1
+      ],
+      [
+       "Part (c): shows n(n + 3) = n² + 3n",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair of expressions is NOT equivalent?",
+     "a": "(a − 2)² and a² − 4",
+     "o": [
+      "(a − 2)² and a² − 4",
+      "(a − 2)² and (2 − a)²",
+      "a(a + 4) + 4 and (a + 2)²",
+      "(a + 1)² − 1 and a(a + 2)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school makes square display boards. A board of size y holds a y-by-y square of photo tiles with a border one tile wide all round it, so the whole board is (y + 2) tiles on each side.\n(a) How many border tiles does a size-5 board need?\n(b) Show that (y + 2)² − y² simplifies to 4(y + 1).\n(c) Tia counts the border as two full rows of (y + 2) tiles (top and bottom) and two side columns of y tiles, and writes 2(y + 2) + 2y. Show that her expression is equivalent to the one in (b).\n(d) The art teacher has exactly 50 border tiles and wants to use every one of them on a single board. Is that possible? Justify using (b), and find the size of board whose border would need 52 tiles.",
+     "a": "(a) 7² − 5² = 49 − 25 = 24 tiles. (b) (y + 2)² − y² = y² + 4y + 4 − y² = 4y + 4 = 4(y + 1). (c) 2(y + 2) + 2y = 2y + 4 + 2y = 4y + 4 = 4(y + 1), the same. (d) Not possible. Every border has 4(y + 1) tiles, a multiple of 4, and 50 is not a multiple of 4 (50 = 4 × 12 + 2). A border of 52 tiles needs y + 1 = 13, so a size-12 board (14 by 14 tiles).",
+     "s": [
+      [
+       "Part (a): 24 tiles",
+       1
+      ],
+      [
+       "Part (b): simplifies to 4(y + 1)",
+       1
+      ],
+      [
+       "Part (c): 2(y + 2) + 2y = 4y + 4",
+       1
+      ],
+      [
+       "Part (d): 50 is not a multiple of 4, so impossible; 52 tiles fit a size-12 board",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Divya writes −2m(3m − 5n) = −6m² − 10mn.\n(a) Find her mistake and write the correct product.\n(b) Check the correct product by putting m = 1 and n = 1.",
+     "a": "(a) (−2m) × (−5n) is +10mn, not −10mn; the correct product is −6m² + 10mn. (b) −2 × (3 − 5) = −2 × (−2) = 4, and −6 + 10 = 4.",
+     "s": [
+      [
+       "Part (a): sign of the second term; −6m² + 10mn",
+       1
+      ],
+      [
+       "Part (b): both give 4",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

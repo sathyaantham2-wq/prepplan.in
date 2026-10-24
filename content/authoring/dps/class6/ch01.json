@@ -1,0 +1,2694 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH6",
+  "class": 6,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 1,
+  "name": "Patterns in Mathematics"
+ },
+ "source_code": "fegp101",
+ "concepts": [
+  {
+   "code": "C6M-1.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A list follows the rule 'each term is the sum of the two terms just before it'. Its 6th term is 21 and its 7th term is 34. The 4th term of the list is:",
+     "a": "8",
+     "o": [
+      "8",
+      "13",
+      "5",
+      "10"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rumour starts with 1 student in round 1. In every later round each student who knows it tells 3 new students, so the number of students who learn it in the rounds is 1, 3, 9, 27, ... In round 8 the number who learn it is:",
+     "a": "2187",
+     "o": [
+      "2187",
+      "729",
+      "1458",
+      "6561"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fruit seller piles tins with 1 tin in the top row, 2 in the next, 3 in the next and so on, down 9 rows. The number of tins in the whole pile is:",
+     "a": "45",
+     "o": [
+      "45",
+      "81",
+      "54",
+      "90"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A teacher says: 'My number is between 10 and 100 and it appears in both the Squares and the Cubes sequences.' The number is:",
+     "a": "64",
+     "o": [
+      "64",
+      "36",
+      "27",
+      "81"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each list in Column I (the first six terms of a sequence of Table 1) with the term that comes next in Column II.\nColumn I: 1. 1, 3, 6, 10, 15, 21  2. 1, 2, 3, 5, 8, 13  3. 1, 2, 4, 8, 16, 32  4. 1, 3, 9, 27, 81, 243\nColumn II: a. 64  b. 21  c. 28  d. 729",
+     "a": "1-c, 2-b, 3-a, 4-d",
+     "o": [
+      "1-c, 2-b, 3-a, 4-d",
+      "1-b, 2-c, 3-a, 4-d",
+      "1-c, 2-b, 3-d, 4-a",
+      "1-c, 2-a, 3-b, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The 8th term of the Triangular numbers is 36.\nStatement 2: In the Virahanka numbers 1, 2, 3, 5, 8, 13, ... the 6th term is 13 and the 8th term is 34.\nStatement 3: Counting 1 as the first term of every sequence, the number 27 is the 3rd term of the Cubes and also the 3rd term of the Powers of 3.\nWhich statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The 10th term of the Powers of 2 sequence 1, 2, 4, 8, ... is 512.\nReason (R): Each term of the Powers of 2 is twice the term before it.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The Triangular numbers 1, 3, 6, 10, ... are formed by adding 1, 2, 3, ... one after another. The first Triangular number that is more than 200 is the ___-th term.",
+     "a": "20"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: In the Virahanka numbers 1, 2, 3, 5, 8, 13, ... the same amount is added to each term to get the next one. Give the reason.",
+     "a": "False. The amounts added are 1, 1, 2, 3, 5 and so on, which are not equal; each term is formed by adding the two terms before it.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: the gaps 1, 1, 2, 3, 5 differ, and the rule is the sum of the two previous terms",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write the next three terms of the Triangular numbers 1, 3, 6, 10, 15, 21, 28. (b) Say what is added at each of these three steps and how that amount changes from one step to the next.",
+     "a": "(a) 36, 45, 55. (b) The amounts added are 8, 9 and 10, so the amount added grows by 1 at every step (it is the next counting number).",
+     "s": [
+      [
+       "Part (a): 36, 45, 55",
+       1
+      ],
+      [
+       "Part (b): 8, 9, 10 added; the amount rises by 1 each step",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the 7th term of the Powers of 2 and of the Powers of 3 (both start 1, ...). (b) At which term does each sequence first go above 1000, and what is that term?",
+     "a": "(a) 64 and 729. (b) The Powers of 2 first exceed 1000 at the 11th term, 1024; the Powers of 3 do so earlier, at the 8th term, 2187.",
+     "s": [
+      [
+       "Part (a): 64 and 729",
+       1
+      ],
+      [
+       "Part (b): 11th term 1024 for Powers of 2, 8th term 2187 for Powers of 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Aman looks at 1, 2, 3, 5, 8 and sees that the gaps are 1, 1, 2, 3. He says the next gap is 4, so the next term is 12. (a) Find the term Aman writes and the gap he used. (b) Table 1 gives 13 as the next Virahanka number. Find the rule and the gap that gives 13, and say what Aman's guess missed.",
+     "a": "(a) Aman writes 8 + 4 = 12 using the gap 4. (b) Each Virahanka term is the sum of the two before it, so the next term is 5 + 8 = 13, a gap of 5. The gaps 1, 1, 2, 3, 5 are the earlier terms themselves, so they do not go up by 1 each time as Aman assumed.",
+     "s": [
+      [
+       "Part (a): 12 with gap 4",
+       1
+      ],
+      [
+       "Part (b): 13 from 5 + 8, gap 5, and gaps are the earlier terms",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate the Odd numbers from the Triangular numbers by the way each next term is formed, using the first five terms of each to show the difference.",
+     "a": "Odd numbers 1, 3, 5, 7, 9: the same amount, 2, is added every time. Triangular numbers 1, 3, 6, 10, 15: the amount added changes, 2, 3, 4, 5, rising by 1 each time.",
+     "s": [
+      [
+       "Odd numbers: constant addition of 2 shown with terms",
+       1
+      ],
+      [
+       "Triangular numbers: additions 2, 3, 4, 5 that keep rising",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ishita says that if a list begins 1, 3, you already know which sequence of Table 1 it is. Name three sequences of Table 1 that begin 1, 3 and give the term each has next.",
+     "a": "She is wrong. The Odd numbers (next term 5), the Triangular numbers (next term 6) and the Powers of 3 (next term 9) all begin 1, 3.",
+     "s": [
+      [
+       "Names three sequences that begin 1, 3",
+       1
+      ],
+      [
+       "Next terms 5, 6 and 9 respectively",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Divya claims: 'The 12th Triangular number is the same as the 12th square number.' Find both numbers by adding and by multiplying and decide whether she is right. Is there any position where the two are equal?",
+     "a": "She is not right. The 12th Triangular number is 1 + 2 + ... + 12 = 78 but the 12th square is 12 x 12 = 144. From the lists 1, 3, 6, 10 and 1, 4, 9, 16 the terms agree only at the 1st position (both 1); after that the squares are larger.",
+     "s": [
+      [
+       "Finds 78 for the Triangular term",
+       1
+      ],
+      [
+       "Finds 144 for the square term and rejects the claim",
+       1
+      ],
+      [
+       "States they match only at the first position",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sneha says: 'Every term of the Powers of 2 after the first is even, and every term of the Powers of 3 is odd.' Test the claim on the first six terms of each sequence and give a reason why it keeps holding.",
+     "a": "Yes, she is right. Powers of 2 after 1 are 2, 4, 8, 16, 32 (all even) and Powers of 3 are 1, 3, 9, 27, 81, 243 (all odd). Doubling any number gives an even number, while multiplying an odd number by 3 gives an odd number, so it continues.",
+     "s": [
+      [
+       "Lists the terms and checks even for 2 and odd for 3",
+       1
+      ],
+      [
+       "Gives the doubling reason for even",
+       1
+      ],
+      [
+       "Gives the tripling-an-odd reason for odd",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that 100 cannot be a term of the Odd numbers or of the Powers of 3, but that it is a term of the Squares.",
+     "a": "100 is even, and every term of the Odd numbers is odd, so it is not there. The Powers of 3 go ... 27, 81, 243, ..., which jumps over 100 (81 < 100 < 243). But 10 x 10 = 100, so it is the 10th square.",
+     "s": [
+      [
+       "Odd numbers: 100 is even",
+       1
+      ],
+      [
+       "Powers of 3: 81 < 100 < 243, so skipped",
+       1
+      ],
+      [
+       "Squares: 10 x 10 = 100",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation that produces the numbers 1, 2, 4, 8, 16 as a count, and say which sequence of Table 1 it is and what the next number would be.",
+     "a": "Sample: a news item is told to 1 person in hour 1; every person who knows it tells exactly one new person each hour, so the number who know doubles: 1, 2, 4, 8, 16. This is the Powers of 2 and the next number is 32.",
+     "s": [
+      [
+       "A situation in which the count doubles each step",
+       1
+      ],
+      [
+       "Names the sequence as Powers of 2",
+       1
+      ],
+      [
+       "Gives 32 as the next",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A hall has 1 seat in the front row, 2 in the second row, 3 in the third row, and every row has one seat more than the row before. (a) How many seats are in the 10th row, and how many in rows 1 to 10 together? (b) Name the sequence that the totals 1, 3, 6, 10, ... form. (c) The hall must hold at most 280 seats. How many full rows can be built, and how many seats are then left unused from the 280?",
+     "a": "(a) The 10th row has 10 seats and rows 1 to 10 together have 1 + 2 + ... + 10 = 55 seats. (b) The totals form the Triangular numbers. (c) 23 rows give 276 seats and 24 rows would give 300 > 280, so 23 full rows; 280 - 276 = 4 seats are unused.",
+     "s": [
+      [
+       "Part (a): 10 seats in row 10 and 55 in total",
+       2
+      ],
+      [
+       "Part (b): Triangular numbers",
+       1
+      ],
+      [
+       "Part (c): 23 rows with 276 seats (24 rows would need 300)",
+       1
+      ],
+      [
+       "Part (c): 4 left over",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A school club spreads a notice. In round 1 one student, Asha, learns it. Plan X: in each later round the number of students who learn it is twice that of the round before (1, 2, 4, ...). Plan Y: in each later round it is three times that of the round before (1, 3, 9, ...). (a) How many learn the notice in round 6 under each plan? (b) In which round does each plan first have more than 100 students learning in that round? (c) Which plan is quicker to pass 100, and by how many rounds? Justify using the rules of the two sequences.",
+     "a": "(a) Plan X gives 32 and Plan Y gives 243 in round 6. (b) Plan X: 64 in round 7 and 128 in round 8, so round 8; Plan Y: 81 in round 5 and 243 in round 6, so round 6. (c) Plan Y is quicker by 2 rounds, because multiplying by 3 each time grows faster than multiplying by 2.",
+     "s": [
+      [
+       "Part (a): 32 and 243",
+       1
+      ],
+      [
+       "Part (b): round 8 for X and round 6 for Y",
+       2
+      ],
+      [
+       "Part (c): Y quicker by 2 rounds",
+       1
+      ],
+      [
+       "Part (c): justification from tripling versus doubling",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A fruit seller in Nashik has 100 oranges to display. A triangular pile has 1 orange in the top row, 2 in the next row, 3 in the next and so on. A square block has equal rows and columns. Her stand holds at most 12 rows in a triangular pile, and her table is wide enough for a square block of at most 9 by 9. (a) How many oranges are in a triangular pile of 6 rows? (b) How many rows does a triangular pile need to hold 91 oranges? (c) Find how many oranges are displayed and how many are left over for each arrangement allowed by her stand and table. (d) She wants to display the larger number. Which arrangement should she use? Give the numbers.",
+     "a": "(a) 1 + 2 + 3 + 4 + 5 + 6 = 21. (b) 13 rows, since the 13th Triangular number is 91. (c) The stand allows at most 12 rows, so 78 displayed and 22 left over; the table allows 9 by 9 = 81 displayed and 19 left over. (d) The square block, because 81 is more than 78 and leaves fewer (19 against 22) left over.",
+     "s": [
+      [
+       "Part (a): 21",
+       1
+      ],
+      [
+       "Part (b): 13 rows (91 is the 13th Triangular number)",
+       1
+      ],
+      [
+       "Part (c): 78 and 22 for the pile, 81 and 19 for the block",
+       1
+      ],
+      [
+       "Part (d): chooses the square block with the comparison 81 against 78",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Deepa wants to save at least Rs 250 for a school trip whose fee is due in 20 days. Plan I: she puts in Rs 1 on day 1, Rs 3 on day 2, Rs 5 on day 3, and so on through the Odd numbers. Plan II: she puts in Rs 1, Rs 2, Rs 4, Rs 8, ..., doubling each day. Her pocket money lets her put in at most Rs 100 on any one day. (a) How much does she put in on day 8 under each plan? (b) On which day does Plan II first ask for more than Rs 100? (c) Using the Powers of 2, find the total saved by the end of day 7 under Plan II without adding every amount, and the total under Plan I by the end of day 7. (d) Plan I reaches a total of Rs 256 on day 16. Which plan should Deepa follow? Give the day each reaches Rs 250 (or why it cannot) and the largest single deposit.",
+     "a": "(a) Plan I: Rs 15; Plan II: Rs 128. (b) Day 8, when the deposit is Rs 128 (day 7 is Rs 64). (c) Plan II: the next power of 2 after the 7 deposits is 128, so the total is 128 - 1 = Rs 127; Plan I: 1 + 3 + 5 + 7 + 9 + 11 + 13 = Rs 49. (d) Plan I: Rs 256 on day 16, within the 20 days, with the largest deposit Rs 31, within Rs 100, so she follows Plan I. Plan II has only Rs 127 by day 7 and needs Rs 128 on day 8, which breaks the Rs 100 limit, so it cannot continue.",
+     "s": [
+      [
+       "Part (a): 15 and 128",
+       1
+      ],
+      [
+       "Part (b): day 8 (128 > 100)",
+       1
+      ],
+      [
+       "Part (c): 127 and 49",
+       1
+      ],
+      [
+       "Part (d): chooses Plan I with day 16, deposit 31, and Plan II breaking the Rs 100 limit on day 8",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A triangular staircase of dots has 11 dots in its bottom row and rows of 1, 2, 3, ... above it. The number of dots in the whole staircase is:",
+     "a": "66",
+     "o": [
+      "66",
+      "121",
+      "55",
+      "22"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these numbers of dots can be arranged as a perfect square grid and also as a complete triangular staircase (rows of 1, 2, 3, ... dots)?",
+     "a": "36",
+     "o": [
+      "36",
+      "49",
+      "45",
+      "64"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A solid cube block of dots holds 512 dots in all. It is sliced into flat layers, each a square grid of dots, with one layer for each dot of its height. The number of dots in one layer is:",
+     "a": "64",
+     "o": [
+      "64",
+      "8",
+      "128",
+      "256"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The hexagonal numbers begin 1, 7, 19, 37, 61, ... and the gaps between neighbours are 6, 12, 18, 24, ..., that is 6 x 1, 6 x 2, 6 x 3, 6 x 4, ... The gap between the 9th and the 10th hexagonal number is:",
+     "a": "54",
+     "o": [
+      "54",
+      "60",
+      "48",
+      "9"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: A square arrangement of 49 dots has 7 rows of 7 dots.\nStatement 2: 21 dots can be arranged as a perfect square grid.\nStatement 3: A block of dots 3 long, 3 wide and 3 high has 27 dots.\nWhich statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The 5th cube number, 125, is 5 times the 5th square number, 25.\nReason (R): A block of dots 5 long, 5 wide and 5 high is made of 5 flat layers, and each layer is a square grid of 5 by 5 dots.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A solid block of dots has the same length, width and height and holds 729 dots. Each flat layer of the block is a square grid, so one layer holds ___ dots.",
+     "a": "81"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each arrangement in Column I with its number of dots in Column II.\nColumn I: 1. A block of 5 layers, each layer 5 rows of 5 dots  2. A staircase with rows of 1, 2, 3, ..., 9 dots  3. A square grid with 9 rows of 9 dots  4. The 4th hexagonal number, counting 1, 7, 19, ...\nColumn II: a. 81  b. 45  c. 125  d. 37",
+     "a": "1-c, 2-b, 3-a, 4-d",
+     "o": [
+      "1-c, 2-b, 3-a, 4-d",
+      "1-b, 2-c, 3-a, 4-d",
+      "1-c, 2-b, 3-d, 4-a",
+      "1-a, 2-b, 3-c, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) A triangular staircase of dots has 55 dots. How many rows does it have? (b) Two more rows are added to it. How many dots are added in all, and how many dots does the new staircase have?",
+     "a": "(a) 1 + 2 + ... + 10 = 55, so it has 10 rows. (b) The new rows have 11 and 12 dots, so 23 dots are added and the staircase has 55 + 23 = 78 dots.",
+     "s": [
+      [
+       "Part (a): 10 rows",
+       1
+      ],
+      [
+       "Part (b): 11 + 12 = 23 added, total 78",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State true or false, and give the reason for your verdict: The 4th cube number has exactly as many dots as the 8th square number.",
+     "a": "True. The 4th cube number is 4 x 4 x 4 = 64 and the 8th square number is 8 x 8 = 64.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: both equal 64 (4 x 4 x 4 and 8 x 8)",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Neha has 36 dots. Describe the two different pictures she can make with all 36 dots, giving the number of rows in each, and say what this shows about a number.",
+     "a": "She can make a square with 6 rows of 6 dots, or a staircase with 8 rows (1 + 2 + ... + 8 = 36). So one number can be shown in different ways and play different roles in two sequences.",
+     "s": [
+      [
+       "Square with 6 rows of 6 and staircase with 8 rows",
+       1
+      ],
+      [
+       "Same number can be represented differently and belong to two sequences",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) How many dots are in a square grid with 13 rows of 13 dots? (b) Another row and another column are added to make a grid of 14 by 14. Show that the number of new dots is 13 + 14 and find it.",
+     "a": "(a) 13 x 13 = 169. (b) 14 x 14 = 196, so 196 - 169 = 27 new dots. The new row has 14 dots and the new column has the other 13 dots, so 14 + 13 = 27.",
+     "s": [
+      [
+       "Part (a): 169",
+       1
+      ],
+      [
+       "Part (b): 27 new dots explained as 14 + 13",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the amounts added in going from 1 to 7, 7 to 19 and 19 to 37 in the hexagonal numbers. (b) Arjun says these amounts are all equal. Say what is true about them instead and use it to find the term after 37.",
+     "a": "(a) 6, 12 and 18. (b) They are not equal: each is 6 more than the one before (multiples of 6), so the next amount is 24 and the next term is 37 + 24 = 61.",
+     "s": [
+      [
+       "Part (a): 6, 12, 18",
+       1
+      ],
+      [
+       "Part (b): amounts rise by 6 each time, so 24 is added and the term is 61",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate a square-number picture from a cube-number picture for the 3rd member of each sequence, saying how the dots are arranged and how many there are.",
+     "a": "The 3rd square is a flat grid of 3 rows with 3 dots in each row, so 9 dots. The 3rd cube is a block 3 dots long, 3 wide and 3 high, so 27 dots.",
+     "s": [
+      [
+       "Square: flat 3 by 3 grid with 9 dots",
+       1
+      ],
+      [
+       "Cube: 3 by 3 by 3 block with 27 dots",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Karthik says: 'In dot pictures, the cube number for a side has always more dots than the square number for the same side.' Test the claim for sides 1, 2 and 3 and say whether it is right.",
+     "a": "Partly right. For side 1 both are 1 dot, so they are equal; for side 2 the cube has 8 and the square has 4; for side 3 the cube has 27 and the square has 9. It is true for sides 2 and above but 'always' fails at side 1.",
+     "s": [
+      [
+       "Side 1: 1 and 1, equal",
+       1
+      ],
+      [
+       "Sides 2 and 3: 8 against 4 and 27 against 9",
+       1
+      ],
+      [
+       "Verdict: true from side 2 onwards, not always",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write one real-life arrangement that matches the 5th square number (25) and one that matches the 4th triangular number (10), and say how many rows each has.",
+     "a": "Sample: a floor with 5 rows of 5 square tiles uses 25 tiles (5 rows). Ten pins set out in a triangle of rows of 1, 2, 3 and 4 use 10 (4 rows).",
+     "s": [
+      [
+       "A square arrangement of 5 rows of 5 for 25",
+       1
+      ],
+      [
+       "A triangular arrangement with rows 1, 2, 3, 4 for 10",
+       1
+      ],
+      [
+       "Rows stated: 5 and 4",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Pooja claims: '100 dots, like 36 dots, can be arranged both as a perfect square and as a triangular staircase.' Test her claim and give your verdict.",
+     "a": "No, she is wrong. 100 dots do make a square of 10 rows of 10. But the staircase totals 91 for 13 rows and 105 for 14 rows, so 100 is skipped and cannot form a complete staircase.",
+     "s": [
+      [
+       "Square of 10 rows of 10 works",
+       1
+      ],
+      [
+       "Staircase totals 91 and 105 jump over 100",
+       1
+      ],
+      [
+       "Concludes the claim is wrong because 100 is not a Triangular number",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that 50 dots cannot be arranged as a complete triangular staircase, a perfect square grid or a solid cube block.",
+     "a": "Staircases hold 45 (9 rows) and 55 (10 rows), skipping 50. Square grids hold 49 (7 by 7) and 64 (8 by 8), skipping 50. Cube blocks hold 27 and 64, skipping 50.",
+     "s": [
+      [
+       "Staircase: 45 and 55 skip 50",
+       1
+      ],
+      [
+       "Square: 49 and 64 skip 50",
+       1
+      ],
+      [
+       "Cube: 27 and 64 skip 50",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A courtyard is paved with square slabs in a square grid. (a) How many slabs are in an 18 by 18 grid, and in a 19 by 19 grid? (b) Explain with a picture of an L-shaped border why the extra slabs needed equal 18 + 19. (c) For which side length does the next grid need an L-shaped border of exactly 51 extra slabs, and how many slabs does the larger grid have?",
+     "a": "(a) 18 x 18 = 324 and 19 x 19 = 361. (b) The new grid adds one row of 19 slabs and one column of the remaining 18 slabs, so 19 + 18 = 37 = 361 - 324. (c) The border is the sum of the two side lengths, and two neighbouring numbers add to 51 as 25 + 26, so the grid grows from 25 by 25 to 26 by 26 with 676 slabs.",
+     "s": [
+      [
+       "Part (a): 324 and 361",
+       1
+      ],
+      [
+       "Part (b): row of 19 plus column of 18 gives 37",
+       2
+      ],
+      [
+       "Part (c): side 25 growing to 26",
+       1
+      ],
+      [
+       "Part (c): 676 slabs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Meena's tile shop sells a floor pattern kit of 120 square tiles. A square pattern uses as many rows as tiles in each row. A staircase pattern uses rows of 1, 2, 3, ... tiles. The room is 12 tiles wide. A tile costs Rs 25. (a) What is the biggest square pattern from 120 tiles and how many tiles are left? (b) How many rows would a staircase using all 120 tiles have? (c) Can that staircase be laid in the room? What is the biggest staircase that can, and how many tiles does it use? (d) The customer will pay for at most Rs 100 of extra tiles and wants the biggest square floor that fits the 12-tile width. Compare the 11 by 11 and 12 by 12 squares and recommend one, with the cost of each.",
+     "a": "(a) 10 by 10 uses 100 tiles and leaves 20. (b) 1 + 2 + ... + 15 = 120, so 15 rows. (c) No, the bottom row would have 15 tiles but the room is 12 wide; the biggest allowed staircase has 12 rows and uses 78 tiles. (d) 11 by 11 = 121 needs 1 more tile, Rs 25, within Rs 100. 12 by 12 = 144 needs 24 more tiles, 24 x 25 = Rs 600, far over Rs 100. So recommend 11 by 11.",
+     "s": [
+      [
+       "Part (a): 100 used and 20 left",
+       1
+      ],
+      [
+       "Part (b): 15 rows",
+       1
+      ],
+      [
+       "Part (c): 15 does not fit 12; the staircase of 12 rows uses 78",
+       1
+      ],
+      [
+       "Part (d): 11 by 11 for Rs 25 chosen; 12 by 12 needs Rs 600 which breaks the Rs 100 limit",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The hexagonal numbers start 1, 7, 19, 37, ... and the amount added to get each next term goes 6, 12, 18, ... (a) Continue the amounts for two more steps and write the next two hexagonal numbers. (b) Check both by the rule 'six times a Triangular number, plus 1', using the Triangular numbers 10 and 15. (c) Is 91 also a triangular number? Find which one, and say what this tells you about a number and the sequences.",
+     "a": "(a) The next amounts are 24 and 30, so the next terms are 37 + 24 = 61 and 61 + 30 = 91. (b) 6 x 10 + 1 = 61 and 6 x 15 + 1 = 91, which agree with part (a). (c) Yes: 1 + 2 + ... + 13 = 91, so 91 is the 13th Triangular number. A number can lie in two sequences and play two roles.",
+     "s": [
+      [
+       "Part (a): amounts 24 and 30",
+       1
+      ],
+      [
+       "Part (a): terms 61 and 91",
+       1
+      ],
+      [
+       "Part (b): 6 x 10 + 1 = 61 and 6 x 15 + 1 = 91",
+       1
+      ],
+      [
+       "Part (c): 91 is the 13th Triangular number",
+       1
+      ],
+      [
+       "Part (c): same number in two sequences with different roles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A toy factory in Surat stacks identical cubic boxes into one large cube block: a block that is 4 boxes long, wide and high holds 4 x 4 x 4 boxes. The store has 100 boxes. Ordering more boxes costs Rs 40 each, and the factory can spend at most Rs 600 on ordering. (a) How many boxes does the block of side 4 hold, and how many of the 100 are left unused? (b) How many boxes does a block of side 5 hold, and how many more must be ordered? (c) Find the cost of ordering them, and the number of extra boxes Rs 600 can buy. (d) Decide whether to build the side-4 block or the side-5 block, giving the figures you rely on.",
+     "a": "(a) 64 boxes in the block and 100 - 64 = 36 unused. (b) 125 boxes, so 125 - 100 = 25 more. (c) 25 x 40 = Rs 1000; Rs 600 buys 600 / 40 = 15 boxes, giving 115 boxes in all. (d) The side-5 block needs Rs 1000 and 125 boxes, but Rs 600 gets only 115 boxes, which is short of 125. So build the side-4 block, which needs no order and holds 64 boxes with 36 left.",
+     "s": [
+      [
+       "Part (a): 64 held and 36 unused",
+       1
+      ],
+      [
+       "Part (b): 125 and 25 more",
+       1
+      ],
+      [
+       "Part (c): Rs 1000 and 15 extra boxes (115 in all)",
+       1
+      ],
+      [
+       "Part (d): chooses side 4 because 115 < 125 and Rs 1000 > Rs 600",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a function, volunteers set out chairs: 1 chair in the first row, 3 in the second, 5 in the third, and each row has 2 chairs more than the row before. The last row has 39 chairs. The total number of chairs is:",
+     "a": "400",
+     "o": [
+      "400",
+      "390",
+      "780",
+      "1521"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Zoya adds all the odd numbers from 1 up to 41, that is 1 + 3 + 5 + ... + 41. Her total is:",
+     "a": "441",
+     "o": [
+      "441",
+      "400",
+      "1681",
+      "861"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pattern of boxes has 1 box in the first stack, then 2, 3, and so on up to 12, and then the stacks come back down 11, 10, ..., 2, 1. The total number of boxes is:",
+     "a": "144",
+     "o": [
+      "144",
+      "156",
+      "78",
+      "288"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Starting from 1, some consecutive odd numbers add up to 169. The last odd number added is:",
+     "a": "25",
+     "o": [
+      "25",
+      "13",
+      "27",
+      "23"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these numbers can NOT be written as 1 + 3 + 5 + ... for some number of terms starting from 1?",
+     "a": "90",
+     "o": [
+      "90",
+      "81",
+      "64",
+      "100"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The sum of the first 9 odd numbers is 72.\nStatement 2: 1 + 3 + 5 + ... + 19 = 100.\nStatement 3: 1 + 2 + 3 + ... + 19 + 20 + 19 + ... + 3 + 2 + 1 = 400.\nWhich statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 only",
+      "1 and 2 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sum of the first 20 odd numbers, 1 + 3 + 5 + ... + 39, is 420.\nReason (R): The sum of odd numbers added from 1 is the square of how many were added; for example the first 5 odd numbers add to 5 x 5 = 25.",
+     "a": "The Assertion is false but the Reason is true.",
+     "o": [
+      "The Assertion is false but the Reason is true.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The odd numbers added from 1, that is 1 + 3 + 5 + ... up to a last odd number, make a total of 2500. The last odd number added is ___.",
+     "a": "99"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 1 + 2 + 3 + ... + 10 + 9 + ... + 2 + 1 equals 110, because it is twice the sum 1 + 2 + ... + 10 = 55. Give the correction or reason.",
+     "a": "False. The peak number 10 appears only once when going up and down, so the total is 55 + 45 = 100 (the square 10 x 10), not 2 x 55 = 110.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Correction: 10 is counted once, so the sum is 100",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 1 + 3 + 5 + ... + 59 using the pattern of odd numbers. (b) Use (a) to find 21 + 23 + 25 + ... + 59.",
+     "a": "(a) 59 is the 30th odd number, so the sum is 30 x 30 = 900. (b) The numbers 1 to 19 (10 odd numbers) add to 10 x 10 = 100, so 21 + ... + 59 = 900 - 100 = 800.",
+     "s": [
+      [
+       "Part (a): 30 terms, 900",
+       1
+      ],
+      [
+       "Part (b): subtracts 100 to get 800",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) What is the value of 1 + 2 + 3 + ... + 99 + 100 + 99 + ... + 3 + 2 + 1? (b) Aryan gets a total of 900 when he adds the counting numbers up to some number and back down to 1. What is that number?",
+     "a": "(a) 100 x 100 = 10,000. (b) Going up to a number and back down to 1 gives that number times itself, and 30 x 30 = 900, so he went up to 30 and back.",
+     "s": [
+      [
+       "Part (a): 10,000",
+       1
+      ],
+      [
+       "Part (b): 30, since 30 x 30 = 900",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 5 by 5 square of dots is split into L-shaped parts of 1, 3, 5, 7 and 9 dots. (a) How many dots are in the square? (b) How many dots must be added as a new L-shaped part to make a 6 by 6 square, and which odd number is that?",
+     "a": "(a) 1 + 3 + 5 + 7 + 9 = 25 dots. (b) 11 dots, the next odd number, since 36 - 25 = 11.",
+     "s": [
+      [
+       "Part (a): 25",
+       1
+      ],
+      [
+       "Part (b): 11, the next odd number (36 - 25)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kavya adds the first 5 even numbers 2 + 4 + 6 + 8 + 10 hoping, like the odd numbers, to get a square. (a) Find her total. (b) Is it a square? Say what this shows about which sums give squares.",
+     "a": "(a) 2 + 4 + 6 + 8 + 10 = 30. (b) No, 30 lies between 25 and 36. The square pattern comes from adding odd numbers starting from 1; even numbers do not give it.",
+     "s": [
+      [
+       "Part (a): 30",
+       1
+      ],
+      [
+       "Part (b): not a square; the pattern belongs to odd numbers from 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the dot picture of a square grid cut into L-shaped parts, explain why the sum of the first 7 odd numbers is 49, saying what each part contributes.",
+     "a": "A 7 by 7 grid has 49 dots. Starting from 1 dot, each new L-shaped border adds the next odd number of dots (3, 5, 7, 9, 11, 13), so 1 + 3 + ... + 13 = 49.",
+     "s": [
+      [
+       "States the 7 by 7 square has 49 dots",
+       1
+      ],
+      [
+       "Each L-shaped part adds the next odd number 3 to 13",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Imran claims: '1 + 3 + 5 + ... + 99 = 2500.' Check his claim by finding how many odd numbers are being added, and give your verdict.",
+     "a": "Yes, he is right. 99 is the 50th odd number (the odd numbers up to 99 are 50 in count), and the sum of the first 50 odd numbers is 50 x 50 = 2500.",
+     "s": [
+      [
+       "Finds that 99 is the 50th odd number",
+       1
+      ],
+      [
+       "Uses 50 x 50",
+       1
+      ],
+      [
+       "Verdict: correct, 2500",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Mehul says: 'The sum of any 8 consecutive odd numbers is 64, since 8 x 8 = 64.' Test it with 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 and say when his statement is true.",
+     "a": "No, it is wrong in general. 3 + 5 + ... + 17 = 80, not 64. The result (number of terms times itself) holds only when the odd numbers start at 1; the first 8 odd numbers (1 to 15) give 64.",
+     "s": [
+      [
+       "Finds the sum 80",
+       1
+      ],
+      [
+       "Rejects the claim",
+       1
+      ],
+      [
+       "States it holds only when starting from 1",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no number of odd numbers added from 1 can give a total of 50.",
+     "a": "The totals are the squares 1, 4, 9, 16, 25, 36, 49, 64, ... The first 7 odd numbers give 49 and the first 8 give 64, so 50 lies between them and is never reached.",
+     "s": [
+      [
+       "Totals of odd numbers from 1 are squares",
+       1
+      ],
+      [
+       "7 terms give 49",
+       1
+      ],
+      [
+       "8 terms give 64, so 50 is skipped",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation that would be described by 1 + 3 + 5 + 7 + 9 + 11 + 13 and say what number the total is and what picture it matches.",
+     "a": "Sample: a mason lays square courtyard bricks in L-shaped borders, with 1 brick at the start and then 3, 5, 7, 9, 11 and 13 in each new border. The total 49 matches a 7 by 7 square grid.",
+     "s": [
+      [
+       "A situation adding the odd numbers 1 to 13 in turn",
+       1
+      ],
+      [
+       "Total 49",
+       1
+      ],
+      [
+       "Matches a 7 by 7 square",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Students stand in a square formation for a drill. (a) A formation of 12 by 12 grows to 13 by 13. How many more students are needed, and which odd number is that? (b) Check the answer by subtraction. (c) The formation is to grow from 20 by 20 to 25 by 25. Write the extra students as a sum of odd numbers and find it.",
+     "a": "(a) 25 more students; this is the 13th odd number, 2 x 13 - 1 = 25. (b) 13 x 13 - 12 x 12 = 169 - 144 = 25. (c) Going from 20 by 20 to 25 by 25 adds the 21st to 25th odd numbers: 41 + 43 + 45 + 47 + 49 = 225, which matches 625 - 400 = 225.",
+     "s": [
+      [
+       "Part (a): 25 and the 13th odd number",
+       1
+      ],
+      [
+       "Part (b): 169 - 144 = 25",
+       1
+      ],
+      [
+       "Part (c): odd numbers 41 to 49",
+       2
+      ],
+      [
+       "Part (c): total 225 checked with 625 - 400",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A warehouse has 1000 identical boxes and stacks them in columns: 1 box, then 2, 3, ..., up to a tallest column, then back down ..., 2, 1. (a) How many boxes does this need in all when the tallest column has 31 boxes? (b) What is the tallest column possible with 1000 boxes, and how many boxes are left? (c) Another plan builds only the going-up columns 1, 2, ..., 31. How many boxes does that need, and how do the two plans compare?",
+     "a": "(a) Up to 31 and back down gives 31 x 31 = 961 boxes. (b) 32 x 32 = 1024 > 1000, so the tallest column is 31 and 1000 - 961 = 39 boxes are left. (c) Going up only: 1 + 2 + ... + 31 = 496 boxes, about half of 961; the up-and-down plan needs 961 - 496 = 465 more boxes for the 30 columns on the way back.",
+     "s": [
+      [
+       "Part (a): 961",
+       1
+      ],
+      [
+       "Part (b): tallest 31 with 1024 too many",
+       1
+      ],
+      [
+       "Part (b): 39 left",
+       1
+      ],
+      [
+       "Part (c): 496 for going up only",
+       1
+      ],
+      [
+       "Part (c): comparison, 465 more for coming down",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A coach in Kolkata plans a one-week training block of 7 days. Plan X: on day 1 the runner runs 1 km, on day 2 she runs 2 km, on day 3 she runs 3 km, and so on, one km more each day. Plan Y: she runs 1 km, 3 km, 5 km, ... through the Odd numbers. The target is a total of at least 40 km, to be reached within the 7 days, and no single day may be more than 13 km. (a) How far does the runner go on day 7 under Plan Y, and what is the total after 5 days? (b) What is the total after 7 days under Plan X? (c) On which day does each plan first reach 40 km in total? (d) Which plan should the coach use? Give the day each reaches 40 km and the longest single run.",
+     "a": "(a) Day 7 of Plan Y is 13 km, and the total after 5 days is 1 + 3 + 5 + 7 + 9 = 25 km. (b) 1 + 2 + ... + 7 = 28 km. (c) Plan X reaches 45 km on day 9; Plan Y reaches 49 km on day 7 (36 km on day 6). (d) Plan Y: it passes 40 km on day 7, within the week, and its longest run is 13 km, exactly at the limit. Plan X has only 28 km after 7 days and needs 9 days, so it misses the deadline.",
+     "s": [
+      [
+       "Part (a): 13 km and 25 km",
+       1
+      ],
+      [
+       "Part (b): 28 km",
+       1
+      ],
+      [
+       "Part (c): day 9 for X, day 7 for Y",
+       1
+      ],
+      [
+       "Part (d): chooses Plan Y; X has only 28 km in 7 days",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A nursery in Mysuru has 500 bricks to pave two separate square flower beds. A square bed that is 15 bricks long and 15 bricks wide uses 15 x 15 bricks, and a bed can be grown by adding L-shaped rows of the next odd number of bricks. Plan P: beds of 15 by 15 and 16 by 16. Plan Q: beds of 16 by 16 and 17 by 17. (a) How many bricks do the two beds of Plan P need together, and how many are left from 500? (b) How many extra bricks turn the 16 by 16 bed into 17 by 17, and which odd number is that? (c) How many bricks does Plan Q need in all, and by how many does it differ from 500? (d) The nursery wants the bigger beds if the 500 bricks allow. Which plan do you recommend? Give the numbers.",
+     "a": "(a) 225 + 256 = 481 bricks, leaving 19. (b) 289 - 256 = 33, the 17th odd number. (c) 256 + 289 = 545 bricks, which is 45 more than 500. (d) Plan Q needs 545 bricks but only 500 are available (45 short), so it cannot be built. Recommend Plan P, which uses 481 bricks and leaves 19.",
+     "s": [
+      [
+       "Part (a): 481 used, 19 left",
+       1
+      ],
+      [
+       "Part (b): 33, the 17th odd number",
+       1
+      ],
+      [
+       "Part (c): 545, which is 45 over 500",
+       1
+      ],
+      [
+       "Part (d): recommends P because Q is 45 bricks short",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two staircase piles of tins hold 45 and 55 tins. They are the neighbours 9th and 10th in the Triangular numbers. Joined together, they can be laid out as a square block whose side is:",
+     "a": "10 tins",
+     "o": [
+      "10 tins",
+      "9 tins",
+      "11 tins",
+      "50 tins"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tank is filled in 9 rounds: 1 litre in round 1, then 2, 4, 8, and so on, doubling each round up to 256 litres in round 9. The total poured in is:",
+     "a": "511 litres",
+     "o": [
+      "511 litres",
+      "512 litres",
+      "510 litres",
+      "1023 litres"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A craftsman makes ring patterns whose bead count is 6 times a Triangular number, plus 1. For the 6th Triangular number, 21, the bead count is:",
+     "a": "127",
+     "o": [
+      "127",
+      "126",
+      "133",
+      "22"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shop packs laddoos in layers of 1, 7, 19, 37, ... laddoos, the hexagonal numbers, and a pack with several layers holds the total of its layers. The totals 1, 8, 27, 64, ... are the cube numbers. A pack of 9 layers holds:",
+     "a": "729",
+     "o": [
+      "729",
+      "810",
+      "512",
+      "81"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The running total 1 + 2 + 4 + 8 + ... of the Powers of 2 reaches 1023 when the number of terms added is ___.",
+     "a": "10"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The consecutive Triangular numbers 21 and 28 add up to 49, a square number.\nStatement 2: 6 times the Triangular number 15, plus 1, is 90.\nStatement 3: The first four hexagonal numbers 1, 7, 19, 37 add up to 64, a cube number.\nWhich statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two consecutive Triangular numbers always add up to a square number.\nReason (R): The Triangular numbers 6 and 10 add up to 16, which is 4 x 4.",
+     "a": "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+     "o": [
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each calculation in Column I with its value in Column II.\nColumn I: 1. The Triangular numbers 15 + 21  2. 6 times the Triangular number 15, plus 1  3. 1 + 2 + 4 + 8 + 16 + 32 + 64, then add 1  4. 1 + 7 + 19 + 37 + 61 + 91\nColumn II: a. 36  b. 91  c. 128  d. 216",
+     "a": "1-a, 2-b, 3-c, 4-d",
+     "o": [
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-a, 2-c, 3-b, 4-d"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) A hexagonal number is 217. Using the rule 'six times a Triangular number, plus 1', find the Triangular number it comes from. (b) The hexagonal number 7 comes from the 1st Triangular number, 1. Using this, say which position 217 holds in the list 1, 7, 19, 37, ...",
+     "a": "(a) 217 - 1 = 216 and 216 / 6 = 36, so it comes from the Triangular number 36. (b) 36 = 1 + 2 + ... + 8 is the 8th Triangular number. Since the 1st Triangular number gives the 2nd hexagonal number, the 8th gives the 9th, so 217 is the 9th hexagonal number.",
+     "s": [
+      [
+       "Part (a): 36 found from (217 - 1) / 6",
+       1
+      ],
+      [
+       "Part (b): 36 is the 8th Triangular number, so 217 is the 9th hexagonal number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use the running totals 1, 3, 7, 15 of the Powers of 2 to explain why each running total is always one less than the next power of 2.",
+     "a": "Start from the total plus 1: 1 + 1 = 2. Adding the next term 2 gives 4, adding 4 gives 8, adding 8 gives 16. At every step the term added equals the number already reached (1 + 1, 2 + 2, 4 + 4, 8 + 8), so the total plus 1 exactly doubles and lands on the next power of 2.",
+     "s": [
+      [
+       "Shows total plus 1 doubling at each step: 2, 4, 8, 16",
+       1
+      ],
+      [
+       "Reason: the term added equals the number already reached, so the total is one less than the next power",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Decide whether the statement is true or false, and justify: The Triangular numbers 36 and 45 are neighbours, and their sum is a square number.",
+     "a": "True. 36 + 45 = 81, which is 9 x 9, and two neighbouring Triangular numbers always add to a square.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: 36 + 45 = 81 = 9 x 9",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) The Triangular numbers 55 and 66 are neighbours. Find their sum and say which square it is. (b) Which two neighbouring Triangular numbers add to 225?",
+     "a": "(a) 55 + 66 = 121 = 11 x 11. (b) 105 + 120 = 225, the 14th and 15th Triangular numbers, giving 15 x 15.",
+     "s": [
+      [
+       "Part (a): 121 = 11 x 11",
+       1
+      ],
+      [
+       "Part (b): 105 and 120 (14th and 15th)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ria adds the Triangular numbers 3 and 10 and gets 13. As 13 is not a square she says the rule for neighbouring Triangular numbers is wrong. (a) Say why her test does not apply. (b) Show a correct test using a neighbour of 10.",
+     "a": "(a) 3 and 10 are not neighbours: 6 lies between them in the list 1, 3, 6, 10. (b) The neighbours 6 and 10 add to 16 = 4 x 4, and 10 and 15 add to 25 = 5 x 5.",
+     "s": [
+      [
+       "Part (a): 3 and 10 are not neighbours (6 lies between)",
+       1
+      ],
+      [
+       "Part (b): 6 + 10 = 16 or 10 + 15 = 25, squares",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the 7th hexagonal number in the list 1, 7, 19, 37, 61, 91, ... using 6 times a Triangular number plus 1. (b) Add the first seven hexagonal numbers and say which cube you get.",
+     "a": "(a) The 7th hexagonal number is 6 x 21 + 1 = 127. (b) 1 + 7 + 19 + 37 + 61 + 91 + 127 = 343 = 7 x 7 x 7, the 7th cube.",
+     "s": [
+      [
+       "Part (a): 127",
+       1
+      ],
+      [
+       "Part (b): 343, the 7th cube",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that 100 cannot be obtained by taking 6 times a Triangular number and adding 1.",
+     "a": "If 6 times a Triangular number plus 1 were 100, then 6 times the number would be 99. But 6 times any whole number is even and 99 is odd, so no Triangular number works.",
+     "s": [
+      [
+       "Subtracts 1 to get 99",
+       1
+      ],
+      [
+       "6 times a whole number is even",
+       1
+      ],
+      [
+       "99 is odd so it is impossible",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Neel claims: 'For the Powers of 3, as for the Powers of 2, the running total plus 1 is the next term.' Test it on 1 + 3 and on 1 + 3 + 9 and give your verdict.",
+     "a": "No, he is wrong. 1 + 3 = 4 and 4 + 1 = 5, but the next Power of 3 is 9. 1 + 3 + 9 = 13 and 13 + 1 = 14, but the next Power of 3 is 27. The 'plus 1' pattern belongs to the doubling Powers of 2 only.",
+     "s": [
+      [
+       "Finds 4 and 13 as the running totals",
+       1
+      ],
+      [
+       "Compares 5 with 9 and 14 with 27",
+       1
+      ],
+      [
+       "Verdict: the claim is wrong for Powers of 3",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Priya says: 'If two neighbouring Triangular numbers add to a square, then any three neighbouring Triangular numbers also add to a square.' Test 1 + 3 + 6 and 3 + 6 + 10 and give a verdict.",
+     "a": "No. 1 + 3 + 6 = 10 and 3 + 6 + 10 = 19, and neither is a square (they lie between 9 and 16, and 16 and 25). So the claim fails: three neighbours do not always add to a square. (Some three neighbours do, for example 15 + 21 + 28 = 64, but the square result was found for two neighbours.)",
+     "s": [
+      [
+       "Finds 10 and 19",
+       1
+      ],
+      [
+       "Shows neither is a square",
+       1
+      ],
+      [
+       "Verdict: the claim fails for three neighbours",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation in which two triangular piles of 78 and 91 objects are put together, and say what shape and size results.",
+     "a": "Sample: a baker sets 78 buns in a triangular tray of 12 rows and 91 buns in a triangular tray of 13 rows. Fitting the two trays together makes a square tray of 13 rows with 13 buns each, 169 buns in all.",
+     "s": [
+      [
+       "Two triangular arrangements with 78 and 91",
+       1
+      ],
+      [
+       "They join to a square arrangement",
+       1
+      ],
+      [
+       "13 by 13 = 169",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A Class 6 club in Pune raises money for a library during a 7-day festival. Plan P: collect Re 1 on day 1, then double the amount each day (Re 1, Rs 2, Rs 4, ...). Plan Q: collect Re 1 on day 1, then triple the amount each day (Re 1, Rs 3, Rs 9, ...). The sponsor will match at most Rs 500 in total, and the club wants to collect at least Rs 100 by the end of the festival. (a) Find the total collected after 4 days under each plan. (b) Find the total collected after 6 days under each plan. (c) Find the total after 7 days under each plan. (d) Which plan can the club follow for all 7 days? Use the Rs 500 limit and the Rs 100 aim.",
+     "a": "(a) Plan P: 1 + 2 + 4 + 8 = 15; Plan Q: 1 + 3 + 9 + 27 = 40. (b) Plan P: 63 (64 - 1); Plan Q: 364. (c) Plan P: 127 (128 - 1); Plan Q: 1093. (d) Plan P: its 7-day total of Rs 127 is above the Rs 100 aim and well under Rs 500. Plan Q reaches Rs 364 on day 6 but the day-7 amount of Rs 729 takes the total to Rs 1093, over the Rs 500 limit, so it cannot run the full festival. Choose Plan P.",
+     "s": [
+      [
+       "Part (a): 15 and 40",
+       1
+      ],
+      [
+       "Part (b): 63 and 364",
+       1
+      ],
+      [
+       "Part (c): 127 and 1093",
+       1
+      ],
+      [
+       "Part (d): chooses P: 127 is within 100 to 500; Q breaks the Rs 500 limit with 1093",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Multiply the Triangular numbers 1, 3, 6, 10, 15 by 6 and add 1. (b) Starting from 1, find the running totals of the hexagonal numbers 1, 7, 19, 37, 61, 91. (c) Name the sequences you get in (a) and (b), and use the pattern to predict the total of the first ten hexagonal numbers.",
+     "a": "(a) 7, 19, 37, 61, 91. (b) 1, 8, 27, 64, 125, 216. (c) (a) gives the hexagonal numbers and (b) gives the Cubes; so the first ten hexagonal numbers add to the 10th cube, 10 x 10 x 10 = 1000.",
+     "s": [
+      [
+       "Part (a): 7, 19, 37, 61, 91",
+       1
+      ],
+      [
+       "Part (b): 1, 8, 27, 64, 125, 216",
+       1
+      ],
+      [
+       "Part (c): names hexagonal numbers and Cubes",
+       1
+      ],
+      [
+       "Part (c): predicts 1000 as the 10th cube",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Pooja saves Re 1 on day 1, Rs 2 on day 2, Rs 4 on day 3, and so on, doubling the amount each day. (a) Find her total savings after 5 days. (b) Without adding every amount, find the total after 12 days using the rule that the total plus 1 is the next power of 2. (c) A watch costs Rs 4000. On which day can she first afford it, if she saves by this plan and keeps everything? Justify with the totals.",
+     "a": "(a) 1 + 2 + 4 + 8 + 16 = 31. (b) The total plus 1 is the next power, so the total after 12 days is 4096 - 1 = 4095. (c) After 11 days the total is 2048 - 1 = 2047, which is below 4000, and after 12 days it is 4095, which is at least 4000, so day 12.",
+     "s": [
+      [
+       "Part (a): 31",
+       1
+      ],
+      [
+       "Part (b): 4095 using 4096 - 1",
+       2
+      ],
+      [
+       "Part (c): 2047 after 11 days is short",
+       1
+      ],
+      [
+       "Part (c): day 12 with 4095",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A sweet shop in Jaipur packs laddoos in layers to make cube-shaped packs. The layers hold the hexagonal numbers 1, 7, 19, 37, 61, ... laddoos, and a pack with several layers holds the total of its layers. The shop has 400 laddoos. It has three confirmed orders: a 7-layer pack at Rs 900, a 6-layer pack at Rs 600 and a 5-layer pack at Rs 450. (a) How many laddoos does a pack of 4 layers hold? (b) How many laddoos are in the 7-layer pack, and how many are left over from 400? (c) How many laddoos do all three orders need together, and by how many does that pass 400? (d) The shop can accept the 7-layer order alone, or the 6-layer and 5-layer orders together. Which should it accept? Use the money and the laddoos used.",
+     "a": "(a) 1 + 7 + 19 + 37 = 64. (b) 343 laddoos (the 7th cube), leaving 400 - 343 = 57. (c) 343 + 216 + 125 = 684, which is 284 more than 400, so the shop cannot take all three. (d) The 6-layer and 5-layer orders together use 216 + 125 = 341 laddoos and bring Rs 1050; the 7-layer order uses 343 and brings Rs 900. Both fit in 400, but the two smaller orders bring Rs 150 more, so accept them.",
+     "s": [
+      [
+       "Part (a): 64",
+       1
+      ],
+      [
+       "Part (b): 343 and 57 left over",
+       1
+      ],
+      [
+       "Part (c): 684, which is 284 over 400",
+       1
+      ],
+      [
+       "Part (d): accepts the two smaller orders: Rs 1050 against Rs 900, both within 400 laddoos",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A designer lists regular polygons in order, starting with the triangle as the 1st shape: triangle, quadrilateral, pentagon, hexagon, heptagon, ... The 8th shape in her list is the:",
+     "a": "decagon",
+     "o": [
+      "decagon",
+      "octagon",
+      "nonagon",
+      "heptagon"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A complete graph has 28 lines in all, one for every pair of its dots. The number of dots it has is:",
+     "a": "8",
+     "o": [
+      "8",
+      "7",
+      "9",
+      "14"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The complete graph K4 has 6 lines. A regular polygon in the sequence triangle, quadrilateral, pentagon, ... has the same number of sides as K4 has lines. That polygon is the:",
+     "a": "hexagon",
+     "o": [
+      "hexagon",
+      "pentagon",
+      "quadrilateral",
+      "heptagon"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Koch Snowflake shapes have 3, 12, 48, ... segments, and each segment is replaced by a speed bump. A shape has 768 segments. The shape just before it has:",
+     "a": "192",
+     "o": [
+      "192",
+      "384",
+      "764",
+      "256"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the Stacked Triangles sequence the 1st shape has 1 small triangle in its only row, and the rows of the later shapes have 1, 3, 5, ... small triangles. The bottom row of the 6th shape has:",
+     "a": "11 triangles",
+     "o": [
+      "11 triangles",
+      "6 triangles",
+      "12 triangles",
+      "36 triangles"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: Every rectangle is a regular polygon, because its corners are alike.\nStatement 2: The complete graph K5 has 5 lines, one for each dot.\nStatement 3: The Koch Snowflake shapes have 3, 12 and 48 line segments in turn.\nWhich statements are correct?",
+     "a": "3 only",
+     "o": [
+      "3 only",
+      "1 only",
+      "1 and 2 only",
+      "2 and 3 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The second shape of the Koch Snowflake sequence has 12 line segments.\nReason (R): Each line segment of the first shape is replaced by a speed bump made of 3 line segments.",
+     "a": "The Assertion is true but the Reason is false.",
+     "o": [
+      "The Assertion is true but the Reason is false.",
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The regular polygon sequence begins with the triangle as its 1st shape. The shape with 15 corners is the ___-th shape of the sequence.",
+     "a": "13"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The 5th shape in the Stacked Triangles sequence, with rows of 1, 3, 5, ... small triangles, has 5 small triangles in its bottom row. Give the correction or reason.",
+     "a": "False. The rows of the 5th shape hold 1, 3, 5, 7, 9 small triangles, so the bottom row has 9, not 5.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Correction: rows go 1, 3, 5, 7, 9, so the bottom row has 9",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) In the complete graph K6, how many lines meet at each of the 6 dots? (b) Use this to find the total number of lines in K6, remembering that each line has two ends.",
+     "a": "(a) 5 lines meet at each dot. (b) 6 x 5 = 30 line ends, and each line has two ends, so there are 30 / 2 = 15 lines.",
+     "s": [
+      [
+       "Part (a): 5",
+       1
+      ],
+      [
+       "Part (b): 30 line ends halved gives 15",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) A regular pentagon has 5 corners. A dot is put at each corner and every pair of dots is joined by a line. Which complete graph is drawn and how many lines does it have? (b) How many of these lines are the sides of the pentagon and how many lie across the inside?",
+     "a": "(a) The complete graph K5, with 10 lines. (b) 5 of the lines are the sides of the pentagon, so the other 10 - 5 = 5 lines lie across the inside.",
+     "s": [
+      [
+       "Part (a): K5 with 10 lines",
+       1
+      ],
+      [
+       "Part (b): 5 sides and 5 inside lines",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Name the 6th shape of the regular polygon sequence (triangle is 1st) and give its number of sides. (b) Say whether it has the same number of corners and why.",
+     "a": "(a) The octagon, with 8 sides. (b) Yes, 8 corners, because in a closed figure each side ends at a corner, so sides and corners are equal in number.",
+     "s": [
+      [
+       "Part (a): octagon with 8 sides",
+       1
+      ],
+      [
+       "Part (b): 8 corners, each side ends at a corner",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Differentiate a square with side 5 cm from a rectangle 6 cm by 4 cm, using the sides and the corners, and say which one is a regular polygon.",
+     "a": "The square has four equal sides (5 cm each) and four alike corners, so it is regular. The rectangle has four alike corners but its sides are not all equal (6 cm and 4 cm), so it is not regular.",
+     "s": [
+      [
+       "Square: equal sides and alike corners, so regular",
+       1
+      ],
+      [
+       "Rectangle: alike corners but sides 6 cm and 4 cm unequal, so not regular",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The Stacked Triangles shapes have rows of 1, 3, 5, ... small triangles. (a) For the 3rd shape, find the number of small triangles in the bottom row and in the whole shape. (b) How many small triangles must be added to the 3rd shape to make the 4th?",
+     "a": "(a) The 3rd shape has rows 1, 3, 5, so its bottom row has 5 and the whole shape has 1 + 3 + 5 = 9. (b) The 4th shape has a new bottom row of 7, so 7 small triangles are added.",
+     "s": [
+      [
+       "Part (a): 5 in the bottom row and 9 in all",
+       1
+      ],
+      [
+       "Part (b): 7 added",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sunil says: 'Adding one more dot to a complete graph adds just one more line.' Compare K4 (6 lines), K5 (10 lines) and K6 (15 lines) and give your verdict.",
+     "a": "No, he is wrong. K4 to K5 adds 10 - 6 = 4 lines and K5 to K6 adds 15 - 10 = 5 lines, because the new dot is joined to every old dot.",
+     "s": [
+      [
+       "Finds 4 and 5 lines added",
+       1
+      ],
+      [
+       "Rejects the claim",
+       1
+      ],
+      [
+       "Gives the reason: the new dot joins every old dot",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Hari claims: 'Every Koch Snowflake shape has exactly 4 times as many segments as the shape before it.' Test this on 3, 12, 48, 192 and give your verdict.",
+     "a": "Yes. 12 / 3 = 4, 48 / 12 = 4 and 192 / 48 = 4. Each segment is replaced by a speed bump of 4 segments, so the count multiplies by 4 each time.",
+     "s": [
+      [
+       "Divides the pairs to get 4 each time",
+       1
+      ],
+      [
+       "Gives the reason from the speed bump",
+       1
+      ],
+      [
+       "Verdict: right",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no shape in the Stacked Triangles sequence has exactly 20 small triangles in its bottom row.",
+     "a": "The bottom rows are 1, 3, 5, 7, ..., 17, 19, 21, ... and 20 lies between 19 and 21. The bottom row starts at 1 and grows by 2 each time, so it is always odd, and 20 is even.",
+     "s": [
+      [
+       "Lists the bottom rows up to 19 and 21",
+       1
+      ],
+      [
+       "20 lies between 19 and 21",
+       1
+      ],
+      [
+       "Reason: odd numbers only, and 20 is even",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation that the complete graph K5 describes, and say how many dots and how many lines it has.",
+     "a": "Sample: five friends each speak on the phone once with every other friend. The 5 friends are the dots and each pair is a line, so there are 5 dots and 10 lines.",
+     "s": [
+      [
+       "A situation where every pair is joined",
+       1
+      ],
+      [
+       "5 dots",
+       1
+      ],
+      [
+       "10 lines",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Seven friends in a hostel each give a card to every other friend, once for each pair, like the complete graph K7. (a) How many cards does each friend give? (b) Use this to find how many pairs there are in all. (c) When an 8th friend joins, how many new pairs are formed, and what is the new total?",
+     "a": "(a) Each friend gives to 6 others, so 6 cards. (b) 7 x 6 = 42, and each pair is counted twice, so 42 / 2 = 21 pairs. (c) The new friend pairs with all 7, giving 7 new pairs, and the total is 21 + 7 = 28.",
+     "s": [
+      [
+       "Part (a): 6",
+       1
+      ],
+      [
+       "Part (b): 42 halved to 21",
+       2
+      ],
+      [
+       "Part (c): 7 new pairs",
+       1
+      ],
+      [
+       "Part (c): 28 in total",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The Koch Snowflake shapes start with 3 line segments, and each segment is replaced by a speed bump. (a) Write the number of segments in the first six shapes. (b) State the rule that gets each count from the one before. (c) Use the rule to predict the number of segments in the 8th shape.",
+     "a": "(a) 3, 12, 48, 192, 768, 3072. (b) Each count is 4 times the one before, since each segment becomes 4. (c) Going on from 3072: 12,288 for the 7th and 49,152 for the 8th.",
+     "s": [
+      [
+       "Part (a): the six counts",
+       2
+      ],
+      [
+       "Part (b): multiply by 4",
+       1
+      ],
+      [
+       "Part (c): 7th is 12,288",
+       1
+      ],
+      [
+       "Part (c): 8th is 49,152",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Ravi makes wire models. A model uses one metal rod for each line and one joint for each dot. A rod costs Rs 10 and a joint costs Rs 12. He has 20 rods in stock and no joints, and he can spend at most Rs 100 on buying joints and extra rods. He can make a complete graph K6 and a regular pentagon from his stock, or a single K7. (a) How many rods and joints does K6 need, and how many does the regular pentagon need? (b) What would it cost to buy the joints for the K6 and the pentagon together? (c) How many rods does K7 need, how many extra rods must he buy, and what does the K7 model cost to buy, counting its joints and extra rods? (d) Which plan can Ravi follow within Rs 100? Give the figures.",
+     "a": "(a) K6 needs 15 rods and 6 joints; the pentagon needs 5 rods and 5 joints. (b) 20 rods are used, and 11 joints cost 11 x 12 = Rs 132. (c) K7 needs 21 rods, so 1 more rod must be bought; with 7 joints the cost is 10 + 84 = Rs 94. (d) K7 costs Rs 94, within Rs 100. The K6 and pentagon plan costs Rs 132 to buy, which is over Rs 100. So Ravi makes the K7 model.",
+     "s": [
+      [
+       "Part (a): 15 rods, 6 joints and 5 rods, 5 joints",
+       1
+      ],
+      [
+       "Part (b): Rs 132",
+       1
+      ],
+      [
+       "Part (c): 21 rods, 1 more rod, Rs 94",
+       1
+      ],
+      [
+       "Part (d): chooses K7 because Rs 94 is within Rs 100 and Rs 132 is not",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school art club draws a Koch Snowflake border from separate paper strips, one strip for each line segment. The first shape has 3 strips and each segment is replaced by a speed bump of 4 segments in the next shape. The club has 250 strips. Extra strips cost Rs 2 each and the club can spend Rs 1200. Four students share the work, and cutting and sticking one strip takes 2 minutes. The club period is 300 minutes. (a) How many strips do the 4th and 5th shapes need? (b) How many extra strips does the 5th shape need? (c) What do those extra strips cost, and how many minutes does each student work on the 5th shape if the work is shared equally? (d) Should the club make the 4th or the 5th shape? Support your answer with the figures.",
+     "a": "(a) 192 and 768. (b) 768 - 250 = 518. (c) 518 x 2 = Rs 1036; the work is 768 x 2 = 1536 minutes, so each of 4 students works 1536 / 4 = 384 minutes. (d) The 5th shape is within the Rs 1200 budget (Rs 1036) but needs 384 minutes each, more than the 300-minute period. The 4th shape needs no extra strips (192 is under 250) and only 192 x 2 / 4 = 96 minutes each. So make the 4th shape.",
+     "s": [
+      [
+       "Part (a): 192 and 768",
+       1
+      ],
+      [
+       "Part (b): 518",
+       1
+      ],
+      [
+       "Part (c): Rs 1036 and 384 minutes each",
+       1
+      ],
+      [
+       "Part (d): chooses the 4th shape because 384 > 300 minutes, with 96 minutes and no purchase for the 4th",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Koch Snowflake shapes have 3, 12, 48, ... line segments. The 7th shape has:",
+     "a": "12288",
+     "o": [
+      "12288",
+      "49152",
+      "4096",
+      "21"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Nine cricket teams in a league each play every other team exactly once. This is like the complete graph K9, with a team for each dot and a match for each line. The number of matches is:",
+     "a": "36",
+     "o": [
+      "36",
+      "72",
+      "81",
+      "45"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Shapes in the Stacked Squares sequence have 1, 4, 9, 16, ... small squares. The 12th shape has how many small squares?",
+     "a": "144",
+     "o": [
+      "144",
+      "78",
+      "24",
+      "156"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a table-tennis league every pair of players plays one match, so the matches form a complete graph. The league had 78 matches in all. The number of players was:",
+     "a": "13",
+     "o": [
+      "13",
+      "12",
+      "78",
+      "39"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read the statements.\nStatement 1: The numbers of lines in the complete graphs K2, K3, K4, K5 and K6 are 1, 3, 6, 10 and 15, the Triangular numbers.\nStatement 2: The 7th Stacked Triangles shape has 49 small triangles.\nStatement 3: The Koch Snowflake counts 3, 12, 48, ... are 3 times the Powers of 4.\nWhich statements are correct?",
+     "a": "1, 2 and 3",
+     "o": [
+      "1, 2 and 3",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each count in Column I with its value in Column II.\nColumn I: 1. Lines in the complete graph K7  2. Small squares in the 8th Stacked Squares shape  3. Line segments in the 4th Koch Snowflake shape  4. Sides of the 6th regular polygon (triangle is the 1st)\nColumn II: a. 64  b. 21  c. 8  d. 192",
+     "a": "1-b, 2-a, 3-d, 4-c",
+     "o": [
+      "1-b, 2-a, 3-d, 4-c",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-d, 2-a, 3-b, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number of lines in the complete graph K5 is the 4th Triangular number.\nReason (R): Adding the 5th dot to K4 joins it to the 4 dots already there, so the 6 lines of K4 grow by 4 to 10.",
+     "a": "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+     "o": [
+      "Both Assertion and Reason are true, and the Reason explains the Assertion.",
+      "Both Assertion and Reason are true, but the Reason does not explain the Assertion.",
+      "The Assertion is true but the Reason is false.",
+      "The Assertion is false but the Reason is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A Stacked Triangles shape has 21 small triangles in its bottom row, where the rows hold 1, 3, 5, ... small triangles. The whole shape has ___ small triangles.",
+     "a": "121"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) How many small triangles must be added to the 7th Stacked Triangles shape to make the 8th, and how many small squares must be added to the 7th Stacked Squares shape to make the 8th? (b) What do the two answers show about the two shape sequences?",
+     "a": "(a) The 7th shapes have 49 pieces each and the 8th have 64, so 15 small triangles and 15 small squares are added (the new bottom row of the triangles is 15 small triangles). (b) The two shape sequences add the same number at every step, the odd numbers, so they lead to the same number sequence, the squares, although the pieces differ.",
+     "s": [
+      [
+       "Part (a): 15 and 15",
+       1
+      ],
+      [
+       "Part (b): same odd-number additions, same square numbers, different pieces",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the number of lines in K8 and K9. (b) By how many does the count grow from K8 to K9, and what does this number represent?",
+     "a": "(a) K8 has 28 lines and K9 has 36 lines. (b) It grows by 8, the number of lines that join the new 9th dot to the 8 old dots.",
+     "s": [
+      [
+       "Part (a): 28 and 36",
+       1
+      ],
+      [
+       "Part (b): 8, the lines from the new dot to the old dots",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Is the statement true or false? Give your verdict and the reason: The complete graph K10, with 10 dots, has 45 lines, which is the 9th Triangular number.",
+     "a": "True. Each of the 10 dots joins 9 others, giving 90 line ends, and 90 / 2 = 45 = 1 + 2 + ... + 9.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: 10 x 9 / 2 = 45, the 9th Triangular number",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The sides of the regular polygons are counted as 3, 4, 5, 6, ... (a) Which sequence is this, and what is the sequence's first term here? (b) A student says the 20th shape has 20 sides. Correct her, with the number.",
+     "a": "(a) The Counting numbers, starting at 3 instead of 1. (b) The 20th shape has 22 sides, because the 1st shape has 3 sides and each shape has 2 more than its position number.",
+     "s": [
+      [
+       "Part (a): Counting numbers starting at 3",
+       1
+      ],
+      [
+       "Part (b): 22 sides, not 20",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) How many sides and how many corners does the 12th regular polygon (triangle is the 1st) have? (b) Why are the two numbers always the same in this sequence?",
+     "a": "(a) The 12th shape has 14 sides and 14 corners. (b) In any closed figure every side ends at a corner, so the number of sides equals the number of corners.",
+     "s": [
+      [
+       "Part (a): 14 and 14",
+       1
+      ],
+      [
+       "Part (b): each side ends at a corner in a closed figure",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the number of segments in the 6th and 7th Koch Snowflake shapes. (b) Write the 6th count as 3 times a power of 4.",
+     "a": "(a) The 6th shape has 3072 segments and the 7th has 12,288. (b) 3072 = 3 x 1024 = 3 x 4 x 4 x 4 x 4 x 4, that is 3 times the 5th power of 4 (1024).",
+     "s": [
+      [
+       "Part (a): 3072 and 12,288",
+       1
+      ],
+      [
+       "Part (b): 3 x 1024",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation where small squares are stacked to give 49 squares and name the number sequence it belongs to, with its position.",
+     "a": "Sample: a rangoli on the floor is made from small square tiles in 7 rows of 7, giving 49 squares. 49 is a Square number, the 7th of the sequence.",
+     "s": [
+      [
+       "A situation with 7 rows of 7 small squares",
+       1
+      ],
+      [
+       "49 squares in all",
+       1
+      ],
+      [
+       "Square number, 7th term",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Rima says: 'The Stacked Squares and the Stacked Triangles give the same counts 1, 4, 9, 16, 25, so the two shape sequences must look the same.' Give your verdict with a reason.",
+     "a": "No. The counts do match (both are the square numbers) but the shapes are made of different pieces, small squares in one and small triangles in the other. Two different shape sequences can lead to the same number sequence.",
+     "s": [
+      [
+       "The counts agree: square numbers",
+       1
+      ],
+      [
+       "The pieces differ: squares and triangles",
+       1
+      ],
+      [
+       "Verdict: the claim is wrong",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Anand says: 'The number of lines in the complete graph K5 is the 5th Triangular number.' Find the lines in K5 and the 5th Triangular number and give your verdict.",
+     "a": "Partly right. K5 has 10 lines, which is a Triangular number, but the 5th Triangular number is 15; 10 is the 4th. The number of lines is the Triangular number one place before the number of dots (K5 has the 4th).",
+     "s": [
+      [
+       "K5 has 10 lines; the 5th Triangular number is 15",
+       1
+      ],
+      [
+       "Says 10 is the 4th Triangular number",
+       1
+      ],
+      [
+       "Verdict: right idea, wrong position",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no complete graph has exactly 20 lines.",
+     "a": "The lines of K6 and K7 are 15 and 21 (the Triangular numbers 1, 3, 6, 10, 15, 21, ...). 20 lies between 15 and 21, and the counts keep growing after that, so no complete graph has 20 lines.",
+     "s": [
+      [
+       "Lists 15 for K6 and 21 for K7",
+       1
+      ],
+      [
+       "20 lies between them",
+       1
+      ],
+      [
+       "Counts grow, so 20 is never reached",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A school holds a table-tennis league in which every pair of players plays one match, like a complete graph. (a) How many matches are there for 8 players, and for 12 players? (b) The school can afford at most 50 matches. Find the largest number of players, and how many matches are then left unused. (c) Name the number sequence behind the match counts.",
+     "a": "(a) 28 matches for 8 players and 66 for 12 players. (b) 10 players need 45 matches and 11 players need 55, which is over 50, so 10 players, leaving 50 - 45 = 5 matches. (c) The match counts are the Triangular numbers.",
+     "s": [
+      [
+       "Part (a): 28 and 66",
+       1
+      ],
+      [
+       "Part (b): 10 players with 45 matches (11 would need 55)",
+       2
+      ],
+      [
+       "Part (b): 5 left",
+       1
+      ],
+      [
+       "Part (c): Triangular numbers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school sports club holds a league in which every pair of teams plays one match, like a complete graph. Each match costs Rs 500 for the umpire. The ground can host one match a day for 30 days; if two matches are played on a day (never more than two), a second ground is hired for Rs 400 that day. The club has Rs 24,000 and wants the biggest league its money allows. (a) How many matches are needed for 8 teams and for 9 teams? (b) What does the league for 8 teams cost, and how many days does it need? (c) How many days with two matches does the league for 9 teams need in the 30 days, and what is its total cost? Can 10 teams be managed within Rs 24,000? (d) Which number of teams, 8, 9 or 10, should the club choose? Give the figures.",
+     "a": "(a) 28 matches for 8 teams and 36 for 9 teams. (b) 28 x 500 = Rs 14,000 over 28 days. (c) 36 matches in 30 days need 6 days with two matches: 36 x 500 = 18,000 plus 6 x 400 = 2400, so Rs 20,400. For 10 teams, 45 matches need 15 double days: 22,500 + 6000 = Rs 28,500, over the Rs 24,000. (d) 9 teams: Rs 20,400 is within Rs 24,000, and it is the biggest league that fits, since 10 teams cost Rs 28,500. 8 teams (Rs 14,000) leave money unused.",
+     "s": [
+      [
+       "Part (a): 28 and 36",
+       1
+      ],
+      [
+       "Part (b): Rs 14,000 in 28 days",
+       1
+      ],
+      [
+       "Part (c): 6 double days, Rs 20,400, and 10 teams cost Rs 28,500",
+       1
+      ],
+      [
+       "Part (d): chooses 9 teams: Rs 20,400 fits, 10 teams does not",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In the Stacked Triangles sequence the rows of each shape hold 1, 3, 5, ... small triangles. (a) How many small triangles are in the bottom row of the 8th shape? (b) How many small triangles are in the whole 8th shape? (c) A mosaic needs 225 small triangles. Which shape is it, and how many rows has it?",
+     "a": "(a) The bottom row of the 8th shape has 15 triangles. (b) 1 + 3 + 5 + ... + 15 = 64. (c) 225 = 15 x 15, so it is the 15th shape with 15 rows.",
+     "s": [
+      [
+       "Part (a): 15",
+       1
+      ],
+      [
+       "Part (b): 64",
+       2
+      ],
+      [
+       "Part (c): 15th shape with 15 rows",
+       2
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school hosts a meeting of 12 members. At the start every member in a greeting group shakes hands exactly once with every other member of the same group, like the lines of a complete graph. Each handshake takes half a minute and one handshake happens at a time. The principal allows 20 minutes for greetings and wants every member to take part in a group. (a) How many handshakes happen if all 12 greet each other, and how long does it take? (b) How many handshakes happen if the 12 split into two groups of 6 who greet only within their group? (c) What is the largest single group that fits in 20 minutes, and how many members would be left out of that group? (d) Which plan meets the principal's wish, the two groups of 6 or the single largest group? Use the numbers.",
+     "a": "(a) 66 handshakes, taking 33 minutes. (b) 15 + 15 = 30 handshakes, taking 15 minutes. (c) 20 minutes allows 40 handshakes; K9 needs 36 (18 minutes) and K10 needs 45 (22.5 minutes), so the largest group is 9, leaving 3 members out. (d) Two groups of 6: everyone takes part and it takes 15 minutes, within 20. A single group of 9 leaves 3 members out, and a single group of all 12 takes 33 minutes, over 20. Choose the two groups of 6.",
+     "s": [
+      [
+       "Part (a): 66 handshakes and 33 minutes",
+       1
+      ],
+      [
+       "Part (b): 30 handshakes",
+       1
+      ],
+      [
+       "Part (c): group of 9 (36 handshakes), 3 left out",
+       1
+      ],
+      [
+       "Part (d): chooses two groups of 6: all take part in 15 minutes; 9 leaves 3 out",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2666 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "MATH8",
+  "class": 8,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 2,
+  "name": "The Baudhayana-Pythagoras Theorem"
+ },
+ "source_code": "hegp202",
+ "concepts": [
+  {
+   "code": "C8M-2.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about doubling and halving a square.\nStatement 1: In the doubling figure, the original square is made of 2 of the small congruent triangles and the square on its diagonal is made of 4 of them.\nStatement 2: To double the area of a square of side 6 cm, it is enough to draw a square of side 12 cm.\nStatement 3: The square whose corners are the midpoints of the sides of a square has half its area.\nWhich of the statements are correct?",
+     "a": "1 and 3 only",
+     "o": [
+      "1 and 3 only",
+      "1 and 2 only",
+      "3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two identical paper squares have side 8 cm. The second square is cut along both its diagonals into 4 triangles, and the 4 triangles are placed on the four sides of the first square, long side against it, to make a bigger square. (a) What is the area of each triangle? (b) What is the area of the bigger square?",
+     "a": "(a) Square 2 has area 64 sq cm, cut into 4 equal triangles of 16 sq cm each. (b) Bigger square = square 1 + 4 triangles = 64 + 64 = 128 sq cm, double either square.",
+     "s": [
+      [
+       "Part (a): 16 sq cm each",
+       1
+      ],
+      [
+       "Part (b): 128 sq cm",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rangoli artist draws a square of area 3 sq dm. On its diagonal she draws a second square, on the diagonal of that a third square, and so on. Which square in her sequence is the first to have an area greater than 100 sq dm?",
+     "a": "The 7th square",
+     "o": [
+      "The 7th square",
+      "The 6th square",
+      "The 34th square",
+      "The 5th square"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For a kolam contest, Lata builds a sequence of squares, each drawn on the diagonal of the previous one, using identical triangular tiles. Her record sheet reads:\nSquare | Tiles | Area (sq cm)\n1st | 2 | ?\n2nd | 4 | ?\n4th | ? | 200\nThe prize needs a square of area at least 700 sq cm, and Lata owns only 64 tiles.\n(a) How many tiles make the 4th square?\n(b) Work backwards to find the area of one tile and of the 1st square.\n(c) Find the area of the 6th square.\n(d) Can Lata win with the tiles she owns? Name the square she should build, with a reason.",
+     "a": "(a) The tiles double: 2, 4, 8, 16, so 16 tiles. (b) One tile = 200 / 16 = 12.5 sq cm; the 1st square = 2 x 12.5 = 25 sq cm. (c) Areas 25, 50, 100, 200, 400, 800, so the 6th square has 800 sq cm. (d) Yes. The 6th square needs 64 tiles (2, 4, 8, 16, 32, 64) and has 800 sq cm, at least 700. The 5th square (400 sq cm) is too small and the 7th needs 128 tiles, so she builds the 6th.",
+     "s": [
+      [
+       "(a) 16 tiles",
+       1
+      ],
+      [
+       "(b) 12.5 sq cm per tile, 25 sq cm first square",
+       1
+      ],
+      [
+       "(c) 800 sq cm",
+       1
+      ],
+      [
+       "(d) 6th square: 64 tiles, 800 sq cm; 5th too small, 7th needs 128",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The diagonal of a square handkerchief is 12 cm. Without finding its side, find the area of the handkerchief. Explain your step.",
+     "a": "The square drawn on the diagonal has area 12 x 12 = 144 sq cm. That square has double the area of the handkerchief, so the handkerchief has 144 / 2 = 72 sq cm.",
+     "s": [
+      [
+       "Square on the diagonal = 144 sq cm",
+       1
+      ],
+      [
+       "Handkerchief is half of it: 72 sq cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Sana joins the midpoints of the sides of a square tile of side 10 cm. She claims: 'The tilted square has half the area of the tile, so its side must be half the tile's side, that is 5 cm.' Check both parts of her claim.",
+     "a": "Partly right. The area part is right: the tilted square has 100 / 2 = 50 sq cm. The side part is wrong: a square of side 5 cm has area 25 sq cm, only one-quarter of the tile. So the side of the tilted square is not 5 cm; it is the number whose square is 50 (between 7 and 8, as 7 x 7 = 49 and 8 x 8 = 64).",
+     "s": [
+      [
+       "Agrees the tilted square has area 50 sq cm",
+       1
+      ],
+      [
+       "Shows a 5 cm square has area 25, a quarter, so the side is not 5 cm",
+       1
+      ],
+      [
+       "Concludes the claim is only partly right; side is between 7 and 8 cm",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A craft teacher has a square sheet of side 32 cm. She halves it by folding the corners to the centre and keeps only the crease square; then she halves that square the same way, and so on. (a) Find the area after the first halving. (b) Find the area after the second halving. (c) After how many halvings is the area first less than 50 sq cm? (d) What is the side of the square after 2 halvings, and after 4 halvings? (e) A student says the side halves at every halving. Use (d) to correct her.",
+     "a": "(a) 1024 / 2 = 512 sq cm. (b) 256 sq cm. (c) Areas: 512, 256, 128, 64, 32, so after 5 halvings (32 sq cm). (d) After 2 halvings the area is 256 = 16 x 16, side 16 cm; after 4 halvings it is 64 = 8 x 8, side 8 cm. (e) The side halves only every two halvings (32 to 16 to 8), because one halving halves the area, and halving the side needs the area to become one-quarter.",
+     "s": [
+      [
+       "(a) 512 sq cm",
+       1
+      ],
+      [
+       "(b) 256 sq cm",
+       1
+      ],
+      [
+       "(c) 5 halvings, area 32 sq cm",
+       1
+      ],
+      [
+       "(d) sides 16 cm and 8 cm",
+       1
+      ],
+      [
+       "(e) side halves every two halvings, with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In the book's sequence of squares, each new square is drawn on the diagonal of the previous one and the squares are made of 2, 4, 8, ... small congruent triangles. The first square has side 4 cm. (a) What is the area of one small triangle? (b) How many small triangles make the 5th square, and what is its area?",
+     "a": "(a) The first square, 16 sq cm, is 2 triangles, so each triangle is 8 sq cm. (b) The counts double: 2, 4, 8, 16, 32, so the 5th square has 32 triangles and an area of 32 x 8 = 256 sq cm (also 16 doubled four times).",
+     "s": [
+      [
+       "Each triangle = 8 sq cm",
+       1
+      ],
+      [
+       "5th square has 32 triangles",
+       1
+      ],
+      [
+       "Area = 256 sq cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Meena wants a square flower bed with double the area of her square bed of 9 sq m. She makes each side twice as long. Compared with the area she wanted, how much extra area does her new bed have?",
+     "a": "18 sq m extra",
+     "o": [
+      "18 sq m extra",
+      "9 sq m extra",
+      "27 sq m extra",
+      "No extra area"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A square card has area 25 sq cm. (a) Nikhil doubles each side. What is the area of his new square? (b) What fraction of Nikhil's square is the square drawn on the diagonal of the original card?",
+     "a": "(a) The side 5 cm becomes 10 cm, so the area is 100 sq cm (four times, not double). (b) The square on the diagonal has 2 x 25 = 50 sq cm, which is 50/100 = 1/2 of Nikhil's square.",
+     "s": [
+      [
+       "Part (a): 100 sq cm",
+       1
+      ],
+      [
+       "Part (b): 50 sq cm, so one-half of Nikhil's square",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The tilted square formed by joining the midpoints of the sides of a square of area 64 sq cm has an area of 32 sq cm.\nReason (R): The four corner triangles cut off by the tilted square together have the same area as the tilted square.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The four corners of a square napkin are folded so that they meet at its centre; the creases run through the midpoints of the sides. The folded napkin (the crease square) has an area of 800 sq cm. Each folded corner triangle has an area of ___ sq cm. (Write the number in digits.)",
+     "a": "200"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'A square is halved by folding its corners to the centre (the crease square through the midpoints), and the new square is halved again in the same way. After these two halvings the side of the square is one-quarter of the original side.' Give a reason.",
+     "a": "False. Each halving halves the area, so two halvings leave 1/2 x 1/2 = 1/4 of the area. A square with one-quarter of the side would have 1/4 x 1/4 = 1/16 of the area. A square with 1/4 of the area has half the side (1/2 x 1/2 = 1/4), so after two halvings the side is half the original, not one-quarter.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Two halvings give 1/4 of the area, which means half the side; a quarter side would give 1/16 of the area",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "A square tile has an area of 16 sq cm. Match each new square in Column A with its area in Column B.\nColumn A\n1. The square whose side is twice the tile's side\n2. The square drawn on the tile's diagonal\n3. The square whose corners are the midpoints of the tile's sides\n4. The square whose side is half the tile's side\nColumn B\na. 4 sq cm\nb. 8 sq cm\nc. 32 sq cm\nd. 64 sq cm",
+     "a": "1-d, 2-c, 3-b, 4-a",
+     "o": [
+      "1-d, 2-c, 3-b, 4-a",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-a, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Starting from a square of area 5 sq cm, Baudhayana's step 'draw a square on the diagonal' is applied 4 times in a row, each time on the newest square. The last square has an area of ___ sq cm. (Write the number in digits.)",
+     "a": "80"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A square plot has a side of 14 m. (a) Find the area of the square drawn on its diagonal. (b) In the doubling figure this new square is made of small congruent triangles, each half of the plot. How many such triangles make it up, and what is the area of each?",
+     "a": "(a) Plot area = 14 x 14 = 196 sq m, so the square on the diagonal has 2 x 196 = 392 sq m. (b) 4 triangles, each 196 / 2 = 98 sq m (4 x 98 = 392).",
+     "s": [
+      [
+       "Part (a): 392 sq m from double of 196",
+       1
+      ],
+      [
+       "Part (b): 4 triangles of 98 sq m each",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Starting from a square of area 3 sq cm, Arun keeps drawing a square on the diagonal of the newest square. Show that none of his squares can ever have an area of exactly 30 sq cm.",
+     "a": "Each step doubles the area, so the areas are 3, 6, 12, 24, 48, ..., that is 3 x 1, 3 x 2, 3 x 4, 3 x 8, ... An area of 30 would need 3 x 10, but 10 is not one of 1, 2, 4, 8, 16, ... (it lies between 8 and 16). So the areas jump from 24 straight to 48 and 30 never appears.",
+     "s": [
+      [
+       "Areas double each time: 3, 6, 12, 24, 48",
+       1
+      ],
+      [
+       "30 = 3 x 10 and 10 is not a doubling of 1",
+       1
+      ],
+      [
+       "Concludes 30 is skipped between 24 and 48",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kavi folds the four corners of a square paper to its centre. The tilted square formed by the creases has area 18 sq cm. Find the side of the original paper.",
+     "a": "The crease square is half the paper, so the paper has area 2 x 18 = 36 sq cm. Its side is 6 cm, since 6 x 6 = 36.",
+     "s": [
+      [
+       "Paper area = 36 sq cm (double the crease square)",
+       1
+      ],
+      [
+       "Side = 6 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) A square is cut by one diagonal into two triangles, and a square is drawn on that diagonal. Using horizontal and vertical lines through the corners, explain why the square on the diagonal has double the area of the original square. (b) Use this to decide which is larger: a square of side 9 cm, or the square drawn on the diagonal of a square of side 6 cm. Show the areas.",
+     "a": "(a) The extended sides of the original square cut the square on the diagonal into 4 small triangles, all congruent to each other and to the 2 halves of the original square. The original has 2 such triangles and the new square has 4, so its area is double. (b) Square of side 6 cm: 36 sq cm, so the square on its diagonal has 72 sq cm. The square of side 9 cm has 81 sq cm. 81 > 72, so the 9 cm square is larger, by 9 sq cm.",
+     "s": [
+      [
+       "Explains the 4 congruent triangles against 2",
+       2
+      ],
+      [
+       "Finds 72 sq cm for the diagonal square",
+       1
+      ],
+      [
+       "Finds 81 sq cm for the 9 cm square",
+       1
+      ],
+      [
+       "Decides the 9 cm square is larger",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school in Jaipur is paving a square courtyard of side 12 m. Design T: join the midpoints of the four sides; the tilted inner square is paved with marble and the four corner triangles are left as lawn. Design C: a square of side 8 m, placed in the centre with its sides parallel to the walls, is paved with marble and the rest is lawn. Marble costs Rs 1,500 per sq m. The rule is: at least 70 sq m of marble, and the marble must cost no more than Rs 1,10,000.\n(a) Find the marble area in Design T.\n(b) Find the area of one corner lawn in Design T.\n(c) Show the marble area and the cost of each design, and decide which design the school should choose. Is the cheaper design acceptable?",
+     "a": "(a) Courtyard 144 sq m; the tilted square is half, 72 sq m. (b) The four corners together are 72 sq m, so each is 18 sq m. (c) Design T: 72 sq m, Rs 1,08,000. Design C: 8 x 8 = 64 sq m, Rs 96,000. Design C is cheaper but has only 64 sq m, below the 70 sq m needed, so it is not acceptable. Design T has 72 sq m and costs Rs 1,08,000, within Rs 1,10,000, so the school should choose Design T.",
+     "s": [
+      [
+       "(a) 72 sq m",
+       1
+      ],
+      [
+       "(b) 18 sq m",
+       1
+      ],
+      [
+       "(c) T 72 sq m at Rs 1,08,000, C 64 sq m at Rs 96,000; C fails the 70 sq m rule, so choose T",
+       2
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "Riya needs a square card of area exactly 200 sq cm and has square papers of sides 10 cm, 14 cm and 20 cm to work from. Which of these squares has an area of exactly 200 sq cm?",
+     "a": "the square drawn on the diagonal of the 10 cm paper",
+     "o": [
+      "the square drawn on the diagonal of the 10 cm paper",
+      "the square joining the midpoints of the sides of the 10 cm paper",
+      "the 14 cm paper itself, since 14 x 14 is about 200 sq cm",
+      "the square drawn on the diagonal of the 20 cm paper"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-2.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The hypotenuse of an isosceles right triangle is the number whose square is 162. (a) Find the equal sides. (b) Between which two whole numbers does its perimeter lie?",
+     "a": "(a) a x a = 162 / 2 = 81, so a = 9. (b) 12 x 12 = 144 and 13 x 13 = 169, so the hypotenuse is between 12 and 13; the perimeter 9 + 9 + c is between 30 and 31.",
+     "s": [
+      [
+       "Part (a): a = 9",
+       1
+      ],
+      [
+       "Part (b): hypotenuse between 12 and 13, perimeter between 30 and 31",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An isosceles right triangle has an area of 24.5 sq cm. The square drawn on its hypotenuse has an area of ___ sq cm. (Write the number in digits.)",
+     "a": "98"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): An isosceles right triangle whose hypotenuse is 6 cm has an area of 9 sq cm.\nReason (R): The hypotenuse of an isosceles right triangle is longer than each of its equal sides.",
+     "a": "A and R are both true, but R is not the correct explanation of A.",
+     "o": [
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A square park in Indore has a side of 30 m. (a) Find the square of the length of its diagonal path. (b) Between which two whole numbers of metres does the diagonal lie? (c) Asha walks along two sides from one corner to the opposite corner instead of the diagonal. Between which two whole numbers of metres is the distance she would save by taking the diagonal? (d) The council plans a second square park whose diagonal is exactly 30 m. Find its area. (e) How does that area compare with the first park's area? Explain why, using the doubling idea.",
+     "a": "(a) 2 x 30 x 30 = 1800. (b) 42 x 42 = 1764 and 43 x 43 = 1849, so between 42 m and 43 m. (c) Two sides = 60 m, so the saving is between 60 - 43 = 17 m and 60 - 42 = 18 m. (d) Side squared = 30 x 30 / 2 = 450, so the area is 450 sq m. (e) It is exactly half of 900 sq m: the first park is the square on the second park's diagonal, and the square on a diagonal has double the area.",
+     "s": [
+      [
+       "(a) 1800",
+       1
+      ],
+      [
+       "(b) 42 m and 43 m",
+       1
+      ],
+      [
+       "(c) saving between 17 m and 18 m",
+       1
+      ],
+      [
+       "(d) 450 sq m",
+       1
+      ],
+      [
+       "(e) half, because the first park is the square on the second park's diagonal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tile shop cuts square tiles along a diagonal to sell isosceles right-angled triangle tiles. A border along a wall 5 m (500 cm) long is to be made by laying the long edges (hypotenuses) of the tiles end to end, with no gaps, until they reach at least 500 cm.\nTile size (equal sides) | Price per triangle tile\n20 cm | Rs 45\n30 cm | Rs 70\n(a) Find the square of the long edge of a 20 cm tile, and the two whole numbers of cm between which the edge lies.\n(b) Between which two whole numbers of cm does the long edge of a 30 cm tile lie?\n(c) Using your bounds, find how many tiles of each size are needed. Explain why your count is certain.\n(d) Which tile size makes the cheaper border?",
+     "a": "(a) c x c = 2 x 20 x 20 = 800; 28 x 28 = 784 and 29 x 29 = 841, so the edge is between 28 and 29 cm. (b) 2 x 30 x 30 = 1800; 42 x 42 = 1764, 43 x 43 = 1849, so between 42 and 43 cm. (c) 20 cm tiles: 17 tiles give less than 17 x 29 = 493 cm, too short; 18 tiles give more than 18 x 28 = 504 cm, enough, so 18 tiles. 30 cm tiles: 11 give less than 11 x 43 = 473 cm; 12 give more than 12 x 42 = 504 cm, so 12 tiles. (d) 18 x 45 = Rs 810 against 12 x 70 = Rs 840, so the 20 cm tiles are cheaper.",
+     "s": [
+      [
+       "(a) 800, between 28 and 29 cm",
+       1
+      ],
+      [
+       "(b) between 42 and 43 cm",
+       1
+      ],
+      [
+       "(c) 18 and 12 tiles, using both bounds",
+       1
+      ],
+      [
+       "(d) Rs 810 against Rs 840: 20 cm tiles",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The hypotenuse of an isosceles right triangle is 8 cm. (a) Find the area of the square drawn on one equal side. (b) Use (a) to find the area of the triangle.",
+     "a": "(a) a x a = 8 x 8 / 2 = 32 sq cm. (b) The triangle is half of the square on an equal side (two such triangles make that square), so its area is 32 / 2 = 16 sq cm.",
+     "s": [
+      [
+       "Part (a): 32 sq cm",
+       1
+      ],
+      [
+       "Part (b): 16 sq cm, half the square",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: 'An isosceles right triangle whose hypotenuse is 10 cm has a larger area than an isosceles right triangle whose equal sides are 7 cm each.' Give a reason.",
+     "a": "True. For the first triangle a x a = 10 x 10 / 2 = 50, and the triangle is half of the square on an equal side, so its area is 50 / 2 = 25 sq cm. The second has area 7 x 7 / 2 = 24.5 sq cm. 25 > 24.5, so the statement is true, even though 7 + 7 = 14 looks much bigger than 10.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Areas 25 sq cm (from a x a = 50) and 24.5 sq cm compared",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student's working reads: 'Equal sides a = 9, so c x c = 2 x 9 = 18, and c lies between 4 and 5.' What is the slip, and what is the correct conclusion?",
+     "a": "She doubled 9, not 9 x 9; c x c = 162, so 12 < c < 13",
+     "o": [
+      "She doubled 9, not 9 x 9; c x c = 162, so 12 < c < 13",
+      "She should halve 81, so c x c = 40.5 and 6 < c < 7",
+      "Her method is right, but 4 x 4 = 16 is less than 18, so 3 < c < 4",
+      "She should add the sides: c = 9 + 9, so c = 18"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The diagonal of a square floor tile is the number whose square is 50 (in cm). Kiran lays 16 such tiles in a 4 by 4 block. What is the area of the block?",
+     "a": "400 sq cm",
+     "o": [
+      "400 sq cm",
+      "800 sq cm",
+      "200 sq cm",
+      "784 sq cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Triangle P is an isosceles right triangle with equal sides of 7 cm. Triangle Q is an isosceles right triangle with a hypotenuse of 10 cm. Which triangle has the longer hypotenuse, and which has the longer equal sides? Show the squares you compare.",
+     "a": "P: c x c = 2 x 49 = 98, less than 10 x 10 = 100, so Q has the longer hypotenuse. Q: a x a = 100 / 2 = 50, more than 7 x 7 = 49, so Q also has the longer equal sides. Q is larger on both counts.",
+     "s": [
+      [
+       "P's hypotenuse squared = 98 against 100",
+       1
+      ],
+      [
+       "Q's equal side squared = 50 against 49",
+       1
+      ],
+      [
+       "Concludes Q is longer on both counts",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life situation in which you would need to work out the number whose square is 2 x 7 x 7. Then find the two consecutive whole numbers between which the answer lies, and say what the answer means in your situation.",
+     "a": "Example: a square garden bed has a side of 7 m and a hose must stretch along its diagonal; the hose length L satisfies L x L = 2 x 49 = 98. Since 9 x 9 = 81 and 10 x 10 = 100, L is between 9 m and 10 m, so a 10 m hose is enough but a 9 m hose is not. Any isosceles right triangle or square-diagonal situation with side 7 is acceptable.",
+     "s": [
+      [
+       "A situation with an isosceles right triangle or square diagonal, side 7",
+       1
+      ],
+      [
+       "Finds 98 and the bounds 9 and 10",
+       1
+      ],
+      [
+       "Interprets the bounds in the situation",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The longest side of a triangular corner shelf, shaped as an isosceles right triangle, is 10 cm. What is the area of the shelf?",
+     "a": "25 sq cm",
+     "o": [
+      "25 sq cm",
+      "50 sq cm",
+      "12.5 sq cm",
+      "100 sq cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "An isosceles right triangle has equal sides of 7 cm. (a) Find c x c, where c is the hypotenuse. (b) Find the two whole numbers between which c lies. (c) By squaring numbers with one decimal place, find bounds for c that differ by 0.1. (d) The hypotenuse of the triangle with equal sides 1 lies between 1.414 and 1.415. Use this to find bounds for c by multiplying by 7. (e) Are your answers to (c) and (d) consistent? Explain.",
+     "a": "(a) 2 x 49 = 98. (b) 81 < 98 < 100, so 9 < c < 10. (c) 9.8 x 9.8 = 96.04 and 9.9 x 9.9 = 98.01, so 9.8 < c < 9.9. (d) c is 7 times the unit hypotenuse: 7 x 1.414 = 9.898 and 7 x 1.415 = 9.905, so 9.898 < c < 9.905. (e) Yes: the range in (d), 9.898 to 9.905, overlaps the range in (c), 9.8 to 9.9. Taking both together, 9.898 < c < 9.9, so the two methods agree and (d) gives the closer estimate.",
+     "s": [
+      [
+       "(a) 98",
+       1
+      ],
+      [
+       "(b) 9 and 10",
+       1
+      ],
+      [
+       "(c) 9.8 and 9.9 from 96.04 and 98.01",
+       1
+      ],
+      [
+       "(d) 9.898 and 9.905",
+       1
+      ],
+      [
+       "(e) explains that the bounds overlap and agree",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Arjun explains the hypotenuse rule like this: 'Two copies of an isosceles right triangle with equal sides a make a square of side a. The square on the hypotenuse c is made of 4 copies of the triangle, so c x c = 4 x a x a.' (a) Find the error in his explanation and correct the rule. (b) Check the corrected rule with a = 3, using the areas of the triangles.",
+     "a": "(a) Each copy of the triangle is half of the square of side a, so its area is a x a / 2, not a x a. Four copies make 4 x a x a / 2 = 2 x a x a, so c x c = 2 x a x a. (b) With a = 3 the square has area 9, each triangle 4.5, and 4 triangles 4 x 4.5 = 18 = 2 x 9. So c x c = 18, double the square, as the corrected rule says (not 4 x 9 = 36).",
+     "s": [
+      [
+       "Each triangle is a x a / 2, so four make 2 x a x a",
+       1
+      ],
+      [
+       "Check with a = 3: 4 x 4.5 = 18 = 2 x 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): An isosceles right triangle with equal sides of 6 cm has a hypotenuse of exactly 8.5 cm.\nReason (R): The square on the hypotenuse of an isosceles right triangle has double the area of the square on an equal side.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Ravi says: 'An isosceles right triangle with equal sides of 10 cm has a hypotenuse longer than 14 cm but shorter than 14.2 cm.' Check his claim by squaring.",
+     "a": "Ravi is right. c x c = 2 x 10 x 10 = 200. 14 x 14 = 196, which is less than 200, and 14.2 x 14.2 = 201.64, which is more than 200. So 14 < c < 14.2. (In fact 14.1 x 14.1 = 198.81, so c is between 14.1 and 14.2.)",
+     "s": [
+      [
+       "Finds c x c = 200",
+       1
+      ],
+      [
+       "Squares 14 and 14.2: 196 and 201.64",
+       1
+      ],
+      [
+       "Agrees with the claim",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "Set-square P is an isosceles right triangle with equal sides of 5 cm. Set-square Q is an isosceles right triangle whose longest side is 8 cm. Which statement about their perimeters is correct?",
+     "a": "Q's perimeter is larger; it is between 19 cm and 20 cm",
+     "o": [
+      "Q's perimeter is larger; it is between 19 cm and 20 cm",
+      "P's perimeter is larger; it is between 17 cm and 18 cm",
+      "They are equal, as both follow c x c = 2 x a x a exactly",
+      "P's perimeter is larger, because P has the longer equal sides"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A family is choosing a camping tent. The front of each tent is an isosceles right triangle with the right angle at the top and the hypotenuse along the ground.\nTent A: each slanting side is 2 m.\nTent B: the base on the ground is 3 m.\nTheir camping spot is a flat patch only 2.9 m wide, and the base must fit within it.\n(a) Between which two numbers with one decimal place does the base of Tent A lie?\n(b) Between which two numbers with one decimal place does a slanting side of Tent B lie?\n(c) Find the area of the front of each tent.\n(d) Which tent should the family buy? Give a reason using (a), (b) and (c).",
+     "a": "(a) base x base = 2 x 2 x 2 = 8; 2.8 x 2.8 = 7.84 and 2.9 x 2.9 = 8.41, so 2.8 m < base < 2.9 m. (b) side x side = 9 / 2 = 4.5; 2.1 x 2.1 = 4.41 and 2.2 x 2.2 = 4.84, so 2.1 m < side < 2.2 m. (c) A: 2 x 2 / 2 = 2 sq m. B: 4.5 / 2 = 2.25 sq m. (d) Tent A: its base is less than 2.9 m and fits the patch, while Tent B's 3 m base does not fit, even though B's front is larger.",
+     "s": [
+      [
+       "(a) 2.8 m and 2.9 m",
+       1
+      ],
+      [
+       "(b) 2.1 m and 2.2 m",
+       1
+      ],
+      [
+       "(c) 2 sq m and 2.25 sq m",
+       1
+      ],
+      [
+       "(d) Tent A, because only its base fits the 2.9 m patch",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "A tailor cuts a square cloth along one diagonal into two triangular scarves. Each scarf has an area of 8 sq dm. What is the area of the square drawn on the longest edge of one scarf?",
+     "a": "32 sq dm",
+     "o": [
+      "32 sq dm",
+      "16 sq dm",
+      "64 sq dm",
+      "24 sq dm"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about isosceles right triangles.\nStatement 1: The hypotenuse is twice as long as each equal side.\nStatement 2: If the equal sides are doubled, the hypotenuse is also doubled.\nStatement 3: If the hypotenuse is a whole number, the equal sides must also be whole numbers.\nWhich of the statements are correct?",
+     "a": "2 only",
+     "o": [
+      "2 only",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no isosceles right triangle can have a hypotenuse of 6 cm and an area of 10 sq cm.",
+     "a": "If the hypotenuse is 6, then a x a = 36 / 2 = 18. Two such triangles make a square of area a x a = 18, so one triangle has area 18 / 2 = 9 sq cm. The area is forced to be 9 sq cm, so it cannot be 10 sq cm.",
+     "s": [
+      [
+       "a x a = 18 from c x c = 2 a x a",
+       1
+      ],
+      [
+       "Area = 18 / 2 = 9 sq cm",
+       1
+      ],
+      [
+       "Concludes 10 sq cm is impossible",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'If the hypotenuse of an isosceles right triangle is doubled, keeping it isosceles and right-angled, the area of the triangle is also doubled.' Give a reason.",
+     "a": "False. Doubling the hypotenuse doubles each equal side a (from c x c = 2 x a x a). The area a x a / 2 then becomes (2a) x (2a) / 2 = 4 times the old area, not 2 times.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Equal sides double, so the area becomes 4 times",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-2.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A square of side 1 m has a diagonal of d m. (a) Using the areas of the squares drawn on sides of 1 m, d m and 2 m, put 1, d and 2 in order and explain. (b) In the same way, find the two consecutive whole numbers between which the diagonal of a square of side 3 m lies.",
+     "a": "(a) The square on the diagonal has double the area of the 1 m square, so its area is 2 sq m. The squares on 1 m and 2 m have areas 1 sq m and 4 sq m. Since 1 < 2 < 4, the sides are in the same order: 1 < d < 2. (b) The square on the diagonal of a 3 m square has area 2 x 9 = 18 sq m. 4 x 4 = 16 and 5 x 5 = 25, and 16 < 18 < 25, so the diagonal lies between 4 m and 5 m.",
+     "s": [
+      [
+       "Part (a): areas 1, 2, 4, so 1 < d < 2",
+       1
+      ],
+      [
+       "Part (b): area 18 lies between 16 and 25, so between 4 m and 5 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'If the equal sides of an isosceles right triangle are whole numbers, its hypotenuse can be a whole number too, provided the equal sides are large enough.' Give a reason.",
+     "a": "False. If the equal sides are a and the hypotenuse c were a whole number, then c x c = 2 x a x a. In c x c the prime 2 occurs an even number of times; in 2 x a x a it occurs an odd number of times (the even count in a x a plus one more). This holds for every size of a, so making the sides larger never helps: c is never a whole number.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Reason: c x c = 2 x a x a is impossible for any size, as the count of the prime 2 is even on one side and odd on the other",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Neha's calculator shows √2 = 1.414213562. She concludes that √2 is a terminating decimal with nine decimal places. Which response is correct?",
+     "a": "Wrong: the screen stops, but √2 never ends",
+     "o": [
+      "Wrong: the screen stops, but √2 never ends",
+      "Right: the screen shows exactly nine places",
+      "Wrong: √2 has exactly three places, 1.414",
+      "Right: any number a screen shows is exact"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A mason has only a 1 m measuring rod and a set-square. He needs a length whose square is exactly 8 sq m. Which of these gives him that length EXACTLY?",
+     "a": "the diagonal of a 2 m by 2 m square",
+     "o": [
+      "the diagonal of a 2 m by 2 m square",
+      "2.828 m measured carefully along the rod",
+      "the side of a square of area 4 sq m",
+      "the diagonal of a 4 m by 4 m square"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An isosceles right triangle has equal sides of 20 cm. (a) Find c x c, where c is the hypotenuse, and show by squaring that 28.2 < c < 28.3. (b) Square 28.28 and 28.29 to find closer bounds for c. (c) A ribbon 28.28 cm long is to cover the hypotenuse completely. Is it long enough? Use (b).",
+     "a": "(a) c x c = 2 x 20 x 20 = 800. 28.2 x 28.2 = 795.24 < 800 and 28.3 x 28.3 = 800.89 > 800, so 28.2 < c < 28.3. (b) 28.28 x 28.28 = 799.7584 < 800 and 28.29 x 28.29 = 800.3241 > 800, so 28.28 < c < 28.29. (c) No. From (b), c is more than 28.28 cm, so a 28.28 cm ribbon falls short (a 28.29 cm ribbon would be enough).",
+     "s": [
+      [
+       "(a) 800, with 795.24 and 800.89",
+       1
+      ],
+      [
+       "(b) 799.7584 and 800.3241, so 28.28 < c < 28.29",
+       1
+      ],
+      [
+       "(c) not long enough, as c is more than 28.28 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "1.41 x 1.41 = 1.9881 and 1.42 x 1.42 = 2.0164. So the side of a square of area 200 sq cm lies between 14.1 cm and the very next number with one decimal place, which is ___ cm. (Write the number in digits.)",
+     "a": "14.2"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To test 17/12 as a value of √2, which observation shows directly that 17/12 is NOT equal to √2?",
+     "a": "17 x 17 = 289 is not 2 x 12 x 12 = 288",
+     "o": [
+      "17 x 17 = 289 is not 2 x 12 x 12 = 288",
+      "17 and 12 have no common factor",
+      "17/12 is less than 1.414, the lower bound found by squaring",
+      "12 is not itself a square number"
+     ],
+     "tags": [
+      "scenario"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Write 12 x 12 and 2 x 12 x 12 as products of primes, and count how many times 2 occurs in each. (b) How many times does 2 occur in 17 x 17? (c) Explain, using counts of the prime 2, why 2 x n x n can never equal m x m for counting numbers m and n. (d) A student offers 99/70 as the exact value of √2, because 99 x 99 = 9801 and 2 x 70 x 70 = 9800. Using (c), reply to the student.",
+     "a": "(a) 12 x 12 = 2 x 2 x 2 x 2 x 3 x 3: four 2s. 2 x 12 x 12 has five 2s. (b) 17 x 17 has no 2 at all (zero, an even count). (c) In any square m x m each prime occurs an even number of times. In n x n the 2s are even, so 2 x n x n has an odd number of 2s. Odd cannot equal even, so the two sides can never be equal. (d) 9801 is not 9800, as (c) guarantees, so 99/70 is not √2. The two numbers can come close, but (c) shows they can never be equal for any m and n.",
+     "s": [
+      [
+       "(a) four 2s and five 2s",
+       1
+      ],
+      [
+       "(b) zero 2s in 17 x 17",
+       1
+      ],
+      [
+       "(c) even count in a square, odd count in 2 x n x n, so never equal",
+       2
+      ],
+      [
+       "(d) 9801 is not 9800, so 99/70 is not √2, as (c) guarantees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Squaring gives 1.4142 x 1.4142 = 1.99996164 and 1.4143 x 1.4143 = 2.00024449. What can be concluded about √2?",
+     "a": "1.4142 < √2 < 1.4143",
+     "o": [
+      "1.4142 < √2 < 1.4143",
+      "√2 = 1.4142, as its square rounds to 2",
+      "1.4143 < √2 < 1.4144",
+      "√2 = 1.41425 exactly, halfway between"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the number √2.\nStatement 1: 1.415 is a lower bound for √2.\nStatement 2: √2 can be written exactly as the fraction 141421/100000.\nStatement 3: In the equation 2 x n x n = m x m, the prime 2 occurs an odd number of times on the left side.\nWhich of the statements are correct?",
+     "a": "3 only",
+     "o": [
+      "3 only",
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A frame-maker in Moradabad makes square photo frames of side 50 cm and fixes a decorative brass wire along one diagonal of each. The wire must be at least as long as the diagonal. He can buy ready-cut pieces in whole centimetres, or one long roll and cut it himself; both cost Rs 3 per cm. He needs wire for 100 frames.\n(a) Find the square of the length of the diagonal.\n(b) Between which two whole numbers of cm does the diagonal lie? What length of ready-cut piece must he buy for each frame?\n(c) Using 1.414 < √2 < 1.415, find bounds for the diagonal correct to two decimal places of a cm.\n(d) Using (c), what length of roll is certain to be enough for 100 frames? Which way of buying is cheaper, and by how much?",
+     "a": "(a) 2 x 50 x 50 = 5000. (b) 70 x 70 = 4900 and 71 x 71 = 5041, so between 70 cm and 71 cm; he must buy 71 cm pieces (70 cm is too short). (c) 50 x 1.414 = 70.7 and 50 x 1.415 = 70.75, so 70.7 cm < diagonal < 70.75 cm. (d) 100 x 70.75 = 7075 cm is certain to be enough. Pieces: 100 x 71 = 7100 cm. The roll saves 25 cm, that is 25 x 3 = Rs 75, so the roll is cheaper by Rs 75.",
+     "s": [
+      [
+       "(a) 5000",
+       1
+      ],
+      [
+       "(b) between 70 and 71 cm; buy 71 cm pieces",
+       1
+      ],
+      [
+       "(c) 70.7 cm and 70.75 cm",
+       1
+      ],
+      [
+       "(d) 7075 cm roll; cheaper than 7100 cm of pieces by Rs 75",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find 1.7 x 1.7 and 1.8 x 1.8. (b) An isosceles right triangle has equal sides of 1.25 m. Use (a) to find bounds, with one decimal place, for its hypotenuse.",
+     "a": "(a) 2.89 and 3.24. (b) c x c = 2 x 1.25 x 1.25 = 3.125. Since 2.89 < 3.125 < 3.24, the hypotenuse is between 1.7 m and 1.8 m.",
+     "s": [
+      [
+       "Part (a): 2.89 and 3.24",
+       1
+      ],
+      [
+       "Part (b): c x c = 3.125, so 1.7 m < c < 1.8 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "In a school maths quiz, four teams wrote down a value for √2:\nTeam | Value\nA | 1.41\nB | 1.4142\nC | 1.4143\nD | 1.415\nThe judge gives the prize to the team whose value is the largest one that is still BELOW √2. Team B's value squared is 1.99996164 and Team D's is 2.002225.\n(a) Find the squares of the values of Teams A and C.\n(b) Which values are below √2 and which are above? Explain using the squares.\n(c) Write the four values and √2 in order from smallest to largest.\n(d) Which team wins? Team D argues that it should win if the prize went to the value closest above √2. Use (c) to reply.",
+     "a": "(a) A: 1.41 x 1.41 = 1.9881. C: 1.4143 x 1.4143 = 2.00024449. (b) A (1.9881) and B (1.99996164) have squares below 2, so they are below √2; C (2.00024449) and D (2.002225) have squares above 2, so they are above √2. (c) 1.41 < 1.4142 < √2 < 1.4143 < 1.415. (d) Team B wins: 1.4142 is the largest value below √2. Team D's argument fails: C's value 1.4143 is also above √2 but smaller than 1.415, so C is closer above √2 than D. D cannot win under either rule.",
+     "s": [
+      [
+       "(a) 1.9881 and 2.00024449",
+       1
+      ],
+      [
+       "(b) A and B below, C and D above, from squares below or above 2",
+       1
+      ],
+      [
+       "(c) 1.41 < 1.4142 < √2 < 1.4143 < 1.415",
+       1
+      ],
+      [
+       "(d) Team B; D loses even on the closest-above rule, since 1.4143 is closer",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "Using only 1.414 < √2 < 1.415, Kiran wants a ribbon that is CERTAIN to be shorter than the diagonal of a square table top of side 100 cm. Which ribbon length can he be sure of?",
+     "a": "141.3 cm",
+     "o": [
+      "141.3 cm",
+      "141.45 cm",
+      "141.5 cm",
+      "142 cm"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student squares two numbers: 2.82 x 2.82 = 7.9524 and 2.83 x 2.83 = 8.0089. Let c be the hypotenuse of an isosceles right triangle with equal sides of 2 cm. (a) Which of 2.82 and 2.83 is a lower bound for c and which is an upper bound? Explain. (b) Do these two squares tell you whether c is more or less than 2.825? If not, settle it.",
+     "a": "(a) c x c = 2 x 2 x 2 = 8. 7.9524 < 8, so 2.82 is a lower bound; 8.0089 > 8, so 2.83 is an upper bound. (b) No: 2.825 lies between the two bounds, so they cannot decide. Squaring it, 2.825 x 2.825 = 7.980625 < 8, so c is more than 2.825 cm.",
+     "s": [
+      [
+       "Part (a): c x c = 8, so 2.82 lower and 2.83 upper",
+       1
+      ],
+      [
+       "Part (b): bounds cannot decide; 2.825 squared is 7.980625 < 8, so c > 2.825",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A quiz answer says: '2 x n x n = m x m can happen. Try n = 5 and m = 7: 2 x 25 = 50, which is almost 49, so with bigger numbers we will hit it exactly.' Check this claim.",
+     "a": "The claim is wrong. 50 is not 49, and no choice of counting numbers will ever work: in m x m every prime, including 2, occurs an even number of times, while in 2 x n x n the prime 2 occurs an odd number of times (the even count in n x n plus one more). Even and odd counts can never match, so 2 x n x n = m x m has no solution, however large the numbers.",
+     "s": [
+      [
+       "Notes 50 is not 49",
+       1
+      ],
+      [
+       "Counts the prime 2: even in m x m, odd in 2 x n x n",
+       1
+      ],
+      [
+       "Concludes the claim is wrong for all counting numbers",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tara writes: 'Because 1.4 x 1.4 = 1.96 is less than 2 and 1.5 x 1.5 = 2.25 is more than 2, √2 lies between 1.4 and 1.5. And since 1.45 is midway, √2 is about 1.45.' Check both parts of her reasoning.",
+     "a": "Partly right. The first part is correct: 1.96 < 2 < 2.25 gives 1.4 < √2 < 1.5. The second part is wrong: 1.45 x 1.45 = 2.1025, which is more than 2, so √2 is less than 1.45. Being midway between the bounds does not make 1.45 close; √2 is nearer 1.4 (1.41 x 1.41 = 1.9881 is still below 2).",
+     "s": [
+      [
+       "Accepts the bounds 1.4 and 1.5",
+       1
+      ],
+      [
+       "Squares 1.45 to get 2.1025, more than 2",
+       1
+      ],
+      [
+       "Concludes the claim is only partly right",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that √2 cannot be equal to any decimal number with at most three decimal places.",
+     "a": "Squaring gives 1.414 x 1.414 = 1.999396 < 2 and 1.415 x 1.415 = 2.002225 > 2, so 1.414 < √2 < 1.415. Every decimal with at most three places is 1.414 or less, or 1.415 or more: there is none strictly between 1.414 and 1.415. So none of them can equal √2.",
+     "s": [
+      [
+       "Uses the squares of 1.414 and 1.415 to trap √2",
+       1
+      ],
+      [
+       "Notes there is no three-place decimal strictly between 1.414 and 1.415",
+       1
+      ],
+      [
+       "Concludes no such decimal equals √2",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A delivery robot in a warehouse moves on a floor of square tiles of side 1 m. It must go from one corner of a 6 by 6 block of tiles to the opposite corner, either diagonally across 6 tiles or along the edges (6 m and then 6 m). (a) Explain why the diagonal of one tile is √2 m. (b) Using 1.414 < √2 < 1.415, find bounds for the diagonal route. (c) Find bounds for the distance saved by the diagonal route. (d) The robot's battery can run 8.5 m. Is it certain to finish the diagonal route? (e) A weaker battery runs only 8.487 m. Do the bounds in (b) settle whether it can finish? If not, use 1.4142 < √2 < 1.4143 to decide.",
+     "a": "(a) The square on a tile's diagonal has double the tile's area, 2 sq m, so the diagonal is the number whose square is 2, that is √2 m. (b) 6 x 1.414 = 8.484 and 6 x 1.415 = 8.49, so the route is between 8.484 m and 8.49 m. (c) 12 - 8.49 = 3.51 and 12 - 8.484 = 3.516, so the saving is between 3.51 m and 3.516 m. (d) Yes: the route is less than 8.49 m, which is less than 8.5 m. (e) No: 8.487 lies between 8.484 and 8.49, so (b) cannot decide. With the closer bounds, 6 x 1.4142 = 8.4852 and 6 x 1.4143 = 8.4858, so the route is less than 8.4858 m, under 8.487 m: the robot can finish.",
+     "s": [
+      [
+       "(a) square on the diagonal has area 2, so diagonal = √2 m",
+       1
+      ],
+      [
+       "(b) 8.484 m and 8.49 m",
+       1
+      ],
+      [
+       "(c) 3.51 m and 3.516 m",
+       1
+      ],
+      [
+       "(d) yes, below 8.5 m",
+       1
+      ],
+      [
+       "(e) not settled by (b); closer bounds 8.4852 to 8.4858 show it can finish",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 1.4142 is a terminating decimal whose square is exactly 2.\nReason (R): The square of a terminating decimal whose last digit is non-zero also has a non-zero last digit after the decimal point.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) What is the digit in the last decimal place (the 8th) of the square of 1.4146? (b) Use your answer to explain why 1.4146 cannot be exactly √2.",
+     "a": "(a) The last decimal place of the square comes from 6 x 6 = 36, so the digit in the 8th decimal place is 6 (in fact 1.4146 x 1.4146 = 2.00109316). (b) If 1.4146 were √2, its square would be exactly 2 = 2.00000000, whose digits after the point are all 0. A square whose 8th decimal digit is 6 is not 2, so 1.4146 is not √2.",
+     "s": [
+      [
+       "Part (a): digit 6 in the 8th decimal place, from 6 x 6",
+       1
+      ],
+      [
+       "Part (b): 2 has only zeros after the point, so the square cannot be 2",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-2.4",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Looking at the triangle with sides 3, 4 and 5, a student claims: 'In a right triangle the hypotenuse is always 2 less than the sum of the two shorter sides.' Test the claim on another right triangle, and give your verdict.",
+     "a": "The claim is wrong. Take shorter sides 5 and 12: c x c = 25 + 144 = 169, so c = 13. The sum of the shorter sides is 17, and 17 - 13 = 4, not 2. One counter-example is enough, so the rule 'always 2 less' fails; the hypotenuse must be found from a x a + b x b = c x c.",
+     "s": [
+      [
+       "Finds the hypotenuse of another right triangle, e.g. 13 for 5 and 12",
+       1
+      ],
+      [
+       "Shows the difference is not 2 (17 - 13 = 4)",
+       1
+      ],
+      [
+       "Rejects the claim; only a x a + b x b = c x c is reliable",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tiler has square tiles of several sizes. Which pair of square tiles can be combined, by Baudhayana's method, into ONE square tile of side 17 cm with no area left over or missing?",
+     "a": "sides 8 cm and 15 cm",
+     "o": [
+      "sides 8 cm and 15 cm",
+      "sides 7 cm and 10 cm",
+      "sides 12 cm and 5 cm",
+      "sides 9 cm and 8 cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "A gardener has two square beds of areas 36 sq m and 64 sq m. She wants to add a third square bed so that the three together have exactly the area of one square bed of side 26 m. What must be the side of the third bed?",
+     "a": "24 m",
+     "o": [
+      "24 m",
+      "16 m",
+      "12 m",
+      "576 m"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a real-life word problem whose solution needs c x c = 12 x 12 + 35 x 35. Solve it and say what the answer means in your problem.",
+     "a": "Example: a straight zip-line runs from the top of a 12 m tower to a point on the ground 35 m from the foot of the tower; how long is the cable? c x c = 144 + 1225 = 1369 = 37 x 37, so the cable is 37 m long. Any right-triangle situation with shorter sides 12 and 35 is acceptable.",
+     "s": [
+      [
+       "A right-triangle situation with shorter sides 12 and 35",
+       1
+      ],
+      [
+       "Computes 144 + 1225 = 1369",
+       1
+      ],
+      [
+       "Finds 37 and says what it measures",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In Baudhayana's construction, the corner angles of the new four-sided figure each come from the angles x and 90 - x of two of the congruent triangles. Explain why the figure is a square and not just a rhombus.",
+     "a": "A rhombus also has four equal sides, so equal sides alone are not enough. The congruent triangles make all four sides equal (each is a hypotenuse c), and where two triangles meet on a straight line, their angles x and 90 - x leave exactly 180 - 90 = 90 degrees for the corner; as the triangles are congruent, every corner is a right angle. Equal sides and right angles make it a square.",
+     "s": [
+      [
+       "Equal sides come from the congruent triangles, but a rhombus also has them",
+       1
+      ],
+      [
+       "Every corner is 90 degrees from x and 90 - x, so it is a square",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'If both shorter sides of a right triangle are doubled, its hypotenuse becomes four times as long.' Give a reason.",
+     "a": "False. With sides 2a and 2b, the square on the new hypotenuse is 4a x a + 4b x b = 4 x (a x a + b x b) = 4c x c = (2c) x (2c). So the hypotenuse only doubles; it is the AREA of the square on it that becomes four times. (Example: 3, 4, 5 becomes 6, 8, 10.)",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Shows the new hypotenuse is 2c; only the area of its square is 4 times",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A farmer near Nashik owns two square plots of sides 24 m and 7 m. The panchayat offers to exchange them for one square plot of exactly the same total area, for a fee of Rs 3,000. Fencing costs Rs 150 per metre, and every plot he owns must be fenced all round.\n(a) Using Baudhayana's theorem, find the side of the single plot. Name the right triangle you use.\n(b) Find the total length of fencing needed for the two plots and for the single plot.\n(c) Counting only the fee and the fencing cost, should he accept the exchange? Show the money.",
+     "a": "(a) A right triangle with shorter sides 24 m and 7 m: c x c = 576 + 49 = 625, so the side is 25 m. (b) Two plots: 4 x 24 + 4 x 7 = 96 + 28 = 124 m. Single plot: 4 x 25 = 100 m. (c) He saves 24 m of fencing, that is 24 x 150 = Rs 3,600, which is more than the Rs 3,000 fee. He should accept: he is Rs 600 better off.",
+     "s": [
+      [
+       "(a) 25 m, from the right triangle with sides 24 and 7",
+       1
+      ],
+      [
+       "(b) 124 m and 100 m",
+       1
+      ],
+      [
+       "(c) saves Rs 3,600 against Rs 3,000 fee: accept, Rs 600 ahead",
+       2
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A carpenter keeps a table for roof trusses. In each truss, the rise (vertical) and the half-span (horizontal) are perpendicular, and the rafter is the sloping side joining their ends.\nTruss | Half-span (m) | Rise (m) | Rafter (m)\nP | 4 | 3 | ?\nQ | ? | 5 | 13\nR | 2.4 | 0.7 | ?\n(a) Find the rafter of truss P.\n(b) Work backwards to find the half-span of truss Q.\n(c) Find the rafter of truss R.\n(d) A shed needs 4 rafters of truss R, each cut from a single piece (no joins). Timber comes in 3 m pieces at Rs 400 each or 6 m pieces at Rs 700 each. What is the cheapest way to buy it?",
+     "a": "(a) 16 + 9 = 25, so 5 m. (b) 169 - 25 = 144, so 12 m. (c) 5.76 + 0.49 = 6.25, so 2.5 m. (d) A 3 m piece gives one 2.5 m rafter (Rs 400 per rafter, Rs 1,600 for 4). A 6 m piece gives two rafters (2 x 2.5 = 5 m), so two 6 m pieces give 4 rafters for Rs 1,400. Buy two 6 m pieces.",
+     "s": [
+      [
+       "(a) 5 m",
+       1
+      ],
+      [
+       "(b) 12 m",
+       1
+      ],
+      [
+       "(c) 2.5 m",
+       1
+      ],
+      [
+       "(d) two 6 m pieces for Rs 1,400, cheaper than four 3 m pieces at Rs 1,600",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Baudhayana's Sulba-Sutra asks for squares with three times and five times the area of a given square. Take a given square of side 4 cm. (a) Using one right triangle, make a square with twice the area: give the triangle's sides and the new area. (b) Using a second right triangle whose sides are 4 cm and the hypotenuse from (a), make a square with three times the area; find its area. (c) Make a square with five times the area using a single right triangle with whole-number sides; give the sides and check the area. (d) Which of the multiples 2, 3, 4, 5, ..., 10 of the area can be made with exactly ONE right triangle whose two perpendicular sides are both non-zero whole-number multiples of 4 cm? (e) Explain why the multiple 3 needs two steps.",
+     "a": "(a) Sides 4 and 4: 16 + 16 = 32 sq cm. (b) 16 + 32 = 48 sq cm = 3 x 16. (c) Sides 4 and 8: 16 + 64 = 80 sq cm = 5 x 16. (d) With sides 4m and 4n the area is 16(m x m + n x n): m x m + n x n can be 2 (1,1), 5 (1,2), 8 (2,2) or 10 (1,3); 4 and 9 are squares (sides 8 cm and 12 cm) and would need a perpendicular side of 0, which is not allowed, so with one triangle the multiples are 2, 5, 8 and 10. (e) 3 is not a sum of two square numbers (1 + 1 = 2, 1 + 4 = 5), so a first triangle must give the diagonal square (area 2 x 16) and a second adds one more 16.",
+     "s": [
+      [
+       "(a) sides 4 and 4, 32 sq cm",
+       1
+      ],
+      [
+       "(b) 48 sq cm",
+       1
+      ],
+      [
+       "(c) sides 4 and 8, 80 sq cm",
+       1
+      ],
+      [
+       "(d) 2, 5, 8 and 10",
+       1
+      ],
+      [
+       "(e) 3 is not a sum of two squares, so two steps",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "To make a square with k times the area of a square of side a, one right triangle with perpendicular sides as in Column B can be used; the square on its hypotenuse is the required square. Match each k in Column A with the right triangle in Column B.\nColumn A\n1. k = 2\n2. k = 5\n3. k = 10\n4. k = 13\nColumn B\na. sides 2a and 3a\nb. sides a and a\nc. sides a and 3a\nd. sides a and 2a",
+     "a": "1-b, 2-d, 3-c, 4-a",
+     "o": [
+      "1-b, 2-d, 3-c, 4-a",
+      "1-b, 2-c, 3-d, 4-a",
+      "1-d, 2-b, 3-c, 4-a",
+      "1-b, 2-d, 3-a, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A 6.5 m ladder leans against a vertical wall with its foot 2.5 m from the wall on level ground. (a) How high up the wall does it reach? (b) The foot slips out to 3.3 m from the wall. How high does it reach now? (c) How far did the top slide down? (d) A student says the top always slides down as far as the foot slides out. Use your answers to judge. (e) A painter needs the top at least 5.8 m high. Is it safe to put the foot 2.9 m from the wall? Is 3 m safe?",
+     "a": "(a) h x h = 42.25 - 6.25 = 36, so 6 m. (b) h x h = 42.25 - 10.89 = 31.36 = 5.6 x 5.6, so 5.6 m. (c) 6 - 5.6 = 0.4 m. (d) Wrong: the foot moved 0.8 m but the top moved only 0.4 m. (e) For a height of 5.8 m, the foot can be at most the number whose square is 42.25 - 33.64 = 8.61. 2.9 x 2.9 = 8.41 < 8.61, so 2.9 m is safe; 3 x 3 = 9 > 8.61, so 3 m is not.",
+     "s": [
+      [
+       "(a) 6 m",
+       1
+      ],
+      [
+       "(b) 5.6 m",
+       1
+      ],
+      [
+       "(c) 0.4 m",
+       1
+      ],
+      [
+       "(d) rejects: 0.8 m against 0.4 m",
+       1
+      ],
+      [
+       "(e) 2.9 m safe, 3 m not, from 8.61",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: 'A right triangle with shorter sides 16 cm and 63 cm has the same hypotenuse as a right triangle with shorter sides 33 cm and 56 cm.' Give a reason.",
+     "a": "True. First triangle: 16 x 16 + 63 x 63 = 256 + 3969 = 4225 = 65 x 65. Second: 33 x 33 + 56 x 56 = 1089 + 3136 = 4225 = 65 x 65. Both hypotenuses are 65 cm, even though the sums of the shorter sides (79 and 89) are different.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Both give 4225 = 65 x 65, so both hypotenuses are 65 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A carpenter's wooden wedge has a sloping edge of 1.5 m and a vertical edge of 0.9 m, at right angles to its base. He makes a second wedge with the same base but a vertical edge of only 0.5 m. How long is the sloping edge of the second wedge?",
+     "a": "1.3 m",
+     "o": [
+      "1.3 m",
+      "1.1 m",
+      "1.7 m",
+      "1.69 m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tent rope 25 m long runs straight from the top of a pole to a peg in the ground 7 m from the foot of the pole. The pole stands upright. How tall is the pole?",
+     "a": "24 m",
+     "o": [
+      "24 m",
+      "18 m",
+      "about 26 m",
+      "32 m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A right triangle whose shorter sides are 1.5 m and 2 m has a hypotenuse of 2.5 m.\nReason (R): In every right triangle, the hypotenuse is 1 less than the sum of the two shorter sides.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 3 cm square and a 7 cm square stand side by side on a straight line, the small square on the left, with their bottom edges on the line and touching along a side. Inside the 7 cm square, a rectangle 3 cm wide and 7 cm tall is marked against its right-hand side. (a) What is the width of the strip of the 7 cm square that lies between the small square and the marked rectangle? (b) The diagonal of the marked rectangle cuts it into two right triangles. Find the area of one of these triangles, and the area of the square built on that diagonal.",
+     "a": "(a) The 7 cm square is 7 cm wide and the rectangle takes 3 cm of it, so the strip is 7 - 3 = 4 cm wide. (b) Each triangle has perpendicular sides 3 cm and 7 cm, so its area is 3 x 7 / 2 = 10.5 sq cm. The square on the diagonal has area 3 x 3 + 7 x 7 = 9 + 49 = 58 sq cm, the total area of the two squares.",
+     "s": [
+      [
+       "Part (a): strip width 4 cm",
+       1
+      ],
+      [
+       "Part (b): triangle 10.5 sq cm; square on the diagonal 58 sq cm",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A right triangle has a hypotenuse of 8.5 m and one shorter side of 4 m. (a) Find the other shorter side. (b) Find the area of the triangle.",
+     "a": "(a) b x b = 72.25 - 16 = 56.25 = 7.5 x 7.5, so the other side is 7.5 m. (b) The two shorter sides are perpendicular, so area = 4 x 7.5 / 2 = 15 sq m.",
+     "s": [
+      [
+       "Part (a): 7.5 m",
+       1
+      ],
+      [
+       "Part (b): 15 sq m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Squares of sides a and b (a < b) are joined, and Baudhayana's construction is followed.\nStatement 1: The rectangle marked inside the larger square measures b by a.\nStatement 2: The part of the larger square left outside that rectangle is a strip of width b - a.\nStatement 3: For a = 3 and b = 7, the new square has side 10, the sum of the two sides.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "1, 2 and 3",
+      "2 and 3 only",
+      "1 only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use a x a + b x b = c x c to find the square of the hypotenuse of a right triangle whose two shorter sides are both 6. (b) Show that this agrees with what the doubling-a-square construction says.",
+     "a": "(a) c x c = 36 + 36 = 72. (b) The triangle is half of a square of side 6 and area 36; its hypotenuse is that square's diagonal, and the square on the diagonal has double the area, 2 x 36 = 72. Both give 72.",
+     "s": [
+      [
+       "Part (a): 72",
+       1
+      ],
+      [
+       "Part (b): doubling gives 2 x 36 = 72, the same",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that a square of side 1 and a square with any whole-number side b can never be combined into a square whose side is a whole number.",
+     "a": "The combined square has area 1 + b x b. For its side c to be a whole number, c x c - b x b = 1 with c > b. But the next square after b x b is (b + 1) x (b + 1) = b x b + 2b + 1, which is at least 3 more than b x b. So no square is just 1 more than b x b, and c cannot be a whole number.",
+     "s": [
+      [
+       "Sets up 1 + b x b = c x c, so c x c - b x b = 1",
+       1
+      ],
+      [
+       "Next square after b x b exceeds it by 2b + 1, at least 3",
+       1
+      ],
+      [
+       "Concludes no whole-number c exists",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A wheelchair ramp at a school rises 0.5 m over a horizontal run of 1.2 m. (a) Find the length of the sloping surface of the ramp. (b) A second ramp, to a stage, also rises 0.5 m, but its sloping surface is 2.5 m long. Between which two numbers with one decimal place does its horizontal run lie? (c) For the same rise, the ramp with the longer run is less steep. Which ramp is less steep? Use (b).",
+     "a": "(a) s x s = 0.25 + 1.44 = 1.69 = 1.3 x 1.3, so the surface is 1.3 m. (b) run x run = 6.25 - 0.25 = 6. 2.4 x 2.4 = 5.76 and 2.5 x 2.5 = 6.25, so 2.4 m < run < 2.5 m. (c) The stage ramp: its run is more than 2.4 m, against 1.2 m for the first ramp, for the same rise of 0.5 m.",
+     "s": [
+      [
+       "(a) 1.3 m",
+       1
+      ],
+      [
+       "(b) run x run = 6, so between 2.4 m and 2.5 m",
+       1
+      ],
+      [
+       "(c) the stage ramp, run over 2.4 m against 1.2 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A right triangle has perpendicular sides of 9 cm and 40 cm. Its perimeter is ___ cm. (Write the number in digits.)",
+     "a": "90"
+    }
+   ]
+  },
+  {
+   "code": "C8M-2.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): (16, 30, 34) is a Baudhayana triple but not a primitive one.\nReason (R): (16, 30, 34) is (8, 15, 17) scaled by 2, and the numbers of a scaled triple share the scale factor.",
+     "a": "A and R are both true, and R is the correct explanation of A.",
+     "o": [
+      "A and R are both true, and R is the correct explanation of A.",
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Scaling (3, 4, 5) shows there are infinitely many Baudhayana triples, but all of these are non-primitive except (3, 4, 5) itself. Give a reason why there are also infinitely many PRIMITIVE triples.",
+     "a": "The odd-square method gives a triple (k, n - 1, n) for every odd square k x k = 2n - 1, and there are infinitely many odd squares (9, 25, 49, 81, ...). In each such triple the two larger numbers differ by 1, so they have no common factor greater than 1, and the triple is primitive. So there are infinitely many primitive triples.",
+     "s": [
+      [
+       "Odd-square method gives a triple for each of the infinitely many odd squares",
+       1
+      ],
+      [
+       "Each has n - 1 and n consecutive, so it is primitive",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A worksheet claims: '(9, 40, 41), (11, 60, 61) and (13, 84, 85) all come from the odd-square method, (n - 1) x (n - 1) + (2n - 1) = n x n, where 2n - 1 is an odd square.' Check the claim for each triple.",
+     "a": "The claim is right. 81 = 2 x 41 - 1, so n = 41 gives 40 x 40 + 81 = 41 x 41: (9, 40, 41). 121 = 2 x 61 - 1, so n = 61 gives (11, 60, 61). 169 = 2 x 85 - 1, so n = 85 gives (13, 84, 85). Each also checks: 81 + 1600 = 1681, 121 + 3600 = 3721, 169 + 7056 = 7225.",
+     "s": [
+      [
+       "Finds n = 41 from 81 and checks (9, 40, 41)",
+       1
+      ],
+      [
+       "Finds n = 61 from 121 and n = 85 from 169",
+       1
+      ],
+      [
+       "Agrees with the claim for all three",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) Compare 6 x 6 x 6 + 8 x 8 x 8 with 10 x 10 x 10. (b) Compare 9 x 9 x 9 + 10 x 10 x 10 with 12 x 12 x 12. (c) The result in (b) misses by only 1. What does Fermat's Last Theorem say about whether a closer search could ever make such a sum exactly a cube? (d) (6, 8, 10) works for squares. Show that scaling never turns (3, 4, 5) into a solution for cubes, by comparing (3k)³ + (4k)³ with (5k)³. (e) Compare 3 x 3 x 3 x 3 + 4 x 4 x 4 x 4 with 5 x 5 x 5 x 5, and say what Fermat's statement says about fourth powers.",
+     "a": "(a) 216 + 512 = 728, not 1000. (b) 729 + 1000 = 1729, while 12 x 12 x 12 = 1728: one more than a cube. (c) No search can succeed: the theorem says x³ + y³ = z³ has no solution in natural numbers, so near misses like 1729 can never become exact. (d) The left side is 27k³ + 64k³ = 91k³, the right side is 125k³; 91 is never 125, so no k works. (e) 81 + 256 = 337, while 5 x 5 x 5 x 5 = 625, so (3, 4, 5) fails for fourth powers too. Fermat's statement says no fourth power is a sum of two fourth powers, so no search can succeed there either.",
+     "s": [
+      [
+       "(a) 728 against 1000",
+       1
+      ],
+      [
+       "(b) 1729 against 1728",
+       1
+      ],
+      [
+       "(c) no exact solution exists for cubes, by the theorem",
+       1
+      ],
+      [
+       "(d) 91k³ against 125k³",
+       1
+      ],
+      [
+       "(e) 337 against 625; no fourth power is a sum of two fourth powers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A Baudhayana triple is three whole numbers a < b < c with a x a + b x b = c x c. Counting every such triple, not only the multiples of (3, 4, 5), how many Baudhayana triples have all three numbers at most 20?",
+     "a": "6",
+     "o": [
+      "6",
+      "4",
+      "3",
+      "8"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is a primitive Baudhayana triple?",
+     "a": "(20, 21, 29)",
+     "o": [
+      "(20, 21, 29)",
+      "(15, 36, 39)",
+      "(12, 35, 38)",
+      "(21, 28, 35)"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "Tanvi wants a Baudhayana triple whose smallest number is 17 and whose two larger numbers differ by 1. Using the odd-square method, (n - 1) x (n - 1) + (2n - 1) = n x n, what is the largest number of her triple?",
+     "a": "145",
+     "o": [
+      "145",
+      "144",
+      "289",
+      "153"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A mason marks right angles on site with a closed loop of rope tied with 60 equally spaced knots. Pulling it tight at three knots makes a triangle whose sides are whole numbers of knot-gaps adding up to 60, and he wants the triangle to be right-angled.\n(a) Show that sides 15, 20 and 25 give a right triangle with perimeter 60.\n(b) Find another Baudhayana triple with perimeter 60. (Hint: scale a primitive triple other than (3, 4, 5).)\n(c) Is either triple primitive? Give the primitive triple behind each.\n(d) The two arms of the right angle must each be at least 12 gaps long so that the corner can be checked along both walls. Which triangle should he use?",
+     "a": "(a) 225 + 400 = 625 = 25 x 25 and 15 + 20 + 25 = 60. (b) (10, 24, 26) = 2 x (5, 12, 13): 100 + 576 = 676 = 26 x 26 and 10 + 24 + 26 = 60. (c) Neither: (15, 20, 25) = 5 x (3, 4, 5) and (10, 24, 26) = 2 x (5, 12, 13). (d) (15, 20, 25): its arms are 15 and 20, both at least 12, while (10, 24, 26) has an arm of only 10.",
+     "s": [
+      [
+       "(a) 225 + 400 = 625 and perimeter 60",
+       1
+      ],
+      [
+       "(b) (10, 24, 26)",
+       1
+      ],
+      [
+       "(c) neither; 5 x (3, 4, 5) and 2 x (5, 12, 13)",
+       1
+      ],
+      [
+       "(d) (15, 20, 25), the only one with both arms at least 12",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write the scaled version (3k, 4k, 5k) of (3, 4, 5) for k = 11. (b) For which k does the scaled version have largest number 85? Write that triple.",
+     "a": "(a) (33, 44, 55). (b) 5k = 85 gives k = 17, so the triple is (51, 68, 85). (Check: 2601 + 4624 = 7225 = 85 x 85.)",
+     "s": [
+      [
+       "Part (a): (33, 44, 55)",
+       1
+      ],
+      [
+       "Part (b): k = 17, triple (51, 68, 85)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'If (a, b, c) is a Baudhayana triple, then adding the same whole number to each of a, b and c gives another Baudhayana triple, just as multiplying each by the same number does.' Give a reason, and check it with (3, 4, 5).",
+     "a": "False. Multiplying keeps the triple, but adding does not. Adding 1 to (3, 4, 5) gives (4, 5, 6): 16 + 25 = 41, but 6 x 6 = 36. Scaling works because (ka) x (ka) + (kb) x (kb) = k x k x (a x a + b x b) = (kc) x (kc); adding a number has no such rule.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Counter-example (4, 5, 6): 41 is not 36; scaling multiplies every square by k x k, adding does not",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student makes new triples from the Baudhayana triple (3, 4, 5) using different rules. Which rule ALWAYS gives another Baudhayana triple?",
+     "a": "multiply each of the three numbers by 7",
+     "o": [
+      "multiply each of the three numbers by 7",
+      "add 7 to each of the three numbers",
+      "square each of the three numbers",
+      "multiply only the two smaller numbers by 7"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A student says: 'Every Baudhayana triple whose largest number is 25 is a scaled version of (3, 4, 5).' Check this claim.",
+     "a": "The claim is wrong. (15, 20, 25) is (3, 4, 5) scaled by 5, but (7, 24, 25) is also a triple: 49 + 576 = 625 = 25 x 25. Its numbers have no common factor greater than 1, so it is primitive and is not a scaled version of (3, 4, 5).",
+     "s": [
+      [
+       "Notes (15, 20, 25) is a scaled (3, 4, 5)",
+       1
+      ],
+      [
+       "Finds (7, 24, 25) with 49 + 576 = 625",
+       1
+      ],
+      [
+       "Rejects the claim: (7, 24, 25) is primitive",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Each triple in Column A is a scaled version of a primitive Baudhayana triple in Column B. Match them.\nColumn A\n1. (10, 24, 26)\n2. (24, 45, 51)\n3. (14, 48, 50)\n4. (21, 28, 35)\nColumn B\na. (3, 4, 5)\nb. (5, 12, 13)\nc. (7, 24, 25)\nd. (8, 15, 17)",
+     "a": "1-b, 2-d, 3-c, 4-a",
+     "o": [
+      "1-b, 2-d, 3-c, 4-a",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-b, 2-d, 3-a, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "(28, ___, 53) is a Baudhayana triple. (Write the missing number in digits.)",
+     "a": "45"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Divide each number of (45, 60, 75) by the largest number that divides all three. (b) Use (a) and the scaling rule to show that (45, 60, 75) is a Baudhayana triple without squaring any number larger than 5.",
+     "a": "(a) The largest common factor is 15, giving (3, 4, 5). (b) 3 x 3 + 4 x 4 = 9 + 16 = 25 = 5 x 5, so (3, 4, 5) is a triple; (45, 60, 75) is its scaled version with k = 15, and a scaled version of a triple is always a triple.",
+     "s": [
+      [
+       "Part (a): factor 15, giving (3, 4, 5)",
+       1
+      ],
+      [
+       "Part (b): (3, 4, 5) is a triple and scaling by 15 keeps it a triple",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about Baudhayana triples.\nStatement 1: (33, 56, 65) is a scaled version of (3, 4, 5), since 65 = 13 x 5.\nStatement 2: (20, 21, 29) is primitive, but it cannot come from the odd-square method.\nStatement 3: (19, 180, 181) is a Baudhayana triple.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Is (11, 60, 61) a Baudhayana triple? (b) Is (12, 60, 61)? Show your working for both.",
+     "a": "(a) Yes: 121 + 3600 = 3721 = 61 x 61. (b) No: 144 + 3600 = 3744, which is not 3721.",
+     "s": [
+      [
+       "Part (a): 3721 = 61 x 61, a triple",
+       1
+      ],
+      [
+       "Part (b): 3744 is not 3721, not a triple",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Use the odd-square method, with the odd square 21 x 21, to write a Baudhayana triple whose smallest number is 21. (b) Scale (3, 4, 5) to get a different triple whose smallest number is 21, and say why the odd-square method could never give it.",
+     "a": "(a) 21 x 21 = 441 = 2n - 1, so n = 221: (21, 220, 221). (Check: 441 + 48400 = 48841 = 221 x 221.) (b) 7 x (3, 4, 5) = (21, 28, 35). Its two larger numbers differ by 7, not 1, and it is not primitive, while the odd-square method gives only triples whose two larger numbers differ by 1.",
+     "s": [
+      [
+       "Part (a): n = 221, triple (21, 220, 221)",
+       1
+      ],
+      [
+       "Part (b): (21, 28, 35); larger numbers differ by 7, so not from the method",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student finds that 3 x 3 x 3 + 4 x 4 x 4 + 5 x 5 x 5 = 6 x 6 x 6 and announces that she has disproved Fermat's Last Theorem. Which response is correct?",
+     "a": "No: the theorem is about a sum of TWO cubes",
+     "o": [
+      "No: the theorem is about a sum of TWO cubes",
+      "Yes: she found a cube equal to a sum of cubes",
+      "No: 27 + 64 + 125 does not make 216",
+      "Yes, but only for cubes, not for other powers"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "(a) If an odd square k x k is the n-th odd number, it equals 2n - 1. Find n when k = 15. (b) Write the triple the method gives for k = 15. (c) Check your triple by squaring. (d) Explain why every triple given by this method is primitive. (e) Baudhayana's own list includes (15, 36, 39). It is a Baudhayana triple, so why is it not produced by this method?",
+     "a": "(a) 225 = 2n - 1, so n = 113. (b) (15, 112, 113). (c) 225 + 12544 = 12769 = 113 x 113. (d) The two larger numbers are n - 1 and n, which differ by 1, so any common factor of the triple would divide 1: the triple is primitive. (e) (15, 36, 39) = 3 x (5, 12, 13) is not primitive (its largest two numbers differ by 3, and all three share the factor 3), and the method only makes primitive triples with the two larger numbers 1 apart.",
+     "s": [
+      [
+       "(a) n = 113",
+       1
+      ],
+      [
+       "(b) (15, 112, 113)",
+       1
+      ],
+      [
+       "(c) 225 + 12544 = 12769",
+       1
+      ],
+      [
+       "(d) n - 1 and n differ by 1, so primitive",
+       1
+      ],
+      [
+       "(e) (15, 36, 39) is non-primitive with larger numbers 3 apart",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no Baudhayana triple can have all three numbers odd.",
+     "a": "The square of an odd number is odd (odd x odd = odd). If a and b are both odd, a x a + b x b is odd + odd = even. But if c is odd, c x c is odd. An even number cannot equal an odd number, so a x a + b x b = c x c fails whenever all three are odd.",
+     "s": [
+      [
+       "Square of an odd number is odd",
+       1
+      ],
+      [
+       "Sum of two odd squares is even, but c x c is odd",
+       1
+      ],
+      [
+       "Concludes all three cannot be odd",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Baudhayana's Sulba-Sutra lists these triples:\n(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25), (12, 35, 37), (15, 36, 39)\nA frame-maker wants a rectangular frame with whole-number sides whose diagonal brace is exactly 65 cm, using only scaled versions of triples in this list.\n(a) Which triple in the list is not primitive? Give the primitive triple it comes from.\n(b) Which triples in the list can be scaled so that the largest number is 65? Write the scaled triples.\n(c) Check one of your scaled triples by squaring.\n(d) The customer wants the frame as close to a square as possible. Which frame should be made?",
+     "a": "(a) (15, 36, 39) = 3 x (5, 12, 13). (b) 65 = 5 x 13 = 13 x 5: (3, 4, 5) x 13 = (39, 52, 65) and (5, 12, 13) x 5 = (25, 60, 65); 17, 25, 37 and 39 do not divide 65. (c) 39 x 39 + 52 x 52 = 1521 + 2704 = 4225 = 65 x 65 (or 625 + 3600 = 4225). (d) 39 cm by 52 cm: its sides differ by 13 cm, against 35 cm for 25 cm by 60 cm, so it is closer to a square.",
+     "s": [
+      [
+       "(a) (15, 36, 39) from (5, 12, 13)",
+       1
+      ],
+      [
+       "(b) (39, 52, 65) and (25, 60, 65)",
+       1
+      ],
+      [
+       "(c) 1521 + 2704 = 4225",
+       1
+      ],
+      [
+       "(d) 39 cm by 52 cm, sides closer together",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-2.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A carpenter is building a rectangular frame 20 cm by 21 cm. (a) Show that its diagonal is a whole number of cm. (b) Using (a), give the sides and diagonal of a larger frame of the same shape whose perimeter is 164 cm.",
+     "a": "(a) d x d = 400 + 441 = 841 = 29 x 29, so the diagonal is 29 cm. (b) The perimeter of the 20 by 21 frame is 82 cm, and 164 = 2 x 82, so double everything: 40 cm by 42 cm with diagonal 58 cm.",
+     "s": [
+      [
+       "Part (a): 841 = 29 x 29",
+       1
+      ],
+      [
+       "Part (b): scale by 2: 40, 42 and 58 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (The diagonals of a rhombus cut each other in half at right angles.)\nStatement 1: The altitude of an equilateral triangle of side 2 units is the number whose square is 3.\nStatement 2: A rhombus whose diagonals are 12 cm and 16 cm has sides of 20 cm.\nStatement 3: A 10 m ladder whose foot is 6 m from a vertical wall reaches 4 m up the wall.\nWhich of the statements are correct?",
+     "a": "1 only",
+     "o": [
+      "1 only",
+      "1 and 2 only",
+      "1 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: 'A rectangle 1 m by 7 m and a square of side 5 m have diagonals of exactly the same length.' Give a reason.",
+     "a": "True. Rectangle: d x d = 1 x 1 + 7 x 7 = 1 + 49 = 50. Square: d x d = 5 x 5 + 5 x 5 = 25 + 25 = 50. Both diagonals are the number whose square is 50, so they are equal, even though the areas (7 sq m and 25 sq m) are very different.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Both diagonals have square 50 (1 + 49 and 25 + 25)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each situation in Column A with its answer in Column B. (The diagonals of a rhombus cut each other in half at right angles.)\nColumn A\n1. Diagonal of a rectangle 8 by 15\n2. Side of a rhombus with diagonals 10 and 24\n3. Diagonal of a square of side 5\n4. Depth of a lake if a lotus tip 1 unit above the water touches the water 5 units away when pushed over\nColumn B\na. 12\nb. 13\nc. 17\nd. between 7 and 8",
+     "a": "1-c, 2-b, 3-d, 4-a",
+     "o": [
+      "1-c, 2-b, 3-d, 4-a",
+      "1-b, 2-c, 3-d, 4-a",
+      "1-c, 2-b, 3-a, 4-d",
+      "1-c, 2-d, 3-b, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A gardener wants a square bed whose area equals the difference of the areas of square beds of sides 7 m and 5 m. She draws a right triangle with hypotenuse 7 m and one side 5 m, and uses its third side as the side of the new bed. What is the area of the new bed?",
+     "a": "24 sq m",
+     "o": [
+      "24 sq m",
+      "4 sq m",
+      "144 sq m",
+      "12 sq m"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A rectangle has a diagonal of 25 cm and one side of 7 cm. Its area is ___ sq cm. (Write the number in digits.)",
+     "a": "168"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A flat board 2.2 m wide must pass through a doorway 2 m high and 0.9 m wide, tilted so that it goes along the doorway's diagonal. What happens?",
+     "a": "No: the diagonal is under 2.2 m",
+     "o": [
+      "No: the diagonal is under 2.2 m",
+      "Yes: the diagonal is 2.9 m, adding 2 and 0.9",
+      "Yes: the diagonal is a little over 2.2 m long",
+      "No: the diagonal is exactly 2 m, the door's height"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: 'In a right triangle the hypotenuse is less than the sum of the other two sides, but it can be equal in length to one of them.' Give a reason.",
+     "a": "False. The hypotenuse is always strictly longer than each shorter side: c x c = a x a + b x b is more than a x a, because b x b is more than 0, so c is more than a (and likewise more than b). So it can never equal one of them.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "c x c = a x a + b x b > a x a, so c is longer than each shorter side",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular gate is 1.2 m wide and 0.5 m high. (a) Find the length of a diagonal brace for it. (b) A welder makes 6 such gates, each with one brace. Steel costs Rs 80 per metre. Find the cost of the braces.",
+     "a": "(a) d x d = 1.44 + 0.25 = 1.69 = 1.3 x 1.3, so the brace is 1.3 m. (b) 6 x 1.3 = 7.8 m, costing 7.8 x 80 = Rs 624.",
+     "s": [
+      [
+       "Part (a): 1.3 m",
+       1
+      ],
+      [
+       "Part (b): 7.8 m, Rs 624",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A carpenter wants a rectangular frame whose two sides and diagonal brace are all whole numbers of cm. Which size should he choose?",
+     "a": "9 cm by 12 cm",
+     "o": [
+      "9 cm by 12 cm",
+      "12 cm by 15 cm",
+      "10 cm by 20 cm",
+      "16 cm by 24 cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school flagpole 12 m tall stands upright on level ground. Four straight support wires run from the top of the pole to pegs on the ground, all at the same distance from the foot of the pole. Wire is sold as one 50 m roll for Rs 900, or loose at Rs 20 per metre (the roll and loose wire may be combined).\n(a) Find the length of one wire if the pegs are 5 m from the foot of the pole.\n(b) A new footpath means the pegs must be 9 m from the foot. Find the total length of the four wires now.\n(c) For the 9 m plan, what is the cheapest way to buy the wire, and what does it cost?",
+     "a": "(a) w x w = 144 + 25 = 169, so 13 m. (b) w x w = 144 + 81 = 225, so each wire is 15 m and four wires need 60 m. (c) All loose: 60 x 20 = Rs 1,200. One roll plus 10 m loose: 900 + 200 = Rs 1,100. Buy the roll and 10 m of loose wire, Rs 1,100.",
+     "s": [
+      [
+       "(a) 13 m",
+       1
+      ],
+      [
+       "(b) 15 m each, 60 m in all",
+       1
+      ],
+      [
+       "(c) roll plus 10 m loose for Rs 1,100, against Rs 1,200 all loose",
+       2
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rhombus-shaped kite has diagonal sticks of 16 cm and 30 cm. The diagonals of a rhombus cut each other in half at right angles. How long is each side of the kite?",
+     "a": "17 cm",
+     "o": [
+      "17 cm",
+      "34 cm",
+      "23 cm",
+      "8.5 cm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The diagonal of a rectangle 1 m by 2 m is longer than 2.2 m.\nReason (R): The diagonal of a rectangle is longer than each of its sides.",
+     "a": "A and R are both true, but R is not the correct explanation of A.",
+     "o": [
+      "A and R are both true, but R is not the correct explanation of A.",
+      "A and R are both true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that a ladder 5 m long can never reach a window 5.2 m high on a vertical wall, wherever its foot is placed on the level ground.",
+     "a": "The ladder, the wall and the ground form a right triangle with the ladder as the hypotenuse. If the foot is d m from the wall and the top is h m high, h x h = 25 - d x d, which is at most 25, so h is at most 5 m (and less than 5 m once d is more than 0). The hypotenuse is the longest side, so the height can never be 5.2 m.",
+     "s": [
+      [
+       "Ladder is the hypotenuse of the right triangle",
+       1
+      ],
+      [
+       "h x h = 25 - d x d, at most 25",
+       1
+      ],
+      [
+       "Height at most 5 m, so 5.2 m is impossible",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A park wants a painted signboard. Board T is an equilateral triangle with sides of 4 m. Board S is a square with the same perimeter, 12 m. Only one tin of paint is available, and it covers 7 sq m. The board must be painted on one face completely.\n(a) The altitude of an equilateral triangle bisects the opposite side. Use this to find the square of the altitude of Board T.\n(b) Between which two numbers with one decimal place does the altitude lie?\n(c) Find bounds for the area of Board T, and the area of Board S.\n(d) Which board should the park choose? Give a reason.",
+     "a": "(a) h x h = 16 - 4 = 12. (b) 3.4 x 3.4 = 11.56 and 3.5 x 3.5 = 12.25, so 3.4 m < h < 3.5 m. (c) Area of T = 4 x h / 2 = 2h, between 6.8 and 7 sq m. Board S has side 3 m, area 9 sq m. (d) Board T: its area is less than 7 sq m, so one tin covers it, while Board S needs 9 sq m, more than one tin.",
+     "s": [
+      [
+       "(a) 12",
+       1
+      ],
+      [
+       "(b) 3.4 m and 3.5 m",
+       1
+      ],
+      [
+       "(c) T between 6.8 and 7 sq m; S 9 sq m",
+       1
+      ],
+      [
+       "(d) Board T, since only its area is under 7 sq m",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An equilateral triangle has sides of 8 cm. (a) The altitude bisects the opposite side. Use this to find the square of the altitude and the two whole numbers between which the altitude lies. (b) Find bounds for the area of the triangle.",
+     "a": "(a) The altitude, half the base (4 cm) and a side (8 cm) form a right triangle: h x h = 64 - 16 = 48. 6 x 6 = 36 and 7 x 7 = 49, so 6 < h < 7. (b) Area = 8 x h / 2 = 4h, so it is between 24 and 28 sq cm.",
+     "s": [
+      [
+       "Part (a): h x h = 48, h between 6 and 7",
+       1
+      ],
+      [
+       "Part (b): area between 24 and 28 sq cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "q": "TV sizes are given by the length of the screen's diagonal, in inches. A shopkeeper says: 'A screen 30 inches by 40 inches is a 50-inch TV, and a square screen 25 inches by 25 inches is also a 50-inch TV, because 25 + 25 = 50.' Check both parts of his claim.",
+     "a": "Partly right. For the 30 by 40 screen, d x d = 900 + 1600 = 2500 = 50 x 50, so it is a 50-inch TV. For the 25 by 25 screen, d x d = 625 + 625 = 1250. 35 x 35 = 1225 and 36 x 36 = 1296, so its diagonal is between 35 and 36 inches, not 50: adding the sides does not give the diagonal.",
+     "s": [
+      [
+       "30 by 40: 2500 = 50 x 50, a 50-inch TV",
+       1
+      ],
+      [
+       "25 by 25: 1250, so the diagonal is between 35 and 36 inches",
+       1
+      ],
+      [
+       "Concludes the claim is only partly right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In a temple tank, a lotus bud stands upright with its tip 0.5 m above the water. A breeze bends the stem (keeping it straight) until the tip just touches the water 2 m from where it stood. Let the depth of the water be x m. (a) Write an equation for x using the Baudhayana-Pythagoras theorem, and say which side is the hypotenuse. (b) Solve it to find the depth. (c) How long is the whole stem? (d) If the tip had touched the water 2.5 m away instead, what would the depth be? (e) Explain from your equation why a larger sideways distance means a deeper tank, for the same 0.5 m above the water.",
+     "a": "(a) The stem of length x + 0.5 is the hypotenuse, with shorter sides x and 2: 2 x 2 + x x x = (x + 0.5) x (x + 0.5). (b) 4 + x x x = x x x + x + 0.25, so x = 3.75 m. (c) 3.75 + 0.5 = 4.25 m. (d) 6.25 = x + 0.25, so x = 6 m. (e) The equation simplifies to (distance x distance) = x + 0.25, so x = distance x distance - 0.25; a larger distance gives a larger square and so a larger depth.",
+     "s": [
+      [
+       "(a) equation with the stem x + 0.5 as hypotenuse",
+       1
+      ],
+      [
+       "(b) 3.75 m",
+       1
+      ],
+      [
+       "(c) 4.25 m",
+       1
+      ],
+      [
+       "(d) 6 m",
+       1
+      ],
+      [
+       "(e) depth = distance x distance - 0.25, so it grows with the distance",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write a word problem, in the style of Bhaskaracharya's lotus problem, whose equation is 5 x 5 + x x x = (x + 1) x (x + 1). Solve it and say what x means.",
+     "a": "Example: a reed sticks up 1 unit above the water of a pond; pushed over by the wind, its tip touches the water 5 units from where it stood. How deep is the pond? Expanding: 25 + x x x = x x x + 2x + 1, so 25 = 2x + 1 and x = 12. The pond is 12 units deep (the reed is 13 units long).",
+     "s": [
+      [
+       "A lotus-style situation with 1 unit above water and 5 units sideways",
+       1
+      ],
+      [
+       "Simplifies to 25 = 2x + 1",
+       1
+      ],
+      [
+       "x = 12, interpreted as the depth",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rhombus has sides of 13 cm and one diagonal of 24 cm. The diagonals of a rhombus cut each other in half at right angles. Find the length of the other diagonal.",
+     "a": "Since the diagonals cut each other in half at right angles, half of the known diagonal (12 cm), half of the other diagonal and a side (13 cm) form a right triangle. Half the other diagonal = the number whose square is 169 - 144 = 25, that is 5 cm, so the other diagonal is 10 cm.",
+     "s": [
+      [
+       "Right triangle with 12 and 13: half-diagonal 5 cm",
+       1
+      ],
+      [
+       "Other diagonal = 10 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Squares are drawn with their corners on the dots of a square grid whose dots are 1 unit apart; the grid goes on without end. (a) A square has one side going p dots across and q dots up. Explain why its area is p x p + q x q. (b) Find the areas of the squares with (p, q) = (1, 3) and (1, 4). (c) List every whole-number area from 1 to 20 that such a square can have. (d) Explain why an area of 12 square units is impossible. (e) Show two different grid squares of area 25.",
+     "a": "(a) The side is the hypotenuse of a right triangle with shorter sides p and q, so side x side = p x p + q x q, which is the area. (b) 1 + 9 = 10 and 1 + 16 = 17. (c) 1, 2, 4, 5, 8, 9, 10, 13, 16, 17, 18, 20. (d) 12 is not a sum of two squares of whole numbers: the squares below it are 0, 1, 4 and 9, and no two of them add to 12. (e) A straight 5 by 5 square, (p, q) = (5, 0), and a tilted square with (p, q) = (3, 4), since 9 + 16 = 25.",
+     "s": [
+      [
+       "(a) side is the hypotenuse of a p, q right triangle",
+       1
+      ],
+      [
+       "(b) 10 and 17",
+       1
+      ],
+      [
+       "(c) the twelve areas",
+       1
+      ],
+      [
+       "(d) 12 is not a sum of two squares",
+       1
+      ],
+      [
+       "(e) (5, 0) and (3, 4)",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A shopkeeper says: 'A 14.5 cm pencil cannot lie flat inside a pencil box whose inside base is 12 cm by 9 cm, because the pencil is longer than both sides of the base.' Check his claim.",
+     "a": "The claim is wrong. The pencil can lie along the diagonal of the base: d x d = 144 + 81 = 225, so the diagonal is 15 cm. Since 14.5 cm is less than 15 cm, the pencil fits flat, even though it is longer than both 12 cm and 9 cm.",
+     "s": [
+      [
+       "Thinks of the diagonal of the base",
+       1
+      ],
+      [
+       "Diagonal = 15 cm from 144 + 81 = 225",
+       1
+      ],
+      [
+       "Rejects the claim: 14.5 < 15, so it fits",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    }
+   ]
+  }
+ ]
+}

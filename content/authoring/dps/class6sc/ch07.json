@@ -1,0 +1,2648 @@
+{
+ "kind": "dps_pack",
+ "subject": {
+  "code": "SCI6",
+  "class": 6,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "Temperature and its Measurement"
+ },
+ "source_code": "fecu107",
+ "concepts": [
+  {
+   "code": "C6SC-7.1",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a school fair stall in Pune, three flasks of tea are kept. A thermometer shows flask 1 at 78 °C, flask 2 at 65 °C and flask 3 at 52 °C. Volunteers who touch the outside of the flasks call all three 'hot'. The stall rule is to serve tea only from 60 °C to 70 °C, both included. Each flask cools by about 2 °C every 5 minutes.\n(a) Which flask can be served right now?\n(b) What will each flask read after 20 minutes?\n(c) Why did the volunteers call all three 'hot' although the readings differ so much?\n(d) At the 20-minute mark, which flask should the stall serve, and for about how many more minutes can it keep serving that flask before it leaves the band? Use (b).",
+     "a": "(a) Flask 2 only (65 °C); flask 1 is above 70 °C and flask 3 is below 60 °C. (b) Each falls about 2 x 4 = 8 °C: flask 1 to 70 °C, flask 2 to 57 °C, flask 3 to 44 °C. (c) Touch can tell that something is hot but cannot give a reliable measure; it cannot show a 26 °C gap between flasks, while temperature can. (d) Serve flask 1, which is now at 70 °C, inside the band; flask 2 has dropped below 60 °C. Flask 1 must fall 10 °C more to reach 60 °C; at 2 °C every 5 minutes that takes about 25 more minutes.",
+     "s": [
+      [
+       "Flask 2 only, at 65 °C, with the other two outside the band",
+       1
+      ],
+      [
+       "Readings after 20 minutes: 70, 57 and 44 °C",
+       1
+      ],
+      [
+       "Touch cannot measure the difference; temperature is the reliable measure",
+       1
+      ],
+      [
+       "Serve flask 1; about 25 more minutes (10 °C at 2 °C per 5 minutes)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Tenzin fills three bowls: P with warm water, Q with tap water and R with ice-cold water. He keeps his right hand in P and his left hand in R for two minutes, then puts both hands into Q at the same time. What will he most likely feel?",
+     "a": "His right hand feels the water in Q as cool, while his left hand feels the same water as warm",
+     "o": [
+      "His right hand feels the water in Q as cool, while his left hand feels the same water as warm",
+      "His right hand feels the water in Q as warm, while his left hand feels the same water as cool",
+      "Both hands feel the water in Q as equally lukewarm, because it is ordinary tap water",
+      "Both hands feel the water in Q as cool, because tap water is colder than warm water"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False? 'If one bucket of water feels cold to my hand and another feels warm, the cold-feeling bucket must be at a lower temperature.' Give the verdict and the reason or the correction.",
+     "a": "False. What the hand feels depends on what it touched just before; the same water can feel cold after warm water and warm after ice-cold water. Only a thermometer reading can show which bucket is at the lower temperature.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: touch depends on what the hand touched before; the same water can feel cold or warm, so a thermometer is needed",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A school's water tank reads 18 °C at 6 am and 31 °C at 3 pm on Monday. On Tuesday it reads 21 °C at 6 am and 30 °C at 3 pm. On which day did the tank water warm up more between 6 am and 3 pm, and by how much more?",
+     "a": "Monday, by 4 °C more (13 °C against 9 °C)",
+     "o": [
+      "Monday, by 4 °C more (13 °C against 9 °C)",
+      "Tuesday, because its 6 am reading of 21 °C is the higher one",
+      "Monday, by 1 °C more, because 31 °C is 1 °C above 30 °C",
+      "Both days equally, because both end at about 30 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Statement 1: A body at 30 °C is hotter than a body at 25 °C.\nStatement 2: If two bodies feel equally warm to touch, they must be at the same temperature.\nStatement 3: The difference in temperature between two bodies tells us how hot one body is compared with the other.\nWhich statements are correct?",
+     "a": "Statements 1 and 3 only",
+     "o": [
+      "Statements 1 and 3 only",
+      "Statements 1 and 2 only",
+      "Statement 2 only",
+      "All three statements"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "After the three-bowl activity, Kabir says: 'The water in the middle bowl changed. It cooled down for my right hand and warmed up for my left hand.' Check his claim.",
+     "a": "No. The water in the middle bowl stayed at one temperature; a thermometer would show the same reading throughout. Only the feeling differed: his right hand came from warm water, so the middle water felt cool; his left hand came from ice-cold water, so it felt warm. The activity shows that touch cannot always judge hotness correctly.",
+     "s": [
+      [
+       "Verdict: the claim is wrong",
+       1
+      ],
+      [
+       "The water's temperature did not change; a thermometer would read the same",
+       1
+      ],
+      [
+       "The different feelings come from where each hand had been, showing touch is unreliable",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Dolly comes home after playing in the afternoon sun. Her grandmother touches Dolly's forehead and says she has a fever. Her brother measures her temperature with a clinical thermometer and finds it normal. Which judgement is best?",
+     "a": "Trust the thermometer, because touch alone cannot always judge hotness correctly",
+     "o": [
+      "Trust the thermometer, because touch alone cannot always judge hotness correctly",
+      "Trust the grandmother, because touching is direct while a thermometer only guesses",
+      "Trust neither, because a forehead warmed by the sun shows the body is hotter than any reading",
+      "Distrust the thermometer, because a feverish forehead always feels warm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In the three-bowl activity, bowl A is at 42 °C, bowl B at 26 °C and bowl C at 7 °C.\n(a) By how many degrees is A hotter than B, and by how many degrees is B hotter than C?\n(b) Using your answer to (a), explain why a hand taken from A feels B as cool while a hand taken from C feels B as warm.",
+     "a": "(a) A is 16 °C hotter than B; B is 19 °C hotter than C. (b) The hand from A comes from water 16 °C hotter than B, so B feels cool; the hand from C comes from water 19 °C colder, so B feels warm. B is at 26 °C for both hands; the feeling depends on where the hand was before.",
+     "s": [
+      [
+       "Differences 16 °C (A minus B) and 19 °C (B minus C)",
+       1
+      ],
+      [
+       "Feeling explained by where each hand came from, with B's temperature the same for both",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these situations does NOT show that our sense of touch can mislead us?",
+     "a": "Two bowls both read 30 °C on a thermometer, so a girl says they are equally hot",
+     "o": [
+      "Two bowls both read 30 °C on a thermometer, so a girl says they are equally hot",
+      "After holding an ice pack, a boy finds room-temperature water feels warm",
+      "After a long hot bath in winter, a girl finds the tap water feels very cold",
+      "After carrying a cold bottle, a boy says plain water in a cup feels warm"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Tea at 82 °C is 16 °C hotter than tea at 66 °C, even though both cups feel 'too hot to sip' to the same person.\nReason (R): The difference in temperature between two bodies tells us how hot one body is in comparison to the other.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Four students each kept a hand for two minutes in a different bowl and then touched the same bottle of water, which a thermometer showed to be at 25 °C. Their bowls and reports were: Arjun 50 °C, 'cool'; Bina 35 °C, 'cool'; Chetan 15 °C, 'warm'; Divya 5 °C, 'warm'.\n(i) For each student, was the earlier bowl hotter or colder than the bottle, and by how many degrees?\n(ii) What pattern links the bowl to the report?\n(iii) Did the bottle's temperature change from student to student? Give a reason.\n(iv) Two students called the same bottle 'cool' and two called it 'warm'. Is any of them lying? Explain.\n(v) What conclusion should the class write?",
+     "a": "(i) Arjun's bowl was 25 °C hotter, Bina's 10 °C hotter, Chetan's 10 °C colder, Divya's 20 °C colder. (ii) A hand from a hotter bowl called the bottle cool; a hand from a colder bowl called it warm. (iii) No; the thermometer showed 25 °C, one reading for everyone. (iv) No one is lying; each reported what the hand felt, and the feeling depends on where the hand had been. (v) We cannot always rely on touch to judge hotness; temperature read on a thermometer is the reliable measure.",
+     "s": [
+      [
+       "All four differences with hotter or colder: 25, 10, 10, 20 °C",
+       1
+      ],
+      [
+       "Pattern: hotter bowl gives 'cool', colder bowl gives 'warm'",
+       1
+      ],
+      [
+       "Bottle stayed at 25 °C, shown by the single thermometer reading",
+       1
+      ],
+      [
+       "Reports are honest feelings that depend on the earlier bowl",
+       1
+      ],
+      [
+       "Conclusion: touch is unreliable, temperature is reliable",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A boy's temperature reads 38.6 °C at 8 am and 38.2 °C at noon. His mother touches his forehead at noon and says, 'He feels just as hot as this morning, so the fever has not changed.'\n(a) Has his temperature changed? State what the two readings show.\n(b) Why could her hand not tell her this?",
+     "a": "(a) Yes. It fell by 0.4 °C, from 38.6 °C to 38.2 °C, though he still has a fever. (b) Touch cannot give a reliable measure of hotness; a change of less than half a degree is far too small for a hand to judge, while a thermometer shows it as a number.",
+     "s": [
+      [
+       "Temperature fell by 0.4 °C (still above normal)",
+       1
+      ],
+      [
+       "Touch is not a reliable measure and cannot detect so small a change; the thermometer can",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a sweet shop, a thermometer gives these readings: freezer air -18 °C, ice cream in a display box -12 °C, a glass of iced water 0 °C and tap water 27 °C. Which order runs from the COLDEST to the HOTTEST?",
+     "a": "Freezer air, ice cream, iced water, tap water",
+     "o": [
+      "Freezer air, ice cream, iced water, tap water",
+      "Ice cream, freezer air, iced water, tap water",
+      "Iced water, ice cream, freezer air, tap water",
+      "Tap water, iced water, ice cream, freezer air"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "On a summer afternoon Neha touches tap water and then water from a matka, and correctly says the matka water is cooler.\n(a) Why could touch give her the right answer this time?\n(b) Describe one change to what her hand did just before, which could make the same matka water feel warm to her.",
+     "a": "(a) Both samples were touched by a hand in the same condition, and the difference between them was large enough to notice, so touch happened to give the right order. (b) If she had first kept that hand in ice-cold water for a minute or two, the matka water could feel warm, because what the hand feels depends on what it touched just before.",
+     "s": [
+      [
+       "Touch can work when the hand starts in the same condition and the difference is large",
+       1
+      ],
+      [
+       "A hand taken from ice-cold water first would feel the matka water as warm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A bowl of dal is served for lunch and a thermometer in it reads 72 °C at 1:00, 61 °C at 1:10, 53 °C at 1:20 and 47 °C at 1:30.\n(i) In which ten minutes did the dal cool the most, and by how many degrees?\n(ii) By how many degrees did it cool in all from 1:00 to 1:30?\n(iii) A cup of water beside it reads 50 °C at 1:30. Which is hotter at 1:30, the dal or the water, and by how much?",
+     "a": "(i) 1:00 to 1:10: it fell 72 - 61 = 11 °C (then 8 °C and 6 °C in the next two ten-minute periods). (ii) 72 - 47 = 25 °C. (iii) The water: 50 - 47 = 3 °C hotter. A higher temperature means a hotter body, and the difference tells how much hotter.",
+     "s": [
+      [
+       "1:00 to 1:10, a fall of 11 °C (against 8 °C and 6 °C)",
+       1
+      ],
+      [
+       "Total fall 25 °C",
+       1
+      ],
+      [
+       "The water is hotter, by 3 °C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Glass A of milk reads 64 °C and glass B reads 41 °C; both feel 'too hot to hold' to Kiran. Ten minutes later A has fallen by 15 °C and B by 6 °C. Which statement is correct now?",
+     "a": "A is still hotter than B, now by 14 °C",
+     "o": [
+      "A is still hotter than B, now by 14 °C",
+      "B is now hotter than A, because B lost fewer degrees",
+      "A is still hotter than B, by 23 °C as at the start",
+      "A and B are now equally hot, because both have lost heat"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Asha's mother is filling a bucket for her baby brother's bath. She has just washed dishes in water at 48 °C. Testing the bath water with the same hand, she finds it 'only a little warm'. A bath thermometer in the bucket reads 41 °C. The family doctor has told them to keep bath water between 36 °C and 38 °C.\n(a) Why did the 41 °C water feel only a little warm to her?\n(b) By how many degrees is the bath water above the doctor's upper limit?\n(c) Which was more reliable here, her hand or the thermometer? Give a reason.\n(d) Asha says, 'Testing with the hand is fine if the hand has not just been in other water.' Her mother says, 'Use the thermometer every time.' Whose rule would you adopt? Justify using (a) to (c).",
+     "a": "(a) Her hand came from water at 48 °C, 7 °C hotter, so the bath water felt less warm than it was. (b) 41 - 38 = 3 °C. (c) The thermometer; touch cannot always judge hotness correctly, as (a) shows. (d) The mother's rule: Asha is partly right that a rested hand avoids this particular error, but the safe band is only 2 °C wide (36-38 °C) and touch gives no number, so only the thermometer can show the water is inside it.",
+     "s": [
+      [
+       "Hand came from 48 °C water, 7 °C hotter, so the bath felt only a little warm",
+       1
+      ],
+      [
+       "3 °C above the upper limit of 38 °C",
+       1
+      ],
+      [
+       "Thermometer more reliable, because touch can mislead",
+       1
+      ],
+      [
+       "Justified choice weighing Asha's point against the narrow 2 °C band that touch cannot judge",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Phiban walks home in the cold Shillong rain, gripping an icy metal umbrella handle. At home she touches her brother Lambok's forehead and he feels hot to her, but the thermometer shows his temperature is normal.\n(a) Using the three-bowl activity, explain why her hand may have misled her.\n(b) Why was taking out the thermometer still the right step, even though it found nothing wrong?",
+     "a": "(a) Her hand had just been very cold, like the hand taken from ice-cold water in the activity, so a body at normal temperature felt warm to it. (b) Touch cannot always judge hotness correctly, so her feeling needed a check; the thermometer gives a reliable measure, and a normal reading is itself useful information.",
+     "s": [
+      [
+       "Cold hand makes a normal forehead feel hot, as with the hand from ice-cold water",
+       1
+      ],
+      [
+       "Thermometer gives the reliable reading that checks the unreliable feeling",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "tags": [
+      "reverse"
+     ],
+     "q": "Work backwards. A bowl of water reads 30 °C. You want a friend's RIGHT hand to feel this water as cool and her LEFT hand to feel the same water as warm.\n(i) Suggest a temperature for the water each hand should be kept in first, and say why.\n(ii) What will a thermometer show for the 30 °C bowl when each hand is in it?\n(iii) Could a right hand taken from water at 20 °C feel the 30 °C bowl as cool? Give a reason.",
+     "a": "(i) Any suitable pair: the right hand first in water clearly hotter than 30 °C (for example 45 °C) and the left hand first in water clearly colder than 30 °C (for example 10 °C), because a hand coming from hotter water feels the bowl as cool and a hand coming from colder water feels it as warm. (ii) The same reading, 30 °C, for both; the water's temperature does not depend on whose hand is in it. (iii) No. Coming from colder water, the hand would feel the 30 °C water as warm, not cool.",
+     "s": [
+      [
+       "Right-hand bowl above 30 °C and left-hand bowl below 30 °C, with the reason",
+       1
+      ],
+      [
+       "Thermometer reads 30 °C either way",
+       1
+      ],
+      [
+       "A hand from 20 °C water feels it warm, so 'cool' is not possible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Your class must show Class 5 students that touch can mislead but a thermometer does not. The school has no ice. You have three bowls, warm water from a kettle, tap water, cooler water from a matka (a thermometer shows it is 8 °C below the tap water) and one laboratory thermometer. One Class 5 child is sure that 'my left hand is just colder than my right hand'. Write:\n(i) which water goes into which bowl, and why;\n(ii) what the students will do with their hands;\n(iii) your prediction;\n(iv) one extra step that rules out the 'left hand is colder' idea;\n(v) how the thermometer is used and the conclusion the students should reach.",
+     "a": "(i) Warm kettle water in one outer bowl, matka water in the other outer bowl and tap water in the middle bowl: the middle bowl must be between the other two, hotter than the matka water and colder than the warm water. (ii) Keep the right hand in the warm water and the left hand in the matka water for 1-2 minutes, then put both hands into the tap water together. (iii) The right hand will feel the tap water as cool and the left hand will feel it as warm. (iv) Repeat with the hands swapped: the left hand will now feel the tap water as cool, so the feeling follows the earlier bowl, not the hand. (v) Read the thermometer in the tap water: one reading, the same whichever hand is in it. Conclusion: we cannot always rely on touch to judge hotness; temperature measured with a thermometer is reliable.",
+     "s": [
+      [
+       "Tap water in the middle bowl, between the warm and the matka water, with the reason",
+       1
+      ],
+      [
+       "Method: hands in the outer bowls 1-2 minutes, then both into the middle bowl",
+       1
+      ],
+      [
+       "Prediction: cool to the hand from warm water, warm to the hand from matka water",
+       1
+      ],
+      [
+       "Swap the hands to show the earlier bowl, not the hand, decides the feeling",
+       1
+      ],
+      [
+       "One thermometer reading for the middle bowl; touch unreliable, temperature reliable",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6SC-7.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False? 'In a healthy family measured at the same time with the same thermometer, the grandmother reads 36.6 °C and her five-year-old grandson reads 37.3 °C. At least one of them must be unwell.' Give the verdict and the reason or the correction.",
+     "a": "False. 37.0 °C is only the average body temperature of many healthy people, and body temperature is influenced by factors such as age, time of day and activity level. Both readings are close to 37.0 °C, so both can be normal for healthy people.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: 37.0 °C is an average and age is one factor that changes body temperature, so both can be normal",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Farhan, who feels perfectly well, washes his hands and the thermometer tip, presses reset, places the digital thermometer under his tongue and closes his mouth. Ten seconds later, while the display is still changing, he takes it out, reads 34.1 °C, and then washes and dries the tip. Which step explains why his record cannot be his body temperature?",
+     "a": "Taking it out before it beeped or flashed, while still changing",
+     "o": [
+      "Taking it out before it beeped or flashed, while still changing",
+      "Pressing reset first, which wipes out the temperature it should measure",
+      "Closing his mouth, which stops the tip from sensing the body",
+      "Washing the tip before use, which leaves it cooled by the water"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rohan uses a digital clinical thermometer like this: (1) he reads the instruction manual first; (2) he cleans the thermometer by dipping the whole thing, display and all, into soapy water; (3) he hands it to his sister holding it by the tip.\n(a) Which of his three actions follow the precautions and which break them?\n(b) Rewrite each action that breaks a precaution so that it follows it.",
+     "a": "(a) Action 1 follows a precaution (use it after reading the instruction manual). Action 2 breaks one: while washing, the digital portion such as the display must be kept out of water. Action 3 breaks one: the thermometer must not be held by the tip. (b) Wash only the tip with soap and water, keeping the display out of the water, and dry it; pass it on holding the body, not the tip.",
+     "s": [
+      [
+       "Action 1 correct; actions 2 and 3 break the display-dry and not-by-the-tip precautions",
+       1
+      ],
+      [
+       "Rewritten: wash only the tip with the display kept dry, and hold it by the body",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school health room follows one rule: a child whose ACTUAL body temperature is 38.0 °C or more is sent home. Four children are checked. Anu, armpit, 37.6 °C. Babu, armpit, 36.9 °C. Chiru, under the tongue, 38.3 °C. Deepa, armpit, 37.0 °C. The nurse knows the rule about armpit readings.\n(a) Should Anu be sent home? Show the range of her actual temperature.\n(b) Should Babu be sent home? Show the range.\n(c) Why is Deepa's case harder to decide than Babu's?\n(d) The nurse has time for one more check. Whom should she re-check, and how? Justify.",
+     "a": "(a) Yes: actual 38.1 °C to 38.6 °C, at or above 38.0 °C either way. (b) No: actual 37.4 °C to 37.9 °C, below 38.0 °C either way. (c) Deepa's actual temperature is 37.5 °C to 38.0 °C, so it may just reach the 38.0 °C limit; the armpit rule alone cannot settle it. (d) Re-check Deepa under the tongue, which reads the body temperature directly instead of the lower armpit value; Anu, Babu and Chiru are already decided.",
+     "s": [
+      [
+       "Anu: 38.1-38.6 °C, sent home",
+       1
+      ],
+      [
+       "Babu: 37.4-37.9 °C, stays",
+       1
+      ],
+      [
+       "Deepa: 37.5-38.0 °C straddles the limit",
+       1
+      ],
+      [
+       "Re-check Deepa under the tongue, with reason",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A clinical thermometer is used correctly on four different people. Which reading lies outside the band in which human body temperature normally stays?",
+     "a": "43.5 °C",
+     "o": [
+      "43.5 °C",
+      "35.4 °C",
+      "39.8 °C",
+      "41.6 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For a healthy grandmother, an armpit reading of 36.3 °C is consistent with a normal body temperature of about 37.0 °C.\nReason (R): A temperature taken in the armpit is about 0.5 °C to 1 °C higher than the actual body temperature.",
+     "a": "A is true, but R is false",
+     "o": [
+      "A is true, but R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Mohan's digital thermometer reads 36.2 °C under his tongue. He says: 'Thermometers always read lower than the real body temperature, so I must add 0.5 °C to 1 °C. My real temperature is 36.7 °C to 37.2 °C.' Check his claim.",
+     "a": "No, his claim is wrong. The 0.5 °C to 1 °C correction is real only for a reading taken in the armpit, which is lower than the actual body temperature; thermometers do not 'always' read low. His reading was taken under the tongue, the usual way of measuring body temperature, so nothing is added: his temperature is 36.2 °C. That is above 35 °C and slightly below the 37.0 °C average, which can still be normal for a healthy person.",
+     "s": [
+      [
+       "Verdict: the claim is wrong",
+       1
+      ],
+      [
+       "The 0.5 °C to 1 °C correction applies only to armpit readings, not to every reading",
+       1
+      ],
+      [
+       "An under-the-tongue reading is used as it is, 36.2 °C, which can be normal",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For five days Sana measures her own temperature under the tongue at 7 am and at 5 pm. Mornings: 36.5, 36.6, 36.4, 36.6, 36.5 °C. Evenings: 37.0, 37.1, 36.9, 37.1, 37.0 °C. She felt well all week.\n(a) Compare each evening reading with the same day's morning reading. What pattern do you find?\n(b) Which factor that influences body temperature does this pattern point to, and does it mean Sana was ill in the mornings?",
+     "a": "(a) Each evening reading is 0.5 °C higher than that day's morning reading, every day. (b) Time of day. No: a healthy person's normal temperature can be slightly different from 37.0 °C and can change with the time of day, so the lower morning readings are normal for her.",
+     "s": [
+      [
+       "Evening is 0.5 °C higher than morning on all five days",
+       1
+      ],
+      [
+       "Factor: time of day; the morning readings are still normal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "During a disease outbreak, railway staff must check the body temperature of hundreds of travellers at a station gate. Which choice suits the job best, and why?",
+     "a": "Non-contact (infrared) thermometers, since they measure without touching anyone",
+     "o": [
+      "Non-contact (infrared) thermometers, since they measure without touching anyone",
+      "Laboratory thermometers, since they have a much wider range than clinical ones",
+      "Digital clinical thermometers placed under each traveller's tongue in turn",
+      "Mercury clinical thermometers, since they need no batteries to keep working"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In a class activity, ten healthy students measured their temperatures under the tongue: 36.8, 37.1, 36.9, 37.3, 36.6, 37.0, 37.2, 36.7, 37.4 and 37.0 (all in °C).\n(i) What are the highest and the lowest readings, and the difference between them?\n(ii) How many students read exactly 37.0 °C?\n(iii) Find the average of the ten readings.\n(iv) Do these results support the idea that normal temperature is the average of many healthy people? Explain.\n(v) Give two factors that could explain why the readings differ.",
+     "a": "(i) Highest 37.4 °C, lowest 36.6 °C, difference 0.8 °C. (ii) Two. (iii) Sum 370.0 °C, average 37.0 °C. (iv) Yes: only two of ten read exactly 37.0 °C, yet the average is 37.0 °C, which is what that idea predicts. (v) Any two of age, time of day and activity level.",
+     "s": [
+      [
+       "Highest 37.4, lowest 36.6, difference 0.8 °C",
+       1
+      ],
+      [
+       "Two students at exactly 37.0 °C",
+       1
+      ],
+      [
+       "Average 370.0 / 10 = 37.0 °C",
+       1
+      ],
+      [
+       "Supports 'normal is an average', with the evidence",
+       1
+      ],
+      [
+       "Two factors from age, time of day, activity level",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each item in Column I with what it tells you in Column II.\nColumn I\n1. 36.4 °C under the tongue of a healthy girl\n2. 98.6 °F\n3. Crushed ice that is melting\n4. 43 °C\nColumn II\na. Above the band in which human body temperature normally stays\nb. Slightly below the 37.0 °C average, and can still be normal\nc. Cannot be measured with a clinical thermometer\nd. The same temperature as 37.0 °C, on another scale",
+     "a": "1-b, 2-d, 3-c, 4-a",
+     "o": [
+      "1-b, 2-d, 3-c, 4-a",
+      "1-d, 2-b, 3-c, 4-a",
+      "1-b, 2-d, 3-a, 4-c",
+      "1-c, 2-d, 3-b, 4-a"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A healthy, active boy's temperature is measured under his tongue and the display shows 30.5 °C. Show that this cannot be a correct reading of his body temperature, and suggest one mistake that could explain it.",
+     "a": "Human body temperature does not normally go below 35 °C, and a healthy person is close to 37.0 °C, so 30.5 °C is more than 4 °C below even the lowest normal value; it cannot be his body temperature. A likely mistake: the thermometer was taken out before it beeped or flashed (or was not reset or not kept under a closed mouth).",
+     "s": [
+      [
+       "Body temperature normally stays at or above 35 °C",
+       1
+      ],
+      [
+       "30.5 °C is below that limit, so the reading is impossible for him",
+       1
+      ],
+      [
+       "A plausible handling mistake, such as reading before the beep",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A grandmother's temperature is taken in the armpit with a digital thermometer and reads 34.6 °C. Her grandson says, 'That is below 35 °C, so the reading is impossible.'\n(a) Work out the range of her actual body temperature and say whether he is right.\n(b) Before anyone decides whether she is well, what should be done about this reading, and why?",
+     "a": "(a) An armpit reading is about 0.5 °C to 1 °C lower than the actual body temperature, so her actual temperature is about 35.1 °C to 35.6 °C. That is not below 35 °C, so the reading is not impossible; he forgot the armpit correction. (b) Take the temperature again carefully, under the tongue or in the armpit while waiting for the beep, because a single armpit reading that low may come from a wrong method and only gives a range, not her actual temperature.",
+     "s": [
+      [
+       "Actual 35.1-35.6 °C, not below 35 °C, so not impossible",
+       1
+      ],
+      [
+       "Re-measure carefully (under the tongue or wait for the beep), because one armpit reading gives only a range",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sita has only a digital clinical thermometer at home. Which of these tasks can she do with it correctly?",
+     "a": "Measure her mother's temperature under the tongue after washing and resetting it",
+     "o": [
+      "Measure her mother's temperature under the tongue after washing and resetting it",
+      "Find the temperature of crushed ice melting in a glass for a project",
+      "Check the temperature of water boiling in a kettle for tea",
+      "Measure her father's temperature while holding the thermometer by its tip"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Find the errors. At a school camp in Ooty, a volunteer checks children with one digital clinical thermometer. Her notes say: 'Kavya: under the tongue, took it out after 10 seconds, no beep yet: 33.8 °C. Between children I wiped the tip on my shirt. At the end I dropped the whole thermometer into a bucket of soapy water to clean it.' Each reading takes about 20 seconds to beep, and washing and drying the tip takes about 15 seconds. Thirty children are still to be checked, and the bus leaves in 15 minutes.\n(a) Show that Kavya's recorded value cannot be her body temperature, and name the mistake that explains it.\n(b) Name the two cleaning precautions the volunteer broke.\n(c) How long would the 30 checks take with and without washing the tip each time?\n(d) Should she skip washing the tip to finish before the bus leaves? Use (b) and (c) to justify your decision.",
+     "a": "(a) Human body temperature does not normally go below 35 °C, and 33.8 °C is below that; she took the thermometer out before the beep, so the reading had not settled. (b) The tip should be washed with soap and water before and after use (not wiped on a shirt), and the display must be kept out of water while washing (not dropped into a bucket). (c) Without washing: 30 x 20 = 600 s = 10 minutes. With washing: 30 x 35 = 1050 s = 17.5 minutes, 2.5 minutes more than she has. (d) No: washing the tip is a precaution because the same tip goes into thirty mouths. Since the full job needs 17.5 minutes, she should keep washing and either ask for a second volunteer and thermometer or finish the last few children after the trip starts, rather than share an unwashed tip.",
+     "s": [
+      [
+       "33.8 °C is below 35 °C; taken out before the beep",
+       1
+      ],
+      [
+       "Precautions broken: tip not washed with soap and water; display put in water",
+       1
+      ],
+      [
+       "10 minutes without washing, 17.5 minutes with washing",
+       1
+      ],
+      [
+       "Keeps washing, with a practical way to cover the 2.5-minute shortfall",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Statement 1: Digital clinical thermometers run on batteries.\nStatement 2: A non-contact thermometer gives a reading only when it is pressed against the person's skin.\nStatement 3: A clinical thermometer can measure the temperature of boiling water if it is left in the water long enough.\nWhich statements are correct?",
+     "a": "Statement 1 only",
+     "o": [
+      "Statement 1 only",
+      "Statements 1 and 2 only",
+      "Statements 2 and 3 only",
+      "All three statements"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Nine-year-old Rahul is ill. His mother records his temperature under the tongue at 8 am and 8 pm for four days. The doctor says that readings within 0.5 °C of 37.0 °C count as normal.\nDay 1: 8 am 38.4 °C, 8 pm 38.8 °C\nDay 2: 8 am 37.9 °C, 8 pm 38.2 °C\nDay 3: 8 am 37.2 °C, 8 pm 37.6 °C\nDay 4: 8 am 36.8 °C, 8 pm 37.1 °C\n(i) By how much did the highest reading exceed the top of the doctor's normal band?\n(ii) His mother says the fever was over on the morning of Day 3. Is the 8 am reading of Day 3 normal, and is her conclusion safe?\n(iii) On which day can you say Rahul's temperature had returned to normal? Give a reason.",
+     "a": "(i) The top of the normal band is 37.0 + 0.5 = 37.5 °C; the highest reading is 38.8 °C (Day 1, 8 pm), so it exceeded the band by 1.3 °C. (ii) 37.2 °C is within 0.5 °C of 37.0 °C, so that reading is normal, but the 8 pm reading on the same day was 37.6 °C, above the band; one normal morning reading does not show the fever is over, so the conclusion is not safe. (iii) Day 4: both readings (36.8 and 37.1 °C) lie within 36.5 °C to 37.5 °C.",
+     "s": [
+      [
+       "Band top 37.5 °C; 38.8 - 37.5 = 1.3 °C",
+       1
+      ],
+      [
+       "37.2 °C is normal but the 37.6 °C evening reading is above the band, so not safe",
+       1
+      ],
+      [
+       "Day 4, both readings within 36.5-37.5 °C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Grandfather wants to keep using his old mercury clinical thermometer instead of the family's new digital one, because 'mine never needs a battery'. His eyesight is weak.\n(a) What is correct in what he says about the digital thermometer?\n(b) Mercury thermometers are being replaced by digital ones. Give one way the digital thermometer suits him better, and judge whether 'no battery' outweighs it.",
+     "a": "(a) Digital clinical thermometers do run on batteries, so he is right that his old one needs none. (b) The digital thermometer shows the temperature as numbers on a display, which are easier to read, and it beeps or flashes when the reading is ready, so with weak eyes he does not have to judge a thin column. Changing a battery now and then is a small cost next to reading his temperature correctly, so 'no battery' does not outweigh it; he should use the digital one.",
+     "s": [
+      [
+       "Digital clinical thermometers run on batteries",
+       1
+      ],
+      [
+       "A digital advantage for him (easy-to-read numbers, beep when ready) judged to outweigh the battery",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sunil, a healthy student, runs two rounds of the school ground and at once measures his temperature under the tongue: 37.3 °C. Thirty minutes later, sitting in class, he reads 36.8 °C with the same thermometer used the same way. What is the best interpretation?",
+     "a": "Both can be normal; activity level influences body temperature",
+     "o": [
+      "Both can be normal; activity level influences body temperature",
+      "He had a fever after running, which went away within thirty minutes",
+      "The thermometer is faulty, because one person must give the same reading twice",
+      "Only 36.8 °C is correct, because any reading above 37.0 °C is a fever"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Work backwards. The best answer to a question is: 'Use a non-contact (infrared) thermometer.'\n(a) Write a situation (who is checked, where, and how many people) for which this is the best answer.\n(b) Give the reason that makes the non-contact thermometer the better choice in your situation.\n(c) Change one detail of your situation so that a digital clinical thermometer becomes a sensible choice, and say why.",
+     "a": "(a) Any suitable situation, for example: guards checking about 500 visitors entering a hospital during an outbreak of a disease. (b) A non-contact thermometer measures temperature without touching anyone, so it reduces the risk of spreading disease when many people are checked one after another. (c) For example: only one sick child is to be checked at home; the digital clinical thermometer, used under the tongue and washed before and after use, gives her temperature, and there is no crowd for disease to spread through.",
+     "s": [
+      [
+       "A situation with many people checked, for example at an entrance during an outbreak",
+       1
+      ],
+      [
+       "Reason: measures without touching, so less risk of spreading disease",
+       1
+      ],
+      [
+       "Changed detail (one person at home) that makes the digital thermometer sensible, with reason",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A family has one digital clinical thermometer. Decide, with a reason each time:\n(i) how to measure a healthy adult's temperature at home;\n(ii) what to do before passing it to the next family member;\n(iii) what to check first if the display stays blank when it is switched on;\n(iv) whether a reading of 37.3 °C under the tongue of a healthy-feeling teenager must mean a fever;\n(v) whether it can be used to check that the water in the kettle has boiled.",
+     "a": "(i) Wash hands and the tip with soap and water, reset, place it under the tongue with the mouth closed, wait for the beep or flash, then read the display. (ii) Clean the tip with soap and water, keeping the display out of the water, and dry it. (iii) The batteries, because digital clinical thermometers run on batteries. (iv) No; 37.0 °C is only the average of many healthy people, and a healthy person may read slightly above it. (v) No; the temperature of boiling water is outside the range of a clinical thermometer.",
+     "s": [
+      [
+       "Correct measuring steps, waiting for the beep",
+       1
+      ],
+      [
+       "Wash and dry the tip, display kept out of water",
+       1
+      ],
+      [
+       "Check the batteries, since it is battery-run",
+       1
+      ],
+      [
+       "37.3 °C can be normal: 37.0 °C is an average",
+       1
+      ],
+      [
+       "Boiling water is outside the clinical range",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6SC-7.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Find the errors. For a science fair in Bhopal, a Class 6 team makes a poster titled 'How cold can it get?'. Its table reads:\nIce cream in a freezer box: -12 °C\nRoom: 25 K\nAbsolute zero, the lowest possible temperature: 0 °C\nThe team checked the ice cream and the room with a laboratory thermometer marked in degrees Celsius.\n(a) Correct the absolute zero line, giving the value in both kelvin and degrees Celsius.\n(b) What did the team mean by 'Room: 25 K', and what is the correct value in kelvin?\n(c) A visitor finds the gap between the room and the ice cream in kelvin. What does she get, and how does it compare with the gap in degrees Celsius?\n(d) The team can fix only one error before judging starts. Which error would mislead visitors more? Justify.",
+     "a": "(a) Absolute zero is 0 K, which is close to -273.15 °C. (b) They read 25 °C on the thermometer but wrote the wrong unit; 25 °C = 25 + 273.15 = 298.15 K. (c) Ice cream: -12 + 273.15 = 261.15 K; 298.15 - 261.15 = 37 K, the same as 25 - (-12) = 37 °C, because the same 273.15 is added to both. (d) Fix the absolute zero line. It is wrong by about 273 degrees and teaches the opposite of the poster's point, that melting ice is the coldest anything can be, while the ice cream line on the same poster (-12 °C) already sits below it. '25 K' is also wrong, but 25 K would be about -248 °C, colder than the ice cream, so a visitor who compares it with the ice cream line can see it is a slip.",
+     "s": [
+      [
+       "Absolute zero: 0 K, close to -273.15 °C",
+       1
+      ],
+      [
+       "Meant 25 °C; correct value 298.15 K",
+       1
+      ],
+      [
+       "Gap 37 K, equal to the 37 °C gap",
+       1
+      ],
+      [
+       "Fix the absolute zero line: off by about 273 degrees and contradicted by the -12 °C line; '25 K' is a slip a visitor can spot",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A beaker of water in the school laboratory is at 25 °C. It is warmed by 18 °C. A student has to record the new temperature on the Kelvin scale. What should she write?",
+     "a": "316.15 K",
+     "o": [
+      "316.15 K",
+      "291.15 K",
+      "298.15 K",
+      "43 K"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rekha measures her own temperature with a digital thermometer. The display shows 98.6 with no unit.\n(a) On which scale is it reading, and what is that temperature on the Celsius scale?\n(b) If the display had meant 98.6 on the Celsius scale, what would you conclude about the reading? Give a reason.",
+     "a": "(a) The Fahrenheit scale; 98.6 °F is the same as 37.0 °C, normal body temperature. (b) The reading would be impossible for a living person, because human body temperature does not normally go above 42 °C.",
+     "s": [
+      [
+       "Fahrenheit, equal to 37.0 °C",
+       1
+      ],
+      [
+       "98.6 °C would be impossible: body temperature normally stays at or below 42 °C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Statement 1: The unit kelvin is written with a capital letter at the start, as 'Kelvin', like the unit 'Celsius'.\nStatement 2: A degree sign is not written with K.\nStatement 3: A space is left between the number and the unit, as in 40 °C.\nWhich statements are correct?",
+     "a": "Statements 2 and 3 only",
+     "o": [
+      "Statements 2 and 3 only",
+      "Statements 1 and 2 only",
+      "Statement 3 only",
+      "All three statements"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Meena says: 'Kelvin is just Celsius plus 273.15, so if one beaker of water is twice as many degrees Celsius as another, it is also twice as many kelvin. Water at 40 °C has twice the kelvin temperature of water at 20 °C.' Check her claim.",
+     "a": "No. 40 °C = 40 + 273.15 = 313.15 K and 20 °C = 20 + 273.15 = 293.15 K. Twice 293.15 is 586.3, not 313.15. Adding the same 273.15 to both numbers keeps the gap the same (20 °C and 20 K) but does not keep 'twice as much'.",
+     "s": [
+      [
+       "Verdict: the claim is wrong",
+       1
+      ],
+      [
+       "Conversions: 313.15 K and 293.15 K",
+       1
+      ],
+      [
+       "313.15 K is not twice 293.15 K (586.3 K); adding 273.15 keeps the gap, not the ratio",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Isha's cousin in another country messages: 'My son's temperature is 102 this morning.' She does not name the scale. Which scale does she most likely mean, and why?",
+     "a": "Fahrenheit, because 102 is a little above the normal 98.6 °F",
+     "o": [
+      "Fahrenheit, because 102 is a little above the normal 98.6 °F",
+      "Celsius, because clinical thermometers generally use that scale",
+      "Kelvin, because the kelvin is the SI unit of temperature",
+      "Celsius, because 102 °C is only slightly above normal"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two groups heat the same kind of water in a school laboratory. Group A records in kelvin: 293.15 K at the start, 318.15 K after 5 minutes and 343.15 K after 10 minutes. Group B records in degrees Celsius: 20 °C, 45 °C and 70 °C at the same times.\n(i) Convert Group A's three readings to degrees Celsius.\n(ii) Did the two groups record the same temperatures? Explain.\n(iii) Find the rise in each 5 minutes, in degrees Celsius and in kelvin.\n(iv) If the water keeps rising at the same rate, what would each group write after 15 minutes?\n(v) Group B's leader wants the final report in degrees Fahrenheit 'because everyone knows 98.6'. Advise her, with two reasons from what you know about the scales.",
+     "a": "(i) 293.15 - 273.15 = 20 °C, 318.15 - 273.15 = 45 °C, 343.15 - 273.15 = 70 °C. (ii) Yes; the readings are the same temperatures written on two scales. (iii) 25 °C every 5 minutes, which is also 25 K. (iv) Group B: 70 + 25 = 95 °C; Group A: 343.15 + 25 = 368.15 K (= 95 + 273.15). (v) Advise against it: the Fahrenheit scale is not used in most scientific studies anymore, and the only Fahrenheit value they know is that 37.0 °C equals 98.6 °F, so they have no way to write 20, 45, 70 or 95 °C in °F. Kelvin, the SI unit, or Celsius suits the report.",
+     "s": [
+      [
+       "Converts to 20, 45, 70 °C",
+       1
+      ],
+      [
+       "Same temperatures on two scales",
+       1
+      ],
+      [
+       "Rise 25 °C = 25 K every 5 minutes",
+       1
+      ],
+      [
+       "After 15 minutes: 95 °C and 368.15 K",
+       1
+      ],
+      [
+       "Fahrenheit not used in most scientific work, and only the 37.0 °C = 98.6 °F pair is known",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A sample of liquid nitrogen in a research laboratory is at 77.15 K. It warms by 100 K. Its temperature is now ___ °C.",
+     "a": "-96"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False? 'When a beaker of water warms up by 15 °C, its temperature has also gone up by 15 K.' Give the verdict and the reason or the correction.",
+     "a": "True. The kelvin value is the Celsius value plus 273.15. For example 20 °C = 293.15 K and 35 °C = 308.15 K: the Celsius rise is 15 °C and the kelvin rise is 308.15 - 293.15 = 15 K, because the same 273.15 is added to both readings.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: the same 273.15 is added to both readings, so a rise of 15 °C is a rise of 15 K (with an example)",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For a science exhibition in Lucknow, a Class 6 team displays four samples with their thermometer readings: chilled water 4 °C, room air 27 °C, hot water 85 °C and freezer air -18 °C. Each label must also show the temperature on the Kelvin scale.\n(a) What should the label for the room air say in kelvin?\n(b) What should the label for the freezer air say in kelvin?\n(c) How many kelvin hotter is the hot water than the freezer air?\n(d) The team wants one label to show how far the hot water is above absolute zero, the lowest possible temperature. Is the kelvin value or the Celsius value the better number to print for this? Justify.",
+     "a": "(a) 27 + 273.15 = 300.15 K. (b) -18 + 273.15 = 255.15 K. (c) Hot water 85 + 273.15 = 358.15 K; 358.15 - 255.15 = 103 K (the same as 85 - (-18) = 103 °C). (d) The kelvin value: 0 K is absolute zero, so 358.15 K is directly how many kelvin the hot water is above absolute zero. The Celsius value, 85 °C, is measured from 0 °C (melting ice), so a visitor would have to add 273.15 to get the same answer.",
+     "s": [
+      [
+       "Room air 300.15 K",
+       1
+      ],
+      [
+       "Freezer air 255.15 K",
+       1
+      ],
+      [
+       "Difference 103 K",
+       1
+      ],
+      [
+       "Kelvin, because the Kelvin scale starts at absolute zero (0 K) while Celsius starts at 0 °C",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A beaker reading 25 °C and a beaker reading 298.15 K are equally hot.\nReason (R): The SI unit of temperature is the kelvin.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Arjun says: 'Our laboratory thermometer reads from -10 °C to 110 °C, so its range spans 120 °C. If its scale were relabelled in kelvin, the range would still span 120 K.' Check his claim by converting both ends.",
+     "a": "Yes, he is right. -10 °C = -10 + 273.15 = 263.15 K and 110 °C = 110 + 273.15 = 383.15 K. Span in Celsius: 110 - (-10) = 120 °C; span in kelvin: 383.15 - 263.15 = 120 K. The spans are equal because the same 273.15 is added to both ends.",
+     "s": [
+      [
+       "Verdict: correct",
+       1
+      ],
+      [
+       "Both ends converted: 263.15 K and 383.15 K",
+       1
+      ],
+      [
+       "Spans 120 °C and 120 K, equal because the same 273.15 is added to both ends",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A gas in a laboratory flask is at 310.15 K. It is then cooled by 45 K. Ananya needs the new temperature in degrees Celsius. What is it?",
+     "a": "-8 °C",
+     "o": [
+      "-8 °C",
+      "82 °C",
+      "8 °C",
+      "265.15 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A line in a lab notebook reads: 'The water was at 50°c, the room at 298.15 K and the ice bath at 273.15 °K.'\n(a) Which of the three temperatures is already written correctly?\n(b) Correct the other two, naming the rule each one breaks.",
+     "a": "(a) '298.15 K' is correct: a space before the unit and no degree sign with K. (b) '50°c' should be '50 °C': a space must be left between the number and the unit, and the symbol is a capital C. '273.15 °K' should be '273.15 K': the degree sign is not written with K.",
+     "s": [
+      [
+       "298.15 K picked out as correct",
+       1
+      ],
+      [
+       "50 °C (space, capital C) and 273.15 K (no degree sign with K)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each Kelvin temperature in Column I with the same temperature in Column II.\nColumn I\n1. 0 K\n2. 273.15 K\n3. 310.15 K\n4. 373.15 K\nColumn II\na. 100 °C\nb. 37 °C\nc. -273.15 °C\nd. 0 °C",
+     "a": "1-c, 2-d, 3-b, 4-a",
+     "o": [
+      "1-c, 2-d, 3-b, 4-a",
+      "1-d, 2-c, 3-b, 4-a",
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-a, 3-b, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A quiz card lists five temperatures: 300 K, 20 °C, 98.6 °F, 0 K and -5 °C.\n(i) Write 300 K in degrees Celsius.\n(ii) Write -5 °C in kelvin.\n(iii) Arrange all five from the coldest to the hottest.\n(iv) Which two of the five are closest to each other, and how far apart are they?\n(v) The card's writer says, '98.6 °F is the value a scientist would most likely write in a research paper.' Comment on this.",
+     "a": "(i) 300 - 273.15 = 26.85 °C. (ii) -5 + 273.15 = 268.15 K. (iii) 0 K (about -273.15 °C), -5 °C, 20 °C, 300 K (26.85 °C), 98.6 °F (37.0 °C). (iv) 20 °C and 300 K (26.85 °C), 6.85 degrees apart; the next closest pair, 300 K and 98.6 °F, is 10.15 degrees apart. (v) Unlikely: the Fahrenheit scale is not used in most scientific studies anymore; scientific work uses the Kelvin scale, whose unit, the kelvin, is the SI unit.",
+     "s": [
+      [
+       "300 K = 26.85 °C",
+       1
+      ],
+      [
+       "-5 °C = 268.15 K",
+       1
+      ],
+      [
+       "Correct order coldest to hottest",
+       1
+      ],
+      [
+       "20 °C and 300 K, 6.85 degrees apart",
+       1
+      ],
+      [
+       "Fahrenheit is not used in most scientific studies; kelvin is the SI unit",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A research group is writing up an experiment for a science journal. Which choice of temperature unit would be the LEAST suitable, and why?",
+     "a": "Degree Fahrenheit, because that scale is not used in most scientific studies anymore",
+     "o": [
+      "Degree Fahrenheit, because that scale is not used in most scientific studies anymore",
+      "Kelvin, because it is written without a degree sign",
+      "Degree Celsius, because laboratory thermometers are marked in it",
+      "Kelvin, because its scale starts at absolute zero"
+     ],
+     "tags": [
+      "scenario"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate writes '-20 K' as the temperature of a cold room. Explain why this cannot be right, and give the correct Kelvin value if the room was really at -20 °C.",
+     "a": "0 K is absolute zero, the lowest possible temperature, so no temperature can be below 0 K and '-20 K' cannot exist. If the room was at -20 °C, the Kelvin value is -20 + 273.15 = 253.15 K.",
+     "s": [
+      [
+       "No temperature below 0 K, absolute zero",
+       1
+      ],
+      [
+       "-20 °C = 253.15 K",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A website claims that a substance was cooled to -280 °C. Show that this cannot be true.",
+     "a": "Convert to kelvin: -280 + 273.15 = -6.85 K. Absolute zero, 0 K (about -273.15 °C), is the lowest temperature that can be achieved, so a temperature 6.85 K below it cannot exist. The claim is false.",
+     "s": [
+      [
+       "Converts -280 °C to -6.85 K",
+       1
+      ],
+      [
+       "States that 0 K, absolute zero, is the lowest possible temperature",
+       1
+      ],
+      [
+       "Concludes the claim is impossible",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A quiz card lists four temperatures said to have been measured in experiments. Which one can NOT be a real temperature?",
+     "a": "-300 °C",
+     "o": [
+      "-300 °C",
+      "-250 °C",
+      "5 K",
+      "3000 °C"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False? 'Liquid nitrogen at -196 °C is far colder than melting ice, yet it is less than 70 degrees above the lowest temperature that can be achieved.' Give the verdict and the reason or the correction.",
+     "a": "False. The lowest temperature that can be achieved is absolute zero, close to -273.15 °C (0 K). -196 °C is -196 + 273.15 = 77.15 K, so it is 77.15 degrees above absolute zero, more than 70. (It is indeed far colder than melting ice at 0 °C.)",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Correction: -196 °C = 77.15 K, so it is 77.15 degrees above absolute zero, not less than 70",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school receives a laboratory manual that gives every temperature in kelvin: ice bath 273.15 K, room 298.15 K, warm bath 318.15 K, hot bath 353.15 K. The school's laboratory thermometers have a range of -10 °C to 110 °C and their smallest division reads 1 °C.\n(a) What is the warm bath temperature in degrees Celsius?\n(b) What is the hot bath temperature in degrees Celsius?\n(c) Can the school's thermometers measure all four temperatures? Explain.\n(d) The manual is for Class 6 students. The teacher can either rewrite every temperature in the manual in degrees Celsius, or leave it in kelvin and have the students convert each value before they start. Which would you advise? Give one point for each choice and then decide.",
+     "a": "(a) 318.15 - 273.15 = 45 °C. (b) 353.15 - 273.15 = 80 °C. (c) Yes: the four are 0, 25, 45 and 80 °C, all inside -10 °C to 110 °C. (d) Rewrite the manual in degrees Celsius. The thermometers are marked only in °C, so a kelvin value has to be converted in the middle of the experiment, and a slip there (for example setting the hot bath to 53 °C from '353.15') is made with hot water and is not noticed until later. Keeping kelvin does give practice with kelvin = Celsius + 273.15 and uses the SI unit, but that practice can be done on paper before the lesson; the kelvin values can stay in brackets beside the Celsius ones.",
+     "s": [
+      [
+       "Warm bath 45 °C",
+       1
+      ],
+      [
+       "Hot bath 80 °C",
+       1
+      ],
+      [
+       "All four (0, 25, 45, 80 °C) lie in the range",
+       1
+      ],
+      [
+       "Rewrite in Celsius: the thermometers read °C and a slip mid-experiment is costly; the SI-unit practice can be done separately",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6SC-7.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "On each thermometer in Column I the top of the liquid column is 3 small divisions above the 20 °C mark. Each thermometer is described by the gap between two bigger marks and the number of small divisions between them. Match it with its reading in Column II.\nColumn I\n1. 10 °C gap, 10 divisions\n2. 10 °C gap, 20 divisions\n3. 20 °C gap, 10 divisions\n4. 50 °C gap, 10 divisions\nColumn II\na. 26 °C\nb. 21.5 °C\nc. 35 °C\nd. 23 °C",
+     "a": "1-d, 2-b, 3-a, 4-c",
+     "o": [
+      "1-d, 2-b, 3-a, 4-c",
+      "1-b, 2-d, 3-a, 4-c",
+      "1-d, 2-b, 3-c, 4-a",
+      "1-a, 2-b, 3-d, 4-c"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A part of a laboratory thermometer is described. A bigger mark labelled 30 °C is at the bottom of the part and a bigger mark labelled 40 °C is above it. Four small marks between them split the gap into 5 equal divisions. The top of the liquid column is at the third small mark above 30 °C.\n(i) What does one small division read?\n(ii) What is the reading?\n(iii) If the temperature then falls by 4 °C, where will the top of the column be?",
+     "a": "(i) 10 ÷ 5 = 2 °C. (ii) 30 + 3 × 2 = 36 °C. (iii) 36 - 4 = 32 °C, which is the first small mark above 30 °C.",
+     "s": [
+      [
+       "Smallest division 2 °C",
+       1
+      ],
+      [
+       "Reading 36 °C",
+       1
+      ],
+      [
+       "32 °C, at the first small mark above 30 °C",
+       1
+      ]
+     ],
+     "tags": [
+      "figure"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On Ishita's laboratory thermometer the bigger marks are 5 °C apart, and there are 4 small marks between any two bigger marks. The top of the liquid column is at the third small mark above the 25 °C mark. What is the reading?",
+     "a": "28 °C",
+     "o": [
+      "28 °C",
+      "28.75 °C",
+      "31 °C",
+      "40 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Thermometer A has a range of -10 °C to 110 °C and its smallest division reads 1 °C. Thermometer B has a range of 0 °C to 50 °C and its smallest division reads 0.5 °C.\n(a) Find the span of the range of each thermometer.\n(b) Using (a) and the smallest divisions, which thermometer would you use for water at 46.5 °C, and which for water at 85 °C?",
+     "a": "(a) A: 110 - (-10) = 120 °C. B: 50 - 0 = 50 °C. (b) 46.5 °C: B, because it lies in B's range and B can read 0.5 °C steps, which A cannot. 85 °C: A, because 85 °C is beyond B's highest mark of 50 °C.",
+     "s": [
+      [
+       "Spans 120 °C and 50 °C",
+       1
+      ],
+      [
+       "B for 46.5 °C (needs 0.5 °C divisions), A for 85 °C (outside B's range)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three thermometers, P, Q and R, are placed in the same beaker of water. On all three the bigger marks are 10 °C apart. Between two bigger marks, P has 5 small divisions, Q has 10 and R has 20. On R the reading is 23.5 °C.\n(a) Find the smallest value each thermometer can read.\n(b) On R, how many small divisions above the 20 °C mark is the top of the column?\n(c) On P, between which two marks does the top of the column lie?\n(d) R's range is 0 °C to 50 °C, while P and Q read -10 °C to 110 °C. A project will warm this water slowly from about 20 °C to 45 °C, recording to the nearest 0.5 °C, and at the end bring it to the boil and record that too. Should the group use one thermometer throughout, or switch? Justify using (a).",
+     "a": "(a) P: 10 ÷ 5 = 2 °C, Q: 10 ÷ 10 = 1 °C, R: 10 ÷ 20 = 0.5 °C. (b) (23.5 - 20) ÷ 0.5 = 7 small divisions. (c) Between the 22 °C and 24 °C marks, since P's marks go up in 2 °C steps. (d) Only R reads 0.5 °C steps, so R is needed for the 20-45 °C part; but boiling water is far above R's top mark of 50 °C, so R cannot take the last reading. Use R for the warming and switch to Q (1 °C, reaches 110 °C) for the boiling reading. Using Q throughout is simpler but fails the 0.5 °C requirement.",
+     "s": [
+      [
+       "2 °C, 1 °C, 0.5 °C",
+       1
+      ],
+      [
+       "7 small divisions",
+       1
+      ],
+      [
+       "Between 22 °C and 24 °C",
+       1
+      ],
+      [
+       "Switch: R for 0.5 °C readings up to 45 °C, Q for boiling water beyond R's range",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Statement 1: A thermometer whose bigger marks are 10 °C apart, with 4 small marks between them making 5 equal divisions, reads 2 °C per small division.\nStatement 2: A thermometer marked from -10 °C at the bottom to 110 °C at the top has a range that spans 120 °C.\nStatement 3: When the top of the liquid column is level with the 30 °C mark, the reading is 30 °C, wherever the bulb happens to be on the scale.\nWhich statements are correct?",
+     "a": "All three statements",
+     "o": [
+      "All three statements",
+      "Statements 1 and 2 only",
+      "Statements 2 and 3 only",
+      "Statement 1 only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "On a thermometer whose smallest division reads 0.5 °C, the top of the liquid column is 7 small divisions above the 20 °C mark.\n(a) What is the reading?\n(b) The water warms to 26 °C. By how many small divisions does the top of the column move up from its position in (a)?",
+     "a": "(a) 20 + 7 × 0.5 = 23.5 °C. (b) 26 - 23.5 = 2.5 °C, and 2.5 ÷ 0.5 = 5 small divisions.",
+     "s": [
+      [
+       "Reading 23.5 °C",
+       1
+      ],
+      [
+       "Rise of 2.5 °C = 5 small divisions",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A laboratory has three thermometers.\nX: range -10 °C to 110 °C, smallest division 1 °C.\nY: range 0 °C to 50 °C, smallest division 0.5 °C.\nZ: range -30 °C to 50 °C, smallest division 2 °C.\nChoose, with a reason:\n(i) a thermometer for water boiling at about 98 °C;\n(ii) a thermometer for a salt and ice mixture at about -20 °C;\n(iii) a thermometer for warm water at about 37.5 °C;\n(iv) the thermometer with the widest range (show the spans);\n(v) why no single thermometer here is best for all three tasks.",
+     "a": "(i) X: only X reaches 98 °C. (ii) Z: only Z goes down to -20 °C. (iii) Y: 37.5 °C is in its range and only Y reads 0.5 °C steps. (iv) Spans: X 120 °C, Y 50 °C, Z 80 °C, so X is widest. (v) The thermometer with the finest divisions (Y) has the narrowest range, and the widest ranges (X, Z) have coarser divisions, so each task needs a different one.",
+     "s": [
+      [
+       "X for boiling water, as only X reaches 98 °C",
+       1
+      ],
+      [
+       "Z for -20 °C, as only Z goes that low",
+       1
+      ],
+      [
+       "Y for 37.5 °C, needing 0.5 °C divisions",
+       1
+      ],
+      [
+       "Spans 120, 50, 80 °C; X widest",
+       1
+      ],
+      [
+       "Trade-off between range and fineness of divisions",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A part of a laboratory thermometer is described. A bigger mark labelled 0 °C is at the top of the part and a bigger mark labelled -10 °C is below it. The gap between them is split into 10 equal small divisions. The top of the liquid column is at the fourth small mark BELOW the 0 °C mark. What is the reading?",
+     "a": "-4 °C",
+     "o": [
+      "-4 °C",
+      "-6 °C",
+      "4 °C",
+      "-14 °C"
+     ],
+     "tags": [
+      "scenario",
+      "figure"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Thermometer P has 10 small divisions between two bigger marks and thermometer Q has 20. Sonu says, 'Q will always read finer temperatures than P.' Check his claim.",
+     "a": "Partly right. More divisions give a finer reading only if the bigger marks are the same gap apart. If both have bigger marks 10 °C apart, P reads 1 °C and Q reads 0.5 °C, so Q is finer. But if Q's bigger marks are 20 °C apart while P's are 10 °C apart, both read 1 °C. He must also know the gap between the bigger marks.",
+     "s": [
+      [
+       "Verdict: partly right",
+       1
+      ],
+      [
+       "Case where Q is finer: same gap, 1 °C against 0.5 °C",
+       1
+      ],
+      [
+       "Case where they are equal: Q's gap 20 °C gives 1 °C, so the gap matters too",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "On a laboratory thermometer there are 20 small divisions between the 10 °C mark and the 20 °C mark. The top of the liquid column is 9 small divisions above the 10 °C mark, so the reading is ___ °C.",
+     "a": "14.5"
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A cold-storage room for vegetables in Nashik needs a thermometer that reads from -25 °C to 15 °C and can show temperatures to the nearest 0.5 °C. You are asked to design its scale with bigger marks every 5 °C.\n(i) What is the span of the range?\n(ii) How many small divisions must lie between two bigger marks? Show the division.\n(iii) How many bigger marks will the scale carry, and how many small divisions along the whole scale?\n(iv) A worker sees the top of the liquid column 3 small divisions below the 0 °C mark. What is the reading?\n(v) A manager asks you to save effort by drawing only 5 small divisions between bigger marks. What would the thermometer then read per division, and would it still meet the room's need?",
+     "a": "(i) 15 - (-25) = 40 °C. (ii) 5 ÷ 0.5 = 10 small divisions between two bigger marks. (iii) Bigger marks at -25, -20, -15, -10, -5, 0, 5, 10 and 15 °C: 9 marks; 40 ÷ 0.5 = 80 small divisions in all. (iv) 0 - 3 x 0.5 = -1.5 °C. (v) 5 ÷ 5 = 1 °C per division; it could no longer show 0.5 °C steps, so it would not meet the need.",
+     "s": [
+      [
+       "Span 40 °C",
+       1
+      ],
+      [
+       "10 small divisions (5 ÷ 0.5)",
+       1
+      ],
+      [
+       "9 bigger marks and 80 small divisions",
+       1
+      ],
+      [
+       "Reading -1.5 °C",
+       1
+      ],
+      [
+       "1 °C per division, which fails the 0.5 °C need",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Shabnam is drawing the part of a thermometer scale between 10 °C and 20 °C so that the smallest division reads 0.5 °C.\n(a) How many small divisions must she draw between the 10 °C and 20 °C marks?\n(b) At which small mark above 10 °C should she write 12.5 °C?",
+     "a": "(a) 10 ÷ 0.5 = 20 small divisions. (b) 12.5 - 10 = 2.5 °C, and 2.5 ÷ 0.5 = 5, so at the fifth small mark above 10 °C.",
+     "s": [
+      [
+       "20 small divisions",
+       1
+      ],
+      [
+       "12.5 °C at the fifth small mark above 10 °C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A laboratory thermometer has a range of -10 °C to 110 °C. Which of these could it NOT be used to measure?",
+     "a": "A salt and ice mixture at about -15 °C",
+     "o": [
+      "A salt and ice mixture at about -15 °C",
+      "Water boiling at about 98 °C",
+      "Ice that is melting in a beaker at 0 °C",
+      "Warm water in a beaker at about 45 °C"
+     ],
+     "rev": true,
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A clinical thermometer is the right choice for measuring the temperature of boiling water in the laboratory.\nReason (R): Laboratory thermometers typically have a range from -10 °C to 110 °C.",
+     "a": "A is false, but R is true",
+     "o": [
+      "A is false, but R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False? 'Two laboratory thermometers with the same range can have different smallest divisions.' Give the verdict and the reason.",
+     "a": "True. The range only tells the lowest and highest temperatures marked. The smallest division depends on how many small divisions lie between two bigger marks, which can differ, e.g. both may read -10 °C to 110 °C but one has 10 divisions per 10 °C (1 °C) and the other 20 (0.5 °C).",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: smallest division depends on the number of divisions between bigger marks, not on the range",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Work backwards. Describe the markings (the gap between two bigger marks and the number of small divisions between them) of:\n(i) a thermometer whose smallest division reads 2 °C;\n(ii) a thermometer whose smallest division reads 0.5 °C;\nand (iii) show that your answer to (ii) works by dividing.",
+     "a": "(i) E.g. bigger marks 10 °C apart with 5 small divisions (10 ÷ 5 = 2 °C). (ii) E.g. bigger marks 5 °C apart with 10 small divisions. (iii) 5 ÷ 10 = 0.5 °C. (Other correct pairs are accepted, e.g. 10 °C with 20 divisions.)",
+     "s": [
+      [
+       "A gap and number of divisions giving 2 °C",
+       1
+      ],
+      [
+       "A gap and number of divisions giving 0.5 °C",
+       1
+      ],
+      [
+       "Division shown to check (ii)",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school in Bhopal needs 10 laboratory thermometers and has Rs 1,350. Type A costs Rs 120 and reads -10 °C to 110 °C with 1 °C divisions. Type B costs Rs 180 and reads 0 °C to 50 °C with 0.5 °C divisions. This year's experiments are: measuring boiling water, measuring tap water, and measuring warm water to the nearest 0.5 °C. Glass thermometers break if they hit something hard, and last year one was broken.\n(a) What would 10 type A thermometers cost, and how much money would be left?\n(b) If the school buys some of each, what is the largest number of type B it can buy and still get 10 thermometers in all? What do they cost?\n(c) Which of the three experiments can type B NOT do, and why?\n(d) Should the school buy 10 of type A, or the mix from (b)? Justify using (a) to (c).",
+     "a": "(a) 10 x 120 = Rs 1,200, leaving Rs 150. (b) Each type B in place of a type A adds Rs 60; Rs 150 allows 2 such swaps (3 would need Rs 180). So 8 type A and 2 type B: 960 + 360 = Rs 1,320. (c) Boiling water: its temperature is above B's highest mark of 50 °C. (d) Buy the mix. With ten of type A, no thermometer reads 0.5 °C, so one of this year's three experiments cannot be done at all; the mix covers all three, using type A for boiling water and type B for the 0.5 °C readings. The Rs 150 left by ten type A is tempting as money for a replacement, but a breakage is only a risk, which handling with care reduces, while the lost experiment is certain. The cost of the mix is that groups must take turns with two type B and only Rs 30 is left.",
+     "s": [
+      [
+       "Rs 1,200, Rs 150 left",
+       1
+      ],
+      [
+       "8 type A and 2 type B, Rs 1,320",
+       1
+      ],
+      [
+       "B cannot measure boiling water: above its 50 °C top mark",
+       1
+      ],
+      [
+       "Buy the mix: ten type A make the 0.5 °C experiment impossible, while a breakage is only a risk",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ankit borrows a thermometer from another school and reads it as if each small division were 1 °C, as on his own thermometer. Explain the risk, and say what he should check before using it.",
+     "a": "Thermometers in different laboratories may have different ranges and smallest divisions, so his readings could be wrong (e.g. double the true change if each division is really 0.5 °C). He should first find its range and work out the smallest division: the gap between two bigger marks divided by the number of small divisions between them.",
+     "s": [
+      [
+       "Risk: range and smallest division can differ, so readings may be wrong",
+       1
+      ],
+      [
+       "Check: range, and smallest division = gap between bigger marks ÷ number of divisions",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Karthik must measure a beaker of water that he expects to be at about 36.5 °C, to the nearest 0.5 °C. Which of these thermometers should he choose?",
+     "a": "Range 0 °C to 50 °C, smallest division 0.5 °C",
+     "o": [
+      "Range 0 °C to 50 °C, smallest division 0.5 °C",
+      "Range 0 °C to 30 °C, smallest division 0.5 °C",
+      "Range -10 °C to 110 °C, smallest division 1 °C",
+      "Range -30 °C to 50 °C, smallest division 2 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Gaurav studies a laboratory thermometer. Its lowest mark is -20 °C and its highest is 120 °C. The bigger marks are at -20, 0, 20, 40 and so on, and there are 10 small divisions between any two bigger marks.\n(i) State its range.\n(ii) Find the span of the range.\n(iii) Find the smallest value it can read.\n(iv) The top of the liquid column is 5 small divisions above the 60 °C mark. What is the reading?\n(v) Can a mark on this thermometer show 71 °C? Explain.",
+     "a": "(i) -20 °C to 120 °C. (ii) 120 - (-20) = 140 °C. (iii) 20 ÷ 10 = 2 °C. (iv) 60 + 5 × 2 = 70 °C. (v) No. The marks go up in 2 °C steps (70, 72, ...), so 71 °C falls between two marks and no mark shows it.",
+     "s": [
+      [
+       "Range -20 °C to 120 °C",
+       1
+      ],
+      [
+       "Span 140 °C",
+       1
+      ],
+      [
+       "Smallest division 2 °C",
+       1
+      ],
+      [
+       "Reading 70 °C",
+       1
+      ],
+      [
+       "71 °C lies between marks 70 and 72 °C",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6SC-7.5",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Read Nikhil's lab record and find what went wrong.\n'I held the laboratory thermometer by the bulb and put it in the warm water so the bulb touched the bottom of the beaker. I held it at a slant so I could see the scale. When the column stopped rising I took it out and read 39 °C from above.'\n(i)-(iv) Identify four mistakes and, for each, write the correct step.\n(v) Which of his mistakes is the one the chapter tells you makes the liquid column fall, and so could have made 39 °C lower than the water's real temperature? Explain.",
+     "a": "(i) Held by the bulb; a laboratory thermometer must not be held by the bulb. (ii) Bulb touched the bottom; keep the bulb in the water away from the bottom and sides. (iii) Held at a slant; hold it vertically, without tilting. (iv) Took it out and read from above; read it while it is still immersed, with the eye in line with the level of the column. (v) Taking it out before reading: as soon as the thermometer is taken out of the warm water, the level of the liquid column begins to fall, so the value he read can be lower than the water's temperature.",
+     "s": [
+      [
+       "Held by the bulb, corrected: do not hold it by the bulb",
+       1
+      ],
+      [
+       "Bulb touching the bottom, corrected",
+       1
+      ],
+      [
+       "Tilted, corrected to vertical",
+       1
+      ],
+      [
+       "Read out of the water and from above, corrected",
+       1
+      ],
+      [
+       "Taking it out makes the column fall, which can give the low value",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Statement 1: The bulb should rest on the bottom of the beaker so that the thermometer stays steady.\nStatement 2: While reading, the eye should be directly in line with the level of the liquid column.\nStatement 3: The thermometer may be tilted towards the reader, as long as the bulb stays in the water, so that the scale is seen clearly.\nWhich statements are correct?",
+     "a": "Statement 2 only",
+     "o": [
+      "Statement 2 only",
+      "Statements 1 and 2 only",
+      "Statements 2 and 3 only",
+      "All three statements"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A teacher keeps a laboratory thermometer in water that is boiling over a burner and reads it every two minutes: 97.9 °C, 97.9 °C, 97.9 °C, 97.9 °C. The burner stays on all the time. What do these readings show?",
+     "a": "The temperature of water stays constant while it is boiling",
+     "o": [
+      "The temperature of water stays constant while it is boiling",
+      "The thermometer is stuck, because a heated liquid must keep warming",
+      "The burner has stopped heating, because the reading has stopped rising",
+      "The water is not really boiling, because boiling water reads exactly 100 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False? 'A student who keeps the thermometer in the water, holds it vertically with the bulb clear of the beaker and waits for the column to stop rising can still record a wrong value if she reads it while looking down at the column from above.' Give the verdict and the reason or the correction.",
+     "a": "True. Keeping it immersed, vertical and clear of the beaker is not enough: while reading, the eye must be directly in line with the level of the liquid column. Looking from above breaks that rule, so the value she notes may not be the mark the column top actually coincides with.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: the eye must also be in line with the level of the column; reading from above can give a wrong mark",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A Class 6 group dips a laboratory thermometer into a beaker of warm water and reads it, correctly, at these times after dipping:\n15 s: 40 °C | 30 s: 52 °C | 45 s: 57 °C | 60 s: 58.5 °C | 75 s: 59 °C | 90 s: 59 °C | 5 min: 56 °C | 10 min: 52 °C\nThe smallest division of the thermometer is 0.5 °C. Six groups must share this one thermometer in the period.\n(a) By which reading was the column no longer rising, and what is the water's temperature?\n(b) If a group had read the thermometer at 45 s, how far off would it have been, and why?\n(c) Why are the readings at 5 minutes and 10 minutes lower than 59 °C?\n(d) To save time, the teacher suggests every group reads at 60 s instead of waiting to see two equal readings (75 s and 90 s). Would you accept this? Use (a) and (b) to weigh the time saved against the accuracy lost.",
+     "a": "(a) By the 90 s reading: it equals the 75 s reading, 59 °C, so the column had stopped rising (it may have stopped at any time from 60 s to 75 s), and the water was at 59 °C. (b) It would read 57 °C, 2 °C too low, because the column had not yet stopped rising. (c) The water itself cools if you wait too long, so later readings fall below the temperature being measured. (d) Reject it. At 60 s the column was still rising, so the reading of 58.5 °C is one small division (0.5 °C) low, and, worse, a group reading only once at 60 s has no way of knowing whether its column has stopped; with a cooler beaker or another thermometer the error could be bigger, as the 2 °C at 45 s shows. The saving is only 30 s per group, 3 minutes for six groups, which is not worth a reading that may not be the water's temperature.",
+     "s": [
+      [
+       "By the 90 s reading (equal to the 75 s one); water at 59 °C",
+       1
+      ],
+      [
+       "57 °C at 45 s, 2 °C low, column still rising",
+       1
+      ],
+      [
+       "Later readings fall because the water itself cools",
+       1
+      ],
+      [
+       "Reject: 0.5 °C low and no check that the column has stopped, for only 3 minutes saved",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Mitali dips a laboratory thermometer in warm water. The column stops rising after about a minute, but she waits fifteen minutes more 'to be extra accurate' before reading it, keeping it in the water. What is wrong with her plan?",
+     "a": "The water itself starts to cool, so her reading is lower than at the start",
+     "o": [
+      "The water itself starts to cool, so her reading is lower than at the start",
+      "The column keeps rising for fifteen minutes, so her reading is far too high",
+      "Nothing is wrong, since a longer wait always gives a more accurate reading",
+      "The bulb absorbs all the water's warmth, so the reading falls to zero"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sanjay measures the temperature of warm water. He holds the laboratory thermometer tilted at an angle so that its bulb rests against the side of the beaker, where it stays steady.\n(a) Name his two mistakes.\n(b) Describe how he should place and hold the thermometer instead.",
+     "a": "(a) The thermometer is tilted, and its bulb touches the side of the beaker. (b) He should hold it vertically, without tilting, with the bulb immersed in the water but not touching the bottom or the sides of the beaker.",
+     "s": [
+      [
+       "Both mistakes: tilted, and bulb touching the side",
+       1
+      ],
+      [
+       "Correct placing: vertical, bulb in the water clear of the bottom and sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Asif and Lata read the same laboratory thermometer standing upright in a beaker of warm water, at the same moment. Asif stands and looks down at the column and reads 46 °C; Lata bends so that her eye is level with the top of the column and reads 45 °C. Asif says: 'Mine is the better reading, because from above I can see the whole scale clearly.' Check his claim.",
+     "a": "No. Both looked at the same column at the same moment, so the water and the column were the same for both; the 1 °C difference comes only from where each eye was. The correct way is to read with the eye directly in line with the level of the liquid column, which is what Lata did, so 45 °C should be recorded. Seeing the whole scale does not help when the eye is not level with the top of the column.",
+     "s": [
+      [
+       "Verdict: the claim is wrong",
+       1
+      ],
+      [
+       "Same column at the same moment, so the 1 °C gap comes from the eye position",
+       1
+      ],
+      [
+       "The eye must be in line with the column top, so Lata's 45 °C is recorded",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four students measure the temperature of warm water in a beaker with a laboratory thermometer. Ali holds it upright with the bulb resting on the bottom of the beaker. Bela holds it tilted, with the bulb in the middle of the water. Charu holds it upright with the bulb in the middle of the water, her eye level with the top of the liquid column. Dev holds it upright with the bulb in the middle of the water, then lifts it out to read it. Who used the correct method?",
+     "a": "Charu",
+     "o": [
+      "Charu",
+      "Ali",
+      "Bela",
+      "Dev"
+     ],
+     "tags": [
+      "scenario",
+      "figure"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): After using a laboratory thermometer, Arjun should lay it down gently on the bench rather than drop it into the tray.\nReason (R): If a laboratory thermometer hits against a hard object, it can break.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Six students read the temperature of the same boiling water at a hill-station school: 97.0, 97.2, 96.4, 97.1, 97.2 and 97.1 (all in °C).\n(i) Find the highest and lowest readings and the difference between them.\n(ii) Which reading stands out from the rest?\n(iii) Suggest a mistake in method that could explain it.\n(iv) A visitor says, 'Boiling water reads 100 °C, so all six thermometers must be faulty.' Using the readings, reply to the visitor.\n(v) Leaving out the odd reading, find the average of the other five and say what value the class should report.",
+     "a": "(i) Highest 97.2 °C, lowest 96.4 °C, difference 0.8 °C. (ii) 96.4 °C; the other five lie within 0.2 °C of each other. (iii) E.g. it was read after lifting the thermometer out (the column falls), or read with the eye not in line with the column, or with the thermometer tilted. (iv) Five different thermometers, read correctly, agree within 0.2 °C, which would hardly happen if all were faulty; the readings show that these thermometers agree with each other, and only the odd reading of 96.4 °C needs explaining. A reading below 100 °C is not by itself a sign of a fault. (v) (97.0 + 97.2 + 97.1 + 97.2 + 97.1) ÷ 5 = 97.12 °C, so report about 97.1 °C.",
+     "s": [
+      [
+       "97.2, 96.4, difference 0.8 °C",
+       1
+      ],
+      [
+       "96.4 °C identified as the odd reading",
+       1
+      ],
+      [
+       "A method mistake from the chapter",
+       1
+      ],
+      [
+       "Five thermometers agree within 0.2 °C, so they are not all faulty; only 96.4 °C needs explaining",
+       1
+      ],
+      [
+       "Average 97.12 °C, reported as about 97.1 °C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Pooja's beaker holds so little warm water that the bulb of her laboratory thermometer is covered only when it rests on the bottom. What should she do?",
+     "a": "Add more warm water, so the bulb is covered but clear of the bottom",
+     "o": [
+      "Add more warm water, so the bulb is covered but clear of the bottom",
+      "Let the bulb rest on the bottom, since it is at least covered by the water",
+      "Tilt the thermometer so that the bulb lies along the water against the side",
+      "Dip it for a moment, then take it out and read it quickly before it falls"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Five students read the same beaker of warm water, one after another within a minute: 46 °C, 46 °C, 45 °C, 41 °C and 46 °C. Each student held the thermometer vertically with the bulb clear of the bottom and sides, kept the eye level with the top of the column, and read it without lifting it out of the water.\n(a) Which reading does not fit the others?\n(b) Which step of the correct method did that student most likely miss? Use the reading taken after hers to rule out the water having cooled.",
+     "a": "(a) 41 °C, which is 4 °C or more below every other reading. (b) She read it before the column had stopped rising, so the liquid had not yet reached the water's temperature. The water had not cooled, because the student after her read 46 °C again.",
+     "s": [
+      [
+       "41 °C picked out as the odd reading",
+       1
+      ],
+      [
+       "Read before the column stopped rising; the later 46 °C rules out cooling",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "At a hill-station school, a thermometer in water boiling over a burner, read correctly, shows 97.0 °C at 3 minutes. At 9 minutes the water is still boiling and the burner is still on. Read correctly again, the thermometer would show a temperature of ___ K.",
+     "a": "370.15"
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A classmate must measure the temperature of hot soup in a tall, narrow steel tumbler, so narrow that the thermometer easily leans against its side. Write three instructions for her. Each instruction must prevent a different mistake that the narrow tumbler makes likely; name the mistake each one prevents.",
+     "a": "Any three different ones, for example: (1) Hold the thermometer so the bulb is in the middle of the soup, touching neither the side nor the bottom of the tumbler (prevents the bulb resting against the side, which a narrow tumbler invites). (2) Hold it upright with your hand, not leaning against the rim (prevents a tilted thermometer). (3) Bend so that your eye is level with the top of the column above the rim, and read while the bulb is still in the soup (prevents reading from above or lifting it out to see the scale). (4) Hold it by the top of the tube, not by the bulb (prevents holding the bulb when steadying it).",
+     "s": [
+      [
+       "First instruction with the mistake it prevents (for example bulb clear of the side and bottom)",
+       1
+      ],
+      [
+       "Second, different instruction with its mistake (for example held vertically, not leaning)",
+       1
+      ],
+      [
+       "Third, different instruction with its mistake (for example eye level with the column, read while immersed)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera and Arun measure the same beaker of warm water at the same moment with two thermometers. Meera holds hers vertically, bulb clear of the beaker, eye level with the column: 48 °C. Arun holds his tilted and reads along the slant: 50 °C.\n(a) Which reading should the group record, and why?\n(b) Arun says the 2 °C gap proves Meera's thermometer is faulty. Is that the only explanation? Suggest a test that would settle it.",
+     "a": "(a) Meera's 48 °C, because she followed the correct way: held vertically, not tilted, with the eye in line with the level of the column. (b) No. Arun's tilted thermometer breaks the rule to hold it vertically, so his method could explain the gap. Test: Arun repeats his reading in the same water with the thermometer held vertically and his eye level with the column (or the two swap thermometers and read correctly); if the readings then agree, the method was the cause.",
+     "s": [
+      [
+       "Record 48 °C, taken by the correct method",
+       1
+      ],
+      [
+       "Not the only explanation: the tilt could cause it; re-read both correctly (or swap) to test",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "At a school in Darjeeling, five students read the same boiling water with the same kind of thermometer: 97.6, 97.7, 97.6, 97.1 and 97.7 °C. Which piece of evidence best shows that the 97.1 °C reading comes from how it was read, not from the water?",
+     "a": "The other four readings of the same water agree within 0.1 °C",
+     "o": [
+      "The other four readings of the same water agree within 0.1 °C",
+      "97.1 °C is lower than 100 °C, the temperature at which water boils",
+      "97.1 °C is the lowest of the five readings that were taken",
+      "The temperature of boiling water keeps changing while it boils"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Arjun wants to check his own fever by putting the bulb of a laboratory thermometer in his mouth, as he would a clinical thermometer.\n(a) Name one rule for using a laboratory thermometer that he would find hard to follow while the bulb is in his mouth, and say why.\n(b) If he takes it out to read it, what happens to the reading, and so which thermometer should he use?",
+     "a": "(a) Any one, with its reason: hold it vertically, not tilted (in the mouth it lies at a slant); keep the bulb from touching the sides (it rests against the tongue and cheek); read it while the bulb is still in place with the eye in line with the column (he cannot easily see his own column without a helper or a mirror). (b) As soon as it is taken out, the liquid column begins to fall, so the reading would be too low; he should use a clinical thermometer, which is made for measuring body temperature.",
+     "s": [
+      [
+       "Any one rule that mouth placement makes hard (vertical, bulb clear of the sides, read in place with eye in line), with the reason",
+       1
+      ],
+      [
+       "Column falls once removed, so the reading is low; use a clinical thermometer",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "At a science fair stall in Kochi, a beaker of fresh tea sits on the table with a laboratory thermometer held upright in it, its bulb clear of the bottom and sides. About 90 visitors are expected in one hour. Procedure P: each visitor bends down and reads the thermometer in the tea, with the eye level with the column; this takes about 40 seconds per visitor. Procedure Q: a student reads the thermometer correctly every minute and writes the value on a board; a visitor just reads the board, about 10 seconds per visitor. Fresh tea is poured in every 15 minutes.\n(a) How long would procedure P and procedure Q each take for 90 visitors?\n(b) Why must the student in procedure Q bend to read the thermometer while it stays in the tea, rather than lift it up to her eye?\n(c) Just after fresh tea is poured in, why should the student not write the first value at once?\n(d) Which procedure should the stall use? Justify using (a) to (c).",
+     "a": "(a) P: 90 x 40 = 3600 s = 60 minutes; Q: 90 x 10 = 900 s = 15 minutes. (b) The temperature must be read while the thermometer is immersed, because the column begins to fall once it is taken out; and the eye must be in line with the level of the column. (c) The column must first stop rising; a value written before that is lower than the tea's temperature. (d) This one is a real trade-off, and the mark goes to the reasoning. For P, a full answer says that every visitor practises reading a thermometer, the stall's purpose, and admits that 60 minutes leaves no spare time and a careless visitor may lift the thermometer out. For Q, it says that 15 minutes leaves 45 minutes spare and every value is read correctly, and admits that visitors only read a board. A middle plan (P for a few visitors at a time, Q when a queue forms) is also fine if the time is checked.",
+     "s": [
+      [
+       "P 60 minutes, Q 15 minutes",
+       1
+      ],
+      [
+       "Read while immersed (column falls once out), eye in line with the column",
+       1
+      ],
+      [
+       "Wait for the column to stop rising after a fresh pour",
+       1
+      ],
+      [
+       "A choice backed by one gain and one cost from (a) to (c): practice for visitors against time and correct values",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A group dips a thermometer in warm water and reads it at 15 s: 38 °C, 30 s: 44 °C, 45 s: 46 °C, 60 s: 46 °C and 8 min: 41 °C. Ravi wants to record 38 °C ('the first reading is the freshest'), Neha wants 41 °C ('the longest wait is the most settled').\n(a) What value should be recorded?\n(b) Explain what is wrong with each of Ravi's and Neha's choices.",
+     "a": "(a) 46 °C: the 45 s and 60 s readings are equal, so the column had stopped rising. (b) Ravi's 38 °C was taken while the column was still rising, so it had not yet reached the water's temperature. Neha's 41 °C was taken after waiting too long, when the water itself had started to cool.",
+     "s": [
+      [
+       "Record 46 °C, where the column stopped rising",
+       1
+      ],
+      [
+       "38 °C too early (column still rising); 41 °C too late (water cooled)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In a supervised class activity, one laboratory thermometer stands in crushed ice that is melting and another stands in water boiling over a burner. Readings are taken at 0, 3 and 6 minutes.\nIce: 0 °C, 0 °C, 0 °C. Boiling water: 97 °C, 97 °C, 97 °C.\n(i) What pattern do both sets of readings show?\n(ii) The burner was on all the time. Does that contradict the boiling-water readings? Explain.\n(iii) A student read 98 °C at 6 minutes after tilting the thermometer. What should the class do with that reading?",
+     "a": "(i) Both temperatures stay constant: ice stays at the same temperature while melting, and water stays at the same temperature while boiling. (ii) No; the temperature of water remains constant while it is boiling, even with the burner on. (iii) Treat it as a reading taken by the wrong method (the thermometer must be held vertically) and repeat it correctly, rather than use it.",
+     "s": [
+      [
+       "Constant temperature while melting and while boiling",
+       1
+      ],
+      [
+       "Burner on does not contradict: boiling water stays constant",
+       1
+      ],
+      [
+       "Tilted reading rejected and repeated with the thermometer vertical",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6SC-7.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "q": "Match each task in Column I with what you should use or look for in Column II.\nColumn I\n1. Checking whether a child has a fever\n2. Measuring the temperature of boiling water in the laboratory\n3. Getting an approximate idea of the temperature of a hospital ward\n4. Knowing the highest air temperature of a town on a given day\nColumn II\na. A room thermometer on the wall\nb. The maximum air temperature in the weather report\nc. A clinical thermometer\nd. A laboratory thermometer",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-a, 2-d, 3-c, 4-b"
+     ],
+     "tags": [
+      "match"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rina heard only part of the evening weather report: 'Today the maximum air temperature was 34 °C, and the air temperature varied by 13 °C during the day.'\n(a) What was the day's minimum air temperature?\n(b) Her brother thinks he heard 'minimum 36 °C'. Explain why that cannot be right for the same day.",
+     "a": "(a) 34 - 13 = 21 °C. (b) The minimum is the lowest air temperature of the day and the maximum is the highest, so the minimum can never be above the maximum; 36 °C is higher than the 34 °C maximum.",
+     "s": [
+      [
+       "Minimum 21 °C",
+       1
+      ],
+      [
+       "A day's minimum cannot be above its maximum of 34 °C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A library in Pune keeps old manuscripts, which the librarian wants to keep in a room at 28 °C or below. The room thermometer on the wall reads 24 °C at 8 am, 27 °C at 11 am, 30 °C at 2 pm and 29 °C at 5 pm. That day's weather report gives Pune's maximum air temperature as 33 °C and the minimum as 21 °C.\n(a) Between which two readings did the room first go above 28 °C?\n(b) By how many degrees was the 2 pm room reading below the town's maximum for the day?\n(c) Why should the librarian use the room thermometer, rather than the weather report, to decide about the manuscripts?\n(d) Tomorrow is forecast to be similar. Should she move the manuscripts to a cooler room at 11 am, or wait until the room thermometer passes 28 °C? Justify using (a) and (c).",
+     "a": "(a) Between 11 am (27 °C) and 2 pm (30 °C). (b) 33 - 30 = 3 °C. (c) The room thermometer gives an approximate idea of the temperature of that room, which is what matters for the manuscripts; the report gives only the town's highest and lowest air temperature of the day. (d) Move them at 11 am. At 11 am the room was only 1 °C below the limit and it rose 3 °C in the next three hours, passing 28 °C, so on a similar day it will very likely cross again. Waiting for the thermometer to pass 28 °C means the manuscripts are already above the limit when she acts, and a room thermometer gives only an approximate idea, so she may not catch the moment. Moving early costs some effort on a day that might stay cooler, a small price against harm to old manuscripts.",
+     "s": [
+      [
+       "Between 11 am and 2 pm",
+       1
+      ],
+      [
+       "3 °C below the town's maximum",
+       1
+      ],
+      [
+       "Room thermometer describes this room; the report describes the town's daily extremes",
+       1
+      ],
+      [
+       "Move at 11 am: 1 °C margin and a 3 °C rise by 2 pm; waiting means acting only after the limit is passed",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Lakshmi records the weather report for 10 days. Day 1: maximum 29 °C, minimum 14 °C. Day 10: maximum 36 °C, minimum 21 °C. On most days in between, both values crept up, though they fell on a couple of days. Which season is most likely approaching?",
+     "a": "Summer, since both values generally rise over the ten days",
+     "o": [
+      "Summer, since both values generally rise over the ten days",
+      "Winter, since every minimum is lower than its maximum",
+      "Neither, since the values did not rise on every single day",
+      "Winter, since the maximum and minimum differ by 15 °C"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student in Shimla recorded the weather report for six successive days in October.\nMaximum (°C): 21, 19, 20, 18, 17, 16\nMinimum (°C): 10, 8, 9, 6, 6, 5\n(i) On which day was the gap between the maximum and the minimum largest, and how large was it?\n(ii) Did the minimum fall on every day? Support your answer from the data.\n(iii) Which season is approaching? Give one piece of evidence and explain why the days that did not fall do not change your answer.",
+     "a": "(i) Gaps: 11, 11, 11, 12, 11, 11 °C, so day 4, with 18 - 6 = 12 °C. (ii) No: it rose from 8 °C to 9 °C on day 3 and stayed at 6 °C on day 5, though it fell on the other days. (iii) Winter: the maximum fell from 21 °C to 16 °C (or the minimum from 10 °C to 5 °C). Weather depends on several factors, so temperatures vary every day; the fall towards winter is a general trend, not a fall every day.",
+     "s": [
+      [
+       "Day 4, gap 12 °C",
+       1
+      ],
+      [
+       "Minimum rose on day 3 and stayed level on day 5",
+       1
+      ],
+      [
+       "Winter, with evidence; daily variation does not break the general trend",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A farmer near Ludhiana reads a weather forecast that gives the minimum air temperatures for the next four nights as 8 °C, 6 °C, 4 °C and 3 °C. His young plants are harmed below 5 °C. What should he do?",
+     "a": "Plan to cover the plants from the third night, the first below 5 °C",
+     "o": [
+      "Plan to cover the plants from the third night, the first below 5 °C",
+      "Do nothing for now, since the first night's minimum of 8 °C is well above 5 °C",
+      "Cover the plants only on the fourth night, because that is the coldest one",
+      "Ignore the forecast, since air temperatures vary every day and a forecast cannot help"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "At 11 am the room thermometer in a school laboratory in Agra reads 27 °C. On the evening news, the town's maximum air temperature for the day is given as 33 °C.\n(a) Does the 27 °C reading show that the news was wrong? Explain.\n(b) A student wants to describe how hot the day was in Agra for her diary. Which of the two numbers should she use, and why?",
+     "a": "(a) No. The room thermometer gives an approximate idea of the temperature of that one room at 11 am, while 33 °C is the highest air temperature of the town during the whole day; they describe different things. (b) The weather report's maximum, 33 °C, because it describes the town's air for the whole day, not one room at one moment.",
+     "s": [
+      [
+       "Not a contradiction: one room at one time against the town's highest air temperature of the day",
+       1
+      ],
+      [
+       "Use 33 °C, the town's daily maximum, with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Divya says, 'As summer approaches, the air temperature rises steadily, every single day.' Check her claim using this 10-day list of maximum temperatures: 29, 30, 32, 31, 33, 34, 33, 35, 36, 36 °C.",
+     "a": "Partly right. The general trend is a rise (from 29 °C to 36 °C, 7 °C over ten days), as expected when summer approaches. But it is not every single day: the maximum fell on day 4 (32 to 31 °C) and day 7 (34 to 33 °C), and stayed the same from day 9 to day 10, because weather depends on several factors.",
+     "s": [
+      [
+       "Verdict: partly right",
+       1
+      ],
+      [
+       "Right part: overall rise of 7 °C from 29 to 36 °C",
+       1
+      ],
+      [
+       "Wrong part: falls on days 4 and 7, so not every day",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Statement 1: A record of the maximum and minimum air temperature for ten successive days tells you more about whether summer is approaching than one day's report.\nStatement 2: A room thermometer on a hospital ward wall reading 25 °C gives an approximate idea of the ward's temperature, not the body temperature of the patients in it.\nStatement 3: If a town's maximum air temperature in April is lower on Thursday than on Wednesday, summer cannot be approaching.\nWhich statements are correct?",
+     "a": "Statements 1 and 2 only",
+     "o": [
+      "Statements 1 and 2 only",
+      "Statements 2 and 3 only",
+      "Statement 1 only",
+      "All three statements"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Two towns' weather reports for five days in March:\nDelhi: maximum 30, 31, 33, 32, 34 °C; minimum 15, 16, 17, 17, 18 °C\nBengaluru: maximum 31, 31, 32, 32, 32 °C; minimum 20, 20, 21, 20, 21 °C\n(i) Find the gap between the maximum and the minimum on each day for each town, and the average gap for each town.\n(ii) By how much did each town's maximum rise from day 1 to day 5?\n(iii) In which town did the air temperature vary more within a day? Use (i).\n(iv) Did either town's maximum rise on every single day? Say what this shows.\n(v) A grandmother who feels cold easily will visit one town that week. Using the minimums, which town would you suggest, and why?",
+     "a": "(i) Delhi: 15, 15, 16, 15, 16 °C, average 77 ÷ 5 = 15.4 °C. Bengaluru: 11, 11, 11, 12, 11 °C, average 56 ÷ 5 = 11.2 °C. (ii) Delhi 34 - 30 = 4 °C; Bengaluru 32 - 31 = 1 °C. (iii) Delhi, whose average gap (15.4 °C) is larger than Bengaluru's (11.2 °C). (iv) No: Delhi's maximum fell on day 4 (33 to 32 °C) and Bengaluru's stayed the same on several days; temperatures vary from day to day because weather depends on several factors, even while the general trend rises. (v) Bengaluru: its lowest temperatures (20-21 °C) are well above Delhi's (15-18 °C), so the coldest part of the day is milder.",
+     "s": [
+      [
+       "Daily gaps and averages 15.4 °C and 11.2 °C",
+       1
+      ],
+      [
+       "Rises of 4 °C and 1 °C",
+       1
+      ],
+      [
+       "Delhi varies more within a day",
+       1
+      ],
+      [
+       "Neither rose every day; daily variation with weather",
+       1
+      ],
+      [
+       "Bengaluru, from its higher minimums",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "On a room thermometer in a clinic, the bigger marks are 10 °C apart with 5 small divisions between them. At 9 am the top of the liquid column is 3 small divisions above the 20 °C mark; at 1 pm it is 2 small divisions above the 30 °C mark. The room warmed by about ___ °C.",
+     "a": "8"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False? 'The weather report gave the day's maximum as 34 °C and the minimum as 21 °C, so at some time that day the air temperature was 13 °C.' Give the verdict and the reason or the correction.",
+     "a": "False. 13 °C is the difference between the maximum and the minimum (34 - 21 = 13 °C), not a temperature the air reached. The minimum, 21 °C, is the lowest air temperature of the day, so the air never fell to 13 °C; it stayed between 21 °C and 34 °C.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "13 °C is the gap 34 - 21; the air stayed between 21 °C and 34 °C",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school in Hyderabad must choose a day next week for its sports day. The forecast maximum air temperatures are: Monday 36 °C, Tuesday 36 °C, Wednesday 37 °C, Thursday 33 °C, Friday 35 °C. The principal's rule is: no sports day on a day forecast above 35 °C, and she wants the chosen day to be at least 1 °C below that limit, because forecasts can be off. Thursday clashes with a unit test that can be moved only with difficulty.\n(a) Which days satisfy the principal's rule?\n(b) How far below the limit is each of those days?\n(c) Why might the actual maximum on the chosen day differ from the forecast?\n(d) Choose a day and justify it, weighing the temperatures against the unit-test clash.",
+     "a": "(a) Thursday (33 °C) and Friday (35 °C); Monday, Tuesday and Wednesday are above 35 °C. (b) Thursday is 2 °C below the limit; Friday is exactly at it, 0 °C below. (c) Weather depends on several factors, so air temperature varies from day to day and the actual value can differ from the forecast. (d) Thursday. Friday is tempting because the test need not move, but it sits exactly on the 35 °C limit, with none of the 1 °C margin the principal asked for, and (c) shows the actual maximum can go above the forecast. Thursday's 2 °C margin is the only safe one, and a unit test can be moved, with difficulty, while a hot sports day cannot be undone.",
+     "s": [
+      [
+       "Thursday and Friday only",
+       1
+      ],
+      [
+       "Thursday 2 °C below, Friday at the limit",
+       1
+      ],
+      [
+       "Daily variation with weather factors",
+       1
+      ],
+      [
+       "Thursday: Friday has no margin and the forecast can be exceeded; the test can be moved",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A room thermometer on the wall of a school laboratory reads 27 °C at 9 am and 31 °C at 1 pm on the same day. What can the teacher correctly conclude?",
+     "a": "The room became roughly 4 °C warmer; each reading is an approximate idea of the room temperature",
+     "o": [
+      "The room became roughly 4 °C warmer; each reading is an approximate idea of the room temperature",
+      "The town's maximum air temperature for the day must have been exactly 31 °C",
+      "The thermometer is faulty, because the temperature of a room stays fixed all day",
+      "Every object in the laboratory, including a beaker of hot water, was at 31 °C at 1 pm"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Work backwards. Write a list of 10 daily maximum air temperatures that fits this description: 'Over the ten days the maximum went down by 6 °C in all, but it rose on exactly two days.' Then show that your list fits both parts of the description, and say which season it suggests.",
+     "a": "E.g. 30, 29, 27, 28, 26, 25, 24, 25, 24, 24 °C. Check: 30 - 24 = 6 °C fall from day 1 to day 10; it rises only on day 4 (27 to 28) and day 8 (24 to 25). The general fall suggests winter is approaching. (Any list meeting both conditions is accepted.)",
+     "s": [
+      [
+       "A ten-value list with a 6 °C fall from first to last day",
+       1
+      ],
+      [
+       "Shows rises on exactly two days",
+       1
+      ],
+      [
+       "Winter, from the general fall",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): One reading of the room thermometer in a Delhi school is enough to make the next day's weather forecast for Delhi.\nReason (R): Data on air temperature, gathered at weather stations along with other weather parameters, are used for making weather forecasts.",
+     "a": "A is false, but R is true",
+     "o": [
+      "A is false, but R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a hospital ward, the room thermometer on the wall reads 25 °C and a patient's clinical thermometer reads 38.4 °C. A visitor says, 'The wall thermometer must be wrong, because it should show the patient's temperature.'\n(a) What is each thermometer telling the nurse?\n(b) Why is the visitor's reasoning wrong?",
+     "a": "(a) The wall thermometer gives an approximate idea of the temperature of the ward's air; the clinical thermometer measures the patient's body temperature (38.4 °C, above the normal 37.0 °C). (b) The two thermometers measure different things; a room thermometer is not meant to show a person's body temperature, so the two readings do not have to agree.",
+     "s": [
+      [
+       "Wall: approximate room temperature; clinical: the patient's body temperature",
+       1
+      ],
+      [
+       "They measure different things, so different readings do not show a fault",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A student in Dehradun records the maximum air temperature for 10 days: 24, 23, 24, 22, 21, 20, 21, 19, 18, 18 °C.\n(i) Find the average of the first five days and of the last five days.\n(ii) What overall trend do the averages show, and which season is approaching?\n(iii) On which days did the maximum go UP compared with the day before?\n(iv) Why do such days not disprove the trend?\n(v) Her friend predicts, 'Next week's maximum will be lower than 18 °C every day.' Is that a safe prediction? Explain.",
+     "a": "(i) First five: 114 ÷ 5 = 22.8 °C. Last five: 96 ÷ 5 = 19.2 °C. (ii) A fall of 3.6 °C in the average, so winter is approaching. (iii) Day 3 (23 to 24 °C) and day 7 (20 to 21 °C). (iv) Weather depends on several factors, so temperatures vary every day; the fall towards winter is a general trend. (v) Not safe: the general trend suggests lower values, but daily temperatures vary, so some days may be at or above 18 °C.",
+     "s": [
+      [
+       "Averages 22.8 °C and 19.2 °C",
+       1
+      ],
+      [
+       "Falling trend, winter approaching",
+       1
+      ],
+      [
+       "Days 3 and 7",
+       1
+      ],
+      [
+       "Daily variation from weather factors does not break a general trend",
+       1
+      ],
+      [
+       "Prediction not safe, because daily values vary",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On the same day, four towns report (maximum, minimum): P 34 °C, 21 °C; Q 29 °C, 22 °C; R 38 °C, 25 °C; S 31 °C, 14 °C. In which town did the air temperature vary the most within the day?",
+     "a": "S, by 17 °C",
+     "o": [
+      "S, by 17 °C",
+      "R, because it has the highest maximum",
+      "P and R equally, by 13 °C each",
+      "Q, because its minimum is the closest to its maximum"
+     ],
+     "tags": [
+      "scenario"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The maximum air temperatures of a town were 26, 27, 26, 28 and 29 °C in week 1 and 29, 31, 30, 32 and 33 °C in week 2.\n(a) Find the average maximum for each week.\n(b) Using (a), say whether summer or winter is more likely to be approaching, and why.",
+     "a": "(a) Week 1: 136 ÷ 5 = 27.2 °C. Week 2: 155 ÷ 5 = 31.0 °C. (b) Summer: the average maximum rose by 3.8 °C, and air temperature generally rises as summer approaches.",
+     "s": [
+      [
+       "Averages 27.2 °C and 31.0 °C",
+       1
+      ],
+      [
+       "Summer, because the average rose",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Find the error. A Class 6 group in Bhubaneswar records the weather report for seven days (maximum, minimum, in °C):\nDay 1: 30, 18 | Day 2: 31, 19 | Day 3: 17, 32 | Day 4: 33, 20 | Day 5: 32, 20 | Day 6: 34, 21 | Day 7: 35, 22\n(a) Which day's entry must contain an error? Give the reason.\n(b) Leaving that day out, find the average maximum of the other six days.\n(c) If the two values for that day were simply written in the wrong order, what would the corrected maximum list be, and on which day would the maximum fall?\n(d) Should the group swap the two values for that day or leave the day out of their analysis? Weigh how well the swapped values fit the neighbouring days.",
+     "a": "(a) Day 3: the maximum (17 °C) is lower than the minimum (32 °C), which cannot happen, since the maximum is the highest air temperature of the day. (b) (30 + 31 + 33 + 32 + 34 + 35) ÷ 6 = 195 ÷ 6 = 32.5 °C. (c) 30, 31, 32, 33, 32, 34, 35 °C; it would fall only on day 5 (33 to 32 °C), within a general rise. (d) Leave day 3 out (or mark it doubtful). A swap is tempting because a maximum of 32 °C fits neatly between 31 °C and 33 °C, but the swapped minimum of 17 °C would be below both day 1 (18 °C) and day 2 (19 °C) while the other minimums rise steadily, so only one of the two values fits and the swap cannot be confirmed. Leaving the day out costs little: the other six days still show the maximum rising from 30 °C to 35 °C.",
+     "s": [
+      [
+       "Day 3: maximum below minimum is impossible",
+       1
+      ],
+      [
+       "Average 32.5 °C",
+       1
+      ],
+      [
+       "Corrected list; maximum falls only on day 5",
+       1
+      ],
+      [
+       "Leave day 3 out: 32 °C fits but 17 °C does not, and six days still show the rise",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ]
+    }
+   ]
+  }
+ ]
+}

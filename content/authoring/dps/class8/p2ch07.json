@@ -1,0 +1,2553 @@
+{
+  "kind": "dps_pack",
+  "subject": {
+    "code": "MATH8",
+    "class": 8,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 7,
+    "name": "Area"
+  },
+  "source_code": "hegp207",
+  "concepts": [
+    {
+      "code": "C8M-7.1",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular park is 20 m long and 12 m wide. A path 2 m wide is laid all round the outside of the park. What is the area of the path?",
+          "a": "144 sq m",
+          "o": [
+            "144 sq m",
+            "128 sq m",
+            "160 sq m",
+            "68 sq m"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A rectangular photo frame has a perimeter of 30 cm and one side of 9 cm. The area it encloses is ___ sq cm. Give the answer as a number only.",
+          "a": "54"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangular field 12 m by 8 m is split into two rectangular plots by a straight fence parallel to its 8 m sides. One plot has an area of 40 sq m.\n(a) How wide is that plot, measured along the 12 m side?\n(b) Find the area and the perimeter of the other plot.",
+          "a": "(a) 40 ÷ 8 = 5 m. (b) The other plot is 12 − 5 = 7 m by 8 m, so its area is 56 sq m and its perimeter is 2 × (7 + 8) = 30 m.",
+          "s": [
+            [
+              "Part (a): width 40 ÷ 8 = 5 m",
+              1
+            ],
+            [
+              "Part (b): other plot 7 m by 8 m, area 56 sq m and perimeter 30 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A school courtyard is a rectangle 18 m long and 12 m wide. Two straight paved paths cross it: one runs the full length (18 m) and one runs the full width (12 m), and they cross in the middle, sharing a square where they overlap. The rest of the courtyard is grass. At present each path is 2 m wide.\n(a) Find the area of the paved paths.\n(b) Find the area of grass.\n(c) The paths are to be widened so that each is 3 m wide. Find the new paved area.\n(d) A teacher estimates: 'Each path gets 1 m wider, so the paving grows by 18 + 12 = 30 sq m.' Use your answers to judge the estimate and explain the difference.",
+          "a": "(a) 18 × 2 + 12 × 2 − 2 × 2 = 36 + 24 − 4 = 56 sq m (the crossing square is counted once). (b) 18 × 12 − 56 = 216 − 56 = 160 sq m. (c) 18 × 3 + 12 × 3 − 3 × 3 = 54 + 36 − 9 = 81 sq m. (d) The estimate is too high: the paving grows by 81 − 56 = 25 sq m, not 30. The two new 1 m strips cross each other, and the crossing square grows from 4 sq m to 9 sq m, so 5 sq m of the 30 is counted twice.",
+          "s": [
+            [
+              "Part (a): 56 sq m, subtracting the 4 sq m overlap",
+              1
+            ],
+            [
+              "Part (b): grass 160 sq m",
+              1
+            ],
+            [
+              "Part (c): 81 sq m with the 9 sq m overlap removed",
+              1
+            ],
+            [
+              "Part (d): actual increase 25 sq m, estimate double-counts 5 sq m of overlap",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: If two rectangles have equal areas, they must have equal perimeters.\nStatement 2: A square of side 6 cm and a rectangle 9 cm by 4 cm cover the same area but have different perimeters.\nStatement 3: Doubling both the length and the width of a rectangle doubles its area.\nWhich of the statements are correct?",
+          "a": "2 only",
+          "o": [
+            "2 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "Show that no rectangle whose sidelengths are whole numbers of centimetres can have a perimeter of 14 cm and an area of 13 sq cm.",
+          "a": "Perimeter 14 cm means length + width = 7 cm. The whole-number pairs are 1 and 6, 2 and 5, 3 and 4, with areas 6, 10 and 12 sq cm. None of them is 13, and the largest possible is 12 sq cm, so such a rectangle cannot exist.",
+          "s": [
+            [
+              "Uses perimeter 14 to get length + width = 7",
+              1
+            ],
+            [
+              "Lists all whole-number pairs with areas 6, 10, 12",
+              1
+            ],
+            [
+              "Concludes 13 is never reached, the largest being 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A paper strip 16 cm long and 4 cm wide is cut into two pieces, each 8 cm by 4 cm. The pieces are placed side by side, without overlap, to make a square of side 8 cm. Compared with the strip, what happens to the square?",
+          "a": "Area unchanged; perimeter drops by 8 cm",
+          "o": [
+            "Area unchanged; perimeter drops by 8 cm",
+            "Area unchanged; perimeter unchanged",
+            "Area drops by 8 sq cm; perimeter drops by 8 cm",
+            "Area unchanged; perimeter drops by 4 cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: If the side of a square garden is made three times as long, the garden's area also becomes three times as large. Give a reason with an example.",
+          "a": "False. The area becomes 3 × 3 = 9 times as large, because both the length and the width are tripled. For example, a square of side 2 m has area 4 sq m, and one of side 6 m has area 36 sq m, which is 9 times 4.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Shows the area becomes 9 times, with an example such as 4 sq m to 36 sq m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A photo 30 cm long and 20 cm wide is mounted on a rectangular card so that the card shows a border all round it. The border is 3 cm wide on the left, 5 cm on the right, 2 cm at the top and 4 cm at the bottom.\n(a) Find the length and the width of the card.\n(b) Find the area of the border by subtracting one area from another.\n(c) Find the area of the border again by splitting it into four rectangles (take the top and bottom strips the full length of the card), and check that the two answers agree.\n(d) The photo is now slid to a new place on the same card, still fully on it, so the four border widths change. Does the border area change? Give a reason.\n(e) Write a formula for the border area of a photo of length L and width W on a card whose border widths are p (left), q (right), r (top) and s (bottom).",
+          "a": "(a) Length 3 + 30 + 5 = 38 cm, width 2 + 20 + 4 = 26 cm. (b) 38 × 26 − 30 × 20 = 988 − 600 = 388 sq cm. (c) Top strip 38 × 2 = 76, bottom strip 38 × 4 = 152, left strip 3 × 20 = 60, right strip 5 × 20 = 100; total 76 + 152 + 60 + 100 = 388 sq cm, which agrees. (d) No. The border is always the card's area minus the photo's area, 988 − 600, and neither of these changes when the photo moves. (e) Border area = (L + p + q)(W + r + s) − L × W.",
+          "s": [
+            [
+              "Part (a): card 38 cm by 26 cm",
+              1
+            ],
+            [
+              "Part (b): 988 − 600 = 388 sq cm",
+              1
+            ],
+            [
+              "Part (c): strips 76 + 152 + 60 + 100 = 388 sq cm",
+              1
+            ],
+            [
+              "Part (d): no change, since card and photo areas are fixed",
+              1
+            ],
+            [
+              "Part (e): (L + p + q)(W + r + s) − LW",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular kitchen garden has an area of 91 sq m and is 13 m long. Fencing along all four sides costs Rs 120 per metre. What does the fencing cost?",
+          "a": "Rs 4,800",
+          "o": [
+            "Rs 4,800",
+            "Rs 2,400",
+            "Rs 10,920",
+            "Rs 6,240"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A stage is built from five square boards, each 2 m by 2 m: one in the centre and one joined along each of its four sides, making a plus-shaped stage.\n(a) Find the area of the stage and the length of edging needed around its boundary.\n(b) Four more boards of the same size are added to fill the four corner gaps, so the stage becomes one big square. Find the new area and the new edging length, and say what this shows about area and perimeter.",
+          "a": "(a) Area 5 × 4 = 20 sq m. The boundary is made of 12 board edges of 2 m each, so the edging is 24 m. (b) The stage becomes a 6 m by 6 m square: area 36 sq m, edging 4 × 6 = 24 m. The area has grown by 16 sq m while the perimeter has stayed 24 m, so the same perimeter can enclose different areas.",
+          "s": [
+            [
+              "Part (a): 20 sq m and 24 m of edging",
+              1
+            ],
+            [
+              "Part (b): 36 sq m and still 24 m; same perimeter, larger area",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Match each rectangle with its area and perimeter.\nColumn A:\n1. 12 cm by 3 cm\n2. 6 cm by 6 cm\n3. 10 cm by 2 cm\n4. 8 cm by 7 cm\nColumn B:\n(a) area 56 sq cm, perimeter 30 cm\n(b) area 36 sq cm, perimeter 24 cm\n(c) area 36 sq cm, perimeter 30 cm\n(d) area 20 sq cm, perimeter 24 cm",
+          "a": "1-c, 2-b, 3-d, 4-a",
+          "o": [
+            "1-c, 2-b, 3-d, 4-a",
+            "1-b, 2-c, 3-d, 4-a",
+            "1-c, 2-d, 3-b, 4-a",
+            "1-a, 2-b, 3-d, 4-c"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A property advertisement says: 'Of two rectangular plots, the one that needs the longer boundary fence always gives you more land.' Test the claim with Plot A, 15 m by 4 m, and Plot B, 10 m by 8 m, and give your verdict.",
+          "a": "No, the claim is wrong. Plot A needs 2 × (15 + 4) = 38 m of fence and has area 60 sq m. Plot B needs 2 × (10 + 8) = 36 m of fence and has area 80 sq m. Plot A has the longer fence but the smaller area, so perimeter does not tell us which region is larger.",
+          "s": [
+            [
+              "Plot A: perimeter 38 m, area 60 sq m",
+              1
+            ],
+            [
+              "Plot B: perimeter 36 m, area 80 sq m",
+              1
+            ],
+            [
+              "Verdict: claim false, longer boundary but less land",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "One bag of fertiliser exactly covers a square vegetable bed of side 6 m. A farmer makes smaller square beds, each of side 3 m. How many such smaller beds can the same bag cover?",
+          "a": "4 beds",
+          "o": [
+            "4 beds",
+            "2 beds",
+            "8 beds",
+            "3 beds"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A family compares three rectangular plots for sale.\nPlot A: 30 m by 20 m, price Rs 9,00,000\nPlot B: 40 m by 15 m, price Rs 8,88,000\nPlot C: 25 m by 25 m, price Rs 9,37,500\nWhichever plot they buy, they must also put a wall along its whole boundary, which costs Rs 1,500 per metre.\n(a) Which two plots have the same area?\n(b) Which plot needs the longest boundary wall, and how long is it?\n(c) Find the land price per sq m of each plot.\n(d) The family wants the lowest total cost (land plus wall) for each sq m of land. Which plot should they buy? Show the figures.",
+          "a": "(a) A: 30 × 20 = 600 sq m, B: 40 × 15 = 600 sq m, C: 625 sq m, so A and B. (b) Plot B: 2 × (40 + 15) = 110 m (A and C each need 100 m). (c) A: 9,00,000 ÷ 600 = Rs 1,500; B: 8,88,000 ÷ 600 = Rs 1,480; C: 9,37,500 ÷ 625 = Rs 1,500. (d) Walls: A 100 × 1,500 = Rs 1,50,000, B 110 × 1,500 = Rs 1,65,000, C Rs 1,50,000. Totals: A Rs 10,50,000, i.e. Rs 1,750 per sq m; B Rs 10,53,000, i.e. Rs 1,755 per sq m; C Rs 10,87,500, i.e. Rs 1,740 per sq m. They should buy Plot C. Plot B has the cheapest land but its longer wall makes it the dearest per sq m, while C's extra 25 sq m with no extra wall makes it the cheapest.",
+          "s": [
+            [
+              "Part (a): A and B, both 600 sq m",
+              1
+            ],
+            [
+              "Part (b): Plot B, 110 m",
+              1
+            ],
+            [
+              "Part (c): Rs 1,500, Rs 1,480, Rs 1,500 per sq m",
+              1
+            ],
+            [
+              "Part (d): totals per sq m 1,750, 1,755, 1,740, so Plot C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) A square handkerchief has a perimeter of 36 cm. Find its area.\n(b) A rectangular napkin has the same perimeter and is 12 cm long. How much less cloth does it have than the handkerchief?",
+          "a": "(a) Side = 36 ÷ 4 = 9 cm, area 81 sq cm. (b) Length + width = 18 cm, so the width is 6 cm and the area is 72 sq cm, which is 81 − 72 = 9 sq cm less.",
+          "s": [
+            [
+              "Part (a): side 9 cm, area 81 sq cm",
+              1
+            ],
+            [
+              "Part (b): napkin 12 cm by 6 cm = 72 sq cm, so 9 sq cm less",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The diagonal of a rectangle 9 cm by 6 cm divides it into two triangles, each of area 27 sq cm.\nReason (R): A diagonal of a rectangle divides it into two congruent triangles, so each covers exactly half the rectangle.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rug is 4 m long and 3 m wide.\n(a) By how much does its area increase if only the length is increased by 2 m?\n(b) By how much does its area increase if instead both the length and the width are increased by 1 m? Which change adds more area?",
+          "a": "(a) 6 × 3 − 12 = 18 − 12 = 6 sq m. (b) 5 × 4 − 12 = 20 − 12 = 8 sq m. Adding 1 m to each side adds more (8 sq m against 6 sq m), even though the total extra length is 2 m in both cases.",
+          "s": [
+            [
+              "Part (a): increase 6 sq m",
+              1
+            ],
+            [
+              "Part (b): increase 8 sq m, so the second change adds more",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A rectangle measures 6 cm by 5 cm. Give the whole-number sidelengths of another rectangle whose perimeter is 6 cm MORE than this one but whose area is LESS. Show the check for both conditions.",
+          "a": "The given rectangle has perimeter 22 cm and area 30 sq cm. The new one needs perimeter 28 cm, so length + width = 14 cm. For example 12 cm by 2 cm: perimeter 2 × (12 + 2) = 28 cm and area 24 sq cm, which is less than 30. (13 cm by 1 cm, area 13 sq cm, also works.)",
+          "s": [
+            [
+              "Finds 22 cm and 30 sq cm for the given rectangle",
+              1
+            ],
+            [
+              "Uses length + width = 14 to choose a rectangle such as 12 cm by 2 cm",
+              1
+            ],
+            [
+              "Checks perimeter 28 cm and area below 30 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular lawn is 10 m by 8 m. A rectangle 6 m by 5 m is paved over at one corner, so the remaining lawn is L-shaped. What are the area and the perimeter of the L-shaped lawn?",
+          "a": "Area 50 sq m, perimeter 36 m",
+          "o": [
+            "Area 50 sq m, perimeter 36 m",
+            "Area 50 sq m, perimeter 14 m",
+            "Area 58 sq m, perimeter 36 m",
+            "Area 80 sq m, perimeter 36 m"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A room floor is 5.4 m long and 4.2 m wide. A shop sells two kinds of floor tile:\nType S: square, 30 cm by 30 cm, Rs 45 each.\nType R: rectangular, 60 cm by 30 cm, Rs 85 each.\nTiles are laid in straight rows without cutting.\n(a) Find the floor area in sq m.\n(b) How many Type S tiles fit along the length, along the width, and in all?\n(c) Check your answer to (b) by dividing the floor area by the area of one Type S tile.\n(d) How many Type R tiles are needed if their 60 cm side runs along the room's length?\n(e) Which type should be bought to cover the floor more cheaply, and how much is saved?",
+          "a": "(a) 5.4 × 4.2 = 22.68 sq m. (b) 540 ÷ 30 = 18 along the length and 420 ÷ 30 = 14 along the width, 18 × 14 = 252 tiles. (c) One tile is 0.3 × 0.3 = 0.09 sq m, and 22.68 ÷ 0.09 = 252, which agrees. (d) 540 ÷ 60 = 9 along the length and 14 along the width, so 126 tiles. (e) Type S costs 252 × 45 = Rs 11,340 and Type R costs 126 × 85 = Rs 10,710, so Type R is cheaper by Rs 630.",
+          "s": [
+            [
+              "Part (a): 22.68 sq m",
+              1
+            ],
+            [
+              "Part (b): 18 by 14 = 252 tiles",
+              1
+            ],
+            [
+              "Part (c): 22.68 ÷ 0.09 = 252",
+              1
+            ],
+            [
+              "Part (d): 9 by 14 = 126 tiles",
+              1
+            ],
+            [
+              "Part (e): Rs 11,340 against Rs 10,710, Type R saves Rs 630",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.2",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "In triangle ABC the angle at B is obtuse. BC = 6 cm. The perpendicular from A meets the line CB, extended beyond B, at D, with DB = 4 cm and AD = 5 cm.\n(a) Find the area of the right triangle ADC.\n(b) Find the area of the right triangle ADB.\n(c) Use (a) and (b) to find the area of triangle ABC, and check that it equals 1/2 × BC × AD.",
+          "a": "(a) DC = DB + BC = 10 cm, so Area(ADC) = 1/2 × 10 × 5 = 25 sq cm. (b) Area(ADB) = 1/2 × 4 × 5 = 10 sq cm. (c) Area(ABC) = 25 − 10 = 15 sq cm, and 1/2 × 6 × 5 = 15 sq cm, so they agree.",
+          "s": [
+            [
+              "Part (a): DC = 10 cm, area 25 sq cm",
+              1
+            ],
+            [
+              "Part (b): area 10 sq cm",
+              1
+            ],
+            [
+              "Part (c): 25 − 10 = 15 sq cm, equal to 1/2 × 6 × 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A triangular sail has a base of 3.2 m, and its top corner is 250 cm above the base, measured at right angles to it. What is the area of the sail?",
+          "a": "4 sq m",
+          "o": [
+            "4 sq m",
+            "400 sq m",
+            "8 sq m",
+            "40 sq m"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A triangular glass panel PQR has QR = 10 cm, and the height from P to QR is 6 cm. Side PR is 8 cm. A support rod is fixed from Q, perpendicular to PR. How long is the rod?",
+          "a": "7.5 cm",
+          "o": [
+            "7.5 cm",
+            "4.8 cm",
+            "3.75 cm",
+            "6 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A triangular pennant has the same area as a rectangular card 7 cm by 6 cm. If the pennant's base is 12 cm, its height is ___ cm. Write only the number.",
+          "a": "7"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A triangle with base 10 cm and height 4 cm has the same area as a triangle with base 8 cm and height 5 cm.\nReason (R): Two triangles with equal areas must have equal bases.",
+          "a": "A is true but R is false",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements about the area of a triangle.\nStatement 1: In a right triangle, the two sides that form the right angle can be used as the base and the height.\nStatement 2: The height of a triangle is always the length of one of its sides.\nStatement 3: If the base of a triangle is doubled and its height is halved, the area does not change.\nWhich of the statements are correct?",
+          "a": "1 and 3 only",
+          "o": [
+            "1 and 3 only",
+            "1 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: For a triangle with an obtuse angle, 1/2 × base × height still gives its area, provided the height is the perpendicular distance from the opposite vertex to the line containing the base. Give a reason.",
+          "a": "True. The foot of the perpendicular falls on the base extended, and the triangle's area is the difference of two right triangles with the same height h: 1/2 × h × DC − 1/2 × h × DB = 1/2 × h × (DC − DB) = 1/2 × h × base.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Explains it as a difference of two right triangles giving 1/2 × base × h",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "ABCD is a rectangle with AB = 10 cm and BC = 6 cm. X is a point on AB with AX = 4 cm.\n(a) Find the area of triangle XDC.\n(b) Find the areas of the two triangles AXD and XBC that are left over, and check that the three areas add up to the rectangle.",
+          "a": "(a) Base DC = 10 cm and height 6 cm, so 1/2 × 10 × 6 = 30 sq cm. (b) Area(AXD) = 1/2 × 4 × 6 = 12 sq cm and XB = 6 cm, so Area(XBC) = 1/2 × 6 × 6 = 18 sq cm. 30 + 12 + 18 = 60 = 10 × 6.",
+          "s": [
+            [
+              "Part (a): 30 sq cm",
+              1
+            ],
+            [
+              "Part (b): 12 sq cm and 18 sq cm, total 60 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A house has two identical triangular gable walls at the ends of its roof. Each gable has a horizontal base of 6 m, its two sloping edges are each 5 m long, and its top is 4 m vertically above the middle of the base. Both gables are to be painted with one coat; 1 litre of paint covers 4 sq m.\n(a) Find the area of one gable.\n(b) How many litres of paint are needed for both gables?\n(c) A worker took the 5 m sloping edge as the height. By how many sq m did he overestimate the area of each gable?\n(d) Paint is sold in 4-litre cans at Rs 900 and 1-litre cans at Rs 260. What is the cheapest way to buy at least the paint needed in (b)? Compare all sensible ways.",
+          "a": "(a) 1/2 × 6 × 4 = 12 sq m. (b) 2 × 12 = 24 sq m, and 24 ÷ 4 = 6 litres. (c) He found 1/2 × 6 × 5 = 15 sq m, which is 15 − 12 = 3 sq m too much per gable. (d) Ways to get at least 6 litres: six 1-litre cans Rs 1,560; one 4-litre and two 1-litre cans Rs 900 + 520 = Rs 1,420; two 4-litre cans Rs 1,800. The cheapest is one 4-litre can and two 1-litre cans, Rs 1,420.",
+          "s": [
+            [
+              "Part (a): 12 sq m",
+              1
+            ],
+            [
+              "Part (b): 24 sq m, so 6 litres",
+              1
+            ],
+            [
+              "Part (c): 15 − 12 = 3 sq m too much",
+              1
+            ],
+            [
+              "Part (d): compares Rs 1,560, 1,420, 1,800 and chooses Rs 1,420",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Two identical rectangles ABCD are each 12 cm long (AB) and 7 cm wide (BC). In the first, triangle 1 has base DC and its third vertex on AB. In the second, triangle 2 has base BC and its third vertex on AD. How do their areas compare?",
+          "a": "Equal, each 42 sq cm",
+          "o": [
+            "Equal, each 42 sq cm",
+            "Triangle 1 is larger; its base is longer",
+            "Triangle 2 is larger; its vertex is farther",
+            "Equal, each 84 sq cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "tags": [
+            "figure"
+          ],
+          "q": "On 1 cm squared paper a rectangle 8 cm wide and 6 cm high is drawn. Triangle ABC is drawn inside it: A is the bottom-left corner of the rectangle, B is on the right side 2 cm above the bottom-right corner, and C is on the top side 3 cm to the right of the top-left corner. Cutting out triangle ABC leaves three right triangles at the corners.\n(a) Find the area of the rectangle.\n(b) Find the area of each of the three corner right triangles.\n(c) Find the area of triangle ABC.\n(d) C is now moved along the top side to the top-left corner. Find the new area of triangle ABC by the same subtraction method.\n(e) Check (d) using 1/2 × base × height with the left side of the rectangle as the base.",
+          "a": "(a) 8 × 6 = 48 sq cm. (b) Bottom: legs 8 and 2, area 8 sq cm. Top-right: legs 6 − 2 = 4 and 8 − 3 = 5, area 10 sq cm. Top-left: legs 3 and 6, area 9 sq cm. (c) 48 − (8 + 10 + 9) = 21 sq cm. (d) Now only two corner triangles are left: the bottom one, 8 sq cm, and the top one with legs 4 and 8, area 16 sq cm. Area(ABC) = 48 − 24 = 24 sq cm. (e) AC is the left side, 6 cm, and the height is the horizontal distance from B to that side, 8 cm: 1/2 × 6 × 8 = 24 sq cm, which agrees.",
+          "s": [
+            [
+              "Part (a): 48 sq cm",
+              1
+            ],
+            [
+              "Part (b): corner triangles 8, 10 and 9 sq cm",
+              1
+            ],
+            [
+              "Part (c): 48 − 27 = 21 sq cm",
+              1
+            ],
+            [
+              "Part (d): 48 − 8 − 16 = 24 sq cm",
+              1
+            ],
+            [
+              "Part (e): 1/2 × 6 × 8 = 24 sq cm, agrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) A triangle with base 9 cm has an area of 36 sq cm. Find its height.\n(b) The height stays the same and the base is lengthened by 3 cm. By how much does the area increase?",
+          "a": "(a) 1/2 × 9 × h = 36, so h = 72 ÷ 9 = 8 cm. (b) The extra area is 1/2 × 3 × 8 = 12 sq cm (new area 1/2 × 12 × 8 = 48 sq cm).",
+          "s": [
+            [
+              "Part (a): height 8 cm",
+              1
+            ],
+            [
+              "Part (b): increase 12 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In triangle ABC, AB = 5 cm, BC = 8 cm, and the perpendicular distance from A to BC is 3 cm. A student writes: Area = 1/2 × 5 × 8 = 20 sq cm. Find the correct area and name the student's mistake.",
+          "a": "The correct area is 1/2 × 8 × 3 = 12 sq cm. The student used the sloping side AB as the height; the height must be the perpendicular distance from A to the base BC.",
+          "s": [
+            [
+              "Correct area 12 sq cm",
+              1
+            ],
+            [
+              "Mistake: used side AB instead of the perpendicular height",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A carpenter records these measurements of a triangular wooden piece PQR: PQ = 40 cm, PR = 30 cm, and the perpendicular distance from Q to the line PR = 24 cm. What is the area of the piece?",
+          "a": "360 sq cm",
+          "o": [
+            "360 sq cm",
+            "600 sq cm",
+            "480 sq cm",
+            "720 sq cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A triangular flag has an area of 54 sq cm. Its base is 3 cm longer than its height. What is the length of its base?",
+          "a": "12 cm",
+          "o": [
+            "12 cm",
+            "9 cm",
+            "15 cm",
+            "18 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Match each triangle with the value asked for.\nColumn A:\n1. Base 12 cm, height 5 cm: its area\n2. Base 9 cm, height 8 cm: its area\n3. Right triangle with the sides around the right angle 6 cm and 7 cm: its area\n4. Area 24 sq cm, base 8 cm: its height\nColumn B:\n(a) 21 sq cm\n(b) 6 cm\n(c) 30 sq cm\n(d) 36 sq cm",
+          "a": "1-c, 2-d, 3-a, 4-b",
+          "o": [
+            "1-c, 2-d, 3-a, 4-b",
+            "1-d, 2-c, 3-a, 4-b",
+            "1-c, 2-d, 3-b, 4-a",
+            "1-c, 2-a, 3-d, 4-b"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A worksheet states: 'If you double the base of a triangle, its area doubles; and if you double both its base and its height, its area again only doubles.' Test both parts with a triangle of base 6 cm and height 4 cm, and give your verdict.",
+          "a": "Partly right. Original area 1/2 × 6 × 4 = 12 sq cm. Doubling the base: 1/2 × 12 × 4 = 24 sq cm, which is double, so the first part is right. Doubling both: 1/2 × 12 × 8 = 48 sq cm, which is 4 times, not double, so the second part is wrong.",
+          "s": [
+            [
+              "Original 12 sq cm and doubled base 24 sq cm",
+              1
+            ],
+            [
+              "Both doubled gives 48 sq cm, four times",
+              1
+            ],
+            [
+              "Verdict: partly right, first part true, second false",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "reverse"
+          ],
+          "q": "Write a real-life situation whose answer is found by working out 1/2 × 14 × 9. Say what 14 and 9 stand for, including units, and give the answer with its unit.",
+          "a": "Example: A triangular flower bed has one side 14 m long along a wall, and its far corner is 9 m from the wall, measured perpendicular to the wall. Its area is 1/2 × 14 × 9 = 63 sq m. Here 14 m is the base and 9 m is the height (perpendicular distance), not a sloping side.",
+          "s": [
+            [
+              "A triangular situation with a base and a height",
+              1
+            ],
+            [
+              "14 identified as base and 9 as perpendicular height, with units",
+              1
+            ],
+            [
+              "Answer 63 with a square unit",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A sale deed describes a triangular plot PQR. Side QR runs along a road and is 40 m long, and the area of the plot is recorded as 600 sq m. Side PR is 50 m long. The owner wants to know how deep the plot is from the road and how far corner Q is from side PR.\n(a) Find the perpendicular distance from P to the road QR.\n(b) Find the perpendicular distance from Q to side PR.\n(c) A rectangular plot next door also has a 40 m road front and the same depth as in (a). What fraction of its area is the triangular plot's area?\n(d) A neighbour offers to swap her plot for a triangular plot whose longest side is 52 m, with its opposite corner 22 m from that side, measured at right angles. He says: 'Its longest side is longer than your 40 m and 50 m sides, so it must be the bigger plot.' If the owner wants more land, should she accept? Use (a) or (b).",
+          "a": "(a) 1/2 × 40 × h = 600, so h = 30 m. (b) 1/2 × 50 × h = 600, so h = 24 m. (c) The rectangle is 40 × 30 = 1,200 sq m, so the triangle is 600/1,200 = one half of it. (d) No. The offered plot has area 1/2 × 52 × 22 = 572 sq m, which is 28 sq m less than her 600 sq m. A longer side alone does not mean more area: her plot gives 40 × 30 = 50 × 24 = 1,200 for base × height, while the offered plot gives only 52 × 22 = 1,144.",
+          "s": [
+            [
+              "Part (a): 30 m",
+              1
+            ],
+            [
+              "Part (b): 24 m",
+              1
+            ],
+            [
+              "Part (c): one half of 1,200 sq m",
+              1
+            ],
+            [
+              "Part (d): offered plot 572 sq m, 28 sq m less, so refuse",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A tile is an isosceles triangle with two equal sides of 25 cm and a base of 30 cm. The perpendicular from the top vertex to the base is 20 cm long.\n(a) Find the area of the tile.\n(b) Find the length of the perpendicular from the end of the base to the opposite 25 cm side.\n(c) A student says the answer to (b) must be 20 cm, 'because a triangle has only one height'. Explain what is wrong.\n(d) Explain, using base × height, why the longest side of a triangle always has the shortest height.\n(e) Find the area of the smallest rectangle with the 30 cm side as one of its sides that encloses the tile, and say what fraction of it the tile covers.",
+          "a": "(a) 1/2 × 30 × 20 = 300 sq cm. (b) 1/2 × 25 × h = 300, so h = 600 ÷ 25 = 24 cm. (c) A triangle has three heights, one for each side taken as base; the height to a 25 cm side is 24 cm, and 20 cm belongs only to the 30 cm base. (d) For every side, base × height = 2 × area = 600, the same number; so the larger the base, the smaller its height must be (30 × 20 and 25 × 24 both give 600). (e) The rectangle is 30 cm by 20 cm = 600 sq cm, and the tile covers 300/600 = one half of it.",
+          "s": [
+            [
+              "Part (a): 300 sq cm",
+              1
+            ],
+            [
+              "Part (b): 24 cm",
+              1
+            ],
+            [
+              "Part (c): each side has its own height",
+              1
+            ],
+            [
+              "Part (d): base × height is fixed at 600, so a longer base has a shorter height",
+              1
+            ],
+            [
+              "Part (e): 600 sq cm rectangle, tile is one half",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) A triangular corner plot in a park has a base of 24 m and a height of 15 m. Find its area.\n(b) Turf costs Rs 40 per sq m. The gardener has already bought turf worth Rs 9,000. How many sq m too much or too little did he buy?",
+          "a": "(a) 1/2 × 24 × 15 = 180 sq m. (b) Rs 9,000 buys 9,000 ÷ 40 = 225 sq m, which is 225 − 180 = 45 sq m too much (the plot needs only Rs 7,200 worth).",
+          "s": [
+            [
+              "Part (a): 180 sq m",
+              1
+            ],
+            [
+              "Part (b): 225 sq m bought, 45 sq m too much",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.3",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A triangular plot ABC has its side BC, 60 m long, along a straight canal. Corner A is on a village road that runs parallel to the canal, 25 m away from it. The owner wants a different shape of plot but does not want to lose any land.\n(a) Find the area of the plot.\n(b) The owner proposes to move corner A to another point A' on the same road, keeping B and C. What is the area of triangle A'BC? Give the reason.\n(c) Instead, corner A could be moved to a point on a second road, also parallel to the canal but 30 m from it. How much land would the plot gain?\n(d) The owner is offered a choice: (i) keep A on the 25 m road and lengthen BC along the canal to 66 m, or (ii) keep BC = 60 m and move A to the 30 m road. Which choice gives more land, and by how much?",
+          "a": "(a) 1/2 × 60 × 25 = 750 sq m. (b) Still 750 sq m: the base BC is the same and A' is on a line parallel to BC, so the height is still 25 m. (c) 1/2 × 60 × 30 = 900 sq m, a gain of 150 sq m. (d) (i) gives 1/2 × 66 × 25 = 825 sq m and (ii) gives 900 sq m, so choice (ii) gives 75 sq m more.",
+          "s": [
+            [
+              "Part (a): 750 sq m",
+              1
+            ],
+            [
+              "Part (b): 750 sq m, same base and same height between the parallels",
+              1
+            ],
+            [
+              "Part (c): 900 sq m, a gain of 150 sq m",
+              1
+            ],
+            [
+              "Part (d): 825 against 900 sq m, choice (ii) by 75 sq m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A triangular garden ABC is split by a straight path from A to a point D on BC. BD = 3 m and DC = 6 m. The part ABD has an area of 15 sq m. What is the area of the part ADC?",
+          "a": "30 sq m",
+          "o": [
+            "30 sq m",
+            "15 sq m",
+            "45 sq m",
+            "7.5 sq m"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The line joining a vertex of any triangle to the midpoint of the opposite side always divides it into two congruent triangles.\nReason (R): The two triangles formed by such a line have equal bases and the same height from that vertex.",
+          "a": "A is false but R is true",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Line l is parallel to BC, and A and D are two different points on l.\nStatement 1: Triangles ABC and DBC have equal areas.\nStatement 2: Triangles ABC and DBC have equal perimeters.\nStatement 3: If M and N are the midpoints of AB and AC, triangle AMN has half the area of triangle ABC.\nWhich of the statements are correct?",
+          "a": "1 only",
+          "o": [
+            "1 only",
+            "1 and 2 only",
+            "1 and 3 only",
+            "2 and 3 only"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Points P and Q lie on a line parallel to BC, and BC = 10 cm. Triangle PBC has an area of 45 sq cm, so the distance between the two parallel lines is ___ cm. Answer with a number.",
+          "a": "9"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: In triangle ABC, D is a point on BC. If triangles ABD and ADC have equal areas, then AD must be perpendicular to BC. Give a reason.",
+          "a": "False. The two triangles have the same height from A, so equal areas only need equal bases, BD = DC; that is, D is the midpoint of BC. AD is then a median, which need not be perpendicular to BC (it is perpendicular only in special cases such as AB = AC).",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Equal areas need only BD = DC (same height), so AD is a median, not necessarily perpendicular",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A garden ABCD is a trapezium with AB parallel to DC. Two straight paths run along the diagonals AC and BD and cross at O, dividing the garden into four flower beds. Bed AOD has an area of 18 sq m.\n(a) Explain why bed BOC must also have an area of 18 sq m.\n(b) Triangle ABC has an area of 30 sq m. Find the area of bed AOB.",
+          "a": "(a) Triangles ABD and ABC have the same base AB, and D and C lie on DC, which is parallel to AB, so they have the same height and equal areas. Taking away the common triangle AOB from each leaves AOD and BOC, so these are equal: 18 sq m. (b) Area(AOB) = Area(ABC) − Area(BOC) = 30 − 18 = 12 sq m.",
+          "s": [
+            [
+              "Part (a): ABD and ABC are equal (same base, between parallels); removing AOB leaves AOD = BOC",
+              1
+            ],
+            [
+              "Part (b): 30 − 18 = 12 sq m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular sheet of card is 24 cm by 15 cm. Both its diagonals are drawn, and one of the four triangles they form is cut away. What area of card is left?",
+          "a": "270 sq cm",
+          "o": [
+            "270 sq cm",
+            "180 sq cm",
+            "315 sq cm",
+            "240 sq cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "ABCD is a rectangle of area 84 sq cm whose diagonals meet at O. A worksheet diagram labels triangle AOB as 24 sq cm and triangle BOC as 18 sq cm. Show that these labels cannot both be right, and find the correct area of each of the four triangles.",
+          "a": "The diagonals of a rectangle bisect each other, so OA = OC. Triangles AOB and BOC have equal bases OA and OC on AC and the same height from B, so their areas must be equal; 24 and 18 cannot both be right. All four triangles are equal in this way, so each is 84 ÷ 4 = 21 sq cm.",
+          "s": [
+            [
+              "Uses OA = OC (diagonals bisect each other)",
+              1
+            ],
+            [
+              "Same height from B, so the two areas must be equal",
+              1
+            ],
+            [
+              "Each triangle is 21 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "tags": [
+            "figure"
+          ],
+          "q": "ABCD is a rectangle with AB = 20 cm and BC = 12 cm; AB is the top side and DC the bottom side. Its diagonals AC and BD meet at O. M is the midpoint of AB, and O is joined to M. M is also joined to D and to C.\n(a) Find the area of each of the four triangles AOB, BOC, COD and DOA.\n(b) Find the areas of triangles AOM and OMB, giving the reason.\n(c) Find the area of triangle DMC.\n(d) Find the areas of triangles AMD and BMC, and check that (c) and (d) together make up the rectangle.\n(e) What fraction of the rectangle is triangle OMB?",
+          "a": "(a) The rectangle is 240 sq cm, and the diagonals divide it into four triangles of equal area, 60 sq cm each. (b) OM joins O to the midpoint of AB, so it divides triangle AOB into two equal parts: 30 sq cm each. (c) DMC has base DC = 20 cm and height 12 cm: 1/2 × 20 × 12 = 120 sq cm. (d) AMD = 1/2 × 10 × 12 = 60 sq cm and BMC = 60 sq cm; 120 + 60 + 60 = 240 sq cm. (e) 30/240 = 1/8.",
+          "s": [
+            [
+              "Part (a): 60 sq cm each",
+              1
+            ],
+            [
+              "Part (b): 30 sq cm each, OM is a median of AOB",
+              1
+            ],
+            [
+              "Part (c): 120 sq cm",
+              1
+            ],
+            [
+              "Part (d): 60 and 60 sq cm, total 240",
+              1
+            ],
+            [
+              "Part (e): one eighth",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "ABCD is a trapezium with AB parallel to DC, AB = 6 cm, DC = 12 cm, and the distance between AB and DC is 8 cm. Its diagonals AC and BD meet at O. Measuring along BD gives OB = 4 cm and OD = 8 cm.\n(a) Find the areas of triangles ABD and ABC, and say why they are equal.\n(b) Find the areas of triangles ADC and BDC.\n(c) Find the area of triangle AOB. (Hint: triangles AOB and AOD have the same height from A.)\n(d) Find the areas of triangles AOD and BOC, and explain why they must be equal.\n(e) Find the area of triangle COD, and check that the four triangles add up to the area of ABD + BDC.",
+          "a": "(a) Both have base AB = 6 cm and their third vertices D and C lie on DC, parallel to AB, so both heights are 8 cm: 1/2 × 6 × 8 = 24 sq cm each. (b) Both have base DC and height 8 cm: 1/2 × 12 × 8 = 48 sq cm each. (c) BD = 4 + 8 = 12 cm, so OB is one third of BD; AOB and ABD have the same height from A, so Area(AOB) = 1/3 × 24 = 8 sq cm. (d) AOD = 24 − 8 = 16 sq cm and BOC = Area(ABC) − Area(AOB) = 24 − 8 = 16 sq cm; they are equal because each is the same area (24) minus the same triangle AOB. (e) COD = 48 − 16 = 32 sq cm; 8 + 16 + 16 + 32 = 72 = 24 + 48.",
+          "s": [
+            [
+              "Part (a): 24 sq cm each, same base between parallels",
+              1
+            ],
+            [
+              "Part (b): 48 sq cm each",
+              1
+            ],
+            [
+              "Part (c): 8 sq cm",
+              1
+            ],
+            [
+              "Part (d): 16 sq cm each, both are 24 minus AOB",
+              1
+            ],
+            [
+              "Part (e): 32 sq cm and total 72 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Triangles ABC and DBC stand on the same base BC = 16 cm, with A and D on the same side of BC. Their areas are 72 sq cm and 48 sq cm.\n(a) Find the perpendicular distances of A and of D from BC.\n(b) Reena says AD is parallel to BC. Is she right? Give a reason.",
+          "a": "(a) 1/2 × 16 × h = 72 gives h = 9 cm for A; 1/2 × 16 × h = 48 gives h = 6 cm for D. (b) No. A line parallel to BC keeps the same distance from BC everywhere, but A is 9 cm and D is 6 cm from BC, so AD cannot be parallel to BC. (AD would be parallel only if the two areas were equal.)",
+          "s": [
+            [
+              "Part (a): 9 cm and 6 cm",
+              1
+            ],
+            [
+              "Part (b): no, unequal distances from BC, so AD is not parallel",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A triangular cloth banner XYZ has an area of 640 sq cm. M and N are the midpoints of XY and XZ, and the small triangle XMN is cut off along MN. What area of cloth is left in the four-sided piece MYZN?",
+          "a": "480 sq cm",
+          "o": [
+            "480 sq cm",
+            "320 sq cm",
+            "160 sq cm",
+            "560 sq cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Three identical square tiles of side 10 cm lie side by side in a row. A triangle is painted with its base exactly the whole bottom edge of the first tile and its top corner at the top-right corner of the third tile. What area does the painted triangle cover?",
+          "a": "50 sq cm",
+          "o": [
+            "50 sq cm",
+            "150 sq cm",
+            "100 sq cm",
+            "75 sq cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Triangle ABC has an area of 48 sq cm. Match each region with its area.\nColumn A:\n1. Triangle ABD, where D is on BC with BD one quarter of BC\n2. Triangle PBC, where P is on AB with BP three quarters of BA\n3. Triangle AXY, where X and Y divide BC into three equal parts\n4. Triangle EBC, where E is on the line through A parallel to BC\nColumn B:\n(a) 16 sq cm\n(b) 48 sq cm\n(c) 12 sq cm\n(d) 36 sq cm",
+          "a": "1-c, 2-d, 3-a, 4-b",
+          "o": [
+            "1-c, 2-d, 3-a, 4-b",
+            "1-c, 2-a, 3-d, 4-b",
+            "1-b, 2-d, 3-a, 4-c",
+            "1-d, 2-c, 3-a, 4-b"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A four-sided toy-kite frame ABCD has its two sticks AC and BD crossing at right angles at O, with BO = OD = 20 cm, AO = 15 cm and OC = 45 cm.\n(a) Find the areas of the four triangles AOB, BOC, COD and DOA.\n(b) A student says: 'Like the diagonals of a rectangle, the sticks of any four-sided frame cut it into four triangles of equal area.' Use (a) to say what the rectangle has that this frame does not.",
+          "a": "(a) AOB = 1/2 × 15 × 20 = 150 sq cm, BOC = 1/2 × 45 × 20 = 450 sq cm, COD = 450 sq cm and DOA = 150 sq cm. (b) The student is wrong. In a rectangle the diagonals bisect each other, so neighbouring triangles have equal bases (OA = OC) and the same height. Here O is not the midpoint of AC (15 cm against 45 cm), so AOB and BOC have unequal bases and unequal areas.",
+          "s": [
+            [
+              "Part (a): 150, 450, 450 and 150 sq cm",
+              1
+            ],
+            [
+              "Part (b): a rectangle's diagonals bisect each other; here AO is not equal to OC",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Claim: 'In triangle ABC, if D is a point on BC with BD : DC = 3 : 2, then the areas of triangles ABD and ADC are also in the ratio 3 : 2, even when the angle at B is obtuse.' Test the claim for BC = 15 cm with the height from A to the line BC equal to 8 cm, and give your verdict.",
+          "a": "Yes, the claim is right. BD = 9 cm and DC = 6 cm. The height from A to the line BC is 8 cm for both triangles, even though in the obtuse case its foot lies outside BC. Area(ABD) = 1/2 × 9 × 8 = 36 sq cm and Area(ADC) = 1/2 × 6 × 8 = 24 sq cm, and 36 : 24 = 3 : 2. With the same height, the areas follow the bases.",
+          "s": [
+            [
+              "Uses BD = 9 cm, DC = 6 cm and the common height 8 cm",
+              1
+            ],
+            [
+              "Areas 36 and 24 sq cm, ratio 3 : 2",
+              1
+            ],
+            [
+              "Verdict: yes, triangles with the same height have areas in the ratio of their bases",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A rectangle is 8 cm by 3 cm. Describe where the third vertex A of a triangle ABC with BC = 8 cm must lie so that the triangle has the same area as the rectangle. Give two different positions of A, one of which is not above the midpoint of BC, and explain why both work.",
+          "a": "The rectangle's area is 24 sq cm, so 1/2 × 8 × h = 24 and h = 6 cm. A can be anywhere on a line parallel to BC at a distance of 6 cm from it (on either side). For example, A directly above the midpoint of BC, and A directly above B, 6 cm from it. Both triangles have base 8 cm and height 6 cm, so both have area 24 sq cm.",
+          "s": [
+            [
+              "Finds height 6 cm from area 24 sq cm",
+              1
+            ],
+            [
+              "States the vertex lies on a line parallel to BC at 6 cm",
+              1
+            ],
+            [
+              "Gives two positions and explains equal base and height",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A housing society owns a triangular plot ABC. BC is 50 m long, and the perpendicular distance from A to BC is 36 m. It is to be divided between Block X (the part next to B) and Block Y by a straight wall from A to a point D on BC. A surveyor gives three proposals for the distance BD:\nProposal 1: BD = 20 m\nProposal 2: BD = 25 m\nProposal 3: BD = 30 m\n(a) Find the area of the whole plot.\n(b) Find the area Block X would get under each proposal.\n(c) Which proposal gives the two blocks equal areas, and what is special about D in it?\n(d) The committee later decides Block X should get 72 sq m more than Block Y. Find the distance BD that does this. The committee will accept one of the three proposals if Block X's area is within 40 sq m of the target. Which proposal, if any, can it accept?",
+          "a": "(a) 1/2 × 50 × 36 = 900 sq m. (b) Proposal 1: 1/2 × 20 × 36 = 360 sq m; Proposal 2: 450 sq m; Proposal 3: 540 sq m. (c) Proposal 2 gives 450 and 450 sq m; D is then the midpoint of BC, so AD is a median. (d) X + Y = 900 and X − Y = 72, so X = 486 sq m, and 1/2 × BD × 36 = 486 gives BD = 486 ÷ 18 = 27 m. Proposal 2 misses the target by 486 − 450 = 36 sq m and Proposal 3 by 540 − 486 = 54 sq m (Proposal 1 by 126 sq m), so only Proposal 2 can be accepted.",
+          "s": [
+            [
+              "Part (a): 900 sq m",
+              1
+            ],
+            [
+              "Part (b): 360, 450 and 540 sq m",
+              1
+            ],
+            [
+              "Part (c): Proposal 2, D is the midpoint (median)",
+              1
+            ],
+            [
+              "Part (d): X = 486 sq m, BD = 27 m; Proposal 2 is within 36 sq m, so accept it",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Triangle PQR has an area of 72 sq cm. S is the point on QR with QS one third of QR, and T is the point on PS with TS one quarter of PS.\n(a) Find the area of triangle PQS.\n(b) Find the area of triangle TQS.",
+          "a": "(a) Triangles PQS and PQR have the same height from P, and QS is one third of QR, so Area(PQS) = 72 ÷ 3 = 24 sq cm. (b) Triangles TQS and PQS have the same height from Q, and TS is one quarter of PS, so Area(TQS) = 24 ÷ 4 = 6 sq cm.",
+          "s": [
+            [
+              "Part (a): 24 sq cm, same height from P, base one third",
+              1
+            ],
+            [
+              "Part (b): 6 sq cm, same height from Q, base one quarter",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.4",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A pentagon is cut by two diagonals from one vertex into three triangles of areas 18, 30 and 16 sq cm. A square has the same area as the pentagon. The side of the square is ___ cm. Fill in a number.",
+          "a": "8"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A floor tile is a regular hexagon with each side 8 cm. Its centre O is about 6.9 cm from each side, measured at right angles.\n(a) Joining O to all six corners, find the area of the tile.\n(b) Show that the same answer comes from 1/2 × (perimeter of the hexagon) × 6.9, and explain why this works.",
+          "a": "(a) Each of the six triangles has base 8 cm and height 6.9 cm: 1/2 × 8 × 6.9 = 27.6 sq cm, so the tile is 6 × 27.6 = 165.6 sq cm. (b) The perimeter is 6 × 8 = 48 cm and 1/2 × 48 × 6.9 = 165.6 sq cm. It works because all six triangles have the same height 6.9 cm, so adding 1/2 × 8 × 6.9 six times is 1/2 × (8 + 8 + 8 + 8 + 8 + 8) × 6.9.",
+          "s": [
+            [
+              "Part (a): six triangles of 27.6 sq cm, 165.6 sq cm",
+              1
+            ],
+            [
+              "Part (b): 1/2 × 48 × 6.9 = 165.6, because every triangle has the same height",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular sheet ABCD has AB = 18 cm and AD = 10 cm. E is on AB with AE = 8 cm, and F is on DC with CF = 6 cm. The right-angled triangles ADE and BCF are cut off. What is the area of the four-sided piece DEBF that is left?",
+          "a": "110 sq cm",
+          "o": [
+            "110 sq cm",
+            "70 sq cm",
+            "145 sq cm",
+            "140 sq cm"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A five-sided field ABCDE is being sold at Rs 1,500 per sq m. The surveyor split it into three triangles using the diagonals AC and AD and recorded:\nTriangle ABC: base AC = 40 m, height from B to AC = 10 m\nTriangle ACD: base AC = 40 m, height from D to AC = 18 m\nTriangle ADE: base AD = 36 m, height from E to AD = 15 m\n(a) Find the area of triangle ABC.\n(b) Find the areas of triangles ACD and ADE.\n(c) Find the area of the field.\n(d) The seller's agent works out the area as 1/2 × 40 × (10 + 18 + 15). The seller offers the buyer three ways to pay: (i) Rs 1,500 per sq m on the agent's area; (ii) a fixed Rs 12,60,000; (iii) the buyer pays Rs 20,000 for a government re-survey, which will find the true area, and then Rs 1,500 per sq m on it. Which way costs the buyer least? Show all three totals.",
+          "a": "(a) 1/2 × 40 × 10 = 200 sq m. (b) ACD: 1/2 × 40 × 18 = 360 sq m; ADE: 1/2 × 36 × 15 = 270 sq m. (c) 200 + 360 + 270 = 830 sq m. (d) The agent's area is 1/2 × 40 × 43 = 860 sq m, wrong because he used AC as the base of triangle ADE, whose base is AD. (i) 860 × 1,500 = Rs 12,90,000; (ii) Rs 12,60,000; (iii) 20,000 + 830 × 1,500 = 20,000 + 12,45,000 = Rs 12,65,000. The fixed price (ii) is least, Rs 5,000 below the re-survey route and Rs 30,000 below the agent's figure.",
+          "s": [
+            [
+              "Part (a): 200 sq m",
+              1
+            ],
+            [
+              "Part (b): 360 and 270 sq m",
+              1
+            ],
+            [
+              "Part (c): 830 sq m",
+              1
+            ],
+            [
+              "Part (d): Rs 12,90,000, 12,60,000 and 12,65,000; choose the fixed price",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A garden with no dents is divided by straight paths from a fountain inside it to its four corners into beds of 21, 18, 25 and 16 sq m, so the garden's area is 80 sq m.\nReason (R): Triangles that cover a polygon without gaps or overlaps have areas that add up to the area of the polygon.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: A polygon can be divided into triangles only if all its sides are equal.\nStatement 2: For every quadrilateral, the area equals 1/2 × the product of its two diagonals.\nStatement 3: Joining one vertex of a hexagon (with no dents) to all the other vertices divides it into 4 triangles.\nWhich of the statements are correct?",
+          "a": "3 only",
+          "o": [
+            "3 only",
+            "1 and 3 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "A house-shaped pentagon is made of a rectangle 10 cm wide and 6 cm high with a triangle standing on its top 10 cm side. The whole shape fits on a card 10 cm wide and 12 cm tall. A student reports the pentagon's area as 100 sq cm. Show that this is impossible, and find the largest area the pentagon can have.",
+          "a": "The rectangle is 10 × 6 = 60 sq cm. The triangle's top corner must be on the card, so the triangle's height is at most 12 − 6 = 6 cm and its area is at most 1/2 × 10 × 6 = 30 sq cm. So the pentagon is at most 60 + 30 = 90 sq cm, and 100 sq cm is impossible. The largest area is 90 sq cm.",
+          "s": [
+            [
+              "Rectangle 60 sq cm and triangle height at most 6 cm",
+              1
+            ],
+            [
+              "Triangle at most 30 sq cm, so total at most 90 sq cm",
+              1
+            ],
+            [
+              "Concludes 100 is impossible; largest 90 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular lawn is 16 m by 10 m. Two right-angled triangular flower beds are cut out at two of its corners: one has the sides around the right angle 6 m and 4 m, the other 8 m and 5 m. How much lawn is left?",
+          "a": "128 sq m",
+          "o": [
+            "128 sq m",
+            "96 sq m",
+            "148 sq m",
+            "140 sq m"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A six-sided garden is made of a rectangle 12 m long and 8 m wide with a triangle added on each 8 m side. In each triangle the outer corner is opposite the midpoint of the 8 m side and 5 m away from it.\n(a) If the hexagon were split by diagonals from one corner, how many triangles would it make?\n(b) Find the area of the garden by adding the rectangle and the two triangles.\n(c) Check (b) another way: find the area of the smallest rectangle that encloses the whole garden, and subtract the four right-angled corner pieces that are not garden.\n(d) Grass costs Rs 55 per sq m. Find the cost of grassing the garden.\n(e) If each outer corner is moved 2 m farther out (so each triangle's height becomes 7 m), by how much does the garden's area increase?",
+          "a": "(a) 6 − 2 = 4 triangles. (b) Rectangle 12 × 8 = 96 sq m; each triangle 1/2 × 8 × 5 = 20 sq m; total 96 + 40 = 136 sq m. (c) The enclosing rectangle is (5 + 12 + 5) = 22 m by 8 m = 176 sq m. Each corner piece is a right triangle with sides 5 m and 4 m, area 10 sq m, and there are four: 176 − 40 = 136 sq m, which agrees. (d) 136 × 55 = Rs 7,480. (e) Each triangle grows by 1/2 × 8 × 2 = 8 sq m, so the garden grows by 16 sq m.",
+          "s": [
+            [
+              "Part (a): 4 triangles",
+              1
+            ],
+            [
+              "Part (b): 96 + 20 + 20 = 136 sq m",
+              1
+            ],
+            [
+              "Part (c): 176 − 40 = 136 sq m",
+              1
+            ],
+            [
+              "Part (d): Rs 7,480",
+              1
+            ],
+            [
+              "Part (e): 16 sq m more",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: Quadrilateral ABCD (with no dents) is split along diagonal AC into triangles of 40 sq cm and 25 sq cm. If it is split along diagonal BD instead, the two new triangles must also have areas adding to 65 sq cm, although they need not be 40 and 25 sq cm. Give a reason.",
+          "a": "True. Either pair of triangles covers the same quadrilateral without gaps or overlaps, so each pair adds up to the area of ABCD, 65 sq cm. The two pairs are different triangles, so the individual areas can change (only their sum is fixed).",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Both splits cover the same region, so the sum stays 65 sq cm; the parts may differ",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular flag is 24 cm long and 16 cm wide. A point P inside it is 6 cm below the top edge, and P is joined to all four corners. The two triangles that stand on the 24 cm edges are coloured blue. What fraction of the flag is blue?",
+          "a": "1/2",
+          "o": [
+            "1/2",
+            "3/16",
+            "5/16",
+            "1/4"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "In quadrilateral ABCD, diagonal AC = 24 cm. The perpendicular from B to AC is 9 cm and the perpendicular from D to AC is 6 cm. P is the midpoint of AC.\n(a) Find the area of ABCD.\n(b) Find the areas of triangles ABP and ADP.\n(c) Find the area of quadrilateral ABPD and compare it with ABCD.\n(d) Explain why joining B and D to the midpoint of AC always gives a quadrilateral with half the area, whatever the shape of ABCD.\n(e) If instead B and D are joined to the point Q on AC with AQ = 8 cm, what fraction of ABCD is quadrilateral ABQD? Show the working.",
+          "a": "(a) 1/2 × 24 × 9 + 1/2 × 24 × 6 = 108 + 72 = 180 sq cm. (b) BP is a median of triangle ABC, so Area(ABP) = 108 ÷ 2 = 54 sq cm; similarly Area(ADP) = 72 ÷ 2 = 36 sq cm. (c) 54 + 36 = 90 sq cm, exactly half of 180. (d) BP is a median of triangle ABC and DP is a median of triangle ADC, so each cuts its triangle in half; the two halves together are half of ABCD. (e) AQ is one third of AC, so ABQ = 1/2 × 8 × 9 = 36 sq cm and ADQ = 1/2 × 8 × 6 = 24 sq cm; 60/180 = one third.",
+          "s": [
+            [
+              "Part (a): 180 sq cm",
+              1
+            ],
+            [
+              "Part (b): 54 and 36 sq cm",
+              1
+            ],
+            [
+              "Part (c): 90 sq cm, half of ABCD",
+              1
+            ],
+            [
+              "Part (d): BP and DP are medians of the two triangles",
+              1
+            ],
+            [
+              "Part (e): 36 + 24 = 60 sq cm, one third",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "figure"
+          ],
+          "q": "On 1 cm squared paper, a quadrilateral has corners at the points (0, 0), (8, 2), (6, 7) and (0, 5), where (x, y) means x cm right of and y cm above the origin. It fits inside a rectangle 8 cm wide and 7 cm tall with one corner at (0, 0).\n(a) Find the area of the rectangle and of each of the three right-angled triangles of the rectangle that lie outside the quadrilateral.\n(b) Find the area of the quadrilateral.",
+          "a": "(a) The rectangle is 8 × 7 = 56 sq cm. The pieces outside are: bottom-right, legs 8 and 2, area 8 sq cm; top-right, legs 5 (from y = 2 to 7) and 2 (from x = 6 to 8), area 5 sq cm; top-left, legs 6 and 2 (from y = 5 to 7), area 6 sq cm. (b) 56 − (8 + 5 + 6) = 37 sq cm.",
+          "s": [
+            [
+              "Part (a): 56 sq cm and pieces 8, 5 and 6 sq cm",
+              1
+            ],
+            [
+              "Part (b): 56 − 19 = 37 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular banner ABCD is 12 m long (AB) and 8 m wide (BC). E is the midpoint of AB. The triangle EBC is cut off, leaving the four-sided piece AECD. What fraction of the banner is left?",
+          "a": "3/4",
+          "o": [
+            "3/4",
+            "1/2",
+            "2/3",
+            "5/8"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Match each shape with its area.\nColumn A:\n1. Quadrilateral with a diagonal of 20 cm and perpendiculars of 6 cm and 4 cm to it from the other corners\n2. Quadrilateral with a diagonal of 16 cm and perpendiculars of 5 cm and 5 cm to it\n3. Pentagon made of a square of side 8 cm with a triangle of height 3 cm on its top side\n4. Rectangle 12 cm by 10 cm with a right triangle (sides 4 cm and 8 cm around the right angle) cut off a corner\nColumn B:\n(a) 80 sq cm\n(b) 76 sq cm\n(c) 104 sq cm\n(d) 100 sq cm",
+          "a": "1-d, 2-a, 3-b, 4-c",
+          "o": [
+            "1-d, 2-a, 3-b, 4-c",
+            "1-a, 2-d, 3-b, 4-c",
+            "1-d, 2-b, 3-a, 4-c",
+            "1-c, 2-a, 3-b, 4-d"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) How many triangles are formed when a pentagon (with no dents) is divided by all the diagonals from one vertex?\n(b) Another student instead joins a point inside the pentagon to all five vertices. How many triangles does that make, and does it still give the correct area when the triangles are added?",
+          "a": "(a) 3 triangles. (b) 5 triangles. Yes: the five triangles cover the pentagon exactly without overlapping, so their areas still add up to the area of the pentagon; it is a different but equally valid way of dividing the polygon into triangles.",
+          "s": [
+            [
+              "Part (a): 3 triangles",
+              1
+            ],
+            [
+              "Part (b): 5 triangles, still correct since they cover the pentagon without overlap",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A student claims: 'Either diagonal of any quadrilateral cuts it into two triangles of equal area, just like the diagonal of a rectangle does.' Test the claim on quadrilateral ABCD with diagonal BD = 18 cm, the perpendicular from A to BD = 7 cm and the perpendicular from C to BD = 5 cm, and give your verdict.",
+          "a": "No, the claim is false. Area(ABD) = 1/2 × 18 × 7 = 63 sq cm and Area(CBD) = 1/2 × 18 × 5 = 45 sq cm, which are not equal. The two triangles have the same base BD, so they are equal only when the two perpendiculars are equal, as in a rectangle.",
+          "s": [
+            [
+              "Area(ABD) = 63 sq cm",
+              1
+            ],
+            [
+              "Area(CBD) = 45 sq cm",
+              1
+            ],
+            [
+              "Verdict: false, equal only when the perpendiculars are equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "reverse"
+          ],
+          "q": "Write a real situation about a four-sided piece of land whose area is found by 1/2 × 26 × (9 + 7). Say what 26, 9 and 7 stand for, and give the area with its unit.",
+          "a": "Example: A four-sided farm PQRS has diagonal PR = 26 m. Corner Q is 9 m from PR and corner S is 7 m from PR, both measured perpendicular to PR. The diagonal splits the farm into two triangles on base PR, so the area is 1/2 × 26 × 9 + 1/2 × 26 × 7 = 1/2 × 26 × 16 = 208 sq m.",
+          "s": [
+            [
+              "26 stands for a diagonal of the quadrilateral",
+              1
+            ],
+            [
+              "9 and 7 are the perpendiculars from the other two corners",
+              1
+            ],
+            [
+              "Area 208 sq m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A theatre group builds stage floors shaped like polygons with no dents. Each floor is made of identical-area triangular panels that fan out from one corner of the stage, so the panels are exactly the triangles formed by the diagonals from that corner. Each panel has an area of 6 sq m.\n(a) How many panels are needed for a four-sided stage, and what is its area?\n(b) Complete this table for stages with 5, 6 and 7 sides: number of panels, and area.\n(c) Write a rule for the area of an n-sided stage.\n(d) The group needs a stage of at least 50 sq m. What is the smallest number of sides the stage can have? Show how you decided.",
+          "a": "(a) A quadrilateral splits into 2 triangles, so 2 panels and 12 sq m. (b) 5 sides: 3 panels, 18 sq m; 6 sides: 4 panels, 24 sq m; 7 sides: 5 panels, 30 sq m. (c) An n-sided polygon makes n − 2 triangles from one corner, so the area is 6 × (n − 2) sq m. (d) 6 × (n − 2) must be at least 50, so n − 2 must be at least 9 (8 panels give only 48 sq m, 9 give 54 sq m). So n = 11 sides.",
+          "s": [
+            [
+              "Part (a): 2 panels, 12 sq m",
+              1
+            ],
+            [
+              "Part (b): 3, 4, 5 panels and 18, 24, 30 sq m",
+              1
+            ],
+            [
+              "Part (c): area = 6(n − 2) sq m",
+              1
+            ],
+            [
+              "Part (d): 9 panels needed, so 11 sides",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangular plot is 30 m by 20 m. A straight road cuts off one corner of it, running from the midpoint of a 30 m side to the midpoint of a 20 m side, and the triangle cut off is taken for the road.\n(a) Find the area of the five-sided plot that is left.\n(b) What fraction of the original plot is left?",
+          "a": "(a) The triangle cut off has sides 15 m and 10 m around the right angle, area 1/2 × 15 × 10 = 75 sq m. The plot left is 600 − 75 = 525 sq m. (b) 525/600 = 7/8.",
+          "s": [
+            [
+              "Part (a): 600 − 75 = 525 sq m",
+              1
+            ],
+            [
+              "Part (b): 7/8",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.5",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A hinged frame of sticks is a rectangle 8 cm by 5 cm. It is pushed sideways into a parallelogram, and the perpendicular distance between its 8 cm sides becomes 4 cm. What happens?",
+          "a": "Area falls by 8 sq cm; perimeter unchanged",
+          "o": [
+            "Area falls by 8 sq cm; perimeter unchanged",
+            "Area unchanged; perimeter unchanged",
+            "Area falls by 8 sq cm; perimeter falls by 2 cm",
+            "Area unchanged; perimeter falls by 2 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In parallelogram PQRS, SR = 15 cm and the perpendicular distance from P to SR is 8 cm. Side QR = 10 cm. The perpendicular distance from S to the line QR is ___ cm. Give the number only.",
+          "a": "12"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A hall floor of 7.2 sq m (72,000 sq cm) is to be covered with one kind of tile. Two kinds are offered:\nTile P: a parallelogram with base 20 cm and height 15 cm, Rs 18 each.\nTile R: a rhombus with diagonals 30 cm and 24 cm, Rs 20 each.\nIgnore cutting and waste: the number of tiles is the floor area divided by the area of one tile.\n(a) Find the area of one Tile P.\n(b) Find the area of one Tile R.\n(c) How many tiles of each kind are needed?\n(d) Tile R costs more per tile. Which kind should be bought to cover the floor more cheaply? Show both totals.",
+          "a": "(a) 20 × 15 = 300 sq cm. (b) 1/2 × 30 × 24 = 360 sq cm. (c) Tile P: 72,000 ÷ 300 = 240 tiles; Tile R: 72,000 ÷ 360 = 200 tiles. (d) Tile P costs 240 × 18 = Rs 4,320 and Tile R costs 200 × 20 = Rs 4,000, so Tile R is cheaper overall by Rs 320, because each tile covers more area.",
+          "s": [
+            [
+              "Part (a): 300 sq cm",
+              1
+            ],
+            [
+              "Part (b): 360 sq cm",
+              1
+            ],
+            [
+              "Part (c): 240 and 200 tiles",
+              1
+            ],
+            [
+              "Part (d): Rs 4,320 against Rs 4,000, choose Tile R",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A field is shaped like a parallelogram. Its base is 25 m, its slanting side is 13 m, and the perpendicular distance between the 25 m sides is 12 m. What is its area?",
+          "a": "300 sq m",
+          "o": [
+            "300 sq m",
+            "325 sq m",
+            "150 sq m",
+            "156 sq m"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A rectangle 6 cm by 4 cm has a greater area than a parallelogram with sides 6 cm and 4 cm that is not a rectangle.\nReason (R): In both a rectangle and a parallelogram, opposite sides are equal and parallel.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: When a parallelogram is cut along a height and the triangle is moved to the other end to make a rectangle, the length of the rectangle equals the slanting side of the parallelogram. Give a reason.",
+          "a": "False. The rectangle's length equals the base of the parallelogram, not the slanting side, and its width is the height. The triangle cut off from one end fills the same gap at the other end, so the base length is kept; this is why the area is base × height.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Rectangle is base by height, so its length is the base",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "tags": [
+            "figure"
+          ],
+          "q": "ABCD is a parallelogram with AB = DC = 14 cm (AB on top, DC at the bottom) and AD = BC = 10 cm. The perpendicular from A meets DC at X, with DX = 6 cm and AX = 8 cm. Triangle AXD is cut off and slid to the right so that AD lies along BC, making a rectangle ABYX.\n(a) Find the area of triangle AXD.\n(b) Find the length XY and the area of rectangle ABYX.\n(c) Explain why XY equals DC.\n(d) Taking AD = 10 cm as the base, find the corresponding height of the parallelogram.\n(e) Find the perimeters of the parallelogram and the rectangle. What does the dissection keep the same, and what does it change?",
+          "a": "(a) 1/2 × 6 × 8 = 24 sq cm. (b) XY = 14 cm, so Area(ABYX) = 14 × 8 = 112 sq cm. (c) The moved triangle puts CY = DX = 6 cm, so XY = XC + CY = XC + DX = DC = 14 cm. (d) Area 112 = 10 × height, so the height on AD is 11.2 cm. (e) Parallelogram: 2 × (14 + 10) = 48 cm; rectangle: 2 × (14 + 8) = 44 cm. Dissection keeps the area (112 sq cm) but changes the perimeter.",
+          "s": [
+            [
+              "Part (a): 24 sq cm",
+              1
+            ],
+            [
+              "Part (b): XY = 14 cm, area 112 sq cm",
+              1
+            ],
+            [
+              "Part (c): CY = DX so XY = DC",
+              1
+            ],
+            [
+              "Part (d): height 11.2 cm",
+              1
+            ],
+            [
+              "Part (e): 48 cm against 44 cm; area kept, perimeter changed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: A rhombus with diagonals 10 cm and 24 cm has an area of 240 sq cm.\nStatement 2: Of all parallelograms with sides 8 cm and 5 cm, the rectangle has the greatest area.\nStatement 3: A rhombus is a parallelogram, so base × height also gives its area.\nWhich of the statements are correct?",
+          "a": "2 and 3 only",
+          "o": [
+            "2 and 3 only",
+            "1 and 3 only",
+            "3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rhombus has diagonals of 16 cm and 12 cm, and each side is 10 cm.\n(a) Find its area.\n(b) Use base × height to find the perpendicular distance between two opposite sides.",
+          "a": "(a) 1/2 × 16 × 12 = 96 sq cm. (b) A rhombus is a parallelogram, so 10 × height = 96 and the height is 9.6 cm.",
+          "s": [
+            [
+              "Part (a): 96 sq cm",
+              1
+            ],
+            [
+              "Part (b): height 9.6 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "Show that no parallelogram with sides 9 cm and 5 cm can have an area of 50 sq cm.",
+          "a": "Take the 9 cm side as the base. The height is the perpendicular distance between the 9 cm sides, which can be at most the slanting 5 cm side (equal to it only for a rectangle). So the area is at most 9 × 5 = 45 sq cm, and 50 sq cm is impossible.",
+          "s": [
+            [
+              "Uses area = 9 × height",
+              1
+            ],
+            [
+              "Height cannot exceed the 5 cm side",
+              1
+            ],
+            [
+              "Largest area 45 sq cm, so 50 is impossible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A garden ABCD is a parallelogram with AB = 18 m, and the distance between AB and DC is 11 m. A triangular flower bed is laid out with AB as one side and its third corner at a point on DC (not at D or C). The rest of the garden is lawn. What is the area of the lawn?",
+          "a": "99 sq m",
+          "o": [
+            "99 sq m",
+            "198 sq m",
+            "49.5 sq m",
+            "148.5 sq m"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A student writes: 'Area = 1/2 × product of the diagonals works for a rhombus, and since a rectangle is also a parallelogram, it works for a rectangle too.' Test the claim on a rhombus with diagonals 10 cm and 24 cm, and on a rectangle 6 cm by 8 cm whose diagonals are each 10 cm long. Give your verdict.",
+          "a": "Partly right. Rhombus: 1/2 × 10 × 24 = 120 sq cm, which is its area, so the first part holds. Rectangle: 1/2 × 10 × 10 = 50 sq cm, but its true area is 6 × 8 = 48 sq cm, so it fails. The formula needs diagonals that are perpendicular (as in a rhombus), and a rectangle's diagonals are not perpendicular unless it is a square.",
+          "s": [
+            [
+              "Rhombus: the formula gives its area, 120 sq cm",
+              1
+            ],
+            [
+              "Rectangle: 50 against the true 48 sq cm",
+              1
+            ],
+            [
+              "Verdict: partly right; it needs perpendicular diagonals",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Match each shape with its area.\nColumn A:\n1. Parallelogram, base 9 cm, height 6 cm\n2. Rhombus, diagonals 12 cm and 7 cm\n3. Parallelogram, sides 10 cm and 6 cm, height 4.5 cm on the 10 cm side\n4. Rhombus, side 8 cm, distance between opposite sides 6 cm\nColumn B:\n(a) 48 sq cm\n(b) 45 sq cm\n(c) 54 sq cm\n(d) 42 sq cm",
+          "a": "1-c, 2-d, 3-b, 4-a",
+          "o": [
+            "1-c, 2-d, 3-b, 4-a",
+            "1-c, 2-a, 3-b, 4-d",
+            "1-b, 2-d, 3-c, 4-a",
+            "1-c, 2-d, 3-a, 4-b"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A parallelogram has sides 12 cm and 8 cm, and the height on the 12 cm side is 6 cm. A student gives its area as 8 × 6 = 48 sq cm. Which judgement is correct?",
+          "a": "Wrong: 6 cm pairs with 12 cm, so 72 sq cm",
+          "o": [
+            "Wrong: 6 cm pairs with 12 cm, so 72 sq cm",
+            "Right: any side times any height gives the area",
+            "Wrong: the area is 12 × 8 = 96 sq cm",
+            "Wrong: the area is 1/2 × 12 × 6 = 36 sq cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) A parallelogram has a base of 18 cm and a height of 12 cm. Find its area.\n(b) The base is increased by half of itself and the height is reduced by one third of itself. Find the new area and say whether the area has increased, decreased or stayed the same.",
+          "a": "(a) 18 × 12 = 216 sq cm. (b) New base 18 + 9 = 27 cm and new height 12 − 4 = 8 cm, so the new area is 27 × 8 = 216 sq cm: it stays the same, because the base is multiplied by 3/2 and the height by 2/3, and 3/2 × 2/3 = 1.",
+          "s": [
+            [
+              "Part (a): 216 sq cm",
+              1
+            ],
+            [
+              "Part (b): 27 × 8 = 216 sq cm, unchanged",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangular card is 24 cm long and 10 cm wide. The midpoints of its four sides are joined in order, giving a rhombus, which is cut out.\n(a) Find the lengths of the diagonals of the rhombus and its area.\n(b) What fraction of the card is left after the rhombus is cut out? Would the fraction be the same for a card of any size? Give a reason.",
+          "a": "(a) The diagonals join the midpoints of opposite sides, so they are 24 cm and 10 cm long. Area = 1/2 × 24 × 10 = 120 sq cm. (b) The card is 240 sq cm, so 240 − 120 = 120 sq cm is left, one half. Yes: for a card l by w, the rhombus has diagonals l and w, so its area is 1/2 × l × w, always half the card.",
+          "s": [
+            [
+              "Part (a): diagonals 24 cm and 10 cm, area 120 sq cm",
+              1
+            ],
+            [
+              "Part (b): one half left, for any rectangle, since 1/2 × l × w is half of l × w",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Rhombus ABCD has diagonals AC = 20 cm and BD = 12 cm meeting at O.\n(a) Find its area using the diagonals.\n(b) By the Sulba-Sutra dissection, the rhombus can be turned into a rectangle with one side equal to AC and the other equal to half of BD. Find the area of that rectangle.\n(c) Find the area again as Area(ABD) + Area(CBD), with BD as the common base.\n(d) Another rhombus has diagonals 15 cm and 16 cm. Compare its area with that of ABCD.\n(e) A student concludes: 'Two rhombuses with equal areas must have equal diagonals.' Use (d) to judge this.",
+          "a": "(a) 1/2 × 20 × 12 = 120 sq cm. (b) 20 × 6 = 120 sq cm, the same. (c) AO = CO = 10 cm, each perpendicular to BD: 1/2 × 12 × 10 + 1/2 × 12 × 10 = 60 + 60 = 120 sq cm. (d) 1/2 × 15 × 16 = 120 sq cm, exactly equal. (e) The conclusion is wrong: the rhombuses in (d) have equal areas (120 sq cm) but different diagonals (20 and 12 against 15 and 16). Equal area needs only equal products of the diagonals.",
+          "s": [
+            [
+              "Part (a): 120 sq cm",
+              1
+            ],
+            [
+              "Part (b): 20 × 6 = 120 sq cm",
+              1
+            ],
+            [
+              "Part (c): 60 + 60 = 120 sq cm",
+              1
+            ],
+            [
+              "Part (d): 120 sq cm, equal",
+              1
+            ],
+            [
+              "Part (e): wrong; equal products, different diagonals",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A rhombus-shaped plot of land is recorded as having an area of 600 sq m. Its shorter diagonal is 30 m and each side is 25 m. The owner wants to fence the boundary and also plant one straight hedge of fruit bushes along a diagonal to split the plot into two equal parts.\n(a) Find the length of the longer diagonal.\n(b) Find the perpendicular distance between two opposite sides.\n(c) Fencing costs Rs 200 per metre. Find the cost of fencing the boundary.\n(d) The hedge costs Rs 150 per metre to plant, and each metre of hedge gives fruit worth Rs 40 a year. The owner will keep the plot for 5 years. Along which diagonal should the hedge be planted to give the greater net gain (fruit earned minus planting cost) over the 5 years?",
+          "a": "(a) 1/2 × 30 × d = 600, so d = 40 m. (b) The rhombus is a parallelogram: 25 × h = 600, so h = 24 m. (c) Boundary 4 × 25 = 100 m, cost 100 × 200 = Rs 20,000. (d) Either diagonal splits the rhombus into two identical halves of 300 sq m. Longer diagonal: cost 40 × 150 = Rs 6,000, fruit 40 × 40 × 5 = Rs 8,000, net gain Rs 2,000. Shorter diagonal: cost 30 × 150 = Rs 4,500, fruit 30 × 40 × 5 = Rs 6,000, net gain Rs 1,500. Plant along the 40 m diagonal; it gains Rs 500 more over 5 years (although it costs more to plant).",
+          "s": [
+            [
+              "Part (a): 40 m",
+              1
+            ],
+            [
+              "Part (b): 24 m",
+              1
+            ],
+            [
+              "Part (c): Rs 20,000",
+              1
+            ],
+            [
+              "Part (d): net Rs 2,000 against Rs 1,500, choose the 40 m diagonal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A parallelogram has sides of 16 cm and 12 cm, and the perpendicular distance between its 16 cm sides is 9 cm.\n(a) Find its area.\n(b) It is cut along a height drawn to a 12 cm side and rearranged into a rectangle with one side 12 cm. Find the other side of that rectangle.\n(c) Explain why both rectangles (one from each choice of base) must have the same area.",
+          "a": "(a) 16 × 9 = 144 sq cm. (b) 12 × h = 144, so the other side (the height on the 12 cm side) is 12 cm: the rectangle is 12 cm by 12 cm. (c) Each rectangle is made from the same pieces of the parallelogram, rearranged without overlap or gaps, so each has the parallelogram's area, 144 sq cm.",
+          "s": [
+            [
+              "Part (a): 144 sq cm",
+              1
+            ],
+            [
+              "Part (b): 12 cm by 12 cm",
+              1
+            ],
+            [
+              "Part (c): dissection keeps the area of the same parallelogram",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A parallelogram and a triangle stand on the same base of 10 cm, and their top vertices lie on one line parallel to the base, 6 cm away from it.\n(a) Find both areas.\n(b) Compare them and explain the comparison.",
+          "a": "(a) Parallelogram: 10 × 6 = 60 sq cm; triangle: 1/2 × 10 × 6 = 30 sq cm. (b) The triangle has half the area of the parallelogram, because they have the same base and the same height, and the triangle's formula has the factor 1/2.",
+          "s": [
+            [
+              "Part (a): 60 sq cm and 30 sq cm",
+              1
+            ],
+            [
+              "Part (b): triangle is half, same base and height",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A rectangular lawn is 40 m long and 26 m wide. A straight path with parallel edges crosses it slantwise from one 40 m side to the other, and it takes up 3 m along each 40 m side. What area of lawn is left?",
+          "a": "962 sq m",
+          "o": [
+            "962 sq m",
+            "920 sq m",
+            "1,001 sq m",
+            "884 sq m"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.6",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "tags": [
+            "figure"
+          ],
+          "q": "WXYZ is a trapezium with WX parallel to ZY. WX = 10 m is the top side and ZY = 22 m the bottom side, and the distance between them is 8 m. Perpendiculars WM and XN are dropped from W and X to ZY, with M nearer Z and N nearer Y, so that ZM = 5 m and NY = 7 m.\n(a) Find the area of triangle WMZ.\n(b) Find the area of rectangle WXNM.\n(c) Find the area of triangle XNY, and hence the area of the trapezium.\n(d) Check your answer with 1/2 × height × sum of the parallel sides.\n(e) The top side is slid along its line, keeping WX = 10 m, ZY = 22 m and the height 8 m, so that ZM becomes 2 m and NY becomes 10 m. Find the new area by the same three pieces, and say what this shows.",
+          "a": "(a) 1/2 × 5 × 8 = 20 sq m. (b) 10 × 8 = 80 sq m. (c) 1/2 × 7 × 8 = 28 sq m; trapezium = 20 + 80 + 28 = 128 sq m. (d) 1/2 × 8 × (10 + 22) = 1/2 × 8 × 32 = 128 sq m, which agrees. (e) 1/2 × 2 × 8 + 80 + 1/2 × 10 × 8 = 8 + 80 + 40 = 128 sq m again. The area depends only on the two parallel sides and the height, not on where the top side sits.",
+          "s": [
+            [
+              "Part (a): 20 sq m",
+              1
+            ],
+            [
+              "Part (b): 80 sq m",
+              1
+            ],
+            [
+              "Part (c): 28 sq m, total 128 sq m",
+              1
+            ],
+            [
+              "Part (d): 1/2 × 8 × 32 = 128 sq m",
+              1
+            ],
+            [
+              "Part (e): 8 + 80 + 40 = 128 sq m; area depends only on a, b and h",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A garden bed is a trapezium whose parallel sides are 18 m and 12 m long and 8 m apart. What is its area?",
+          "a": "120 sq m",
+          "o": [
+            "120 sq m",
+            "240 sq m",
+            "144 sq m",
+            "96 sq m"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A tablet screen is 8 in long and 5 in wide. Using 1 sq in = 6.4516 sq cm, its area to the nearest whole number is ___ sq cm. Write the whole number only.",
+          "a": "258"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A family is choosing between two plots. Plot X is advertised as 0.25 acre for Rs 50 lakh. Plot Y is a rectangle 30 m by 35 m for Rs 54 lakh. Use 1 acre = 43,560 sq ft, 1 ft = 12 in and 1 in = 2.54 cm.\n(a) Express the area of Plot X in sq ft.\n(b) Find how many sq cm make 1 sq ft, and write it in sq m to four decimal places.\n(c) Using (a) and (b), find the area of Plot X in sq m, to the nearest whole number.\n(d) The family wants the lower price per sq m. Which plot should they choose? Show the price per sq m of each.",
+          "a": "(a) 0.25 × 43,560 = 10,890 sq ft. (b) 1 ft = 12 × 2.54 = 30.48 cm, so 1 sq ft = 30.48 × 30.48 = 929.0304 sq cm, which is about 0.0929 sq m. (c) 10,890 × 0.0929 = 1,011.7, about 1,012 sq m (the exact factor 0.09290304 also gives 1,011.7). (d) Plot X: 50,00,000 ÷ 1,012 = about Rs 4,940 per sq m (Rs 4,942 if 1,011.7 is used; either is accepted). Plot Y: 30 × 35 = 1,050 sq m, and 54,00,000 ÷ 1,050 = about Rs 5,143 per sq m. Plot X is cheaper per sq m, although Plot Y is a little larger.",
+          "s": [
+            [
+              "Part (a): 10,890 sq ft",
+              1
+            ],
+            [
+              "Part (b): 929.0304 sq cm, about 0.0929 sq m",
+              1
+            ],
+            [
+              "Part (c): about 1,012 sq m",
+              1
+            ],
+            [
+              "Part (d): about Rs 4,940 to 4,942 against Rs 5,143 per sq m, choose Plot X",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A floor area of 12 sq ft is smaller than 1.2 sq m.\nReason (R): Since 1 ft = 30.48 cm, 1 sq ft = 929.0304 sq cm, which is less than 0.1 sq m.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A trapezium has parallel sides of 7 cm and 13 cm and a height of 6 cm. Two copies of it are joined, one turned round, to form a parallelogram.\n(a) Find the base and the area of the parallelogram.\n(b) Hence find the area of the trapezium.",
+          "a": "(a) The base of the parallelogram is 7 + 13 = 20 cm and its height is 6 cm, so its area is 20 × 6 = 120 sq cm. (b) The trapezium is half of it: 60 sq cm.",
+          "s": [
+            [
+              "Part (a): base 20 cm, area 120 sq cm",
+              1
+            ],
+            [
+              "Part (b): 60 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements.\nStatement 1: 1 sq km = 10,00,000 sq m.\nStatement 2: A trapezium with parallel sides 9 cm and 15 cm and height 4 cm has the same area as a rectangle 12 cm by 4 cm.\nStatement 3: 1 sq ft = 12 sq in.\nWhich of the statements are correct?",
+          "a": "1 and 2 only",
+          "o": [
+            "1 and 2 only",
+            "2 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: The formula 1/2 × height × (sum of the parallel sides) also gives the area of a rectangle, if the rectangle is treated as a trapezium whose two parallel sides are both its length. Give a reason.",
+          "a": "True. For a rectangle of length l and width w, both parallel sides are l and the height is w, so 1/2 × w × (l + l) = 1/2 × w × 2l = l × w, the area of the rectangle.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Shows 1/2 × w × (l + l) = l × w",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A window pane is a trapezium whose parallel sides are 1.2 m and 0.8 m long, and they are 50 cm apart. What is the area of the pane in sq cm?",
+          "a": "5,000 sq cm",
+          "o": [
+            "5,000 sq cm",
+            "50 sq cm",
+            "10,000 sq cm",
+            "2,500 sq cm"
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A carpenter says: 'A trapezium with parallel sides 6 cm and 14 cm and height 5 cm has the same area as a 10 cm by 5 cm rectangle. In fact, every trapezium has the same area as the rectangle with the same height whose length is the average of the two parallel sides.' Check both parts and give your verdict.",
+          "a": "Yes, both parts are right. Trapezium: 1/2 × 5 × (6 + 14) = 50 sq cm, and the rectangle is 10 × 5 = 50 sq cm. In general 1/2 × h × (a + b) = h × (a + b)/2, which is height × average of the parallel sides, the area of that rectangle.",
+          "s": [
+            [
+              "Trapezium 50 sq cm equals rectangle 50 sq cm",
+              1
+            ],
+            [
+              "Rewrites 1/2 × h × (a + b) as h × (a + b)/2",
+              1
+            ],
+            [
+              "Verdict: yes, the claim is right",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A field in the shape of a trapezium has an area of 360 sq m. The distance between its parallel sides is 16 m, and one parallel side is 20 m.\n(a) Write the area formula with the unknown side b.\n(b) Find b.\n(c) Check your answer by putting it back into the formula.",
+          "a": "(a) 1/2 × 16 × (20 + b) = 360, that is 8 × (20 + b) = 360. (b) 20 + b = 45, so b = 25 m. (c) 1/2 × 16 × (20 + 25) = 8 × 45 = 360 sq m, as given.",
+          "s": [
+            [
+              "Part (a): 8 × (20 + b) = 360",
+              1
+            ],
+            [
+              "Part (b): b = 25 m",
+              1
+            ],
+            [
+              "Part (c): 8 × 45 = 360 checks",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "An A4 sheet is 21 cm by 29.7 cm. About how many A4 sheets, laid without overlap, would cover a table top 1.2 m by 0.6 m?",
+          "a": "About 12",
+          "o": [
+            "About 12",
+            "About 34",
+            "About 1",
+            "About 115"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "tags": [
+            "match"
+          ],
+          "q": "Use 1 in = 2.54 cm, 1 sq in = 6.4516 sq cm, 1 ft = 12 in and 1 acre = 43,560 sq ft. Match each quantity with its value.\nColumn A:\n1. 5 in, in cm\n2. 3 sq in, in sq cm\n3. 2 sq ft, in sq in\n4. 0.5 acre, in sq ft\nColumn B:\n(a) 288\n(b) 12.7\n(c) 21,780\n(d) 19.3548",
+          "a": "1-b, 2-d, 3-a, 4-c",
+          "o": [
+            "1-b, 2-d, 3-a, 4-c",
+            "1-d, 2-b, 3-a, 4-c",
+            "1-b, 2-d, 3-c, 4-a",
+            "1-b, 2-a, 3-d, 4-c"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) A photo is 6 in by 4 in. Find its area in sq in.\n(b) Using 1 sq in = 6.4516 sq cm, express this area in sq cm, correct to two decimal places.",
+          "a": "(a) 6 × 4 = 24 sq in. (b) 24 × 6.4516 = 154.8384, about 154.84 sq cm.",
+          "s": [
+            [
+              "Part (a): 24 sq in",
+              1
+            ],
+            [
+              "Part (b): 154.84 sq cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A trapezium has parallel sides of 12 cm and 20 cm and a height of 7 cm.\n(a) Find its area.\n(b) A triangle has the same height and the same area. Find its base, and say how it is related to the parallel sides.",
+          "a": "(a) 1/2 × 7 × (12 + 20) = 112 sq cm. (b) 1/2 × base × 7 = 112, so the base is 32 cm, which is the sum of the two parallel sides (12 + 20).",
+          "s": [
+            [
+              "Part (a): 112 sq cm",
+              1
+            ],
+            [
+              "Part (b): base 32 cm, the sum of the parallel sides",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A classroom is 30 ft long and 24 ft wide. The school's land is 2 acres. Use 1 ft = 12 in, 1 in = 2.54 cm and 1 acre = 43,560 sq ft.\n(a) Find the classroom's area in sq ft.\n(b) Express it in sq in.\n(c) 1 sq ft = 929.0304 sq cm. Express the classroom's area in sq m, to one decimal place.\n(d) Find the school's area in sq ft, and how many times the classroom's area it is.\n(e) The headmaster says the school is 'about 8,000 sq m'. Use (c) and (d) to judge whether this is reasonable.",
+          "a": "(a) 30 × 24 = 720 sq ft. (b) 1 sq ft = 12 × 12 = 144 sq in, so 720 × 144 = 1,03,680 sq in. (c) 720 × 929.0304 = 6,68,901.888 sq cm; dividing by 10,000 gives about 66.9 sq m. (d) 2 × 43,560 = 87,120 sq ft, and 87,120 ÷ 720 = 121 times. (e) 121 × 66.89 = about 8,094 sq m, so 'about 8,000 sq m' is reasonable (a slight underestimate).",
+          "s": [
+            [
+              "Part (a): 720 sq ft",
+              1
+            ],
+            [
+              "Part (b): 1,03,680 sq in",
+              1
+            ],
+            [
+              "Part (c): about 66.9 sq m",
+              1
+            ],
+            [
+              "Part (d): 87,120 sq ft, 121 times",
+              1
+            ],
+            [
+              "Part (e): about 8,094 sq m, so the estimate is reasonable",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "tags": [
+            "case_study"
+          ],
+          "q": "A farm field is a trapezium. Its two parallel sides, along two village roads, are 60 m and 40 m long, and the roads are 25 m apart. The other two sides are a straight hedge at right angles to both roads and a slanting fence. The farmer can buy a triangular strip from his neighbour that would make the field a rectangle 60 m by 25 m. The strip costs Rs 40 per sq m, and each sq m of crop land earns him Rs 18 a year.\n(a) Find the area of the field.\n(b) Check (a) by splitting the field into a rectangle and a right triangle.\n(c) Find the area of the strip he would buy, and its cost.\n(d) Will the strip's earnings pay back its cost within 2 years? If not, in which year does the farmer get his money back?",
+          "a": "(a) 1/2 × 25 × (60 + 40) = 1,250 sq m. (b) Rectangle 40 × 25 = 1,000 sq m and right triangle with sides 20 m and 25 m, 1/2 × 20 × 25 = 250 sq m; 1,000 + 250 = 1,250 sq m. (c) The rectangle is 60 × 25 = 1,500 sq m, so the strip is 1,500 − 1,250 = 250 sq m, costing 250 × 40 = Rs 10,000. (d) The strip earns 250 × 18 = Rs 4,500 a year, so Rs 9,000 in 2 years, which is less than Rs 10,000. He gets his money back during the third year (Rs 13,500 by its end).",
+          "s": [
+            [
+              "Part (a): 1,250 sq m",
+              1
+            ],
+            [
+              "Part (b): 1,000 + 250 = 1,250 sq m",
+              1
+            ],
+            [
+              "Part (c): 250 sq m, Rs 10,000",
+              1
+            ],
+            [
+              "Part (d): Rs 4,500 a year; not within 2 years, paid back in the third year",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "Trapezium ABCD has AB = 10 cm parallel to DC = 16 cm, and they are 6 cm apart. A line through B parallel to AD meets DC at G, splitting ABCD into parallelogram ABGD and triangle BGC. What are their areas?",
+          "a": "60 sq cm and 18 sq cm",
+          "o": [
+            "60 sq cm and 18 sq cm",
+            "60 sq cm and 36 sq cm",
+            "96 sq cm and 18 sq cm",
+            "30 sq cm and 18 sq cm"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "tags": [
+            "scenario"
+          ],
+          "q": "A carpenter has a rectangular plank 20 cm long and 8 cm wide. From each end of one long edge he saws off a right-angled triangle whose sides around the right angle are 5 cm (along the long edge) and 8 cm (across the plank). The piece left is a trapezium. What is its area?",
+          "a": "120 sq cm",
+          "o": [
+            "120 sq cm",
+            "80 sq cm",
+            "140 sq cm",
+            "100 sq cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) How many sq in make 1 sq ft?\n(b) Rectangular tiles, each 9 in by 8 in, are laid in straight rows, without cutting, on a floor area 6 ft by 4 ft, with the 9 in side along the 6 ft side. How many tiles are needed?",
+          "a": "(a) 1 ft = 12 in, so 1 sq ft = 12 × 12 = 144 sq in. (b) The floor is 72 in by 48 in. Along 72 in, 72 ÷ 9 = 8 tiles; along 48 in, 48 ÷ 8 = 6 tiles; 8 × 6 = 48 tiles. (Check: 24 sq ft = 3,456 sq in, and 3,456 ÷ 72 = 48.)",
+          "s": [
+            [
+              "Part (a): 144 sq in",
+              1
+            ],
+            [
+              "Part (b): 48 tiles",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "An A4 sheet is 21 cm by 29.7 cm. A US Letter sheet is 8.5 in by 11 in.\n(a) Find the area of the A4 sheet in sq cm.\n(b) Using 1 sq in = 6.4516 sq cm, express it in sq in to one decimal place.\n(c) Which sheet has the larger area, and by about how many sq in?",
+          "a": "(a) 21 × 29.7 = 623.7 sq cm. (b) 623.7 ÷ 6.4516 = about 96.7 sq in. (c) Letter: 8.5 × 11 = 93.5 sq in. The A4 sheet is larger, by about 96.7 − 93.5 = 3.2 sq in.",
+          "s": [
+            [
+              "Part (a): 623.7 sq cm",
+              1
+            ],
+            [
+              "Part (b): about 96.7 sq in",
+              1
+            ],
+            [
+              "Part (c): Letter 93.5 sq in, A4 larger by about 3.2 sq in",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
