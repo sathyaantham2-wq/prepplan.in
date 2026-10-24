@@ -9,6 +9,7 @@ import {
 } from '../db/repositories'
 import { CURRENT_CONSENT_VERSION } from './consent'
 import { env } from './env'
+import { whatsappLogin } from './wa-login-plugin'
 
 export const auth = betterAuth({
   database: createAuthPool(),
@@ -45,8 +46,14 @@ export const auth = betterAuth({
     customRules: {
       '/sign-in/email': { window: 60, max: 10 },
       '/sign-up/email': { window: 60, max: 10 },
+      // "Continue with WhatsApp": starting is cheap to abuse, polling is every couple of seconds
+      // from each open sign-in screen (a family on one network may have several).
+      '/whatsapp/start': { window: 60, max: 10 },
+      '/whatsapp/poll': { window: 60, max: 120 },
+      '/whatsapp/complete-signup': { window: 60, max: 10 },
     },
   },
+  plugins: [whatsappLogin()],
   // No email confirmation (owner decision 2026-09-20): a new account signs in at once.
   emailAndPassword: {
     enabled: true,

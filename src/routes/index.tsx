@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
@@ -17,6 +17,8 @@ import {
   useInstallOffer,
 } from '../components/install-app-dialog'
 import { signIn, signOut, signUp, useSession } from '../lib/auth-client'
+import { WhatsAppLogin } from '../components/whatsapp-login'
+import type { WaConfigResponse } from '../lib/wa-login-types'
 
 const SHARE_INSTALL_OFFER_KEY = 'prepplan-install-offer-share'
 
@@ -55,6 +57,24 @@ function Home() {
   const [guestBusy, setGuestBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  // "Continue with WhatsApp": offered only when the server says the feature is switched on.
+  const [waEnabled, setWaEnabled] = useState(false)
+  const [showWa, setShowWa] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/auth/whatsapp/config')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((c: WaConfigResponse | null) => {
+        if (!cancelled && c?.enabled === true) setWaEnabled(true)
+      })
+      .catch(() => undefined)
+    return () => {
+      cancelled = true
+    }
+  }, [])
+  // After WhatsApp sign-in (or sign-up) the session cookie is set: a full load lets the redirect
+  // effect above send her exactly where an email sign-in goes (a new account: profile setup).
+  const handleWaDone = useCallback(() => window.location.assign('/'), [])
 
   const role = (session?.user as { role?: string } | undefined)?.role
 
@@ -223,7 +243,7 @@ function Home() {
         )}
 
         <Card>
-          <CardHeader>
+          <CardHeader hidden={showWa}>
             <CardTitle className="text-h3">
               {mode === 'sign-in' ? 'Sign in' : 'Create your account'}
             </CardTitle>
@@ -234,6 +254,14 @@ function Home() {
             </CardDescription>
           </CardHeader>
           <CardContent>
+            {showWa && (
+              <WhatsAppLogin
+                purpose="signin"
+                onDone={handleWaDone}
+                onCancel={() => setShowWa(false)}
+              />
+            )}
+            <div hidden={showWa}>
             {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {mode === 'sign-up' && (
@@ -325,6 +353,16 @@ function Home() {
                 >
                   Continue with Google
                 </Button>
+                {waEnabled && (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="mt-2 w-full"
+                    onClick={() => setShowWa(true)}
+                  >
+                    Continue with WhatsApp
+                  </Button>
+                )}
 
                 <div className="bg-muted/50 mt-4 space-y-3 rounded-lg border p-3">
                   <p className="text-small text-muted-foreground">
@@ -345,6 +383,24 @@ function Home() {
                     agrees to your using PrepPlan.
                   </p>
                 </div>
+              </>
+            )}
+
+            {mode === 'sign-up' && waEnabled && (
+              <>
+                <div className="my-4 flex items-center gap-3">
+                  <div className="bg-border h-px flex-1" />
+                  <span className="text-small text-muted-foreground">or</span>
+                  <div className="bg-border h-px flex-1" />
+                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => setShowWa(true)}
+                >
+                  Continue with WhatsApp
+                </Button>
               </>
             )}
 
@@ -375,6 +431,7 @@ function Home() {
                 )}
               </p>
             }
+            </div>
           </CardContent>
         </Card>
         {/* F131: Google Play wants the privacy policy reachable from inside the app. */}

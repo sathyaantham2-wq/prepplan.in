@@ -31,6 +31,17 @@ Update this file whenever the picture changes; it is meant to be uploaded as Pro
 - [ ] Owner: confirm Gemini is on a paid tier (children's answers and handwriting photos go to it)
 - [ ] Owner: legal review of `/privacy` and consent copy
 
+## "Continue with WhatsApp" sign-in checklist (code built, switched off until these are done)
+Guide: `docs/whatsapp-login-setup.md`. Nothing changes for anyone until the three required variables are set in Vercel.
+- [ ] Owner: Meta developer account and Meta Business account; business verification started
+- [ ] Owner: a dedicated WhatsApp Business phone number (a SIM not used on the personal WhatsApp app)
+- [ ] Owner: copy app secret, phone number id and a permanent access token from Meta
+- [ ] Owner: choose a verify token; set the webhook to `https://www.prepplan.in/api/webhooks/whatsapp`, subscribe to `messages`
+- [ ] Owner: set `WHATSAPP_BUSINESS_NUMBER`, `WHATSAPP_APP_SECRET`, `WHATSAPP_VERIFY_TOKEN` (+ optional `WHATSAPP_ACCESS_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`) in Vercel, redeploy
+- [ ] Owner: try it with `scripts/whatsapp-simulate.ts` locally, then with a real phone
+- [ ] Owner: update `/privacy` and the sign-up consent copy to mention the phone number; legal review (a child's phone number is personal data under DPDP)
+- [ ] Owner: re-check Meta's current pricing page for service conversations
+
 ## Known inconsistencies, left as-is by owner decision
 - Class 10 Maths multi_statement uses 3 statements in some chapters (should be 2).
 - Class 8 Social Science uses the denser Maths AR/MS pattern.

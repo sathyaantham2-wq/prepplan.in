@@ -13,6 +13,7 @@ import { AppShell } from '../components/app-shell'
 import { useSession, signOut } from '../lib/auth-client'
 import { PageLoading } from '../components/page-loading'
 import { MyExamsSection } from '../components/my-exams-section'
+import { WhatsAppSettingsCard } from '../components/whatsapp-settings-card'
 
 export const Route = createFileRoute('/settings')({ component: Settings })
 
@@ -225,6 +226,8 @@ function StudentSettings() {
         <h1 className="text-h1 mb-6">Settings</h1>
 
         <MyExamsSection />
+
+        <WhatsAppSettingsCard />
 
         <Card className="mb-4">
           <CardHeader>

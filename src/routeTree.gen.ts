@@ -114,6 +114,7 @@ import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/c
 import { Route as ApiSyllabusConceptsRouteImport } from './routes/api/syllabus/concepts'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
+import { Route as ApiWebhooksWhatsappRouteImport } from './routes/api/webhooks/whatsapp'
 import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/report'
 import { Route as ApiAdminSubjectsIdRouteImport } from './routes/api/admin/subjects/$id'
 import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
@@ -147,6 +148,7 @@ import { Route as ApiStudentsMeLeaderboardOptInRouteImport } from './routes/api/
 import { Route as ApiStudentsMeProfileRouteImport } from './routes/api/students/me/profile'
 import { Route as ApiStudentsMeRewardsRouteImport } from './routes/api/students/me/rewards'
 import { Route as ApiStudentsMeWeeklyCardRouteImport } from './routes/api/students/me/weekly-card'
+import { Route as ApiStudentsMeWhatsappRouteImport } from './routes/api/students/me/whatsapp'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
 import { Route as ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport } from './routes/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -698,6 +700,11 @@ const ApiTrackerStudentIdRoute = ApiTrackerStudentIdRouteImport.update({
   path: '/api/tracker/$studentId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiWebhooksWhatsappRoute = ApiWebhooksWhatsappRouteImport.update({
+  id: '/api/webhooks/whatsapp',
+  path: '/api/webhooks/whatsapp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EvaluationIdReportRoute = EvaluationIdReportRouteImport.update({
   id: '/evaluation/$id/report',
   path: '/evaluation/$id/report',
@@ -868,6 +875,11 @@ const ApiStudentsMeRewardsRoute = ApiStudentsMeRewardsRouteImport.update({
 const ApiStudentsMeWeeklyCardRoute = ApiStudentsMeWeeklyCardRouteImport.update({
   id: '/weekly-card',
   path: '/weekly-card',
+  getParentRoute: () => ApiStudentsMeRoute,
+} as any)
+const ApiStudentsMeWhatsappRoute = ApiStudentsMeWhatsappRouteImport.update({
+  id: '/whatsapp',
+  path: '/whatsapp',
   getParentRoute: () => ApiStudentsMeRoute,
 } as any)
 const ApiSummaryWeeklyStudentIdRoute =
@@ -1087,6 +1099,7 @@ export interface FileRoutesByFullPath {
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/webhooks/whatsapp': typeof ApiWebhooksWhatsappRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
@@ -1120,6 +1133,7 @@ export interface FileRoutesByFullPath {
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/students/me/rewards': typeof ApiStudentsMeRewardsRouteWithChildren
   '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
+  '/api/students/me/whatsapp': typeof ApiStudentsMeWhatsappRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -1245,6 +1259,7 @@ export interface FileRoutesByTo {
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/webhooks/whatsapp': typeof ApiWebhooksWhatsappRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
@@ -1278,6 +1293,7 @@ export interface FileRoutesByTo {
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/students/me/rewards': typeof ApiStudentsMeRewardsRouteWithChildren
   '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
+  '/api/students/me/whatsapp': typeof ApiStudentsMeWhatsappRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -1405,6 +1421,7 @@ export interface FileRoutesById {
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/webhooks/whatsapp': typeof ApiWebhooksWhatsappRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
@@ -1438,6 +1455,7 @@ export interface FileRoutesById {
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/students/me/rewards': typeof ApiStudentsMeRewardsRouteWithChildren
   '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
+  '/api/students/me/whatsapp': typeof ApiStudentsMeWhatsappRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -1566,6 +1584,7 @@ export interface FileRouteTypes {
     | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/webhooks/whatsapp'
     | '/evaluation/$id/report'
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
@@ -1599,6 +1618,7 @@ export interface FileRouteTypes {
     | '/api/students/me/profile'
     | '/api/students/me/rewards'
     | '/api/students/me/weekly-card'
+    | '/api/students/me/whatsapp'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -1724,6 +1744,7 @@ export interface FileRouteTypes {
     | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/webhooks/whatsapp'
     | '/evaluation/$id/report'
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
@@ -1757,6 +1778,7 @@ export interface FileRouteTypes {
     | '/api/students/me/profile'
     | '/api/students/me/rewards'
     | '/api/students/me/weekly-card'
+    | '/api/students/me/whatsapp'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -1883,6 +1905,7 @@ export interface FileRouteTypes {
     | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/webhooks/whatsapp'
     | '/evaluation/$id/report'
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
@@ -1916,6 +1939,7 @@ export interface FileRouteTypes {
     | '/api/students/me/profile'
     | '/api/students/me/rewards'
     | '/api/students/me/weekly-card'
+    | '/api/students/me/whatsapp'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -2012,6 +2036,7 @@ export interface RootRouteChildren {
   ApiSyllabusConceptsRoute: typeof ApiSyllabusConceptsRouteWithChildren
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
+  ApiWebhooksWhatsappRoute: typeof ApiWebhooksWhatsappRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
   ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -2755,6 +2780,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiTrackerStudentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/webhooks/whatsapp': {
+      id: '/api/webhooks/whatsapp'
+      path: '/api/webhooks/whatsapp'
+      fullPath: '/api/webhooks/whatsapp'
+      preLoaderRoute: typeof ApiWebhooksWhatsappRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/evaluation/$id/report': {
       id: '/evaluation/$id/report'
       path: '/evaluation/$id/report'
@@ -2984,6 +3016,13 @@ declare module '@tanstack/react-router' {
       path: '/weekly-card'
       fullPath: '/api/students/me/weekly-card'
       preLoaderRoute: typeof ApiStudentsMeWeeklyCardRouteImport
+      parentRoute: typeof ApiStudentsMeRoute
+    }
+    '/api/students/me/whatsapp': {
+      id: '/api/students/me/whatsapp'
+      path: '/whatsapp'
+      fullPath: '/api/students/me/whatsapp'
+      preLoaderRoute: typeof ApiStudentsMeWhatsappRouteImport
       parentRoute: typeof ApiStudentsMeRoute
     }
     '/api/summary/weekly/$studentId': {
@@ -3486,6 +3525,7 @@ interface ApiStudentsMeRouteChildren {
   ApiStudentsMeProfileRoute: typeof ApiStudentsMeProfileRoute
   ApiStudentsMeRewardsRoute: typeof ApiStudentsMeRewardsRouteWithChildren
   ApiStudentsMeWeeklyCardRoute: typeof ApiStudentsMeWeeklyCardRoute
+  ApiStudentsMeWhatsappRoute: typeof ApiStudentsMeWhatsappRoute
 }
 
 const ApiStudentsMeRouteChildren: ApiStudentsMeRouteChildren = {
@@ -3495,6 +3535,7 @@ const ApiStudentsMeRouteChildren: ApiStudentsMeRouteChildren = {
   ApiStudentsMeProfileRoute: ApiStudentsMeProfileRoute,
   ApiStudentsMeRewardsRoute: ApiStudentsMeRewardsRouteWithChildren,
   ApiStudentsMeWeeklyCardRoute: ApiStudentsMeWeeklyCardRoute,
+  ApiStudentsMeWhatsappRoute: ApiStudentsMeWhatsappRoute,
 }
 
 const ApiStudentsMeRouteWithChildren = ApiStudentsMeRoute._addFileChildren(
@@ -3648,6 +3689,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSyllabusConceptsRoute: ApiSyllabusConceptsRouteWithChildren,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
+  ApiWebhooksWhatsappRoute: ApiWebhooksWhatsappRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,
   ApiSummaryWeeklyStudentIdRoute: ApiSummaryWeeklyStudentIdRoute,
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute:
