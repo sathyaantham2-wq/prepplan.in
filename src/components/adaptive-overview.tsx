@@ -402,7 +402,7 @@ export function AdaptiveOverview({
           </p>
           <p className="text-small text-muted-foreground mt-2">
             {next.is_initial_assessment
-              ? 'Start with a short Easy assessment so we can find your level.'
+              ? 'Start with a short Quick check so we can find your level.'
               : `Your level: ${next.level === 'Not started' ? 'not assessed yet' : next.level} · Suggested difficulty: ${next.recommended_difficulty}`}
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-4">

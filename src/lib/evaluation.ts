@@ -18,6 +18,8 @@ import { AiCapReachedError, StudentSpendCapReachedError, enforceStudentSpendBudg
 import { recordMasteryAttempt } from './mastery'
 import { isPossiblyStoppedEarly } from './school-paper'
 import { recordPointsForConfirmedItems } from './points'
+import { recordFixitCardsForLostMarks } from './fixit'
+import type { LostMarkItem } from './fixit'
 import type { GradedObjectiveItem } from './points'
 import { recordConfirmedAnswers } from './adaptive/service'
 import { captureError, describeError } from './error-log'
@@ -344,6 +346,7 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
 
     const byConcept = new Map<string, { marks: number; marksMax: number }>()
     const gradedObjectiveItems: Array<GradedObjectiveItem> = []
+    const markItems: Array<LostMarkItem> = []
     for (const item of items) {
       const slot = await trx
         .selectFrom('paper_questions')
@@ -368,6 +371,14 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
         marksAwarded: Number(item.marks_awarded),
         marksMax: Number(item.marks_max),
       })
+      markItems.push({
+        evaluationItemId: item.id,
+        conceptId: slot.concept_id,
+        marksAwarded: Number(item.marks_awarded),
+        marksMax: Number(item.marks_max),
+        knowledgeKnown: item.knowledge_known,
+        errorType: item.error_type,
+      })
     }
 
     const today = new Date().toISOString().slice(0, 10)
@@ -391,6 +402,10 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
       paper.subject_id,
       gradedObjectiveItems,
     )
+
+    // Fix-it Deck: every concept she lost marks on gets a card (savepoint inside, so a failure
+    // here is logged and can never undo the confirmation).
+    await recordFixitCardsForLostMarks(trx, attempt.student_id, markItems)
 
     return updatedEvaluation
   })

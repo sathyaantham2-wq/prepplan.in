@@ -13,27 +13,35 @@ function shareUrl(): string {
 // Shares the app itself, never a paper or a result: those belong to one student. Uses the
 // device's own share sheet where there is one (phones, the Android app) and copies the link
 // everywhere else. Rendered next to the sound and theme toggles.
+// Returns 'copied' when the link went to the clipboard, so the caller can say so.
+export async function shareApp(): Promise<'shared' | 'copied' | 'manual'> {
+  const url = shareUrl()
+  if (typeof navigator.share === 'function') {
+    try {
+      await navigator.share({ title: 'PrepPlan', text: SHARE_TEXT, url })
+      return 'shared'
+    } catch (error) {
+      // She closed the share sheet -- that is an answer, not a failure.
+      if ((error as Error).name === 'AbortError') return 'shared'
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url)
+    return 'copied'
+  } catch {
+    // No share sheet and no clipboard access: show the link so it can be copied by hand.
+    window.prompt('Copy this link to share PrepPlan:', url)
+    return 'manual'
+  }
+}
+
 export function ShareAppButton() {
   const [copied, setCopied] = useState(false)
 
   async function handleShare() {
-    const url = shareUrl()
-    if (typeof navigator.share === 'function') {
-      try {
-        await navigator.share({ title: 'PrepPlan', text: SHARE_TEXT, url })
-        return
-      } catch (error) {
-        // She closed the share sheet -- that is an answer, not a failure.
-        if ((error as Error).name === 'AbortError') return
-      }
-    }
-    try {
-      await navigator.clipboard.writeText(url)
+    if ((await shareApp()) === 'copied') {
       setCopied(true)
       window.setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // No share sheet and no clipboard access: show the link so it can be copied by hand.
-      window.prompt('Copy this link to share PrepPlan:', url)
     }
   }
 

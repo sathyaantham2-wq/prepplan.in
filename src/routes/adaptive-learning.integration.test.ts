@@ -334,7 +334,7 @@ describe('concept-level adaptive learning', () => {
   })
 
   describe('first assessment', () => {
-    it('recommends a short Easy assessment for a student with no history', async () => {
+    it('recommends a short Quick check for a student with no history', async () => {
       const response = await handlerFor(PlanRoute, 'GET')({
         request: request(student.cookie, undefined, `http://localhost/test?subject_id=${subjectId}&chapter_ids=${chapterId}`),
       })

@@ -15,6 +15,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ChooseBoardRouteImport } from './routes/choose-board'
 import { Route as CivilPaperRouteImport } from './routes/civil-paper'
 import { Route as DeleteAccountRouteImport } from './routes/delete-account'
+import { Route as FixItRouteImport } from './routes/fix-it'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
@@ -26,6 +27,7 @@ import { Route as PlanRouteImport } from './routes/plan'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
+import { Route as RewardsRouteImport } from './routes/rewards'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
@@ -81,6 +83,7 @@ import { Route as ApiCronDailyNudgeRouteImport } from './routes/api/cron/daily-n
 import { Route as ApiCronWeeklySummaryRouteImport } from './routes/api/cron/weekly-summary'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$id'
+import { Route as ApiFixitTodayRouteImport } from './routes/api/fixit/today'
 import { Route as ApiGuardianInvitesIncomingRouteImport } from './routes/api/guardian-invites/incoming'
 import { Route as ApiGuardianInvitesLeaveRouteImport } from './routes/api/guardian-invites/leave'
 import { Route as ApiHabitDrillsIdRouteImport } from './routes/api/habit-drills/$id'
@@ -138,9 +141,12 @@ import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
+import { Route as ApiStudentsMeExamsRouteImport } from './routes/api/students/me/exams'
 import { Route as ApiStudentsMeHomeRouteImport } from './routes/api/students/me/home'
 import { Route as ApiStudentsMeLeaderboardOptInRouteImport } from './routes/api/students/me/leaderboard-opt-in'
 import { Route as ApiStudentsMeProfileRouteImport } from './routes/api/students/me/profile'
+import { Route as ApiStudentsMeRewardsRouteImport } from './routes/api/students/me/rewards'
+import { Route as ApiStudentsMeWeeklyCardRouteImport } from './routes/api/students/me/weekly-card'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
 import { Route as ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport } from './routes/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -148,9 +154,11 @@ import { Route as ApiAttemptsIdScanApplyRouteImport } from './routes/api/attempt
 import { Route as ApiAttemptsIdScanPagesRouteImport } from './routes/api/attempts/$id/scan/pages'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
+import { Route as ApiFixitCardsIdAnswerRouteImport } from './routes/api/fixit/cards/$id/answer'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
 import { Route as ApiStudentsIdHabitsTrendRouteImport } from './routes/api/students/$id/habits/trend'
+import { Route as ApiStudentsMeRewardsUnlockRouteImport } from './routes/api/students/me/rewards/unlock'
 import { Route as ApiStudyPlanIdDaysDayNumberRouteImport } from './routes/api/study-plan/$id/days/$dayNumber'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
 import { Route as ApiAttemptsIdItemsItemIdDisputeRouteImport } from './routes/api/attempts/$id/items/$itemId/dispute'
@@ -187,6 +195,11 @@ const CivilPaperRoute = CivilPaperRouteImport.update({
 const DeleteAccountRoute = DeleteAccountRouteImport.update({
   id: '/delete-account',
   path: '/delete-account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FixItRoute = FixItRouteImport.update({
+  id: '/fix-it',
+  path: '/fix-it',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GenerateRoute = GenerateRouteImport.update({
@@ -242,6 +255,11 @@ const ProfileSetupRoute = ProfileSetupRouteImport.update({
 const RemediationRoute = RemediationRouteImport.update({
   id: '/remediation',
   path: '/remediation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RewardsRoute = RewardsRouteImport.update({
+  id: '/rewards',
+  path: '/rewards',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SettingsRoute = SettingsRouteImport.update({
@@ -520,6 +538,11 @@ const ApiEvaluationsIdRoute = ApiEvaluationsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ApiEvaluationsRoute,
+} as any)
+const ApiFixitTodayRoute = ApiFixitTodayRouteImport.update({
+  id: '/api/fixit/today',
+  path: '/api/fixit/today',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiGuardianInvitesIncomingRoute =
   ApiGuardianInvitesIncomingRouteImport.update({
@@ -816,6 +839,11 @@ const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   path: '/login',
   getParentRoute: () => ApiStudentsIdRoute,
 } as any)
+const ApiStudentsMeExamsRoute = ApiStudentsMeExamsRouteImport.update({
+  id: '/exams',
+  path: '/exams',
+  getParentRoute: () => ApiStudentsMeRoute,
+} as any)
 const ApiStudentsMeHomeRoute = ApiStudentsMeHomeRouteImport.update({
   id: '/home',
   path: '/home',
@@ -830,6 +858,16 @@ const ApiStudentsMeLeaderboardOptInRoute =
 const ApiStudentsMeProfileRoute = ApiStudentsMeProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => ApiStudentsMeRoute,
+} as any)
+const ApiStudentsMeRewardsRoute = ApiStudentsMeRewardsRouteImport.update({
+  id: '/rewards',
+  path: '/rewards',
+  getParentRoute: () => ApiStudentsMeRoute,
+} as any)
+const ApiStudentsMeWeeklyCardRoute = ApiStudentsMeWeeklyCardRouteImport.update({
+  id: '/weekly-card',
+  path: '/weekly-card',
   getParentRoute: () => ApiStudentsMeRoute,
 } as any)
 const ApiSummaryWeeklyStudentIdRoute =
@@ -871,6 +909,11 @@ const ApiEvaluationsIdReportPdfRoute =
     path: '/pdf',
     getParentRoute: () => ApiEvaluationsIdReportRoute,
   } as any)
+const ApiFixitCardsIdAnswerRoute = ApiFixitCardsIdAnswerRouteImport.update({
+  id: '/api/fixit/cards/$id/answer',
+  path: '/api/fixit/cards/$id/answer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiQuestionsGenerateBatchIdResumeRoute =
   ApiQuestionsGenerateBatchIdResumeRouteImport.update({
     id: '/resume',
@@ -888,6 +931,12 @@ const ApiStudentsIdHabitsTrendRoute =
     id: '/habits/trend',
     path: '/habits/trend',
     getParentRoute: () => ApiStudentsIdRoute,
+  } as any)
+const ApiStudentsMeRewardsUnlockRoute =
+  ApiStudentsMeRewardsUnlockRouteImport.update({
+    id: '/unlock',
+    path: '/unlock',
+    getParentRoute: () => ApiStudentsMeRewardsRoute,
   } as any)
 const ApiStudyPlanIdDaysDayNumberRoute =
   ApiStudyPlanIdDaysDayNumberRouteImport.update({
@@ -939,6 +988,7 @@ export interface FileRoutesByFullPath {
   '/choose-board': typeof ChooseBoardRoute
   '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
+  '/fix-it': typeof FixItRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -950,6 +1000,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
+  '/rewards': typeof RewardsRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -1005,6 +1056,7 @@ export interface FileRoutesByFullPath {
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/fixit/today': typeof ApiFixitTodayRoute
   '/api/guardian-invites/incoming': typeof ApiGuardianInvitesIncomingRoute
   '/api/guardian-invites/leave': typeof ApiGuardianInvitesLeaveRoute
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
@@ -1062,9 +1114,12 @@ export interface FileRoutesByFullPath {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
   '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
+  '/api/students/me/rewards': typeof ApiStudentsMeRewardsRouteWithChildren
+  '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -1072,9 +1127,11 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id/scan/pages': typeof ApiAttemptsIdScanPagesRouteWithChildren
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
+  '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
+  '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
   '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
@@ -1089,6 +1146,7 @@ export interface FileRoutesByTo {
   '/choose-board': typeof ChooseBoardRoute
   '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
+  '/fix-it': typeof FixItRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -1100,6 +1158,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
+  '/rewards': typeof RewardsRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -1155,6 +1214,7 @@ export interface FileRoutesByTo {
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/fixit/today': typeof ApiFixitTodayRoute
   '/api/guardian-invites/incoming': typeof ApiGuardianInvitesIncomingRoute
   '/api/guardian-invites/leave': typeof ApiGuardianInvitesLeaveRoute
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
@@ -1212,9 +1272,12 @@ export interface FileRoutesByTo {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
   '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
+  '/api/students/me/rewards': typeof ApiStudentsMeRewardsRouteWithChildren
+  '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -1222,9 +1285,11 @@ export interface FileRoutesByTo {
   '/api/attempts/$id/scan/pages': typeof ApiAttemptsIdScanPagesRouteWithChildren
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
+  '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
+  '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
   '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
@@ -1241,6 +1306,7 @@ export interface FileRoutesById {
   '/choose-board': typeof ChooseBoardRoute
   '/civil-paper': typeof CivilPaperRoute
   '/delete-account': typeof DeleteAccountRoute
+  '/fix-it': typeof FixItRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -1252,6 +1318,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
+  '/rewards': typeof RewardsRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -1307,6 +1374,7 @@ export interface FileRoutesById {
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/fixit/today': typeof ApiFixitTodayRoute
   '/api/guardian-invites/incoming': typeof ApiGuardianInvitesIncomingRoute
   '/api/guardian-invites/leave': typeof ApiGuardianInvitesLeaveRoute
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
@@ -1364,9 +1432,12 @@ export interface FileRoutesById {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
   '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
+  '/api/students/me/rewards': typeof ApiStudentsMeRewardsRouteWithChildren
+  '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -1374,9 +1445,11 @@ export interface FileRoutesById {
   '/api/attempts/$id/scan/pages': typeof ApiAttemptsIdScanPagesRouteWithChildren
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
+  '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
+  '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
   '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
@@ -1394,6 +1467,7 @@ export interface FileRouteTypes {
     | '/choose-board'
     | '/civil-paper'
     | '/delete-account'
+    | '/fix-it'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1405,6 +1479,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/profile-setup'
     | '/remediation'
+    | '/rewards'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -1460,6 +1535,7 @@ export interface FileRouteTypes {
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/fixit/today'
     | '/api/guardian-invites/incoming'
     | '/api/guardian-invites/leave'
     | '/api/habit-drills/$id'
@@ -1517,9 +1593,12 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/exams'
     | '/api/students/me/home'
     | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
+    | '/api/students/me/rewards'
+    | '/api/students/me/weekly-card'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -1527,9 +1606,11 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/pages'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
+    | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
+    | '/api/students/me/rewards/unlock'
     | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
     | '/api/attempts/$id/items/$itemId/dispute'
@@ -1544,6 +1625,7 @@ export interface FileRouteTypes {
     | '/choose-board'
     | '/civil-paper'
     | '/delete-account'
+    | '/fix-it'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1555,6 +1637,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/profile-setup'
     | '/remediation'
+    | '/rewards'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -1610,6 +1693,7 @@ export interface FileRouteTypes {
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/fixit/today'
     | '/api/guardian-invites/incoming'
     | '/api/guardian-invites/leave'
     | '/api/habit-drills/$id'
@@ -1667,9 +1751,12 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/exams'
     | '/api/students/me/home'
     | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
+    | '/api/students/me/rewards'
+    | '/api/students/me/weekly-card'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -1677,9 +1764,11 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/pages'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
+    | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
+    | '/api/students/me/rewards/unlock'
     | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
     | '/api/attempts/$id/items/$itemId/dispute'
@@ -1695,6 +1784,7 @@ export interface FileRouteTypes {
     | '/choose-board'
     | '/civil-paper'
     | '/delete-account'
+    | '/fix-it'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1706,6 +1796,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/profile-setup'
     | '/remediation'
+    | '/rewards'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -1761,6 +1852,7 @@ export interface FileRouteTypes {
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/fixit/today'
     | '/api/guardian-invites/incoming'
     | '/api/guardian-invites/leave'
     | '/api/habit-drills/$id'
@@ -1818,9 +1910,12 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/exams'
     | '/api/students/me/home'
     | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
+    | '/api/students/me/rewards'
+    | '/api/students/me/weekly-card'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -1828,9 +1923,11 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/pages'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
+    | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
+    | '/api/students/me/rewards/unlock'
     | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
     | '/api/attempts/$id/items/$itemId/dispute'
@@ -1847,6 +1944,7 @@ export interface RootRouteChildren {
   ChooseBoardRoute: typeof ChooseBoardRoute
   CivilPaperRoute: typeof CivilPaperRoute
   DeleteAccountRoute: typeof DeleteAccountRoute
+  FixItRoute: typeof FixItRoute
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
   LeaderboardRoute: typeof LeaderboardRoute
@@ -1858,6 +1956,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ProfileSetupRoute: typeof ProfileSetupRoute
   RemediationRoute: typeof RemediationRoute
+  RewardsRoute: typeof RewardsRoute
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
   DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
@@ -1899,6 +1998,7 @@ export interface RootRouteChildren {
   ApiCronDailyNudgeRoute: typeof ApiCronDailyNudgeRoute
   ApiCronWeeklySummaryRoute: typeof ApiCronWeeklySummaryRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
+  ApiFixitTodayRoute: typeof ApiFixitTodayRoute
   ApiHouseholdsMeRoute: typeof ApiHouseholdsMeRoute
   ApiHouseholdsUsersRoute: typeof ApiHouseholdsUsersRouteWithChildren
   ApiNotificationsUnsubscribeRoute: typeof ApiNotificationsUnsubscribeRoute
@@ -1915,6 +2015,7 @@ export interface RootRouteChildren {
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
   ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
+  ApiFixitCardsIdAnswerRoute: typeof ApiFixitCardsIdAnswerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1959,6 +2060,13 @@ declare module '@tanstack/react-router' {
       path: '/delete-account'
       fullPath: '/delete-account'
       preLoaderRoute: typeof DeleteAccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fix-it': {
+      id: '/fix-it'
+      path: '/fix-it'
+      fullPath: '/fix-it'
+      preLoaderRoute: typeof FixItRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/generate': {
@@ -2036,6 +2144,13 @@ declare module '@tanstack/react-router' {
       path: '/remediation'
       fullPath: '/remediation'
       preLoaderRoute: typeof RemediationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rewards': {
+      id: '/rewards'
+      path: '/rewards'
+      fullPath: '/rewards'
+      preLoaderRoute: typeof RewardsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/settings': {
@@ -2422,6 +2537,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/evaluations/$id'
       preLoaderRoute: typeof ApiEvaluationsIdRouteImport
       parentRoute: typeof ApiEvaluationsRoute
+    }
+    '/api/fixit/today': {
+      id: '/api/fixit/today'
+      path: '/api/fixit/today'
+      fullPath: '/api/fixit/today'
+      preLoaderRoute: typeof ApiFixitTodayRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/guardian-invites/incoming': {
       id: '/api/guardian-invites/incoming'
@@ -2822,6 +2944,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiStudentsIdLoginRouteImport
       parentRoute: typeof ApiStudentsIdRoute
     }
+    '/api/students/me/exams': {
+      id: '/api/students/me/exams'
+      path: '/exams'
+      fullPath: '/api/students/me/exams'
+      preLoaderRoute: typeof ApiStudentsMeExamsRouteImport
+      parentRoute: typeof ApiStudentsMeRoute
+    }
     '/api/students/me/home': {
       id: '/api/students/me/home'
       path: '/home'
@@ -2841,6 +2970,20 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/api/students/me/profile'
       preLoaderRoute: typeof ApiStudentsMeProfileRouteImport
+      parentRoute: typeof ApiStudentsMeRoute
+    }
+    '/api/students/me/rewards': {
+      id: '/api/students/me/rewards'
+      path: '/rewards'
+      fullPath: '/api/students/me/rewards'
+      preLoaderRoute: typeof ApiStudentsMeRewardsRouteImport
+      parentRoute: typeof ApiStudentsMeRoute
+    }
+    '/api/students/me/weekly-card': {
+      id: '/api/students/me/weekly-card'
+      path: '/weekly-card'
+      fullPath: '/api/students/me/weekly-card'
+      preLoaderRoute: typeof ApiStudentsMeWeeklyCardRouteImport
       parentRoute: typeof ApiStudentsMeRoute
     }
     '/api/summary/weekly/$studentId': {
@@ -2892,6 +3035,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiEvaluationsIdReportPdfRouteImport
       parentRoute: typeof ApiEvaluationsIdReportRoute
     }
+    '/api/fixit/cards/$id/answer': {
+      id: '/api/fixit/cards/$id/answer'
+      path: '/api/fixit/cards/$id/answer'
+      fullPath: '/api/fixit/cards/$id/answer'
+      preLoaderRoute: typeof ApiFixitCardsIdAnswerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/questions/generate-batch/$id/resume': {
       id: '/api/questions/generate-batch/$id/resume'
       path: '/resume'
@@ -2912,6 +3062,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/students/$id/habits/trend'
       preLoaderRoute: typeof ApiStudentsIdHabitsTrendRouteImport
       parentRoute: typeof ApiStudentsIdRoute
+    }
+    '/api/students/me/rewards/unlock': {
+      id: '/api/students/me/rewards/unlock'
+      path: '/unlock'
+      fullPath: '/api/students/me/rewards/unlock'
+      preLoaderRoute: typeof ApiStudentsMeRewardsUnlockRouteImport
+      parentRoute: typeof ApiStudentsMeRewardsRoute
     }
     '/api/study-plan/$id/days/$dayNumber': {
       id: '/api/study-plan/$id/days/$dayNumber'
@@ -3311,16 +3468,33 @@ const ApiStudentsIdRouteWithChildren = ApiStudentsIdRoute._addFileChildren(
   ApiStudentsIdRouteChildren,
 )
 
+interface ApiStudentsMeRewardsRouteChildren {
+  ApiStudentsMeRewardsUnlockRoute: typeof ApiStudentsMeRewardsUnlockRoute
+}
+
+const ApiStudentsMeRewardsRouteChildren: ApiStudentsMeRewardsRouteChildren = {
+  ApiStudentsMeRewardsUnlockRoute: ApiStudentsMeRewardsUnlockRoute,
+}
+
+const ApiStudentsMeRewardsRouteWithChildren =
+  ApiStudentsMeRewardsRoute._addFileChildren(ApiStudentsMeRewardsRouteChildren)
+
 interface ApiStudentsMeRouteChildren {
+  ApiStudentsMeExamsRoute: typeof ApiStudentsMeExamsRoute
   ApiStudentsMeHomeRoute: typeof ApiStudentsMeHomeRoute
   ApiStudentsMeLeaderboardOptInRoute: typeof ApiStudentsMeLeaderboardOptInRoute
   ApiStudentsMeProfileRoute: typeof ApiStudentsMeProfileRoute
+  ApiStudentsMeRewardsRoute: typeof ApiStudentsMeRewardsRouteWithChildren
+  ApiStudentsMeWeeklyCardRoute: typeof ApiStudentsMeWeeklyCardRoute
 }
 
 const ApiStudentsMeRouteChildren: ApiStudentsMeRouteChildren = {
+  ApiStudentsMeExamsRoute: ApiStudentsMeExamsRoute,
   ApiStudentsMeHomeRoute: ApiStudentsMeHomeRoute,
   ApiStudentsMeLeaderboardOptInRoute: ApiStudentsMeLeaderboardOptInRoute,
   ApiStudentsMeProfileRoute: ApiStudentsMeProfileRoute,
+  ApiStudentsMeRewardsRoute: ApiStudentsMeRewardsRouteWithChildren,
+  ApiStudentsMeWeeklyCardRoute: ApiStudentsMeWeeklyCardRoute,
 }
 
 const ApiStudentsMeRouteWithChildren = ApiStudentsMeRoute._addFileChildren(
@@ -3406,6 +3580,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChooseBoardRoute: ChooseBoardRoute,
   CivilPaperRoute: CivilPaperRoute,
   DeleteAccountRoute: DeleteAccountRoute,
+  FixItRoute: FixItRoute,
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
   LeaderboardRoute: LeaderboardRoute,
@@ -3417,6 +3592,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ProfileSetupRoute: ProfileSetupRoute,
   RemediationRoute: RemediationRoute,
+  RewardsRoute: RewardsRoute,
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
   DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
@@ -3458,6 +3634,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCronDailyNudgeRoute: ApiCronDailyNudgeRoute,
   ApiCronWeeklySummaryRoute: ApiCronWeeklySummaryRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
+  ApiFixitTodayRoute: ApiFixitTodayRoute,
   ApiHouseholdsMeRoute: ApiHouseholdsMeRoute,
   ApiHouseholdsUsersRoute: ApiHouseholdsUsersRouteWithChildren,
   ApiNotificationsUnsubscribeRoute: ApiNotificationsUnsubscribeRoute,
@@ -3475,6 +3652,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSummaryWeeklyStudentIdRoute: ApiSummaryWeeklyStudentIdRoute,
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute:
     ApiAdaptiveConceptsConceptIdWrongQuestionsRoute,
+  ApiFixitCardsIdAnswerRoute: ApiFixitCardsIdAnswerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

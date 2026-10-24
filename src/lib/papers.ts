@@ -10,6 +10,7 @@ import {
   chaptersRepository,
 } from '../db/repositories'
 import { adaptiveLevel } from './adaptive/levels'
+import { resolveAllowedTheme } from './rewards'
 import type { AdaptiveLevel } from './adaptive/levels'
 import { loadMasteryConfig, signalsForConcepts } from './adaptive/service'
 import {
@@ -156,6 +157,9 @@ export interface GeneratePaperInput {
   // The weak/priority weighting still applies among whatever concepts are left.
   concept_ids?: Array<string>
   theme?: string
+  // When true (a student generating for herself) a theme she has not unlocked quietly becomes
+  // the default (src/lib/rewards.ts). Parent/admin callers leave it off and keep their picker.
+  enforce_theme_unlock?: boolean
   // Honoured only when `adaptive` is true. A normal paper's difficulty mix comes from its
   // blueprint, never from the caller (owner decision 2026-10-05).
   difficulty_ceiling?: DifficultyTier
@@ -889,6 +893,9 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
   // F113: resolved for the paper header (part + chapter_no + name) -- read-only, so it's safe to
   // fetch outside the write transaction below.
   const chapters = await chaptersRepository.listByIds(db, input.chapter_ids)
+  const theme = input.enforce_theme_unlock
+    ? await resolveAllowedTheme(db, input.student_id, input.theme)
+    : (input.theme ?? 'Clean School')
 
   const result = await db.transaction().execute(async (trx) => {
     const paper = await papersRepository.insert(trx, {
@@ -903,7 +910,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
       title: input.title ?? blueprint.name,
       total_marks: totalMarks,
       duration_min: blueprint.duration_min,
-      theme: input.theme ?? 'Clean School',
+      theme,
       weighting: JSON.stringify({
         target: weighting,
         actual: bucketActualPct,

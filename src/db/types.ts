@@ -284,6 +284,29 @@ export interface EvaluationItems {
   step_marks_awarded: Json | null;
 }
 
+export interface FixitCards {
+  cause: string | null;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  due_on: ColumnType<string, string | Date, string | Date>;
+  id: Generated<string>;
+  last_answered_at: Timestamp | null;
+  served_on: ColumnType<string, string | Date, string | Date> | null;
+  served_question_id: string | null;
+  source_evaluation_item_id: string | null;
+  stage: Generated<number>;
+  status: Generated<string>;
+  student_id: string;
+}
+
+export interface FixitAnswers {
+  answered_at: Generated<Timestamp>;
+  card_id: string;
+  correct: boolean;
+  id: Generated<string>;
+  question_id: string;
+}
+
 export interface Evaluations {
   actual_score: Numeric | null;
   attempt_id: string;
@@ -667,6 +690,14 @@ export interface StudentPointsLedger {
   subject_id: string;
 }
 
+export interface StudentUnlocks {
+  item_key: string;
+  kind: Generated<string>;
+  price_coins: number;
+  student_id: string;
+  unlocked_at: Generated<Timestamp>;
+}
+
 export interface StudentActivityDaily {
   active_seconds: Generated<number>;
   day: ColumnType<string, string | Date, string | Date>;
@@ -784,6 +815,8 @@ export interface DB {
   deletion_log: DeletionLog;
   error_log: ErrorLog;
   evaluation_items: EvaluationItems;
+  fixit_answers: FixitAnswers;
+  fixit_cards: FixitCards;
   evaluations: Evaluations;
   generation_batch_items: GenerationBatchItems;
   generation_batches: GenerationBatches;
@@ -815,6 +848,7 @@ export interface DB {
   student_concept_performance: StudentConceptPerformance;
   student_points_ledger: StudentPointsLedger;
   student_subjects: StudentSubjects;
+  student_unlocks: StudentUnlocks;
   student_activity_daily: StudentActivityDaily;
   students: Students;
   study_plans: StudyPlans;
