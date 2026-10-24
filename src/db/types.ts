@@ -780,6 +780,8 @@ export interface Users {
   image: string | null;
   is_active: Generated<boolean>;
   name: string;
+  phone_number: string | null;
+  phone_number_verified_at: Timestamp | null;
   role: UserRole;
   signup_type: string | null;
   updated_at: Generated<Timestamp>;
@@ -792,6 +794,29 @@ export interface Verifications {
   identifier: string;
   updated_at: Generated<Timestamp>;
   value: string;
+}
+
+export interface WaInboundMessages {
+  received_at: Generated<Timestamp>;
+  wamid: string;
+}
+
+export interface WaLoginChallenges {
+  code: string;
+  consumed_at: Timestamp | null;
+  created_at: Generated<Timestamp>;
+  created_ip_hash: string | null;
+  expires_at: Timestamp;
+  id: Generated<string>;
+  phone_e164: string | null;
+  poll_token_hash: string;
+  purpose: string;
+  signup_ticket_expires_at: Timestamp | null;
+  signup_ticket_hash: string | null;
+  status: Generated<string>;
+  user_id: string | null;
+  verified_at: Timestamp | null;
+  wamid: string | null;
 }
 
 export interface DB {
@@ -856,4 +881,6 @@ export interface DB {
   uploads: Uploads;
   users: Users;
   verifications: Verifications;
+  wa_inbound_messages: WaInboundMessages;
+  wa_login_challenges: WaLoginChallenges;
 }

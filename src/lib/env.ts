@@ -66,6 +66,18 @@ const envSchema = z.object({
     .regex(/^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$/)
     .optional(),
   ANDROID_CERT_SHA256: z.string().min(1).optional(),
+  // "Continue with WhatsApp" sign-in (src/lib/wa-login-plugin.ts, /api/webhooks/whatsapp). Enabled
+  // only when the business number, app secret and verify token are all set; otherwise the whole
+  // feature answers 404 and nothing changes for anyone. The access token and phone number id are
+  // only needed for the optional "you are signed in" reply. See docs/whatsapp-login-setup.md.
+  WHATSAPP_BUSINESS_NUMBER: z
+    .string()
+    .regex(/^[1-9][0-9]{7,14}$/)
+    .optional(),
+  WHATSAPP_APP_SECRET: z.string().min(1).optional(),
+  WHATSAPP_VERIFY_TOKEN: z.string().min(1).optional(),
+  WHATSAPP_ACCESS_TOKEN: z.string().min(1).optional(),
+  WHATSAPP_PHONE_NUMBER_ID: z.string().min(1).optional(),
 })
 
 export type Env = z.infer<typeof envSchema>
