@@ -6,11 +6,23 @@ interface Props {
   subjects: Array<TopicSubject>
   // Called when she taps or presses Enter on a suggestion. Never generates anything by itself.
   onSelect: (suggestion: TopicSuggestion) => void
+  // Optional, used by the newer builder layouts: lets the same box also filter a chapter list.
+  onTextChange?: (text: string) => void
+  label?: string
+  placeholder?: string
+  className?: string
 }
 
 // "What do you want to practise?" -- combobox with a listbox of up to 8 suggestions.
 // All matching lives in lib/topic-search.ts; this only renders and handles the keyboard.
-export function TopicSearchBox({ subjects, onSelect }: Props) {
+export function TopicSearchBox({
+  subjects,
+  onSelect,
+  onTextChange,
+  label = 'What do you want to practise?',
+  placeholder = 'Try Fractions, or ch 3 science',
+  className = 'relative mb-3',
+}: Props) {
   const baseId = useId()
   const listId = `${baseId}-list`
   const [text, setText] = useState('')
@@ -25,6 +37,7 @@ export function TopicSearchBox({ subjects, onSelect }: Props) {
   function choose(s: TopicSuggestion) {
     onSelect(s)
     setText('')
+    onTextChange?.('')
     setOpen(false)
     setActive(0)
   }
@@ -47,18 +60,19 @@ export function TopicSearchBox({ subjects, onSelect }: Props) {
     } else if (e.key === 'Escape') {
       e.preventDefault()
       setText('')
+      onTextChange?.('')
       setOpen(false)
       setActive(0)
     }
   }
 
   return (
-    <div className="relative mb-3">
+    <div className={className}>
       <label
         htmlFor={`${baseId}-input`}
         className="text-muted-foreground mb-1 block text-xs font-medium"
       >
-        What do you want to practise?
+        {label}
       </label>
       <input
         id={`${baseId}-input`}
@@ -74,11 +88,12 @@ export function TopicSearchBox({ subjects, onSelect }: Props) {
         autoCorrect="off"
         spellCheck={false}
         enterKeyHint="go"
-        placeholder="Try Fractions, or ch 3 science"
+        placeholder={placeholder}
         className="border-input bg-background h-11 w-full rounded-md border px-3 text-base shadow-xs sm:text-sm"
         value={text}
         onChange={(e) => {
           setText(e.target.value)
+          onTextChange?.(e.target.value)
           setOpen(true)
           setActive(0)
         }}

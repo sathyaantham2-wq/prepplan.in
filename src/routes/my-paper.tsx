@@ -16,6 +16,16 @@ import { PaperStylePicker } from '../components/paper-style'
 import { PageLoading } from '../components/page-loading'
 import { TopicSearchBox } from '../components/topic-search-box'
 import type { TopicSubject, TopicSuggestion } from '../lib/topic-search'
+import { PaperBuilderA } from '../components/paper-builder/layout-a'
+import { PaperBuilderB } from '../components/paper-builder/layout-b'
+import { LayoutSwitcher } from '../components/paper-builder/layout-switcher'
+import type { PaperBuilderProps } from '../components/paper-builder/types'
+import {
+  normaliseLayoutParam,
+  parseLayout,
+  showLayoutSwitcher,
+} from '../lib/paper-builder-view'
+import type { BuilderLayout } from '../lib/paper-builder-view'
 import {
   InstallAppDialog,
   useInstallOffer,
@@ -29,10 +39,17 @@ export const Route = createFileRoute('/my-paper')({
   // this concept" on the student's mastery view.
   validateSearch: (
     search: Record<string, unknown>,
-  ): { subject?: string; chapters?: string; concepts?: string } => ({
+  ): {
+    subject?: string
+    chapters?: string
+    concepts?: string
+    layout?: string
+  } => ({
     subject: typeof search.subject === 'string' ? search.subject : undefined,
     chapters: typeof search.chapters === 'string' ? search.chapters : undefined,
     concepts: typeof search.concepts === 'string' ? search.concepts : undefined,
+    // ?layout=a|b previews the alternative builder layouts; anything else is the classic one.
+    layout: normaliseLayoutParam(search.layout),
   }),
 })
 
@@ -297,6 +314,19 @@ function MyPaper() {
   // the matching chapters always show, so a search never looks like it found nothing.
   const [expandedParts, setExpandedParts] = useState<Set<string>>(new Set())
   const [plan, setPlan] = useState<Plan | null>(null)
+  // Average mastery (0-100) per chapter and subject, from the same overview as the topic search;
+  // only the alternative layouts show it. recommendedIds is the chapters the app chose for her
+  // for the current subject (null when the selection came from a link or has not loaded).
+  const [chapterMastery, setChapterMastery] = useState<
+    Record<string, number | null>
+  >({})
+  const [subjectMastery, setSubjectMastery] = useState<
+    Record<string, number | null>
+  >({})
+  const [recommendedIds, setRecommendedIds] = useState<Array<string> | null>(
+    null,
+  )
+  const [chapterQuery, setChapterQuery] = useState('')
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [starting, setStarting] = useState(false)
@@ -389,8 +419,10 @@ function MyPaper() {
               subject_id: string
               subject_name: string
               has_content: boolean
+              average_mastery: number | null
               chapters: Array<{
                 chapter_id: string
+                average_mastery: number | null
                 chapter_name: string
                 part: string
                 chapter_no: number
@@ -400,6 +432,15 @@ function MyPaper() {
           } | null,
         ) => {
           if (!data) return
+          const chapterScores: Record<string, number | null> = {}
+          const subjectScores: Record<string, number | null> = {}
+          for (const s of data.subjects) {
+            subjectScores[s.subject_id] = s.average_mastery
+            for (const c of s.chapters)
+              chapterScores[c.chapter_id] = c.average_mastery
+          }
+          setChapterMastery(chapterScores)
+          setSubjectMastery(subjectScores)
           setTopicSubjects(
             data.subjects
               .filter((s) => s.has_content)
@@ -428,6 +469,7 @@ function MyPaper() {
   useEffect(() => {
     setPlan(null)
     setChapterIds(null)
+    setRecommendedIds(null)
     setAllChapters([])
     if (!subjectId) return
     fetch(`/api/syllabus/chapters?subject_id=${subjectId}`)
@@ -483,8 +525,11 @@ function MyPaper() {
         return
       }
       setPlan(body)
-      if (chapters === null)
-        setChapterIds(body.chapters.map((c: { id: string }) => c.id))
+      if (chapters === null) {
+        const picked = body.chapters.map((c: { id: string }) => c.id)
+        setChapterIds(picked)
+        setRecommendedIds(picked)
+      }
     } finally {
       setLoadingPlan(false)
     }
@@ -524,7 +569,13 @@ function MyPaper() {
   useEffect(() => {
     if (!focusGenerate || loadingPlan || !plan || starting) return
     const button = generateButtonRef.current
-    if (!button || button.disabled) return
+    // A layout without a Generate button on this screen (Layout B, before its last step) has
+    // nothing to focus: drop the request rather than steal focus later.
+    if (!button) {
+      setFocusGenerate(false)
+      return
+    }
+    if (button.disabled) return
     button.focus({ preventScroll: true })
     button.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
     setFocusGenerate(false)
@@ -664,6 +715,20 @@ function MyPaper() {
     return <PageLoading />
   }
 
+  // ?layout=a|b: alternative builder layouts for comparison. No parameter is the classic layout,
+  // exactly as before. Read from the router's search params, so server and client agree.
+  const layout = parseLayout(search.layout)
+  const classic = layout === 'classic'
+  function setLayout(next: BuilderLayout) {
+    // The search box remounts empty, so its filter must not outlive it.
+    setChapterQuery('')
+    void navigate({
+      to: '/my-paper',
+      search: (prev) => ({ ...prev, layout: next }),
+      replace: true,
+    })
+  }
+
   const withContent = subjects.filter((s) => s.has_content)
 
   // chapterIds === null means "not loaded yet" (the server picks her chapters); an empty array
@@ -671,6 +736,47 @@ function MyPaper() {
   const noChaptersSelected = chapterIds !== null && chapterIds.length === 0
   const readyToGenerate =
     Boolean(plan) && Boolean(chapterIds) && (chapterIds?.length ?? 0) > 0
+
+  const builderProps: PaperBuilderProps = {
+    subjects: withContent.map((s) => ({
+      id: s.id,
+      name: s.name,
+      mastery: subjectMastery[s.id] ?? null,
+    })),
+    subjectId,
+    onSubject: setSubjectId,
+    countOptions: QUESTION_COUNT_OPTIONS,
+    questionCount,
+    onQuestionCount: (n) =>
+      updateQuestionCount(n as (typeof QUESTION_COUNT_OPTIONS)[number]),
+    questionType,
+    onQuestionType: updateQuestionType,
+    plan,
+    loadingPlan,
+    starting,
+    error,
+    chapters: allChapters.map((c) => ({
+      id: c.id,
+      name: c.name,
+      part: c.part,
+      chapter_no: c.chapter_no,
+      mastery: chapterMastery[c.id] ?? null,
+    })),
+    selectedChapterIds: chapterIds ?? [],
+    recommendedChapterIds: recommendedIds,
+    onToggleChapter: toggleChapter,
+    onSelectAllChapters: selectAllChapters,
+    onClearChapters: clearAllChapters,
+    chapterQuery,
+    onChapterQuery: setChapterQuery,
+    topicSubjects,
+    onSelectTopic: selectTopic,
+    readyToGenerate,
+    onGenerate: handleGenerate,
+    onReset: resetPreferences,
+    generateButtonRef,
+    styleSlot: <PaperStylePicker value={theme} onChange={setTheme} />,
+  }
 
   return (
     <AppShell variant="student" active="generate">
@@ -702,7 +808,17 @@ function MyPaper() {
           </Card>
         )}
 
-        {withContent.length > 0 && (
+        {withContent.length > 0 && !classic && (
+          <div className="mb-4">
+            {layout === 'a' ? (
+              <PaperBuilderA {...builderProps} />
+            ) : (
+              <PaperBuilderB {...builderProps} />
+            )}
+          </div>
+        )}
+
+        {withContent.length > 0 && classic && (
           // No card heading: the page heading says what this is, and the question count and time
           // are in the sticky bar below (2026-10-01). The Time field stays removed -- it was only
           // ever derived from the question count.
@@ -841,7 +957,7 @@ function MyPaper() {
           </Card>
         )}
 
-        {plan && (
+        {plan && classic && (
           <div className="space-y-4">
             {allChapters.length > 1 && (
               <Card>
@@ -1018,8 +1134,8 @@ function MyPaper() {
           settings card, above the chapter list -- so after picking chapters she had to
           scroll back up to find it. It now stays in view at the bottom of the screen the whole
           time, above the phone tab bar, with the same Reset and error display it had before. */}
-        {withContent.length > 0 && (
-          <div className="no-print bg-card/95 border-border sticky bottom-[calc(60px+env(safe-area-inset-bottom))] z-10 mt-4 rounded-xl border p-3 shadow-lg backdrop-blur lg:bottom-4">
+        {withContent.length > 0 && classic && (
+          <div data-builder-bar className="no-print bg-card/95 border-border sticky bottom-[calc(60px+env(safe-area-inset-bottom))] z-10 mt-4 rounded-xl border p-3 shadow-lg backdrop-blur lg:bottom-4">
             {error && (
               <p className="text-small text-destructive mb-2" role="alert">
                 {error}
@@ -1054,6 +1170,9 @@ function MyPaper() {
           </div>
         )}
       </div>
+      {showLayoutSwitcher(search.layout) && withContent.length > 0 && (
+        <LayoutSwitcher layout={layout} onChange={setLayout} />
+      )}
       {showInstall && (
         <InstallAppDialog
           storageKey={INSTALL_OFFER_KEY}
