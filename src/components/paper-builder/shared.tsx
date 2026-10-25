@@ -18,7 +18,7 @@ import type { BuilderQuestionType, SubjectIconKind } from '../../lib/paper-build
 import { TopicSearchBox } from '../topic-search-box'
 import type { BuilderChapterItem, BuilderSubject, PaperBuilderProps } from './types'
 
-// Shared building blocks for the Layout A and Layout B paper builders. Presentational only.
+// Shared building blocks for the new paper builder (layout-c.tsx). Presentational only.
 
 export const cardClass =
   'bg-card border-border rounded-3xl border p-4 shadow-[0_1px_0_var(--highlight)_inset,0_14px_34px_-24px_var(--glow)] sm:p-6'
@@ -528,7 +528,7 @@ export function SummaryBar({
   return (
     <div
       data-builder-bar
-      className="no-print bg-card/95 border-border sticky bottom-[calc(76px+env(safe-area-inset-bottom))] z-10 mt-4 rounded-2xl border p-3 shadow-lg backdrop-blur lg:bottom-4"
+      className="no-print bg-popover border-border sticky bottom-[calc(76px+env(safe-area-inset-bottom))] z-10 mt-4 rounded-2xl border p-3 shadow-lg backdrop-blur lg:bottom-4"
     >
       {error && (
         <p className="text-small text-destructive mb-2" role="alert">

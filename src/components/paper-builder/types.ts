@@ -22,8 +22,8 @@ export interface BuilderPlan extends PlanLike {
 }
 
 /**
- * Everything a paper-builder layout needs. All state, data loading and handlers stay in
- * src/routes/my-paper.tsx; the layouts only render these props.
+ * Everything the paper builder needs. All state, data loading and handlers stay in
+ * src/routes/my-paper.tsx; the builder only renders these props.
  */
 export interface PaperBuilderProps {
   subjects: Array<BuilderSubject>

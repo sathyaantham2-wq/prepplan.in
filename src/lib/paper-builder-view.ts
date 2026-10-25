@@ -1,4 +1,4 @@
-// Pure helpers for the student's paper builder layouts (/my-paper?layout=a|b). No React, no
+// Pure helpers for the student's paper builder (the new layout, /my-paper?layout=c). No React, no
 // server imports (src/lib/adaptive/plan.ts pulls in the database layer, which must never reach the
 // client bundle), so everything here is unit-testable and safe to import from components.
 
@@ -6,7 +6,7 @@
 // Layout selection (URL query string only)
 // ---------------------------------------------------------------------------------------------
 
-export type BuilderLayout = 'classic' | 'a' | 'b'
+export type BuilderLayout = 'classic' | 'c'
 
 /** The raw ?layout= value as the route keeps it: a string, or undefined when absent. */
 export function normaliseLayoutParam(value: unknown): string | undefined {
@@ -15,15 +15,18 @@ export function normaliseLayoutParam(value: unknown): string | undefined {
   return undefined
 }
 
-/** 'a' and 'b' (any case) pick a new layout; anything else, or nothing, is the current one. */
+/**
+ * 'c' (any case) picks the new layout. 'a' and 'b' are aliases for it, so preview links shared
+ * while two candidates were being compared still land on the one that was kept. Anything else, or
+ * nothing, is the classic layout.
+ */
 export function parseLayout(value: unknown): BuilderLayout {
   const raw = normaliseLayoutParam(value)?.trim().toLowerCase()
-  if (raw === 'a') return 'a'
-  if (raw === 'b') return 'b'
+  if (raw === 'c' || raw === 'a' || raw === 'b') return 'c'
   return 'classic'
 }
 
-/** The comparison switcher shows only when a layout parameter is present at all. */
+/** The Classic | New switch shows only when a layout parameter is present at all. */
 export function showLayoutSwitcher(value: unknown): boolean {
   return normaliseLayoutParam(value) !== undefined
 }
@@ -34,8 +37,7 @@ export const LAYOUT_CHOICES: ReadonlyArray<{
   param: string
 }> = [
   { value: 'classic', label: 'Classic', param: 'classic' },
-  { value: 'a', label: 'A', param: 'a' },
-  { value: 'b', label: 'B', param: 'b' },
+  { value: 'c', label: 'New', param: 'c' },
 ]
 
 // ---------------------------------------------------------------------------------------------
@@ -258,18 +260,21 @@ export function schoolPaperLine(school: { total_marks: number; duration_min: num
 }
 
 // ---------------------------------------------------------------------------------------------
-// Guided steps (Layout B)
+// Quick path vs guided path, and the three steps
 // ---------------------------------------------------------------------------------------------
 
-export const WIZARD_STEPS = [
+export const GUIDE_STEPS = [
   { key: 'subject', label: 'Subject' },
   { key: 'chapters', label: 'Chapters' },
   { key: 'size', label: 'Size and style' },
 ] as const
 
-export type WizardStep = 0 | 1 | 2
+export type GuideStep = 0 | 1 | 2
 
-export interface WizardState {
+/** The last step is the review: it is where "Skip to review" lands. */
+export const REVIEW_STEP: GuideStep = 2
+
+export interface GuideState {
   subjectId: string
   chapterCount: number
   planReady: boolean
@@ -277,21 +282,80 @@ export interface WizardState {
   starting: boolean
 }
 
-/**
- * One plain sentence saying why she cannot move on from `step`, or null when she can. On the last
- * step "move on" means generating the paper.
- */
-export function wizardBlockReason(step: WizardStep, s: WizardState): string | null {
+export function clampStep(step: number): GuideStep {
+  return Math.max(0, Math.min(2, Math.round(step))) as GuideStep
+}
+
+/** 'Step 2 of 3: Chapters'. */
+export function stepProgressText(step: GuideStep): string {
+  return `Step ${step + 1} of ${GUIDE_STEPS.length}: ${GUIDE_STEPS[step].label}`
+}
+
+export function nextStep(step: GuideStep): GuideStep | null {
+  return step >= REVIEW_STEP ? null : ((step + 1) as GuideStep)
+}
+
+export function previousStep(step: GuideStep): GuideStep | null {
+  return step <= 0 ? null : ((step - 1) as GuideStep)
+}
+
+/** The two things a paper cannot exist without. Everything else has a smart default. */
+export function selectionBlockReason(s: Pick<GuideState, 'subjectId' | 'chapterCount'>): string | null {
   if (!s.subjectId) return 'Choose a subject to continue.'
-  if (step >= 1 && s.chapterCount === 0) return 'Pick at least one chapter to continue.'
-  if (step === 2) {
-    if (s.planning) return 'Planning your paper…'
-    if (!s.planReady) return 'Your paper is not ready yet.'
-    if (s.starting) return 'Getting your paper ready…'
-  }
+  if (s.chapterCount === 0) return 'Pick at least one chapter to continue.'
   return null
 }
 
-export function clampStep(step: number): WizardStep {
-  return Math.max(0, Math.min(2, Math.round(step))) as WizardStep
+/**
+ * Why Next is disabled on `step`, or null. Smart defaults are already filled in, so a step is a
+ * dead end only when its own required choice is truly missing: a subject on step 1, a chapter on
+ * step 2. The last step has no Next (the summary's Generate button takes over).
+ */
+export function nextBlockReason(step: GuideStep, s: Pick<GuideState, 'subjectId' | 'chapterCount'>): string | null {
+  if (step === 0) return s.subjectId ? null : 'Choose a subject to continue.'
+  if (step === 1) return s.chapterCount > 0 ? null : 'Pick at least one chapter to continue.'
+  return null
+}
+
+/** Why "Skip to review" cannot be used yet: the review needs a subject and a chapter. */
+export function skipToReviewBlockReason(s: Pick<GuideState, 'subjectId' | 'chapterCount'>): string | null {
+  return selectionBlockReason(s)
+}
+
+/** Why Generate is disabled, or null when the paper can be made. */
+export function generateBlockReason(s: GuideState): string | null {
+  const missing = selectionBlockReason(s)
+  if (missing) return missing.replace(' to continue', ' to make a paper')
+  if (s.planning) return 'Planning your paper\u2026'
+  if (s.starting) return 'Getting your paper ready\u2026'
+  if (!s.planReady) return 'Your paper is not ready yet.'
+  return null
+}
+
+/** Whether the progress dots may jump straight to `target` (always backwards, forwards when valid). */
+export function canGoToStep(target: GuideStep, s: Pick<GuideState, 'subjectId' | 'chapterCount'>): boolean {
+  if (target === 0) return true
+  if (target === 1) return Boolean(s.subjectId)
+  return selectionBlockReason(s) === null
+}
+
+export type BuilderMode = 'quick' | 'guided'
+
+/**
+ * The "Made for you" card is the first thing she sees when the app has a recommendation; without
+ * one the guided steps show directly. "Customise" switches to the steps, "Back to the quick
+ * version" returns to the card. While the first plan is still loading the card shows (planning).
+ */
+export function builderMode(input: {
+  hasRecommendation: boolean
+  customising: boolean
+  settingUp: boolean
+}): BuilderMode {
+  if (input.customising) return 'guided'
+  if (input.hasRecommendation || input.settingUp) return 'quick'
+  return 'guided'
+}
+
+export function sameChapterSet(a: ReadonlyArray<string>, b: ReadonlyArray<string>): boolean {
+  return a.length === b.length && a.every((x) => b.includes(x))
 }

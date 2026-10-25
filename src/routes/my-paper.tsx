@@ -16,9 +16,8 @@ import { PaperStylePicker } from '../components/paper-style'
 import { PageLoading } from '../components/page-loading'
 import { TopicSearchBox } from '../components/topic-search-box'
 import type { TopicSubject, TopicSuggestion } from '../lib/topic-search'
-import { PaperBuilderA } from '../components/paper-builder/layout-a'
-import { PaperBuilderB } from '../components/paper-builder/layout-b'
-import { LayoutSwitcher } from '../components/paper-builder/layout-switcher'
+import { PaperBuilderC } from '../components/paper-builder/layout-c'
+import { LayoutSwitch } from '../components/paper-builder/layout-switcher'
 import type { PaperBuilderProps } from '../components/paper-builder/types'
 import {
   normaliseLayoutParam,
@@ -48,7 +47,8 @@ export const Route = createFileRoute('/my-paper')({
     subject: typeof search.subject === 'string' ? search.subject : undefined,
     chapters: typeof search.chapters === 'string' ? search.chapters : undefined,
     concepts: typeof search.concepts === 'string' ? search.concepts : undefined,
-    // ?layout=a|b previews the alternative builder layouts; anything else is the classic one.
+    // ?layout=c (or the old preview aliases a and b) shows the new builder; anything else is the
+    // classic one.
     layout: normaliseLayoutParam(search.layout),
   }),
 })
@@ -315,7 +315,7 @@ function MyPaper() {
   const [expandedParts, setExpandedParts] = useState<Set<string>>(new Set())
   const [plan, setPlan] = useState<Plan | null>(null)
   // Average mastery (0-100) per chapter and subject, from the same overview as the topic search;
-  // only the alternative layouts show it. recommendedIds is the chapters the app chose for her
+  // only the new layout shows it. recommendedIds is the chapters the app chose for her
   // for the current subject (null when the selection came from a link or has not loaded).
   const [chapterMastery, setChapterMastery] = useState<
     Record<string, number | null>
@@ -569,8 +569,8 @@ function MyPaper() {
   useEffect(() => {
     if (!focusGenerate || loadingPlan || !plan || starting) return
     const button = generateButtonRef.current
-    // A layout without a Generate button on this screen (Layout B, before its last step) has
-    // nothing to focus: drop the request rather than steal focus later.
+    // A screen without a Generate button (the classic one before its plan loads) has nothing to
+    // focus: drop the request rather than steal focus later.
     if (!button) {
       setFocusGenerate(false)
       return
@@ -715,8 +715,8 @@ function MyPaper() {
     return <PageLoading />
   }
 
-  // ?layout=a|b: alternative builder layouts for comparison. No parameter is the classic layout,
-  // exactly as before. Read from the router's search params, so server and client agree.
+  // ?layout=c (aliases a, b): the new builder. No parameter is the classic layout, exactly as
+  // before. Read from the router's search params, so server and client agree.
   const layout = parseLayout(search.layout)
   const classic = layout === 'classic'
   function setLayout(next: BuilderLayout) {
@@ -786,9 +786,14 @@ function MyPaper() {
           below the fold on a phone; now Subject is on the first screen. Same word, "paper",
           everywhere: heading, button and progress text. */}
         <div className="mb-4">
-          <h1 className="display-title text-[1.6rem] leading-tight font-bold tracking-tight">
-            New paper
-          </h1>
+          <div className="flex items-start justify-between gap-3">
+            <h1 className="display-title text-[1.6rem] leading-tight font-bold tracking-tight">
+              New paper
+            </h1>
+            {showLayoutSwitcher(search.layout) && withContent.length > 0 && (
+              <LayoutSwitch layout={layout} onChange={setLayout} />
+            )}
+          </div>
           <p className="text-small text-muted-foreground mt-1">
             Mixes what you already know with what needs more practice.
           </p>
@@ -810,11 +815,7 @@ function MyPaper() {
 
         {withContent.length > 0 && !classic && (
           <div className="mb-4">
-            {layout === 'a' ? (
-              <PaperBuilderA {...builderProps} />
-            ) : (
-              <PaperBuilderB {...builderProps} />
-            )}
+            <PaperBuilderC {...builderProps} />
           </div>
         )}
 
@@ -1170,9 +1171,6 @@ function MyPaper() {
           </div>
         )}
       </div>
-      {showLayoutSwitcher(search.layout) && withContent.length > 0 && (
-        <LayoutSwitcher layout={layout} onChange={setLayout} />
-      )}
       {showInstall && (
         <InstallAppDialog
           storageKey={INSTALL_OFFER_KEY}

@@ -1,33 +1,46 @@
 import { describe, expect, it } from 'vitest'
 import {
+  builderMode,
+  canGoToStep,
   clampStep,
   describeAskedVsPlanned,
+  generateBlockReason,
   estimateMinutes,
   groupChaptersByPart,
   masteryPercent,
+  nextBlockReason,
+  nextStep,
   parseLayout,
+  previousStep,
+  sameChapterSet,
   schoolPaperLine,
   showLayoutSwitcher,
+  skipToReviewBlockReason,
+  stepProgressText,
   subjectIconKind,
   summaryText,
-  wizardBlockReason,
   worthPractising,
 } from './paper-builder-view'
 
 describe('layout param', () => {
-  it('picks a and b, anything else is the current layout', () => {
-    expect(parseLayout('a')).toBe('a')
-    expect(parseLayout('B')).toBe('b')
-    expect(parseLayout(' b ')).toBe('b')
+  it('picks the new layout for c, and for the old preview aliases a and b', () => {
+    expect(parseLayout('c')).toBe('c')
+    expect(parseLayout('C')).toBe('c')
+    expect(parseLayout(' c ')).toBe('c')
+    expect(parseLayout('a')).toBe('c')
+    expect(parseLayout('B')).toBe('c')
+  })
+  it('keeps everything else on the classic layout', () => {
     expect(parseLayout(undefined)).toBe('classic')
     expect(parseLayout('')).toBe('classic')
-    expect(parseLayout('c')).toBe('classic')
+    expect(parseLayout('d')).toBe('classic')
     expect(parseLayout('classic')).toBe('classic')
     expect(parseLayout(null)).toBe('classic')
   })
-  it('shows the switcher only when the parameter is present', () => {
+  it('shows the switch only when the parameter is present', () => {
     expect(showLayoutSwitcher(undefined)).toBe(false)
     expect(showLayoutSwitcher(null)).toBe(false)
+    expect(showLayoutSwitcher('c')).toBe(true)
     expect(showLayoutSwitcher('a')).toBe(true)
     expect(showLayoutSwitcher('classic')).toBe(true)
     expect(showLayoutSwitcher('nonsense')).toBe(true)
@@ -198,28 +211,66 @@ describe('summaryText', () => {
   })
 })
 
-describe('wizard', () => {
+describe('guided steps', () => {
   const base = { subjectId: 's', chapterCount: 2, planReady: true, planning: false, starting: false }
-  it('needs a subject first', () => {
-    expect(wizardBlockReason(0, { ...base, subjectId: '' })).toBe('Choose a subject to continue.')
-    expect(wizardBlockReason(0, base)).toBeNull()
-  })
-  it('needs a chapter from step 2 on, not on step 1', () => {
-    expect(wizardBlockReason(0, { ...base, chapterCount: 0 })).toBeNull()
-    expect(wizardBlockReason(1, { ...base, chapterCount: 0 })).toBe(
-      'Pick at least one chapter to continue.',
-    )
-    expect(wizardBlockReason(1, base)).toBeNull()
-  })
-  it('waits for the plan before generating', () => {
-    expect(wizardBlockReason(2, { ...base, planning: true })).toBe('Planning your paper…')
-    expect(wizardBlockReason(2, { ...base, planReady: false })).toBe('Your paper is not ready yet.')
-    expect(wizardBlockReason(2, { ...base, starting: true })).toBe('Getting your paper ready…')
-    expect(wizardBlockReason(2, base)).toBeNull()
-  })
-  it('clamps the step', () => {
+  it('moves forward and back inside the three steps', () => {
+    expect(nextStep(0)).toBe(1)
+    expect(nextStep(1)).toBe(2)
+    expect(nextStep(2)).toBeNull()
+    expect(previousStep(0)).toBeNull()
+    expect(previousStep(2)).toBe(1)
     expect(clampStep(-1)).toBe(0)
     expect(clampStep(5)).toBe(2)
-    expect(clampStep(1)).toBe(1)
+    expect(stepProgressText(1)).toBe('Step 2 of 3: Chapters')
+  })
+  it('disables Next only when its own required choice is missing', () => {
+    expect(nextBlockReason(0, { ...base, subjectId: '' })).toBe('Choose a subject to continue.')
+    expect(nextBlockReason(0, { ...base, chapterCount: 0 })).toBeNull()
+    expect(nextBlockReason(1, { ...base, chapterCount: 0 })).toBe(
+      'Pick at least one chapter to continue.',
+    )
+    expect(nextBlockReason(1, base)).toBeNull()
+    expect(nextBlockReason(2, { ...base, chapterCount: 0 })).toBeNull()
+  })
+  it('lets her skip to the review once a subject and a chapter are chosen', () => {
+    expect(skipToReviewBlockReason(base)).toBeNull()
+    expect(skipToReviewBlockReason({ ...base, chapterCount: 0 })).toBe(
+      'Pick at least one chapter to continue.',
+    )
+    expect(skipToReviewBlockReason({ ...base, subjectId: '' })).toBe('Choose a subject to continue.')
+  })
+  it('lets the dots jump only where the choices allow', () => {
+    expect(canGoToStep(0, { subjectId: '', chapterCount: 0 })).toBe(true)
+    expect(canGoToStep(1, { subjectId: '', chapterCount: 0 })).toBe(false)
+    expect(canGoToStep(1, { subjectId: 's', chapterCount: 0 })).toBe(true)
+    expect(canGoToStep(2, { subjectId: 's', chapterCount: 0 })).toBe(false)
+    expect(canGoToStep(2, { subjectId: 's', chapterCount: 1 })).toBe(true)
+  })
+  it('explains why Generate is disabled, in a fixed order', () => {
+    expect(generateBlockReason(base)).toBeNull()
+    expect(generateBlockReason({ ...base, subjectId: '' })).toBe('Choose a subject to make a paper.')
+    expect(generateBlockReason({ ...base, chapterCount: 0 })).toBe(
+      'Pick at least one chapter to make a paper.',
+    )
+    expect(generateBlockReason({ ...base, planning: true })).toBe('Planning your paper…')
+    expect(generateBlockReason({ ...base, starting: true })).toBe('Getting your paper ready…')
+    expect(generateBlockReason({ ...base, planReady: false })).toBe('Your paper is not ready yet.')
+  })
+})
+
+describe('quick or guided', () => {
+  it('shows the Made for you card when there is a recommendation or the first plan is loading', () => {
+    expect(builderMode({ hasRecommendation: true, customising: false, settingUp: false })).toBe('quick')
+    expect(builderMode({ hasRecommendation: false, customising: false, settingUp: true })).toBe('quick')
+  })
+  it('goes straight to the steps without a recommendation, and after Customise', () => {
+    expect(builderMode({ hasRecommendation: false, customising: false, settingUp: false })).toBe('guided')
+    expect(builderMode({ hasRecommendation: true, customising: true, settingUp: false })).toBe('guided')
+    expect(builderMode({ hasRecommendation: true, customising: true, settingUp: true })).toBe('guided')
+  })
+  it('compares chapter selections as sets', () => {
+    expect(sameChapterSet(['a', 'b'], ['b', 'a'])).toBe(true)
+    expect(sameChapterSet(['a'], ['a', 'b'])).toBe(false)
+    expect(sameChapterSet(['a', 'c'], ['a', 'b'])).toBe(false)
   })
 })
