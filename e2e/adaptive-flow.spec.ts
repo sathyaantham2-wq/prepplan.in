@@ -212,22 +212,23 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // Owner decision 2026-09-23: /my-paper is her default landing page now, straight after
   // finishing her profile -- not /student ("Your progress"), which is still reachable from the
   // sidebar (checked later, via "Back to my progress" after this attempt is marked).
-  // "New paper": a short Easy assessment made from her profile -- Subject,
-  // Questions, Difficulty and Question type are real controls now, defaulting to the same 10
-  // Easy MCQ-only shape a first assessment always used to be.
+  // "New paper": a short assessment made from her profile; the count and question type are real
+  // controls (difficulty is not student-selectable on a normal paper).
   await page.waitForURL('**/my-paper**')
   await expect(page.getByRole('heading', { name: 'New paper' })).toBeVisible()
-  // exact: true matters here -- getByLabel is case-insensitive substring matching by default,
-  // and the TanStack devtools overlay the dev server renders carries aria-labels like
-  // "Open match details for /admin/questions", which a bare 'Questions' also matches.
-  await expect(page.getByLabel('Questions', { exact: true })).toHaveValue('10')
-  // The default type is Combined, which adds short and long answers (2026-10-04); this flow is the
-  // quick multiple-choice assessment, marked at once, so it asks for exactly that.
-  await page.getByLabel('Question type', { exact: true }).selectOption('mcq')
-  // The plan summary lives in the sticky bar only (the header badge went 2026-10-01): question
-  // count and estimated minutes, derived from the count, not chosen directly.
+  // The "Made for you" card is the first screen; the size and type are on its last customise step.
+  // The default is 10 questions of the Combined type, which adds short and long answers
+  // (2026-10-04); this flow is the quick multiple-choice assessment, marked at once, so it asks
+  // for exactly that.
+  await page.getByRole('button', { name: 'Customise' }).click({ timeout: 20_000 })
+  await page.getByRole('button', { name: 'Next: Chapters' }).click()
+  await page.getByRole('button', { name: 'Next: Size and style' }).click()
+  await expect(page.getByRole('radio', { name: /^10/ })).toBeChecked()
+  await page.getByRole('button', { name: /More options/ }).click()
+  await page.getByRole('radio', { name: 'Multiple choice' }).click()
+  // The live summary: question count and estimated minutes, derived from the count.
   await expect(
-    page.getByText(/10\s+questions\s+·\s+about \d+ min/),
+    page.getByText(/10\s+questions\s+·\s+about \d+ min/).first(),
   ).toBeVisible()
   // Generating a paper is where the install is offered as a popup (2026-10-02). A test browser
   // never offers a real install, so the browser's own event is fired by hand here; the paper is
@@ -244,7 +245,7 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
     })
     window.dispatchEvent(event)
   })
-  await page.getByRole('button', { name: 'Generate paper' }).click()
+  await page.getByRole('button', { name: 'Make this paper' }).click()
   const installDialog = page.getByRole('dialog', { name: 'Install PrepPlan' })
   await expect(installDialog).toBeVisible()
   await installDialog.getByRole('button', { name: 'Not now' }).click()
@@ -335,6 +336,8 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await practiseConcept.click()
   await page.waitForURL('**/my-paper?**')
   await expect(page.getByText('Focused practice')).toBeVisible()
+  // The paper is already decided by the link, so the quick card shows rather than the steps.
+  await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible()
   await expect(
     page.getByText('This paper asks only about this concept.'),
   ).toBeVisible()

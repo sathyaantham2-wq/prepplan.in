@@ -8,9 +8,10 @@ import { createClass7Fixture, removeClass7Fixture } from './class7-fixture'
 import type { Class7Fixture } from './class7-fixture'
 
 /**
- * The chapter picker on /my-paper (2026-10-03 request): the parts (Part I, Part II ...) start
- * closed and she opens the one she wants. Builds its own two-part Class 7 subject (see class7-fixture.ts) so
- * the picker is shown at all (it hides itself when a subject has a single chapter).
+ * Choosing chapters by part in the paper builder (/my-paper, Customise, step 2): chapters are
+ * grouped under Part I, Part II ... with a "n of m selected" count each, and Select all / Clear
+ * and ticking one chapter keep those counts right. Builds its own two-part Class 7 subject (see
+ * class7-fixture.ts), because chapter identity is (part, number) and CI has no real Class 7 data.
  */
 
 let db: Db
@@ -40,7 +41,7 @@ test.afterAll(async () => {
   await db.destroy()
 })
 
-test('chapter parts start closed and open on tap', async ({ page }) => {
+test('chapters are grouped by part and selected per part', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' })
   await page.waitForTimeout(2000)
   await page.fill('#email', student.email)
@@ -54,15 +55,31 @@ test('chapter parts start closed and open on tap', async ({ page }) => {
   await page.getByRole('button', { name: 'Save and continue' }).click()
   await page.waitForURL('**/my-paper**')
 
-  const parts = page.locator('button[aria-expanded]').filter({ hasText: /Part / })
-  await expect(parts.first()).toBeVisible({ timeout: 20_000 })
-  const total = await parts.count()
-  for (let i = 0; i < total; i++) {
-    await expect(parts.nth(i)).toHaveAttribute('aria-expanded', 'false')
-  }
+  await page.goto(`/my-paper?subject=${fixture.subjectId}`)
+  await page.getByRole('button', { name: 'Customise' }).click({ timeout: 20_000 })
+  await page.getByRole('button', { name: 'Next: Chapters' }).click()
+  await expect(page.getByRole('heading', { name: 'Which chapters?' })).toBeVisible()
 
-  await parts.first().click()
-  await expect(parts.first()).toHaveAttribute('aria-expanded', 'true')
-  await parts.first().click()
-  await expect(parts.first()).toHaveAttribute('aria-expanded', 'false')
+  const partI = page.getByText(/^Part I · \d of 1 selected$/)
+  const partII = page.getByText(/^Part II · \d of 1 selected$/)
+  await expect(partI).toBeVisible()
+  await expect(partII).toBeVisible()
+
+  await page.getByRole('button', { name: 'Clear' }).click()
+  await expect(partI).toHaveText('Part I · 0 of 1 selected')
+  await expect(partII).toHaveText('Part II · 0 of 1 selected')
+
+  // Ticking the Part II chapter changes Part II only.
+  await page
+    .locator('label')
+    .filter({ hasText: /E2E chapter part II/ })
+    .click()
+  await expect(partI).toHaveText('Part I · 0 of 1 selected')
+  await expect(partII).toHaveText('Part II · 1 of 1 selected')
+  await expect(page.getByText('1 selected', { exact: true })).toBeVisible()
+
+  await page.getByRole('button', { name: 'Select all' }).click()
+  await expect(partI).toHaveText('Part I · 1 of 1 selected')
+  await expect(partII).toHaveText('Part II · 1 of 1 selected')
+  await expect(page.getByText('2 selected', { exact: true })).toBeVisible()
 })

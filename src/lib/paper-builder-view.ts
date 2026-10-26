@@ -1,44 +1,6 @@
-// Pure helpers for the student's paper builder (the new layout, /my-paper?layout=c). No React, no
+// Pure helpers for the student's paper builder (/my-paper). No React, no
 // server imports (src/lib/adaptive/plan.ts pulls in the database layer, which must never reach the
 // client bundle), so everything here is unit-testable and safe to import from components.
-
-// ---------------------------------------------------------------------------------------------
-// Layout selection (URL query string only)
-// ---------------------------------------------------------------------------------------------
-
-export type BuilderLayout = 'classic' | 'c'
-
-/** The raw ?layout= value as the route keeps it: a string, or undefined when absent. */
-export function normaliseLayoutParam(value: unknown): string | undefined {
-  if (typeof value === 'string') return value
-  if (typeof value === 'number' || typeof value === 'boolean') return String(value)
-  return undefined
-}
-
-/**
- * 'c' (any case) picks the new layout. 'a' and 'b' are aliases for it, so preview links shared
- * while two candidates were being compared still land on the one that was kept. Anything else, or
- * nothing, is the classic layout.
- */
-export function parseLayout(value: unknown): BuilderLayout {
-  const raw = normaliseLayoutParam(value)?.trim().toLowerCase()
-  if (raw === 'c' || raw === 'a' || raw === 'b') return 'c'
-  return 'classic'
-}
-
-/** The Classic | New switch shows only when a layout parameter is present at all. */
-export function showLayoutSwitcher(value: unknown): boolean {
-  return normaliseLayoutParam(value) !== undefined
-}
-
-export const LAYOUT_CHOICES: ReadonlyArray<{
-  value: BuilderLayout
-  label: string
-  param: string
-}> = [
-  { value: 'classic', label: 'Classic', param: 'classic' },
-  { value: 'c', label: 'New', param: 'c' },
-]
 
 // ---------------------------------------------------------------------------------------------
 // Subject icons

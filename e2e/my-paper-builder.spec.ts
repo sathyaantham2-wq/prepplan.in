@@ -8,9 +8,10 @@ import { createClass7Fixture, removeClass7Fixture } from './class7-fixture'
 import type { Class7Fixture } from './class7-fixture'
 
 /**
- * The new paper builder on /my-paper?layout=c (the old preview links ?layout=a and ?layout=b land
- * on it too): the "Made for you" quick path, the three-step customise path with its live summary,
- * and the inline Classic | New switch keeping her selections. Builds its own two-chapter subject.
+ * The student's paper builder on /my-paper: the "Made for you" quick path, the three-step
+ * customise path with its live summary, and going back to the quick card keeping her changes.
+ * Builds its own two-chapter subject. An old ?layout=... link from the preview period still lands
+ * on the same builder.
  */
 
 let db: Db
@@ -21,8 +22,8 @@ let studentId: string
 
 test.beforeAll(async () => {
   db = createDb()
-  fixture = await createClass7Fixture(db, 'layoutc')
-  parent = await createParentSession('e2e-lc-parent')
+  fixture = await createClass7Fixture(db, 'builder')
+  parent = await createParentSession('e2e-pb-parent')
   // Through the API, so the parental-consent record exists and generation is not blocked.
   const created = await fetch('http://localhost:3000/api/students', {
     method: 'POST',
@@ -31,10 +32,10 @@ test.beforeAll(async () => {
       cookie: parent.cookie,
       origin: 'http://localhost:3000',
     },
-    body: JSON.stringify({ name: 'Layout Kid', class: 7, board: 'CBSE', consent_accepted: true }),
+    body: JSON.stringify({ name: 'Builder Kid', class: 7, board: 'CBSE', consent_accepted: true }),
   }).then((r) => r.json())
   studentId = created.id
-  student = await createStudentSession('e2e-lc-student', parent.householdId, studentId)
+  student = await createStudentSession('e2e-pb-student', parent.householdId, studentId)
 })
 
 test.afterAll(async () => {
@@ -71,33 +72,20 @@ async function signIn(page: Page) {
   await page.waitForURL('**/my-paper**')
 }
 
-test('quick path, customise path and the switch', async ({ page }) => {
+test('customise path through every step makes a real paper, and back to quick keeps changes', async ({
+  page,
+}) => {
   await signIn(page)
-
-  // Quick path: the card is the whole screen; one tap makes a real paper.
-  await page.goto(`/my-paper?layout=c&subject=${fixture.subjectId}`)
-  await expect(page.getByRole('heading', { name: 'New paper' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: /E2E Class 7 layoutc/ })).toBeVisible({
-    timeout: 20_000,
-  })
-  await expect(page.getByText('Made for you')).toBeVisible()
-  await expect(page.getByRole('radio', { name: 'New' })).toBeChecked()
-  await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible()
-  await expect(page.getByRole('button', { name: 'Make this paper' })).toBeEnabled({ timeout: 20_000 })
-
-  // The old preview aliases show the same builder.
-  await page.goto(`/my-paper?layout=b&subject=${fixture.subjectId}`)
-  await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible({ timeout: 20_000 })
-  await page.goto(`/my-paper?layout=c&subject=${fixture.subjectId}`)
+  await page.goto(`/my-paper?subject=${fixture.subjectId}`)
   await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible({ timeout: 20_000 })
 
-  // Customise: steps, skip to review, selections kept across Classic | New.
   await page.getByRole('button', { name: 'Customise' }).click()
   await expect(page.getByRole('heading', { name: 'Which subject?' })).toBeFocused()
   await page.getByRole('button', { name: 'Next: Chapters' }).click()
   await expect(page.getByRole('heading', { name: 'Which chapters?' })).toBeFocused()
   // One search box only.
   await expect(page.getByLabel('Find a chapter or topic')).toHaveCount(1)
+  await expect(page.getByPlaceholder('Search chapters…')).toHaveCount(0)
   await page.getByRole('button', { name: 'Clear' }).click()
   await expect(page.getByText('Pick at least one chapter to continue.')).toBeVisible()
   await expect(page.getByRole('button', { name: /^Next: / })).toBeDisabled()
@@ -112,37 +100,75 @@ test('quick path, customise path and the switch', async ({ page }) => {
   await page.getByRole('button', { name: /More options/ }).click()
   await expect(page.getByRole('radio', { name: 'Written' })).toBeVisible()
 
-  // Switch to Classic and back: the 15 and the chapter choice survive.
-  await page.getByRole('radio', { name: 'Classic' }).click()
-  await expect(page.getByLabel('Questions', { exact: true })).toHaveValue('15')
-  await page.getByRole('radio', { name: 'New' }).click()
-  await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible({ timeout: 20_000 })
-  await expect(page.getByRole('list', { name: 'Chapters in this paper' }).getByRole('listitem')).toHaveCount(1)
+  // Back to the quick card: the 15 and the single chapter survive.
+  await page.getByRole('button', { name: 'Back', exact: true }).click()
+  await page.getByRole('button', { name: 'Back', exact: true }).click()
+  await page.getByRole('button', { name: 'Back to the quick version' }).click()
+  await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible()
+  await expect(
+    page.getByRole('list', { name: 'Chapters in this paper' }).getByRole('listitem'),
+  ).toHaveCount(1)
 
   // Customise all the way through and make the paper from the review step.
   await page.getByRole('button', { name: 'Customise' }).click()
   await page.getByRole('button', { name: 'Next: Chapters' }).click()
   await page.getByRole('button', { name: 'Next: Size and style' }).click()
   await expect(page.getByRole('radio', { name: /^15/ })).toBeChecked()
+  // The fixture holds a single multiple-choice question, so ask for that kind only: a Combined
+  // paper also wants written questions, which the fixture does not have.
+  // (More options stays open from the first pass, so only open it when it is closed.)
+  const more = page.getByRole('button', { name: /More options/ })
+  if ((await more.getAttribute('aria-expanded')) !== 'true') await more.click()
+  await page.getByRole('radio', { name: 'Multiple choice' }).click()
   const make = page.getByRole('button', { name: 'Make this paper' })
   await expect(make).toBeEnabled({ timeout: 20_000 })
   await make.click()
   await page.waitForURL('**/attempt/**', { timeout: 30_000 })
 })
 
+// Runs after the customise test on purpose: the fixture has one question per chapter and a paper
+// does not repeat a question she has just had, so the single-chapter paper goes first and this one
+// still finds the other chapter's question.
 test('quick path makes a real paper', async ({ page }) => {
   await signIn(page)
-  await page.goto(`/my-paper?layout=c&subject=${fixture.subjectId}`)
+  await page.goto(`/my-paper?subject=${fixture.subjectId}`)
+  await expect(page.getByRole('heading', { name: 'New paper' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /E2E Class 7 builder/ })).toBeVisible({
+    timeout: 20_000,
+  })
+  await expect(page.getByText('Made for you')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible()
   const make = page.getByRole('button', { name: 'Make this paper' })
   await expect(make).toBeEnabled({ timeout: 20_000 })
   await make.click()
   await page.waitForURL('**/attempt/**', { timeout: 30_000 })
 })
 
-test('no layout query shows the classic builder, without the switch', async ({ page }) => {
+test('there is no Classic switch, and an old ?layout= link still shows the builder', async ({
+  page,
+}) => {
   await signIn(page)
-  await page.goto(`/my-paper?subject=${fixture.subjectId}`)
-  await expect(page.getByLabel('Questions', { exact: true })).toBeVisible({ timeout: 20_000 })
-  await expect(page.getByRole('radio', { name: 'Classic' })).toHaveCount(0)
-  await expect(page.getByRole('button', { name: 'Customise' })).toHaveCount(0)
+  for (const layout of ['a', 'b', 'c', 'classic', 'nonsense']) {
+    await page.goto(`/my-paper?layout=${layout}&subject=${fixture.subjectId}`)
+    await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible({ timeout: 20_000 })
+    await expect(page.getByRole('radio', { name: 'Classic' })).toHaveCount(0)
+    await expect(page.getByRole('radio', { name: 'New' })).toHaveCount(0)
+    await expect(page.getByLabel('Question type', { exact: true })).toHaveCount(0)
+  }
+})
+
+test('a link to one chapter shows the paper for that chapter', async ({ page }) => {
+  await signIn(page)
+  const second = await db
+    .selectFrom('chapters')
+    .select('id')
+    .where('subject_id', '=', fixture.subjectId)
+    .where('part', '=', 'II')
+    .executeTakeFirstOrThrow()
+  await page.goto(`/my-paper?subject=${fixture.subjectId}&chapters=${second.id}`)
+  await expect(page.getByRole('button', { name: 'Customise' })).toBeVisible({ timeout: 20_000 })
+  const chapters = page.getByRole('list', { name: 'Chapters in this paper' }).getByRole('listitem')
+  await expect(chapters).toHaveCount(1)
+  await expect(chapters.first()).toContainText('E2E chapter part II')
+  await expect(page.getByRole('button', { name: 'Make this paper' })).toBeEnabled({ timeout: 20_000 })
 })

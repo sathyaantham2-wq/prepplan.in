@@ -10,42 +10,15 @@ import {
   masteryPercent,
   nextBlockReason,
   nextStep,
-  parseLayout,
   previousStep,
   sameChapterSet,
   schoolPaperLine,
-  showLayoutSwitcher,
   skipToReviewBlockReason,
   stepProgressText,
   subjectIconKind,
   summaryText,
   worthPractising,
 } from './paper-builder-view'
-
-describe('layout param', () => {
-  it('picks the new layout for c, and for the old preview aliases a and b', () => {
-    expect(parseLayout('c')).toBe('c')
-    expect(parseLayout('C')).toBe('c')
-    expect(parseLayout(' c ')).toBe('c')
-    expect(parseLayout('a')).toBe('c')
-    expect(parseLayout('B')).toBe('c')
-  })
-  it('keeps everything else on the classic layout', () => {
-    expect(parseLayout(undefined)).toBe('classic')
-    expect(parseLayout('')).toBe('classic')
-    expect(parseLayout('d')).toBe('classic')
-    expect(parseLayout('classic')).toBe('classic')
-    expect(parseLayout(null)).toBe('classic')
-  })
-  it('shows the switch only when the parameter is present', () => {
-    expect(showLayoutSwitcher(undefined)).toBe(false)
-    expect(showLayoutSwitcher(null)).toBe(false)
-    expect(showLayoutSwitcher('c')).toBe(true)
-    expect(showLayoutSwitcher('a')).toBe(true)
-    expect(showLayoutSwitcher('classic')).toBe(true)
-    expect(showLayoutSwitcher('nonsense')).toBe(true)
-  })
-})
 
 describe('subjectIconKind', () => {
   it('maps names by keyword', () => {

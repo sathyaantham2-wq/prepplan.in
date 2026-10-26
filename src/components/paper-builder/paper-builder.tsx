@@ -184,11 +184,11 @@ function SummaryCard({
 // ---------------------------------------------------------------------------------------------
 
 /**
- * Layout C. The fast path is a "Made for you" card with one big button; "Customise" swaps it for a
+ * The student's paper builder. The fast path is a "Made for you" card with one big button; "Customise" swaps it for a
  * three-step guide (subject, chapters, size and style) next to a live "Your paper" summary that
  * can generate at any step. Every step is skippable because smart defaults are already filled in.
  */
-export function PaperBuilderC(p: PaperBuilderProps) {
+export function PaperBuilder(p: PaperBuilderProps) {
   const d = deriveBuilder(p)
   const desktop = useIsDesktop()
   const [customising, setCustomising] = useState(false)
@@ -198,8 +198,11 @@ export function PaperBuilderC(p: PaperBuilderProps) {
   const mounted = useRef(false)
 
   const hasRecommendation = p.recommendedChapterIds !== null && p.recommendedChapterIds.length > 0
+  // The card also shows for a selection that came from a link ("Practise this chapter"): the paper
+  // is already decided, so one tap makes it and Customise changes it.
+  const hasQuickCard = hasRecommendation || p.selectedChapterIds.length > 0
   const settingUp = p.loadingPlan && !p.plan
-  const mode = builderMode({ hasRecommendation, customising, settingUp })
+  const mode = builderMode({ hasRecommendation: hasQuickCard, customising, settingUp })
   const isRecommended = hasRecommendation && sameChapterSet(p.selectedChapterIds, p.recommendedChapterIds ?? [])
 
   const state = {
@@ -346,7 +349,7 @@ export function PaperBuilderC(p: PaperBuilderProps) {
 
   return (
     <div className="space-y-4">
-      {hasRecommendation && (
+      {hasQuickCard && (
         <button
           type="button"
           onClick={backToQuick}
