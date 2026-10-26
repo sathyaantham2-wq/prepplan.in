@@ -816,3 +816,21 @@ pre code {
   min-width: 2rem;
   font-size: 0.7rem;
 }
+
+/* Paper builder (/my-paper): a tiny scale "pop" when a chip or card is selected. */
+@keyframes pb-pop {
+  0% {
+    transform: scale(0.96);
+  }
+  60% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pb-pop {
+    animation: pb-pop 0.22s ease-out both;
+  }
+}

@@ -56,13 +56,19 @@ test('combined and written bring written questions, even for a brand-new student
   await page.getByRole('button', { name: 'Save and continue' }).click()
   await page.waitForURL('**/my-paper**')
 
-  const type = page.getByLabel('Question type', { exact: true })
+  // Question type lives under "More options" on the last customise step; the live summary shows
+  // the size the plan came to.
+  await page.getByRole('button', { name: 'Customise' }).click({ timeout: 20_000 })
+  await page.getByRole('button', { name: 'Next: Chapters' }).click()
+  await page.getByRole('button', { name: 'Next: Size and style' }).click()
+  await page.getByRole('button', { name: /More options/ }).click()
   // Default Combined: 10 multiple choice + 2 short + 1 long answer.
-  await expect(page.getByText(/·\s*13\s+questions/)).toBeVisible({ timeout: 20_000 })
+  await expect(page.getByRole('radio', { name: 'Combined' })).toBeChecked()
+  await expect(page.getByText(/·\s*13\s+questions/).first()).toBeVisible({ timeout: 20_000 })
   // Written only: 4 short + 2 long answers.
-  await type.selectOption('written')
-  await expect(page.getByText(/·\s*6\s+questions/)).toBeVisible()
+  await page.getByRole('radio', { name: 'Written' }).click()
+  await expect(page.getByText(/·\s*6\s+questions/).first()).toBeVisible()
   // Multiple choice only, as before.
-  await type.selectOption('mcq')
-  await expect(page.getByText(/·\s*10\s+questions/)).toBeVisible()
+  await page.getByRole('radio', { name: 'Multiple choice' }).click()
+  await expect(page.getByText(/·\s*10\s+questions/).first()).toBeVisible()
 })
