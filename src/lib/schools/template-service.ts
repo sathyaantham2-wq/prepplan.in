@@ -1,3 +1,4 @@
+import { blockedFixtureSubject } from '../fixture-subjects'
 import type { Db } from '../../db/connection'
 import {
   bankRepository,
@@ -208,6 +209,13 @@ async function assertSubjectAccess(
     scope.samplePairs.some((p) => p.subjectId === subjectId)
   if (!mine || !allowed)
     throw new SchoolError('not_found', 'Subject not found.')
+  const subject = await db
+    .selectFrom('subjects')
+    .select('code')
+    .where('id', '=', subjectId)
+    .executeTakeFirst()
+  if (!subject || blockedFixtureSubject(subject.code))
+    throw new SchoolError('not_found', 'Subject not found.')
 }
 
 /** Subjects the caller may use for layouts and previews, with their class. */
@@ -215,7 +223,7 @@ export async function listUsableSubjects(db: Db, scope: SchoolScope) {
   const rows = await schoolSubjectsRepository.list(db, scope)
   const subjects = await db
     .selectFrom('subjects')
-    .select(['id', 'name', 'class'])
+    .select(['id', 'name', 'code', 'class'])
     .where(
       'id',
       'in',
@@ -225,6 +233,7 @@ export async function listUsableSubjects(db: Db, scope: SchoolScope) {
     )
     .execute()
   return subjects
+    .filter((s) => !blockedFixtureSubject(s.code))
     .filter(
       (s) =>
         scope.pairs === 'all' ||

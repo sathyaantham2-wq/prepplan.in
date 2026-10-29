@@ -17,6 +17,7 @@ import {
   questionsRepository,
   questionOptionsRepository,
 } from './repositories'
+import { assertLocalDatabase } from '../lib/fixture-subjects'
 import { createQuestion } from '../lib/questions'
 import { generatePaper } from '../lib/papers'
 import { createEvaluation, confirmEvaluation } from '../lib/evaluation'
@@ -26,6 +27,7 @@ import { createEvaluation, confirmEvaluation } from '../lib/evaluation'
 // /examprep-scope-authoring against an actual textbook (see that skill's own warning against
 // authoring scope from memory). Names are marked "(seed)" so nobody mistakes this for real data.
 async function main() {
+  assertLocalDatabase(process.env.DATABASE_URL, 'The seed script')
   const db = createDb()
   try {
     const subject = await subjectsRepository.insert(db, {

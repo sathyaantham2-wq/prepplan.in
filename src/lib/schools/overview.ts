@@ -1,3 +1,4 @@
+import { blockedFixtureSubject } from '../fixture-subjects'
 import type { Db } from '../../db/connection'
 import {
   schoolClassesRepository,
@@ -127,7 +128,7 @@ export async function loadSchoolOverview(
     (
       await db
         .selectFrom('subjects')
-        .select(['id', 'name', 'board', 'class', 'is_active'])
+        .select(['id', 'name', 'code', 'board', 'class', 'is_active'])
         .execute()
     ).map((s) => [s.id, s]),
   )
@@ -157,6 +158,7 @@ export async function loadSchoolOverview(
             .filter(
               (s) =>
                 s.is_active &&
+                !blockedFixtureSubject(s.code) &&
                 s.board === school.board &&
                 s.class === c.grade &&
                 !addedIds.has(s.id),

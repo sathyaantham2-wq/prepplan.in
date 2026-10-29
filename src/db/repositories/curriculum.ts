@@ -2,6 +2,7 @@ import { sql } from 'kysely'
 import type { Insertable, Selectable } from 'kysely'
 import type { Db } from '../connection'
 import type { DB } from '../types'
+import { FIXTURE_SUBJECT_LIKE, isProductionRuntime } from '../../lib/fixture-subjects'
 import { createRepository } from './factory'
 
 // Global reference data — same content regardless of household, so unscoped.
@@ -9,13 +10,17 @@ export const subjectsRepository = {
   ...createRepository('subjects'),
   // withContent hides subjects that have no chapters yet (a student may pick such a subject as an
   // interest, but there is nothing to generate a paper from).
-  async listByBoardClass(db: Db, board: string, classNum: number, withContent = false) {
+  // In a production runtime seed/fixture/E2E subjects are never listed, active or not.
+  async listByBoardClass(db: Db, board: string, classNum: number, withContent = false, excludeFixtures = isProductionRuntime()) {
     let query = db
       .selectFrom('subjects')
       .selectAll()
       .where('board', '=', board)
       .where('class', '=', classNum)
       .where('is_active', '=', true)
+    if (excludeFixtures) {
+      for (const pattern of FIXTURE_SUBJECT_LIKE) query = query.where('code', 'not like', pattern)
+    }
     if (withContent) {
       query = query.where((eb) =>
         eb.exists(

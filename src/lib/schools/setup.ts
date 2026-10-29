@@ -1,3 +1,4 @@
+import { blockedFixtureSubject } from '../fixture-subjects'
 import type { Db } from '../../db/connection'
 import type { SchoolSampleChecker } from '../../db/enums'
 import {
@@ -96,11 +97,12 @@ export async function addSchoolSubject(
     .executeTakeFirstOrThrow()
   const subject = await db
     .selectFrom('subjects')
-    .select(['id', 'board', 'class'])
+    .select(['id', 'code', 'board', 'class'])
     .where('id', '=', subjectId)
     .executeTakeFirst()
   if (
     !subject ||
+    blockedFixtureSubject(subject.code) ||
     subject.board !== school.board ||
     subject.class !== cls.grade
   ) {

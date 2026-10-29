@@ -21,7 +21,7 @@ function ago(iso: string): string {
 }
 
 function AdminOverviewPage() {
-  const [data, setData] = useState<AdminOverview | null>(null)
+  const [data, setData] = useState<(AdminOverview & { fixtureSubjectsActive?: Array<string> }) | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
 
@@ -31,7 +31,7 @@ function AdminOverviewPage() {
     try {
       const r = await fetch('/api/admin/overview')
       if (!r.ok) throw new Error('Could not load the overview.')
-      setData((await r.json()) as AdminOverview)
+      setData((await r.json()) as AdminOverview & { fixtureSubjectsActive?: Array<string> })
     } catch (e) {
       setError((e as Error).message)
     } finally {
@@ -79,6 +79,12 @@ function AdminOverviewPage() {
       actions={refresh}
     >
       {error && <Notice tone="bad">{error}</Notice>}
+      {data.fixtureSubjectsActive && data.fixtureSubjectsActive.length > 0 && (
+        <Notice tone="warn">
+          Test subjects are switched on: {data.fixtureSubjectsActive.join(', ')}. Students must not see these. Switch them off
+          (is_active = false).
+        </Notice>
+      )}
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatTile
