@@ -4,6 +4,7 @@ import {
   examPrintRepository,
   schoolBookletsRepository,
   schoolExamAbsencesRepository,
+  schoolPrintJobPartsRepository,
   schoolPrintJobsRepository,
   schoolScanBatchesRepository,
   schoolScanChunksRepository,
@@ -17,7 +18,7 @@ import {
   verifyScanPageSignature,
 } from '../scan-crypto'
 import { chunkKey, getScanStore, scanKey } from '../scan-storage'
-import { SchoolError, auditSchool } from './common'
+import { SchoolError, auditSchool, auditSchoolEvent } from './common'
 import { loadExam } from './exam-service'
 import { readBookletPage } from './page-reader'
 
@@ -704,17 +705,75 @@ export async function scanImage(
   return decryptScan(sealed)
 }
 
+/** The original upload is deleted this many days after its exam's marks lock. */
+export const ORIGINAL_KEPT_DAYS_AFTER_LOCK = 7
+
 /**
- * Deletes the stored files past each school's retention period, and the pieces of uploads that were
- * never joined. The rows stay: a page keeps its status, reason and quality note, with the keys
- * cleared and `purged_at` set. A file that could not be deleted keeps its key and is tried again
- * the next day.
+ * The daily clean-up of stored files. Rows are never deleted; a file that could not be deleted keeps
+ * its key and is tried again the next day.
+ *  - originals: 7 days after the exam's marks lock (the straightened copy stays), logged per exam;
+ *  - everything of a page (both files): past the school's own retention period, the row marked purged;
+ *  - pieces of uploads never joined: after a day;
+ *  - finished booklet print files: after their week, and any batch left behind by a failed job.
  */
 export async function purgeScanData(
   db: Db,
   now = new Date(),
-): Promise<{ scans: number; printFiles: number; chunks: number }> {
+): Promise<{
+  scans: number
+  originals: number
+  printFiles: number
+  chunks: number
+}> {
   const store = getScanStore()
+
+  const lockedDue = await schoolScanPagesRepository.listOriginalsDueAfterLock(
+    db,
+    now,
+    ORIGINAL_KEPT_DAYS_AFTER_LOCK,
+  )
+  const originalsDone: Array<(typeof lockedDue)[number]> = []
+  for (const p of lockedDue) {
+    try {
+      if (p.original_key) await store.remove(p.original_key)
+      originalsDone.push(p)
+    } catch {
+      // keep the key; try again tomorrow
+    }
+  }
+  const originals = await schoolScanPagesRepository.markOriginalsPurged(
+    db,
+    originalsDone.map((p) => p.id),
+    now,
+  )
+  const byExam = new Map<
+    string,
+    { schoolId: string; lockedAt: Date; n: number }
+  >()
+  for (const p of originalsDone) {
+    const e = byExam.get(p.exam_id) ?? {
+      schoolId: p.school_id,
+      lockedAt: p.marks_locked_at as Date,
+      n: 0,
+    }
+    e.n++
+    byExam.set(p.exam_id, e)
+  }
+  for (const [examId, e] of byExam)
+    await auditSchoolEvent(db, {
+      schoolId: e.schoolId,
+      actorUserId: null,
+      action: 'school.scan_originals_purged',
+      entity: 'school_exams',
+      entityId: examId,
+      before: null,
+      after: {
+        pages: e.n,
+        marks_locked_at: e.lockedAt,
+        days_after_lock: ORIGINAL_KEPT_DAYS_AFTER_LOCK,
+      },
+    })
+
   const due = await schoolScanPagesRepository.listDueForPurge(db, now)
   const done: Array<string> = []
   for (const p of due) {
@@ -742,11 +801,34 @@ export async function purgeScanData(
       // try again tomorrow
     }
   }
-  return {
-    scans,
-    chunks,
-    printFiles: await schoolPrintJobsRepository.purgeExpired(db, now),
+
+  let printFiles = 0
+  for (const j of await schoolPrintJobsRepository.listExpired(db, now)) {
+    try {
+      if (j.result_key) await store.remove(j.result_key)
+      await schoolPrintJobsRepository.markResultPurged(db, j.id, now)
+      printFiles++
+    } catch {
+      // try again tomorrow
+    }
   }
+  for (const part of await schoolPrintJobPartsRepository.listLeftOver(
+    db,
+    now,
+  )) {
+    try {
+      if (part.pdf_key) await store.remove(part.pdf_key)
+      await db
+        .updateTable('school_print_job_parts')
+        .set({ pdf_key: null })
+        .where('id', '=', part.id)
+        .execute()
+      printFiles++
+    } catch {
+      // try again tomorrow
+    }
+  }
+  return { scans, originals, chunks, printFiles }
 }
 
 // ---------------------------------------------------------------- big files, in pieces

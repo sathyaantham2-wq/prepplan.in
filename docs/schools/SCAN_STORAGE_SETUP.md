@@ -66,28 +66,45 @@ Assumptions, all adjustable:
 | One class of 40 students | 6,400 | about **24 GB** written | about **6.7 GB** |
 | One school of 800 students | 128,000 | about **480 GB** written | about **134 GB** |
 
-Retention keeps the amount held at one time well below the yearly total. With the default 60 days
-and exams spread over the year (a test every couple of months), the most held at once is roughly a
-third to a half of the yearly figure: about 8 to 12 GB (class, phone photos) or 2 to 3 GB (class,
-scanner), and about 160 to 240 GB (school, phone photos) or 45 to 65 GB (school, scanner).
+### How long each file is kept (owner rule, 2026-10-29)
 
-What this means in practice:
+- **Original upload:** deleted **7 days after that exam's marks lock** (the row keeps its status and gets
+  `original_purged_at`; the key is cleared; the deletion is logged in `audit_log` as
+  `school.scan_originals_purged`, once per exam with the number of pages). The lock itself is set by the
+  lock job in a later step (`school_exams.marks_locked_at`); until an exam is locked its originals are
+  not touched by this rule. They still fall under the school retention below as a backstop.
+- **Straightened copy:** kept for the school's retention period (default 60 days, never under 30), then
+  deleted; the row stays marked `purged_at`.
+- **Pieces of an upload** (while a big file arrives): deleted when joined, or after a day if never joined.
+- **Booklet print PDFs:** sealed files in the same bucket (`<school>/<exam>/_print/<job>/result.bin`),
+  deleted 7 days after the job; the batches are deleted the moment they are joined.
 
-- **Originals dominate.** A phone photo is 15 times the size of the straightened copy.
-  Asking schools to scan at 200 dpi (as the upload screen now says) cuts the storage by about a
-  factor of 3.5 against raw phone photos.
-- A pilot (one class, one or two exams) is a few hundred MB to a few GB: it fits any plan.
-- A full 800-student school on phone photos is hundreds of GB held at once. Check Supabase's current
-  storage allowance and price for your plan before such a school is on-boarded (the Free plan is
-  1 GB; Pro includes 100 GB, with a per-GB charge above that). These prices change: confirm them on
-  Supabase's pricing page, I have not looked them up.
-- If space becomes a problem, the lever is not shrinking the original at upload (you asked that it
-  never be). It is a shorter retention for a school (30 days minimum) or, later, dropping the
-  original once marks are locked while keeping the straightened copy. That is a policy decision for
-  you; it is not built.
+A page therefore lives about: original 3 to 5 weeks (marking, review, release, the 7-day dispute window,
+the lock, then 7 more days); straightened copy up to 60 days; nothing is held longer than that.
 
-## Not changed
+### What is held at one time (updated with this rule)
 
-Finished booklet print jobs (the joined PDF, kept 7 days) and their batches are still stored in
-Postgres. They are generated documents with no student work in them and can be made again. Say so if
-you want those moved to storage as well.
+The table above is what is **written** over a year. What sits in storage at once is far less. The
+biggest moment is right after a half-yearly or annual round (10 pages × 5 subjects per student =
+50 pages per student). Assume one big round of originals is present, plus about one and a half rounds of
+straightened copies (60 days):
+
+| Peak held at once | Phone photos (3.5 MB original) | Scanner PDFs (0.8 MB original) |
+|---|---|---|
+| One class of 40 (2,000 pages a round) | about **7.8 GB** (7.0 originals + 0.75 straightened) | about **2.4 GB** (1.6 + 0.75) |
+| A school of 800 (40,000 pages a round) | about **155 GB** (140 + 15) | about **47 GB** (32 + 15) |
+
+Between rounds it falls to the straightened copies of the last two months, a few GB for the whole school.
+If the lock is late (for example a dispute drags on), originals stay longer; the school retention period
+still caps them.
+
+Compared with keeping originals for the whole retention period, this saves about 15 to 35 percent at the
+peak (more for a school whose rounds are close together), and nothing is lost that marking needs: marking
+uses the straightened copy. Phone photos are still the biggest cost, about three times a scanner at
+200 dpi; the upload screen says so. Check Supabase's current storage allowance and price for your plan
+before an 800-student school is on-boarded; I have not looked the prices up.
+
+## Nothing else is stored in Postgres
+
+No school table has a column that can hold file bytes (a test checks every `school_*` table). The
+only thing left is `school_exams.marks_locked_at`, a date.

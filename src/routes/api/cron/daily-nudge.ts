@@ -62,6 +62,7 @@ export const Route = createFileRoute('/api/cron/daily-nudge')({
           scan_pages_purged: purged,
           school_scan_pages_purged: schoolPurged.scans,
           school_print_files_purged: schoolPurged.printFiles,
+          school_scan_originals_purged: schoolPurged.originals,
         })
       },
     },

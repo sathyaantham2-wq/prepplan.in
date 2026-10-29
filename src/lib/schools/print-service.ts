@@ -6,6 +6,8 @@ import {
   schoolPrintJobsRepository,
 } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
+import { decryptScan, encryptScan } from '../scan-crypto'
+import { getScanStore, printKey } from '../scan-storage'
 import { SchoolError, auditSchool } from './common'
 import {
   bookletStudents,
@@ -58,7 +60,7 @@ async function progress(
     },
     pages: job.page_count,
     message: job.message,
-    ready: job.status === 'done' && job.result !== null,
+    ready: job.status === 'done' && job.result_key !== null,
   }
 }
 
@@ -152,13 +154,16 @@ export async function stepBookletJob(
       manifest,
       batch,
     )
+    // the batch is a sealed file in private storage; the row keeps only its key
+    const key = printKey(scope.schoolId, job.exam_id, job.id, `part-${seq}`)
+    await getScanStore().put(key, encryptScan(pdf))
     await schoolPrintJobPartsRepository
       .insert(db, scope, {
         job_id: job.id,
         seq,
         students: slice.length,
         pages,
-        pdf,
+        pdf_key: key,
       })
       .catch(() => undefined) // another request made this batch first: keep that one
   } catch (e) {
@@ -174,27 +179,34 @@ export async function stepBookletJob(
     .sort((a, b) => a.seq - b.seq)
   const done = after.reduce((n, p) => n + p.students, 0)
   if (done >= job.total) {
+    const store = getScanStore()
     const merged = await PDFDocument.create()
     let pageCount = 0
     for (const part of after) {
-      if (!part.pdf) throw new Error('A printed batch is missing')
-      const src = await PDFDocument.load(part.pdf)
+      const sealed = part.pdf_key ? await store.get(part.pdf_key) : null
+      if (!sealed) throw new Error('A printed batch is missing')
+      const src = await PDFDocument.load(decryptScan(sealed))
       const copied = await merged.copyPages(src, src.getPageIndices())
       for (const p of copied) merged.addPage(p)
       pageCount += copied.length
     }
     const bytes = Buffer.from(await merged.save())
+    const resultKey = printKey(scope.schoolId, job.exam_id, job.id, 'result')
+    await store.put(resultKey, encryptScan(bytes))
     await schoolPrintJobsRepository.update(db, scope, job.id, {
       status: 'done',
       done_count: done,
-      result: bytes,
+      result_key: resultKey,
       page_count: pageCount,
       finished_at: new Date(),
     })
-    for (const part of after)
+    // only the joined file is kept: the batches are deleted at once
+    for (const part of after) {
+      if (part.pdf_key) await store.remove(part.pdf_key)
       await schoolPrintJobPartsRepository.update(db, scope, part.id, {
-        pdf: null,
+        pdf_key: null,
       })
+    }
     await auditSchool(
       db,
       scope,
@@ -224,7 +236,10 @@ export async function bookletJobResult(
   const job = await loadJob(db, scope, jobId)
   if (job.status !== 'done')
     throw new SchoolError('conflict', 'The booklets are not ready yet.')
-  if (!job.result)
+  const sealed = job.result_key
+    ? await getScanStore().get(job.result_key)
+    : null
+  if (!sealed)
     throw new SchoolError(
       'not_found',
       'This file is no longer kept. Start the printing again.',
@@ -236,7 +251,7 @@ export async function bookletJobResult(
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '')
       .slice(0, 60) || 'exam'
-  return { pdf: job.result, fileName: `${name}-answer-booklets.pdf` }
+  return { pdf: decryptScan(sealed), fileName: `${name}-answer-booklets.pdf` }
 }
 
 // Re-exported for the cron that blanks old files.

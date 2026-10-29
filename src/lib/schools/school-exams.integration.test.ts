@@ -20,7 +20,7 @@ import { Route as ScanAssignRoute } from '../../routes/api/schools/$schoolId/exa
 import { Route as AbsencesRoute } from '../../routes/api/schools/$schoolId/exams/$examId/absences'
 import { Route as ScanImageRoute } from '../../routes/api/schools/$schoolId/scan-images/$pageId'
 import { decryptScan } from '../scan-crypto'
-import type { MemoryScanStore} from '../scan-storage';
+import type { MemoryScanStore } from '../scan-storage'
 import { getScanStore } from '../scan-storage'
 import { buildBookletsHtml } from './booklet-html'
 import { photograph, renderPagePngs } from './scan-test-support'
@@ -1052,13 +1052,47 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
             .executeTakeFirstOrThrow()
         ).page_count * 2,
       )
-      // the batch files are dropped once joined; only the joined PDF stays
+      // the batches are deleted from storage once joined; only the joined PDF stays, sealed
       const left = await db
         .selectFrom('school_print_job_parts')
-        .select('pdf')
+        .select(['pdf_key', 'seq'])
         .where('job_id', '=', job.jobId)
         .execute()
-      expect(left.every((r) => r.pdf === null)).toBe(true)
+      expect(left.length).toBeGreaterThan(0)
+      expect(left.every((r) => r.pdf_key === null)).toBe(true)
+      const pstore = getScanStore() as MemoryScanStore
+      const prefix = `${schoolA}/${examId}/_print/${job.jobId}/`
+      expect(
+        [...pstore.files.keys()].filter((k) => k.startsWith(prefix)),
+      ).toEqual([`${prefix}result.bin`])
+      expect(
+        pstore.files.get(`${prefix}result.bin`)!.subarray(0, 4).toString(),
+      ).not.toBe('%PDF') // sealed: names and IDs are printed on it
+      expect(
+        decryptScan(pstore.files.get(`${prefix}result.bin`)!)
+          .subarray(0, 4)
+          .toString(),
+      ).toBe('%PDF')
+      // after its week the file is deleted from storage and the row says so
+      await db
+        .updateTable('school_print_jobs')
+        .set({ expires_at: new Date(Date.now() - 1000) })
+        .where('id', '=', job.jobId)
+        .execute()
+      expect((await purgeScanData(db)).printFiles).toBeGreaterThanOrEqual(1)
+      expect(pstore.files.has(`${prefix}result.bin`)).toBe(false)
+      const jobRow = await db
+        .selectFrom('school_print_jobs')
+        .select(['result_key', 'result_purged_at', 'status'])
+        .where('id', '=', job.jobId)
+        .executeTakeFirstOrThrow()
+      expect(jobRow).toMatchObject({ result_key: null, status: 'done' })
+      expect(jobRow.result_purged_at).not.toBeNull()
+      const gone = await call(BookletResultRoute, 'GET', teacherS.cookie, jp())
+      expect(gone.status).toBe(404)
+      expect(((await gone.json()) as { message: string }).message).toMatch(
+        /no longer kept/,
+      )
       // a job cannot be read by another school or by a teacher of another subject
       for (const s of [outsiderS, otherTeacherS]) {
         expect(
@@ -1503,15 +1537,11 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect(raw!.includes(Buffer.from([0xff, 0xd8, 0xff]))).toBe(false) // no plain JPEG inside the stored file
       const plain = decryptScan(raw!)
       expect(plain.subarray(0, 3).toString('hex')).toBe('ffd8ff')
-      // and the database has no column that could hold image bytes at all
+      // and no school table has a column that could hold file bytes at all (scans, pieces, print files)
       const bytea = await db
         .selectFrom('information_schema.columns' as never)
         .select(['table_name', 'column_name'] as never)
-        .where('table_name' as never, 'in', [
-          'school_scan_pages',
-          'school_scan_chunks',
-          'school_scan_batches',
-        ] as never)
+        .where('table_name' as never, 'like', 'school_%' as never)
         .where('data_type' as never, '=', 'bytea' as never)
         .execute()
       expect(bytea).toEqual([])
@@ -1815,6 +1845,100 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect(tooBig.status).toBe(400)
     }, 120_000)
 
+    it('the original is deleted 7 days after the exam’s marks lock; the straightened copy stays; it is logged; the row stays', async () => {
+      const store = getScanStore() as MemoryScanStore
+      const mine = () =>
+        db
+          .selectFrom('school_scan_pages')
+          .select([
+            'id',
+            'image_key',
+            'original_key',
+            'original_purged_at',
+            'purged_at',
+            'status',
+          ])
+          .where('exam_id', '=', examId)
+          .where('original_key', 'is not', null)
+          .execute()
+      const before = await mine()
+      expect(before.length).toBeGreaterThan(pc)
+      const originals = before.map((b) => b.original_key!)
+      for (const k of originals) expect(store.files.has(k)).toBe(true)
+      // marks not locked: the original stays however old the page is
+      await db
+        .updateTable('school_scan_pages')
+        .set({ created_at: new Date(Date.now() - 20 * 24 * 3600 * 1000) })
+        .where('exam_id', '=', examId)
+        .execute()
+      expect((await purgeScanData(db)).originals).toBe(0)
+      // locked 6 days ago: not yet
+      await db
+        .updateTable('school_exams')
+        .set({ marks_locked_at: new Date(Date.now() - 6 * 24 * 3600 * 1000) })
+        .where('id', '=', examId)
+        .execute()
+      expect((await purgeScanData(db)).originals).toBe(0)
+      for (const k of originals) expect(store.files.has(k)).toBe(true)
+      // another exam locked long ago does not touch this one's originals
+      await db
+        .updateTable('school_exams')
+        .set({ marks_locked_at: new Date(Date.now() - 30 * 24 * 3600 * 1000) })
+        .where('id', '=', halfYearlyId)
+        .execute()
+      expect((await purgeScanData(db)).originals).toBe(0)
+      // locked 8 days ago: the originals go
+      await db
+        .updateTable('school_exams')
+        .set({ marks_locked_at: new Date(Date.now() - 8 * 24 * 3600 * 1000) })
+        .where('id', '=', examId)
+        .execute()
+      const r = await purgeScanData(db)
+      expect(r.originals).toBe(before.length)
+      for (const k of originals) expect(store.files.has(k)).toBe(false)
+      const rows = await db
+        .selectFrom('school_scan_pages')
+        .select([
+          'id',
+          'image_key',
+          'original_key',
+          'original_purged_at',
+          'purged_at',
+          'status',
+        ])
+        .where('exam_id', '=', examId)
+        .execute()
+      for (const b of before) {
+        const after = rows.find((x) => x.id === b.id)!
+        expect(after.original_key).toBeNull()
+        expect(after.original_purged_at).not.toBeNull()
+        expect(after.purged_at).toBeNull() // the page itself is not purged yet
+        expect(after.status).toBe(b.status) // the row, its status all stay
+        expect(after.image_key).toBe(b.image_key) // the straightened copy stays...
+        expect(store.files.has(after.image_key!)).toBe(true) // ...and is really still there
+      }
+      // the pages still show, and are still received
+      const sum = await scanSummary(db, teacher, examId)
+      expect(sum.students.find((s) => s.name === 'Asha A')!.pages.length).toBe(
+        pc,
+      )
+      // logged once for the exam, with how many
+      const log = await db
+        .selectFrom('audit_log')
+        .select(['action', 'entity', 'entity_id', 'after'])
+        .where('school_id', '=', schoolA)
+        .where('action', '=', 'school.scan_originals_purged')
+        .execute()
+      expect(log).toHaveLength(1)
+      expect(log[0]).toMatchObject({
+        entity: 'school_exams',
+        entity_id: examId,
+      })
+      expect((log[0].after as { pages: number }).pages).toBe(before.length)
+      // running it again changes nothing
+      expect((await purgeScanData(db)).originals).toBe(0)
+    }, 60_000)
+
     it('files past the school’s retention are deleted from storage, the rows stay marked purged, and the summary stops linking them', async () => {
       const store = getScanStore() as MemoryScanStore
       const before = await db
@@ -1824,7 +1948,9 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         .where('image_key', 'is not', null)
         .execute()
       expect(before.length).toBeGreaterThan(pc)
-      const keys = before.flatMap((b) => [b.image_key!, b.original_key!])
+      const keys = before.flatMap((b) =>
+        [b.image_key, b.original_key].filter((k): k is string => k !== null),
+      )
       for (const k of keys) expect(store.files.has(k)).toBe(true)
       // inside the school's own period nothing is touched
       expect((await purgeScanData(db)).scans).toBe(0)

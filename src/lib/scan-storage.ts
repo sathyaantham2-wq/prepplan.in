@@ -29,6 +29,14 @@ export const scanKey = (
   kind: 'original' | 'straightened',
 ) => `${schoolId}/${examId}/${pageId}/${kind}.bin`
 
+/** A booklet print job's files (names and IDs are printed on them, so they are sealed too). */
+export const printKey = (
+  schoolId: string,
+  examId: string,
+  jobId: string,
+  what: 'result' | `part-${number}`,
+) => `${schoolId}/${examId}/_print/${jobId}/${what}.bin`
+
 /** A piece of a file still being uploaded; removed when the pieces are joined. */
 export const chunkKey = (schoolId: string, uploadId: string, seq: number) =>
   `${schoolId}/_chunks/${uploadId}/${seq}.bin`

@@ -707,6 +707,7 @@ export interface SchoolExams {
   exam_date: Timestamp | null;
   id: Generated<string>;
   layout: Json;
+  marks_locked_at: Timestamp | null;
   nominal_marks: number;
   printed_marks: number;
   school_id: string;
@@ -774,7 +775,7 @@ export interface SchoolPrintJobParts {
   id: Generated<string>;
   job_id: string;
   pages: number;
-  pdf: Buffer | null;
+  pdf_key: string | null;
   school_id: string;
   seq: number;
   students: number;
@@ -792,7 +793,8 @@ export interface SchoolPrintJobs {
   kind: string;
   message: string | null;
   page_count: number | null;
-  result: Buffer | null;
+  result_key: string | null;
+  result_purged_at: Timestamp | null;
   school_id: string;
   status: SchoolPrintJobStatus;
   student_ids: Json;
@@ -845,6 +847,7 @@ export interface SchoolScanPages {
   image_key: string | null;
   original_key: string | null;
   original_name: string | null;
+  original_purged_at: Timestamp | null;
   page_no: number | null;
   purged_at: Timestamp | null;
   quality: Generated<Json>;

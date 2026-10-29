@@ -214,12 +214,50 @@ export const schoolScanPagesRepository = {
       )
       .execute()
   },
+  /** Originals whose exam's marks locked more than `days` days ago (the files are still there). */
+  async listOriginalsDueAfterLock(db: Db, now: Date, days: number) {
+    return db
+      .selectFrom('school_scan_pages as p')
+      .innerJoin('school_exams as e', (j) =>
+        j
+          .onRef('e.id', '=', 'p.exam_id')
+          .onRef('e.school_id', '=', 'p.school_id'),
+      )
+      .select([
+        'p.id',
+        'p.school_id',
+        'p.exam_id',
+        'p.original_key',
+        'e.marks_locked_at',
+      ])
+      .where('p.original_key', 'is not', null)
+      .where('e.marks_locked_at', 'is not', null)
+      .where(
+        sql<boolean>`e.marks_locked_at < ${now}::timestamptz - (${days} || ' days')::interval`,
+      )
+      .execute()
+  },
+  /** After an original is deleted: clear its key and say when. The straightened copy stays. */
+  async markOriginalsPurged(db: Db, ids: ReadonlyArray<string>, now: Date) {
+    if (ids.length === 0) return 0
+    const r = await db
+      .updateTable('school_scan_pages')
+      .set({ original_key: null, original_purged_at: now })
+      .where('id', 'in', [...ids])
+      .executeTakeFirst()
+    return Number(r.numUpdatedRows)
+  },
   /** After the files are deleted: forget their keys and say when. The row stays. */
   async markPurged(db: Db, ids: ReadonlyArray<string>, now: Date) {
     if (ids.length === 0) return 0
     const r = await db
       .updateTable('school_scan_pages')
-      .set({ image_key: null, original_key: null, purged_at: now })
+      .set({
+        image_key: null,
+        original_key: null,
+        purged_at: now,
+        original_purged_at: sql<Date>`coalesce(original_purged_at, ${now}::timestamptz)`,
+      })
       .where('id', 'in', [...ids])
       .executeTakeFirst()
     return Number(r.numUpdatedRows)
@@ -264,14 +302,33 @@ export const schoolExamAbsencesRepository = {
 }
 export const schoolPrintJobsRepository = {
   ...createSchoolScopedRepository('school_print_jobs'),
-  async purgeExpired(db: Db, now: Date): Promise<number> {
-    const r =
-      await sql`update school_print_jobs set result = null where result is not null and expires_at < ${now}`.execute(
-        db,
-      )
-    return Number(r.numAffectedRows ?? 0)
+  /** Finished jobs whose file is past its week (the file is still there). */
+  async listExpired(db: Db, now: Date) {
+    return db
+      .selectFrom('school_print_jobs')
+      .select(['id', 'school_id', 'result_key'])
+      .where('result_key', 'is not', null)
+      .where('expires_at', '<', now)
+      .execute()
+  },
+  async markResultPurged(db: Db, id: string, now: Date) {
+    await db
+      .updateTable('school_print_jobs')
+      .set({ result_key: null, result_purged_at: now })
+      .where('id', '=', id)
+      .execute()
   },
 }
-export const schoolPrintJobPartsRepository = createSchoolScopedRepository(
-  'school_print_job_parts',
-)
+export const schoolPrintJobPartsRepository = {
+  ...createSchoolScopedRepository('school_print_job_parts'),
+  /** Pieces still in storage whose job has expired (a job that failed leaves them behind). */
+  async listLeftOver(db: Db, now: Date) {
+    return db
+      .selectFrom('school_print_job_parts as p')
+      .innerJoin('school_print_jobs as j', 'j.id', 'p.job_id')
+      .select(['p.id', 'p.pdf_key'])
+      .where('p.pdf_key', 'is not', null)
+      .where('j.expires_at', '<', now)
+      .execute()
+  },
+}
