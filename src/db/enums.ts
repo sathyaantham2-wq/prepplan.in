@@ -5,6 +5,10 @@
 // with the CHECK constraints by hand when a migration changes one.
 
 export type UserRole = 'parent' | 'student' | 'teacher' | 'admin'
+export type SchoolRole =
+  'school_admin' | 'principal' | 'teacher' | 'student' | 'parent'
+export type SchoolStatus = 'active' | 'suspended'
+export type SchoolMemberStatus = 'active' | 'inactive'
 export type ScopeKind = 'IN' | 'OUT'
 export type DifficultyTier = 'Easy' | 'Hard' | 'Hardest'
 export type BloomLevel =

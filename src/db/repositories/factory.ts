@@ -1,6 +1,7 @@
 import type { Insertable, Selectable, Updateable } from 'kysely'
 import type { Db } from '../connection'
 import type { DB } from '../types'
+import type { SchoolScope } from '../school-scope'
 
 type TableName = keyof DB & string
 
@@ -103,6 +104,63 @@ export function createScopedRepository<
         .set(row)
         .where('id', '=', id)
         .where(scopeColumn, '=', scope)
+        .returningAll()
+        .executeTakeFirstOrThrow() as Promise<Selectable<DB[TTable]>>
+    },
+  }
+}
+
+/**
+ * Repository for a school-side table (ADR-0003). Every method takes a SchoolScope, a branded value
+ * only src/lib/school-session.ts can issue, and bakes `school_id = scope.schoolId` into the query.
+ * insert() overwrites school_id with the scope's, so a row can never be written into another
+ * school; update() refuses to change school_id. As everywhere in this file there is no delete.
+ * The composite foreign keys in the migrations are the second layer under this one.
+ */
+export function createSchoolScopedRepository<TTable extends TableName>(
+  table: TTable,
+) {
+  const anyDb = (db: Db) => db as any
+
+  return {
+    async findById(db: Db, scope: SchoolScope, id: string) {
+      return anyDb(db)
+        .selectFrom(table)
+        .selectAll()
+        .where('id', '=', id)
+        .where('school_id', '=', scope.schoolId)
+        .executeTakeFirst() as Promise<Selectable<DB[TTable]> | undefined>
+    },
+    async list(db: Db, scope: SchoolScope) {
+      return anyDb(db)
+        .selectFrom(table)
+        .selectAll()
+        .where('school_id', '=', scope.schoolId)
+        .execute() as Promise<Array<Selectable<DB[TTable]>>>
+    },
+    async insert(
+      db: Db,
+      scope: SchoolScope,
+      row: Omit<Insertable<DB[TTable]>, 'school_id'>,
+    ) {
+      return anyDb(db)
+        .insertInto(table)
+        .values({ ...row, school_id: scope.schoolId })
+        .returningAll()
+        .executeTakeFirstOrThrow() as Promise<Selectable<DB[TTable]>>
+    },
+    async update(
+      db: Db,
+      scope: SchoolScope,
+      id: string,
+      row: Omit<Updateable<DB[TTable]>, 'school_id'>,
+    ) {
+      if ('school_id' in row) throw new Error('school_id cannot be changed')
+      return anyDb(db)
+        .updateTable(table)
+        .set(row)
+        .where('id', '=', id)
+        .where('school_id', '=', scope.schoolId)
         .returningAll()
         .executeTakeFirstOrThrow() as Promise<Selectable<DB[TTable]>>
     },

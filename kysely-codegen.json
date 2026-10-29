@@ -5,6 +5,9 @@
   "customImports": {
     "UserRole": "./enums#UserRole",
     "ScopeKind": "./enums#ScopeKind",
+    "SchoolRole": "./enums#SchoolRole",
+    "SchoolStatus": "./enums#SchoolStatus",
+    "SchoolMemberStatus": "./enums#SchoolMemberStatus",
     "DifficultyTier": "./enums#DifficultyTier",
     "BloomLevel": "./enums#BloomLevel",
     "QuestionType": "./enums#QuestionType",
@@ -32,6 +35,9 @@
   "overrides": {
     "columns": {
       "users.role": "UserRole",
+      "school_members.role": "SchoolRole",
+      "school_members.status": "SchoolMemberStatus",
+      "schools.status": "SchoolStatus",
       "chapter_scope.kind": "ScopeKind",
       "concepts.difficulty_base": "DifficultyTier",
       "questions.bloom": "BloomLevel",

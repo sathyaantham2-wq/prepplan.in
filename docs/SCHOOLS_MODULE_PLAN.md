@@ -1,0 +1,503 @@
+# PrepPlan for Schools — design plan
+
+Status: **ACCEPTED by the owner 2026-10-29; build in progress, S1 first.** Nothing is pushed or deployed, and nothing has touched production.
+No F-number exists for this module. The "proposed backlog rows" in section 7 use working labels (`SCH-1` …)
+only; the owner assigns real F-numbers and edits tab 03.
+
+What was read to write this: `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/DATA_DICTIONARY.md` and, in the
+code, `src/lib/session.ts`, `src/db/repositories/factory.ts`, `household-isolation.integration.test.ts`,
+`src/lib/evaluation.ts` (`confirmEvaluation`), `src/lib/answer-review.ts`, `src/lib/adaptive/auto-confirm.ts`,
+`src/lib/scans.ts`, `scan-crypto.ts`, `scan-mapping.ts`, `src/lib/school-paper.ts`, `school-blueprint.ts`,
+`src/lib/pdf/page-count.ts`, `guardian-links.ts`, migrations 0063/0072/0074 and the generated `src/db/types.ts`.
+Things I did **not** read in depth and must re-check at the step that touches them are marked **[verify]**.
+
+**Revision 2 (2026-10-29, owner decisions):** (1) school students follow a separate rule set, now written
+into `CLAUDE.md` as "School module rules"; (2) no parental consent in the school module, replaced by a
+per-school terms-acceptance record; (3) purpose limit enforced in code and tested; (4) no public sign-up
+for school students; (5) sample check by the class teacher by default, switchable per section-subject.
+These **override** the earlier DPDP risk note (old R6), the per-student consent idea, and decisions D1, D5
+and D12 below. Changed places are marked "(rev 2)".
+
+`docs/DATA_DICTIONARY.md` says 40 tables; `types.ts` has grown well past that (scan, fix-it, points,
+disputes, guardian tables). Treat `types.ts` as the truth and refresh the dictionary as part of step S1.
+
+---
+
+# Part A — Plain-language version
+
+## A1. What we are building
+
+A **School workspace** inside the same app. A school signs up (paid), its admin loads classes, sections,
+students and teachers from Excel, and teachers design a question paper to the school's own marks pattern.
+The app prints a **Smart Answer Booklet** for every student: each page carries a QR code, each question has
+its own answer box sized to its marks, MCQs have bubbles, and there is a rough-work area. After the exam
+the school scans the answered booklets (a PDF or a pile of phone photos, in any order). The app sorts
+pages by QR code, tells you which student is missing which page, then the AI marks every answer box
+against the step-wise marking scheme.
+
+The big change from today: **the AI's marks are final unless flagged.** Teachers do not confirm every
+mark. They resolve only the flagged ones, plus a small random sample the app asks them to spot-check.
+After results are released, students get a dispute window (default 7 days, school can change it) with up
+to 5 flags per paper. When the window closes the marks **lock**, and only locked marks feed mastery and
+reports. Every change is logged and nothing is deleted.
+
+## A2. Who sees what
+
+| Role | Sees | Can do |
+|---|---|---|
+| School admin | Whole school | Set up classes/sections/subjects, upload students and teachers, assign teachers, pick dispute window, run reports. Cannot change a student's mark. |
+| Principal | Whole school, read-only | See results, flag counts, teacher workload, sample-check results. |
+| Teacher | **Only the section + subject pairs assigned to them** | Design papers, run scans, resolve flagged answers, do sample checks, release results, decide disputes. |
+| Student | Own papers and own marks | Take the exam, see marks after release, flag up to 5 answers, get the report. |
+| Parent | Own child's results, read-only | View only. |
+
+Every school record carries a `school_id`, and the filter is built into the data layer (not typed into each
+screen), the same way `household_id` works today. A school can never see another school's data, and a
+teacher can never see a section they are not assigned to.
+
+## A3. The life of one exam
+
+1. Teacher builds a paper (or picks a saved school template) → app picks questions from the bank.
+2. Teacher reviews the paper and the marking scheme; approves it.
+3. App generates one booklet PDF per student, with QR codes. School prints and conducts the exam.
+4. School scans the answered booklets and uploads them. App sorts pages, lists missing/unreadable pages per student.
+5. AI marks every answer box. Each answer is either **final** or **flagged** (low confidence, unreadable, a diagram, or a missing page).
+6. Teacher clears the flag queue and does the ~5% spot-check. The section can only be released when no AI flag is open.
+7. Results release → the 7-day window starts. Students flag up to 5 answers. The AI re-reads once (keep or raise only). If the student is still not satisfied, the teacher decides, and that decision is final (can raise or lower).
+8. Window closes and nothing is open → marks lock → mastery updates → student report PDF is available.
+
+## A4. What is reused
+
+Almost everything heavy already exists: the question bank and step-wise marking scheme, the blueprint/paper
+generator, the Chromium PDF renderer with page-count checking, the AI grading and the "AI re-reads once,
+keep or raise" dispute code, the encrypted scan storage, and the mastery tracker. What is new is the school
+tenant, the roster/Excel upload, the booklet layout and QR sorting, the flag/lock rules, and the school screens.
+
+## A5. The three things that need most care
+
+1. **School tenancy.** Cross-school leakage is the worst possible bug for a B2B product. The plan puts the
+   guard in the repository layer, in the database (composite foreign keys), and in tests.
+2. **Not breaking today's flows.** A school exam's marks must never be confirmable through the existing
+   parent or student screens, or the window and lock rules are bypassed. The plan adds one explicit guard
+   and a test for it (section 4).
+3. **Phone-photo scanning.** Reading boxes from skewed, shadowed phone photos is the riskiest technical part.
+   The plan builds the booklet with corner alignment marks and does scanning as its own approvable steps.
+
+## A5b. School students are a separate world (rev 2)
+
+- **Separate rules.** School students follow the "School module rules" in `CLAUDE.md`, not the PrepPlan
+  consumer rules. Nothing is shared between the two.
+- **No consent per student.** The school relies on the educational-institution exemption in the DPDP
+  Rules 2025 (Fourth Schedule, Part A), as you decided. What we record instead is **one row per school
+  saying who accepted the PrepPlan school terms, when, and which version.** A school cannot be activated
+  until that row exists. (I take the legal basis as your decision; I have not checked it.)
+- **Purpose limit.** A school student's data is used only for that school's exams and reports. No product
+  analytics events, no marketing or cross-sell email, no daily nudges or weekly cards, no leaderboard or
+  points, no link to a personal PrepPlan account, and never as AI training data. This is enforced by a
+  marker on the student record, checks at the places that send or count things, and a test that fails if
+  any of them touches a school student.
+- **No public sign-up.** Only the school admin creates school students, from the roster upload. They get a
+  school-issued sign-in. The public sign-up page can never create one.
+- **Sample check.** Done by the section's class teacher by default. The school admin can hand it to the
+  subject teacher for any one section-subject.
+
+## A6. What I need you to decide
+
+See section 8 for the full list with my recommendation on each. The four that block the start are:
+tenancy model for school students (D1), whether the pilot is one school only (D2), the hard-rule change
+for CLAUDE.md (D3), and the dependencies I want to add (D4).
+
+---
+
+# Part B — Technical detail
+
+## 1. New tables and changes to existing ones
+
+### 1.1 Design rules
+
+- Every school-side table has `school_id uuid not null references schools(id) on delete restrict`.
+- Parents tables expose `unique (school_id, id)`; child tables use a **composite FK `(school_id, parent_id)
+  → parent(school_id, id)`**. The database itself then refuses a row whose parent belongs to another school.
+  This is defence in depth under the repository filter.
+- No `on delete cascade` on school data (invariant 4). Rows move through `status` columns.
+- `schools.household_id` points to a household created for the school (the existing billing/ownership
+  unit; `households.plan` already exists). This keeps `audit_log.household_id` and `ai_jobs.household_id`
+  `NOT NULL`-compatible, so existing household queries are untouched.
+- `users.role` (`parent | student | teacher | admin`) stays the **platform** role and is not widened.
+  School roles live in `school_members.role`. (The existing `'teacher'` platform role is used by the
+  guardian-invite flow in migration 0063; reusing it for school teachers would conflate two meanings.)
+- Chapter identity stays `(source_id, part, chapter_no)`; exams store `chapter_ids uuid[]` exactly like `papers`.
+- Board and class stay first-class: `school_classes.grade` and `schools.board` are data, nothing hardcoded.
+
+### 1.2 New tables
+
+| Table | Purpose / key columns |
+|---|---|
+| `schools` | `id, household_id, name, code (unique slug), board, city, status (active/suspended), dispute_window_days default 7, sample_rate default 0.05, scan_retention_days, plan, created_at` |
+| `school_members` | `school_id, user_id, role (school_admin/principal/teacher/student/parent), status, created_at`; unique `(school_id, user_id, role)`. A person may belong to several schools. |
+| `school_classes` | `school_id, grade int, academic_year`; unique `(school_id, grade, academic_year)` |
+| `school_terms_acceptances` (rev 2) | `school_id, accepted_by_user_id, accepted_at, terms_version, accepted_ip null`. Append-only; a new terms version is a new row. **Replaces any per-student consent record.** A school with no row for the current version cannot add students, print booklets or run marking. |
+| `school_sections` | `school_id, class_id, name ('A'), academic_year, class_teacher_member_id null (rev 2)`; unique `(class_id, name)` |
+| `school_subjects` | `school_id, class_id, subject_id → subjects` (the global `(board, class, code)` row). Phase 1 only offers subjects that already have a bank. |
+| `school_teacher_assignments` | `school_id, member_id, section_id, subject_id, sample_checker text check in ('class_teacher','subject_teacher') default 'class_teacher' (rev 2)`; unique on the triple. **This is the teacher's marking scope.** Only the school admin can change `sample_checker`, and the change is audited. |
+| `school_students` | `school_id, student_id → students, section_id, roll_no, status, created_by_user_id`; unique `(section_id, roll_no)`. Reuses `students` so mastery, papers, attempts and evaluations work unchanged. Created only by the school admin (rev 2); there is no consent row. |
+| `school_student_guardians` | `school_id, school_student_id, name, phone_e164, user_id null, verified_at null` (parent phone from Excel; read-only view in Phase 2) |
+| `school_import_batches` | `school_id, kind (students/teachers), file_sha256, status (dry_run/committed/failed), counts, row_errors jsonb, created_by`. Keeps the uploaded rows' outcome for audit. |
+| `school_paper_templates` | `school_id, subject_id, name, version, status (active/retired), total_marks, duration_min, layout jsonb, config jsonb`. `layout` is blueprint-shaped sections: per section the question type, count, marks each, internal-choice rule, thinking-level mix. Versioned; an exam pins a version (same idea as `papers.blueprint_version`). |
+| `school_exams` | `school_id, template_id, template_version, class_id, subject_id, title, chapter_ids uuid[], exam_date, status (draft/booklets_ready/conducted/scanning/marking/released/closed), dispute_window_days (snapshot), created_by` |
+| `school_exam_questions` | The master paper: `exam_id, question_id, position, marks, section, choice_group, slot, expected_words` (mirrors `paper_questions`). |
+| `school_exam_sections` | One row per exam × section: `released_at, window_closes_at, locked_at, sample_rate (snapshot)`. Release and lock are per section. |
+| `school_booklet_layouts` | `exam_id, version, page_count, manifest jsonb` — box coordinates in mm per question per page, MCQ bubble positions, corner-mark positions. The scan cropper reads this. |
+| `school_booklets` | `exam_id, student_id, attempt_id, paper_id, layout_version, pdf_ref, generated_at`. One per student. |
+| `school_scan_batches` | `school_id, exam_id, section_id, uploaded_by, source (pdf/photos), file_count, status` |
+| `school_scan_pages` | Staging + identified pages: `batch_id, image (bytea, AES-GCM via scan-crypto), qr_payload, exam_id null, student_id null, page_no null, status (unread/identified/duplicate/unreadable/orphan), quality_score, purged_at`. Same encryption and signed-URL pattern as `scan_pages`. |
+| `school_item_marks` | **The school marking state, one row per `evaluation_items` row:** `school_id, evaluation_item_id (unique), state, ai_confidence, flag_reason null, current_marks, ai_marks, last_changed_by, locked_at`. States below in section 4. |
+| `school_flags` | `school_id, evaluation_item_id, kind (ai/student), reason (low_confidence/unreadable/diagram/missing_page/student_dispute), student_comment null, status (open/ai_reviewed/with_teacher/resolved), ai_reply null, marks_before, marks_after null, resolved_by null, resolved_at null`. Append-only; a new decision is a new row, never an edit. |
+| `school_sample_checks` | `school_id, exam_id, section_id, evaluation_item_id, selected_seed, status (pending/agreed/changed), reviewed_by null, marks_before, marks_after null` |
+| `school_student_reports` | `school_id, student_id, exam_id, evaluation_id, pdf_ref, generated_at` (only built from locked marks) |
+
+### 1.3 Changes to existing tables (all additive, nullable or defaulted)
+
+| Table | Change | Why |
+|---|---|---|
+| `papers` | `school_exam_id uuid null` | Marks a per-student paper as a school paper so consumer screens can exclude it and the guard in section 4 can find it. |
+| `audit_log` | `school_id uuid null` | School events carry the school; `household_id` is the school's household so the column stays `NOT NULL`. |
+| `ai_jobs` | `school_id uuid null` | Per-school AI spend metering (the school marking cost is the main variable cost). |
+| `users` | **no change** (rev 2: school users are created by the school service only, never by the public sign-up path; see 3.4) | |
+| `students` (rev 2) | `school_id uuid null references schools(id)`. **This is the purpose-limit marker:** null for a PrepPlan student, set for a school student. Each school student sits in a household created for her (so `students.household_id NOT NULL` still holds) and is never linked to a personal account. | Every consumer query, cron, email and event writer filters on `school_id is null` or refuses when it is set (section 3.4). |
+| `evaluations`, `evaluation_items`, `attempts`, `attempt_answers`, `concept_mastery` | **no schema change** | School marking state lives in `school_item_marks`; mastery is fed by calling the existing `confirmEvaluation` at lock time. |
+
+### 1.4 Migration list (continues from 0076; each has `up` and `down`, tested in CI like the rest)
+
+| # | File | up | down |
+|---|---|---|---|
+| 0077 | `schools_core` | `schools`, `school_terms_acceptances`, `school_members`, `school_classes`, `school_sections`, `school_subjects`; unique `(school_id, id)` on each | drop in reverse order |
+| 0078 | `school_roster` | `school_students`, `school_student_guardians`, `school_teacher_assignments`, `school_import_batches`; `students.school_id` (+ index) | drop tables, drop column (refuses if any student has `school_id` set, so a school student is never silently turned into a consumer one) |
+| 0079 | `school_paper_templates` | `school_paper_templates` | drop |
+| 0080 | `school_exams` | `school_exams`, `school_exam_questions`, `school_exam_sections`; `papers.school_exam_id` | drop tables, drop column |
+| 0081 | `school_booklets` | `school_booklet_layouts`, `school_booklets` | drop |
+| 0082 | `school_scans` | `school_scan_batches`, `school_scan_pages` | drop |
+| 0083 | `school_marking` | `school_item_marks`, `school_flags`, `school_sample_checks` | drop |
+| 0084 | `school_audit_and_metering` | `audit_log.school_id`, `ai_jobs.school_id` (+ indexes) | drop columns |
+| 0085 | `school_reports` | `school_student_reports` | drop |
+
+Down-migration note: `down` for 0084 drops only the new columns; the audit rows themselves remain (they
+still have a household). Down migrations are for the local test DB only. Production migrations are run by
+the owner, as in earlier work, and are never run by me.
+
+After each migration: `npm run db:codegen`, then refresh `docs/DATA_DICTIONARY.md`.
+
+## 2. How school scoping is enforced
+
+### 2.1 Layers (a row must pass all of them)
+
+1. **A `SchoolScope` value that cannot be forged.** `requireSchoolRole(request, schoolId, ...roles)` (new,
+   beside `requireRole` in `session.ts`) loads the caller's `school_members` row for that school and returns
+   `SchoolScope { userId, schoolId, role, pairs, samplePairs }`. `pairs` is the teacher's `(section_id,
+   subject_id)` list from `school_teacher_assignments` (empty list for non-teachers; admin and principal get
+   `pairs = 'all'`). `samplePairs` (rev 2) is the list of pairs whose **sample check** this person does:
+   for a class teacher, every pair in their section with `sample_checker = 'class_teacher'`; for a subject
+   teacher, their own pairs with `sample_checker = 'subject_teacher'`. It grants access to the sample-check
+   items and their answer images **only**, not to the rest of that subject (flag queue, release, disputes).
+   `SchoolScope` is a branded type produced only by that function. The school id is taken from the URL
+   (`/schools/$schoolId/...`) and **verified against membership on every request**, never read from a cookie
+   or body. A 404 (not 403) is returned for a school the caller does not belong to, so existence is not leaked.
+2. **Repository factory.** A new `createSchoolScopedRepository(table)` next to `createScopedRepository`. Every
+   method takes `SchoolScope` and bakes in `where school_id = scope.schoolId`. Tables that are teacher-limited
+   (exams, exam sections, school students, marks) additionally get a `scopedToPairs(query, scope)` helper that
+   applies `(section_id, subject_id) in pairs` for the teacher role. Child tables with no section column are
+   reached through their parent in the repository (same approach `evaluationsRepository` uses via `students`
+   today). No route handler writes a school query itself; the existing ESLint rule that blocks `kysely` imports
+   outside `src/db/**` already forces this.
+3. **Database constraints.** Composite FKs (section 1.1) mean a child row cannot point at another school's
+   parent. `school_id` is `NOT NULL` everywhere.
+4. **Schema-lint test.** A test reads `information_schema` and fails if any table whose name starts with
+   `school_` lacks a `NOT NULL school_id`, or lacks a composite FK to its parent, or is not exported from a
+   repository file that uses the school factory. A new school table that forgets scoping fails CI.
+5. **Defence in depth, later (D6).** Postgres row-level security keyed on `current_setting('app.school_id')`
+   is possible but the app uses one pooled DB role; I recommend leaving RLS to Phase 2.
+
+### 2.2 Isolation tests to add (same pattern as T02; **local test DB only**)
+
+New file `src/db/repositories/school-isolation.integration.test.ts`, plus a route-level sweep modelled on
+`src/routes/cross-household-access.integration.test.ts`. Setup: school A and school B, each with two sections,
+two subjects, teachers (one assigned to A-1/Maths only), students, a guardian, an exam, booklets, scan pages,
+item marks and flags. Assertions:
+
+1. School A scope + School B's id for **every** exported school repository method → `undefined` / empty / throws.
+2. Teacher T (assigned A-1 Maths) cannot list or fetch exams, scans, flags, marks or students of A-2 or A-1 Science, though they are in the same school.
+3. Principal and admin read the whole school, and still nothing of school B.
+4. Student sees only her own attempt, marks, flags and report; another student in the same section gets nothing.
+5. Parent sees only the linked child; a parent with two children at different schools sees each in its own school context only.
+6. Student cannot read the answer key, the master paper's key or another student's booklet at any school state (T09 equivalent).
+7. Scan page signed URL: a URL for school A's page presented with a school B session → denied; expired URL → denied; tampered signature → denied.
+8. QR token: a booklet QR from school A, replayed into school B's upload → rejected as `orphan`, never attached; a tampered token (any bit changed) → rejected.
+9. Bulk import: a row naming a section or roll number of another school cannot be created or changed.
+10. Audit log: school A admin reads only school A audit rows; the consumer `GET /api/audit-log` never returns school rows.
+11. Schema-lint test (above).
+12. **Consumer-flow guard test** (section 4.4): a school paper's attempt/evaluation is refused by every consumer confirm/review/dispute route.
+13. Cross-pool: a user with membership in two schools, acting in school A, cannot touch school B rows even with B's ids.
+14. Deactivated member (`status != active`) loses access on the next request, like `is_active` today.
+15. (rev 2) **Sample-check scope.** A class teacher reaches the sample-check items of their own section's `class_teacher` pairs and nothing else of those subjects (no flag queue, no release, no dispute). When the admin switches one pair to `subject_teacher`, the class teacher loses it on the next request and the subject teacher gains it. Only the admin can make that switch.
+16. (rev 2) **Purpose limit** (full list in 3.4): a school student is absent from `product_events`, daily nudges, weekly summaries, leaderboard, points, marketing/notification email and every consumer list; no code path links her to a personal account.
+17. (rev 2) **No public sign-up for school students.** The public sign-up route, including Google sign-in, cannot create a user with a school role, and cannot attach itself to a school student's email.
+18. (rev 2) A school with no `school_terms_acceptances` row for the current terms version cannot add students, print booklets or run marking.
+
+`vitest.setup.ts` already refuses a non-local `DATABASE_URL`, so all of these run against the local
+`examprep_test` database only. CI uses its own ephemeral Postgres.
+
+## 3. Reused vs new code
+
+### 3.1 Reused as-is or with a thin adapter
+
+| Existing | Used for |
+|---|---|
+| `questions`, `question_options`, `question_step_marks`, `concepts`, `chapters` | The bank and the step-wise marking scheme the AI marks against |
+| `blueprints` shape + `generatePaper` (`src/lib/papers.ts`), `school-paper.ts` (slot rules, tags, OR pairs, section-total/numbering/four-option checks), `school-blueprint.ts` | A school template is converted to a blueprint-shaped object in memory and fed to the same selector. **[verify]** the `GeneratePaperInput` shape in step S5; I read the signature only. |
+| `src/lib/pdf/render.ts`, `page-count.ts` (`renderWithPageCount`), `paper-template.ts`, `key-template.ts`, `report-template.ts` | Question paper, key and student report PDFs; page count verified by the same loop |
+| `scan-crypto.ts` (AES-256-GCM, HKDF labels, signed URLs) | Scan storage and signed URLs. A new HKDF label `booklet-qr-v1` signs QR tokens. |
+| `ai-transcription.ts`, `scan-mapping.ts` (confidence threshold 0.85, blockers) | Reading handwriting. The booklet layout means we crop a known box instead of asking the model to find the question number, which is simpler and cheaper. |
+| `ai-grading.ts` (`gradeSubjectiveAnswer`, `reviewDisputedAnswer`) | AI marking and the "keep or raise only" re-read |
+| `answer-review.ts` (`MAX_DISPUTES_PER_PAPER = 5`, comment length rules) | Constants and the shape of the dispute logic; the school version is a sibling with school rules, not a modification |
+| `evaluation.ts` `createEvaluation` / `confirmEvaluation` | School evaluations are created by `createEvaluation`; `confirmEvaluation` is called **once, at lock time**, so mastery, points and fix-it cards all fire from locked marks with no change to that function |
+| `mastery.ts`, `diagnosis.ts`, `habit-drills.ts`, `fixit.ts`, `adaptive/*` | The report's gap-vs-habit split, strengths, topics to fix, habits to fix, and the worksheet |
+| `ai-metering.ts` | Extended with a per-school spend ceiling (a sibling of `enforceStudentSpendBudget`) |
+| `papaparse` | CSV path of the roster import |
+| `audit_log` + `auditLogRepository` | School events, with `school_id` set |
+| Vercel cron (`vercel.json`, `src/routes/api/cron/*`) | The lock job (hourly) |
+
+### 3.2 New
+
+- `src/lib/schools/*` — membership, `SchoolScope`, roster import, templates, exams, booklet layout/QR, scan ingest, school marking state machine, flags, sample selection, lock job, report assembly.
+- `src/db/repositories/schools*.ts` — school-scoped repositories and `createSchoolScopedRepository`.
+- `src/routes/schools/$schoolId/**` (screens) and `src/routes/api/schools/$schoolId/**` (API).
+- A booklet PDF template (absolute positioned, mm units) and its manifest builder.
+- Corner-mark deskew + box cropping for phone photos.
+- Excel (`.xlsx`) reader for roster upload.
+
+### 3.4 Purpose limit, enforced in code (rev 2)
+
+The rule: a school student's data serves that school's exams and reports and nothing else. What I found in
+the code that touches students today, and what each gets:
+
+| Existing code | Problem for a school student | Plan |
+|---|---|---|
+| `logProductEvent` (`product-events.ts`), called from `attempt-submit`, `api/evaluations`, `api/papers/generate`, `.../pdf`, `api/remediation/generate`, `email.ts` | Writes analytics rows per student | Refuse inside `logProductEvent` itself when the student has `school_id` set (one choke point, one query), so a future caller cannot forget. |
+| `cron/daily-nudge`, `cron/weekly-summary`, `weekly-card.ts`, `leaderboard.ts` (all `selectFrom('students')`) | Would nudge, email or rank her | Add `school_id is null` to each; leaderboard and points never include her. |
+| `email.ts` | Marketing or progress email to her or her household | Only school-flow templates (result released, login issued) may be sent to a school student or guardian; every other template refuses when `school_id` is set. |
+| `confirmEvaluation` → `recordPointsForConfirmedItems`, `recordFixitCardsForLostMarks` | At lock these would create points and fix-it cards: personal-app features | Skip both for a school student (small additive change inside the function: look up `students.school_id`). Mastery and the adaptive ledger **stay**, because the report and worksheet need them. **[verify]** the exact call sites in S2b. |
+| `src/lib/auth.ts` `after` hook | For every new `student` it creates a Class 7 profile **and a consent row** | School users are created by the school service, not by sign-up, and the hook skips them. They get no `consents` row (rev 2 decision 2). |
+| `guardian-links.ts` invites | Move a student into a guardian's household | Refuse when the student has `school_id` set. A school student can never be linked into a personal account. |
+| Public sign-up and Google sign-in (commit `1bf36e6` links Google sign-in to an existing email account) | Could attach to a school student's email | School logins use credentials the school admin issues. Sign-in providers on a school user are restricted, and the link-by-email behaviour is refused for school users. **[verify]** in `auth.ts`. |
+| `privacy.ts` export/delete | Household-based; a school student's data belongs to the school | Out of Phase 1; the school is the controller, so requests go to the school (flag in D15). |
+| AI calls | Student answers are sent to the model provider | Marking calls go through the same provider layer; terms and the provider's no-training setting are recorded in the school terms. No student content is stored for training and no prompts are reused outside that school's exam. **[verify]** provider data-retention settings with the owner (D16). |
+| Anything not in this table | Unknown | The purpose-limit test (test 16) is written as a sweep: it creates a school student, runs every cron handler and every exported function that selects `students` or sends mail/events, and fails if any produces output for her. A new feature that touches students must pass it. |
+
+### 3.3 New dependencies (need approval, D4)
+
+| Need | Candidate | Note |
+|---|---|---|
+| Read `.xlsx` | `exceljs` | Avoid the npm `xlsx` package (stale on npm). CSV already works via papaparse. |
+| Generate QR | `qrcode` | Server-side SVG for the booklet |
+| Decode QR from a photo | `jsqr` or `zxing-wasm` | Pick after a spike on real phone photos |
+| Deskew / crop / compress | `sharp` | Vercel-compatible; **[verify]** serverless size and the 20 MB/3 MB-per-page limits in `scans.ts` |
+| PDF → page images | `pdfjs-dist` is already installed | Needs a canvas backend on the server; spike in S7 |
+
+## 4. How AI-flag / student-flag / lock fits the evaluation + `confirmed_at` model
+
+### 4.1 Key idea
+
+`evaluations.confirmed_at` keeps its current meaning: **"these marks are load-bearing; mastery and reports
+may read them."** Everything that reads confirmed marks (dashboard, tracker, fix-it, points) already
+filters on `confirmed_at is not null`. For school exams `confirmed_at` is set at the moment of **lock**,
+not at AI marking. The school-specific life of a mark (final, flagged, disputed, decided) is held in the
+new `school_item_marks` / `school_flags` tables. So:
+
+- before lock: marks are visible to the school screens through `school_item_marks.current_marks`, and are
+  invisible to mastery by construction;
+- at lock: `confirmEvaluation(db, evaluationId)` runs unchanged, reading `evaluation_items.marks_awarded`,
+  and writes mastery, points and fix-it cards in its existing transaction.
+
+Every school mark change also writes `evaluation_items.marks_awarded` (and `overridden_by` when a teacher
+changes it), so `confirmEvaluation` sees the right number and `evaluated_by` becomes `mixed` as it does today.
+
+### 4.2 State machine per answer (`school_item_marks.state`)
+
+```
+            AI marks answer
+                  │
+     ┌────────────┴─────────────┐
+ confident & readable        low confidence / unreadable /
+ & not a diagram             diagram / missing page
+     │                            │
+  ai_final                   ai_flagged ── teacher resolves ──► teacher_set
+     │                                                              │
+     └───────────────── section released (no ai_flagged open) ──────┘
+                                  │
+                 student flags (≤5/paper, reason required) ──► student_flagged
+                                  │
+                       AI re-reads once (keep or raise only)
+                          ┌───────┴────────┐
+                       raised             kept
+                          │               │ student accepts ──► (stays as is)
+                    ai_rechecked          │ student asks teacher
+                          │               ▼
+                          │          with_teacher ── teacher decides (raise or lower, final) ──► teacher_final
+                          └───────────────┬──────────────────────────────┘
+                              window closed AND nothing open
+                                          ▼
+                                       locked  (school_item_marks.locked_at; then confirmEvaluation)
+```
+
+Rules enforced in code, not in the UI:
+
+- A section cannot be released while any `ai_flagged` item exists in it. (Check lives in the release function.)
+- The 5-flag cap counts `school_flags` rows of kind `student` per attempt, same constant as today.
+- `AI re-read` may only keep or raise; a lower value from the model is discarded and logged.
+- A teacher decision on a flag is final: a second decision on the same flag is refused.
+- A lock is per evaluation: `window_closes_at` passed **and** no flag open. A student whose flag is still
+  with a teacher stays unlocked until it is decided (D8 asks whether to cap that wait).
+- Locked rows reject every change, including from the teacher. A correction after lock is out of scope for
+  Phase 1; it would be an explicit "post-lock correction" feature with its own audit entry (D9).
+- Each transition writes `audit_log` (`school.mark.ai_final`, `.ai_flagged`, `.teacher_set`, `.student_flagged`,
+  `.ai_rechecked`, `.teacher_final`, `.locked`, `.released`, `.sample_checked`) with before/after.
+
+### 4.3 Random sample check
+
+At marking completion the app draws `sample_rate` (default 5%, per-school setting) of `ai_final` answers per
+section, with a stored seed so the draw is reproducible and auditable, into `school_sample_checks`. **Who
+checks (rev 2):** by default the section's **class teacher**; the school admin can switch any one
+section-subject to the **subject teacher** (`school_teacher_assignments.sample_checker`). Each sample row
+records `assigned_checker_member_id` at draw time, so a later switch never reassigns work already handed
+out. A section with no class teacher set and no subject-teacher switch shows "no sample checker" and the
+admin is told; because the sample is advisory (below) this does not block release, but it is flagged on
+the release screen. The checker sees the answer image, the AI's marks and reasoning and chooses *agree* or *change*. A change goes
+through the same audit path and updates the mark before release. Proposal (D7): the sample is **advisory** (does not block release), but the release
+screen shows "sample not done", and a high disagreement rate (more than 10% changed) automatically widens the
+sample to 20% and blocks release until that is done. The 10% and 20% numbers are my proposal, not requirements.
+
+### 4.4 Not breaking the current parent/student flows
+
+The existing flows assume that an unconfirmed evaluation is waiting for a parent or for the student's own
+review (`answer-review.ts` `loadReview` states `waiting_for_parent | review`, `finalizeReview`,
+`autoConfirmAttempt` on `submitAttempt`, parent `confirmEvaluation`). A school evaluation is unconfirmed
+for days, so without a guard a school student could open it through the consumer screen and "accept" it,
+confirming it before the window. The plan:
+
+1. `papers.school_exam_id` marks school papers.
+2. One function `assertNotSchoolAttempt(db, attemptId)` is called at the top of every consumer entry that
+   can confirm or review: `submitAttempt` auto-confirm, `finalizeReview`, `disputeAnswer`, `removeAnswer`,
+   the parent confirm route, `releaseUnmarkedToStudent`. It refuses with 409 for a school paper. **[verify]**
+   the full list with `grep` in step S5; the list above is what I found by reading.
+3. School attempts never go through `submitAttempt`; they have their own ingest path that sets
+   `attempts.status = 'submitted'` itself.
+4. Consumer lists (`papers-attempted`, dashboards, leaderboards) exclude `school_exam_id is not null` and
+   students with `school_id` set (rev 2: school results never appear in any personal view; D5 settled).
+5. Test 12 in section 2.2 pins this.
+6. The hard rule "AI never finalises a mark on a normal paper" is superseded for school exams, the same way
+   the 2026-10-02 student-paper decision superseded it. (Rev 2: on your instruction the "School module rules"
+   section is now in `CLAUDE.md` and carries this rule; the sentence was:) *"School exams (PrepPlan for Schools): AI marks are final unless flagged; teacher
+   resolves AI flags before release; students may flag up to 5 answers in the school's dispute window; marks
+   lock when the window closes; only locked marks reach mastery."*
+
+### 4.5 What the student may see (T09 consistency)
+
+At release the student sees her own answer image, marks and step-wise feedback. The **model answer and key
+are shown only after lock** (consistent with the existing rule that she sees the correct answer once marks
+are confirmed). A downloadable key stays forbidden. If you prefer showing the model answer at release so the
+dispute is better informed, that is a change to a hard rule and needs your explicit OK (D3).
+
+## 5. Phase 1 build order
+
+Each step is small, ends with green tests on the local test DB, and waits for your approval before the next.
+No step touches production. Migrations are written and tested locally; **you** run them in production.
+
+| Step | Deliverable | Migration | Tests |
+|---|---|---|---|
+| S0 | Approve this plan; assign F-numbers; decide D1–D4; approve the `CLAUDE.md` amendment text; write `ADR-0003-school-tenancy.md` | — | — |
+| S1 | School tenant foundation: `schools`, `school_members`, classes, sections, school subjects; `SchoolScope`, `requireSchoolRole`, `createSchoolScopedRepository`; refresh data dictionary | 0077 | Isolation tests 1, 3, 11, 13, 14 |
+| S2 | Roster tables; Excel/CSV upload with a **dry-run preview** (errors per row, duplicates, bad phone numbers) then commit, admin only; create `students` (with `school_id`) + a household per school student, **no consent row**; teacher accounts; section-subject assignments incl. `sample_checker` and class teacher; school terms acceptance (rev 2: S1 creates the table, S2 enforces "no terms, no students") | 0078 | Tests 2, 4, 9, 15, 17, 18; import unit tests |
+| S2b (rev 2) | **Purpose-limit guards**: the `school_id` checks in section 3.4 (events, crons, leaderboard, email, points, fix-it, guardian invites, `auth.ts` hook), plus the sweep test | — | Test 16 (must be green before any school data is loaded anywhere) |
+| S3 | School admin screens: setup (classes/sections/subjects), roster, teacher assignment; school-level audit entries | — | Route sweep for admin/teacher |
+| S4 | School paper templates: marks pattern, sections, marks per question type, internal choice; versioned; validation reusing the section-total/numbering/four-option checks | 0079 | Template validation tests |
+| S5 | Exams + master paper from template (reusing the selector), teacher review/swap of questions, question paper + teacher key PDF, per-student `papers` materialised; the consumer guard `assertNotSchoolAttempt` | 0080 | Tests 6, 12; paper totals/shortfall tests |
+| S6 | Booklet layout engine: answer boxes sized to marks, MCQ bubbles, rough-work area, overflow page, corner marks, QR per page; manifest; PDF with verified page count; one PDF per class | 0081 | Layout unit tests; print-QA test like `print-qa.integration.test.ts`; QR signing/tamper test 8 |
+| S7 | Scan intake: PDF or photos in any order, QR decode, sort by exam/student/page, duplicate/orphan detection, "missing or unreadable pages per student" view. **No AI marking yet.** | 0082 | Tests 7, 8; fixtures of rotated/skewed photos |
+| S8 | AI marking per answer box against the step scheme; sets `ai_final` or `ai_flagged` with reason; per-school AI spend ceiling; internal only, nothing visible to students | 0083, 0084 | Marking contract tests with fake AI provider; flag-rule tests |
+| S9 | Teacher marking workspace: flag queue (image + AI reasoning side by side), resolve, sample check; release gate (no open AI flag) | — | State-machine tests; gate tests |
+| S10 | Release + student result view + student flags (≤5, reason) + AI re-read (keep/raise) + send to teacher + teacher final decision | — | Tests 4, 6; dispute-rule tests incl. "AI cannot lower" |
+| S11 | Lock job (Vercel cron, hourly) → `confirmEvaluation`; lock rejects any later change; audit complete | — | Lock tests; mastery-after-lock test; "mastery unchanged before lock" test |
+| S12 | Student report PDF (gap vs habit split, strengths, topics to fix, habits to fix) + personalised practice worksheet, built only from locked marks | 0085 | Report tests; "no report before lock" test |
+
+Phase 2 candidates (not planned in detail yet): principal/admin dashboards, parent read-only portal with
+phone OTP, multi-set papers (A/B variants), subjects outside the bank, post-lock correction, SSO/Google
+Workspace, billing and invoices, Postgres RLS, WhatsApp delivery of reports.
+
+## 6. Risks
+
+| # | Risk | Mitigation |
+|---|---|---|
+| R1 | Cross-school data leak | Section 2: branded scope, repo factory, composite FKs, schema-lint, 14 isolation tests, 404 for foreign schools |
+| R2 | Bypassing the window via the consumer screens (section 4.4) | `assertNotSchoolAttempt` + test 12 |
+| R3 | Phone-photo quality: skew, shadow, cut-off edges, handwriting variety | Corner marks + deskew; quality score per page; "unreadable" becomes an AI flag, never a guessed mark; spike on real photos before S7 is closed |
+| R4 | AI marking accuracy, since AI marks are **final** unless flagged. Over-confident wrong marks never reach a teacher | Conservative flag thresholds at launch (flag anything below 0.85, the existing OCR threshold, plus any diagram); 5% sample with auto-widening; per-school disagreement dashboard; pilot with a teacher double-marking one full class and comparing before wider rollout (D2) |
+| R5 | Cost: marking a class of 40 × ~20 answers per exam, plus vision calls | Per-school AI spend ceiling (`ai_jobs.school_id`); measure cost per booklet in the pilot before pricing (D10) |
+| R6 (rev 2, replaces the earlier DPDP note) | Children's data without parental consent, relying on the DPDP Rules 2025 Fourth Schedule Part A educational-institution exemption (your decision) | The exemption is purpose-bound, so the plan makes purpose limit mechanical (3.4, test 16) and records the school's terms acceptance (who, when, version). Two things I cannot settle: whether PrepPlan as a *vendor* to the school fits the exemption's wording, and what the school terms must say (processing only for the school's exams and reports, no onward use, no AI training, retention, erasure and access requests handled by the school). **I have not verified the Rules text and this is not legal advice; have your lawyer confirm before the first real school.** |
+| R7 | Scan retention. Today images purge 30 days after upload, but a school needs them through the dispute window and lock | Per-school `scan_retention_days`, floor = window + 30; text read from the image stays regardless |
+| R8 | Serverless limits (request size, PDF generation time, Chromium cold start) for a 40-booklet batch | Generate booklets in a background job per student with resumable batches (same idea as `generation_batches`); upload pages one by one as `scans.ts` already does |
+| R9 | Booklet layout drift: the QR/box manifest must match what was printed, even if the template changes later | Layout is versioned and pinned to the exam; scans always use the manifest of the printed version |
+| R10 | Teacher turnover / absent teacher blocks release | Admin can reassign assignments; D8 on flag wait limits |
+| R11 | Roll-number and name collisions in Excel (duplicate roll nos, two students with one parent phone) | Dry-run preview with row errors; unique `(section_id, roll_no)`; a phone may legitimately link several children |
+| R12 | Existing docs are stale (dictionary says 40 tables) | Refresh in S1 |
+| R13 | Scope creep into a general LMS | Out of scope: attendance, fees, timetable, homework, chat |
+
+## 7. Proposed tab 03 backlog rows (working labels, **not F-numbers**; you assign numbers)
+
+| Label | Title | Acceptance criteria |
+|---|---|---|
+| SCH-1 | School tenant and roles | A school, its members and the five roles exist. A request for another school's id returns 404. A teacher sees only assigned section-subject pairs. All school tables carry `school_id`; the schema-lint test passes. |
+| SCH-2 | Classes, sections, subjects, assignments | Admin can create classes/sections, choose from subjects that have a bank, and assign teachers to section-subject pairs. Changes are audited. |
+| SCH-3 | Excel/CSV roster upload | `.xlsx` and `.csv` of students (name, class, section, roll no, parent phone) and teachers upload with a dry-run preview listing every row error; commit is all-or-reportable; re-uploading the same file creates no duplicates. |
+| SCH-4 | School paper templates | A teacher defines total marks, duration, sections, marks per question type, internal choice; saved as a versioned template; section totals and numbering are verified before save. |
+| SCH-5 | School exam paper | From a template and chapters, a master paper is generated with shortfalls printed; teacher can swap questions; question paper and teacher key PDF render with a verified page count; student role cannot fetch the key. |
+| SCH-6 | Smart Answer Booklet | One PDF per student; a signed QR on every page (school, exam, student, page); one answer box per question sized to marks; MCQ bubbles; rough-work area; overflow page; printed page count equals real page count. |
+| SCH-7 | Bulk scan intake | PDF or phone photos of a class upload in any order; pages sorted by QR; duplicate, orphan and cross-school pages rejected; missing/unreadable pages listed per student. |
+| SCH-8 | AI marking with flags | Each answer box is marked against the step scheme. Low confidence, unreadable, diagram or missing page → flagged with a reason. Unflagged marks are final. |
+| SCH-9 | Teacher flag queue and sample check | Teacher resolves flags with image and AI reasoning side by side; ~5% of unflagged answers are queued for spot-check with a reproducible seed; a section cannot be released with an open AI flag. |
+| SCH-10 | Release and student flags | Release starts the school's dispute window. A student can flag at most 5 answers with a reason; AI re-reads once and may only keep or raise; unresolved goes to the teacher whose decision is final (raise or lower). |
+| SCH-11 | Mark lock | Marks lock when the window closes and no flag is open. Locked rows reject every change. Mastery and reports read only locked marks. Every transition is in `audit_log`. |
+| SCH-12 | Student report and worksheet | A PDF per student with the knowledge-gap vs delivery-habit split, strengths, topics to fix, habits to fix, and a personalised practice worksheet; not available before lock. |
+| SCH-13 | School isolation test suite | The 14 tests in section 2.2 pass against the local test DB and run in CI. |
+| SCH-15 | School terms acceptance (rev 2) | A school admin accepts the current PrepPlan school terms; who, when and version are stored append-only. Without the current version the school cannot add students, print booklets or run marking. No per-student consent record exists. |
+| SCH-16 | Purpose limit for school students (rev 2) | A school student is excluded from `product_events`, nudges, weekly summaries, leaderboard, points, marketing and notification email outside the school flow, guardian invites and personal-account linking; her data is never used as AI training data. The sweep test fails if any path produces output for her. |
+| SCH-17 | Admin-only student creation and sample-check assignment (rev 2) | Public sign-up cannot create a school student. The class teacher does the sample check by default; the admin can switch any section-subject to the subject teacher; both changes are audited. |
+| SCH-14 | Consumer-flow guard | No consumer confirm/review/dispute/parent route can act on a school attempt; consumer lists exclude school papers. |
+
+## 8. Decisions needed from the owner
+
+| # | Question | My recommendation |
+|---|---|---|
+| D1 (rev 2, settled) | How do school students relate to existing `students`/households? | **Separate.** A `students` row with `school_id` set, in a household created for her, linked via `school_students`. Never linked to a personal account; guardian invites refuse her. A child who is both a school student and a PrepPlan consumer has two unrelated accounts. |
+| D2 | Pilot scope | One friendly school, one class, one subject, with a teacher double-marking in parallel to measure AI accuracy before turning on "AI final" for everyone. |
+| D3 | OK to supersede the "AI never finalises" hard rule for school exams, with the exact `CLAUDE.md` text in 4.4? And: model answer shown only after lock (my default) or at release? | Yes to the amendment; model answer after lock. |
+| D4 | OK to add dependencies in 3.3 (`exceljs`, `qrcode`, a QR decoder, `sharp`)? | Yes, after a one-day spike on real phone photos for the decoder and `sharp`. |
+| D5 (rev 2, settled) | Should locked school marks show in a personal dashboard? | **No.** There is no personal account to show them in. School marks appear only in the school screens and the school report. |
+| D6 | Add Postgres row-level security in Phase 1? | No; revisit in Phase 2. |
+| D7 | Sample check: advisory or blocking? | Advisory, auto-widening to 20% and blocking if more than 10% are changed. The 10%/20% are my numbers. |
+| D8 | Cap how long an unresolved flag can delay lock? | Teacher reminder at 3 days; admin may reassign; no auto-lock of an open flag. |
+| D9 | Post-lock correction (teacher error discovered later) | Out of Phase 1; add as its own approved feature with its own audit entry. |
+| D10 | Pricing unit (per student per year, per exam, per booklet)? | Decide after the pilot's real AI cost per booklet is known. |
+| D11 | Which subjects are in the pilot? | One with a strong written-answer bank, e.g. Class 8 Science or Class 7 Maths. Subjects outside the bank are Phase 2. |
+| D12 (rev 2, partly settled) | Class teacher | A class teacher exists (`school_sections.class_teacher_member_id`) but has **no general access** to other subjects: only the sample-check items for pairs set to `class_teacher`. If you also want them to see their section's results read-only, say so. |
+| D15 | Access, correction and erasure requests for school students | Handled by the school as controller; PrepPlan provides export/erase tooling at the school's request. Out of Phase 1 build, but the terms must say so. |
+| D16 | AI provider terms for school student answers | Confirm the provider's no-training and retention settings for the API key used for schools, and record them in the school terms. Consider a separate API key for school traffic so spend and settings are isolated. |
+| D17 | At lock, skip points and fix-it cards for school students (section 3.4), keep mastery and the adaptive ledger for the report | Yes. Tell me if you want the adaptive ledger skipped too (the report's "topics to fix" would then be computed only from that exam). |
+| D18 | The earlier D7 sample check rules (advisory, widen to 20% if more than 10% changed) | Unchanged, but now run by the class teacher by default. |
+| D13 | Who may release a section: the assigned teacher only, or admin too? | Assigned teacher; admin only to reassign. Principal read-only. |
+| D14 | What language/script must the marking handle (English only, or Telugu/Hindi answers too)? | English in the pilot. A multilingual answer is a Phase 2 spike because the marking and transcription accuracy are unknown. |
+
+## 9. Out of scope for this plan
+
+No code, no migrations written, no spreadsheet edits, no F-numbers, no change to `CLAUDE.md`, nothing
+run against production, nothing pushed or deployed. Tests described here run only on the local
+`examprep_test` database.

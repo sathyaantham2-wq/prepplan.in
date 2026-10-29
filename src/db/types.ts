@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolMemberStatus, SchoolRole, SchoolStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -284,29 +284,6 @@ export interface EvaluationItems {
   step_marks_awarded: Json | null;
 }
 
-export interface FixitCards {
-  cause: string | null;
-  concept_id: string;
-  created_at: Generated<Timestamp>;
-  due_on: ColumnType<string, string | Date, string | Date>;
-  id: Generated<string>;
-  last_answered_at: Timestamp | null;
-  served_on: ColumnType<string, string | Date, string | Date> | null;
-  served_question_id: string | null;
-  source_evaluation_item_id: string | null;
-  stage: Generated<number>;
-  status: Generated<string>;
-  student_id: string;
-}
-
-export interface FixitAnswers {
-  answered_at: Generated<Timestamp>;
-  card_id: string;
-  correct: boolean;
-  id: Generated<string>;
-  question_id: string;
-}
-
 export interface Evaluations {
   actual_score: Numeric | null;
   attempt_id: string;
@@ -320,6 +297,29 @@ export interface Evaluations {
   percentage: Numeric | null;
   remarks: string | null;
   total_marks: Numeric;
+}
+
+export interface FixitAnswers {
+  answered_at: Generated<Timestamp>;
+  card_id: string;
+  correct: boolean;
+  id: Generated<string>;
+  question_id: string;
+}
+
+export interface FixitCards {
+  cause: string | null;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  due_on: Timestamp;
+  id: Generated<string>;
+  last_answered_at: Timestamp | null;
+  served_on: Timestamp | null;
+  served_question_id: string | null;
+  source_evaluation_item_id: string | null;
+  stage: Generated<number>;
+  status: Generated<string>;
+  student_id: string;
 }
 
 export interface GenerationBatches {
@@ -623,6 +623,64 @@ export interface ScanPages {
   uploaded_by_user_id: string;
 }
 
+export interface SchoolClasses {
+  academic_year: string;
+  created_at: Generated<Timestamp>;
+  grade: number;
+  id: Generated<string>;
+  school_id: string;
+}
+
+export interface SchoolMembers {
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  role: SchoolRole;
+  school_id: string;
+  status: SchoolMemberStatus;
+  user_id: string;
+}
+
+export interface Schools {
+  board: Generated<string>;
+  city: string | null;
+  code: string;
+  created_at: Generated<Timestamp>;
+  dispute_window_days: Generated<number>;
+  household_id: string;
+  id: Generated<string>;
+  name: string;
+  plan: Generated<string>;
+  sample_rate: Generated<Numeric>;
+  scan_retention_days: Generated<number>;
+  status: SchoolStatus;
+}
+
+export interface SchoolSections {
+  class_id: string;
+  class_teacher_member_id: string | null;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  name: string;
+  school_id: string;
+}
+
+export interface SchoolSubjects {
+  class_id: string;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  school_id: string;
+  subject_id: string;
+}
+
+export interface SchoolTermsAcceptances {
+  accepted_at: Generated<Timestamp>;
+  accepted_by_user_id: string;
+  accepted_ip: string | null;
+  id: Generated<string>;
+  school_id: string;
+  terms_version: string;
+}
+
 export interface Sessions {
   created_at: Generated<Timestamp>;
   expires_at: Timestamp;
@@ -644,6 +702,15 @@ export interface Sources {
   subject_id: string;
   title: string;
   year: number | null;
+}
+
+export interface StudentActivityDaily {
+  active_seconds: Generated<number>;
+  day: Timestamp;
+  first_seen_at: Generated<Timestamp>;
+  last_seen_at: Generated<Timestamp>;
+  pings: Generated<number>;
+  student_id: string;
 }
 
 export interface StudentConceptPerformance {
@@ -690,23 +757,6 @@ export interface StudentPointsLedger {
   subject_id: string;
 }
 
-export interface StudentUnlocks {
-  item_key: string;
-  kind: Generated<string>;
-  price_coins: number;
-  student_id: string;
-  unlocked_at: Generated<Timestamp>;
-}
-
-export interface StudentActivityDaily {
-  active_seconds: Generated<number>;
-  day: ColumnType<string, string | Date, string | Date>;
-  first_seen_at: Generated<Timestamp>;
-  last_seen_at: Generated<Timestamp>;
-  pings: Generated<number>;
-  student_id: string;
-}
-
 export interface Students {
   access_enabled: Generated<boolean>;
   board: string;
@@ -734,6 +784,14 @@ export interface StudentSubjects {
   student_id: string;
   subject_id: string;
   updated_at: Generated<Timestamp>;
+}
+
+export interface StudentUnlocks {
+  item_key: string;
+  kind: Generated<string>;
+  price_coins: number;
+  student_id: string;
+  unlocked_at: Generated<Timestamp>;
 }
 
 export interface StudyPlans {
@@ -815,9 +873,9 @@ export interface DB {
   deletion_log: DeletionLog;
   error_log: ErrorLog;
   evaluation_items: EvaluationItems;
+  evaluations: Evaluations;
   fixit_answers: FixitAnswers;
   fixit_cards: FixitCards;
-  evaluations: Evaluations;
   generation_batch_items: GenerationBatchItems;
   generation_batches: GenerationBatches;
   generation_events: GenerationEvents;
@@ -843,13 +901,19 @@ export interface DB {
   remediation_tasks: RemediationTasks;
   scan_detections: ScanDetections;
   scan_pages: ScanPages;
+  school_classes: SchoolClasses;
+  school_members: SchoolMembers;
+  school_sections: SchoolSections;
+  school_subjects: SchoolSubjects;
+  school_terms_acceptances: SchoolTermsAcceptances;
+  schools: Schools;
   sessions: Sessions;
   sources: Sources;
+  student_activity_daily: StudentActivityDaily;
   student_concept_performance: StudentConceptPerformance;
   student_points_ledger: StudentPointsLedger;
   student_subjects: StudentSubjects;
   student_unlocks: StudentUnlocks;
-  student_activity_daily: StudentActivityDaily;
   students: Students;
   study_plans: StudyPlans;
   subjects: Subjects;

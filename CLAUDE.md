@@ -122,6 +122,38 @@ Never invent a feature ID. If work doesn't map to an existing F-number, say so a
   ("dont put any limits"). The independent INR spend ceiling (F121, `enforceStudentSpendBudget`)
   is unaffected and still applies -- this is only the raw daily paper-count check.
 
+## School module rules (PrepPlan for Schools, owner decisions 2026-10-29, no F-number yet)
+
+School students follow **this** rule set, separate from everything above that is written for PrepPlan's
+own students. Do not mix the two. Design: `docs/SCHOOLS_MODULE_PLAN.md` (a draft until the owner approves it).
+
+- **Separate students.** A school student is a `students` row with `school_id` set, created only by her
+  school admin (roster upload). There is no public sign-up for school students. She is never linked to a
+  personal PrepPlan account (no guardian invite, no account merge, no sign-in by email linking).
+- **No parental consent is collected in the school module.** The school relies on the DPDP Rules 2025
+  Fourth Schedule Part A educational-institution exemption. There is no per-student consent record. The
+  record that exists is per school: who accepted the PrepPlan school terms, when, and which version
+  (`school_terms_acceptances`). A school without the current version cannot add students, print booklets
+  or run marking.
+- **Purpose limit, enforced in code.** A school student's data is used only for that school's exams and
+  reports. No product analytics events (`product_events`), no marketing or cross-sell email, no daily
+  nudges, weekly summaries, leaderboard or points, no linking into personal accounts, and never as AI
+  training data. Any new feature that reads `students` must exclude `school_id is not null` or refuse. The
+  school-student test sweep must stay green.
+- **Scope.** Every school-side record is scoped by `school_id` at the repository layer (the way
+  `household_id` works for PrepPlan). A teacher sees only the section-subject pairs assigned to them.
+- **Marking (supersedes "AI never finalises a mark" for school exams only).** AI marks are final unless
+  flagged. An AI flag (low confidence, unreadable, diagram, missing page) must be resolved by a teacher
+  before results are released for that section. After release a student has a dispute window (default 7
+  days, set per school): at most 5 flags per paper, each with a reason; the AI re-reads once and may only
+  keep or raise; if still unresolved the teacher decides and that decision is final (raise or lower).
+  Marks lock when the window closes; mastery and reports use locked marks only. Every change goes to
+  `audit_log`; nothing is deleted.
+- **Sample check.** About 5% of unflagged answers are queued for a spot-check. The section's class teacher
+  does it by default; the school admin can assign the subject teacher instead, per section-subject.
+- **Answer key.** The student-role key rules above still apply; nothing about the school module relaxes
+  them.
+
 ## Stack
 
 TanStack Start (React 19) · TypeScript strict · Tailwind v4 + shadcn/ui · Postgres (Neon or
