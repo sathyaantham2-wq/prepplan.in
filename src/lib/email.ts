@@ -14,6 +14,13 @@ export type EmailTemplate =
   | 'daily_nudge'
   | 'guardian_invite'
 
+/**
+ * The only templates a school login may receive: mail that belongs to the school flow. Anything
+ * else (nudges, summaries, paper-ready, guardian invites, marketing) is skipped for a school
+ * account, recorded as such. Empty until the credentials step adds its own template.
+ */
+export const SCHOOL_ALLOWED_TEMPLATES: ReadonlyArray<EmailTemplate> = []
+
 export function isEmailConfigured(): boolean {
   return Boolean(env.MAKE_EMAIL_WEBHOOK_URL)
 }
@@ -152,10 +159,24 @@ export async function sendTransactionalEmail(
   try {
     const user = await db
       .selectFrom('users')
-      .select(['email', 'email_notifications_enabled'])
+      .select(['email', 'email_notifications_enabled', 'signup_type'])
       .where('id', '=', input.userId)
       .executeTakeFirst()
     if (!user) return
+
+    if (
+      user.signup_type === 'school' &&
+      !SCHOOL_ALLOWED_TEMPLATES.includes(input.template)
+    ) {
+      await notificationsRepository.insert(db, {
+        user_id: input.userId,
+        channel: 'email',
+        template: input.template,
+        payload: JSON.stringify({ reason: 'school account' }),
+        status: 'skipped',
+      })
+      return
+    }
 
     if (!user.email_notifications_enabled) {
       await notificationsRepository.insert(db, {

@@ -1,5 +1,6 @@
 import type { Db } from '../db/connection'
 import { productEventsRepository } from '../db/repositories'
+import { isSchoolStudent } from './school-guard'
 
 // F093: "Events: paper generated, downloaded, attempted, uploaded, evaluated, remediated."
 // 'attempt_uploaded' is declared here (and on the DB check constraint) for when F050 (upload of
@@ -41,6 +42,8 @@ export async function logProductEvent(
   },
 ): Promise<void> {
   try {
+    // No product analytics on school students (CLAUDE.md "School module rules").
+    if (await isSchoolStudent(db, input.studentId)) return
     await productEventsRepository.insert(db, {
       household_id: input.householdId,
       student_id: input.studentId,

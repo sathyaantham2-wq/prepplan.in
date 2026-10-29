@@ -714,6 +714,7 @@ describe('school roster, assignments and terms (S2)', () => {
           .where('id', '=', id)
           .executeTakeFirstOrThrow()
         expect(user.role).toBe('parent')
+        expect(user.signup_type).not.toBe('school')
         expect(
           await db
             .selectFrom('school_members')

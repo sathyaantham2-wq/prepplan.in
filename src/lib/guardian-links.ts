@@ -21,6 +21,7 @@ export type InviteError =
   | 'no_student_profile'
   | 'student_already_linked'
   | 'not_approved'
+  | 'school_account'
 
 export type Result<T> = { ok: true; value: T } | { ok: false; error: InviteError }
 
@@ -44,6 +45,25 @@ export async function createInvite(
   consentGiven: boolean,
 ): Promise<Result<{ id: string; created: boolean }>> {
   const email = normaliseEmail(rawEmail)
+
+  // A school login can neither send an invite nor be linked into a personal account, and the
+  // answer is the same as for an address nobody holds, so nothing is revealed about who is a
+  // school student.
+  const guardianIsSchool = await db
+    .selectFrom('users')
+    .select('signup_type')
+    .where('id', '=', guardian.userId)
+    .executeTakeFirst()
+  if (guardianIsSchool?.signup_type === 'school') {
+    return { ok: false, error: 'school_account' }
+  }
+  const target = await db
+    .selectFrom('users')
+    .innerJoin('students', 'students.user_id', 'users.id')
+    .select('students.school_id')
+    .where('users.email', '=', email)
+    .executeTakeFirst()
+  if (target?.school_id) return { ok: true, value: { id: crypto.randomUUID(), created: false } }
 
   const self = await db
     .selectFrom('users')
@@ -100,7 +120,7 @@ export async function listForGuardian(db: Db, householdId: string) {
 async function studentFor(db: Db, userId: string) {
   const user = await db
     .selectFrom('users')
-    .select(['email'])
+    .select(['email', 'signup_type'])
     .where('id', '=', userId)
     .executeTakeFirst()
   const student = await db
@@ -161,6 +181,7 @@ export async function respondToInvite(
 
   const { user, student } = await studentFor(db, studentUserId)
   if (!user || !student) return { ok: false, error: 'no_student_profile' }
+  if (user.signup_type === 'school' || student.school_id) return { ok: false, error: 'school_account' }
   // An invite is addressed to an email; only the account that owns that email can answer it.
   if (normaliseEmail(user.email) !== invite.student_email) {
     return { ok: false, error: 'not_found' }

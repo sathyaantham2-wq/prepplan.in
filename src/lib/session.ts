@@ -1,16 +1,20 @@
 import { auth } from './auth'
 import type { UserRole } from '../db/enums'
+import { schoolAccountRefusal } from './school-guard'
 
 export interface AuthedUser {
   id: string
   householdId: string
   role: UserRole
+  /** Created by a school (users.signup_type = 'school'): staff or student. */
+  isSchool: boolean
 }
 
 interface SessionUser {
   household_id: string
   role: UserRole
   is_active: boolean
+  signup_type?: string | null
 }
 
 /**
@@ -32,7 +36,12 @@ export async function getCurrentUser(
   // call site to remember a separate check.
   if (!user.is_active) return null
 
-  return { id: user.id, householdId: user.household_id, role: user.role }
+  return {
+    id: user.id,
+    householdId: user.household_id,
+    role: user.role,
+    isSchool: user.signup_type === 'school',
+  }
 }
 
 export async function requireUser(
@@ -40,6 +49,10 @@ export async function requireUser(
 ): Promise<AuthedUser | Response> {
   const user = await getCurrentUser(request)
   if (!user) return new Response(null, { status: 401 })
+  // Every consumer route (practice papers, adaptive, leaderboard, sharing, notifications, ...)
+  // funnels through here, so this one line keeps a school login out of all of them. School routes
+  // use requireSchoolRole (school-session.ts), which reads getCurrentUser directly.
+  if (user.isSchool) return schoolAccountRefusal()
   return user
 }
 

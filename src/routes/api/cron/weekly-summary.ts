@@ -1,8 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { getSharedDb } from '../../../db/connection'
+import { listOutboundStudents } from '../../../lib/outbound-students'
 import { buildWeeklySummary } from '../../../lib/weekly-summary'
 import { mostRecentMonday } from '../../../lib/study-plan'
-import { buildWeeklySummaryEmail, notifyHouseholdParents } from '../../../lib/email'
+import {
+  buildWeeklySummaryEmail,
+  notifyHouseholdParents,
+} from '../../../lib/email'
 import { env } from '../../../lib/env'
 import { wrapRouteHandlers } from '../../../lib/error-log'
 
@@ -22,16 +26,15 @@ export const Route = createFileRoute('/api/cron/weekly-summary')({
         if (!env.CRON_SECRET) {
           return new Response('CRON_SECRET is not configured', { status: 500 })
         }
-        if (request.headers.get('authorization') !== `Bearer ${env.CRON_SECRET}`) {
+        if (
+          request.headers.get('authorization') !== `Bearer ${env.CRON_SECRET}`
+        ) {
           return new Response(null, { status: 401 })
         }
 
         const db = getSharedDb()
         const weekStart = mostRecentMonday(new Date())
-        const students = await db
-          .selectFrom('students')
-          .select(['id', 'name', 'household_id'])
-          .execute()
+        const students = await listOutboundStudents(db)
 
         for (const student of students) {
           const summary = await buildWeeklySummary(db, student.id, weekStart)

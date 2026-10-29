@@ -124,7 +124,7 @@ async function getReport(
     tracking_since: string | null
   }>`
     select
-      (select count(*) from students where user_id is not null) as students_with_login,
+      (select count(*) from students where user_id is not null and school_id is null) as students_with_login,
       (select count(distinct student_id) from student_activity_daily where day = ${today}::date) as active_today,
       (select count(distinct student_id) from student_activity_daily
          where day between ${today}::date - 6 and ${today}::date) as active_7d,
@@ -162,7 +162,7 @@ async function getReport(
     from students s
     left join student_activity_daily d
       on d.student_id = s.id and d.day between ${from}::date and ${today}::date
-    where s.user_id is not null
+    where s.user_id is not null and s.school_id is null
     group by s.id, s.name, s.class
     order by seconds desc, s.name
     limit 500

@@ -1,3 +1,4 @@
+import { isSchoolStudent } from './school-guard'
 import type { Db } from '../db/connection'
 import type { DifficultyTier, QuestionType } from '../db/enums'
 import { studentPointsLedgerRepository } from '../db/repositories'
@@ -55,6 +56,8 @@ export async function recordPointsForConfirmedItems(
   subjectId: string,
   items: Array<GradedObjectiveItem>,
 ): Promise<void> {
+  // No points or leaderboard for school students (CLAUDE.md "School module rules").
+  if (await isSchoolStudent(db, studentId)) return
   for (const item of items) {
     if (!isObjectiveType(item.questionType)) continue
     if (item.marksMax <= 0 || item.marksAwarded !== item.marksMax) continue

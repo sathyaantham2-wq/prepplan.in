@@ -1,3 +1,4 @@
+import { isSchoolStudent } from './school-guard'
 import { randomUUID } from 'node:crypto'
 import type { Db } from '../db/connection'
 import type { QuestionType } from '../db/enums'
@@ -39,6 +40,8 @@ export function causeForItem(item: Pick<LostMarkItem, 'knowledgeKnown' | 'errorT
 export async function recordFixitCardsForLostMarks(db: Db, studentId: string, items: Array<LostMarkItem>): Promise<void> {
   const lost = items.filter((i) => i.marksMax > 0 && i.marksAwarded < i.marksMax)
   if (lost.length === 0) return
+  // The Fix-it Deck is a PrepPlan feature; school students do not get one.
+  if (await isSchoolStudent(db, studentId)) return
   await fixitRepository.savepoint(db, 'start')
   try {
     const seen = new Set<string>()

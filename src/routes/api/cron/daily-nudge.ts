@@ -1,7 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { getSharedDb } from '../../../db/connection'
+import { listOutboundStudents } from '../../../lib/outbound-students'
 import { generateOrGetTodayNudge } from '../../../lib/daily-nudge'
-import { buildDailyNudgeEmail, notifyHouseholdParents } from '../../../lib/email'
+import {
+  buildDailyNudgeEmail,
+  notifyHouseholdParents,
+} from '../../../lib/email'
 import { env } from '../../../lib/env'
 import { wrapRouteHandlers } from '../../../lib/error-log'
 import { purgeExpiredScans } from '../../../lib/scans'
@@ -24,7 +28,9 @@ export const Route = createFileRoute('/api/cron/daily-nudge')({
         if (!env.CRON_SECRET) {
           return new Response('CRON_SECRET is not configured', { status: 500 })
         }
-        if (request.headers.get('authorization') !== `Bearer ${env.CRON_SECRET}`) {
+        if (
+          request.headers.get('authorization') !== `Bearer ${env.CRON_SECRET}`
+        ) {
           return new Response(null, { status: 401 })
         }
 
@@ -33,10 +39,7 @@ export const Route = createFileRoute('/api/cron/daily-nudge')({
         // answer pages older than SCAN_RETENTION_DAYS lose their image (the text read from them
         // stays). Runs first, so a failing email further down can't skip it.
         const purged = await purgeExpiredScans(db)
-        const students = await db
-          .selectFrom('students')
-          .select(['id', 'name', 'household_id'])
-          .execute()
+        const students = await listOutboundStudents(db)
 
         for (const student of students) {
           const nudge = await generateOrGetTodayNudge(db, student.id)
@@ -51,7 +54,10 @@ export const Route = createFileRoute('/api/cron/daily-nudge')({
           })
         }
 
-        return Response.json({ students_processed: students.length, scan_pages_purged: purged })
+        return Response.json({
+          students_processed: students.length,
+          scan_pages_purged: purged,
+        })
       },
     },
   },

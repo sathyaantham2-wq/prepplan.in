@@ -1,5 +1,6 @@
 import type { Db } from '../db/connection'
 import { studentsRepository } from '../db/repositories'
+import { schoolAccountRefusal } from './school-guard'
 
 /**
  * F010: "Toggle per student; disabled student sees a friendly locked screen; parent always
@@ -18,6 +19,8 @@ export async function resolveEnabledStudent(db: Db, userId: string) {
       { status: 403 },
     )
   }
+  // Second layer under requireUser: a school student never uses the consumer student routes.
+  if (student.school_id) return schoolAccountRefusal()
   if (!student.access_enabled) {
     return Response.json(
       {

@@ -57,6 +57,7 @@ export async function getLeaderboard(
     .select((eb) => eb.fn.sum<string>('student_points_ledger.points').as('total_points'))
     .where('student_points_ledger.subject_id', '=', subjectId)
     .where('students.leaderboard_opt_in', '=', true)
+    .where('students.school_id', 'is', null)
     .groupBy(['student_points_ledger.student_id', 'students.leaderboard_nickname'])
     .orderBy('total_points', 'desc')
     .execute()
