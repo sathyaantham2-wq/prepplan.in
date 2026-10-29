@@ -115,15 +115,23 @@ export const schoolLoginRepository = {
       .where('ss.school_id', '=', schoolId)
       .where('ss.status', '=', 'active')
       .where('m.status', '=', 'active')
-      .where((eb) => eb(eb.fn('upper', ['ss.admission_no']), '=', admissionNo.toUpperCase()))
+      .where((eb) =>
+        eb(eb.fn('upper', ['ss.admission_no']), '=', admissionNo.toUpperCase()),
+      )
       .executeTakeFirst()
   },
-  async admissionNoTaken(db: Db, schoolId: string, admissionNo: string): Promise<boolean> {
+  async admissionNoTaken(
+    db: Db,
+    schoolId: string,
+    admissionNo: string,
+  ): Promise<boolean> {
     const row = await db
       .selectFrom('school_students')
       .select('id')
       .where('school_id', '=', schoolId)
-      .where((eb) => eb(eb.fn('upper', ['admission_no']), '=', admissionNo.toUpperCase()))
+      .where((eb) =>
+        eb(eb.fn('upper', ['admission_no']), '=', admissionNo.toUpperCase()),
+      )
       .executeTakeFirst()
     return row !== undefined
   },
@@ -380,5 +388,60 @@ export const schoolLoginRepository = {
         'teacher',
       ] satisfies Array<SchoolRole>)
       .executeTakeFirst()
+  },
+  /** Staff of the school with whether each has chosen a password yet (for the admin's teacher list). */
+  async listStaff(db: Db, scope: SchoolScope) {
+    const rows = await db
+      .selectFrom('school_members as m')
+      .innerJoin('users as u', 'u.id', 'm.user_id')
+      .leftJoin('accounts as a', (j) =>
+        j
+          .onRef('a.user_id', '=', 'm.user_id')
+          .on('a.provider_id', '=', 'credential'),
+      )
+      .select([
+        'm.id as member_id',
+        'm.role',
+        'm.status',
+        'u.name',
+        'u.email',
+        'a.password',
+      ])
+      .where('m.school_id', '=', scope.schoolId)
+      .where('m.role', 'in', ['school_admin', 'principal', 'teacher'])
+      .where('m.status', '=', 'active')
+      .orderBy('u.name')
+      .execute()
+    return rows.map((r) => ({
+      memberId: r.member_id,
+      role: r.role,
+      name: r.name,
+      email: r.email,
+      hasPassword: !!r.password,
+    }))
+  },
+  /** The caller's own teacher membership id in this school, if any. */
+  async teacherMemberId(db: Db, scope: SchoolScope): Promise<string | null> {
+    const row = await db
+      .selectFrom('school_members')
+      .select('id')
+      .where('school_id', '=', scope.schoolId)
+      .where('user_id', '=', scope.userId)
+      .where('role', '=', 'teacher')
+      .where('status', '=', 'active')
+      .executeTakeFirst()
+    return row?.id ?? null
+  },
+  /** Every active membership of a user, across schools, with the school's name. */
+  async membershipsOf(db: Db, userId: string) {
+    return db
+      .selectFrom('school_members as m')
+      .innerJoin('schools as s', 's.id', 'm.school_id')
+      .select(['s.id as school_id', 's.name as school_name', 'm.role'])
+      .where('m.user_id', '=', userId)
+      .where('m.status', '=', 'active')
+      .where('s.status', '=', 'active')
+      .orderBy('s.name')
+      .execute()
   },
 }

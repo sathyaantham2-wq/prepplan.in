@@ -123,6 +123,8 @@ export function installUiSounds(): () => void {
       'button, a[href], [role="button"], summary, label, select, input[type="checkbox"], input[type="radio"]',
     )
     if (!el) return
+    // The school screens are quiet (they carry data-no-sound).
+    if (el.closest('[data-no-sound]')) return
     if (el.matches(':disabled, [aria-disabled="true"]')) return
     if (
       el.matches('label, select, input[type="checkbox"], input[type="radio"]')

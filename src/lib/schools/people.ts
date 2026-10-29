@@ -10,6 +10,7 @@ import {
   usersRepository,
 } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
+import { UNAMBIGUOUS_ALPHABET } from './alphabet'
 
 // School people are created by the school service only: never by the public sign-up path, which
 // cannot produce a school role (CLAUDE.md "School module rules"). Each gets a household of their
@@ -47,8 +48,6 @@ export async function createSchoolTeacher(
   return { user, member }
 }
 
-const ID_ALPHABET = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'
-
 /**
  * A permanent, school-unique sign-in ID for a student whose roster row had no admission number,
  * e.g. PK7M2P9X. It is the student's ID for as long as she is at the school: promotion changes her
@@ -60,7 +59,8 @@ export async function generateAdmissionNo(
 ): Promise<string> {
   for (let attempt = 0; attempt < 20; attempt++) {
     let id = 'P'
-    for (let i = 0; i < 7; i++) id += ID_ALPHABET[randomInt(ID_ALPHABET.length)]
+    for (let i = 0; i < 7; i++)
+      id += UNAMBIGUOUS_ALPHABET[randomInt(UNAMBIGUOUS_ALPHABET.length)]
     if (!(await schoolLoginRepository.admissionNoTaken(db, schoolId, id)))
       return id
   }

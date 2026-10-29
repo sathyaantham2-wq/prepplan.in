@@ -7,6 +7,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import appCss from '../styles.css?url'
 import { ThemeProvider } from '../components/theme-provider'
 import { ActivityPing } from '../components/activity-ping'
+import { SchoolRedirect } from '../components/school-redirect'
 import {
   installClientErrorReporting,
   reportReactError,
@@ -130,18 +131,21 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </div>
         <ThemeProvider>
           <ActivityPing />
+          <SchoolRedirect />
           {children}
-          <TanStackDevtools
-            config={{
-              position: 'bottom-right',
-            }}
-            plugins={[
-              {
-                name: 'Tanstack Router',
-                render: <TanStackRouterDevtoolsPanel />,
-              },
-            ]}
-          />
+          {import.meta.env.VITE_NO_DEVTOOLS ? null : (
+            <TanStackDevtools
+              config={{
+                position: 'bottom-right',
+              }}
+              plugins={[
+                {
+                  name: 'Tanstack Router',
+                  render: <TanStackRouterDevtoolsPanel />,
+                },
+              ]}
+            />
+          )}
         </ThemeProvider>
         <Scripts />
       </body>

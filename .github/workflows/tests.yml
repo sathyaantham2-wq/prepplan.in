@@ -87,6 +87,16 @@ jobs:
         run: npm run db:seed:patterns && npm run db:seed:habits
       - name: E2E
         run: npm run test:e2e
+      # The school screens (e2e/schools.spec.ts) run in the step above, against this job's own
+      # throwaway Postgres only. Keep their phone-sized screenshots so a reviewer can look at them.
+      - name: Upload school screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: school-screens
+          path: test-results/school-screens/
+          retention-days: 7
+          if-no-files-found: ignore
       - name: Upload trace on failure
         if: failure()
         uses: actions/upload-artifact@v4

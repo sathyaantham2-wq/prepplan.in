@@ -38,6 +38,7 @@ const PUBLIC_ROUTES = [
   './api/cron/weekly-summary.ts',
   './api/errors.ts',
   './api/guest.ts',
+  './api/school-me.ts', // school screens only: reads the session itself, never offers consumer data
   './api/school-login.ts',
   './api/school-login/activate.ts',
   './api/school-login/activate-staff.ts',

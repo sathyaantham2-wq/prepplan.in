@@ -247,7 +247,7 @@ describe('school credentials (S2c)', () => {
       const seen = new Set<string>()
       for (let i = 0; i < 200; i++) {
         const c = newSlipCode()
-        expect(c).toMatch(/^[2-9A-HJ-NP-Z]{5}-[2-9A-HJ-NP-Z]{5}$/)
+        expect(c).toMatch(/^[2-9A-HJKMNP-Z]{5}-[2-9A-HJKMNP-Z]{5}$/)
         seen.add(c)
       }
       expect(seen.size).toBe(200)
@@ -259,7 +259,7 @@ describe('school credentials (S2c)', () => {
       expect(normaliseAdmissionNo("x'; drop")).toBeNull()
     })
     it('a student with no admission number gets a generated, school-unique one', () => {
-      expect(students.B1.admissionNo).toMatch(/^P[2-9A-HJ-NP-Z]{7}$/)
+      expect(students.B1.admissionNo).toMatch(/^P[2-9A-HJKMNP-Z]{7}$/)
       expect(students.B1.admissionNo).not.toBe(students.A1.admissionNo)
     })
     it('only a keyed hash is stored, never the code', async () => {
@@ -324,7 +324,7 @@ describe('school credentials (S2c)', () => {
         delivery: 'slip',
       })
       if (slip.delivery !== 'slip') throw new Error('expected a slip')
-      expect(slip.code).toMatch(/^[2-9A-HJ-NP-Z]{5}-[2-9A-HJ-NP-Z]{5}$/)
+      expect(slip.code).toMatch(/^[2-9A-HJKMNP-Z]{5}-[2-9A-HJKMNP-Z]{5}$/)
       expect(slip.email).toBe(t1Email)
       const r = await activateStaffWithCode(db, {
         email: t1Email,

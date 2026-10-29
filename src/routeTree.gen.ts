@@ -28,6 +28,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as RewardsRouteImport } from './routes/rewards'
+import { Route as SchoolRouteImport } from './routes/school'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
@@ -57,6 +58,7 @@ import { Route as ApiPapersRouteImport } from './routes/api/papers'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
 import { Route as ApiSchoolLoginRouteImport } from './routes/api/school-login'
+import { Route as ApiSchoolMeRouteImport } from './routes/api/school-me'
 import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
@@ -64,6 +66,10 @@ import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
 import { Route as PaperIdRouteImport } from './routes/paper/$id'
 import { Route as ScanAttemptIdRouteImport } from './routes/scan/$attemptId'
+import { Route as SchoolIndexRouteImport } from './routes/school/index'
+import { Route as SchoolSchoolIdRouteImport } from './routes/school/$schoolId'
+import { Route as SchoolSetPasswordRouteImport } from './routes/school/set-password'
+import { Route as SchoolSignInRouteImport } from './routes/school/sign-in'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
 import { Route as ApiActivityPingRouteImport } from './routes/api/activity/ping'
@@ -118,6 +124,11 @@ import { Route as ApiSyllabusConceptsRouteImport } from './routes/api/syllabus/c
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
 import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/report'
+import { Route as SchoolSchoolIdIndexRouteImport } from './routes/school/$schoolId/index'
+import { Route as SchoolSchoolIdClassesRouteImport } from './routes/school/$schoolId/classes'
+import { Route as SchoolSchoolIdStudentsRouteImport } from './routes/school/$schoolId/students'
+import { Route as SchoolSchoolIdTeachersRouteImport } from './routes/school/$schoolId/teachers'
+import { Route as SchoolSchoolIdTermsRouteImport } from './routes/school/$schoolId/terms'
 import { Route as ApiAdminSubjectsIdRouteImport } from './routes/api/admin/subjects/$id'
 import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
 import { Route as ApiAttemptsIdAnswerImageRouteImport } from './routes/api/attempts/$id/answer-image'
@@ -144,6 +155,8 @@ import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
 import { Route as ApiSchoolsSchoolIdImportsRouteImport } from './routes/api/schools/$schoolId/imports'
+import { Route as ApiSchoolsSchoolIdOverviewRouteImport } from './routes/api/schools/$schoolId/overview'
+import { Route as ApiSchoolsSchoolIdSetupRouteImport } from './routes/api/schools/$schoolId/setup'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
 import { Route as ApiStudentsMeExamsRouteImport } from './routes/api/students/me/exams'
 import { Route as ApiStudentsMeHomeRouteImport } from './routes/api/students/me/home'
@@ -173,6 +186,7 @@ import { Route as ApiAttemptsIdItemsItemIdRemoveRouteImport } from './routes/api
 import { Route as ApiAttemptsIdScanDetectionsDetectionIdRouteImport } from './routes/api/attempts/$id/scan/detections/$detectionId'
 import { Route as ApiAttemptsIdScanPagesPageIdRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId'
 import { Route as ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport } from './routes/api/schools/$schoolId/imports/$batchId/commit'
+import { Route as ApiSchoolsSchoolIdSectionsSectionIdStudentsRouteImport } from './routes/api/schools/$schoolId/sections/$sectionId/students'
 import { Route as ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRouteImport } from './routes/api/schools/$schoolId/students/$schoolStudentId/reset-password'
 import { Route as ApiAttemptsIdScanPagesPageIdExtractRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId/extract'
 
@@ -269,6 +283,11 @@ const RemediationRoute = RemediationRouteImport.update({
 const RewardsRoute = RewardsRouteImport.update({
   id: '/rewards',
   path: '/rewards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolRoute = SchoolRouteImport.update({
+  id: '/school',
+  path: '/school',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SettingsRoute = SettingsRouteImport.update({
@@ -417,6 +436,11 @@ const ApiSchoolLoginRoute = ApiSchoolLoginRouteImport.update({
   path: '/api/school-login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSchoolMeRoute = ApiSchoolMeRouteImport.update({
+  id: '/api/school-me',
+  path: '/api/school-me',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiStudentDashboardRoute = ApiStudentDashboardRouteImport.update({
   id: '/api/student-dashboard',
   path: '/api/student-dashboard',
@@ -451,6 +475,26 @@ const ScanAttemptIdRoute = ScanAttemptIdRouteImport.update({
   id: '/scan/$attemptId',
   path: '/scan/$attemptId',
   getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolIndexRoute = SchoolIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SchoolRoute,
+} as any)
+const SchoolSchoolIdRoute = SchoolSchoolIdRouteImport.update({
+  id: '/$schoolId',
+  path: '/$schoolId',
+  getParentRoute: () => SchoolRoute,
+} as any)
+const SchoolSetPasswordRoute = SchoolSetPasswordRouteImport.update({
+  id: '/set-password',
+  path: '/set-password',
+  getParentRoute: () => SchoolRoute,
+} as any)
+const SchoolSignInRoute = SchoolSignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => SchoolRoute,
 } as any)
 const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
   id: '/summary/weekly',
@@ -728,6 +772,31 @@ const EvaluationIdReportRoute = EvaluationIdReportRouteImport.update({
   path: '/evaluation/$id/report',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SchoolSchoolIdIndexRoute = SchoolSchoolIdIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
+const SchoolSchoolIdClassesRoute = SchoolSchoolIdClassesRouteImport.update({
+  id: '/classes',
+  path: '/classes',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
+const SchoolSchoolIdStudentsRoute = SchoolSchoolIdStudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
+const SchoolSchoolIdTeachersRoute = SchoolSchoolIdTeachersRouteImport.update({
+  id: '/teachers',
+  path: '/teachers',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
+const SchoolSchoolIdTermsRoute = SchoolSchoolIdTermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
 const ApiAdminSubjectsIdRoute = ApiAdminSubjectsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -865,6 +934,17 @@ const ApiSchoolsSchoolIdImportsRoute =
     path: '/api/schools/$schoolId/imports',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiSchoolsSchoolIdOverviewRoute =
+  ApiSchoolsSchoolIdOverviewRouteImport.update({
+    id: '/api/schools/$schoolId/overview',
+    path: '/api/schools/$schoolId/overview',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiSchoolsSchoolIdSetupRoute = ApiSchoolsSchoolIdSetupRouteImport.update({
+  id: '/api/schools/$schoolId/setup',
+  path: '/api/schools/$schoolId/setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -1029,6 +1109,12 @@ const ApiSchoolsSchoolIdImportsBatchIdCommitRoute =
     path: '/$batchId/commit',
     getParentRoute: () => ApiSchoolsSchoolIdImportsRoute,
   } as any)
+const ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute =
+  ApiSchoolsSchoolIdSectionsSectionIdStudentsRouteImport.update({
+    id: '/api/schools/$schoolId/sections/$sectionId/students',
+    path: '/api/schools/$schoolId/sections/$sectionId/students',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute =
   ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRouteImport.update({
     id: '/api/schools/$schoolId/students/$schoolStudentId/reset-password',
@@ -1062,6 +1148,7 @@ export interface FileRoutesByFullPath {
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/rewards': typeof RewardsRoute
+  '/school': typeof SchoolRouteWithChildren
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -1090,6 +1177,7 @@ export interface FileRoutesByFullPath {
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
+  '/api/school-me': typeof ApiSchoolMeRoute
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1097,9 +1185,13 @@ export interface FileRoutesByFullPath {
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/paper/$id': typeof PaperIdRoute
   '/scan/$attemptId': typeof ScanAttemptIdRoute
+  '/school/$schoolId': typeof SchoolSchoolIdRouteWithChildren
+  '/school/set-password': typeof SchoolSetPasswordRoute
+  '/school/sign-in': typeof SchoolSignInRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/admin/': typeof AdminIndexRoute
+  '/school/': typeof SchoolIndexRoute
   '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
@@ -1152,6 +1244,11 @@ export interface FileRoutesByFullPath {
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
+  '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
+  '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
+  '/school/$schoolId/terms': typeof SchoolSchoolIdTermsRoute
+  '/school/$schoolId/': typeof SchoolSchoolIdIndexRoute
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/answer-image': typeof ApiAttemptsIdAnswerImageRoute
@@ -1178,6 +1275,8 @@ export interface FileRoutesByFullPath {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
+  '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
@@ -1207,6 +1306,7 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/sections/$sectionId/students': typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
@@ -1257,6 +1357,7 @@ export interface FileRoutesByTo {
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
+  '/api/school-me': typeof ApiSchoolMeRoute
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1264,9 +1365,12 @@ export interface FileRoutesByTo {
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/paper/$id': typeof PaperIdRoute
   '/scan/$attemptId': typeof ScanAttemptIdRoute
+  '/school/set-password': typeof SchoolSetPasswordRoute
+  '/school/sign-in': typeof SchoolSignInRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/admin': typeof AdminIndexRoute
+  '/school': typeof SchoolIndexRoute
   '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
@@ -1319,6 +1423,11 @@ export interface FileRoutesByTo {
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
+  '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
+  '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
+  '/school/$schoolId/terms': typeof SchoolSchoolIdTermsRoute
+  '/school/$schoolId': typeof SchoolSchoolIdIndexRoute
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/answer-image': typeof ApiAttemptsIdAnswerImageRoute
@@ -1345,6 +1454,8 @@ export interface FileRoutesByTo {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
+  '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
@@ -1374,6 +1485,7 @@ export interface FileRoutesByTo {
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/sections/$sectionId/students': typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
@@ -1398,6 +1510,7 @@ export interface FileRoutesById {
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/rewards': typeof RewardsRoute
+  '/school': typeof SchoolRouteWithChildren
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -1426,6 +1539,7 @@ export interface FileRoutesById {
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
+  '/api/school-me': typeof ApiSchoolMeRoute
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1433,9 +1547,13 @@ export interface FileRoutesById {
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/paper/$id': typeof PaperIdRoute
   '/scan/$attemptId': typeof ScanAttemptIdRoute
+  '/school/$schoolId': typeof SchoolSchoolIdRouteWithChildren
+  '/school/set-password': typeof SchoolSetPasswordRoute
+  '/school/sign-in': typeof SchoolSignInRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/admin/': typeof AdminIndexRoute
+  '/school/': typeof SchoolIndexRoute
   '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
@@ -1488,6 +1606,11 @@ export interface FileRoutesById {
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
+  '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
+  '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
+  '/school/$schoolId/terms': typeof SchoolSchoolIdTermsRoute
+  '/school/$schoolId/': typeof SchoolSchoolIdIndexRoute
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/answer-image': typeof ApiAttemptsIdAnswerImageRoute
@@ -1514,6 +1637,8 @@ export interface FileRoutesById {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
+  '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
@@ -1543,6 +1668,7 @@ export interface FileRoutesById {
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/sections/$sectionId/students': typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
@@ -1568,6 +1694,7 @@ export interface FileRouteTypes {
     | '/profile-setup'
     | '/remediation'
     | '/rewards'
+    | '/school'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -1596,6 +1723,7 @@ export interface FileRouteTypes {
     | '/api/questions'
     | '/api/remediation'
     | '/api/school-login'
+    | '/api/school-me'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -1603,9 +1731,13 @@ export interface FileRouteTypes {
     | '/evaluate/$attemptId'
     | '/paper/$id'
     | '/scan/$attemptId'
+    | '/school/$schoolId'
+    | '/school/set-password'
+    | '/school/sign-in'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/admin/'
+    | '/school/'
     | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
@@ -1658,6 +1790,11 @@ export interface FileRouteTypes {
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
+    | '/school/$schoolId/classes'
+    | '/school/$schoolId/students'
+    | '/school/$schoolId/teachers'
+    | '/school/$schoolId/terms'
+    | '/school/$schoolId/'
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/answer-image'
@@ -1684,6 +1821,8 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/schools/$schoolId/imports'
+    | '/api/schools/$schoolId/overview'
+    | '/api/schools/$schoolId/setup'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
     | '/api/students/me/home'
@@ -1713,6 +1852,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/sections/$sectionId/students'
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesByTo: FileRoutesByTo
@@ -1763,6 +1903,7 @@ export interface FileRouteTypes {
     | '/api/questions'
     | '/api/remediation'
     | '/api/school-login'
+    | '/api/school-me'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -1770,9 +1911,12 @@ export interface FileRouteTypes {
     | '/evaluate/$attemptId'
     | '/paper/$id'
     | '/scan/$attemptId'
+    | '/school/set-password'
+    | '/school/sign-in'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/admin'
+    | '/school'
     | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
@@ -1825,6 +1969,11 @@ export interface FileRouteTypes {
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
+    | '/school/$schoolId/classes'
+    | '/school/$schoolId/students'
+    | '/school/$schoolId/teachers'
+    | '/school/$schoolId/terms'
+    | '/school/$schoolId'
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/answer-image'
@@ -1851,6 +2000,8 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/schools/$schoolId/imports'
+    | '/api/schools/$schoolId/overview'
+    | '/api/schools/$schoolId/setup'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
     | '/api/students/me/home'
@@ -1880,6 +2031,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/sections/$sectionId/students'
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   id:
@@ -1903,6 +2055,7 @@ export interface FileRouteTypes {
     | '/profile-setup'
     | '/remediation'
     | '/rewards'
+    | '/school'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -1931,6 +2084,7 @@ export interface FileRouteTypes {
     | '/api/questions'
     | '/api/remediation'
     | '/api/school-login'
+    | '/api/school-me'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -1938,9 +2092,13 @@ export interface FileRouteTypes {
     | '/evaluate/$attemptId'
     | '/paper/$id'
     | '/scan/$attemptId'
+    | '/school/$schoolId'
+    | '/school/set-password'
+    | '/school/sign-in'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/admin/'
+    | '/school/'
     | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
@@ -1993,6 +2151,11 @@ export interface FileRouteTypes {
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
+    | '/school/$schoolId/classes'
+    | '/school/$schoolId/students'
+    | '/school/$schoolId/teachers'
+    | '/school/$schoolId/terms'
+    | '/school/$schoolId/'
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/answer-image'
@@ -2019,6 +2182,8 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/schools/$schoolId/imports'
+    | '/api/schools/$schoolId/overview'
+    | '/api/schools/$schoolId/setup'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
     | '/api/students/me/home'
@@ -2048,6 +2213,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/sections/$sectionId/students'
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesById: FileRoutesById
@@ -2072,6 +2238,7 @@ export interface RootRouteChildren {
   ProfileSetupRoute: typeof ProfileSetupRoute
   RemediationRoute: typeof RemediationRoute
   RewardsRoute: typeof RewardsRoute
+  SchoolRoute: typeof SchoolRouteWithChildren
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
   DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
@@ -2089,6 +2256,7 @@ export interface RootRouteChildren {
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
   ApiSchoolLoginRoute: typeof ApiSchoolLoginRouteWithChildren
+  ApiSchoolMeRoute: typeof ApiSchoolMeRoute
   ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   ApiStudyPlanRoute: typeof ApiStudyPlanRouteWithChildren
@@ -2130,12 +2298,15 @@ export interface RootRouteChildren {
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
   ApiSchoolsSchoolIdImportsRoute: typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  ApiSchoolsSchoolIdOverviewRoute: typeof ApiSchoolsSchoolIdOverviewRoute
+  ApiSchoolsSchoolIdSetupRoute: typeof ApiSchoolsSchoolIdSetupRoute
   ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   ApiFixitCardsIdAnswerRoute: typeof ApiFixitCardsIdAnswerRoute
   ApiSchoolsSchoolIdCredentialsStaffRoute: typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   ApiSchoolsSchoolIdCredentialsStudentsRoute: typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   ApiSchoolsSchoolIdTermsAcceptRoute: typeof ApiSchoolsSchoolIdTermsAcceptRoute
+  ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute: typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute: typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
 }
 
@@ -2272,6 +2443,13 @@ declare module '@tanstack/react-router' {
       path: '/rewards'
       fullPath: '/rewards'
       preLoaderRoute: typeof RewardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school': {
+      id: '/school'
+      path: '/school'
+      fullPath: '/school'
+      preLoaderRoute: typeof SchoolRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/settings': {
@@ -2477,6 +2655,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/school-me': {
+      id: '/api/school-me'
+      path: '/api/school-me'
+      fullPath: '/api/school-me'
+      preLoaderRoute: typeof ApiSchoolMeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/student-dashboard': {
       id: '/api/student-dashboard'
       path: '/api/student-dashboard'
@@ -2525,6 +2710,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/scan/$attemptId'
       preLoaderRoute: typeof ScanAttemptIdRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/school/': {
+      id: '/school/'
+      path: '/'
+      fullPath: '/school/'
+      preLoaderRoute: typeof SchoolIndexRouteImport
+      parentRoute: typeof SchoolRoute
+    }
+    '/school/$schoolId': {
+      id: '/school/$schoolId'
+      path: '/$schoolId'
+      fullPath: '/school/$schoolId'
+      preLoaderRoute: typeof SchoolSchoolIdRouteImport
+      parentRoute: typeof SchoolRoute
+    }
+    '/school/set-password': {
+      id: '/school/set-password'
+      path: '/set-password'
+      fullPath: '/school/set-password'
+      preLoaderRoute: typeof SchoolSetPasswordRouteImport
+      parentRoute: typeof SchoolRoute
+    }
+    '/school/sign-in': {
+      id: '/school/sign-in'
+      path: '/sign-in'
+      fullPath: '/school/sign-in'
+      preLoaderRoute: typeof SchoolSignInRouteImport
+      parentRoute: typeof SchoolRoute
     }
     '/summary/weekly': {
       id: '/summary/weekly'
@@ -2904,6 +3117,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EvaluationIdReportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/school/$schoolId/': {
+      id: '/school/$schoolId/'
+      path: '/'
+      fullPath: '/school/$schoolId/'
+      preLoaderRoute: typeof SchoolSchoolIdIndexRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
+    '/school/$schoolId/classes': {
+      id: '/school/$schoolId/classes'
+      path: '/classes'
+      fullPath: '/school/$schoolId/classes'
+      preLoaderRoute: typeof SchoolSchoolIdClassesRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
+    '/school/$schoolId/students': {
+      id: '/school/$schoolId/students'
+      path: '/students'
+      fullPath: '/school/$schoolId/students'
+      preLoaderRoute: typeof SchoolSchoolIdStudentsRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
+    '/school/$schoolId/teachers': {
+      id: '/school/$schoolId/teachers'
+      path: '/teachers'
+      fullPath: '/school/$schoolId/teachers'
+      preLoaderRoute: typeof SchoolSchoolIdTeachersRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
+    '/school/$schoolId/terms': {
+      id: '/school/$schoolId/terms'
+      path: '/terms'
+      fullPath: '/school/$schoolId/terms'
+      preLoaderRoute: typeof SchoolSchoolIdTermsRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
     '/api/admin/subjects/$id': {
       id: '/api/admin/subjects/$id'
       path: '/$id'
@@ -3084,6 +3332,20 @@ declare module '@tanstack/react-router' {
       path: '/api/schools/$schoolId/imports'
       fullPath: '/api/schools/$schoolId/imports'
       preLoaderRoute: typeof ApiSchoolsSchoolIdImportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/overview': {
+      id: '/api/schools/$schoolId/overview'
+      path: '/api/schools/$schoolId/overview'
+      fullPath: '/api/schools/$schoolId/overview'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdOverviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/setup': {
+      id: '/api/schools/$schoolId/setup'
+      path: '/api/schools/$schoolId/setup'
+      fullPath: '/api/schools/$schoolId/setup'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdSetupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/students/$id/login': {
@@ -3289,6 +3551,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdImportsRoute
     }
+    '/api/schools/$schoolId/sections/$sectionId/students': {
+      id: '/api/schools/$schoolId/sections/$sectionId/students'
+      path: '/api/schools/$schoolId/sections/$sectionId/students'
+      fullPath: '/api/schools/$schoolId/sections/$sectionId/students'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/schools/$schoolId/students/$schoolStudentId/reset-password': {
       id: '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
       path: '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
@@ -3337,6 +3606,43 @@ const AdminRouteChildren: AdminRouteChildren = {
 }
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
+interface SchoolSchoolIdRouteChildren {
+  SchoolSchoolIdClassesRoute: typeof SchoolSchoolIdClassesRoute
+  SchoolSchoolIdStudentsRoute: typeof SchoolSchoolIdStudentsRoute
+  SchoolSchoolIdTeachersRoute: typeof SchoolSchoolIdTeachersRoute
+  SchoolSchoolIdTermsRoute: typeof SchoolSchoolIdTermsRoute
+  SchoolSchoolIdIndexRoute: typeof SchoolSchoolIdIndexRoute
+}
+
+const SchoolSchoolIdRouteChildren: SchoolSchoolIdRouteChildren = {
+  SchoolSchoolIdClassesRoute: SchoolSchoolIdClassesRoute,
+  SchoolSchoolIdStudentsRoute: SchoolSchoolIdStudentsRoute,
+  SchoolSchoolIdTeachersRoute: SchoolSchoolIdTeachersRoute,
+  SchoolSchoolIdTermsRoute: SchoolSchoolIdTermsRoute,
+  SchoolSchoolIdIndexRoute: SchoolSchoolIdIndexRoute,
+}
+
+const SchoolSchoolIdRouteWithChildren = SchoolSchoolIdRoute._addFileChildren(
+  SchoolSchoolIdRouteChildren,
+)
+
+interface SchoolRouteChildren {
+  SchoolSchoolIdRoute: typeof SchoolSchoolIdRouteWithChildren
+  SchoolSetPasswordRoute: typeof SchoolSetPasswordRoute
+  SchoolSignInRoute: typeof SchoolSignInRoute
+  SchoolIndexRoute: typeof SchoolIndexRoute
+}
+
+const SchoolRouteChildren: SchoolRouteChildren = {
+  SchoolSchoolIdRoute: SchoolSchoolIdRouteWithChildren,
+  SchoolSetPasswordRoute: SchoolSetPasswordRoute,
+  SchoolSignInRoute: SchoolSignInRoute,
+  SchoolIndexRoute: SchoolIndexRoute,
+}
+
+const SchoolRouteWithChildren =
+  SchoolRoute._addFileChildren(SchoolRouteChildren)
 
 interface ApiAttemptsIdScanPagesPageIdRouteChildren {
   ApiAttemptsIdScanPagesPageIdExtractRoute: typeof ApiAttemptsIdScanPagesPageIdExtractRoute
@@ -3806,6 +4112,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProfileSetupRoute: ProfileSetupRoute,
   RemediationRoute: RemediationRoute,
   RewardsRoute: RewardsRoute,
+  SchoolRoute: SchoolRouteWithChildren,
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
   DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
@@ -3823,6 +4130,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiRemediationRoute: ApiRemediationRouteWithChildren,
   ApiSchoolLoginRoute: ApiSchoolLoginRouteWithChildren,
+  ApiSchoolMeRoute: ApiSchoolMeRoute,
   ApiStudentDashboardRoute: ApiStudentDashboardRoute,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   ApiStudyPlanRoute: ApiStudyPlanRouteWithChildren,
@@ -3864,6 +4172,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,
   ApiSchoolsSchoolIdImportsRoute: ApiSchoolsSchoolIdImportsRouteWithChildren,
+  ApiSchoolsSchoolIdOverviewRoute: ApiSchoolsSchoolIdOverviewRoute,
+  ApiSchoolsSchoolIdSetupRoute: ApiSchoolsSchoolIdSetupRoute,
   ApiSummaryWeeklyStudentIdRoute: ApiSummaryWeeklyStudentIdRoute,
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute:
     ApiAdaptiveConceptsConceptIdWrongQuestionsRoute,
@@ -3873,6 +4183,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdCredentialsStudentsRoute:
     ApiSchoolsSchoolIdCredentialsStudentsRoute,
   ApiSchoolsSchoolIdTermsAcceptRoute: ApiSchoolsSchoolIdTermsAcceptRoute,
+  ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute:
+    ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute,
   ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute:
     ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute,
 }

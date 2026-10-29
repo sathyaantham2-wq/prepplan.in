@@ -12,7 +12,14 @@ import { defineConfig } from '@playwright/test'
 if (existsSync('.env.test')) process.loadEnvFile('.env.test')
 else if (existsSync('.env')) process.loadEnvFile('.env')
 
-const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '::1', '0.0.0.0', 'postgres', 'db'])
+const LOCAL_HOSTS = new Set([
+  'localhost',
+  '127.0.0.1',
+  '::1',
+  '0.0.0.0',
+  'postgres',
+  'db',
+])
 const dbUrl = process.env.DATABASE_URL
 if (!dbUrl) {
   throw new Error(
@@ -61,6 +68,8 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,
     cwd: import.meta.dirname,
-    env: process.env as Record<string, string>,
+    // The dev server's floating developer-tools button covers the bottom menu of the phone-sized
+    // school screens, so the browser tests run without it (it does not exist in production).
+    env: { ...process.env, VITE_NO_DEVTOOLS: '1' },
   },
 })

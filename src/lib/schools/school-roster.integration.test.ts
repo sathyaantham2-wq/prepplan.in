@@ -726,7 +726,7 @@ describe('school roster, assignments and terms (S2)', () => {
         .orderBy('roll_no')
         .execute()
       expect(rows[0].admission_no).toBe('2024/0031')
-      expect(rows[1].admission_no).toMatch(/^P[2-9A-HJ-NP-Z]{7}$/)
+      expect(rows[1].admission_no).toMatch(/^P[2-9A-HJKMNP-Z]{7}$/)
       // the same admission number for a different child is refused, and a repeat of the same child is "unchanged"
       const again = await dryRunRosterImport(db, adminA, {
         kind: 'students',

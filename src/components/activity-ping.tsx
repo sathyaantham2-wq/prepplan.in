@@ -15,9 +15,11 @@ const IDLE_AFTER_MS = 60_000
 export function ActivityPing() {
   const { data: session } = useSession()
   const role = (session?.user as { role?: string } | undefined)?.role
+  // A school login is not part of PrepPlan's own usage figures (CLAUDE.md "School module rules").
+  const isSchool = (session?.user as { signup_type?: string } | undefined)?.signup_type === 'school'
 
   useEffect(() => {
-    if (role !== 'student') return
+    if (role !== 'student' || isSchool) return
 
     let lastInteraction = Date.now()
     let stopped = false
@@ -50,7 +52,7 @@ export function ActivityPing() {
       window.clearInterval(timer)
       for (const name of events) window.removeEventListener(name, touch)
     }
-  }, [role])
+  }, [role, isSchool])
 
   return null
 }

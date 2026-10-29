@@ -7,6 +7,7 @@ import {
   timingSafeEqual,
 } from 'node:crypto'
 import { hashPassword } from 'better-auth/crypto'
+import { UNAMBIGUOUS_ALPHABET } from './alphabet'
 import { ADMISSION_NO } from './roster-parse'
 import type { Db } from '../../db/connection'
 import {
@@ -39,7 +40,6 @@ import {
 export const CODE_TTL_DAYS = 7
 export const MIN_PASSWORD_LENGTH = 8
 export const MAX_PASSWORD_LENGTH = 128
-const CODE_ALPHABET = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ' // no 0/O/1/I
 export const BAD_CREDENTIALS =
   'That school code, ID, code or password is not right.'
 export const LOCKED_MESSAGE =
@@ -66,7 +66,7 @@ const sameHash = (a: string, b: string) =>
 export function newSlipCode(): string {
   let c = ''
   for (let i = 0; i < 10; i++)
-    c += CODE_ALPHABET[randomInt(CODE_ALPHABET.length)]
+    c += UNAMBIGUOUS_ALPHABET[randomInt(UNAMBIGUOUS_ALPHABET.length)]
   return `${c.slice(0, 5)}-${c.slice(5)}`
 }
 export const normaliseSlipCode = (input: string) =>
