@@ -7,7 +7,11 @@ import {
 import type { SchoolScope } from '../../db/school-scope'
 import type { ThinkingLevel } from '../school-paper'
 import { SchoolError, auditSchool } from './common'
-import { computeCoverage, shortfallLines } from './template-coverage'
+import {
+  computeCoverage,
+  rowFitsSlot,
+  shortfallLines,
+} from './template-coverage'
 import type {
   BankRow,
   CoverageChapter,
@@ -238,6 +242,11 @@ export async function listChapters(
   subjectId: string,
 ) {
   await assertSubjectAccess(db, scope, subjectId)
+  const chapters = await listChaptersRaw(db, subjectId)
+  return chapters
+}
+
+async function listChaptersRaw(db: Db, subjectId: string) {
   return (await bankRepository.chaptersForSubject(db, subjectId)).map((c) => ({
     id: c.id,
     book: c.sourceTitle,
@@ -251,6 +260,31 @@ export async function listChapters(
   }))
 }
 
+/** What the bank holds for a whole subject, with a plain warning when a kind of question is missing altogether. */
+export async function subjectDepthNote(
+  db: Db,
+  scope: SchoolScope,
+  subjectId: string,
+) {
+  await assertSubjectAccess(db, scope, subjectId)
+  const depth = await bankRepository.subjectDepth(db, subjectId)
+  return { ...depth, note: depthNote(depth) }
+}
+
+export function depthNote(depth: {
+  longAnswers: number
+  caseStudies: number
+}): string | null {
+  if (depth.longAnswers === 0 && depth.caseStudies === 0) {
+    return 'This subject has no long-answer (4 or 5 mark) questions and no case-based questions in the bank at all. Any section of a paper that asks for them, such as Sections D and E of the 80-mark layout, will be empty whichever chapters you choose. Papers made of 1 to 3 mark questions are not affected.'
+  }
+  if (depth.longAnswers === 0)
+    return 'This subject has no long-answer (4 or 5 mark) questions in the bank at all. A section that asks for them will be empty whichever chapters you choose.'
+  if (depth.caseStudies === 0)
+    return 'This subject has no case-based questions in the bank at all. A case-study section will be empty whichever chapters you choose.'
+  return null
+}
+
 const chapterLabel = (c: {
   part: string
   chapterNo: number
@@ -262,6 +296,8 @@ export interface CoveragePreview extends CoverageResult {
   layoutName: string
   durationMin: number
   teacherCopyLines: Array<string>
+  /** Rows that nothing in the whole subject can fill, whichever chapters are chosen. */
+  subjectNotes: Array<string>
   chapterLabels: Array<{ id: string; label: string }>
 }
 
@@ -315,16 +351,24 @@ export async function previewCoverage(
     db,
     input.chapterIds,
   )) as Array<BankRow>
-  const result = computeCoverage({
-    layout: toLayout(definition),
-    chapters,
-    bank,
-  })
+  const layout = toLayout(definition)
+  const result = computeCoverage({ layout, chapters, bank })
+  const wholeSubject = (await bankRepository.bankRows(
+    db,
+    all.map((c) => c.id),
+  )) as Array<BankRow>
+  const subjectNotes = layout.sections
+    .filter((slot) => !wholeSubject.some((r) => rowFitsSlot(r, slot)))
+    .map(
+      (slot) =>
+        `${slot.name} — ${slot.slot}: the bank has nothing that fits this row anywhere in this subject, so it will be empty whichever chapters you choose.`,
+    )
   return {
     ...result,
     layoutName: definition.name,
     durationMin: definition.durationMin,
     teacherCopyLines: shortfallLines(result),
+    subjectNotes,
     chapterLabels: chapters.map((c) => ({ id: c.id, label: c.label })),
   }
 }

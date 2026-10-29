@@ -102,3 +102,36 @@ export function printCodeSlip(lines: Array<[string, string]>, title: string) {
   w.focus()
   w.print()
 }
+
+/**
+ * Opens a PDF the signed-in person asked for in a new tab. The tab is opened first (a browser only
+ * allows that from a tap) and pointed at the file once it has arrived.
+ */
+export async function openPdf(path: string, body?: unknown): Promise<void> {
+  const tab = window.open('', '_blank')
+  try {
+    const res = await fetch(path, {
+      method: body === undefined ? 'GET' : 'POST',
+      headers:
+        body === undefined ? undefined : { 'content-type': 'application/json' },
+      body: body === undefined ? undefined : JSON.stringify(body),
+      credentials: 'same-origin',
+    })
+    if (!res.ok) {
+      let message = 'We could not make that file. Please try again.'
+      try {
+        const j = (await res.json()) as { message?: string }
+        if (j.message) message = j.message
+      } catch {
+        // keep the default
+      }
+      throw new ApiError(res.status, message)
+    }
+    const url = URL.createObjectURL(await res.blob())
+    if (tab) tab.location.href = url
+    else window.location.href = url
+  } catch (e) {
+    tab?.close()
+    throw e
+  }
+}

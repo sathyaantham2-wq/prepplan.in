@@ -715,6 +715,176 @@ describe('school paper layouts and coverage preview (S4)', () => {
       expect(twoMark.unfilled).toBe(0) // Part I chapter 3 has plenty
     })
 
+    it('says plainly when the subject has no long-answer or case-based questions at all, and which rows will be empty', async () => {
+      // Test Maths has case studies but no long answers: the warning names only the long answers.
+      const withBoth = (await (
+        await call(
+          BankRoute,
+          'GET',
+          adminS.cookie,
+          { schoolId: schoolA },
+          undefined,
+          `?subject_id=${subjectId}`,
+        )
+      ).json()) as {
+        depth: { longAnswers: number; caseStudies: number; note: string | null }
+      }
+      expect(withBoth.depth.caseStudies).toBe(3)
+      expect(withBoth.depth.longAnswers).toBe(0)
+      expect(withBoth.depth.note).toMatch(
+        /^This subject has no long-answer \(4 or 5 mark\) questions in the bank at all\./,
+      )
+      expect(withBoth.depth.note).not.toMatch(/case/)
+      const cls = (
+        await db
+          .selectFrom('school_classes')
+          .select('id')
+          .where('school_id', '=', schoolA)
+          .executeTakeFirstOrThrow()
+      ).id
+      const thinSubject = (
+        await db
+          .insertInto('subjects')
+          .values({
+            board: 'CBSE',
+            class: 7,
+            code: `ZT-${tag}`,
+            name: 'Short Only',
+            language: 'en',
+            is_active: true,
+          })
+          .returning('id')
+          .executeTakeFirstOrThrow()
+      ).id
+      try {
+        const src = (
+          await db
+            .insertInto('sources')
+            .values({
+              subject_id: thinSubject,
+              title: 'Thin Book',
+              publisher: 'X',
+            })
+            .returning('id')
+            .executeTakeFirstOrThrow()
+        ).id
+        const ch = await db
+          .insertInto('chapters')
+          .values({
+            source_id: src,
+            subject_id: thinSubject,
+            part: 'I',
+            chapter_no: 1,
+            name: 'Only short',
+            order_index: 1,
+          })
+          .returning('id')
+          .executeTakeFirstOrThrow()
+        const con = await db
+          .insertInto('concepts')
+          .values({
+            chapter_id: ch.id,
+            board: 'CBSE',
+            class: 7,
+            code: `ZT-${tag}-thin`,
+            name: 'thin',
+            difficulty_base: 'Easy',
+          })
+          .returning('id')
+          .executeTakeFirstOrThrow()
+        await addQuestions(con.id, 20, {
+          type: 'mcq',
+          marks: 1,
+          bloom: 'Understand',
+        })
+        await addQuestions(con.id, 10, {
+          type: 'short_answer',
+          marks: 2,
+          bloom: 'Understand',
+        })
+        await addSchoolSubject(db, admin, cls, thinSubject)
+        const res = (await (
+          await call(
+            BankRoute,
+            'GET',
+            adminS.cookie,
+            { schoolId: schoolA },
+            undefined,
+            `?subject_id=${thinSubject}`,
+          )
+        ).json()) as {
+          depth: {
+            longAnswers: number
+            caseStudies: number
+            note: string | null
+          }
+        }
+        expect(res.depth).toMatchObject({ longAnswers: 0, caseStudies: 0 })
+        expect(res.depth.note).toMatch(
+          /no long-answer \(4 or 5 mark\) questions and no case-based questions in the bank at all/,
+        )
+        const cbse = (await listTemplates(db, admin)).templates.find(
+          (t) => t.basedOn === 'cbse_80',
+        )!
+        const r = await previewCoverage(db, admin, {
+          subjectId: thinSubject,
+          chapterIds: [ch.id],
+          templateKey: cbse.key,
+        })
+        expect(r.subjectNotes.join(' | ')).toMatch(
+          /5-mark long answer: the bank has nothing that fits this row anywhere in this subject/,
+        )
+        expect(r.subjectNotes.join(' | ')).toMatch(
+          /4-mark case study: the bank has nothing/,
+        )
+        // the same subject on the Unit Test (no case study, 4-mark written needs...) still names what is missing
+        const unit = (await listTemplates(db, admin)).templates.find(
+          (t) => t.basedOn === 'unit_test_40',
+        )!
+        const u = await previewCoverage(db, admin, {
+          subjectId: thinSubject,
+          chapterIds: [ch.id],
+          templateKey: unit.key,
+        })
+        expect(u.subjectNotes.join(' | ')).toMatch(/4-mark long answer/)
+        expect(u.subjectNotes.join(' | ')).not.toMatch(/case study/)
+      } finally {
+        await db
+          .deleteFrom('school_subjects')
+          .where('school_id', '=', schoolA)
+          .where('subject_id', '=', thinSubject)
+          .execute()
+        await db
+          .deleteFrom('questions')
+          .where('text', 'like', `Q ${tag}%`)
+          .where(
+            'concept_id',
+            'in',
+            (
+              await db
+                .selectFrom('concepts')
+                .select('id')
+                .where('code', '=', `ZT-${tag}-thin`)
+                .execute()
+            ).map((c) => c.id),
+          )
+          .execute()
+        await db
+          .deleteFrom('concepts')
+          .where('code', '=', `ZT-${tag}-thin`)
+          .execute()
+        await db
+          .deleteFrom('chapters')
+          .where('subject_id', '=', thinSubject)
+          .execute()
+        await db
+          .deleteFrom('sources')
+          .where('subject_id', '=', thinSubject)
+          .execute()
+        await db.deleteFrom('subjects').where('id', '=', thinSubject).execute()
+      }
+    })
+
     it('refuses nonsense: no chapters, repeated chapters, a chapter of another subject, a layout of another school', async () => {
       await refuses(
         previewCoverage(db, admin, {

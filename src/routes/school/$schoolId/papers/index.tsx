@@ -109,6 +109,11 @@ function Papers() {
               <b className="text-lg">{t.name}</b>
               <Chip tone="good">{t.totalMarks} marks</Chip>
               <Chip>{t.durationMin} minutes</Chip>
+              {t.basedOn && t.version === 1 ? (
+                <Chip tone="wait">
+                  Starting template: edit to match your school’s pattern
+                </Chip>
+              ) : null}
             </div>
             <ul className="space-y-1 text-base text-slate-700">
               {t.sections.map((s, i) => (
@@ -174,6 +179,9 @@ function Papers() {
           {data.defaults.map((d) => (
             <Card key={d.key} className="space-y-2">
               <b className="text-lg">{d.name}</b>
+              <Chip tone="wait">
+                Starting template: edit to match your school’s pattern
+              </Chip>
               <p className="text-base text-slate-700">{d.blurb}</p>
               <Btn kind="plain" className="w-full" onClick={() => use(d.key)}>
                 Use this layout

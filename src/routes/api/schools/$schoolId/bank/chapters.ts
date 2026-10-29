@@ -3,7 +3,10 @@ import { getSharedDb } from '../../../../../db/connection'
 import { wrapRouteHandlers } from '../../../../../lib/error-log'
 import { requireSchoolRole } from '../../../../../lib/school-session'
 import { SchoolError } from '../../../../../lib/schools/common'
-import { listChapters } from '../../../../../lib/schools/template-service'
+import {
+  listChapters,
+  subjectDepthNote,
+} from '../../../../../lib/schools/template-service'
 
 // Chapters of one subject, each named by book, part and chapter number, with how many concepts and
 // approved questions the bank holds for it. ?subject_id=
@@ -27,7 +30,10 @@ export const Route = createFileRoute('/api/schools/$schoolId/bank/chapters')({
           )
         try {
           return Response.json(
-            { chapters: await listChapters(getSharedDb(), scope, subjectId) },
+            {
+              chapters: await listChapters(getSharedDb(), scope, subjectId),
+              depth: await subjectDepthNote(getSharedDb(), scope, subjectId),
+            },
             { headers: { 'cache-control': 'no-store' } },
           )
         } catch (e) {

@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolCredentialKind, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, SchoolTemplateStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolCredentialKind, SchoolExamStatus, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, SchoolTemplateStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -624,6 +624,34 @@ export interface ScanPages {
   uploaded_by_user_id: string;
 }
 
+export interface SchoolBookletLayouts {
+  created_at: Generated<Timestamp>;
+  exam_id: string;
+  id: Generated<string>;
+  manifest: Json;
+  page_count: number;
+  school_id: string;
+  version: Generated<number>;
+}
+
+export interface SchoolBookletPages {
+  booklet_id: string;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  page_no: number;
+  school_id: string;
+  token: string;
+}
+
+export interface SchoolBooklets {
+  created_at: Generated<Timestamp>;
+  exam_id: string;
+  id: Generated<string>;
+  page_count: number;
+  school_id: string;
+  school_student_id: string;
+}
+
 export interface SchoolClasses {
   academic_year: string;
   created_at: Generated<Timestamp>;
@@ -643,6 +671,48 @@ export interface SchoolCredentialCodes {
   revoked_at: Timestamp | null;
   school_id: string;
   used_at: Timestamp | null;
+}
+
+export interface SchoolExamQuestions {
+  chapter_id: string;
+  choice_group: string | null;
+  exam_id: string;
+  expected_words: number | null;
+  id: Generated<string>;
+  is_alternate: Generated<boolean>;
+  marks: number;
+  position: number;
+  question_id: string;
+  school_id: string;
+  section: string;
+  slot: string;
+}
+
+export interface SchoolExams {
+  chapter_ids: string[];
+  class_id: string;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  exam_date: Timestamp | null;
+  id: Generated<string>;
+  layout: Json;
+  nominal_marks: number;
+  printed_marks: number;
+  school_id: string;
+  shortfalls: Generated<Json>;
+  status: SchoolExamStatus;
+  subject_id: string;
+  teacher_copy_lines: Generated<Json>;
+  template_id: string;
+  template_name: string;
+  title: string;
+}
+
+export interface SchoolExamSections {
+  exam_id: string;
+  id: Generated<string>;
+  school_id: string;
+  section_id: string;
 }
 
 export interface SchoolImportBatches {
@@ -985,8 +1055,14 @@ export interface DB {
   remediation_tasks: RemediationTasks;
   scan_detections: ScanDetections;
   scan_pages: ScanPages;
+  school_booklet_layouts: SchoolBookletLayouts;
+  school_booklet_pages: SchoolBookletPages;
+  school_booklets: SchoolBooklets;
   school_classes: SchoolClasses;
   school_credential_codes: SchoolCredentialCodes;
+  school_exam_questions: SchoolExamQuestions;
+  school_exam_sections: SchoolExamSections;
+  school_exams: SchoolExams;
   school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
   school_paper_templates: SchoolPaperTemplates;

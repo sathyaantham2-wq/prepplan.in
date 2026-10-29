@@ -22,6 +22,7 @@ interface NavItem {
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/students'
     | '/school/$schoolId/papers'
+    | '/school/$schoolId/exams'
   label: string
 }
 
@@ -34,6 +35,7 @@ function navFor(role: SchoolOverview['role']): Array<NavItem> {
       { to: '/school/$schoolId/teachers', label: 'Teachers' },
       { to: '/school/$schoolId/students', label: 'Students' },
       { to: '/school/$schoolId/papers', label: 'Papers' },
+      { to: '/school/$schoolId/exams', label: 'Exams' },
     ]
   }
   if (role === 'teacher' || role === 'principal')
@@ -41,6 +43,7 @@ function navFor(role: SchoolOverview['role']): Array<NavItem> {
       home,
       { to: '/school/$schoolId/students', label: 'Students' },
       { to: '/school/$schoolId/papers', label: 'Papers' },
+      { to: '/school/$schoolId/exams', label: 'Exams' },
     ]
   return [home]
 }
@@ -139,7 +142,7 @@ function SchoolLayout() {
               to={i.to}
               params={{ schoolId }}
               activeOptions={{ exact: i.to === '/school/$schoolId' }}
-              className="flex min-h-14 items-center justify-center text-base font-semibold text-slate-700"
+              className={`flex min-h-14 items-center justify-center font-semibold text-slate-700 ${items.length > 5 ? 'text-sm' : 'text-base'}`}
               activeProps={{ className: 'bg-emerald-100 text-emerald-900' }}
             >
               {i.label}

@@ -88,6 +88,26 @@ export const bankRepository = {
     }))
   },
 
+  /** Subject-wide: how many approved long-answer (written, 4+ marks, not a case study) and case-based questions exist at all. */
+  async subjectDepth(
+    db: Db,
+    subjectId: string,
+  ): Promise<{ longAnswers: number; caseStudies: number }> {
+    const res = await sql<{ long_answers: number; case_studies: number }>`
+      select
+        count(*) filter (where q.type in ('short_answer', 'long_answer') and q.marks >= 4 and not (q.tags @> array['case_study']))::int as long_answers,
+        count(*) filter (where q.tags @> array['case_study'])::int as case_studies
+      from questions q
+      join concepts c on c.id = q.concept_id
+      join chapters ch on ch.id = c.chapter_id
+      where q.status = 'approved' and ch.subject_id = ${subjectId}
+    `.execute(db)
+    return {
+      longAnswers: res.rows[0]?.long_answers ?? 0,
+      caseStudies: res.rows[0]?.case_studies ?? 0,
+    }
+  },
+
   /** Approved questions of the given chapters, counted by what decides which slot they fit. */
   async bankRows(db: Db, chapterIds: ReadonlyArray<string>) {
     if (chapterIds.length === 0) return []

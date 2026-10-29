@@ -139,7 +139,7 @@ test.describe.serial('school screens on a phone', () => {
       tags: Array<string> = [],
     ) => {
       for (let i = 0; i < n; i++) {
-        await db
+        const q = await db
           .insertInto('questions')
           .values({
             concept_id: concept,
@@ -157,7 +157,23 @@ test.describe.serial('school screens on a phone', () => {
             created_by: 'e2e',
             tags,
           })
-          .execute()
+          .returning('id')
+          .executeTakeFirstOrThrow()
+        // a multiple-choice question is only complete with its four options
+        if (type === 'mcq' || type === 'assertion_reason') {
+          for (const [i2, label] of ['A', 'B', 'C', 'D'].entries()) {
+            await db
+              .insertInto('question_options')
+              .values({
+                question_id: q.id,
+                label,
+                text: `Option ${label}`,
+                is_correct: i2 === 0,
+                order_index: i2 + 1,
+              })
+              .execute()
+          }
+        }
       }
     }
     const [a1, a2, a3] = await chapter('I', 3, 'Fractions and Decimals', 3)
@@ -240,6 +256,27 @@ test.describe.serial('school screens on a phone', () => {
       .execute()
     await db.deleteFrom('audit_log').where('school_id', 'in', ids).execute()
     await db
+      .deleteFrom('school_booklet_pages')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_booklets')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_booklet_layouts')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_exam_questions')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_exam_sections')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db.deleteFrom('school_exams').where('school_id', 'in', ids).execute()
+    await db
       .deleteFrom('school_student_guardians')
       .where('school_id', 'in', ids)
       .execute()
@@ -296,6 +333,21 @@ test.describe.serial('school screens on a phone', () => {
         ...sh.map((h) => h.household_id),
       ])
       .execute()
+    const e2eQs = await db
+      .selectFrom('questions')
+      .select('id')
+      .where('created_by', '=', 'e2e')
+      .where('text', 'like', `E2E ${tag}%`)
+      .execute()
+    if (e2eQs.length)
+      await db
+        .deleteFrom('question_options')
+        .where(
+          'question_id',
+          'in',
+          e2eQs.map((q) => q.id),
+        )
+        .execute()
     await db
       .deleteFrom('questions')
       .where('created_by', '=', 'e2e')
@@ -753,6 +805,117 @@ test.describe.serial('school screens on a phone', () => {
     await page.getByText('What will be printed on your copy').click()
     await shot(page, '35-coverage-preview')
     await looksRight(page)
+  })
+
+  let examId = ''
+  test('exams: one paper for the class, its gaps shown, and the question paper, teacher copy and booklets open as PDFs', async () => {
+    const page = adminPage
+    await page.getByRole('link', { name: 'Exams' }).last().click()
+    await expect(page.getByRole('heading', { name: 'Exams' })).toBeVisible()
+    await shot(page, '40-exams-empty')
+    await looksRight(page)
+    await page.getByRole('button', { name: 'Make an exam paper' }).click()
+    await expect(
+      page.getByRole('heading', { name: 'Make an exam paper' }),
+    ).toBeVisible()
+    await page.getByLabel('Name of the exam').fill('Half-yearly Maths')
+    await page
+      .getByLabel('Paper layout')
+      .selectOption({ label: 'CBSE-style paper, 80 marks' })
+    await expect(page.getByLabel(/Section A/)).toBeChecked()
+    await page.getByLabel(/Chapter 3 · Fractions and Decimals/).check()
+    await page.getByLabel(/Chapter 3 · Data Handling/).check()
+    await page.getByLabel(/Chapter 4 · Simple Equations/).check()
+    await shot(page, '41-exam-make')
+    await looksRight(page)
+    await page.getByRole('button', { name: 'Make the paper' }).click()
+    await page.waitForURL(/\/exams\/[0-9a-f-]{36}$/)
+    examId = page.url().split('/').pop()!
+    await expect(
+      page.getByRole('heading', { name: 'Half-yearly Maths' }),
+    ).toBeVisible()
+    // the bank cannot fill every row: the gaps are shown, never hidden
+    await expect(page.getByTestId('exam-gaps')).toContainText(
+      '4-mark case study',
+    )
+    await expect(
+      page.getByText('Students cannot open any of these files'),
+    ).toBeVisible()
+    await shot(page, '42-exam-detail-gaps')
+    await looksRight(page)
+
+    // the three documents, as the signed-in office would fetch them
+    const base = `/api/schools/${schoolId}/exams/${examId}`
+    for (const [name, path] of [
+      ['question paper', '/question-paper'],
+      ['teacher copy', '/teacher-copy'],
+    ] as const) {
+      const res = await page.request.get(base + path)
+      expect(res.status(), name).toBe(200)
+      expect(res.headers()['content-type']).toBe('application/pdf')
+      expect(res.headers()['cache-control']).toBe('private, no-store')
+      expect((await res.body()).subarray(0, 4).toString()).toBe('%PDF')
+    }
+    const sectionA = await db
+      .selectFrom('school_sections')
+      .select('id')
+      .where('school_id', '=', schoolId)
+      .where('name', '=', 'A')
+      .executeTakeFirstOrThrow()
+    const booklets = await page.request.post(`${base}/booklets`, {
+      data: { section_id: sectionA.id },
+    })
+    expect(booklets.status()).toBe(200)
+    expect(booklets.headers()['x-booklet-students']).toBe('2')
+    expect((await booklets.body()).subarray(0, 4).toString()).toBe('%PDF')
+
+    // and the buttons open them in a new tab
+    const popup = page.waitForEvent('popup')
+    await page
+      .getByRole('button', { name: 'Open the question paper (PDF)' })
+      .click()
+    await popup
+    await expect(page.getByText(/Opened in a new tab/)).toBeVisible()
+  })
+
+  test('a signed-in student is refused every exam file (question paper, teacher copy, booklets, lists)', async ({
+    browser,
+  }) => {
+    const ctx = await browser.newContext({ viewport: PHONE })
+    const page = await ctx.newPage()
+    const login = await page.request.post('/api/school-login', {
+      data: {
+        school_code: schoolCode,
+        login_id: studentId,
+        password: PASSWORD,
+      },
+    })
+    expect(login.status()).toBe(200)
+    const base = `/api/schools/${schoolId}/exams`
+    for (const path of [
+      base,
+      `${base}/${examId}`,
+      `${base}/${examId}/question-paper`,
+      `${base}/${examId}/teacher-copy`,
+    ]) {
+      expect((await page.request.get(path)).status(), path).toBe(403)
+    }
+    expect(
+      (
+        await page.request.post(`${base}/${examId}/booklets`, { data: {} })
+      ).status(),
+    ).toBe(403)
+    expect(
+      (
+        await page.request.post(base, {
+          data: { title: 'x', subject_id: subjectId, template_key: 'x' },
+        })
+      ).status(),
+    ).toBe(403)
+    // the school pages she can open do not list exams at all
+    await open(page, `/school/${schoolId}`)
+    await expect(page.getByRole('link', { name: 'Exams' })).toHaveCount(0)
+    await ctx.close()
   })
 
   test('on a wider screen the same pages show a top menu instead of the bottom bar', async ({

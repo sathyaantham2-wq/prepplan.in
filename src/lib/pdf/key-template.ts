@@ -25,6 +25,11 @@ export interface KeyTemplateInput {
   questions: Array<KeyTemplateQuestion>
   coverage: Array<CoverageRow>
   theme?: PaperTheme
+  /**
+   * School teacher's copy: a banner on every page, the exam's details, and every gap in the paper
+   * (never hidden). Replaces the parent-facing warning and the concept table.
+   */
+  teacherCopy?: { details: Array<string>; gaps: Array<string> }
 }
 
 function renderExpectedAnswer(q: KeyTemplateQuestion): string {
@@ -54,6 +59,17 @@ function renderStepMarks(
           .join('')}
       </tbody>
     </table>`
+}
+
+function renderTeacherCopyHead(t: {
+  details: Array<string>
+  gaps: Array<string>
+}): string {
+  const gaps =
+    t.gaps.length === 0
+      ? '<div class="tc-ok"><strong>Gaps in this paper:</strong> none. Every row was filled from the question bank.</div>'
+      : `<div class="tc-gaps"><h2>Gaps in this paper (${t.gaps.length})</h2><ul>${t.gaps.map((g) => `<li>${escapeHtml(g)}</li>`).join('')}</ul></div>`
+  return `<div class="tc-details">${t.details.map((d) => escapeHtml(d)).join('<br>')}</div>${gaps}`
 }
 
 function renderKeyItemBody(q: KeyTemplateQuestion): string {
@@ -148,6 +164,13 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
   body { font-family: ${withTelugu("Georgia, 'Times New Roman', serif")}; font-size: 11pt; color: #111; margin: 0; }
   h1 { font-size: 15pt; margin: 0 0 4px; }
   .warning { font-size: 9pt; color: #a00; margin-bottom: 12px; }
+  .tc-banner { position: fixed; top: 0; left: 0; right: 0; text-align: center; font-size: 8pt; font-weight: bold; letter-spacing: 1px; color: #fff; background: #a00; padding: 1.2mm 0; }
+  body.tc { padding-top: 7mm; }
+  .tc-details { font-size: 10pt; margin: 4px 0 10px; line-height: 1.5; }
+  .tc-gaps { border: 2px solid #a00; background: #fff4f4; padding: 6px 10px; margin: 8px 0 14px; font-size: 10pt; }
+  .tc-gaps h2 { font-size: 11.5pt; margin: 0 0 4px; color: #a00; }
+  .tc-gaps ul { margin: 4px 0 0; padding-left: 18px; }
+  .tc-ok { border: 1px solid #2a7; background: #f3fbf7; padding: 5px 10px; margin: 8px 0 14px; font-size: 10pt; }
   .item { page-break-inside: avoid; margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
   .item .item-head { font-weight: bold; }
   .item .marks { color: #444; font-weight: normal; }
@@ -173,12 +196,17 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
   ${THEME_STYLES[input.theme ?? DEFAULT_THEME]}
 </style>
 </head>
-<body>
+${input.teacherCopy ? '<body class="tc">' : '<body>'}
+  ${input.teacherCopy ? '<div class="tc-banner">TEACHER COPY — NOT FOR STUDENTS</div>' : ''}
   <h1>${escapeHtml(input.title)} — Answer Key &amp; Marking Scheme</h1>
-  <div class="warning">For teacher/parent use only. Never distribute this file to the student before the paper is attempted.</div>
+  ${input.teacherCopy ? renderTeacherCopyHead(input.teacherCopy) : '<div class="warning">For teacher/parent use only. Never distribute this file to the student before the paper is attempted.</div>'}
   ${renderKeyItems(sorted)}
-  <h2 class="coverage-title">Concept Coverage &amp; Bloom Table</h2>
-  ${renderCoverageTable(input.coverage)}
+  ${
+    input.teacherCopy
+      ? ''
+      : `<h2 class="coverage-title">Concept Coverage &amp; Bloom Table</h2>
+  ${renderCoverageTable(input.coverage)}`
+  }
 </body>
 </html>`
 }

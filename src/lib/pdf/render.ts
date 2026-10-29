@@ -55,7 +55,23 @@ export const PDF_PAGE_OPTIONS = {
   margin: { top: '14mm', bottom: '14mm', left: '12mm', right: '12mm' },
 } as const
 
-export async function renderHtmlToPdf(html: string): Promise<Buffer> {
+/**
+ * Pages whose layout is fixed in millimetres on the whole sheet (the school answer booklets): no
+ * page margin at all and the page size taken from the document's own @page rule, so what is printed
+ * sits exactly where the scan reader expects it. Everything on such a page stays at least 7 mm from
+ * the edge, which any school printer can reach.
+ */
+export const PDF_FULL_PAGE_OPTIONS = {
+  format: 'A4',
+  printBackground: true,
+  margin: { top: '0', bottom: '0', left: '0', right: '0' },
+  preferCSSPageSize: true,
+} as const
+
+export async function renderHtmlToPdf(
+  html: string,
+  options: { fullPage?: boolean } = {},
+): Promise<Buffer> {
   const browser = await getBrowser()
   const page = await browser.newPage()
   try {
@@ -67,7 +83,9 @@ export async function renderHtmlToPdf(html: string): Promise<Buffer> {
     await page.evaluate(async () => {
       await document.fonts.ready
     })
-    const pdf = await page.pdf(PDF_PAGE_OPTIONS)
+    const pdf = await page.pdf(
+      options.fullPage ? PDF_FULL_PAGE_OPTIONS : PDF_PAGE_OPTIONS,
+    )
     return pdf
   } finally {
     await page.close()

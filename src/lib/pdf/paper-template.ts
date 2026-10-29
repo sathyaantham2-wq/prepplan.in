@@ -108,7 +108,9 @@ function renderQuestionBody(q: PaperTemplateQuestion): string {
   // (or one whose diagram_params fail that kind's schema) falls back to exactly F035's original
   // behaviour -- a bare draw-here box -- rather than a broken or missing figure.
   const diagramSvg = renderDiagramSvg(q.diagram_kind, q.diagram_params)
-  const diagramHtml = diagramSvg ? `<div class="diagram">${diagramSvg}</div>` : ''
+  const diagramHtml = diagramSvg
+    ? `<div class="diagram">${diagramSvg}</div>`
+    : ''
   const drawBoxHtml = q.diagram_kind ? '<div class="draw-box"></div>' : ''
 
   return `
@@ -189,7 +191,9 @@ function renderHalfYearlySection(
     const key = q.slot ?? ''
     bySlot.set(key, [...(bySlot.get(key) ?? []), q])
   }
-  const slots = [...new Set([...slotOrder, ...bySlot.keys(), ...notesBySlot.keys()])]
+  const slots = [
+    ...new Set([...slotOrder, ...bySlot.keys(), ...notesBySlot.keys()]),
+  ]
   return slots
     .map((slot) => {
       const qs = bySlot.get(slot) ?? []
@@ -239,10 +243,19 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
       }))
     : groupBySection(input.questions)
   const printedMarks = input.questions
-    .filter((q, i, all) => q.choice_group === null || all.findIndex((x) => x.choice_group === q.choice_group) === i)
+    .filter(
+      (q, i, all) =>
+        q.choice_group === null ||
+        all.findIndex((x) => x.choice_group === q.choice_group) === i,
+    )
     .reduce((n, q) => n + q.marks, 0)
   const hours = input.durationMin / 60
-  const timeLabel = hy ? `${Number.isInteger(hours) ? hours : hours.toFixed(1)} hours` : `${input.durationMin} min`
+  // A paper of two hours or more reads in hours ("3 hours"); a shorter test in minutes ("45 minutes").
+  const timeLabel = hy
+    ? input.durationMin >= 120
+      ? `${Number.isInteger(hours) ? hours : hours.toFixed(1)} hours`
+      : `${input.durationMin} minutes`
+    : `${input.durationMin} min`
   const sectionNotes = (section: string) => {
     const bySlot = new Map<string, Array<string>>()
     for (const f of input.shortfalls) {

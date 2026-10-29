@@ -154,6 +154,7 @@ import { Route as ApiPapersIdWorkflowRouteImport } from './routes/api/papers/$id
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
+import { Route as ApiSchoolsSchoolIdExamsRouteImport } from './routes/api/schools/$schoolId/exams'
 import { Route as ApiSchoolsSchoolIdImportsRouteImport } from './routes/api/schools/$schoolId/imports'
 import { Route as ApiSchoolsSchoolIdOverviewRouteImport } from './routes/api/schools/$schoolId/overview'
 import { Route as ApiSchoolsSchoolIdSetupRouteImport } from './routes/api/schools/$schoolId/setup'
@@ -167,6 +168,9 @@ import { Route as ApiStudentsMeRewardsRouteImport } from './routes/api/students/
 import { Route as ApiStudentsMeWeeklyCardRouteImport } from './routes/api/students/me/weekly-card'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
+import { Route as SchoolSchoolIdExamsIndexRouteImport } from './routes/school/$schoolId/exams/index'
+import { Route as SchoolSchoolIdExamsExamIdRouteImport } from './routes/school/$schoolId/exams/$examId'
+import { Route as SchoolSchoolIdExamsNewRouteImport } from './routes/school/$schoolId/exams/new'
 import { Route as SchoolSchoolIdPapersIndexRouteImport } from './routes/school/$schoolId/papers/index'
 import { Route as SchoolSchoolIdPapersCheckRouteImport } from './routes/school/$schoolId/papers/check'
 import { Route as SchoolSchoolIdPapersEditRouteImport } from './routes/school/$schoolId/papers/edit'
@@ -180,6 +184,7 @@ import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/
 import { Route as ApiSchoolsSchoolIdBankChaptersRouteImport } from './routes/api/schools/$schoolId/bank/chapters'
 import { Route as ApiSchoolsSchoolIdCredentialsStaffRouteImport } from './routes/api/schools/$schoolId/credentials/staff'
 import { Route as ApiSchoolsSchoolIdCredentialsStudentsRouteImport } from './routes/api/schools/$schoolId/credentials/students'
+import { Route as ApiSchoolsSchoolIdExamsExamIdRouteImport } from './routes/api/schools/$schoolId/exams/$examId'
 import { Route as ApiSchoolsSchoolIdTemplatesPreviewRouteImport } from './routes/api/schools/$schoolId/templates/preview'
 import { Route as ApiSchoolsSchoolIdTermsAcceptRouteImport } from './routes/api/schools/$schoolId/terms/accept'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
@@ -191,6 +196,9 @@ import { Route as ApiAttemptsIdItemsItemIdDisputeRouteImport } from './routes/ap
 import { Route as ApiAttemptsIdItemsItemIdRemoveRouteImport } from './routes/api/attempts/$id/items/$itemId/remove'
 import { Route as ApiAttemptsIdScanDetectionsDetectionIdRouteImport } from './routes/api/attempts/$id/scan/detections/$detectionId'
 import { Route as ApiAttemptsIdScanPagesPageIdRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId'
+import { Route as ApiSchoolsSchoolIdExamsExamIdBookletsRouteImport } from './routes/api/schools/$schoolId/exams/$examId/booklets'
+import { Route as ApiSchoolsSchoolIdExamsExamIdQuestionPaperRouteImport } from './routes/api/schools/$schoolId/exams/$examId/question-paper'
+import { Route as ApiSchoolsSchoolIdExamsExamIdTeacherCopyRouteImport } from './routes/api/schools/$schoolId/exams/$examId/teacher-copy'
 import { Route as ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport } from './routes/api/schools/$schoolId/imports/$batchId/commit'
 import { Route as ApiSchoolsSchoolIdSectionsSectionIdStudentsRouteImport } from './routes/api/schools/$schoolId/sections/$sectionId/students'
 import { Route as ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRouteImport } from './routes/api/schools/$schoolId/students/$schoolStudentId/reset-password'
@@ -934,6 +942,11 @@ const ApiRemediationIdAttemptRoute = ApiRemediationIdAttemptRouteImport.update({
   path: '/attempt',
   getParentRoute: () => ApiRemediationIdRoute,
 } as any)
+const ApiSchoolsSchoolIdExamsRoute = ApiSchoolsSchoolIdExamsRouteImport.update({
+  id: '/api/schools/$schoolId/exams',
+  path: '/api/schools/$schoolId/exams',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSchoolsSchoolIdImportsRoute =
   ApiSchoolsSchoolIdImportsRouteImport.update({
     id: '/api/schools/$schoolId/imports',
@@ -1003,6 +1016,23 @@ const ApiSyllabusConceptsIdRoute = ApiSyllabusConceptsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ApiSyllabusConceptsRoute,
+} as any)
+const SchoolSchoolIdExamsIndexRoute =
+  SchoolSchoolIdExamsIndexRouteImport.update({
+    id: '/exams/',
+    path: '/exams/',
+    getParentRoute: () => SchoolSchoolIdRoute,
+  } as any)
+const SchoolSchoolIdExamsExamIdRoute =
+  SchoolSchoolIdExamsExamIdRouteImport.update({
+    id: '/exams/$examId',
+    path: '/exams/$examId',
+    getParentRoute: () => SchoolSchoolIdRoute,
+  } as any)
+const SchoolSchoolIdExamsNewRoute = SchoolSchoolIdExamsNewRouteImport.update({
+  id: '/exams/new',
+  path: '/exams/new',
+  getParentRoute: () => SchoolSchoolIdRoute,
 } as any)
 const SchoolSchoolIdPapersIndexRoute =
   SchoolSchoolIdPapersIndexRouteImport.update({
@@ -1079,6 +1109,12 @@ const ApiSchoolsSchoolIdCredentialsStudentsRoute =
     path: '/api/schools/$schoolId/credentials/students',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiSchoolsSchoolIdExamsExamIdRoute =
+  ApiSchoolsSchoolIdExamsExamIdRouteImport.update({
+    id: '/$examId',
+    path: '/$examId',
+    getParentRoute: () => ApiSchoolsSchoolIdExamsRoute,
+  } as any)
 const ApiSchoolsSchoolIdTemplatesPreviewRoute =
   ApiSchoolsSchoolIdTemplatesPreviewRouteImport.update({
     id: '/preview',
@@ -1144,6 +1180,24 @@ const ApiAttemptsIdScanPagesPageIdRoute =
     id: '/$pageId',
     path: '/$pageId',
     getParentRoute: () => ApiAttemptsIdScanPagesRoute,
+  } as any)
+const ApiSchoolsSchoolIdExamsExamIdBookletsRoute =
+  ApiSchoolsSchoolIdExamsExamIdBookletsRouteImport.update({
+    id: '/booklets',
+    path: '/booklets',
+    getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
+  } as any)
+const ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute =
+  ApiSchoolsSchoolIdExamsExamIdQuestionPaperRouteImport.update({
+    id: '/question-paper',
+    path: '/question-paper',
+    getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
+  } as any)
+const ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute =
+  ApiSchoolsSchoolIdExamsExamIdTeacherCopyRouteImport.update({
+    id: '/teacher-copy',
+    path: '/teacher-copy',
+    getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
   } as any)
 const ApiSchoolsSchoolIdImportsBatchIdCommitRoute =
   ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport.update({
@@ -1316,6 +1370,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
+  '/api/schools/$schoolId/exams': typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
@@ -1329,8 +1384,11 @@ export interface FileRoutesByFullPath {
   '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
+  '/school/$schoolId/exams/$examId': typeof SchoolSchoolIdExamsExamIdRoute
+  '/school/$schoolId/exams/new': typeof SchoolSchoolIdExamsNewRoute
   '/school/$schoolId/papers/check': typeof SchoolSchoolIdPapersCheckRoute
   '/school/$schoolId/papers/edit': typeof SchoolSchoolIdPapersEditRoute
+  '/school/$schoolId/exams/': typeof SchoolSchoolIdExamsIndexRoute
   '/school/$schoolId/papers/': typeof SchoolSchoolIdPapersIndexRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   '/api/attempts/$id/scan/apply': typeof ApiAttemptsIdScanApplyRoute
@@ -1342,6 +1400,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/bank/chapters': typeof ApiSchoolsSchoolIdBankChaptersRoute
   '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
+  '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
   '/api/schools/$schoolId/templates/preview': typeof ApiSchoolsSchoolIdTemplatesPreviewRoute
   '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
@@ -1353,6 +1412,9 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  '/api/schools/$schoolId/exams/$examId/teacher-copy': typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/schools/$schoolId/sections/$sectionId/students': typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
@@ -1501,6 +1563,7 @@ export interface FileRoutesByTo {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
+  '/api/schools/$schoolId/exams': typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
@@ -1514,8 +1577,11 @@ export interface FileRoutesByTo {
   '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
+  '/school/$schoolId/exams/$examId': typeof SchoolSchoolIdExamsExamIdRoute
+  '/school/$schoolId/exams/new': typeof SchoolSchoolIdExamsNewRoute
   '/school/$schoolId/papers/check': typeof SchoolSchoolIdPapersCheckRoute
   '/school/$schoolId/papers/edit': typeof SchoolSchoolIdPapersEditRoute
+  '/school/$schoolId/exams': typeof SchoolSchoolIdExamsIndexRoute
   '/school/$schoolId/papers': typeof SchoolSchoolIdPapersIndexRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   '/api/attempts/$id/scan/apply': typeof ApiAttemptsIdScanApplyRoute
@@ -1527,6 +1593,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/bank/chapters': typeof ApiSchoolsSchoolIdBankChaptersRoute
   '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
+  '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
   '/api/schools/$schoolId/templates/preview': typeof ApiSchoolsSchoolIdTemplatesPreviewRoute
   '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
@@ -1538,6 +1605,9 @@ export interface FileRoutesByTo {
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  '/api/schools/$schoolId/exams/$examId/teacher-copy': typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/schools/$schoolId/sections/$sectionId/students': typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
@@ -1690,6 +1760,7 @@ export interface FileRoutesById {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
+  '/api/schools/$schoolId/exams': typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
@@ -1703,8 +1774,11 @@ export interface FileRoutesById {
   '/api/students/me/weekly-card': typeof ApiStudentsMeWeeklyCardRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
+  '/school/$schoolId/exams/$examId': typeof SchoolSchoolIdExamsExamIdRoute
+  '/school/$schoolId/exams/new': typeof SchoolSchoolIdExamsNewRoute
   '/school/$schoolId/papers/check': typeof SchoolSchoolIdPapersCheckRoute
   '/school/$schoolId/papers/edit': typeof SchoolSchoolIdPapersEditRoute
+  '/school/$schoolId/exams/': typeof SchoolSchoolIdExamsIndexRoute
   '/school/$schoolId/papers/': typeof SchoolSchoolIdPapersIndexRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   '/api/attempts/$id/scan/apply': typeof ApiAttemptsIdScanApplyRoute
@@ -1716,6 +1790,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/bank/chapters': typeof ApiSchoolsSchoolIdBankChaptersRoute
   '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
+  '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
   '/api/schools/$schoolId/templates/preview': typeof ApiSchoolsSchoolIdTemplatesPreviewRoute
   '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
@@ -1727,6 +1802,9 @@ export interface FileRoutesById {
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  '/api/schools/$schoolId/exams/$examId/teacher-copy': typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/schools/$schoolId/sections/$sectionId/students': typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
@@ -1880,6 +1958,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
+    | '/api/schools/$schoolId/exams'
     | '/api/schools/$schoolId/imports'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/setup'
@@ -1893,8 +1972,11 @@ export interface FileRouteTypes {
     | '/api/students/me/weekly-card'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
+    | '/school/$schoolId/exams/$examId'
+    | '/school/$schoolId/exams/new'
     | '/school/$schoolId/papers/check'
     | '/school/$schoolId/papers/edit'
+    | '/school/$schoolId/exams/'
     | '/school/$schoolId/papers/'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
     | '/api/attempts/$id/scan/apply'
@@ -1906,6 +1988,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/bank/chapters'
     | '/api/schools/$schoolId/credentials/staff'
     | '/api/schools/$schoolId/credentials/students'
+    | '/api/schools/$schoolId/exams/$examId'
     | '/api/schools/$schoolId/templates/preview'
     | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
@@ -1917,6 +2000,9 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/items/$itemId/remove'
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/schools/$schoolId/exams/$examId/booklets'
+    | '/api/schools/$schoolId/exams/$examId/question-paper'
+    | '/api/schools/$schoolId/exams/$examId/teacher-copy'
     | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/schools/$schoolId/sections/$sectionId/students'
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
@@ -2065,6 +2151,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
+    | '/api/schools/$schoolId/exams'
     | '/api/schools/$schoolId/imports'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/setup'
@@ -2078,8 +2165,11 @@ export interface FileRouteTypes {
     | '/api/students/me/weekly-card'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
+    | '/school/$schoolId/exams/$examId'
+    | '/school/$schoolId/exams/new'
     | '/school/$schoolId/papers/check'
     | '/school/$schoolId/papers/edit'
+    | '/school/$schoolId/exams'
     | '/school/$schoolId/papers'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
     | '/api/attempts/$id/scan/apply'
@@ -2091,6 +2181,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/bank/chapters'
     | '/api/schools/$schoolId/credentials/staff'
     | '/api/schools/$schoolId/credentials/students'
+    | '/api/schools/$schoolId/exams/$examId'
     | '/api/schools/$schoolId/templates/preview'
     | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
@@ -2102,6 +2193,9 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/items/$itemId/remove'
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/schools/$schoolId/exams/$examId/booklets'
+    | '/api/schools/$schoolId/exams/$examId/question-paper'
+    | '/api/schools/$schoolId/exams/$examId/teacher-copy'
     | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/schools/$schoolId/sections/$sectionId/students'
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
@@ -2253,6 +2347,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
+    | '/api/schools/$schoolId/exams'
     | '/api/schools/$schoolId/imports'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/setup'
@@ -2266,8 +2361,11 @@ export interface FileRouteTypes {
     | '/api/students/me/weekly-card'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
+    | '/school/$schoolId/exams/$examId'
+    | '/school/$schoolId/exams/new'
     | '/school/$schoolId/papers/check'
     | '/school/$schoolId/papers/edit'
+    | '/school/$schoolId/exams/'
     | '/school/$schoolId/papers/'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
     | '/api/attempts/$id/scan/apply'
@@ -2279,6 +2377,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/bank/chapters'
     | '/api/schools/$schoolId/credentials/staff'
     | '/api/schools/$schoolId/credentials/students'
+    | '/api/schools/$schoolId/exams/$examId'
     | '/api/schools/$schoolId/templates/preview'
     | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
@@ -2290,6 +2389,9 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/items/$itemId/remove'
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/schools/$schoolId/exams/$examId/booklets'
+    | '/api/schools/$schoolId/exams/$examId/question-paper'
+    | '/api/schools/$schoolId/exams/$examId/teacher-copy'
     | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/schools/$schoolId/sections/$sectionId/students'
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
@@ -2375,6 +2477,7 @@ export interface RootRouteChildren {
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
+  ApiSchoolsSchoolIdExamsRoute: typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   ApiSchoolsSchoolIdImportsRoute: typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   ApiSchoolsSchoolIdOverviewRoute: typeof ApiSchoolsSchoolIdOverviewRoute
   ApiSchoolsSchoolIdSetupRoute: typeof ApiSchoolsSchoolIdSetupRoute
@@ -3407,6 +3510,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiRemediationIdAttemptRouteImport
       parentRoute: typeof ApiRemediationIdRoute
     }
+    '/api/schools/$schoolId/exams': {
+      id: '/api/schools/$schoolId/exams'
+      path: '/api/schools/$schoolId/exams'
+      fullPath: '/api/schools/$schoolId/exams'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/schools/$schoolId/imports': {
       id: '/api/schools/$schoolId/imports'
       path: '/api/schools/$schoolId/imports'
@@ -3497,6 +3607,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/syllabus/concepts/$id'
       preLoaderRoute: typeof ApiSyllabusConceptsIdRouteImport
       parentRoute: typeof ApiSyllabusConceptsRoute
+    }
+    '/school/$schoolId/exams/': {
+      id: '/school/$schoolId/exams/'
+      path: '/exams'
+      fullPath: '/school/$schoolId/exams/'
+      preLoaderRoute: typeof SchoolSchoolIdExamsIndexRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
+    '/school/$schoolId/exams/$examId': {
+      id: '/school/$schoolId/exams/$examId'
+      path: '/exams/$examId'
+      fullPath: '/school/$schoolId/exams/$examId'
+      preLoaderRoute: typeof SchoolSchoolIdExamsExamIdRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
+    '/school/$schoolId/exams/new': {
+      id: '/school/$schoolId/exams/new'
+      path: '/exams/new'
+      fullPath: '/school/$schoolId/exams/new'
+      preLoaderRoute: typeof SchoolSchoolIdExamsNewRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
     }
     '/school/$schoolId/papers/': {
       id: '/school/$schoolId/papers/'
@@ -3589,6 +3720,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdCredentialsStudentsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/schools/$schoolId/exams/$examId': {
+      id: '/api/schools/$schoolId/exams/$examId'
+      path: '/$examId'
+      fullPath: '/api/schools/$schoolId/exams/$examId'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdExamsRoute
+    }
     '/api/schools/$schoolId/templates/preview': {
       id: '/api/schools/$schoolId/templates/preview'
       path: '/preview'
@@ -3666,6 +3804,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAttemptsIdScanPagesPageIdRouteImport
       parentRoute: typeof ApiAttemptsIdScanPagesRoute
     }
+    '/api/schools/$schoolId/exams/$examId/booklets': {
+      id: '/api/schools/$schoolId/exams/$examId/booklets'
+      path: '/booklets'
+      fullPath: '/api/schools/$schoolId/exams/$examId/booklets'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdBookletsRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
+    }
+    '/api/schools/$schoolId/exams/$examId/question-paper': {
+      id: '/api/schools/$schoolId/exams/$examId/question-paper'
+      path: '/question-paper'
+      fullPath: '/api/schools/$schoolId/exams/$examId/question-paper'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
+    }
+    '/api/schools/$schoolId/exams/$examId/teacher-copy': {
+      id: '/api/schools/$schoolId/exams/$examId/teacher-copy'
+      path: '/teacher-copy'
+      fullPath: '/api/schools/$schoolId/exams/$examId/teacher-copy'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
+    }
     '/api/schools/$schoolId/imports/$batchId/commit': {
       id: '/api/schools/$schoolId/imports/$batchId/commit'
       path: '/$batchId/commit'
@@ -3735,8 +3894,11 @@ interface SchoolSchoolIdRouteChildren {
   SchoolSchoolIdTeachersRoute: typeof SchoolSchoolIdTeachersRoute
   SchoolSchoolIdTermsRoute: typeof SchoolSchoolIdTermsRoute
   SchoolSchoolIdIndexRoute: typeof SchoolSchoolIdIndexRoute
+  SchoolSchoolIdExamsExamIdRoute: typeof SchoolSchoolIdExamsExamIdRoute
+  SchoolSchoolIdExamsNewRoute: typeof SchoolSchoolIdExamsNewRoute
   SchoolSchoolIdPapersCheckRoute: typeof SchoolSchoolIdPapersCheckRoute
   SchoolSchoolIdPapersEditRoute: typeof SchoolSchoolIdPapersEditRoute
+  SchoolSchoolIdExamsIndexRoute: typeof SchoolSchoolIdExamsIndexRoute
   SchoolSchoolIdPapersIndexRoute: typeof SchoolSchoolIdPapersIndexRoute
 }
 
@@ -3746,8 +3908,11 @@ const SchoolSchoolIdRouteChildren: SchoolSchoolIdRouteChildren = {
   SchoolSchoolIdTeachersRoute: SchoolSchoolIdTeachersRoute,
   SchoolSchoolIdTermsRoute: SchoolSchoolIdTermsRoute,
   SchoolSchoolIdIndexRoute: SchoolSchoolIdIndexRoute,
+  SchoolSchoolIdExamsExamIdRoute: SchoolSchoolIdExamsExamIdRoute,
+  SchoolSchoolIdExamsNewRoute: SchoolSchoolIdExamsNewRoute,
   SchoolSchoolIdPapersCheckRoute: SchoolSchoolIdPapersCheckRoute,
   SchoolSchoolIdPapersEditRoute: SchoolSchoolIdPapersEditRoute,
+  SchoolSchoolIdExamsIndexRoute: SchoolSchoolIdExamsIndexRoute,
   SchoolSchoolIdPapersIndexRoute: SchoolSchoolIdPapersIndexRoute,
 }
 
@@ -4205,6 +4370,42 @@ const ApiSyllabusConceptsRouteChildren: ApiSyllabusConceptsRouteChildren = {
 const ApiSyllabusConceptsRouteWithChildren =
   ApiSyllabusConceptsRoute._addFileChildren(ApiSyllabusConceptsRouteChildren)
 
+interface ApiSchoolsSchoolIdExamsExamIdRouteChildren {
+  ApiSchoolsSchoolIdExamsExamIdBookletsRoute: typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute: typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
+}
+
+const ApiSchoolsSchoolIdExamsExamIdRouteChildren: ApiSchoolsSchoolIdExamsExamIdRouteChildren =
+  {
+    ApiSchoolsSchoolIdExamsExamIdBookletsRoute:
+      ApiSchoolsSchoolIdExamsExamIdBookletsRoute,
+    ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute:
+      ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute,
+    ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute:
+      ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute,
+  }
+
+const ApiSchoolsSchoolIdExamsExamIdRouteWithChildren =
+  ApiSchoolsSchoolIdExamsExamIdRoute._addFileChildren(
+    ApiSchoolsSchoolIdExamsExamIdRouteChildren,
+  )
+
+interface ApiSchoolsSchoolIdExamsRouteChildren {
+  ApiSchoolsSchoolIdExamsExamIdRoute: typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
+}
+
+const ApiSchoolsSchoolIdExamsRouteChildren: ApiSchoolsSchoolIdExamsRouteChildren =
+  {
+    ApiSchoolsSchoolIdExamsExamIdRoute:
+      ApiSchoolsSchoolIdExamsExamIdRouteWithChildren,
+  }
+
+const ApiSchoolsSchoolIdExamsRouteWithChildren =
+  ApiSchoolsSchoolIdExamsRoute._addFileChildren(
+    ApiSchoolsSchoolIdExamsRouteChildren,
+  )
+
 interface ApiSchoolsSchoolIdImportsRouteChildren {
   ApiSchoolsSchoolIdImportsBatchIdCommitRoute: typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
 }
@@ -4314,6 +4515,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,
+  ApiSchoolsSchoolIdExamsRoute: ApiSchoolsSchoolIdExamsRouteWithChildren,
   ApiSchoolsSchoolIdImportsRoute: ApiSchoolsSchoolIdImportsRouteWithChildren,
   ApiSchoolsSchoolIdOverviewRoute: ApiSchoolsSchoolIdOverviewRoute,
   ApiSchoolsSchoolIdSetupRoute: ApiSchoolsSchoolIdSetupRoute,

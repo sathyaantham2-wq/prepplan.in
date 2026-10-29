@@ -19,7 +19,7 @@ export function extractStyleAndBody(html: string): {
   body: string
 } {
   const styleMatch = /<style>([\s\S]*?)<\/style>/.exec(html)
-  const bodyMatch = /<body>([\s\S]*?)<\/body>/.exec(html)
+  const bodyMatch = /<body[^>]*>([\s\S]*?)<\/body>/.exec(html)
   if (!styleMatch || !bodyMatch) {
     throw new Error(
       'Expected a <style> and <body> block in the generated document',

@@ -4,6 +4,14 @@ import type { SchoolScope } from '../school-scope'
 import { createRepository, createSchoolScopedRepository } from './factory'
 import { schoolCredentialCodesRepository } from './school-credentials'
 import { schoolPaperTemplatesRepository } from './school-templates'
+import {
+  schoolBookletLayoutsRepository,
+  schoolBookletPagesRepository,
+  schoolBookletsRepository,
+  schoolExamQuestionsRepository,
+  schoolExamSectionsRepository,
+  schoolExamsRepository,
+} from './school-exams'
 
 // The tenant root: never itself school-scoped (it *is* the school). Reached only through a
 // membership lookup (findForMember) or by platform admin code.
@@ -268,6 +276,12 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_import_batches: schoolImportBatchesRepository,
   school_credential_codes: schoolCredentialCodesRepository,
   school_paper_templates: schoolPaperTemplatesRepository,
+  school_exams: schoolExamsRepository,
+  school_exam_sections: schoolExamSectionsRepository,
+  school_exam_questions: schoolExamQuestionsRepository,
+  school_booklet_layouts: schoolBookletLayoutsRepository,
+  school_booklets: schoolBookletsRepository,
+  school_booklet_pages: schoolBookletPagesRepository,
 } as const
 
 /** Which of these e-mail addresses already belong to a PrepPlan account (any role). */
