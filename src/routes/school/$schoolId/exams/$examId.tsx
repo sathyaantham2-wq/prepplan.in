@@ -9,7 +9,12 @@ import {
   Select,
 } from '../../../../components/school/ui'
 import { ScanPanel } from '../../../../components/school/scan-panel'
-import { api, openPdf, runBookletJob } from '../../../../lib/school-client'
+import {
+  api,
+  downloadFile,
+  openPdf,
+  runBookletJob,
+} from '../../../../lib/school-client'
 import type { BookletJobProgress } from '../../../../lib/school-client'
 
 export const Route = createFileRoute('/school/$schoolId/exams/$examId')({
@@ -72,6 +77,20 @@ function ExamPage() {
     if (!sectionId && sectionChoices.length > 0)
       setSectionId(sectionChoices[0].id)
   }, [sectionChoices, sectionId])
+
+  async function word() {
+    setBusy('word')
+    setMessage(null)
+    setError(null)
+    try {
+      await downloadFile(`${base}/question-paper-docx`)
+      setMessage('The Word file is downloaded. Edit it as you like.')
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Something went wrong.')
+    } finally {
+      setBusy(null)
+    }
+  }
 
   async function useSample() {
     setBusy('sample')
@@ -185,6 +204,16 @@ function ExamPage() {
           {busy === 'paper'
             ? 'Making the file…'
             : 'Open the question paper (PDF)'}
+        </Btn>
+        <Btn
+          kind="plain"
+          className="w-full"
+          disabled={busy !== null}
+          onClick={() => void word()}
+        >
+          {busy === 'word'
+            ? 'Making the Word file…'
+            : 'Download the question paper (Word)'}
         </Btn>
         {d.mayHandle ? (
           <>

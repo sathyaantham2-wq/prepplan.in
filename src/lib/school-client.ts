@@ -170,3 +170,33 @@ export async function runBookletJob(
     throw new Error(job.message ?? 'The booklets could not be printed.')
   return job
 }
+
+/**
+ * Downloads a file the signed-in person asked for (a Word paper): the request carries the sign-in,
+ * and the browser is handed the file with its own name.
+ */
+export async function downloadFile(path: string): Promise<void> {
+  const res = await fetch(path, { credentials: 'same-origin' })
+  if (!res.ok) {
+    let message = 'We could not make that file. Please try again.'
+    try {
+      const j = (await res.json()) as { message?: string }
+      if (j.message) message = j.message
+    } catch {
+      // keep the default
+    }
+    throw new ApiError(res.status, message)
+  }
+  const name =
+    /filename="([^"]+)"/.exec(
+      res.headers.get('content-disposition') ?? '',
+    )?.[1] ?? 'question-paper.docx'
+  const url = URL.createObjectURL(await res.blob())
+  const a = document.createElement('a')
+  a.href = url
+  a.download = name
+  document.body.appendChild(a)
+  a.click()
+  a.remove()
+  setTimeout(() => URL.revokeObjectURL(url), 10_000)
+}

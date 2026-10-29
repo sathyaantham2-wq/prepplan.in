@@ -15,7 +15,9 @@ import {
 } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
 import { buildAnswerKeyHtml } from '../pdf/key-template'
+import { buildPaperDocx } from '../pdf/paper-docx'
 import { buildPaperHtml } from '../pdf/paper-template'
+import type { PaperTemplateInput } from '../pdf/paper-template'
 import { countPdfPages, renderWithPageCount } from '../pdf/page-count'
 import { renderHtmlToPdf } from '../pdf/render'
 import { markSplit } from '../school-paper'
@@ -472,7 +474,12 @@ export async function questionPaperHtml(
   db: Db,
   scope: SchoolScope,
   examId: string,
-): Promise<{ build: (pageCount?: number) => string; title: string }> {
+): Promise<{
+  build: (pageCount?: number) => string
+  /** The same paper as plain data, for the Word file. */
+  input: (pageCount?: number) => PaperTemplateInput
+  title: string
+}> {
   const { exam } = await loadExam(db, scope, examId, 'paper')
   const d = await loadPrintData(db, scope, exam)
   const printed = d.rows.filter((r) => !r.is_alternate)
@@ -482,61 +489,81 @@ export async function questionPaperHtml(
   const sectionOrder = d.layout.config.section_order.filter((s) =>
     printed.some((r) => r.section === s),
   )
-  const build = (pageCount?: number) =>
-    buildPaperHtml({
-      title: `${d.school.name} — ${exam.title}`,
-      studentName: '',
-      board: d.school.board,
-      class: d.grade,
-      durationMin: d.layout.duration_min,
-      totalMarks: exam.printed_marks,
-      chapters: d.chapters.map((c) => ({
-        part: c.part,
-        chapter_no: c.chapter_no,
-        name: c.name,
-      })),
-      questions: d.rows.map((r) => ({
-        id: r.id,
-        section: r.section,
-        position: r.position,
-        marks: r.marks,
-        bloom: r.bloom,
-        difficulty: r.difficulty,
-        type: r.type,
-        text: r.text,
-        diagram_kind: r.diagram_kind,
-        diagram_params: r.diagram_params,
-        concept_name: null,
-        choice_group: r.choice_group,
-        slot: r.slot,
-        mark_split: isObjectiveType(r.type)
-          ? undefined
-          : markSplit(
-              d.steps
-                .filter((s) => s.question_id === r.question_id)
-                .map((s) => s.marks),
-            ),
-        options: d.options
-          .filter((o) => o.question_id === r.question_id)
-          .map((o) => ({
-            label: o.label,
-            text: o.text,
-            order_index: o.order_index,
-          })),
-      })),
-      // Gaps are for the teacher's copy; the students' paper just prints what is on it.
-      shortfalls: [],
-      halfYearly: {
-        subjectName: d.subject.name,
-        instructions: d.layout.config.instructions,
-        sectionOrder,
-        sectionTotals,
-        nominalMarks: exam.printed_marks,
-        pageCount,
-        draftNote: null,
-      },
-    })
-  return { build, title: exam.title }
+  const input = (pageCount?: number): PaperTemplateInput => ({
+    title: `${d.school.name} — ${exam.title}`,
+    studentName: '',
+    board: d.school.board,
+    class: d.grade,
+    durationMin: d.layout.duration_min,
+    totalMarks: exam.printed_marks,
+    chapters: d.chapters.map((c) => ({
+      part: c.part,
+      chapter_no: c.chapter_no,
+      name: c.name,
+    })),
+    questions: d.rows.map((r) => ({
+      id: r.id,
+      section: r.section,
+      position: r.position,
+      marks: r.marks,
+      bloom: r.bloom,
+      difficulty: r.difficulty,
+      type: r.type,
+      text: r.text,
+      diagram_kind: r.diagram_kind,
+      diagram_params: r.diagram_params,
+      concept_name: null,
+      choice_group: r.choice_group,
+      slot: r.slot,
+      mark_split: isObjectiveType(r.type)
+        ? undefined
+        : markSplit(
+            d.steps
+              .filter((s) => s.question_id === r.question_id)
+              .map((s) => s.marks),
+          ),
+      options: d.options
+        .filter((o) => o.question_id === r.question_id)
+        .map((o) => ({
+          label: o.label,
+          text: o.text,
+          order_index: o.order_index,
+        })),
+    })),
+    // Gaps are for the teacher's copy; the students' paper just prints what is on it.
+    shortfalls: [],
+    halfYearly: {
+      subjectName: d.subject.name,
+      instructions: d.layout.config.instructions,
+      sectionOrder,
+      sectionTotals,
+      nominalMarks: exam.printed_marks,
+      pageCount,
+      draftNote: null,
+    },
+  })
+  const build = (pageCount?: number) => buildPaperHtml(input(pageCount))
+  return { build, input, title: exam.title }
+}
+
+/** The question paper as an editable Word file. Same data as the PDF, so the two always agree; no answers. */
+export async function renderQuestionPaperDocx(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+): Promise<{ docx: Buffer; fileName: string }> {
+  const { input, title } = await questionPaperHtml(db, scope, examId)
+  const docx = await buildPaperDocx(input())
+  await auditSchool(
+    db,
+    scope,
+    'school.question_paper_docx_downloaded',
+    'school_exams',
+    examId,
+    null,
+    { bytes: docx.length },
+  )
+  return { docx, fileName: `${slug(title)}-question-paper.docx` }
 }
 
 export async function renderQuestionPaper(

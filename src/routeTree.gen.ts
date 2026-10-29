@@ -211,6 +211,7 @@ import { Route as ApiAttemptsIdScanPagesPageIdRouteImport } from './routes/api/a
 import { Route as ApiSchoolsSchoolIdExamsExamIdAbsencesRouteImport } from './routes/api/schools/$schoolId/exams/$examId/absences'
 import { Route as ApiSchoolsSchoolIdExamsExamIdBookletsRouteImport } from './routes/api/schools/$schoolId/exams/$examId/booklets'
 import { Route as ApiSchoolsSchoolIdExamsExamIdQuestionPaperRouteImport } from './routes/api/schools/$schoolId/exams/$examId/question-paper'
+import { Route as ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRouteImport } from './routes/api/schools/$schoolId/exams/$examId/question-paper-docx'
 import { Route as ApiSchoolsSchoolIdExamsExamIdScanBatchesRouteImport } from './routes/api/schools/$schoolId/exams/$examId/scan-batches'
 import { Route as ApiSchoolsSchoolIdExamsExamIdScanSummaryRouteImport } from './routes/api/schools/$schoolId/exams/$examId/scan-summary'
 import { Route as ApiSchoolsSchoolIdExamsExamIdScansRouteImport } from './routes/api/schools/$schoolId/exams/$examId/scans'
@@ -1287,6 +1288,12 @@ const ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute =
     path: '/question-paper',
     getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
   } as any)
+const ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute =
+  ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRouteImport.update({
+    id: '/question-paper-docx',
+    path: '/question-paper-docx',
+    getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
+  } as any)
 const ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute =
   ApiSchoolsSchoolIdExamsExamIdScanBatchesRouteImport.update({
     id: '/scan-batches',
@@ -1563,6 +1570,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/exams/$examId/absences': typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
   '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  '/api/schools/$schoolId/exams/$examId/question-paper-docx': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   '/api/schools/$schoolId/exams/$examId/scan-batches': typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
   '/api/schools/$schoolId/exams/$examId/scan-summary': typeof ApiSchoolsSchoolIdExamsExamIdScanSummaryRoute
   '/api/schools/$schoolId/exams/$examId/scans': typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
@@ -1776,6 +1784,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/exams/$examId/absences': typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
   '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  '/api/schools/$schoolId/exams/$examId/question-paper-docx': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   '/api/schools/$schoolId/exams/$examId/scan-batches': typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
   '/api/schools/$schoolId/exams/$examId/scan-summary': typeof ApiSchoolsSchoolIdExamsExamIdScanSummaryRoute
   '/api/schools/$schoolId/exams/$examId/scans': typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
@@ -1993,6 +2002,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/exams/$examId/absences': typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
   '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  '/api/schools/$schoolId/exams/$examId/question-paper-docx': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   '/api/schools/$schoolId/exams/$examId/scan-batches': typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
   '/api/schools/$schoolId/exams/$examId/scan-summary': typeof ApiSchoolsSchoolIdExamsExamIdScanSummaryRoute
   '/api/schools/$schoolId/exams/$examId/scans': typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
@@ -2211,6 +2221,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/absences'
     | '/api/schools/$schoolId/exams/$examId/booklets'
     | '/api/schools/$schoolId/exams/$examId/question-paper'
+    | '/api/schools/$schoolId/exams/$examId/question-paper-docx'
     | '/api/schools/$schoolId/exams/$examId/scan-batches'
     | '/api/schools/$schoolId/exams/$examId/scan-summary'
     | '/api/schools/$schoolId/exams/$examId/scans'
@@ -2424,6 +2435,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/absences'
     | '/api/schools/$schoolId/exams/$examId/booklets'
     | '/api/schools/$schoolId/exams/$examId/question-paper'
+    | '/api/schools/$schoolId/exams/$examId/question-paper-docx'
     | '/api/schools/$schoolId/exams/$examId/scan-batches'
     | '/api/schools/$schoolId/exams/$examId/scan-summary'
     | '/api/schools/$schoolId/exams/$examId/scans'
@@ -2640,6 +2652,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/absences'
     | '/api/schools/$schoolId/exams/$examId/booklets'
     | '/api/schools/$schoolId/exams/$examId/question-paper'
+    | '/api/schools/$schoolId/exams/$examId/question-paper-docx'
     | '/api/schools/$schoolId/exams/$examId/scan-batches'
     | '/api/schools/$schoolId/exams/$examId/scan-summary'
     | '/api/schools/$schoolId/exams/$examId/scans'
@@ -4171,6 +4184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
     }
+    '/api/schools/$schoolId/exams/$examId/question-paper-docx': {
+      id: '/api/schools/$schoolId/exams/$examId/question-paper-docx'
+      path: '/question-paper-docx'
+      fullPath: '/api/schools/$schoolId/exams/$examId/question-paper-docx'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
+    }
     '/api/schools/$schoolId/exams/$examId/scan-batches': {
       id: '/api/schools/$schoolId/exams/$examId/scan-batches'
       path: '/scan-batches'
@@ -4811,6 +4831,7 @@ interface ApiSchoolsSchoolIdExamsExamIdRouteChildren {
   ApiSchoolsSchoolIdExamsExamIdAbsencesRoute: typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   ApiSchoolsSchoolIdExamsExamIdBookletsRoute: typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
   ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
+  ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute: typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
   ApiSchoolsSchoolIdExamsExamIdScanSummaryRoute: typeof ApiSchoolsSchoolIdExamsExamIdScanSummaryRoute
   ApiSchoolsSchoolIdExamsExamIdScansRoute: typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
@@ -4828,6 +4849,8 @@ const ApiSchoolsSchoolIdExamsExamIdRouteChildren: ApiSchoolsSchoolIdExamsExamIdR
       ApiSchoolsSchoolIdExamsExamIdBookletsRoute,
     ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute:
       ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute,
+    ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute:
+      ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute,
     ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute:
       ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute,
     ApiSchoolsSchoolIdExamsExamIdScanSummaryRoute:

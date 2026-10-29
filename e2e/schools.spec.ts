@@ -943,6 +943,23 @@ test.describe.serial('school screens on a phone', () => {
       .click()
     await popup
     await expect(page.getByText(/Opened in a new tab/)).toBeVisible()
+
+    // and the same paper as an editable Word file
+    const download = page.waitForEvent('download')
+    await page
+      .getByRole('button', { name: 'Download the question paper (Word)' })
+      .click()
+    const file = await download
+    expect(file.suggestedFilename()).toMatch(
+      /^[a-z0-9-]+-question-paper\.docx$/,
+    )
+    const path = await file.path()
+    const { readFileSync } = await import('node:fs')
+    const bytes = readFileSync(path)
+    expect(bytes.subarray(0, 2).toString()).toBe('PK')
+    expect(bytes.length).toBeGreaterThan(5_000)
+    await expect(page.getByText(/The Word file is downloaded/)).toBeVisible()
+    await shot(page, '43-exam-word-downloaded')
   })
 
   test("scans: a section's photographed booklets are sorted by their codes; missing pages are listed and can be fixed", async () => {

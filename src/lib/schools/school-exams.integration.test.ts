@@ -41,6 +41,8 @@ import {
 import { Route as BookletsRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklets'
 import { Route as BookletJobRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId'
 import { Route as BookletResultRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
+import { Route as QuestionPaperDocxRoute } from '../../routes/api/schools/$schoolId/exams/$examId/question-paper-docx'
+import JSZip from 'jszip'
 import { Route as QuestionPaperRoute } from '../../routes/api/schools/$schoolId/exams/$examId/question-paper'
 import { Route as TeacherCopyRoute } from '../../routes/api/schools/$schoolId/exams/$examId/teacher-copy'
 import { Route as ExamRoute } from '../../routes/api/schools/$schoolId/exams/$examId'
@@ -1136,6 +1138,58 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       ).toBe(403)
       expect((await call(BookletJobRoute, 'GET', null, jp())).status).toBe(401)
     }, 90_000)
+    it('the question paper also comes as an editable Word file: same people, no answers, one marker per question', async () => {
+      for (const s of [teacherS, adminS, principalS]) {
+        const res = await call(QuestionPaperDocxRoute, 'GET', s.cookie, p())
+        expect(res.status).toBe(200)
+        expect(res.headers.get('content-type')).toBe(
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        )
+        expect(res.headers.get('content-disposition')).toMatch(
+          /^attachment; filename="[a-z0-9-]+-question-paper\.docx"$/,
+        )
+        expect(res.headers.get('cache-control')).toBe('private, no-store')
+        const buf = Buffer.from(await res.arrayBuffer())
+        expect(buf.subarray(0, 2).toString()).toBe('PK')
+        const zip = await JSZip.loadAsync(buf)
+        const xml = await zip.file('word/document.xml')!.async('string')
+        // the same questions as the PDF, no answer, no correct option, no marking step
+        expect(xml).not.toContain('SECRET-ANSWER')
+        expect(xml).not.toContain('SECRET-STEP')
+        expect(xml).not.toContain('Correct option')
+        expect(xml).toContain('Option B') // the options themselves are printed
+        const qs = await db
+          .selectFrom('school_exam_questions')
+          .select('id')
+          .where('exam_id', '=', examId)
+          .where('is_alternate', '=', false)
+          .execute()
+        expect(
+          (xml.match(/<w:bookmarkStart /g) ?? []).length,
+        ).toBeGreaterThanOrEqual(qs.length)
+        for (const q of qs)
+          expect(xml).toContain(`ppq_${q.id.replace(/-/g, '')}`)
+        expect(xml).toContain('General instructions')
+      }
+      const logged = await db
+        .selectFrom('audit_log')
+        .select('action')
+        .where('school_id', '=', schoolA)
+        .where('action', '=', 'school.question_paper_docx_downloaded')
+        .execute()
+      expect(logged.length).toBeGreaterThanOrEqual(3)
+    }, 60_000)
+    it('the Word paper is refused to the same people as the PDF: signed-out, another school, another subject, students, parents', async () => {
+      expect(await statusOf(QuestionPaperDocxRoute, 'GET', null)).toBe(401)
+      expect(await statusOf(QuestionPaperDocxRoute, 'GET', outsiderS)).toBe(404)
+      expect(await statusOf(QuestionPaperDocxRoute, 'GET', otherTeacherS)).toBe(
+        404,
+      )
+      for (const s of [studentS, parentS])
+        expect([401, 403, 404]).toContain(
+          await statusOf(QuestionPaperDocxRoute, 'GET', s),
+        )
+    })
     it('the exam detail never carries a question, an answer or a marking step', async () => {
       const res = await call(ExamRoute, 'GET', teacherS.cookie, p())
       const text = await res.text()
