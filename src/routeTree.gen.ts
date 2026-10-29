@@ -59,6 +59,7 @@ import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
 import { Route as ApiSchoolLoginRouteImport } from './routes/api/school-login'
 import { Route as ApiSchoolMeRouteImport } from './routes/api/school-me'
+import { Route as ApiSchoolSignupRouteImport } from './routes/api/school-signup'
 import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
@@ -70,6 +71,7 @@ import { Route as SchoolIndexRouteImport } from './routes/school/index'
 import { Route as SchoolSchoolIdRouteImport } from './routes/school/$schoolId'
 import { Route as SchoolSetPasswordRouteImport } from './routes/school/set-password'
 import { Route as SchoolSignInRouteImport } from './routes/school/sign-in'
+import { Route as SchoolSignUpRouteImport } from './routes/school/sign-up'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
 import { Route as ApiActivityPingRouteImport } from './routes/api/activity/ping'
@@ -116,6 +118,7 @@ import { Route as ApiRemediationGenerateRouteImport } from './routes/api/remedia
 import { Route as ApiScanPagesPageIdRouteImport } from './routes/api/scan-pages/$pageId'
 import { Route as ApiSchoolLoginActivateRouteImport } from './routes/api/school-login/activate'
 import { Route as ApiSchoolLoginActivateStaffRouteImport } from './routes/api/school-login/activate-staff'
+import { Route as ApiSchoolSignupCreateRouteImport } from './routes/api/school-signup/create'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiStudentsMeRouteImport } from './routes/api/students/me'
 import { Route as ApiStudyPlanGenerateRouteImport } from './routes/api/study-plan/generate'
@@ -472,6 +475,11 @@ const ApiSchoolMeRoute = ApiSchoolMeRouteImport.update({
   path: '/api/school-me',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSchoolSignupRoute = ApiSchoolSignupRouteImport.update({
+  id: '/api/school-signup',
+  path: '/api/school-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiStudentDashboardRoute = ApiStudentDashboardRouteImport.update({
   id: '/api/student-dashboard',
   path: '/api/student-dashboard',
@@ -525,6 +533,11 @@ const SchoolSetPasswordRoute = SchoolSetPasswordRouteImport.update({
 const SchoolSignInRoute = SchoolSignInRouteImport.update({
   id: '/sign-in',
   path: '/sign-in',
+  getParentRoute: () => SchoolRoute,
+} as any)
+const SchoolSignUpRoute = SchoolSignUpRouteImport.update({
+  id: '/sign-up',
+  path: '/sign-up',
   getParentRoute: () => SchoolRoute,
 } as any)
 const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
@@ -763,6 +776,11 @@ const ApiSchoolLoginActivateStaffRoute =
     path: '/activate-staff',
     getParentRoute: () => ApiSchoolLoginRoute,
   } as any)
+const ApiSchoolSignupCreateRoute = ApiSchoolSignupCreateRouteImport.update({
+  id: '/create',
+  path: '/create',
+  getParentRoute: () => ApiSchoolSignupRoute,
+} as any)
 const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -1392,6 +1410,7 @@ export interface FileRoutesByFullPath {
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
   '/api/school-me': typeof ApiSchoolMeRoute
+  '/api/school-signup': typeof ApiSchoolSignupRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1402,6 +1421,7 @@ export interface FileRoutesByFullPath {
   '/school/$schoolId': typeof SchoolSchoolIdRouteWithChildren
   '/school/set-password': typeof SchoolSetPasswordRoute
   '/school/sign-in': typeof SchoolSignInRoute
+  '/school/sign-up': typeof SchoolSignUpRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/admin/': typeof AdminIndexRoute
@@ -1450,6 +1470,7 @@ export interface FileRoutesByFullPath {
   '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
   '/api/school-login/activate': typeof ApiSchoolLoginActivateRoute
   '/api/school-login/activate-staff': typeof ApiSchoolLoginActivateStaffRoute
+  '/api/school-signup/create': typeof ApiSchoolSignupCreateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -1603,6 +1624,7 @@ export interface FileRoutesByTo {
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
   '/api/school-me': typeof ApiSchoolMeRoute
+  '/api/school-signup': typeof ApiSchoolSignupRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1612,6 +1634,7 @@ export interface FileRoutesByTo {
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/school/set-password': typeof SchoolSetPasswordRoute
   '/school/sign-in': typeof SchoolSignInRoute
+  '/school/sign-up': typeof SchoolSignUpRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/admin': typeof AdminIndexRoute
@@ -1660,6 +1683,7 @@ export interface FileRoutesByTo {
   '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
   '/api/school-login/activate': typeof ApiSchoolLoginActivateRoute
   '/api/school-login/activate-staff': typeof ApiSchoolLoginActivateStaffRoute
+  '/api/school-signup/create': typeof ApiSchoolSignupCreateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -1816,6 +1840,7 @@ export interface FileRoutesById {
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
   '/api/school-me': typeof ApiSchoolMeRoute
+  '/api/school-signup': typeof ApiSchoolSignupRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1826,6 +1851,7 @@ export interface FileRoutesById {
   '/school/$schoolId': typeof SchoolSchoolIdRouteWithChildren
   '/school/set-password': typeof SchoolSetPasswordRoute
   '/school/sign-in': typeof SchoolSignInRoute
+  '/school/sign-up': typeof SchoolSignUpRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/admin/': typeof AdminIndexRoute
@@ -1874,6 +1900,7 @@ export interface FileRoutesById {
   '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
   '/api/school-login/activate': typeof ApiSchoolLoginActivateRoute
   '/api/school-login/activate-staff': typeof ApiSchoolLoginActivateStaffRoute
+  '/api/school-signup/create': typeof ApiSchoolSignupCreateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -2031,6 +2058,7 @@ export interface FileRouteTypes {
     | '/api/remediation'
     | '/api/school-login'
     | '/api/school-me'
+    | '/api/school-signup'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -2041,6 +2069,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId'
     | '/school/set-password'
     | '/school/sign-in'
+    | '/school/sign-up'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/admin/'
@@ -2089,6 +2118,7 @@ export interface FileRouteTypes {
     | '/api/scan-pages/$pageId'
     | '/api/school-login/activate'
     | '/api/school-login/activate-staff'
+    | '/api/school-signup/create'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -2242,6 +2272,7 @@ export interface FileRouteTypes {
     | '/api/remediation'
     | '/api/school-login'
     | '/api/school-me'
+    | '/api/school-signup'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -2251,6 +2282,7 @@ export interface FileRouteTypes {
     | '/scan/$attemptId'
     | '/school/set-password'
     | '/school/sign-in'
+    | '/school/sign-up'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/admin'
@@ -2299,6 +2331,7 @@ export interface FileRouteTypes {
     | '/api/scan-pages/$pageId'
     | '/api/school-login/activate'
     | '/api/school-login/activate-staff'
+    | '/api/school-signup/create'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -2454,6 +2487,7 @@ export interface FileRouteTypes {
     | '/api/remediation'
     | '/api/school-login'
     | '/api/school-me'
+    | '/api/school-signup'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -2464,6 +2498,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId'
     | '/school/set-password'
     | '/school/sign-in'
+    | '/school/sign-up'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/admin/'
@@ -2512,6 +2547,7 @@ export interface FileRouteTypes {
     | '/api/scan-pages/$pageId'
     | '/api/school-login/activate'
     | '/api/school-login/activate-staff'
+    | '/api/school-signup/create'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -2657,6 +2693,7 @@ export interface RootRouteChildren {
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
   ApiSchoolLoginRoute: typeof ApiSchoolLoginRouteWithChildren
   ApiSchoolMeRoute: typeof ApiSchoolMeRoute
+  ApiSchoolSignupRoute: typeof ApiSchoolSignupRouteWithChildren
   ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   ApiStudyPlanRoute: typeof ApiStudyPlanRouteWithChildren
@@ -3070,6 +3107,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolMeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/school-signup': {
+      id: '/api/school-signup'
+      path: '/api/school-signup'
+      fullPath: '/api/school-signup'
+      preLoaderRoute: typeof ApiSchoolSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/student-dashboard': {
       id: '/api/student-dashboard'
       path: '/api/student-dashboard'
@@ -3145,6 +3189,13 @@ declare module '@tanstack/react-router' {
       path: '/sign-in'
       fullPath: '/school/sign-in'
       preLoaderRoute: typeof SchoolSignInRouteImport
+      parentRoute: typeof SchoolRoute
+    }
+    '/school/sign-up': {
+      id: '/school/sign-up'
+      path: '/sign-up'
+      fullPath: '/school/sign-up'
+      preLoaderRoute: typeof SchoolSignUpRouteImport
       parentRoute: typeof SchoolRoute
     }
     '/summary/weekly': {
@@ -3468,6 +3519,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/school-login/activate-staff'
       preLoaderRoute: typeof ApiSchoolLoginActivateStaffRouteImport
       parentRoute: typeof ApiSchoolLoginRoute
+    }
+    '/api/school-signup/create': {
+      id: '/api/school-signup/create'
+      path: '/create'
+      fullPath: '/api/school-signup/create'
+      preLoaderRoute: typeof ApiSchoolSignupCreateRouteImport
+      parentRoute: typeof ApiSchoolSignupRoute
     }
     '/api/students/$id': {
       id: '/api/students/$id'
@@ -4274,6 +4332,7 @@ interface SchoolRouteChildren {
   SchoolSchoolIdRoute: typeof SchoolSchoolIdRouteWithChildren
   SchoolSetPasswordRoute: typeof SchoolSetPasswordRoute
   SchoolSignInRoute: typeof SchoolSignInRoute
+  SchoolSignUpRoute: typeof SchoolSignUpRoute
   SchoolIndexRoute: typeof SchoolIndexRoute
 }
 
@@ -4281,6 +4340,7 @@ const SchoolRouteChildren: SchoolRouteChildren = {
   SchoolSchoolIdRoute: SchoolSchoolIdRouteWithChildren,
   SchoolSetPasswordRoute: SchoolSetPasswordRoute,
   SchoolSignInRoute: SchoolSignInRoute,
+  SchoolSignUpRoute: SchoolSignUpRoute,
   SchoolIndexRoute: SchoolIndexRoute,
 }
 
@@ -4599,6 +4659,18 @@ const ApiSchoolLoginRouteWithChildren = ApiSchoolLoginRoute._addFileChildren(
   ApiSchoolLoginRouteChildren,
 )
 
+interface ApiSchoolSignupRouteChildren {
+  ApiSchoolSignupCreateRoute: typeof ApiSchoolSignupCreateRoute
+}
+
+const ApiSchoolSignupRouteChildren: ApiSchoolSignupRouteChildren = {
+  ApiSchoolSignupCreateRoute: ApiSchoolSignupCreateRoute,
+}
+
+const ApiSchoolSignupRouteWithChildren = ApiSchoolSignupRoute._addFileChildren(
+  ApiSchoolSignupRouteChildren,
+)
+
 interface ApiStudentsIdRouteChildren {
   ApiStudentsIdLoginRoute: typeof ApiStudentsIdLoginRoute
   ApiStudentsIdConsentWithdrawRoute: typeof ApiStudentsIdConsentWithdrawRoute
@@ -4875,6 +4947,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRemediationRoute: ApiRemediationRouteWithChildren,
   ApiSchoolLoginRoute: ApiSchoolLoginRouteWithChildren,
   ApiSchoolMeRoute: ApiSchoolMeRoute,
+  ApiSchoolSignupRoute: ApiSchoolSignupRouteWithChildren,
   ApiStudentDashboardRoute: ApiStudentDashboardRoute,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   ApiStudyPlanRoute: ApiStudyPlanRouteWithChildren,

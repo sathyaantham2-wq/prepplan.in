@@ -70,6 +70,13 @@ export default defineConfig({
     cwd: import.meta.dirname,
     // The dev server's floating developer-tools button covers the bottom menu of the phone-sized
     // school screens, so the browser tests run without it (it does not exist in production).
-    env: { ...process.env, VITE_NO_DEVTOOLS: '1' },
+    // The browser tests start several schools in a short time; the platform-wide brake on new
+    // schools (src/lib/schools/signup.ts) is lifted for them only.
+    env: {
+      ...process.env,
+      VITE_NO_DEVTOOLS: '1',
+      SCHOOL_SIGNUP_MAX_PER_HOUR: '100000',
+      SCHOOL_SIGNUP_MAX_PER_DAY: '100000',
+    },
   },
 })

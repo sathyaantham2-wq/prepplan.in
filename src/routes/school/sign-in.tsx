@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Btn, Card, Notice, TextInput } from '../../components/school/ui'
+import { GoogleSchoolButton } from '../../components/school/google-button'
 import { signIn } from '../../lib/auth-client'
 import { api } from '../../lib/school-client'
 
@@ -121,6 +122,12 @@ function SchoolSignIn() {
             {busy ? 'Signing in…' : 'Sign in'}
           </Btn>
         </form>
+        {who === 'staff' ? (
+          <div className="mt-4 space-y-2">
+            <p className="text-center text-base text-slate-600">or</p>
+            <GoogleSchoolButton label="Sign in with Google" />
+          </div>
+        ) : null}
       </Card>
 
       <p className="mt-5 text-base">
@@ -131,6 +138,15 @@ function SchoolSignIn() {
           className="font-semibold text-emerald-800 underline"
         >
           Set up your sign-in
+        </Link>
+      </p>
+      <p className="mt-3 text-base">
+        Starting a new school?{' '}
+        <Link
+          to="/school/sign-up"
+          className="font-semibold text-emerald-800 underline"
+        >
+          Create your school account
         </Link>
       </p>
       <p className="mt-3 text-sm text-slate-600">

@@ -87,6 +87,51 @@ export const schoolsRepository = {
       return { school, adminUserId: user.id, adminMemberId: member.id }
     })
   },
+  /**
+   * A school started by someone who already has a school-type login (a first Google sign-in): the
+   * school's household, the school, and this user as its first admin, in one transaction.
+   */
+  async provisionForUser(
+    db: Db,
+    input: {
+      userId: string
+      name: string
+      code: string
+      board: string
+      city?: string
+    },
+  ) {
+    return db.transaction().execute(async (trx) => {
+      const household = await trx
+        .insertInto('households')
+        .values({ name: `${input.name} (school)`, plan: 'school' })
+        .returning('id')
+        .executeTakeFirstOrThrow()
+      const school = await trx
+        .insertInto('schools')
+        .values({
+          household_id: household.id,
+          name: input.name,
+          code: input.code,
+          board: input.board,
+          city: input.city ?? null,
+          status: 'active',
+        })
+        .returningAll()
+        .executeTakeFirstOrThrow()
+      const member = await trx
+        .insertInto('school_members')
+        .values({
+          school_id: school.id,
+          user_id: input.userId,
+          role: 'school_admin',
+          status: 'active',
+        })
+        .returning('id')
+        .executeTakeFirstOrThrow()
+      return { school, adminMemberId: member.id }
+    })
+  },
   /** The school, but only if this user holds an active membership in it and it is active. */
   async findForMember(db: Db, userId: string, schoolId: string) {
     return db

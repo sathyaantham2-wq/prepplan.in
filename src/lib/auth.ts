@@ -1,3 +1,4 @@
+import { hasSchoolIntent, newAccountKind } from './school-signup-intent'
 import { betterAuth } from 'better-auth'
 import { APIError, createAuthMiddleware } from 'better-auth/api'
 import { createAuthPool } from '../db/auth-pool'
@@ -77,13 +78,17 @@ export const auth = betterAuth({
           // must mean "not the OAuth callback", never a crash.
           const path = context?.path
           const viaSocial = path?.startsWith('/callback/') ?? false
-          const signupType = viaSocial
-            ? 'student'
-            : (user as { signup_type?: string }).signup_type
+          const kind = newAccountKind({
+            viaSocial,
+            schoolIntent: hasSchoolIntent(context?.request?.headers.get('cookie')),
+            formType: (user as { signup_type?: string }).signup_type,
+          })
+          // A school login (a first Google sign-in from a school page) is a platform "teacher" with
+          // signup_type 'school', exactly like school staff made by a school. It has no student profile.
           const role =
-            signupType === 'student'
+            kind === 'student'
               ? ('student' as const)
-              : signupType === 'teacher'
+              : kind === 'teacher' || kind === 'school'
                 ? ('teacher' as const)
                 : ('parent' as const)
           const household = await householdsRepository.insert(db, {
@@ -95,7 +100,7 @@ export const auth = betterAuth({
               ...user,
               household_id: household.id,
               role,
-              signup_type: role,
+              signup_type: kind === 'school' ? 'school' : role,
             },
           }
         },

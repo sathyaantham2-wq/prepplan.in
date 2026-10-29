@@ -53,6 +53,7 @@ export async function api<T = unknown>(
 
 export interface MeResponse {
   name: string
+  start: 'has_school' | 'can_create' | 'personal_account'
   schools: Array<{ id: string; name: string; role: string }>
 }
 

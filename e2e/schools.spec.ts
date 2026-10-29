@@ -425,15 +425,13 @@ test.describe.serial('school screens on a phone', () => {
     ).toBeVisible()
     await shot(page, '01-sign-in-student')
     const text = (await page.locator('body').innerText()).toLowerCase()
-    for (const banned of [
-      'sign up',
-      'create account',
-      'google',
-      'guest',
-      'whatsapp',
-      'register',
-    ])
+    // a school starts itself (its own link), but students are never invited to sign up here, and
+    // nothing from the personal app shows
+    for (const banned of ['guest', 'whatsapp', 'register', 'parent'])
       expect(text, banned).not.toContain(banned)
+    await expect(
+      page.getByRole('link', { name: 'Create your school account' }),
+    ).toBeVisible()
     await expect(page.getByLabel('School code')).toBeVisible()
     await expect(page.getByLabel('Your ID')).toBeVisible()
     await looksRight(page)
@@ -443,7 +441,7 @@ test.describe.serial('school screens on a phone', () => {
     // a wrong password says so in plain words
     await page.getByLabel('Email').fill(adminEmail)
     await page.getByLabel('Password', { exact: true }).fill('not-the-password')
-    await page.getByRole('button', { name: 'Sign in' }).click()
+    await page.getByRole('button', { name: 'Sign in', exact: true }).click()
     await expect(page.getByRole('alert')).toContainText('not right')
     await shot(page, '03-sign-in-wrong-password')
   })
@@ -692,7 +690,7 @@ test.describe.serial('school screens on a phone', () => {
     await page.getByLabel('School code').fill(schoolCode)
     await page.getByLabel('Your ID').fill(studentId.toLowerCase())
     await page.getByLabel('Password', { exact: true }).fill(PASSWORD)
-    await page.getByRole('button', { name: 'Sign in' }).click()
+    await page.getByRole('button', { name: 'Sign in', exact: true }).click()
     await page.waitForURL(`**/school/${schoolId}`)
     await ctx.close()
   })
@@ -1209,7 +1207,7 @@ test.describe.serial('school screens on a phone', () => {
     await page.getByRole('tab', { name: 'Teacher or school office' }).click()
     await page.getByLabel('Email').fill(adminEmail)
     await page.getByLabel('Password', { exact: true }).fill(PASSWORD)
-    await page.getByRole('button', { name: 'Sign in' }).click()
+    await page.getByRole('button', { name: 'Sign in', exact: true }).click()
     await page.waitForURL(`**/school/${schoolId}`)
     await expect(
       page.getByRole('heading', { name: 'Your school set-up' }),

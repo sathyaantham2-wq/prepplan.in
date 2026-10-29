@@ -39,6 +39,8 @@ const PUBLIC_ROUTES = [
   './api/errors.ts',
   './api/guest.ts',
   './api/school-me.ts', // school screens only: reads the session itself, never offers consumer data
+  './api/school-signup.ts', // a school starts itself: public by design (owner decision 2026-10-29)
+  './api/school-signup/create.ts', // reads the session itself; refuses any login that is not a school login
   './api/school-login.ts',
   './api/school-login/activate.ts',
   './api/school-login/activate-staff.ts',

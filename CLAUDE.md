@@ -127,6 +127,13 @@ Never invent a feature ID. If work doesn't map to an existing F-number, say so a
 School students follow **this** rule set, separate from everything above that is written for PrepPlan's
 own students. Do not mix the two. Design: `docs/SCHOOLS_MODULE_PLAN.md` (a draft until the owner approves it).
 
+- **A school starts itself (owner decision 2026-10-29).** The person who creates a school, by the e-mail
+  form at `/school/sign-up` or by "Continue with Google" from a school page, becomes its office admin and
+  the account is active at once (no confirmation, no approval). A platform-wide brake limits new schools to
+  10 an hour and 40 a day. An e-mail that already belongs to a PrepPlan student or parent is refused: a
+  school login is never joined to a personal one. This opens sign-up for school ADMINS only; school
+  students and teachers are still created only by their school. The school terms are accepted in the
+  set-up wizard before any student can be added.
 - **Separate students.** A school student is a `students` row with `school_id` set, created only by her
   school admin (roster upload). There is no public sign-up for school students. She is never linked to a
   personal PrepPlan account (no guardian invite, no account merge, no sign-in by email linking).

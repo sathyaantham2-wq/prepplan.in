@@ -364,11 +364,11 @@ export type SignInResult =
   | { ok: true; setCookies: Array<string> }
   | { ok: false; reason: 'bad_credentials' | 'locked' | 'weak_password' }
 
-function checkPassword(pw: string): boolean {
+export function checkPassword(pw: string): boolean {
   return pw.length >= MIN_PASSWORD_LENGTH && pw.length <= MAX_PASSWORD_LENGTH
 }
 
-async function signInUser(
+export async function signInUser(
   email: string,
   password: string,
 ): Promise<{ ok: true; setCookies: Array<string> } | { ok: false }> {
