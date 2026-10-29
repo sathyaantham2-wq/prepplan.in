@@ -8,10 +8,7 @@ import { createScopedRepository } from './factory'
 // even though createScopedRepository would offer one. Leaderboard aggregation (a later pass)
 // reads this scoped by student and rolls it up across students in the same cohort itself; this
 // repository only ever writes and reads one student's own rows.
-const student_points_ledger = createScopedRepository(
-  'student_points_ledger',
-  'student_id',
-)
+const student_points_ledger = createScopedRepository('student_points_ledger', 'student_id')
 export const studentPointsLedgerRepository = {
   findById: student_points_ledger.findById,
   list: student_points_ledger.list,
@@ -23,10 +20,7 @@ export const studentPointsLedgerRepository = {
       .where('student_id', '=', studentId)
       .execute()
     return rows.reduce(
-      (sum, r) => ({
-        points: sum.points + r.points,
-        coins: sum.coins + r.coins,
-      }),
+      (sum, r) => ({ points: sum.points + r.points, coins: sum.coins + r.coins }),
       { points: 0, coins: 0 },
     )
   },
@@ -60,12 +54,7 @@ export const studentUnlocksRepository = {
   },
   /** Row lock on the student: serialises concurrent purchases for the same student. */
   async lockStudent(db: Db, studentId: string) {
-    await db
-      .selectFrom('students')
-      .select('id')
-      .where('id', '=', studentId)
-      .forUpdate()
-      .executeTakeFirstOrThrow()
+    await db.selectFrom('students').select('id').where('id', '=', studentId).forUpdate().executeTakeFirstOrThrow()
   },
 }
 

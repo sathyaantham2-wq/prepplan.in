@@ -85,9 +85,7 @@ export const questionsRepository = {
       query = query.where('type', 'in', params.types)
     }
     if (params.requiredTag) {
-      query = query.where(
-        sql<boolean>`tags @> ARRAY[${params.requiredTag}]::text[]`,
-      )
+      query = query.where(sql<boolean>`tags @> ARRAY[${params.requiredTag}]::text[]`)
     }
     if (params.excludeTags && params.excludeTags.length > 0) {
       query = query.where(
@@ -123,11 +121,7 @@ export const questionsRepository = {
       .selectFrom('questions as q')
       .innerJoin('concepts as c', 'c.id', 'q.concept_id')
       .innerJoin('chapters as ch', 'ch.id', 'c.chapter_id')
-      .select([
-        'q.id as id',
-        'q.concept_id as concept_id',
-        'c.chapter_id as chapter_id',
-      ])
+      .select(['q.id as id', 'q.concept_id as concept_id', 'c.chapter_id as chapter_id'])
       .where('ch.subject_id', '=', params.subjectId)
       .where('q.status', '=', 'approved')
       .where('q.marks', '=', 1)

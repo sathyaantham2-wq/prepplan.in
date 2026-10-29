@@ -128,11 +128,7 @@ export const conceptStatusRepository = {
             .groupBy('concept_id')
             .as('last_tested'),
         (join) =>
-          join.onRef(
-            'last_tested.concept_id',
-            '=',
-            'concept_status.concept_id',
-          ),
+          join.onRef('last_tested.concept_id', '=', 'concept_status.concept_id'),
       )
       .select([
         'concept_status.student_id',
@@ -234,7 +230,10 @@ export const conceptRemediationContentRepository = {
       Selectable<DB['concept_remediation_content']> | undefined
     >
   },
-  async insert(db: Db, row: Insertable<DB['concept_remediation_content']>) {
+  async insert(
+    db: Db,
+    row: Insertable<DB['concept_remediation_content']>,
+  ) {
     return db
       .insertInto('concept_remediation_content')
       .values(row)
