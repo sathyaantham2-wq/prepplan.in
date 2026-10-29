@@ -10,6 +10,7 @@ import {
   TextInput,
 } from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
+import { AnswerSheets } from '../../../../components/school/own-sheets-panel'
 import type {
   OwnPaperView,
   OwnQuestionView,
@@ -215,6 +216,7 @@ function OwnPaperPage() {
           <QuestionCard key={q.id} q={q} v={v} editable={editable} act={act} />
         ))}
       </ul>
+      {v.status === 'approved' ? <AnswerSheets base={base} /> : null}
       {editable && v.status === 'needs_review' ? (
         <AddQuestion v={v} act={act} />
       ) : null}

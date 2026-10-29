@@ -118,7 +118,7 @@ type PaperRow = NonNullable<
   Awaited<ReturnType<typeof schoolOwnPapersRepository.findById>>
 >
 
-async function loadPaper(
+export async function loadOwnPaper(
   db: Db,
   scope: SchoolScope,
   paperId: string,
@@ -530,7 +530,7 @@ export async function stepOwnPaper(
   paperId: string,
   aiOverride?: OwnPaperAi,
 ): Promise<PaperProgress> {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   if (paper.status !== 'reading') return progressOf(paper)
   const ai = aiOverride ?? (await aiFor(db, scope))
   const questions = await schoolOwnQuestionsRepository.forPaper(
@@ -583,7 +583,7 @@ export async function stepOwnPaper(
               : null,
         }))
       )
-        return progressOf(await loadPaper(db, scope, paperId))
+        return progressOf(await loadOwnPaper(db, scope, paperId))
       let pos = questions.length
       let prevId = questions.at(-1)?.id ?? null
       let prevGroup = questions.at(-1)?.or_group ?? null
@@ -662,7 +662,7 @@ export async function stepOwnPaper(
         })
         const parsed = MappingSchema.parse(JSON.parse(raw))
         if (!(await advance()))
-          return progressOf(await loadPaper(db, scope, paperId))
+          return progressOf(await loadOwnPaper(db, scope, paperId))
         for (const m of parsed) {
           const q = batch.find((x) => x.position === m.q)
           const ch = coded.find((c) => c.code === m.chapter)
@@ -673,7 +673,7 @@ export async function stepOwnPaper(
             })
         }
       } else if (!(await advance()))
-        return progressOf(await loadPaper(db, scope, paperId))
+        return progressOf(await loadOwnPaper(db, scope, paperId))
       if (paper.progress + 1 >= paper.progress_total)
         await toKeyPhase(db, scope, paper)
     } else if (paper.phase === 'key') {
@@ -695,7 +695,7 @@ export async function stepOwnPaper(
       }
       const parsed = KeySchema.parse(JSON.parse(raw))
       if (!(await advance()))
-        return progressOf(await loadPaper(db, scope, paperId))
+        return progressOf(await loadOwnPaper(db, scope, paperId))
       for (const k of parsed) {
         const q = questions.find((x) => x.position === k.q)
         if (q && q.key_status === 'none')
@@ -729,7 +729,7 @@ export async function stepOwnPaper(
         })
         const parsed = KeySchema.parse(JSON.parse(raw))
         if (!(await advance()))
-          return progressOf(await loadPaper(db, scope, paperId))
+          return progressOf(await loadOwnPaper(db, scope, paperId))
         for (const k of parsed) {
           const q = need.find((x) => x.position === k.q)
           if (q)
@@ -748,7 +748,7 @@ export async function stepOwnPaper(
               : null,
         }))
       )
-        return progressOf(await loadPaper(db, scope, paperId))
+        return progressOf(await loadOwnPaper(db, scope, paperId))
       const left = (
         await schoolOwnQuestionsRepository.forPaper(db, scope, paperId)
       ).filter((q) => q.key_status === 'none').length
@@ -773,7 +773,7 @@ export async function stepOwnPaper(
     await schoolOwnPapersRepository.update(db, scope, paperId, { message })
     throw new SchoolError('conflict', message)
   }
-  return progressOf(await loadPaper(db, scope, paperId))
+  return progressOf(await loadOwnPaper(db, scope, paperId))
 }
 
 async function keyFileText(key: string, kind: string | null): Promise<string> {
@@ -882,7 +882,7 @@ export async function getOwnPaper(
   scope: SchoolScope,
   paperId: string,
 ): Promise<OwnPaperView> {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   const qs = await schoolOwnQuestionsRepository.forPaper(db, scope, paperId)
   const chapters = (
     await bankRepository.chaptersForSubject(db, paper.subject.id)
@@ -973,7 +973,7 @@ export async function listOwnPapers(db: Db, scope: SchoolScope) {
     .filter((x) => !x.archived_at)
     .sort((a, b) => b.created_at.getTime() - a.created_at.getTime())) {
     try {
-      const p = await loadPaper(db, scope, r.id)
+      const p = await loadOwnPaper(db, scope, r.id)
       out.push({
         id: p.id,
         title: p.title,
@@ -1018,7 +1018,7 @@ export async function updateOwnQuestion(
   questionId: string,
   patch: QuestionPatch,
 ) {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   assertEditable(paper)
   const q = await schoolOwnQuestionsRepository.findById(db, scope, questionId)
   if (!q || q.paper_id !== paperId || q.removed_at)
@@ -1087,7 +1087,7 @@ export async function addOwnQuestion(
     chapterId?: string | null
   },
 ) {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   assertEditable(paper)
   const t = input.text.trim()
   if (t.length < 2 || t.length > 4000)
@@ -1119,7 +1119,7 @@ export async function removeOwnQuestion(
   paperId: string,
   questionId: string,
 ) {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   assertEditable(paper)
   const q = await schoolOwnQuestionsRepository.findById(db, scope, questionId)
   if (!q || q.paper_id !== paperId || q.removed_at)
@@ -1153,7 +1153,7 @@ export async function approveOwnPaper(
   scope: SchoolScope,
   paperId: string,
 ): Promise<void> {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   if (paper.status === 'approved')
     throw new SchoolError('conflict', 'This paper is already approved.')
   if (paper.status !== 'needs_review' || paper.phase !== 'done')
@@ -1200,7 +1200,7 @@ export async function setOwnKey(
     approve?: boolean
   },
 ) {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   if (paper.status === 'failed')
     throw new SchoolError(
       'conflict',
@@ -1252,7 +1252,7 @@ export async function approveOwnKeys(
   paperId: string,
   questionIds: 'all' | Array<string>,
 ): Promise<{ approved: number }> {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   if (paper.status === 'failed')
     throw new SchoolError(
       'conflict',
@@ -1299,7 +1299,7 @@ export async function assertPaperReadyForMarking(
   scope: SchoolScope,
   paperId: string,
 ): Promise<void> {
-  const paper = await loadPaper(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
   if (paper.status !== 'approved')
     throw new SchoolError(
       'conflict',

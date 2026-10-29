@@ -76,6 +76,7 @@ export async function filesToOriginalPages(
 export async function sendInPieces(
   base: string,
   blob: Blob,
+  chunkPath = 'scan-chunks',
 ): Promise<{ uploadId: string; chunks: number }> {
   if (blob.size > MAX_FILE_BYTES)
     throw new Error(
@@ -84,7 +85,7 @@ export async function sendInPieces(
   const uploadId = crypto.randomUUID()
   const chunks = Math.max(1, Math.ceil(blob.size / CHUNK_BYTES))
   for (let i = 0; i < chunks; i++) {
-    const res = await fetch(`${base}/scan-chunks/${uploadId}?seq=${i}`, {
+    const res = await fetch(`${base}/${chunkPath}/${uploadId}?seq=${i}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/octet-stream' },
       body: blob.slice(i * CHUNK_BYTES, (i + 1) * CHUNK_BYTES),

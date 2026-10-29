@@ -6,6 +6,7 @@ import { createDb } from '../src/db/connection'
 import type { Db } from '../src/db/connection'
 import { schoolsRepository } from '../src/db/repositories'
 import { issueFirstAdminCode } from '../src/lib/schools/credentials'
+import { buildCoversHtml } from '../src/lib/schools/own-cover'
 
 /**
  * "Use your own paper" on a phone: upload a Word paper, watch it being read, fix a question, approve the
@@ -63,6 +64,7 @@ test.describe.serial('use your own paper (phone)', () => {
   let subjectId = ''
   let sourceId = ''
   let page: Page
+  let written: Buffer = Buffer.alloc(0)
 
   test.beforeAll(async ({ browser }) => {
     db = createDb()
@@ -180,8 +182,15 @@ test.describe.serial('use your own paper (phone)', () => {
         .where('user_id', 'in', mu)
         .execute()
     for (const t of [
+      'school_scan_chunks',
+      'school_own_sheets',
+      'school_own_covers',
       'school_own_questions',
       'school_own_papers',
+      'school_student_guardians',
+      'school_students',
+      'students',
+      'school_import_batches',
       'school_credential_codes',
       'audit_log',
       'school_teacher_assignments',
@@ -333,6 +342,155 @@ test.describe.serial('use your own paper (phone)', () => {
     // and the list shows it as approved
     await page.getByRole('link', { name: 'Your own papers' }).click()
     await expect(page.getByText('Approved').first()).toBeVisible()
+  })
+
+  test('an approved paper gets cover pages; a scanned stack is sorted to each student by its cover', async ({
+    browser,
+  }) => {
+    // the office accepts the school terms (no student can be added before), then two students in Section A
+    expect(
+      (await page.request.post(`/api/schools/${schoolId}/terms/accept`)).ok(),
+    ).toBe(true)
+    // two students in Section A, from a student list
+    const roster =
+      'Name,Class,Section,Roll No,Admission No,Parent Phone\nAsha Rao,7,A,1,2024/0101,\nRavi Kumar,7,A,2,2024/0102,\n'
+    const dry = await page.request.post(`/api/schools/${schoolId}/imports`, {
+      data: {
+        kind: 'students',
+        academic_year: '2026-27',
+        file_name: 'students.csv',
+        content_base64: Buffer.from(roster).toString('base64'),
+      },
+    })
+    expect(dry.ok(), await dry.text()).toBe(true)
+    const { batchId } = (await dry.json()) as { batchId: string }
+    expect(
+      (
+        await page.request.post(
+          `/api/schools/${schoolId}/imports/${batchId}/commit`,
+        )
+      ).ok(),
+    ).toBe(true)
+
+    // the previous test left the list of own papers open
+    await page.reload()
+    await page.getByRole('link', { name: /Unit Test 2 Approved/ }).click()
+    const card = page.getByTestId('own-sheets')
+    await expect(card).toBeVisible()
+    await expect(card.getByLabel('For which section')).toContainText(
+      'Section A (2 students)',
+    )
+    await expect(card).toContainText('0 received')
+    await shot(page, 'op-07-answer-sheets')
+    await looksRight(page)
+
+    // print the covers: one page each, the same codes every time
+    const paperId = page.url().split('/').at(-1)!
+    const pdf = await page.request.get(
+      `/api/schools/${schoolId}/own-papers/${paperId}/covers?section_id=${await card.getByLabel('For which section').inputValue()}`,
+    )
+    expect(pdf.ok()).toBe(true)
+    expect((await pdf.body()).subarray(0, 4).toString()).toBe('%PDF')
+    const covers = await db
+      .selectFrom('school_own_covers as c')
+      .innerJoin('school_students as ss', 'ss.id', 'c.school_student_id')
+      .innerJoin('students as st', 'st.id', 'ss.student_id')
+      .select(['c.token', 'st.name', 'ss.roll_no', 'ss.admission_no'])
+      .where('c.paper_id', '=', paperId)
+      .orderBy('ss.roll_no')
+      .execute()
+    expect(covers.map((c) => c.name)).toEqual(['Asha Rao', 'Ravi Kumar'])
+
+    // the printed covers, photographed: a scan of the stack is cover, page, cover, page
+    const html = await buildCoversHtml({
+      schoolName: 'Own Paper School',
+      paperTitle: 'Unit Test',
+      subjectName: 'Mathematics',
+      grade: 7,
+      totalMarks: 10,
+      students: covers.map((c) => ({
+        name: c.name,
+        admissionNo: c.admission_no,
+        rollNo: c.roll_no,
+        sectionName: 'A',
+        token: c.token,
+      })),
+    })
+    const ctx = await browser.newContext({
+      viewport: { width: 794, height: 1123 },
+      deviceScaleFactor: 1.5625,
+    })
+    const pg = await ctx.newPage()
+    await pg.setContent(html, { waitUntil: 'load' })
+    await pg
+      .locator('.page')
+      .nth(0)
+      .screenshot({ path: `${SHOTS}/op-07b-cover-page.png` })
+    const coverPng = [
+      await pg.locator('.page').nth(0).screenshot({ type: 'png' }),
+      await pg.locator('.page').nth(1).screenshot({ type: 'png' }),
+    ]
+    await pg.setContent(
+      '<div style="width:794px;height:1123px;background:#fff;font:20px serif;padding:40px">Answer: x = 8</div>',
+    )
+    written = await pg.screenshot({ type: 'png' })
+    await ctx.close()
+    await card.getByTestId('own-stack-input').setInputFiles([
+      { name: 'scan-01.png', mimeType: 'image/png', buffer: coverPng[0] },
+      { name: 'scan-02.png', mimeType: 'image/png', buffer: written },
+      { name: 'scan-03.png', mimeType: 'image/png', buffer: coverPng[1] },
+      { name: 'scan-04.png', mimeType: 'image/png', buffer: written },
+      { name: 'scan-05.png', mimeType: 'image/png', buffer: written },
+    ])
+    const log = card.getByTestId('own-sheet-log')
+    await expect(log).toContainText('scan-05.png', { timeout: 60_000 })
+    await expect(log).toContainText('Cover page: Asha Rao')
+    await expect(log).toContainText('Cover page: Ravi Kumar')
+    await expect(card).toContainText('2 received')
+    const list = card.getByTestId('own-sheet-students')
+    await expect(list).toContainText('1 · Asha Rao')
+    await expect(list.locator('li').nth(0)).toContainText('1 page')
+    await expect(list.locator('li').nth(1)).toContainText('2 pages')
+    await shot(page, 'op-08-stack-sorted')
+    await looksRight(page)
+  })
+
+  test('no cover pages: one file per student named by roll number; a page nobody can place waits for the teacher', async () => {
+    const card = page.getByTestId('own-sheets')
+    await card.getByText('No cover pages? Upload one file per student').click()
+    const blank = written
+    await card.getByTestId('own-roll-input').setInputFiles([
+      { name: '1-p3.png', mimeType: 'image/png', buffer: blank },
+      { name: '9.png', mimeType: 'image/png', buffer: blank },
+    ])
+    const log = card.getByTestId('own-sheet-log')
+    await expect(log).toContainText(
+      '9.png: no student with roll number "9" in this section. Not sent.',
+    )
+    await expect(log).toContainText('1-p3.png: Page 2 of Asha Rao.', {
+      timeout: 30_000,
+    })
+    await shot(page, 'op-09-by-roll-number')
+    // a page with no cover before it, sent on its own
+    await card
+      .getByTestId('own-stack-input')
+      .setInputFiles([
+        { name: 'loose.png', mimeType: 'image/png', buffer: blank },
+      ])
+    await expect(card).toContainText('1 waiting for a student', {
+      timeout: 30_000,
+    })
+    await card.getByLabel('Whose page is this').selectOption({
+      label: 'A · 2 · Ravi Kumar',
+    })
+    await card.getByRole('button', { name: 'Put it with this student' }).click()
+    await expect(card).not.toContainText('waiting for a student')
+    await expect(
+      card.getByTestId('own-sheet-students').locator('li').nth(1),
+    ).toContainText('3 pages')
+    await shot(page, 'op-10-page-placed')
+    await looksRight(page)
+    await page.getByRole('link', { name: 'Your own papers' }).click()
   })
 
   test('a file that cannot be read is told so in plain words', async () => {

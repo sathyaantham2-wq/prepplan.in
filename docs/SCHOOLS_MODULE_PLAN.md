@@ -680,7 +680,21 @@ Decisions (owner, 2026-10-29): (1) a school starts itself with Gmail or an e-mai
 - **Storage:** the uploaded files are sealed (AES-256-GCM) in the private bucket under `<school>/_own/<paper>/`; no school table can hold file bytes.
 - **Reading, honestly:** a PDF that is only a picture is refused with the advice to send the Word file or photos (the server cannot draw PDF pages as pictures); a very long paper is read in pieces; an item the reader gives back in the wrong shape is dropped and counted, never guessed; a reader reply that cannot be used leaves the paper where it was with a plain "Try again".
 
-**Not built yet (the rest of step 3):** the **QR cover page** per student to staple on top of the school's own answer sheets, and the **one-upload-per-student named by roll number** fallback. They connect this to the answer-sheet scan reader, so they come next, together with the real-photo check.
+**The rest of step 3 is in 11.11 below.**
 
 **Needs from the owner:** (1) Is Rs 100 a month the right default allowance per school? It is a single constant (`DEFAULT_SCHOOL_AI_CAP_INR`). (2) A first real try of the reader on a real school paper (the tests use a scripted stand-in; the prompts have never run against a live model), ideally Class 7 Maths from the Word file of an actual school. (3) How long to keep a school's uploaded paper (now: as long as the school).
 
+### 11.11 Step 3 built (second part): cover pages and the answer sheets of a school's own paper
+
+**What a school can do now.** On an approved own paper, an **Answer sheets** card: choose the section, **Print the cover pages (PDF)** (one A4 page per student: name, class and section, roll number, student ID, and a code), staple each student's cover on top of her own answer sheets, and **upload the scanned stack** (a PDF or photos, in order). Each cover starts that student's pages; the pages after it are hers until the next cover. The screen then shows, per student, how many pages arrived, and which students have none yet. Screens: `docs/schools/screens-own-paper/op-07` to `op-10`, the cover page itself `op-07b-cover-page.png`.
+
+**Without covers:** "No cover pages? Upload one file per student", each file named by the roll number (`12.pdf`, `12-p2.jpg`, `roll 12.png`), matched to the section chosen above; a name that matches no roll number is listed and **not sent**. A page that arrives with no cover before it waits under **Pages waiting for a student**, with a picture to look at and a student picker; nothing is guessed.
+
+**The rules, in code (migration 0089, `school_own_covers`, `school_own_sheets`):**
+- A cover code is made once per student and paper (an HMAC, not guessable) and printed the same every time. The cover has the same four corner marks and the same 30 mm QR as the exam booklets, so the existing page reader straightens and reads it; the code is `PPC1-…`, so a booklet page of a PrepPlan exam (`PPB1-…`) is told apart and refused.
+- Refused, and **nothing of it is kept**: a page of an exam booklet, a cover of another school, of another paper, a code PrepPlan never made, a student outside the teacher's sections, a file that is not a picture.
+- Who: the office and the teacher of that subject and section only. Students, parents and other schools never (another school gets "not found", as everywhere in the module). Tested route by route.
+- Storage as for scans: sealed (AES-256-GCM) under `<school>/_own/<paper>/sheets/`, pieces of at most 3.5 MB joined on the server (originals are never shrunk), signed 10-minute picture links, removed by the daily clean-up after the school's retention days; the row stays with `purged_at`. No school table holds file bytes (the existing test covers the new tables).
+- **Not marked yet.** Marking these sheets is step 4 (AI marking), which waits for the owner's real-photo report.
+
+**Production:** migration 0089 is **not** run on production and nothing is pushed. Both wait for the owner's go-ahead. As with step 3's first part, uploads need the Supabase bucket settings in Vercel.

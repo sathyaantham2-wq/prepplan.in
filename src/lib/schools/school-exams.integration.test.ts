@@ -2,6 +2,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { createDb } from '../../db/connection'
 import type { Db } from '../../db/connection'
 import { schoolsRepository } from '../../db/repositories'
+import { examPrintRepository } from '../../db/repositories/school-exams'
 import type { SchoolScope } from '../../db/school-scope'
 import {
   deleteSchoolTermsForTest,
@@ -9,7 +10,11 @@ import {
   signInSchoolUserForTest,
 } from '../../db/test-helpers'
 import type { TestSession } from '../../db/test-helpers'
-import { PDFDocument, PDFDocument as PdfLibDocument, StandardFonts  } from 'pdf-lib'
+import {
+  PDFDocument,
+  PDFDocument as PdfLibDocument,
+  StandardFonts,
+} from 'pdf-lib'
 import sharp from 'sharp'
 import QRCode from 'qrcode'
 import { Route as ScanBatchesRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-batches'
@@ -31,7 +36,8 @@ import {
   stepOwnPaper,
   updateOwnQuestion,
 } from './own-paper-service'
-import { renderQuestionPaperDocx,
+import {
+  renderQuestionPaperDocx,
   bookletStudents,
   createExam,
   ensureBookletRecords,
@@ -40,7 +46,8 @@ import { renderQuestionPaperDocx,
   questionPaperHtml,
   renderBooklets,
   renderTeacherCopy,
-  teacherCopyHtml } from './exam-service'
+  teacherCopyHtml,
+} from './exam-service'
 import { Route as WizardRoute } from '../../routes/api/schools/$schoolId/wizard'
 import { Route as ResultsRoute } from '../../routes/api/schools/$schoolId/results'
 import { Route as ResultsExamRoute } from '../../routes/api/schools/$schoolId/results/$examId'
@@ -56,7 +63,26 @@ import { decryptScan } from '../scan-crypto'
 import type { MemoryScanStore } from '../scan-storage'
 import { getScanStore } from '../scan-storage'
 import { buildBookletsHtml } from './booklet-html'
-import { photograph, renderPagePngs } from './scan-test-support'
+import { buildCoversHtml, ownCoverToken } from './own-cover'
+import {
+  assignOwnSheet,
+  coverSections,
+  ingestOwnSheet,
+  ownSheetsSummary,
+  renderCovers,
+  saveOwnSheetChunk,
+  takeOwnSheetUpload,
+} from './own-sheets'
+import { rollFromFileName } from '../../components/school/own-sheets-panel'
+import { Route as CoversRoute } from '../../routes/api/schools/$schoolId/own-papers/$paperId/covers'
+import { Route as SheetsRoute } from '../../routes/api/schools/$schoolId/own-papers/$paperId/sheets'
+import { Route as SheetImageRoute } from '../../routes/api/schools/$schoolId/own-sheet-images/$sheetId'
+import {
+  fixtureManifest,
+  fixtureToken,
+  photograph,
+  renderPagePngs,
+} from './scan-test-support'
 import type { PhotoOptions } from './scan-test-support'
 import {
   assignScanPage,
@@ -510,6 +536,18 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
     const ids = schoolIds
     await deleteTestCredentials(userIds)
     await db
+      .deleteFrom('school_scan_chunks')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_own_sheets')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_own_covers')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
       .deleteFrom('school_own_questions')
       .where('school_id', 'in', ids)
       .execute()
@@ -531,10 +569,6 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       .execute()
     await db
       .deleteFrom('school_print_jobs')
-      .where('school_id', 'in', ids)
-      .execute()
-    await db
-      .deleteFrom('school_scan_chunks')
       .where('school_id', 'in', ids)
       .execute()
     await db
@@ -3541,5 +3575,372 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       })
       expect([400, 413]).toContain(big.status)
     }, 60_000)
+
+    describe('cover pages and answer sheets', () => {
+      let sectionId = ''
+      let coverStudents: Array<{
+        school_student_id: string
+        name: string
+        roll_no: string
+        admission_no: string
+        section_name: string
+      }> = []
+      const cvPng = new Map<string, Buffer>()
+      const blankJpeg = (shade: string, w = 900, h = 1200) =>
+        sharp({
+          create: { width: w, height: h, channels: 3, background: shade },
+        })
+          .jpeg()
+          .toBuffer()
+
+      it('prints one cover page per student, with the same code every time', async () => {
+        const secs = await coverSections(db, admin, paperId)
+        const sec = secs.find((s) => s.students >= 2)!
+        expect(sec).toBeTruthy()
+        sectionId = sec.id
+        const first = await renderCovers(db, admin, paperId, sectionId)
+        expect(first.students).toBe(sec.students)
+        expect(first.pdf.subarray(0, 4).toString()).toBe('%PDF')
+        const rows = await db
+          .selectFrom('school_own_covers')
+          .select(['school_student_id', 'token'])
+          .where('paper_id', '=', paperId)
+          .execute()
+        expect(rows).toHaveLength(sec.students)
+        expect(new Set(rows.map((r) => r.token)).size).toBe(rows.length)
+        await renderCovers(db, admin, paperId, sectionId)
+        const again = await db
+          .selectFrom('school_own_covers')
+          .select('token')
+          .where('paper_id', '=', paperId)
+          .execute()
+        expect(again.map((r) => r.token).sort()).toEqual(
+          rows.map((r) => r.token).sort(),
+        )
+        // a teacher without this section cannot print it
+        await refuses(
+          renderCovers(db, otherTeacher(), paperId, sectionId),
+          'not_found',
+        )
+        // a paper that is not approved has no covers
+        const draft = await createOwnPaper(db, teacher, {
+          schoolSubjectId: await subjectRow(),
+          title: 'Draft only',
+          files: [await wordFile(paperLines)],
+        })
+        await refuses(
+          renderCovers(db, admin, draft.paperId, sectionId),
+          'conflict',
+        )
+      }, 120_000)
+
+      it("the code on a cover is read from a phone photo and starts that student's stack", async () => {
+        const rows = await db
+          .selectFrom('school_own_covers')
+          .select(['school_student_id', 'token'])
+          .where('paper_id', '=', paperId)
+          .execute()
+        const wanted = new Set(rows.map((r) => r.school_student_id))
+        coverStudents = (
+          await examPrintRepository.studentsOfSections(db, admin, [sectionId])
+        ).filter((x) => wanted.has(x.school_student_id))
+        const html = await buildCoversHtml({
+          schoolName: 'Test School',
+          paperTitle: 'Unit Test 2',
+          subjectName: 'Maths',
+          grade: 7,
+          totalMarks: 10,
+          students: coverStudents.map((s) => ({
+            name: s.name,
+            admissionNo: s.admission_no,
+            rollNo: s.roll_no,
+            sectionName: s.section_name,
+            token: rows.find(
+              (r) => r.school_student_id === s.school_student_id,
+            )!.token,
+          })),
+        })
+        const pngs = await renderPagePngs(html)
+        expect(pngs).toHaveLength(coverStudents.length)
+        coverStudents.forEach((s, i) => cvPng.set(s.school_student_id, pngs[i]))
+        const a = coverStudents[0]
+        const r = await ingestOwnSheet(db, admin, paperId, {
+          bytes: await photograph(cvPng.get(a.school_student_id)!, {
+            rotate: 4,
+            perspective: 0.1,
+          }),
+          name: 'IMG_1.jpg',
+        })
+        expect(r).toMatchObject({
+          status: 'placed',
+          kind: 'cover',
+          studentId: a.school_student_id,
+        })
+        // the pages that follow the cover are hers, in order
+        const blank = await blankJpeg('#ffffff')
+        const p1 = await ingestOwnSheet(db, admin, paperId, {
+          bytes: blank,
+          currentStudentId: r.studentId,
+        })
+        const p2 = await ingestOwnSheet(db, admin, paperId, {
+          bytes: blank,
+          currentStudentId: p1.studentId,
+        })
+        expect(p1).toMatchObject({
+          status: 'placed',
+          studentId: a.school_student_id,
+        })
+        expect(p2.message).toMatch(/Page 2/)
+        const sum = await ownSheetsSummary(db, admin, paperId)
+        expect(
+          sum.students.find((x) => x.schoolStudentId === a.school_student_id),
+        ).toMatchObject({ state: 'received', covers: 1, pages: 2 })
+        expect(sum.students.filter((x) => x.state === 'none').length).toBe(
+          sum.students.length - 1,
+        )
+        // the file is sealed in storage, the original untouched underneath
+        const store = getScanStore() as MemoryScanStore
+        const key = (
+          await db
+            .selectFrom('school_own_sheets')
+            .select('original_key')
+            .where('id', '=', p1.sheetId)
+            .executeTakeFirstOrThrow()
+        ).original_key!
+        const sealed = store.files.get(key)!
+        expect(sealed.equals(blank)).toBe(false)
+        expect(decryptScan(sealed).equals(blank)).toBe(true)
+      }, 180_000)
+
+      it('a page with no cover before it waits for the teacher, who names the student', async () => {
+        const lost = await ingestOwnSheet(db, admin, paperId, {
+          bytes: await blankJpeg('#eeeeee'),
+        })
+        expect(lost.status).toBe('unplaced')
+        let sum = await ownSheetsSummary(db, admin, paperId)
+        expect(sum.unplaced.map((u) => u.id)).toContain(lost.sheetId)
+        expect(sum.unplaced[0].url).toMatch(/own-sheet-images/)
+        const b = coverStudents[1]
+        await assignOwnSheet(
+          db,
+          admin,
+          paperId,
+          lost.sheetId,
+          b.school_student_id,
+        )
+        sum = await ownSheetsSummary(db, admin, paperId)
+        expect(sum.unplaced).toHaveLength(0)
+        expect(
+          sum.students.find((x) => x.schoolStudentId === b.school_student_id),
+        ).toMatchObject({ state: 'received', pages: 1 })
+        // a page already placed cannot be assigned again
+        await expect(
+          assignOwnSheet(db, admin, paperId, lost.sheetId, b.school_student_id),
+        ).rejects.toThrow()
+      }, 60_000)
+
+      it('one file named by roll number: the student is named, no cover needed', async () => {
+        const c = coverStudents[0]
+        const r = await ingestOwnSheet(db, admin, paperId, {
+          bytes: await blankJpeg('#dddddd', 800, 1100),
+          studentId: c.school_student_id,
+        })
+        expect(r).toMatchObject({
+          status: 'placed',
+          studentId: c.school_student_id,
+        })
+        await refuses(
+          ingestOwnSheet(db, admin, paperId, {
+            bytes: await blankJpeg('#dddddd'),
+            studentId: '00000000-0000-4000-8000-000000000000',
+          }),
+          'not_found',
+        )
+        expect(rollFromFileName('12.pdf')).toBe('12')
+        expect(rollFromFileName('12-p2.jpg')).toBe('12')
+        expect(rollFromFileName('roll 7.png')).toBe('7')
+        expect(rollFromFileName('A12.pdf')).toBe('A12')
+        expect(rollFromFileName('12p3.jpg')).toBe('12')
+        expect(rollFromFileName('12_2.png')).toBe('12')
+      }, 60_000)
+
+      it('refuses and keeps nothing: an exam booklet page, a cover PrepPlan never made, a file that is not a picture', async () => {
+        const store = getScanStore() as MemoryScanStore
+        const before = new Set(store.files.keys())
+        const manifest = fixtureManifest()
+        const exam = await buildBookletsHtml({
+          schoolName: 'Test School',
+          examTitle: 'Exam',
+          subjectName: 'Maths',
+          className: 'Class 7',
+          durationMin: 45,
+          totalMarks: 25,
+          manifest,
+          students: [
+            {
+              name: 'Someone',
+              admissionNo: 'X1',
+              rollNo: '1',
+              sectionName: 'A',
+              tokens: Array.from({ length: manifest.pageCount }, (_, i) =>
+                fixtureToken(0, i + 1),
+              ),
+            },
+          ],
+        })
+        const [bookletPng] = await renderPagePngs(exam, [0])
+        const r1 = await ingestOwnSheet(db, admin, paperId, {
+          bytes: await photograph(bookletPng),
+        })
+        expect(r1.status).toBe('rejected')
+        expect(r1.message).toMatch(/exam booklet/)
+        const fake = await buildCoversHtml({
+          schoolName: 'Test School',
+          paperTitle: 'Other',
+          subjectName: 'Maths',
+          grade: 7,
+          totalMarks: 10,
+          students: [
+            {
+              name: 'Ghost',
+              admissionNo: 'G',
+              rollNo: '1',
+              sectionName: 'A',
+              token: ownCoverToken({
+                schoolId: schoolA,
+                paperId: '00000000-0000-4000-8000-000000000001',
+                schoolStudentId: coverStudents[0].school_student_id,
+              }),
+            },
+          ],
+        })
+        const [fakePng] = await renderPagePngs(fake)
+        const r2 = await ingestOwnSheet(db, admin, paperId, {
+          bytes: await photograph(fakePng),
+        })
+        expect(r2.status).toBe('rejected')
+        expect(r2.message).toMatch(/not made by PrepPlan/)
+        const r3 = await ingestOwnSheet(db, admin, paperId, {
+          bytes: Buffer.from('this is not a picture'),
+        })
+        expect(r3.status).toBe('rejected')
+        await expect(
+          ingestOwnSheet(db, admin, paperId, { bytes: Buffer.alloc(0) }),
+        ).rejects.toThrow(/empty or too big/)
+        expect([...store.files.keys()].filter((k) => !before.has(k))).toEqual(
+          [],
+        )
+      }, 120_000)
+
+      it("a teacher without the student's section cannot file that student's cover", async () => {
+        const out = await ingestOwnSheet(db, otherTeacher(), paperId, {
+          bytes: await photograph(
+            cvPng.get(coverStudents[0].school_student_id)!,
+          ),
+        }).then(
+          (r) => r.status,
+          (e: unknown) => (e instanceof SchoolError ? e.code : 'other'),
+        )
+        expect(['rejected', 'not_found']).toContain(out)
+      }, 60_000)
+
+      it('a file sent in pieces is joined exactly; a missing piece is refused', async () => {
+        const blank = await blankJpeg('#cccccc', 700, 900)
+        const id = '11111111-1111-4111-8111-111111111111'
+        const cut = Math.floor(blank.length / 2)
+        await saveOwnSheetChunk(
+          db,
+          admin,
+          paperId,
+          id,
+          0,
+          blank.subarray(0, cut),
+        )
+        await saveOwnSheetChunk(db, admin, paperId, id, 1, blank.subarray(cut))
+        const got = await takeOwnSheetUpload(db, admin, paperId, id, 2)
+        expect(got.equals(blank)).toBe(true)
+        const id2 = '22222222-2222-4222-8222-222222222222'
+        await saveOwnSheetChunk(db, admin, paperId, id2, 0, blank)
+        await expect(
+          takeOwnSheetUpload(db, admin, paperId, id2, 2),
+        ).rejects.toThrow()
+      }, 60_000)
+
+      it('who may open what: the office and the subject teacher only; students, parents and outsiders never', async () => {
+        const sheet = await db
+          .selectFrom('school_own_sheets')
+          .select('id')
+          .where('paper_id', '=', paperId)
+          .where('status', '=', 'placed')
+          .executeTakeFirstOrThrow()
+        const params = { schoolId: schoolA, paperId }
+        const cases: Array<[TestSession, number, string]> = [
+          [adminS, 200, 'office'],
+          [teacherS, 200, 'teacher'],
+          [studentS, 403, 'student'],
+          [parentS, 403, 'parent'],
+          [outsiderS, 404, 'outsider'], // another school's office: it does not exist for her
+        ]
+        for (const [who, want, label] of cases)
+          expect(
+            (await call(SheetsRoute, 'GET', who.cookie, params)).status,
+            label,
+          ).toBe(want)
+        expect((await call(SheetsRoute, 'GET', null, params)).status).toBe(401)
+        expect(
+          (await call(CoversRoute, 'GET', studentS.cookie, params)).status,
+        ).toBe(403)
+        expect(
+          (
+            await call(SheetImageRoute, 'GET', studentS.cookie, {
+              schoolId: schoolA,
+              sheetId: sheet.id,
+            })
+          ).status,
+        ).toBe(403)
+        const res = await call(SheetsRoute, 'GET', adminS.cookie, params)
+        const text = await res.text()
+        const body = JSON.parse(text) as {
+          totals: { received: number }
+          sections: Array<unknown>
+        }
+        expect(body.totals.received).toBeGreaterThan(0)
+        expect(body.sections.length).toBeGreaterThan(0)
+        // never a storage key or an answer in what the screen gets
+        expect(text).not.toMatch(/original_key|SECRET-ANSWER|_own\//)
+      }, 60_000)
+
+      it('old sheets are deleted from storage by the retention rule; the row stays with a purged mark', async () => {
+        const store = getScanStore() as MemoryScanStore
+        const kept = await db
+          .selectFrom('school_own_sheets')
+          .select(['id', 'original_key'])
+          .where('paper_id', '=', paperId)
+          .where('original_key', 'is not', null)
+          .execute()
+        expect(kept.length).toBeGreaterThan(0)
+        for (const k of kept)
+          expect(store.files.has(k.original_key!)).toBe(true)
+        await db
+          .updateTable('school_own_sheets')
+          .set({ created_at: new Date(Date.now() - 90 * 86_400_000) })
+          .where('paper_id', '=', paperId)
+          .execute()
+        await purgeScanData(db)
+        for (const k of kept)
+          expect(store.files.has(k.original_key!)).toBe(false)
+        const rows = await db
+          .selectFrom('school_own_sheets')
+          .select(['id', 'purged_at'])
+          .where(
+            'id',
+            'in',
+            kept.map((k) => k.id),
+          )
+          .execute()
+        expect(rows).toHaveLength(kept.length)
+        expect(rows.every((r) => r.purged_at !== null)).toBe(true)
+      }, 60_000)
+    })
   })
 })

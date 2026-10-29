@@ -766,6 +766,15 @@ export interface SchoolMembers {
   user_id: string;
 }
 
+export interface SchoolOwnCovers {
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  paper_id: string;
+  school_id: string;
+  school_student_id: string;
+  token: string;
+}
+
 export interface SchoolOwnPapers {
   approved_at: Timestamp | null;
   approved_by_user_id: string | null;
@@ -817,6 +826,25 @@ export interface SchoolOwnQuestions {
   source_exam_question_id: string | null;
   text: string;
   type: Generated<string>;
+}
+
+export interface SchoolOwnSheets {
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  image_key: string | null;
+  kind: string;
+  original_key: string | null;
+  original_name: string | null;
+  paper_id: string;
+  placed_by: string | null;
+  purged_at: Timestamp | null;
+  reason: string | null;
+  school_id: string;
+  school_student_id: string | null;
+  seq: number | null;
+  size_bytes: number | null;
+  status: string;
+  uploaded_by_user_id: string;
 }
 
 export interface SchoolPaperTemplates {
@@ -897,8 +925,9 @@ export interface SchoolScanChunks {
   consumed_at: Timestamp | null;
   created_at: Generated<Timestamp>;
   created_by_user_id: string;
-  exam_id: string;
+  exam_id: string | null;
   id: Generated<string>;
+  own_paper_id: string | null;
   school_id: string;
   seq: number;
   size_bytes: number;
@@ -1221,8 +1250,10 @@ export interface DB {
   school_exams: SchoolExams;
   school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
+  school_own_covers: SchoolOwnCovers;
   school_own_papers: SchoolOwnPapers;
   school_own_questions: SchoolOwnQuestions;
+  school_own_sheets: SchoolOwnSheets;
   school_paper_templates: SchoolPaperTemplates;
   school_print_job_parts: SchoolPrintJobParts;
   school_print_jobs: SchoolPrintJobs;

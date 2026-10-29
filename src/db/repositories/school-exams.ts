@@ -277,6 +277,23 @@ export const schoolScanChunksRepository = {
       .orderBy('seq')
       .execute()
   },
+  /** The pieces of one upload for an own paper, in order. Only the uploader's own. */
+  async piecesOfPaper(
+    db: Db,
+    scope: SchoolScope,
+    paperId: string,
+    uploadId: string,
+  ) {
+    return db
+      .selectFrom('school_scan_chunks')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('own_paper_id', '=', paperId)
+      .where('upload_id', '=', uploadId)
+      .where('created_by_user_id', '=', scope.userId)
+      .orderBy('seq')
+      .execute()
+  },
   /** Pieces never joined into a page within a day (their files are still there). */
   async listAbandoned(db: Db, now: Date) {
     return db
@@ -380,5 +397,74 @@ export const schoolOwnQuestionsRepository = {
       .orderBy('position')
       .orderBy('created_at')
       .execute()
+  },
+}
+
+export const schoolOwnCoversRepository = {
+  ...createSchoolScopedRepository('school_own_covers'),
+  /**
+   * Looks a cover's QR token up across ALL schools: the one read not limited to the caller's school,
+   * because a scanned page may belong to another school. It returns only enough to refuse it.
+   */
+  async findByToken(db: Db, token: string) {
+    return db
+      .selectFrom('school_own_covers')
+      .select(['school_id', 'paper_id', 'school_student_id'])
+      .where('token', '=', token)
+      .executeTakeFirst()
+  },
+}
+export const schoolOwnSheetsRepository = {
+  ...createSchoolScopedRepository('school_own_sheets'),
+  /** Every scanned page of a paper, in the order they came, without the files. */
+  async listForPaper(db: Db, scope: SchoolScope, paperId: string) {
+    return db
+      .selectFrom('school_own_sheets')
+      .select([
+        'id',
+        'school_student_id',
+        'kind',
+        'status',
+        'placed_by',
+        'seq',
+        'reason',
+        'original_name',
+        'size_bytes',
+        'purged_at',
+        'created_at',
+        sql<boolean>`(image_key is not null or original_key is not null)`.as(
+          'has_file',
+        ),
+        sql<boolean>`(original_key is not null)`.as('has_original'),
+      ])
+      .where('school_id', '=', scope.schoolId)
+      .where('paper_id', '=', paperId)
+      .orderBy('created_at')
+      .execute()
+  },
+  async listDueForPurge(db: Db, now: Date) {
+    return db
+      .selectFrom('school_own_sheets as p')
+      .innerJoin('schools as s', 's.id', 'p.school_id')
+      .select(['p.id', 'p.image_key', 'p.original_key'])
+      .where((eb) =>
+        eb.or([
+          eb('p.image_key', 'is not', null),
+          eb('p.original_key', 'is not', null),
+        ]),
+      )
+      .where(
+        sql<boolean>`p.created_at < ${now}::timestamptz - (s.scan_retention_days || ' days')::interval`,
+      )
+      .execute()
+  },
+  async markPurged(db: Db, ids: ReadonlyArray<string>, now: Date) {
+    if (ids.length === 0) return 0
+    const r = await db
+      .updateTable('school_own_sheets')
+      .set({ image_key: null, original_key: null, purged_at: now })
+      .where('id', 'in', [...ids])
+      .executeTakeFirst()
+    return Number(r.numUpdatedRows)
   },
 }

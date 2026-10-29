@@ -7,6 +7,7 @@ import {
   schoolPrintJobPartsRepository,
   schoolPrintJobsRepository,
   schoolScanBatchesRepository,
+  schoolOwnSheetsRepository,
   schoolScanChunksRepository,
   schoolScanPagesRepository,
 } from '../../db/repositories'
@@ -792,6 +793,20 @@ export async function purgeScanData(
     }
   }
   const scans = await schoolScanPagesRepository.markPurged(db, done, now)
+
+  // answer sheets of a school's own papers follow the same retention
+  const dueSheets = await schoolOwnSheetsRepository.listDueForPurge(db, now)
+  const sheetsDone: Array<string> = []
+  for (const x of dueSheets) {
+    try {
+      for (const k of [x.image_key, x.original_key])
+        if (k) await store.remove(k)
+      sheetsDone.push(x.id)
+    } catch {
+      // keep the keys; try again tomorrow
+    }
+  }
+  await schoolOwnSheetsRepository.markPurged(db, sheetsDone, now)
 
   let chunks = 0
   for (const c of await schoolScanChunksRepository.listAbandoned(db, now)) {
