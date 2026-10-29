@@ -163,7 +163,7 @@ export const schoolScanPagesRepository = {
         'size_bytes',
         'purged_at',
         'created_at',
-        sql<boolean>`(image is not null)`.as('has_image'),
+        sql<boolean>`(image_key is not null)`.as('has_image'),
       ])
       .where('school_id', '=', scope.schoolId)
       .where('exam_id', '=', examId)
@@ -197,16 +197,32 @@ export const schoolScanPagesRepository = {
       .where('bp.token', '=', token)
       .executeTakeFirst()
   },
-  /** Blank the pictures older than each school's own retention period. The rows stay. */
-  async purgeExpired(db: Db, now: Date): Promise<number> {
-    const r = await sql`
-      update school_scan_pages p set image = null, original = null, purged_at = ${now}
-      from schools s
-      where p.school_id = s.id and (p.image is not null or p.original is not null)
-        and p.created_at < ${now}::timestamptz - (s.scan_retention_days || ' days')::interval`.execute(
-      db,
-    )
-    return Number(r.numAffectedRows ?? 0)
+  /** Pages whose files are past their school's own retention period (the files are still there). */
+  async listDueForPurge(db: Db, now: Date) {
+    return db
+      .selectFrom('school_scan_pages as p')
+      .innerJoin('schools as s', 's.id', 'p.school_id')
+      .select(['p.id', 'p.school_id', 'p.image_key', 'p.original_key'])
+      .where((eb) =>
+        eb.or([
+          eb('p.image_key', 'is not', null),
+          eb('p.original_key', 'is not', null),
+        ]),
+      )
+      .where(
+        sql<boolean>`p.created_at < ${now}::timestamptz - (s.scan_retention_days || ' days')::interval`,
+      )
+      .execute()
+  },
+  /** After the files are deleted: forget their keys and say when. The row stays. */
+  async markPurged(db: Db, ids: ReadonlyArray<string>, now: Date) {
+    if (ids.length === 0) return 0
+    const r = await db
+      .updateTable('school_scan_pages')
+      .set({ image_key: null, original_key: null, purged_at: now })
+      .where('id', 'in', [...ids])
+      .executeTakeFirst()
+    return Number(r.numUpdatedRows)
   },
 }
 export const schoolScanChunksRepository = {
@@ -223,13 +239,15 @@ export const schoolScanChunksRepository = {
       .orderBy('seq')
       .execute()
   },
-  /** Blank pieces that were never joined into a page within a day. The rows stay. */
-  async purgeAbandoned(db: Db, now: Date): Promise<number> {
-    const r =
-      await sql`update school_scan_chunks set data = null where data is not null and created_at < ${now}::timestamptz - interval '1 day'`.execute(
-        db,
-      )
-    return Number(r.numAffectedRows ?? 0)
+  /** Pieces never joined into a page within a day (their files are still there). */
+  async listAbandoned(db: Db, now: Date) {
+    return db
+      .selectFrom('school_scan_chunks')
+      .select(['id', 'school_id', 'storage_key'])
+      .where('storage_key', 'is not', null)
+      .where('consumed_at', 'is', null)
+      .where(sql<boolean>`created_at < ${now}::timestamptz - interval '1 day'`)
+      .execute()
   },
 }
 export const schoolExamAbsencesRepository = {

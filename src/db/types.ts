@@ -826,12 +826,12 @@ export interface SchoolScanChunks {
   consumed_at: Timestamp | null;
   created_at: Generated<Timestamp>;
   created_by_user_id: string;
-  data: Buffer | null;
   exam_id: string;
   id: Generated<string>;
   school_id: string;
   seq: number;
   size_bytes: number;
+  storage_key: string | null;
   upload_id: string;
 }
 
@@ -842,8 +842,8 @@ export interface SchoolScanPages {
   created_at: Generated<Timestamp>;
   exam_id: string;
   id: Generated<string>;
-  image: Buffer | null;
-  original: Buffer | null;
+  image_key: string | null;
+  original_key: string | null;
   original_name: string | null;
   page_no: number | null;
   purged_at: Timestamp | null;

@@ -66,6 +66,12 @@ const envSchema = z.object({
     .regex(/^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$/)
     .optional(),
   ANDROID_CERT_SHA256: z.string().min(1).optional(),
+  // PrepPlan for Schools: scanned answer pages live in a PRIVATE Supabase Storage bucket, never in
+  // Postgres (src/lib/scan-storage.ts). The service key is server-only. Without both URL and key a
+  // production deployment refuses scan uploads; local development writes to ./.scan-storage instead.
+  SUPABASE_URL: z.string().url().optional(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
+  SCAN_BUCKET: z.string().min(1).optional(),
 })
 
 export type Env = z.infer<typeof envSchema>

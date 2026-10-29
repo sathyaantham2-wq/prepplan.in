@@ -20,6 +20,8 @@ import { Route as ScanAssignRoute } from '../../routes/api/schools/$schoolId/exa
 import { Route as AbsencesRoute } from '../../routes/api/schools/$schoolId/exams/$examId/absences'
 import { Route as ScanImageRoute } from '../../routes/api/schools/$schoolId/scan-images/$pageId'
 import { decryptScan } from '../scan-crypto'
+import type { MemoryScanStore} from '../scan-storage';
+import { getScanStore } from '../scan-storage'
 import { buildBookletsHtml } from './booklet-html'
 import { photograph, renderPagePngs } from './scan-test-support'
 import type { PhotoOptions } from './scan-test-support'
@@ -1439,13 +1441,14 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect(wrongSchool.message).not.toContain(bStudentName)
       const kept = await db
         .selectFrom('school_scan_pages')
-        .select(['image', 'booklet_id', 'page_no'])
+        .select(['image_key', 'original_key', 'booklet_id', 'page_no'])
         .where('id', 'in', [wrongExam.pageId!, wrongSchool.pageId!])
         .execute()
       expect(kept).toHaveLength(2)
       for (const k of kept)
         expect(k).toMatchObject({
-          image: null,
+          image_key: null,
+          original_key: null,
           booklet_id: null,
           page_no: null,
         })
@@ -1485,14 +1488,33 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       const pg = sum.students.find((r) => r.name === 'Asha A')!.pages[0]
       const stored = await db
         .selectFrom('school_scan_pages')
-        .select('image')
+        .select(['image_key', 'original_key'])
         .where('id', '=', pg.pageId)
         .executeTakeFirstOrThrow()
-      expect(stored.image).not.toBeNull()
-      const raw = stored.image as Buffer
-      expect(raw.includes(Buffer.from([0xff, 0xd8, 0xff]))).toBe(false) // no plain JPEG inside
-      const plain = decryptScan(raw)
+      // the row holds only keys, per school and exam, with no name in them
+      expect(stored.image_key).toBe(
+        `${schoolA}/${examId}/${pg.pageId}/straightened.bin`,
+      )
+      expect(stored.original_key).toBe(
+        `${schoolA}/${examId}/${pg.pageId}/original.bin`,
+      )
+      const raw = await getScanStore().get(stored.image_key!)
+      expect(raw).not.toBeNull()
+      expect(raw!.includes(Buffer.from([0xff, 0xd8, 0xff]))).toBe(false) // no plain JPEG inside the stored file
+      const plain = decryptScan(raw!)
       expect(plain.subarray(0, 3).toString('hex')).toBe('ffd8ff')
+      // and the database has no column that could hold image bytes at all
+      const bytea = await db
+        .selectFrom('information_schema.columns' as never)
+        .select(['table_name', 'column_name'] as never)
+        .where('table_name' as never, 'in', [
+          'school_scan_pages',
+          'school_scan_chunks',
+          'school_scan_batches',
+        ] as never)
+        .where('data_type' as never, '=', 'bytea' as never)
+        .execute()
+      expect(bytea).toEqual([])
       const q = new URL(pg.url, 'http://x').searchParams
       const get = (cookie: string | null, url = pg.url) => {
         const u = new URL(url, 'http://x')
@@ -1542,11 +1564,16 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       })
       const row1 = await db
         .selectFrom('school_scan_pages')
-        .select(['original', 'image'])
+        .select(['original_key', 'image_key'])
         .where('id', '=', r.pageId!)
         .executeTakeFirstOrThrow()
-      expect(decryptScan(row1.original as Buffer).equals(bytes)).toBe(true)
-      expect(decryptScan(row1.image as Buffer).equals(bytes)).toBe(false)
+      const store = getScanStore()
+      expect(
+        decryptScan((await store.get(row1.original_key!))!).equals(bytes),
+      ).toBe(true)
+      expect(
+        decryptScan((await store.get(row1.image_key!))!).equals(bytes),
+      ).toBe(false)
       // a big file (more than one request may carry) goes up in pieces and is joined exactly
       const w = 2000
       const h = 2600
@@ -1578,6 +1605,12 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         })
       // a piece missing: refused, and nothing is stored
       expect((await put(0, big.subarray(0, size))).status).toBe(200)
+      // a piece waiting for the rest is a sealed file in storage, not database content
+      const waiting = (await getScanStore().get(
+        `${schoolA}/_chunks/${uploadId}/0.bin`,
+      ))!
+      expect(waiting.equals(big.subarray(0, size))).toBe(false)
+      expect(decryptScan(waiting).equals(big.subarray(0, size))).toBe(true)
       const early = await call(
         ScansRoute,
         'POST',
@@ -1602,21 +1635,28 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       const out = (await joined.json()) as { pageId: string }
       const stored = await db
         .selectFrom('school_scan_pages')
-        .select(['original', 'size_bytes'])
+        .select(['original_key', 'size_bytes'])
         .where('id', '=', out.pageId)
         .executeTakeFirstOrThrow()
       expect(stored.size_bytes).toBe(big.length)
-      expect(decryptScan(stored.original as Buffer).equals(big)).toBe(true)
+      expect(
+        decryptScan((await getScanStore().get(stored.original_key!))!).equals(
+          big,
+        ),
+      ).toBe(true)
       // the pieces are blanked once joined, the rows stay, and the same upload cannot be used twice
       const left = await db
         .selectFrom('school_scan_chunks')
-        .select(['data', 'consumed_at'])
+        .select(['storage_key', 'consumed_at'])
         .where('upload_id', '=', uploadId)
         .execute()
       expect(left).toHaveLength(pieces)
-      expect(left.every((l) => l.data === null && l.consumed_at !== null)).toBe(
-        true,
-      )
+      expect(
+        await getScanStore().get(`${schoolA}/_chunks/${uploadId}/0.bin`),
+      ).toBeNull() // only the final file is kept
+      expect(
+        left.every((l) => l.storage_key === null && l.consumed_at !== null),
+      ).toBe(true)
       expect(
         (
           await call(
@@ -1775,14 +1815,19 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect(tooBig.status).toBe(400)
     }, 120_000)
 
-    it('pictures past the school’s retention are blanked, the rows stay, and the summary stops linking them', async () => {
+    it('files past the school’s retention are deleted from storage, the rows stay marked purged, and the summary stops linking them', async () => {
+      const store = getScanStore() as MemoryScanStore
       const before = await db
         .selectFrom('school_scan_pages')
-        .select('id')
+        .select(['id', 'image_key', 'original_key'])
         .where('school_id', '=', schoolA)
-        .where('image', 'is not', null)
+        .where('image_key', 'is not', null)
         .execute()
       expect(before.length).toBeGreaterThan(pc)
+      const keys = before.flatMap((b) => [b.image_key!, b.original_key!])
+      for (const k of keys) expect(store.files.has(k)).toBe(true)
+      // inside the school's own period nothing is touched
+      expect((await purgeScanData(db)).scans).toBe(0)
       await db
         .updateTable('school_scan_pages')
         .set({ created_at: new Date(Date.now() - 400 * 24 * 3600 * 1000) })
@@ -1790,20 +1835,45 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         .execute()
       const r = await purgeScanData(db)
       expect(r.scans).toBeGreaterThanOrEqual(before.length)
+      for (const k of keys) expect(store.files.has(k)).toBe(false) // the files are really gone
       const after = await db
         .selectFrom('school_scan_pages')
-        .select(['image', 'original', 'purged_at'])
+        .select(['image_key', 'original_key', 'purged_at', 'status'])
         .where('school_id', '=', schoolA)
         .execute()
-      expect(after.length).toBeGreaterThanOrEqual(before.length) // nothing deleted
-      expect(after.every((a) => a.image === null && a.original === null)).toBe(
-        true,
-      )
+      expect(after.length).toBeGreaterThanOrEqual(before.length) // nothing deleted from the database
+      expect(
+        after.every((a) => a.image_key === null && a.original_key === null),
+      ).toBe(true)
+      expect(
+        after
+          .filter((a) => a.status === 'matched')
+          .every((a) => a.purged_at !== null),
+      ).toBe(true)
       const sum = await scanSummary(db, teacher, examId)
       expect(sum.students.every((s) => s.pages.length === 0)).toBe(true)
       expect(sum.students.find((s) => s.name === 'Asha A')!.received).toEqual(
         all,
       ) // the record of receipt stays
+    }, 60_000)
+
+    it('an upload that fails after its files were stored leaves no file behind', async () => {
+      const store = getScanStore() as MemoryScanStore
+      const before = new Set(store.files.keys())
+      // a booklet page that exists but whose student is not part of this exam's sections: the row
+      // cannot be written, so the sealed files must be removed again
+      const bytes = await photo('Asha A', 2)
+      await expect(
+        ingestScanPage(db, teacher, examId, {
+          bytes,
+          target: {
+            schoolStudentId: '00000000-0000-4000-8000-000000000000',
+            pageNo: 1,
+          },
+          batchId: '00000000-0000-4000-8000-000000000000',
+        }),
+      ).rejects.toBeInstanceOf(SchoolError)
+      expect([...store.files.keys()].filter((k) => !before.has(k))).toEqual([])
     }, 60_000)
   })
 })

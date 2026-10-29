@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto'
 import type { Db } from '../../db/connection'
 import {
   examPrintRepository,
@@ -15,6 +16,7 @@ import {
   signedScanPageUrl,
   verifyScanPageSignature,
 } from '../scan-crypto'
+import { chunkKey, getScanStore, scanKey } from '../scan-storage'
 import { SchoolError, auditSchool } from './common'
 import { loadExam } from './exam-service'
 import { readBookletPage } from './page-reader'
@@ -27,7 +29,8 @@ import { readBookletPage } from './page-reader'
 //   unreadable no QR could be read: waits for a teacher to say which page it is
 //   manual     a teacher said which page it is
 //   rejected   not ours, or from another exam or another school: no picture is kept
-// Pictures are stored only encrypted (AES-256-GCM) and blanked after the school's retention period.
+// Pictures are stored only as encrypted (AES-256-GCM) files in private storage, never in the database,
+// and the files are deleted after the school's retention period (the row stays, marked purged).
 
 export const MAX_SCAN_BYTES = 12 * 1024 * 1024
 
@@ -93,15 +96,36 @@ export async function ingestScanPage(
   db: Db,
   scope: SchoolScope,
   examId: string,
-  input: {
-    bytes: Buffer
-    name?: string | null
-    batchId?: string | null
-    /** Re-uploading a page the teacher is looking at: the new picture replaces the current one. */
-    replace?: boolean
-    /** Only used when the page has no readable QR: which page of which student this is. */
-    target?: { schoolStudentId: string; pageNo: number } | null
-  },
+  input: ScanInput,
+): Promise<ScanUploadResult> {
+  const written: Array<string> = []
+  try {
+    return await ingestInner(db, scope, examId, input, written)
+  } catch (e) {
+    const store = getScanStore()
+    await Promise.all(
+      written.map((k) => store.remove(k).catch(() => undefined)),
+    )
+    throw e
+  }
+}
+
+interface ScanInput {
+  bytes: Buffer
+  name?: string | null
+  batchId?: string | null
+  /** Re-uploading a page the teacher is looking at: the new picture replaces the current one. */
+  replace?: boolean
+  /** Only used when the page has no readable QR: which page of which student this is. */
+  target?: { schoolStudentId: string; pageNo: number } | null
+}
+
+async function ingestInner(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+  input: ScanInput,
+  written: Array<string>,
 ): Promise<ScanUploadResult> {
   const { exam } = await loadExam(db, scope, examId, 'handle')
   if (input.bytes.length === 0 || input.bytes.length > MAX_SCAN_BYTES)
@@ -144,9 +168,27 @@ export async function ingestScanPage(
 
   if (reading.problem && !reading.image && !reading.token)
     return reject(reading.problem)
-  const sealed = reading.image ? encryptScan(reading.image) : null
+  // The files go to private storage, sealed, before the row is written; the row keeps only the
+  // keys. Whatever was written is removed again if anything below fails.
+  const store = getScanStore()
+  const pageId = randomUUID()
+  const originalKey = scanKey(scope.schoolId, examId, pageId, 'original')
+  const imageKey = reading.image
+    ? scanKey(scope.schoolId, examId, pageId, 'straightened')
+    : null
   // the file exactly as it came in, sealed: never shrunk, never re-encoded
-  const keep = { ...base, original: encryptScan(input.bytes) }
+  await store.put(originalKey, encryptScan(input.bytes))
+  written.push(originalKey)
+  if (imageKey && reading.image) {
+    await store.put(imageKey, encryptScan(reading.image))
+    written.push(imageKey)
+  }
+  const keep = {
+    ...base,
+    id: pageId,
+    original_key: originalKey,
+    image_key: imageKey,
+  }
 
   // A QR that is not ours (some other code on the sheet): treat like no QR, but say so.
   if (!reading.token) {
@@ -156,7 +198,6 @@ export async function ingestScanPage(
         scope,
         examId,
         keep,
-        sealed,
         input.target,
         input.replace === true,
         batchId,
@@ -168,7 +209,6 @@ export async function ingestScanPage(
       ...keep,
       status: 'unreadable',
       reason,
-      image: sealed,
     })
     return {
       pageId: row.id,
@@ -204,7 +244,6 @@ export async function ingestScanPage(
     scope,
     examId,
     keep,
-    sealed,
     found.booklet_id,
     found.page_no,
     input.replace === true,
@@ -218,7 +257,6 @@ async function assignNew(
   scope: SchoolScope,
   examId: string,
   base: Record<string, unknown>,
-  sealed: Buffer | null,
   target: { schoolStudentId: string; pageNo: number },
   replace: boolean,
   batchId: string,
@@ -229,7 +267,6 @@ async function assignNew(
     scope,
     examId,
     base,
-    sealed,
     booklet.id,
     checkPageNo(booklet.page_count, target.pageNo),
     replace,
@@ -266,7 +303,6 @@ async function place(
   scope: SchoolScope,
   examId: string,
   base: Record<string, unknown>,
-  sealed: Buffer | null,
   bookletId: string,
   pageNo: number,
   replace: boolean,
@@ -302,7 +338,6 @@ async function place(
         page_no: pageNo,
         status: 'duplicate',
         reason: 'This page was already received. The first copy is kept.',
-        image: sealed,
       } as never)
       return { id: dup.id, status: 'duplicate' as const, replaced: false }
     }
@@ -317,7 +352,6 @@ async function place(
       booklet_id: bookletId,
       page_no: pageNo,
       status: kind,
-      image: sealed,
       assigned_by_user_id: kind === 'manual' ? scope.userId : null,
     } as never)
     return { id: ins.id, status: kind, replaced: current !== undefined }
@@ -659,23 +693,58 @@ export async function scanImage(
   )
   if (!verifyScanPageSignature(pageId, exp, sig)) throw notFound
   const page = await schoolScanPagesRepository.findWithImage(db, scope, pageId)
-  if (!page || !page.image) throw notFound
+  if (!page?.image_key) throw notFound
   try {
     await loadExam(db, scope, page.exam_id, 'handle')
   } catch {
     throw notFound
   }
-  return decryptScan(page.image)
+  const sealed = await getScanStore().get(page.image_key)
+  if (!sealed) throw notFound
+  return decryptScan(sealed)
 }
 
-/** Blank pictures past each school's retention, and the finished booklet files past their week. */
+/**
+ * Deletes the stored files past each school's retention period, and the pieces of uploads that were
+ * never joined. The rows stay: a page keeps its status, reason and quality note, with the keys
+ * cleared and `purged_at` set. A file that could not be deleted keeps its key and is tried again
+ * the next day.
+ */
 export async function purgeScanData(
   db: Db,
   now = new Date(),
 ): Promise<{ scans: number; printFiles: number; chunks: number }> {
+  const store = getScanStore()
+  const due = await schoolScanPagesRepository.listDueForPurge(db, now)
+  const done: Array<string> = []
+  for (const p of due) {
+    try {
+      for (const k of [p.image_key, p.original_key])
+        if (k) await store.remove(k)
+      done.push(p.id)
+    } catch {
+      // keep the keys; try again tomorrow
+    }
+  }
+  const scans = await schoolScanPagesRepository.markPurged(db, done, now)
+
+  let chunks = 0
+  for (const c of await schoolScanChunksRepository.listAbandoned(db, now)) {
+    try {
+      if (c.storage_key) await store.remove(c.storage_key)
+      await db
+        .updateTable('school_scan_chunks')
+        .set({ storage_key: null })
+        .where('id', '=', c.id)
+        .execute()
+      chunks++
+    } catch {
+      // try again tomorrow
+    }
+  }
   return {
-    scans: await schoolScanPagesRepository.purgeExpired(db, now),
-    chunks: await schoolScanChunksRepository.purgeAbandoned(db, now),
+    scans,
+    chunks,
     printFiles: await schoolPrintJobsRepository.purgeExpired(db, now),
   }
 }
@@ -686,7 +755,10 @@ export async function purgeScanData(
 export const MAX_CHUNK_BYTES = 3.5 * 1024 * 1024
 const MAX_CHUNKS = 4 // 4 x 3.5 MB covers the 12 MB file limit
 
-/** Keeps one piece of a file being uploaded. Safe to send again: the same piece replaces itself. */
+/**
+ * Keeps one piece of a file being uploaded, sealed, in storage (not in the database). Safe to send
+ * again: the same piece replaces itself.
+ */
 export async function saveScanChunk(
   db: Db,
   scope: SchoolScope,
@@ -715,11 +787,13 @@ export async function saveScanChunk(
     uploadId,
   )
   const existing = mine.find((m) => m.seq === seq)
-  if (existing && existing.consumed_at)
+  if (existing?.consumed_at)
     throw new SchoolError('conflict', 'That upload was already used.')
+  const key = chunkKey(scope.schoolId, uploadId, seq)
+  await getScanStore().put(key, encryptScan(bytes))
   if (existing)
     await schoolScanChunksRepository.update(db, scope, existing.id, {
-      data: bytes,
+      storage_key: key,
       size_bytes: bytes.length,
     })
   else
@@ -727,14 +801,17 @@ export async function saveScanChunk(
       exam_id: examId,
       upload_id: uploadId,
       seq,
-      data: bytes,
+      storage_key: key,
       size_bytes: bytes.length,
       created_by_user_id: scope.userId,
     })
   return { received: mine.length + (existing ? 0 : 1) }
 }
 
-/** Joins the pieces of an upload into the original file, then blanks them (the rows stay). */
+/**
+ * Joins the pieces of an upload into the original file, then deletes them from storage (the rows
+ * stay, with the key cleared). Only the joined file is kept, by the page that is then made from it.
+ */
 export async function takeScanUpload(
   db: Db,
   scope: SchoolScope,
@@ -753,18 +830,30 @@ export async function takeScanUpload(
   const ok =
     pieces.length === chunks &&
     pieces.every(
-      (p, i) => p.seq === i && p.data !== null && p.consumed_at === null,
+      (p, i) => p.seq === i && p.storage_key !== null && p.consumed_at === null,
     )
   if (!ok)
     throw new SchoolError(
       'invalid',
       'Some of that file did not arrive. Please send it again.',
     )
-  const whole = Buffer.concat(pieces.map((p) => p.data as Buffer))
-  for (const p of pieces)
+  const store = getScanStore()
+  const parts: Array<Buffer> = []
+  for (const p of pieces) {
+    const sealed = p.storage_key ? await store.get(p.storage_key) : null
+    if (!sealed)
+      throw new SchoolError(
+        'invalid',
+        'Some of that file did not arrive. Please send it again.',
+      )
+    parts.push(decryptScan(sealed))
+  }
+  for (const p of pieces) {
+    if (p.storage_key) await store.remove(p.storage_key)
     await schoolScanChunksRepository.update(db, scope, p.id, {
-      data: null,
+      storage_key: null,
       consumed_at: new Date(),
     })
-  return whole
+  }
+  return Buffer.concat(parts)
 }
