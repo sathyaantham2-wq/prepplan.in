@@ -12,8 +12,13 @@ type RouteHandler = (opts: {
   params?: Record<string, string>
 }) => Promise<Response>
 
-function handlerFor(route: { options: { server?: unknown } }, method: string): RouteHandler {
-  const handlers = (route.options.server as { handlers: Record<string, RouteHandler> }).handlers
+function handlerFor(
+  route: { options: { server?: unknown } },
+  method: string,
+): RouteHandler {
+  const handlers = (
+    route.options.server as { handlers: Record<string, RouteHandler> }
+  ).handlers
   return handlers[method]
 }
 
@@ -39,10 +44,18 @@ describe('AI usage & cost dashboard (F091)', () => {
   let admin: TestSession
   let parent: TestSession
   let studentId: string
-  const today = new Date().toISOString().slice(0, 10)
+  // "Today" as the database counts days (its own time zone), not the computer's UTC date: between
+  // midnight and 05:30 in India the two differ, and the dashboard groups by the database's day.
+  let today = ''
 
   beforeAll(async () => {
     db = createDb()
+    const { sql } = await import('kysely')
+    today = (
+      await sql<{
+        d: string
+      }>`select to_char(now(), 'YYYY-MM-DD') as d`.execute(db)
+    ).rows[0].d
     admin = await createParentSession('ai-usage-admin')
     await promoteToAdmin(admin.userId)
     parent = await createParentSession('ai-usage-parent')
@@ -92,7 +105,10 @@ describe('AI usage & cost dashboard (F091)', () => {
   })
 
   afterAll(async () => {
-    await db.deleteFrom('ai_jobs').where('household_id', '=', parent.householdId).execute()
+    await db
+      .deleteFrom('ai_jobs')
+      .where('household_id', '=', parent.householdId)
+      .execute()
     await db
       .deleteFrom('ai_jobs')
       .where('household_id', 'is', null)
@@ -107,12 +123,18 @@ describe('AI usage & cost dashboard (F091)', () => {
   })
 
   it('requires admin', async () => {
-    const response = await handlerFor(AiUsageRoute, 'GET')({ request: request(parent.cookie) })
+    const response = await handlerFor(
+      AiUsageRoute,
+      'GET',
+    )({ request: request(parent.cookie) })
     expect(response.status).toBe(403)
   })
 
   it('reports overall totals across all three seeded jobs', async () => {
-    const response = await handlerFor(AiUsageRoute, 'GET')({ request: request(admin.cookie) })
+    const response = await handlerFor(
+      AiUsageRoute,
+      'GET',
+    )({ request: request(admin.cookie) })
     expect(response.status).toBe(200)
     const body = await response.json()
     expect(body.totals.calls).toBeGreaterThanOrEqual(3)
@@ -124,19 +146,38 @@ describe('AI usage & cost dashboard (F091)', () => {
     const response = await handlerFor(
       AiUsageRoute,
       'GET',
-    )({ request: new Request('http://localhost/test?group_by=feature', { headers: { cookie: admin.cookie } }) })
+    )({
+      request: new Request('http://localhost/test?group_by=feature', {
+        headers: { cookie: admin.cookie },
+      }),
+    })
     const body = await response.json()
-    const byKey = new Map(body.buckets.map((b: { group_key: string; calls: number }) => [b.group_key, b]))
-    expect((byKey.get('AI-05') as { calls: number }).calls).toBeGreaterThanOrEqual(1)
-    expect((byKey.get('AI-09') as { calls: number }).calls).toBeGreaterThanOrEqual(1)
-    expect((byKey.get('AI-01') as { calls: number }).calls).toBeGreaterThanOrEqual(1)
+    const byKey = new Map(
+      body.buckets.map((b: { group_key: string; calls: number }) => [
+        b.group_key,
+        b,
+      ]),
+    )
+    expect(
+      (byKey.get('AI-05') as { calls: number }).calls,
+    ).toBeGreaterThanOrEqual(1)
+    expect(
+      (byKey.get('AI-09') as { calls: number }).calls,
+    ).toBeGreaterThanOrEqual(1)
+    expect(
+      (byKey.get('AI-01') as { calls: number }).calls,
+    ).toBeGreaterThanOrEqual(1)
   })
 
   it('groups by student, attributing AI-01 to no student', async () => {
     const response = await handlerFor(
       AiUsageRoute,
       'GET',
-    )({ request: new Request('http://localhost/test?group_by=student', { headers: { cookie: admin.cookie } }) })
+    )({
+      request: new Request('http://localhost/test?group_by=student', {
+        headers: { cookie: admin.cookie },
+      }),
+    })
     const body = await response.json()
     const studentBucket = body.buckets.find(
       (b: { group_key: string | null }) => b.group_key === studentId,
@@ -152,9 +193,15 @@ describe('AI usage & cost dashboard (F091)', () => {
     const response = await handlerFor(
       AiUsageRoute,
       'GET',
-    )({ request: new Request('http://localhost/test?group_by=day', { headers: { cookie: admin.cookie } }) })
+    )({
+      request: new Request('http://localhost/test?group_by=day', {
+        headers: { cookie: admin.cookie },
+      }),
+    })
     const body = await response.json()
-    const todayBucket = body.buckets.find((b: { group_key: string }) => b.group_key === today)
+    const todayBucket = body.buckets.find(
+      (b: { group_key: string }) => b.group_key === today,
+    )
     expect(todayBucket).toBeTruthy()
     expect(todayBucket.calls).toBeGreaterThanOrEqual(3)
   })
