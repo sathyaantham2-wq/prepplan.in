@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import { ApiError, api } from '../../lib/school-client'
-import { blobToBase64, filesToPages, formatBytes } from '../../lib/scan-client'
+import { formatBytes } from '../../lib/scan-client'
+import {
+  filesToOriginalPages,
+  sendInPieces,
+} from '../../lib/school-scan-client'
 import type {
   ScanSummary,
   ScanUploadResult,
@@ -91,7 +95,7 @@ export function ScanPanel({ base }: { base: string }) {
     setError(null)
     setMessage(null)
     try {
-      const pages = await filesToPages(files)
+      const pages = await filesToOriginalPages(files)
       const list: Array<UploadItem> = pages.map((p) => ({
         key: p.key,
         source: p.source,
@@ -115,7 +119,10 @@ export function ScanPanel({ base }: { base: string }) {
         try {
           const result = await api<ScanUploadResult>(`${base}/scans`, {
             body: {
-              data: await blobToBase64(p.blob),
+              ...(await (async () => {
+                const sent = await sendInPieces(base, p.blob)
+                return { upload_id: sent.uploadId, chunks: sent.chunks }
+              })()),
               name: p.source,
               batch_id: batchId,
               replace: target ? true : undefined,
@@ -174,6 +181,13 @@ export function ScanPanel({ base }: { base: string }) {
           Upload a whole section as one PDF, or take photos with a phone. Any
           order is fine, and a page may be upside down or tilted. Each page is
           matched to its student by the code printed on it.
+        </p>
+        <p
+          data-testid="scan-original-note"
+          className="rounded-lg border border-amber-400 bg-amber-50 px-3 py-2 text-base text-amber-950"
+        >
+          Upload the original photos. Don&apos;t forward them through WhatsApp
+          first. Scanners: 200 dpi or more.
         </p>
         <FilePick
           label="Choose photos or a PDF"

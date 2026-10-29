@@ -1,6 +1,6 @@
 import jsQR from 'jsqr'
 import sharp from 'sharp'
-import { PAGE } from './booklet-layout'
+import { PAGE, QR_SIZE_MM } from './booklet-layout'
 import { parseQrContent } from './booklet-token'
 
 // Reads one photographed booklet page: finds its QR code (the page's identity), works out how the
@@ -21,7 +21,7 @@ const WORK_EDGE = 1800 // longest side while looking for things
 const QR_SEARCH_EDGES = [2600, 3600, 1200]
 export const OUT_W = 1240 // straightened page: A4 at about 150 dpi
 export const OUT_H = 1754
-const QR_MM = 20
+const QR_MM = QR_SIZE_MM
 const MARK_MM = 5
 const MARK_CENTRE_MM = { x: 7 + 2.5, fromRight: 12 - 2.5, y: 7 + 2.5 } // see booklet-layout corners
 const CORNER_CENTRES_MM: Array<[number, number]> = [
@@ -243,32 +243,52 @@ function findCornerMarks(
       b.h < side * 1.9
     const filled = b.area / (b.w * b.h) > 0.55 // a square seen at an angle fills less of its bounding box
     const inQr = qrCentre
-      ? Math.hypot(b.cx - qrCentre[0], b.cy - qrCentre[1]) < 14 * pxPerMm
+      ? Math.hypot(b.cx - qrCentre[0], b.cy - qrCentre[1]) <
+        QR_MM * 0.6 * pxPerMm
       : false
     return squareish && sized && filled && !inQr
   })
   if (marks.length < 4)
     return marks.map((m) => [m.cx, m.cy] as [number, number])
-  const pick = (score: (b: Blob) => number) =>
-    marks.reduce((best, b) => (score(b) < score(best) ? b : best))
-  const tl = pick((b) => b.cx + b.cy)
-  const tr = pick((b) => -(b.cx - b.cy))
-  const bl = pick((b) => b.cx - b.cy)
-  const br = pick((b) => -(b.cx + b.cy))
-  const four = [tl, tr, bl, br]
-  if (new Set(four).size < 4)
-    return four.map((m) => [m.cx, m.cy] as [number, number]).slice(0, 3)
-  // the rectangle they make must be about as wide and tall as the page's corner marks are apart
-  const top = Math.hypot(tr.cx - tl.cx, tr.cy - tl.cy) / pxPerMm
-  const left = Math.hypot(bl.cx - tl.cx, bl.cy - tl.cy) / pxPerMm
+  // More than four candidates (a dark patch of desk, a smudge): take the four that make the
+  // rectangle the page's corner marks should make, not just the four most extreme.
   const wantW = CORNER_CENTRES_MM[1][0] - CORNER_CENTRES_MM[0][0]
   const wantH = CORNER_CENTRES_MM[2][1] - CORNER_CENTRES_MM[0][1]
-  const ok =
-    Math.abs(top - wantW) / wantW < 0.18 &&
-    Math.abs(left - wantH) / wantH < 0.18
-  return ok
-    ? four.map((m) => [m.cx, m.cy] as [number, number])
-    : four.map((m) => [m.cx, m.cy] as [number, number]).slice(0, 3)
+  const pool = [...marks]
+    .sort((a, b) => b.area / (b.w * b.h) - a.area / (a.w * a.h))
+    .slice(0, 12)
+  const dist = (a: Blob, b: Blob) =>
+    Math.hypot(a.cx - b.cx, a.cy - b.cy) / pxPerMm
+  const off = (v: number, want: number) => Math.abs(v - want) / want
+  let best: { four: Array<Blob>; score: number } | null = null
+  for (let i = 0; i < pool.length; i++)
+    for (let j = i + 1; j < pool.length; j++)
+      for (let k = j + 1; k < pool.length; k++)
+        for (let l = k + 1; l < pool.length; l++) {
+          const q = [pool[i], pool[j], pool[k], pool[l]]
+          const tl = q.reduce((m, b) => (b.cx + b.cy < m.cx + m.cy ? b : m))
+          const br = q.reduce((m, b) => (b.cx + b.cy > m.cx + m.cy ? b : m))
+          const rest = q.filter((b) => b !== tl && b !== br)
+          if (rest.length !== 2) continue
+          const tr =
+            rest[0].cx - rest[0].cy > rest[1].cx - rest[1].cy
+              ? rest[0]
+              : rest[1]
+          const bl = rest[0] === tr ? rest[1] : rest[0]
+          const sides = [
+            off(dist(tl, tr), wantW),
+            off(dist(bl, br), wantW),
+            off(dist(tl, bl), wantH),
+            off(dist(tr, br), wantH),
+          ]
+          if (sides.some((v) => v > 0.3)) continue
+          const score = sides.reduce((t, v) => t + v, 0)
+          if (!best || score < best.score)
+            best = { four: [tl, tr, bl, br], score }
+        }
+  return best
+    ? best.four.map((m) => [m.cx, m.cy] as [number, number])
+    : marks.slice(0, 3).map((m) => [m.cx, m.cy] as [number, number])
 }
 
 /** Solves the 3x3 projective map taking four source points to four destination points. */

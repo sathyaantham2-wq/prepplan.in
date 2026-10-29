@@ -292,6 +292,10 @@ test.describe.serial('school screens on a phone', () => {
       .where('school_id', 'in', ids)
       .execute()
     await db
+      .deleteFrom('school_scan_chunks')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
       .deleteFrom('school_scan_pages')
       .where('school_id', 'in', ids)
       .execute()
@@ -1048,6 +1052,9 @@ test.describe.serial('school screens on a phone', () => {
     ).toBeVisible()
     await expect(page.getByTestId('scan-students')).toContainText(
       booklets[0].name,
+    )
+    await expect(page.getByTestId('scan-original-note')).toHaveText(
+      "Upload the original photos. Don't forward them through WhatsApp first. Scanners: 200 dpi or more.",
     )
     await shot(page, '50-scan-upload')
     await looksRight(page)

@@ -5,8 +5,9 @@ import { requireSchoolRole } from '../../../../../../lib/school-session'
 import { SchoolError } from '../../../../../../lib/schools/common'
 import { readJson, str } from '../../../../../../lib/schools/http'
 import {
-  MAX_SCAN_BYTES,
+  MAX_CHUNK_BYTES,
   ingestScanPage,
+  takeScanUpload,
 } from '../../../../../../lib/schools/scan-service'
 
 export const Route = createFileRoute(
@@ -24,14 +25,26 @@ export const Route = createFileRoute(
         if (scope instanceof Response) return scope
         try {
           const b = await readJson(request)
-          const data = typeof b?.data === 'string' ? b.data : ''
-          // base64 is about a third bigger than the picture
-          if (data.length > Math.ceil((MAX_SCAN_BYTES * 4) / 3) + 8)
-            throw new SchoolError(
-              'invalid',
-              'That file is too big. Each photo must be under 12 MB.',
+          // A file arrives either whole in `data` (small, base64) or in pieces sent earlier to
+          // .../scan-chunks/:uploadId and named here by upload_id and the number of pieces.
+          let bytes: Buffer
+          if (typeof b?.upload_id === 'string') {
+            bytes = await takeScanUpload(
+              getSharedDb(),
+              scope,
+              params.examId,
+              b.upload_id,
+              typeof b.chunks === 'number' ? b.chunks : 0,
             )
-          const bytes = Buffer.from(data, 'base64')
+          } else {
+            const data = typeof b?.data === 'string' ? b.data : ''
+            if (data.length > Math.ceil((MAX_CHUNK_BYTES * 4) / 3) + 8)
+              throw new SchoolError(
+                'invalid',
+                'That file is too big to send in one piece.',
+              )
+            bytes = Buffer.from(data, 'base64')
+          }
           const t =
             b?.target && typeof b.target === 'object'
               ? (b.target as Record<string, unknown>)

@@ -64,7 +64,7 @@ function pageHtml(
     <div class="who"><b>${escapeHtml(s.name)}</b> &nbsp; ID <span class="mono">${escapeHtml(s.admissionNo)}</span> &nbsp; Roll ${escapeHtml(s.rollNo)} &nbsp; ${escapeHtml(s.sectionName)}</div>
   </div>`)
   if (p.kind === 'cover') {
-    parts.push(`<div class="cover-block" style="left:16mm;top:34mm;width:178mm">
+    parts.push(`<div class="cover-block" style="left:16mm;top:42mm;width:178mm">
       <div class="title">Answer Booklet</div>
       <table class="details">
         <tr><td>Name</td><td><b>${escapeHtml(s.name)}</b></td><td>Class</td><td>${escapeHtml(input.className)} ${escapeHtml(s.sectionName)}</td></tr>

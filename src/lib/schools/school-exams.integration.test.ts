@@ -13,6 +13,7 @@ import { PDFDocument } from 'pdf-lib'
 import sharp from 'sharp'
 import QRCode from 'qrcode'
 import { Route as ScanBatchesRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-batches'
+import { Route as ScanChunkRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-chunks.$uploadId'
 import { Route as ScansRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scans'
 import { Route as ScanSummaryRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-summary'
 import { Route as ScanAssignRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign'
@@ -472,6 +473,10 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       .execute()
     await db
       .deleteFrom('school_print_jobs')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_scan_chunks')
       .where('school_id', 'in', ids)
       .execute()
     await db
@@ -1528,6 +1533,138 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         expect([403, 404]).toContain((await get(s.cookie)).status)
     }, 60_000)
 
+    it('nothing is shrunk or re-encoded: the stored original is the uploaded file, byte for byte, even when it needs several pieces', async () => {
+      // an ordinary photo of a page: the original is what came in, the straightened copy is separate
+      const bytes = await photo('Ravi A', 5, { rotate: 12, noise: 6 })
+      const r = await ingestScanPage(db, teacher, examId, {
+        bytes,
+        name: 'p5.jpg',
+      })
+      const row1 = await db
+        .selectFrom('school_scan_pages')
+        .select(['original', 'image'])
+        .where('id', '=', r.pageId!)
+        .executeTakeFirstOrThrow()
+      expect(decryptScan(row1.original as Buffer).equals(bytes)).toBe(true)
+      expect(decryptScan(row1.image as Buffer).equals(bytes)).toBe(false)
+      // a big file (more than one request may carry) goes up in pieces and is joined exactly
+      const w = 2000
+      const h = 2600
+      const noise = Buffer.alloc(w * h * 3)
+      for (let i = 0; i < noise.length; i++) noise[i] = (i * 2654435761) >>> 24
+      const big = await sharp(noise, {
+        raw: { width: w, height: h, channels: 3 },
+      })
+        .jpeg({ quality: 90 })
+        .toBuffer()
+      expect(big.length).toBeGreaterThan(3.6 * 1024 * 1024)
+      expect(big.length).toBeLessThan(12 * 1024 * 1024)
+      const uploadId = crypto.randomUUID()
+      const size = Math.floor(3.5 * 1024 * 1024)
+      const pieces = Math.ceil(big.length / size)
+      const put = async (i: number, body: Buffer) =>
+        (
+          ScanChunkRoute.options.server as { handlers: Record<string, Handler> }
+        ).handlers.PUT({
+          request: new Request(`http://localhost/x?seq=${i}`, {
+            method: 'PUT',
+            headers: {
+              cookie: teacherS.cookie,
+              'content-type': 'application/octet-stream',
+            },
+            body: new Uint8Array(body),
+          }),
+          params: { schoolId: schoolA, examId, uploadId },
+        })
+      // a piece missing: refused, and nothing is stored
+      expect((await put(0, big.subarray(0, size))).status).toBe(200)
+      const early = await call(
+        ScansRoute,
+        'POST',
+        teacherS.cookie,
+        { schoolId: schoolA, examId },
+        { upload_id: uploadId, chunks: pieces },
+      )
+      expect(early.status).toBe(400)
+      for (let i = 1; i < pieces; i++)
+        expect(
+          (await put(i, big.subarray(i * size, (i + 1) * size))).status,
+        ).toBe(200)
+      expect((await put(0, big.subarray(0, size))).status).toBe(200) // sending a piece again is harmless
+      const joined = await call(
+        ScansRoute,
+        'POST',
+        teacherS.cookie,
+        { schoolId: schoolA, examId },
+        { upload_id: uploadId, chunks: pieces, name: 'big.jpg' },
+      )
+      expect(joined.status).toBe(200)
+      const out = (await joined.json()) as { pageId: string }
+      const stored = await db
+        .selectFrom('school_scan_pages')
+        .select(['original', 'size_bytes'])
+        .where('id', '=', out.pageId)
+        .executeTakeFirstOrThrow()
+      expect(stored.size_bytes).toBe(big.length)
+      expect(decryptScan(stored.original as Buffer).equals(big)).toBe(true)
+      // the pieces are blanked once joined, the rows stay, and the same upload cannot be used twice
+      const left = await db
+        .selectFrom('school_scan_chunks')
+        .select(['data', 'consumed_at'])
+        .where('upload_id', '=', uploadId)
+        .execute()
+      expect(left).toHaveLength(pieces)
+      expect(left.every((l) => l.data === null && l.consumed_at !== null)).toBe(
+        true,
+      )
+      expect(
+        (
+          await call(
+            ScansRoute,
+            'POST',
+            teacherS.cookie,
+            { schoolId: schoolA, examId },
+            { upload_id: uploadId, chunks: pieces },
+          )
+        ).status,
+      ).toBe(400)
+      // a piece is only accepted from staff of this exam, and not too big or out of range
+      expect((await put(9, big.subarray(0, 100))).status).toBe(400)
+      expect((await put(0, big.subarray(0, size + 1000))).status).toBe(400)
+      for (const sess of [outsiderS, otherTeacherS]) {
+        const res = await (
+          ScanChunkRoute.options.server as { handlers: Record<string, Handler> }
+        ).handlers.PUT({
+          request: new Request('http://localhost/x?seq=0', {
+            method: 'PUT',
+            headers: { cookie: sess.cookie },
+            body: new Uint8Array([1]),
+          }),
+          params: {
+            schoolId: schoolA,
+            examId,
+            uploadId: '5c3f0000-0000-4000-8000-0000000000b2',
+          },
+        })
+        expect(res.status).toBe(404)
+      }
+      expect(
+        (
+          await (
+            ScanChunkRoute.options.server as {
+              handlers: Record<string, Handler>
+            }
+          ).handlers.PUT({
+            request: new Request('http://localhost/x?seq=0', {
+              method: 'PUT',
+              body: new Uint8Array([1]),
+            }),
+            params: { schoolId: schoolA, examId, uploadId },
+          })
+        ).status,
+      ).toBe(401)
+    }, 120_000)
+
     it('a student marked absent is not chased; marking is refused once pages arrived; a page arriving clears it', async () => {
       const kiran = (
         await db
@@ -1655,11 +1792,13 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect(r.scans).toBeGreaterThanOrEqual(before.length)
       const after = await db
         .selectFrom('school_scan_pages')
-        .select(['image', 'purged_at'])
+        .select(['image', 'original', 'purged_at'])
         .where('school_id', '=', schoolA)
         .execute()
       expect(after.length).toBeGreaterThanOrEqual(before.length) // nothing deleted
-      expect(after.every((a) => a.image === null)).toBe(true)
+      expect(after.every((a) => a.image === null && a.original === null)).toBe(
+        true,
+      )
       const sum = await scanSummary(db, teacher, examId)
       expect(sum.students.every((s) => s.pages.length === 0)).toBe(true)
       expect(sum.students.find((s) => s.name === 'Asha A')!.received).toEqual(

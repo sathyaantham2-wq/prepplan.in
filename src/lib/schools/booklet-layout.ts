@@ -15,7 +15,7 @@
 
 export const PAGE = { w: 210, h: 297 } as const
 const MARGIN = 12
-const CONTENT_TOP = 34
+const CONTENT_TOP = 44 // clear of the 30 mm QR code (it ends at 38 mm)
 const CONTENT_BOTTOM = 281
 const LINE_H = 8
 const LABEL_H = 7
@@ -25,7 +25,7 @@ const MIN_BOX = 24
 const BUBBLE_R = 2.75
 const BUBBLE_PITCH = 11
 const ROW_PITCH = 9.5
-const GRID_TOP = 108
+const GRID_TOP = 118
 const BUBBLE_OPTIONS = ['A', 'B', 'C', 'D'] as const
 
 export interface BookletQuestion {
@@ -72,7 +72,9 @@ export interface BookletManifest {
 }
 
 // Corner marks sit 7 mm in from each edge and the QR 16 mm in, inside what any printer can reach.
-const qr = { x: PAGE.w - 16 - 20, y: 8, size: 20 }
+// 30 mm: at 150 dpi (a 1240 px wide A4 scan) each of its 29 modules is about 6 px, enough to read.
+export const QR_SIZE_MM = 30
+const qr = { x: PAGE.w - 16 - QR_SIZE_MM, y: 8, size: QR_SIZE_MM }
 const corners = [
   { x: 7, y: 7, size: 5 },
   { x: PAGE.w - 12, y: 7, size: 5 },

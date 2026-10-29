@@ -118,6 +118,40 @@ describe('the page reader on phone-style photos of real booklet pages', () => {
     }, 180_000)
   }
 
+  // Flatbed scans and scanned PDFs: the page fills the picture, so it is the pixels across the page
+  // that matter. 150 dpi is 1240 px wide, 100 dpi 827 px. Rendered pages are 1240 px wide already.
+  describe('flat scans', () => {
+    const scan = async (
+      png: Buffer,
+      width: number,
+      o: { rotate?: number; jpeg?: number } = {},
+    ) =>
+      sharp(png)
+        .resize({ width })
+        .rotate(o.rotate ?? 0, { background: '#ffffff' })
+        .jpeg({ quality: o.jpeg ?? 75 })
+        .toBuffer()
+    const flat: Array<[string, number, { rotate?: number; jpeg?: number }]> = [
+      ['150 dpi (1240 px wide)', 1240, {}],
+      ['150 dpi, a degree or two crooked', 1240, { rotate: 1.5 }],
+      ['150 dpi, fed in upside down', 1240, { rotate: 180 }],
+      ['150 dpi, heavily compressed', 1240, { jpeg: 40 }],
+      ['100 dpi (827 px wide)', 827, {}],
+    ]
+    for (const [name, width, o] of flat) {
+      it(`reads every page: ${name}`, async () => {
+        let sorted = 0
+        for (let p = 0; p < pageCount; p++) {
+          const r = await readBookletPage(await scan(originals[p], width, o))
+          if (r.token === fixtureToken(0, p + 1)) sorted++
+          else expect(r.token, 'must never be a different page').toBeNull()
+        }
+        console.log(`${name}: ${sorted}/${pageCount} sorted`)
+        expect(sorted).toBe(pageCount)
+      }, 120_000)
+    }
+  })
+
   it('says plainly when a picture has no code, and keeps it upright', async () => {
     const blank = await sharp({
       create: { width: 900, height: 1200, channels: 3, background: '#d9d4c7' },

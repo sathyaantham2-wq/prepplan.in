@@ -209,6 +209,7 @@ import { Route as ApiSchoolsSchoolIdSectionsSectionIdStudentsRouteImport } from 
 import { Route as ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRouteImport } from './routes/api/schools/$schoolId/students/$schoolStudentId/reset-password'
 import { Route as ApiAttemptsIdScanPagesPageIdExtractRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId/extract'
 import { Route as ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRouteImport } from './routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId'
+import { Route as ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRouteImport } from './routes/api/schools/$schoolId/exams/$examId/scan-chunks.$uploadId'
 import { Route as ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdResultRouteImport } from './routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
 import { Route as ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRouteImport } from './routes/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign'
 
@@ -1267,6 +1268,12 @@ const ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRoute =
     path: '/booklet-jobs/$jobId',
     getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
   } as any)
+const ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute =
+  ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRouteImport.update({
+    id: '/scan-chunks/$uploadId',
+    path: '/scan-chunks/$uploadId',
+    getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
+  } as any)
 const ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdResultRoute =
   ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdResultRouteImport.update({
     id: '/result',
@@ -1481,6 +1488,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
   '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId': typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRouteWithChildren
+  '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId': typeof ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute
   '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result': typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdResultRoute
   '/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign': typeof ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRoute
 }
@@ -1682,6 +1690,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
   '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId': typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRouteWithChildren
+  '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId': typeof ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute
   '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result': typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdResultRoute
   '/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign': typeof ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRoute
 }
@@ -1887,6 +1896,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
   '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId': typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRouteWithChildren
+  '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId': typeof ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute
   '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result': typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdResultRoute
   '/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign': typeof ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRoute
 }
@@ -2093,6 +2103,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
     | '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId'
+    | '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId'
     | '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
     | '/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign'
   fileRoutesByTo: FileRoutesByTo
@@ -2294,6 +2305,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
     | '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId'
+    | '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId'
     | '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
     | '/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign'
   id:
@@ -2498,6 +2510,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
     | '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId'
+    | '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId'
     | '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
     | '/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign'
   fileRoutesById: FileRoutesById
@@ -4000,6 +4013,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
     }
+    '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId': {
+      id: '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId'
+      path: '/scan-chunks/$uploadId'
+      fullPath: '/api/schools/$schoolId/exams/$examId/scan-chunks/$uploadId'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
+    }
     '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result': {
       id: '/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
       path: '/result'
@@ -4555,6 +4575,7 @@ interface ApiSchoolsSchoolIdExamsExamIdRouteChildren {
   ApiSchoolsSchoolIdExamsExamIdScansRoute: typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
   ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute: typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
   ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRoute: typeof ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRouteWithChildren
+  ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute: typeof ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute
   ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRoute: typeof ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRoute
 }
 
@@ -4576,6 +4597,8 @@ const ApiSchoolsSchoolIdExamsExamIdRouteChildren: ApiSchoolsSchoolIdExamsExamIdR
       ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute,
     ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRoute:
       ApiSchoolsSchoolIdExamsExamIdBookletJobsJobIdRouteWithChildren,
+    ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute:
+      ApiSchoolsSchoolIdExamsExamIdScanChunksUploadIdRoute,
     ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRoute:
       ApiSchoolsSchoolIdExamsExamIdScanPagesPageIdAssignRoute,
   }

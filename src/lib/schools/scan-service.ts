@@ -5,6 +5,7 @@ import {
   schoolExamAbsencesRepository,
   schoolPrintJobsRepository,
   schoolScanBatchesRepository,
+  schoolScanChunksRepository,
   schoolScanPagesRepository,
 } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
@@ -144,6 +145,8 @@ export async function ingestScanPage(
   if (reading.problem && !reading.image && !reading.token)
     return reject(reading.problem)
   const sealed = reading.image ? encryptScan(reading.image) : null
+  // the file exactly as it came in, sealed: never shrunk, never re-encoded
+  const keep = { ...base, original: encryptScan(input.bytes) }
 
   // A QR that is not ours (some other code on the sheet): treat like no QR, but say so.
   if (!reading.token) {
@@ -152,7 +155,7 @@ export async function ingestScanPage(
         db,
         scope,
         examId,
-        base,
+        keep,
         sealed,
         input.target,
         input.replace === true,
@@ -162,7 +165,7 @@ export async function ingestScanPage(
       ? 'The code on this page is not from a PrepPlan booklet. Choose which student and page it is.'
       : 'We could not read the code on this page. Choose which student and page it is.'
     const row = await schoolScanPagesRepository.insert(db, scope, {
-      ...base,
+      ...keep,
       status: 'unreadable',
       reason,
       image: sealed,
@@ -200,7 +203,7 @@ export async function ingestScanPage(
     db,
     scope,
     examId,
-    base,
+    keep,
     sealed,
     found.booklet_id,
     found.page_no,
@@ -669,9 +672,99 @@ export async function scanImage(
 export async function purgeScanData(
   db: Db,
   now = new Date(),
-): Promise<{ scans: number; printFiles: number }> {
+): Promise<{ scans: number; printFiles: number; chunks: number }> {
   return {
     scans: await schoolScanPagesRepository.purgeExpired(db, now),
+    chunks: await schoolScanChunksRepository.purgeAbandoned(db, now),
     printFiles: await schoolPrintJobsRepository.purgeExpired(db, now),
   }
+}
+
+// ---------------------------------------------------------------- big files, in pieces
+
+/** The largest piece one request may carry (hosting limits a request to about 4.5 MB). */
+export const MAX_CHUNK_BYTES = 3.5 * 1024 * 1024
+const MAX_CHUNKS = 4 // 4 x 3.5 MB covers the 12 MB file limit
+
+/** Keeps one piece of a file being uploaded. Safe to send again: the same piece replaces itself. */
+export async function saveScanChunk(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+  uploadId: string,
+  seq: number,
+  bytes: Buffer,
+): Promise<{ received: number }> {
+  await loadExam(db, scope, examId, 'handle')
+  if (!/^[0-9a-f-]{36}$/i.test(uploadId))
+    throw new SchoolError('invalid', 'That upload code is not valid.')
+  if (!Number.isInteger(seq) || seq < 0 || seq >= MAX_CHUNKS)
+    throw new SchoolError(
+      'invalid',
+      'That file is too big. Each photo must be under 12 MB.',
+    )
+  if (bytes.length === 0 || bytes.length > MAX_CHUNK_BYTES)
+    throw new SchoolError(
+      'invalid',
+      'That piece of the file is empty or too big.',
+    )
+  const mine = await schoolScanChunksRepository.piecesOf(
+    db,
+    scope,
+    examId,
+    uploadId,
+  )
+  const existing = mine.find((m) => m.seq === seq)
+  if (existing && existing.consumed_at)
+    throw new SchoolError('conflict', 'That upload was already used.')
+  if (existing)
+    await schoolScanChunksRepository.update(db, scope, existing.id, {
+      data: bytes,
+      size_bytes: bytes.length,
+    })
+  else
+    await schoolScanChunksRepository.insert(db, scope, {
+      exam_id: examId,
+      upload_id: uploadId,
+      seq,
+      data: bytes,
+      size_bytes: bytes.length,
+      created_by_user_id: scope.userId,
+    })
+  return { received: mine.length + (existing ? 0 : 1) }
+}
+
+/** Joins the pieces of an upload into the original file, then blanks them (the rows stay). */
+export async function takeScanUpload(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+  uploadId: string,
+  chunks: number,
+): Promise<Buffer> {
+  if (!Number.isInteger(chunks) || chunks < 1 || chunks > MAX_CHUNKS)
+    throw new SchoolError('invalid', 'That upload is not valid.')
+  const pieces = await schoolScanChunksRepository.piecesOf(
+    db,
+    scope,
+    examId,
+    uploadId,
+  )
+  const ok =
+    pieces.length === chunks &&
+    pieces.every(
+      (p, i) => p.seq === i && p.data !== null && p.consumed_at === null,
+    )
+  if (!ok)
+    throw new SchoolError(
+      'invalid',
+      'Some of that file did not arrive. Please send it again.',
+    )
+  const whole = Buffer.concat(pieces.map((p) => p.data as Buffer))
+  for (const p of pieces)
+    await schoolScanChunksRepository.update(db, scope, p.id, {
+      data: null,
+      consumed_at: new Date(),
+    })
+  return whole
 }

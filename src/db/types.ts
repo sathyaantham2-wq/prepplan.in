@@ -822,6 +822,19 @@ export interface SchoolScanBatches {
   uploaded_by_user_id: string;
 }
 
+export interface SchoolScanChunks {
+  consumed_at: Timestamp | null;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  data: Buffer | null;
+  exam_id: string;
+  id: Generated<string>;
+  school_id: string;
+  seq: number;
+  size_bytes: number;
+  upload_id: string;
+}
+
 export interface SchoolScanPages {
   assigned_by_user_id: string | null;
   batch_id: string;
@@ -830,6 +843,7 @@ export interface SchoolScanPages {
   exam_id: string;
   id: Generated<string>;
   image: Buffer | null;
+  original: Buffer | null;
   original_name: string | null;
   page_no: number | null;
   purged_at: Timestamp | null;
@@ -1138,6 +1152,7 @@ export interface DB {
   school_print_job_parts: SchoolPrintJobParts;
   school_print_jobs: SchoolPrintJobs;
   school_scan_batches: SchoolScanBatches;
+  school_scan_chunks: SchoolScanChunks;
   school_scan_pages: SchoolScanPages;
   school_sections: SchoolSections;
   school_student_guardians: SchoolStudentGuardians;

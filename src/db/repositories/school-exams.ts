@@ -200,12 +200,35 @@ export const schoolScanPagesRepository = {
   /** Blank the pictures older than each school's own retention period. The rows stay. */
   async purgeExpired(db: Db, now: Date): Promise<number> {
     const r = await sql`
-      update school_scan_pages p set image = null, purged_at = ${now}
+      update school_scan_pages p set image = null, original = null, purged_at = ${now}
       from schools s
-      where p.school_id = s.id and p.image is not null
+      where p.school_id = s.id and (p.image is not null or p.original is not null)
         and p.created_at < ${now}::timestamptz - (s.scan_retention_days || ' days')::interval`.execute(
       db,
     )
+    return Number(r.numAffectedRows ?? 0)
+  },
+}
+export const schoolScanChunksRepository = {
+  ...createSchoolScopedRepository('school_scan_chunks'),
+  /** The pieces of one upload, in order, with their bytes. Only the uploader's own, for this exam. */
+  async piecesOf(db: Db, scope: SchoolScope, examId: string, uploadId: string) {
+    return db
+      .selectFrom('school_scan_chunks')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('exam_id', '=', examId)
+      .where('upload_id', '=', uploadId)
+      .where('created_by_user_id', '=', scope.userId)
+      .orderBy('seq')
+      .execute()
+  },
+  /** Blank pieces that were never joined into a page within a day. The rows stay. */
+  async purgeAbandoned(db: Db, now: Date): Promise<number> {
+    const r =
+      await sql`update school_scan_chunks set data = null where data is not null and created_at < ${now}::timestamptz - interval '1 day'`.execute(
+        db,
+      )
     return Number(r.numAffectedRows ?? 0)
   },
 }
