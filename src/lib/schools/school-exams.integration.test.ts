@@ -9,10 +9,38 @@ import {
   signInSchoolUserForTest,
 } from '../../db/test-helpers'
 import type { TestSession } from '../../db/test-helpers'
-import { PDFDocument } from 'pdf-lib'
+import { PDFDocument, PDFDocument as PdfLibDocument, StandardFonts  } from 'pdf-lib'
 import sharp from 'sharp'
 import QRCode from 'qrcode'
 import { Route as ScanBatchesRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-batches'
+import { Route as OwnPapersRoute } from '../../routes/api/schools/$schoolId/own-papers'
+import { Route as OwnPaperRoute } from '../../routes/api/schools/$schoolId/own-papers/$paperId'
+import { Document, Packer, Paragraph, TextRun } from 'docx'
+import { createOwnPaperAi } from './own-paper-ai'
+import type { OwnPaperAi } from './own-paper-ai'
+import {
+  addOwnQuestion,
+  approveOwnKeys,
+  approveOwnPaper,
+  assertPaperReadyForMarking,
+  createOwnPaper,
+  detectKind,
+  getOwnPaper,
+  removeOwnQuestion,
+  setOwnKey,
+  stepOwnPaper,
+  updateOwnQuestion,
+} from './own-paper-service'
+import { renderQuestionPaperDocx,
+  bookletStudents,
+  createExam,
+  ensureBookletRecords,
+  getExam,
+  listExams,
+  questionPaperHtml,
+  renderBooklets,
+  renderTeacherCopy,
+  teacherCopyHtml } from './exam-service'
 import { Route as WizardRoute } from '../../routes/api/schools/$schoolId/wizard'
 import { Route as ResultsRoute } from '../../routes/api/schools/$schoolId/results'
 import { Route as ResultsExamRoute } from '../../routes/api/schools/$schoolId/results/$examId'
@@ -51,17 +79,6 @@ import { countPdfPages } from '../pdf/page-count'
 import { loadSchoolScope } from '../school-session'
 import { bookletPageToken } from './booklet-token'
 import { SchoolError } from './common'
-import {
-  bookletStudents,
-  createExam,
-  ensureBookletRecords,
-  getExam,
-  listExams,
-  questionPaperHtml,
-  renderBooklets,
-  renderTeacherCopy,
-  teacherCopyHtml,
-} from './exam-service'
 import {
   DEMO_STUDENT_NAMES,
   provisionDemoSchool,
@@ -492,6 +509,14 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
   afterAll(async () => {
     const ids = schoolIds
     await deleteTestCredentials(userIds)
+    await db
+      .deleteFrom('school_own_questions')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_own_papers')
+      .where('school_id', 'in', ids)
+      .execute()
     await db
       .deleteFrom('school_demo_results')
       .where('school_id', 'in', ids)
@@ -2681,5 +2706,840 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         (await useSampleAnswerSheets(db, demoTeacher, again.id)).students,
       ).toHaveLength(30)
     }, 120_000)
+  })
+
+  /** Step 3: "Use your own paper". The AI is replaced by a scripted stand-in; nothing reaches a vendor. */
+  describe('own papers (step 3)', () => {
+    const calls: Array<{ fn: string; input: unknown }> = []
+    let script: {
+      extract: Array<unknown>
+      key: unknown
+      available: boolean
+      badExtract?: boolean
+    }
+    const resetScript = () => {
+      script = {
+        extract: [
+          {
+            questions: [
+              {
+                number: '1',
+                section: 'Section A',
+                text: 'What is 3/4 of 20?',
+                marks: 1,
+                type: 'mcq',
+                options: [
+                  { label: 'A', text: '15' },
+                  { label: 'B', text: '12' },
+                ],
+              },
+              {
+                number: '2',
+                section: 'Section A',
+                text: 'Write 0.25 as a fraction.',
+                marks: 1,
+                type: 'short_answer',
+              },
+              {
+                number: '3',
+                section: 'Section B',
+                text: 'Solve x/2 + 3 = 7 and show the steps.',
+                marks: 3,
+                type: 'short_answer',
+              },
+              {
+                number: '4',
+                section: 'Section B',
+                text: 'Find the area of a square of side 5 cm.',
+                marks: 2,
+                type: 'short_answer',
+              },
+              {
+                number: '4',
+                section: 'Section B',
+                text: 'Or: find the perimeter of a square of side 5 cm.',
+                marks: 2,
+                type: 'short_answer',
+                or_with_previous: true,
+              },
+            ],
+          },
+        ],
+        key: [
+          { q: 1, answer: '(A) 15' },
+          { q: 2, answer: '1/4' },
+        ],
+        available: true,
+      }
+    }
+    resetScript()
+    const fakeAi: OwnPaperAi = {
+      available: () => script.available,
+      extract: async (i) => {
+        calls.push({ fn: 'extract', input: i })
+        if (script.badExtract) return 'this is not json'
+        return JSON.stringify(
+          script.extract[
+            Math.min(
+              calls.filter((c) => c.fn === 'extract').length - 1,
+              script.extract.length - 1,
+            )
+          ],
+        )
+      },
+      map: async (i) => {
+        calls.push({ fn: 'map', input: i })
+        const codes = i.chapters.map((c) => c.code)
+        return JSON.stringify(
+          i.questions.map((q, k) => ({
+            q: q.n,
+            chapter: k === 2 ? null : codes[k % 2],
+            confidence: k % 2 === 0 ? 0.9 : 0.4,
+          })),
+        )
+      },
+      readKey: async (i) => {
+        calls.push({ fn: 'readKey', input: i })
+        return JSON.stringify(script.key)
+      },
+      draftKey: async (i) => {
+        calls.push({ fn: 'draftKey', input: i })
+        return JSON.stringify(
+          i.questions.map((q) => ({
+            q: q.n,
+            answer: `Draft answer for question ${q.n}`,
+            steps:
+              q.marks >= 2
+                ? [
+                    { description: 'Method', marks: q.marks - 1 },
+                    { description: 'Answer', marks: 1 },
+                  ]
+                : [],
+          })),
+        )
+      },
+    }
+    const subjectRow = async () =>
+      (
+        await db
+          .selectFrom('school_subjects')
+          .select('id')
+          .where('school_id', '=', schoolA)
+          .executeTakeFirstOrThrow()
+      ).id
+    const wordFile = async (lines: Array<string>, name = 'paper.docx') => ({
+      name,
+      mediaType:
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      bytes: Buffer.from(
+        await Packer.toBuffer(
+          new Document({
+            sections: [
+              {
+                children: lines.map(
+                  (l) => new Paragraph({ children: [new TextRun(l)] }),
+                ),
+              },
+            ],
+          }),
+        ),
+      ),
+    })
+    const paperLines = [
+      'Sunrise School Unit Test 2 Mathematics Class 7',
+      'Section A',
+      '1. What is 3/4 of 20? (A) 15 (B) 12',
+      '2. Write 0.25 as a fraction.',
+      'Section B',
+      '3. Solve x/2 + 3 = 7 and show the steps. [3]',
+      '4. Find the area of a square of side 5 cm. [2] OR find the perimeter. [2]',
+    ]
+    const stepAll = async (id: string, who = teacher, max = 30) => {
+      const seen: Array<string> = []
+      for (let i = 0; i < max; i++) {
+        const r = await stepOwnPaper(db, who, id, fakeAi)
+        seen.push(r.phase)
+        if (r.status !== 'reading') return { seen, last: r }
+      }
+      throw new Error('did not finish')
+    }
+    let paperId = ''
+
+    it('refuses what cannot be read, in plain words', async () => {
+      const sub = await subjectRow()
+      const base = { schoolSubjectId: sub, title: 'Unit Test 2' }
+      await refuses(
+        createOwnPaper(db, teacher, { ...base, files: [] }),
+        'invalid',
+      )
+      expect(() =>
+        detectKind([
+          {
+            name: 'a.doc',
+            mediaType: 'application/msword',
+            bytes: Buffer.from('x'),
+          },
+        ]),
+      ).toThrow(/old Word file/)
+      await expect(
+        createOwnPaper(db, teacher, {
+          ...base,
+          files: [
+            { name: 'a.docx', mediaType: 'x', bytes: Buffer.from('x') },
+            {
+              name: 'b.pdf',
+              mediaType: 'application/pdf',
+              bytes: Buffer.from('x'),
+            },
+          ],
+        }),
+      ).rejects.toThrow(/not a mix/)
+      await expect(
+        createOwnPaper(db, teacher, {
+          ...base,
+          files: [
+            {
+              name: 'a.pdf',
+              mediaType: 'application/pdf',
+              bytes: Buffer.alloc(3_400_000),
+            },
+          ],
+        }),
+      ).rejects.toThrow(/too big/)
+      await expect(
+        createOwnPaper(db, teacher, {
+          ...base,
+          files: [
+            { name: 'a.docx', mediaType: 'x', bytes: Buffer.from('not a zip') },
+          ],
+        }),
+      ).rejects.toThrow(/could not open that Word file/)
+      await expect(
+        createOwnPaper(db, teacher, {
+          ...base,
+          title: ' ',
+          files: [await wordFile(paperLines)],
+        }),
+      ).rejects.toThrow(/name/)
+      // a PDF that is only a picture has no text to read
+      const blank = await PdfLibDocument.create()
+      blank.addPage()
+      await expect(
+        createOwnPaper(db, teacher, {
+          ...base,
+          files: [
+            {
+              name: 'scan.pdf',
+              mediaType: 'application/pdf',
+              bytes: Buffer.from(await blank.save()),
+            },
+          ],
+        }),
+      ).rejects.toThrow(/picture of a paper/)
+      // not a subject she teaches, and not a school subject at all
+      await refuses(
+        createOwnPaper(db, otherTeacher(), {
+          ...base,
+          files: [await wordFile(paperLines)],
+        }),
+        'not_found',
+      )
+      await refuses(
+        createOwnPaper(db, teacher, {
+          ...base,
+          schoolSubjectId: '00000000-0000-4000-8000-000000000000',
+          files: [await wordFile(paperLines)],
+        }),
+        'not_found',
+      )
+    })
+
+    function otherTeacher(): SchoolScope {
+      return { ...teacher, pairs: [] }
+    }
+
+    it("the school's own Word paper is read piece by piece, mapped to chapters, its key read, the missing keys drafted", async () => {
+      const sub = await subjectRow()
+      const file = await wordFile(paperLines)
+      const keyFile = await wordFile(['1. (A) 15', '2. 1/4'], 'key.docx')
+      const made = await createOwnPaper(db, teacher, {
+        schoolSubjectId: sub,
+        title: 'Unit Test 2',
+        files: [file],
+        keyFiles: [keyFile],
+      })
+      paperId = made.paperId
+      // the files are kept sealed in private storage, never in the database
+      const store = getScanStore() as MemoryScanStore
+      const sealed = store.files.get(`${schoolA}/_own/${paperId}/paper-0.bin`)!
+      expect(sealed.equals(file.bytes)).toBe(false)
+      expect(decryptScan(sealed).equals(file.bytes)).toBe(true)
+      expect(store.files.has(`${schoolA}/_own/${paperId}/key-0.bin`)).toBe(true)
+      let v = await getOwnPaper(db, teacher, paperId)
+      expect(v).toMatchObject({
+        status: 'reading',
+        phase: 'read',
+        sourceKind: 'docx',
+        subjectName: 'Exam Maths',
+        grade: 7,
+      })
+
+      const { seen, last } = await stepAll(paperId)
+      expect(new Set(seen)).toEqual(new Set(['map', 'key', 'draft', 'done'])) // the first step answers with the phase it moved to
+      expect(last).toMatchObject({ status: 'needs_review', phase: 'done' })
+      expect(calls.map((c) => c.fn)).toEqual([
+        'extract',
+        'map',
+        'readKey',
+        'draftKey',
+      ])
+
+      v = await getOwnPaper(db, teacher, paperId)
+      expect(v.questions.map((q) => q.position)).toEqual([1, 2, 3, 4, 5])
+      expect(v.questions[0]).toMatchObject({
+        section: 'Section A',
+        marks: 1,
+        text: 'What is 3/4 of 20?',
+        options: [
+          { label: 'A', text: '15' },
+          { label: 'B', text: '12' },
+        ],
+      })
+      // the OR pair is one pair and counts once: 1 + 1 + 3 + 2 = 7
+      expect(v.questions[3].orGroup).toBe(v.questions[4].orGroup)
+      expect(v.questions[3].orGroup).not.toBeNull()
+      expect(v.totalMarks).toBe(7)
+      // chapters: sure ones are set, a weak guess and a miss are flagged for the teacher
+      expect(v.questions[0]).toMatchObject({ confidence: 0.9, check: false })
+      expect(v.questions[1]).toMatchObject({ confidence: 0.4, check: true })
+      expect(v.questions[2]).toMatchObject({ chapterId: null, check: true })
+      expect(v.summary.toCheck).toBeGreaterThanOrEqual(2)
+      // keys: the school's own for 1 and 2, an AI draft for the rest, none approved yet
+      expect(v.questions.map((q) => q.keySource)).toEqual([
+        'uploaded',
+        'uploaded',
+        'ai_draft',
+        'ai_draft',
+        'ai_draft',
+      ])
+      expect(v.questions.every((q) => q.keyStatus === 'draft')).toBe(true)
+      expect(v.questions[2].keySteps.reduce((n, x) => n + x.marks, 0)).toBe(3)
+      expect(v.summary).toMatchObject({
+        keysApproved: 0,
+        keysDraft: 5,
+        keysNone: 0,
+      })
+      // nothing but the paper went to the reader: no student, no e-mail
+      const sent = JSON.stringify(calls)
+      for (const bad of [
+        'Asha',
+        'Ravi',
+        'Kiran',
+        '@school.test',
+        'Maths Teacher',
+      ])
+        expect(sent, bad).not.toContain(bad)
+      expect(sent).toContain('What is 3/4 of 20?')
+      const log = await db
+        .selectFrom('audit_log')
+        .select('action')
+        .where('school_id', '=', schoolA)
+        .where('action', '=', 'school.own_paper_uploaded')
+        .execute()
+      expect(log.length).toBeGreaterThan(0)
+    }, 120_000)
+
+    it('nothing can be marked until a teacher approves the paper AND every key, and an AI draft counts for nothing until she does', async () => {
+      await refuses(
+        assertPaperReadyForMarking(db, teacher, paperId),
+        'conflict',
+      ) // not approved
+      await approveOwnPaper(db, teacher, paperId)
+      const v = await getOwnPaper(db, teacher, paperId)
+      expect(v.status).toBe('approved')
+      expect(v.markable).toBe(false)
+      await expect(
+        assertPaperReadyForMarking(db, teacher, paperId),
+      ).rejects.toThrow(/answer key is not approved yet \(5 of 5/)
+      // she edits one key (and approves it), then approves the rest
+      await setOwnKey(db, teacher, paperId, v.questions[2].id, {
+        answer: 'x = 8. Steps: x/2 = 4, so x = 8.',
+        steps: [
+          { description: 'x/2 = 7 - 3', marks: 1 },
+          { description: 'x = 8', marks: 2 },
+        ],
+        approve: true,
+      })
+      await expect(
+        assertPaperReadyForMarking(db, teacher, paperId),
+      ).rejects.toThrow(/4 of 5/)
+      const r = await approveOwnKeys(db, teacher, paperId, 'all')
+      expect(r.approved).toBe(4)
+      await assertPaperReadyForMarking(db, teacher, paperId) // now it may be marked
+      const after = await getOwnPaper(db, teacher, paperId)
+      expect(after.markable).toBe(true)
+      expect(after.questions[2]).toMatchObject({
+        keySource: 'teacher',
+        keyStatus: 'approved',
+      })
+      const log = await db
+        .selectFrom('audit_log')
+        .select(['action', 'after'])
+        .where('school_id', '=', schoolA)
+        .where('action', '=', 'school.own_keys_approved')
+        .execute()
+      expect((log.at(-1)!.after as { ai_drafts: number }).ai_drafts).toBe(2) // the log says how many were AI drafts
+    })
+
+    it('an approved paper is frozen; a key can still be corrected, and then needs a new yes', async () => {
+      const v = await getOwnPaper(db, teacher, paperId)
+      await expect(
+        updateOwnQuestion(db, teacher, paperId, v.questions[0].id, {
+          text: 'Changed after approval',
+        }),
+      ).rejects.toThrow(/approved and cannot be changed/)
+      await expect(
+        removeOwnQuestion(db, teacher, paperId, v.questions[0].id),
+      ).rejects.toThrow(/approved/)
+      await expect(
+        addOwnQuestion(db, teacher, paperId, {
+          text: 'New question',
+          marks: 1,
+        }),
+      ).rejects.toThrow(/approved/)
+      await expect(approveOwnPaper(db, teacher, paperId)).rejects.toThrow(
+        /already approved/,
+      )
+      await setOwnKey(db, teacher, paperId, v.questions[0].id, {
+        answer: '(A) 15 because 3/4 of 20 = 15',
+      })
+      await expect(
+        assertPaperReadyForMarking(db, teacher, paperId),
+      ).rejects.toThrow(/1 of 5/)
+      await approveOwnKeys(db, teacher, paperId, [v.questions[0].id])
+      await assertPaperReadyForMarking(db, teacher, paperId)
+    })
+
+    it('the teacher can fix the list before approving: text, marks, chapter, remove, add; the total follows', async () => {
+      resetScript()
+      calls.length = 0
+      const made = await createOwnPaper(db, teacher, {
+        schoolSubjectId: await subjectRow(),
+        title: 'Edits',
+        files: [await wordFile(paperLines)],
+      })
+      await stepAll(made.paperId)
+      let v = await getOwnPaper(db, teacher, made.paperId)
+      expect(v.summary.keysDraft).toBe(5) // no key was uploaded: the AI drafted all five
+      expect(calls.map((c) => c.fn)).toEqual(['extract', 'map', 'draftKey'])
+      const [q1, q2, q3] = v.questions
+      await updateOwnQuestion(db, teacher, made.paperId, q1.id, {
+        text: 'What is 3/4 of 24?',
+        marks: 2,
+      })
+      await updateOwnQuestion(db, teacher, made.paperId, q3.id, {
+        chapterId: v.chapters[0].id,
+      })
+      await expect(
+        updateOwnQuestion(db, teacher, made.paperId, q3.id, {
+          chapterId: '00000000-0000-4000-8000-000000000000',
+        }),
+      ).rejects.toThrow(/not in this subject/)
+      await expect(
+        updateOwnQuestion(db, teacher, made.paperId, q3.id, { marks: 0 }),
+      ).rejects.toThrow(/between 0.5 and 100/)
+      await expect(
+        updateOwnQuestion(db, teacher, made.paperId, q3.id, { text: 'x' }),
+      ).rejects.toThrow(/between 2 and 4000/)
+      await removeOwnQuestion(db, teacher, made.paperId, q2.id)
+      await addOwnQuestion(db, teacher, made.paperId, {
+        text: 'Define a fraction.',
+        marks: 2,
+        chapterId: v.chapters[0].id,
+      })
+      v = await getOwnPaper(db, teacher, made.paperId)
+      expect(v.questions).toHaveLength(5)
+      expect(v.questions[0]).toMatchObject({
+        text: 'What is 3/4 of 24?',
+        marks: 2,
+      })
+      expect(v.questions.find((q) => q.id === q3.id)).toMatchObject({
+        chapterId: v.chapters[0].id,
+        confidence: 1,
+        check: false,
+      })
+      expect(v.totalMarks).toBe(2 + 3 + 2 + 2) // 2 (edited) + 3 + the OR pair once (2) + the new 2
+      // the removed question is hidden, never deleted
+      const row = await db
+        .selectFrom('school_own_questions')
+        .select('removed_at')
+        .where('id', '=', q2.id)
+        .executeTakeFirstOrThrow()
+      expect(row.removed_at).not.toBeNull()
+      // an approved key is un-approved when its question's wording changes
+      await approveOwnKeys(db, teacher, made.paperId, 'all')
+      await updateOwnQuestion(db, teacher, made.paperId, q1.id, {
+        text: 'What is 3/4 of 28?',
+      })
+      expect(
+        (await getOwnPaper(db, teacher, made.paperId)).questions[0].keyStatus,
+      ).toBe('draft')
+      await approveOwnPaper(db, teacher, made.paperId)
+    }, 120_000)
+
+    it('a reply the reader gets wrong does not lose or double anything: plain message, try again, and two taps do one step', async () => {
+      calls.length = 0
+      script.badExtract = true
+      const made = await createOwnPaper(db, teacher, {
+        schoolSubjectId: await subjectRow(),
+        title: 'Retry',
+        files: [await wordFile(paperLines)],
+      })
+      await expect(
+        stepOwnPaper(db, teacher, made.paperId, fakeAi),
+      ).rejects.toThrow(/could not use|Press/)
+      let v = await getOwnPaper(db, teacher, made.paperId)
+      expect(v).toMatchObject({ status: 'reading', phase: 'read', progress: 0 })
+      expect(v.message).toMatch(/Press/)
+      expect(v.questions).toEqual([])
+      script.badExtract = false
+      // two taps at the same moment
+      const [a, b] = await Promise.all([
+        stepOwnPaper(db, teacher, made.paperId, fakeAi),
+        stepOwnPaper(db, teacher, made.paperId, fakeAi),
+      ])
+      expect([a.phase, b.phase]).toContain('map')
+      v = await getOwnPaper(db, teacher, made.paperId)
+      expect(v.questions.length).toBe(5) // not 10
+      expect(v.message).toBeNull()
+    }, 60_000)
+
+    it('a PDF with text and photos of pages are read too, and the reader is told what it needs to know', async () => {
+      const pdf = await PdfLibDocument.create()
+      const font = await pdf.embedFont(StandardFonts.Helvetica)
+      const page = pdf.addPage()
+      paperLines
+        .concat(paperLines)
+        .forEach((l, i) =>
+          page.drawText(l, { x: 40, y: 780 - i * 18, size: 10, font }),
+        )
+      calls.length = 0
+      resetScript()
+      const m = await createOwnPaper(db, teacher, {
+        schoolSubjectId: await subjectRow(),
+        title: 'From a PDF',
+        files: [
+          {
+            name: 'p.pdf',
+            mediaType: 'application/pdf',
+            bytes: Buffer.from(await pdf.save()),
+          },
+        ],
+      })
+      expect((await getOwnPaper(db, teacher, m.paperId)).sourceKind).toBe('pdf')
+      await stepAll(m.paperId)
+      const sent = calls.find((c) => c.fn === 'extract')!.input as {
+        text: string
+        subject: string
+        grade: number
+      }
+      expect(sent.text).toContain('What is 3/4 of 20?')
+      expect(sent).toMatchObject({ subject: 'Exam Maths', grade: 7 })
+
+      // photos: the reader gets one page at a time, as a picture
+      const png = await sharp({
+        create: { width: 400, height: 560, channels: 3, background: '#ffffff' },
+      })
+        .png()
+        .toBuffer()
+      calls.length = 0
+      script.extract = [
+        { questions: [{ number: '1', text: 'Photo question one?', marks: 1 }] },
+        { questions: [{ number: '2', text: 'Photo question two?', marks: 2 }] },
+      ]
+      const ph = await createOwnPaper(db, teacher, {
+        schoolSubjectId: await subjectRow(),
+        title: 'Photos',
+        files: [
+          { name: 'a.png', mediaType: 'image/png', bytes: png },
+          { name: 'b.png', mediaType: 'image/png', bytes: png },
+        ],
+      })
+      const view = await getOwnPaper(db, teacher, ph.paperId)
+      expect(view).toMatchObject({ sourceKind: 'images', total: 2 })
+      await stepAll(ph.paperId)
+      const images = calls
+        .filter((c) => c.fn === 'extract')
+        .map(
+          (c) =>
+            (c.input as { image?: { mediaType: string } }).image?.mediaType,
+        )
+      expect(images).toEqual(['image/png', 'image/png'])
+      expect(
+        (await getOwnPaper(db, teacher, ph.paperId)).questions.map(
+          (q) => q.text,
+        ),
+      ).toEqual(['Photo question one?', 'Photo question two?'])
+      resetScript()
+    }, 120_000)
+
+    it('a Word paper that PrepPlan made and a teacher edited is read exactly, with no reader: unchanged questions keep the bank key, the changed one needs a new key', async () => {
+      const { docx } = await renderQuestionPaperDocx(db, teacher, examId)
+      const zip = await JSZip.loadAsync(docx)
+      const xml = await zip.file('word/document.xml')!.async('string')
+      // she changes the wording of the first question that has plain text in one run
+      const target = (
+        await db
+          .selectFrom('school_exam_questions as eq')
+          .innerJoin('questions as q', 'q.id', 'eq.question_id')
+          .select(['eq.id', 'q.text'])
+          .where('eq.exam_id', '=', examId)
+          .where('eq.is_alternate', '=', false)
+          .orderBy('eq.position')
+          .execute()
+      )[0]
+      expect(xml).toContain(target.text.slice(0, 20))
+      zip.file(
+        'word/document.xml',
+        xml.replace(target.text.slice(0, 20), 'EDITED BY THE TEACHER '),
+      )
+      const edited = Buffer.from(
+        await zip.generateAsync({ type: 'nodebuffer' }),
+      )
+      calls.length = 0
+      const made = await createOwnPaper(db, teacher, {
+        schoolSubjectId: await subjectRow(),
+        title: 'Edited paper',
+        files: [{ name: 'edited.docx', mediaType: 'x', bytes: edited }],
+      })
+      const v0 = await getOwnPaper(db, teacher, made.paperId)
+      expect(v0.sourceKind).toBe('prepplan_docx')
+      expect(calls).toEqual([]) // nothing was sent to a reader
+      const exam = await db
+        .selectFrom('school_exam_questions')
+        .select('id')
+        .where('exam_id', '=', examId)
+        .where('is_alternate', '=', false)
+        .execute()
+      expect(v0.questions.length).toBeGreaterThanOrEqual(exam.length)
+      expect(v0.summary.changed).toBe(1)
+      const changed = v0.questions.find((q) => q.changedFromSource)!
+      expect(changed.text).toContain('EDITED BY THE TEACHER')
+      expect(changed).toMatchObject({
+        fromPrepPlan: true,
+        keyStatus: 'none',
+        confidence: 1,
+      })
+      // the others: matched to the printed question, its chapter, and the bank's reviewed key
+      const same = v0.questions.filter(
+        (q) => !q.changedFromSource && q.fromPrepPlan,
+      )
+      expect(same.length).toBeGreaterThan(5)
+      expect(
+        same.every(
+          (q) =>
+            q.chapterId !== null &&
+            q.keyStatus === 'approved' &&
+            q.keySource === 'bank' &&
+            q.keyText,
+        ),
+      ).toBe(true)
+      expect(JSON.stringify(same)).toContain('SECRET-ANSWER') // the teacher sees the key of her own paper; it is not a student route
+      // the only key to settle is the changed question's: drafted by the reader, then approved by a teacher
+      expect(v0.phase).toBe('draft')
+      await stepAll(made.paperId)
+      expect(calls.map((c) => c.fn)).toEqual(['draftKey'])
+      expect(
+        (calls[0].input as { questions: Array<unknown> }).questions,
+      ).toHaveLength(1)
+      await approveOwnPaper(db, teacher, made.paperId)
+      await expect(
+        assertPaperReadyForMarking(db, teacher, made.paperId),
+      ).rejects.toThrow(/1 of/)
+      await approveOwnKeys(db, teacher, made.paperId, 'all')
+      await assertPaperReadyForMarking(db, teacher, made.paperId)
+    }, 120_000)
+
+    it("the school's AI allowance stops every reader call before it is made, and is shared by the whole school", async () => {
+      const school = await db
+        .selectFrom('schools')
+        .select(['household_id'])
+        .where('id', '=', schoolA)
+        .executeTakeFirstOrThrow()
+      const real = createOwnPaperAi(db, {
+        schoolId: schoolA,
+        householdId: school.household_id,
+      })
+      await db
+        .updateTable('schools')
+        .set({ ai_spend_cap_inr: '1.00' })
+        .where('id', '=', schoolA)
+        .execute()
+      await db
+        .insertInto('ai_jobs')
+        .values({
+          household_id: school.household_id,
+          feature: 'SCH-01',
+          model: 'test',
+          status: 'success',
+          tokens_in: 1,
+          tokens_out: 1,
+          cost_inr: '1.50',
+          latency_ms: 1,
+        })
+        .execute()
+      await expect(
+        real.extract({
+          text: 'Q1 something',
+          fromNumber: 1,
+          subject: 'Maths',
+          grade: 7,
+        }),
+      ).rejects.toThrow(
+        /used its AI allowance for this month \(Rs 1.50 of Rs 1\)/,
+      )
+      await expect(
+        real.draftKey({ questions: [], subject: 'Maths', grade: 7 }),
+      ).rejects.toThrow(/AI allowance/)
+      // and the step of a paper says the same, in the teacher's words, without losing the paper
+      const m = await createOwnPaper(db, teacher, {
+        schoolSubjectId: await subjectRow(),
+        title: 'Over the cap',
+        files: [await wordFile(paperLines)],
+      })
+      const capped: OwnPaperAi = { ...fakeAi, extract: (i) => real.extract(i) }
+      await expect(
+        stepOwnPaper(db, teacher, m.paperId, capped),
+      ).rejects.toThrow(/AI allowance/)
+      expect((await getOwnPaper(db, teacher, m.paperId)).message).toMatch(
+        /AI allowance/,
+      )
+      // a bigger allowance lets it carry on
+      await db
+        .updateTable('schools')
+        .set({ ai_spend_cap_inr: '500.00' })
+        .where('id', '=', schoolA)
+        .execute()
+      await expect(
+        real.draftKey({ questions: [], subject: 'Maths', grade: 7 }),
+      ).rejects.not.toThrow(/AI allowance/)
+      await db
+        .updateTable('schools')
+        .set({ ai_spend_cap_inr: null })
+        .where('id', '=', schoolA)
+        .execute()
+      await db
+        .deleteFrom('ai_jobs')
+        .where('household_id', '=', school.household_id)
+        .where('model', '=', 'test')
+        .execute()
+    }, 60_000)
+
+    it('who may use it: the office and the teacher of the subject; not the principal, students, parents, other schools or other teachers', async () => {
+      const p = (extra: Record<string, string> = {}) => ({
+        schoolId: schoolA,
+        ...extra,
+      })
+      const file = await wordFile(paperLines)
+      const body = {
+        school_subject_id: await subjectRow(),
+        title: 'Via the route',
+        files: [
+          {
+            name: 'p.docx',
+            media_type: file.mediaType,
+            data: file.bytes.toString('base64'),
+          },
+        ],
+      }
+      const ok = await call(OwnPapersRoute, 'POST', teacherS.cookie, p(), body)
+      expect(ok.status).toBe(200)
+      const id = ((await ok.json()) as { paperId: string }).paperId
+      expect(
+        (await call(OwnPapersRoute, 'GET', adminS.cookie, p())).status,
+      ).toBe(200)
+      expect(
+        (await call(OwnPaperRoute, 'GET', adminS.cookie, p({ paperId: id })))
+          .status,
+      ).toBe(200)
+      const got = await call(
+        OwnPaperRoute,
+        'GET',
+        teacherS.cookie,
+        p({ paperId: id }),
+      )
+      expect(got.headers.get('cache-control')).toBe('private, no-store')
+      expect(await got.json()).toMatchObject({
+        id,
+        status: 'reading',
+        sourceKind: 'docx',
+      })
+      expect(
+        (
+          await call(
+            OwnPaperRoute,
+            'POST',
+            teacherS.cookie,
+            p({ paperId: id }),
+            { action: 'nonsense' },
+          )
+        ).status,
+      ).toBe(400)
+      expect(
+        (
+          await call(
+            OwnPaperRoute,
+            'POST',
+            teacherS.cookie,
+            p({ paperId: id }),
+            { action: 'approve' },
+          )
+        ).status,
+      ).toBe(409) // still being read
+      for (const [route, method, params, b] of [
+        [OwnPapersRoute, 'GET', p(), undefined],
+        [OwnPapersRoute, 'POST', p(), body],
+        [OwnPaperRoute, 'GET', p({ paperId: id }), undefined],
+        [OwnPaperRoute, 'POST', p({ paperId: id }), { action: 'approve' }],
+      ] as const) {
+        expect((await call(route, method, null, params, b)).status).toBe(401)
+        expect(
+          (await call(route, method, outsiderS.cookie, params, b)).status,
+        ).toBe(404) // the admin of another school
+        expect(
+          (await call(route, method, principalS.cookie, params, b)).status,
+        ).toBe(403)
+        for (const sess of [studentS, parentS])
+          expect([401, 403, 404]).toContain(
+            (await call(route, method, sess.cookie, params, b)).status,
+          )
+        // a teacher of another subject
+        const other = await call(route, method, otherTeacherS.cookie, params, b)
+        if (route === OwnPapersRoute && method === 'GET') {
+          expect(other.status).toBe(200)
+          expect(await other.json()).toEqual([]) // she sees none of the papers
+        } else expect(other.status).toBe(404)
+      }
+      // a paper of one school is not found by another
+      expect(
+        (
+          await call(OwnPaperRoute, 'GET', outsiderS.cookie, {
+            schoolId: schoolA,
+            paperId: id,
+          })
+        ).status,
+      ).toBe(404)
+      const big = await call(OwnPapersRoute, 'POST', teacherS.cookie, p(), {
+        ...body,
+        files: [
+          {
+            name: 'p.docx',
+            media_type: file.mediaType,
+            data: 'A'.repeat(4_600_000),
+          },
+        ],
+      })
+      expect([400, 413]).toContain(big.status)
+    }, 60_000)
   })
 })

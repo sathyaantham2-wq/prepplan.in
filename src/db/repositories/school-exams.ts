@@ -364,3 +364,21 @@ export const schoolDemoResultsRepository = {
       .execute()
   },
 }
+
+export const schoolOwnPapersRepository =
+  createSchoolScopedRepository('school_own_papers')
+export const schoolOwnQuestionsRepository = {
+  ...createSchoolScopedRepository('school_own_questions'),
+  /** The questions of one paper that are still on it, in order. */
+  async forPaper(db: Db, scope: SchoolScope, paperId: string) {
+    return db
+      .selectFrom('school_own_questions')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('paper_id', '=', paperId)
+      .where('removed_at', 'is', null)
+      .orderBy('position')
+      .orderBy('created_at')
+      .execute()
+  },
+}

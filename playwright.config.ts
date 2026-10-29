@@ -77,6 +77,8 @@ export default defineConfig({
       VITE_NO_DEVTOOLS: '1',
       SCHOOL_SIGNUP_MAX_PER_HOUR: '100000',
       SCHOOL_SIGNUP_MAX_PER_DAY: '100000',
+      // reading a school's own paper uses a free stand-in, never an AI vendor (ignored in production)
+      OWN_PAPER_AI: 'fake',
     },
   },
 })

@@ -26,6 +26,11 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
   // the stronger tier is paid once per question ever (cached in question_explanations), not once
   // per student who reads it.
   'AI-13': 'strong', // Per-question worked explanation
+  // PrepPlan for Schools, own papers (step 3)
+  'SCH-01': 'strong', // Read a school's own paper: text or photos -> questions, marks, sections
+  'SCH-02': 'cheap', // Map each question to a chapter of the bank
+  'SCH-03': 'strong', // Draft an answer key and marking scheme (a teacher must approve it)
+  'SCH-04': 'mid', // Read the school's own answer key
 }
 
 // Claude Sonnet 5 is the only "strong" model this app has ever called (ai-grading.ts /

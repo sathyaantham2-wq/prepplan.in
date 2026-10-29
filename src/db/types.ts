@@ -766,6 +766,59 @@ export interface SchoolMembers {
   user_id: string;
 }
 
+export interface SchoolOwnPapers {
+  approved_at: Timestamp | null;
+  approved_by_user_id: string | null;
+  archived_at: Timestamp | null;
+  class_id: string;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  exam_id: string | null;
+  id: Generated<string>;
+  key_keys: Generated<Json>;
+  key_kind: string | null;
+  message: string | null;
+  phase: Generated<string>;
+  progress: Generated<number>;
+  progress_total: Generated<number>;
+  read_chunks: Generated<Json>;
+  school_id: string;
+  school_subject_id: string;
+  source_keys: Generated<Json>;
+  source_kind: string;
+  source_names: Generated<Json>;
+  status: Generated<string>;
+  title: string;
+  total_marks: Numeric | null;
+}
+
+export interface SchoolOwnQuestions {
+  changed_from_source: Generated<boolean>;
+  chapter_id: string | null;
+  created_at: Generated<Timestamp>;
+  edited_by_user_id: string | null;
+  id: Generated<string>;
+  key_approved_at: Timestamp | null;
+  key_approved_by_user_id: string | null;
+  key_source: string | null;
+  key_status: Generated<string>;
+  key_steps: Generated<Json>;
+  key_text: string | null;
+  map_confidence: Numeric | null;
+  marks: Numeric;
+  options: Generated<Json>;
+  or_group: string | null;
+  original_text: string;
+  paper_id: string;
+  position: number;
+  removed_at: Timestamp | null;
+  school_id: string;
+  section: Generated<string>;
+  source_exam_question_id: string | null;
+  text: string;
+  type: Generated<string>;
+}
+
 export interface SchoolPaperTemplates {
   based_on: string | null;
   created_at: Generated<Timestamp>;
@@ -1168,6 +1221,8 @@ export interface DB {
   school_exams: SchoolExams;
   school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
+  school_own_papers: SchoolOwnPapers;
+  school_own_questions: SchoolOwnQuestions;
   school_paper_templates: SchoolPaperTemplates;
   school_print_job_parts: SchoolPrintJobParts;
   school_print_jobs: SchoolPrintJobs;

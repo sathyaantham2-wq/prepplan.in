@@ -67,6 +67,13 @@ function SchoolHome() {
         title="See results"
         hint="Marks, strong topics and topics to fix for each student."
       />
+      <Link
+        to="/school/$schoolId/own-papers"
+        params={{ schoolId }}
+        className="flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-4 text-base font-semibold"
+      >
+        Or use your own paper
+      </Link>
     </div>
   )
   const demoBox = o.school.isDemo ? (

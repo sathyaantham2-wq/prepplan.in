@@ -182,3 +182,7 @@ export function getScanStore(): ScanStore {
   if (kind === 'none') throw new ScanStorageNotConfigured()
   return (disk ??= new DiskScanStore(join(process.cwd(), '.scan-storage')))
 }
+
+/** A school's own question paper (or its answer key) as uploaded, sealed; kept for the life of the paper. */
+export const ownPaperKey = (schoolId: string, paperId: string, kind: 'paper' | 'key', n: number) =>
+  `${schoolId}/_own/${paperId}/${kind}-${n}.bin`

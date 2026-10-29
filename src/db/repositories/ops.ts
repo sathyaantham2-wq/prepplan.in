@@ -57,6 +57,16 @@ export const aiJobsRepository = {
       .executeTakeFirstOrThrow()
     return Number(row.total)
   },
+  // PrepPlan for Schools: INR spent by one household (a school's own household) since a point in time.
+  async sumCostForHouseholdSince(db: Db, householdId: string, since: Date): Promise<number> {
+    const row = await db
+      .selectFrom('ai_jobs')
+      .select(sql<string>`coalesce(sum(cost_inr), 0)`.as('total'))
+      .where('household_id', '=', householdId)
+      .where('created_at', '>=', since)
+      .executeTakeFirstOrThrow()
+    return Number(row.total)
+  },
   // F091: "dashboard by day, feature and student." One row per bucket in the requested
   // dimension, summed over [from, to]. A pending/error row (no tokens/cost yet) still counts
   // toward `calls` and `error_count` so a string of failures shows up even before it costs
