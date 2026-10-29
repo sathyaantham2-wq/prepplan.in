@@ -9,6 +9,10 @@ export type SchoolRole =
   'school_admin' | 'principal' | 'teacher' | 'student' | 'parent'
 export type SchoolStatus = 'active' | 'suspended'
 export type SchoolMemberStatus = 'active' | 'inactive'
+export type SchoolStudentStatus = 'active' | 'inactive' | 'left'
+export type SchoolSampleChecker = 'class_teacher' | 'subject_teacher'
+export type SchoolImportKind = 'students' | 'teachers'
+export type SchoolImportStatus = 'dry_run' | 'committed' | 'failed'
 export type ScopeKind = 'IN' | 'OUT'
 export type DifficultyTier = 'Easy' | 'Hard' | 'Hardest'
 export type BloomLevel =

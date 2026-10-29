@@ -1,7 +1,10 @@
 import { getSharedDb } from '../db/connection'
 import type { Db } from '../db/connection'
 import type { SchoolRole } from '../db/enums'
-import { schoolMembersRepository } from '../db/repositories'
+import {
+  activeSchoolMemberships,
+  schoolTeacherAssignmentsRepository,
+} from '../db/repositories'
 import { issueSchoolScope } from '../db/school-scope'
 import type { SchoolScope } from '../db/school-scope'
 import { getCurrentUser } from './session'
@@ -39,9 +42,9 @@ export type SchoolScopeResult =
  * call, never cached in the session, so deactivating a member or suspending a school takes
  * effect on the next request.
  *
- * Section-subject pairs: the admin and principal get 'all'. A teacher's assignments live in
- * school_teacher_assignments, which arrives in step S2; until then every non-admin scope has no
- * pairs, which means no access, never all.
+ * Section-subject pairs: the admin and principal get 'all'. A teacher gets exactly their rows in
+ * school_teacher_assignments (plus the sample-check pairs they own). Everyone else has none,
+ * which means no access, never all.
  */
 export async function loadSchoolScope(
   db: Db,
@@ -51,19 +54,33 @@ export async function loadSchoolScope(
 ): Promise<SchoolScopeResult> {
   // A malformed id from the URL is simply "not a member", never a database error.
   if (!UUID.test(schoolId)) return { ok: false, reason: 'not_a_member' }
-  const held = await schoolMembersRepository.activeRoles(db, userId, schoolId)
-  if (held.length === 0) return { ok: false, reason: 'not_a_member' }
-  const role = pickRole(held, allowed)
+  const memberships = await activeSchoolMemberships(db, userId, schoolId)
+  if (memberships.length === 0) return { ok: false, reason: 'not_a_member' }
+  const role = pickRole(
+    memberships.map((m) => m.role),
+    allowed,
+  )
   if (!role) return { ok: false, reason: 'wrong_role' }
   const wholeSchool = role === 'school_admin' || role === 'principal'
+  let pairs: Parameters<typeof issueSchoolScope>[0]['pairs'] = wholeSchool
+    ? 'all'
+    : []
+  let samplePairs: NonNullable<
+    Parameters<typeof issueSchoolScope>[0]['samplePairs']
+  > = []
+  if (role === 'teacher') {
+    const member = memberships.find((m) => m.role === 'teacher')!
+    const found = await schoolTeacherAssignmentsRepository.pairsFor(
+      db,
+      schoolId,
+      member.id,
+    )
+    pairs = found.pairs
+    samplePairs = found.samplePairs
+  }
   return {
     ok: true,
-    scope: issueSchoolScope({
-      userId,
-      schoolId,
-      role,
-      pairs: wholeSchool ? 'all' : [],
-    }),
+    scope: issueSchoolScope({ userId, schoolId, role, pairs, samplePairs }),
   }
 }
 

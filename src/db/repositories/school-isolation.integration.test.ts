@@ -189,40 +189,25 @@ describe('school isolation (S1)', () => {
 
   describe('1. school A scope with school B ids', () => {
     it('findById returns nothing for every school-scoped repository', async () => {
-      const bRows = {
-        school_classes: classB,
-        school_sections: sectionB,
-        school_subjects: (
-          await db
-            .selectFrom('school_subjects')
-            .select('id')
-            .where('school_id', '=', schoolB)
-            .executeTakeFirstOrThrow()
-        ).id,
-        school_terms_acceptances: (
-          await db
-            .selectFrom('school_terms_acceptances')
-            .select('id')
-            .where('school_id', '=', schoolB)
-            .executeTakeFirstOrThrow()
-        ).id,
-        school_members: (
-          await db
-            .selectFrom('school_members')
-            .select('id')
-            .where('school_id', '=', schoolB)
-            .executeTakeFirstOrThrow()
-        ).id,
-      }
+      let checked = 0
       for (const [table, repo] of Object.entries(SCHOOL_TABLE_REPOSITORIES)) {
-        const id = bRows[table as keyof typeof bRows]
-        expect(id, table).toBeTruthy()
+        // Any row school B has in this table (S2 tables are covered by the roster tests, which
+        // create B's rows only where a table needs them).
+        const res = await sql<{
+          id: string
+        }>`select id from ${sql.table(table)} where school_id = ${schoolB} limit 1`.execute(
+          db,
+        )
+        const id = res.rows[0]?.id
+        if (!id) continue
+        checked++
         expect(await repo.findById(db, scopeA, id), table).toBeUndefined()
         expect(
           await repo.findById(db, scopeB, id),
           `${table} own scope`,
         ).toBeDefined()
       }
+      expect(checked).toBeGreaterThanOrEqual(5)
     })
 
     it('list returns only the scope own rows', async () => {

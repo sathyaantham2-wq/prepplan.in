@@ -140,6 +140,7 @@ import { Route as ApiPapersIdWorkflowRouteImport } from './routes/api/papers/$id
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
+import { Route as ApiSchoolsSchoolIdImportsRouteImport } from './routes/api/schools/$schoolId/imports'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
 import { Route as ApiStudentsMeExamsRouteImport } from './routes/api/students/me/exams'
 import { Route as ApiStudentsMeHomeRouteImport } from './routes/api/students/me/home'
@@ -156,6 +157,7 @@ import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/ev
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiFixitCardsIdAnswerRouteImport } from './routes/api/fixit/cards/$id/answer'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
+import { Route as ApiSchoolsSchoolIdTermsAcceptRouteImport } from './routes/api/schools/$schoolId/terms/accept'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
 import { Route as ApiStudentsIdHabitsTrendRouteImport } from './routes/api/students/$id/habits/trend'
 import { Route as ApiStudentsMeRewardsUnlockRouteImport } from './routes/api/students/me/rewards/unlock'
@@ -165,6 +167,7 @@ import { Route as ApiAttemptsIdItemsItemIdDisputeRouteImport } from './routes/ap
 import { Route as ApiAttemptsIdItemsItemIdRemoveRouteImport } from './routes/api/attempts/$id/items/$itemId/remove'
 import { Route as ApiAttemptsIdScanDetectionsDetectionIdRouteImport } from './routes/api/attempts/$id/scan/detections/$detectionId'
 import { Route as ApiAttemptsIdScanPagesPageIdRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId'
+import { Route as ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport } from './routes/api/schools/$schoolId/imports/$batchId/commit'
 import { Route as ApiAttemptsIdScanPagesPageIdExtractRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId/extract'
 
 const IndexRoute = IndexRouteImport.update({
@@ -834,6 +837,12 @@ const ApiRemediationIdAttemptRoute = ApiRemediationIdAttemptRouteImport.update({
   path: '/attempt',
   getParentRoute: () => ApiRemediationIdRoute,
 } as any)
+const ApiSchoolsSchoolIdImportsRoute =
+  ApiSchoolsSchoolIdImportsRouteImport.update({
+    id: '/api/schools/$schoolId/imports',
+    path: '/api/schools/$schoolId/imports',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -920,6 +929,12 @@ const ApiQuestionsGenerateBatchIdResumeRoute =
     path: '/resume',
     getParentRoute: () => ApiQuestionsGenerateBatchIdRoute,
   } as any)
+const ApiSchoolsSchoolIdTermsAcceptRoute =
+  ApiSchoolsSchoolIdTermsAcceptRouteImport.update({
+    id: '/api/schools/$schoolId/terms/accept',
+    path: '/api/schools/$schoolId/terms/accept',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiStudentsIdConsentWithdrawRoute =
   ApiStudentsIdConsentWithdrawRouteImport.update({
     id: '/consent/withdraw',
@@ -973,6 +988,12 @@ const ApiAttemptsIdScanPagesPageIdRoute =
     id: '/$pageId',
     path: '/$pageId',
     getParentRoute: () => ApiAttemptsIdScanPagesRoute,
+  } as any)
+const ApiSchoolsSchoolIdImportsBatchIdCommitRoute =
+  ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport.update({
+    id: '/$batchId/commit',
+    path: '/$batchId/commit',
+    getParentRoute: () => ApiSchoolsSchoolIdImportsRoute,
   } as any)
 const ApiAttemptsIdScanPagesPageIdExtractRoute =
   ApiAttemptsIdScanPagesPageIdExtractRouteImport.update({
@@ -1113,6 +1134,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
+  '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
@@ -1129,6 +1151,7 @@ export interface FileRoutesByFullPath {
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
+  '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
@@ -1138,6 +1161,7 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRoutesByTo {
@@ -1271,6 +1295,7 @@ export interface FileRoutesByTo {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
+  '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
@@ -1287,6 +1312,7 @@ export interface FileRoutesByTo {
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
+  '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
@@ -1296,6 +1322,7 @@ export interface FileRoutesByTo {
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRoutesById {
@@ -1431,6 +1458,7 @@ export interface FileRoutesById {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
+  '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
   '/api/students/me/home': typeof ApiStudentsMeHomeRoute
@@ -1447,6 +1475,7 @@ export interface FileRoutesById {
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
+  '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
@@ -1456,6 +1485,7 @@ export interface FileRoutesById {
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRouteTypes {
@@ -1592,6 +1622,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
+    | '/api/schools/$schoolId/imports'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
     | '/api/students/me/home'
@@ -1608,6 +1639,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/report/pdf'
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
+    | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
     | '/api/students/me/rewards/unlock'
@@ -1617,6 +1649,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/items/$itemId/remove'
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -1750,6 +1783,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
+    | '/api/schools/$schoolId/imports'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
     | '/api/students/me/home'
@@ -1766,6 +1800,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/report/pdf'
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
+    | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
     | '/api/students/me/rewards/unlock'
@@ -1775,6 +1810,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/items/$itemId/remove'
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   id:
     | '__root__'
@@ -1909,6 +1945,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
+    | '/api/schools/$schoolId/imports'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
     | '/api/students/me/home'
@@ -1925,6 +1962,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/report/pdf'
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
+    | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
     | '/api/students/me/rewards/unlock'
@@ -1934,6 +1972,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/items/$itemId/remove'
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesById: FileRoutesById
 }
@@ -2013,9 +2052,11 @@ export interface RootRouteChildren {
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
+  ApiSchoolsSchoolIdImportsRoute: typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   ApiFixitCardsIdAnswerRoute: typeof ApiFixitCardsIdAnswerRoute
+  ApiSchoolsSchoolIdTermsAcceptRoute: typeof ApiSchoolsSchoolIdTermsAcceptRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2937,6 +2978,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiRemediationIdAttemptRouteImport
       parentRoute: typeof ApiRemediationIdRoute
     }
+    '/api/schools/$schoolId/imports': {
+      id: '/api/schools/$schoolId/imports'
+      path: '/api/schools/$schoolId/imports'
+      fullPath: '/api/schools/$schoolId/imports'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdImportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/students/$id/login': {
       id: '/api/students/$id/login'
       path: '/login'
@@ -3049,6 +3097,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsGenerateBatchIdResumeRouteImport
       parentRoute: typeof ApiQuestionsGenerateBatchIdRoute
     }
+    '/api/schools/$schoolId/terms/accept': {
+      id: '/api/schools/$schoolId/terms/accept'
+      path: '/api/schools/$schoolId/terms/accept'
+      fullPath: '/api/schools/$schoolId/terms/accept'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdTermsAcceptRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/students/$id/consent/withdraw': {
       id: '/api/students/$id/consent/withdraw'
       path: '/consent/withdraw'
@@ -3111,6 +3166,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/attempts/$id/scan/pages/$pageId'
       preLoaderRoute: typeof ApiAttemptsIdScanPagesPageIdRouteImport
       parentRoute: typeof ApiAttemptsIdScanPagesRoute
+    }
+    '/api/schools/$schoolId/imports/$batchId/commit': {
+      id: '/api/schools/$schoolId/imports/$batchId/commit'
+      path: '/$batchId/commit'
+      fullPath: '/api/schools/$schoolId/imports/$batchId/commit'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdImportsRoute
     }
     '/api/attempts/$id/scan/pages/$pageId/extract': {
       id: '/api/attempts/$id/scan/pages/$pageId/extract'
@@ -3573,6 +3635,21 @@ const ApiSyllabusConceptsRouteChildren: ApiSyllabusConceptsRouteChildren = {
 const ApiSyllabusConceptsRouteWithChildren =
   ApiSyllabusConceptsRoute._addFileChildren(ApiSyllabusConceptsRouteChildren)
 
+interface ApiSchoolsSchoolIdImportsRouteChildren {
+  ApiSchoolsSchoolIdImportsBatchIdCommitRoute: typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+}
+
+const ApiSchoolsSchoolIdImportsRouteChildren: ApiSchoolsSchoolIdImportsRouteChildren =
+  {
+    ApiSchoolsSchoolIdImportsBatchIdCommitRoute:
+      ApiSchoolsSchoolIdImportsBatchIdCommitRoute,
+  }
+
+const ApiSchoolsSchoolIdImportsRouteWithChildren =
+  ApiSchoolsSchoolIdImportsRoute._addFileChildren(
+    ApiSchoolsSchoolIdImportsRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -3649,20 +3726,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,
+  ApiSchoolsSchoolIdImportsRoute: ApiSchoolsSchoolIdImportsRouteWithChildren,
   ApiSummaryWeeklyStudentIdRoute: ApiSummaryWeeklyStudentIdRoute,
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute:
     ApiAdaptiveConceptsConceptIdWrongQuestionsRoute,
   ApiFixitCardsIdAnswerRoute: ApiFixitCardsIdAnswerRoute,
+  ApiSchoolsSchoolIdTermsAcceptRoute: ApiSchoolsSchoolIdTermsAcceptRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

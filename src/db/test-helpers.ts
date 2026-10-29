@@ -1,5 +1,7 @@
 import { auth } from '../lib/auth'
+import { sql } from 'kysely'
 import { createDb } from './connection'
+import type { Db } from './connection'
 
 /**
  * Shared fixture helpers for integration tests that need a real, working session — not a mock —
@@ -126,4 +128,24 @@ export async function promoteToAdmin(userId: string): Promise<void> {
   } finally {
     await db.destroy()
   }
+}
+
+/**
+ * Test teardown only: school_terms_acceptances is append-only by trigger, so a fixture school's
+ * rows can only be removed by stepping around it. Never call this outside a test.
+ */
+export async function deleteSchoolTermsForTest(
+  db: Db,
+  schoolIds: Array<string>,
+) {
+  await sql`alter table school_terms_acceptances disable trigger school_terms_acceptances_append_only`.execute(
+    db,
+  )
+  await db
+    .deleteFrom('school_terms_acceptances')
+    .where('school_id', 'in', schoolIds)
+    .execute()
+  await sql`alter table school_terms_acceptances enable trigger school_terms_acceptances_append_only`.execute(
+    db,
+  )
 }

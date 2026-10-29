@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolMemberStatus, SchoolRole, SchoolStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -106,6 +106,7 @@ export interface AuditLog {
   entity_id: string;
   household_id: string;
   id: Generated<string>;
+  school_id: string | null;
 }
 
 export interface Blueprints {
@@ -631,6 +632,22 @@ export interface SchoolClasses {
   school_id: string;
 }
 
+export interface SchoolImportBatches {
+  academic_year: string | null;
+  committed_at: Timestamp | null;
+  counts: Generated<Json>;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  file_name: string;
+  file_sha256: string;
+  id: Generated<string>;
+  kind: SchoolImportKind;
+  payload: Generated<Json>;
+  row_errors: Generated<Json>;
+  school_id: string;
+  status: SchoolImportStatus;
+}
+
 export interface SchoolMembers {
   created_at: Generated<Timestamp>;
   id: Generated<string>;
@@ -664,12 +681,46 @@ export interface SchoolSections {
   school_id: string;
 }
 
+export interface SchoolStudentGuardians {
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  name: string | null;
+  phone_e164: string;
+  school_id: string;
+  school_student_id: string;
+  user_id: string | null;
+  verified_at: Timestamp | null;
+}
+
+export interface SchoolStudents {
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  id: Generated<string>;
+  member_id: string;
+  roll_no: string;
+  school_id: string;
+  section_id: string;
+  status: SchoolStudentStatus;
+  student_id: string;
+}
+
 export interface SchoolSubjects {
   class_id: string;
   created_at: Generated<Timestamp>;
   id: Generated<string>;
   school_id: string;
   subject_id: string;
+}
+
+export interface SchoolTeacherAssignments {
+  class_id: string;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  member_id: string;
+  sample_checker: SchoolSampleChecker;
+  school_id: string;
+  school_subject_id: string;
+  section_id: string;
 }
 
 export interface SchoolTermsAcceptances {
@@ -773,6 +824,7 @@ export interface Students {
   profile_completed_at: Timestamp | null;
   roll_no: string | null;
   school: string | null;
+  school_id: string | null;
   section: string | null;
   target_exams: Generated<Json>;
   user_id: string | null;
@@ -902,9 +954,13 @@ export interface DB {
   scan_detections: ScanDetections;
   scan_pages: ScanPages;
   school_classes: SchoolClasses;
+  school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
   school_sections: SchoolSections;
+  school_student_guardians: SchoolStudentGuardians;
+  school_students: SchoolStudents;
   school_subjects: SchoolSubjects;
+  school_teacher_assignments: SchoolTeacherAssignments;
   school_terms_acceptances: SchoolTermsAcceptances;
   schools: Schools;
   sessions: Sessions;

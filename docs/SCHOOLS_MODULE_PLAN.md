@@ -501,3 +501,25 @@ Workspace, billing and invoices, Postgres RLS, WhatsApp delivery of reports.
 No code, no migrations written, no spreadsheet edits, no F-numbers, no change to `CLAUDE.md`, nothing
 run against production, nothing pushed or deployed. Tests described here run only on the local
 `examprep_test` database.
+
+## 10. Build log
+
+| Step | State | Notes |
+|---|---|---|
+| S0 | Done 2026-10-29 | ADR-0003 accepted; CLAUDE.md "School module rules" added. F-numbers still to be assigned by the owner. |
+| S1 | Done, committed `8d5fade` | Migration **0078** `schools_core` (the plan said 0077; the unmerged WhatsApp-login branch owns `0077_wa_login`, so every school migration number is one higher than in section 1.4: roster is **0079**, templates 0080, exams 0081, and so on). |
+| S2 | Built 2026-10-29, not yet committed | Migration 0079 `school_roster`: `school_students`, `school_student_guardians`, `school_teacher_assignments` (one teacher per section-subject, `sample_checker`), `school_import_batches`, `students.school_id`, `audit_log.school_id` (moved forward from 0084 because setup changes are audited from now on). Services in `src/lib/schools/`; API: `POST /api/schools/:id/imports`, `.../imports/:batchId/commit`, `.../terms/accept`. Dependency added: `exceljs` 4.4.0. Tests 2, 4, 9, 15, 17, 18 plus parser unit tests pass; full suite 870 passed on a scratch local DB. |
+
+Decisions taken inside S2 that the plan left open:
+- School staff (teachers, the admin) have platform `users.role = 'teacher'` and `signup_type = 'school'`; that platform role has no consumer-route access, and everything school-side comes from `school_members`.
+- A teacher whose e-mail already has a PrepPlan account is an import error (not silently attached).
+- Commit is all-or-nothing in one transaction; a batch with any row error cannot be committed.
+- A student with no parent phone is allowed; a present phone must be valid (10-digit Indian mobiles get +91).
+- School people are created **without credentials**. Nobody added this way can sign in yet.
+
+### Items this surfaced (to schedule, none built)
+
+1. **Credential issue (new step, call it S2c).** Without it no school person can sign in, so S3's screens cannot be used by a real school. Proposal: the admin receives a one-time set-password link at provisioning; the admin then issues one-time links or codes to teachers and students from the roster. Needs a decision on delivery (admin hands out printed slips vs. e-mail to teachers) and on whether students use a roll-number + code login.
+2. **S2b must also guard `resolveEnabledStudent`** (`src/lib/access.ts`): a school student has `users.role = 'student'`, so once she can sign in she would otherwise reach every consumer student route (paper generation, spend budget, rewards). That function is the single choke point.
+3. **Platform provisioning** (`schoolsRepository.provision`) has no route on purpose; the owner runs it from a script. A small script is still to be written.
+4. **Local test DB:** `examprep_test` has `0077_wa_login` applied from the unmerged WhatsApp branch, so this branch cannot migrate it until that merges. All S1/S2 verification ran on a scratch DB `examprep_schools_s1`.
