@@ -32,7 +32,18 @@ export interface OverviewClass {
   availableSubjects: Array<{ id: string; name: string }>
 }
 export interface SchoolOverview {
-  school: { id: string; name: string; code: string; board: string }
+  school: {
+    id: string
+    name: string
+    code: string
+    board: string
+    /** A demo school: every screen is labelled "DEMO - sample data". */
+    isDemo: boolean
+    /** Spend cap for the AI steps, in rupees; null means none is set. */
+    aiSpendCapInr: number | null
+  }
+  /** The admin has finished (or skipped) the first-sign-in wizard. */
+  wizardDone: boolean
   role: SchoolScope['role']
   termsAccepted: boolean
   classes: Array<OverviewClass>
@@ -60,7 +71,15 @@ export async function loadSchoolOverview(
 ): Promise<SchoolOverview> {
   const school = await db
     .selectFrom('schools')
-    .select(['id', 'name', 'code', 'board'])
+    .select([
+      'id',
+      'name',
+      'code',
+      'board',
+      'is_demo',
+      'ai_spend_cap_inr',
+      'wizard_done_at',
+    ])
     .where('id', '=', scope.schoolId)
     .executeTakeFirstOrThrow()
   const user = await db
@@ -76,7 +95,18 @@ export async function loadSchoolOverview(
   )
 
   const base = {
-    school,
+    school: {
+      id: school.id,
+      name: school.name,
+      code: school.code,
+      board: school.board,
+      isDemo: school.is_demo,
+      aiSpendCapInr:
+        school.ai_spend_cap_inr === null
+          ? null
+          : Number(school.ai_spend_cap_inr),
+    },
+    wizardDone: school.wizard_done_at !== null,
     role: scope.role,
     termsAccepted,
     me: { name: user.name, memberId: myMemberId },

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useSchool } from '../../../../components/school/context'
 import {
   Btn,
@@ -39,6 +39,7 @@ interface Detail {
 
 function ExamPage() {
   const { schoolId, overview } = useSchool()
+  const navigate = useNavigate()
   const { examId } = Route.useParams()
   const [d, setD] = useState<Detail | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -71,6 +72,24 @@ function ExamPage() {
     if (!sectionId && sectionChoices.length > 0)
       setSectionId(sectionChoices[0].id)
   }, [sectionChoices, sectionId])
+
+  async function useSample() {
+    setBusy('sample')
+    setError(null)
+    try {
+      await api(`/api/schools/${schoolId}/demo/sample-results`, {
+        body: { exam_id: examId },
+      })
+      await navigate({
+        to: '/school/$schoolId/results/$examId',
+        params: { schoolId, examId },
+        search: { student: undefined },
+      })
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Something went wrong.')
+      setBusy(null)
+    }
+  }
 
   async function run(name: string, path: string, body?: unknown) {
     setBusy(name)
@@ -254,6 +273,30 @@ function ExamPage() {
           Students cannot open any of these files. Print them for the exam.
         </p>
       </Card>
+      {d.mayHandle && overview.school.isDemo ? (
+        <Card
+          className="space-y-3 border-amber-400 bg-amber-50"
+          data-testid="demo-sample-card"
+        >
+          <h2 className="text-lg font-bold text-amber-950">
+            Demo: no answer sheets needed
+          </h2>
+          <p className="text-base text-amber-950">
+            Press the button to fill this exam with sample answer sheets for the
+            30 invented students. You then see sample results. Nothing is
+            scanned and no AI is used.
+          </p>
+          <Btn
+            className="w-full"
+            disabled={busy !== null}
+            onClick={() => void useSample()}
+          >
+            {busy === 'sample'
+              ? 'Making sample results…'
+              : 'Use sample answer sheets'}
+          </Btn>
+        </Card>
+      ) : null}
       {d.mayHandle ? <ScanPanel base={base} /> : null}
     </div>
   )

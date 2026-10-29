@@ -107,6 +107,14 @@ function SchoolLayout() {
             Sign out
           </button>
         </div>
+        {overview.school.isDemo ? (
+          <p
+            data-testid="demo-banner"
+            className="bg-amber-300 px-4 py-1.5 text-center text-sm font-bold tracking-wide text-amber-950"
+          >
+            DEMO - sample data
+          </p>
+        ) : null}
         {items.length > 1 ? (
           <nav
             aria-label="School"

@@ -1,14 +1,99 @@
-import { Link, createFileRoute } from '@tanstack/react-router'
+import { useEffect, useState } from 'react'
+import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useSchool } from '../../../components/school/context'
-import { Card, Chip } from '../../../components/school/ui'
+import { Btn, Card, Chip, Notice } from '../../../components/school/ui'
+import { api } from '../../../lib/school-client'
 
 export const Route = createFileRoute('/school/$schoolId/')({
   component: SchoolHome,
 })
 
 function SchoolHome() {
-  const { overview, schoolId } = useSchool()
+  const { overview, schoolId, reload } = useSchool()
+  const navigate = useNavigate()
   const o = overview
+  const [demoMsg, setDemoMsg] = useState<string | null>(null)
+  const [demoBusy, setDemoBusy] = useState(false)
+
+  // The school admin's first sign-in starts the setup wizard.
+  const needsWizard =
+    o.role === 'school_admin' && !o.wizardDone && !o.school.isDemo
+  useEffect(() => {
+    if (needsWizard)
+      void navigate({
+        to: '/school/$schoolId/welcome',
+        params: { schoolId },
+        replace: true,
+      })
+  }, [needsWizard, navigate, schoolId])
+  if (needsWizard) return <p className="text-base text-slate-700">Loading…</p>
+
+  async function resetDemo() {
+    if (
+      !window.confirm(
+        'Reset the demo? The sample papers and results are put away and you can start again.',
+      )
+    )
+      return
+    setDemoBusy(true)
+    try {
+      await api(`/api/schools/${schoolId}/demo/reset`, { body: {} })
+      setDemoMsg('The demo is reset. Make a new paper to start again.')
+      await reload()
+    } catch (e) {
+      setDemoMsg(e instanceof Error ? e.message : 'Something went wrong.')
+    } finally {
+      setDemoBusy(false)
+    }
+  }
+
+  const bigActions = (
+    <div className="space-y-3" data-testid="big-actions">
+      <BigAction
+        to="/school/$schoolId/exams/new"
+        schoolId={schoolId}
+        title="Make a paper"
+        hint="Choose the chapters. We make the question paper."
+      />
+      <BigAction
+        to="/school/$schoolId/exams"
+        schoolId={schoolId}
+        title="Upload answer sheets"
+        hint="Pick the exam, then add the scanned answer sheets."
+      />
+      <BigAction
+        to="/school/$schoolId/results"
+        schoolId={schoolId}
+        title="See results"
+        hint="Marks, strong topics and topics to fix for each student."
+      />
+    </div>
+  )
+  const demoBox = o.school.isDemo ? (
+    <Card className="space-y-2 border-amber-400 bg-amber-50">
+      <p className="text-base font-bold text-amber-950">
+        This is the demo school
+      </p>
+      <p className="text-base text-amber-950">
+        One Class 7 section with 30 invented students. Make a paper, open it,
+        and press “Use sample answer sheets” to see sample results. Nothing here
+        is real.
+      </p>
+      <p className="text-sm text-amber-950" data-testid="demo-cap">
+        AI spend cap for this demo: ₹{o.school.aiSpendCapInr ?? 0}. The sample
+        results use none of it.
+      </p>
+      {demoMsg ? <Notice kind="good">{demoMsg}</Notice> : null}
+      <Btn
+        kind="plain"
+        className="w-full"
+        disabled={demoBusy}
+        onClick={() => void resetDemo()}
+      >
+        {demoBusy ? 'Resetting…' : 'Reset demo'}
+      </Btn>
+    </Card>
+  ) : null
 
   if (o.role === 'student' || o.role === 'parent') {
     return (
@@ -38,6 +123,8 @@ function SchoolHome() {
     )
     return (
       <div className="space-y-4">
+        {demoBox}
+        {bigActions}
         <h1 className="text-2xl font-bold">Your classes</h1>
         {rows.length === 0 ? (
           <Card>
@@ -122,8 +209,10 @@ function SchoolHome() {
 
   return (
     <div className="space-y-4">
+      {demoBox}
+      {o.role === 'school_admin' ? bigActions : null}
       <h1 className="text-2xl font-bold">
-        {o.role === 'principal' ? 'Your school' : 'Get your school ready'}
+        {o.role === 'principal' ? 'Your school' : 'Your school set-up'}
       </h1>
       <div className="grid grid-cols-3 gap-2 text-center">
         <Stat n={o.counts.classes} label="Classes" />
@@ -173,5 +262,31 @@ function Stat({ n, label }: { n: number; label: string }) {
       <p className="text-2xl font-bold">{n}</p>
       <p className="text-sm text-slate-700">{label}</p>
     </div>
+  )
+}
+
+function BigAction({
+  to,
+  schoolId,
+  title,
+  hint,
+}: {
+  to:
+    | '/school/$schoolId/exams/new'
+    | '/school/$schoolId/exams'
+    | '/school/$schoolId/results'
+  schoolId: string
+  title: string
+  hint: string
+}) {
+  return (
+    <Link
+      to={to}
+      params={{ schoolId }}
+      className="flex min-h-24 flex-col justify-center rounded-2xl border-2 border-emerald-700 bg-emerald-50 px-5 py-4 shadow-sm hover:bg-emerald-100"
+    >
+      <span className="text-2xl font-bold">{title} ›</span>
+      <span className="text-base text-slate-800">{hint}</span>
+    </Link>
   )
 }

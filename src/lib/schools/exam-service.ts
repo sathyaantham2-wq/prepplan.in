@@ -374,9 +374,9 @@ export async function listExams(
   assertStaff(scope)
   const exams = await schoolExamsRepository.list(db, scope)
   const out: Array<ExamSummary> = []
-  for (const e of exams.sort(
-    (a, b) => b.created_at.getTime() - a.created_at.getTime(),
-  )) {
+  for (const e of exams
+    .filter((x) => x.archived_at === null) // an archived exam (a reset demo) is out of sight, never deleted
+    .sort((a, b) => b.created_at.getTime() - a.created_at.getTime())) {
     const sectionIds = await examSections(db, scope, e.id)
     if (
       scope.role === 'teacher' &&

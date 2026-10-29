@@ -332,3 +332,35 @@ export const schoolPrintJobPartsRepository = {
       .execute()
   },
 }
+
+export const schoolDemoResultsRepository = {
+  ...createSchoolScopedRepository('school_demo_results'),
+  async openFor(db: Db, scope: SchoolScope, examId: string) {
+    return db
+      .selectFrom('school_demo_results')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('exam_id', '=', examId)
+      .where('archived_at', 'is', null)
+      .executeTakeFirst()
+  },
+  async listOpen(db: Db, scope: SchoolScope) {
+    return db
+      .selectFrom('school_demo_results')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('archived_at', 'is', null)
+      .orderBy('created_at', 'desc')
+      .execute()
+  },
+  /** A fresh set replaces the old: the old one is archived, never deleted. */
+  async archiveOpen(db: Db, scope: SchoolScope, examId: string) {
+    await db
+      .updateTable('school_demo_results')
+      .set({ archived_at: new Date() })
+      .where('school_id', '=', scope.schoolId)
+      .where('exam_id', '=', examId)
+      .where('archived_at', 'is', null)
+      .execute()
+  },
+}

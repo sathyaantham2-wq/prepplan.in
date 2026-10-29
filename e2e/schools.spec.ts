@@ -466,9 +466,15 @@ test.describe.serial('school screens on a phone', () => {
     await page.getByLabel('Type it again').fill(PASSWORD)
     await shot(page, '05-set-password-staff-form')
     await page.getByRole('button', { name: 'Save and continue' }).click()
+    // a school admin's first sign-in starts the set-up wizard; this walk-through leaves it
+    // (the wizard itself is covered in schools-m1.spec.ts)
+    await page.waitForURL(`**/school/${schoolId}/welcome`)
+    await page
+      .getByRole('button', { name: 'Leave setup, I will do it later' })
+      .click()
     await page.waitForURL(`**/school/${schoolId}`)
     await expect(
-      page.getByRole('heading', { name: 'Get your school ready' }),
+      page.getByRole('heading', { name: 'Your school set-up' }),
     ).toBeVisible()
   })
 
@@ -1206,7 +1212,7 @@ test.describe.serial('school screens on a phone', () => {
     await page.getByRole('button', { name: 'Sign in' }).click()
     await page.waitForURL(`**/school/${schoolId}`)
     await expect(
-      page.getByRole('heading', { name: 'Get your school ready' }),
+      page.getByRole('heading', { name: 'Your school set-up' }),
     ).toBeVisible()
     await shot(page, '26-admin-home-desktop')
     await ctx.close()

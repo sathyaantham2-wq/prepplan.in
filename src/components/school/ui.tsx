@@ -94,12 +94,11 @@ export function Select({
 export function Card({
   children,
   className = '',
-}: {
-  children: ReactNode
-  className?: string
-}) {
+  ...rest
+}: React.HTMLAttributes<HTMLElement>) {
   return (
     <section
+      {...rest}
       className={`rounded-xl border border-slate-300 bg-white p-4 sm:p-5 ${className}`}
     >
       {children}

@@ -567,3 +567,89 @@ S6 storage change (owner decision 2026-10-29): **no image bytes in Postgres.** M
 
 S6 storage rules update (owner decision 2026-10-29): migration **0086**. The **original** upload file is deleted 7 days after that exam's marks lock (`school_exams.marks_locked_at`, set by the later lock job), the straightened copy stays for the school's retention period; the row keeps `original_purged_at` with `original_key` cleared; each exam's deletion is logged (`school.scan_originals_purged`). Finished **booklet print PDFs moved out of Postgres** into the same private bucket (`<school>/<exam>/_print/<job>/`, sealed, deleted 7 days after the job; batches deleted as soon as they are joined). No `school_*` table has a bytes column any more (tested). Estimate updated in `docs/schools/SCAN_STORAGE_SETUP.md`.
 
+---
+
+## 11. Owner direction 2026-10-29: M1 to M4 (replaces S7 as the next work)
+
+The numbering M1 to M4 is the owner's. Status: **M1 is built in this step; M2, M3, M4 are plans only.** Nothing here has an F-number; the rows at the end are proposals. Local and test database only: no push, no deploy, nothing in production. (The owner named this file `docs/schools/SCHOOLS_MODULE_PLAN.md`; the plan has always lived at `docs/SCHOOLS_MODULE_PLAN.md`, so the section is added here.)
+
+### 11.1 Which class for the demo (re-confirmed from `docs/schools/BANK_DEPTH_PRODUCTION_2026-10-29.md`, read again, no new production query)
+
+An 80-mark paper needs, per the built layout: Section D 4 long answers of 5 marks and Section E 3 case studies of 4 marks (plus ORs), drawn from the chapters the teacher picks (3 to 5 for a demo).
+
+| Class | Maths | Science | Social Science |
+|---|---|---|---|
+| **7** | 222 long5 / 222 case, **14 or more in every one of 15 chapters** | 142 / 142, **6 or more in every chapter** (12 median) | 274 / 274, **12 or more in every one of 20 chapters** |
+| 8 | 170 / 173 (12+ per chapter) | 157 / 161 (12+) | 242 / 243, but **Part II chapter 8 has 0 and 0** |
+| 9 | 96 / 96 (12 per chapter, only 8 chapters) | 172 / 172 | 116 / 116 (10+) |
+| 6 | **none at all** (0 long5, 0 case) | 145 / 148 | 174 / 175 |
+
+**Class 7 is the right choice and the best of the four**: all three subjects are deep in every chapter, and Class 7 Maths is the deepest Maths (14 per chapter). Class 8 is the runner-up (one Social Science chapter is empty). Class 6 Maths and Classes 10 to 12 could not fill Sections D and E. One caution for the demo: Class 7 Science has a few chapters with only 6 long answers and 6 case studies, enough for one paper but thin if the same chapter is picked for many papers; the demo defaults to Maths first.
+
+### 11.2 M1: usability and the demo school (built in this step)
+
+**M1a. First sign-in wizard for the school admin.** One question per screen, a progress bar, plain English, "Skip for now" on every screen and a way out of the whole wizard. Screens: (1) your name and mobile number; (2) school name, city, board, and accepting the short school terms; (3) which classes the school has and how many sections each (the subjects Maths, Science and Social Science are added for you); (4) teachers: name, e-mail, which class and subject, "add another"; (5) students: upload the school's list or "I will do this later" (with the sample file); (6) "You are ready". The wizard stores only its position (`schools.wizard_step`, `wizard_done_at`); every answer goes through the same services as the existing screens, so nothing is done twice and every action is audited as before. The admin lands in the wizard on first sign-in; it can be reopened from the home screen.
+
+**M1b. School home: three big actions.** After setup the home shows **Make a paper**, **Upload answer sheets**, **See results**. The old setup checklist moves below them. Teachers see the same three for their subjects.
+
+**M1c. Demo school.** A school with `schools.is_demo = true`, created only by the provisioning script (`--demo`), never from the web. One Class 7 section A with **30 fictional students** (invented names, no real person, no guardian phone numbers), Maths, Science and Social Science added, a demo teacher and a demo office login. The teacher makes a **real** paper from the bank in one tap; **Use sample answer sheets** on the exam page then creates a set of **pre-filled sample results** for the 30 students, built from that paper's own questions and chapters:
+- a **student report** per student: marks, how many lost marks were a **knowledge gap** and how many a **writing habit**, strengths, topics to fix;
+- a **class habit heatmap** (students by habit);
+- a few **teacher flags** (answers a teacher would be asked to look at).
+The sample results use no AI call and no scanned image. Every demo screen carries a clear **DEMO - sample data** label. **Reset demo** archives the demo school's exams and sample results (`archived_at`; nothing is deleted) and the demo is ready to be used again. Demo data is separate by construction: it sits under the demo school's `school_id` like any tenant, the school is flagged, it is excluded from anything a real school or the platform counts, and demo endpoints refuse a school that is not a demo. **AI spend cap:** `schools.ai_spend_cap_inr` (demo default ₹50) is stored now and will be enforced by the AI steps (M3, M4); M1 spends nothing.
+
+**M1 does not include** real marking, the student portal, scanned-sheet results or the Word export. The results screens are built so they can later show real results unchanged: M1 fills them from a generated sample, M4 from real marks.
+
+### 11.3 M2 (plan only): the paper as an editable Word file, and its return
+
+Download the master question paper (not the teacher copy) as **.docx**, edit freely, upload the final version. The upload goes through the **M3 reading and approval flow** (the same extraction and teacher approval), so a paper edited in Word is treated exactly like a school's own paper and the approved list becomes the exam's paper of record.
+
+How Maths notation survives in Word (the question text in the bank is plain text with Unicode symbols, so this is a mapping, not an image):
+- **Fractions, powers, roots, subscripts**: written as native Word equations (Office Math, OMML) so they stay editable. The bank's text is parsed with a small, tested converter (`a/b` between numbers or brackets to a stacked fraction; `x^2` and `x²` to a superscript; `√`, `π`, `°`, `≤`, `≥`, `≠`, `×`, `÷` kept as Unicode in the equation font). Anything the converter is not sure about stays as plain Unicode text rather than being guessed.
+- **Font**: Cambria Math for equations, a normal body font elsewhere, so the file reads the same on any Word.
+- **Figures and tables**: diagrams as embedded PNG at print resolution with alt text; tables as real Word tables.
+- **Coming back**: the upload reader reads OMML back into the same plain-text notation (so `1/2` stays `1/2`, not a picture), keeps a hidden question id in each question's bookmark so edited questions are matched to their originals, and shows the teacher a **side-by-side diff** (changed, added, removed) before approval. A Word file with no bookmarks (the school retyped it) is read as an M3 "own paper".
+- **Risks**: Word's equation editor stores some constructs several ways, and Google Docs and LibreOffice flatten equations on export. The mitigation is a fixed fixture set of the notation the bank really contains (pulled from the production bank, read-only) round-tripped in Word, LibreOffice and Google Docs before the step is called done, and an honest "we could not read this question" list rather than silent loss.
+- Open decision for the owner: **docx generation library** (`docx` npm, MIT, supports OMML) against writing the XML ourselves. Proposal: `docx`.
+
+### 11.4 M3 (plan only): "Use your own paper"
+
+The school uploads its own question paper (Word, PDF or photo) and, optionally, its answer key.
+1. **Read**: the file is turned into pages; an AI step extracts the structure (sections, question numbers, text, marks, options, OR choices, case-study stems with their sub-parts) as a typed list with a confidence per item. Maths notation is read from OMML for Word, and from the page image for PDF and photo.
+2. **Map**: each question is mapped to a chapter and topic of the bank (book, part, chapter number, concept), with the match's confidence; unmapped questions stay unmapped and are marked "other" (they can still be marked, they just give no topic report).
+3. **Teacher approves the list** screen by screen: edit text, marks, section, chapter. Nothing is marked until the list is approved. Approval is recorded (who, when) and frozen as a new version; later edits make a new version.
+4. **The key**: if the school uploads one, it goes through the same read and approval. If not, the AI **drafts** an answer key and a step-wise marking scheme per question, clearly labelled "draft by PrepPlan AI", and the teacher **must approve or edit every question's key before any marking can start**; marking is blocked at the service level, not hidden in the screen.
+5. **Answer sheets for a school's own paper**: PrepPlan prints a **QR cover page per student** (name, ID, exam, a code per page count the student declares or the teacher sets) to staple on top of the school's own answer sheets. The scan reader (S6) reads the cover QR and treats the pages after it, up to the next cover, as that student's. Fallback: **one upload per student, named by roll number** (`12.pdf`, `12-p3.jpg`), matched to the roster, with a clear list for names that do not match.
+6. **Rules that stay**: the school-student purpose limit and the encrypted private storage (S6 and its follow-ups) apply unchanged; the school's paper and key are stored sealed like the scans; copyright of a school's own paper stays with the school (the terms must say so, flag for the owner's terms document).
+- **Risks**: handwriting-free printed papers read well, photos of papers less so (hence the approval screen); mapping to topics is a judgement call (shown with confidence); a draft key can be wrong (hence mandatory approval).
+- **Needs**: an AI provider choice and cost model per paper (the school spend cap above), and the owner's word on how long a school's uploaded paper is kept.
+
+### 11.5 M4 (plan only): AI correction, with results in the student and teacher portals
+
+Waits for the real-photo report on the scan reader. Then: marking per answer box against the approved key and step scheme (AI marks are final unless flagged; the flag, spot-check and dispute-window rules in CLAUDE.md "School module rules" apply as written), the teacher marking workspace for flags, release to the student portal, the lock job that sets `school_exams.marks_locked_at` (which starts the 7-day clock for deleting the original scan files) and the teacher portal's class results. The M1 results screens (student report, habit heatmap, flags) are the target design for this step: M4 replaces their generated sample with real marks without redesigning them. The student portal shows only a student's own results, after release, and never the key or paper beyond the CLAUDE.md exception.
+
+### 11.6 Proposed backlog rows (working labels, not F-numbers; the owner assigns numbers)
+
+| Working label | Story | Acceptance (short) |
+|---|---|---|
+| M1-A School setup wizard | As a school admin I set up my school one question at a time, and can skip any step | One question per screen, progress bar, skip on every screen, plain English, resumable, every action audited |
+| M1-B School home with three actions | As staff I start my three common jobs from the home screen | Make a paper, Upload answer sheets, See results visible at phone width, tap targets 44 px |
+| M1-C Demo school | As the owner I can show the product with a safe sample school | Created only by the provisioning script, 30 fictional students, labelled DEMO, separate, reset without deleting, spend cap stored |
+| M1-D Sample results | As a teacher I can see what results will look like | Student reports (gap vs habit, strengths, topics to fix), class habit heatmap, a few flags, built from the real paper, no AI |
+| M2-A Paper as Word | As a teacher I download the question paper as an editable Word file | Native equations for fractions and powers, round-trip fixture set passes |
+| M2-B Edited paper back | As a teacher I upload my edited paper | Goes through M3 approval, shows what changed |
+| M3-A Own paper upload and approval | As a teacher I use my own paper | AI extraction + chapter mapping, teacher approves before use |
+| M3-B Answer key draft and approval | As a teacher I need no key to start | AI drafts key and scheme, approval mandatory, marking blocked until approved |
+| M3-C QR cover page and per-roll upload | As a teacher I can scan the school's own answer sheets | Cover QR per student, roll-number fallback, clear mismatch list |
+| M4-A AI correction and portals | As a student and teacher I see marked results | Per CLAUDE.md school marking rules, release, dispute window, lock |
+
+### 11.7 M1 build log (built 2026-10-29, not committed; screenshots in `docs/schools/screens-m1/`)
+
+- **Migration 0087**: `schools.is_demo`, `ai_spend_cap_inr`, `wizard_step`, `wizard_done_at`; `school_members.phone_e164`; `school_exams.archived_at`; `school_demo_results` (registry entry, composite FK, one open set per exam).
+- **Wizard** (`/school/:id/welcome`, `lib/schools/wizard.ts`, `/api/schools/:id/wizard`, admin only): five questions, one per screen, a progress bar, "Skip for now" on every screen, Back, and "Leave setup, I will do it later". The first sign-in of a school admin is sent there; a finished or left wizard is not shown again and can be reopened by the API. Answers go through the existing services (class, section, subject, teacher, terms, roster upload), all audited.
+- **Home**: Make a paper / Upload answer sheets / See results as three large buttons for the office and for teachers; the set-up checklist moves below.
+- **Demo school**: `npm run schools:provision:test -- --demo ...` (local database only, no web route) makes Class 7 section A, 30 invented students (no guardian phone, reserved undeliverable addresses), the Class 7 subjects that have questions (or `--subjects CODES`), both ready-made layouts, a demo teacher (class teacher, all subjects) and one-time codes for the office and the teacher. `ai_spend_cap_inr` is 50; M1 itself spends nothing. A yellow "DEMO - sample data" bar sits under the header of every screen of a demo school. **Reset demo** archives the exams and sample results (nothing deleted; audited). Demo buttons are refused to any school that is not a demo; another school cannot open a demo school's results.
+- **Sample results** (`lib/schools/demo-results.ts`): pure and deterministic, built from the paper the teacher just made and its chapters: student report (marks, marks lost to a topic not learnt against a writing habit, strong topics, topics to fix with why, habits with a tip, question by question), class view (average, spread, where marks were lost, topics to teach again, habit heatmap, a few teacher flags, every student). No AI, no image.
+- **Tests**: 9 unit tests (sums, determinism, labels, plain words), 13 integration tests (wizard validation, permissions, demo set-up, sample results, isolation, refusal for real schools, reset), 13 phone E2E steps with screenshots; the existing 15 school E2E steps still pass. Full suite 1058 passed.
+- **Known limits, stated plainly**: the demo uses whatever bank the database holds: on this machine that is small test content, so the screenshots show the layout, not the real Class 7 questions; in production the demo draws from the real Class 7 Maths, Science and Social Science bank. The sample results are invented and say so. Results for real schools do not exist until marking is built (M4); their screens say "Results appear here after the answer sheets of an exam have been marked."
+

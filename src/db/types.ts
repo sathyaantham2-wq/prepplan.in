@@ -673,6 +673,16 @@ export interface SchoolCredentialCodes {
   used_at: Timestamp | null;
 }
 
+export interface SchoolDemoResults {
+  archived_at: Timestamp | null;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  exam_id: string;
+  id: Generated<string>;
+  payload: Json;
+  school_id: string;
+}
+
 export interface SchoolExamAbsences {
   cleared_at: Timestamp | null;
   cleared_reason: string | null;
@@ -700,6 +710,7 @@ export interface SchoolExamQuestions {
 }
 
 export interface SchoolExams {
+  archived_at: Timestamp | null;
   chapter_ids: string[];
   class_id: string;
   created_at: Generated<Timestamp>;
@@ -748,6 +759,7 @@ export interface SchoolMembers {
   failed_logins: Generated<number>;
   id: Generated<string>;
   locked_until: Timestamp | null;
+  phone_e164: string | null;
   role: SchoolRole;
   school_id: string;
   status: SchoolMemberStatus;
@@ -802,6 +814,7 @@ export interface SchoolPrintJobs {
 }
 
 export interface Schools {
+  ai_spend_cap_inr: Numeric | null;
   board: Generated<string>;
   city: string | null;
   code: string;
@@ -809,11 +822,14 @@ export interface Schools {
   dispute_window_days: Generated<number>;
   household_id: string;
   id: Generated<string>;
+  is_demo: Generated<boolean>;
   name: string;
   plan: Generated<string>;
   sample_rate: Generated<Numeric>;
   scan_retention_days: Generated<number>;
   status: SchoolStatus;
+  wizard_done_at: Timestamp | null;
+  wizard_step: string | null;
 }
 
 export interface SchoolScanBatches {
@@ -1145,6 +1161,7 @@ export interface DB {
   school_booklets: SchoolBooklets;
   school_classes: SchoolClasses;
   school_credential_codes: SchoolCredentialCodes;
+  school_demo_results: SchoolDemoResults;
   school_exam_absences: SchoolExamAbsences;
   school_exam_questions: SchoolExamQuestions;
   school_exam_sections: SchoolExamSections;
