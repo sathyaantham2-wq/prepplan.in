@@ -74,12 +74,14 @@ export async function dryRunRosterImport(
       (c) => c.academic_year === year,
     )
     const sections = await schoolSectionsRepository.list(db, scope)
+    const index = await schoolStudentsRepository.rosterIndex(db, scope)
     const held = new Map(
-      (await schoolStudentsRepository.rosterIndex(db, scope)).map((r) => [
-        `${r.section_id}|${r.roll_no}`,
-        r.name,
-      ]),
+      index.map((r) => [`${r.section_id}|${r.roll_no}`, r.name]),
     )
+    const byAdmission = new Map(
+      index.map((r) => [r.admission_no.toUpperCase(), r]),
+    )
+    const admissionInFile = new Set<string>()
     const inFile = new Set<string>()
     raw.forEach((r, i) => {
       const row = i + 1
@@ -105,6 +107,32 @@ export async function dryRunRosterImport(
           status: 'error',
           message: `Section ${v.value.section} is not set up in class ${v.value.grade}.`,
         })
+      const adm = v.value.admissionNo
+      if (adm) {
+        if (admissionInFile.has(adm))
+          return void reports.push({
+            row,
+            status: 'error',
+            message: `Admission number ${adm} appears twice in the file.`,
+          })
+        admissionInFile.add(adm)
+        const owner = byAdmission.get(adm)
+        if (owner) {
+          const same =
+            owner.section_id === section.id &&
+            owner.roll_no === v.value.rollNo &&
+            owner.name.trim().toLowerCase() === v.value.name.toLowerCase()
+          return void reports.push(
+            same
+              ? { row, status: 'unchanged' }
+              : {
+                  row,
+                  status: 'error',
+                  message: `Admission number ${adm} already belongs to another student.`,
+                },
+          )
+        }
+      }
       const key = `${section.id}|${v.value.rollNo}`
       if (inFile.has(key))
         return void reports.push({
@@ -236,6 +264,7 @@ export async function commitRosterImport(
             sectionId: section.id,
             sectionName: section.name,
             rollNo: row.rollNo,
+            admissionNo: row.admissionNo,
             guardianPhone: row.guardianPhone,
             guardianName: row.guardianName,
           })

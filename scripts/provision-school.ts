@@ -9,11 +9,12 @@
  * there is no override flag: running it against production needs the owner's explicit, separate
  * approval and a change to this file (owner decision 2026-10-29).
  *
- * The admin is created without credentials; the credentials step (S2c) issues the one-time link.
- * The school's terms are NOT accepted here: the admin must accept them before adding students.
+ * It prints a one-time code (works once, 7 days) for the admin to choose a password with.
+ * The school terms are NOT accepted here: the admin must accept them before adding students.
  */
 import { createDb } from '../src/db/connection'
 import { schoolsRepository } from '../src/db/repositories'
+import { issueFirstAdminCode } from '../src/lib/schools/credentials'
 
 const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '::1'])
 
@@ -67,8 +68,20 @@ async function main() {
     console.log(
       `school ${result.school.id} (${code}) created; admin user ${result.adminUserId}`,
     )
+    const first = await issueFirstAdminCode(
+      db,
+      result.school.id,
+      result.adminMemberId,
+    )
+    console.log('')
     console.log(
-      'No credentials yet. The admin must accept the school terms before adding students.',
+      `First sign-in for ${adminEmail}: one-time code ${first.code} (works once, expires ${first.expiresAt.toISOString().slice(0, 10)}).`,
+    )
+    console.log(
+      'Give it to the admin on paper; they enter their e-mail and this code to choose a password.',
+    )
+    console.log(
+      'The admin must then accept the school terms before adding students.',
     )
   } finally {
     await db.destroy()

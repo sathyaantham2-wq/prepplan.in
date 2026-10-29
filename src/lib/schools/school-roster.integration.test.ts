@@ -510,6 +510,7 @@ describe('school roster, assignments and terms (S2)', () => {
                 .executeTakeFirstOrThrow()
             ).id,
             roll_no: '99',
+            admission_no: 'X99',
             status: 'active',
             created_by_user_id: adminAUser,
           })
@@ -688,6 +689,73 @@ describe('school roster, assignments and terms (S2)', () => {
         kiran.id,
       )
       expect(await schoolStudentsRepository.findOwn(db, adminA)).toBeUndefined()
+    })
+  })
+
+  describe('admission numbers', () => {
+    it('admission numbers: kept as the permanent ID, generated when missing, unique per school, never reassigned', async () => {
+      const head = 'Name,Class,Section,Roll No,Admission No'
+      const pre = await dryRunRosterImport(db, adminA, {
+        kind: 'students',
+        academicYear: YEAR,
+        fileName: 'a.csv',
+        bytes: csv([
+          head,
+          'Dev,7,A,31,2024/0031',
+          'Dia,7,A,32,',
+          'Dup,7,B,33,2024/0031',
+          'Clash,7,B,34,' + 'x'.repeat(31),
+        ]),
+      })
+      expect(pre.counts).toEqual({ new: 2, unchanged: 0, errors: 2 })
+      expect(pre.rows.find((r) => r.row === 3)?.message).toMatch(
+        /appears twice/,
+      )
+      const ok = await dryRunRosterImport(db, adminA, {
+        kind: 'students',
+        academicYear: YEAR,
+        fileName: 'a.csv',
+        bytes: csv([head, 'Dev,7,A,31,2024/0031', 'Dia,7,A,32,']),
+      })
+      await commitRosterImport(db, adminA, ok.batchId)
+      const rows = await db
+        .selectFrom('school_students')
+        .select(['roll_no', 'admission_no'])
+        .where('school_id', '=', schoolA)
+        .where('roll_no', 'in', ['31', '32'])
+        .orderBy('roll_no')
+        .execute()
+      expect(rows[0].admission_no).toBe('2024/0031')
+      expect(rows[1].admission_no).toMatch(/^P[2-9A-HJ-NP-Z]{7}$/)
+      // the same admission number for a different child is refused, and a repeat of the same child is "unchanged"
+      const again = await dryRunRosterImport(db, adminA, {
+        kind: 'students',
+        academicYear: YEAR,
+        fileName: 'a.csv',
+        bytes: csv([head, 'Dev,7,A,31,2024/0031']),
+      })
+      expect(again.rows.map((r) => r.status)).toEqual(['unchanged'])
+      const other = await dryRunRosterImport(db, adminA, {
+        kind: 'students',
+        academicYear: YEAR,
+        fileName: 'a.csv',
+        bytes: csv([head, 'Someone Else,7,B,40,2024/0031']),
+      })
+      expect(other.rows[0].status).toBe('error')
+      expect(other.rows[0].message).toMatch(
+        /already belongs to another student/,
+      )
+      // the same admission number in ANOTHER school is a different student: allowed
+      expect(
+        (
+          await dryRunRosterImport(db, adminB, {
+            kind: 'students',
+            academicYear: YEAR,
+            fileName: 'a.csv',
+            bytes: csv([head, 'Dev,8,Z,1,2024/0031']),
+          })
+        ).counts.errors,
+      ).toBe(0)
     })
   })
 

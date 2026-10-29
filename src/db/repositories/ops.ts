@@ -48,7 +48,11 @@ export const aiJobsRepository = {
   // calls only; a rejected/errored call never reached the model, so it never priced anything) by
   // one student since a point in time, regardless of which feature (generation or evaluation)
   // spent it.
-  async sumCostForStudentSince(db: Db, studentId: string, since: Date): Promise<number> {
+  async sumCostForStudentSince(
+    db: Db,
+    studentId: string,
+    since: Date,
+  ): Promise<number> {
     const row = await db
       .selectFrom('ai_jobs')
       .select(sql<string>`coalesce(sum(cost_inr), 0)`.as('total'))
@@ -89,7 +93,8 @@ export const aiJobsRepository = {
       tokens_in: Number(r.tokens_in),
       tokens_out: Number(r.tokens_out),
       cost_inr: Number(r.cost_inr),
-      avg_latency_ms: r.avg_latency_ms == null ? null : Number(r.avg_latency_ms),
+      avg_latency_ms:
+        r.avg_latency_ms == null ? null : Number(r.avg_latency_ms),
       error_count: Number(r.error_count),
     }))
   },

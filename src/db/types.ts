@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolCredentialKind, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -632,6 +632,19 @@ export interface SchoolClasses {
   school_id: string;
 }
 
+export interface SchoolCredentialCodes {
+  code_hash: string;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string | null;
+  expires_at: Timestamp;
+  id: Generated<string>;
+  kind: SchoolCredentialKind;
+  member_id: string;
+  revoked_at: Timestamp | null;
+  school_id: string;
+  used_at: Timestamp | null;
+}
+
 export interface SchoolImportBatches {
   academic_year: string | null;
   committed_at: Timestamp | null;
@@ -650,7 +663,9 @@ export interface SchoolImportBatches {
 
 export interface SchoolMembers {
   created_at: Generated<Timestamp>;
+  failed_logins: Generated<number>;
   id: Generated<string>;
+  locked_until: Timestamp | null;
   role: SchoolRole;
   school_id: string;
   status: SchoolMemberStatus;
@@ -693,6 +708,7 @@ export interface SchoolStudentGuardians {
 }
 
 export interface SchoolStudents {
+  admission_no: string;
   created_at: Generated<Timestamp>;
   created_by_user_id: string;
   id: Generated<string>;
@@ -954,6 +970,7 @@ export interface DB {
   scan_detections: ScanDetections;
   scan_pages: ScanPages;
   school_classes: SchoolClasses;
+  school_credential_codes: SchoolCredentialCodes;
   school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
   school_sections: SchoolSections;

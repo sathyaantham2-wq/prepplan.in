@@ -14,6 +14,8 @@ export interface StudentRow {
   grade: number
   section: string
   rollNo: string
+  /** The school's own admission number, upper-cased; null when the row has none (one is generated). */
+  admissionNo: string | null
   guardianPhone: string | null
   guardianName: string | null
 }
@@ -39,6 +41,11 @@ const ALIASES: Record<string, string> = {
   rollno: 'rollno',
   rollnumber: 'rollno',
   roll: 'rollno',
+  admissionno: 'admissionno',
+  admissionnumber: 'admissionno',
+  admission: 'admissionno',
+  admno: 'admissionno',
+  adno: 'admissionno',
   parentphone: 'parentphone',
   guardianphone: 'parentphone',
   parentmobile: 'parentphone',
@@ -144,6 +151,9 @@ export function normalizePhone(input: string): string | null {
   return null
 }
 
+/** Letters, numbers and / . _ - ; 30 characters at most. Matches the database check. */
+export const ADMISSION_NO = /^[A-Za-z0-9][A-Za-z0-9/._-]{0,29}$/
+
 export function validateStudentRow(row: RawRow): RowResult<StudentRow> {
   const name = (row.name ?? '').trim()
   if (!name) return { ok: false, error: 'Name is missing.' }
@@ -169,6 +179,13 @@ export function validateStudentRow(row: RawRow): RowResult<StudentRow> {
       ok: false,
       error: 'Roll number is missing or longer than 20 characters.',
     }
+  const admissionRaw = (row.admissionno ?? '').trim().replace(/\s+/g, '')
+  if (admissionRaw && !ADMISSION_NO.test(admissionRaw)) {
+    return {
+      ok: false,
+      error: `Admission number "${admissionRaw}" can only use letters, numbers and / . _ - (up to 30 characters).`,
+    }
+  }
   let guardianPhone: string | null = null
   if ((row.parentphone ?? '').trim()) {
     guardianPhone = normalizePhone(row.parentphone ?? '')
@@ -185,6 +202,7 @@ export function validateStudentRow(row: RawRow): RowResult<StudentRow> {
       grade,
       section,
       rollNo,
+      admissionNo: admissionRaw ? admissionRaw.toUpperCase() : null,
       guardianPhone,
       guardianName: (row.parentname ?? '').trim() || null,
     },

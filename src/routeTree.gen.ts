@@ -56,6 +56,7 @@ import { Route as ApiLeaderboardRouteImport } from './routes/api/leaderboard'
 import { Route as ApiPapersRouteImport } from './routes/api/papers'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
+import { Route as ApiSchoolLoginRouteImport } from './routes/api/school-login'
 import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
@@ -107,6 +108,8 @@ import { Route as ApiQuestionsGenerateBatchRouteImport } from './routes/api/ques
 import { Route as ApiRemediationIdRouteImport } from './routes/api/remediation/$id'
 import { Route as ApiRemediationGenerateRouteImport } from './routes/api/remediation/generate'
 import { Route as ApiScanPagesPageIdRouteImport } from './routes/api/scan-pages/$pageId'
+import { Route as ApiSchoolLoginActivateRouteImport } from './routes/api/school-login/activate'
+import { Route as ApiSchoolLoginActivateStaffRouteImport } from './routes/api/school-login/activate-staff'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiStudentsMeRouteImport } from './routes/api/students/me'
 import { Route as ApiStudyPlanGenerateRouteImport } from './routes/api/study-plan/generate'
@@ -157,6 +160,8 @@ import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/ev
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiFixitCardsIdAnswerRouteImport } from './routes/api/fixit/cards/$id/answer'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
+import { Route as ApiSchoolsSchoolIdCredentialsStaffRouteImport } from './routes/api/schools/$schoolId/credentials/staff'
+import { Route as ApiSchoolsSchoolIdCredentialsStudentsRouteImport } from './routes/api/schools/$schoolId/credentials/students'
 import { Route as ApiSchoolsSchoolIdTermsAcceptRouteImport } from './routes/api/schools/$schoolId/terms/accept'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
 import { Route as ApiStudentsIdHabitsTrendRouteImport } from './routes/api/students/$id/habits/trend'
@@ -168,6 +173,7 @@ import { Route as ApiAttemptsIdItemsItemIdRemoveRouteImport } from './routes/api
 import { Route as ApiAttemptsIdScanDetectionsDetectionIdRouteImport } from './routes/api/attempts/$id/scan/detections/$detectionId'
 import { Route as ApiAttemptsIdScanPagesPageIdRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId'
 import { Route as ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport } from './routes/api/schools/$schoolId/imports/$batchId/commit'
+import { Route as ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRouteImport } from './routes/api/schools/$schoolId/students/$schoolStudentId/reset-password'
 import { Route as ApiAttemptsIdScanPagesPageIdExtractRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId/extract'
 
 const IndexRoute = IndexRouteImport.update({
@@ -404,6 +410,11 @@ const ApiQuestionsRoute = ApiQuestionsRouteImport.update({
 const ApiRemediationRoute = ApiRemediationRouteImport.update({
   id: '/api/remediation',
   path: '/api/remediation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSchoolLoginRoute = ApiSchoolLoginRouteImport.update({
+  id: '/api/school-login',
+  path: '/api/school-login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiStudentDashboardRoute = ApiStudentDashboardRouteImport.update({
@@ -666,6 +677,17 @@ const ApiScanPagesPageIdRoute = ApiScanPagesPageIdRouteImport.update({
   path: '/api/scan-pages/$pageId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSchoolLoginActivateRoute = ApiSchoolLoginActivateRouteImport.update({
+  id: '/activate',
+  path: '/activate',
+  getParentRoute: () => ApiSchoolLoginRoute,
+} as any)
+const ApiSchoolLoginActivateStaffRoute =
+  ApiSchoolLoginActivateStaffRouteImport.update({
+    id: '/activate-staff',
+    path: '/activate-staff',
+    getParentRoute: () => ApiSchoolLoginRoute,
+  } as any)
 const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -929,6 +951,18 @@ const ApiQuestionsGenerateBatchIdResumeRoute =
     path: '/resume',
     getParentRoute: () => ApiQuestionsGenerateBatchIdRoute,
   } as any)
+const ApiSchoolsSchoolIdCredentialsStaffRoute =
+  ApiSchoolsSchoolIdCredentialsStaffRouteImport.update({
+    id: '/api/schools/$schoolId/credentials/staff',
+    path: '/api/schools/$schoolId/credentials/staff',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiSchoolsSchoolIdCredentialsStudentsRoute =
+  ApiSchoolsSchoolIdCredentialsStudentsRouteImport.update({
+    id: '/api/schools/$schoolId/credentials/students',
+    path: '/api/schools/$schoolId/credentials/students',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiSchoolsSchoolIdTermsAcceptRoute =
   ApiSchoolsSchoolIdTermsAcceptRouteImport.update({
     id: '/api/schools/$schoolId/terms/accept',
@@ -995,6 +1029,12 @@ const ApiSchoolsSchoolIdImportsBatchIdCommitRoute =
     path: '/$batchId/commit',
     getParentRoute: () => ApiSchoolsSchoolIdImportsRoute,
   } as any)
+const ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute =
+  ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRouteImport.update({
+    id: '/api/schools/$schoolId/students/$schoolStudentId/reset-password',
+    path: '/api/schools/$schoolId/students/$schoolStudentId/reset-password',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiAttemptsIdScanPagesPageIdExtractRoute =
   ApiAttemptsIdScanPagesPageIdExtractRouteImport.update({
     id: '/extract',
@@ -1049,6 +1089,7 @@ export interface FileRoutesByFullPath {
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
+  '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1101,6 +1142,8 @@ export interface FileRoutesByFullPath {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
+  '/api/school-login/activate': typeof ApiSchoolLoginActivateRoute
+  '/api/school-login/activate-staff': typeof ApiSchoolLoginActivateStaffRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -1151,6 +1194,8 @@ export interface FileRoutesByFullPath {
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
+  '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
+  '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
@@ -1162,6 +1207,7 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRoutesByTo {
@@ -1210,6 +1256,7 @@ export interface FileRoutesByTo {
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
+  '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1262,6 +1309,8 @@ export interface FileRoutesByTo {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
+  '/api/school-login/activate': typeof ApiSchoolLoginActivateRoute
+  '/api/school-login/activate-staff': typeof ApiSchoolLoginActivateStaffRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -1312,6 +1361,8 @@ export interface FileRoutesByTo {
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
+  '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
+  '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
@@ -1323,6 +1374,7 @@ export interface FileRoutesByTo {
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRoutesById {
@@ -1373,6 +1425,7 @@ export interface FileRoutesById {
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
+  '/api/school-login': typeof ApiSchoolLoginRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
@@ -1425,6 +1478,8 @@ export interface FileRoutesById {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
+  '/api/school-login/activate': typeof ApiSchoolLoginActivateRoute
+  '/api/school-login/activate-staff': typeof ApiSchoolLoginActivateStaffRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -1475,6 +1530,8 @@ export interface FileRoutesById {
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
+  '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
+  '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   '/api/schools/$schoolId/terms/accept': typeof ApiSchoolsSchoolIdTermsAcceptRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
@@ -1486,6 +1543,7 @@ export interface FileRoutesById {
   '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
   '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/students/$schoolStudentId/reset-password': typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
   '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRouteTypes {
@@ -1537,6 +1595,7 @@ export interface FileRouteTypes {
     | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
+    | '/api/school-login'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -1589,6 +1648,8 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/scan-pages/$pageId'
+    | '/api/school-login/activate'
+    | '/api/school-login/activate-staff'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -1639,6 +1700,8 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/report/pdf'
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
+    | '/api/schools/$schoolId/credentials/staff'
+    | '/api/schools/$schoolId/credentials/students'
     | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
@@ -1650,6 +1713,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -1698,6 +1762,7 @@ export interface FileRouteTypes {
     | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
+    | '/api/school-login'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -1750,6 +1815,8 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/scan-pages/$pageId'
+    | '/api/school-login/activate'
+    | '/api/school-login/activate-staff'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -1800,6 +1867,8 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/report/pdf'
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
+    | '/api/schools/$schoolId/credentials/staff'
+    | '/api/schools/$schoolId/credentials/students'
     | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
@@ -1811,6 +1880,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   id:
     | '__root__'
@@ -1860,6 +1930,7 @@ export interface FileRouteTypes {
     | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
+    | '/api/school-login'
     | '/api/student-dashboard'
     | '/api/students'
     | '/api/study-plan'
@@ -1912,6 +1983,8 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/scan-pages/$pageId'
+    | '/api/school-login/activate'
+    | '/api/school-login/activate-staff'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -1962,6 +2035,8 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/report/pdf'
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
+    | '/api/schools/$schoolId/credentials/staff'
+    | '/api/schools/$schoolId/credentials/students'
     | '/api/schools/$schoolId/terms/accept'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
@@ -1973,6 +2048,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/scan/detections/$detectionId'
     | '/api/attempts/$id/scan/pages/$pageId'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
     | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesById: FileRoutesById
 }
@@ -2012,6 +2088,7 @@ export interface RootRouteChildren {
   ApiPapersRoute: typeof ApiPapersRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
+  ApiSchoolLoginRoute: typeof ApiSchoolLoginRouteWithChildren
   ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   ApiStudyPlanRoute: typeof ApiStudyPlanRouteWithChildren
@@ -2056,7 +2133,10 @@ export interface RootRouteChildren {
   ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   ApiFixitCardsIdAnswerRoute: typeof ApiFixitCardsIdAnswerRoute
+  ApiSchoolsSchoolIdCredentialsStaffRoute: typeof ApiSchoolsSchoolIdCredentialsStaffRoute
+  ApiSchoolsSchoolIdCredentialsStudentsRoute: typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   ApiSchoolsSchoolIdTermsAcceptRoute: typeof ApiSchoolsSchoolIdTermsAcceptRoute
+  ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute: typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2388,6 +2468,13 @@ declare module '@tanstack/react-router' {
       path: '/api/remediation'
       fullPath: '/api/remediation'
       preLoaderRoute: typeof ApiRemediationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/school-login': {
+      id: '/api/school-login'
+      path: '/api/school-login'
+      fullPath: '/api/school-login'
+      preLoaderRoute: typeof ApiSchoolLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/student-dashboard': {
@@ -2747,6 +2834,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiScanPagesPageIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/school-login/activate': {
+      id: '/api/school-login/activate'
+      path: '/activate'
+      fullPath: '/api/school-login/activate'
+      preLoaderRoute: typeof ApiSchoolLoginActivateRouteImport
+      parentRoute: typeof ApiSchoolLoginRoute
+    }
+    '/api/school-login/activate-staff': {
+      id: '/api/school-login/activate-staff'
+      path: '/activate-staff'
+      fullPath: '/api/school-login/activate-staff'
+      preLoaderRoute: typeof ApiSchoolLoginActivateStaffRouteImport
+      parentRoute: typeof ApiSchoolLoginRoute
+    }
     '/api/students/$id': {
       id: '/api/students/$id'
       path: '/$id'
@@ -3097,6 +3198,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsGenerateBatchIdResumeRouteImport
       parentRoute: typeof ApiQuestionsGenerateBatchIdRoute
     }
+    '/api/schools/$schoolId/credentials/staff': {
+      id: '/api/schools/$schoolId/credentials/staff'
+      path: '/api/schools/$schoolId/credentials/staff'
+      fullPath: '/api/schools/$schoolId/credentials/staff'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdCredentialsStaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/credentials/students': {
+      id: '/api/schools/$schoolId/credentials/students'
+      path: '/api/schools/$schoolId/credentials/students'
+      fullPath: '/api/schools/$schoolId/credentials/students'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdCredentialsStudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/schools/$schoolId/terms/accept': {
       id: '/api/schools/$schoolId/terms/accept'
       path: '/api/schools/$schoolId/terms/accept'
@@ -3173,6 +3288,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/schools/$schoolId/imports/$batchId/commit'
       preLoaderRoute: typeof ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdImportsRoute
+    }
+    '/api/schools/$schoolId/students/$schoolStudentId/reset-password': {
+      id: '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
+      path: '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
+      fullPath: '/api/schools/$schoolId/students/$schoolStudentId/reset-password'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/attempts/$id/scan/pages/$pageId/extract': {
       id: '/api/attempts/$id/scan/pages/$pageId/extract'
@@ -3514,6 +3636,20 @@ const ApiRemediationRouteWithChildren = ApiRemediationRoute._addFileChildren(
   ApiRemediationRouteChildren,
 )
 
+interface ApiSchoolLoginRouteChildren {
+  ApiSchoolLoginActivateRoute: typeof ApiSchoolLoginActivateRoute
+  ApiSchoolLoginActivateStaffRoute: typeof ApiSchoolLoginActivateStaffRoute
+}
+
+const ApiSchoolLoginRouteChildren: ApiSchoolLoginRouteChildren = {
+  ApiSchoolLoginActivateRoute: ApiSchoolLoginActivateRoute,
+  ApiSchoolLoginActivateStaffRoute: ApiSchoolLoginActivateStaffRoute,
+}
+
+const ApiSchoolLoginRouteWithChildren = ApiSchoolLoginRoute._addFileChildren(
+  ApiSchoolLoginRouteChildren,
+)
+
 interface ApiStudentsIdRouteChildren {
   ApiStudentsIdLoginRoute: typeof ApiStudentsIdLoginRoute
   ApiStudentsIdConsentWithdrawRoute: typeof ApiStudentsIdConsentWithdrawRoute
@@ -3686,6 +3822,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPapersRoute: ApiPapersRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiRemediationRoute: ApiRemediationRouteWithChildren,
+  ApiSchoolLoginRoute: ApiSchoolLoginRouteWithChildren,
   ApiStudentDashboardRoute: ApiStudentDashboardRoute,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   ApiStudyPlanRoute: ApiStudyPlanRouteWithChildren,
@@ -3731,7 +3868,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute:
     ApiAdaptiveConceptsConceptIdWrongQuestionsRoute,
   ApiFixitCardsIdAnswerRoute: ApiFixitCardsIdAnswerRoute,
+  ApiSchoolsSchoolIdCredentialsStaffRoute:
+    ApiSchoolsSchoolIdCredentialsStaffRoute,
+  ApiSchoolsSchoolIdCredentialsStudentsRoute:
+    ApiSchoolsSchoolIdCredentialsStudentsRoute,
   ApiSchoolsSchoolIdTermsAcceptRoute: ApiSchoolsSchoolIdTermsAcceptRoute,
+  ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute:
+    ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -2,6 +2,7 @@ import type { Db } from '../connection'
 import type { SchoolRole } from '../enums'
 import type { SchoolScope } from '../school-scope'
 import { createRepository, createSchoolScopedRepository } from './factory'
+import { schoolCredentialCodesRepository } from './school-credentials'
 
 // The tenant root: never itself school-scoped (it *is* the school). Reached only through a
 // membership lookup (findForMember) or by platform admin code.
@@ -210,6 +211,7 @@ export const schoolStudentsRepository = {
       .select([
         'school_students.section_id',
         'school_students.roll_no',
+        'school_students.admission_no',
         'students.name',
       ])
       .where('school_students.school_id', '=', scope.schoolId)
@@ -263,6 +265,7 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_students: schoolStudentsRepository,
   school_student_guardians: schoolStudentGuardiansRepository,
   school_import_batches: schoolImportBatchesRepository,
+  school_credential_codes: schoolCredentialCodesRepository,
 } as const
 
 /** Which of these e-mail addresses already belong to a PrepPlan account (any role). */

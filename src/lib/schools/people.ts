@@ -1,7 +1,9 @@
+import { randomInt } from 'node:crypto'
 import type { Db } from '../../db/connection'
 import {
   householdsRepository,
   schoolMembersRepository,
+  schoolLoginRepository,
   schoolStudentGuardiansRepository,
   schoolStudentsRepository,
   studentsRepository,
@@ -45,6 +47,26 @@ export async function createSchoolTeacher(
   return { user, member }
 }
 
+const ID_ALPHABET = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'
+
+/**
+ * A permanent, school-unique sign-in ID for a student whose roster row had no admission number,
+ * e.g. PK7M2P9X. It is the student's ID for as long as she is at the school: promotion changes her
+ * class, section and roll number, never this.
+ */
+export async function generateAdmissionNo(
+  db: Db,
+  schoolId: string,
+): Promise<string> {
+  for (let attempt = 0; attempt < 20; attempt++) {
+    let id = 'P'
+    for (let i = 0; i < 7; i++) id += ID_ALPHABET[randomInt(ID_ALPHABET.length)]
+    if (!(await schoolLoginRepository.admissionNoTaken(db, schoolId, id)))
+      return id
+  }
+  throw new Error('Could not generate a free admission number')
+}
+
 export async function createSchoolStudent(
   db: Db,
   scope: SchoolScope,
@@ -54,6 +76,8 @@ export async function createSchoolStudent(
     sectionId: string
     sectionName: string
     rollNo: string
+    /** The school's admission number; null generates a permanent school-unique ID. */
+    admissionNo: string | null
     guardianPhone: string | null
     guardianName: string | null
   },
@@ -90,8 +114,11 @@ export async function createSchoolStudent(
     role: 'student',
     status: 'active',
   })
+  const admissionNo =
+    input.admissionNo ?? (await generateAdmissionNo(db, scope.schoolId))
   const schoolStudent = await schoolStudentsRepository.insert(db, scope, {
     student_id: student.id,
+    admission_no: admissionNo,
     member_id: member.id,
     section_id: input.sectionId,
     roll_no: input.rollNo,

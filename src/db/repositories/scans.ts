@@ -21,7 +21,10 @@ const PAGE_META = [
   'purged_at',
 ] as const
 
-export type ScanPageMeta = Pick<Selectable<DB['scan_pages']>, (typeof PAGE_META)[number]>
+export type ScanPageMeta = Pick<
+  Selectable<DB['scan_pages']>,
+  (typeof PAGE_META)[number]
+>
 
 export const scanPagesRepository = {
   async insert(db: Db, row: Insertable<DB['scan_pages']>) {
@@ -80,7 +83,9 @@ export const scanPagesRepository = {
   async totalBytes(db: Db, attemptId: string) {
     const row = await db
       .selectFrom('scan_pages')
-      .select((eb) => eb.fn.coalesce(eb.fn.sum<number>('size_bytes'), eb.lit(0)).as('total'))
+      .select((eb) =>
+        eb.fn.coalesce(eb.fn.sum<number>('size_bytes'), eb.lit(0)).as('total'),
+      )
       .where('attempt_id', '=', attemptId)
       .executeTakeFirstOrThrow()
     return Number(row.total)
@@ -113,7 +118,9 @@ export const scanDetectionsRepository = {
       .selectAll()
       .where('student_id', '=', studentId)
       .where('id', '=', id)
-      .executeTakeFirst() as Promise<Selectable<DB['scan_detections']> | undefined>
+      .executeTakeFirst() as Promise<
+      Selectable<DB['scan_detections']> | undefined
+    >
   },
   /** Re-reading a page replaces everything previously found on it. */
   async replaceForPage(
@@ -128,7 +135,8 @@ export const scanDetectionsRepository = {
         .where('student_id', '=', studentId)
         .where('scan_page_id', '=', pageId)
         .execute()
-      if (rows.length > 0) await trx.insertInto('scan_detections').values(rows).execute()
+      if (rows.length > 0)
+        await trx.insertInto('scan_detections').values(rows).execute()
     })
   },
   async update(

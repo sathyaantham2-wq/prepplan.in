@@ -15,10 +15,7 @@ const TIME_ZONE = 'Asia/Kolkata'
  * adds nothing beyond the wall clock. Stored per day in India time; only a number of seconds is
  * kept, never what she was looking at.
  */
-async function recordPing(
-  db: Db,
-  studentId: string,
-): Promise<void> {
+async function recordPing(db: Db, studentId: string): Promise<void> {
   await sql`
     insert into student_activity_daily (student_id, day, active_seconds, pings, first_seen_at, last_seen_at)
     values (${studentId}, (now() at time zone ${TIME_ZONE})::date, ${RESUME_CREDIT_SECONDS}, 1, now(), now())
@@ -34,7 +31,6 @@ async function recordPing(
       last_seen_at = now()
   `.execute(db)
 }
-
 
 export interface ActivityDay {
   day: string
@@ -72,10 +68,7 @@ export interface ActivityReport {
 const toMinutes = (seconds: number) => Math.round((seconds / 60) * 10) / 10
 
 /** Admin report: how many students used the app, and for how long, over a trailing window. */
-async function getReport(
-  db: Db,
-  windowDays: number,
-): Promise<ActivityReport> {
+async function getReport(db: Db, windowDays: number): Promise<ActivityReport> {
   const todayRow = await sql<{ today: string }>`
     select to_char((now() at time zone ${TIME_ZONE})::date, 'YYYY-MM-DD') as today
   `.execute(db)

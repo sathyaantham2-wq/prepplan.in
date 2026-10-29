@@ -44,7 +44,9 @@ const CARD_JOINS = sql`
 
 export const fixitRepository = {
   async today(db: Db): Promise<string> {
-    const r = await sql<{ d: string }>`select to_char(${TODAY}, 'YYYY-MM-DD') as d`.execute(db)
+    const r = await sql<{
+      d: string
+    }>`select to_char(${TODAY}, 'YYYY-MM-DD') as d`.execute(db)
     return r.rows[0].d
   },
 
@@ -54,7 +56,12 @@ export const fixitRepository = {
    */
   async upsertForLostMark(
     db: Db,
-    params: { studentId: string; conceptId: string; evaluationItemId: string | null; cause: 'knowledge' | 'habit' | null },
+    params: {
+      studentId: string
+      conceptId: string
+      evaluationItemId: string | null
+      cause: 'knowledge' | 'habit' | null
+    },
   ): Promise<void> {
     await sql`
       insert into fixit_cards (student_id, concept_id, source_evaluation_item_id, cause, stage, due_on, status)
@@ -67,33 +74,53 @@ export const fixitRepository = {
   },
 
   /** Savepoint around the card writes made inside confirmEvaluation's transaction. Needs a transaction. */
-  async savepoint(db: Db, action: 'start' | 'release' | 'rollback'): Promise<void> {
+  async savepoint(
+    db: Db,
+    action: 'start' | 'release' | 'rollback',
+  ): Promise<void> {
     if (action === 'start') await sql`savepoint fixit_cards_sp`.execute(db)
-    else if (action === 'release') await sql`release savepoint fixit_cards_sp`.execute(db)
+    else if (action === 'release')
+      await sql`release savepoint fixit_cards_sp`.execute(db)
     else await sql`rollback to savepoint fixit_cards_sp`.execute(db)
   },
 
-  async findByConcept(db: Db, studentId: string, conceptId: string): Promise<FixitCardRow | null> {
+  async findByConcept(
+    db: Db,
+    studentId: string,
+    conceptId: string,
+  ): Promise<FixitCardRow | null> {
     const r = await sql<FixitCardRow>`
       select ${CARD_COLUMNS} ${CARD_JOINS}
-      where c.concept_id = ${conceptId} and c.student_id = ${studentId}`.execute(db)
+      where c.concept_id = ${conceptId} and c.student_id = ${studentId}`.execute(
+      db,
+    )
     return r.rows[0] ?? null
   },
 
   async countAll(db: Db, studentId: string): Promise<number> {
-    const r = await sql<{ n: string }>`select count(*)::text as n from fixit_cards where student_id = ${studentId}`.execute(db)
+    const r = await sql<{
+      n: string
+    }>`select count(*)::text as n from fixit_cards where student_id = ${studentId}`.execute(
+      db,
+    )
     return Number(r.rows[0].n)
   },
 
   async countMastered(db: Db, studentId: string): Promise<number> {
-    const r = await sql<{ n: string }>`select count(*)::text as n from fixit_cards where student_id = ${studentId} and status = 'mastered'`.execute(db)
+    const r = await sql<{
+      n: string
+    }>`select count(*)::text as n from fixit_cards where student_id = ${studentId} and status = 'mastered'`.execute(
+      db,
+    )
     return Number(r.rows[0].n)
   },
 
   async countAnsweredToday(db: Db, studentId: string): Promise<number> {
     const r = await sql<{ n: string }>`
       select count(*)::text as n from fixit_answers a join fixit_cards c on c.id = a.card_id
-      where c.student_id = ${studentId} and (a.answered_at at time zone 'Asia/Kolkata')::date = ${TODAY}`.execute(db)
+      where c.student_id = ${studentId} and (a.answered_at at time zone 'Asia/Kolkata')::date = ${TODAY}`.execute(
+      db,
+    )
     return Number(r.rows[0].n)
   },
 
@@ -102,11 +129,17 @@ export const fixitRepository = {
     const r = await sql<{ n: string }>`
       select count(*)::text as n from fixit_cards c
       where c.student_id = ${studentId} and c.status = 'active' and c.due_on <= ${TODAY}
-        and exists (select 1 from questions q where q.concept_id = c.concept_id and ${ELIGIBLE_QUESTION})`.execute(db)
+        and exists (select 1 from questions q where q.concept_id = c.concept_id and ${ELIGIBLE_QUESTION})`.execute(
+      db,
+    )
     return Number(r.rows[0].n)
   },
 
-  async listDue(db: Db, studentId: string, limit: number): Promise<Array<FixitCardRow>> {
+  async listDue(
+    db: Db,
+    studentId: string,
+    limit: number,
+  ): Promise<Array<FixitCardRow>> {
     if (limit <= 0) return []
     const r = await sql<FixitCardRow>`
       select ${CARD_COLUMNS} ${CARD_JOINS}
@@ -118,7 +151,11 @@ export const fixitRepository = {
   },
 
   /** Own card only: the id alone is never enough. */
-  async findOwn(db: Db, studentId: string, cardId: string): Promise<FixitCardRow | null> {
+  async findOwn(
+    db: Db,
+    studentId: string,
+    cardId: string,
+  ): Promise<FixitCardRow | null> {
     const r = await sql<FixitCardRow>`
       select ${CARD_COLUMNS} ${CARD_JOINS}
       where c.id = ${cardId} and c.student_id = ${studentId}`.execute(db)
@@ -130,7 +167,12 @@ export const fixitRepository = {
    * has, the longest-ago seen first. The tie-break is a hash of the card and day, so it is stable
    * within a day but not the same question every time.
    */
-  async pickQuestion(db: Db, studentId: string, cardId: string, conceptId: string): Promise<string | null> {
+  async pickQuestion(
+    db: Db,
+    studentId: string,
+    cardId: string,
+    conceptId: string,
+  ): Promise<string | null> {
     const r = await sql<{ id: string }>`
       select q.id from questions q
       left join lateral (
@@ -152,7 +194,12 @@ export const fixitRepository = {
     return r.rows[0]?.id ?? null
   },
 
-  async setServed(db: Db, studentId: string, cardId: string, questionId: string): Promise<void> {
+  async setServed(
+    db: Db,
+    studentId: string,
+    cardId: string,
+    questionId: string,
+  ): Promise<void> {
     await sql`
       update fixit_cards set served_question_id = ${questionId}, served_on = ${TODAY}
       where id = ${cardId} and student_id = ${studentId}`.execute(db)
@@ -160,19 +207,36 @@ export const fixitRepository = {
 
   async applyAnswer(
     db: Db,
-    params: { studentId: string; cardId: string; questionId: string; correct: boolean; stage: number; dueOn: string; status: 'active' | 'mastered' },
+    params: {
+      studentId: string
+      cardId: string
+      questionId: string
+      correct: boolean
+      stage: number
+      dueOn: string
+      status: 'active' | 'mastered'
+    },
   ): Promise<void> {
     await sql`
       update fixit_cards set stage = ${params.stage}, due_on = ${params.dueOn}::date, status = ${params.status},
         last_answered_at = now(), served_question_id = null, served_on = null
-      where id = ${params.cardId} and student_id = ${params.studentId}`.execute(db)
+      where id = ${params.cardId} and student_id = ${params.studentId}`.execute(
+      db,
+    )
     await sql`
-      insert into fixit_answers (card_id, question_id, correct) values (${params.cardId}, ${params.questionId}, ${params.correct})`.execute(db)
+      insert into fixit_answers (card_id, question_id, correct) values (${params.cardId}, ${params.questionId}, ${params.correct})`.execute(
+      db,
+    )
   },
 
   /** Confirmed, non-removed items of the last 30 days that lost marks, newest first, one per concept. */
   async recentLostItems(db: Db, studentId: string, limit: number) {
-    const r = await sql<{ evaluation_item_id: string; concept_id: string; knowledge_known: boolean | null; error_type: string | null }>`
+    const r = await sql<{
+      evaluation_item_id: string
+      concept_id: string
+      knowledge_known: boolean | null
+      error_type: string | null
+    }>`
       select evaluation_item_id, concept_id, knowledge_known, error_type from (
         select distinct on (q.concept_id) ei.id as evaluation_item_id, q.concept_id, ei.knowledge_known,
                ei.error_type, e.confirmed_at

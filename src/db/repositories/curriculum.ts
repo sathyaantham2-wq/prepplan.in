@@ -9,7 +9,12 @@ export const subjectsRepository = {
   ...createRepository('subjects'),
   // withContent hides subjects that have no chapters yet (a student may pick such a subject as an
   // interest, but there is nothing to generate a paper from).
-  async listByBoardClass(db: Db, board: string, classNum: number, withContent = false) {
+  async listByBoardClass(
+    db: Db,
+    board: string,
+    classNum: number,
+    withContent = false,
+  ) {
     let query = db
       .selectFrom('subjects')
       .selectAll()
@@ -19,7 +24,10 @@ export const subjectsRepository = {
     if (withContent) {
       query = query.where((eb) =>
         eb.exists(
-          eb.selectFrom('chapters').select('chapters.id').whereRef('chapters.subject_id', '=', 'subjects.id'),
+          eb
+            .selectFrom('chapters')
+            .select('chapters.id')
+            .whereRef('chapters.subject_id', '=', 'subjects.id'),
         ),
       )
     }

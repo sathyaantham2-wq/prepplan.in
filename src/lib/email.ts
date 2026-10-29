@@ -13,13 +13,16 @@ export type EmailTemplate =
   | 'weekly_summary'
   | 'daily_nudge'
   | 'guardian_invite'
+  | 'school_credentials'
 
 /**
  * The only templates a school login may receive: mail that belongs to the school flow. Anything
  * else (nudges, summaries, paper-ready, guardian invites, marketing) is skipped for a school
- * account, recorded as such. Empty until the credentials step adds its own template.
+ * account, recorded as such. Only the one-time set-password mail.
  */
-export const SCHOOL_ALLOWED_TEMPLATES: ReadonlyArray<EmailTemplate> = []
+export const SCHOOL_ALLOWED_TEMPLATES: ReadonlyArray<EmailTemplate> = [
+  'school_credentials',
+]
 
 export function isEmailConfigured(): boolean {
   return Boolean(env.MAKE_EMAIL_WEBHOOK_URL)
@@ -32,7 +35,9 @@ export function isEmailConfigured(): boolean {
  * one existing secret rather than introducing a second one to manage.
  */
 export function unsubscribeToken(userId: string): string {
-  return createHmac('sha256', env.BETTER_AUTH_SECRET).update(userId).digest('hex')
+  return createHmac('sha256', env.BETTER_AUTH_SECRET)
+    .update(userId)
+    .digest('hex')
 }
 
 export function verifyUnsubscribeToken(userId: string, token: string): boolean {
@@ -64,6 +69,28 @@ export function buildGuardianInviteEmail(input: {
     subject: `${input.guardianName} wants to follow your progress`,
     html: `<p>${input.guardianName} (${input.guardianRole}) has asked to see your progress on PrepPlan.</p><p><a href="${input.appUrl}">Sign in</a> and choose Approve or Decline. Nothing is shared until you approve, and you can stop sharing at any time.</p>`,
     text: `${input.guardianName} (${input.guardianRole}) has asked to see your progress on PrepPlan.\nSign in to approve or decline: ${input.appUrl}\nNothing is shared until you approve.`,
+  }
+}
+
+const escapeHtml = (t: string) =>
+  t
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+
+/** The one-time set-password mail for school staff. The link works once and expires in 7 days. */
+export function buildSchoolCredentialsEmail(input: {
+  name: string
+  schoolName: string
+  link: string
+}): EmailContent {
+  const name = escapeHtml(input.name)
+  const school = escapeHtml(input.schoolName)
+  return {
+    subject: `Set your PrepPlan password for ${input.schoolName}`,
+    html: `<p>Hello ${name},</p><p>${school} has added you to PrepPlan for Schools.</p><p><a href="${input.link}">Set your password</a>. The link works once and expires in 7 days.</p>`,
+    text: `Hello ${input.name},\n${input.schoolName} has added you to PrepPlan for Schools.\nSet your password (the link works once and expires in 7 days): ${input.link}`,
   }
 }
 
@@ -152,17 +179,20 @@ export function buildWeeklySummaryEmail(input: {
  * Never throws -- a notification failure must never break the paper-generation/evaluation flow
  * that triggered it, same principle as logAiJob/logProductEvent.
  */
+/** What happened to one mail: 'sent' (accepted for delivery), 'skipped' (not configured, unsubscribed, or not allowed), 'failed'. */
+export type EmailDelivery = 'sent' | 'skipped' | 'failed'
+
 export async function sendTransactionalEmail(
   db: Db,
   input: { userId: string; template: EmailTemplate; content: EmailContent },
-): Promise<void> {
+): Promise<EmailDelivery> {
   try {
     const user = await db
       .selectFrom('users')
       .select(['email', 'email_notifications_enabled', 'signup_type'])
       .where('id', '=', input.userId)
       .executeTakeFirst()
-    if (!user) return
+    if (!user) return 'skipped'
 
     if (
       user.signup_type === 'school' &&
@@ -175,7 +205,7 @@ export async function sendTransactionalEmail(
         payload: JSON.stringify({ reason: 'school account' }),
         status: 'skipped',
       })
-      return
+      return 'skipped'
     }
 
     if (!user.email_notifications_enabled) {
@@ -186,7 +216,7 @@ export async function sendTransactionalEmail(
         payload: JSON.stringify({ reason: 'unsubscribed' }),
         status: 'skipped',
       })
-      return
+      return 'skipped'
     }
 
     if (!env.MAKE_EMAIL_WEBHOOK_URL) {
@@ -197,7 +227,7 @@ export async function sendTransactionalEmail(
         payload: JSON.stringify({ reason: 'email not configured' }),
         status: 'skipped',
       })
-      return
+      return 'skipped'
     }
 
     const footer = unsubscribeFooter(input.userId)
@@ -221,6 +251,7 @@ export async function sendTransactionalEmail(
         ? { status: 'sent' as const, sent_at: new Date() }
         : { status: 'failed' as const }),
     })
+    return response.ok ? 'sent' : 'failed'
   } catch (err) {
     console.error('sendTransactionalEmail: failed', err)
     await notificationsRepository
@@ -234,6 +265,7 @@ export async function sendTransactionalEmail(
         status: 'failed',
       })
       .catch(() => {})
+    return 'failed'
   }
 }
 
@@ -246,7 +278,11 @@ export async function sendTransactionalEmail(
  */
 export async function notifyHouseholdParents(
   db: Db,
-  input: { householdId: string; template: EmailTemplate; content: EmailContent },
+  input: {
+    householdId: string
+    template: EmailTemplate
+    content: EmailContent
+  },
 ): Promise<void> {
   const parents = await db
     .selectFrom('users')

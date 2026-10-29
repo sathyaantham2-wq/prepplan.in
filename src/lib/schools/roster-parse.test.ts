@@ -42,6 +42,7 @@ describe('validateStudentRow', () => {
         grade: 7,
         section: 'A',
         rollNo: '12',
+        admissionNo: null,
         guardianPhone: '+919876543210',
         guardianName: null,
       },
@@ -62,6 +63,32 @@ describe('validateStudentRow', () => {
   ])('rejects %j', (row, message) => {
     const r = validateStudentRow(row)
     expect(!r.ok && r.error).toMatch(message)
+  })
+})
+
+describe('admission number', () => {
+  const base = { name: 'Asha K', class: '7', section: 'a', rollno: '12' }
+  it('is optional, upper-cased and stripped of spaces', () => {
+    expect(validateStudentRow(base)).toMatchObject({
+      ok: true,
+      value: { admissionNo: null },
+    })
+    const r = validateStudentRow({ ...base, admissionno: ' 2024/ab-01 ' })
+    expect(r.ok && r.value.admissionNo).toBe('2024/AB-01')
+  })
+  it('refuses odd characters and long values', () => {
+    for (const bad of ["a'b", 'x'.repeat(31), '/leading', 'a b$']) {
+      expect(validateStudentRow({ ...base, admissionno: bad }).ok, bad).toBe(
+        false,
+      )
+    }
+  })
+  it('is read from common column names', async () => {
+    const rows = await parseRosterFile(
+      'r.csv',
+      Buffer.from('Name,Class,Section,Roll No,Admission No\nAsha,7,A,1,AD-1\n'),
+    )
+    expect(rows[0].admissionno).toBe('AD-1')
   })
 })
 

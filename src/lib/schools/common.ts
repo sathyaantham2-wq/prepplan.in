@@ -48,19 +48,43 @@ export async function auditSchool(
   before: unknown,
   after: unknown,
 ): Promise<void> {
+  await auditSchoolEvent(db, {
+    schoolId: scope.schoolId,
+    actorUserId: scope.userId,
+    action,
+    entity,
+    entityId,
+    before,
+    after,
+  })
+}
+
+/** Same, for events with no signed-in school scope (activation by a one-time code, provisioning). */
+export async function auditSchoolEvent(
+  db: Db,
+  input: {
+    schoolId: string
+    actorUserId: string | null
+    action: string
+    entity: string
+    entityId: string
+    before: unknown
+    after: unknown
+  },
+): Promise<void> {
   const school = await db
     .selectFrom('schools')
     .select('household_id')
-    .where('id', '=', scope.schoolId)
+    .where('id', '=', input.schoolId)
     .executeTakeFirstOrThrow()
   await auditLogRepository.insert(db, {
     household_id: school.household_id,
-    school_id: scope.schoolId,
-    actor_user_id: scope.userId,
-    action,
-    entity,
-    entity_id: entityId,
-    before: before === null ? null : JSON.stringify(before),
-    after: after === null ? null : JSON.stringify(after),
+    school_id: input.schoolId,
+    actor_user_id: input.actorUserId,
+    action: input.action,
+    entity: input.entity,
+    entity_id: input.entityId,
+    before: input.before === null ? null : JSON.stringify(input.before),
+    after: input.after === null ? null : JSON.stringify(input.after),
   })
 }

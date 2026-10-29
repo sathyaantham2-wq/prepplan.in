@@ -38,6 +38,9 @@ const PUBLIC_ROUTES = [
   './api/cron/weekly-summary.ts',
   './api/errors.ts',
   './api/guest.ts',
+  './api/school-login.ts',
+  './api/school-login/activate.ts',
+  './api/school-login/activate-staff.ts',
   './api/notifications/unsubscribe.ts',
 ]
 
@@ -84,6 +87,7 @@ describe('school logins on consumer routes (S2b)', () => {
       sectionId: sec.id,
       sectionName: 'A',
       rollNo: '1',
+      admissionNo: null,
       guardianPhone: null,
       guardianName: null,
     })

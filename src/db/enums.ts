@@ -13,6 +13,7 @@ export type SchoolStudentStatus = 'active' | 'inactive' | 'left'
 export type SchoolSampleChecker = 'class_teacher' | 'subject_teacher'
 export type SchoolImportKind = 'students' | 'teachers'
 export type SchoolImportStatus = 'dry_run' | 'committed' | 'failed'
+export type SchoolCredentialKind = 'staff_link' | 'staff_code' | 'student_code'
 export type ScopeKind = 'IN' | 'OUT'
 export type DifficultyTier = 'Easy' | 'Hard' | 'Hardest'
 export type BloomLevel =

@@ -68,6 +68,7 @@ describe('school purpose limit (S2b)', () => {
       sectionId: sec.id,
       sectionName: 'A',
       rollNo: '1',
+      admissionNo: null,
       guardianPhone: null,
       guardianName: null,
     })
