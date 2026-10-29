@@ -18,7 +18,12 @@ import {
   verifyScanPageSignature,
 } from '../scan-crypto'
 import { chunkKey, getScanStore, scanKey } from '../scan-storage'
-import { SchoolError, auditSchool, auditSchoolEvent } from './common'
+import {
+  SchoolError,
+  auditSchool,
+  auditSchoolEvent,
+  storageOrRefuse,
+} from './common'
 import { loadExam } from './exam-service'
 import { readBookletPage } from './page-reader'
 
@@ -99,6 +104,7 @@ export async function ingestScanPage(
   examId: string,
   input: ScanInput,
 ): Promise<ScanUploadResult> {
+  storageOrRefuse(getScanStore)
   const written: Array<string> = []
   try {
     return await ingestInner(db, scope, examId, input, written)
@@ -850,6 +856,7 @@ export async function saveScanChunk(
   bytes: Buffer,
 ): Promise<{ received: number }> {
   await loadExam(db, scope, examId, 'handle')
+  storageOrRefuse(getScanStore)
   if (!/^[0-9a-f-]{36}$/i.test(uploadId))
     throw new SchoolError('invalid', 'That upload code is not valid.')
   if (!Number.isInteger(seq) || seq < 0 || seq >= MAX_CHUNKS)

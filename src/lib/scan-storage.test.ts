@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest'
 import {
   DiskScanStore,
   MemoryScanStore,
+  ScanStorageNotConfigured,
   SupabaseScanStore,
   chooseScanStoreKind,
   chunkKey,
@@ -136,5 +137,27 @@ describe('disk store (local development)', () => {
     await store.remove('a/b/c.bin')
     expect(await store.get('a/b/c.bin')).toBeNull()
     expect(readdirSync(dir)).toEqual(['a'])
+  })
+})
+
+describe('a deployment without file storage refuses plainly, before anything is saved', () => {
+  it('turns "not set up" into a sentence for the person, and leaves other errors alone', async () => {
+    const { SchoolError, storageOrRefuse } = await import('./schools/common')
+    expect(() =>
+      storageOrRefuse(() => {
+        throw new ScanStorageNotConfigured()
+      }),
+    ).toThrow(SchoolError)
+    expect(() =>
+      storageOrRefuse(() => {
+        throw new ScanStorageNotConfigured()
+      }),
+    ).toThrow(/File storage is not switched on yet/)
+    expect(() =>
+      storageOrRefuse(() => {
+        throw new Error('something else')
+      }),
+    ).toThrow('something else')
+    expect(storageOrRefuse(() => 5)).toBe(5)
   })
 })

@@ -88,3 +88,20 @@ export async function auditSchoolEvent(
     after: input.after === null ? null : JSON.stringify(input.after),
   })
 }
+
+/**
+ * The private file storage, or a plain refusal when it is not set up on this deployment (no Supabase
+ * settings in a production runtime). Called before anything is saved, so nothing is left half done.
+ */
+export function storageOrRefuse<T>(get: () => T): T {
+  try {
+    return get()
+  } catch (e) {
+    if (e instanceof Error && e.message === 'Scan storage is not set up')
+      throw new SchoolError(
+        'conflict',
+        'File storage is not switched on yet for this site, so files cannot be uploaded. Please write to support@prepplan.in.',
+      )
+    throw e
+  }
+}

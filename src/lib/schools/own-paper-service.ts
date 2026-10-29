@@ -9,7 +9,7 @@ import {
 import type { SchoolScope } from '../../db/school-scope'
 import { decryptScan, encryptScan } from '../scan-crypto'
 import { getScanStore, ownPaperKey } from '../scan-storage'
-import { SchoolError, auditSchool } from './common'
+import { SchoolError, auditSchool, storageOrRefuse } from './common'
 import { isProductionRuntime } from '../fixture-subjects'
 import { createFakeOwnPaperAi, createOwnPaperAi } from './own-paper-ai'
 import type { AiImage, OwnPaperAi } from './own-paper-ai'
@@ -225,6 +225,7 @@ export async function createOwnPaper(
     scope,
     input.schoolSubjectId,
   )
+  storageOrRefuse(getScanStore)
   const title = input.title.trim().slice(0, 120)
   if (title.length < 2)
     throw new SchoolError(
