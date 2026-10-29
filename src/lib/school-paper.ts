@@ -10,7 +10,8 @@ import type { BloomLevel, QuestionType } from '../db/enums'
  * No F-number covers this paper type yet (CLAUDE.md: never invent one).
  */
 
-export type ThinkingLevel = 'recall_understanding' | 'application' | 'analysis_evaluation'
+export type ThinkingLevel =
+  'recall_understanding' | 'application' | 'analysis_evaluation'
 
 export const THINKING_LEVELS: Array<ThinkingLevel> = [
   'recall_understanding',
@@ -33,7 +34,9 @@ export const LEVEL_BLOOMS: Record<ThinkingLevel, Array<BloomLevel>> = {
 }
 
 export function levelOfBloom(bloom: BloomLevel): ThinkingLevel {
-  return THINKING_LEVELS.find((l) => LEVEL_BLOOMS[l].includes(bloom)) as ThinkingLevel
+  return THINKING_LEVELS.find((l) =>
+    LEVEL_BLOOMS[l].includes(bloom),
+  ) as ThinkingLevel
 }
 
 /**
@@ -41,7 +44,12 @@ export function levelOfBloom(bloom: BloomLevel): ThinkingLevel {
  * a question: a case study must not turn up in a 3-mark short-answer slot, a map question needs
  * the map slot, and a ruler-and-compass question must not reach a phone attempt.
  */
-export const SPECIAL_TAGS = ['case_study', 'map', 'construction', 'figure'] as const
+export const SPECIAL_TAGS = [
+  'case_study',
+  'map',
+  'construction',
+  'figure',
+] as const
 export type SpecialTag = (typeof SPECIAL_TAGS)[number]
 // Tags whose question is only usable when a real, original figure exists for it.
 export const FIGURE_TAGS: Array<string> = ['map', 'figure']
@@ -76,14 +84,21 @@ export function parseHalfYearlyConfig(raw: unknown): HalfYearlyConfig | null {
     draft_note: c.draft_note,
     instructions: c.instructions ?? [],
     word_limits: c.word_limits ?? {},
-    level_mix: c.level_mix ?? { recall_understanding: 34, application: 33, analysis_evaluation: 33 },
+    level_mix: c.level_mix ?? {
+      recall_understanding: 34,
+      application: 33,
+      analysis_evaluation: 33,
+    },
     section_totals: c.section_totals ?? {},
     section_order: c.section_order ?? Object.keys(c.section_totals ?? {}),
     stopped_early_ratio: c.stopped_early_ratio ?? 0.5,
   }
 }
 
-export function expectedWordsFor(marks: number, cfg: HalfYearlyConfig): number | null {
+export function expectedWordsFor(
+  marks: number,
+  cfg: HalfYearlyConfig,
+): number | null {
   return cfg.word_limits[String(marks)] ?? null
 }
 
@@ -138,7 +153,12 @@ export interface CheckShortfall {
   marksMissing: number
 }
 
-const OPTION_TYPES: Array<QuestionType> = ['mcq', 'assertion_reason', 'multi_statement', 'match']
+const OPTION_TYPES: Array<QuestionType> = [
+  'mcq',
+  'assertion_reason',
+  'multi_statement',
+  'match',
+]
 
 /**
  * Run before a paper is saved or shown. Returns human-readable problems; empty means it passes.
@@ -158,8 +178,12 @@ export function checkPaperStructure(
   const problems: Array<string> = []
 
   // An OR pair prints under one number, so numbering counts it once.
-  const printed = slots.filter((s) => !s.isChoiceAlternate).sort((a, b) => a.position - b.position)
-  const numbers = [...new Set(slots.map((s) => s.position))].sort((a, b) => a - b)
+  const printed = slots
+    .filter((s) => !s.isChoiceAlternate)
+    .sort((a, b) => a.position - b.position)
+  const numbers = [...new Set(slots.map((s) => s.position))].sort(
+    (a, b) => a - b,
+  )
   const expected = numbers.map((_, i) => i + 1)
   if (numbers.some((n, i) => n !== expected[i])) {
     problems.push(`Numbering is not continuous: ${numbers.join(', ')}`)
@@ -167,28 +191,42 @@ export function checkPaperStructure(
 
   for (const s of slots) {
     if (OPTION_TYPES.includes(s.type) && s.optionCount !== 4) {
-      problems.push(`Question ${s.position} (${s.type}) has ${s.optionCount} options, not 4`)
+      problems.push(
+        `Question ${s.position} (${s.type}) has ${s.optionCount} options, not 4`,
+      )
     }
   }
 
   const printedBySection = new Map<string, number>()
   for (const s of printed) {
-    printedBySection.set(s.section, (printedBySection.get(s.section) ?? 0) + s.marks)
+    printedBySection.set(
+      s.section,
+      (printedBySection.get(s.section) ?? 0) + s.marks,
+    )
   }
   const missingBySection = new Map<string, number>()
   for (const f of shortfalls) {
-    missingBySection.set(f.section, (missingBySection.get(f.section) ?? 0) + f.marksMissing)
+    missingBySection.set(
+      f.section,
+      (missingBySection.get(f.section) ?? 0) + f.marksMissing,
+    )
   }
   let sum = 0
   for (const [section, total] of Object.entries(sectionTotals)) {
     sum += total
-    const have = (printedBySection.get(section) ?? 0) + (missingBySection.get(section) ?? 0)
+    const have =
+      (printedBySection.get(section) ?? 0) +
+      (missingBySection.get(section) ?? 0)
     if (have !== total) {
-      problems.push(`${section}: printed ${printedBySection.get(section) ?? 0} + shortfall ${missingBySection.get(section) ?? 0} marks is not the section total of ${total}`)
+      problems.push(
+        `${section}: printed ${printedBySection.get(section) ?? 0} + shortfall ${missingBySection.get(section) ?? 0} marks is not the section total of ${total}`,
+      )
     }
   }
   if (sum !== paperTotal) {
-    problems.push(`Section totals add to ${sum}, not the paper total of ${paperTotal}`)
+    problems.push(
+      `Section totals add to ${sum}, not the paper total of ${paperTotal}`,
+    )
   }
   return problems
 }
@@ -224,16 +262,21 @@ export interface Layout {
   config: HalfYearlyConfig
 }
 
-const OBJECTIVE_1: Array<QuestionType> = ['mcq', 'assertion_reason', 'multi_statement', 'match']
+const OBJECTIVE_1: Array<QuestionType> = [
+  'mcq',
+  'assertion_reason',
+  'multi_statement',
+  'match',
+]
 const WRITTEN: Array<QuestionType> = ['short_answer', 'long_answer']
-const SHORT_BLOOM: Array<BloomLevel> = ['Remember', 'Understand', 'Apply']
-const MID_BLOOM: Array<BloomLevel> = ['Understand', 'Apply', 'Analyse']
-const HIGH_BLOOM: Array<BloomLevel> = ['Apply', 'Analyse', 'Evaluate', 'Create']
-const CASE_BLOOM: Array<BloomLevel> = ['Apply', 'Analyse', 'Evaluate']
+export const SHORT_BLOOM: Array<BloomLevel> = ['Remember', 'Understand', 'Apply']
+export const MID_BLOOM: Array<BloomLevel> = ['Understand', 'Apply', 'Analyse']
+export const HIGH_BLOOM: Array<BloomLevel> = ['Apply', 'Analyse', 'Evaluate', 'Create']
+export const CASE_BLOOM: Array<BloomLevel> = ['Apply', 'Analyse', 'Evaluate']
 
-const WORD_LIMITS = { '2': 40, '3': 60, '4': 100, '5': 120 }
+export const WORD_LIMITS = { '2': 40, '3': 60, '4': 100, '5': 120 }
 
-const COMMON_INSTRUCTIONS = [
+export const COMMON_INSTRUCTIONS = [
   'All questions are compulsory. Where a question has an OR, answer one of the two.',
   'The marks for each question, and for each part of it, are printed beside it.',
   'Write within the word limit for the marks: ',
@@ -256,7 +299,7 @@ function orderOf(sections: Array<LayoutSection>): Array<string> {
   return [...new Set(sections.map((s) => s.name))]
 }
 
-function wordLimitLine(): string {
+export function wordLimitLine(): string {
   return `${COMMON_INSTRUCTIONS[2]}2 marks: 40 words, 3 marks: 60 words, 4 marks: 100 words, 5 marks: 120 words.`
 }
 
@@ -267,29 +310,76 @@ function wordLimitLine(): string {
  * the blueprint row, not this code.
  */
 export function socialScienceLayout(): Layout {
-  const mcq = (name: string, count: number, discipline: string): LayoutSection => ({
-    name, slot: '1-mark multiple choice', marks_per_question: 1, count,
-    bloom_allowed: SHORT_BLOOM, types: OBJECTIVE_1, discipline,
+  const mcq = (
+    name: string,
+    count: number,
+    discipline: string,
+  ): LayoutSection => ({
+    name,
+    slot: '1-mark multiple choice',
+    marks_per_question: 1,
+    count,
+    bloom_allowed: SHORT_BLOOM,
+    types: OBJECTIVE_1,
+    discipline,
   })
-  const shortAns = (name: string, count: number, discipline: string, or = 0): LayoutSection => ({
-    name, slot: '2-mark very short answer', marks_per_question: 2, count,
-    bloom_allowed: SHORT_BLOOM, types: WRITTEN, discipline, or_count: or,
+  const shortAns = (
+    name: string,
+    count: number,
+    discipline: string,
+    or = 0,
+  ): LayoutSection => ({
+    name,
+    slot: '2-mark very short answer',
+    marks_per_question: 2,
+    count,
+    bloom_allowed: SHORT_BLOOM,
+    types: WRITTEN,
+    discipline,
+    or_count: or,
   })
   const map = (name: string, discipline: string): LayoutSection => ({
-    name, slot: '2-mark map question', marks_per_question: 2, count: 1,
-    bloom_allowed: SHORT_BLOOM, tag: 'map', discipline,
+    name,
+    slot: '2-mark map question',
+    marks_per_question: 2,
+    count: 1,
+    bloom_allowed: SHORT_BLOOM,
+    tag: 'map',
+    discipline,
   })
-  const three = (name: string, count: number, discipline: string, or = 0): LayoutSection => ({
-    name, slot: '3-mark short answer', marks_per_question: 3, count,
-    bloom_allowed: MID_BLOOM, types: WRITTEN, discipline, or_count: or,
+  const three = (
+    name: string,
+    count: number,
+    discipline: string,
+    or = 0,
+  ): LayoutSection => ({
+    name,
+    slot: '3-mark short answer',
+    marks_per_question: 3,
+    count,
+    bloom_allowed: MID_BLOOM,
+    types: WRITTEN,
+    discipline,
+    or_count: or,
   })
   const caseStudy = (name: string, discipline: string): LayoutSection => ({
-    name, slot: '4-mark case study (1+1+2)', marks_per_question: 4, count: 1,
-    bloom_allowed: CASE_BLOOM, tag: 'case_study', discipline,
+    name,
+    slot: '4-mark case study (1+1+2)',
+    marks_per_question: 4,
+    count: 1,
+    bloom_allowed: CASE_BLOOM,
+    tag: 'case_study',
+    discipline,
   })
   const five = (name: string, discipline: string): LayoutSection => ({
-    name, slot: '5-mark long answer', marks_per_question: 5, count: 1,
-    bloom_allowed: HIGH_BLOOM, types: WRITTEN, discipline, or_count: 1,
+    name,
+    slot: '5-mark long answer',
+    marks_per_question: 5,
+    count: 1,
+    bloom_allowed: HIGH_BLOOM,
+    types: WRITTEN,
+    discipline,
+    or_count: 1,
   })
 
   const A = 'Section A — History'
@@ -297,22 +387,52 @@ export function socialScienceLayout(): Layout {
   const C = 'Section C — Civics'
   const D = 'Section D — Economics'
   const sections: Array<LayoutSection> = [
-    mcq(A, 6, 'History'), shortAns(A, 1, 'History'), map(A, 'History'), three(A, 2, 'History', 1), caseStudy(A, 'History'), five(A, 'History'),
-    mcq(B, 6, 'Geography'), shortAns(B, 1, 'Geography'), map(B, 'Geography'), three(B, 2, 'Geography', 1), caseStudy(B, 'Geography'), five(B, 'Geography'),
-    mcq(C, 4, 'Civics'), shortAns(C, 2, 'Civics'), three(C, 1, 'Civics', 1), caseStudy(C, 'Civics'), five(C, 'Civics'),
-    shortAns(D, 2, 'Economics', 1), three(D, 2, 'Economics', 1),
+    mcq(A, 6, 'History'),
+    shortAns(A, 1, 'History'),
+    map(A, 'History'),
+    three(A, 2, 'History', 1),
+    caseStudy(A, 'History'),
+    five(A, 'History'),
+    mcq(B, 6, 'Geography'),
+    shortAns(B, 1, 'Geography'),
+    map(B, 'Geography'),
+    three(B, 2, 'Geography', 1),
+    caseStudy(B, 'Geography'),
+    five(B, 'Geography'),
+    mcq(C, 4, 'Civics'),
+    shortAns(C, 2, 'Civics'),
+    three(C, 1, 'Civics', 1),
+    caseStudy(C, 'Civics'),
+    five(C, 'Civics'),
+    shortAns(D, 2, 'Economics', 1),
+    three(D, 2, 'Economics', 1),
   ]
   return {
     name: 'School Half-Yearly (Social Science)',
     total_marks: 80,
     duration_min: 180,
     sections,
-    bloom_targets: { Remember: 20, Understand: 30, Apply: 30, Analyse: 10, Evaluate: 5, Create: 5 },
+    bloom_targets: {
+      Remember: 20,
+      Understand: 30,
+      Apply: 30,
+      Analyse: 10,
+      Evaluate: 5,
+      Create: 5,
+    },
     config: {
       kind: 'school_half_yearly',
-      instructions: [...COMMON_INSTRUCTIONS.slice(0, 2), wordLimitLine(), COMMON_INSTRUCTIONS[3]],
+      instructions: [
+        ...COMMON_INSTRUCTIONS.slice(0, 2),
+        wordLimitLine(),
+        COMMON_INSTRUCTIONS[3],
+      ],
       word_limits: WORD_LIMITS,
-      level_mix: { recall_understanding: 50, application: 30, analysis_evaluation: 20 },
+      level_mix: {
+        recall_understanding: 50,
+        application: 30,
+        analysis_evaluation: 20,
+      },
       section_totals: totalsFor(sections),
       section_order: orderOf(sections),
       stopped_early_ratio: 0.5,
@@ -332,27 +452,88 @@ export function stemLayout(subjectLabel: string): Layout {
   const D = 'Section D — Long Answer (5 marks each)'
   const E = 'Section E — Case Studies (4 marks each)'
   const sections: Array<LayoutSection> = [
-    { name: A, slot: 'Multiple choice', marks_per_question: 1, count: 18, bloom_allowed: ['Remember', 'Understand', 'Apply', 'Analyse'], types: ['mcq', 'multi_statement', 'match'] },
-    { name: A, slot: 'Assertion and reason', marks_per_question: 1, count: 2, bloom_allowed: ['Understand', 'Apply', 'Analyse'], types: ['assertion_reason'] },
-    { name: B, slot: '2-mark short answer', marks_per_question: 2, count: 5, bloom_allowed: SHORT_BLOOM, types: WRITTEN, or_count: 2 },
-    { name: C, slot: '3-mark short answer', marks_per_question: 3, count: 6, bloom_allowed: MID_BLOOM, types: WRITTEN, or_count: 2 },
-    { name: D, slot: '5-mark long answer', marks_per_question: 5, count: 4, bloom_allowed: HIGH_BLOOM, types: WRITTEN, or_count: 3 },
-    { name: E, slot: '4-mark case study', marks_per_question: 4, count: 3, bloom_allowed: CASE_BLOOM, tag: 'case_study', or_count: 1 },
+    {
+      name: A,
+      slot: 'Multiple choice',
+      marks_per_question: 1,
+      count: 18,
+      bloom_allowed: ['Remember', 'Understand', 'Apply', 'Analyse'],
+      types: ['mcq', 'multi_statement', 'match'],
+    },
+    {
+      name: A,
+      slot: 'Assertion and reason',
+      marks_per_question: 1,
+      count: 2,
+      bloom_allowed: ['Understand', 'Apply', 'Analyse'],
+      types: ['assertion_reason'],
+    },
+    {
+      name: B,
+      slot: '2-mark short answer',
+      marks_per_question: 2,
+      count: 5,
+      bloom_allowed: SHORT_BLOOM,
+      types: WRITTEN,
+      or_count: 2,
+    },
+    {
+      name: C,
+      slot: '3-mark short answer',
+      marks_per_question: 3,
+      count: 6,
+      bloom_allowed: MID_BLOOM,
+      types: WRITTEN,
+      or_count: 2,
+    },
+    {
+      name: D,
+      slot: '5-mark long answer',
+      marks_per_question: 5,
+      count: 4,
+      bloom_allowed: HIGH_BLOOM,
+      types: WRITTEN,
+      or_count: 3,
+    },
+    {
+      name: E,
+      slot: '4-mark case study',
+      marks_per_question: 4,
+      count: 3,
+      bloom_allowed: CASE_BLOOM,
+      tag: 'case_study',
+      or_count: 1,
+    },
   ]
   return {
     name: `School Half-Yearly (${subjectLabel})`,
     total_marks: 80,
     duration_min: 180,
     sections,
-    bloom_targets: { Remember: 10, Understand: 15, Apply: 45, Analyse: 15, Evaluate: 10, Create: 5 },
+    bloom_targets: {
+      Remember: 10,
+      Understand: 15,
+      Apply: 45,
+      Analyse: 15,
+      Evaluate: 10,
+      Create: 5,
+    },
     config: {
       kind: 'school_half_yearly',
       draft: true,
       draft_note:
         'DRAFT layout: the five-section CBSE pattern, estimated by the owner. Not yet checked against a real half-yearly paper for this subject.',
-      instructions: [...COMMON_INSTRUCTIONS.slice(0, 2), wordLimitLine(), COMMON_INSTRUCTIONS[3]],
+      instructions: [
+        ...COMMON_INSTRUCTIONS.slice(0, 2),
+        wordLimitLine(),
+        COMMON_INSTRUCTIONS[3],
+      ],
       word_limits: WORD_LIMITS,
-      level_mix: { recall_understanding: 25, application: 45, analysis_evaluation: 30 },
+      level_mix: {
+        recall_understanding: 25,
+        application: 45,
+        analysis_evaluation: 30,
+      },
       section_totals: totalsFor(sections),
       section_order: orderOf(sections),
       stopped_early_ratio: 0.5,
@@ -369,7 +550,11 @@ export const PRACTICE_COUNTS = [10, 15, 30] as const
  * Chapters are the student's choice and the marks follow from the questions, so there is no fixed
  * mark total. `kind` picks the thinking-level mix: 'stem' (Maths, Science) or 'social'.
  */
-export function practiceLayout(kind: 'stem' | 'social', count: (typeof PRACTICE_COUNTS)[number], subjectLabel: string): Layout {
+export function practiceLayout(
+  kind: 'stem' | 'social',
+  count: (typeof PRACTICE_COUNTS)[number],
+  subjectLabel: string,
+): Layout {
   const shape = {
     10: { mcq: 4, ar: 0, two: 3, three: 1, five: 1, caseStudy: 1 },
     15: { mcq: 6, ar: 1, two: 4, three: 2, five: 1, caseStudy: 1 },
@@ -379,14 +564,67 @@ export function practiceLayout(kind: 'stem' | 'social', count: (typeof PRACTICE_
   const B = 'Section B — Short Answer (2 marks each)'
   const C = 'Section C — Long Answer (3 and 5 marks)'
   const D = 'Section D — Case Study (4 marks)'
-  const mcqBloom: Array<BloomLevel> = kind === 'stem' ? ['Remember', 'Understand', 'Apply', 'Analyse'] : ['Remember', 'Understand', 'Apply']
+  const mcqBloom: Array<BloomLevel> =
+    kind === 'stem'
+      ? ['Remember', 'Understand', 'Apply', 'Analyse']
+      : ['Remember', 'Understand', 'Apply']
   const sections: Array<LayoutSection> = [
-    { name: A, slot: 'Multiple choice', marks_per_question: 1, count: shape.mcq, bloom_allowed: mcqBloom, types: ['mcq', 'multi_statement', 'match'] },
-    ...(shape.ar > 0 ? [{ name: A, slot: 'Assertion and reason', marks_per_question: 1, count: shape.ar, bloom_allowed: ['Understand', 'Apply', 'Analyse'] as Array<BloomLevel>, types: ['assertion_reason'] as Array<QuestionType> }] : []),
-    { name: B, slot: '2-mark short answer', marks_per_question: 2, count: shape.two, bloom_allowed: SHORT_BLOOM, types: WRITTEN },
-    { name: C, slot: '3-mark answer', marks_per_question: 3, count: shape.three, bloom_allowed: MID_BLOOM, types: WRITTEN },
-    { name: C, slot: '5-mark answer', marks_per_question: 5, count: shape.five, bloom_allowed: HIGH_BLOOM, types: WRITTEN },
-    { name: D, slot: '4-mark case study', marks_per_question: 4, count: shape.caseStudy, bloom_allowed: CASE_BLOOM, tag: 'case_study' },
+    {
+      name: A,
+      slot: 'Multiple choice',
+      marks_per_question: 1,
+      count: shape.mcq,
+      bloom_allowed: mcqBloom,
+      types: ['mcq', 'multi_statement', 'match'],
+    },
+    ...(shape.ar > 0
+      ? [
+          {
+            name: A,
+            slot: 'Assertion and reason',
+            marks_per_question: 1,
+            count: shape.ar,
+            bloom_allowed: [
+              'Understand',
+              'Apply',
+              'Analyse',
+            ] as Array<BloomLevel>,
+            types: ['assertion_reason'] as Array<QuestionType>,
+          },
+        ]
+      : []),
+    {
+      name: B,
+      slot: '2-mark short answer',
+      marks_per_question: 2,
+      count: shape.two,
+      bloom_allowed: SHORT_BLOOM,
+      types: WRITTEN,
+    },
+    {
+      name: C,
+      slot: '3-mark answer',
+      marks_per_question: 3,
+      count: shape.three,
+      bloom_allowed: MID_BLOOM,
+      types: WRITTEN,
+    },
+    {
+      name: C,
+      slot: '5-mark answer',
+      marks_per_question: 5,
+      count: shape.five,
+      bloom_allowed: HIGH_BLOOM,
+      types: WRITTEN,
+    },
+    {
+      name: D,
+      slot: '4-mark case study',
+      marks_per_question: 4,
+      count: shape.caseStudy,
+      bloom_allowed: CASE_BLOOM,
+      tag: 'case_study',
+    },
   ]
   const total = marksOfSections(sections)
   return {
@@ -394,9 +632,24 @@ export function practiceLayout(kind: 'stem' | 'social', count: (typeof PRACTICE_
     total_marks: total,
     duration_min: count * 3,
     sections,
-    bloom_targets: kind === 'stem'
-      ? { Remember: 10, Understand: 15, Apply: 45, Analyse: 15, Evaluate: 10, Create: 5 }
-      : { Remember: 20, Understand: 30, Apply: 30, Analyse: 10, Evaluate: 5, Create: 5 },
+    bloom_targets:
+      kind === 'stem'
+        ? {
+            Remember: 10,
+            Understand: 15,
+            Apply: 45,
+            Analyse: 15,
+            Evaluate: 10,
+            Create: 5,
+          }
+        : {
+            Remember: 20,
+            Understand: 30,
+            Apply: 30,
+            Analyse: 10,
+            Evaluate: 5,
+            Create: 5,
+          },
     config: {
       kind: 'school_half_yearly',
       question_count: count,
@@ -407,9 +660,18 @@ export function practiceLayout(kind: 'stem' | 'social', count: (typeof PRACTICE_
         COMMON_INSTRUCTIONS[3],
       ],
       word_limits: WORD_LIMITS,
-      level_mix: kind === 'stem'
-        ? { recall_understanding: 25, application: 45, analysis_evaluation: 30 }
-        : { recall_understanding: 50, application: 30, analysis_evaluation: 20 },
+      level_mix:
+        kind === 'stem'
+          ? {
+              recall_understanding: 25,
+              application: 45,
+              analysis_evaluation: 30,
+            }
+          : {
+              recall_understanding: 50,
+              application: 30,
+              analysis_evaluation: 20,
+            },
       section_totals: totalsFor(sections),
       section_order: orderOf(sections),
       stopped_early_ratio: 0.5,

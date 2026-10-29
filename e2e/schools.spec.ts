@@ -78,6 +78,103 @@ test.describe.serial('school screens on a phone', () => {
   let adminPage: Page
   let browserRef: Browser
 
+  let sourceId = ''
+  /** A small bank for the coverage preview: two chapters both numbered 3 (Part I and Part II), deep in some places and empty in others. */
+  async function buildBank() {
+    sourceId = (
+      await db
+        .insertInto('sources')
+        .values({
+          subject_id: subjectId,
+          title: 'Ganita Prakash',
+          publisher: 'NCERT',
+        })
+        .returning('id')
+        .executeTakeFirstOrThrow()
+    ).id
+    const chapter = async (
+      part: string,
+      no: number,
+      name: string,
+      nConcepts: number,
+    ) => {
+      const ch = await db
+        .insertInto('chapters')
+        .values({
+          source_id: sourceId,
+          subject_id: subjectId,
+          part,
+          chapter_no: no,
+          name,
+          order_index: no,
+        })
+        .returning('id')
+        .executeTakeFirstOrThrow()
+      const ids: Array<string> = []
+      for (let i = 1; i <= nConcepts; i++)
+        ids.push(
+          (
+            await db
+              .insertInto('concepts')
+              .values({
+                chapter_id: ch.id,
+                board: 'CBSE',
+                class: 7,
+                code: `E2E-${tag}-${part}${no}.${i}`,
+                name: `${name} ${i}`,
+                difficulty_base: 'Easy',
+              })
+              .returning('id')
+              .executeTakeFirstOrThrow()
+          ).id,
+        )
+      return ids
+    }
+    const add = async (
+      concept: string,
+      n: number,
+      type: string,
+      marks: number,
+      bloom: string,
+      tags: Array<string> = [],
+    ) => {
+      for (let i = 0; i < n; i++) {
+        await db
+          .insertInto('questions')
+          .values({
+            concept_id: concept,
+            board: 'CBSE',
+            class: 7,
+            bloom: bloom as never,
+            difficulty: 'Easy',
+            marks,
+            type: type as never,
+            text: `E2E ${tag} ${Math.random()}`,
+            text_hash: `e2e-${tag}-${Math.random()}`,
+            answer: 'a',
+            status: 'approved',
+            origin: 'manual',
+            created_by: 'e2e',
+            tags,
+          })
+          .execute()
+      }
+    }
+    const [a1, a2, a3] = await chapter('I', 3, 'Fractions and Decimals', 3)
+    const [b1] = await chapter('II', 3, 'Data Handling', 1)
+    const [c1, c2] = await chapter('I', 4, 'Simple Equations', 2)
+    await add(a1, 30, 'mcq', 1, 'Understand')
+    await add(a1, 6, 'assertion_reason', 1, 'Apply')
+    await add(a2, 14, 'short_answer', 2, 'Understand')
+    await add(a3, 10, 'short_answer', 3, 'Apply')
+    await add(a3, 6, 'long_answer', 5, 'Analyse')
+    await add(b1, 6, 'mcq', 1, 'Remember')
+    await add(b1, 1, 'short_answer', 2, 'Understand')
+    await add(c1, 12, 'mcq', 1, 'Apply')
+    await add(c2, 3, 'short_answer', 4, 'Analyse', ['case_study'])
+    await add(c2, 4, 'short_answer', 3, 'Apply')
+  }
+
   test.beforeAll(async ({ browser }) => {
     browserRef = browser
     db = createDb()
@@ -103,6 +200,7 @@ test.describe.serial('school screens on a phone', () => {
       adminEmail,
     })
     schoolId = p.school.id
+    await buildBank()
     adminCode = (await issueFirstAdminCode(db, schoolId, p.adminMemberId)).code
     adminPage = await (
       await browser.newContext({
@@ -155,6 +253,10 @@ test.describe.serial('school screens on a phone', () => {
       .where('school_id', 'in', ids)
       .execute()
     await db
+      .deleteFrom('school_paper_templates')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
       .deleteFrom('school_teacher_assignments')
       .where('school_id', 'in', ids)
       .execute()
@@ -194,6 +296,17 @@ test.describe.serial('school screens on a phone', () => {
         ...sh.map((h) => h.household_id),
       ])
       .execute()
+    await db
+      .deleteFrom('questions')
+      .where('created_by', '=', 'e2e')
+      .where('text', 'like', `E2E ${tag}%`)
+      .execute()
+    await db
+      .deleteFrom('concepts')
+      .where('code', 'like', `E2E-${tag}-%`)
+      .execute()
+    await db.deleteFrom('chapters').where('source_id', '=', sourceId).execute()
+    await db.deleteFrom('sources').where('id', '=', sourceId).execute()
     await db.deleteFrom('subjects').where('id', '=', subjectId).execute()
     await db.destroy()
   })
@@ -515,6 +628,131 @@ test.describe.serial('school screens on a phone', () => {
     await shot(t, '25-teacher-students')
     await looksRight(t)
     await ctx.close()
+  })
+
+  test('paper layouts: a ready-made one is saved, and your own is built with the marks checked as you go', async () => {
+    const page = adminPage
+    await page.getByRole('link', { name: 'Papers' }).last().click()
+    await expect(
+      page.getByRole('heading', { name: 'Paper layouts' }),
+    ).toBeVisible()
+    await shot(page, '30-papers-empty')
+    await looksRight(page)
+    await page.getByRole('button', { name: 'Use this layout' }).first().click()
+    await expect(
+      page.getByText('CBSE-style paper, 80 marks').first(),
+    ).toBeVisible()
+    await page.getByRole('button', { name: 'Use this layout' }).last().click()
+    await expect(page.getByText('Unit Test, 40 marks').first()).toBeVisible()
+    await shot(page, '31-papers-saved-layouts')
+    await looksRight(page)
+
+    await page.getByRole('button', { name: 'Make your own layout' }).click()
+    await expect(
+      page.getByRole('heading', { name: 'Make a layout' }),
+    ).toBeVisible()
+    await page.getByLabel('Name').fill('Half-yearly, 60 marks')
+    await page.getByLabel('Total marks').fill('60')
+    await page.getByLabel('Time (minutes)').fill('120')
+    // the marks do not add up yet: the page says so, and saving is blocked
+    await expect(
+      page.getByText(/The rows add up to 10 marks, but the total is 60/),
+    ).toBeVisible()
+    await expect(
+      page.getByRole('button', { name: 'Save layout' }),
+    ).toBeDisabled()
+    await shot(page, '32-builder-marks-do-not-add-up')
+    await looksRight(page)
+
+    const addRow = async (
+      heading: string,
+      kind: string,
+      count: string,
+      marks: string,
+      or: string,
+    ) => {
+      await page.getByRole('button', { name: 'Add a row' }).click()
+      const row = page
+        .locator('section')
+        .filter({ hasText: /Row \d/ })
+        .last()
+      await row.getByLabel('Heading on the paper').fill(heading)
+      await row.getByLabel('Kind of question').selectOption({ label: kind })
+      await row.getByLabel('How many questions').fill(count)
+      await row.getByLabel('Marks for each').fill(marks)
+      if (or) await row.getByLabel('Questions with a choice (OR)').fill(or)
+    }
+    await addRow(
+      'Section B — Short answer (2 marks each)',
+      'Short answer',
+      '5',
+      '2',
+      '1',
+    ) // 10
+    await addRow(
+      'Section C — Short answer (3 marks each)',
+      'Short answer',
+      '4',
+      '3',
+      '1',
+    ) // 12
+    await addRow(
+      'Section D — Long answer (5 marks each)',
+      'Long answer',
+      '2',
+      '5',
+      '1',
+    ) // 10
+    await addRow(
+      'Section E — Case studies (4 marks each)',
+      'Case study',
+      '2',
+      '4',
+      '',
+    ) // 8
+    await page.getByLabel('Total marks').fill('50')
+    await expect(page.getByText('Ready: 50 marks')).toBeVisible()
+    await shot(page, '33-builder-ready')
+    await looksRight(page)
+    await page.getByRole('button', { name: 'Save layout' }).click()
+    await page.waitForURL('**/papers/check**')
+    await expect(
+      page.getByRole('heading', { name: 'Check against the bank' }),
+    ).toBeVisible()
+  })
+
+  test('coverage preview: choose chapters by book, part and chapter, then see marks, thinking and every gap', async () => {
+    const page = adminPage
+    await page.getByRole('link', { name: 'Papers' }).last().click()
+    await page
+      .getByRole('button', { name: 'Check against the bank' })
+      .first()
+      .click()
+    await expect(
+      page.getByRole('heading', { name: 'Check against the bank' }),
+    ).toBeVisible()
+    // the two chapters numbered 3 are told apart by their part
+    await expect(
+      page.getByText('Ganita Prakash · Part I', { exact: true }),
+    ).toBeVisible()
+    await expect(
+      page.getByText('Ganita Prakash · Part II', { exact: true }),
+    ).toBeVisible()
+    await expect(page.getByText('Chapter 3').first()).toBeVisible()
+    await shot(page, '34-check-choose-chapters')
+    await looksRight(page)
+    await page.getByLabel(/Chapter 3 · Fractions and Decimals/).check()
+    await page.getByLabel(/Chapter 3 · Data Handling/).check()
+    await page.getByLabel(/Chapter 4 · Simple Equations/).check()
+    await page.getByRole('button', { name: /^Check 3 chapters$/ }).click()
+    const result = page.getByTestId('coverage-result')
+    await expect(result).toBeVisible()
+    await expect(result).toContainText('The bank can fill')
+    await expect(page.getByTestId('paper-gaps')).toBeVisible()
+    await expect(page.getByTestId('chapter-gaps')).toBeVisible()
+    await page.getByText('What will be printed on your copy').click()
+    await shot(page, '35-coverage-preview')
+    await looksRight(page)
   })
 
   test('on a wider screen the same pages show a top menu instead of the bottom bar', async ({

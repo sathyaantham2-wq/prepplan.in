@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolCredentialKind, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolCredentialKind, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, SchoolTemplateStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -672,6 +672,22 @@ export interface SchoolMembers {
   user_id: string;
 }
 
+export interface SchoolPaperTemplates {
+  based_on: string | null;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  duration_min: number;
+  id: Generated<string>;
+  level_mix: Json;
+  name: string;
+  school_id: string;
+  sections: Json;
+  status: SchoolTemplateStatus;
+  template_key: string;
+  total_marks: number;
+  version: number;
+}
+
 export interface Schools {
   board: Generated<string>;
   city: string | null;
@@ -973,6 +989,7 @@ export interface DB {
   school_credential_codes: SchoolCredentialCodes;
   school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
+  school_paper_templates: SchoolPaperTemplates;
   school_sections: SchoolSections;
   school_student_guardians: SchoolStudentGuardians;
   school_students: SchoolStudents;

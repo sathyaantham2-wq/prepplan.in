@@ -352,15 +352,13 @@ export async function getAdminOverview(db: Db): Promise<AdminOverview> {
       by_board: boards.map((b) => ({ board: b.board, approved: num(b.n) })),
       concepts_total: num(conceptCounts[0]?.total),
       concepts_short: conceptsShort,
-      shortfalls: shortfalls
-        .slice(0, 6)
-        .map((r) => ({
-          subject: r.subject,
-          board: r.board,
-          class: r.class,
-          short: num(r.short),
-          concepts: num(r.concepts),
-        })),
+      shortfalls: shortfalls.slice(0, 6).map((r) => ({
+        subject: r.subject,
+        board: r.board,
+        class: r.class,
+        short: num(r.short),
+        concepts: num(r.concepts),
+      })),
     },
     recent_signups: recentSignups.map((u) => ({
       at: u.at,

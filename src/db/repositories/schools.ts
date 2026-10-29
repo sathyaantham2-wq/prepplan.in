@@ -3,6 +3,7 @@ import type { SchoolRole } from '../enums'
 import type { SchoolScope } from '../school-scope'
 import { createRepository, createSchoolScopedRepository } from './factory'
 import { schoolCredentialCodesRepository } from './school-credentials'
+import { schoolPaperTemplatesRepository } from './school-templates'
 
 // The tenant root: never itself school-scoped (it *is* the school). Reached only through a
 // membership lookup (findForMember) or by platform admin code.
@@ -266,6 +267,7 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_student_guardians: schoolStudentGuardiansRepository,
   school_import_batches: schoolImportBatchesRepository,
   school_credential_codes: schoolCredentialCodesRepository,
+  school_paper_templates: schoolPaperTemplatesRepository,
 } as const
 
 /** Which of these e-mail addresses already belong to a PrepPlan account (any role). */

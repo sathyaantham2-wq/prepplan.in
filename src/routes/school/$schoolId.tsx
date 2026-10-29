@@ -21,6 +21,7 @@ interface NavItem {
     | '/school/$schoolId/classes'
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/students'
+    | '/school/$schoolId/papers'
   label: string
 }
 
@@ -32,10 +33,15 @@ function navFor(role: SchoolOverview['role']): Array<NavItem> {
       { to: '/school/$schoolId/classes', label: 'Classes' },
       { to: '/school/$schoolId/teachers', label: 'Teachers' },
       { to: '/school/$schoolId/students', label: 'Students' },
+      { to: '/school/$schoolId/papers', label: 'Papers' },
     ]
   }
   if (role === 'teacher' || role === 'principal')
-    return [home, { to: '/school/$schoolId/students', label: 'Students' }]
+    return [
+      home,
+      { to: '/school/$schoolId/students', label: 'Students' },
+      { to: '/school/$schoolId/papers', label: 'Papers' },
+    ]
   return [home]
 }
 
