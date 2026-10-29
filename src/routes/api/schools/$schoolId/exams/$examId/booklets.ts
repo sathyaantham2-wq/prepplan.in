@@ -3,12 +3,13 @@ import { getSharedDb } from '../../../../../../db/connection'
 import { wrapRouteHandlers } from '../../../../../../lib/error-log'
 import { requireSchoolRole } from '../../../../../../lib/school-session'
 import { SchoolError } from '../../../../../../lib/schools/common'
-import { renderBooklets } from '../../../../../../lib/schools/exam-service'
 import { readJson, str } from '../../../../../../lib/schools/http'
-import { pdfResponse } from '../../../../../../lib/schools/pdf-response'
+import { startBookletJob } from '../../../../../../lib/schools/print-service'
 
-// The Smart Answer Booklets (PDF) for a section, or one student: { section_id?, school_student_id? }.
-// The office and the teacher of the subject only.
+// Starts printing the answer booklets of a section (or one student) in batches:
+// { section_id?, school_student_id?, batch_size? }. Returns the job; the page then asks for each
+// batch in turn and downloads the joined PDF when it is done. The office and the teacher of the
+// subject only.
 export const Route = createFileRoute(
   '/api/schools/$schoolId/exams/$examId/booklets',
 )({
@@ -24,14 +25,14 @@ export const Route = createFileRoute(
         if (scope instanceof Response) return scope
         const b = await readJson(request)
         try {
-          const r = await renderBooklets(getSharedDb(), scope, params.examId, {
-            sectionId: str(b?.section_id) ?? undefined,
-            schoolStudentId: str(b?.school_student_id) ?? undefined,
-          })
-          const res = pdfResponse(r.pdf, r.fileName)
-          res.headers.set('x-booklet-students', String(r.students))
-          res.headers.set('x-booklet-pages', String(r.pages))
-          return res
+          return Response.json(
+            await startBookletJob(getSharedDb(), scope, params.examId, {
+              sectionId: str(b?.section_id) ?? undefined,
+              schoolStudentId: str(b?.school_student_id) ?? undefined,
+              batchSize:
+                typeof b?.batch_size === 'number' ? b.batch_size : undefined,
+            }),
+          )
         } catch (e) {
           if (e instanceof SchoolError) return e.toResponse()
           throw e

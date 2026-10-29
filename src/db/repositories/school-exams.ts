@@ -97,6 +97,20 @@ export const examPrintRepository = {
       .execute()
   },
   /** Students (active) of the given sections with what a booklet prints. */
+  async studentsByIds(
+    db: Db,
+    scope: SchoolScope,
+    schoolStudentIds: ReadonlyArray<string>,
+  ) {
+    if (schoolStudentIds.length === 0) return []
+    return db
+      .selectFrom('school_students as ss')
+      .innerJoin('students as st', 'st.id', 'ss.student_id')
+      .select(['ss.id as school_student_id', 'st.name'])
+      .where('ss.school_id', '=', scope.schoolId)
+      .where('ss.id', 'in', [...schoolStudentIds])
+      .execute()
+  },
   async studentsOfSections(
     db: Db,
     scope: SchoolScope,
@@ -128,3 +142,95 @@ export const examPrintRepository = {
       .execute()
   },
 }
+
+export const schoolScanBatchesRepository = createSchoolScopedRepository(
+  'school_scan_batches',
+)
+export const schoolScanPagesRepository = {
+  ...createSchoolScopedRepository('school_scan_pages'),
+  /** Every page that came in for an exam, newest last, without the picture itself. */
+  async listForExam(db: Db, scope: SchoolScope, examId: string) {
+    return db
+      .selectFrom('school_scan_pages')
+      .select([
+        'id',
+        'booklet_id',
+        'page_no',
+        'status',
+        'reason',
+        'quality',
+        'original_name',
+        'size_bytes',
+        'purged_at',
+        'created_at',
+        sql<boolean>`(image is not null)`.as('has_image'),
+      ])
+      .where('school_id', '=', scope.schoolId)
+      .where('exam_id', '=', examId)
+      .orderBy('created_at')
+      .execute()
+  },
+  async findWithImage(db: Db, scope: SchoolScope, id: string) {
+    return db
+      .selectFrom('school_scan_pages')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('id', '=', id)
+      .executeTakeFirst()
+  },
+  /**
+   * Looks a QR token up across ALL schools: the one place a read is not limited to the caller's
+   * school, because the caller does not yet know whose page a photo is. It returns only enough to
+   * decide whether the page may be used here; the caller refuses anything from another school.
+   */
+  async findPageByToken(db: Db, token: string) {
+    return db
+      .selectFrom('school_booklet_pages as bp')
+      .innerJoin('school_booklets as b', 'b.id', 'bp.booklet_id')
+      .select([
+        'bp.school_id',
+        'bp.booklet_id',
+        'bp.page_no',
+        'b.exam_id',
+        'b.school_student_id',
+      ])
+      .where('bp.token', '=', token)
+      .executeTakeFirst()
+  },
+  /** Blank the pictures older than each school's own retention period. The rows stay. */
+  async purgeExpired(db: Db, now: Date): Promise<number> {
+    const r = await sql`
+      update school_scan_pages p set image = null, purged_at = ${now}
+      from schools s
+      where p.school_id = s.id and p.image is not null
+        and p.created_at < ${now}::timestamptz - (s.scan_retention_days || ' days')::interval`.execute(
+      db,
+    )
+    return Number(r.numAffectedRows ?? 0)
+  },
+}
+export const schoolExamAbsencesRepository = {
+  ...createSchoolScopedRepository('school_exam_absences'),
+  async openForExam(db: Db, scope: SchoolScope, examId: string) {
+    return db
+      .selectFrom('school_exam_absences')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('exam_id', '=', examId)
+      .where('cleared_at', 'is', null)
+      .execute()
+  },
+}
+export const schoolPrintJobsRepository = {
+  ...createSchoolScopedRepository('school_print_jobs'),
+  async purgeExpired(db: Db, now: Date): Promise<number> {
+    const r =
+      await sql`update school_print_jobs set result = null where result is not null and expires_at < ${now}`.execute(
+        db,
+      )
+    return Number(r.numAffectedRows ?? 0)
+  },
+}
+export const schoolPrintJobPartsRepository = createSchoolScopedRepository(
+  'school_print_job_parts',
+)

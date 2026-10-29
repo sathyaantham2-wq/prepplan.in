@@ -135,3 +135,37 @@ export async function openPdf(path: string, body?: unknown): Promise<void> {
     throw e
   }
 }
+
+export interface BookletJobProgress {
+  jobId: string
+  status: 'running' | 'done' | 'failed'
+  total: number
+  done: number
+  batches: { done: number; total: number }
+  pages: number | null
+  message: string | null
+  ready: boolean
+}
+
+/**
+ * Prints answer booklets a few at a time: starts the job, then asks for one batch after another
+ * (each a short request) and reports progress. Resolves with the finished job; the joined PDF is
+ * then at `${base}/booklet-jobs/${jobId}/result`.
+ */
+export async function runBookletJob(
+  base: string,
+  body: Record<string, unknown>,
+  onProgress: (p: BookletJobProgress) => void,
+): Promise<BookletJobProgress> {
+  let job = await api<BookletJobProgress>(`${base}/booklets`, { body })
+  onProgress(job)
+  while (job.status === 'running') {
+    job = await api<BookletJobProgress>(`${base}/booklet-jobs/${job.jobId}`, {
+      method: 'POST',
+    })
+    onProgress(job)
+  }
+  if (job.status === 'failed')
+    throw new Error(job.message ?? 'The booklets could not be printed.')
+  return job
+}

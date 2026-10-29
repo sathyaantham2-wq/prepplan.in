@@ -1,10 +1,18 @@
-import { mkdirSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { expect, test } from '@playwright/test'
 import type { Browser, Page } from '@playwright/test'
 import { createDb } from '../src/db/connection'
 import type { Db } from '../src/db/connection'
 import { schoolsRepository } from '../src/db/repositories'
 import { issueFirstAdminCode } from '../src/lib/schools/credentials'
+import { buildBookletsHtml } from '../src/lib/schools/booklet-html'
+import type { BookletManifest } from '../src/lib/schools/booklet-layout'
+import {
+  photograph,
+  renderPagePngs,
+} from '../src/lib/schools/scan-test-support'
 
 /**
  * PrepPlan for Schools, S3: the school screens on a phone-sized screen. Provisions its own school,
@@ -32,6 +40,27 @@ async function shot(page: Page, name: string) {
   await page.waitForTimeout(150)
   await page.screenshot({ path: `${SHOTS}/${name}.png` })
   if (size) await page.setViewportSize(size)
+}
+
+/** A picture of one part of the page (the whole page can be taller than a screenshot may be). */
+async function shotOf(page: Page, selector: string, name: string) {
+  const box = await page
+    .locator(selector)
+    .first()
+    .evaluate((el) => {
+      const r = el.getBoundingClientRect()
+      return {
+        x: 0,
+        y: r.top + window.scrollY,
+        width: window.innerWidth,
+        height: r.height,
+      }
+    })
+  await page.screenshot({
+    path: `${SHOTS}/${name}.png`,
+    fullPage: true,
+    clip: box,
+  })
 }
 
 async function looksRight(page: Page) {
@@ -252,6 +281,26 @@ test.describe.serial('school screens on a phone', () => {
         .execute()
     await db
       .deleteFrom('school_credential_codes')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_print_job_parts')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_print_jobs')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_scan_pages')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_scan_batches')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_exam_absences')
       .where('school_id', 'in', ids)
       .execute()
     await db.deleteFrom('audit_log').where('school_id', 'in', ids).execute()
@@ -862,11 +911,21 @@ test.describe.serial('school screens on a phone', () => {
       .where('school_id', '=', schoolId)
       .where('name', '=', 'A')
       .executeTakeFirstOrThrow()
-    const booklets = await page.request.post(`${base}/booklets`, {
-      data: { section_id: sectionA.id },
+    const started = await page.request.post(`${base}/booklets`, {
+      data: { section_id: sectionA.id, batch_size: 1 },
     })
+    expect(started.status()).toBe(200)
+    let job = (await started.json()) as { jobId: string; status: string }
+    for (let i = 0; i < 4 && job.status === 'running'; i++) {
+      const step = await page.request.post(`${base}/booklet-jobs/${job.jobId}`)
+      expect(step.status()).toBe(200)
+      job = (await step.json()) as typeof job
+    }
+    expect(job.status).toBe('done')
+    const booklets = await page.request.get(
+      `${base}/booklet-jobs/${job.jobId}/result`,
+    )
     expect(booklets.status()).toBe(200)
-    expect(booklets.headers()['x-booklet-students']).toBe('2')
     expect((await booklets.body()).subarray(0, 4).toString()).toBe('%PDF')
 
     // and the buttons open them in a new tab
@@ -876,6 +935,206 @@ test.describe.serial('school screens on a phone', () => {
       .click()
     await popup
     await expect(page.getByText(/Opened in a new tab/)).toBeVisible()
+  })
+
+  test("scans: a section's photographed booklets are sorted by their codes; missing pages are listed and can be fixed", async () => {
+    test.setTimeout(240_000)
+    const page = adminPage
+    // the printed booklets of section A, as pictures (the real pages, then made to look like phone photos)
+    const layout = await db
+      .selectFrom('school_booklet_layouts')
+      .select('manifest')
+      .where('exam_id', '=', examId)
+      .executeTakeFirstOrThrow()
+    const manifest = layout.manifest as unknown as BookletManifest
+    const booklets = await db
+      .selectFrom('school_booklets as b')
+      .innerJoin('school_students as ss', 'ss.id', 'b.school_student_id')
+      .innerJoin('students as st', 'st.id', 'ss.student_id')
+      .select(['b.id', 'st.name', 'ss.admission_no', 'ss.roll_no'])
+      .where('b.exam_id', '=', examId)
+      .orderBy('ss.roll_no')
+      .execute()
+    expect(booklets.length).toBeGreaterThanOrEqual(2)
+    const tokens = new Map<string, Array<string>>()
+    for (const b of booklets)
+      tokens.set(
+        b.id,
+        (
+          await db
+            .selectFrom('school_booklet_pages')
+            .select('token')
+            .where('booklet_id', '=', b.id)
+            .orderBy('page_no')
+            .execute()
+        ).map((t) => t.token),
+      )
+    const html = await buildBookletsHtml({
+      schoolName: 'E2E School',
+      examTitle: 'Half-yearly Maths',
+      subjectName: 'Maths',
+      className: 'Class 7',
+      durationMin: 180,
+      totalMarks: 80,
+      manifest,
+      students: booklets.map((b) => ({
+        name: b.name,
+        admissionNo: b.admission_no,
+        rollNo: b.roll_no,
+        sectionName: 'A',
+        tokens: tokens.get(b.id) ?? [],
+      })),
+    })
+    const pages = await renderPagePngs(html)
+    const dir = mkdtempSync(join(tmpdir(), 'scan-e2e-'))
+    const n = manifest.pageCount
+    const looks = [
+      { rotate: 180 },
+      { rotate: 6, perspective: 0.5 },
+      { shadow: true, rotate: -4 },
+      { rotate: 90, noise: 8 },
+      {},
+    ]
+    const file = async (student: number, pageNo: number, label: string) => {
+      const path = join(dir, `s${student + 1}-p${pageNo}-${label}.jpg`)
+      writeFileSync(
+        path,
+        await photograph(pages[student * n + pageNo - 1], {
+          ...looks[(pageNo + student) % looks.length],
+          size: 2400,
+          seed: pageNo * 7 + student,
+        }),
+      )
+      return path
+    }
+    const all = Array.from({ length: n }, (_, i) => i + 1)
+    // student 1: every page, scrambled, and page 1 sent twice. student 2: all but pages 2 and 3.
+    const first = [
+      ...all.filter((x) => x % 2 === 0),
+      ...all.filter((x) => x % 2 === 1),
+    ]
+    const files: Array<string> = []
+    for (const p of first) files.push(await file(0, p, 'a'))
+    files.push(await file(0, 1, 'again'))
+    for (const p of all.filter((x) => x !== 2 && x !== 3))
+      files.push(await file(1, p, 'b'))
+    // a page whose code cannot be read: a blank sheet
+    const blank = join(dir, 'smudged-sheet.png')
+    writeFileSync(
+      blank,
+      await (
+        await import('sharp')
+      )
+        .default({
+          create: {
+            width: 900,
+            height: 1200,
+            channels: 3,
+            background: '#e8e3d6',
+          },
+        })
+        .png()
+        .toBuffer(),
+    )
+    files.push(blank)
+
+    const base = `/api/schools/${schoolId}/exams/${examId}`
+    await page.goto(`/school/${schoolId}/exams/${examId}`, {
+      waitUntil: 'networkidle',
+    })
+    await page.waitForTimeout(600)
+    await expect(
+      page.getByRole('heading', { name: 'Scanned answer sheets' }),
+    ).toBeVisible()
+    await expect(page.getByTestId('scan-students')).toContainText(
+      booklets[0].name,
+    )
+    await shot(page, '50-scan-upload')
+    await looksRight(page)
+
+    await page.getByTestId('scan-files').setInputFiles(files)
+    await expect(page.getByTestId('scan-progress')).toContainText(
+      /pages were placed/,
+      { timeout: 200_000 },
+    )
+    await expect(page.getByTestId('scan-progress')).toContainText(
+      'Received: ' + booklets[0].name,
+    )
+    await expect(page.getByTestId('scan-progress')).toContainText(
+      'Already received',
+    )
+    await expect(page.getByTestId('scan-progress')).toContainText(
+      'We could not read the code',
+    )
+    await shotOf(page, '[data-testid=scan-panel]', '51-scan-uploaded')
+    await looksRight(page)
+
+    // who has sent what
+    const one = page.locator('[data-testid=scan-students] li', {
+      hasText: booklets[0].name,
+    })
+    const two = page.locator('[data-testid=scan-students] li', {
+      hasText: booklets[1].name,
+    })
+    await expect(one).toHaveAttribute('data-state', 'complete')
+    await expect(one).toContainText('All pages in')
+    await expect(one).toContainText('Sent twice: page 1')
+    await expect(two).toHaveAttribute('data-state', 'missing')
+    await expect(two).toContainText('Missing: pages 2, 3')
+    await expect(page.getByTestId('scan-unmatched')).toBeVisible()
+    await shotOf(page, '[data-testid=scan-students]', '52-scan-missing-pages')
+    await shotOf(page, '[data-testid=scan-unmatched]', '52b-scan-unplaced-page')
+    await looksRight(page)
+
+    // re-upload one page for student 2 (page 2), and place the unreadable sheet as her page 3
+    await two.getByRole('button', { name: 'Fix or add a page' }).click()
+    await two.getByLabel('Which page is the new picture of?').selectOption('2')
+    await shotOf(page, '[data-testid=scan-students]', '53-scan-fix-a-page')
+    await looksRight(page)
+    await two
+      .locator('input[type=file]')
+      .setInputFiles(await file(1, 2, 'redo'))
+    await expect(two).toContainText('Missing: page 3', { timeout: 60_000 })
+    await expect(page.getByTestId('scan-progress')).toContainText(
+      'Received: ' + booklets[1].name + ', page 2',
+    )
+    const lost = page.getByTestId('scan-unmatched').locator('li').first()
+    const secondStudentId = (
+      await db
+        .selectFrom('school_booklets')
+        .select('school_student_id')
+        .where('id', '=', booklets[1].id)
+        .executeTakeFirstOrThrow()
+    ).school_student_id
+    await lost.getByLabel('Student').selectOption(secondStudentId)
+    await lost.getByLabel('Page').selectOption('3')
+    await lost.getByRole('button', { name: 'Save as this page' }).click()
+    await expect(two).toHaveAttribute('data-state', 'complete', {
+      timeout: 30_000,
+    })
+    await expect(page.getByTestId('scan-unmatched')).toHaveCount(0)
+    await expect(page.getByTestId('scan-totals')).toContainText('2 complete')
+    await shotOf(page, '[data-testid=scan-students]', '54-scan-all-in')
+    await looksRight(page)
+
+    // the page pictures are only reachable through short-lived signed links, and not without signing in
+    const summary = (await (
+      await page.request.get(`${base}/scan-summary`)
+    ).json()) as { students: Array<{ pages: Array<{ url: string }> }> }
+    const link = summary.students[0].pages[0].url
+    expect((await page.request.get(link)).status()).toBe(200)
+    expect(
+      (
+        await page.request.get(link.replace(/sig=[^&]+/, 'sig=forged'))
+      ).status(),
+    ).toBe(404)
+    const stranger = await page.context().browser()!.newContext()
+    expect(
+      (
+        await stranger.request.get(new URL(link, page.url()).toString())
+      ).status(),
+    ).toBe(401)
+    await stranger.close()
   })
 
   test('a signed-in student is refused every exam file (question paper, teacher copy, booklets, lists)', async ({
@@ -897,9 +1156,17 @@ test.describe.serial('school screens on a phone', () => {
       `${base}/${examId}`,
       `${base}/${examId}/question-paper`,
       `${base}/${examId}/teacher-copy`,
+      `${base}/${examId}/scan-summary`,
     ]) {
       expect((await page.request.get(path)).status(), path).toBe(403)
     }
+    for (const path of ['scan-batches', 'scans', 'absences'])
+      expect(
+        (
+          await page.request.post(`${base}/${examId}/${path}`, { data: {} })
+        ).status(),
+        path,
+      ).toBe(403)
     expect(
       (
         await page.request.post(`${base}/${examId}/booklets`, { data: {} })

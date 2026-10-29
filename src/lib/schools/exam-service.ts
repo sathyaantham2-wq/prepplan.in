@@ -73,7 +73,7 @@ function teachesExam(
   )
 }
 
-async function loadExam(
+export async function loadExam(
   db: Db,
   scope: SchoolScope,
   examId: string,
@@ -619,17 +619,17 @@ export interface BookletRequest {
   schoolStudentId?: string
 }
 
-/**
- * The answer booklets for a section, or for one student: one A4 booklet each, a QR on every page.
- * Creates the booklet and page records the first time (so the scan step can recognise each page) and
- * reprints identically afterwards. The printed page count is checked against what was laid out.
- */
-export async function renderBooklets(
+export type BookletStudentRow = Awaited<
+  ReturnType<typeof examPrintRepository.studentsOfSections>
+>[number]
+
+/** Who a booklet request is for: a section (default: all the exam's sections), or one student. */
+export async function bookletStudents(
   db: Db,
   scope: SchoolScope,
   examId: string,
-  req: BookletRequest = {},
-): Promise<{ pdf: Buffer; fileName: string; students: number; pages: number }> {
+  req: BookletRequest,
+) {
   const { exam, sectionIds } = await loadExam(db, scope, examId, 'handle')
   await requireSchoolTerms(db, scope)
   const wanted = req.sectionId ? [req.sectionId] : sectionIds
@@ -645,66 +645,69 @@ export async function renderBooklets(
       'invalid',
       'There are no students to print booklets for.',
     )
-
   const layoutRow = (await schoolBookletLayoutsRepository.list(db, scope)).find(
     (l) => l.exam_id === examId,
   )
   if (!layoutRow)
     throw new SchoolError('not_found', 'This exam has no booklet layout.')
-  const manifest = layoutRow.manifest as unknown as BookletManifest
-  const d = await loadPrintData(db, scope, exam)
+  return {
+    exam,
+    students,
+    manifest: layoutRow.manifest as unknown as BookletManifest,
+  }
+}
 
+/** Makes the booklet and page records (once per student) so each printed page can be recognised later. */
+export async function ensureBookletRecords(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+  students: ReadonlyArray<BookletStudentRow>,
+  manifest: BookletManifest,
+): Promise<void> {
   const existing = new Map(
     (await schoolBookletsRepository.list(db, scope))
       .filter((b) => b.exam_id === examId)
       .map((b) => [b.school_student_id, b.id]),
   )
-  const withTokens = []
   await db.transaction().execute(async (trx) => {
     for (const s of students) {
-      let bookletId = existing.get(s.school_student_id)
-      if (!bookletId) {
-        bookletId = (
-          await schoolBookletsRepository.insert(trx, scope, {
-            exam_id: examId,
-            school_student_id: s.school_student_id,
-            page_count: manifest.pageCount,
-          })
-        ).id
-        for (let page = 1; page <= manifest.pageCount; page++) {
-          await schoolBookletPagesRepository.insert(trx, scope, {
-            booklet_id: bookletId,
-            page_no: page,
-            token: bookletPageToken({
-              schoolId: scope.schoolId,
-              examId,
-              schoolStudentId: s.school_student_id,
-              page,
-            }),
-          })
-        }
+      if (existing.has(s.school_student_id)) continue
+      const bookletId = (
+        await schoolBookletsRepository.insert(trx, scope, {
+          exam_id: examId,
+          school_student_id: s.school_student_id,
+          page_count: manifest.pageCount,
+        })
+      ).id
+      for (let page = 1; page <= manifest.pageCount; page++) {
+        await schoolBookletPagesRepository.insert(trx, scope, {
+          booklet_id: bookletId,
+          page_no: page,
+          token: bookletPageToken({
+            schoolId: scope.schoolId,
+            examId,
+            schoolStudentId: s.school_student_id,
+            page,
+          }),
+        })
       }
     }
     await schoolExamsRepository.update(trx, scope, examId, {
       status: 'booklets_ready',
     })
   })
-  for (const s of students) {
-    withTokens.push({
-      name: s.name,
-      admissionNo: s.admission_no,
-      rollNo: s.roll_no,
-      sectionName: s.section_name,
-      tokens: Array.from({ length: manifest.pageCount }, (_, i) =>
-        bookletPageToken({
-          schoolId: scope.schoolId,
-          examId,
-          schoolStudentId: s.school_student_id,
-          page: i + 1,
-        }),
-      ),
-    })
-  }
+}
+
+/** One batch of booklets as a PDF. The printed page count is checked against the layout. */
+export async function renderBookletBatch(
+  db: Db,
+  scope: SchoolScope,
+  exam: ExamRow,
+  manifest: BookletManifest,
+  students: ReadonlyArray<BookletStudentRow>,
+): Promise<{ pdf: Buffer; pages: number }> {
+  const d = await loadPrintData(db, scope, exam)
   const html = await buildBookletsHtml({
     schoolName: d.school.name,
     examTitle: exam.title,
@@ -713,15 +716,55 @@ export async function renderBooklets(
     durationMin: d.layout.duration_min,
     totalMarks: exam.printed_marks,
     manifest,
-    students: withTokens,
+    students: students.map((s) => ({
+      name: s.name,
+      admissionNo: s.admission_no,
+      rollNo: s.roll_no,
+      sectionName: s.section_name,
+      tokens: Array.from({ length: manifest.pageCount }, (_, i) =>
+        bookletPageToken({
+          schoolId: scope.schoolId,
+          examId: exam.id,
+          schoolStudentId: s.school_student_id,
+          page: i + 1,
+        }),
+      ),
+    })),
   })
   const pdf = await renderHtmlToPdf(html, { fullPage: true })
   const pages = countPdfPages(pdf)
-  if (pages !== manifest.pageCount * students.length) {
+  if (pages !== manifest.pageCount * students.length)
     throw new Error(
       `The booklets printed ${pages} pages, expected ${manifest.pageCount * students.length}`,
     )
-  }
+  return { pdf, pages }
+}
+
+/**
+ * The answer booklets for a section, or one student, as ONE PDF made in a single go. Fine for a
+ * handful of students (tests, one reprint); a class is printed through a print job (print-service.ts),
+ * which does it in batches so no request runs long.
+ */
+export async function renderBooklets(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+  req: BookletRequest = {},
+): Promise<{ pdf: Buffer; fileName: string; students: number; pages: number }> {
+  const { exam, students, manifest } = await bookletStudents(
+    db,
+    scope,
+    examId,
+    req,
+  )
+  await ensureBookletRecords(db, scope, examId, students, manifest)
+  const { pdf, pages } = await renderBookletBatch(
+    db,
+    scope,
+    exam,
+    manifest,
+    students,
+  )
   await auditSchool(
     db,
     scope,

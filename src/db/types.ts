@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolCredentialKind, SchoolExamStatus, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolRole, SchoolSampleChecker, SchoolStatus, SchoolStudentStatus, SchoolTemplateStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, SchoolCredentialKind, SchoolExamStatus, SchoolImportKind, SchoolImportStatus, SchoolMemberStatus, SchoolPrintJobStatus, SchoolRole, SchoolSampleChecker, SchoolScanStatus, SchoolStatus, SchoolStudentStatus, SchoolTemplateStatus, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -673,6 +673,17 @@ export interface SchoolCredentialCodes {
   used_at: Timestamp | null;
 }
 
+export interface SchoolExamAbsences {
+  cleared_at: Timestamp | null;
+  cleared_reason: string | null;
+  exam_id: string;
+  id: Generated<string>;
+  marked_at: Generated<Timestamp>;
+  marked_by_user_id: string;
+  school_id: string;
+  school_student_id: string;
+}
+
 export interface SchoolExamQuestions {
   chapter_id: string;
   choice_group: string | null;
@@ -758,6 +769,36 @@ export interface SchoolPaperTemplates {
   version: number;
 }
 
+export interface SchoolPrintJobParts {
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  job_id: string;
+  pages: number;
+  pdf: Buffer | null;
+  school_id: string;
+  seq: number;
+  students: number;
+}
+
+export interface SchoolPrintJobs {
+  batch_size: number;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  done_count: Generated<number>;
+  exam_id: string;
+  expires_at: Timestamp;
+  finished_at: Timestamp | null;
+  id: Generated<string>;
+  kind: string;
+  message: string | null;
+  page_count: number | null;
+  result: Buffer | null;
+  school_id: string;
+  status: SchoolPrintJobStatus;
+  student_ids: Json;
+  total: number;
+}
+
 export interface Schools {
   board: Generated<string>;
   city: string | null;
@@ -771,6 +812,33 @@ export interface Schools {
   sample_rate: Generated<Numeric>;
   scan_retention_days: Generated<number>;
   status: SchoolStatus;
+}
+
+export interface SchoolScanBatches {
+  created_at: Generated<Timestamp>;
+  exam_id: string;
+  id: Generated<string>;
+  school_id: string;
+  uploaded_by_user_id: string;
+}
+
+export interface SchoolScanPages {
+  assigned_by_user_id: string | null;
+  batch_id: string;
+  booklet_id: string | null;
+  created_at: Generated<Timestamp>;
+  exam_id: string;
+  id: Generated<string>;
+  image: Buffer | null;
+  original_name: string | null;
+  page_no: number | null;
+  purged_at: Timestamp | null;
+  quality: Generated<Json>;
+  reason: string | null;
+  school_id: string;
+  size_bytes: number | null;
+  status: SchoolScanStatus;
+  uploaded_by_user_id: string;
 }
 
 export interface SchoolSections {
@@ -1060,12 +1128,17 @@ export interface DB {
   school_booklets: SchoolBooklets;
   school_classes: SchoolClasses;
   school_credential_codes: SchoolCredentialCodes;
+  school_exam_absences: SchoolExamAbsences;
   school_exam_questions: SchoolExamQuestions;
   school_exam_sections: SchoolExamSections;
   school_exams: SchoolExams;
   school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
   school_paper_templates: SchoolPaperTemplates;
+  school_print_job_parts: SchoolPrintJobParts;
+  school_print_jobs: SchoolPrintJobs;
+  school_scan_batches: SchoolScanBatches;
+  school_scan_pages: SchoolScanPages;
   school_sections: SchoolSections;
   school_student_guardians: SchoolStudentGuardians;
   school_students: SchoolStudents;

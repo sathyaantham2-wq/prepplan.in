@@ -8,7 +8,9 @@ import {
   Notice,
   Select,
 } from '../../../../components/school/ui'
-import { api, openPdf } from '../../../../lib/school-client'
+import { ScanPanel } from '../../../../components/school/scan-panel'
+import { api, openPdf, runBookletJob } from '../../../../lib/school-client'
+import type { BookletJobProgress } from '../../../../lib/school-client'
 
 export const Route = createFileRoute('/school/$schoolId/exams/$examId')({
   component: ExamPage,
@@ -43,6 +45,7 @@ function ExamPage() {
   const [message, setMessage] = useState<string | null>(null)
   const [busy, setBusy] = useState<string | null>(null)
   const [sectionId, setSectionId] = useState('')
+  const [job, setJob] = useState<BookletJobProgress | null>(null)
   const base = `/api/schools/${schoolId}/exams/${examId}`
 
   const load = useCallback(async () => {
@@ -78,6 +81,21 @@ function ExamPage() {
       setMessage(
         'Opened in a new tab. If nothing opened, allow pop-ups for this site and try again.',
       )
+      await load()
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Something went wrong.')
+    } finally {
+      setBusy(null)
+    }
+  }
+
+  async function makeBooklets() {
+    setBusy('booklets')
+    setMessage(null)
+    setError(null)
+    setJob(null)
+    try {
+      await runBookletJob(base, { section_id: sectionId }, setJob)
       await load()
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.')
@@ -182,14 +200,53 @@ function ExamPage() {
                 kind="plain"
                 className="w-full"
                 disabled={busy !== null || !sectionId}
-                onClick={() =>
-                  run('booklets', `${base}/booklets`, { section_id: sectionId })
-                }
+                onClick={makeBooklets}
               >
                 {busy === 'booklets'
                   ? 'Making the booklets…'
-                  : 'Open the answer booklets (PDF)'}
+                  : 'Make the answer booklets'}
               </Btn>
+              {job ? (
+                <div className="space-y-2" data-testid="booklet-progress">
+                  <div
+                    role="progressbar"
+                    aria-valuemin={0}
+                    aria-valuemax={job.total}
+                    aria-valuenow={job.done}
+                    className="h-3 w-full overflow-hidden rounded-full bg-slate-200"
+                  >
+                    <div
+                      className="h-full bg-emerald-800 transition-all"
+                      style={{
+                        width: `${job.total === 0 ? 0 : Math.round((job.done / job.total) * 100)}%`,
+                      }}
+                    />
+                  </div>
+                  <p className="text-base text-slate-700">
+                    {job.ready
+                      ? `Ready: ${job.total} booklets, ${job.pages} pages.`
+                      : `${job.done} of ${job.total} booklets made…`}
+                  </p>
+                  {job.ready ? (
+                    <Btn
+                      className="w-full"
+                      onClick={() =>
+                        void openPdf(
+                          `${base}/booklet-jobs/${job.jobId}/result`,
+                        ).catch((e: unknown) =>
+                          setError(
+                            e instanceof Error
+                              ? e.message
+                              : 'Something went wrong.',
+                          ),
+                        )
+                      }
+                    >
+                      Open the answer booklets (PDF)
+                    </Btn>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </>
         ) : null}
@@ -197,6 +254,7 @@ function ExamPage() {
           Students cannot open any of these files. Print them for the exam.
         </p>
       </Card>
+      {d.mayHandle ? <ScanPanel base={base} /> : null}
     </div>
   )
 }

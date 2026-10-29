@@ -9,7 +9,30 @@ import {
   signInSchoolUserForTest,
 } from '../../db/test-helpers'
 import type { TestSession } from '../../db/test-helpers'
+import { PDFDocument } from 'pdf-lib'
+import sharp from 'sharp'
+import QRCode from 'qrcode'
+import { Route as ScanBatchesRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-batches'
+import { Route as ScansRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scans'
+import { Route as ScanSummaryRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-summary'
+import { Route as ScanAssignRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-pages/$pageId/assign'
+import { Route as AbsencesRoute } from '../../routes/api/schools/$schoolId/exams/$examId/absences'
+import { Route as ScanImageRoute } from '../../routes/api/schools/$schoolId/scan-images/$pageId'
+import { decryptScan } from '../scan-crypto'
+import { buildBookletsHtml } from './booklet-html'
+import { photograph, renderPagePngs } from './scan-test-support'
+import type { PhotoOptions } from './scan-test-support'
+import {
+  assignScanPage,
+  ingestScanPage,
+  purgeScanData,
+  scanSummary,
+  setStudentAbsent,
+  startScanBatch,
+} from './scan-service'
 import { Route as BookletsRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklets'
+import { Route as BookletJobRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId'
+import { Route as BookletResultRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
 import { Route as QuestionPaperRoute } from '../../routes/api/schools/$schoolId/exams/$examId/question-paper'
 import { Route as TeacherCopyRoute } from '../../routes/api/schools/$schoolId/exams/$examId/teacher-copy'
 import { Route as ExamRoute } from '../../routes/api/schools/$schoolId/exams/$examId'
@@ -19,7 +42,9 @@ import { loadSchoolScope } from '../school-session'
 import { bookletPageToken } from './booklet-token'
 import { SchoolError } from './common'
 import {
+  bookletStudents,
   createExam,
+  ensureBookletRecords,
   getExam,
   listExams,
   questionPaperHtml,
@@ -441,6 +466,26 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
   afterAll(async () => {
     const ids = schoolIds
     await deleteTestCredentials(userIds)
+    await db
+      .deleteFrom('school_print_job_parts')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_print_jobs')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_scan_pages')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_scan_batches')
+      .where('school_id', 'in', ids)
+      .execute()
+    await db
+      .deleteFrom('school_exam_absences')
+      .where('school_id', 'in', ids)
+      .execute()
     await db.deleteFrom('audit_log').where('school_id', 'in', ids).execute()
     await db
       .deleteFrom('school_booklet_pages')
@@ -768,6 +813,7 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         await db
           .selectFrom('school_exams')
           .select('id')
+          .where('school_id', '=', schoolA)
           .where('title', '=', 'Half-yearly')
           .executeTakeFirstOrThrow()
       ).id
@@ -954,11 +1000,71 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
             .toString(),
         ).toBe('%PDF')
       }
-      const b = await call(BookletsRoute, 'POST', teacherS.cookie, p(), {
-        section_id: secB,
+      // booklets are printed in batches: start, step until done, then one joined PDF
+      const started = await call(BookletsRoute, 'POST', teacherS.cookie, p(), {
+        section_id: secA,
+        batch_size: 1,
       })
-      expect(b.status).toBe(200)
-      expect(b.headers.get('x-booklet-students')).toBe('1')
+      expect(started.status).toBe(200)
+      let job = (await started.json()) as {
+        jobId: string
+        status: string
+        total: number
+        done: number
+        ready: boolean
+        batches: { total: number }
+      }
+      expect(job).toMatchObject({
+        status: 'running',
+        total: 2,
+        done: 0,
+        ready: false,
+      })
+      expect(job.batches.total).toBe(2)
+      const jp = () => ({ ...p(), jobId: job.jobId })
+      expect(
+        (await call(BookletResultRoute, 'GET', teacherS.cookie, jp())).status,
+      ).toBe(409) // not ready yet
+      for (let i = 0; i < 5 && job.status === 'running'; i++) {
+        const r = await call(BookletJobRoute, 'POST', teacherS.cookie, jp())
+        expect(r.status).toBe(200)
+        job = { ...job, ...((await r.json()) as typeof job) }
+      }
+      expect(job).toMatchObject({ status: 'done', done: 2, ready: true })
+      const result = await call(BookletResultRoute, 'GET', adminS.cookie, jp())
+      expect(result.status).toBe(200)
+      expect(result.headers.get('cache-control')).toBe('private, no-store')
+      const pdf = Buffer.from(await result.arrayBuffer())
+      expect(pdf.subarray(0, 4).toString()).toBe('%PDF')
+      expect((await PDFDocument.load(pdf)).getPageCount()).toBe(
+        (
+          await db
+            .selectFrom('school_booklet_layouts')
+            .select('page_count')
+            .where('exam_id', '=', examId)
+            .executeTakeFirstOrThrow()
+        ).page_count * 2,
+      )
+      // the batch files are dropped once joined; only the joined PDF stays
+      const left = await db
+        .selectFrom('school_print_job_parts')
+        .select('pdf')
+        .where('job_id', '=', job.jobId)
+        .execute()
+      expect(left.every((r) => r.pdf === null)).toBe(true)
+      // a job cannot be read by another school or by a teacher of another subject
+      for (const s of [outsiderS, otherTeacherS]) {
+        expect(
+          (await call(BookletJobRoute, 'GET', s.cookie, jp())).status,
+        ).toBe(404)
+        expect(
+          (await call(BookletResultRoute, 'GET', s.cookie, jp())).status,
+        ).toBe(404)
+      }
+      expect(
+        (await call(BookletJobRoute, 'GET', principalS.cookie, jp())).status,
+      ).toBe(403)
+      expect((await call(BookletJobRoute, 'GET', null, jp())).status).toBe(401)
     }, 90_000)
     it('the exam detail never carries a question, an answer or a marking step', async () => {
       const res = await call(ExamRoute, 'GET', teacherS.cookie, p())
@@ -994,5 +1100,571 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect(await listExams(db, otherScope.scope)).toEqual([])
       await refuses(getExam(db, otherScope.scope, examId), 'not_found')
     })
+  })
+
+  /** S6: photographed answer booklets come back and are sorted by the code on each page. */
+  describe('scan intake (S6)', () => {
+    let halfYearlyId = ''
+    let bExamId = ''
+    let bAdmin: SchoolScope
+    let bStudentName = ''
+    // pristine page images, by "Student name|page"
+    const pngs = new Map<string, Buffer>()
+    let pc = 0 // pages in a booklet
+    let all: Array<number> = []
+    let ashaId = ''
+    let raviId = ''
+
+    async function renderFor(
+      scope: SchoolScope,
+      exId: string,
+      sectionId: string,
+      prefix = '',
+    ) {
+      const { students: rows, manifest } = await bookletStudents(
+        db,
+        scope,
+        exId,
+        { sectionId },
+      )
+      await ensureBookletRecords(db, scope, exId, rows, manifest)
+      const exam = await db
+        .selectFrom('school_exams')
+        .select('title')
+        .where('id', '=', exId)
+        .executeTakeFirstOrThrow()
+      const tokens = new Map<string, Array<string>>()
+      for (const r of rows) {
+        const b = await db
+          .selectFrom('school_booklets')
+          .select('id')
+          .where('exam_id', '=', exId)
+          .where('school_student_id', '=', r.school_student_id)
+          .executeTakeFirstOrThrow()
+        const pages = await db
+          .selectFrom('school_booklet_pages')
+          .select(['page_no', 'token'])
+          .where('booklet_id', '=', b.id)
+          .orderBy('page_no')
+          .execute()
+        tokens.set(
+          r.school_student_id,
+          pages.map((x) => x.token),
+        )
+      }
+      const html = await buildBookletsHtml({
+        schoolName: 'Test School',
+        examTitle: exam.title,
+        subjectName: 'Maths',
+        className: 'Class 7',
+        durationMin: 45,
+        totalMarks: 25,
+        manifest,
+        students: rows.map((r) => ({
+          name: r.name,
+          admissionNo: r.admission_no,
+          rollNo: r.roll_no,
+          sectionName: r.section_name,
+          tokens: tokens.get(r.school_student_id) ?? [],
+        })),
+      })
+      const images = await renderPagePngs(html)
+      rows.forEach((r, i) => {
+        for (let p = 0; p < manifest.pageCount; p++)
+          pngs.set(
+            `${prefix}${r.name}|${p + 1}`,
+            images[i * manifest.pageCount + p],
+          )
+      })
+      return { rows, manifest }
+    }
+    const photo = async (name: string, page: number, o: PhotoOptions = {}) =>
+      photograph(pngs.get(`${name}|${page}`)!, {
+        seed: page + name.length,
+        ...o,
+      })
+    const upload = async (
+      name: string,
+      page: number,
+      o: PhotoOptions = {},
+      extra: { replace?: boolean; batchId?: string } = {},
+    ) =>
+      ingestScanPage(db, teacher, examId, {
+        bytes: await photo(name, page, o),
+        name: `${name}-${page}.jpg`,
+        ...extra,
+      })
+    const row = async (st: string) =>
+      (await scanSummary(db, teacher, examId)).students.find(
+        (r) => r.name === st,
+      )!
+    const base64 = async (name: string, page: number) =>
+      (await photo(name, page)).toString('base64')
+
+    beforeAll(async () => {
+      halfYearlyId = (
+        await db
+          .selectFrom('school_exams')
+          .select('id')
+          .where('school_id', '=', schoolA)
+          .where('title', '=', 'Half-yearly')
+          .executeTakeFirstOrThrow()
+      ).id
+      const { rows, manifest } = await renderFor(teacher, examId, secA)
+      pc = manifest.pageCount
+      all = Array.from({ length: pc }, (_, i) => i + 1)
+      ashaId = rows.find((r) => r.name === 'Asha A')!.school_student_id
+      raviId = rows.find((r) => r.name === 'Ravi A')!.school_student_id
+      await renderFor(admin, halfYearlyId, secA, 'HY:') // a booklet of another exam of the same school
+
+      // another school with its own exam and student
+      const bId = schoolIds[1]
+      const bMember = await db
+        .selectFrom('school_members')
+        .select('user_id')
+        .where('school_id', '=', bId)
+        .where('role', '=', 'school_admin')
+        .executeTakeFirstOrThrow()
+      const bs = await loadSchoolScope(db, bMember.user_id, bId, [
+        'school_admin',
+      ])
+      if (!bs.ok) throw new Error('scope')
+      bAdmin = bs.scope
+      await acceptSchoolTerms(db, bAdmin)
+      const cls = await createClass(db, bAdmin, 7, '2026-27')
+      const sec = await createSection(db, bAdmin, cls.id, 'A')
+      await addSchoolSubject(db, bAdmin, cls.id, subjectId)
+      const st = await createSchoolStudent(db, bAdmin, {
+        name: 'Bela Other',
+        grade: 7,
+        sectionId: sec.id,
+        sectionName: 'A',
+        rollNo: '1',
+        admissionNo: 'B-1',
+        guardianPhone: null,
+        guardianName: null,
+      })
+      households.push(st.user.household_id)
+      userIds.push(st.user.id)
+      bStudentName = 'Bela Other'
+      const tpl = await saveTemplate(db, bAdmin, { definition: TINY })
+      bExamId = (
+        await createExam(db, bAdmin, {
+          title: 'Other school exam',
+          subjectId,
+          templateKey: tpl.key,
+          chapterIds: [chapter.p1, chapter.p2],
+          sectionIds: [sec.id],
+        })
+      ).id
+      await renderFor(bAdmin, bExamId, sec.id)
+    }, 240_000)
+
+    it('whole booklet in any order, upside down, tilted, in shadow: every page lands on the right student and page', async () => {
+      const { batchId } = await startScanBatch(db, teacher, examId)
+      // every page, in a scrambled order (odd pages from the end, then even ones)
+      const order = [
+        ...all.filter((n) => n % 2 === 1).reverse(),
+        ...all.filter((n) => n % 2 === 0),
+      ]
+      const looks: Array<PhotoOptions> = [
+        { rotate: 180 },
+        { rotate: 8, perspective: 0.5 },
+        { shadow: true, rotate: -4 },
+        { rotate: 90, blur: 1, noise: 8 },
+      ]
+      for (const [i, page] of order.entries()) {
+        const r = await upload('Asha A', page, looks[i % looks.length], {
+          batchId,
+        })
+        expect(r).toMatchObject({
+          status: 'matched',
+          student: 'Asha A',
+          pageNo: page,
+        })
+      }
+      const asha = await row('Asha A')
+      expect(asha).toMatchObject({
+        state: 'complete',
+        received: all,
+        missing: [],
+        duplicates: [],
+      })
+      expect(asha.pages).toHaveLength(pc)
+      expect((await row('Ravi A')).state).toBe('none')
+    }, 180_000)
+
+    it('the same page twice is kept aside as a duplicate; a re-upload may replace the first', async () => {
+      const dup = await upload('Asha A', 2)
+      expect(dup.status).toBe('duplicate')
+      expect(dup.message).toMatch(/Already received/)
+      let asha = await row('Asha A')
+      expect(asha.received).toEqual(all)
+      expect(asha.duplicates).toEqual([{ pageNo: 2, count: 1 }])
+      const rep = await upload('Asha A', 3, { rotate: 2 }, { replace: true })
+      expect(rep.status).toBe('matched')
+      expect(rep.message).toMatch(/Replaced/)
+      asha = await row('Asha A')
+      expect(asha.received).toEqual(all)
+      expect(asha.duplicates).toEqual([
+        { pageNo: 2, count: 1 },
+        { pageNo: 3, count: 1 },
+      ])
+    }, 120_000)
+
+    it('missing pages are listed per student', async () => {
+      for (const page of all.filter((n) => n !== 3))
+        await upload('Ravi A', page, { rotate: page * 3 })
+      const ravi = await row('Ravi A')
+      expect(ravi).toMatchObject({
+        state: 'missing',
+        received: all.filter((n) => n !== 3),
+        missing: [3],
+      })
+      const sum = await scanSummary(db, teacher, examId)
+      expect(sum.totals).toMatchObject({
+        students: 3, // the exam covers both sections: Kiran has sent nothing yet
+        complete: 1,
+        missing: 1,
+        absent: 0,
+        none: 1,
+      })
+    }, 120_000)
+
+    it('a page whose code cannot be read waits; the teacher says which page it is; a taken slot needs “replace”', async () => {
+      const blank = await sharp({
+        create: {
+          width: 900,
+          height: 1200,
+          channels: 3,
+          background: '#e5e0d4',
+        },
+      })
+        .jpeg()
+        .toBuffer()
+      const r = await ingestScanPage(db, teacher, examId, {
+        bytes: blank,
+        name: 'smudged.jpg',
+      })
+      expect(r.status).toBe('unreadable')
+      expect((await scanSummary(db, teacher, examId)).totals.unmatched).toBe(1)
+      await refuses(
+        assignScanPage(db, teacher, examId, r.pageId!, {
+          schoolStudentId: ashaId,
+          pageNo: 2,
+        }),
+        'conflict',
+      )
+      await refuses(
+        assignScanPage(db, teacher, examId, r.pageId!, {
+          schoolStudentId: raviId,
+          pageNo: 9,
+        }),
+        'invalid',
+      )
+      const ok = await assignScanPage(db, teacher, examId, r.pageId!, {
+        schoolStudentId: raviId,
+        pageNo: 3,
+      })
+      expect(ok).toMatchObject({
+        status: 'manual',
+        student: 'Ravi A',
+        pageNo: 3,
+      })
+      expect(await row('Ravi A')).toMatchObject({
+        state: 'complete',
+        missing: [],
+      })
+      expect((await scanSummary(db, teacher, examId)).totals.unmatched).toBe(0)
+      await refuses(
+        assignScanPage(db, teacher, examId, r.pageId!, {
+          schoolStudentId: raviId,
+          pageNo: 3,
+        }),
+        'conflict',
+      ) // no longer unreadable
+      const audit = await db
+        .selectFrom('audit_log')
+        .select('action')
+        .where('school_id', '=', schoolA)
+        .where('action', '=', 'school.scan_page_assigned')
+        .execute()
+      expect(audit.length).toBeGreaterThan(0)
+    }, 60_000)
+
+    it('a re-upload of one page, with no readable code and the student and page named, is saved on that page', async () => {
+      const blank = await sharp({
+        create: {
+          width: 900,
+          height: 1200,
+          channels: 3,
+          background: '#dcd6c8',
+        },
+      })
+        .jpeg()
+        .toBuffer()
+      const r = await ingestScanPage(db, teacher, examId, {
+        bytes: blank,
+        replace: true,
+        target: { schoolStudentId: raviId, pageNo: 3 },
+      })
+      expect(r).toMatchObject({
+        status: 'manual',
+        student: 'Ravi A',
+        pageNo: 3,
+      })
+      expect((await row('Ravi A')).duplicates).toEqual([
+        { pageNo: 3, count: 1 },
+      ])
+    }, 60_000)
+
+    it('pages of another exam and another school are rejected with a plain reason and no picture or student is stored', async () => {
+      const wrongExam = await ingestScanPage(db, teacher, halfYearlyId, {
+        bytes: await photograph(pngs.get('Asha A|2')!, { rotate: 5 }),
+      })
+      expect(wrongExam.status).toBe('rejected')
+      expect(wrongExam.message).toMatch(
+        /different exam .*Unit Test 1.*not .*Half-yearly/,
+      )
+      const wrongSchool = await ingestScanPage(db, teacher, examId, {
+        bytes: await photograph(pngs.get(`${bStudentName}|1`)!, { rotate: -6 }),
+      })
+      expect(wrongSchool.status).toBe('rejected')
+      expect(wrongSchool.message).toMatch(/different school/)
+      expect(wrongSchool.message).not.toContain(bStudentName)
+      const kept = await db
+        .selectFrom('school_scan_pages')
+        .select(['image', 'booklet_id', 'page_no'])
+        .where('id', 'in', [wrongExam.pageId!, wrongSchool.pageId!])
+        .execute()
+      expect(kept).toHaveLength(2)
+      for (const k of kept)
+        expect(k).toMatchObject({
+          image: null,
+          booklet_id: null,
+          page_no: null,
+        })
+      // school B has no scan rows from this
+      expect(
+        await db
+          .selectFrom('school_scan_pages')
+          .select('id')
+          .where('school_id', '=', schoolIds[1])
+          .execute(),
+      ).toEqual([])
+      // and a code that looks right but was never printed
+      const fake = await QRCode.toString(
+        'PPB1-' + 'ABCDEFGHJKMNPQRSTUVWXYZ234'.slice(0, 26),
+        { type: 'svg', margin: 2 },
+      )
+      const png = await sharp(Buffer.from(fake))
+        .resize(700, 700)
+        .flatten({ background: '#fff' })
+        .png()
+        .toBuffer()
+      const fakeRes = await ingestScanPage(db, teacher, examId, { bytes: png })
+      expect(fakeRes.status).toBe('rejected')
+      expect(fakeRes.message).toMatch(/not from a PrepPlan answer booklet/)
+      // a file that is not a picture at all
+      const junk = await ingestScanPage(db, teacher, examId, {
+        bytes: Buffer.from('hello'),
+      })
+      expect(junk.status).toBe('rejected')
+      await expect(
+        ingestScanPage(db, teacher, examId, { bytes: Buffer.alloc(0) }),
+      ).rejects.toBeInstanceOf(SchoolError)
+    }, 120_000)
+
+    it('pictures are stored only encrypted, and come back only through a signed, unexpired link for staff of the subject', async () => {
+      const sum = await scanSummary(db, teacher, examId)
+      const pg = sum.students.find((r) => r.name === 'Asha A')!.pages[0]
+      const stored = await db
+        .selectFrom('school_scan_pages')
+        .select('image')
+        .where('id', '=', pg.pageId)
+        .executeTakeFirstOrThrow()
+      expect(stored.image).not.toBeNull()
+      const raw = stored.image as Buffer
+      expect(raw.includes(Buffer.from([0xff, 0xd8, 0xff]))).toBe(false) // no plain JPEG inside
+      const plain = decryptScan(raw)
+      expect(plain.subarray(0, 3).toString('hex')).toBe('ffd8ff')
+      const q = new URL(pg.url, 'http://x').searchParams
+      const get = (cookie: string | null, url = pg.url) => {
+        const u = new URL(url, 'http://x')
+        return (
+          ScanImageRoute.options.server as { handlers: Record<string, Handler> }
+        ).handlers.GET({
+          request: new Request(u, { headers: cookie ? { cookie } : {} }),
+          params: { schoolId: schoolA, pageId: pg.pageId },
+        })
+      }
+      const ok = await get(teacherS.cookie)
+      expect(ok.status).toBe(200)
+      expect(ok.headers.get('content-type')).toBe('image/jpeg')
+      expect(ok.headers.get('cache-control')).toBe('private, no-store')
+      expect((await ok.arrayBuffer()).byteLength).toBeGreaterThan(1000)
+      expect((await get(adminS.cookie)).status).toBe(200)
+      expect((await get(null)).status).toBe(401)
+      expect(
+        (
+          await get(
+            teacherS.cookie,
+            `${pg.url.split('?')[0]}?exp=${q.get('exp')}&sig=nope`,
+          )
+        ).status,
+      ).toBe(404)
+      expect(
+        (
+          await get(
+            teacherS.cookie,
+            `${pg.url.split('?')[0]}?exp=1&sig=${q.get('sig')}`,
+          )
+        ).status,
+      ).toBe(404)
+      for (const s of [outsiderS, otherTeacherS])
+        expect((await get(s.cookie)).status).toBe(404)
+      expect((await get(principalS.cookie)).status).toBe(403)
+      for (const s of [studentS, parentS])
+        expect([403, 404]).toContain((await get(s.cookie)).status)
+    }, 60_000)
+
+    it('a student marked absent is not chased; marking is refused once pages arrived; a page arriving clears it', async () => {
+      const kiran = (
+        await db
+          .selectFrom('school_students as ss')
+          .innerJoin('students as st', 'st.id', 'ss.student_id')
+          .select('ss.id')
+          .where('ss.school_id', '=', schoolA)
+          .where('st.name', '=', 'Kiran B')
+          .executeTakeFirstOrThrow()
+      ).id
+      await setStudentAbsent(db, teacher, examId, kiran, true)
+      let sum = await scanSummary(db, teacher, examId)
+      expect(sum.students.find((r) => r.name === 'Kiran B')).toMatchObject({
+        state: 'absent',
+        absent: true,
+        missing: [],
+      })
+      expect(sum.totals.absent).toBe(1)
+      await setStudentAbsent(db, teacher, examId, kiran, false)
+      expect((await row('Kiran B')).state).toBe('none')
+      await setStudentAbsent(db, teacher, examId, kiran, true)
+      await refuses(
+        setStudentAbsent(db, teacher, examId, ashaId, true),
+        'conflict',
+      )
+      await refuses(
+        setStudentAbsent(
+          db,
+          teacher,
+          examId,
+          '00000000-0000-4000-8000-000000000000',
+          true,
+        ),
+        'not_found',
+      )
+      // nothing is deleted: the earlier absence rows stay, cleared
+      const kept = await db
+        .selectFrom('school_exam_absences')
+        .select(['cleared_at'])
+        .where('school_id', '=', schoolA)
+        .where('school_student_id', '=', kiran)
+        .execute()
+      expect(kept.length).toBeGreaterThanOrEqual(2)
+      expect(kept.filter((k) => k.cleared_at === null)).toHaveLength(1)
+      sum = await scanSummary(db, teacher, examId)
+      expect(sum.totals.absent).toBe(1)
+    }, 60_000)
+
+    it('who may use it: nobody signed in 401; another school or another subject 404; principal 403; student and parent refused', async () => {
+      const p = () => ({ schoolId: schoolA, examId })
+      const status = async (
+        route: { options: { server?: unknown } },
+        method: string,
+        s: TestSession | null,
+        params: Record<string, string> = p(),
+        body?: unknown,
+      ) => (await call(route, method, s?.cookie ?? null, params, body)).status
+      const calls: Array<
+        [
+          { options: { server?: unknown } },
+          string,
+          Record<string, string>,
+          unknown,
+        ]
+      > = [
+        [ScanSummaryRoute, 'GET', p(), undefined],
+        [ScanBatchesRoute, 'POST', p(), {}],
+        [ScansRoute, 'POST', p(), { data: '' }],
+        [
+          AbsencesRoute,
+          'POST',
+          p(),
+          { school_student_id: ashaId, absent: false },
+        ],
+        [
+          ScanAssignRoute,
+          'POST',
+          { ...p(), pageId: ashaId },
+          { school_student_id: ashaId, page_no: 1 },
+        ],
+      ]
+      for (const [route, method, params, body] of calls) {
+        expect(await status(route, method, null, params, body)).toBe(401)
+        expect(await status(route, method, outsiderS, params, body)).toBe(404)
+        expect(await status(route, method, otherTeacherS, params, body)).toBe(
+          404,
+        )
+        expect(await status(route, method, principalS, params, body)).toBe(403)
+        for (const s of [studentS, parentS])
+          expect([401, 403]).toContain(
+            await status(route, method, s, params, body),
+          )
+      }
+      // and the teacher of the subject can: upload one page through the route
+      const up = await call(ScansRoute, 'POST', teacherS.cookie, p(), {
+        data: await base64('Ravi A', 1),
+        name: 'r1.jpg',
+      })
+      expect(up.status).toBe(200)
+      expect(await up.json()).toMatchObject({ status: 'duplicate' })
+      const sumRes = await call(ScanSummaryRoute, 'GET', teacherS.cookie, p())
+      expect(sumRes.headers.get('cache-control')).toBe('private, no-store')
+      const body = await sumRes.text()
+      expect(body).not.toMatch(/SECRET/)
+      const tooBig = await call(ScansRoute, 'POST', teacherS.cookie, p(), {
+        data: 'A'.repeat(17 * 1024 * 1024),
+      })
+      expect(tooBig.status).toBe(400)
+    }, 120_000)
+
+    it('pictures past the school’s retention are blanked, the rows stay, and the summary stops linking them', async () => {
+      const before = await db
+        .selectFrom('school_scan_pages')
+        .select('id')
+        .where('school_id', '=', schoolA)
+        .where('image', 'is not', null)
+        .execute()
+      expect(before.length).toBeGreaterThan(pc)
+      await db
+        .updateTable('school_scan_pages')
+        .set({ created_at: new Date(Date.now() - 400 * 24 * 3600 * 1000) })
+        .where('school_id', '=', schoolA)
+        .execute()
+      const r = await purgeScanData(db)
+      expect(r.scans).toBeGreaterThanOrEqual(before.length)
+      const after = await db
+        .selectFrom('school_scan_pages')
+        .select(['image', 'purged_at'])
+        .where('school_id', '=', schoolA)
+        .execute()
+      expect(after.length).toBeGreaterThanOrEqual(before.length) // nothing deleted
+      expect(after.every((a) => a.image === null)).toBe(true)
+      const sum = await scanSummary(db, teacher, examId)
+      expect(sum.students.every((s) => s.pages.length === 0)).toBe(true)
+      expect(sum.students.find((s) => s.name === 'Asha A')!.received).toEqual(
+        all,
+      ) // the record of receipt stays
+    }, 60_000)
   })
 })

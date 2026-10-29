@@ -11,6 +11,11 @@ import {
   schoolExamQuestionsRepository,
   schoolExamSectionsRepository,
   schoolExamsRepository,
+  schoolExamAbsencesRepository,
+  schoolPrintJobPartsRepository,
+  schoolPrintJobsRepository,
+  schoolScanBatchesRepository,
+  schoolScanPagesRepository,
 } from './school-exams'
 
 // The tenant root: never itself school-scoped (it *is* the school). Reached only through a
@@ -282,6 +287,11 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_booklet_layouts: schoolBookletLayoutsRepository,
   school_booklets: schoolBookletsRepository,
   school_booklet_pages: schoolBookletPagesRepository,
+  school_scan_batches: schoolScanBatchesRepository,
+  school_scan_pages: schoolScanPagesRepository,
+  school_exam_absences: schoolExamAbsencesRepository,
+  school_print_jobs: schoolPrintJobsRepository,
+  school_print_job_parts: schoolPrintJobPartsRepository,
 } as const
 
 /** Which of these e-mail addresses already belong to a PrepPlan account (any role). */
