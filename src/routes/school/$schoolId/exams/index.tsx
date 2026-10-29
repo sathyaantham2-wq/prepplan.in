@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { BookOpenCheck } from 'lucide-react'
 import { useSchool } from '../../../../components/school/context'
-import { Btn, Card, Chip, Notice } from '../../../../components/school/ui'
+import {
+  Btn,
+  Card,
+  Chip,
+  EmptyState,
+  Notice,
+} from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 import type { ExamSummary } from '../../../../lib/schools/exam-service'
 
@@ -43,11 +50,19 @@ function Exams() {
           Make an exam paper
         </Btn>
       ) : null}
-      {exams.length === 0 ? <Notice>No exam papers yet.</Notice> : null}
+      {exams.length === 0 ? (
+        <EmptyState
+          icon={<BookOpenCheck className="size-6" />}
+          title="No exam papers yet."
+        >
+          Make one from your chapters, then print it with an answer booklet for
+          every student.
+        </EmptyState>
+      ) : null}
       {exams.map((e) => (
         <Card key={e.id} className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
-            <b className="text-lg">{e.title}</b>
+            <b className="font-display text-lg">{e.title}</b>
             <Chip tone="good">{e.printedMarks} marks</Chip>
             {e.gaps > 0 ? (
               <Chip tone="wait">

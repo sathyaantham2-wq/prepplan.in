@@ -1,7 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { useSchool } from '../../../../components/school/context'
-import { Card, Chip, Notice } from '../../../../components/school/ui'
+import { BarChart3 } from 'lucide-react'
+import {
+  Chip,
+  EmptyState,
+  Loading,
+  Notice,
+  cardClass,
+  linkButton,
+} from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 import type { ResultsListRow } from '../../../../lib/schools/demo'
 
@@ -24,24 +32,29 @@ function ResultsList() {
     <div className="space-y-4">
       <h1 className="text-2xl font-bold">Results</h1>
       {error ? <Notice kind="error">{error}</Notice> : null}
-      {rows === null && !error ? (
-        <p className="text-base text-slate-700">Loading…</p>
-      ) : null}
+      {rows === null && !error ? <Loading /> : null}
       {rows?.length === 0 ? (
-        <Card className="space-y-3">
-          <p className="text-base">
-            {overview.school.isDemo
-              ? 'No sample results yet. Make a paper, open it, and press “Use sample answer sheets”.'
-              : 'Results appear here after the answer sheets of an exam have been marked.'}
-          </p>
-          <Link
-            to="/school/$schoolId/exams"
-            params={{ schoolId }}
-            className="inline-flex min-h-12 items-center rounded-lg border border-slate-300 px-4 text-base font-semibold"
-          >
-            Go to exams
-          </Link>
-        </Card>
+        <EmptyState
+          icon={<BarChart3 className="size-6" />}
+          title={
+            overview.school.isDemo
+              ? 'No sample results yet.'
+              : 'No results yet.'
+          }
+          action={
+            <Link
+              to="/school/$schoolId/exams"
+              params={{ schoolId }}
+              className={linkButton.plain}
+            >
+              Go to exams
+            </Link>
+          }
+        >
+          {overview.school.isDemo
+            ? 'Make a paper, open it, and press “Use sample answer sheets”.'
+            : 'Results appear here after the answer sheets of an exam have been marked.'}
+        </EmptyState>
       ) : null}
       {rows?.map((r) => (
         <Link
@@ -49,10 +62,10 @@ function ResultsList() {
           to="/school/$schoolId/results/$examId"
           params={{ schoolId, examId: r.examId }}
           search={{ student: undefined }}
-          className="block rounded-xl border border-slate-300 bg-white p-4 hover:bg-slate-50"
+          className={`${cardClass} block p-4! text-slate-900 transition-colors hover:border-emerald-300`}
         >
           <span className="flex flex-wrap items-center gap-2">
-            <b className="text-lg">{r.title}</b>
+            <b className="font-display text-lg">{r.title}</b>
             {r.demo ? <Chip tone="wait">DEMO - sample data</Chip> : null}
           </span>
           <span className="mt-1 block text-base text-slate-700">

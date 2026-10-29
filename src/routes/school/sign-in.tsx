@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AuthShell } from '../../components/school/auth-shell'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Btn, Card, Notice, TextInput } from '../../components/school/ui'
 import { GoogleSchoolButton } from '../../components/school/google-button'
@@ -45,14 +46,9 @@ function SchoolSignIn() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-md px-4 py-8">
-      <p className="text-sm font-semibold tracking-wide text-emerald-800 uppercase">
-        PrepPlan for Schools
-      </p>
-      <h1 className="mt-1 mb-6 text-3xl font-bold">Sign in to your school</h1>
-
+    <AuthShell title="Sign in to your school">
       <div
-        className="mb-4 grid grid-cols-2 gap-2"
+        className="mb-4 grid grid-cols-2 gap-1 rounded-2xl bg-slate-200/70 p-1"
         role="tablist"
         aria-label="Who is signing in"
       >
@@ -66,10 +62,10 @@ function SchoolSignIn() {
               setWho(w)
               setError(null)
             }}
-            className={`min-h-12 rounded-lg border px-3 text-base font-semibold ${
+            className={`min-h-12 rounded-xl px-3 text-[15px] font-semibold transition-all ${
               who === w
-                ? 'border-emerald-700 bg-emerald-700 text-white'
-                : 'border-slate-300 bg-white text-slate-800'
+                ? 'bg-white text-emerald-800 shadow-sm ring-1 ring-slate-900/5'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             {w === 'student' ? 'I am a student' : 'Teacher or school office'}
@@ -153,6 +149,6 @@ function SchoolSignIn() {
         Forgot your password? Students: ask your class teacher. Teachers: ask
         the school office.
       </p>
-    </main>
+    </AuthShell>
   )
 }

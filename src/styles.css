@@ -834,3 +834,39 @@ pre code {
     animation: pb-pop 0.22s ease-out both;
   }
 }
+
+/* PrepPlan for Schools: the school area's own calm look (src/routes/school.tsx sets data-school-area).
+   In the base layer, so a utility class on any element always wins over these defaults. */
+@layer base {
+  [data-school-area] {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  [data-school-area] :where(h1, h2, h3) {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    color: var(--color-slate-900);
+  }
+  [data-school-area] :where(a) {
+    color: var(--color-emerald-800);
+  }
+  [data-school-area] ::selection {
+    background: var(--color-emerald-200);
+  }
+  [data-school-area] :where(button, a, select, input, textarea, summary):focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--color-emerald-600) 55%, transparent);
+    outline-offset: 2px;
+  }
+}
+@layer base {
+  [data-school-area] :where(input[type='checkbox'], input[type='radio'], progress) {
+    accent-color: var(--color-emerald-700);
+  }
+}
+
+/* The global `a { color }` above is unlayered, so it would beat every colour utility on a link.
+   In the school area it steps back: a link's own utility colour wins, else the base-layer green. */
+[data-school-area] a {
+  color: revert-layer;
+}

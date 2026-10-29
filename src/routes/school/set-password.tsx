@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { AuthShell } from '../../components/school/auth-shell'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Btn, Card, Notice, TextInput } from '../../components/school/ui'
 import { api } from '../../lib/school-client'
@@ -20,12 +21,7 @@ function SetPassword() {
   }, [token])
 
   return (
-    <main className="mx-auto w-full max-w-md px-4 py-8">
-      <p className="text-sm font-semibold tracking-wide text-emerald-800 uppercase">
-        PrepPlan for Schools
-      </p>
-      <h1 className="mt-1 mb-6 text-3xl font-bold">Set up your sign-in</h1>
-
+    <AuthShell title="Set up your sign-in">
       {kind === null ? (
         <div className="space-y-3">
           <p className="text-base text-slate-700">
@@ -67,7 +63,7 @@ function SetPassword() {
           Sign in
         </Link>
       </p>
-    </main>
+    </AuthShell>
   )
 }
 

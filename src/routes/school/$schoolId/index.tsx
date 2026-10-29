@@ -1,7 +1,27 @@
 import { useEffect, useState } from 'react'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useSchool } from '../../../components/school/context'
-import { Btn, Card, Chip, Notice } from '../../../components/school/ui'
+import {
+  BarChart3,
+  Check,
+  ChevronRight,
+  FilePlus2,
+  FileUp,
+  LayoutGrid,
+  ScanLine,
+  UserRound,
+  Users,
+} from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import {
+  Btn,
+  Card,
+  Chip,
+  Loading,
+  Notice,
+  Stat,
+  linkButton,
+} from '../../../components/school/ui'
 import { api } from '../../../lib/school-client'
 
 export const Route = createFileRoute('/school/$schoolId/')({
@@ -26,7 +46,7 @@ function SchoolHome() {
         replace: true,
       })
   }, [needsWizard, navigate, schoolId])
-  if (needsWizard) return <p className="text-base text-slate-700">Loading…</p>
+  if (needsWizard) return <Loading />
 
   async function resetDemo() {
     if (
@@ -49,36 +69,43 @@ function SchoolHome() {
 
   const bigActions = (
     <div className="space-y-3" data-testid="big-actions">
-      <BigAction
-        to="/school/$schoolId/exams/new"
-        schoolId={schoolId}
-        title="Make a paper"
-        hint="Choose the chapters. We make the question paper."
-      />
-      <BigAction
-        to="/school/$schoolId/exams"
-        schoolId={schoolId}
-        title="Upload answer sheets"
-        hint="Pick the exam, then add the scanned answer sheets."
-      />
-      <BigAction
-        to="/school/$schoolId/results"
-        schoolId={schoolId}
-        title="See results"
-        hint="Marks, strong topics and topics to fix for each student."
-      />
+      <div className="grid gap-3 sm:grid-cols-3">
+        <BigAction
+          to="/school/$schoolId/exams/new"
+          schoolId={schoolId}
+          title="Make a paper"
+          hint="Choose the chapters. We make the question paper."
+          icon={FilePlus2}
+          lead
+        />
+        <BigAction
+          to="/school/$schoolId/exams"
+          schoolId={schoolId}
+          title="Upload answer sheets"
+          hint="Pick the exam, then add the scanned answer sheets."
+          icon={ScanLine}
+        />
+        <BigAction
+          to="/school/$schoolId/results"
+          schoolId={schoolId}
+          title="See results"
+          hint="Marks, strong topics and topics to fix for each student."
+          icon={BarChart3}
+        />
+      </div>
       <Link
         to="/school/$schoolId/own-papers"
         params={{ schoolId }}
-        className="flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-4 text-base font-semibold"
+        className={`${linkButton.plain} w-full`}
       >
+        <FileUp aria-hidden="true" className="size-5 text-emerald-700" />
         Or use your own paper
       </Link>
     </div>
   )
   const demoBox = o.school.isDemo ? (
-    <Card className="space-y-2 border-amber-400 bg-amber-50">
-      <p className="text-base font-bold text-amber-950">
+    <Card className="space-y-2 border-amber-300! bg-amber-50!">
+      <p className="font-display text-lg font-bold text-amber-950">
         This is the demo school
       </p>
       <p className="text-base text-amber-950">
@@ -104,12 +131,15 @@ function SchoolHome() {
 
   if (o.role === 'student' || o.role === 'parent') {
     return (
-      <Card>
-        <h1 className="mb-2 text-2xl font-bold">Hello, {o.me.name}</h1>
-        <p className="text-base text-slate-700">
-          Your exams and results will show here when your school sets them up.
-        </p>
-      </Card>
+      <div className="space-y-4">
+        <Welcome name={o.me.name} school={o.school.name} />
+        <Card>
+          <h1 className="mb-2 text-2xl font-bold">Hello, {o.me.name}</h1>
+          <p className="text-base text-slate-700">
+            Your exams and results will show here when your school sets them up.
+          </p>
+        </Card>
+      </div>
     )
   }
 
@@ -129,10 +159,11 @@ function SchoolHome() {
       })),
     )
     return (
-      <div className="space-y-4">
+      <div className="space-y-5">
+        <Welcome name={o.me.name} school={o.school.name} />
         {demoBox}
         {bigActions}
-        <h1 className="text-2xl font-bold">Your classes</h1>
+        <h2 className="pt-2 text-xl font-bold">Your classes</h2>
         {rows.length === 0 ? (
           <Card>
             <p className="text-base">
@@ -143,7 +174,7 @@ function SchoolHome() {
         {rows.map((r) => (
           <Card key={r.key}>
             <div className="flex flex-wrap items-center gap-2">
-              <b className="text-lg">{r.title}</b>
+              <b className="font-display text-lg">{r.title}</b>
               {r.isClassTeacher ? (
                 <Chip tone="good">You are the class teacher</Chip>
               ) : null}
@@ -156,8 +187,9 @@ function SchoolHome() {
               to="/school/$schoolId/students"
               params={{ schoolId }}
               search={{ section: r.key }}
-              className="mt-3 inline-flex min-h-12 items-center rounded-lg border border-slate-300 px-4 text-base font-semibold"
+              className={`${linkButton.plain} mt-4`}
             >
+              <Users aria-hidden="true" className="size-5 text-slate-500" />
               See students
             </Link>
           </Card>
@@ -213,61 +245,124 @@ function SchoolHome() {
     },
   ]
   const next = steps.findIndex((s) => !s.done)
+  const doneCount = steps.filter((s) => s.done).length
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
+      <Welcome name={o.me.name} school={o.school.name} />
       {demoBox}
       {o.role === 'school_admin' ? bigActions : null}
-      <h1 className="text-2xl font-bold">
+      <h2 className="pt-2 text-xl font-bold">
         {o.role === 'principal' ? 'Your school' : 'Your school set-up'}
-      </h1>
-      <div className="grid grid-cols-3 gap-2 text-center">
-        <Stat n={o.counts.classes} label="Classes" />
-        <Stat n={o.counts.teachers} label="Teachers" />
-        <Stat n={o.counts.students} label="Students" />
+      </h2>
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        <Stat
+          n={o.counts.classes}
+          label="Classes"
+          icon={<LayoutGrid className="size-4" />}
+        />
+        <Stat
+          n={o.counts.teachers}
+          label="Teachers"
+          icon={<UserRound className="size-4" />}
+        />
+        <Stat
+          n={o.counts.students}
+          label="Students"
+          icon={<Users className="size-4" />}
+        />
       </div>
       {o.role === 'school_admin' ? (
-        <ol className="space-y-2">
-          {steps.map((s, i) => (
-            <li key={s.label}>
-              <Link
-                to={`/school/$schoolId/${s.to}` as '/school/$schoolId/terms'}
-                params={{ schoolId }}
-                className={`flex min-h-14 items-center gap-3 rounded-xl border px-4 py-3 ${i === next ? 'border-emerald-700 bg-emerald-50' : 'border-slate-300 bg-white'}`}
-              >
-                <span
-                  aria-hidden="true"
-                  className={`flex size-8 shrink-0 items-center justify-center rounded-full text-base font-bold ${s.done ? 'bg-emerald-700 text-white' : 'border border-slate-400 text-slate-700'}`}
+        <Card className="space-y-4">
+          <div>
+            <div className="flex items-baseline justify-between gap-2">
+              <p className="font-display text-base font-bold">
+                Getting your school ready
+              </p>
+              <p className="text-sm font-semibold text-slate-600 tabular-nums">
+                {doneCount} of {steps.length} done
+              </p>
+            </div>
+            <div
+              aria-hidden="true"
+              className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100"
+            >
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700 transition-all"
+                style={{ width: `${(doneCount / steps.length) * 100}%` }}
+              />
+            </div>
+          </div>
+          <ol className="space-y-2">
+            {steps.map((s, i) => (
+              <li key={s.label}>
+                <Link
+                  to={`/school/$schoolId/${s.to}` as '/school/$schoolId/terms'}
+                  params={{ schoolId }}
+                  className={`group flex min-h-14 items-center gap-3 rounded-xl border px-3.5 py-3 text-slate-900! transition-colors ${i === next ? 'border-emerald-600 bg-emerald-50/70 ring-1 ring-emerald-600/20' : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'}`}
                 >
-                  {s.done ? '✓' : i + 1}
-                </span>
-                <span className="min-w-0">
-                  <span className="block text-base font-semibold">
-                    {s.label}
+                  <span
+                    aria-hidden="true"
+                    className={`flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${s.done ? 'bg-emerald-600 text-white' : i === next ? 'bg-white text-emerald-800 ring-2 ring-emerald-600' : 'bg-white text-slate-500 ring-1 ring-slate-300'}`}
+                  >
+                    {s.done ? (
+                      <Check className="size-4" strokeWidth={3} />
+                    ) : (
+                      i + 1
+                    )}
                   </span>
-                  {s.hint ? (
-                    <span className="block text-sm text-slate-600">
-                      {s.hint}
+                  <span className="min-w-0 flex-1">
+                    <span
+                      className={`block text-base font-semibold ${s.done ? 'text-slate-500' : ''}`}
+                    >
+                      {s.label}
                     </span>
-                  ) : null}
-                </span>
-                <span className="sr-only">
-                  {s.done ? 'Done' : 'Not done yet'}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
+                    {s.hint ? (
+                      <span className="block text-sm text-slate-600">
+                        {s.hint}
+                      </span>
+                    ) : null}
+                  </span>
+                  <span className="sr-only">
+                    {s.done ? 'Done' : 'Not done yet'}
+                  </span>
+                  <ChevronRight
+                    aria-hidden="true"
+                    className="size-5 shrink-0 text-slate-400 group-hover:text-slate-600"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </Card>
       ) : null}
     </div>
   )
 }
 
-function Stat({ n, label }: { n: number; label: string }) {
+function greeting(): string {
+  const h = new Date().getHours()
+  return h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening'
+}
+
+function Welcome({ name, school }: { name: string; school: string }) {
+  const first = name.split(/\s+/)[0] || name
   return (
-    <div className="rounded-xl border border-slate-300 bg-white py-3">
-      <p className="text-2xl font-bold">{n}</p>
-      <p className="text-sm text-slate-700">{label}</p>
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-800 to-teal-900 px-5 py-6 text-white shadow-lg shadow-emerald-900/20 sm:px-7 sm:py-8">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-16 -right-10 size-48 rounded-full bg-white/10 blur-2xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-20 left-1/3 size-56 rounded-full bg-teal-400/20 blur-3xl"
+      />
+      <p className="relative text-sm font-semibold tracking-wide text-emerald-100/90 uppercase">
+        {school}
+      </p>
+      <p className="font-display relative mt-1 text-2xl font-bold tracking-tight sm:text-3xl">
+        {greeting()}, {first}
+      </p>
     </div>
   )
 }
@@ -277,6 +372,8 @@ function BigAction({
   schoolId,
   title,
   hint,
+  icon: Icon,
+  lead = false,
 }: {
   to:
     | '/school/$schoolId/exams/new'
@@ -285,15 +382,35 @@ function BigAction({
   schoolId: string
   title: string
   hint: string
+  icon: LucideIcon
+  lead?: boolean
 }) {
   return (
     <Link
       to={to}
       params={{ schoolId }}
-      className="flex min-h-24 flex-col justify-center rounded-2xl border-2 border-emerald-700 bg-emerald-50 px-5 py-4 shadow-sm hover:bg-emerald-100"
+      className={`group flex min-h-24 items-center gap-4 rounded-2xl border p-4 transition-all sm:flex-col sm:items-start sm:gap-3 sm:p-5 ${lead ? 'border-emerald-700 bg-emerald-700 text-white! shadow-md shadow-emerald-900/20 hover:bg-emerald-800' : 'border-slate-200 bg-white text-slate-900! shadow-[0_1px_2px_rgba(16,24,40,0.04),0_1px_3px_rgba(16,24,40,0.06)] hover:border-emerald-300 hover:shadow-md'}`}
     >
-      <span className="text-2xl font-bold">{title} ›</span>
-      <span className="text-base text-slate-800">{hint}</span>
+      <span
+        aria-hidden="true"
+        className={`flex size-12 shrink-0 items-center justify-center rounded-xl ${lead ? 'bg-white/15 text-white' : 'bg-emerald-50 text-emerald-700'}`}
+      >
+        <Icon className="size-6" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="font-display block text-lg leading-snug font-bold">
+          {title}
+        </span>
+        <span
+          className={`mt-0.5 block text-[15px] leading-snug ${lead ? 'text-emerald-50/90' : 'text-slate-600'}`}
+        >
+          {hint}
+        </span>
+      </span>
+      <ChevronRight
+        aria-hidden="true"
+        className={`size-5 shrink-0 transition-transform group-hover:translate-x-0.5 sm:hidden ${lead ? 'text-white/80' : 'text-slate-400'}`}
+      />
     </Link>
   )
 }

@@ -52,7 +52,7 @@ const Pick = ({
 }) => (
   <label
     htmlFor={id}
-    className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center rounded-lg border border-slate-300 bg-white px-4 text-base font-semibold text-slate-800 hover:bg-slate-50"
+    className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-base font-semibold text-slate-800 hover:bg-slate-50"
   >
     <input
       id={id}

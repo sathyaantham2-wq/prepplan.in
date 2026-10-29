@@ -307,7 +307,7 @@ function SchoolScreen({
       >
         <option value="CBSE">CBSE</option>
       </Select>
-      <div className="space-y-2 rounded-lg border border-slate-300 p-3">
+      <div className="space-y-2 rounded-xl border border-slate-200 p-3">
         <p className="text-base">
           Student information is used only for your school’s exams and reports.
           It is never used for advertising or to train AI.

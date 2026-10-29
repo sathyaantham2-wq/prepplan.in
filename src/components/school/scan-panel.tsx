@@ -29,7 +29,7 @@ const pagesText = (n: Array<number>) =>
   `${n.length === 1 ? 'page' : 'pages'} ${n.join(', ')}`
 
 const PICK =
-  'inline-flex min-h-12 cursor-pointer items-center justify-center rounded-lg border border-slate-300 bg-white px-4 text-base font-semibold text-slate-800 focus-within:ring-2 focus-within:ring-emerald-700/40 hover:bg-slate-50'
+  'inline-flex min-h-12 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-base font-semibold text-slate-800 focus-within:ring-2 focus-within:ring-emerald-700/40 hover:bg-slate-50'
 
 function FilePick({
   label,
@@ -265,7 +265,7 @@ export function ScanPanel({ base }: { base: string }) {
               {students.map((s) => (
                 <li
                   key={s.schoolStudentId}
-                  className="space-y-2 rounded-lg border border-slate-300 px-3 py-3"
+                  className="space-y-2 rounded-xl border border-slate-200 px-3 py-3"
                   data-state={s.state}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">

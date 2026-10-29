@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AuthShell } from '../../components/school/auth-shell'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { GoogleSchoolButton } from '../../components/school/google-button'
 import { Btn, Card, Notice, TextInput } from '../../components/school/ui'
@@ -50,15 +51,15 @@ function SchoolSignUp() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-md px-4 py-8" data-no-sound>
-      <p className="text-sm font-semibold tracking-wide text-emerald-800 uppercase">
-        PrepPlan for Schools
-      </p>
-      <h1 className="mt-1 mb-2 text-3xl font-bold">Start with your school</h1>
-      <p className="mb-5 text-base text-slate-700">
-        Make question papers from your syllabus and see how every student did.
-        It takes about five minutes.
-      </p>
+    <AuthShell
+      title="Start with your school"
+      intro={
+        <>
+          Make question papers from your syllabus and see how every student did.
+          It takes about five minutes.
+        </>
+      }
+    >
       <Card className="space-y-4">
         <GoogleSchoolButton label="Continue with Google" />
         <p className="text-center text-base text-slate-600">
@@ -133,6 +134,6 @@ function SchoolSignUp() {
         You become the school office. You add your teachers and students
         yourself. Students and teachers cannot sign up on their own.
       </p>
-    </main>
+    </AuthShell>
   )
 }

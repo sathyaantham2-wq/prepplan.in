@@ -122,7 +122,7 @@ function ClassView({
           {c.buckets.map((b) => (
             <div
               key={b.label}
-              className="rounded-lg border border-slate-300 py-2"
+              className="rounded-xl border border-slate-200 py-2"
             >
               <b className="text-lg">{b.students}</b>{' '}
               <span className="text-slate-700">{b.label}</span>
@@ -236,7 +236,7 @@ function ClassView({
                 to="/school/$schoolId/results/$examId"
                 params={{ schoolId, examId }}
                 search={{ student: s.studentId }}
-                className="flex min-h-14 items-center justify-between gap-3 rounded-lg border border-slate-300 px-3 py-2"
+                className="flex min-h-14 items-center justify-between gap-3 rounded-xl border border-slate-200 px-3 py-2 text-slate-900 transition-colors hover:border-emerald-300 hover:bg-emerald-50/40"
               >
                 <span className="min-w-0">
                   <span className="block truncate text-base font-semibold">
@@ -333,7 +333,7 @@ function Report({
         {s.toFix.map((t) => (
           <div
             key={t.topic}
-            className="space-y-1 rounded-lg border border-slate-300 p-3"
+            className="space-y-1 rounded-xl border border-slate-200 p-3"
           >
             <p className="flex flex-wrap items-center gap-2 text-base font-bold">
               {t.topic}

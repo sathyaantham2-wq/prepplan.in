@@ -698,3 +698,15 @@ Decisions (owner, 2026-10-29): (1) a school starts itself with Gmail or an e-mai
 - **Not marked yet.** Marking these sheets is step 4 (AI marking), which waits for the owner's real-photo report.
 
 **Production:** migration 0089 is **not** run on production and nothing is pushed. Both wait for the owner's go-ahead. As with step 3's first part, uploads need the Supabase bucket settings in Vercel.
+
+### 11.12 A new look for the school screens (2026-10-30, owner: "better UI, world-class design")
+
+One design pass over the whole school area, done in the shared pieces so every screen follows. No wording, button names or rules changed (the browser tests find screens by those words and still pass).
+- **Look:** a calm light-grey page, white cards with a soft shadow and rounded corners, one dark green for actions; Manrope for text and Plus Jakarta Sans for headings (both already loaded by the app); a green focus ring on every control; checkboxes in green.
+- **Frame:** the header carries a PrepPlan for Schools mark, the school's name and who is signed in (on a phone, Sign out becomes an icon so the school's name fits); wide screens get tabs with icons, phones a bottom bar with icons that respects the iPhone home bar.
+- **Home:** a welcome banner, the three big actions as icon cards (the first one filled), the figures with icons, and the set-up steps with a progress bar ("5 of 7 done").
+- **Sign-in, sign-up, first password:** one frame (`src/components/school/auth-shell.tsx`); on a wide screen a green panel beside the form says what the product does. The student/staff choice on sign-in is a segmented control.
+- **New shared pieces** in `src/components/school/ui.tsx`: `PageHeader`, `Stat`, `EmptyState`, `Loading`, `linkButton`; `Notice` has icons, `Chip` has a red tone.
+- **A real fix found on the way:** the app's global link colour (unlayered CSS) beat every colour class on a link, which is why the school code had to force colours with `!`. In the school area it now steps back (`color: revert-layer`), so a link's own colour works.
+
+Screens of the new look: `docs/schools/screens-design/` (phone 390 px; `26-admin-home-desktop.png` for a wide screen).

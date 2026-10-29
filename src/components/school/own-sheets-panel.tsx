@@ -194,7 +194,7 @@ export function AnswerSheets({ base }: { base: string }) {
           }}
         />
       </label>
-      <details className="rounded-lg border border-slate-300 px-3 py-2">
+      <details className="rounded-xl border border-slate-200 px-3 py-2">
         <summary className="cursor-pointer text-base font-medium">
           No cover pages? Upload one file per student
         </summary>
@@ -260,7 +260,7 @@ export function AnswerSheets({ base }: { base: string }) {
           {d.unplaced.map((u) => (
             <div
               key={u.id}
-              className="space-y-2 rounded-lg border border-slate-300 p-3"
+              className="space-y-2 rounded-xl border border-slate-200 p-3"
             >
               <p className="text-base">
                 {u.name ?? 'A page'}

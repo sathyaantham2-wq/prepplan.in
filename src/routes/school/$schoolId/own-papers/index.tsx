@@ -1,7 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { useSchool } from '../../../../components/school/context'
-import { Card, Chip, Notice } from '../../../../components/school/ui'
+import { FileUp } from 'lucide-react'
+import {
+  Chip,
+  EmptyState,
+  Loading,
+  Notice,
+  cardClass,
+  linkButton,
+} from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 
 export const Route = createFileRoute('/school/$schoolId/own-papers/')({
@@ -48,28 +56,28 @@ function OwnPapers() {
       <Link
         to="/school/$schoolId/own-papers/new"
         params={{ schoolId }}
-        className="flex min-h-14 items-center justify-center rounded-lg bg-emerald-700 px-4 text-base font-semibold [&_a]:text-white!"
+        className={`${linkButton.primary} min-h-14 w-full`}
       >
-        <span className="text-white">Use your own paper</span>
+        <FileUp aria-hidden="true" className="size-5" />
+        Use your own paper
       </Link>
       {error ? <Notice kind="error">{error}</Notice> : null}
-      {rows === null && !error ? (
-        <p className="text-base text-slate-700">Loading…</p>
-      ) : null}
+      {rows === null && !error ? <Loading /> : null}
       {rows?.length === 0 ? (
-        <Card>
-          <p className="text-base">No papers yet.</p>
-        </Card>
+        <EmptyState icon={<FileUp className="size-6" />} title="No papers yet.">
+          A paper you upload is listed here while it is read, checked and
+          approved.
+        </EmptyState>
       ) : null}
       {rows?.map((r) => (
         <Link
           key={r.id}
           to="/school/$schoolId/own-papers/$paperId"
           params={{ schoolId, paperId: r.id }}
-          className="block rounded-xl border border-slate-300 bg-white p-4 hover:bg-slate-50"
+          className={`${cardClass} block p-4! text-slate-900 transition-colors hover:border-emerald-300`}
         >
           <span className="flex flex-wrap items-center gap-2">
-            <b className="text-lg">{r.title}</b>
+            <b className="font-display text-lg">{r.title}</b>
             <Chip tone={STATUS[r.status]?.tone ?? 'plain'}>
               {STATUS[r.status]?.text ?? r.status}
             </Chip>
