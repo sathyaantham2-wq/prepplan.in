@@ -1,0 +1,315 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 1,
+  "name": "Geometric Twins"
+ },
+ "source_code": "gegp201",
+ "concepts": [
+  {
+   "code": "C7M-1.1",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A carpenter in Mysuru keeps three templates: a circular coaster of radius 4.5 cm, a rectangular tray 32 cm long and 20 cm wide, and an angle-shaped corner guard with arms AB = 6 cm and BC = 10 cm and ∠ABC = 75°. His helper brings four pieces: (i) a coaster of diameter 9 cm; (ii) a tray 20 cm long and 32 cm wide, lying turned through a right angle; (iii) a corner guard with arms 10 cm and 6 cm and 75° between them; (iv) a corner guard with arms 6 cm and 10 cm and 105° between them. The helper says, 'All four pieces match their templates, because each has the same lengths as its template.' (a) Decide whether each of pieces (i), (ii) and (iii) is congruent to its template, naming the measurement that decides it. (b) Is piece (iv) congruent to its template? (c) Evaluate the helper's statement and say what he must check for a corner guard besides the arm lengths.",
+     "a": "(a) (i) Congruent: a diameter of 9 cm means a radius of 4.5 cm, and a circle is fixed by its radius. (ii) Congruent: the two sides are 32 cm and 20 cm, the same as the template; turning a figure does not change it. (iii) Congruent: flipped over, it has arms of 6 cm and 10 cm with 75° between them, and flipping is allowed when superimposing. (b) No: the arms are the same but the angle between them is 105°, not 75°, so it will not fit over the template. (c) The helper is wrong. For circles and rectangles the lengths are enough, but for the corner guard equal arm lengths alone allow many different figures; he must also check that the angle between the arms is 75°.",
+     "s": [
+      [
+       "(i) congruent: diameter 9 cm gives radius 4.5 cm, the radius fixes a circle",
+       1
+      ],
+      [
+       "(ii) congruent: same two sides 32 cm and 20 cm, turning allowed",
+       1
+      ],
+      [
+       "(iii) congruent because flipping is allowed and arms 6 cm, 10 cm with 75° between match; (iv) not congruent because the angle is 105°, not 75°",
+       1
+      ],
+      [
+       "(c) verdict: the helper is wrong, with the reason that arm lengths alone do not fix the corner guard and the angle between the arms (75°) must also be checked",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 1-4"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two triangular metal plates are cut for a bridge model. ΔPQR has PQ = 7 cm, QR = 9 cm and RP = 11 cm. ΔLMN has LM = 9 cm, MN = 11 cm and NL = 7 cm. Kabir writes 'ΔPQR ≅ ΔLMN by SSS'. (a) Show that Kabir's statement claims a pair of sides are equal that are not equal. (b) Work out which vertex of ΔLMN matches each vertex of ΔPQR, and write the congruence correctly. (c) In ΔLMN, ∠M = 48°. Which angle of ΔPQR must also be 48°? Give the reason. (d) Write two more correct ways of expressing the same congruence.",
+     "a": "(a) By the order of letters, ΔPQR ≅ ΔLMN says PQ = LM, but PQ = 7 cm and LM = 9 cm. (b) PQ = NL = 7 cm, QR = LM = 9 cm and RP = MN = 11 cm. Q is on both the 7 cm and 9 cm sides, and so is L, so Q matches L; then P matches N and R matches M. ΔPQR ≅ ΔNLM (SSS). (c) ∠R = 48°, because R corresponds to M and corresponding angles of congruent triangles are equal. (d) Any two of ΔQRP ≅ ΔLMN, ΔRPQ ≅ ΔMNL, ΔPRQ ≅ ΔNML, ΔQPR ≅ ΔLNM, ΔRQP ≅ ΔMLN.",
+     "s": [
+      [
+       "(a) shows Kabir's order means PQ = LM, and 7 cm ≠ 9 cm",
+       1
+      ],
+      [
+       "(b) matches the sides (7, 9, 11) and the vertices P↔N, Q↔L, R↔M, writing ΔPQR ≅ ΔNLM",
+       1
+      ],
+      [
+       "(c) ∠R = 48°, with the reason that R corresponds to M",
+       1
+      ],
+      [
+       "(d) two more correct orderings, e.g. ΔQRP ≅ ΔLMN and ΔRPQ ≅ ΔMNL",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 6-8"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A painter's A-frame stand has two equal legs, AB = AC = 150 cm, hinged at the top A, with the feet B and C on the floor. The angle at the hinge is ∠BAC = 40°. A cord is tied from A straight to M, the point on the floor exactly midway between the feet, so BM = MC. (a) Show that ΔABM ≅ ΔACM, naming the condition and the three pairs of equal parts. (b) Find ∠BAM. (c) Show that the cord meets the floor at a right angle, that is ∠AMB = 90°. (d) Find ∠ABM.",
+     "a": "(a) AB = AC (equal legs), BM = CM (M is the midpoint) and AM is common, so ΔABM ≅ ΔACM by SSS. (b) ∠BAM and ∠CAM are corresponding angles, so they are equal; they make up ∠BAC = 40°, so ∠BAM = 20°. (c) ∠AMB = ∠AMC (corresponding angles), and together they make a straight angle of 180°, so each is 90°. (d) In ΔABM, ∠ABM = 180° - 20° - 90° = 70°.",
+     "s": [
+      [
+       "(a) SSS with AB = AC, BM = CM and AM common, written ΔABM ≅ ΔACM",
+       1
+      ],
+      [
+       "(b) ∠BAM = ∠CAM as corresponding angles, so ∠BAM = 40° ÷ 2 = 20°",
+       1
+      ],
+      [
+       "(c) ∠AMB = ∠AMC and they add to 180°, so ∠AMB = 90°",
+       1
+      ],
+      [
+       "(d) angle sum in ΔABM: ∠ABM = 180° - 20° - 90° = 70°",
+       1
+      ]
+     ],
+     "p": "pp. 6-9"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For a class banner, Tanvi must phone the measurements of a triangular pennant ABC to her friend, who will cut an exact copy. She has three sets of measurements. Set 1: AB = 8 cm, BC = 6 cm and ∠B = 50°. Set 2: AB = 8 cm, AC = 6 cm and ∠B = 40°. Set 3: ∠A = 40°, ∠B = 60° and ∠C = 80°. (a) For Set 1 and for Set 3, say whether the friend is sure to cut a copy congruent to the pennant, with the reason. (b) Explain, by describing how the friend would construct the triangle from Set 2 (base AB first, then the 40° line from B, then the arc from A), why Set 2 can give two triangles that are not congruent. (c) Which set should Tanvi phone? For Set 2, which angle should she measure instead of ∠B so that the two sides and that angle fix the pennant?",
+     "a": "(a) Set 1: yes; ∠B is the angle between AB and BC, so this is two sides and the included angle (SAS). Set 3: no; triangles with angles 40°, 60° and 80° can have the same shape but different sizes, so equal angles do not fix the size. (b) Draw AB = 8 cm and a line from B making 40° with AB. An arc of radius 6 cm from A cuts this line at two different points (one nearer B, one farther away), so two triangles with AB = 8 cm, AC = 6 cm and ∠B = 40° can be drawn, and they are not congruent (their third sides are about 3.0 cm and 9.2 cm). The 40° angle is not between the two given sides, so this SSA data does not guarantee congruence. (c) She should phone Set 1. For Set 2 she should measure ∠A, the angle between AB and AC, so the data becomes SAS.",
+     "s": [
+      [
+       "(a) Set 1 fixes the pennant by SAS because ∠B lies between AB and BC",
+       1
+      ],
+      [
+       "(a) Set 3 does not fix it: same angles give the same shape but possibly a different size (AAA)",
+       1
+      ],
+      [
+       "(b) the arc of radius 6 cm from A cuts the 40° line at two points, giving two non-congruent triangles, so SSA fails",
+       1
+      ],
+      [
+       "(c) decision: phone Set 1; for Set 2 measure ∠A, the included angle between AB and AC",
+       1
+      ]
+     ],
+     "p": "pp. 9-12"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three triangular glass panes are listed in a shop register. Pane 1, ΔABC: ∠A = 58°, ∠B = 47° and BC = 9 cm. Pane 2, ΔPQR: ∠P = 75°, ∠Q = 58° and QR = 9 cm. Pane 3, ΔLMN: ∠L = 47°, ∠M = 75° and LN = 9 cm. The shopkeeper says, 'All three panes have angles 47°, 58° and 75° and a 9 cm side, so all three are congruent.' (a) Find the third angle of each pane. (b) For each pane, name the angle that the 9 cm side lies opposite. (c) Which two panes are congruent? Name the condition and write the congruence with the vertices in the correct order. (d) Evaluate the shopkeeper's claim for the remaining pane.",
+     "a": "(a) ∠C = 180° - 58° - 47° = 75°; ∠R = 180° - 75° - 58° = 47°; ∠N = 180° - 47° - 75° = 58°. (b) Pane 1: BC is opposite ∠A = 58°. Pane 2: QR is opposite ∠P = 75°. Pane 3: LN is opposite ∠M = 75°. (c) Panes 2 and 3. Matching equal angles: P ↔ M (75°), Q ↔ N (58°), R ↔ L (47°), and QR = NL = 9 cm lies between the 58° and 47° angles in both, so ΔPQR ≅ ΔMNL by ASA (or AAS using the given parts). (d) The claim is wrong for Pane 1. Its 9 cm side is opposite the 58° angle, while in Panes 2 and 3 it is opposite the 75° angle, so the equal side is not in the matching position and no condition applies. Pane 1 has the same shape but is a different size (in Pane 2 the side opposite 58° is only about 7.9 cm).",
+     "s": [
+      [
+       "(a) third angles by the angle sum: ∠C = 75°, ∠R = 47°, ∠N = 58°",
+       1
+      ],
+      [
+       "(b) the 9 cm side is opposite 58° in Pane 1 and opposite 75° in Panes 2 and 3",
+       1
+      ],
+      [
+       "(c) Panes 2 and 3 congruent by ASA/AAS, written ΔPQR ≅ ΔMNL",
+       1
+      ],
+      [
+       "(d) verdict: claim wrong for Pane 1, because its 9 cm side is not in the corresponding position (equal angles alone do not give congruence)",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 14-16"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "On level ground, three 5 m ladders lean against vertical walls (each wall meets the ground at a right angle). Ladder 1 has its foot 2.5 m from its wall and makes an angle of 60° with the ground. Ladder 2 also has its foot 2.5 m from its wall. Ladder 3 touches its wall at a point 2.5 m above the ground. A painter says, 'Ladder 3 touches the wall much lower, so its triangle cannot be congruent to the triangle of Ladder 1.' (a) Show that the triangles formed by Ladders 1 and 2 with their walls and the ground are congruent, and find the angle Ladder 2 makes with the ground and with the wall. (b) Is the triangle of Ladder 3 congruent to the triangle of Ladder 1? Say which parts match. (c) Find the angle Ladder 3 makes with the ground. (d) RHS gives two sides and an angle that is not between them, yet it guarantees congruence while SSA in general does not. Explain why, using the construction of a right triangle with a given hypotenuse and side.",
+     "a": "(a) Both have a right angle at the wall, the ladder (5 m) as hypotenuse and the ground side 2.5 m, so they are congruent by RHS. Ladder 2 makes 60° with the ground, and with the wall 180° - 90° - 60° = 30°. (b) Yes. It has a right angle, hypotenuse 5 m and a side 2.5 m (along the wall), so it is congruent to Ladder 1's triangle by RHS. Its 2.5 m wall side matches Ladder 1's 2.5 m ground side, so its foot matches Ladder 1's top and its top matches Ladder 1's foot. The painter is wrong: the triangle is the same, only turned. (c) The angle at Ladder 3's foot corresponds to the angle at Ladder 1's top, which is 30°. (d) Draw the given side and a line perpendicular to it at one end; an arc of the hypotenuse's length from the other end meets the perpendicular line once above and once below. The two triangles are mirror images of each other, so they are congruent; there is no second, different triangle, which is what makes SSA fail in general.",
+     "s": [
+      [
+       "(a) RHS for Ladders 1 and 2 (right angle, hypotenuse 5 m, side 2.5 m) and Ladder 2's angles 60° with the ground and 30° with the wall",
+       1
+      ],
+      [
+       "(b) Ladder 3 congruent by RHS, with its 2.5 m wall side matching Ladder 1's 2.5 m ground side, so the painter is wrong",
+       1
+      ],
+      [
+       "(c) angle with the ground = 30°, as it corresponds to the top angle of Ladder 1",
+       1
+      ],
+      [
+       "(d) the arc meets the perpendicular above and below, giving mirror-image triangles that are congruent, so no non-congruent second triangle exists",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 16-17"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A cycle-wheel maker joins the centre O of a wheel to points on the rim with equal, equally spaced spokes, and fixes a straight rod between the ends of every two neighbouring spokes, so each pair of neighbouring spokes and its rod form a triangle OBC with OB = OC. (a) With 8 spokes, find ∠BOC and the angles ∠OBC and ∠OCB, giving the reason the last two are equal. (b) Find the same three angles for 12 spokes. (c) A customer wants each angle between a rod and a spoke to be 80°. How many spokes are needed? (d) Can a wheel be made in this way with each such angle equal to 50°? Justify.",
+     "a": "(a) ∠BOC = 360° ÷ 8 = 45°. OB = OC, so the angles opposite them are equal: ∠OBC = ∠OCB = (180° - 45°) ÷ 2 = 67.5°. (b) ∠BOC = 360° ÷ 12 = 30°, so ∠OBC = ∠OCB = (180° - 30°) ÷ 2 = 75°. (c) ∠BOC = 180° - 2 × 80° = 20°, so the number of spokes = 360° ÷ 20° = 18. (d) No. ∠BOC would be 180° - 2 × 50° = 80°, and 360° ÷ 80° = 4.5 is not a whole number of spokes.",
+     "s": [
+      [
+       "(a) ∠BOC = 45°, base angles equal because they are opposite the equal spokes OB = OC, each 67.5°",
+       1
+      ],
+      [
+       "(b) 12 spokes: ∠BOC = 30°, base angles 75° each",
+       1
+      ],
+      [
+       "(c) ∠BOC = 20°, so 360 ÷ 20 = 18 spokes",
+       1
+      ],
+      [
+       "(d) No: centre angle 80° and 360 ÷ 80 = 4.5 is not a whole number",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ],
+     "p": "pp. 18-21"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tile pattern is made of an equilateral triangle ABC and an isosceles triangle ACD drawn on the side AC, on the opposite side of AC from B, with CA = CD and ∠ACD = 100°. B and D are joined. (a) Find ∠CAD and ∠BAD. (b) Show that ΔBCD is isosceles and find ∠CBD and ∠CDB. (c) Find ∠ABD and ∠ADB. (d) Meena says, 'In ΔABD, AB = AD.' Use your angles to decide whether she is right.",
+     "a": "(a) In ΔACD, CA = CD, so ∠CAD = ∠CDA = (180° - 100°) ÷ 2 = 40°. ∠BAC = 60° (equilateral), so ∠BAD = 60° + 40° = 100°. (b) CB = CA (equilateral) and CA = CD, so CB = CD and ΔBCD is isosceles. ∠BCD = 60° + 100° = 160°, so ∠CBD = ∠CDB = (180° - 160°) ÷ 2 = 10°. (c) ∠ABD = 60° - 10° = 50° and ∠ADB = 40° - 10° = 30° (check: 50° + 100° + 30° = 180°). (d) She is wrong. If AB = AD, the angles opposite them, ∠ADB and ∠ABD, would be equal, but they are 30° and 50°.",
+     "s": [
+      [
+       "(a) ∠CAD = 40° from the equal sides CA = CD, and ∠BAD = 60° + 40° = 100°",
+       1
+      ],
+      [
+       "(b) CB = CA = CD so ΔBCD is isosceles; ∠BCD = 160°, ∠CBD = ∠CDB = 10°",
+       1
+      ],
+      [
+       "(c) ∠ABD = 50° and ∠ADB = 30°",
+       1
+      ],
+      [
+       "(d) verdict: Meena is wrong, because equal sides AB and AD would need equal opposite angles ∠ADB and ∠ABD, but 30° ≠ 50°",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 17-19"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular iron gate ABCD has the top rail AB and the bottom rail DC, with AD and BC the upright sides. E is the midpoint of the top rail AB, and two straight bars are welded from E to the bottom corners D and C. The welder measures ∠AED = 56°. (a) Show that ΔAED ≅ ΔBEC, naming the condition and the three pairs of equal parts. (b) What does this give about the bars ED and EC, and about ∠BEC? (c) Find ∠DEC and the angles ∠EDC and ∠ECD. (d) For a new gate the owner wants the bars to meet at a right angle, ∠DEC = 90°. What must ∠AED be then?",
+     "a": "(a) AE = BE (E is the midpoint), ∠A = ∠B = 90° (angles of a rectangle) and AD = BC (opposite sides of a rectangle), so ΔAED ≅ ΔBEC by SAS. (b) ED = EC and ∠BEC = ∠AED = 56°, as corresponding parts. (c) ∠DEC = 180° - 56° - 56° = 68°. ED = EC, so ∠EDC = ∠ECD = (180° - 68°) ÷ 2 = 56°. (d) ∠AED = ∠BEC and ∠AED + 90° + ∠BEC = 180°, so ∠AED = 90° ÷ 2 = 45°.",
+     "s": [
+      [
+       "(a) SAS with AE = BE, ∠A = ∠B = 90° and AD = BC, written ΔAED ≅ ΔBEC",
+       1
+      ],
+      [
+       "(b) ED = EC and ∠BEC = 56° as corresponding parts",
+       1
+      ],
+      [
+       "(c) ∠DEC = 68° from the straight angle at E, and ∠EDC = ∠ECD = 56° because ED = EC",
+       1
+      ],
+      [
+       "(d) ∠AED = (180° - 90°) ÷ 2 = 45°",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ],
+     "p": "pp. 19-21"
+    }
+   ]
+  }
+ ]
+}

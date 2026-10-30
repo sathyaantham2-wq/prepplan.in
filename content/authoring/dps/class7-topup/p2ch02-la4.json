@@ -1,0 +1,309 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 2,
+  "name": "Operations with Integers"
+ },
+ "source_code": "gegp202",
+ "concepts": [
+  {
+   "code": "C7M-2.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A frog sits at 0 on a number line, with jumps to the right written as positive and jumps to the left as negative. It makes 10 jumps in this order: +2, -4, +6, -8, +10, -12, +14, -16, +18, -20. (a) Find its final position by grouping the jumps in pairs. (b) An 11th jump takes the frog to +7. What is this movement, and in which direction? (c) Without listing every position, decide whether the frog is ever at -9 or at 0 just after one of the 10 jumps, and give a reason for each. (d) A second frog makes the same 10 jumps in the reverse order, starting with -20. Where does it finish? Give a reason.",
+     "a": "(a) Each pair gives (+2) + (-4) = -2, (+6) + (-8) = -2, and so on, so 5 pairs give 5 x (-2) = -10. (b) P = a + b: -10 + b = 7, so b = 17; the jump is 17 units to the right. (c) Never at -9: every jump is an even number and the frog starts at 0, so every position is even, and -9 is odd. Never at 0: after each pair of jumps the position is -2, -4, -6, -8 or -10, and each following positive jump (+6, +10, +14, +18) is longer than the distance back to 0, so after an odd number of jumps it is 2, 4, 6, 8 or 10; it is never 0. (d) It also finishes at -10, because the final position is the sum of the same ten movements and changing the order of adding does not change the sum.",
+     "s": [
+      [
+       "(a) jumps paired as five pairs of -2, final position -10",
+       1
+      ],
+      [
+       "(b) -10 + b = 7 used to get the movement +17, that is 17 units to the right",
+       1
+      ],
+      [
+       "(c) never at -9 because all jumps are even so every position is even; never at 0 because after pairs it is -2, -4, ..., -10 and after the next jump it is 2, 4, ..., 10",
+       1
+      ],
+      [
+       "(d) finishes at -10, with the reason that the same movements are added and the order of adding does not change the sum",
+       1
+      ]
+     ],
+     "p": "pp. 26-27"
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In the token model a green token is +1 and a red token is -1, a positive multiplier places tokens into an empty bag and a negative multiplier removes them. Arjun uses the set '2 green and 5 red tokens' to stand for -3. (a) He places this set into an empty bag 4 times. How many green and red tokens are in the bag, and what integer do they show? Which product is this? (b) He now finds (-4) x (-3) by removing the same set from an empty bag 4 times. Describe the fewest zero pairs he must put in each time, what is left each time, and the final result. (c) Leela removes the simpler set '3 red tokens' 4 times instead. Putting in the fewest zero pairs each time, how many does she put in altogether, and what does she get? (d) Arjun says, 'Doing it this way, I put in more zero pairs than Leela, so my answer must be bigger.' Is he right? Explain.",
+     "a": "(a) 8 green and 20 red; 8 zero pairs cancel, leaving 12 red, that is -12. This is 4 x (-3) = -12. (b) The bag is empty, so each time he puts in 5 zero pairs (5 green, 5 red) and removes 2 green and 5 red, leaving 3 green. After 4 times there are 12 green tokens, so (-4) x (-3) = 12. (c) She puts in 3 zero pairs each time, 12 zero pairs altogether, removes 3 red each time and gets 12 green tokens, that is 12. (d) No. Arjun put in 20 zero pairs and Leela 12, but both get 12. A zero pair has value 0, so putting in more zero pairs does not change the value; both sets stand for -3, so the product is the same.",
+     "s": [
+      [
+       "(a) 8 green and 20 red, value -12, recognised as 4 x (-3)",
+       1
+      ],
+      [
+       "(b) 5 zero pairs put in each time, 3 green left each time, final result (-4) x (-3) = 12",
+       1
+      ],
+      [
+       "(c) 12 zero pairs altogether and result 12",
+       1
+      ],
+      [
+       "(d) verdict No: 20 against 12 zero pairs but the same answer 12, because a zero pair is worth 0 and both sets stand for -3",
+       1
+      ]
+     ],
+     "p": "pp. 30-31"
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.3",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Sanya builds the times-(-6) table with the multiplier going down by 1 each line, starting at 3 x (-6) = -18. (a) Write the lines for the multipliers 3, 2, 1, 0, -1, -2, -3, -4 and -5, and state by how much the product changes at each step. (b) Her classmate writes (-5) x (-6) = -30, saying 'two negatives should stay negative'. Use your table to show he is wrong. (c) Without multiplying again, write (-6) x (-5), and find the integer whose product with (-1) is 30. Name the property or rule you use for each. (d) Brahmagupta called positive numbers fortunes and negative numbers debts. A student says the result in (b) follows his rule 'the product of a debt and a fortune is a debt'. Is she right? Name the rule that does fit (b), and use the rules to give the sign and value of (-5) x 6 and of 30 / (-6).",
+     "a": "(a) 3 x (-6) = -18, 2 x (-6) = -12, 1 x (-6) = -6, 0 x (-6) = 0, (-1) x (-6) = 6, (-2) x (-6) = 12, (-3) x (-6) = 18, (-4) x (-6) = 24, (-5) x (-6) = 30. Each time the multiplier goes down by 1, the product goes up by 6. (b) The pattern adds 6 at each step, so after (-4) x (-6) = 24 comes 30, not -30; (-5) x (-6) = 30. (c) (-6) x (-5) = 30 because multiplication of integers is commutative (a x b = b x a). Since (-1) x a = -a, the integer is -30: (-1) x (-30) = 30. (d) No: -5 and -6 are both debts, so the rule that fits (b) is 'the product of two debts is a fortune', giving +30. (-5) x 6 is a debt times a fortune, so it is a debt: -30. 30 / (-6) is the quotient of a fortune and a debt, so it is a debt: -5.",
+     "s": [
+      [
+       "(a) all nine lines correct, ending (-5) x (-6) = 30, with the change stated as +6 per step",
+       1
+      ],
+      [
+       "(b) the pattern used to show (-5) x (-6) = 30, not -30",
+       1
+      ],
+      [
+       "(c) (-6) x (-5) = 30 by commutativity, and -30 found using (-1) x a = -a",
+       1
+      ],
+      [
+       "(d) verdict No; the rule 'the product of two debts is a fortune' named, and (-5) x 6 = -30 and 30 / (-6) = -5 as debts",
+       1
+      ]
+     ],
+     "p": "pp. 32-35"
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A cold-storage room A is cooled from 20 degrees C to -16 degrees C in 9 hours, the temperature falling by the same amount every hour. (a) Write the total change in temperature as an integer. (b) Find the change per hour by turning the division into a missing-factor multiplication. (c) Using division of integers, find after how many hours room A was at 0 degrees C. (d) Room B is cooled from 20 degrees C to -16 degrees C in 12 hours at a steady rate. A worker says, 'Room B cools faster, because its rate is -3 and -3 is greater than -4.' Find room B's rate and decide whether the worker is right.",
+     "a": "(a) Change = -16 - 20 = -36 degrees C. (b) (-36) / 9: 9 x ? = -36, and 9 x (-4) = -36, so the change is -4 degrees C per hour. (c) The temperature must fall by 20 degrees: (-20) / (-4) = 5, so it was 0 degrees C after 5 hours (20 + 5 x (-4) = 0). (d) Room B: (-36) / 12 = -3 degrees C per hour. The worker is wrong: -3 is greater than -4, but the size of the fall per hour is 3 degrees for B and 4 degrees for A, so room A cools faster.",
+     "s": [
+      [
+       "(a) total change -36 degrees C",
+       1
+      ],
+      [
+       "(b) 9 x ? = -36 written and the rate -4 degrees C per hour found",
+       1
+      ],
+      [
+       "(c) (-20) / (-4) = 5, so 0 degrees C after 5 hours",
+       1
+      ],
+      [
+       "(d) room B's rate -3 degrees C per hour and verdict: wrong, because A falls 4 degrees an hour and B only 3, so A cools faster",
+       1
+      ]
+     ],
+     "p": "pp. 38-39",
+     "tags": [
+      "claim_check"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.5",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "An olympiad has 30 questions. A correct answer gets +4 marks, a wrong answer gets -1 mark and an unanswered question gets 0. (a) Priya had 17 correct and 10 wrong answers. Find her score and the number of questions she left. (b) Kabir got the same score as Priya with 16 correct answers. How many of his answers were wrong, and how many did he leave? (c) Their teacher says, 'Two students with the same score must have the same number of correct answers.' Use (a) and (b) to judge this. (d) Ira answered all 30 questions and got 15 correct. She thinks she would have scored more if she had left all her wrong answers blank. Is she right? Compare the two scores.",
+     "a": "(a) 17 x 4 + 10 x (-1) = 68 + (-10) = 58 marks; she left 30 - 27 = 3 questions. (b) 16 x 4 = 64, so his wrong answers gave 58 - 64 = -6, that is 6 wrong answers; he left 30 - 22 = 8. (c) The teacher is wrong: Priya and Kabir both scored 58 with 17 and 16 correct answers. (d) Yes. With 15 wrong her score is 15 x 4 + 15 x (-1) = 60 - 15 = 45; with those 15 left blank it would be 60. She would gain 15 marks, 1 for each wrong answer.",
+     "s": [
+      [
+       "(a) 17 x 4 + 10 x (-1) = 58 and 3 questions left",
+       1
+      ],
+      [
+       "(b) 64 + (-6) = 58 used to get 6 wrong answers and 8 left",
+       1
+      ],
+      [
+       "(c) verdict: the teacher is wrong, with the same score 58 from 17 and 16 correct",
+       1
+      ],
+      [
+       "(d) verdict Yes, scores 45 and 60 compared (a gain of 15)",
+       1
+      ]
+     ],
+     "p": "p. 43",
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A drone films a gorge from the cliff edge. Heights above the cliff edge are positive and below it negative, in metres; the drone's speed and direction are written as one integer, positive going up and negative going down. The drone starts at +36 m and moves at (-3) m per minute for 20 minutes, then at (+2) m per minute for 9 minutes. (a) Write an expression for its height after the first 20 minutes and find it. (b) Find its height after the next 9 minutes. (c) At (+2) m per minute, how many more minutes does it need to come back level with the cliff edge? (d) The pilot says, 'After 29 minutes the drone is only 42 m from where it started, but it has flown 78 m up and down.' Check both parts of her statement and say whether she is right.",
+     "a": "(a) 36 + 20 x (-3) = 36 + (-60) = -24, that is 24 m below the cliff edge. (b) -24 + 9 x 2 = -24 + 18 = -6, that is 6 m below the edge. (c) It must rise 6 m at 2 m per minute: 6 / 2 = 3 more minutes. (d) Yes, she is right on both counts. Its change in height is -6 - 36 = -42, so it ends 42 m below its start; it flew 20 x 3 = 60 m down and 9 x 2 = 18 m up, 60 + 18 = 78 m in all. The 42 m is the change in position and the 78 m the distance flown, so they need not be equal.",
+     "s": [
+      [
+       "(a) 36 + 20 x (-3) written and height -24 m",
+       1
+      ],
+      [
+       "(b) -24 + 9 x 2 = -6 m",
+       1
+      ],
+      [
+       "(c) 3 more minutes",
+       1
+      ],
+      [
+       "(d) verdict Yes: change -6 - 36 = -42 (42 m from the start) and distance 60 + 18 = 78 m, with the difference between change in position and distance explained",
+       1
+      ]
+     ],
+     "p": "pp. 36-37",
+     "tags": [
+      "claim_check"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Five cards show the integers -3, 4, -2, 5 and -1. (a) Without multiplying first, decide the sign of the product of all five cards by counting the negative factors, then find the product. (b) Pick three cards whose product is as large as possible. Give the product and explain, using the number of negative factors, why no other three cards give more. (c) Pick three cards whose product is as small as possible and give the product. (d) Remove one card so that the product of the other four is as large as possible. Which card do you remove, and what is the product?",
+     "a": "(a) There are 3 negative factors, an odd number, so the product is negative: (-3) x 4 x (-2) x 5 x (-1) = -120. (b) A positive product of three cards needs 0 or 2 negative factors; only two cards are positive, so it needs exactly 2 negatives. The largest such product uses the two largest-size negatives, -3 and -2, with the largest positive, 5: (-3) x (-2) x 5 = 30. (c) A negative product needs 1 or 3 negative factors; three negatives give (-3) x (-2) x (-1) = -6, while one negative with both positives gives (-3) x 4 x 5 = -60, the smallest. (d) Remove -1: the other four have 2 negative factors and (-3) x 4 x (-2) x 5 = 120.",
+     "s": [
+      [
+       "(a) odd number (3) of negative factors gives a negative sign, product -120",
+       1
+      ],
+      [
+       "(b) (-3) x (-2) x 5 = 30, with the reason that exactly 2 negatives are needed and these are the largest sizes",
+       1
+      ],
+      [
+       "(c) (-3) x 4 x 5 = -60 as the smallest",
+       1
+      ],
+      [
+       "(d) the card -1 removed, product of the rest 120",
+       1
+      ]
+     ],
+     "p": "pp. 39-40"
+    }
+   ]
+  },
+  {
+   "code": "C7M-2.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "You are told that (-36) x 47 = -1692. Using the distributive property and this one product, do not multiply from the start. (a) Find (-36) x 48, writing 48 as 47 + 1. (b) Find (-37) x 47, writing -37 as (-36) + (-1). (c) Use your answer to (b) to find (-37) x 46. (d) Riya says, '(-37) x 46 must be -1692, because one factor moved 1 further from zero and the other moved 1 nearer to zero, so the changes cancel.' Use your answer to (c) to decide whether she is right.",
+     "a": "(a) (-36) x (47 + 1) = (-36) x 47 + (-36) x 1 = -1692 + (-36) = -1728. (b) ((-36) + (-1)) x 47 = -1692 + (-47) = -1739. (c) (-37) x 46 = (-37) x (47 + (-1)) = -1739 + 37 = -1702. (d) She is wrong: (-37) x 46 = -1702, not -1692. Going from -36 to -37 changes the product by (-1) x 47 = -47, and then going from 47 to 46 changes it by (-37) x (-1) = +37. The changes are not equal in size, so they do not cancel; the product is 10 less.",
+     "s": [
+      [
+       "(a) (-36) x 47 + (-36) x 1 shown, result -1728",
+       1
+      ],
+      [
+       "(b) (-1692) + (-47) shown, result -1739",
+       1
+      ],
+      [
+       "(c) (-37) x (47 + (-1)) = -1739 + 37 = -1702",
+       1
+      ],
+      [
+       "(d) verdict: Riya is wrong, -1702 not -1692, because the changes -47 and +37 do not cancel",
+       1
+      ]
+     ],
+     "p": "pp. 41-44",
+     "tags": [
+      "claim_check"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A pattern machine takes three integers a, b and c and gives one result. It gave these: (5, 2, -3) gives -9; (-4, 1, -2) gives 10; (6, -2, -1) gives -8. (a) Test the rule a - b x c on the first input and decide whether it can be the machine's rule. (b) Show that the rule (a - b) x c fits all three inputs. (c) Meera says the machine does a x c - b x c. Explain whether her rule always gives the same results as the rule in (b), and why. (d) Find the result for (-7, -3, 4), and find the missing first number in the input (?, 4, -5) that gives 15.",
+     "a": "(a) 5 - 2 x (-3) = 5 + 6 = 11, not -9, so a - b x c cannot be the rule. (b) (5 - 2) x (-3) = -9; (-4 - 1) x (-2) = (-5) x (-2) = 10; (6 - (-2)) x (-1) = 8 x (-1) = -8. All three fit. (c) Yes, always: by the distributive property (a - b) x c = a x c + (-b) x c = a x c - b x c, so her rule gives the same result for every input. (d) (-7 - (-3)) x 4 = (-4) x 4 = -16. For (?, 4, -5): (? - 4) x (-5) = 15, so ? - 4 = 15 / (-5) = -3 and the first number is 1.",
+     "s": [
+      [
+       "(a) 5 - 2 x (-3) = 11 found, rule rejected because the machine gave -9",
+       1
+      ],
+      [
+       "(b) (a - b) x c checked on all three inputs: -9, 10, -8",
+       1
+      ],
+      [
+       "(c) Meera's rule always agrees, justified by the distributive property",
+       1
+      ],
+      [
+       "(d) result -16 for (-7, -3, 4), and first number 1 from (? - 4) x (-5) = 15",
+       1
+      ]
+     ],
+     "p": "pp. 41-42",
+     "tags": [
+      "claim_check"
+     ]
+    }
+   ]
+  }
+ ]
+}

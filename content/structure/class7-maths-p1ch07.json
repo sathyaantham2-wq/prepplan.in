@@ -1,0 +1,180 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "A Tale of Three Intersecting Lines",
+  "blurb": "Naming triangles, constructing them from sides or from sides and angles, the triangle inequality, the angle sum property, exterior angles, altitudes and the types of triangles.",
+  "order_index": 7,
+  "source_code": "gegp107"
+ },
+ "scope": [
+  [
+   "IN",
+   "Name a triangle from its vertices in any order and name its sides and angles (for example angle A for angle CAB)",
+   "p.146"
+  ],
+  [
+   "IN",
+   "Construct an equilateral triangle with a ruler and compass by drawing arcs of the side length from both ends of the base",
+   "pp.146-148"
+  ],
+  [
+   "IN",
+   "Construct a triangle from its three side lengths by drawing arcs from the two ends of a base and joining their intersection",
+   "pp.148-150"
+  ],
+  [
+   "IN",
+   "Define equilateral and isosceles triangles and form them from points on circles",
+   "p.150"
+  ],
+  [
+   "IN",
+   "Use the direct path versus roundabout path idea to decide that three lengths cannot form a triangle, and compare each length with the sum of the other two",
+   "pp.151-154"
+  ],
+  [
+   "IN",
+   "State and use the triangle inequality, and explain with the touching, non-intersecting and intersecting circle cases why lengths satisfying it always form a triangle",
+   "pp.154-159"
+  ],
+  [
+   "IN",
+   "Describe the possible lengths of a third side when two sides are given",
+   "p.159"
+  ],
+  [
+   "IN",
+   "Construct a triangle from two sides and the included angle, and explain when it is possible",
+   "pp.160-161"
+  ],
+  [
+   "IN",
+   "Construct a triangle from two angles and the included side, and use the rule that the two angles must add to less than 180 degrees",
+   "pp.161-163"
+  ],
+  [
+   "IN",
+   "Find the third angle using a line through a vertex parallel to the opposite side, and state the angle sum property that a triangle has angles adding to 180 degrees",
+   "pp.164-166"
+  ],
+  [
+   "IN",
+   "Identify an exterior angle and find it from the interior angles, including that it equals the sum of the two opposite interior angles",
+   "p.167"
+  ],
+  [
+   "IN",
+   "Define an altitude, find the altitudes of acute, obtuse and right triangles, and construct one with a ruler and set-square",
+   "pp.167-170"
+  ],
+  [
+   "IN",
+   "Classify triangles by sides as equilateral, isosceles or scalene and by angles as acute, right or obtuse",
+   "pp.170-171"
+  ],
+  [
+   "OUT",
+   "Congruence rules for triangles (SSS, SAS, ASA) and using them to prove things -- the chapter says these come in a later chapter",
+   null
+  ],
+  [
+   "OUT",
+   "The relationship between larger angles and longer sides, and the equal angles of an isosceles or equilateral triangle -- deferred to a later chapter",
+   null
+  ],
+  [
+   "OUT",
+   "The Pythagoras theorem and lengths of sides of a right triangle -- not covered in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Area of a triangle, medians, angle bisectors, perpendicular bisectors and triangle centres -- not covered",
+   null
+  ],
+  [
+   "OUT",
+   "The ambiguous two sides and a non-included angle construction -- only the included-angle case is taught",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "name": "Naming triangles and constructing equilateral triangles",
+   "description": "Naming a triangle, its sides and angles, and constructing an equilateral triangle with a ruler and compass.",
+   "idea": "The third vertex of an equilateral triangle lies on an arc from each end of the base, so it is the same distance from both ends.",
+   "rule": "A triangle can be named with its vertices in any order; to construct an equilateral triangle draw the base, then arcs of the same length from both ends, and join their intersection to the ends.",
+   "example": "For side 4 cm: draw AB = 4 cm, draw 4 cm arcs from A and B, and join their meeting point C to A and B.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-7.2",
+   "name": "Constructing a triangle from its three sides",
+   "description": "Constructing a triangle when all three side lengths are given, and recognising isosceles and scalene triangles.",
+   "idea": "The third vertex is the point that is the right distance from each end of the base, so it lies where two arcs cross.",
+   "rule": "Draw the base, draw an arc of the second length from one end and an arc of the third length from the other end, and join the meeting point to both ends.",
+   "example": "For sides 4, 5, 6 cm: base AB = 4 cm, arc of radius 5 cm from A, arc of radius 6 cm from B, joining the intersection C.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-7.3",
+   "name": "The triangle inequality",
+   "description": "Deciding whether three lengths can be the sides of a triangle by comparing each length with the sum of the other two, and finding possible third sides.",
+   "idea": "A direct path between two points is always shorter than a roundabout path through a third point, so each side must be shorter than the other two sides together.",
+   "rule": "Three lengths form a triangle exactly when each is less than the sum of the other two, which only needs checking for the longest length.",
+   "example": "10, 15, 30 cannot form a triangle because 30 is more than 10 + 15 = 25.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.4",
+   "name": "Triangles from two sides and an angle, or two angles and a side",
+   "description": "Constructing a triangle from two sides and the included angle, or two angles and the included side, and knowing when it is impossible.",
+   "idea": "Fixing an included angle fixes the direction of the second side, and fixing two base angles fixes where the other two sides meet.",
+   "rule": "Two sides with an included angle below 180 degrees always give a triangle; two angles with an included side give a triangle only if the two angles add to less than 180 degrees.",
+   "example": "AB = 5 cm, angle A = 45 degrees, AC = 4 cm: draw AB, draw a 45 degree arm at A, mark C 4 cm along it, and join BC.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.5",
+   "name": "Angle sum property and exterior angles",
+   "description": "Using the angle sum of 180 degrees to find a missing angle, and using the exterior angle relationship.",
+   "idea": "A line through a vertex parallel to the opposite side turns the two base angles into alternate angles that, with the top angle, make a straight angle.",
+   "rule": "The three angles of a triangle add up to 180 degrees; an exterior angle equals the sum of the two interior opposite angles.",
+   "example": "With angles 50 degrees and 60 degrees the third is 70 degrees, and the exterior angle at that vertex is 110 degrees.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.6",
+   "name": "Altitudes of a triangle",
+   "description": "Identifying and constructing the altitude from a vertex to the opposite side, including obtuse and right triangles.",
+   "idea": "The height of a vertex above the opposite side is measured along a perpendicular from that vertex.",
+   "rule": "An altitude is the perpendicular from a vertex to the opposite side (extended if needed); every triangle has three altitudes, and in a right triangle two of them are its sides.",
+   "example": "In a triangle with an obtuse angle at B, the altitude from A meets the extended line CB outside the triangle.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.7",
+   "name": "Types of triangles by sides and by angles",
+   "description": "Classifying triangles as equilateral, isosceles or scalene by sides and as acute, right or obtuse by angles.",
+   "idea": "The same triangle can be described by its sides and, separately, by its angles.",
+   "rule": "Equilateral has three equal sides, isosceles at least two, scalene none; acute has three acute angles, right has one right angle, obtuse has one obtuse angle.",
+   "example": "A triangle with angles 100, 40, 40 degrees is obtuse-angled, and it is also isosceles.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

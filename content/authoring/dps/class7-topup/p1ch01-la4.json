@@ -1,0 +1,310 @@
+{
+  "kind": "dps_topup",
+  "subject": {
+    "code": "MATH",
+    "class": 7,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 1,
+    "name": "Large Numbers Around Us"
+  },
+  "source_code": "gegp101",
+  "concepts": [
+    {
+      "code": "C7M-1.1",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A state forest department's report gives the saplings planted in two years. For 2023 the clerk wrote the figure in words only: 'twenty three lakh four thousand sixty'. For 2024 the figure is 23,40,600. Both figures are made of the same digits 2, 3, 4, 6 and 0. (a) Write the 2023 figure in numerals with Indian commas. (b) Write the 2024 figure in words in the Indian system. (c) Find how many more saplings were planted in 2024. (d) How far is the increase from half a lakh? Name the place each of the digits 4 and 6 occupies in the two figures, and use this to explain why the same digits give an increase of tens of thousands.",
+          "a": "(a) 23,04,060. (b) Twenty three lakh forty thousand six hundred. (c) 23,40,600 - 23,04,060 = 36,540 more saplings. (d) The increase 36,540 is 50,000 - 36,540 = 13,460 less than half a lakh. In 2023 the 4 is in the thousands place and the 6 in the tens place; in 2024 the 4 is in the ten-thousands place and the 6 in the hundreds place. Each digit has moved one place to the left, so its value is ten times larger, which is why the increase runs into tens of thousands.",
+          "s": [
+            [
+              "(a) 23,04,060 written with commas in the 3-2-2 pattern (zeros kept in the ten-thousands and hundreds places)",
+              1
+            ],
+            [
+              "(b) correct Indian number name: twenty three lakh forty thousand six hundred",
+              1
+            ],
+            [
+              "(c) subtraction shown, increase = 36,540",
+              1
+            ],
+            [
+              "(d) increase 13,460 less than 50,000, and the places named (4: thousands to ten-thousands, 6: tens to hundreds) with the reason that each digit's value became ten times larger",
+              1
+            ]
+          ],
+          "p": "pp. 4-5"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.2",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A music streaming company has two offices. The US office reports that one song was streamed 'forty two million seventy thousand' times. The Mumbai office reports that a second song was streamed 4 crore 27 lakh times. The company wants both figures in one system before comparing them. (a) Write the US figure in numerals, first with American commas and then with Indian commas. (b) Read the US figure in the Indian system. (c) Which song has more streams, and by how many? (d) Write the Mumbai figure and the difference in American numerals and words, and use 1 crore = 10 million to explain why both songs have more than 40 million streams.",
+          "a": "(a) 42,070,000 (American) = 4,20,70,000 (Indian). (b) Four crore twenty lakh seventy thousand. (c) 4 crore 27 lakh = 4,27,00,000; 4,27,00,000 - 4,20,70,000 = 6,30,000, so the Mumbai song has 6,30,000 more streams. (d) Mumbai: 42,700,000 = forty two million seven hundred thousand; difference 630,000 = six hundred thirty thousand. Since 1 crore = 10 million, 4 crore = 40 million, and each song has more than 4 crore streams, so each has more than 40 million.",
+          "s": [
+            [
+              "(a) 42,070,000 with 3-3-3 commas and 4,20,70,000 with 3-2-2-2 commas",
+              1
+            ],
+            [
+              "(b) four crore twenty lakh seventy thousand",
+              1
+            ],
+            [
+              "(c) Mumbai song ahead; 4,27,00,000 - 4,20,70,000 = 6,30,000 shown",
+              1
+            ],
+            [
+              "(d) 42,700,000 (forty two million seven hundred thousand) and 630,000 (six hundred thirty thousand), with 4 crore = 40 million used for the reason",
+              1
+            ]
+          ],
+          "p": "pp. 8-9"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.3",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Systematic Sippy has the buttons +1, +10, +100, +1000, +10000 and +100000, and it always uses the fewest clicks possible. One afternoon it showed several different 6-digit numbers, each in exactly 3 clicks. (a) What is the largest 6-digit number Sippy can show in exactly 3 clicks? Explain. (b) What is the smallest such number? Explain. (c) How many different 6-digit numbers can Sippy show in exactly 3 clicks? Organise your count by how many times +100000 is pressed.",
+          "a": "Sippy's fewest clicks for a number equal the sum of its digits, so the number's digits add up to 3 and it needs at least one +100000 press to have 6 digits. (a) 3,00,000: all three clicks on +100000. (b) 1,00,002: one +100000 click (needed for 6 digits) and the other two on +1. (c) +100000 three times: 1 number (3,00,000). Twice: the third click goes on one of the 5 smaller buttons: 5 numbers. Once: the other two clicks go both on the same smaller button (5 ways) or on two different smaller buttons (10 ways): 15 numbers. Total 1 + 5 + 15 = 21.",
+          "s": [
+            [
+              "(a) 3,00,000 with the reason that all 3 clicks go on the highest button",
+              1
+            ],
+            [
+              "(b) 1,00,002 with the reason that one +100000 click is needed and the rest go on +1",
+              1
+            ],
+            [
+              "(c) cases of three and two +100000 presses counted as 1 and 5",
+              1
+            ],
+            [
+              "(c) case of one +100000 press counted as 15 (5 same-button + 10 two-button) and total 21",
+              1
+            ]
+          ],
+          "p": "p. 7"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.4",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A district health office must order polio drop doses so that no child is left out. Its two blocks have 2,93,415 and 3,47,862 children. The store clerk rounds each number to the nearest ten thousand and orders that many doses. (a) Write the nearest ten thousand of each number. (b) For which block does the clerk's order fall short, by how many doses, and why did this happen? (c) The office now says each block's order must be a multiple of ten thousand that does not fall short. Find the smallest such order for each block and the total order. (d) How many doses will be left over from the total under the rule in (c)? If instead each block's order were rounded up to the next thousand, how many doses would be left over? Under which rule are fewer doses left over, and by how many?",
+          "a": "(a) 2,93,415 -> 2,90,000; 3,47,862 -> 3,50,000. (b) The first block: 2,90,000 is a round-down, 3,415 doses short, because the thousands digit 3 is less than 5. (c) 3,00,000 and 3,50,000; total 6,50,000. (d) Exact total 6,41,277, so 6,50,000 - 6,41,277 = 8,723 doses left over. Rounding up to the next thousand gives 2,94,000 + 3,48,000 = 6,42,000, so 6,42,000 - 6,41,277 = 723 doses left over. The next-thousand rule leaves fewer doses over, by 8,723 - 723 = 8,000.",
+          "s": [
+            [
+              "(a) both nearest ten thousands: 2,90,000 and 3,50,000",
+              1
+            ],
+            [
+              "(b) first block named as a round-down, short by 3,415, with the reason",
+              1
+            ],
+            [
+              "(c) 3,00,000 and 3,50,000, total 6,50,000",
+              1
+            ],
+            [
+              "(d) 8,723 left over from the exact 6,41,277 under the ten-thousand rule, 723 left over under the next-thousand rule (6,42,000), so the next-thousand rule leaves 8,000 fewer",
+              1
+            ]
+          ],
+          "p": "pp. 10-11"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.5",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A dairy cooperative in Anand collected 6,38,914 litres of milk in June and 2,87,409 litres in the first fortnight of July. All of it must go into a cold store that holds 9,25,000 litres. Answer (a), (b) and (c) without finding the exact sum. (a) Show that the total is more than 9,00,000 litres. (b) Show that the total is less than 9,30,000 litres. (c) Decide whether the total is more or less than 9,25,000 litres, using closer round values. (d) Find the exact total and say whether the cold store is enough; if not, by how many litres it falls short.",
+          "a": "(a) 6,38,914 > 6,30,000 and 2,87,409 > 2,80,000, so the total is more than 9,10,000, which is more than 9,00,000. (b) 6,38,914 < 6,40,000 and 2,87,409 < 2,90,000, so the total is less than 9,30,000. (c) 6,38,914 > 6,38,000 and 2,87,409 > 2,87,000, so the total is more than 6,38,000 + 2,87,000 = 9,25,000. (d) 6,38,914 + 2,87,409 = 9,26,323 litres. The store is not enough; it falls short by 9,26,323 - 9,25,000 = 1,323 litres.",
+          "s": [
+            [
+              "(a) both numbers bounded below by round values (for example 6,30,000 and 2,80,000) giving a total above 9,00,000",
+              1
+            ],
+            [
+              "(b) both numbers bounded above (6,40,000 and 2,90,000) giving a total below 9,30,000",
+              1
+            ],
+            [
+              "(c) closer lower bounds 6,38,000 + 2,87,000 = 9,25,000, so the total is more than 9,25,000",
+              1
+            ],
+            [
+              "(d) exact total 9,26,323 litres; store not enough, short by 1,323 litres",
+              1
+            ]
+          ],
+          "p": "pp. 11-12"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.6",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A bangle maker in Hyderabad packs 125 glass bangles in each box. In one season she filled 1,736 boxes and sold each box for ₹50. (a) Find the number of bangles using 125 = 1000 / 8, showing your regrouping. (b) Find the money she earned using 50 = 100 / 2. (c) Her helper worked out the bangles as 1,736 x 100 / 4 and got 43,400. Find his mistake and how far his answer is from the correct one. (d) Next season she will pack 250 bangles in each of 1,736 boxes. Use your answer to (a), not a new multiplication, to find the number of bangles.",
+          "a": "(a) 1,736 x 125 = 1,736 x 1000 / 8 = 17,36,000 / 8 = 2,17,000 bangles (or 1,736 / 8 = 217, then x 1000). (b) 1,736 x 50 = 1,736 x 100 / 2 = 1,73,600 / 2 = ₹86,800. (c) 100 / 4 = 25, so he found 1,736 x 25, not 1,736 x 125; for 125 he needed 1000 / 8. His answer is 2,17,000 - 43,400 = 1,73,600 too small. (d) 250 = 2 x 125, so 2 x 2,17,000 = 4,34,000 bangles.",
+          "s": [
+            [
+              "(a) 1,736 x 1000 / 8 written and 2,17,000 bangles found",
+              1
+            ],
+            [
+              "(b) 1,736 x 100 / 2 written and ₹86,800 found",
+              1
+            ],
+            [
+              "(c) mistake named (100 / 4 = 25, so he multiplied by 25 instead of 125) and the gap 1,73,600 found",
+              1
+            ],
+            [
+              "(d) 250 = 2 x 125 used to double the answer to (a): 4,34,000 bangles",
+              1
+            ]
+          ],
+          "p": "pp. 13-14"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.7",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Three students report products they worked out. Meena: a 4-digit number x a 3-digit number = 1,23,456. Ravi: a 4-digit number x a 2-digit number = 12,34,567. Without multiplying anything out: (a) decide whether Meena's product has a possible number of digits, using the smallest and the largest products of that kind; (b) show that Ravi's product cannot be right; (c) Salma multiplied a 5-digit number by another number and got a 9-digit product. How many digits can the other number have? Justify your answer, and show why it cannot have 3 digits or 6 digits.",
+          "a": "(a) The smallest 4-digit x 3-digit product is 1000 x 100 = 1,00,000 (6 digits) and every such product is less than 10,000 x 1,000 = 1,00,00,000, so it has 6 or 7 digits. 1,23,456 has 6 digits, so it is possible. (b) Every 4-digit x 2-digit product is less than 10,000 x 100 = 10,00,000, the smallest 7-digit number, so it has at most 6 digits; 12,34,567 has 7 digits and cannot be right. (c) A 5-digit x n-digit product has (5 + n - 1) or (5 + n) digits; for 9 digits, n = 5 or n = 4. With 3 digits the product is less than 1,00,000 x 1,000 = 10,00,00,000, so at most 8 digits; with 6 digits it is at least 10,000 x 1,00,000 = 1,00,00,00,000, so at least 10 digits.",
+          "s": [
+            [
+              "(a) bounds 1,00,000 and 1,00,00,000 found, so 6 or 7 digits, and 1,23,456 judged possible",
+              1
+            ],
+            [
+              "(b) bound 10,000 x 100 = 10,00,000 shown, so at most 6 digits and Ravi's 7-digit product impossible",
+              1
+            ],
+            [
+              "(c) the other number has 4 or 5 digits, from the m + n - 1 or m + n rule",
+              1
+            ],
+            [
+              "(c) 3 digits ruled out (product below 10,00,00,000) and 6 digits ruled out (product at least 1,00,00,00,000)",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "p": "p. 15"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.8",
+      "questions": [
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Assume a person's heart beats about 72 times every minute, day and night, and take 365 days in a year. Neha says, 'By my 25th birthday my heart will have beaten more than one arab times.' Work in stages. (a) Find the number of beats in one hour and in one day. Is a day's count more or less than one lakh? (b) Find the number of beats in one year, written with Indian commas. (c) Find the number of beats in 25 years and test Neha's claim. (d) On which birthday does the count first cross one arab? Show the check for the two birthdays on either side.",
+          "a": "(a) 72 x 60 = 4,320 beats an hour; 4,320 x 24 = 1,03,680 beats a day, which is more than one lakh. (b) 1,03,680 x 365 = 3,78,43,200 beats a year. (c) 3,78,43,200 x 25 = 94,60,80,000, which is less than one arab (1,00,00,00,000) by 5,39,20,000, so Neha's claim is false. (d) 26 years give 98,39,23,200 (still less than one arab) and 27 years give 1,02,17,66,400 (more than one arab), so the count first crosses one arab on the 27th birthday.",
+          "s": [
+            [
+              "(a) 4,320 beats an hour and 1,03,680 a day, judged more than one lakh",
+              1
+            ],
+            [
+              "(b) 3,78,43,200 beats in a year",
+              1
+            ],
+            [
+              "(c) 94,60,80,000 in 25 years compared with 1,00,00,00,000; claim false",
+              1
+            ],
+            [
+              "(d) 26 years = 98,39,23,200 (below) and 27 years = 1,02,17,66,400 (above), so the 27th birthday",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "pp. 18-19"
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.10",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Rehana has nine number cards: 1, 2, 3, 4, 5, 6, 7, 8 and 9. She must use all nine cards, each exactly once, to make one 5-digit number and one 4-digit number. (a) Make the two numbers so that their sum is as large as possible, find the sum, and state the rule you used to place the cards. (b) Her friend makes 98,642 and 7,531, while Rehana makes 97,531 and 8,642. Without adding the numbers fully, decide whether the two sums are equal and explain why. (c) Now make the two numbers so that the 5-digit number minus the 4-digit number is as small as possible, and find that difference.",
+          "a": "(a) Put the biggest card in the highest place: 9 in the ten-thousands place, then 8 and 7 in the two thousands places, 6 and 5 in the hundreds, 4 and 3 in the tens, 2 and 1 in the ones; for example 97,531 + 8,642 = 1,06,173. (b) Equal: in both pairs the thousands places hold 7 and 8, the hundreds 5 and 6, the tens 3 and 4 and the ones 1 and 2, with 9 in the ten-thousands place, so each place adds the same; both sums are 1,06,173. (c) Make the 5-digit number as small as possible, 12,345, and the 4-digit number from the remaining cards as large as possible, 9,876; the difference is 12,345 - 9,876 = 2,469.",
+          "s": [
+            [
+              "(a) a correct pair of numbers with the largest sum 1,06,173",
+              1
+            ],
+            [
+              "(a) the placing rule: largest cards in the highest places, the 9 in the ten-thousands place",
+              1
+            ],
+            [
+              "(b) sums judged equal, with the reason that each place holds the same two digits",
+              1
+            ],
+            [
+              "(c) 12,345 and 9,876 chosen, difference 2,469",
+              1
+            ]
+          ],
+          "p": "p. 20"
+        }
+      ]
+    }
+  ]
+}

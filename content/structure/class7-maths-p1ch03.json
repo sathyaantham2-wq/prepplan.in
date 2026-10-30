@@ -1,0 +1,233 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 3,
+  "name": "A Peek Beyond the Point",
+  "blurb": "Decimal fractions: tenths/hundredths, place value, comparing and locating decimals, unit conversions, addition/subtraction, and estimation.",
+  "order_index": 3,
+  "source_code": "gegp103"
+ },
+ "scope": [
+  [
+   "IN",
+   "Read/write a length as a mixed tenths quantity (e.g. 3 4/10) and convert to pure tenths (34/10)",
+   "3-4"
+  ],
+  [
+   "IN",
+   "Add and subtract quantities in tenths, regrouping across the whole-number boundary",
+   "5-6"
+  ],
+  [
+   "IN",
+   "Read/write a quantity combining tenths and hundredths (e.g. 4 4/10 5/100) and convert between forms",
+   "8-11"
+  ],
+  [
+   "IN",
+   "Add and subtract quantities in tenths and hundredths together, borrowing across places",
+   "11-13"
+  ],
+  [
+   "IN",
+   "Explain the place-value extension: each place past the point is 10x smaller than the one before it",
+   "14-16"
+  ],
+  [
+   "IN",
+   "Write a quantity in decimal notation and read it aloud digit-by-digit (7.05 = \"seven point zero five\")",
+   "17-19"
+  ],
+  [
+   "IN",
+   "Convert between \"N tenths/hundredths\" phrasing and decimal form (234 tenths = 23.4)",
+   "18-19"
+  ],
+  [
+   "IN",
+   "Convert between mm/cm/m, g/kg, and paise/rupee using decimal notation",
+   "19-24"
+  ],
+  [
+   "IN",
+   "Recognise trailing zeros don't change a decimal's value, but a zero right after the point does",
+   "25-26"
+  ],
+  [
+   "IN",
+   "Locate a decimal on a number line by zooming into successive segments",
+   "25-27"
+  ],
+  [
+   "IN",
+   "Compare two decimals digit-by-digit from the most significant place",
+   "27-28"
+  ],
+  [
+   "IN",
+   "Identify which of several decimals is closest to a target value",
+   "28"
+  ],
+  [
+   "IN",
+   "Add and subtract decimals with the standard column method, carrying/borrowing across the point",
+   "29-30"
+  ],
+  [
+   "IN",
+   "Identify and extend a decimal number sequence/pattern",
+   "30-31"
+  ],
+  [
+   "IN",
+   "Estimate a sum/difference of two decimals by bounding with their whole-number parts",
+   "31"
+  ],
+  [
+   "IN",
+   "Recognise that clock time and cricket overs LOOK decimal but aren't true base-10 decimals",
+   "32-33"
+  ],
+  [
+   "OUT",
+   "Multiplication and division of decimals -- Not introduced anywhere in this chapter -- covered later in Part II Ch 4 \"Another Peek Beyond the Point\"",
+   null
+  ],
+  [
+   "OUT",
+   "Rounding a decimal to a given decimal place -- Chapter 1 covered rounding whole numbers; this chapter never extends rounding to decimals",
+   null
+  ],
+  [
+   "OUT",
+   "Percentages -- Not introduced",
+   null
+  ],
+  [
+   "OUT",
+   "Recurring/repeating decimals -- Every example is a terminating decimal",
+   null
+  ],
+  [
+   "OUT",
+   "Converting a general fraction (e.g. 1/3, 1/7) to decimal form -- Figure-it-Out only covers denominators 2, 4, 5 (clean terminating cases); non-terminating conversions are never attempted",
+   null
+  ],
+  [
+   "OUT",
+   "Negative decimal numbers -- Every example is a positive real-world quantity (length, weight, money)",
+   null
+  ],
+  [
+   "OUT",
+   "Scientific/standard notation -- Not covered",
+   null
+  ],
+  [
+   "IN",
+   "Compare two decimals digit by digit from the highest place value, and find which of several decimals is closest to a target value",
+   "pp.72-73"
+  ],
+  [
+   "IN",
+   "Find the constant change in a decimal sequence and write its next terms",
+   "pp.75-76"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-3.1",
+   "name": "Reading & writing tenths and hundredths",
+   "description": "Splitting a unit into tenths, and tenths into hundredths, to represent and convert precise measurements.",
+   "idea": "A unit split into 10 equal parts gives tenths; each tenth split into 10 gives hundredths. A length like 3 4/10 can also be written as 34 one-tenths, or with tenths and hundredths together like 4 4/10 5/100.",
+   "rule": "10 tenths = 1 unit; 10 hundredths = 1 tenth. Convert between mixed and pure fractional-part forms by multiplying/dividing by 10.",
+   "example": "34 x 1/10 = 34/10 = 3 units + 4 tenths. 1 1/10 4/100 = 1.14 = 114 hundredths.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-3.2",
+   "name": "Decimal place value and notation",
+   "description": "The decimal point as an extension of the Indian place-value system to fractional parts.",
+   "idea": "The decimal point extends the Indian place-value system to the right: each place past the point is 10 times smaller than the one before it (tenths, hundredths, thousandths).",
+   "rule": "70.5 = 7x10 + 0x1 + 5x1/10. Read digit-by-digit after the point (7.05 = \"seven point zero five\"), never as one big number.",
+   "example": "705 (7 hundreds+5 ones), 70.5 (7 tens+5 tenths), 7.05 (7 ones+5 hundredths) -- same digits, three different values.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-3.3",
+   "name": "Trailing zeros and equivalent decimal forms",
+   "description": "When adding zeros to a decimal changes its value and when it does not.",
+   "idea": "Adding zeros to the right end of a decimal doesn't change its value, but adding a zero between the point and the first digit does.",
+   "rule": "0.2 = 0.20 = 0.200 (all \"2 tenths\"). But 0.2 != 0.02 != 0.002 (different place values).",
+   "example": "Sonu and Zara's disagreement: 0.2, 0.20 and 0.200 are all equal; 0.02 is ten times smaller.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-3.4",
+   "name": "Locating and comparing decimals",
+   "description": "Placing decimals on a number line by zooming, and comparing them digit by digit.",
+   "idea": "A decimal is located on a number line by zooming into successively smaller segments. Two decimals are compared digit by digit from the most significant place until a difference is found.",
+   "rule": "Compare units first, then tenths, then hundredths, etc. -- the first place where digits differ decides which number is greater.",
+   "example": "6.456 vs 6.465: same units and tenths, but 5 hundredths < 6 hundredths, so 6.456 < 6.465.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.5",
+   "name": "Unit conversions using decimals",
+   "description": "mm/cm/m, g/kg, and paise/rupee conversions expressed as decimal fractions.",
+   "idea": "mm-to-cm, cm-to-m, g-to-kg and paise-to-rupee conversions are all decimal-fraction relationships (1 smaller unit = a tenth, hundredth or thousandth of the bigger one).",
+   "rule": "1mm=0.1cm, 1cm=0.01m, 1g=0.001kg, 1 paisa=0.01 rupee.",
+   "example": "254 g = 254/1000 kg = 0.254 kg. 75 paise = 0.75 rupee.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.6",
+   "name": "Addition and subtraction of decimals",
+   "description": "Column addition and subtraction of decimal numbers, including carrying and borrowing across the point.",
+   "idea": "Decimals add and subtract with the same column method as whole numbers, carrying/borrowing across the decimal point when a place value overflows (e.g. 10 hundredths becomes 1 tenth).",
+   "rule": "Align decimal points, then add/subtract column by column right to left, carrying or borrowing as needed.",
+   "example": "75.345 + 86.691 = 162.036. 3.5 - 2.7 = 0.8 (borrow a unit as 10 tenths).",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-3.7",
+   "name": "Estimating sums and differences of decimals",
+   "description": "Bounding a decimal sum/difference using the whole-number parts of the two numbers.",
+   "idea": "The sum of two decimals (each with a fractional part between 0 and 1) is always greater than the sum of their whole-number parts, and less than that sum plus 2.",
+   "rule": "whole1 + whole2 < sum < whole1 + whole2 + 2 (since each fractional part is less than 1).",
+   "example": "25.936 + 8.202: sum is greater than 25+8=33 and less than 25+1+8+1=35.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.8",
+   "name": "Recognising non-decimal \"decimal-look-alike\" notation",
+   "description": "Real-world quantities written with a point that are not true base-10 decimals, like clock time and cricket overs.",
+   "idea": "Some real quantities are written with a point but are NOT base-10 decimals -- clock time (hours.tenths-of-an-hour, where each tenth is 6 minutes) and cricket overs (X.Y means X overs and Y balls, out of 6, not tenths).",
+   "rule": "Before treating a \"N.M\" quantity as a decimal, check whether its unit actually subdivides into 10 -- an hour does not (60 min), and an over does not (6 balls).",
+   "example": "4.5 hours post noon = 4:30, not 4:05 or 4:50. \"Overs left: 5.5\" = 5 overs + 5 balls, not 5 overs 3 balls.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.9",
+   "name": "Closest decimals and decimal sequences",
+   "description": "Comparing decimals digit by digit, finding the decimal closest to a target, and finding the change in a decimal sequence to extend it.",
+   "idea": "Comparing place by place from the highest place tells which decimal is greater, and closeness to a target is the size of the difference, not the number of digits.",
+   "rule": "Compare from the highest place; the first place where the digits differ decides. The closest decimal is the one with the smallest difference from the target. In a sequence, subtract neighbouring terms to find the change.",
+   "example": "1.01 is closest to 1 among 0.9, 1.1, 1.01 and 1.11, because it is 1/100 away while 0.9 is 10/100 away.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

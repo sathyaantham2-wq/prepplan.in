@@ -1,0 +1,305 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 1,
+  "name": "Geometric Twins"
+ },
+ "source_code": "gegp201",
+ "concepts": [
+  {
+   "code": "C7M-1.1",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A carpenter in Mysuru keeps three templates: a circular coaster of radius 4.5 cm, a rectangular tray 32 cm long and 20 cm wide, and an angle-shaped corner guard with arms AB = 6 cm and BC = 10 cm and ∠ABC = 75°. His helper brings four pieces: (i) a coaster of diameter 9 cm; (ii) a tray 20 cm long and 32 cm wide, lying turned through a right angle; (iii) a corner guard with arms 10 cm and 6 cm and 75° between them; (iv) a corner guard with arms 6 cm and 10 cm and 105° between them. The helper says, 'All four pieces match their templates, because each has the same lengths as its template.' (a) Decide whether each of pieces (i), (ii) and (iii) is congruent to its template, naming the measurement that decides it. (b) Is piece (iv) congruent to its template? (c) Evaluate the helper's statement and say what he must check for a corner guard besides the arm lengths.",
+     "a": "(a) (i) Congruent: a diameter of 9 cm means a radius of 4.5 cm, and a circle is fixed by its radius. (ii) Congruent: the two sides are 32 cm and 20 cm, the same as the template; turning a figure does not change it. (iii) Congruent: flipped over, it has arms of 6 cm and 10 cm with 75° between them, and flipping is allowed when superimposing. (b) No: the arms are the same but the angle between them is 105°, not 75°, so it will not fit over the template. (c) The helper is wrong. For circles and rectangles the lengths are enough, but for the corner guard equal arm lengths alone allow many different figures; he must also check that the angle between the arms is 75°.",
+     "s": [
+      [
+       "(i) congruent: diameter 9 cm gives radius 4.5 cm, the radius fixes a circle",
+       1
+      ],
+      [
+       "(ii) congruent: same two sides 32 cm and 20 cm, turning allowed",
+       1
+      ],
+      [
+       "(iii) congruent because flipping is allowed and arms 6 cm, 10 cm with 75° between match; (iv) not congruent because the angle is 105°, not 75°",
+       1
+      ],
+      [
+       "(c) verdict: the helper is wrong, with the reason that arm lengths alone do not fix the corner guard and the angle between the arms (75°) must also be checked",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 1-4"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.2",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two triangular brass plates are cut for a clock. ΔABC has AB = AC = 8 cm and BC = 5 cm. ΔPQR has PQ = 8 cm, QR = 5 cm and RP = 8 cm. Asha writes 'ΔABC ≅ ΔPQR'. Bilal writes 'ΔACB ≅ ΔPQR' and says, 'Asha's statement and mine are both correct.' Charu writes 'ΔBAC ≅ ΔPQR'. (a) Check Asha's and Bilal's statements pair of sides by pair of sides, and decide whether Bilal's claim is right. (b) With a protractor, ∠P measures 36° and ∠Q measures 72°. Without measuring ΔABC, find ∠A, ∠B and ∠C, saying which statement gives each. (c) Show that Charu's statement is wrong in two ways: one pair of sides and one pair of angles that it claims are equal. (d) Bilal tries the same swap on ΔDEF with DE = 8 cm, EF = 5 cm, FD = 7 cm and ΔXYZ with XY = 8 cm, YZ = 5 cm, ZX = 7 cm, writing ΔDFE ≅ ΔXYZ. Show that it fails, and explain why the swap worked for ΔABC.",
+     "a": "(a) Asha: AB = PQ = 8 cm, BC = QR = 5 cm, CA = RP = 8 cm, so ΔABC ≅ ΔPQR by SSS. Bilal: AC = PQ = 8 cm, CB = QR = 5 cm, BA = RP = 8 cm, so ΔACB ≅ ΔPQR by SSS as well. Bilal is right: both statements are correct. (b) In both statements A matches P, so ∠A = ∠P = 36°. Asha's statement matches B with Q, so ∠B = ∠Q = 72°. Bilal's statement matches C with Q, so ∠C = ∠Q = 72° (check: 36° + 72° + 72° = 180°). (c) Charu's order says AC = QR, but AC = 8 cm and QR = 5 cm. It also says ∠B = ∠P, but ∠B = 72° and ∠P = 36°. (d) ΔDFE ≅ ΔXYZ would need DF = XY, but DF = 7 cm and XY = 8 cm, so it fails. The swap worked for ΔABC only because the two sides that meet at A are equal (AB = AC = 8 cm), so exchanging B and C still puts equal sides together; in ΔDEF the sides at D are 8 cm and 7 cm.",
+     "s": [
+      [
+       "(a) checks all three side pairs for Asha's and for Bilal's statement and decides that Bilal's claim is right: both are correct by SSS",
+       1
+      ],
+      [
+       "(b) ∠A = 36° (A matches P), ∠B = 72° from Asha's statement and ∠C = 72° from Bilal's statement",
+       1
+      ],
+      [
+       "(c) Charu wrong: AC = 8 cm but QR = 5 cm, and ∠B = 72° but ∠P = 36°",
+       1
+      ],
+      [
+       "(d) ΔDFE ≅ ΔXYZ fails because DF = 7 cm ≠ XY = 8 cm; the swap worked only because AB = AC",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 6-9"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A swing frame has a straight ground rail with four bolts A, B, C and D in that order, where AB = 3 cm, BC = 4 cm and CD = 3 cm on the scale drawing. Four straight rods join the top point E to the bolts, with EA = ED = 11 cm and EB = EC = 10 cm. The fitter measures ∠AEB = 15.5° and ∠BEC = 23°. (a) Show that AC = DB without measuring them, and find their length. (b) Show that ΔEAC ≅ ΔEDB, naming the condition and the three pairs of equal parts, with the vertices in the correct order. (c) Using (b) and also ΔEAB ≅ ΔEDC, find ∠DEB and ∠DEC, giving the matching angle for each. (d) Find ∠AED, the full angle between the two outer rods.",
+     "a": "(a) AC = AB + BC = 3 + 4 = 7 cm and DB = DC + CB = 3 + 4 = 7 cm, so AC = DB = 7 cm (equal pieces added to the common piece BC). (b) EA = ED = 11 cm, AC = DB = 7 cm and EC = EB = 10 cm, so ΔEAC ≅ ΔEDB by SSS, with E matching E, A matching D and C matching B. (c) From (b), ∠DEB corresponds to ∠AEC = ∠AEB + ∠BEC = 15.5° + 23° = 38.5°, so ∠DEB = 38.5°. ΔEAB ≅ ΔEDC by SSS (EA = ED, AB = DC = 3 cm, EB = EC), so ∠DEC corresponds to ∠AEB and ∠DEC = 15.5°. (d) ∠AED = ∠AEB + ∠BEC + ∠CED = 15.5° + 23° + 15.5° = 54°.",
+     "s": [
+      [
+       "(a) AC = DB = 3 + 4 = 7 cm, and (b) SSS with EA = ED, AC = DB, EC = EB, written ΔEAC ≅ ΔEDB",
+       2
+      ],
+      [
+       "(c) ∠DEB = ∠AEC = 38.5° and ∠DEC = ∠AEB = 15.5°, each from the correct pair of congruent triangles",
+       1
+      ],
+      [
+       "(d) ∠AED = 15.5° + 23° + 15.5° = 54°",
+       1
+      ]
+     ],
+     "p": "pp. 4-9"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A sign-maker in Pune must phone the measurements of a triangular sign blank ABC to a workshop so that it cuts an exact copy. Her helper Rehan first offers AB = 8 cm, BC = 7 cm and ∠A = 50°. (a) Is this an SAS set? If not, say what kind of set it is and name the angle that would make it SAS with these two sides. Next she phones AB = 8 cm, ∠B = 40° and AC = 6.5 cm. The workshop draws AB = 8 cm, draws a line from B making 40° with BA, and draws an arc centred at A with radius 6.5 cm. The arc cuts the line at two points, C₁ and C₂, and the workshop measures BC₁ = 2.2 cm and BC₂ = 10.1 cm. (b) Explain why both ΔABC₁ and ΔABC₂ fit the phoned measurements, and why they are not congruent. (c) Rehan says, 'Both triangles have AB = 8 cm, AC = 6.5 cm and ∠B = 40°, so they are congruent by SAS.' Judge his claim. (d) Keeping AB = 8 cm and ∠B = 40°, name one measurement she could phone instead of AC so that every copy is congruent to her blank, and name the condition that guarantees it.",
+     "a": "(a) No. ∠A is not between AB and BC (it lies between AB and AC), so this is two sides and a non-included angle, an SSA set. With AB and BC the included angle is ∠B. (b) In both triangles AB = 8 cm, the angle at B is the 40° drawn at B, and AC₁ = AC₂ = 6.5 cm because C₁ and C₂ both lie on the arc of radius 6.5 cm centred at A. But BC₁ = 2.2 cm and BC₂ = 10.1 cm, so the third sides differ and the triangles cannot be congruent. (c) Rehan is wrong. In SAS the angle must lie between the two equal sides; ∠B lies between AB and BC, not between AB and AC, so this is the SSA condition, and SSA does not guarantee congruence: (b) gives two non-congruent triangles from the same measurements. (d) For example, the length BC of her blank (say 10.1 cm, if her blank is the longer triangle): then ∠B lies between AB and BC, so every copy is congruent by SAS. (Another correct answer: the angle at A of her blank, so that AB lies between ∠A and ∠B, giving ASA; or the angle at C of her blank, giving AAS.)",
+     "s": [
+      [
+       "(a) not SAS: two sides and a non-included angle (SSA); the included angle would be ∠B",
+       1
+      ],
+      [
+       "(b) both fit: AB = 8 cm, ∠B = 40°, AC₁ = AC₂ = 6.5 cm (same arc); not congruent since BC₁ = 2.2 cm ≠ BC₂ = 10.1 cm",
+       1
+      ],
+      [
+       "(c) Rehan wrong: ∠B is not between AB and AC, so it is SSA, which does not guarantee congruence",
+       1
+      ],
+      [
+       "(d) phone BC (SAS, ∠B between AB and BC) or ∠A (ASA, AB between the two angles)",
+       1
+      ]
+     ],
+     "p": "pp. 10-12"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A factory cuts triangular steel gusset plates to match a master plate ABC with ∠A = 50°, ∠B = 70° and AB = 60 cm; its other sides measure BC = 53 cm and CA = 65 cm (to the nearest cm). Three new plates arrive with incomplete records. Plate 1, ΔXYZ: ∠X = 50° and ∠Y = 70°, no side measured. Plate 2, ΔKLM: ∠K = 70° and KL = 60 cm. Plate 3, ΔDEF: ∠D = 60°, ∠E = 50° and DF = 53 cm. (a) For Plate 1, using only the two angles given (∠X and ∠Y), name the one side and its length that would prove the plate congruent to the master by ASA, and one other side and its length that would prove it by AAS. (b) For Plate 2, which angle must be measured, and what must it be, for ASA? Write the congruence with the vertices in the correct order. (c) The inspector writes for Plate 3: 'ΔDEF ≅ ΔCAB by AAS, so EF = 65 cm.' Check both parts of his note.",
+     "a": "First, ∠C = 180° - 50° - 70° = 60°. In ΔABC, BC (53 cm) is opposite the 50° angle, CA (65 cm) is opposite the 70° angle and AB (60 cm) lies between the 50° and 70° angles. (a) X matches A and Y matches B. ASA with ∠X and ∠Y: XY = 60 cm, the side between ∠X = 50° and ∠Y = 70°. AAS with ∠X and ∠Y: YZ = 53 cm (the side opposite ∠X = 50°, like BC opposite ∠A), or XZ = 65 cm (the side opposite ∠Y = 70°, like CA opposite ∠B). (b) ∠L must be measured and must be 50°. Then L matches A, K matches B and M matches C, so ΔLKM ≅ ΔABC by ASA (KL = BA = 60 cm lies between the angles). (c) ∠F = 180° - 60° - 50° = 70°, so D matches C, E matches A and F matches B. DF = 53 cm is opposite ∠E = 50°, just as CB = 53 cm is opposite ∠A = 50°, so ΔDEF ≅ ΔCAB by AAS: the first part is right. But EF corresponds to AB, so EF = 60 cm, not 65 cm; it is DE, which corresponds to CA, that would be 65 cm. The second part is wrong.",
+     "s": [
+      [
+       "(a) ASA: XY = 60 cm, the side between the 50° and 70° angles",
+       1
+      ],
+      [
+       "(a) AAS with ∠X and ∠Y: YZ = 53 cm (opposite ∠X = 50°) or XZ = 65 cm (opposite ∠Y = 70°)",
+       1
+      ],
+      [
+       "(b) measure ∠L, which must be 50°; ΔLKM ≅ ΔABC by ASA",
+       1
+      ],
+      [
+       "(c) congruence ΔDEF ≅ ΔCAB by AAS is right, but EF corresponds to AB, so EF = 60 cm, not 65 cm; DE (which would be 65 cm) corresponds to CA",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 12-16"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "On level ground, three 5 m ladders lean against vertical walls (each wall meets the ground at a right angle). Ladder 1 has its foot 2.5 m from its wall and makes an angle of 60° with the ground. Ladder 2 also has its foot 2.5 m from its wall. Ladder 3 touches its wall at a point 2.5 m above the ground. A painter says, 'Ladder 3 touches the wall much lower, so its triangle cannot be congruent to the triangle of Ladder 1.' (a) Show that the triangles formed by Ladders 1 and 2 with their walls and the ground are congruent, and find the angle Ladder 2 makes with the ground and with the wall. (b) Is the triangle of Ladder 3 congruent to the triangle of Ladder 1? Say which parts match. (c) Find the angle Ladder 3 makes with the ground. (d) RHS gives two sides and an angle that is not between them, yet it guarantees congruence while SSA in general does not. Explain why, using the construction of a right triangle with a given hypotenuse and side.",
+     "a": "(a) Both have a right angle at the wall, the ladder (5 m) as hypotenuse and the ground side 2.5 m, so they are congruent by RHS. Ladder 2 makes 60° with the ground, and with the wall 180° - 90° - 60° = 30°. (b) Yes. It has a right angle, hypotenuse 5 m and a side 2.5 m (along the wall), so it is congruent to Ladder 1's triangle by RHS. Its 2.5 m wall side matches Ladder 1's 2.5 m ground side, so its foot matches Ladder 1's top and its top matches Ladder 1's foot. The painter is wrong: the triangle is the same, only turned. (c) The angle at Ladder 3's foot corresponds to the angle at Ladder 1's top, which is 30°. (d) Draw the given side and a line perpendicular to it at one end; an arc of the hypotenuse's length from the other end meets the perpendicular line once above and once below. The two triangles are mirror images of each other, so they are congruent; there is no second, different triangle, which is what makes SSA fail in general.",
+     "s": [
+      [
+       "(a) RHS for Ladders 1 and 2 (right angle, hypotenuse 5 m, side 2.5 m) and Ladder 2's angles 60° with the ground and 30° with the wall",
+       1
+      ],
+      [
+       "(b) Ladder 3 congruent by RHS, with its 2.5 m wall side matching Ladder 1's 2.5 m ground side, so the painter is wrong",
+       1
+      ],
+      [
+       "(c) angle with the ground = 30°, as it corresponds to the top angle of Ladder 1",
+       1
+      ],
+      [
+       "(d) the arc meets the perpendicular above and below, giving mirror-image triangles that are congruent, so no non-congruent second triangle exists",
+       1
+      ]
+     ],
+     "p": "pp. 16-17"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A cycle-wheel maker joins the centre O of a wheel to points on the rim with equal, equally spaced spokes, and fixes a straight rod between the ends of every two neighbouring spokes, so each pair of neighbouring spokes and its rod form a triangle OBC with OB = OC. (a) With 8 spokes, find ∠BOC and the angles ∠OBC and ∠OCB, giving the reason the last two are equal. (b) Explain, naming a congruence condition, why all eight rods of this wheel have the same length. (c) A customer wants each angle between a rod and a spoke to be 80°. How many spokes are needed? Could the angle be 50° instead? Justify. (d) The maker wants every angle between a rod and a spoke to be a whole number of degrees. Which numbers of spokes from 8 to 20 work? Explain how you decide.",
+     "a": "(a) ∠BOC = 360° ÷ 8 = 45°. OB = OC, so the angles opposite them are equal: ∠OBC = ∠OCB = (180° - 45°) ÷ 2 = 67.5°. (b) Any two of the triangles have two sides equal to the spoke length and the angle between them equal to 45°, so they are congruent by SAS; the rods are corresponding sides, so all eight rods are equal. (c) ∠BOC = 180° - 2 × 80° = 20°, so 360° ÷ 20° = 18 spokes. For 50°, ∠BOC would be 180° - 2 × 50° = 80°, and 360° ÷ 80° = 4.5 is not a whole number of spokes, so no. (d) With n spokes, ∠BOC = 360° ÷ n and each base angle is (180° - 360° ÷ n) ÷ 2 = 90° - 180° ÷ n. This is a whole number exactly when n divides 180. From 8 to 20 that is 9, 10, 12, 15, 18 and 20 spokes (base angles 70°, 72°, 75°, 78°, 80° and 81°); 8 spokes gives 67.5°, which fails.",
+     "s": [
+      [
+       "(a) ∠BOC = 45°; base angles equal because they are opposite the equal spokes, each 67.5°",
+       1
+      ],
+      [
+       "(b) SAS: two spokes and the 45° angle between them, so the rods are equal corresponding sides",
+       1
+      ],
+      [
+       "(c) 80° needs ∠BOC = 20°, so 18 spokes; 50° gives 360 ÷ 80 = 4.5, not possible",
+       1
+      ],
+      [
+       "(d) base angle 90° - 180° ÷ n is whole when n divides 180: 9, 10, 12, 15, 18, 20 spokes",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ],
+     "p": "pp. 17-19"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tile pattern is made of an equilateral triangle ABC and an isosceles triangle ACD drawn on the side AC, on the opposite side of AC from B, with CA = CD and ∠ACD = 100°. B and D are joined. (a) Find ∠CAD and ∠BAD. (b) Show that ΔBCD is isosceles and find ∠CBD and ∠CDB. (c) Find ∠ABD and ∠ADB. (d) Meena says, 'In ΔABD, AB = AD.' Use your angles to decide whether she is right.",
+     "a": "(a) In ΔACD, CA = CD, so ∠CAD = ∠CDA = (180° - 100°) ÷ 2 = 40°. ∠BAC = 60° (equilateral), so ∠BAD = 60° + 40° = 100°. (b) CB = CA (equilateral) and CA = CD, so CB = CD and ΔBCD is isosceles. ∠BCD = 60° + 100° = 160°, so ∠CBD = ∠CDB = (180° - 160°) ÷ 2 = 10°. (c) ∠ABD = 60° - 10° = 50° and ∠ADB = 40° - 10° = 30° (check: 50° + 100° + 30° = 180°). (d) She is wrong. If AB = AD, the angles opposite them, ∠ADB and ∠ABD, would be equal, but they are 30° and 50°.",
+     "s": [
+      [
+       "(a) ∠CAD = 40° from the equal sides CA = CD, and ∠BAD = 60° + 40° = 100°",
+       1
+      ],
+      [
+       "(b) CB = CA = CD so ΔBCD is isosceles; ∠BCD = 160°, ∠CBD = ∠CDB = 10°",
+       1
+      ],
+      [
+       "(c) ∠ABD = 50° and ∠ADB = 30°",
+       1
+      ],
+      [
+       "(d) verdict: Meena is wrong, because equal sides AB and AD would need equal opposite angles ∠ADB and ∠ABD, but 30° ≠ 50°",
+       1
+      ]
+     ],
+     "p": "pp. 17-19"
+    }
+   ]
+  },
+  {
+   "code": "C7M-1.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular iron gate ABCD has the top rail AB and the bottom rail DC, with AD and BC the upright sides. E is the midpoint of the top rail AB, and two straight bars are welded from E to the bottom corners D and C. The welder measures ∠AED = 56°. (a) Show that ΔAED ≅ ΔBEC, naming the condition and the three pairs of equal parts. (b) What does this give about the bars ED and EC, and about ∠BEC? (c) Find ∠DEC and the angles ∠EDC and ∠ECD. (d) For a new gate the owner wants the bars to meet at a right angle, ∠DEC = 90°. What must ∠AED be then?",
+     "a": "(a) AE = BE (E is the midpoint), ∠A = ∠B = 90° (angles of a rectangle) and AD = BC (opposite sides of a rectangle), so ΔAED ≅ ΔBEC by SAS. (b) ED = EC and ∠BEC = ∠AED = 56°, as corresponding parts. (c) ∠DEC = 180° - 56° - 56° = 68°. ED = EC, so ∠EDC = ∠ECD = (180° - 68°) ÷ 2 = 56°. (d) ∠AED = ∠BEC and ∠AED + 90° + ∠BEC = 180°, so ∠AED = 90° ÷ 2 = 45°.",
+     "s": [
+      [
+       "(a) SAS with AE = BE, ∠A = ∠B = 90° and AD = BC, written ΔAED ≅ ΔBEC",
+       1
+      ],
+      [
+       "(b) ED = EC and ∠BEC = 56° as corresponding parts",
+       1
+      ],
+      [
+       "(c) ∠DEC = 68° from the straight angle at E, and ∠EDC = ∠ECD = 56° because ED = EC",
+       1
+      ],
+      [
+       "(d) ∠AED = (180° - 90°) ÷ 2 = 45°",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ],
+     "p": "pp. 19-21"
+    }
+   ]
+  }
+ ]
+}

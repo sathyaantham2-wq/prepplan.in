@@ -1,0 +1,145 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 5,
+  "name": "Connecting the Dots",
+  "blurb": "Statistical questions and statements, the arithmetic mean, comparing data with range and dot plots, the median and outliers, mean versus median, double bar graphs and reading data tables.",
+  "order_index": 13,
+  "source_code": "gegp205"
+ },
+ "scope": [
+  [
+   "IN",
+   "Tell statistical questions and statistical statements from other questions and statements",
+   "pp.97-98"
+  ],
+  [
+   "IN",
+   "Find the arithmetic mean (average) of data, understand it as a fair share, and compare groups of different sizes by their means",
+   "pp.98-101"
+  ],
+  [
+   "IN",
+   "Describe and compare data using the minimum, maximum, range, total and mean, and read a dot plot",
+   "pp.101-104"
+  ],
+  [
+   "IN",
+   "Find the median of data with an odd or even number of values and recognise outliers and their effect on the mean",
+   "pp.105-108"
+  ],
+  [
+   "IN",
+   "Compare the mean and median, tell zero from no value, and choose which measure of central tendency represents the data",
+   "pp.108-112"
+  ],
+  [
+   "IN",
+   "Read and draw clustered column (double bar) graphs, choose a scale, and interpret them in two steps",
+   "pp.114-124"
+  ],
+  [
+   "IN",
+   "Read data tables and graphs to find patterns, compare groups over time, and decide which statements the data can justify",
+   "pp.125-131"
+  ],
+  [
+   "OUT",
+   "Mode and frequency tables -- not taught in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Pie charts and line graphs -- only dot plots and double bar graphs are used",
+   null
+  ],
+  [
+   "OUT",
+   "Standard deviation and other formal measures of spread -- only range is used",
+   null
+  ],
+  [
+   "OUT",
+   "The number lock puzzle and the individual and group projects -- activities that are not assessed",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-5.1",
+   "name": "Statistical questions and statements",
+   "description": "Telling a statistical question, one answered by collecting data that varies, from an ordinary question, and recognising statistical statements.",
+   "idea": "A question whose answer varies from one person or time to another can only be answered by collecting data.",
+   "rule": "A statistical question expects varied answers and is answered with data; a statistical statement summarises data with numbers, proportions or predictions.",
+   "example": "How tall are the Grade 7 students in our school? is statistical; How tall is Meena? is not.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-5.2",
+   "name": "Arithmetic mean (average)",
+   "description": "Finding the arithmetic mean of a list of values, understanding it as a fair share and comparing groups of different sizes by their means.",
+   "idea": "The mean is the equal share each value would get if the total were shared out evenly, so it balances the highs and lows.",
+   "rule": "Mean = sum of all the values divided by the number of values.",
+   "example": "The guava counts 3, 8, 10, 5, 4 have total 30 and mean 30 / 5 = 6.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-5.3",
+   "name": "Comparing data with range, totals and dot plots",
+   "description": "Describing and comparing data using the minimum, maximum, range, total and mean, and reading a dot plot.",
+   "idea": "Different summaries answer different questions, and no single one gives the full picture of which group is better.",
+   "rule": "Range = maximum - minimum; a dot plot shows every value as a dot on a number line and shows spread and clusters but loses the original order.",
+   "example": "Runs 0, 17, 21, 90 have range 90 and runs 67, 55, 18, 35 have range 49, so the second set is more consistent.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.4",
+   "name": "Median and outliers",
+   "description": "Finding the median of sorted data with an odd or even number of values and recognising outliers and their pull on the mean.",
+   "idea": "The median is the middle value, so a few very large or very small values cannot move it much.",
+   "rule": "Sort the data; the median is the middle value, or the average of the two middle values when the count is even; an outlier is a value far from the rest.",
+   "example": "The heights 118, 165, 170, 173, 175 have median 170 but mean 160.2, because 118 is an outlier.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.5",
+   "name": "Mean and median compared, zero and missing values",
+   "description": "Comparing the mean and median, choosing the measure that represents the data, and treating a zero score differently from a missing value.",
+   "idea": "An outlier pulls the mean towards itself, and only values that really belong to the data should be counted.",
+   "rule": "No outlier: mean and median are close; high outlier: mean greater than median; low outlier: mean less than median; a missing value is not counted, a zero is.",
+   "example": "57, 13, 0, 84, -, 51, 27 has 6 values, not 7, because the player did not play one match.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.6",
+   "name": "Double bar (clustered column) graphs",
+   "description": "Reading and drawing double bar graphs, choosing a scale, converting between values and bar lengths, and interpreting them in two steps.",
+   "idea": "Putting two bars side by side for each category on one scale lets us compare groups directly.",
+   "rule": "Bar length = value / scale unit; use different colours or patterns for the two groups; first identify what is given, then infer.",
+   "example": "With 1 unit = 4 degrees C, a temperature of 26 degrees C is drawn as a bar 6.5 units long.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.7",
+   "name": "Reading data tables and finding stories in data",
+   "description": "Reading tables of averages over ages and years, comparing groups, computing changes, and deciding which statements the data justify.",
+   "idea": "Data tell a story only if we read exactly what they say, and averages do not describe every individual.",
+   "rule": "Compare values by subtracting; a statement is justified only if the numbers in the table show it; one or two samples cannot be generalised.",
+   "example": "Boys aged 5 in 1989 averaged 101.3 cm and in 2019 averaged 107.1 cm, an increase of 5.8 cm.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

@@ -1,0 +1,294 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 3,
+  "name": "Finding Common Ground"
+ },
+ "source_code": "gegp203",
+ "concepts": [
+  {
+   "code": "C7M-3.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A tailor in Mysuru has a roll of cotton cloth 84 m long and a roll of silk cloth 126 m long. She cuts both rolls into pieces that are all the same length, a whole number of metres, with no cloth left over. (a) List all the factors of 84 and of 126, and write their common factors. (b) If she wants as few pieces as possible, how long is each piece and how many pieces does she get in all? (c) Her cutting table is only 30 m long, so no piece can be longer than 30 m. What is now the best piece length, and how many pieces does she get? Justify your choice.",
+     "a": "(a) Factors of 84: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84. Factors of 126: 1, 2, 3, 6, 7, 9, 14, 18, 21, 42, 63, 126. Common factors: 1, 2, 3, 6, 7, 14, 21, 42. (b) The piece length must be a common factor; the fewest pieces come from the largest one, the HCF 42 m: 84/42 + 126/42 = 2 + 3 = 5 pieces. (c) 42 m is now too long, so take the largest common factor not above 30, which is 21 m: 84/21 + 126/21 = 4 + 6 = 10 pieces. Any smaller common factor (14, 7, ...) gives more pieces.",
+     "s": [
+      [
+       "(a) both factor lists correct and the common factors 1, 2, 3, 6, 7, 14, 21, 42",
+       1
+      ],
+      [
+       "(b) chooses the HCF 42 m as the piece length, explaining that the largest common factor gives the fewest pieces",
+       1
+      ],
+      [
+       "(b) 2 + 3 = 5 pieces",
+       1
+      ],
+      [
+       "(c) rejects 42, chooses 21 m as the largest common factor up to 30, and gets 4 + 6 = 10 pieces",
+       1
+      ]
+     ],
+     "p": "pp. 47-48"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "(a) Use the division method to write the prime factorisation of 504. (b) Using only the prime factorisation, decide whether each of 2 x 2 x 2 x 7, 3 x 3 x 7 and 2 x 3 x 3 x 3 is a factor of 504. For each one that is a factor, find the number it must be multiplied by to give 504. (c) Farhan conjectures: 'Every odd factor of 504 is a factor of 63.' Decide whether his conjecture is true, explain using the prime factorisation, and list all the odd factors of 504.",
+     "a": "(a) 504 / 2 = 252, / 2 = 126, / 2 = 63, / 3 = 21, / 3 = 7, / 7 = 1, so 504 = 2 x 2 x 2 x 3 x 3 x 7. (b) 2 x 2 x 2 x 7 = 56 is a subpart, and 504 = 56 x (3 x 3) = 56 x 9. 3 x 3 x 7 = 63 is a subpart, and 504 = 63 x (2 x 2 x 2) = 63 x 8. 2 x 3 x 3 x 3 = 54 needs three 3s but 504 has only two, so 54 is not a factor. (c) True. Every factor of 504 is a subpart of 2 x 2 x 2 x 3 x 3 x 7. An odd factor can contain no 2, so it is a subpart of 3 x 3 x 7 = 63, that is, a factor of 63. The odd factors of 504 are therefore 1, 3, 7, 9, 21 and 63 (six of them), and each one divides 504.",
+     "s": [
+      [
+       "(a) division steps by 2, 2, 2, 3, 3, 7 ending in 1, giving 504 = 2 x 2 x 2 x 3 x 3 x 7",
+       1
+      ],
+      [
+       "(b) 56 and 63 shown to be subparts, with 504 = 56 x 9 and 504 = 63 x 8",
+       1
+      ],
+      [
+       "(b) 54 rejected because it needs three 3s and 504 has only two",
+       1
+      ],
+      [
+       "(c) verdict 'true' because an odd factor has no 2 and so is a subpart of 3 x 3 x 7 = 63, with the odd factors 1, 3, 7, 9, 21, 63 listed",
+       1
+      ]
+     ],
+     "p": "pp. 50-52"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three classes must find the HCF of 168, 252 and 420. (a) Write each number as a product of primes. (b) Find the HCF, saying how many times each common prime is taken and why. (c) Rohit took the two 2s, one 3 and one 7 correctly, but also put in the 5 once 'because it appears in 420', and wrote HCF = 2 x 2 x 3 x 5 x 7. Find the value of his answer and give two reasons, without dividing it into anything, why it cannot be a common factor of the three numbers. (d) How many common factors do 168, 252 and 420 have? Explain how you know.",
+     "a": "(a) 168 = 2 x 2 x 2 x 3 x 7, 252 = 2 x 2 x 3 x 3 x 7, 420 = 2 x 2 x 3 x 5 x 7. (b) Common primes 2, 3, 7 (5 is not in 168 or 252). Take the minimum count: two 2s (252 and 420 have two), one 3 (168 and 420 have one), one 7. HCF = 2 x 2 x 3 x 7 = 84. (c) Rohit's number is 4 x 3 x 5 x 7 = 420, which is just the largest number itself. It contains a 5, and 168 and 252 have no 5 in their factorisations, so it is not a subpart of them; also it is bigger than 168, and a factor of a number cannot be bigger than the number. A prime goes into the HCF only if it is common to all the numbers. (d) Every common factor is a subpart of the largest common subpart 2 x 2 x 3 x 7, so the common factors are the factors of 84: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84, which is 12 common factors.",
+     "s": [
+      [
+       "(a) all three prime factorisations correct",
+       1
+      ],
+      [
+       "(b) HCF = 2 x 2 x 3 x 7 = 84, taking each common prime the minimum number of times and leaving out 5",
+       1
+      ],
+      [
+       "(c) Rohit's value 420, rejected for two reasons: 5 is missing from 168 and 252, and 420 is larger than 168",
+       1
+      ],
+      [
+       "(d) 12 common factors, with the reason that they are exactly the factors of the HCF 84",
+       1
+      ]
+     ],
+     "p": "pp. 53-54"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For a festival, Anshu makes a toran from cloth strips 12 cm long, Guna from strips 18 cm long and Leela from strips 20 cm long, placing strips end to end. All three torans must have the same length. (a) Using prime factorisation, find the length of the shortest toran all three can make. (b) How many strips does each child use for it? (c) The product 12 x 18 x 20 = 4320 cm is also a length all three can make. Write 4320 as a product of primes, compare it prime by prime with your answer to (a), and find how many times longer it is. (d) The torans for the school gate must each be at least 3 m and at most 6 m long, and the class wants to use as few strips in all as possible. Which length should they choose, and how many strips do the three children use altogether?",
+     "a": "(a) 12 = 2 x 2 x 3, 18 = 2 x 3 x 3, 20 = 2 x 2 x 5. Take each prime the most times it appears: two 2s, two 3s, one 5. LCM = 2 x 2 x 3 x 3 x 5 = 180 cm. (b) Anshu 180 / 12 = 15 strips, Guna 180 / 18 = 10 strips, Leela 180 / 20 = 9 strips. (c) 4320 = 2 x 2 x 2 x 2 x 2 x 3 x 3 x 3 x 5: five 2s instead of two and three 3s instead of two, with the one 5 the same. The extra primes are 2 x 2 x 2 x 3 = 24, so 4320 = 24 x 180 is 24 times as long: a common multiple, but not the lowest. (d) The common lengths are multiples of 180: 180, 360, 540, 720, ... Between 300 cm and 600 cm only 360 cm and 540 cm. For 360 cm: 30 + 20 + 18 = 68 strips; for 540 cm: 45 + 30 + 27 = 102 strips. They should choose 360 cm, using 68 strips.",
+     "s": [
+      [
+       "(a) prime factorisations and LCM = 2 x 2 x 3 x 3 x 5 = 180 cm, taking each prime its maximum number of times",
+       1
+      ],
+      [
+       "(b) 15, 10 and 9 strips",
+       1
+      ],
+      [
+       "(c) 4320 = 2 x 2 x 2 x 2 x 2 x 3 x 3 x 3 x 5, naming the three extra 2s and one extra 3 (24) and 4320 = 24 x 180",
+       1
+      ],
+      [
+       "(d) finds 360 cm and 540 cm as the only common lengths from 3 m to 6 m, compares 68 and 102 strips and chooses 360 cm",
+       1
+      ]
+     ],
+     "p": "pp. 55-58"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A puzzle card shows two numbers written as 16 x 21 and 16 x 35. (a) Using the common multiplier 16, find their HCF without multiplying the numbers out; show the step. (b) Kavya keeps 16 x 21 and replaces the second number by 16 x b, where b is a whole number from 20 to 30. Find all the values of b for which the HCF of 16 x 21 and 16 x b is exactly 16, and state the condition b must meet. (c) For b = 28, find the HCF and explain why it is larger than 16. (d) Find the smallest b greater than 30 for which the HCF of 16 x 21 and 16 x b is 16 x 21 itself, and name the property of HCFs that this shows.",
+     "a": "(a) The HCF of two multiples of 16 is 16 x (HCF of the multipliers). 21 = 3 x 7 and 35 = 5 x 7 have HCF 7, so the HCF is 16 x 7 = 112. (b) The HCF is exactly 16 only when 21 and b have HCF 1, that is, b has neither 3 nor 7 as a factor. From 20 to 30 this leaves b = 20, 22, 23, 25, 26, 29 (21, 24, 27, 30 contain 3 and 28 contains 7). (c) 28 = 2 x 2 x 7 shares the prime 7 with 21, so the HCF of 21 and 28 is 7 and the HCF of the two numbers is 16 x 7 = 112, more than 16. (d) The HCF is 16 x 21 when 16 x 21 is a factor of 16 x b, that is, when b is a multiple of 21. The smallest such b above 30 is 42, giving 16 x 21 = 336 and 16 x 42 = 672. This shows that when one number is a factor of the other, their HCF is the smaller number.",
+     "s": [
+      [
+       "(a) HCF of 21 and 35 is 7, so the HCF is 16 x 7 = 112",
+       1
+      ],
+      [
+       "(b) condition: b must share no prime with 21 = 3 x 7 (HCF of 21 and b is 1)",
+       1
+      ],
+      [
+       "(b) all six values 20, 22, 23, 25, 26, 29 and no others",
+       1
+      ],
+      [
+       "(c) and (d) HCF 112 for b = 28 because 28 contains 7; b = 42, linked to the property that when one number is a factor of the other the HCF is the smaller number",
+       1
+      ]
+     ],
+     "p": "pp. 58-60"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Neha uses the division method for 420 and 630. She first divides both numbers by 10 and then by 21. (a) Write her division table and find the HCF. (b) Find the LCM from her table. (c) Verify your answers using HCF x LCM = product of the two numbers. (d) Kiran says the LCM is 420 x 630 = 264600, 'because both numbers divide it'. Is his number a common multiple? Is it the LCM? Find how many times the LCM it is, and explain why that number appears.",
+     "a": "(a) 420, 630 divided by 10 gives 42, 63; divided by 21 gives 2, 3. Now 2 and 3 have no common factor, so HCF = 10 x 21 = 210. (b) LCM = HCF x numbers in the last row = 210 x 2 x 3 = 1260. (c) 420 x 630 = 264600 and 210 x 1260 = 264600, so the relation holds. (d) 264600 is a common multiple, since both numbers divide their product, but it is not the lowest: 264600 / 1260 = 210 times the LCM. The factor is the HCF because product = HCF x LCM, so the product is bigger than the LCM by exactly the HCF; it would equal the LCM only if the HCF were 1.",
+     "s": [
+      [
+       "(a) table 420, 630 -> 42, 63 -> 2, 3 and HCF = 10 x 21 = 210",
+       1
+      ],
+      [
+       "(b) LCM = 210 x 2 x 3 = 1260",
+       1
+      ],
+      [
+       "(c) both products worked out as 264600",
+       1
+      ],
+      [
+       "(d) common multiple but not the LCM; 264600 = 210 x 1260, with the reason that the product is HCF x LCM",
+       1
+      ]
+     ],
+     "p": "pp. 60-62"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two whole numbers have HCF 6 and LCM 180. (a) Find the product of the two numbers. (b) Riya says one of the numbers could be 24; Sam says one of them could be 36. Decide whether each is right, checking the partner number in each case. (c) Find every possible pair of such numbers, and explain how you made sure no pair is missing.",
+     "a": "(a) Product = HCF x LCM = 6 x 180 = 1080. (b) Riya is wrong: the partner would be 1080 / 24 = 45, but 24 and 45 have HCF 3 (and LCM 360), not 6 and 180; also 24 does not divide 180. Sam is right: the partner is 1080 / 36 = 30; 30 = 2 x 3 x 5 and 36 = 2 x 2 x 3 x 3 give HCF 2 x 3 = 6 and LCM 2 x 2 x 3 x 3 x 5 = 180. (c) Both numbers are multiples of 6: 6a and 6b with a x b = 1080 / 36 = 30, and a, b must have no common factor other than 1 (otherwise the HCF would be more than 6). The pairs a x b = 30 are 1 x 30, 2 x 15, 3 x 10, 5 x 6, and each is co-prime, so the numbers are (6, 180), (12, 90), (18, 60), (30, 36).",
+     "s": [
+      [
+       "(a) product = 6 x 180 = 1080",
+       1
+      ],
+      [
+       "(b) Riya wrong (partner 45, HCF 3) and Sam right (partner 30, HCF 6 and LCM 180 checked by primes)",
+       1
+      ],
+      [
+       "(c) method: numbers 6a and 6b with a x b = 30 and a, b having no common prime",
+       1
+      ],
+      [
+       "(c) all four pairs (6, 180), (12, 90), (18, 60), (30, 36) and no others",
+       1
+      ]
+     ],
+     "p": "pp. 62-63"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A carton is 24 cm long, 36 cm wide and 60 cm high. It is to be packed with identical cubes with no gaps. (a) Which of cubes of side 4 cm, 6 cm, 8 cm and 9 cm can fill it exactly? Give a reason for each one that cannot. (b) Find the side of the largest cube that fills it exactly, and say why the HCF gives it. (c) How many of these largest cubes are needed? (d) How many 6 cm cubes are needed, and how many times the number in (c) is this?",
+     "a": "(a) The side must divide 24, 36 and 60. 4 cm and 6 cm divide all three, so they fit. 8 cm does not divide 36 (or 60); 9 cm does not divide 24 (or 60). (b) The largest side dividing all three lengths is their HCF: 24 = 2 x 2 x 2 x 3, 36 = 2 x 2 x 3 x 3, 60 = 2 x 2 x 3 x 5, HCF = 2 x 2 x 3 = 12 cm. (c) (24/12) x (36/12) x (60/12) = 2 x 3 x 5 = 30 cubes. (d) (24/6) x (36/6) x (60/6) = 4 x 6 x 10 = 240 cubes, which is 240 / 30 = 8 times as many.",
+     "s": [
+      [
+       "(a) 4 cm and 6 cm fit; 8 cm rejected (does not divide 36) and 9 cm rejected (does not divide 24)",
+       1
+      ],
+      [
+       "(b) side 12 cm as the HCF of 24, 36 and 60, with the reason that the side must be a common factor of all three",
+       1
+      ],
+      [
+       "(c) 2 x 3 x 5 = 30 cubes",
+       1
+      ],
+      [
+       "(d) 4 x 6 x 10 = 240 cubes, 8 times as many",
+       1
+      ]
+     ],
+     "p": "p. 64"
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A temple staircase has 130 steps, numbered 1 to 130 from the bottom. Starting from the ground, Asha lands only on every 4th step (4, 8, 12, ...), Bala on every 6th step and Chitra on every 10th step. (a) On which steps do all three land? (b) On how many steps do Asha and Bala both land but Chitra does not? (c) Chitra leaves, and Dinesh joins Asha and Bala. He will jump a fixed number of steps, from 5 to 9, and the children want the first step on which all three of them land to be step 24. Find the first common step for each possible jump, and decide which jump Dinesh must choose.",
+     "a": "(a) A step all three land on is a common multiple of 4, 6 and 10. 4 = 2 x 2, 6 = 2 x 3, 10 = 2 x 5, so the LCM is 2 x 2 x 3 x 5 = 60, and the steps are 60 and 120 (180 is beyond 130). (b) Asha and Bala both land on multiples of LCM(4, 6) = 12: 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, that is 10 steps. Chitra also lands on 60 and 120, so 10 - 2 = 8 steps. (c) The first common step is the LCM of 4, 6 and the jump, that is LCM(12, jump): jump 5 gives 60, 6 gives 12, 7 gives 84, 8 gives 24, 9 gives 36. Only a jump of 8 gives 24 (12 = 2 x 2 x 3 needs one more 2 to make 24 = 2 x 2 x 2 x 3, and 8 = 2 x 2 x 2 supplies it with no new prime), so Dinesh must jump 8 steps.",
+     "s": [
+      [
+       "(a) LCM of 4, 6, 10 = 60 by primes, steps 60 and 120",
+       1
+      ],
+      [
+       "(b) 10 common steps of Asha and Bala (multiples of 12) less 60 and 120, giving 8",
+       1
+      ],
+      [
+       "(c) first common step for all five jumps: 60, 12, 84, 24, 36",
+       1
+      ],
+      [
+       "(c) chooses a jump of 8 as the only one giving 24, with a reason from the primes or the list",
+       1
+      ]
+     ],
+     "p": "pp. 63-64"
+    }
+   ]
+  }
+ ]
+}

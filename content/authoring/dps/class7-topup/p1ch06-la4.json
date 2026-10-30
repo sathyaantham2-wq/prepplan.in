@@ -1,0 +1,294 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Number Play"
+ },
+ "source_code": "gegp106",
+ "concepts": [
+  {
+   "code": "C7M-6.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 127-128",
+     "q": "Eight children of different heights wait in a queue at a water cooler, one behind the other, all facing the front. Each child calls out the number of children in front of them who are taller than them. From the front, the calls are 0, 1, 1, 0, 3, 5, 0, 2. (a) Which child (1st, 2nd, ...) is the tallest? Give a reason. (b) Which child is the shortest? Give a reason. (c) The tallest child now walks to the very front of the queue; the others keep their order. Write the new calls of the whole queue from the front. (d) Go back to the original queue. A new child joins at the very front. Ravi says: 'If the new child is taller than all eight, every one of the eight calls goes up by 1; if the new child is shorter than all eight, none of the eight calls changes.' Do you agree with each half of his statement? Explain.",
+     "a": "(a) The 7th child. The 7th calls 0, so they are taller than all six children in front of them. The 8th calls 2, so at least one child ahead is taller than the 8th; if the 8th were taller than the 7th, they would be taller than everyone in front and would call 0. So the 8th is shorter than the 7th, and nobody is taller than the 7th. (b) The 6th child. The shortest child is shorter than everyone in front, so their call equals the number of children in front. Only the 1st (0), 2nd (1) and 6th (5) do this; the 6th is shorter than all five in front, including the 1st and 2nd, and the 7th and 8th call 0 and 2, less than 6 and 7, so each is taller than someone ahead. So the 6th is the shortest. (c) 0, 1, 2, 2, 1, 4, 6, 2: the tallest child calls 0, each of the six children who were in front of the tallest gains 1 (0+1, 1+1, 1+1, 0+1, 3+1, 5+1), and the last child keeps 2 because the same seven children are still in front. (d) Agree with both halves. A child taller than all eight is counted as taller by every one of them, so each call goes up by 1 (1, 2, 2, 1, 4, 6, 1, 3) and the new child calls 0. A child shorter than all eight is taller than none of them, so no call changes, and the new child still calls 0 because nobody is in front.",
+     "s": [
+      [
+       "(a) names the 7th child as tallest: the 7th calls 0, and the 8th's call of 2 shows the 8th is not taller than everyone ahead, so the 8th is shorter than the 7th",
+       1
+      ],
+      [
+       "(b) names the 6th child as shortest, with the reason that the shortest child's call must equal the number of children in front (5 for the 6th) and the 7th and 8th call less",
+       1
+      ],
+      [
+       "(c) writes the new calls 0, 1, 2, 2, 1, 4, 6, 2, showing that the six children who were in front of the tallest each gain 1 and the 8th keeps 2",
+       1
+      ],
+      [
+       "(d) agrees with both halves: a new tallest child at the front adds 1 to every call, a new shortest child changes none, and the new child calls 0 either way",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 130-131",
+     "q": "In a board game, Tanvi's token starts on square 0 of a number track. On every move the token goes either 3 squares forward or 5 squares back, and it is never allowed to go below square 0. (a) Using the rules for the parity of sums and differences, explain why every move changes the parity (even or odd) of the token's square. (b) Can the token be back on square 0 after exactly 15 moves? Justify. (c) Show that the token can be back on square 0 after exactly 8 moves by giving the moves and the square after each move. (d) Kabir claims: 'After exactly 10 moves the token can stand on square 30, but never on square 31.' Is he right? Justify both parts.",
+     "a": "(a) 3 and 5 are odd. Adding or subtracting an odd number changes parity: even + odd = odd, odd + odd = even, even - odd = odd, odd - odd = even. (b) No. The parity changes on every move, so after 1, 3, 5, ... moves the square is odd; after 15 (an odd number of) moves the square is odd, but 0 is even. (c) 5 moves forward and 3 moves back: 3, 6, 9, 12, 15, 10, 5, 0 (5 x 3 = 15 = 3 x 5), never below 0. (d) Yes. Ten moves forward give 10 x 3 = 30, so square 30 can be reached. After an even number of moves (10) the parity has changed an even number of times, so the square is even, and 31 is odd, so 31 can never be reached in 10 moves.",
+     "s": [
+      [
+       "(a) states that 3 and 5 are odd and uses even +/- odd = odd and odd +/- odd = even to show each move flips the parity",
+       1
+      ],
+      [
+       "(b) says no: after an odd number of moves (15) the square is odd, and 0 is even",
+       1
+      ],
+      [
+       "(c) gives a valid 8-move sequence ending at 0, such as 5 forward then 3 back with squares 3, 6, 9, 12, 15, 10, 5, 0, none below 0",
+       1
+      ],
+      [
+       "(d) says Kabir is right: ten forward moves reach 30, and after 10 moves the square is even, so the odd square 31 is impossible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 130-131",
+     "q": "Mehul has to fill a 3 x 3 grid with nine whole numbers (repeats allowed) so that each of the three row sums and each of the three column sums is odd. (a) How many odd numbers can one row hold if its sum is odd? Give a reason. (b) Explain why the total number of odd numbers in the whole grid must be odd, so that a grid with 4 or 6 odd numbers cannot work. (c) Mehul says: '7 is odd, so a grid with exactly 7 odd numbers and 2 even numbers will work.' Show that he is wrong. (d) Draw a grid, writing o for an odd number and e for an even number, that uses exactly 5 odd numbers and satisfies all six conditions.",
+     "a": "(a) 1 or 3. Even numbers do not change the parity of a sum, and a sum of odd numbers is odd only when an odd number of them are added, so the row holds 1 or 3 odd numbers. (b) Each row holds an odd count (1 or 3), and the sum of three odd numbers is odd, so the grid's total count of odd numbers is odd (3, 5, 7 or 9 by counting alone); 4 and 6 are even, so they fail. (c) With 7 odd numbers the rows must hold 3, 3 and 1 odd numbers (the only way to make 7 from three of 1 or 3). The row with 1 odd number has 2 even numbers, in two different columns. Each of those columns gets 2 odd numbers from the two full rows plus 1 even number, so its sum is even. So 7 cannot work. (d) For example: o o o / o e e / o e e. Rows hold 3, 1, 1 odd numbers and columns hold 3, 1, 1, so all six sums are odd, and there are 5 odd numbers.",
+     "s": [
+      [
+       "(a) answers 1 or 3, because a sum of odd numbers is odd only when an odd number of them are added (even numbers do not change parity)",
+       1
+      ],
+      [
+       "(b) adds the three odd row counts to show the total count of odd numbers is odd, so 4 and 6 are impossible",
+       1
+      ],
+      [
+       "(c) shows rows must hold 3, 3, 1 odd numbers and that each column under an even in the one-odd row gets two odd numbers and an even, so its sum is even",
+       1
+      ],
+      [
+       "(d) draws a grid with exactly 5 o's whose every row and column holds 1 or 3 o's, such as o o o / o e e / o e e",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.3",
+   "questions": [
+    {
+     "b": "Create",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 132-133",
+     "q": "In this question n stands for any counting number 1, 2, 3, .... (a) Decide whether 9n + 9n + 5 and 9n + 4 are always even, always odd, or can be either; give a reason or two values of n for each. (b) Using some of the terms 3n, 4n, 5 and 6 (each at most once, added together), build one expression that is always odd and one that can be either odd or even. Justify each. (c) Arjun says: 'The expression 4n + 6 always gives an even number, and it gives every even number greater than 8.' Decide whether he is fully right, partly right or wrong, and write an expression that does give every even number greater than 8. (2 marks)",
+     "a": "(a) 9n + 9n + 5 = 18n + 5 is always odd (18n is even, even + odd = odd). 9n + 4 can be either: n = 1 gives 13 (odd), n = 2 gives 22 (even). (b) For example: always odd 4n + 5 (4n is even, even + odd = odd); either 3n + 6 (n = 1 gives 9, n = 2 gives 12, because 3n changes parity with n). (c) Partly right. The first half is true: 4n is even and 6 is even, so 4n + 6 is always even. The second half is false: 4n + 6 gives 10, 14, 18, 22, ..., going up by 4, so 12, 16, 20, ... are missed. 2n + 8 gives 10, 12, 14, 16, ..., every even number greater than 8.",
+     "s": [
+      [
+       "(a) shows 9n + 9n + 5 = 18n + 5 is always odd and 9n + 4 can be either, with a reason or two values (such as 13 and 22)",
+       1
+      ],
+      [
+       "(b) gives one valid always-odd and one either expression from the allowed terms (such as 4n + 5 and 3n + 6), each justified by the parity of its terms",
+       1
+      ],
+      [
+       "(c) says partly right and justifies the true half: 4n and 6 are both even, so 4n + 6 is always even",
+       1
+      ],
+      [
+       "(c) rejects the second half by naming a missed even number (12) from 10, 14, 18, ... and gives a correct expression such as 2n + 8",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.4",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 133-134",
+     "q": "A 3 x 3 grid is to be filled with the numbers 1 to 9, each used once. The puzzle card says the top row sum is 6 and the bottom row sum is 24. (a) Find the middle row sum and say which three numbers must be in each row. (b) Every column holds one number from each row. Find the smallest and the largest possible column sum, and explain. (c) Three students suggest the column sums for the card: Neha 14, 14, 17; Om 11, 16, 18; Pooja 13, 15, 16. Only one set can work. Decide which, and give a different reason why each of the other two cannot. (d) Fill the grid for the set that works, with the columns in the order given.",
+     "a": "(a) The row sums add to 1 + 2 + ... + 9 = 45, so the middle row sum is 45 - 6 - 24 = 15. A sum of 6 needs 1, 2, 3 (the smallest possible), a sum of 24 needs 7, 8, 9 (the largest possible), so the middle row holds 4, 5, 6. (b) Smallest column 1 + 4 + 7 = 12, largest 3 + 6 + 9 = 18, since each column takes one number from {1, 2, 3}, one from {4, 5, 6} and one from {7, 8, 9}. (c) Neha's set can work. Om's set cannot: it adds up to 45, but 11 is less than the smallest possible column sum 12. Pooja's set cannot: each sum lies from 12 to 18, but 13 + 15 + 16 = 44, and the three column sums must add up to 45. (d) For example: top row 1 2 3, middle row 4 5 6, bottom row 9 7 8; columns 1 + 4 + 9 = 14, 2 + 5 + 7 = 14, 3 + 6 + 8 = 17.",
+     "s": [
+      [
+       "(a) finds the middle row sum 15 from 45 - 6 - 24, and the rows {1, 2, 3}, {4, 5, 6}, {7, 8, 9}",
+       1
+      ],
+      [
+       "(b) finds the column range 12 (1 + 4 + 7) to 18 (3 + 6 + 9), with the reason that each column takes one number from each row",
+       1
+      ],
+      [
+       "(c) chooses Neha's set, rejects Om's because 11 is below the minimum 12 (though the total is 45) and Pooja's because its total is 44, not 45 (though each sum is in range)",
+       1
+      ],
+      [
+       "(d) gives a correct grid with rows 6, 15, 24 and columns 14, 14, 17, such as 1 2 3 / 4 5 6 / 9 7 8",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 136-137",
+     "q": "The grid 4 3 8 / 9 5 1 / 2 7 6 (rows from the top) is a magic square made with the numbers 1 to 9, with magic sum 15. Reena wants a magic square made with the nine odd numbers 1, 3, 5, ..., 17. (a) Find the total of these nine odd numbers and use it to find the magic sum her square must have. (b) Replace every number x of the given square by 2x - 1 (double it, then subtract 1). Write the new square. (c) Check that your new square is magic: give its row, column and diagonal sums, and explain why the sum of every line is the same. (d) Her friend Lata says: 'If I replace every x of the given square by 3x - 2 instead, I get a magic square of the numbers 1, 4, 7, ..., 25, and I can tell without building it that its magic sum is 39.' Is she right? Check both the magic sum and the list of numbers without writing the square.",
+     "a": "(a) 1 + 3 + 5 + ... + 17 = 81. The three row sums are equal and add to 81, so the magic sum is 81 / 3 = 27. (b) 7 5 15 / 17 9 1 / 3 13 11. (c) Rows 7 + 5 + 15, 17 + 9 + 1, 3 + 13 + 11; columns 7 + 17 + 3, 5 + 9 + 13, 15 + 1 + 11; diagonals 7 + 9 + 11, 15 + 9 + 3: all 27. Each line of the old square added to 15; doubling makes each line 30 and subtracting 1 from each of its three numbers takes away 3, so every line becomes 27. (d) Yes. Tripling makes every line 3 x 15 = 45, and subtracting 2 from each of the three numbers in a line takes away 6, so every line sums to 45 - 6 = 39 and the square is still magic. The numbers 3x - 2 for x = 1, 2, ..., 9 are 1, 4, 7, 10, 13, 16, 19, 22, 25, and their total 117 divided by 3 also gives 39.",
+     "s": [
+      [
+       "(a) finds the total 81 and the magic sum 81 / 3 = 27",
+       1
+      ],
+      [
+       "(b) writes the new square 7 5 15 / 17 9 1 / 3 13 11",
+       1
+      ],
+      [
+       "(c) shows all rows, columns and both diagonals sum to 27 and explains it as 2 x 15 - 3 for every line",
+       1
+      ],
+      [
+       "(d) says Lata is right: each line becomes 3 x 15 - 6 = 39, and the numbers 3x - 2 are 1, 4, ..., 25 (total 117, and 117 / 3 = 39)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 135-137",
+     "q": "A 3 x 3 magic square is to be made with the nine consecutive numbers 6, 7, 8, ..., 14, each used once. (a) Find its magic sum and the number at its centre, showing your working. (b) A corner number lies on one row, one column and one diagonal. List every set of three different numbers from 6 to 14 that contains 6 and adds up to the magic sum, and use the list to show that 6 cannot stand in a corner. (c) Tushar says: 'Then 7 cannot stand in a corner either, because it is also one of the smallest numbers.' Test his claim in the same way. (d) Write one complete magic square with these numbers that has 7 in a corner, and show that its rows, columns and diagonals all give the magic sum.",
+     "a": "(a) 6 + 7 + ... + 14 = 90, so the magic sum is 90 / 3 = 30. Subtracting 5 from every number gives a magic square made with 1 to 9, whose centre must be 5, so the centre here is 5 + 5 = 10 (one-third of 30). (b) Sets with 6 adding to 30: {6, 10, 14} and {6, 11, 13} only. A corner needs three different lines through it, each a set containing that number, but 6 has only two such sets, so 6 cannot be in a corner. (c) Tushar is wrong. Sets with 7 adding to 30: {7, 9, 14}, {7, 10, 13} and {7, 11, 12}: three sets, enough for a row, a column and a diagonal, so 7 can be in a corner. (d) For example 11 6 13 / 12 10 8 / 7 14 9: rows 30, 30, 30; columns 11 + 12 + 7, 6 + 10 + 14, 13 + 8 + 9 = 30 each; diagonals 11 + 10 + 9 = 30 and 13 + 10 + 7 = 30, with 7 in the bottom-left corner.",
+     "s": [
+      [
+       "(a) finds the total 90, the magic sum 30 and the centre 10, with working",
+       1
+      ],
+      [
+       "(b) lists exactly {6, 10, 14} and {6, 11, 13} and argues that a corner needs three lines, so 6 cannot be a corner",
+       1
+      ],
+      [
+       "(c) rejects Tushar's claim by listing the three sets {7, 9, 14}, {7, 10, 13}, {7, 11, 12}",
+       1
+      ],
+      [
+       "(d) gives a correct magic square of 6 to 14 with 7 in a corner, such as 11 6 13 / 12 10 8 / 7 14 9, with all eight line sums checked as 30",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 141-142",
+     "q": "Gauri builds a sequence with the same rule as the Virahanka-Fibonacci numbers (each term is the sum of the two terms before it), but she starts with 4 and 7: 4, 7, 11, 18, .... (a) Write the next four terms after 18. (b) Her friend Mira uses the same rule, and the 4th and 5th terms of Mira's sequence are 25 and 40. Find Mira's first three terms. (c) Continue Gauri's sequence to its 10th term. Write the parities (odd or even) of these ten terms, describe the pattern, and use the parity rules for sums to explain why it keeps repeating. (d) Gauri says: 'The even terms of my sequence are at the same places (1st, 2nd, 3rd, ...) as the even terms of 1, 2, 3, 5, 8, 13, ....' Do you agree? Explain using the parities of both sequences.",
+     "a": "(a) 29, 47, 76, 123 (11 + 18, 18 + 29, 29 + 47, 47 + 76). (b) Work backwards by subtraction: 3rd term = 40 - 25 = 15, 2nd term = 25 - 15 = 10, 1st term = 15 - 10 = 5, so Mira's sequence is 5, 10, 15, 25, 40, .... (c) 4, 7, 11, 18, 29, 47, 76, 123, 199, 322: even, odd, odd, even, odd, odd, even, odd, odd, even. The block even, odd, odd repeats: after even, odd comes even + odd = odd, then odd + odd = even, and then the same three steps happen again. (d) No. In Gauri's sequence the even terms are the 1st, 4th, 7th and 10th (4, 18, 76, 322), but in 1, 2, 3, 5, 8, 13, 21, 34 the even terms are the 2nd, 5th and 8th (2, 8, 34). Both have one even term in every three, but at different places.",
+     "s": [
+      [
+       "(a) writes the next four terms 29, 47, 76, 123",
+       1
+      ],
+      [
+       "(b) works backwards by subtraction to get 15, 10 and 5 as Mira's first three terms",
+       1
+      ],
+      [
+       "(c) continues to 199 and 322, gives the parities even, odd, odd repeating, and explains it with even + odd = odd and odd + odd = even",
+       1
+      ],
+      [
+       "(d) disagrees: Gauri's even terms are 1st, 4th, 7th, 10th, while those of 1, 2, 3, 5, 8, ... are 2nd, 5th, 8th",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 143",
+     "q": "Solve the cryptarithm AA + BB = CBC, where AA and BB are 2-digit numbers and CBC is a 3-digit number. Each letter stands for one digit, different letters stand for different digits, and the first digit of a number is not 0. (a) Find C, explaining why it can have only one value. (b) Find A and B, explaining at each step why no other value is possible. (2 marks) (c) Sana says: 'The puzzle AA + BB = CAC, with A in the middle of the answer instead of B, also has exactly one solution.' Is she right? Justify.",
+     "a": "(a) Two 2-digit numbers add to less than 100 + 100 = 200 (at most 99 + 88 = 187), so the 3-digit sum starts with 1: C = 1. (b) The units digits add to A + B, and the units digit of CBC is C = 1. A + B is at least 1 + 2 = 3 and at most 9 + 8 = 17, so A + B cannot be 1 and must be 11, with a carry of 1 into the tens column. The tens column is then A + B + 1 = 12: it writes 2 and carries 1 into the hundreds, which matches C = 1. The tens digit of CBC is B, so B = 2 and A = 11 - 2 = 9. Check: 99 + 22 = 121. (c) Yes. The same steps give C = 1, A + B = 11 and a tens column of 12, so now the tens digit A = 2 and B = 11 - 2 = 9: 22 + 99 = 121 = CAC. Every step was forced, so this is the only solution.",
+     "s": [
+      [
+       "(a) shows the sum of two 2-digit numbers is less than 200, so C = 1",
+       1
+      ],
+      [
+       "(b) uses the units column to get A + B = 11 (not 1, since A + B is at least 3), with a carry of 1",
+       1
+      ],
+      [
+       "(b) uses the tens column A + B + 1 = 12 to get B = 2 and A = 9, and checks 99 + 22 = 121",
+       1
+      ],
+      [
+       "(c) says Sana is right: the same forced steps give A = 2, B = 9, C = 1, and 22 + 99 = 121 is the only solution",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

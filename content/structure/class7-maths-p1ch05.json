@@ -1,0 +1,199 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 5,
+  "name": "Parallel and Intersecting Lines",
+  "blurb": "Linear pairs and vertically opposite angles at an intersection, perpendicular and parallel lines, transversals, and corresponding, alternate and co-interior angle relationships used to test or use parallel lines.",
+  "order_index": 5,
+  "source_code": "gegp105"
+ },
+ "scope": [
+  [
+   "IN",
+   "Identify that two intersecting lines form four angles",
+   "p.107"
+  ],
+  [
+   "IN",
+   "Identify linear pairs and use that they sum to 180 degrees",
+   "p.107"
+  ],
+  [
+   "IN",
+   "Identify vertically opposite angles and use that they are equal, with the informal reasoning for why",
+   "pp.107-108"
+  ],
+  [
+   "IN",
+   "Identify perpendicular lines as lines intersecting at 90 degrees",
+   "pp.108-109"
+  ],
+  [
+   "IN",
+   "Identify parallel lines as lines on the same plane that never meet",
+   "p.110"
+  ],
+  [
+   "IN",
+   "Construct parallel lines using a ruler and set-square, or by paper folding",
+   "pp.111-112, 118-120"
+  ],
+  [
+   "IN",
+   "Use arrow notation for parallel lines and the square-angle symbol for perpendicular lines",
+   "p.112"
+  ],
+  [
+   "IN",
+   "Identify a transversal and the eight angles it forms with two lines",
+   "p.115"
+  ],
+  [
+   "IN",
+   "Identify corresponding angle pairs formed by a transversal",
+   "pp.115-116"
+  ],
+  [
+   "IN",
+   "Use equal corresponding angles as both a test for and a consequence of two lines being parallel",
+   "pp.117-118"
+  ],
+  [
+   "IN",
+   "Identify alternate angle pairs and use that they are equal when the lines are parallel",
+   "p.120"
+  ],
+  [
+   "IN",
+   "Identify co-interior (same-side interior) angles and use that they sum to 180 degrees on parallel lines",
+   "pp.121-122"
+  ],
+  [
+   "IN",
+   "Solve multi-step numeric angle problems chaining linear pair, vertically opposite, corresponding, alternate and co-interior facts, including figures with more than one transversal or more than two parallel lines",
+   "pp.117-125"
+  ],
+  [
+   "OUT",
+   "Writing a formal two-column or statement-reason geometric proof -- this chapter uses informal spoken justification, not an examined formal-proof format",
+   null
+  ],
+  [
+   "OUT",
+   "Angle sum of a triangle or other polygon -- a separate topic not covered in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Coordinate geometry or slope-based tests for parallel or perpendicular lines -- not covered",
+   null
+  ],
+  [
+   "OUT",
+   "Compass constructions such as a perpendicular bisector or angle bisector -- this chapter only covers set-square and paper-folding methods",
+   null
+  ],
+  [
+   "OUT",
+   "Lines in three dimensions or skew lines -- the chapter is explicitly restricted to lines on a single plane surface",
+   null
+  ],
+  [
+   "IN",
+   "Use paper folding to make parallel and perpendicular lines, and find the pattern 2^n + 1 for the number of parallel lines after n horizontal folds",
+   "pp.110-112"
+  ],
+  [
+   "IN",
+   "Recognise that lines which look slanted can be parallel (parallel illusions), so parallelism is judged by angle facts and not by appearance",
+   "p.125"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-5.1",
+   "name": "Linear pairs and vertically opposite angles",
+   "description": "Identifying the four angles formed when two lines intersect, and using the linear-pair (sum 180 degrees) and vertically-opposite (equal) relationships between them.",
+   "idea": "Two intersecting lines always create two pairs of equal vertically opposite angles and four adjacent linear pairs that each add to a straight angle.",
+   "rule": "Adjacent angles on a straight line (a linear pair) always sum to 180 degrees; angles opposite each other at the intersection (vertically opposite) are always equal.",
+   "example": "If two lines intersect and one angle is 120 degrees, the angle adjacent to it (linear pair) is 60 degrees, and the angle vertically opposite the 120-degree angle is also 120 degrees.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-5.2",
+   "name": "Perpendicular lines",
+   "description": "Recognising perpendicular lines as a pair of lines that intersect at a right angle, and identifying them in figures and notation.",
+   "idea": "When two intersecting lines form four equal angles, each angle must be 90 degrees, and the lines are called perpendicular.",
+   "rule": "Two lines are perpendicular if and only if they intersect at 90 degrees; this is marked with a small square symbol at the intersection.",
+   "example": "The adjacent edges of a square sheet of paper are perpendicular to each other, meeting at a 90-degree angle.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-5.3",
+   "name": "Parallel lines: definition, identification and construction",
+   "description": "Recognising parallel lines as lines on the same plane that never meet, identifying them by eye or by equal spacing, and constructing them with a ruler/set-square or by paper folding.",
+   "idea": "Parallel lines stay the same distance apart forever and never intersect, however far they are extended in either direction, as long as they lie on the same flat surface.",
+   "rule": "Two lines are parallel only if they lie on the same plane and never meet; arrow notation (single, double, and so on) marks each distinct set of parallel lines in a figure.",
+   "example": "The opposite edges of a rectangular sheet of paper are parallel to each other and never meet, however far the paper is imagined to extend.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-5.4",
+   "name": "Transversals and the eight angles they form",
+   "description": "Identifying a transversal crossing a pair of lines, the eight angles it creates, and the vertically-opposite relationships among them.",
+   "idea": "A single line crossing two other lines creates two sets of four angles, and because vertically opposite angles are always equal within each set, at most four distinct angle measures are possible among all eight.",
+   "rule": "A transversal forms 8 angles with the two lines it crosses; within these, four pairs are vertically opposite and therefore equal to each other.",
+   "example": "When transversal t crosses lines l and m, angle 1 and angle 3 (vertically opposite at the first crossing) are always equal, no matter how the lines are drawn.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.5",
+   "name": "Corresponding angles and testing lines for parallelism",
+   "description": "Identifying corresponding angle pairs formed by a transversal, and using equal corresponding angles both to prove lines are parallel and as a known fact about parallel lines.",
+   "idea": "Corresponding angles sit in matching positions at each crossing; when a transversal crosses parallel lines these are always equal, and conversely, equal corresponding angles are enough to prove two lines are parallel.",
+   "rule": "If a transversal makes equal corresponding angles with two lines, the lines are parallel; if two lines are already known to be parallel, every pair of corresponding angles formed by any transversal is equal.",
+   "example": "If angle a and angle b are corresponding angles and both measure 70 degrees, the two lines crossed by the transversal must be parallel.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.6",
+   "name": "Alternate angles",
+   "description": "Identifying alternate angle pairs formed by a transversal, and using the fact that they are equal when the two lines are parallel.",
+   "idea": "An alternate angle can be found by taking the corresponding angle first and then its vertically opposite angle, which is why alternate angles are also always equal on parallel lines.",
+   "rule": "Alternate angles formed by a transversal crossing a pair of parallel lines are always equal to each other.",
+   "example": "If angle f is 120 degrees on one parallel line, its alternate angle d on the other parallel line is also 120 degrees.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.7",
+   "name": "Co-interior angles and multi-step angle-chasing with parallel lines",
+   "description": "Identifying interior angles on the same side of a transversal (co-interior/allied angles) and their 180-degree sum on parallel lines, and combining several angle facts across more than one transversal or more than two parallel lines to find unknown angles.",
+   "idea": "Interior angles on the same side of a transversal crossing parallel lines always add to 180 degrees, and harder figures need several of these angle facts used one after another to reach the answer.",
+   "rule": "Co-interior (same-side interior) angles formed by a transversal on a pair of parallel lines always sum to 180 degrees; multi-line problems are solved by applying linear pair, vertically opposite, corresponding, alternate and co-interior facts in sequence.",
+   "example": "If AB is parallel to CD and CD is parallel to EF, and angle ADC is 60 degrees, then angle BCD (co-interior with it across CD) is 120 degrees.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-5.8",
+   "name": "Paper folding and parallel illusions",
+   "description": "Making parallel and perpendicular lines by folding a sheet, the number of parallel lines after each fold, and why lines that look bent can still be parallel.",
+   "idea": "Each horizontal fold halves every gap between neighbouring parallel lines, and every fold line makes a right angle with the vertical edges, so all of them are parallel.",
+   "rule": "Opposite edges of a sheet are parallel and adjacent edges are perpendicular; after n horizontal folds there are 2^n + 1 parallel lines (3, 5, 9, 17, ...); a vertical fold is perpendicular to the horizontal ones.",
+   "example": "After 3 horizontal folds there are 2^3 + 1 = 9 parallel lines.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

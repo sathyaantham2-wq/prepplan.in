@@ -1,5 +1,5 @@
 {
- "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-05, so the local test database has the concepts a DPS pack attaches to. Contains no questions.",
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
  "subject": {
   "code": "MATH",
   "name": "Mathematics",
@@ -62,6 +62,36 @@
    "18-21"
   ],
   [
+   "OUT",
+   "Decimal numbers and decimal place value — Introduced in Part I Ch 3 (A Peek Beyond the Point), not here",
+   null
+  ],
+  [
+   "OUT",
+   "Negative numbers / integer operations — This chapter only uses positive whole numbers; integers are Part II Ch 2",
+   null
+  ],
+  [
+   "OUT",
+   "Algebraic letter-number expressions — Introduced in Part I Ch 4 (Expressions Using Letter-Numbers)",
+   null
+  ],
+  [
+   "OUT",
+   "Formal long multiplication/division algorithms — Assumed prior knowledge; this chapter only teaches shortcut regrouping",
+   null
+  ],
+  [
+   "OUT",
+   "Percentages, ratios, or unit-rate word problems outside the large-number-estimation framing — Not covered in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Scientific/exponential notation for large numbers — Not introduced until a later grade",
+   null
+  ],
+  [
    "IN",
    "Use 1,00,000 as the smallest 6-digit number, compare a lifetime in days (365 x years) with one lakh, and say how much more or less than a lakh a given population is",
    "pp.1-3"
@@ -85,36 +115,6 @@
    "IN",
    "Solve toothpick-digit puzzles: count the sticks in a number and make bigger or smaller numbers with a given number of sticks",
    "p.23"
-  ],
-  [
-   "OUT",
-   "Scientific/exponential notation for large numbers",
-   "Not introduced until a later grade"
-  ],
-  [
-   "OUT",
-   "Percentages, ratios, or unit-rate word problems outside the large-number-estimation framing",
-   "Not covered in this chapter"
-  ],
-  [
-   "OUT",
-   "Formal long multiplication/division algorithms",
-   "Assumed prior knowledge; this chapter only teaches shortcut regrouping"
-  ],
-  [
-   "OUT",
-   "Algebraic letter-number expressions",
-   "Introduced in Part I Ch 4 (Expressions Using Letter-Numbers)"
-  ],
-  [
-   "OUT",
-   "Negative numbers / integer operations",
-   "This chapter only uses positive whole numbers; integers are Part II Ch 2"
-  ],
-  [
-   "OUT",
-   "Decimal numbers and decimal place value",
-   "Introduced in Part I Ch 3 (A Peek Beyond the Point), not here"
   ]
  ],
  "concepts": [
@@ -126,6 +126,15 @@
    "rule": "100 thousand = 1 lakh; 100 lakh = 1 crore; 100 crore = 1 arab.",
    "example": "12,78,830 = twelve lakh seventy eight thousand eight hundred thirty.",
    "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-1.10",
+   "name": "Large-number puzzles: digit arrangements and toothpick digits",
+   "description": "Puzzle-style problems: arranging the digits 0 to 9 into the largest or smallest number, button-click expressions on a two-button calculator, writing numbers in a row, and counting sticks in toothpick digits.",
+   "idea": "To make the largest or smallest number, place the biggest or smallest digits in the highest places first, subject to the condition given (for example an even last digit).",
+   "rule": "A number is a multiple of 5 only if it ends in 0 or 5, and even only if it ends in an even digit; a calculator with +10,000 and +100 can only show multiples of 100; more digits means a bigger number.",
+   "example": "The largest 10-digit multiple of 5 that uses every digit once is 9876543210.",
+   "difficulty_base": "Hard"
   },
   {
    "code": "C7M-1.2",
@@ -198,15 +207,6 @@
    "rule": "1 lakh = 100 thousand (5 zeros); 1 crore = 100 lakh (7 zeros); 1 arab = 100 crore (9 zeros); a thousand lakh is 10 crore (8 zeros); 99,999 + 1 = 1,00,000.",
    "example": "365 x 100 = 36,500 days in 100 years, so 3 varieties a day gives 3 x 36,500 = 1,09,500, which is more than one lakh.",
    "difficulty_base": "Easy"
-  },
-  {
-   "code": "C7M-1.10",
-   "name": "Large-number puzzles: digit arrangements and toothpick digits",
-   "description": "Puzzle-style problems: arranging the digits 0 to 9 into the largest or smallest number, button-click expressions on a two-button calculator, writing numbers in a row, and counting sticks in toothpick digits.",
-   "idea": "To make the largest or smallest number, place the biggest or smallest digits in the highest places first, subject to the condition given (for example an even last digit).",
-   "rule": "A number is a multiple of 5 only if it ends in 0 or 5, and even only if it ends in an even digit; a calculator with +10,000 and +100 can only show multiples of 100; more digits means a bigger number.",
-   "example": "The largest 10-digit multiple of 5 that uses every digit once is 9876543210.",
-   "difficulty_base": "Hard"
   }
  ]
 }

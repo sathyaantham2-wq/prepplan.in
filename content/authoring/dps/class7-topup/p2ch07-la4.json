@@ -1,0 +1,297 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 7,
+  "name": "Finding the Unknown"
+ },
+ "source_code": "gegp207",
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 165-168",
+     "q": "At a village fair a stall-keeper uses a balanced two-pan scale. All jars have the same weight, and all bags have the same weight. Scale 1 balances with 5 jars and a 4-unit weight on the left pan and 3 jars and a 22-unit weight on the right pan. Scale 2 balances with 2 jars and 3 bags on the left pan and 7 bags and a 6-unit weight on the right pan. (a) Frame an equation for Scale 1, taking the weight of a jar as j, and find j by removing equal weights from both pans. (b) Frame an equation for Scale 2 using your value of j, taking the weight of a bag as b, and solve it. (c) A customer puts 4 jars on one pan and a 3-unit weight on the other. How many bags must be added to the 3-unit weight to balance the scale?",
+     "a": "(a) 5j + 4 = 3j + 22. Removing 3 jars and 4 units from each pan leaves 2j = 18, so j = 9 units. (b) 2(9) + 3b = 7b + 6, i.e. 18 + 3b = 7b + 6. Removing 3 bags and 6 units from each pan gives 12 = 4b, so b = 3 units. Check: 18 + 9 = 27 and 21 + 6 = 27. (c) 4 jars weigh 4 × 9 = 36 units. If n bags are added, 3n + 3 = 36, so 3n = 33 and n = 11 bags.",
+     "s": [
+      [
+       "(a) frames 5j + 4 = 3j + 22 and gets 2j = 18, j = 9",
+       1
+      ],
+      [
+       "(b) frames 18 + 3b = 7b + 6 (or 2j + 3b = 7b + 6 with j = 9 substituted)",
+       1
+      ],
+      [
+       "(b) solves 4b = 12 to get b = 3 and checks both pans are 27",
+       1
+      ],
+      [
+       "(c) frames 3n + 3 = 36 from 4 × 9 = 36 and finds n = 11 bags",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 169-170",
+     "q": "Answer each part without working out the long expression, and name every operation you perform on both sides, in order. (a) It is known that 48 × 25 × 7 + 365 = 8765. Find the value of 48 × 25. (b) It is known that (5/12) × 36 × 14 × (3/7) = 90. Find the value of (5/12) × 36 × 14. (c) It is known that 36 × 25 × 14 × 9 = 113400. Using this fact, find the value of 36 × 25 × 14 × 3 with a single division. (d) It is known that 9071 - 3485 + 618 - (-245) = 6449. Find the value of 9071 - 3485 + 618 - 245.",
+     "a": "(a) Two steps, in this order: subtract 365 from both sides to get 48 × 25 × 7 = 8765 - 365 = 8400, then divide both sides by 7 to get 48 × 25 = 8400 / 7 = 1200. (Dividing by 7 first would not remove the term 365.) (b) Remove the factor (3/7) by dividing both sides by (3/7), that is, multiplying by (7/3): (5/12) × 36 × 14 = 90 × (7/3) = 210. (c) 36 × 25 × 14 × 3 is one-third of 36 × 25 × 14 × 9, so divide both sides by 3: 113400 / 3 = 37800. (d) The term -(-245) is +245. First add (-245) to both sides to remove it: 9071 - 3485 + 618 = 6449 + (-245) = 6204. Then add (-245) once more to bring in the term -245: 9071 - 3485 + 618 - 245 = 6204 - 245 = 5959. So 245 is taken away twice from 6449.",
+     "s": [
+      [
+       "(a) subtracts 365 from both sides first (8400), then divides by 7 to get 1200",
+       1
+      ],
+      [
+       "(b) divides both sides by (3/7), i.e. multiplies 90 by 7/3, and gets 210",
+       1
+      ],
+      [
+       "(c) sees that dividing a product with factor 9 by 3 leaves the factor 3, and gets 113400 / 3 = 37800",
+       1
+      ],
+      [
+       "(d) removes -(-245) by adding (-245) to get 6204, then subtracts 245 again to get 5959",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 177",
+     "q": "Solve the equation 24(x - 3) + 180 = 900 in two different ways. (a) First divide both sides by 12, since 24, 180 and 900 are all multiples of 12, and then solve the simpler equation. (b) Instead, first expand the bracket on the LHS and then solve. (c) Check your value of x by substituting it in the original equation, and say which method kept the numbers smaller. (d) Asha says dividing every term by 24 first would be even quicker. Explain why that choice is worse here.",
+     "a": "(a) Dividing every term by 12: 2(x - 3) + 15 = 75, so 2(x - 3) = 60, x - 3 = 30, x = 33. (b) Expanding: 24x - 72 + 180 = 900, so 24x + 108 = 900, 24x = 900 - 108 = 792, x = 792 / 24 = 33. (c) LHS = 24(33 - 3) + 180 = 24 × 30 + 180 = 720 + 180 = 900 = RHS, so x = 33 is correct. Dividing by 12 first kept the numbers smaller (75 and 60 instead of 792). (d) 24 divides 24 but not 180 or 900: 180 / 24 = 7.5 and 900 / 24 = 37.5, so dividing by 24 brings in decimals. 12 is the largest number dividing all three of 24, 180 and 900, so it is the best choice.",
+     "s": [
+      [
+       "(a) divides every term by 12 to get 2(x - 3) + 15 = 75 and solves to x = 33",
+       1
+      ],
+      [
+       "(b) expands to 24x + 108 = 900 and gets 24x = 792, x = 33",
+       1
+      ],
+      [
+       "(c) substitutes x = 33: 720 + 180 = 900, and names the divide-first method as using smaller numbers",
+       1
+      ],
+      [
+       "(d) shows 180 / 24 = 7.5 and 900 / 24 = 37.5 are not whole numbers, so 12 (a common factor of all three) is the better divisor",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 171-173",
+     "q": "Solve each equation, showing every step, and check each solution by substituting it back. (a) 4(2 - 3y) + 5 = 3(y + 1) - 5 (b) p / 12 + 7 = 3. In your check for (a), write the value of the LHS and of the RHS separately.",
+     "a": "(a) Expanding: 8 - 12y + 5 = 3y + 3 - 5, so 13 - 12y = 3y - 2. Adding 12y to both sides and adding 2 to both sides: 15 = 15y, so y = 1. Check: LHS = 4(2 - 3) + 5 = -4 + 5 = 1; RHS = 3(2) - 5 = 1. (b) Subtracting 7 from both sides: p / 12 = -4. Multiplying both sides by 12: p = -48. Check: -48 / 12 + 7 = -4 + 7 = 3.",
+     "s": [
+      [
+       "(a) expands both brackets correctly and simplifies to 13 - 12y = 3y - 2",
+       1
+      ],
+      [
+       "(a) collects terms to 15y = 15 and gets y = 1",
+       1
+      ],
+      [
+       "(b) gets p / 12 = -4 and multiplies by 12 to get p = -48",
+       1
+      ],
+      [
+       "checks both: LHS = RHS = 1 in (a) and -4 + 7 = 3 in (b)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 178-179",
+     "q": "A school sports club buys balls for the season. A cricket ball costs ₹45 more than a tennis ball. The club pays ₹960 for 4 cricket balls and 9 tennis balls. (a) Taking the cost of a tennis ball as ₹t, write the cost of a cricket ball and frame an equation for the bill. (b) Solve the equation and find the cost of each kind of ball. (c) The club had first planned to buy 6 cricket balls and 6 tennis balls. Would that order have cost more or less than ₹960, and by how much?",
+     "a": "(a) A cricket ball costs ₹(t + 45). The bill gives 4(t + 45) + 9t = 960. (b) 4t + 180 + 9t = 960, so 13t + 180 = 960, 13t = 780, t = 60. A tennis ball costs ₹60 and a cricket ball ₹105. Check: 4 × 105 + 9 × 60 = 420 + 540 = 960. (c) 6 × 105 + 6 × 60 = 630 + 360 = ₹990, which is ₹30 more than ₹960.",
+     "s": [
+      [
+       "(a) writes the cricket ball as t + 45 and frames 4(t + 45) + 9t = 960",
+       1
+      ],
+      [
+       "(b) simplifies to 13t + 180 = 960, i.e. 13t = 780",
+       1
+      ],
+      [
+       "(b) gets t = 60, so tennis ball ₹60 and cricket ball ₹105 (checked: 420 + 540 = 960)",
+       1
+      ],
+      [
+       "(c) finds 630 + 360 = ₹990 and concludes it is ₹30 more",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 181",
+     "tags": [
+      "show_impossible"
+     ],
+     "q": "Read the clues: 'I am a 3-digit number. My tens digit is 2 more than my hundreds digit. My units digit is twice my hundreds digit. The sum of my three digits is 18.' (a) Taking the hundreds digit as h, write each digit in terms of h and frame an equation. (b) Solve it, find the number and check all the clues. (c) Riya keeps the first two clues but changes the digit sum to 20. Show that no number fits her clues. (d) With the first two clues kept, what is the largest digit sum such a number can have? Give a reason.",
+     "a": "(a) Hundreds digit h, tens digit h + 2, units digit 2h, so h + (h + 2) + 2h = 18, i.e. 4h + 2 = 18. (b) 4h = 16, h = 4: the digits are 4, 6 and 8, so the number is 468. Check: 6 = 4 + 2, 8 = 2 × 4, 4 + 6 + 8 = 18. (c) 4h + 2 = 20 gives 4h = 18, h = 9/2 = 4.5, which is not a digit, so no number fits. (d) The units digit 2h must be a single digit, so 2h is at most 9 and h is at most 4. The digit sum 4h + 2 is then at most 4 × 4 + 2 = 18, so 18 is the largest possible sum.",
+     "s": [
+      [
+       "(a) writes the digits as h, h + 2, 2h and frames 4h + 2 = 18",
+       1
+      ],
+      [
+       "(b) gets h = 4, the number 468, and checks the three clues",
+       1
+      ],
+      [
+       "(c) solves 4h + 2 = 20 to get h = 4.5 and says it is not a digit, so impossible",
+       1
+      ],
+      [
+       "(d) argues 2h must be at most 9, so h is at most 4 and the largest sum is 18",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.5",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 179-181",
+     "q": "Start from the equation x = -3. (a) Multiply both sides by 3, then add 12 to both sides. Write the two equations you get, and without solving, give the solution of the second one. (b) Now add x to both sides of the second equation. Write the new equation and check by substitution that x = -3 still satisfies it. (c) Tanvi copies the equation from (b) as 4x + 12 = 4x + 3 and says that x = -3 will work 'after a little more working'. Is she right? Explain. (d) Find the number k for which 4x + 12 = x + k has the solution x = 5.",
+     "a": "(a) 3x = -9, then 3x + 12 = 3. Each was got by doing the same operation on both sides of x = -3, so its solution is still x = -3. (b) 4x + 12 = 3 + x. Check: LHS = 4(-3) + 12 = 0, RHS = 3 + (-3) = 0. (c) No. Subtracting 4x from both sides of 4x + 12 = 4x + 3 leaves 12 = 3, which is false for every x, so the equation has no solution at all (4 times a number plus 12 can never equal 4 times the same number plus 3). (d) Putting x = 5: 4(5) + 12 = 5 + k, so 32 = 5 + k and k = 27.",
+     "s": [
+      [
+       "(a) writes 3x = -9 and 3x + 12 = 3 and says the solution is x = -3 because the same operation was done on both sides",
+       1
+      ],
+      [
+       "(b) writes 4x + 12 = 3 + x and shows LHS = RHS = 0 at x = -3",
+       1
+      ],
+      [
+       "(c) says Tanvi is wrong: removing 4x leaves 12 = 3, so there is no solution",
+       1
+      ],
+      [
+       "(d) substitutes x = 5 to get 32 = 5 + k and finds k = 27",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.6",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 181",
+     "q": "Kunal solves x / 3 + 5 = x - 7 like this. Step 1: x + 5 = 3x - 7 (multiplying both sides by 3). Step 2: x - 3x = -7 - 5. Step 3: -2x = -12. Step 4: x = 6. (a) Substitute x = 6 in the original equation to show that his answer is wrong. (b) Find the first wrong step and say exactly what went wrong in it. (c) Write the correct Step 1 and solve the equation. (d) Check your answer in the original equation.",
+     "a": "(a) LHS = 6 / 3 + 5 = 2 + 5 = 7, RHS = 6 - 7 = -1. Since 7 is not -1, x = 6 is wrong. (b) Step 1. Multiplying both sides by 3 must multiply every term: Kunal multiplied x / 3 and x but not the 5 and the -7. (c) x + 15 = 3x - 21. Then x - 3x = -21 - 15, so -2x = -36 and x = 18. (d) LHS = 18 / 3 + 5 = 6 + 5 = 11, RHS = 18 - 7 = 11, so x = 18 is correct.",
+     "s": [
+      [
+       "(a) substitutes x = 6 and shows LHS = 7 but RHS = -1",
+       1
+      ],
+      [
+       "(b) names Step 1 as the first wrong step and says 5 and -7 were not multiplied by 3",
+       1
+      ],
+      [
+       "(c) writes x + 15 = 3x - 21 and solves to -2x = -36, x = 18",
+       1
+      ],
+      [
+       "(d) checks x = 18: both sides equal 11",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 183-184",
+     "q": "Candle A is 30 cm tall and burns down 2 cm every hour. Candle B is 22 cm tall and burns down 1 cm every hour. Both are lit at the same moment. (a) Taking h as the number of hours, frame an equation for the moment the two candles are equally tall, and write it in the form Ah + B = Ch + D, naming A, B, C and D with their signs. (b) Use Brahmagupta's formula h = (D - B) / (A - C) to find h. (c) Find the height of each candle at that moment to check your answer. (d) Candle E is 26 cm tall and also burns down 2 cm every hour. Explain why the formula cannot be used to find when A and E are equally tall, and what that tells you.",
+     "a": "(a) 30 - 2h = 22 - h, i.e. (-2)h + 30 = (-1)h + 22, so A = -2, B = 30, C = -1, D = 22. (b) h = (22 - 30) / (-2 - (-1)) = (-8) / (-1) = 8 hours. (c) Candle A: 30 - 2 × 8 = 14 cm; Candle B: 22 - 8 = 14 cm, so both are 14 cm after 8 hours. (d) 30 - 2h = 26 - 2h has A = C = -2, so A - C = 0 and the formula would divide by 0. Both candles lose 2 cm an hour, so A always stays 4 cm taller than E: the equation has no solution and they are never equally tall.",
+     "s": [
+      [
+       "(a) frames 30 - 2h = 22 - h and names A = -2, B = 30, C = -1, D = 22",
+       1
+      ],
+      [
+       "(b) substitutes with signs to get (-8) / (-1) = 8 hours",
+       1
+      ],
+      [
+       "(c) shows both candles are 14 cm at h = 8",
+       1
+      ],
+      [
+       "(d) says A = C makes A - C = 0, so the formula fails and the candles are never equally tall (A stays 4 cm taller)",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

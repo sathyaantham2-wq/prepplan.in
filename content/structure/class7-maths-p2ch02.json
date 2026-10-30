@@ -1,0 +1,180 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 2,
+  "name": "Operations with Integers",
+  "blurb": "Integers on the number line and the token model, multiplication and division of integers with their sign rules, the commutative, associative and distributive properties, and word problems with marks, temperature, lifts and profit or loss.",
+  "order_index": 10,
+  "source_code": "gegp202"
+ },
+ "scope": [
+  [
+   "IN",
+   "Find two numbers from their sum and difference by trial and by reasoning, and model the final position of a coin after two strikes as P = a + b",
+   "pp.24-25"
+  ],
+  [
+   "IN",
+   "Model movements to the right as positive and to the left as negative, and find final positions and missing movements on a number line",
+   "pp.26-27"
+  ],
+  [
+   "IN",
+   "Use green and red tokens with zero pairs to add and subtract integers, and show that subtracting a number is adding its additive inverse",
+   "p.28"
+  ],
+  [
+   "IN",
+   "Multiply integers with the token model by placing or removing tokens from an empty bag, including the cases 4 x (-2), (-4) x 2 and (-4) x (-2)",
+   "pp.29-31"
+  ],
+  [
+   "IN",
+   "Use patterns in multiplication tables to see that the product of two negatives is positive, and use 1 x a = a and (-1) x a = -a",
+   "pp.32-34"
+  ],
+  [
+   "IN",
+   "State the sign rules for products and quotients, including Brahmagupta's fortune and debt rules, and use that multiplication of integers is commutative",
+   "pp.34-35"
+  ],
+  [
+   "IN",
+   "Solve word problems with integers: marking with negative marks, a lift moving up and down, with speed and direction as integers",
+   "pp.35-37"
+  ],
+  [
+   "IN",
+   "Explore the magic integer grid and see why the product of the circled numbers is always the same",
+   "pp.37-38"
+  ],
+  [
+   "IN",
+   "Divide integers by turning division into a missing-factor multiplication, and use the rules a / (-b) = -(a / b), (-a) / b = -(a / b), (-a) / (-b) = a / b",
+   "pp.38-39"
+  ],
+  [
+   "IN",
+   "Solve problems on temperature falls, profit and loss per item, and missing integers in multiplication and division statements",
+   "p.39"
+  ],
+  [
+   "IN",
+   "Use that integer multiplication is associative and can be done in any order, and find the sign of a product of many integers by counting negative factors",
+   "pp.39-41"
+  ],
+  [
+   "IN",
+   "Use the distributive property a x (b + c) = a x b + a x c for integers, including with tokens, and find the operations done by a pattern machine",
+   "pp.41-42"
+  ],
+  [
+   "IN",
+   "Evaluate expressions with integers, use given products to find nearby products, and solve multi-step problems and puzzles with integers",
+   "pp.42-44"
+  ],
+  [
+   "OUT",
+   "Fractions and decimals with negative signs (rational numbers) -- only integers are used",
+   null
+  ],
+  [
+   "OUT",
+   "Exponents with negative bases as a topic, and order of operations rules beyond brackets, terms and multiplication -- not covered",
+   null
+  ],
+  [
+   "OUT",
+   "Solving algebraic equations with integer coefficients -- appears in Part II Chapter 7",
+   null
+  ],
+  [
+   "OUT",
+   "Division by zero -- not discussed in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "A formal proof of the distributive law for all integers -- the chapter uses tokens and examples",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-2.1",
+   "name": "Integers on the number line and the token model",
+   "description": "Using positive and negative integers for movement, finding final positions and missing movements, adding and subtracting with tokens, additive inverses, and the sum and difference number game.",
+   "idea": "A positive integer moves right or gains and a negative integer moves left or loses; tokens with zero pairs show why subtracting a number is the same as adding its additive inverse.",
+   "rule": "Final position = first movement + second movement; a - b = a + (-b); the additive inverse of a is -a; from a sum S and difference D (first minus second) the numbers are (S + D)/2 and (S - D)/2.",
+   "example": "A coin moved 5 units right and then 7 units left is at 5 + (-7) = -2.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-2.2",
+   "name": "Multiplication of integers with tokens",
+   "description": "Multiplying integers by placing or removing tokens from an empty bag, and finding products with all four sign combinations.",
+   "idea": "A positive multiplier places tokens into the bag and a negative multiplier removes them, using zero pairs when the bag is empty.",
+   "rule": "4 x 2 = 8, 4 x (-2) = -8, (-4) x 2 = -8, (-4) x (-2) = 8; the product has the same size whatever the signs.",
+   "example": "(-4) x (-2): remove 2 red tokens from zero pairs 4 times, leaving 8 green tokens, so the product is 8.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-2.3",
+   "name": "Patterns in integer multiplication and the sign rules",
+   "description": "Using multiplication tables and patterns to see the sign rules, 1 x a = a, (-1) x a = -a, commutativity, and Brahmagupta's rules of fortune and debt.",
+   "idea": "In a table with a fixed multiplicand, every step down in the multiplier changes the product by the same amount, and the pattern carries on into negative multipliers.",
+   "rule": "Positive x positive and negative x negative are positive; positive x negative is negative; a x b = b x a; (-1) x a = -a.",
+   "example": "From 2 x (-3) = -6, 1 x (-3) = -3, 0 x (-3) = 0 the pattern continues (-1) x (-3) = 3.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-2.4",
+   "name": "Division of integers",
+   "description": "Dividing integers by rewriting division as a missing-factor multiplication and using the sign rules for quotients.",
+   "idea": "To divide, ask what must be multiplied by the divisor to get the dividend, and the sign rules for products then decide the sign of the quotient.",
+   "rule": "a / (-b) = -(a / b), (-a) / b = -(a / b) and (-a) / (-b) = a / b for positive a and b, b not zero.",
+   "example": "(-100) / (-4): (-4) x ? = -100 and (-4) x 25 = -100, so the quotient is 25.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-2.5",
+   "name": "Word problems with integers",
+   "description": "Modelling marking schemes with negative marks, lifts, temperature falls, and profit or loss per item with integers.",
+   "idea": "Choose the sign of each quantity from its direction (gain or loss, up or down), then multiply and add.",
+   "rule": "Total = (number of gains x gain) + (number of losses x (-loss)); new position = start + (time x speed) with a signed speed.",
+   "example": "30 correct at 5 marks and 20 wrong at -2 marks give 30 x 5 + 20 x (-2) = 110.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-2.6",
+   "name": "Associativity and the sign of many products",
+   "description": "Using that integer multiplication is associative and can be done in any order, and finding the sign of a product of many integers by counting the negative factors.",
+   "idea": "Grouping and order do not change a product, and each pair of negative factors cancels to a positive.",
+   "rule": "a x (b x c) = (a x b) x c; a product is positive with an even number of negative factors and negative with an odd number.",
+   "example": "(5 x (-3)) x 4 = -60 and 5 x ((-3) x 4) = -60.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-2.7",
+   "name": "Distributive property and expressions with integers",
+   "description": "Using a x (b + c) = a x b + a x c with integers, evaluating expressions, using a known product to find nearby products, and finding the operations of a pattern machine.",
+   "idea": "A multiplier acts on each term inside brackets separately, whatever the signs of the numbers.",
+   "rule": "a x (b + c) = (a x b) + (a x c) for all integers; the inverse of a whole sum is the sum of the inverses of its terms.",
+   "example": "(-2) x (4 + (-3)) = (-2) x 4 + (-2) x (-3) = -8 + 6 = -2.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

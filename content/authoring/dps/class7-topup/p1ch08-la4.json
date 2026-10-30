@@ -1,0 +1,303 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 8,
+  "name": "Working with Fractions"
+ },
+ "source_code": "gegp108",
+ "concepts": [
+  {
+   "code": "C7M-8.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 174-176",
+     "q": "The wall clock in a school office loses 3/4 minute every day, and the clock in the staff room loses 1 1/3 minutes every day. Both were set right at 9 am on a Monday. (a) How many minutes behind is the office clock after 7 days? Give the answer as a mixed fraction. (b) How many minutes behind is the staff-room clock after 7 days, and by how many minutes is it further behind than the office clock? (c) The office clock is corrected as soon as it is 10 minutes or more behind. After how many days is it first 10 minutes or more behind? Show the products for the day before and the day itself.",
+     "a": "(a) 7 × 3/4 = 21/4 = 5 1/4 minutes. (b) 1 1/3 = 4/3, so 7 × 4/3 = 28/3 = 9 1/3 minutes; it is 28/3 − 21/4 = 112/12 − 63/12 = 49/12 = 4 1/12 minutes further behind. (c) After 13 days the office clock is 13 × 3/4 = 39/4 = 9 3/4 minutes behind (less than 10); after 14 days it is 14 × 3/4 = 42/4 = 10 1/2 minutes behind, so it is corrected after 14 days.",
+     "s": [
+      [
+       "(a) writes 7 × 3/4 = 21/4 and converts to 5 1/4 minutes",
+       1
+      ],
+      [
+       "(b) converts 1 1/3 to 4/3 and finds 7 × 4/3 = 28/3 = 9 1/3 minutes",
+       1
+      ],
+      [
+       "(b) finds the difference 28/3 − 21/4 = 49/12 = 4 1/12 minutes",
+       1
+      ],
+      [
+       "(c) shows 13 × 3/4 = 9 3/4 (under 10) and 14 × 3/4 = 10 1/2 (10 or more), so 14 days",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-8.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 179-180",
+     "q": "Kiran pictures 7/4 on unit squares: one whole unit square is shaded, and in a second unit square 3 of its 4 equal columns are shaded. To find 2/3 × 7/4 she must first divide this 7/4 into 3 equal parts. (a) She cuts every unit square into 4 columns and 3 rows. How many equal small parts is each unit square now cut into, and how many small parts make up 7/4? (b) How many small parts make up one-third of 7/4, and what fraction of a unit square is that? (c) Use this to find 2/3 × 7/4 in lowest form and as a mixed fraction. (d) Kiran says, 'My product is more than 1, so it must be more than 7/4 as well.' Is she right? Give a reason.",
+     "a": "(a) 4 × 3 = 12 small parts in each unit square; 7/4 = 12 + 9 = 21 small parts. (b) 21 ÷ 3 = 7 small parts, which is 7/12 of a unit square. (c) 2/3 × 7/4 = 2 × 7/12 = 14/12 = 7/6 = 1 1/6. (d) No. 7/6 is less than 7/4 (14/12 < 21/12); she multiplied 7/4 by 2/3, which is between 0 and 1, so the product must be less than 7/4 even though it is more than 1.",
+     "s": [
+      [
+       "(a) 12 small parts per unit square, and 7/4 = 21 small parts",
+       1
+      ],
+      [
+       "(b) one-third of 7/4 is 7 small parts = 7/12 of a unit square",
+       1
+      ],
+      [
+       "(c) 2 × 7/12 = 14/12 = 7/6 = 1 1/6",
+       1
+      ],
+      [
+       "(d) says she is wrong: 7/6 < 7/4 because the multiplier 2/3 lies between 0 and 1",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-8.3",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 182-183",
+     "q": "Consider the product 18/25 × 35/42 × 10/9. (a) Cancel common factors before multiplying, naming each numerator-denominator pair you divide and the factor you divide by. (b) Write the product in lowest form. (c) Rohan divides 18 and 10 by 2, because both are even, and writes 9/25 × 35/42 × 5/9. Say why this step is not allowed, and find the value he would wrongly get. (d) Ishaan keeps 18/25 × 35/42 but replaces 10/9 by a fraction k/9. Find the smallest positive whole number k for which the product is a whole number, and state that product.",
+     "a": "(a) For example: 18 and 9 by 9 (giving 2 and 1), 35 and 25 by 5 (giving 7 and 5), 10 and 5 by 5 (giving 2 and 1), 7 and 42 by 7 (giving 1 and 6), then one of the 2s and the 6 by 2 (giving 1 and 3), leaving 2/(1 × 3 × 1). (b) 2/3. (c) 18 and 10 are both numerators; a common factor may be cancelled only between a numerator and a denominator (that is dividing the top and bottom of the product by the same number). Dividing two numerators by 2 divides the product by 4, so Rohan gets 9/25 × 35/42 × 5/9 = 1575/9450 = 1/6 instead of 2/3. (d) 18/25 × 35/42 = 3/5, so the product is 3/5 × k/9 = k/15; the smallest positive k is 15, giving 1.",
+     "s": [
+      [
+       "(a) shows valid cancellations, each between a numerator and a denominator with the common factor named",
+       1
+      ],
+      [
+       "(b) product in lowest form 2/3",
+       1
+      ],
+      [
+       "(c) explains that cancelling is allowed only between a numerator and a denominator, and finds Rohan's wrong value 1/6",
+       1
+      ],
+      [
+       "(d) works 18/25 × 35/42 = 3/5, so 3/5 × k/9 = k/15 and the smallest positive k = 15 gives the whole number 1",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-8.4",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 184-185",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Without multiplying, say whether each product is greater than both numbers, less than both, or lies between them, and give the reason in each case: (a) 913/899 × 455/468 (b) 37/41 × 29/31 (c) 8/7 × 9/8. (d) Asif says, 'If one number is greater than 1, the product is always greater than 1.' Use product (a) to test his claim, showing the numerator and denominator of the product.",
+     "a": "(a) 913/899 is greater than 1 and 455/468 is between 0 and 1, so the product lies between them. (b) Both 37/41 and 29/31 are between 0 and 1, so the product is less than both. (c) Both 8/7 and 9/8 are greater than 1, so the product (9/7) is greater than both. (d) 913 × 455 = 415415 and 899 × 468 = 420732, so the product 415415/420732 (= 31955/32364) is less than 1. Asif is wrong: a number greater than 1 times a number less than 1 can be less than 1.",
+     "s": [
+      [
+       "(a) between the two, because one factor is greater than 1 and the other is between 0 and 1",
+       1
+      ],
+      [
+       "(b) less than both, because both factors are between 0 and 1",
+       1
+      ],
+      [
+       "(c) greater than both, because both factors are greater than 1",
+       1
+      ],
+      [
+       "(d) computes 415415/420732 < 1 and concludes Asif's claim is false",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 185-186",
+     "q": "A hostel cook plans 640 g of rice for a meal. Cook Rekha first multiplies the amount by 5/4 because more students are coming, and later multiplies the new amount by 3/5 when many of them leave for a trip. Cook Sunny makes the same two changes in the other order: first by 3/5, then by 5/4. (a) Find Rekha's final amount, showing the amount after each change. (b) Without working it out again, give Sunny's final amount and the property that lets you say so. (c) Find the single fraction that has the same effect as the two changes, and use it to say whether the final amount is more or less than 640 g. (d) Show that the final amount lies between 640 × 3/5 and 640 × 5/4, and say which rule about the size of a product explains this.",
+     "a": "(a) 640 × 5/4 = 800 g, then 800 × 3/5 = 480 g. (b) 480 g, because the order of multiplication does not change the product (640 × 5/4 × 3/5 = 640 × 3/5 × 5/4). (c) 5/4 × 3/5 = 3/4; 3/4 is between 0 and 1, so the final amount 640 × 3/4 = 480 g is less than 640 g. (d) 640 × 3/5 = 384 g and 640 × 5/4 = 800 g, and 384 < 480 < 800. The single multiplier 3/4 is the product of 5/4 (greater than 1) and 3/5 (between 0 and 1), so it lies between them; hence 640 × 3/4 lies between 640 × 3/5 and 640 × 5/4.",
+     "s": [
+      [
+       "(a) 640 × 5/4 = 800 g, then 800 × 3/5 = 480 g",
+       1
+      ],
+      [
+       "(b) 480 g, stating that the order of multiplication does not change the product",
+       1
+      ],
+      [
+       "(c) single fraction 5/4 × 3/5 = 3/4, between 0 and 1, so less than 640 g",
+       1
+      ],
+      [
+       "(d) 384 < 480 < 800, explained by a product of a number above 1 and a number below 1 lying between them",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-8.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 186-189",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "(a) Rewrite 5/6 ÷ 10/9 as a missing-factor multiplication, then find the missing factor using the reciprocal of the divisor. (b) Check your answer by multiplying it with the divisor. (c) Zoya says, 'Since the order of multiplication does not matter, I can take the reciprocal of the dividend instead of the divisor.' Work out 5/6 ÷ 10/9 her way and compare her result with your answer to (a). (d) Repeat Zoya's method on 2/5 ÷ 4/15 and the correct method on it, and state what her method always gives instead of the quotient.",
+     "a": "(a) 10/9 × ? = 5/6; the reciprocal of 10/9 is 9/10, so ? = 5/6 × 9/10 = 45/60 = 3/4. (b) 10/9 × 3/4 = 30/36 = 5/6, which is the dividend, so 3/4 is right. (c) Zoya's way: 6/5 × 10/9 = 60/45 = 4/3, which is the reciprocal of the correct answer 3/4, so her method is wrong. (d) Correct: 2/5 × 15/4 = 30/20 = 3/2; Zoya: 5/2 × 4/15 = 20/30 = 2/3. Her method gives the reciprocal of the true quotient, not the quotient.",
+     "s": [
+      [
+       "(a) writes 10/9 × ? = 5/6 and finds 5/6 × 9/10 = 3/4",
+       1
+      ],
+      [
+       "(b) checks 10/9 × 3/4 = 5/6",
+       1
+      ],
+      [
+       "(c) Zoya's result 6/5 × 10/9 = 4/3, noted as the reciprocal of 3/4 and so wrong",
+       1
+      ],
+      [
+       "(d) correct 3/2 and Zoya's 2/3, concluding her method gives the reciprocal of the quotient",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-8.6",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 189-190",
+     "q": "In a quiz round, each team is given the number 3/4 and a card with a divisor on it: 2/7, 7/2, 3/4 or 9/8. (a) Before dividing, predict for each card whether the team's quotient will be greater than or less than 3/4, giving the reason. (b) Work out all four quotients and check your predictions. (c) The cards 2/7 and 7/2 are reciprocals of each other. Multiply the two quotients they give, and explain, by writing each division as a multiplication, why the answer is 3/4 × 3/4. (d) For the final round the quizmaster wants one card that makes the quotient exactly twice 3/4 and another that makes it exactly half of 3/4. Find both divisors, check them by dividing, and say whether each fits your rule from (a).",
+     "a": "(a) 2/7 and 3/4 are between 0 and 1, so those quotients are greater than 3/4; 7/2 and 9/8 are greater than 1, so those quotients are less than 3/4. (b) 3/4 ÷ 2/7 = 21/8, 3/4 ÷ 7/2 = 3/14, 3/4 ÷ 3/4 = 1, 3/4 ÷ 9/8 = 2/3; all predictions hold (21/8 and 1 are greater than 3/4; 3/14 and 2/3 are less). (c) 21/8 × 3/14 = 63/112 = 9/16. Written as multiplications, 3/4 ÷ 2/7 = 3/4 × 7/2 and 3/4 ÷ 7/2 = 3/4 × 2/7, so the product is 3/4 × 3/4 × (7/2 × 2/7) = 3/4 × 3/4 × 1 = 9/16. (d) Twice: the divisor 1/2, since 3/4 ÷ 1/2 = 3/4 × 2 = 3/2 = 2 × 3/4; it lies between 0 and 1, so the quotient is greater, as the rule says. Half: the divisor 2, since 3/4 ÷ 2 = 3/8 = 1/2 × 3/4; it is greater than 1, so the quotient is less, as the rule says.",
+     "s": [
+      [
+       "(a) predicts greater for 2/7 and 3/4 (divisors between 0 and 1) and less for 7/2 and 9/8 (divisors greater than 1)",
+       1
+      ],
+      [
+       "(b) quotients 21/8, 3/14, 1 and 2/3, matching the predictions",
+       1
+      ],
+      [
+       "(c) 21/8 × 3/14 = 9/16, explained as 3/4 × 3/4 × (7/2 × 2/7) with 7/2 × 2/7 = 1",
+       1
+      ],
+      [
+       "(d) divisor 1/2 gives 3/2 (twice) and divisor 2 gives 3/8 (half), each matched to the rule from (a)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-8.7",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 190-191",
+     "q": "A temple courtyard is a rectangle 3 3/5 units long and 2 2/5 units wide. It is to be covered with square stone tiles. Small tiles have side 3/10 unit and cost ₹15 each; large tiles have side 3/5 unit and cost ₹55 each. (a) Find the area of the courtyard as a mixed fraction. (b) Find the area of one small tile and, by dividing, the number of small tiles needed. (c) Check your answer to (b) by finding how many small tiles fit along the length and along the width. (d) Find the number of large tiles needed and decide which kind of tile makes the floor cheaper, and by how much.",
+     "a": "(a) 18/5 × 12/5 = 216/25 = 8 16/25 square units. (b) One small tile: 3/10 × 3/10 = 9/100 square unit; tiles = 216/25 ÷ 9/100 = 216/25 × 100/9 = 96. (c) Along the length 18/5 ÷ 3/10 = 12, along the width 12/5 ÷ 3/10 = 8, and 12 × 8 = 96. (d) Large tile area 3/5 × 3/5 = 9/25, so 216/25 ÷ 9/25 = 24 tiles (6 by 4). Small tiles cost 96 × 15 = ₹1440, large tiles 24 × 55 = ₹1320, so large tiles are cheaper by ₹120.",
+     "s": [
+      [
+       "(a) area 18/5 × 12/5 = 216/25 = 8 16/25 square units",
+       1
+      ],
+      [
+       "(b) tile area 9/100 and 216/25 × 100/9 = 96 small tiles",
+       1
+      ],
+      [
+       "(c) 12 tiles along the length and 8 along the width, 12 × 8 = 96",
+       1
+      ],
+      [
+       "(d) 24 large tiles; ₹1440 against ₹1320, so large tiles are cheaper by ₹120",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 183-184",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "At a district book fair 1440 visitors come in through the gate. At the first fork 2/3 of them walk to the food lane and the rest go to the book stalls. In the food lane 3/8 of those people go to the sweet shop and the rest to the chaat counter. Of the people at the sweet shop, 1/5 also buy a souvenir. (a) What fraction of all the visitors reach the sweet shop, and how many people is that? (b) What fraction of all the visitors buy a souvenir, and how many? (c) What fraction of all the visitors reach the chaat counter? (d) The organiser says, 'The chaat counter gets more visitors than the book stalls, by more than 100 people.' Check the claim using fractions of all the visitors and the actual numbers.",
+     "a": "(a) 3/8 of 2/3 = 3/8 × 2/3 = 1/4; 1/4 × 1440 = 360 people. (b) 1/5 × 1/4 = 1/20; 1/20 × 1440 = 72 people. (c) The chaat counter gets 5/8 of the food lane: 5/8 × 2/3 = 10/24 = 5/12. (d) The book stalls get 1 − 2/3 = 1/3 = 4/12 of the visitors, which is 480 people; the chaat counter gets 5/12, which is 600 people. 5/12 − 4/12 = 1/12 of 1440 = 120, and 120 is more than 100, so the claim is true.",
+     "s": [
+      [
+       "(a) 3/8 × 2/3 = 1/4 of the visitors, which is 360 people",
+       1
+      ],
+      [
+       "(b) 1/5 × 1/4 = 1/20 of the visitors, which is 72 people",
+       1
+      ],
+      [
+       "(c) 5/8 × 2/3 = 5/12 of the visitors at the chaat counter",
+       1
+      ],
+      [
+       "(d) book stalls 1/3 (480) against chaat 5/12 (600), a difference of 1/12 = 120 people, so the claim is true",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

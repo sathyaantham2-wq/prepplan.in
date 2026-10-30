@@ -1,0 +1,294 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 4,
+  "name": "Another Peek Beyond the Point"
+ },
+ "source_code": "gegp204",
+ "concepts": [
+  {
+   "code": "C7M-4.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 68-75",
+     "q": "Lata starts with a counting number N. She divides it by 100, multiplies the result by 10 and then divides by 1000, and ends with 0.0472. (a) Work backwards to find N. (b) Jay says the three steps together do the same as one division by 10000. Check his claim by moving the decimal point. (c) Write 0.0472 as a sum of tenths, hundredths, thousandths and ten-thousandths. (d) If 0.0472 is a length in kilometres, write it in metres and in centimetres.",
+     "a": "(a) Undo each step in reverse order: 0.0472 x 1000 = 47.2, 47.2 / 10 = 4.72, 4.72 x 100 = 472, so N = 472. (b) Dividing by 100 moves the point 2 places left, multiplying by 10 moves it 1 place right, dividing by 1000 moves it 3 places left: 2 - 1 + 3 = 4 places left in all, the same as dividing by 10000 (472 / 10000 = 0.0472). Jay is right. (c) 0.0472 = 0/10 + 4/100 + 7/1000 + 2/10000. (d) 0.0472 km x 1000 = 47.2 m, and 47.2 m x 100 = 4720 cm.",
+     "s": [
+      [
+       "(a) reverses the steps (x 1000, / 10, x 100) and finds N = 472",
+       1
+      ],
+      [
+       "(b) counts the net shift as 4 places to the left and agrees that it equals one division by 10000",
+       1
+      ],
+      [
+       "(c) writes 0/10 + 4/100 + 7/1000 + 2/10000",
+       1
+      ],
+      [
+       "(d) converts to 47.2 m and 4720 cm",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 70-73",
+     "q": "A school replaces 6 old bulbs in its library with LED bulbs. Each LED bulb saves 0.045 units of electricity in every hour it is on, and the lights are on for 4.5 hours a day. (a) Find the units saved in one hour by all 6 bulbs. (b) Find the units saved in one day, and explain how many decimal places the product must have before any final zero is dropped. (c) Find the units saved in 30 days. (d) Electricity costs Rs 6.40 per unit. How much money does the school save in those 30 days?",
+     "a": "(a) 0.045 x 6 = 270/1000 = 0.27 units. (b) 0.27 x 4.5: 27 x 45 = 1215, and the factors have 2 + 1 = 3 decimal places, so 1.215 units a day. (c) 1.215 x 30 = 36.45 units. (d) 36.45 x 6.40: 3645 x 640 = 2332800 with 2 + 2 = 4 decimal places, giving 233.2800, so Rs 233.28.",
+     "s": [
+      [
+       "(a) finds 0.045 x 6 = 0.27 units",
+       1
+      ],
+      [
+       "(b) multiplies 27 x 45 = 1215 and places the point using 2 + 1 = 3 decimal places to get 1.215 units",
+       1
+      ],
+      [
+       "(c) finds 1.215 x 30 = 36.45 units",
+       1
+      ],
+      [
+       "(d) finds 36.45 x 6.40 = Rs 233.28",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 71-73",
+     "q": "You are told that 247 x 36 = 8892. (a) Without multiplying again, write 2.47 x 3.6, 0.247 x 0.36 and 24.7 x 0.036. (b) For each of the three, say whether the product is greater than both factors, less than both, or between them, and give the reason from the sizes of the factors. (c) Ravi says, \"24.7 x 0.036 must be more than 24.7, because multiplying always makes a number bigger.\" Judge his claim using your answer. (d) Fill the blank: ___ x 0.36 = 889.2.",
+     "a": "(a) 2.47 x 3.6 = 8.892 (2 + 1 = 3 places); 0.247 x 0.36 = 0.08892 (3 + 2 = 5 places); 24.7 x 0.036 = 0.8892 (1 + 3 = 4 places). (b) 8.892 is greater than both 2.47 and 3.6 because both factors are greater than 1; 0.08892 is less than both 0.247 and 0.36 because both factors are between 0 and 1; 0.8892 lies between 0.036 and 24.7 because one factor is greater than 1 and the other is between 0 and 1. (c) Ravi is wrong: multiplying by 0.036, a number between 0 and 1, makes 24.7 smaller, and the product 0.8892 is far less than 24.7. (d) 889.2 has 1 decimal place and 0.36 has 2, and 8892 = 247 x 36, so the missing number is 2470 (2470 x 0.36 = 889.2).",
+     "s": [
+      [
+       "(a) writes 8.892, 0.08892 and 0.8892 with the decimal places counted correctly",
+       1
+      ],
+      [
+       "(b) classifies the three products (greater than both, less than both, between) with the size reason for each",
+       1
+      ],
+      [
+       "(c) rejects Ravi's claim, saying a factor between 0 and 1 makes the product smaller than 24.7",
+       1
+      ],
+      [
+       "(d) finds the missing factor 2470 and checks 2470 x 0.36 = 889.2",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 76-83",
+     "q": "A farm cooperative has 1253 m of fencing wire to be wound into 8 bundles of equal length. (a) Find 1253 / 8 by long division using place value, saying what you regroup at each step after the Ones. (b) Check your answer by writing 1253/8 as an equivalent fraction with denominator 1000. (c) Write the length of one bundle in metres and centimetres. (d) Using (a) only, write 12.53 / 8 and explain your answer.",
+     "a": "(a) 12 Hundreds / 8 = 1 Hundred, 4 Hundreds remain; 45 Tens / 8 = 5 Tens, 5 Tens remain; 53 Ones / 8 = 6 Ones, 5 Ones remain. Regroup 5 Ones as 50 Tenths and place the decimal point: 50 Tenths / 8 = 6 Tenths, 2 Tenths remain; regroup as 20 Hundredths: 2 Hundredths, 4 Hundredths remain; regroup as 40 Thousandths: 5 Thousandths, remainder 0. So 1253 / 8 = 156.625. (b) 8 x 125 = 1000, so 1253/8 = (1253 x 125)/(8 x 125) = 156625/1000 = 156.625. (c) 156.625 m = 156 m and 0.625 x 100 = 62.5 cm, that is 156 m 62.5 cm. (d) 12.53 is 1253 / 100, so 12.53 / 8 = 156.625 / 100 = 1.56625.",
+     "s": [
+      [
+       "(a) carries the long division to 156 with 5 Ones remaining, then regroups into Tenths and places the decimal point",
+       1
+      ],
+      [
+       "(a) continues through Hundredths and Thousandths to the quotient 156.625 with remainder 0",
+       1
+      ],
+      [
+       "(b) multiplies numerator and denominator by 125 to get 156625/1000 = 156.625",
+       1
+      ],
+      [
+       "(c) and (d) gives 156 m 62.5 cm and 12.53 / 8 = 1.56625 by moving the point 2 places left",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 75-83",
+     "q": "In a relay race the track of 3.6 km is shared equally among the runners of a team. Team A has 8 runners and Team B has 5 runners. (a) Find the distance each runner of Team A covers. (b) Find the distance each runner of Team B covers. (c) How many metres more does a Team B runner cover than a Team A runner? (d) A coach says his Team C has some whole number of runners, each covering exactly 0.288 km. Show that this cannot be true.",
+     "a": "(a) 3.6 / 8: 36 Tenths / 8 = 4 Tenths, 4 Tenths remain; 40 Hundredths / 8 = 5 Hundredths, so 0.45 km. (b) 3.6 / 5 = 0.72 km (36 Tenths / 5 = 7 Tenths, 1 Tenth remains; 10 Hundredths / 5 = 2 Hundredths). (c) 0.72 - 0.45 = 0.27 km = 0.27 x 1000 = 270 m more. (d) 12 runners would cover 0.288 x 12 = 3.456 km, less than 3.6 km, and 13 runners would cover 0.288 x 13 = 3.744 km, more than 3.6 km; there is no whole number between 12 and 13, so no team of runners covering 0.288 km each can make exactly 3.6 km.",
+     "s": [
+      [
+       "(a) divides 3.6 by 8 with regrouping to get 0.45 km",
+       1
+      ],
+      [
+       "(b) divides 3.6 by 5 to get 0.72 km",
+       1
+      ],
+      [
+       "(c) finds the difference 0.27 km and converts it to 270 m",
+       1
+      ],
+      [
+       "(d) shows 12 runners give 3.456 km and 13 give 3.744 km, so no whole number of runners fits",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 84-87",
+     "q": "A school's water tank holds 157.5 litres. The caretaker can fill it with a jug of 1.75 litres, a bucket of 2.25 litres or a mug of 0.75 litre. (a) Find how many jugfuls fill the tank, showing how you make the divisor a counting number. (b) Find the number of bucketfuls. (c) Find the number of mugfuls, and explain why this quotient is greater than 157.5 while the other two are less. (d) How many fewer trips does the bucket need than the jug?",
+     "a": "(a) Multiply both by 100: 157.5 / 1.75 = 15750 / 175 = 90 jugfuls. (b) 157.5 / 2.25 = 15750 / 225 = 70 bucketfuls. (c) 157.5 / 0.75 = 15750 / 75 = 210 mugfuls. Dividing by a number less than 1 gives a quotient greater than the dividend, because each mug holds less than 1 litre, so more mugs than litres are needed; 1.75 and 2.25 are greater than 1, so their quotients are less than 157.5. (d) 90 - 70 = 20 fewer trips.",
+     "s": [
+      [
+       "(a) multiplies dividend and divisor by 100 and finds 15750 / 175 = 90",
+       1
+      ],
+      [
+       "(b) finds 15750 / 225 = 70",
+       1
+      ],
+      [
+       "(c) finds 210 and explains that a divisor less than 1 gives a quotient greater than the dividend while divisors greater than 1 give smaller ones",
+       1
+      ],
+      [
+       "(d) finds 20 fewer trips",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 84-87",
+     "q": "A shop sells ghee in two packs: a 0.45 kg pack for Rs 283.50 and a 1.2 kg pack for Rs 744. (a) Find the price per kilogram of each pack. (b) Which pack is cheaper per kilogram, and by how much? (c) Neha needs exactly 3.6 kg of ghee. Find what she pays if she buys only small packs and what she pays if she buys only large packs. (d) The shopkeeper says, \"Buying large packs for 3.6 kg saves you Rs 36.\" Check his claim in two ways.",
+     "a": "(a) 283.50 / 0.45 = 28350 / 45 = Rs 630 per kg; 744 / 1.2 = 7440 / 12 = Rs 620 per kg. (b) The large pack is cheaper by 630 - 620 = Rs 10 per kg. (c) Small packs: 3.6 / 0.45 = 8 packs, 8 x 283.50 = Rs 2268. Large packs: 3.6 / 1.2 = 3 packs, 3 x 744 = Rs 2232. (d) 2268 - 2232 = Rs 36; also 3.6 kg x Rs 10 per kg = Rs 36. The claim is correct.",
+     "s": [
+      [
+       "(a) finds Rs 630 per kg and Rs 620 per kg by making each divisor a counting number",
+       1
+      ],
+      [
+       "(b) states the large pack is cheaper by Rs 10 per kg",
+       1
+      ],
+      [
+       "(c) finds 8 small packs cost Rs 2268 and 3 large packs cost Rs 2232",
+       1
+      ],
+      [
+       "(d) confirms the saving of Rs 36 both by subtraction and as 3.6 x 10",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 75-86",
+     "q": "A 5 m ribbon is cut once into 16 equal pieces and, from another 5 m ribbon, into 11 equal pieces. (a) Find 5 / 16 as a decimal using an equivalent fraction. (b) Divide 5 by 11 by long division for four steps after the decimal point, writing the remainder after each step. (c) Explain why the division by 11 will never end, while the division by 16 ended. (d) Using (b), write the first four digits after the point of 50 / 11 and say whether that division ends.",
+     "a": "(a) 16 x 625 = 10000, so 5/16 = 3125/10000 = 0.3125 m. (b) 50 Tenths / 11 = 4, remainder 6; 60 Hundredths / 11 = 5, remainder 5; 50 Thousandths / 11 = 4, remainder 6; 60 / 11 = 5, remainder 5. So 5 / 11 = 0.4545... (c) For 5 / 16 the remainder became 0, so the division stopped. For 5 / 11 the remainder 6 comes back after two steps; from then on the same steps repeat, so the remainder is never 0, the division never ends and the digits 4, 5 repeat. (d) 50 / 11 = 10 x (5 / 11), so the point moves one place right: 4.5454..., which also never ends.",
+     "s": [
+      [
+       "(a) writes 5/16 as 3125/10000 = 0.3125",
+       1
+      ],
+      [
+       "(b) gives digits 4, 5, 4, 5 with remainders 6, 5, 6, 5",
+       1
+      ],
+      [
+       "(c) explains that the remainder 6 repeats, so the steps repeat and the remainder never becomes 0, unlike the division by 16",
+       1
+      ],
+      [
+       "(d) gives 4.5454... and says it never ends",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.7",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 88-92",
+     "q": "Kavya suggests a simpler leap-year rule: \"A year is a leap year if it is divisible by 4, except years divisible by 200.\" Take the 1000 calendar years from year 1 to year 1000. (a) How many leap years does her rule give, and how many days do the 1000 years have? (b) How many days do the same 1000 years have under the rule the calendar uses now? (c) The Earth needs 365.2422 days for one revolution. Find the gap between each calendar and 1000 revolutions, saying whether the calendar is ahead or behind. (d) Which rule keeps the calendar closer to the Earth, and should Kavya's rule replace it?",
+     "a": "(a) Years divisible by 4: 250; divisible by 200: 200, 400, 600, 800, 1000, that is 5. Leap years = 250 - 5 = 245, days = 1000 x 365 + 245 = 365245. (b) Current rule: 250 - 10 + 2 = 242 leap years, days = 365000 + 242 = 365242. (c) 1000 x 365.2422 = 365242.2 days. Kavya's calendar has 365245 - 365242.2 = 2.8 days too many; the current calendar is short by 365242.2 - 365242 = 0.2 day. (d) The current rule is closer (0.2 day against 2.8 days in 1000 years), so Kavya's rule should not replace it, even though it is simpler.",
+     "s": [
+      [
+       "(a) counts 250 - 5 = 245 leap years and 365245 days",
+       1
+      ],
+      [
+       "(b) counts 242 leap years and 365242 days under the current rule",
+       1
+      ],
+      [
+       "(c) finds 365242.2 and the gaps 2.8 days too many (Kavya) and 0.2 day short (current)",
+       1
+      ],
+      [
+       "(d) decides the current rule is better because its gap is much smaller",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

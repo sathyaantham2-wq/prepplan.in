@@ -1,0 +1,299 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 5,
+  "name": "Parallel and Intersecting Lines"
+ },
+ "source_code": "gegp105",
+ "concepts": [
+  {
+   "code": "C7M-5.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 107-108",
+     "q": "Three straight roads AB, CD and EF all cross at one chowk O. Going round O clockwise, the six rays come in the order OA, OC, OE, OB, OD, OF, so the six angles round O are AOC, COE, EOB, BOD, DOF and FOA. A surveyor records angle AOC = (2y + 8) degrees, angle DOF = (3y - 4) degrees and angle FOA = (4y + 5) degrees. (a) Name the angle equal to DOF and the angle equal to FOA, and give the reason. (b) Find y. (c) Find all six angles and check their total. (d) Is any one of the three roads perpendicular to another? Justify.",
+     "a": "(a) Angle COE = angle DOF and angle EOB = angle FOA, because OD is opposite OC, OF is opposite OE and OB is opposite OA, so each pair is vertically opposite and vertically opposite angles are equal. (b) A, O and B lie on a straight line, so AOC + COE + EOB = 180: (2y + 8) + (3y - 4) + (4y + 5) = 180, so 9y + 9 = 180 and y = 19. (c) AOC = BOD = 46 degrees, COE = DOF = 53 degrees, EOB = FOA = 81 degrees; total 2 x (46 + 53 + 81) = 360 degrees. (d) No. AB and CD meet at 46 and 134 degrees, CD and EF at 53 and 127 degrees, AB and EF at 81 and 99 degrees (AOE = 46 + 53 = 99). None of these is 90 degrees, so no two roads are perpendicular.",
+     "s": [
+      [
+       "(a) COE equals DOF and EOB equals FOA, with the reason that each pair is vertically opposite (the rays are opposite rays of the same lines)",
+       1
+      ],
+      [
+       "(b) uses the straight angle AOB: (2y + 8) + (3y - 4) + (4y + 5) = 180, giving y = 19",
+       1
+      ],
+      [
+       "(c) six angles 46, 53, 81, 46, 53, 81 degrees and the check that they total 360 degrees",
+       1
+      ],
+      [
+       "(d) works out the angle between each pair of roads (46/134, 53/127, 81/99) and concludes none is 90 degrees, so no two roads are perpendicular",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 118",
+     "q": "In a window frame the top bar l and the bottom bar m are parallel and horizontal. A straight upright bar t is fixed so that it meets l at P at a right angle, and it also meets m at Q. (a) Without measuring, find all four angles at Q and say which angle fact gives each. What does this tell you about t and m? (b) A second upright u meets l at R, to the right of P. The angle below l and to the left of u at R is 92 degrees. Is u parallel to t? Justify, using l as the transversal. (c) A carpenter says: 'If one straight bar is perpendicular to both l and m, then l and m must be parallel.' Is he right? Give the reason.",
+     "a": "(a) The angle below l and right of t at P is 90 degrees; its corresponding angle at Q (below m, right of t) is also 90 degrees because l is parallel to m. The other three angles at Q are 90 degrees: two form linear pairs with it (180 - 90 = 90) and one is vertically opposite it. So t is perpendicular to m as well. (b) No. At R the angle below l and to the right of u forms a linear pair with the 92 degree angle, so it is 180 - 92 = 88 degrees. With l as the transversal crossing t and u, the angle below l and to the right is 90 degrees at P and 88 degrees at R. These corresponding angles are unequal, so u is not parallel to t. (c) Yes. The bar is then a transversal of l and m making 90 degrees with each in the same position, so a pair of corresponding angles is equal (90 = 90) and l and m are parallel. This is exactly why two lines drawn with a set square perpendicular to one line are parallel.",
+     "s": [
+      [
+       "(a) the corresponding angle at Q is 90 degrees, with the reason that l is parallel to m",
+       1
+      ],
+      [
+       "(a) the other three angles at Q are 90 degrees by linear pair and vertically opposite angles, so t is perpendicular to m",
+       1
+      ],
+      [
+       "(b) gets 180 - 92 = 88 degrees below l, right of u (linear pair), compares the corresponding angles 90 and 88 degrees and concludes u is not parallel to t",
+       1
+      ],
+      [
+       "(c) agrees: both corresponding angles are 90 degrees, so they are equal and l is parallel to m",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 118-119",
+     "q": "A sheet of paper has a horizontal crease l and a point A above l. Using folds only, Jai tries to make a crease through A parallel to l. His first crease t passes through A but is not perpendicular to l: it meets l at T, and the angle above l and to the right of t at T is 70 degrees. He then folds t onto itself through A, which gives a crease m through A perpendicular to t. (a) Is m parallel to l? Justify with t as the transversal. (b) What angle must a crease through A make with t, above it and to the right of t, to be parallel to l? Why can folding t onto itself never give this crease? (c) Gauri starts again: she folds l onto itself so the crease t' passes through A, then folds t' onto itself through A to get m'. Explain with an angle fact why m' is parallel to l. (d) Are Jai's m and Gauri's m' parallel to each other? Find the angle between them.",
+     "a": "(a) No. With t as the transversal of l and m, the angle above l and to the right of t at T is 70 degrees, but the angle in the same position at A (above m, right of t) is 90 degrees because m is perpendicular to t. These corresponding angles are unequal, so m is not parallel to l (extended, m meets l to the right). (b) It must make 70 degrees with t in that position, so that the corresponding angles are equal (70 = 70). Folding a crease onto itself always makes a perpendicular, that is 90 degrees, so it can give the crease parallel to l only if t were perpendicular to l. (c) t' is perpendicular to l, so it makes 90 degrees with l; m' is perpendicular to t', so it makes 90 degrees with t' in the same position. A pair of corresponding angles is equal (90 = 90), so m' is parallel to l. (d) No. Both m and m' pass through A, and they are different lines (m' is parallel to l, m is not), so they meet at A and cannot be parallel. Measured from the ray of t going up from A, the crease parallel to l makes 70 degrees on the right (corresponding to the 70 degree angle at T) and m makes 90 degrees, so the angle between m and m' is 90 - 70 = 20 degrees.",
+     "s": [
+      [
+       "(a) compares the corresponding angles 70 degrees at T and 90 degrees at A on transversal t and concludes m is not parallel to l",
+       1
+      ],
+      [
+       "(b) the crease must make 70 degrees with t (equal corresponding angles), and folding onto itself always gives 90 degrees",
+       1
+      ],
+      [
+       "(c) t' makes 90 degrees with l and m' makes 90 degrees with t' in the same position, so equal corresponding angles give m' parallel to l",
+       1
+      ],
+      [
+       "(d) m and m' meet at A so are not parallel, and the angle between them is 90 - 70 = 20 degrees",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 115-118",
+     "q": "A straight footpath t crosses three straight lanes p, q and r of a park at P, Q and R. At each crossing the four angles are called upper-left, upper-right, lower-right and lower-left. (a) How many angles does t form with the three lanes altogether, and what is the greatest number of different measures they can have? Give the reason. (b) Exact readings give: upper-left at P is 64 degrees, lower-right at Q is 64 degrees, and upper-right at R is 118 degrees. Find all four angles at each crossing. (c) How many different measures are there among all the angles? (d) Which pairs of lanes are parallel? Justify.",
+     "a": "(a) 4 angles at each of 3 crossings, so 12 angles. At each crossing the vertically opposite angles are equal, so each crossing has at most 2 different measures (a and 180 - a), so at most 3 x 2 = 6 different measures. (b) P: 64, 116, 64, 116. Q: lower-right 64, so upper-left 64 (vertically opposite), upper-right and lower-left 116 (linear pair): 64, 116, 64, 116. R: upper-right 118, so lower-left 118, and upper-left and lower-right 180 - 118 = 62: 62, 118, 62, 118. (c) Four different measures: 62, 64, 116 and 118 degrees. (d) The upper-left angles are 64 at P, 64 at Q and 62 at R. Corresponding angles at P and Q are equal, so p is parallel to q. At R the corresponding angle is 62, not 64, so r is parallel to neither p nor q.",
+     "s": [
+      [
+       "(a) 12 angles in all, and at most 6 different measures because each crossing has vertically opposite angles equal (at most 2 measures per crossing)",
+       1
+      ],
+      [
+       "(b) all twelve angles: P and Q each 64, 116, 64, 116; R 62, 118, 62, 118, using vertically opposite angles and linear pairs",
+       1
+      ],
+      [
+       "(c) four different measures: 62, 64, 116 and 118 degrees",
+       1
+      ],
+      [
+       "(d) compares corresponding (upper-left) angles 64, 64, 62: p is parallel to q, and r is parallel to neither",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 117-118",
+     "q": "Lines l and m are cut by a transversal t at P on l and Q on m, with P above Q. The angle above l and to the left of t at P is (3k + 12) degrees. The angle below m and to the right of t at Q is (5k - 20) degrees. (a) Which angle at Q is the corresponding angle of the given angle at P, and how is it related to the given angle at Q? (b) Find the value of k for which l is parallel to m, and the size of the given angles for that k. (c) For this k, find the angle above m and to the right of t at Q. (d) If instead k = 18, show that l and m cannot be parallel.",
+     "a": "(a) The corresponding angle is the one above m and to the left of t at Q. It is vertically opposite the given angle below m and to the right of t, so it also equals (5k - 20) degrees. (b) For l parallel to m the corresponding angles are equal: 3k + 12 = 5k - 20, so 2k = 32 and k = 16; both angles are 60 degrees. (c) The angle above m and to the right of t forms a linear pair with the 60 degree angle above m and to the left, so it is 180 - 60 = 120 degrees. (d) With k = 18 the angle at P is 3(18) + 12 = 66 degrees and the corresponding angle at Q is 5(18) - 20 = 70 degrees. These corresponding angles are unequal, so l and m are not parallel.",
+     "s": [
+      [
+       "(a) names the angle above m, left of t at Q as the corresponding angle and says it equals (5k - 20) degrees because it is vertically opposite the given angle",
+       1
+      ],
+      [
+       "(b) sets corresponding angles equal, 3k + 12 = 5k - 20, giving k = 16 and each angle 60 degrees",
+       1
+      ],
+      [
+       "(c) uses the linear pair: 180 - 60 = 120 degrees",
+       1
+      ],
+      [
+       "(d) works out 66 and 70 degrees for k = 18 and concludes the corresponding angles are unequal, so the lines are not parallel",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 120",
+     "q": "Three straight parallel rods p, q and r are fixed horizontally on a wall, p at the top, q in the middle and r at the bottom. A bent wire runs straight from P on p down to Q on q, then straight from Q down to R on r. Q is to the right of P, and R is to the left of Q. The angle between the wire PQ and the part of p to the right of P (below p) is 50 degrees. The bend PQR, measured on the left side of Q, is 110 degrees. (a) Find the angle between QP and the part of q to the left of Q, naming the pair of angles you use. (b) Find the angle between QR and the part of q to the left of Q. (c) S is a point on r to the right of R. Find angle QRS, giving the reason. (d) The bend at Q is to be changed so that angle QRS becomes 45 degrees, with PQ unchanged. What should angle PQR be?",
+     "a": "(a) PQ is a transversal of the parallel rods p and q. The 50 degree angle below p to the right of P and the angle above q to the left of Q are alternate angles, so the angle is 50 degrees. (b) The part of q to the left of Q splits the bend PQR into the 50 degree angle above q and the angle below q, so that angle is 110 - 50 = 60 degrees. (c) QR is a transversal of the parallel rods q and r. The 60 degree angle below q to the left of Q and angle QRS above r to the right of R are alternate angles, so angle QRS = 60 degrees. (d) Angle QRS = 45 degrees needs the angle below q to the left of Q to be 45 degrees (alternate angles), so PQR = 50 + 45 = 95 degrees.",
+     "s": [
+      [
+       "(a) angle above q, left of Q is 50 degrees, named as the alternate angle of the 50 degree angle at P (p parallel to q)",
+       1
+      ],
+      [
+       "(b) splits the bend: 110 - 50 = 60 degrees below q, left of Q",
+       1
+      ],
+      [
+       "(c) angle QRS = 60 degrees as the alternate angle of the 60 degree angle at Q (q parallel to r)",
+       1
+      ],
+      [
+       "(d) works backwards: the angle below q must be 45 degrees, so PQR = 50 + 45 = 95 degrees",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.7",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 122",
+     "q": "A floor tile PQRS has its corners in the order P, Q, R, S, with side PQ parallel to SR and side PS parallel to QR. Angle SPQ is (2a + 16) degrees and angle PQR is (3a - 6) degrees. (a) Name the transversal and the pair of parallel sides for which SPQ and PQR are interior angles on the same side, and find a. (b) Find angle QRS and angle RSP, naming the pair of parallel sides used each time. (c) A designer keeps angle SPQ = (2a + 16) degrees but changes angle PQR to (3a - 21) degrees, still with both pairs of sides parallel. Find the new angles at P and Q. (d) The designer says the new tile is a rectangle, with all four corners 90 degrees. Is she right? Justify.",
+     "a": "(a) PQ is the transversal of the parallel sides PS and QR, so SPQ + PQR = 180: (2a + 16) + (3a - 6) = 180, 5a + 10 = 180, a = 34. Then SPQ = 84 degrees and PQR = 96 degrees. (b) QR is a transversal of PQ and SR, so PQR + QRS = 180 and QRS = 84 degrees. SR is a transversal of PS and QR, so QRS + RSP = 180 and RSP = 96 degrees. (c) (2a + 16) + (3a - 21) = 180 gives 5a - 5 = 180, a = 37, so SPQ = 90 degrees and PQR = 90 degrees. (d) Yes. Using the same co-interior pairs, QRS = 180 - 90 = 90 degrees and RSP = 180 - 90 = 90 degrees, so all four corners are 90 degrees.",
+     "s": [
+      [
+       "(a) names PQ as the transversal of PS and QR, writes (2a + 16) + (3a - 6) = 180 and gets a = 34 (SPQ = 84, PQR = 96)",
+       1
+      ],
+      [
+       "(b) QRS = 84 degrees (PQ parallel to SR) and RSP = 96 degrees (PS parallel to QR), each from interior angles on the same side",
+       1
+      ],
+      [
+       "(c) solves (2a + 16) + (3a - 21) = 180 to get a = 37, so the new angles at P and Q are both 90 degrees",
+       1
+      ],
+      [
+       "(d) agrees, showing QRS and RSP are also 180 - 90 = 90 degrees by the co-interior pairs",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 121-122",
+     "q": "A shop sign hangs between two straight horizontal beams l (top) and m (bottom), which are parallel. Two straight struts start from the same point P on l and go down to Q and R on m, with Q to the left of R. L is a point on l to the left of P and N is a point on l to the right of P. Angle NPQ is (3x + 50) degrees, angle PQR is (4x - 10) degrees and angle PRQ is (2x + 15) degrees. (a) Name the transversal for which NPQ and PQR are interior angles on the same side, and find x. (b) Find angle NPQ, angle PQR and angle PRQ. (c) Find angle LPR and then angle QPR, naming each angle fact you use. (d) A worker fixes a third strut from R up to a point S on l to the right of P. He measures angle QRS as 110 degrees and says RS is parallel to PQ. Is he right? Justify.",
+     "a": "(a) PQ is the transversal of the parallel beams l and m; NPQ and PQR lie between l and m on the same side of PQ, so they add up to 180 degrees: (3x + 50) + (4x - 10) = 180, 7x + 40 = 180, x = 20. (b) NPQ = 3(20) + 50 = 110 degrees, PQR = 4(20) - 10 = 70 degrees, PRQ = 2(20) + 15 = 55 degrees. (c) PR is a transversal of l and m, and LPR and PRQ are interior angles on the same side of PR, so LPR = 180 - 55 = 125 degrees. LPQ and NPQ form a linear pair, so LPQ = 180 - 110 = 70 degrees. LPR is made up of LPQ and QPR, so QPR = 125 - 70 = 55 degrees. (d) Yes. Angle QRS and the angle between RS and m to the right of R form a linear pair, so that angle is 180 - 110 = 70 degrees. With m as the transversal of PQ and RS, the angle between PQ and m to the right of Q is PQR = 70 degrees. These corresponding angles are equal (70 = 70), so RS is parallel to PQ.",
+     "s": [
+      [
+       "(a) names PQ as the transversal of l and m, writes (3x + 50) + (4x - 10) = 180 and gets x = 20",
+       1
+      ],
+      [
+       "(b) NPQ = 110 degrees, PQR = 70 degrees and PRQ = 55 degrees",
+       1
+      ],
+      [
+       "(c) LPR = 180 - 55 = 125 degrees (interior angles on the same side of PR), LPQ = 70 degrees (linear pair), so QPR = 125 - 70 = 55 degrees",
+       1
+      ],
+      [
+       "(d) agrees: finds the angle between RS and m right of R as 180 - 110 = 70 degrees, compares it with PQR = 70 degrees as corresponding angles on transversal m, and concludes RS is parallel to PQ",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.8",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 111-119",
+     "q": "Lata has a square sheet ABCD, with corners in the order A (bottom left), B (bottom right), C (top right) and D (top left). She folds it along the diagonal AC and opens it, then along the diagonal BD and opens it; the two creases cross at O. When she folds along AC, corner B lands exactly on D. (a) Use this to explain why the creases AC and BD are perpendicular. (b) M is the point halfway between O and D. Lata folds the crease BD onto itself so that the new crease m passes through M. Explain why m is parallel to AC. (c) The crease m meets the top edge DC at N. Find the angle between m and the edge DC at N, on the side towards D and inside the sheet, giving the reasons. (d) The sheet now shows seven lines: the four edges, the two diagonals and m. How many pairs of these lines are parallel and how many pairs are perpendicular? List them.",
+     "a": "(a) When the sheet is folded along AC, B falls on D, so the ray OB falls on the ray OD and angle AOB fits exactly on angle AOD; the two angles are equal. They form a linear pair on BD, so each is 180 / 2 = 90 degrees, and AC is perpendicular to BD. (b) Folding BD onto itself makes a crease perpendicular to BD, so m makes 90 degrees with BD. AC also makes 90 degrees with BD. With BD as the transversal of AC and m, a pair of corresponding angles is equal (90 = 90), so m is parallel to AC. (c) When folding along AC, edge CB falls on edge CD, so AC splits the 90 degree corner at C into two equal parts: angle ACD = 45 degrees. DC is a transversal of the parallel lines AC and m, and the angle at N between ND and m (inside the sheet) is in the same position as angle DCA at C, so they are corresponding angles and the angle is 45 degrees. (d) Parallel pairs: AB and DC, AD and BC, AC and m, so 3 pairs. Perpendicular pairs: AB and BC, BC and CD, CD and DA, DA and AB, AC and BD, m and BD, so 6 pairs. m makes 45 degrees with the edges, so it is perpendicular to none of them.",
+     "s": [
+      [
+       "(a) B lands on D, so angles AOB and AOD are equal; being a linear pair, each is 90 degrees, so AC is perpendicular to BD",
+       1
+      ],
+      [
+       "(b) m is perpendicular to BD (folding a line onto itself), AC is perpendicular to BD, and equal corresponding angles (90 = 90) on transversal BD give m parallel to AC",
+       1
+      ],
+      [
+       "(c) angle ACD = 45 degrees (the fold halves the corner), and the angle at N is its corresponding angle on transversal DC, so 45 degrees",
+       1
+      ],
+      [
+       "(d) 3 parallel pairs (AB-DC, AD-BC, AC-m) and 6 perpendicular pairs (four corners of the square, AC-BD, m-BD)",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,303 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 6,
+  "name": "Constructions and Tilings"
+ },
+ "source_code": "gegp206",
+ "concepts": [
+  {
+   "code": "C7M-6.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 137-139",
+     "q": "A kite-shaped badge AXBY is cut so that AX = AY = 7 cm, BX = BY = 4 cm and XY = 6 cm, with A above XY and B below it. The fold line AB meets XY at O. (a) Name two triangles that are congruent because of the three given pairs of sides, state the congruence condition, and write the pair of equal angles at A that follows. (b) Using (a), show that triangle AOX is congruent to triangle AOY, naming the condition. (c) Find OX and the angle AOX, giving reasons. (d) A sticker is placed at a point C with CX = CY = 5 cm. Without measuring, explain whether C must lie on the fold line AB.",
+     "a": "(a) In triangles ABX and ABY: AX = AY = 7 cm, BX = BY = 4 cm and AB is common, so they are congruent by SSS, giving angle XAB = angle YAB (that is, angle XAO = angle YAO). (b) In triangles AOX and AOY: AX = AY, angle XAO = angle YAO and AO is common, so they are congruent by SAS. (c) Corresponding parts give OX = OY, so OX = 6 ÷ 2 = 3 cm; also angle AOX = angle AOY and together they make 180 degrees, so each is 90 degrees. Thus AB is the perpendicular bisector of XY even though A and B are at different distances from X. (d) Yes. C is at equal distance from X and Y, so C lies on the perpendicular bisector of XY; XY has only one perpendicular bisector, which is AB, so C lies on AB.",
+     "s": [
+      [
+       "(a) Names triangles ABX and ABY congruent by SSS (AX = AY, BX = BY, AB common) and writes angle XAO = angle YAO",
+       1
+      ],
+      [
+       "(b) Shows triangle AOX congruent to triangle AOY by SAS, naming the equal sides AX = AY, the equal angles at A and the common side AO",
+       1
+      ],
+      [
+       "(c) Gets OX = OY = 3 cm and angle AOX = 90 degrees because the two equal angles at O add up to 180 degrees",
+       1
+      ],
+      [
+       "(d) Says C lies on AB because a point at equal distance from X and Y lies on the perpendicular bisector, and XY has only one perpendicular bisector, AB",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 139-141",
+     "tags": [
+      "construction"
+     ],
+     "q": "Draw a line segment PQ of length 8 cm. Using only an unmarked ruler and a compass: (a) construct a 90 degree angle at the end point P, and write the steps; (b) construct the perpendicular bisector of PQ and mark the midpoint M. (c) Explain why in (a) you need only one pair of intersecting arcs but in (b) you need two pairs. (d) For (b), Kiran wants to use arcs of radius 3.5 cm from P and from Q. Explain whether this will work, and state the condition the radius must satisfy.",
+     "a": "(a) Extend QP beyond P. With centre P and any radius, cut the line at X and Y on either side of P, so that P is the midpoint of XY. With a radius larger than PX, draw arcs from X and from Y meeting at A. Join PA; angle APQ = 90 degrees, since PA is the perpendicular bisector of XY. (b) With a fixed radius more than 4 cm, draw arcs from P and Q above PQ meeting at C, and with the same radius below PQ meeting at D. CD is the perpendicular bisector; it cuts PQ at M with PM = MQ = 4 cm. (c) In (a), P itself is already a point at equal distance from X and Y, so one more such point A fixes the line; in (b) no point of the bisector is known, so two points C and D are needed to draw the line. (d) It will not work: arcs of radius 3.5 cm from P and Q reach only 3.5 + 3.5 = 7 cm, less than PQ = 8 cm, so they do not meet. The radius must be more than half of PQ, that is more than 4 cm.",
+     "s": [
+      [
+       "(a) Extends QP beyond P and marks X and Y on the line at equal distance from P with the compass",
+       1
+      ],
+      [
+       "(a) Draws equal arcs from X and Y meeting at A and joins PA to give the 90 degree angle at P",
+       1
+      ],
+      [
+       "(b) Draws two pairs of equal arcs (radius more than 4 cm) from P and Q above and below PQ, joins their meeting points and marks M with PM = MQ = 4 cm",
+       1
+      ],
+      [
+       "(c)(d) Explains that P is already one equidistant point in (a), and that 3.5 + 3.5 = 7 < 8 so the arcs miss; the radius must exceed 4 cm",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 143-144",
+     "q": "Four students bisect the same angle XOY of 60 degrees. Each first marks A on OX and B on OY with OA = OB = 5 cm. (a) Without measuring, find the length AB and give the reason. (b) Bala draws arcs of radius 2 cm from A and from B. Explain what happens. (c) Chitra draws arcs of radius 3 cm from A and from B on the same side of AB as O, and they meet at C between O and AB. Decide whether OC bisects the angle, with a reason. (d) What is the smallest whole number of centimetres that can be used as the radius of the arcs from A and B so that they meet?",
+     "a": "(a) Triangle OAB has OA = OB, so the angles at A and B are equal; they add up to 180 − 60 = 120 degrees, so each is 60 degrees. All three angles are 60 degrees, so the triangle is equilateral and AB = 5 cm. (b) Arcs of radius 2 cm from A and B together reach only 2 + 2 = 4 cm, which is less than AB = 5 cm, so the arcs do not meet and no point C is found; the radius was not long enough. (c) Yes. OA = OB, AC = BC = 3 cm and OC is common, so triangles OAC and OBC are congruent by SSS and angle AOC = angle BOC = 30 degrees. The side on which the arcs meet does not matter. (d) The arcs meet only if twice the radius is more than AB = 5 cm, so the radius must be more than 2.5 cm; the smallest whole number is 3 cm.",
+     "s": [
+      [
+       "(a) Uses equal base angles of the isosceles triangle OAB, each (180 − 60) ÷ 2 = 60 degrees, to conclude that it is equilateral and AB = 5 cm",
+       1
+      ],
+      [
+       "(b) Says Bala's arcs do not meet because 2 + 2 = 4 cm is less than AB = 5 cm",
+       1
+      ],
+      [
+       "(c) Decides Chitra is correct: triangles OAC and OBC congruent by SSS (OA = OB, AC = BC, OC common), so OC bisects the angle into 30 degrees each",
+       1
+      ],
+      [
+       "(d) States the radius must be more than 5 ÷ 2 = 2.5 cm, so the smallest whole-number radius is 3 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 141-144",
+     "tags": [
+      "construction"
+     ],
+     "q": "Draw a line l and mark a point O on it. Using only an unmarked ruler and a compass, construct on the same side of l an angle of 135 degrees and an angle of 67.5 degrees, both with vertex O and one arm along l. Write the steps of construction in order and, for each angle, show by working why it has the required measure.",
+     "a": "Mark a point P on l to the right of O and a point Q on l to the left of O. Step 1: with centre O, cut l at two points at equal distance from O; with equal arcs from these points find a point R and join OR, so angle POR = angle QOR = 90 degrees. Step 2: bisect angle POR (mark equal lengths on OP and OR, draw equal arcs, join O to their meeting point S), so angle POS = 45 degrees. Then angle QOS = angle QOR + angle ROS = 90 + 45 = 135 degrees (or 180 − 45 = 135 degrees). Step 3: bisect angle QOS with ray OT; angle QOT = 135 ÷ 2 = 67.5 degrees.",
+     "s": [
+      [
+       "Constructs a 90 degree angle at O on l by marking two points at equal distance from O and drawing equal arcs from them",
+       1
+      ],
+      [
+       "Bisects one right angle to get 45 degrees using equal lengths on the arms and equal arcs",
+       1
+      ],
+      [
+       "Identifies the 135 degree angle as the right angle plus the 45 degree part, working 90 + 45 = 135 (or 180 − 45 = 135)",
+       1
+      ],
+      [
+       "Bisects the 135 degree angle and shows 135 ÷ 2 = 67.5 degrees",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 155",
+     "q": "A point P is 4 cm from a line l. Ravi wants the perpendicular from P to l. He draws an arc with centre P that cuts l at X and Y, and then constructs the perpendicular bisector of XY. (a) Explain why the perpendicular bisector of XY passes through P. (b) Ravi first tries an arc of radius 3 cm from P. What goes wrong, and what is the smallest whole number of centimetres he can use instead? (c) He then constructs, in the same way, the perpendicular QG from another point Q on the same side of l, meeting l at G, while PF meets l at F. Use the angles that PF and QG make with l to explain whether PF and QG are parallel.",
+     "a": "(a) X and Y are both on the arc with centre P, so PX = PY. A point at equal distance from X and Y lies on the perpendicular bisector of XY, so the bisector passes through P and is perpendicular to l; it is the required perpendicular. (b) P is 4 cm from l, so an arc of radius 3 cm does not reach l at all and gives no points X and Y. The radius must be more than 4 cm (with exactly 4 cm the arc only touches l at one point), so the smallest whole number is 5 cm. (c) PF and QG both make 90 degrees with l. Taking l as a transversal, the corresponding angles at F and at G are both 90 degrees and equal, so PF and QG are parallel.",
+     "s": [
+      [
+       "(a) States PX = PY because both are radii of the same arc, so P lies on the perpendicular bisector of XY",
+       1
+      ],
+      [
+       "(b) Explains that a 3 cm arc does not reach l because P is 4 cm away, so no X and Y are found",
+       1
+      ],
+      [
+       "(b) Says the radius must be more than 4 cm (4 cm only touches l) and gives the smallest whole number as 5 cm",
+       1
+      ],
+      [
+       "(c) Uses l as a transversal: the corresponding angles at F and G are both 90 degrees, so PF and QG are parallel",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 153-154",
+     "tags": [
+      "construction"
+     ],
+     "q": "Draw a line segment AX of length 7 cm. Using only an unmarked ruler and a compass, construct an angle of 15 degrees at A with AX as one arm. Write the steps in order, and explain why the first angle you make is exactly 60 degrees. Then state, with working, the angle that the arm of your 15 degree angle makes with XA extended beyond A.",
+     "a": "Step 1: with centre A and any radius, draw an arc cutting AX at B. Step 2: with the same radius and centre B, cut the arc at C; join AC. Then AB = AC = BC (all equal to the radius), so triangle ABC is equilateral and angle CAX = 60 degrees. Step 3: bisect angle CAX (equal arcs from B and C meet at D; join AD), so angle DAX = 30 degrees. Step 4: bisect angle DAX to get ray AE with angle EAX = 30 ÷ 2 = 15 degrees. With XA extended beyond A, the ray AE makes 180 − 15 = 165 degrees.",
+     "s": [
+      [
+       "Draws an arc from A cutting AX at B and, with the same radius from B, cuts it at C to make angle CAX",
+       1
+      ],
+      [
+       "Explains angle CAX = 60 degrees because AB = AC = BC (all radii), so triangle ABC is equilateral",
+       1
+      ],
+      [
+       "Bisects the 60 degree angle to get 30 degrees and bisects again to get 15 degrees, with 60 ÷ 2 = 30 and 30 ÷ 2 = 15",
+       1
+      ],
+      [
+       "States the angle with XA extended is 180 − 15 = 165 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 152-154",
+     "q": "Gauri draws a regular hexagon GHIJKL of side 3 cm and extends every side in both directions to make a six-pointed star. The sides LG and IH, extended beyond G and H, meet at the star point A, so triangle AGH stands on side GH; the other five points stand on the other sides in the same way. (a) Find angle AGH and angle AHG, giving reasons. (b) Show that triangle AGH is equilateral and write AG. (c) Find the total length of the outline of the star. (d) Each extended side of the hexagon, from star point to star point, is a side of one of two large triangles in the star. Find the length of such a side and the perimeter of one large triangle.",
+     "a": "(a) Each angle of a regular hexagon is 120 degrees. LG extended is a straight line, so angle AGH = 180 − 120 = 60 degrees; in the same way angle AHG = 180 − 120 = 60 degrees. (b) The third angle is 180 − 60 − 60 = 60 degrees, so all three angles are 60 degrees and triangle AGH is equilateral; AG = AH = GH = 3 cm. (c) The outline is made of 2 sides from each of the 6 point triangles, that is 12 segments of 3 cm: 12 × 3 = 36 cm. (d) An extended side such as the line through A, G, L and the next star point is made of three 3 cm pieces (one point triangle side, one hexagon side, another point triangle side): 3 + 3 + 3 = 9 cm. A large triangle has perimeter 3 × 9 = 27 cm.",
+     "s": [
+      [
+       "(a) Uses the hexagon angle of 120 degrees on a straight line to get angle AGH = angle AHG = 180 − 120 = 60 degrees",
+       1
+      ],
+      [
+       "(b) Finds the third angle 180 − 60 − 60 = 60 degrees, so triangle AGH is equilateral with AG = 3 cm",
+       1
+      ],
+      [
+       "(c) Counts 12 outline segments of 3 cm and gets 12 × 3 = 36 cm",
+       1
+      ],
+      [
+       "(d) Gets a large-triangle side of 3 + 3 + 3 = 9 cm and a perimeter of 3 × 9 = 27 cm",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.6",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 157-160",
+     "q": "A hall floor is a grid of unit squares with 5 rows and 7 columns. One square will hold a pillar and the rest must be covered exactly by 2 x 1 mats, with no gaps or overlaps. (a) Explain why the floor cannot be covered if there is no pillar. (b) Colour the grid like a chessboard with the corner squares black. How many black and how many white squares are there? (c) The builder wants the pillar in row 2, column 3 (square (1, 1) is black). Decide whether the remaining floor can be covered, with a reason. (d) The pillar is moved to the corner square in row 1, column 1. Describe one complete covering and state how many mats it uses.",
+     "a": "(a) 5 × 7 = 35 squares, an odd number, and each mat covers exactly 2 squares, so 35 squares can never be covered exactly. (b) Rows 1, 3 and 5 have 4 black and 3 white squares; rows 2 and 4 have 3 black and 4 white. Black = 3 × 4 + 2 × 3 = 18 and white = 3 × 3 + 2 × 4 = 17. (c) Square (2, 3) has 2 + 3 = 5, odd, so it is white (squares whose row and column add to an even number are black, like (1, 1)). Removing it leaves 18 black and 16 white squares. Every mat covers one black and one white square, so the numbers must be equal; the floor cannot be covered. (d) Row 1 now has 6 squares (columns 2 to 7): cover them with 3 horizontal mats. Rows 2 to 5 form a block of 4 rows and 7 columns: cover each column with 2 vertical mats, 7 × 2 = 14 mats. Total 3 + 14 = 17 mats, which matches 34 ÷ 2 = 17.",
+     "s": [
+      [
+       "(a) Says 5 × 7 = 35 is odd while each mat covers 2 squares, so no exact covering",
+       1
+      ],
+      [
+       "(b) Counts 18 black and 17 white squares with working by rows",
+       1
+      ],
+      [
+       "(c) Identifies (2, 3) as white, leaving 18 black and 16 white, and rejects the plan because each mat covers one black and one white square",
+       1
+      ],
+      [
+       "(d) Describes 3 horizontal mats in row 1 and 7 × 2 = 14 vertical mats in rows 2 to 5, a total of 17 mats",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 151-161",
+     "q": "A wall is tiled with 40 regular hexagonal tiles of side 10 cm, three tiles meeting at every corner. (a) Show with the angles why three hexagons fit exactly at a corner. (b) The wall is retiled using equilateral triangle tiles of side 10 cm, each old hexagon being replaced by the triangles it is made of. How many triangles are needed, and how many triangles meet at each corner of the new tiling? Justify the second number with angles. (c) In one place, a single hexagon is kept at a corner and the rest of the space around that corner is filled with triangle tiles. How many triangles meet there? (d) Explain why the new triangle tiling has corners that were not corners of the hexagon tiling, and find how many such new corners there are.",
+     "a": "(a) Each angle of a regular hexagon is 120 degrees and 3 × 120 = 360 degrees, the full angle around a point, so three hexagons fit with no gap or overlap. (b) A regular hexagon is made of 6 equilateral triangles of the same side, so 40 × 6 = 240 triangles. Each angle of an equilateral triangle is 60 degrees and 360 ÷ 60 = 6, so 6 triangles meet at each corner. (c) The space left is 360 − 120 = 240 degrees, and 240 ÷ 60 = 4 triangles. (d) Each hexagon is cut into 6 triangles that all meet at its centre, so the centre of every hexagon becomes a corner where 6 triangles meet; it was inside a tile before. There are 40 hexagons, so there are 40 new corners.",
+     "s": [
+      [
+       "(a) Shows 3 × 120 = 360 degrees, the full angle around a point",
+       1
+      ],
+      [
+       "(b) Finds 40 × 6 = 240 triangles and 6 triangles at a corner because 6 × 60 = 360 degrees",
+       1
+      ],
+      [
+       "(c) Works 360 − 120 = 240 degrees and 240 ÷ 60 = 4 triangles",
+       1
+      ],
+      [
+       "(d) Explains that each hexagon centre becomes a corner where its 6 triangles meet, giving 40 new corners",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

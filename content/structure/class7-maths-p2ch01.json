@@ -1,0 +1,170 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 1,
+  "name": "Geometric Twins",
+  "blurb": "Congruent figures, the SSS, SAS, ASA, AAS and RHS conditions for congruent triangles, why AAA and SSA do not work, naming corresponding parts, and the angles of isosceles and equilateral triangles.",
+  "order_index": 9,
+  "source_code": "gegp201"
+ },
+ "scope": [
+  [
+   "IN",
+   "Say when two figures are congruent (same shape and size, one fits exactly over the other, rotation and flipping allowed)",
+   "pp.1-2"
+  ],
+  [
+   "IN",
+   "Decide which measurements are enough to recreate a figure, such as the radius of a circle or the two sides of a rectangle",
+   "pp.2-4"
+  ],
+  [
+   "IN",
+   "State and use the SSS condition: triangles with equal sidelengths are congruent",
+   "pp.4-6"
+  ],
+  [
+   "IN",
+   "Name corresponding vertices, sides and angles of congruent triangles and write the congruence in the correct order, for example triangle ABC congruent to triangle XYZ",
+   "pp.6-9"
+  ],
+  [
+   "IN",
+   "Explain why equal angles alone (AAA) do not guarantee congruence",
+   "p.9-10"
+  ],
+  [
+   "IN",
+   "State and use the SAS condition with two sides and the included angle",
+   "p.10"
+  ],
+  [
+   "IN",
+   "Explain why two sides and a non-included angle (SSA) do not guarantee congruence",
+   "pp.10-12"
+  ],
+  [
+   "IN",
+   "State and use the ASA condition, and the AAS condition by finding the third angle with the angle sum",
+   "pp.12-16"
+  ],
+  [
+   "IN",
+   "State and use the RHS condition for right-angled triangles, and list the five conditions that guarantee congruence",
+   "pp.16-17"
+  ],
+  [
+   "IN",
+   "Show that angles opposite equal sides of a triangle are equal, find the base angles of an isosceles triangle, and show that each angle of an equilateral triangle is 60 degrees",
+   "pp.17-19"
+  ],
+  [
+   "IN",
+   "Use congruence in figures: midpoints, vertically opposite angles, alternate angles, common sides, squares and rectangles, to prove equal sides or angles",
+   "pp.13-14, 19-21"
+  ],
+  [
+   "OUT",
+   "Similarity of triangles and scale factors -- same shape but different size is only used to show AAA fails",
+   null
+  ],
+  [
+   "OUT",
+   "Formal two-column proofs with statements and reasons in a required format -- the chapter argues in words",
+   null
+  ],
+  [
+   "OUT",
+   "The Pythagoras theorem and calculating the hypotenuse -- the hypotenuse is only named for the RHS condition",
+   null
+  ],
+  [
+   "OUT",
+   "Congruence of quadrilaterals and other polygons by conditions -- only triangles have conditions in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Area and perimeter calculations of congruent figures -- not covered",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-1.1",
+   "name": "Congruent figures",
+   "description": "Recognising congruent figures, checking congruence by superimposing (with rotating or flipping), and deciding which measurements are enough to recreate a figure.",
+   "idea": "Figures are congruent when one can be placed exactly over the other, and a few well-chosen measurements can fix a figure completely.",
+   "rule": "Congruent figures have the same shape and size; rotating or flipping a figure does not change it; two arms and the angle between them fix an angle-shaped symbol; a circle is fixed by its radius and a rectangle by its two sides.",
+   "example": "Two circles are congruent when their radii are equal; two rectangles are congruent when their lengths and breadths are equal.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-1.2",
+   "name": "SSS condition and naming congruent triangles",
+   "description": "Using equal sidelengths (SSS) to show congruence, and naming the corresponding vertices, sides and angles in the correct order.",
+   "idea": "Three sides fix a triangle, so equal sidelengths mean the triangles fit exactly, and the order of letters in the congruence records which vertices match.",
+   "rule": "If the three sides of one triangle equal the three sides of another, the triangles are congruent (SSS); in triangle ABC congruent to triangle XYZ, A matches X, B matches Y and C matches Z, and matching parts are equal.",
+   "example": "Triangle ABD is congruent to triangle CDB in rectangle ABCD, because AB = CD, AD = CB and BD is common.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-1.3",
+   "name": "SAS condition, and why AAA and SSA fail",
+   "description": "Using two sides and the included angle (SAS), and understanding why equal angles alone (AAA) and two sides with a non-included angle (SSA) do not guarantee congruence.",
+   "idea": "The angle between two sides fixes the third side, but an angle that is not between the two sides can leave two possible triangles, and angles alone fix only the shape.",
+   "rule": "Two sides and the included angle equal means congruent (SAS); equal angles alone give triangles of the same shape but perhaps different sizes; SSA can give two different triangles.",
+   "example": "With AB = 6 cm, AC = 4 cm and angle B = 30 degrees, an arc from Q meets the line at two points R and S, giving two non-congruent triangles.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-1.4",
+   "name": "ASA and AAS conditions",
+   "description": "Using two angles and the included side (ASA), and two angles and a non-included side (AAS) by finding the third angle.",
+   "idea": "Two angles fix the third by the angle sum, so an AAS pair becomes an ASA pair and both guarantee congruence.",
+   "rule": "Two angles and the included side equal gives congruence (ASA); two angles and a non-included side equal also gives congruence (AAS), after finding the third angle as 180 degrees minus the other two.",
+   "example": "Angles 35 degrees and 75 degrees with BC = 4 cm in both triangles: the third angle is 70 degrees in each, so ASA applies.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-1.5",
+   "name": "RHS condition and the list of conditions",
+   "description": "Using the right angle, hypotenuse and one side (RHS) for right-angled triangles, and knowing all five conditions that guarantee congruence.",
+   "idea": "In a right-angled triangle the hypotenuse and one side fix the triangle, since the other side can only fall in one place on either side of the perpendicular.",
+   "rule": "Right-angled triangles with equal hypotenuse and one equal side are congruent (RHS); the conditions that guarantee congruence are SSS, SAS, ASA, AAS and RHS.",
+   "example": "Two right-angled triangles with hypotenuse 5 cm and another side 4 cm are congruent.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-1.6",
+   "name": "Angles of isosceles and equilateral triangles",
+   "description": "Using congruence to show that angles opposite equal sides are equal, finding base angles of an isosceles triangle, and showing each angle of an equilateral triangle is 60 degrees.",
+   "idea": "The altitude from the apex of an isosceles triangle splits it into two triangles that are congruent by RHS, so the base angles match.",
+   "rule": "In a triangle, angles opposite equal sides are equal; the angles of an equilateral triangle are all 60 degrees; base angles of an isosceles triangle with apex angle a are (180 - a)/2.",
+   "example": "In an isosceles triangle with AB = AC and angle A = 80 degrees, angle B = angle C = 50 degrees.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-1.7",
+   "name": "Using congruence in figures",
+   "description": "Finding equal sides and angles in figures by spotting congruent triangles using midpoints, vertically opposite angles, alternate angles, common sides, squares and rectangles.",
+   "idea": "Marking the given equal parts and the extra facts a figure provides, such as common sides and vertically opposite angles, reveals which condition applies.",
+   "rule": "Identify the equal parts (given, common side, vertically opposite or alternate angles), match a condition, write the congruence with the vertices in order, and then equal corresponding parts follow.",
+   "example": "If O is the midpoint of AD and BC, then triangle AOB is congruent to triangle DOC by SAS, so AB = DC.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

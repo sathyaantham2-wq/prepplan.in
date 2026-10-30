@@ -1,0 +1,29 @@
+# Review: top-up p1ch08-la4.json (9 long answers, 4 marks, Class 7 Maths Part I ch 8)
+
+Method: every part recomputed with fractions.Fraction before reading the key. All arithmetic in all 9 keys is correct.
+Printed-page scheme checked: text file NNN = printed page 172+NNN; every "p" value is a printed page and in the right region of the chapter.
+Marking steps: all 9 have 4 steps of 1 mark each (sum 4), each step names a checkable result, and they follow the parts and the key.
+Scope: no OUT line violated (no decimals, percent, negatives, formal proof). Money in 8.7 is plain arithmetic, not percent or ratio.
+
+| Concept | Verdict | What is wrong | Fix |
+|---|---|---|---|
+| C7M-8.1 clock (3/4 and 1 1/3 min) | LOW | Part (c) says "the first morning it is 10 minutes or more behind. After how many days" while the loss is counted in whole days. "After 14 days" vs "the morning of day 15" can be read two ways. Parts (a),(b) are close to one-line repeated multiplication, but (c) climbs. Idea is new to the pack. | Reword (c): "At the end of which day (counting 9 am Monday as day 0, so after how many days) ..." or simply "After how many days is it first 10 minutes or more behind?" |
+| C7M-8.2 unit-square 2/3 x 7/4 | OK | Figure is fully described in words (one whole unit square shaded; second unit square, 3 of 4 equal columns shaded; every square cut into 4 columns and 3 rows). 12, 21, 7, 7/12, 7/6 all verified. (d) is a real misconception (more than 1 therefore more than 7/4). No repeat in existing pack (it uses improper 7/4, which no existing item does). | None. Optional: say "the same cuts are made in both squares" so the picture cannot be read differently. |
+| C7M-8.3 18/25 x 35/42 x 10/9 | HIGH | Part (d): "smallest whole number k for which the product is a whole number". In India's CBSE usage 0 is a whole number, and k = 0 gives product 0, a whole number. The key says 15. A second defensible answer (0). | Change to "smallest positive whole number k" in the stem and in step 4 (keep k = 15, product 1). |
+| C7M-8.3 (same item) | LOW | Idea overlaps existing 8.3 long answer "Asha finds 18/35 x 25/54 by multiplying straight across; Bilal cancels first" (across-vs-cancel, ask for numerator/denominator before simplifying). Step 3 needs the HCF 3150, which is extra effort rather than a chapter idea. | Replace (c) with a different diagnostic (for example, ask why cancelling 18 with 42 is allowed), or accept as a deliberate variant. |
+| C7M-8.4 claim (a) 913/899 x 455/468, (b), (c), (d) Asif | OK | Verified: product 415415/420732 = 31955/32364, below 1 and above 455/468. Rule matches book p.185 (situation table). (a)-(c) are each one-line rule applications, but (d) forces the numerator/denominator comparison, so overall not recall. Claim-check, verdict false. | None. |
+| C7M-8.4 hostel rice 5/4 then 3/5 | LOW | Same setting as existing mcq "trouser at 3/4 of price then raised to 5/4" and the sugar 9/10 repeat items (two sequential multipliers, one above 1 and one below). Different order/commutativity angle though. | Accept, or change one multiplier pair and the order property question. |
+| C7M-8.5 claim Zoya's reciprocal | OK | 3/4, 4/3, 3/2, 2/3 all verified; her method gives the reciprocal of the quotient (true for any fractions). Real misconception, steps match. Existing "Gopal" item is a different error. Verdict false. | None. |
+| C7M-8.6 divisors 2/7, 7/2, 3/4, 9/8 | MEDIUM | Overlaps the existing 8.6 long answer "The dividend is fixed at 6 ... compare each quotient with 6, state the rule, for which divisor is the quotient exactly 6" (same plan: vary divisor, predict, compare, divisor 1). Numbers verified: 21/8, 3/14, 1, 2/3; differences 15/8, 15/28, 1/4, 1/12; 9/8 correct. (d) divisor 1 is a good gap in the book's rule, but it is the same gap the existing item's (c) already tests. | Swap (d) for a new angle (for example, a divisor that gives quotient exactly twice the dividend and show the divisor is 1/2), or change (c) so it is not another "closest" computation. |
+| C7M-8.7 temple tiles | OK (LOW on idea) | All verified: 216/25 = 8 16/25, 9/100, 96, 12 x 8, 9/25, 24, 6 x 4, Rs 1440 vs Rs 1320, saving Rs 120. Page 190-191 correct (brick problem). Echoes the existing Baudhayana bricks mcq and the Rs-cost long answers, but adds a two-tile cost decision. | None needed. |
+| C7M-8.7 mela claim (1440 visitors) | LOW | Verified 1/4 = 360, 1/20 = 72, 5/12, rides 480 vs chaat 600, difference 120. (1) "p" is pp. 193-194, but those pages hold the shaded-triangle fractional relations and the dramma chain; a mela crowd split rests more on pp. 183-184 (fraction of a fraction word problems). Defensible via the dramma chain on 193-194, so not wrong. (2) Repeats the existing 8.7 "Class 7 raised Rs 24,000 at the mela" and "tank 3/4 full, 2/3 used" chain-of-fractions idea. (3) Claim-check verdict false. | Use "pp. 183-184, 193-194" for p; change the setting from "school mela" to another place. |
+
+## Template check
+- Claim-check verdicts: 3 of 3 are false (8.4 Asif, 8.5 Zoya, 8.7 organiser). LOW: one-sided. Make one of them a claim that is true (for example, Asif's claim reworded so that it holds for two factors both above 1).
+- Parts: every item is lettered (a)-(d) with 4 one-mark steps; no part order is identical across concepts (arithmetic first, judgement last), which is fine for a 9-item pack but note that all 9 end with an "explain / test a claim" part.
+- Option position references: none (no options).
+- Difficulty: 3 Hard-or-Hardest items per sort are fine; no easy items. No item is recall in disguise.
+
+## Counts
+HIGH 1 (8.3 k = 0 second answer), MEDIUM 1 (8.6 overlap with existing pack), LOW 5 (8.1 wording, 8.3 overlap, 8.4 sequence repeat, 8.7 mela page/repeat, claim-check all false). 9 items read.
+Verdict: pass after fixes (one stem word in 8.3, one rewrite in 8.6).

@@ -1,0 +1,294 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 3,
+  "name": "Finding Common Ground"
+ },
+ "source_code": "gegp203",
+ "concepts": [
+  {
+   "code": "C7M-3.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school librarian in Mysuru has 84 Hindi books and 126 English books. She puts them on shelves so that each shelf holds books of one language only and every shelf holds the same number of books. (a) List all the factors of 84 and of 126, and write their common factors. (b) If she wants as few shelves as possible, how many books go on each shelf and how many shelves does she use? (c) The shelves in the library can hold at most 30 books each. What is now the best number of books per shelf, and how many shelves are needed? Justify your choice.",
+     "a": "(a) Factors of 84: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84. Factors of 126: 1, 2, 3, 6, 7, 9, 14, 18, 21, 42, 63, 126. Common factors: 1, 2, 3, 6, 7, 14, 21, 42. (b) The number per shelf must be a common factor; the fewest shelves come from the largest one, the HCF 42: 84/42 + 126/42 = 2 + 3 = 5 shelves. (c) 42 is now too many, so take the largest common factor not above 30, which is 21: 84/21 + 126/21 = 4 + 6 = 10 shelves. Any smaller common factor (14, 7, ...) gives more shelves.",
+     "s": [
+      [
+       "(a) both factor lists correct and the common factors 1, 2, 3, 6, 7, 14, 21, 42",
+       1
+      ],
+      [
+       "(b) chooses the HCF 42 books per shelf, explaining that the largest common factor gives the fewest shelves",
+       1
+      ],
+      [
+       "(b) 2 + 3 = 5 shelves",
+       1
+      ],
+      [
+       "(c) rejects 42, chooses 21 as the largest common factor up to 30, and gets 4 + 6 = 10 shelves",
+       1
+      ]
+     ],
+     "p": "pp. 47-48"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "(a) Use the division method to write the prime factorisation of 504. (b) Using only the prime factorisation, decide whether each of 2 x 2 x 2 x 7, 3 x 3 x 7 and 2 x 3 x 3 x 3 is a factor of 504. For each one that is a factor, find the number it must be multiplied by to give 504. (c) Farhan conjectures: 'A number with a longer prime factorisation always has more factors.' Test his claim on 32 and 30 by listing all their factors, and say what your result shows.",
+     "a": "(a) 504 / 2 = 252, / 2 = 126, / 2 = 63, / 3 = 21, / 3 = 7, / 7 = 1, so 504 = 2 x 2 x 2 x 3 x 3 x 7. (b) 2 x 2 x 2 x 7 = 56 is a subpart, and 504 = 56 x (3 x 3) = 56 x 9. 3 x 3 x 7 = 63 is a subpart, and 504 = 63 x (2 x 2 x 2) = 63 x 8. 2 x 3 x 3 x 3 = 54 needs three 3s but 504 has only two, so 54 is not a factor. (c) 32 = 2 x 2 x 2 x 2 x 2 (five primes) has factors 1, 2, 4, 8, 16, 32, only 6. 30 = 2 x 3 x 5 (three primes) has factors 1, 2, 3, 5, 6, 10, 15, 30, that is 8. The longer factorisation gives fewer factors, so 32 and 30 are a counterexample and the conjecture is false.",
+     "s": [
+      [
+       "(a) division steps by 2, 2, 2, 3, 3, 7 ending in 1, giving 504 = 2 x 2 x 2 x 3 x 3 x 7",
+       1
+      ],
+      [
+       "(b) 56 and 63 shown to be subparts, with 504 = 56 x 9 and 504 = 63 x 8",
+       1
+      ],
+      [
+       "(b) 54 rejected because it needs three 3s and 504 has only two",
+       1
+      ],
+      [
+       "(c) lists 6 factors of 32 and 8 factors of 30 and calls this a counterexample that disproves the conjecture",
+       1
+      ]
+     ],
+     "p": "pp. 50-52"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three classes must find the HCF of 168, 252 and 420. (a) Write each number as a product of primes. (b) Find the HCF, saying how many times each common prime is taken and why. (c) Rohit took every prime the largest number of times it appears and wrote HCF = 2 x 2 x 2 x 3 x 3 x 5 x 7. Find the value of his answer and explain, without dividing, why it cannot be a common factor of the three numbers. (d) How many common factors do 168, 252 and 420 have? Explain how you know.",
+     "a": "(a) 168 = 2 x 2 x 2 x 3 x 7, 252 = 2 x 2 x 3 x 3 x 7, 420 = 2 x 2 x 3 x 5 x 7. (b) Common primes 2, 3, 7 (5 is not in 168 or 252). Take the minimum count: two 2s (252 and 420 have two), one 3 (168 and 420 have one), one 7. HCF = 2 x 2 x 3 x 7 = 84. (c) Rohit's number is 8 x 9 x 5 x 7 = 2520. It is bigger than 168, and a factor of a number cannot be bigger than the number; also it contains a 5, which 168 does not have. He used the rule for the LCM (maximum counts), not the HCF (minimum counts). (d) Every common factor is a subpart of the largest common subpart 2 x 2 x 3 x 7, so the common factors are the factors of 84: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84, which is 12 common factors.",
+     "s": [
+      [
+       "(a) all three prime factorisations correct",
+       1
+      ],
+      [
+       "(b) HCF = 2 x 2 x 3 x 7 = 84, taking each common prime the minimum number of times and leaving out 5",
+       1
+      ],
+      [
+       "(c) Rohit's value 2520, rejected because it is larger than 168 (or contains a 5 that 168 lacks), and names the mistake as using maximum counts",
+       1
+      ],
+      [
+       "(d) 12 common factors, with the reason that they are exactly the factors of the HCF 84",
+       1
+      ]
+     ],
+     "p": "pp. 53-54"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "For a festival, Anshu makes a toran from cloth strips 12 cm long, Guna from strips 18 cm long and Leela from strips 20 cm long, placing strips end to end. All three torans must have the same length. (a) Using prime factorisation, find the length of the shortest toran all three can make. (b) How many strips does each child use for it? (c) Guna says the shortest length is 12 x 18 x 20 = 4320 cm. How many times your answer to (a) is this, and why is it not the shortest? (d) The toran for the school gate must be at least 3 m and at most 6 m long. Which common lengths can they make?",
+     "a": "(a) 12 = 2 x 2 x 3, 18 = 2 x 3 x 3, 20 = 2 x 2 x 5. Take each prime the most times it appears: two 2s, two 3s, one 5. LCM = 2 x 2 x 3 x 3 x 5 = 180 cm. (b) Anshu 180 / 12 = 15 strips, Guna 180 / 18 = 10 strips, Leela 180 / 20 = 9 strips. (c) 4320 / 180 = 24, so it is 24 times the LCM. 4320 is a common multiple, but it repeats primes more often than needed (for example four 2s instead of two), so it is not the lowest. (d) The common lengths are multiples of 180: 180, 360, 540, 720, ... Between 300 cm and 600 cm only 360 cm and 540 cm.",
+     "s": [
+      [
+       "(a) prime factorisations and LCM = 2 x 2 x 3 x 3 x 5 = 180 cm, taking each prime its maximum number of times",
+       1
+      ],
+      [
+       "(b) 15, 10 and 9 strips",
+       1
+      ],
+      [
+       "(c) 4320 = 24 x 180, explained as a common multiple that is not the lowest",
+       1
+      ],
+      [
+       "(d) lists common multiples of 180 and picks 360 cm and 540 cm",
+       1
+      ]
+     ],
+     "p": "pp. 55-58"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.5",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "The LCM of 3 and 24 is 24, one of the two numbers. (a) Find the HCF and the LCM of each pair: 7 and 35, 12 and 60, 15 and 45. (b) Make a general statement about the HCF and the LCM of a pair in which one number is a factor of the other, and write it using n and kn, where k is a whole number. (c) Use prime factorisation to explain why the LCM of n and 5n is 5n. (d) Meena claims: 'If the LCM of two numbers is one of the numbers, then their HCF is the other number.' Decide whether she is right and justify.",
+     "a": "(a) 7 and 35: HCF 7, LCM 35. 12 and 60: HCF 12, LCM 60. 15 and 45: HCF 15, LCM 45. (b) When one number is a factor of the other, the HCF is the smaller number and the LCM is the larger: for n and kn, HCF = n and LCM = kn. (c) 5n = 5 x (the primes of n), so 5n already contains the whole prime factorisation of n as a subpart, and of course its own; the smallest number containing both is 5n itself, so the LCM is 5n. (d) She is right. If the LCM of a and b is b, then b is a multiple of a, so a is a factor of b; then a is a common factor and no common factor can exceed a, so the HCF is a, the other number.",
+     "s": [
+      [
+       "(a) all six values correct: HCF 7, 12, 15 and LCM 35, 60, 45",
+       1
+      ],
+      [
+       "(b) general statement: HCF is the smaller and LCM is the larger number, written as HCF(n, kn) = n and LCM(n, kn) = kn",
+       1
+      ],
+      [
+       "(c) explains that 5n contains the prime factorisation of n as a subpart, so 5n is the lowest common multiple",
+       1
+      ],
+      [
+       "(d) verdict 'right', with the reason that the LCM being b makes a a factor of b, so the HCF is a",
+       1
+      ]
+     ],
+     "p": "pp. 58-59"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three students use the division method for 420 and 630. Neha first divides both numbers by 10 and then by 21. Kiran divides by 10 and then by 3, gets the row 14, 21, stops there, and says the HCF is 30. (a) Write Neha's division table and find the HCF. (b) Find the LCM from her table. (c) Verify your answers using HCF x LCM = product of the two numbers. (d) Explain exactly where Kiran went wrong and what he should have done next.",
+     "a": "(a) 420, 630 divided by 10 gives 42, 63; divided by 21 gives 2, 3. Now 2 and 3 have no common factor, so HCF = 10 x 21 = 210. (b) LCM = HCF x numbers in the last row = 210 x 2 x 3 = 1260. (c) 420 x 630 = 264600 and 210 x 1260 = 264600, so the relation holds. (d) Kiran stopped while 14 and 21 still have the common factor 7. He should divide by 7 to get 2 and 3, which have no common factor; then the HCF is 10 x 3 x 7 = 210, not 30.",
+     "s": [
+      [
+       "(a) table 420, 630 -> 42, 63 -> 2, 3 and HCF = 10 x 21 = 210",
+       1
+      ],
+      [
+       "(b) LCM = 210 x 2 x 3 = 1260",
+       1
+      ],
+      [
+       "(c) both products worked out as 264600",
+       1
+      ],
+      [
+       "(d) names the error: 14 and 21 still share 7, so he must divide by 7 again, giving HCF 210",
+       1
+      ]
+     ],
+     "p": "pp. 60-62"
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two whole numbers have HCF 6 and LCM 180. (a) Find the product of the two numbers. (b) Riya says one of the numbers is 24. Show that this is impossible. (c) Find every possible pair of such numbers. Explain how you made sure no pair is missing, and check one pair by finding its HCF and LCM.",
+     "a": "(a) Product = HCF x LCM = 6 x 180 = 1080. (b) Each number must divide the LCM 180, but 180 / 24 = 7.5, so 24 is not a factor of 180. (Also, 1080 / 24 = 45, and the HCF of 24 and 45 is 3, not 6.) (c) Both numbers are multiples of 6: 6a and 6b with a x b = 1080 / 36 = 30 and a, b having no common factor other than 1 (otherwise the HCF would be more than 6). The co-prime pairs with product 30 are 1 x 30, 2 x 15, 3 x 10, 5 x 6, so the pairs are (6, 180), (12, 90), (18, 60), (30, 36). Check (30, 36): 30 = 2 x 3 x 5, 36 = 2 x 2 x 3 x 3, HCF = 2 x 3 = 6, LCM = 2 x 2 x 3 x 3 x 5 = 180.",
+     "s": [
+      [
+       "(a) product = 6 x 180 = 1080",
+       1
+      ],
+      [
+       "(b) 24 rejected because it does not divide the LCM 180 (or because 24 and 45 have HCF 3)",
+       1
+      ],
+      [
+       "(c) writes the numbers as 6a and 6b with a x b = 30 and a, b having no common prime, and gets all four pairs (6, 180), (12, 90), (18, 60), (30, 36)",
+       1
+      ],
+      [
+       "(c) checks one pair by prime factorisation, getting HCF 6 and LCM 180",
+       1
+      ]
+     ],
+     "p": "pp. 62-63"
+    }
+   ]
+  },
+  {
+   "code": "C7M-3.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A carton is 24 cm long, 36 cm wide and 60 cm high. It is to be packed with identical cubes with no gaps. (a) Which of cubes of side 4 cm, 6 cm, 8 cm and 9 cm can fill it exactly? Give a reason for each one that cannot. (b) Find the side of the largest cube that fills it exactly, and say why the HCF gives it. (c) How many of these largest cubes are needed? (d) How many 6 cm cubes are needed, and how many times the number in (c) is this?",
+     "a": "(a) The side must divide 24, 36 and 60. 4 cm and 6 cm divide all three, so they fit. 8 cm does not divide 36 (or 60); 9 cm does not divide 24 (or 60). (b) The largest side dividing all three lengths is their HCF: 24 = 2 x 2 x 2 x 3, 36 = 2 x 2 x 3 x 3, 60 = 2 x 2 x 3 x 5, HCF = 2 x 2 x 3 = 12 cm. (c) (24/12) x (36/12) x (60/12) = 2 x 3 x 5 = 30 cubes. (d) (24/6) x (36/6) x (60/6) = 4 x 6 x 10 = 240 cubes, which is 240 / 30 = 8 times as many.",
+     "s": [
+      [
+       "(a) 4 cm and 6 cm fit; 8 cm rejected (does not divide 36) and 9 cm rejected (does not divide 24)",
+       1
+      ],
+      [
+       "(b) side 12 cm as the HCF of 24, 36 and 60, with the reason that the side must be a common factor of all three",
+       1
+      ],
+      [
+       "(c) 2 x 3 x 5 = 30 cubes",
+       1
+      ],
+      [
+       "(d) 4 x 6 x 10 = 240 cubes, 8 times as many",
+       1
+      ]
+     ],
+     "p": "p. 64"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A jar of marbles can be shared equally, with none left, among 4 children, among 6 children or among 10 children. When the marbles are packed in bags of 7, exactly 2 marbles are left over. (a) What must the number of marbles be a multiple of? (b) Find the smallest possible number of marbles, showing your checks. (c) Priya says the answer is 62, 'because it is 60 plus the 2 left over'. Test her answer. (d) Find the next possible number of marbles after your answer to (b), and explain how you can get it without testing every multiple.",
+     "a": "(a) A multiple of LCM(4, 6, 10): 4 = 2 x 2, 6 = 2 x 3, 10 = 2 x 5, LCM = 2 x 2 x 3 x 5 = 60. (b) Test multiples of 60 for remainder 2 on division by 7: 60 leaves 4, 120 leaves 1, 180 leaves 5, 240 = 7 x 34 + 2 leaves 2. Smallest number is 240. (c) 62 fails twice: it is not divisible by 4 (62 / 4 = 15.5), and 62 = 7 x 8 + 6 leaves remainder 6, not 2, on division by 7. She wrongly added the remainder to the LCM. (d) The number must stay a multiple of 60 and keep the same remainder for 7, so we add a common multiple of 60 and 7, the LCM 420: 240 + 420 = 660. Check: 660 / 60 = 11 and 660 = 7 x 94 + 2.",
+     "s": [
+      [
+       "(a) multiple of the LCM of 4, 6 and 10, which is 60",
+       1
+      ],
+      [
+       "(b) tests 60, 120, 180 (remainders 4, 1, 5) and finds 240 with remainder 2",
+       1
+      ],
+      [
+       "(c) rejects 62: it is not divisible by 4 (and leaves remainder 6 on division by 7)",
+       1
+      ],
+      [
+       "(d) next number 240 + LCM(60, 7) = 240 + 420 = 660, with the reason for adding 420",
+       1
+      ]
+     ],
+     "p": "p. 64"
+    }
+   ]
+  }
+ ]
+}

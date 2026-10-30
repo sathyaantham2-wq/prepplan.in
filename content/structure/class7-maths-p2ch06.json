@@ -1,0 +1,145 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 6,
+  "name": "Constructions and Tilings",
+  "blurb": "Ruler and compass constructions of the perpendicular bisector, 90, 45, 60 and 30 degree angles, angle copying, parallel lines, the regular hexagon and star, and tiling regions and the plane.",
+  "order_index": 14,
+  "source_code": "gegp206"
+ },
+ "scope": [
+  [
+   "IN",
+   "Explain bisection and the perpendicular bisector, and justify through congruence that a point at equal distance from the ends of a segment lies on its perpendicular bisector",
+   "pp.136-139"
+  ],
+  [
+   "IN",
+   "Construct the perpendicular bisector of a segment and a 90 degree angle at a point on a line with an unmarked ruler and compass, and the rope method of the Sulba-Sutras",
+   "pp.139-142"
+  ],
+  [
+   "IN",
+   "Bisect an angle and copy an angle using the SSS congruence condition, and construct 45 degree and eight-petalled designs",
+   "pp.143-147"
+  ],
+  [
+   "IN",
+   "Construct a line parallel to a given line by copying a corresponding angle, and a perpendicular from a point outside a line",
+   "pp.147-148, 155"
+  ],
+  [
+   "IN",
+   "Use angles around a point (360 degrees) to build a regular hexagon from six equilateral triangles, construct 60, 120, 30 and 15 degree angles and the six-pointed star",
+   "pp.151-155"
+  ],
+  [
+   "IN",
+   "Decide whether a region can be tiled with 2 x 1 tiles using counting and black-and-white colouring",
+   "pp.157-160"
+  ],
+  [
+   "IN",
+   "Tile the entire plane with squares, equilateral triangles and regular hexagons, and know that other shapes and mixed shapes can also tile it",
+   "pp.160-162"
+  ],
+  [
+   "OUT",
+   "Constructing a regular pentagon -- the chapter defers it to later classes",
+   null
+  ],
+  [
+   "OUT",
+   "Constructing an angle of an exact given measure such as 65.5 degrees -- only a Math Talk question and not developed",
+   null
+  ],
+  [
+   "OUT",
+   "Tangram rearrangement puzzles and the optical illusion figure -- recreational and not assessed",
+   null
+  ],
+  [
+   "OUT",
+   "Proving which polygons can tile the plane in general -- the chapter only shows examples",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-6.1",
+   "name": "Perpendicular bisector and points equidistant from two points",
+   "description": "Understanding bisection and the perpendicular bisector and proving through congruent triangles that points at equal distance from the ends of a segment lie on its perpendicular bisector.",
+   "idea": "Two points that are each at equal distance from X and Y give congruent triangles, so the line through them cuts XY in half at a right angle.",
+   "rule": "Any point at equal distance from X and Y lies on the perpendicular bisector of XY, and the perpendicular bisector is the only such line.",
+   "example": "If AX = AY = BX = BY then triangle ABX is congruent to triangle ABY by SSS and AB bisects XY at right angles.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-6.2",
+   "name": "Constructing the perpendicular bisector and a 90 degree angle",
+   "description": "Constructing the perpendicular bisector of a segment and a 90 degree angle at a point on a line using an unmarked ruler and compass, and the rope method.",
+   "idea": "Arcs of equal radius from the two ends locate points equidistant from both ends, and two such points fix the perpendicular bisector.",
+   "rule": "Use the same radius from X and from Y for each pair of arcs; for a 90 degree angle at O first mark X and Y at equal distance from O so that O is the midpoint.",
+   "example": "The midpoint of a rope stretched between pegs at X and Y is equidistant from both, so it lies on the perpendicular bisector.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.3",
+   "name": "Bisecting and copying angles",
+   "description": "Bisecting an angle and copying an angle with a ruler and compass, justified by the SSS congruence condition, and using bisection to get 45 degree angles.",
+   "idea": "Equal arcs make triangles with three pairs of equal sides, so their corresponding angles are equal.",
+   "rule": "To bisect angle XOY mark OA = OB and draw equal arcs from A and B meeting at C; OC bisects the angle. To copy an angle, copy an isosceles triangle by SSS.",
+   "example": "Bisecting a 90 degree angle gives 45 degrees, and 360 degrees divided into 8 equal parts gives 45 degrees.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.4",
+   "name": "Constructing parallel and perpendicular lines",
+   "description": "Constructing a line parallel to a given line by copying a corresponding angle, and a perpendicular from a point outside a line.",
+   "idea": "Equal corresponding angles on a transversal give parallel lines, and a point equidistant from two points of a line lies on their perpendicular bisector.",
+   "rule": "Copy the angle between the given line and a transversal at the new point; for a perpendicular from P, cut the line at X and Y with PX = PY and bisect XY.",
+   "example": "Copying a 65 degree angle at B on the transversal gives a line through B parallel to the given line.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.5",
+   "name": "Angles at a point, 60 degrees and the regular hexagon",
+   "description": "Using the fact that angles around a point add up to 360 degrees, constructing 60, 120, 30 and 15 degree angles, the regular hexagon and the six-pointed star.",
+   "idea": "An equilateral triangle gives a 60 degree angle, and six of them fit exactly around a point to form a regular hexagon.",
+   "rule": "Angles around a point add to 360 degrees; six equilateral triangles fill it; a regular hexagon has angles of 120 degrees and its centre is at distance equal to its side from every vertex.",
+   "example": "The angles 40, 60, 50, 30, 40 and 90 degrees leave a gap of 50 degrees, so a 70 degree angle does not fit.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.6",
+   "name": "Tiling regions with 2 x 1 tiles",
+   "description": "Deciding whether a region can be tiled with 2 x 1 tiles by counting squares and by black-and-white colouring.",
+   "idea": "Each tile covers exactly two squares, one of each colour in a chessboard colouring, so the counts of squares must match.",
+   "rule": "A region with an odd number of squares cannot be tiled; a tileable region has equal numbers of black and white squares; a grid with one even side can be tiled.",
+   "example": "A 5 x 7 grid has 35 squares so it cannot be tiled, and a 4 x 6 grid needs 12 tiles.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.7",
+   "name": "Tiling the plane",
+   "description": "Tiling the entire plane with squares, equilateral triangles and regular hexagons, using the angles around a point, and recognising that mixed and irregular shapes can tile too.",
+   "idea": "Shapes tile the plane when the angles that meet at each point add up to 360 degrees with no gap or overlap.",
+   "rule": "Squares (4 x 90), equilateral triangles (6 x 60) and regular hexagons (3 x 120) each tile the plane; combinations tile if their angles add to 360 degrees.",
+   "example": "Two hexagons and two triangles meet at a point with 120 + 120 + 60 + 60 = 360 degrees.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

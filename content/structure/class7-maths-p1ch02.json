@@ -1,0 +1,195 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Arithmetic Expressions",
+  "blurb": "Writing and comparing expressions, terms, commutative/associative properties, brackets, and the distributive property.",
+  "order_index": 2,
+  "source_code": "gegp102"
+ },
+ "scope": [
+  [
+   "IN",
+   "Write an arithmetic expression modelling a real situation (money, marbles, tickets, repeated events)",
+   "1-2, 9-11, 19-20"
+  ],
+  [
+   "IN",
+   "Recognise that different expressions can share the same value",
+   "1"
+  ],
+  [
+   "IN",
+   "Compare two expressions with =, < or > by reasoning about structure, not full computation",
+   "1-3"
+  ],
+  [
+   "IN",
+   "Identify the terms of an expression, converting each subtraction to 'add the inverse' first",
+   "5-6"
+  ],
+  [
+   "IN",
+   "Apply the commutative property of addition to terms (swap order without changing the value)",
+   "6-7"
+  ],
+  [
+   "IN",
+   "Apply the associative property of addition to terms (regroup without changing the value)",
+   "7-8"
+  ],
+  [
+   "IN",
+   "Evaluate an expression by computing each x/division term first, then adding all terms in any order",
+   "8-11"
+  ],
+  [
+   "IN",
+   "Evaluate an expression with a single level of brackets, innermost-first",
+   "4, 12"
+  ],
+  [
+   "IN",
+   "Remove a bracket preceded by '+' without changing the signs of the terms inside",
+   "14"
+  ],
+  [
+   "IN",
+   "Remove a bracket preceded by '-', correctly flipping the sign of every term inside",
+   "12-13"
+  ],
+  [
+   "IN",
+   "Apply the distributive property to expand a x (b+-c) into a x b +- a x c",
+   "15-17"
+  ],
+  [
+   "IN",
+   "Apply the distributive property in reverse to factor a common multiplier out of a sum/difference",
+   "17"
+  ],
+  [
+   "IN",
+   "Use the distributive property as a mental-math shortcut (e.g. 97x25 via (100-3)x25)",
+   "18"
+  ],
+  [
+   "OUT",
+   "BODMAS/PEMDAS as a named acronym or memorised rule order -- The chapter deliberately teaches order-of-operations via \"terms\", never names or drills an acronym -- a generated question must not lean on BODMAS terminology",
+   null
+  ],
+  [
+   "OUT",
+   "Algebraic expressions with a variable (x, y, n as an unknown) -- This chapter is purely numeric; variables are introduced in a later chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Solving an equation for an unknown value -- This chapter only evaluates and compares given expressions -- no \"solve for x\"",
+   null
+  ],
+  [
+   "OUT",
+   "Exponents or powers inside an expression -- Not introduced in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Fractions or decimals as the numbers inside an expression -- All worked examples use whole numbers/integers; decimals belong to Chapter 3 (A Peek Beyond the Point)",
+   null
+  ],
+  [
+   "OUT",
+   "Nested brackets more than one level deep, e.g. ((a+b)-(c-d)) -- Every worked example and Figure-it-Out item uses at most one level of brackets",
+   null
+  ],
+  [
+   "OUT",
+   "New rules for multiplying/dividing negative numbers -- The chapter explicitly assumes the Token Model of integers from Class 6 as prior knowledge; it only builds addition/subtraction of terms on top of it",
+   null
+  ],
+  [
+   "OUT",
+   "Algebraic identities beyond the distributive property, e.g. (a+b) squared -- Not covered anywhere in this chapter",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-2.1",
+   "name": "Writing and comparing simple expressions",
+   "description": "Modelling a real situation as an expression, and comparing two expressions with =, < or > by reasoning rather than full computation.",
+   "idea": "An arithmetic expression is a phrase like 5 x 25 that has a value; different expressions can share the same value, and two expressions can be compared by reasoning about the situation rather than always calculating in full.",
+   "rule": "Model a real situation as an expression first; to compare two expressions, look at how their parts differ rather than computing both from scratch.",
+   "example": "Mallika spends Rs.25/day for lunch, Mon-Fri: 5 x 25. Comparing 1023+125 and 1022+128 by reasoning: Raja started 1 marble ahead but gained 3 fewer, so Joy ends 2 ahead -- 1023+125 < 1022+128.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-2.2",
+   "name": "Terms of an expression",
+   "description": "Identifying the terms of an expression by rewriting every subtraction as 'add the inverse' first.",
+   "idea": "The terms of an expression are its parts separated by a '+' sign; every subtraction is first rewritten as 'add the inverse' so the whole expression becomes a sum of terms.",
+   "rule": "Rewrite a - b as a + (-b) before identifying terms. A part containing x or / with no + inside it is a single term.",
+   "example": "83 - 14 = 83 + -14, so the terms are 83 and -14. In 6 x 5 + 3, the terms are (6x5) and 3.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-2.3",
+   "name": "Commutative and associative property of addition (of terms)",
+   "description": "Swapping or regrouping the terms of an expression never changes its value, even with negative terms.",
+   "idea": "Once an expression is written as a sum of terms, the terms can be swapped (commutative) or regrouped (associative) in any order without changing the value -- this holds even when some terms are negative.",
+   "rule": "Term1 + Term2 = Term2 + Term1. (Term1+Term2)+Term3 = Term1+(Term2+Term3). Applies to any number of terms, in any order.",
+   "example": "(-7) + 10 + (-11) gives -8 however the three terms are grouped or reordered.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-2.4",
+   "name": "Evaluating expressions with brackets and mixed operations",
+   "description": "Evaluating brackets first, then each multiplication/division term, then adding all terms.",
+   "idea": "A bracketed sub-expression is evaluated first. Without brackets, an expression is evaluated by first finding the value of each term (a term with x or / is computed as one unit), then adding all the terms.",
+   "rule": "Evaluate innermost brackets first; then evaluate each remaining multiplication/division term; then add all terms in any order.",
+   "example": "30 + 5 x 4 = 30 + (5x4) = 30 + 20 = 50. 5 x (3+2) + 7 x 8 + 3 = 25 + 56 + 3 = 84.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-2.5",
+   "name": "Removing brackets (sign changes)",
+   "description": "The sign-flip rule for removing a bracket preceded by a minus sign, versus a plus sign.",
+   "idea": "A bracket preceded by '-' flips the sign of every term inside it when removed; a bracket preceded by '+' (or nothing) leaves the signs unchanged.",
+   "rule": "a - (b + c) = a - b - c. a - (b - c) = a - b + c. a + (b - c) = a + b - c (signs unchanged).",
+   "example": "100 - (15+56) = 100-15-56 = 29 (Irfan's change). 500 - (250-100) = 500-250+100 = 350.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-2.6",
+   "name": "Distributive property",
+   "description": "Multiplying a number by a sum/difference equals the sum/difference of the products, and the reverse (factoring).",
+   "idea": "Multiplying a number by a sum or difference gives the same result as multiplying it by each term separately and then adding/subtracting -- and the reverse: a common multiplier can be factored back out.",
+   "rule": "a x (b + c) = a x b + a x c. a x (b - c) = a x b - a x c. Works in both directions (expanding and factoring).",
+   "example": "4 x 5 + 3 x 5 = (4+3) x 5 = 35 (scouts and guides). 2 x (43+24) = 2x43 + 2x24 (bill split).",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-2.7",
+   "name": "Real-world modelling and mental-math shortcuts",
+   "description": "Modelling word problems as expressions, and using the distributive property as a quick-multiplication trick.",
+   "idea": "Real situations (money, tickets, repeated events) are modelled as expressions using terms, brackets and the distributive property; the same property gives quick ways to multiply numbers close to a round number.",
+   "rule": "To multiply near a round number, rewrite one factor as (round number +/- small number) and distribute.",
+   "example": "97 x 25 = (100-3) x 25 = 2500-75 = 2425. Binu's yearly savings from a monthly budget: (20000-5000-5000-2000) x 12.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

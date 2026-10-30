@@ -1,0 +1,294 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 4,
+  "name": "Expressions Using Letter-Numbers"
+ },
+ "source_code": "gegp104",
+ "concepts": [
+  {
+   "code": "C7M-4.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 103",
+     "q": "A city bus runs from the Depot to the College with 7 stops in between. It takes t minutes between any two stops next to each other and waits 2 minutes at each in-between stop (no wait is counted at the Depot or the College). (a) Write an expression for the time in minutes from the Depot to the College. (b) Preeti writes 7t + 14. Explain her mistake. (c) Find the journey time when t = 4. (d) The route is extended by one more stop beyond the College, so the College becomes an in-between stop. Write the new expression and say by how much the journey time grows when t = 4.",
+     "a": "(a) 7 stops in between make 8 gaps, and 7 waits of 2 minutes give 14 minutes, so the time is 8t + 14 minutes. (b) Preeti used the 7 stops as the number of gaps; there are 8 gaps between the two ends, so she missed one t. (c) 8 × 4 + 14 = 32 + 14 = 46 minutes. (d) Now there are 9 gaps and 8 waits: 9t + 16. At t = 4 this is 52 minutes, 6 minutes more (that is t + 2 more: one extra gap and one extra wait).",
+     "s": [
+      [
+       "(a) counts 8 gaps and 7 waits of 2 minutes and writes 8t + 14",
+       1
+      ],
+      [
+       "(b) explains that Preeti counted stops (7) instead of gaps (8), so one t is missing",
+       1
+      ],
+      [
+       "(c) substitutes t = 4 to get 46 minutes",
+       1
+      ],
+      [
+       "(d) writes 9t + 16 and finds 52 - 46 = 6 minutes more",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 86-87",
+     "q": "In a mall the floors are numbered ..., -3, -2, -1 (basements), 0 (ground), 1, 2, 3, .... A lift starts at floor f, goes up a floors, then down b floors, then up c floors. (a) Write an expression for the floor where the lift stops at the end. (b) Find this floor when f = -3, a = 8, b = 11 and c = 2. (c) With the same a, b and c, a second lift starts at floor 6. Find where it stops, and explain why the two lifts end exactly as many floors apart as they started. (d) A third lift makes the same moves (a = 8, b = 11, c = 2) and must end at the ground floor 0. On which floor must it start?",
+     "a": "(a) f + a - b + c. (b) -3 + 8 - 11 + 2 = -4, so basement floor -4. (c) 6 + 8 - 11 + 2 = 5, floor 5. They started 6 - (-3) = 9 floors apart and end 5 - (-4) = 9 floors apart, because both lifts add the same a - b + c = -1 to their starting floors, so only the starting floor makes a difference. (d) The moves change the floor by a - b + c = -1, so f - 1 = 0 and the lift must start at floor 1 (check: 1 + 8 - 11 + 2 = 0).",
+     "s": [
+      [
+       "(a) writes f + a - b + c",
+       1
+      ],
+      [
+       "(b) substitutes the values with correct signs to get -4",
+       1
+      ],
+      [
+       "(c) finds floor 5 and shows both gaps are 9 floors because the same a - b + c (= -1) is added to both starting floors",
+       1
+      ],
+      [
+       "(d) uses f + (-1) = 0 to get starting floor 1 and checks it",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.3",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 87",
+     "q": "Riya lets t stand for the tens digit and u for the units digit of a two-digit number (neither digit is 0). (a) She writes the number as tu. Using t = 4 and u = 7, find what tu stands for in this chapter's short form, and explain why it does not give the number 47. (b) Write a correct expression for the two-digit number, in short form with the number first, and check that it gives 47. (c) Write a similar expression for the number whose digits are swapped (u becomes the tens digit), and find its value for t = 4, u = 7. (d) Riya says: 'tu and ut are always equal, so a number and its swapped number are always equal.' Explain which half of her statement is true and which is false, and say for which digits the number and its swapped number are equal.",
+     "a": "(a) In short form tu means t × u, so for t = 4, u = 7 it is 4 × 7 = 28, not 47. Writing letters side by side multiplies them; it does not place digits next to each other. (b) The tens digit is worth 10 each, so the number is 10 × t + u = 10t + u; for t = 4, u = 7 this is 40 + 7 = 47. (c) 10u + t; for t = 4, u = 7 this is 70 + 4 = 74. (d) tu = ut is true, because both mean t × u and numbers can be multiplied in any order (4 × 7 = 7 × 4 = 28). The second half is false: 10t + u and 10u + t multiply different digits by 10, so 47 and 74 differ. They are equal only when both digits are the same (t = u), for example 55.",
+     "s": [
+      [
+       "(a) reads tu as t × u = 28 and explains that side-by-side letters mean multiplication, not digits",
+       1
+      ],
+      [
+       "(b) writes 10t + u and checks 40 + 7 = 47",
+       1
+      ],
+      [
+       "(c) writes 10u + t and gets 74",
+       1
+      ],
+      [
+       "(d) says tu = ut is true (both are t × u) but 10t + u and 10u + t differ (47 and 74), equal only when t = u (e.g. 55)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.4",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 88-92",
+     "q": "Tuck Shop A sells rolls at ₹r each and samosas at ₹s each. Over four days it sells rolls: 6, 3, 8, 5 and samosas: 10, 14, 7, 9. (a) Write the total money earned by Shop A as an expression and simplify it. (b) Find its value when r = 25 and s = 15. (c) Shop B, selling the same items at the same prices, earns 25r + 32s. Write and simplify the expression for how much more Shop B earns than Shop A. (d) Tanvi says Shop B always earns more because 25 > 22. Is she right? Use r = 25, s = 15 and r = 40, s = 10 to decide.",
+     "a": "(a) 6r + 3r + 8r + 5r + 10s + 14s + 7s + 9s = 22r + 40s. (b) 22 × 25 + 40 × 15 = 550 + 600 = ₹1150. (c) (25r + 32s) - (22r + 40s) = 25r + 32s - 22r - 40s = 3r - 8s. (d) No. At r = 25, s = 15, 3r - 8s = 75 - 120 = -45, so B earns ₹45 less; at r = 40, s = 10, 3r - 8s = 120 - 80 = 40, so B earns ₹40 more. Who earns more depends on the prices, because B sells more rolls but fewer samosas.",
+     "s": [
+      [
+       "(a) combines like terms to get 22r + 40s",
+       1
+      ],
+      [
+       "(b) substitutes to get ₹1150",
+       1
+      ],
+      [
+       "(c) opens the bracket with the minus sign and gets 3r - 8s",
+       1
+      ],
+      [
+       "(d) finds -45 and 40 for the two price pairs and concludes Tanvi is wrong: it depends on the prices",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 93",
+     "q": "Nine number cards are laid in 3 rows of 3. Top row: 2, m, 2. Middle row: k, -4, k. Bottom row: 2, m, 2. (a) Write the sum of all nine cards by adding row by row, then simplify it. (b) Find the sum a second way, by first collecting the number cards, then the m cards, then the k cards, and show you get the same simplest form. (c) Find the sum when m = 5 and k = -3. (d) Ira says the simplest form must have 4 terms because there are 4 different cards (2, -4, m and k). Check her statement against your answer.",
+     "a": "(a) (2 + m + 2) + (k - 4 + k) + (2 + m + 2) = (m + 4) + (2k - 4) + (m + 4) = 2m + 2k + 4. (b) Numbers 2 + 2 - 4 + 2 + 2 = 4, m cards m + m = 2m, k cards k + k = 2k, so 2m + 2k + 4 again. (c) 2 × 5 + 2 × (-3) + 4 = 10 - 6 + 4 = 8. (d) Ira is wrong. The cards 2 and -4 are both number terms, so they are like terms and combine into the single number 4. The simplest form 2m + 2k + 4 has only 3 terms: one in m, one in k and one number term.",
+     "s": [
+      [
+       "(a) writes the three row sums and simplifies to 2m + 2k + 4",
+       1
+      ],
+      [
+       "(b) groups like terms another way (numbers 4, 2m, 2k) and reaches the same form",
+       1
+      ],
+      [
+       "(c) substitutes m = 5, k = -3 to get 8",
+       1
+      ],
+      [
+       "(d) says Ira is wrong: 2 and -4 are like (number) terms that combine, so 2m + 2k + 4 has 3 terms",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 91-92",
+     "q": "A rectangular flower bed is (3x + 4) m long and (x - 1) m wide, where x is greater than 1. A square bed next to it has side (2x + 1) m. Salma claims: 'Whatever x is, the rectangle's border is always 2 m longer than the square's border.' (a) Write the perimeter of the rectangle and simplify it, showing how you open the brackets. (b) Write and simplify the perimeter of the square. (c) Decide whether Salma is right. (d) Check your answer to (c) with x = 5.",
+     "a": "(a) 2(3x + 4) + 2(x - 1) = 6x + 8 + 2x - 2 = 8x + 6 m. (b) 4(2x + 1) = 8x + 4 m. (c) (8x + 6) - (8x + 4) = 2, so Salma is right for every x. (d) x = 5: rectangle 2 × 19 + 2 × 4 = 46 m, square 4 × 11 = 44 m, a difference of 2 m.",
+     "s": [
+      [
+       "(a) distributes 2 over both brackets and simplifies to 8x + 6",
+       1
+      ],
+      [
+       "(b) distributes 4 to get 8x + 4",
+       1
+      ],
+      [
+       "(c) subtracts to get 2 and says Salma is right for every value of x",
+       1
+      ],
+      [
+       "(d) finds 46 m and 44 m at x = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 91-92",
+     "q": "A number trick: 'Think of a number n. Add 5. Multiply the result by 3. Subtract the number you first thought of. Subtract 15. Your answer is always double your number.' (a) Write the whole trick as one expression in n, with brackets where needed. (b) Remove the brackets and simplify to show the trick always works. (c) Ravi thinks of -4. Work out each step in numbers and check the final answer. (d) Change only the last step (the number subtracted) so that the answer is always 7 more than double the number. Show your new expression simplifies correctly.",
+     "a": "(a) 3(n + 5) - n - 15. (b) 3n + 15 - n - 15 = 2n, always double the number. (c) -4 + 5 = 1; 1 × 3 = 3; 3 - (-4) = 7; 7 - 15 = -8, which is 2 × (-4). (d) Subtract 8 instead of 15: 3(n + 5) - n - 8 = 3n + 15 - n - 8 = 2n + 7.",
+     "s": [
+      [
+       "(a) writes 3(n + 5) - n - 15",
+       1
+      ],
+      [
+       "(b) opens the bracket and combines like terms to get 2n",
+       1
+      ],
+      [
+       "(c) works the steps 1, 3, 7, -8 and checks -8 = 2 × (-4)",
+       1
+      ],
+      [
+       "(d) replaces 15 by 8 and shows 3(n + 5) - n - 8 = 2n + 7",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.6",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 92-96",
+     "q": "A number machine takes two inputs a and b and gives one output. Three examples: inputs (4, 3) give 11, inputs (5, 1) give 11, inputs (2, 6) give 10. Three students guess its formula. Arjun: 2(a + b) - b. Bela: 2a + b. Chirag: 2a + 2b - 3. (a) Test each formula on all three examples and say which fit. (b) Simplify Arjun's formula and say how it is related to Bela's. (c) Chirag says, 'My formula gives 11 for (4, 3), so it is correct.' Explain why one matching example does not prove a formula, and give an input pair not in the table for which Bela's and Chirag's formulas give different outputs.",
+     "a": "(a) Arjun: 11, 11, 10; Bela: 11, 11, 10; Chirag: 11, 9, 13. Arjun's and Bela's fit all three; Chirag's fails for (5, 1) and (2, 6). (b) 2(a + b) - b = 2a + 2b - b = 2a + b, so Arjun's formula is the same expression as Bela's. (c) Two expressions are equal only if they agree for every input; one agreeing pair can be a coincidence. For example (1, 1): Bela gives 3, Chirag gives 1.",
+     "s": [
+      [
+       "(a) computes all nine outputs and states that Arjun's and Bela's fit, Chirag's fails (5, 1) and (2, 6)",
+       1
+      ],
+      [
+       "(b) simplifies 2(a + b) - b to 2a + b, the same as Bela's",
+       1
+      ],
+      [
+       "(c) explains that equal expressions must agree for every value, not just one",
+       1
+      ],
+      [
+       "(c) gives a pair such as (1, 1) with different outputs (3 and 1)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 100-101",
+     "q": "A farmer builds a straight bamboo fence in sections. One section is 2 posts with 2 rails between them. Each new section joined to the end needs 1 more post and 2 more rails. (a) Find the number of bamboo pieces (posts and rails) for 1, 2 and 3 sections. (b) Write an expression for the pieces in s sections, explaining where each part comes from. (c) How many pieces does a 45-section fence need? (d) How many sections use exactly 301 pieces? A neighbour has exactly 200 pieces. Show that he cannot use all of them in one complete fence, and say how many pieces are left over after the longest fence he can make.",
+     "a": "(a) 4, 7, 10. (b) s sections have s + 1 posts and 2s rails, so (s + 1) + 2s = 3s + 1 pieces. (c) 3 × 45 + 1 = 136. (d) 3s + 1 = 301 gives 3s = 300, so s = 100 sections. A complete fence always uses 1 more than a multiple of 3. But 200 - 1 = 199 = 3 × 66 + 1 is not a multiple of 3, so 200 is not of the form 3s + 1. The longest fence is 66 sections using 3 × 66 + 1 = 199 pieces, leaving 1 piece.",
+     "s": [
+      [
+       "(a) gives 4, 7 and 10 pieces",
+       1
+      ],
+      [
+       "(b) writes 3s + 1 from s + 1 posts and 2s rails",
+       1
+      ],
+      [
+       "(c) finds 136 pieces",
+       1
+      ],
+      [
+       "(d) finds 100 sections for 301 pieces, shows 199 is not a multiple of 3 so 200 does not fit, and gives 66 sections with 1 piece left",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,294 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "A Tale of Three Intersecting Lines"
+ },
+ "source_code": "gegp107",
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 146-150",
+     "q": "A rangoli teacher asks for an equilateral triangle ABC whose perimeter is 19.5 cm, drawn with a ruler and compass. (a) Find the length of each side and the compass opening needed for both arcs. (b) Arjun draws AB = 6.5 cm, an arc of 6.5 cm from A and an arc of 6 cm from B, and calls the result equilateral. Test his claim: name the triangle he actually gets by its sides and find how far its perimeter is from 19.5 cm. (c) Neha keeps her compass at 6.5 cm for both arcs but draws the base 7 cm long. Name her triangle by its sides, find its perimeter, and say which single change makes it correct. (d) The teacher now wants an equilateral rangoli of perimeter 24 cm. By how much must the compass opening change, and why must the base be changed by the same amount?",
+     "a": "(a) All three sides are equal, so each side = 19.5 / 3 = 6.5 cm; both arcs need a compass opening of 6.5 cm. (b) His sides are AB = 6.5, AC = 6.5 and BC = 6 cm. Only two sides are equal, so the triangle is isosceles, not equilateral; its perimeter is 19 cm, 0.5 cm short. (c) Her sides are 6.5, 6.5 and 7 cm: isosceles, perimeter 20 cm (0.5 cm too much). Redrawing the base as 6.5 cm, equal to the arc radius, makes all three sides equal. (d) New side = 24 / 3 = 8 cm, so the opening must increase by 8 - 6.5 = 1.5 cm. The base is the third side, and in an equilateral triangle it must equal the two arc radii, so it also becomes 8 cm.",
+     "s": [
+      [
+       "Part (a): each side 19.5 / 3 = 6.5 cm, and the compass opening 6.5 cm for both arcs",
+       1
+      ],
+      [
+       "Part (b): Arjun's sides 6.5, 6.5, 6 cm, isosceles not equilateral, perimeter 19 cm (0.5 cm short)",
+       1
+      ],
+      [
+       "Part (c): Neha's sides 6.5, 6.5, 7 cm, isosceles, perimeter 20 cm; fix by making the base 6.5 cm",
+       1
+      ],
+      [
+       "Part (d): side 8 cm, opening increases by 1.5 cm, base also 8 cm because all three sides must be equal",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.2",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 148-150",
+     "q": "Three students must construct a triangle with sides 3.5 cm, 5 cm and 6.5 cm. Their construction records are: Xavier: 'Base AB = 5 cm, arc of 6.5 cm from A, arc of 3.5 cm from B.' Yamini: 'Base AB = 5 cm, arc of 5 cm from A, arc of 6.5 cm from B.' Zoya: 'Base AB = 6.5 cm, arc of 3.5 cm from A, arc of 2.5 cm from B.' (a) Whose record gives the required triangle? Give the reason that decides it. (b) Yamini's arcs do meet. Write the sides of the triangle she actually gets, name it by its sides, and find how much its perimeter differs from the required one. (c) Zoya says her arcs 'refused to cross'. Use the lengths to explain why, and name the slip in her record. (d) Xavier swaps his two arcs (3.5 cm from A, 6.5 cm from B) and says he now has a different triangle. Decide whether he is right.",
+     "a": "(a) Only Xavier: he uses each of 3.5, 5 and 6.5 cm exactly once, one as the base and the other two as arc radii. Yamini uses 5 cm twice and leaves out 3.5 cm; Zoya uses 2.5 cm, which is not a given side. (b) Yamini's sides are 5, 5 and 6.5 cm (it exists since 5 + 5 = 10 > 6.5); two sides are equal, so it is isosceles. Its perimeter is 16.5 cm against 3.5 + 5 + 6.5 = 15 cm, 1.5 cm more. (c) The two arc radii add up to 3.5 + 2.5 = 6 cm, which is less than the 6.5 cm base, so the arcs fall 0.5 cm short of each other and cannot meet. She has written 2.5 cm (half of 5) instead of 5 cm. (d) He is not right: the swapped record still uses 3.5, 5 and 6.5 cm once each, so it gives a triangle with the same three sides, only turned over; it is still the required scalene triangle.",
+     "s": [
+      [
+       "Part (a): only Xavier, because each given length is used exactly once; Yamini repeats 5 cm and Zoya uses 2.5 cm",
+       1
+      ],
+      [
+       "Part (b): Yamini's sides 5, 5, 6.5 cm, isosceles, perimeter 16.5 cm, 1.5 cm more than 15 cm",
+       1
+      ],
+      [
+       "Part (c): 3.5 + 2.5 = 6 < 6.5, so the arcs cannot meet; she wrote 2.5 cm in place of 5 cm",
+       1
+      ],
+      [
+       "Part (d): not a different triangle, the same three sides are used once each, still the required scalene triangle",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.3",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 159-160",
+     "q": "A farmer is fencing a triangular calf pen. Two sides are already fixed at 2.5 m and 6 m, and the third side must be a whole number of metres. (a) Write all the possible lengths of the third side (any length, not only whole numbers) as a range, with the reason for each end of the range. (b) List the whole-number lengths that are possible and say how many there are. (c) His son suggests 3.5 m 'because 2.5 + 3.5 = 6'. Explain what would happen to the arcs and to the pen. (d) Which whole-number choice makes the pen isosceles, and what are the least and greatest perimeters of the pen with a whole-number third side?",
+     "a": "(a) The third side x must satisfy 6 < 2.5 + x, so x > 3.5, and x < 2.5 + 6 = 8.5; so 3.5 m < x < 8.5 m. (b) 4, 5, 6, 7 and 8 m: 5 lengths. (c) With 3.5 m the two shorter lengths add up to exactly the longest (2.5 + 3.5 = 6). On a base of 6 m the arcs of 2.5 m and 3.5 m only touch at one point on the base, so the three corners lie on a straight line and there is no pen. (d) 6 m makes it isosceles (6, 6, 2.5); least perimeter = 2.5 + 6 + 4 = 12.5 m and greatest = 2.5 + 6 + 8 = 16.5 m.",
+     "s": [
+      [
+       "Part (a): 3.5 m < third side < 8.5 m, using 6 - 2.5 and 6 + 2.5 with the reason",
+       1
+      ],
+      [
+       "Part (b): 4, 5, 6, 7, 8 m, five lengths",
+       1
+      ],
+      [
+       "Part (c): 2.5 + 3.5 equals the longest side, the arcs only touch, the corners are in a line and no triangle forms",
+       1
+      ],
+      [
+       "Part (d): 6 m for isosceles, perimeters 12.5 m and 16.5 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 151-159",
+     "q": "Three villages P, Q and R are not on one straight line. The straight-line distance from P to Q is 18 km and from Q to R is 11 km. A tourist map prints the straight-line distance from P to R as 31 km. (a) Use the direct path and roundabout path idea to show that the map must be wrong. (b) What would PR be if Q stood exactly on the straight path between P and R, and why does that not fit the villages? (c) Other maps print PR as 7 km, 12.5 km, 28 km and 29 km. Decide which of these could be right, giving the range PR must lie in. (d) A second map prints PR = 6 km. Decide whether this can be right by comparing a direct path with a roundabout path.",
+     "a": "(a) The direct path from P to R must be shorter than the roundabout path through Q, which is 18 + 11 = 29 km. 31 km is longer than 29 km, so the map is wrong. (b) PR would be 18 + 11 = 29 km, but then P, Q and R would lie on one straight line, which the villages do not. (c) PR > 18 - 11 = 7 km and PR < 18 + 11 = 29 km, so 7 km < PR < 29 km. Only 12.5 km and 28 km could be right; 7 km and 29 km sit exactly at the ends and would put the villages in a line. (d) It cannot be right: the direct path P to Q is 18 km, but the roundabout path P to R to Q would be 6 + 11 = 17 km, shorter than the direct path, which is impossible.",
+     "s": [
+      [
+       "Part (a): roundabout path P-Q-R = 29 km, and 31 > 29 so the direct path would be longer, impossible",
+       1
+      ],
+      [
+       "Part (b): PR = 29 km, which would put the three villages on one straight line",
+       1
+      ],
+      [
+       "Part (c): 7 km < PR < 29 km, so only 12.5 km and 28 km are possible; 7 and 29 are rejected",
+       1
+      ],
+      [
+       "Part (d): not possible, because 6 + 11 = 17 km is less than the direct 18 km from P to Q",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.4",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 160-163",
+     "q": "A worksheet gives four sets of data for triangle ABC, with the angles drawn at the two ends of the given side on the same side of it. Set 1: AB = 6 cm, angle A = 179°, AC = 2 cm (angle A included between the two sides). Set 2: angle A = 95°, AB = 7 cm, angle B = 85°. Set 3: angle A = 40°, AB = 9 cm, angle B = 139°. Set 4: angle A = 100°, AB = 4 cm, angle B = 100°. For each set, decide whether the triangle can be constructed and give the reason that decides it.",
+     "a": "Set 1: yes. With two sides and an included angle less than 180°, C is a fixed point 2 cm along the second arm, and joining BC always closes the triangle. Set 2: no. 95° + 85° = 180°, so the two arms are parallel (the interior angles on the same side of AB add up to 180°) and never meet. Set 3: yes. 40° + 139° = 179°, which is less than 180°, so the arms meet; the length 9 cm does not matter (the third angle is only 1°). Set 4: no. Both angles are more than 90° (sum 200°), so the arms bend away from each other and never meet.",
+     "s": [
+      [
+       "Set 1: possible, because an included angle below 180° always gives a point C to join to B",
+       1
+      ],
+      [
+       "Set 2: not possible, because 95 + 85 = 180, so the arms are parallel",
+       1
+      ],
+      [
+       "Set 3: possible, because 40 + 139 = 179 is less than 180; the side length does not matter",
+       1
+      ],
+      [
+       "Set 4: not possible, because both angles exceed 90° (sum 200° is not less than 180°)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 161-166",
+     "q": "Kiran is asked to construct triangle ABC with AB = 6.5 cm, angle A = 50° and angle C = 60°. (a) Explain why these are not 'two angles and the included side' as the data stand. (b) Use the angle sum of a triangle to find the angle that makes the data fit that method. (c) Write the construction steps Kiran should follow. (d) Check, with the rule for two angles on a base, that the triangle exists, and say whether it is acute-angled, right-angled or obtuse-angled.",
+     "a": "(a) AB joins the vertices of angle A and angle B, not angle C, so 50° and 60° are not both at the ends of AB. (b) Angle B = 180° - 50° - 60° = 70°. (c) Draw AB = 6.5 cm; at A draw an arm making 50° with AB; at B draw an arm making 70° with BA on the same side; the point where the two arms meet is C. (d) 50° + 70° = 120°, which is less than 180°, so the arms meet and the triangle exists; its angles 50°, 70° and 60° are all less than 90°, so it is acute-angled.",
+     "s": [
+      [
+       "Part (a): AB is included between angles A and B, so angle C is not at an end of the given side",
+       1
+      ],
+      [
+       "Part (b): angle B = 180 - 50 - 60 = 70°",
+       1
+      ],
+      [
+       "Part (c): base AB = 6.5 cm, 50° at A and 70° at B on the same side, meeting point is C",
+       1
+      ],
+      [
+       "Part (d): 50 + 70 = 120 < 180 so it exists, and all angles below 90° so it is acute-angled",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 166-167",
+     "q": "In triangle PQR, side PQ is extended beyond Q to T, and the exterior angle RQT is 126°. Angle R is twice angle P. (a) Find the interior angle PQR. (b) Without using (a), write what angle P + angle R must be, and why. (c) Find angle P and angle R, and check the angle sum. (d) Find the exterior angles at P and at R (each formed by extending one side), add all three exterior angles, and explain why the total will be the same for every triangle.",
+     "a": "(a) Angles PQR and RQT form a straight angle, so PQR = 180° - 126° = 54°. (b) An exterior angle equals the sum of the two interior opposite angles, so P + R = 126°. (c) P + 2P = 126, so 3P = 126, P = 42° and R = 84° (check: 42 + 84 + 54 = 180). (d) Exterior at P = 180 - 42 = 138°, at R = 180 - 84 = 96°; total 126 + 138 + 96 = 360°. Each exterior angle is 180° minus an interior angle, so the total is 3 x 180° minus the angle sum 180°, which is 360° for every triangle.",
+     "s": [
+      [
+       "Part (a): angle PQR = 180 - 126 = 54°",
+       1
+      ],
+      [
+       "Part (b): P + R = 126°, because the exterior angle equals the sum of the two interior opposite angles",
+       1
+      ],
+      [
+       "Part (c): 3P = 126, so P = 42° and R = 84°, with the check 42 + 84 + 54 = 180",
+       1
+      ],
+      [
+       "Part (d): exterior angles 138° and 96°, total 360°, with the reason 3 x 180 - 180 = 360",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.6",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 167-170",
+     "q": "Two triangles ABC both have AB = 5 cm and BC = 12 cm. In triangle 1, angle B = 90°; in triangle 2, angle B = 110°. (a) In triangle 1, which two altitudes are sides of the triangle? Name them and give their lengths. (b) In triangle 2, which altitudes fall outside the triangle? Give the reason for each. (c) In triangle 2, Meera keeps her ruler on segment BC only and slides the set-square, but its edge never reaches A, so she writes 'no altitude from A'. Correct her method. (d) Sita says, 'In triangle 2 the altitude from B also falls outside, because B is the obtuse angle.' Decide whether she is right, using the other two angles.",
+     "a": "(a) AB is perpendicular to BC, so AB is the altitude from A to BC (5 cm), and CB is the altitude from C to AB (12 cm). (b) The altitudes from A and from C fall outside. Because angle B is obtuse, the perpendicular from A meets line CB only when it is extended beyond B, and the perpendicular from C meets line AB only when it is extended beyond B. (c) Every vertex has an altitude. She must extend CB beyond B, keep the ruler along this extended line, slide the set-square until its vertical edge touches A, and draw the perpendicular from A to the extended line. (d) She is wrong. Angles A and C add up to 180 - 110 = 70°, so both are acute; the perpendicular from B to AC therefore lands between A and C, inside the triangle.",
+     "s": [
+      [
+       "Part (a): AB = 5 cm (from A) and CB = 12 cm (from C), because they are perpendicular at B",
+       1
+      ],
+      [
+       "Part (b): altitudes from A and from C fall outside, their feet lie on CB and AB extended beyond B because B is obtuse",
+       1
+      ],
+      [
+       "Part (c): extend CB beyond B, ruler along the extended line, slide the set-square to touch A, draw the altitude",
+       1
+      ],
+      [
+       "Part (d): Sita is wrong; A + C = 70°, both acute, so the altitude from B falls inside on AC",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 164-171",
+     "q": "In a sorting game each card describes a triangle. Card 1: the angles are a°, 2a° and 3a°, and no two of its sides are equal. Card 2: two angles are 47° and 42°. Card 3: the exterior angle at one vertex is 85°. (a) Find the three angles of Card 1 and classify it by its angles and by its sides. (b) Classify Card 2 by its angles. (c) Classify Card 3 by its angles. (d) Which card shows that a triangle can be scalene and right-angled at once, and could Card 3 ever be acute-angled? Give a reason.",
+     "a": "(a) a + 2a + 3a = 180, so 6a = 180 and a = 30; the angles are 30°, 60° and 90°. It is right-angled, and since no two sides are equal (given) it is scalene. (b) The third angle is 180 - 47 - 42 = 91°, so Card 2 is obtuse-angled even though both given angles are acute. (c) The interior angle at that vertex is 180 - 85 = 95°, so Card 3 is obtuse-angled. (d) Card 1 is both scalene and right-angled. Card 3 can never be acute-angled, because its 95° interior angle is obtuse whatever the other two angles are.",
+     "s": [
+      [
+       "Part (a): a = 30, angles 30°, 60°, 90°; right-angled and scalene",
+       1
+      ],
+      [
+       "Part (b): third angle 91°, so obtuse-angled",
+       1
+      ],
+      [
+       "Part (c): interior angle 180 - 85 = 95°, so obtuse-angled",
+       1
+      ],
+      [
+       "Part (d): Card 1 is scalene and right-angled; Card 3 can never be acute because its 95° angle is obtuse",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

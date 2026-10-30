@@ -1,0 +1,140 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 7,
+  "name": "Finding the Unknown",
+  "blurb": "Framing and solving linear equations: balance problems, the matchstick pattern, keeping equality by doing the same to both sides, unknowns on both sides, word problems, generating equations, correcting mistakes and Brahmagupta's formula.",
+  "order_index": 15,
+  "source_code": "gegp207"
+ },
+ "scope": [
+  [
+   "IN",
+   "Find unknown weights from balance pictures, frame equations from them and from the matchstick pattern 2n + 1, and use the words equation, LHS and RHS",
+   "pp.164-168"
+  ],
+  [
+   "IN",
+   "Solve by trial and error, and keep equality by performing the same operation on both sides, using addition and subtraction and multiplication and division as inverse operations",
+   "pp.168-170"
+  ],
+  [
+   "IN",
+   "Solve linear equations step by step, including unknowns on both sides, brackets and fractions such as u / 15 = 6, and check the solution",
+   "pp.170-173, 177"
+  ],
+  [
+   "IN",
+   "Frame and solve equations from word problems, including party costs, savings, number tricks and two related quantities",
+   "pp.174-179"
+  ],
+  [
+   "IN",
+   "Generate equations with a given solution, know that the same operation on both sides keeps the solution, and that some equations have no solution",
+   "pp.179-181"
+  ],
+  [
+   "IN",
+   "Find and correct mistakes in the steps of solving an equation",
+   "p.181"
+  ],
+  [
+   "IN",
+   "Know the history of bijaganita and use Brahmagupta's formula x = (D - B) / (A - C) for Ax + B = Cx + D",
+   "pp.182-184"
+  ],
+  [
+   "OUT",
+   "Two equations in two unknowns solved together -- only one-unknown equations are solved",
+   null
+  ],
+  [
+   "OUT",
+   "Quadratic equations and inequalities -- not in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "The tangram cut-outs and the number lock style puzzles -- not assessed",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "name": "Framing equations from balances and patterns",
+   "description": "Finding unknown weights from balance pictures, framing equations from them and from the matchstick pattern, and using the terms equation, LHS and RHS.",
+   "idea": "A balanced scale or a pattern rule says that two expressions are equal, and writing that with a letter-number gives an equation.",
+   "rule": "An equation is a statement of equality between two expressions; solving it means finding the value of the letter that makes LHS = RHS.",
+   "example": "The matchstick pattern uses 2n + 1 sticks at position n, so 99 sticks gives 2n + 1 = 99.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-7.2",
+   "name": "Equality, trial and error and inverse operations",
+   "description": "Testing values by trial and error and keeping equality by doing the same operation on both sides.",
+   "idea": "Both sides of an equation have the same value, so adding, subtracting, multiplying or dividing both by the same number keeps them equal.",
+   "rule": "Trial and error substitutes values until LHS = RHS; addition and subtraction, and multiplication and division, undo each other.",
+   "example": "From 14593 - 1459 + 145 - 14 + 88 = 13353, subtracting 88 from both sides gives the value of the rest.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-7.3",
+   "name": "Solving linear equations step by step",
+   "description": "Solving equations with the unknown on one or both sides, with brackets and with fractions, and checking the solution.",
+   "idea": "Do the same thing to both sides until only the unknown is left on one side, then check by substituting back.",
+   "rule": "Remove an added or subtracted term by moving its additive inverse to the other side; remove a factor by dividing the other side; remove a divisor by multiplying the other side.",
+   "example": "5x - 4 = 7 gives 5x = 11 and x = 11 / 5, and 6y + 7 = 4y + 21 gives y = 7.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.4",
+   "name": "Word problems with one unknown",
+   "description": "Framing and solving equations from word problems such as party costs, savings, number tricks and related quantities.",
+   "idea": "Choose a letter for the unknown, write the situation as an expression on each side, and solve.",
+   "rule": "Define the unknown, form the equation from the conditions, solve it, and check the answer against the story.",
+   "example": "25p + 50 = 500 gives p = 18 people, so 13 friends can be invited with 5 family members.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.5",
+   "name": "Generating equations and equivalent equations",
+   "description": "Writing equations that have a given solution, seeing that the same operation on both sides keeps the solution, and recognising equations with no solution.",
+   "idea": "Every step of doing the same to both sides gives a new equation with the same solution, so we can build equations backwards from the answer.",
+   "rule": "Equations in a chain of equal operations share the same solution; an equation like x + 4 = x + 5 has no solution.",
+   "example": "From 4k + 1 = 13 we get 8k + 2 = 26 without solving for k.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.6",
+   "name": "Finding and correcting mistakes in solving equations",
+   "description": "Checking the steps of a worked solution, finding the mistake and correcting it.",
+   "idea": "A step is correct only if the same operation is applied to every term on both sides.",
+   "rule": "Divide every term when dividing an equation, move a term across the equals sign with its inverse, and check the final value by substitution.",
+   "example": "From 2v - 4 = 6, writing v - 4 = 6 - 2 is wrong because only one term was divided by 2.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-7.7",
+   "name": "History of algebra and Brahmagupta's formula",
+   "description": "Knowing the origin of bijaganita and the word algebra, and solving Ax + B = Cx + D with Brahmagupta's formula.",
+   "idea": "Ancient Indian mathematicians turned solving into a procedure and gave a formula for equations with the unknown on both sides.",
+   "rule": "For Ax + B = Cx + D, x = (D - B) / (A - C); the formula cannot be used when A = C.",
+   "example": "650m + 4000 = 500m + 5050 gives m = (5050 - 4000) / (650 - 500) = 7.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

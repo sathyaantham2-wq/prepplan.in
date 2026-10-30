@@ -1,0 +1,160 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 4,
+  "name": "Another Peek Beyond the Point",
+  "blurb": "Multiplying and dividing decimals: place value and powers of ten, decimal multiplication and the size of products, division by counting numbers and by decimals, quotients that never end, and the leap year calendar.",
+  "order_index": 12,
+  "source_code": "gegp204"
+ },
+ "scope": [
+  [
+   "IN",
+   "Recall decimals as fractions with denominators 10, 100, 1000, write a fraction as a sum of tenths, hundredths and thousandths, and divide by 10, 100, 1000 by moving the decimal point",
+   "pp.68-69"
+  ],
+  [
+   "IN",
+   "Multiply a decimal by a counting number and by another decimal by converting to fractions",
+   "pp.69-71"
+  ],
+  [
+   "IN",
+   "Multiply decimals by removing the decimal points, multiplying, and placing the point using the total number of decimal places",
+   "pp.71-72"
+  ],
+  [
+   "IN",
+   "Decide whether a product is greater or less than the numbers multiplied, and use a known product to write related products",
+   "pp.72-73"
+  ],
+  [
+   "IN",
+   "Multiply decimals by 10, 100 and 1000 and solve word problems with decimal multiplication",
+   "p.73"
+  ],
+  [
+   "IN",
+   "Divide a decimal by 10, 100, 1000, and write a division of counting numbers as a decimal using an equivalent fraction with denominator 10, 100 or 1000",
+   "pp.74-76"
+  ],
+  [
+   "IN",
+   "Divide by counting numbers with long division using place value, regrouping into tenths, hundredths and thousandths, including decimal dividends",
+   "pp.76-83"
+  ],
+  [
+   "IN",
+   "Divide by a decimal by multiplying the divisor and dividend by the same power of ten, and compare the quotient with the dividend",
+   "pp.84, 86-87"
+  ],
+  [
+   "IN",
+   "Recognise decimal quotients that never end, such as 10 divided by 3 and 1 divided by 7, and explain why the remainders repeat",
+   "pp.84-86"
+  ],
+  [
+   "IN",
+   "Explain the leap year rules using decimal multiplication, and count days over 100 and 1000 calendar years",
+   "pp.88-92"
+  ],
+  [
+   "OUT",
+   "Recurring decimals written with bar notation and converting them back to fractions -- the chapter only shows that the digits repeat",
+   null
+  ],
+  [
+   "OUT",
+   "Rounding or estimating decimals to a given number of places -- not taught in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Cyclic numbers such as 142857 as a proof topic and Artin's conjecture -- mentioned only as a curiosity",
+   null
+  ],
+  [
+   "OUT",
+   "The Hidato puzzle -- recreational puzzle not linked to a concept",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-4.1",
+   "name": "Decimals as fractions, and multiplying or dividing by 10, 100, 1000",
+   "description": "Reading decimals as fractions with denominators 10, 100, 1000, expanding them by place value, and multiplying or dividing by powers of ten by moving the decimal point.",
+   "idea": "A decimal is a fraction with denominator 10, 100, 1000, so multiplying or dividing by a power of ten shifts every digit that many places.",
+   "rule": "Dividing by 10, 100, 1000 moves the decimal point left by the number of zeroes, adding zeroes in front if needed; multiplying moves it right.",
+   "example": "254/1000 = 0.2 + 0.05 + 0.004 = 0.254 and 12345 / 1000 = 12.345.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-4.2",
+   "name": "Multiplying decimals",
+   "description": "Multiplying a decimal by a counting number or by another decimal, using fractions and the rule for placing the decimal point.",
+   "idea": "Multiplying decimals is multiplying their fractions, so the numerators multiply and the denominators multiply to a power of ten.",
+   "rule": "Remove the decimal points, multiply as counting numbers, and give the product as many decimal places as the two numbers have together.",
+   "example": "5.8 x 1.24 = 58 x 124 / 1000 = 7192 / 1000 = 7.192.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-4.3",
+   "name": "Size of a product and using a known product",
+   "description": "Deciding whether a product is greater or less than the numbers multiplied and using one known product to write related products by moving the decimal point.",
+   "idea": "Multiplying by a number greater than 1 makes bigger and by a number between 0 and 1 makes smaller, just as with fractions.",
+   "rule": "Both numbers above 1: product larger than both; both between 0 and 1: product smaller than both; one of each: product between them. Related products differ only in the decimal point.",
+   "example": "Given 18 x 12 = 216, 1.8 x 1.2 = 2.16 and 0.18 x 0.12 = 0.0216.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-4.4",
+   "name": "Dividing decimals by counting numbers",
+   "description": "Dividing by counting numbers with an equivalent fraction with denominator 10, 100, 1000, and with long division that regroups into tenths, hundredths and thousandths.",
+   "idea": "When ones remain they can be regrouped into tenths, then hundredths, so a division of counting numbers can continue into decimal places.",
+   "rule": "Regroup the remainder into the next smaller place, put the decimal point in the quotient when moving from ones to tenths, and stop when the remainder is 0.",
+   "example": "1325 / 4 = 331.25 and 237 / 8 = 29.625.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-4.5",
+   "name": "Dividing by a decimal",
+   "description": "Dividing by a decimal divisor by turning it into a counting number, and comparing the quotient with the dividend.",
+   "idea": "Multiplying the divisor and the dividend by the same power of ten leaves the quotient unchanged.",
+   "rule": "Multiply divisor and dividend by 10, 100, ... until the divisor is a counting number, then divide; dividing by a number below 1 gives a quotient greater than the dividend.",
+   "example": "4.68 / 0.13 = 468 / 13 = 36 and 128 / 0.4 = 320.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-4.6",
+   "name": "Decimal quotients that never end",
+   "description": "Recognising divisions such as 10 by 3 and 1 by 7 whose decimals never end and explaining why the remainders and digits repeat.",
+   "idea": "If a remainder repeats in long division, the same steps repeat forever, so the digits of the quotient repeat in a cycle.",
+   "rule": "Dividing by n leaves fewer than n different non-zero remainders, so either the division ends or a remainder repeats and the digits cycle.",
+   "example": "10 / 3 = 3.333... and 1 / 7 = 0.142857 142857...",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-4.7",
+   "name": "Leap years and the calendar",
+   "description": "Explaining the leap year rules with decimal multiplication and counting calendar days over 100 and 1000 years.",
+   "idea": "The Earth takes 365.2422 days to go round the Sun, so extra days are added to the calendar and then some are taken back.",
+   "rule": "A year is a leap year if it is divisible by 4, except century years, which are leap years only if divisible by 400.",
+   "example": "In 1000 years there are 242 leap years, giving 750 x 365 + 240 x 366 + 8 x 365 + 2 x 366 = 365,242 days.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

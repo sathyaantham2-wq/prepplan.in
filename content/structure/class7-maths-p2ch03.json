@@ -1,0 +1,170 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 3,
+  "name": "Finding Common Ground",
+  "blurb": "Highest Common Factor and Lowest Common Multiple by listing and by prime factorisation, the division method, patterns and general statements about HCF and LCM, the relation HCF x LCM = product, and word problems.",
+  "order_index": 11,
+  "source_code": "gegp203"
+ },
+ "scope": [
+  [
+   "IN",
+   "Find the common factors and the HCF (GCD) of two numbers by listing factors, and use it to solve problems such as the largest square tile and the fewest equal bags",
+   "pp.47-48"
+  ],
+  [
+   "IN",
+   "Find the longest jump that lands on two given numbers and see that it is their HCF",
+   "p.48"
+  ],
+  [
+   "IN",
+   "Write the prime factorisation of a number by the division method and see that it is the same whatever order the factors are found in",
+   "pp.49-52"
+  ],
+  [
+   "IN",
+   "List all the factors of a number from its prime factorisation and decide whether a product of some of its primes is a factor",
+   "pp.50-52"
+  ],
+  [
+   "IN",
+   "Test a claim with a counterexample and use the words conjecture and counterexample",
+   "pp.51-52"
+  ],
+  [
+   "IN",
+   "Find common factors and the HCF of two or more numbers using prime factorisation, taking the minimum number of occurrences of each common prime",
+   "pp.52-54"
+  ],
+  [
+   "IN",
+   "Find the LCM of two numbers by listing multiples and use it to solve problems such as the shortest toran and the next free gajak",
+   "pp.55-56"
+  ],
+  [
+   "IN",
+   "Find the LCM of two or more numbers using prime factorisation, taking the maximum number of occurrences of each prime",
+   "pp.56-58"
+  ],
+  [
+   "IN",
+   "State and explain general statements about the HCF and LCM of special pairs (one a factor of the other, consecutive numbers, consecutive even or odd numbers, co-prime numbers, doubled numbers, common multipliers)",
+   "pp.58-60"
+  ],
+  [
+   "IN",
+   "Use the division method to find both the HCF and the LCM, including dividing by a larger common factor at once",
+   "pp.60-62"
+  ],
+  [
+   "IN",
+   "Use that HCF x LCM equals the product of the two numbers and that the LCM is never greater than the product",
+   "pp.62-63"
+  ],
+  [
+   "IN",
+   "Solve word problems that need an HCF or an LCM, such as the cowherd, packing cubes into a box, and the smallest number with given divisors",
+   "pp.63-64"
+  ],
+  [
+   "OUT",
+   "Euclid's division algorithm for the HCF -- the chapter only uses listing, prime factorisation and the division method",
+   null
+  ],
+  [
+   "OUT",
+   "Fractions with unlike denominators added through the LCM as a topic of its own -- only one Mahaviracharya sum is mentioned",
+   null
+  ],
+  [
+   "OUT",
+   "Divisibility tests for numbers larger than those in Class 6 and modular arithmetic proofs -- not used",
+   null
+  ],
+  [
+   "OUT",
+   "A formal proof that HCF x LCM = product for three or more numbers -- the chapter only suggests exploring it",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-3.1",
+   "name": "HCF by listing common factors",
+   "description": "Finding the common factors and the highest common factor of two numbers by listing factors, and using the HCF in problems about the largest equal tiles or the fewest equal bags.",
+   "idea": "A piece that fits two lengths exactly must be a common factor of both, and the biggest such piece needs the fewest pieces.",
+   "rule": "The HCF (also called GCD) of two numbers is the highest of their common factors; the longest jump that lands on both numbers from 0 is their HCF.",
+   "example": "The factors of 12 are 1, 2, 3, 4, 6, 12 and of 16 are 1, 2, 4, 8, 16, so the HCF is 4 and a 12 ft by 16 ft floor needs 4 ft square tiles.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-3.2",
+   "name": "Prime factorisation and factors from it",
+   "description": "Writing prime factorisations by the division method, building all the factors of a number from its primes, and testing claims with counterexamples.",
+   "idea": "Every number is a product of primes, always the same primes in some order, and each factor is a subpart of that product.",
+   "rule": "Divide repeatedly by primes until the quotient is 1; a product of some of the primes is a factor; a claim is disproved by one counterexample.",
+   "example": "225 = 3 x 3 x 5 x 5 has the factors 1, 3, 5, 9, 15, 25, 45, 75 and 225.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-3.3",
+   "name": "HCF using prime factorisation",
+   "description": "Finding the common factors and HCF of two or more numbers by comparing their prime factorisations.",
+   "idea": "The largest common subpart of the prime factorisations contains each common prime as many times as the number that has it least often.",
+   "rule": "HCF = product of each common prime taken the minimum number of times it appears; if there is no common prime the HCF is 1.",
+   "example": "30 = 2 x 3 x 5 and 72 = 2 x 2 x 2 x 3 x 3 have HCF 2 x 3 = 6.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.4",
+   "name": "LCM by listing multiples and by prime factorisation",
+   "description": "Finding the lowest common multiple of numbers by listing multiples and by prime factorisation, and using it for repeating-event problems.",
+   "idea": "A common multiple must contain the prime factorisation of each number, and the lowest one contains each prime only as often as needed.",
+   "rule": "LCM = product of each prime taken the maximum number of times it appears in any of the numbers; common multiples go on without end.",
+   "example": "96 = 2^5 x 3 and 360 = 2^3 x 3^2 x 5 have LCM 2^5 x 3^2 x 5 = 1440.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.5",
+   "name": "Patterns, properties and generalisations about HCF and LCM",
+   "description": "Stating and explaining general statements about the HCF and LCM of special pairs of numbers, using conjectures and counterexamples.",
+   "idea": "Looking at examples of a kind of pair suggests a general statement, which can then be explained through factors and primes.",
+   "rule": "If one number is a factor of the other the HCF is the smaller number; consecutive numbers have HCF 1; consecutive even numbers have HCF 2; doubling both numbers doubles the HCF; the HCF of two multiples of k is k times the HCF of their multipliers.",
+   "example": "270 and 50 have HCF 10; 540 and 100 have HCF 20.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.6",
+   "name": "Division method and HCF x LCM = product",
+   "description": "Finding the HCF and LCM together with the division method and using the relation HCF x LCM = product of the two numbers.",
+   "idea": "Dividing both numbers by common factors row by row collects the HCF on the left, and the LCM from those factors and the last row.",
+   "rule": "HCF = product of the divisors used; LCM = HCF x the remaining numbers of the last row; HCF x LCM = product of the two numbers, so the LCM is never more than the product.",
+   "example": "For 84 and 180 the divisors 2, 2, 3 give HCF 12, and the last row 7, 15 gives LCM 12 x 7 x 15 = 1260.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-3.7",
+   "name": "Word problems with HCF and LCM",
+   "description": "Deciding whether a problem needs the HCF or the LCM and solving problems such as packing cubes, the cowherd puzzle and repeating events.",
+   "idea": "Cutting into equal pieces as large as possible needs the HCF, and finding when repeating events coincide needs the LCM.",
+   "rule": "Largest equal pieces or largest cube: HCF; first common time or smallest common length: LCM; a number with given remainders or divisors: combine LCM with the remainder condition.",
+   "example": "The cowherd's number of cows is a multiple of 3, 5 and 7, so a multiple of 105, and under 200 that gives 105 cows.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

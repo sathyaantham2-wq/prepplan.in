@@ -1,0 +1,303 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 6,
+  "name": "Constructions and Tilings"
+ },
+ "source_code": "gegp206",
+ "concepts": [
+  {
+   "code": "C7M-6.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 137-139",
+     "q": "A kite-shaped badge AXBY is cut so that AX = AY = 7 cm, BX = BY = 4 cm and XY = 6 cm, with A above XY and B below it. The fold line AB meets XY at O. (a) Name two triangles that are congruent because of the three given pairs of sides, state the congruence condition, and write the pair of equal angles at A that follows. (b) Using (a), show that triangle AOX is congruent to triangle AOY, naming the condition. (c) Find OX and the angle AOX, giving reasons. (d) A sticker is placed at a point C with CX = CY = 5 cm. Without measuring, explain whether C must lie on the fold line AB.",
+     "a": "(a) In triangles ABX and ABY: AX = AY = 7 cm, BX = BY = 4 cm and AB is common, so they are congruent by SSS, giving angle XAB = angle YAB (that is, angle XAO = angle YAO). (b) In triangles AOX and AOY: AX = AY, angle XAO = angle YAO and AO is common, so they are congruent by SAS. (c) Corresponding parts give OX = OY, so OX = 6 ÷ 2 = 3 cm; also angle AOX = angle AOY and together they make 180 degrees, so each is 90 degrees. Thus AB is the perpendicular bisector of XY even though A and B are at different distances from X. (d) Yes. C is at equal distance from X and Y, so C lies on the perpendicular bisector of XY; XY has only one perpendicular bisector, which is AB, so C lies on AB.",
+     "s": [
+      [
+       "(a) Names triangles ABX and ABY congruent by SSS (AX = AY, BX = BY, AB common) and writes angle XAO = angle YAO",
+       1
+      ],
+      [
+       "(b) Shows triangle AOX congruent to triangle AOY by SAS, naming the equal sides AX = AY, the equal angles at A and the common side AO",
+       1
+      ],
+      [
+       "(c) Gets OX = OY = 3 cm and angle AOX = 90 degrees because the two equal angles at O add up to 180 degrees",
+       1
+      ],
+      [
+       "(d) Says C lies on AB because a point at equal distance from X and Y lies on the perpendicular bisector, and XY has only one perpendicular bisector, AB",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 139-141",
+     "tags": [
+      "construction"
+     ],
+     "q": "Draw a line segment PQ of length 8 cm. Using only an unmarked ruler and a compass: (a) construct a 90 degree angle at the end point P, and write the steps; (b) construct the perpendicular bisector of PQ and mark the midpoint M. (c) Explain why in (a) you need only one pair of intersecting arcs but in (b) you need two pairs. (d) Kiran says the arm PA of the 90 degree angle from (a) and the perpendicular bisector CD from (b) will meet if both are drawn long enough above PQ. Decide whether he is right, and state the distance between the two lines measured along PQ.",
+     "a": "(a) Extend QP beyond P. With centre P and any radius, cut the line at X and Y on either side of P, so that P is the midpoint of XY. With a radius larger than PX, draw arcs from X and from Y meeting at A. Join PA; angle APQ = 90 degrees, since PA is the perpendicular bisector of XY. (b) With a fixed radius more than 4 cm, draw arcs from P and Q above PQ meeting at C, and with the same radius below PQ meeting at D. CD is the perpendicular bisector; it cuts PQ at M with PM = MQ = 4 cm. (c) In (a), P itself is already a point at equal distance from X and Y, so one more such point A fixes the line; in (b) no point of the bisector is known, so two points C and D are needed to draw the line. (d) Kiran is wrong. Taking PQ as a transversal, PA makes 90 degrees with PQ at P and CD makes 90 degrees with PQ at M; these corresponding angles are equal, so PA and CD are parallel and never meet. Measured along PQ they are PM = 8 ÷ 2 = 4 cm apart.",
+     "s": [
+      [
+       "(a) Extends QP beyond P, marks X and Y at equal distance from P, draws equal arcs from X and Y meeting at A and joins PA to give 90 degrees at P",
+       1
+      ],
+      [
+       "(b) Draws two pairs of equal arcs (radius more than 4 cm) from P and Q above and below PQ, joins their meeting points and marks M with PM = MQ = 4 cm",
+       1
+      ],
+      [
+       "(c) Explains that P is already one point at equal distance from X and Y in (a), while in (b) two such points must be found",
+       1
+      ],
+      [
+       "(d) Rejects Kiran's claim: both lines make 90 degrees with PQ (equal corresponding angles), so they are parallel, 8 ÷ 2 = 4 cm apart along PQ",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.3",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 143-144",
+     "q": "Four students bisect the same angle XOY of 60 degrees. Each first marks A on OX and B on OY with OA = OB = 5 cm. (a) Without measuring, find the length AB and give the reason. (b) Bala draws arcs of radius 2 cm from A and from B. Explain what happens, and find the smallest whole number of centimetres he could use as the radius instead. (c) Chitra draws arcs of radius 3 cm from A and from B on the same side of AB as O, and they meet at C between O and AB. Decide whether OC bisects the angle, with a reason. (d) Dev extends the ray OC backwards beyond O to a point E. He claims that OE bisects the outside angle between OX and OY, the angle of 300 degrees. Check his claim by finding angle XOE and angle YOE.",
+     "a": "(a) Triangle OAB has OA = OB, so the angles at A and B are equal; they add up to 180 − 60 = 120 degrees, so each is 60 degrees. All three angles are 60 degrees, so the triangle is equilateral and AB = 5 cm. (b) Arcs of radius 2 cm from A and B together reach only 2 + 2 = 4 cm, which is less than AB = 5 cm, so the arcs do not meet and no point C is found. Twice the radius must be more than 5 cm, so the radius must be more than 2.5 cm; the smallest whole number is 3 cm. (c) Yes. OA = OB, AC = BC = 3 cm and OC is common, so triangles OAC and OBC are congruent by SSS and angle AOC = angle BOC = 30 degrees. The side on which the arcs meet does not matter. (d) COE is a straight line, so angle XOE = 180 − 30 = 150 degrees and angle YOE = 180 − 30 = 150 degrees. The outside angle is 360 − 60 = 300 degrees and 300 ÷ 2 = 150, so OE does bisect the reflex angle; Dev is right.",
+     "s": [
+      [
+       "(a) Uses equal base angles of the isosceles triangle OAB, each (180 − 60) ÷ 2 = 60 degrees, to conclude that it is equilateral and AB = 5 cm",
+       1
+      ],
+      [
+       "(b) Says Bala's arcs do not meet because 2 + 2 = 4 cm is less than AB = 5 cm, and the radius must exceed 5 ÷ 2 = 2.5 cm, so 3 cm",
+       1
+      ],
+      [
+       "(c) Decides Chitra is correct: triangles OAC and OBC congruent by SSS (OA = OB, AC = BC, OC common), so OC bisects the angle into 30 degrees each",
+       1
+      ],
+      [
+       "(d) Finds angle XOE = angle YOE = 180 − 30 = 150 degrees and checks 150 = (360 − 60) ÷ 2, so Dev is right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 141-144",
+     "tags": [
+      "construction"
+     ],
+     "q": "Draw a line l and mark a point O on it. Using only an unmarked ruler and a compass, construct on the same side of l an angle of 135 degrees and an angle of 67.5 degrees, both with vertex O and one arm along l. Write the steps of construction in order and, for each angle, show by working why it has the required measure.",
+     "a": "Mark a point P on l to the right of O and a point Q on l to the left of O. Step 1: with centre O, cut l at two points at equal distance from O; with equal arcs from these points find a point R and join OR, so angle POR = angle QOR = 90 degrees. Step 2: bisect angle POR (mark equal lengths on OP and OR, draw equal arcs, join O to their meeting point S), so angle POS = 45 degrees. Then angle QOS = angle QOR + angle ROS = 90 + 45 = 135 degrees (or 180 − 45 = 135 degrees). Step 3: bisect angle QOS with ray OT; angle QOT = 135 ÷ 2 = 67.5 degrees.",
+     "s": [
+      [
+       "Constructs a 90 degree angle at O on l by marking two points at equal distance from O and drawing equal arcs from them",
+       1
+      ],
+      [
+       "Bisects one right angle to get 45 degrees using equal lengths on the arms and equal arcs",
+       1
+      ],
+      [
+       "Identifies the 135 degree angle as the right angle plus the 45 degree part, working 90 + 45 = 135 (or 180 − 45 = 135)",
+       1
+      ],
+      [
+       "Bisects the 135 degree angle and shows 135 ÷ 2 = 67.5 degrees",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 147-148",
+     "q": "A line m is crossed by a transversal l at A, and the angle between them above m, on the right of l, is 65 degrees. B is a point on l above m. (a) Describe how to draw the line n through B parallel to m using only a ruler and a compass: say which angle at B is copied and which two lengths must be the same at A and at B. (b) C is a point on m to the right of A. Ria draws through C a line k parallel to l, using m as the transversal. Which angle at C must she copy, and what is its measure? (c) The lines n and k meet at D, giving the four-sided figure ABDC. Find the angles at A, B and C of ABDC, giving reasons. (d) Find the angle at D in two different ways, each using a different pair of parallel lines, and check that the answers agree.",
+     "a": "(a) With centre A and any radius, draw an arc cutting m at E and l at F. With the same radius and centre B, draw an arc cutting l at G above B. With radius EF and centre G, cut this arc at H, and join BH to give n. The copied angle is the corresponding angle at B, between l (above B) and n on the right, which equals 65 degrees. The radius at B must equal the radius at A, and GH must equal EF. (b) She copies at C the corresponding angle between m (to the right of C) and k above m, which must equal the angle between m (to the right of A) and l above m, that is 65 degrees. (c) Angle BAC = 65 degrees (given). AB is parallel to CD, with transversal m: angle ACD and angle BAC are interior angles on the same side, so angle ACD = 180 − 65 = 115 degrees. AC is parallel to BD, with transversal l: angle ABD = 180 − 65 = 115 degrees for the same reason. (d) Way 1: AB is parallel to CD with transversal BD, so angle BDC and angle ABD are interior angles on the same side: angle BDC = 180 − angle ABD = 180 − 115 = 65 degrees. Way 2: BD is parallel to AC with transversal CD, so angle BDC = 180 − angle ACD = 180 − 115 = 65 degrees. Both give 65 degrees.",
+     "s": [
+      [
+       "(a) Describes copying the corresponding angle at B: same radius at A and B, the length EF transferred from G, and BH joined, so the angle at B is 65 degrees",
+       1
+      ],
+      [
+       "(b) Names the corresponding angle at C between m and k and gives it as 65 degrees",
+       1
+      ],
+      [
+       "(c) Gets angle A = 65 degrees and angles C and B = 180 − 65 = 115 degrees using interior angles on the same side of a transversal",
+       1
+      ],
+      [
+       "(d) Finds angle D = 180 − 115 = 65 degrees from AB parallel to CD (transversal BD) and checks it from BD parallel to AC (transversal CD), 180 − 115 = 65 degrees",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 153-154",
+     "tags": [
+      "construction"
+     ],
+     "q": "Draw a line segment AX of length 7 cm. Using only an unmarked ruler and a compass, construct an angle of 15 degrees at A with AX as one arm. Write the steps in order, and explain why the first angle you make is exactly 60 degrees. Then state, with working, the angle that the arm of your 15 degree angle makes with XA extended beyond A.",
+     "a": "Step 1: with centre A and any radius, draw an arc cutting AX at B. Step 2: with the same radius and centre B, cut the arc at C; join AC. Then AB = AC = BC (all equal to the radius), so triangle ABC is equilateral and angle CAX = 60 degrees. Step 3: bisect angle CAX (equal arcs from B and C meet at D; join AD), so angle DAX = 30 degrees. Step 4: bisect angle DAX to get ray AE with angle EAX = 30 ÷ 2 = 15 degrees. With XA extended beyond A, the ray AE makes 180 − 15 = 165 degrees.",
+     "s": [
+      [
+       "Draws an arc from A cutting AX at B and, with the same radius from B, cuts it at C to make angle CAX",
+       1
+      ],
+      [
+       "Explains angle CAX = 60 degrees because AB = AC = BC (all radii), so triangle ABC is equilateral",
+       1
+      ],
+      [
+       "Bisects the 60 degree angle to get 30 degrees and bisects again to get 15 degrees, with 60 ÷ 2 = 30 and 30 ÷ 2 = 15",
+       1
+      ],
+      [
+       "States the angle with XA extended is 180 − 15 = 165 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 151-153",
+     "q": "Sana places six congruent equilateral triangles of side 6 cm round a point O so that they make a hexagon ABCDEF. (a) Explain why the six triangles fit round O with no gap and no overlap. (b) Find each angle of the hexagon in two different ways: first from the triangle angles that meet at a corner, and then from the total of all the angles of the six triangles minus the angles at O. (c) Her brother tries the same with congruent isosceles triangles whose angle at O is 50 degrees. How many of them can be placed round O, and what is left? Do they fill the space round O? (d) Find every whole-number angle from 40 to 80 degrees that could be used at O so that congruent triangles fill the space round O exactly, and the number of triangles in each case.",
+     "a": "(a) Each angle of an equilateral triangle is 60 degrees, and 6 × 60 = 360 degrees, the complete angle round a point, so the six angles at O fill the space with no gap and no overlap. (b) Way 1: at a corner such as B, two triangles meet, each giving 60 degrees, so the angle is 60 + 60 = 120 degrees. Way 2: the six triangles have 6 × 180 = 1080 degrees in all; 360 degrees of this is at O, leaving 1080 − 360 = 720 degrees shared equally by the six corners, 720 ÷ 6 = 120 degrees. (c) 7 × 50 = 350 degrees and 8 × 50 = 400 degrees is too much, so only 7 fit, leaving a gap of 360 − 350 = 10 degrees; they do not fill the space round O. (d) The angle must divide 360 exactly: 40 degrees (9 triangles), 45 degrees (8), 60 degrees (6) and 72 degrees (5). No other whole number from 40 to 80 divides 360.",
+     "s": [
+      [
+       "(a) States each angle at O is 60 degrees and 6 × 60 = 360 degrees, the complete angle",
+       1
+      ],
+      [
+       "(b) Gets 60 + 60 = 120 degrees and also (6 × 180 − 360) ÷ 6 = 720 ÷ 6 = 120 degrees",
+       1
+      ],
+      [
+       "(c) Finds 7 × 50 = 350 degrees, a gap of 10 degrees, so they do not fill the space round O",
+       1
+      ],
+      [
+       "(d) Lists 40 (9), 45 (8), 60 (6) and 72 (5) as the only angles from 40 to 80 that divide 360 exactly",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.6",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 157-160",
+     "q": "An L-shaped stage is made of unit squares. Rows 1 and 2 each have 7 squares (columns 1 to 7); rows 3, 4 and 5 each have only the first 4 squares (columns 1 to 4). It is to be covered exactly by 2 x 1 mats. Colour it like a chessboard with square (row 1, column 1) black. (a) Find the number of squares and the number of black and white squares. (b) Describe one complete covering and state how many mats it uses. (c) Two pillars must stand on the stage. Plan P puts them on (row 1, column 1) and (row 3, column 3); Plan Q puts them on (row 1, column 1) and (row 2, column 7). Decide which plan leaves a floor that cannot be covered, with a reason. (d) For the other plan, describe a covering of the rest of the stage and state the number of mats.",
+     "a": "(a) 2 × 7 + 3 × 4 = 14 + 12 = 26 squares. A square is black when its row and column numbers add to an even number. Rows 1 and 2 give 4 + 3 = 7 black and 3 + 4 = 7 white; rows 3 to 5 have 2 black and 2 white each, 6 and 6. Total 13 black and 13 white. (b) In rows 1 and 2, cover each of the 7 columns with one vertical mat (7 mats). In rows 3 to 5, cover each row with 2 horizontal mats (6 mats). Total 7 + 6 = 13 mats, which matches 26 ÷ 2 = 13. Any other valid covering with 13 mats earns the mark. (c) In Plan P both squares are black (1 + 1 = 2 and 3 + 3 = 6 are even), leaving 11 black and 13 white squares. Each mat covers one black and one white square, so the counts must be equal; Plan P cannot be covered. (d) Plan Q removes a black square and a white square (2 + 7 = 9 is odd), leaving 12 and 12. Row 1, columns 2 to 7: 3 horizontal mats; row 2, columns 1 to 6: 3 horizontal mats; rows 3 to 5: 2 horizontal mats each, 6 mats. Total 3 + 3 + 6 = 12 mats, which matches 24 ÷ 2 = 12. Any other valid covering with 12 mats earns the mark.",
+     "s": [
+      [
+       "(a) Gets 14 + 12 = 26 squares with 13 black and 13 white, with working by rows",
+       1
+      ],
+      [
+       "(b) Describes a full covering (7 vertical mats in rows 1 to 2, 6 horizontal mats in rows 3 to 5) of 13 mats (any valid covering with 13 mats earns the mark)",
+       1
+      ],
+      [
+       "(c) Rejects Plan P: both pillar squares are black, leaving 11 black and 13 white, while each mat covers one of each",
+       1
+      ],
+      [
+       "(d) Describes a covering for Plan Q with 3 + 3 + 6 = 12 mats (any valid covering with 12 mats earns the mark)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 152-162",
+     "q": "A tile maker cuts each regular hexagonal tile of side 10 cm along the line joining two opposite corners, getting two four-sided tiles, each made of three equilateral triangles of side 10 cm joined side by side. (a) Find the four corner angles of one such tile, giving reasons. (b) Find the perimeter of the tile, explaining how long its longest side is. (c) Write two different sets of corners of these tiles, each set containing both kinds of corner, that fill the space round a point exactly, and show the check. (d) The tile is not a regular polygon. Explain why copies of it can still tile the entire plane.",
+     "a": "(a) The tile is half of the hexagon. At each of the two ends of the cut there is the corner of only one triangle, so each of those angles is 60 degrees; at each of the other two corners, two triangles meet, so each is 60 + 60 = 120 degrees. The angles are 60, 60, 120 and 120 degrees. (b) The cut runs through the centre of the hexagon, where the three triangles' angles 3 × 60 = 180 degrees make a straight line, so the long side is made of two triangle sides: 10 + 10 = 20 cm. Perimeter = 10 + 10 + 10 + 20 = 50 cm. (c) For example, two 60 degree and two 120 degree corners: 60 + 60 + 120 + 120 = 360 degrees; or four 60 degree corners and one 120 degree corner: 4 × 60 + 120 = 360 degrees. (d) Two of these tiles placed together along their long sides make a regular hexagon again. Regular hexagons tile the plane with three meeting at each corner, since 3 × 120 = 360 degrees. Cutting every hexagon of such a tiling in half gives a tiling of the whole plane by the four-sided tiles, with no gaps or overlaps.",
+     "s": [
+      [
+       "(a) Finds the angles 60, 60, 120 and 120 degrees by counting how many triangle corners meet at each corner of the tile",
+       1
+      ],
+      [
+       "(b) Explains the long side is a straight line of two triangle sides, 20 cm, and gets a perimeter of 10 + 10 + 10 + 20 = 50 cm",
+       1
+      ],
+      [
+       "(c) Gives two mixed sets totalling 360 degrees, such as 60 + 60 + 120 + 120 and 4 × 60 + 120",
+       1
+      ],
+      [
+       "(d) Explains that two tiles make a regular hexagon and hexagons tile the plane (3 × 120 = 360), so the tiles tile the plane",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

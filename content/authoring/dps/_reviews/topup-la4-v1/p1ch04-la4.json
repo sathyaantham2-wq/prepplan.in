@@ -1,0 +1,294 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 4,
+  "name": "Expressions Using Letter-Numbers"
+ },
+ "source_code": "gegp104",
+ "concepts": [
+  {
+   "code": "C7M-4.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 102-103",
+     "q": "A metro line runs from Ashram to Botanical Garden with 5 stations in between. The train takes t minutes between any two stations next to each other and halts for 1 minute at each in-between station (no halt is counted at Ashram or Botanical Garden). (a) Write an expression for the time in minutes from Ashram to Botanical Garden. (b) Preeti writes 5t + 5. Explain her mistake. (c) Find the journey time when t = 3. (d) The line is extended by one more station beyond Botanical Garden, so Botanical Garden becomes an in-between station. Write the new expression and say by how much the journey time grows when t = 3.",
+     "a": "(a) 5 stations in between make 6 gaps, so the time is 6t + 5 minutes. (b) Preeti used the 5 stations as the number of gaps; there are 6 gaps between the two ends, so she missed one t. (c) 6 × 3 + 5 = 23 minutes. (d) Now there are 7 gaps and 6 halts: 7t + 6. At t = 3 this is 27 minutes, 4 minutes more (that is t + 1 more).",
+     "s": [
+      [
+       "(a) counts 6 gaps and 5 halts and writes 6t + 5",
+       1
+      ],
+      [
+       "(b) explains that Preeti counted stations (5) instead of gaps (6), so one t is missing",
+       1
+      ],
+      [
+       "(c) substitutes t = 3 to get 23 minutes",
+       1
+      ],
+      [
+       "(d) writes 7t + 6 and finds 27 - 23 = 4 minutes more",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 86-87",
+     "q": "In a mall the floors are numbered ..., -3, -2, -1 (basements), 0 (ground), 1, 2, 3, .... A lift starts at floor f, goes up a floors, then down b floors, then up c floors. (a) Write an expression for the floor where the lift stops at the end. (b) Find this floor when f = -3, a = 8, b = 11 and c = 2. (c) With the same a, b and c, a second lift starts at floor 6. Find where it stops, and explain why the two lifts end exactly as many floors apart as they started.",
+     "a": "(a) f + a - b + c. (b) -3 + 8 - 11 + 2 = -4, so basement floor -4. (c) 6 + 8 - 11 + 2 = 5, floor 5. They started 6 - (-3) = 9 floors apart and end 5 - (-4) = 9 floors apart, because both lifts add the same a - b + c = -1 to their starting floors, so only the starting floor makes a difference.",
+     "s": [
+      [
+       "(a) writes f + a - b + c",
+       1
+      ],
+      [
+       "(b) substitutes the values with correct signs to get -4",
+       1
+      ],
+      [
+       "(c) finds the second lift stops at floor 5",
+       1
+      ],
+      [
+       "(c) shows both gaps are 9 floors and explains that the same a - b + c (= -1) is added to both starting floors",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 86-87",
+     "q": "Kabir copies four terms from his rough work and must write each in the short form used in this chapter (number first, no multiplication sign): (i) 5 × m × 2, (ii) y × 8 - 3 × z, (iii) k × 1 + 4, (iv) 2 × (p × 3). (a) Write the short form of each. (b) Name the coefficient of y and of z in (ii). (c) Kabir writes (iii) as 1k + 4 and his friend writes k + 4. Say whether both are acceptable and which is the usual way. (d) Find the value of (ii) when y = 3 and z = -2.",
+     "a": "(a) (i) 10m, (ii) 8y - 3z, (iii) k + 4, (iv) 6p. (b) The coefficient of y is 8 and of z is -3. (c) Both mean the same, since 1 × k = k; the usual short form drops the 1 and writes k + 4. (d) 8 × 3 - 3 × (-2) = 24 + 6 = 30.",
+     "s": [
+      [
+       "(a) writes 10m and 6p for (i) and (iv) (numbers multiplied, number written first)",
+       1
+      ],
+      [
+       "(b) writes 8y - 3z and gives the coefficients 8 and -3",
+       1
+      ],
+      [
+       "(c) says both are equal because 1 × k = k, and the usual form is k + 4",
+       1
+      ],
+      [
+       "(d) substitutes y = 3, z = -2 to get 24 + 6 = 30",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.4",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 88-92",
+     "q": "Stall A at a school fair sells notebooks at ₹n each and pens at ₹p each. Over four days it sells notebooks: 4, 7, 2, 5 and pens: 9, 6, 12, 8. (a) Write the total money earned by Stall A as an expression and simplify it. (b) Find its value when n = 45 and p = 12. (c) Stall B, selling the same items at the same prices, earns 20n + 30p. Write and simplify the expression for how much more Stall B earns than Stall A. (d) Tanvi says Stall B always earns more because 20 > 18. Is she right? Use n = 45, p = 12 and n = 10, p = 6 to decide.",
+     "a": "(a) 4n + 7n + 2n + 5n + 9p + 6p + 12p + 8p = 18n + 35p. (b) 18 × 45 + 35 × 12 = 810 + 420 = ₹1230. (c) (20n + 30p) - (18n + 35p) = 2n - 5p. (d) No. At n = 45, p = 12, 2n - 5p = 90 - 60 = 30, so B earns ₹30 more; at n = 10, p = 6, 2n - 5p = 20 - 30 = -10, so B earns ₹10 less. Who earns more depends on the prices, because B sells more notebooks but fewer pens.",
+     "s": [
+      [
+       "(a) combines like terms to get 18n + 35p",
+       1
+      ],
+      [
+       "(b) substitutes to get ₹1230",
+       1
+      ],
+      [
+       "(c) opens the bracket with the minus sign and gets 2n - 5p",
+       1
+      ],
+      [
+       "(d) finds 30 and -10 for the two price pairs and concludes Tanvi is wrong: it depends on the prices",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 93",
+     "q": "Nine number cards are laid in 3 rows of 3. Top row: 2, m, 2. Middle row: k, -4, k. Bottom row: 2, m, 2. (a) Write the sum of all nine cards by adding row by row, then simplify it. (b) Find the sum a second way, by first collecting the number cards, then the m cards, then the k cards, and show you get the same simplest form. (c) Find the sum when m = 5 and k = -3. (d) Ira says the simplest form has 3 terms because there are 3 different kinds of cards (numbers, m and k). Check her statement against your answer.",
+     "a": "(a) (2 + m + 2) + (k - 4 + k) + (2 + m + 2) = (m + 4) + (2k - 4) + (m + 4) = 2m + 2k + 4. (b) Numbers 2 + 2 - 4 + 2 + 2 = 4, m cards m + m = 2m, k cards k + k = 2k, so 2m + 2k + 4 again. (c) 2 × 5 + 2 × (-3) + 4 = 10 - 6 + 4 = 8. (d) Yes, 2m + 2k + 4 has 3 terms: one for m, one for k and one number term, since unlike terms cannot be combined further.",
+     "s": [
+      [
+       "(a) writes the three row sums and simplifies to 2m + 2k + 4",
+       1
+      ],
+      [
+       "(b) groups like terms another way (numbers 4, 2m, 2k) and reaches the same form",
+       1
+      ],
+      [
+       "(c) substitutes m = 5, k = -3 to get 8",
+       1
+      ],
+      [
+       "(d) agrees with Ira, explaining that m, k and the number term are unlike and stay separate",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 91-92",
+     "q": "A rectangular flower bed is (3x + 4) m long and (x - 1) m wide, where x is greater than 1. A square bed next to it has side (2x + 1) m. Salma claims: 'Whatever x is, the rectangle's border is always 2 m longer than the square's border.' (a) Write the perimeter of the rectangle and simplify it, showing how you open the brackets. (b) Write and simplify the perimeter of the square. (c) Decide whether Salma is right. (d) Check your answer to (c) with x = 5.",
+     "a": "(a) 2(3x + 4) + 2(x - 1) = 6x + 8 + 2x - 2 = 8x + 6 m. (b) 4(2x + 1) = 8x + 4 m. (c) (8x + 6) - (8x + 4) = 2, so Salma is right for every x. (d) x = 5: rectangle 2 × 19 + 2 × 4 = 46 m, square 4 × 11 = 44 m, a difference of 2 m.",
+     "s": [
+      [
+       "(a) distributes 2 over both brackets and simplifies to 8x + 6",
+       1
+      ],
+      [
+       "(b) distributes 4 to get 8x + 4",
+       1
+      ],
+      [
+       "(c) subtracts to get 2 and says Salma is right for every value of x",
+       1
+      ],
+      [
+       "(d) finds 46 m and 44 m at x = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 91-92",
+     "q": "A number trick: 'Think of a number n. Add 5. Multiply the result by 3. Subtract the number you first thought of. Subtract 15. Your answer is always double your number.' (a) Write the whole trick as one expression in n, with brackets where needed. (b) Remove the brackets and simplify to show the trick always works. (c) Ravi thinks of -4. Work out each step in numbers and check the final answer. (d) Change only the last step (the number subtracted) so that the answer is always 7 more than double the number. Show your new expression simplifies correctly.",
+     "a": "(a) 3(n + 5) - n - 15. (b) 3n + 15 - n - 15 = 2n, always double the number. (c) -4 + 5 = 1; 1 × 3 = 3; 3 - (-4) = 7; 7 - 15 = -8, which is 2 × (-4). (d) Subtract 8 instead of 15: 3(n + 5) - n - 8 = 3n + 15 - n - 8 = 2n + 7.",
+     "s": [
+      [
+       "(a) writes 3(n + 5) - n - 15",
+       1
+      ],
+      [
+       "(b) opens the bracket and combines like terms to get 2n",
+       1
+      ],
+      [
+       "(c) works the steps 1, 3, 7, -8 and checks -8 = 2 × (-4)",
+       1
+      ],
+      [
+       "(d) replaces 15 by 8 and shows 3(n + 5) - n - 8 = 2n + 7",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.6",
+   "questions": [
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 92-96",
+     "q": "A number machine takes two inputs a and b and gives one output. Three examples: inputs (4, 3) give 11, inputs (5, 1) give 11, inputs (2, 6) give 10. Three students guess its formula. Arjun: 2(a + b) - b. Bela: 2a + b. Chirag: 2a + 2b - 3. (a) Test each formula on all three examples and say which fit. (b) Simplify Arjun's formula and say how it is related to Bela's. (c) Chirag says, 'My formula gives 11 for (4, 3), so it is correct.' Explain why one matching example does not prove a formula, and give an input pair not in the table for which Bela's and Chirag's formulas give different outputs.",
+     "a": "(a) Arjun: 11, 11, 10; Bela: 11, 11, 10; Chirag: 11, 9, 13. Arjun's and Bela's fit all three; Chirag's fails for (5, 1) and (2, 6). (b) 2(a + b) - b = 2a + 2b - b = 2a + b, so Arjun's formula is the same expression as Bela's. (c) Two expressions are equal only if they agree for every input; one agreeing pair can be a coincidence. For example (1, 1): Bela gives 3, Chirag gives 1.",
+     "s": [
+      [
+       "(a) computes all nine outputs and states that Arjun's and Bela's fit, Chirag's fails (5, 1) and (2, 6)",
+       1
+      ],
+      [
+       "(b) simplifies 2(a + b) - b to 2a + b, the same as Bela's",
+       1
+      ],
+      [
+       "(c) explains that equal expressions must agree for every value, not just one",
+       1
+      ],
+      [
+       "(c) gives a pair such as (1, 1) with different outputs (3 and 1)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 97-101",
+     "q": "A farmer builds a straight bamboo fence in sections. One section is 2 posts with 2 rails between them. Each new section joined to the end needs 1 more post and 2 more rails. (a) Find the number of bamboo pieces (posts and rails) for 1, 2 and 3 sections. (b) Write an expression for the pieces in s sections, explaining where each part comes from. (c) How many pieces does a 45-section fence need? (d) The farmer has exactly 150 pieces. Show that he cannot use all of them to make a complete fence, and say how many pieces are left over after the longest fence he can make.",
+     "a": "(a) 4, 7, 10. (b) s sections have s + 1 posts and 2s rails, so (s + 1) + 2s = 3s + 1 pieces. (c) 3 × 45 + 1 = 136. (d) A complete fence uses 3s + 1 pieces, which is 1 more than a multiple of 3. 150 - 1 = 149 leaves remainder 2 on division by 3, so 150 is not of that form. The longest fence is 49 sections using 3 × 49 + 1 = 148 pieces, leaving 2 pieces.",
+     "s": [
+      [
+       "(a) gives 4, 7 and 10 pieces",
+       1
+      ],
+      [
+       "(b) writes 3s + 1 from s + 1 posts and 2s rails",
+       1
+      ],
+      [
+       "(c) finds 136 pieces",
+       1
+      ],
+      [
+       "(d) uses remainder reasoning (149 = 3 × 49 + 2) to show 150 does not fit, and gives 49 sections with 2 pieces left",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

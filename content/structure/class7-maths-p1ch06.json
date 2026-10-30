@@ -1,0 +1,180 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Number Play",
+  "blurb": "Counting sequences from heights, parity of sums and expressions, row-and-column sum grids, magic squares, Virahanka-Fibonacci numbers and cryptarithms.",
+  "order_index": 6,
+  "source_code": "gegp106"
+ },
+ "scope": [
+  [
+   "IN",
+   "Read the taller-in-front number a child calls out, write the numbers for a given height arrangement, and arrange heights to match a given number sequence",
+   "pp.127-128"
+  ],
+  [
+   "IN",
+   "Decide whether statements about such sequences are always, only sometimes, or never true (first person says 0, tallest says 0, largest possible number in a group of n)",
+   "p.128"
+  ],
+  [
+   "IN",
+   "Use the pairing picture to find the parity of sums of even and odd numbers, including sums of many odd numbers",
+   "pp.129-131"
+  ],
+  [
+   "IN",
+   "Use parity to decide whether a target sum is possible (number cards in boxes, ages of consecutive-year siblings, coin totals)",
+   "pp.130-131"
+  ],
+  [
+   "IN",
+   "Find the parity of differences and of a product or grid of small squares from the parity of the factors",
+   "p.131"
+  ],
+  [
+   "IN",
+   "Decide the parity of an algebraic expression, build expressions that are always even, always odd or either, and use 2n and 2n - 1 as the nth even and odd numbers",
+   "pp.132-133"
+  ],
+  [
+   "IN",
+   "Fill a 3 x 3 grid with 1 to 9 given row and column sums, and use the minimum sum 6, maximum sum 24 and total 45 to decide when a grid is impossible",
+   "pp.133-134"
+  ],
+  [
+   "IN",
+   "Explain why a 3 x 3 magic square of 1 to 9 has magic sum 15 and centre 5, and why 1 and 9 cannot be in corners",
+   "pp.134-136"
+  ],
+  [
+   "IN",
+   "Create magic squares from consecutive numbers, describe them with centre m, and see how adding to or multiplying every entry changes the magic sum",
+   "pp.136-137"
+  ],
+  [
+   "IN",
+   "Recognise the 4 x 4 Chautisa Yantra with every row, column and diagonal summing to 34, and the 3 x 3 magic squares in Indian history",
+   "pp.137-138"
+  ],
+  [
+   "IN",
+   "Count rhythms of short (1 beat) and long (2 beat) syllables, that is the ways to write n as a sum of 1s and 2s, and see that each count is the sum of the previous two",
+   "pp.139-141"
+  ],
+  [
+   "IN",
+   "Extend the Virahanka-Fibonacci sequence forwards and backwards and find the pattern in its parities",
+   "pp.141-142"
+  ],
+  [
+   "IN",
+   "Solve cryptarithms where each letter stands for one digit, using carrying and place-value reasoning",
+   "pp.142-143"
+  ],
+  [
+   "OUT",
+   "Modular arithmetic notation, divisibility tests or remainders after division by numbers other than 2 -- parity is the only such idea used here",
+   null
+  ],
+  [
+   "OUT",
+   "Counting arrangements with factorials (for example the 3,62,880 ways to fill a 3 x 3 grid) -- the chapter says this comes in later years",
+   null
+  ],
+  [
+   "OUT",
+   "Magic squares of order 5 or larger and general construction methods for them -- only mentioned as later-grade material",
+   null
+  ],
+  [
+   "OUT",
+   "The closed-form formula, golden ratio or ratio-of-successive-terms property of Fibonacci numbers -- only the recurrence and the parity pattern are used",
+   null
+  ],
+  [
+   "OUT",
+   "Formal induction or two-column proofs of parity rules -- the chapter proves them only with the pairing pictures",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-6.1",
+   "name": "Sequences from heights (taller-in-front rule)",
+   "description": "Reading the number each child calls when every child says how many children in front of them are taller, building the sequence for an arrangement, and arranging heights to fit a sequence.",
+   "idea": "A child's number depends only on the children standing in front of them, never on those behind.",
+   "rule": "A child's number is the count of taller children in front; the first child and the tallest child always say 0; in a group of n children the largest possible number is n - 1.",
+   "example": "Heights 140, 150, 145 cm from the front give the numbers 0, 0, 1.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-6.2",
+   "name": "Parity of sums, differences and products",
+   "description": "Deciding whether a sum, difference or product is even or odd from the parity of the numbers combined, and using this to show a target total is impossible.",
+   "idea": "Even numbers pair up with nothing left over; every odd number leaves one unpaired item.",
+   "rule": "even + even = even, odd + odd = even, even + odd = odd, and subtraction follows the same table; a sum of k odd numbers is odd when k is odd and even when k is even; a product is odd only when every factor is odd.",
+   "example": "Five odd number cards can never add up to 30, because a sum of five odd numbers is odd.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-6.3",
+   "name": "Parity of expressions and the nth even and odd number",
+   "description": "Deciding whether an algebraic expression is always even, always odd or sometimes either, and writing the nth even and odd numbers.",
+   "idea": "In an expression, a term with an even multiplier is always even, so only the terms that can be odd decide the parity.",
+   "rule": "2n is the nth even number and 2n - 1 is the nth odd number; an expression like 3n + 4 can be odd or even because 3n changes parity with n.",
+   "example": "4m - 1 is odd for every whole number m, but 3n + 4 is odd for n = 3 and even for n = 8.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.4",
+   "name": "Row-and-column sum grids",
+   "description": "Filling a 3 x 3 grid with the numbers 1 to 9 so the row and column sums match given circled values, and deciding when no such grid exists.",
+   "idea": "Every number from 1 to 9 is used exactly once, so the row sums together and the column sums together each use all nine numbers.",
+   "rule": "The three row sums add to 45 and so do the three column sums; any row or column sum must lie between 6 and 24.",
+   "example": "A grid with a row sum of 5 is impossible because the smallest possible row sum is 1 + 2 + 3 = 6.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.5",
+   "name": "Magic squares",
+   "description": "Building and reasoning about 3 x 3 magic squares, including the magic sum, the centre number, the corners, generalising with a centre letter-number m, and the 4 x 4 Chautisa Yantra.",
+   "idea": "In a magic square every row, column and diagonal has the same total, which forces the centre and the magic sum.",
+   "rule": "A 3 x 3 magic square using 1 to 9 has magic sum 15 and centre 5; with centre m and nine consecutive numbers the magic sum is 3m; adding k to every entry adds 3k to the magic sum and multiplying every entry by k multiplies it by k.",
+   "example": "Adding 1 to every number of the 1 to 9 magic square gives a magic square of 2 to 10 with magic sum 18.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.6",
+   "name": "Virahanka-Fibonacci numbers",
+   "description": "Counting ways to write a number as a sum of 1s and 2s (rhythms of short and long syllables), extending the sequence 1, 2, 3, 5, 8, 13, and reading its parity pattern.",
+   "idea": "Every rhythm of n beats starts with a 1 or a 2, so the count for n is the count for n - 1 plus the count for n - 2.",
+   "rule": "The sequence 1, 2, 3, 5, 8, 13, 21, 34, ... adds the two previous terms; its parities repeat as odd, even, odd, odd, even, odd.",
+   "example": "There are 8 ways to write 5 as a sum of 1s and 2s, because 5 beats gives 5 (from 4 beats) plus 3 (from 3 beats).",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-6.7",
+   "name": "Cryptarithms (digits in disguise)",
+   "description": "Solving addition puzzles in which each letter stands for one digit, using units-place, carrying and place-value reasoning.",
+   "idea": "Different letters stand for different digits and the same letter always stands for the same digit, so each column of the sum limits the choices.",
+   "rule": "Start from the units column, track the carry into the next column, and remember that the leading digit of a number cannot be 0.",
+   "example": "In T + T + T = UT, only T = 5 works, giving 5 + 5 + 5 = 15 so U = 1.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

@@ -7,6 +7,11 @@
  *   node scripts/with-test-env.mjs npx tsx scripts/load-dps-pack.ts content/authoring/dps/class7/ch01.json [--check]
  *
  * --check validates the pack and writes nothing (it needs no database).
+ *
+ * A "dps_topup" pack (kind) adds questions of the kinds a chapter is short of, to concepts that already
+ * have their full pack (owner request 2026-10-30: enough for three papers per chapter in both school
+ * layouts). The per-concept mix and the 24-per-concept ceiling do not apply to it; every question must
+ * still pass the question rules below, name its NCERT page ("p"), and fit at least one paper slot.
  * A pack is separate from the 20-per-concept Bloom x difficulty grid: it holds the item types the
  * school papers use and the grid lacks (case studies, 5-mark answers, claim-checks, match, ...).
  */
@@ -34,6 +39,8 @@ export interface PackQuestion {
   rev?: boolean
   /** case_study, claim_check, show_impossible, reverse, scenario, match, map, figure, construction */
   tags?: Array<string>
+  /** top-up packs: the NCERT page(s) the question rests on, e.g. "p. 14" or "pp. 14-15" */
+  p?: string
 }
 
 export interface PackFile {
@@ -77,9 +84,36 @@ function wordCount(s: string) {
   return s.trim().split(/\s+/).filter(Boolean).length
 }
 
+/**
+ * The seven paper slots of the two school layouts (Unit Test 40, Half-yearly 80) as the paper
+ * generator fills them (templates.ts toLayoutSection + template-coverage.ts rowFitsSlot): type, marks,
+ * thinking level and the case-study tag. A top-up question must fit one, or it fills no gap.
+ */
+export const PAPER_SLOTS: Array<{ key: string; marks: number; types: Array<QType>; bloom: Array<Bloom>; caseStudy: boolean }> = [
+  { key: 'mcq1', marks: 1, types: ['mcq', 'multi_statement', 'match'], bloom: ['Remember', 'Understand', 'Apply', 'Analyse'], caseStudy: false },
+  { key: 'ar1', marks: 1, types: ['assertion_reason'], bloom: ['Understand', 'Apply', 'Analyse'], caseStudy: false },
+  { key: 'sa2', marks: 2, types: ['short_answer', 'long_answer'], bloom: ['Remember', 'Understand', 'Apply'], caseStudy: false },
+  { key: 'sa3', marks: 3, types: ['short_answer', 'long_answer'], bloom: ['Understand', 'Apply', 'Analyse'], caseStudy: false },
+  { key: 'la4', marks: 4, types: ['short_answer', 'long_answer'], bloom: ['Apply', 'Analyse', 'Evaluate', 'Create'], caseStudy: false },
+  { key: 'la5', marks: 5, types: ['short_answer', 'long_answer'], bloom: ['Apply', 'Analyse', 'Evaluate', 'Create'], caseStudy: false },
+  { key: 'cs4', marks: 4, types: ['long_answer'], bloom: ['Apply', 'Analyse', 'Evaluate'], caseStudy: true },
+]
+const SLOT_SPECIAL = ['case_study', 'map', 'construction', 'figure']
+
+export function fitsPaperSlot(q: PackQuestion): string | null {
+  const special = (q.tags ?? []).filter((t) => SLOT_SPECIAL.includes(t))
+  for (const s of PAPER_SLOTS) {
+    if (q.m !== s.marks || !s.types.includes(q.t) || !s.bloom.includes(q.b)) continue
+    if (s.caseStudy ? special.length === 1 && special[0] === 'case_study' : special.every((t) => t === 'construction')) return s.key
+  }
+  return null
+}
+
 export function validatePack(file: PackFile): Array<string> {
   const problems: Array<string> = []
-  if (file.kind !== 'dps_pack') problems.push('kind must be "dps_pack"')
+  const topup = file.kind === 'dps_topup'
+  if (file.kind !== 'dps_pack' && !topup)
+    problems.push('kind must be "dps_pack" or "dps_topup"')
   let matchCount = 0
   let blankCount = 0
   let trueFalseCount = 0
@@ -87,7 +121,7 @@ export function validatePack(file: PackFile): Array<string> {
   const seen = new Set<string>()
   for (const c of file.concepts) {
     const have = { objective: 0, case_study: 0, long5: 0, reasoning3: 0, scenario_mcq: 0, multi_statement: 0, assertion_reason: 0, short2: 0, short2_multipart: 0, three_mark: 0 }
-    if (c.questions.length < CONCEPT_TOTAL.min || c.questions.length > CONCEPT_TOTAL.max) {
+    if (!topup && (c.questions.length < CONCEPT_TOTAL.min || c.questions.length > CONCEPT_TOTAL.max)) {
       problems.push(`${c.code}: has ${c.questions.length} questions, wants ${CONCEPT_TOTAL.min} to ${CONCEPT_TOTAL.max}`)
     }
     for (const [i, q] of c.questions.entries()) {
@@ -96,6 +130,8 @@ export function validatePack(file: PackFile): Array<string> {
       for (const t of tags) if (!TAGS.includes(t)) problems.push(`${where}: unknown tag "${t}"`)
       if (q.b === 'Remember') problems.push(`${where}: Remember-level (recall) items are not allowed; raise it to Understand or above with a situation, comparison or reason`)
       if (q.d === 'Easy') problems.push(`${where}: the "Easy" label is retired; use Hard, or Hardest for 5-mark and case-study items`)
+      else if (!(['Hard', 'Hardest'] as Array<string>).includes(q.d)) problems.push(`${where}: unknown difficulty "${q.d}"; use Hard or Hardest`)
+      if (!(['Understand', 'Apply', 'Analyse', 'Evaluate', 'Create'] as Array<string>).includes(q.b) && q.b !== 'Remember') problems.push(`${where}: unknown Bloom level "${q.b}"`)
       if (seen.has(q.q)) problems.push(`${where}: duplicate text`)
       seen.add(q.q)
       if (!q.a.trim()) problems.push(`${where}: empty answer`)
@@ -105,6 +141,16 @@ export function validatePack(file: PackFile): Array<string> {
         problems.push(`${where}: the answer refers to an option by letter or number; the options are shuffled at load, so describe the correct option instead`)
       }
       if (!/[A-Za-z]/.test(q.q)) problems.push(`${where}: question has no words`)
+      if (topup) {
+        if (!q.p || !/^pp?\.\s*\d+(\s*[-–]\s*\d+)?$/.test(q.p.trim()))
+          problems.push(`${where}: a top-up question names its NCERT page, like "p. 14" or "pp. 14-15"`)
+        if (!fitsPaperSlot(q)) problems.push(`${where}: this ${q.m}-mark ${q.t} (${q.b}) fits no paper slot (see PAPER_SLOTS)`)
+        if (q.t === 'long_answer' && q.m === 4 && !(q.tags ?? []).includes('case_study')) {
+          const n = (q.s ?? []).length
+          if (n < 3 || n > 5) problems.push(`${where}: a 4-mark long answer has 3 to 5 marking steps (marks per step), so it can be marked step by step`)
+          if (wordCount(q.q) < 20) problems.push(`${where}: a 4-mark long answer needs a real task, not one line`)
+        }
+      }
 
       if (OPTION_TYPES.includes(q.t)) {
         have.objective++
@@ -177,9 +223,16 @@ export function validatePack(file: PackFile): Array<string> {
       if (q.t === 'short_answer' && q.m === 2 && steps.length >= 2) have.short2_multipart++
       if ((q.t === 'short_answer' || q.t === 'long_answer') && q.m === 3) have.three_mark++
     }
-    for (const [key, min] of Object.entries(PACK_MINIMUMS)) {
-      if (have[key as keyof typeof have] < min) problems.push(`${c.code}: needs at least ${min} ${key}, has ${have[key as keyof typeof have]}`)
-    }
+    if (!topup)
+      for (const [key, min] of Object.entries(PACK_MINIMUMS)) {
+        if (have[key as keyof typeof have] < min) problems.push(`${c.code}: needs at least ${min} ${key}, has ${have[key as keyof typeof have]}`)
+      }
+  }
+  if (topup) {
+    const all = file.concepts.flatMap((c) => c.questions)
+    if (all.filter((q) => q.b === 'Understand').length > all.length * LEVEL_RULES.maxUnderstand)
+      problems.push(`chapter: more than ${LEVEL_RULES.maxUnderstand * 100}% of the questions are Understand level`)
+    return problems
   }
   const wantBlank = chapterBlankMinimum(file.concepts.length)
   if (blankCount < wantBlank) problems.push(`chapter: needs at least ${wantBlank} fill_blank items, has ${blankCount}`)
@@ -262,7 +315,7 @@ async function main() {
           tags: ['dps', ...(q.tags ?? [])],
           created_by: `claude-dps-pack-${sub.code}-${ch.part}${ch.chapter_no}`,
           origin: 'ai_generated',
-          source_ref: file.source_code,
+          source_ref: q.p ? `${file.source_code} ${q.p.trim()}` : file.source_code,
         })
         added++
       }

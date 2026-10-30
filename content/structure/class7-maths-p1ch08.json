@@ -1,0 +1,190 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 8,
+  "name": "Working with Fractions",
+  "blurb": "Multiplying a fraction with a whole number and with another fraction, cancelling common factors, how the size of a product or quotient compares with the numbers used, division by reciprocals, and word problems.",
+  "order_index": 8,
+  "source_code": "gegp108"
+ },
+ "scope": [
+  [
+   "IN",
+   "Multiply a whole number and a fraction as repeated addition (5 x 3 km, 3 x 1/4 km)",
+   "pp.173-174"
+  ],
+  [
+   "IN",
+   "Multiply a fraction by a whole number by dividing by the denominator and multiplying by the numerator (1/5 x 3 = 3/5, 2/5 x 3 = 6/5)",
+   "pp.174-176"
+  ],
+  [
+   "IN",
+   "Convert a mixed fraction to an improper fraction before multiplying, and convert products back to mixed fractions",
+   "p.176"
+  ],
+  [
+   "IN",
+   "Multiply two fractions using a unit square, and read the product as the shaded fraction of the whole (1/2 x 1/4 = 1/8, 3/4 x 2/5 = 3/10)",
+   "pp.177-180"
+  ],
+  [
+   "IN",
+   "Connect the area of a rectangle with fractional sides to the product of the sides",
+   "p.180"
+  ],
+  [
+   "IN",
+   "Use the rows-and-columns picture to show 1/b x 1/d = 1/(b x d)",
+   "p.181"
+  ],
+  [
+   "IN",
+   "Use Brahmagupta's formula a/b x c/d = (a x c)/(b x d), writing a whole number with denominator 1",
+   "pp.181-182"
+  ],
+  [
+   "IN",
+   "Cancel common factors of numerators and denominators before multiplying to reach the lowest form",
+   "pp.182-183"
+  ],
+  [
+   "IN",
+   "Solve word problems that multiply fractions, including mixed fractions and fractions of a fraction",
+   "pp.183-184"
+  ],
+  [
+   "IN",
+   "Compare a product with the numbers multiplied depending on whether they are greater than 1 or between 0 and 1",
+   "pp.184-185"
+  ],
+  [
+   "IN",
+   "Use that the order of multiplication does not change a product of fractions",
+   "p.186"
+  ],
+  [
+   "IN",
+   "Rewrite a division as a missing-factor multiplication and use the reciprocal to divide by a fraction",
+   "pp.186-188"
+  ],
+  [
+   "IN",
+   "Use Brahmagupta's formula a/b divided by c/d = a/b x d/c",
+   "pp.188-189"
+  ],
+  [
+   "IN",
+   "Compare a quotient with the dividend and divisor depending on whether the divisor is greater than 1 or between 0 and 1",
+   "pp.189-190"
+  ],
+  [
+   "IN",
+   "Solve word problems needing division by a fraction or a whole number, including the brick, fountain and cowrie-shell problems and the fractional-relations square problem",
+   "pp.190-198"
+  ],
+  [
+   "OUT",
+   "Adding and subtracting fractions as a topic of its own -- only used inside word problems, the methods were taught earlier",
+   null
+  ],
+  [
+   "OUT",
+   "Decimals, percentages, ratio and proportion in fraction problems -- not part of this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Multiplying or dividing negative fractions and rational numbers -- not covered here",
+   null
+  ],
+  [
+   "OUT",
+   "A formal algebraic proof of the multiplication or division formula -- the chapter justifies them with pictures and the missing-factor idea",
+   null
+  ],
+  [
+   "OUT",
+   "Division by zero and the reciprocal of zero -- not discussed in the chapter",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-8.1",
+   "name": "Multiplying a whole number and a fraction",
+   "description": "Multiplying a fraction by a whole number, or a whole number by a fraction, including mixed fractions and converting back to a mixed fraction.",
+   "idea": "Multiplying a whole number by a fraction is repeated addition of that fraction; a fraction multiplier takes that part of the whole number.",
+   "rule": "To find a/b x n, divide n by the denominator b and multiply the result by the numerator a; convert a mixed fraction to an improper fraction first.",
+   "example": "3 x 1/4 = 1/4 + 1/4 + 1/4 = 3/4, and 2/5 x 3 = 3/5 x 2 = 6/5.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-8.2",
+   "name": "Multiplying two fractions with a unit square",
+   "description": "Finding the product of two fractions by shading a unit square, and linking it to the area of a rectangle with fractional sides.",
+   "idea": "On a unit square one fraction sets the columns and the other the rows, and the product is the shaded part of the whole.",
+   "rule": "The whole is cut into (denominator of one) x (denominator of the other) equal parts; 1/b x 1/d = 1/(b x d); the area of a rectangle with fractional sides equals the product of its sides.",
+   "example": "1/2 x 1/4 = 1/8 because the whole square has 2 columns and 4 rows, so 8 equal parts of which 1 is shaded.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-8.3",
+   "name": "Brahmagupta's multiplication rule and cancelling",
+   "description": "Multiplying fractions by multiplying numerators and denominators, cancelling common factors first, and giving the product in lowest form.",
+   "idea": "A fraction stays the same when its numerator and denominator are divided by the same factor, so common factors can be cancelled across a product.",
+   "rule": "a/b x c/d = (a x c)/(b x d); a whole number n is n/1; cancel common factors of any numerator with any denominator before multiplying.",
+   "example": "12/7 x 5/24: cancel 12 and 24 to get (1 x 5)/(7 x 2) = 5/14.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-8.4",
+   "name": "Size of a product and order of multiplication",
+   "description": "Deciding whether a product is bigger or smaller than the numbers multiplied, and using that changing the order does not change the product.",
+   "idea": "Multiplying by a number greater than 1 makes a number bigger, and by a number between 0 and 1 makes it smaller.",
+   "rule": "If both numbers exceed 1 the product exceeds both; if both lie between 0 and 1 the product is less than both; if one exceeds 1 and one is below 1 the product lies between them; a/b x c/d = c/d x a/b.",
+   "example": "3/4 x 2/5 = 3/10, which is less than both 3/4 and 2/5.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-8.5",
+   "name": "Dividing fractions using reciprocals",
+   "description": "Dividing by a whole number or fraction by multiplying with the reciprocal of the divisor.",
+   "idea": "Dividing by a number is finding the missing factor, and the reciprocal is the number that multiplies the divisor to give 1.",
+   "rule": "The reciprocal of a/b is b/a; a/b divided by c/d = a/b x d/c = (a x d)/(b x c).",
+   "example": "2/3 divided by 3/5 = 2/3 x 5/3 = 10/9.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-8.6",
+   "name": "Size of a quotient compared with dividend and divisor",
+   "description": "Predicting whether a quotient will be greater or less than the dividend depending on the divisor.",
+   "idea": "Dividing by a number less than 1 makes the result bigger, because more small pieces fit into the dividend.",
+   "rule": "If the divisor is between 0 and 1 the quotient is greater than the dividend; if the divisor is greater than 1 the quotient is less than the dividend.",
+   "example": "6 divided by 1/4 = 24, which is greater than 6, because the divisor 1/4 is less than 1.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-8.7",
+   "name": "Word problems and fraction-of-a-fraction chains",
+   "description": "Solving multi-step problems that multiply or divide fractions, including the brick, fountain, rate and cowrie-shell problems and chains of fractions of fractions.",
+   "idea": "A situation is turned into one multiplication or division of fractions by asking which quantity is being scaled or shared.",
+   "rule": "Total = number of items x size of one item; number of items = total divided by size of one item; \"a fraction of\" a quantity means multiply.",
+   "example": "15/2 sq units covered by bricks of area 1/25 needs 15/2 divided by 1/25 = 375/2 bricks.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}

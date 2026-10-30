@@ -1,0 +1,190 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "MATH",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 4,
+  "name": "Expressions Using Letter-Numbers",
+  "blurb": "Writing and evaluating algebraic expressions, combining like terms, removing brackets, testing expression equality, and using expressions to describe numeric and visual patterns.",
+  "order_index": 4,
+  "source_code": "gegp104"
+ },
+ "scope": [
+  [
+   "IN",
+   "Use a letter-number to stand for an unknown or varying quantity",
+   "p.82"
+  ],
+  [
+   "IN",
+   "Write an algebraic expression for a word relationship (ages, costs, perimeters, counts)",
+   "pp.82-84"
+  ],
+  [
+   "IN",
+   "Evaluate an algebraic expression by substituting a given numeric value",
+   "pp.83, 86-87"
+  ],
+  [
+   "IN",
+   "Write repeated addition as multiplication and omit the multiplication sign (4 times n becomes 4n)",
+   "p.86"
+  ],
+  [
+   "IN",
+   "Identify the coefficient and the letter-number in a term",
+   "p.86"
+  ],
+  [
+   "IN",
+   "Evaluate arithmetic expressions using swapping, grouping, and brackets with a negative sign outside",
+   "pp.85-86"
+  ],
+  [
+   "IN",
+   "Identify like terms (same letter-number) versus unlike terms (different letter-numbers)",
+   "p.90"
+  ],
+  [
+   "IN",
+   "Combine like terms into a single term using the distributive property",
+   "pp.88-89"
+  ],
+  [
+   "IN",
+   "Remove brackets from an expression, including brackets preceded by a subtraction sign",
+   "pp.90-91"
+  ],
+  [
+   "IN",
+   "Simplify an algebraic expression to its simplest (fewest-term) form",
+   "pp.87-94"
+  ],
+  [
+   "IN",
+   "Test whether two algebraic expressions are equal by substituting several values",
+   "pp.92-93"
+  ],
+  [
+   "IN",
+   "Write an algebraic expression for the nth term of a numeric or visual pattern",
+   "pp.95-105"
+  ],
+  [
+   "IN",
+   "Use a position formula, including remainder reasoning, to find which pattern-element occurs at a given position",
+   "pp.97, 104"
+  ],
+  [
+   "IN",
+   "Write and verify a general expression to prove a pattern always holds, such as a calendar grid sum",
+   "pp.97-99"
+  ],
+  [
+   "OUT",
+   "Solving a linear equation for the unknown letter-number -- introduced in a later chapter on simple equations, not this one",
+   null
+  ],
+  [
+   "OUT",
+   "Multiplying two algebraic expressions together, such as expanding (a+b)(c+d) -- this chapter only distributes a single number or sign over a bracket",
+   null
+  ],
+  [
+   "OUT",
+   "Exponents or powers of letter-numbers, such as x squared -- not introduced in this chapter",
+   null
+  ],
+  [
+   "OUT",
+   "Factorising an expression into a product form as a taught, generative skill -- the chapter shows recognising a factored form once, but does not teach how to produce one",
+   null
+  ],
+  [
+   "OUT",
+   "Graphing an algebraic relationship on a coordinate plane -- not covered",
+   null
+  ],
+  [
+   "OUT",
+   "Inequalities involving letter-numbers -- not covered",
+   null
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7M-4.1",
+   "name": "Writing algebraic expressions from word descriptions",
+   "description": "Translating a word relationship (ages, costs, perimeters, counts) into an algebraic expression using a chosen letter-number.",
+   "idea": "A letter-number stands in for an unknown or varying quantity; the relationship in words becomes the same relationship written with symbols.",
+   "rule": "Identify what varies, name it with a letter, then write the operation described in words (more than, less than, times, formula) using that letter.",
+   "example": "Shabnam is 3 years older than Aftab. If a stands for Aftab's age, Shabnam's age = a + 3.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-4.2",
+   "name": "Evaluating algebraic expressions by substitution",
+   "description": "Finding the numeric value of an algebraic expression by replacing each letter-number with a given number.",
+   "idea": "An expression takes a definite numeric value once every letter-number in it is replaced by a number.",
+   "rule": "Substitute the given value(s) for the letter-number(s), then evaluate using order of operations.",
+   "example": "Value of 5m + 3 when m = 2: 5 times 2 plus 3 = 13.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-4.3",
+   "name": "Omission of the multiplication symbol and term conventions",
+   "description": "Writing 4 times n as 4n, and reading the coefficient and letter-number in a term.",
+   "idea": "By convention, the multiplication sign is dropped between a number and a letter-number, with the number written first.",
+   "rule": "4 times n is shortened to 4n; the number in front is the coefficient of the letter-number.",
+   "example": "4 times n = 4n; in the term 7k, 7 is the coefficient of k.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7M-4.4",
+   "name": "Like terms and combining them",
+   "description": "Recognising which terms share the same letter-number (like terms) and adding/subtracting them into a single term.",
+   "idea": "Terms with the same letter-number can be combined by adding their coefficients, the same way repeated addition becomes multiplication.",
+   "rule": "5c + 3c + 10c = (5 + 3 + 10)c = 18c. Terms with different letter-numbers (unlike terms) cannot be combined further.",
+   "example": "5c + 3c + 10c simplifies to 18c; 18c + 11d cannot be simplified further since c and d are unlike terms.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-4.5",
+   "name": "Removing brackets and the distributive property",
+   "description": "Expanding a bracket, including one preceded by a subtraction sign, and using the distributive property to simplify.",
+   "idea": "A bracket can be opened by distributing a number or a negative sign over every term inside it; swapping and grouping then lets like terms be combined.",
+   "rule": "(40x + 75y) - (6x + 10y) = 40x + 75y - 6x - 10y = 34x + 65y; 4(x + y) - y = 4x + 4y - y = 4x + 3y.",
+   "example": "(4x + 3y) - (3x + 4y) = 4x + 3y - 3x - 4y = x - y.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-4.6",
+   "name": "Testing whether two algebraic expressions are equal",
+   "description": "Checking, by substituting several values, whether two expressions always give the same value.",
+   "idea": "Two expressions are equal only if they give the same value for every value of the letter-number, not just for one chosen value.",
+   "rule": "Substitute two or more different values into both expressions; if any substitution gives different results, the expressions are not equal.",
+   "example": "5u and 5 + u are not equal in general: at u = 8, 5u = 40 but 5 + u = 13.",
+   "difficulty_base": "Hard"
+  },
+  {
+   "code": "C7M-4.7",
+   "name": "Algebraic expressions for numeric and visual patterns",
+   "description": "Finding a formula (expression in n or another letter-number) for the nth term of a sequence, matchstick pattern, or repeating design, and using it to prove a pattern always holds.",
+   "idea": "A single algebraic expression can describe every term of a pattern at once, letting us predict far-off terms and prove a relationship holds for every case, not just the ones checked.",
+   "rule": "Find how the pattern changes from one step to the next, express the step number generally (e.g., y or n), and write the total as a formula; verify by substitution.",
+   "example": "A matchstick triangle-chain has 3 + 2(y - 1) = 2y + 1 matchsticks at step y; Step 33 needs 2 times 33 plus 1 = 67 matchsticks.",
+   "difficulty_base": "Hard"
+  }
+ ]
+}
