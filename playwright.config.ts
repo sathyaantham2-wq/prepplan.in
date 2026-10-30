@@ -79,6 +79,7 @@ export default defineConfig({
       SCHOOL_SIGNUP_MAX_PER_DAY: '100000',
       // reading a school's own paper uses a free stand-in, never an AI vendor (ignored in production)
       OWN_PAPER_AI: 'fake',
+      FAKE_MARKING: 'mixed',
     },
   },
 })

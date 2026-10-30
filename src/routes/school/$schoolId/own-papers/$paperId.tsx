@@ -12,6 +12,7 @@ import {
 import { api } from '../../../../lib/school-client'
 import { AnswerSheets } from '../../../../components/school/own-sheets-panel'
 import { StudentSheets } from '../../../../components/school/student-sheets'
+import { ClassResults } from '../../../../components/school/marking-panel'
 import type {
   OwnPaperView,
   OwnQuestionView,
@@ -39,6 +40,8 @@ function OwnPaperPage() {
   const [progress, setProgress] = useState<PaperProgress | null>(null)
   const started = useRef(false)
   const [otherOpen, setOtherOpen] = useState(false)
+  const [resultsVersion, setResultsVersion] = useState(0)
+  const bumpResults = useCallback(() => setResultsVersion((n) => n + 1), [])
 
   const load = useCallback(async () => {
     try {
@@ -222,7 +225,13 @@ function OwnPaperPage() {
         v.markable ? (
           <>
             <Card>
-              <StudentSheets base={base} />
+              <StudentSheets
+                base={base}
+                onMarkingChanged={bumpResults}
+              />
+            </Card>
+            <Card>
+              <ClassResults base={base} version={resultsVersion} />
             </Card>
             <details
               className="rounded-2xl border border-slate-200 bg-white px-4 py-3"

@@ -8,6 +8,8 @@ import {
   XCircle,
 } from 'lucide-react'
 import { Btn, Chip, Notice, Select } from './ui'
+import { STATUS_LOOK, StudentMarking } from './marking-panel'
+import type { Overview } from './marking-panel'
 import { api } from '../../lib/school-client'
 import {
   filesToOriginalPages,
@@ -58,8 +60,15 @@ const STATE: Record<
   refused: { text: 'Refused', tone: 'bad' },
 }
 
-export function StudentSheets({ base }: { base: string }) {
+export function StudentSheets({
+  base,
+  onMarkingChanged,
+}: {
+  base: string
+  onMarkingChanged?: () => void
+}) {
   const [d, setD] = useState<Loaded | null>(null)
+  const [marking, setMarking] = useState<Overview | null>(null)
   const [sectionId, setSectionId] = useState('')
   const [open, setOpen] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -67,12 +76,14 @@ export function StudentSheets({ base }: { base: string }) {
   const load = useCallback(async () => {
     try {
       const x = await api<Loaded>(`${base}/sheets`)
+      setMarking(await api<Overview>(`${base}/marking`).catch(() => null))
+      onMarkingChanged?.()
       setD(x)
       setSectionId((s) => s || x.sections[0]?.id || '')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.')
     }
-  }, [base])
+  }, [base, onMarkingChanged])
   useEffect(() => {
     void load()
   }, [load])
@@ -138,7 +149,28 @@ export function StudentSheets({ base }: { base: string }) {
                     : `${s.pages} ${s.pages === 1 ? 'page' : 'pages'}`}
                 </span>
               </span>
-              <Chip tone={STATE[s.state].tone}>{STATE[s.state].text}</Chip>
+              {(() => {
+                const m = marking?.students.find(
+                  (x) => x.schoolStudentId === s.schoolStudentId,
+                )
+                // marking wins once it has started; before that the state of her pages
+                return m && m.status !== 'not_uploaded' && m.status !== 'ready' ? (
+                  <Chip tone={STATUS_LOOK[m.status].tone}>
+                    {STATUS_LOOK[m.status].text}
+                    {m.status === 'marked' &&
+                    m.totalMarks !== null &&
+                    m.maxMarks !== null
+                      ? ` · ${m.totalMarks}/${m.maxMarks}`
+                      : ''}
+                  </Chip>
+                ) : s.state === 'received' ? (
+                  <Chip>Ready to mark</Chip>
+                ) : s.state === 'none' ? (
+                  <Chip>Not uploaded</Chip>
+                ) : (
+                  <Chip tone={STATE[s.state].tone}>{STATE[s.state].text}</Chip>
+                )
+              })()}
               <ChevronRight
                 aria-hidden="true"
                 className={`size-5 shrink-0 text-slate-400 transition-transform ${open === s.schoolStudentId ? 'rotate-90' : ''}`}
@@ -150,6 +182,11 @@ export function StudentSheets({ base }: { base: string }) {
                 studentId={s.schoolStudentId}
                 classmates={mine}
                 onChanged={load}
+                markingStatus={
+                  marking?.students.find(
+                    (x) => x.schoolStudentId === s.schoolStudentId,
+                  )?.status ?? 'ready'
+                }
               />
             ) : null}
           </li>
@@ -202,11 +239,13 @@ function OneStudent({
   studentId,
   classmates,
   onChanged,
+  markingStatus,
 }: {
   base: string
   studentId: string
   classmates: Loaded['students']
   onChanged: () => Promise<void>
+  markingStatus: Overview['students'][number]['status']
 }) {
   const [p, setP] = useState<StudentPages | null>(null)
   const [busy, setBusy] = useState(false)
@@ -484,6 +523,15 @@ function OneStudent({
             ))}
           </ul>
         </div>
+      ) : null}
+      {kept.some((x) => x.checkState === 'passed') &&
+      !kept.some((x) => x.checkState === 'needs_confirm') ? (
+        <StudentMarking
+          base={base}
+          studentId={studentId}
+          status={markingStatus}
+          onChanged={onChanged}
+        />
       ) : null}
     </div>
   )

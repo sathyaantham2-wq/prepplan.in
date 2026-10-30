@@ -30,7 +30,7 @@ import {
 } from './marking-logic'
 import type {CombinedAnswer, MarkQuestion, PassAnswer} from './marking-logic';
 import { assertPaperReadyForMarking, loadOwnPaper } from './own-paper-service'
-import { studentOfPaper } from './own-sheets'
+import { ownSheetsSummary, studentOfPaper } from './own-sheets'
 import { assertSchoolAiBudget } from './school-ai-budget'
 
 // AI marking of one student's answer sheets (M4 stage 1; owner direction 2026-10-30).
@@ -147,25 +147,50 @@ export function createMarkingAi(
  * A stand-in for the automated tests only (OWN_PAPER_AI=fake, ignored in a production runtime). Every
  * question is found; a multiple-choice answer reads as the key's option, a written answer gets full marks.
  */
+// counted across requests, so the browser tests see student 1, 2, 3 in turn
+let fakeCalls = 0
+
 export function createFakeMarkingAi(): MarkingAi {
+  // FAKE_MARKING=mixed (browser tests): student 1 is marked cleanly with one writing-habit loss, student 2's
+  // three passes disagree on the written answer, student 3 chooses a wrong option. Three calls per student.
+  const mixed = process.env.FAKE_MARKING === 'mixed'
   return {
     available: () => true,
-    markPass: ({ questions }) =>
-      Promise.resolve(
+    markPass: ({ questions }) => {
+      const call = fakeCalls++
+      const student = Math.floor(call / PASSES) % 3
+      const pass = call % PASSES
+      return Promise.resolve(
         JSON.stringify({
-          answers: questions.map((q) => ({
-            question: q.no,
-            found: true,
-            answer_text: 'fake answer',
-            choice: isChoiceQuestion(q) ? mcqKeyLabel(q) : null,
-            marks: q.marks,
-            steps: [],
-            loss_kind: 'none',
-            loss_reason: null,
-            confidence: 0.9,
-          })),
+          answers: questions.map((q) => {
+            const choice = isChoiceQuestion(q) ? mcqKeyLabel(q) : null
+            const wrong = mixed && student === 2 && choice !== null
+            const full = q.marks
+            const marks = !mixed
+              ? full
+              : student === 0
+                ? Math.max(0, full - 1)
+                : student === 1
+                  ? Math.max(0, full - pass)
+                  : full
+            return {
+              question: q.no,
+              found: true,
+              answer_text: choice
+                ? `Option ${choice}`
+                : 'Tenths are bigger than hundredths',
+              choice: wrong ? (choice === 'A' ? 'C' : 'A') : choice,
+              marks,
+              steps: [],
+              loss_kind: mixed && marks < full ? 'writing_habit' : 'none',
+              loss_reason:
+                mixed && marks < full ? 'Stopped before writing the conclusion' : null,
+              confidence: 0.9,
+            }
+          }),
         }),
-      ),
+      )
+    },
   }
 }
 
@@ -646,5 +671,166 @@ export async function studentMarking(
         lossReason: m?.loss_reason ?? null,
       }
     }),
+  }
+}
+
+// ---------------------------------------------------------------- the class and the report
+
+export type MarkingStatus =
+  | 'not_uploaded'
+  | 'ready'
+  | 'checking'
+  | 'marked'
+  | 'needs_teacher'
+  | 'rejected'
+
+export interface StudentRow {
+  schoolStudentId: string
+  name: string
+  rollNo: string
+  section: string
+  pages: number
+  /** Where the sheets stand before marking (the page checks). */
+  sheetState: string
+  status: MarkingStatus
+  message: string | null
+  totalMarks: number | null
+  maxMarks: number | null
+  flagged: number
+}
+
+/**
+ * Every student of the paper's classes with where her marking stands, and, from the marked ones, the class
+ * summary. Students with no pages are "not uploaded"; they do not hold the results back.
+ */
+export async function markingOverview(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+) {
+  const sheets = await ownSheetsSummary(db, scope, paperId)
+  const paper = await loadOwnPaper(db, scope, paperId)
+  const states = await schoolSheetMarkingRepository.listForPaper(
+    db,
+    scope,
+    paperId,
+  )
+  const marks = await db
+    .selectFrom('school_answer_marks')
+    .select(['school_student_id', 'own_question_id', 'final_marks', 'max_marks', 'state', 'loss_kind'])
+    .where('school_id', '=', scope.schoolId)
+    .where('paper_id', '=', paperId)
+    .execute()
+  const questions = await markingQuestions(db, scope, paperId)
+
+  const students: Array<StudentRow> = sheets.students.map((s) => {
+    const st = states.find((x) => x.school_student_id === s.schoolStudentId)
+    const status: MarkingStatus = st
+      ? (st.status as MarkingStatus)
+      : s.pages === 0
+        ? 'not_uploaded'
+        : 'ready'
+    return {
+      schoolStudentId: s.schoolStudentId,
+      name: s.name,
+      rollNo: s.rollNo,
+      section: s.section,
+      pages: s.pages,
+      sheetState: s.state,
+      status,
+      message: st?.message ?? null,
+      totalMarks: st?.total_marks == null ? null : Number(st.total_marks),
+      maxMarks: st?.max_marks == null ? null : Number(st.max_marks),
+      flagged: marks.filter(
+        (m) => m.school_student_id === s.schoolStudentId && m.state === 'flagged',
+      ).length,
+    }
+  })
+
+  const marked = students.filter((s) => s.status === 'marked')
+  const open = students.filter(
+    (s) => s.status === 'checking' || s.status === 'needs_teacher' || s.status === 'ready',
+  )
+  const markedIds = new Set(marked.map((s) => s.schoolStudentId))
+  const perQuestion = questions.map((q) => {
+    const mine = marks.filter(
+      (m) => m.own_question_id === q.id && markedIds.has(m.school_student_id),
+    )
+    const got = mine.reduce((n, m) => n + Number(m.final_marks), 0)
+    return {
+      questionNo: q.no,
+      text: q.text,
+      maxMarks: q.marks,
+      averagePct:
+        mine.length === 0 ? null : Math.round((got / (mine.length * q.marks)) * 100),
+    }
+  })
+  const lost = (kind: string) =>
+    marks
+      .filter((m) => markedIds.has(m.school_student_id) && m.loss_kind === kind)
+      .reduce((n, m) => n + (Number(m.max_marks) - Number(m.final_marks)), 0)
+  const percents = marked
+    .filter((s) => s.maxMarks)
+    .map((s) => ((s.totalMarks ?? 0) / (s.maxMarks ?? 1)) * 100)
+  return {
+    paper: { title: paper.title, totalMarks: Number(paper.total_marks ?? 0) },
+    students,
+    resultsReady: marked.length > 0 && open.length === 0,
+    class: {
+      marked: marked.length,
+      waiting: open.length,
+      notUploaded: students.filter((s) => s.status === 'not_uploaded').length,
+      averagePct:
+        percents.length === 0
+          ? null
+          : Math.round(percents.reduce((a, b) => a + b, 0) / percents.length),
+      highest: percents.length ? Math.round(Math.max(...percents)) : null,
+      lowest: percents.length ? Math.round(Math.min(...percents)) : null,
+      perQuestion,
+      marksLostToKnowledge: lost('knowledge_gap'),
+      marksLostToWriting: lost('writing_habit'),
+    },
+  }
+}
+
+/** One student's report: score, what she did well, what to fix, and her writing habits. */
+export async function studentReport(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+) {
+  const v = await studentMarking(db, scope, paperId, studentId)
+  const scored = v.answers.filter((a) => a.finalMarks !== null)
+  const lostOf = (a: (typeof scored)[number]) => a.maxMarks - (a.finalMarks ?? 0)
+  const habits = new Map<string, number>()
+  for (const a of scored)
+    if (a.lossKind === 'writing_habit' && a.lossReason)
+      habits.set(a.lossReason, (habits.get(a.lossReason) ?? 0) + lostOf(a))
+  return {
+    ...v,
+    report: {
+      strengths: scored
+        .filter((a) => lostOf(a) === 0)
+        .map((a) => ({ questionNo: a.questionNo, text: a.text })),
+      toFix: scored
+        .filter((a) => lostOf(a) > 0 && a.lossKind !== 'writing_habit')
+        .sort((a, b) => lostOf(b) - lostOf(a))
+        .map((a) => ({
+          questionNo: a.questionNo,
+          text: a.text,
+          lost: lostOf(a),
+          why: a.lossReason,
+        })),
+      writingHabits: [...habits.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .map(([habit, lost]) => ({ habit, lost })),
+      marksLostToKnowledge: scored
+        .filter((a) => a.lossKind === 'knowledge_gap')
+        .reduce((n, a) => n + lostOf(a), 0),
+      marksLostToWriting: scored
+        .filter((a) => a.lossKind === 'writing_habit')
+        .reduce((n, a) => n + lostOf(a), 0),
+    },
   }
 }
