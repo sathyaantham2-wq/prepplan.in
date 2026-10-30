@@ -19,9 +19,19 @@ export interface StudentRow {
   guardianPhone: string | null
   guardianName: string | null
 }
+/** One "7A Maths" from a teacher's Teaches cell: class, section and the subject as the school wrote it. */
+export interface TeachItem {
+  grade: number
+  section: string
+  subject: string
+}
 export interface TeacherRow {
   name: string
   email: string
+  /** What she teaches (optional column "Teaches"), e.g. "7A Maths; 7B Maths; 8A Science". */
+  teaches: Array<TeachItem>
+  /** Sections she is the class teacher of (optional column "Class teacher of"), e.g. "7A". */
+  classTeacherOf: Array<{ grade: number; section: string }>
 }
 export type RowResult<T> = { ok: true; value: T } | { ok: false; error: string }
 
@@ -56,6 +66,13 @@ const ALIASES: Record<string, string> = {
   email: 'email',
   emailid: 'email',
   emailaddress: 'email',
+  teaches: 'teaches',
+  classesandsubjects: 'teaches',
+  classesubjects: 'teaches',
+  subjects: 'teaches',
+  teachesclasses: 'teaches',
+  classteacher: 'classteacher',
+  classteacherof: 'classteacher',
 }
 
 function cellText(v: ExcelJS.CellValue): string {
@@ -209,11 +226,94 @@ export function validateStudentRow(row: RawRow): RowResult<StudentRow> {
   }
 }
 
+const CLASS_SECTION = /^(?:class\s*)?(\d{1,2})\s*[-\s]?\s*([a-z]{1,3})$/i
+const CLASS_SECTION_SUBJECT =
+  /^(?:class\s*)?(\d{1,2})\s*[-\s]?\s*([a-z]{1,3})\s+(.+)$/i
+
+/** "7A Maths; 7B Maths, 8-A Science" -> items. Separated by ; , or new lines. */
+export function parseTeaches(text: string): RowResult<Array<TeachItem>> {
+  const out: Array<TeachItem> = []
+  for (const part of text.split(/[;,\n]+/)) {
+    const p = part.trim().replace(/\s+/g, ' ')
+    if (!p) continue
+    const m = CLASS_SECTION_SUBJECT.exec(p)
+    const grade = m ? Number(m[1]) : NaN
+    if (!m || grade < 1 || grade > 12)
+      return {
+        ok: false,
+        error: `"${p}" in Teaches: write the class, section and subject, like 7A Maths.`,
+      }
+    out.push({ grade, section: m[2].toUpperCase(), subject: m[3].trim() })
+  }
+  return { ok: true, value: out }
+}
+
+export function parseClassTeacherOf(
+  text: string,
+): RowResult<Array<{ grade: number; section: string }>> {
+  const out: Array<{ grade: number; section: string }> = []
+  for (const part of text.split(/[;,\n]+/)) {
+    const p = part.trim().replace(/\s+/g, ' ')
+    if (!p) continue
+    const m = CLASS_SECTION.exec(p)
+    const grade = m ? Number(m[1]) : NaN
+    if (!m || grade < 1 || grade > 12)
+      return {
+        ok: false,
+        error: `"${p}" in Class teacher of: write the class and section, like 7A.`,
+      }
+    out.push({ grade, section: m[2].toUpperCase() })
+  }
+  return { ok: true, value: out }
+}
+
 export function validateTeacherRow(row: RawRow): RowResult<TeacherRow> {
   const name = (row.name ?? '').trim()
   if (!name) return { ok: false, error: 'Name is missing.' }
   const email = (row.email ?? '').trim().toLowerCase()
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
     return { ok: false, error: `Email "${row.email ?? ''}" is not valid.` }
-  return { ok: true, value: { name, email } }
+  const teaches = parseTeaches(row.teaches ?? '')
+  if (!teaches.ok) return teaches
+  const classTeacherOf = parseClassTeacherOf(row.classteacher ?? '')
+  if (!classTeacherOf.ok) return classTeacherOf
+  return {
+    ok: true,
+    value: {
+      name,
+      email,
+      teaches: teaches.value,
+      classTeacherOf: classTeacherOf.value,
+    },
+  }
+}
+
+const SUBJECT_ALIASES: Record<string, string> = {
+  maths: 'mathematics',
+  math: 'mathematics',
+  mat: 'mathematics',
+  sci: 'science',
+  sst: 'socialscience',
+  social: 'socialscience',
+  socialstudies: 'socialscience',
+  eng: 'english',
+}
+
+/** The school subject a teacher's file means by "Maths", "Science", "SST"...; null if none or several. */
+export function matchSubject<T extends { name: string }>(
+  written: string,
+  subjects: ReadonlyArray<T>,
+): T | null {
+  const key = (t: string) => t.toLowerCase().replace(/[^a-z0-9]/g, '')
+  const w = SUBJECT_ALIASES[key(written)] ?? key(written)
+  if (!w) return null
+  const exact = subjects.filter(
+    (s) => (SUBJECT_ALIASES[key(s.name)] ?? key(s.name)) === w,
+  )
+  if (exact.length === 1) return exact[0]
+  const loose = subjects.filter((s) => {
+    const n = key(s.name)
+    return n.startsWith(w) || w.startsWith(n)
+  })
+  return loose.length === 1 ? loose[0] : null
 }

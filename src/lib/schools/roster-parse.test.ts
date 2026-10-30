@@ -1,8 +1,11 @@
 import ExcelJS from 'exceljs'
 import { describe, expect, it } from 'vitest'
 import {
+  matchSubject,
   normalizePhone,
+  parseClassTeacherOf,
   parseRosterFile,
+  parseTeaches,
   validateStudentRow,
   validateTeacherRow,
 } from './roster-parse'
@@ -96,11 +99,62 @@ describe('validateTeacherRow', () => {
   it('lower-cases the email', () => {
     expect(validateTeacherRow({ name: 'T', email: ' T@School.IN ' })).toEqual({
       ok: true,
-      value: { name: 'T', email: 't@school.in' },
+      value: {
+        name: 'T',
+        email: 't@school.in',
+        teaches: [],
+        classTeacherOf: [],
+      },
     })
   })
   it('rejects a bad email', () => {
     expect(validateTeacherRow({ name: 'T', email: 'nope' }).ok).toBe(false)
+  })
+  it('reads every class a teacher teaches, however it is written', () => {
+    const r = validateTeacherRow({
+      name: 'T',
+      email: 't@s.in',
+      teaches: '7A Maths; 7-b maths, class 8 C Science\n10A SST',
+      classteacher: '7a',
+    })
+    expect(r).toEqual({
+      ok: true,
+      value: {
+        name: 'T',
+        email: 't@s.in',
+        teaches: [
+          { grade: 7, section: 'A', subject: 'Maths' },
+          { grade: 7, section: 'B', subject: 'maths' },
+          { grade: 8, section: 'C', subject: 'Science' },
+          { grade: 10, section: 'A', subject: 'SST' },
+        ],
+        classTeacherOf: [{ grade: 7, section: 'A' }],
+      },
+    })
+    expect(parseTeaches('Maths 7A').ok).toBe(false)
+    expect(parseTeaches('13A Maths').ok).toBe(false)
+    expect(parseClassTeacherOf('seven').ok).toBe(false)
+  })
+})
+
+describe('matchSubject', () => {
+  const subjects = [
+    { name: 'Mathematics' },
+    { name: 'Science' },
+    { name: 'Social Science (Geography)' },
+    { name: 'Hindi 2' },
+    { name: 'Hindi 3' },
+  ]
+  it('knows the short names schools use, and never guesses between two', () => {
+    expect(matchSubject('Maths', subjects)?.name).toBe('Mathematics')
+    expect(matchSubject('maths', subjects)?.name).toBe('Mathematics')
+    expect(matchSubject('SST', subjects)?.name).toBe(
+      'Social Science (Geography)',
+    )
+    expect(matchSubject('Science', subjects)?.name).toBe('Science')
+    expect(matchSubject('Hindi 3', subjects)?.name).toBe('Hindi 3')
+    expect(matchSubject('Hindi', subjects)).toBeNull() // two Hindis: ask, never guess
+    expect(matchSubject('Physics', subjects)).toBeNull()
   })
 })
 

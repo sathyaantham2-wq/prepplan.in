@@ -11,7 +11,10 @@ import type { SchoolScope } from '../../db/school-scope'
 import { TEST_PASSWORD, deleteSchoolTermsForTest } from '../../db/test-helpers'
 import { loadSchoolScope } from '../school-session'
 import { SchoolError } from './common'
+import ExcelJS from 'exceljs'
 import { commitRosterImport, dryRunRosterImport } from './roster'
+import { parseRosterFile } from './roster-parse'
+import { buildRosterTemplate } from './roster-template'
 import {
   addSchoolSubject,
   assignTeacher,
@@ -839,6 +842,144 @@ describe('school roster, assignments and terms (S2)', () => {
         .where('school_members.school_id', 'in', schoolIds)
         .execute()
       expect(n).toHaveLength(0)
+    })
+  })
+
+  /** Owner request 2026-10-30: Excel uploads with every class a teacher teaches, and a sample to fill. */
+  describe('teachers file: Teaches and Class teacher of; the sample Excel', () => {
+    it('a new teacher with several classes, a teacher already here given one more (it moves, and the preview says so), and plain errors', async () => {
+      const uma = `uma-${tag}@school.test`
+      const tom = `tom-${tag}@school.test`
+      const bad = await dryRunRosterImport(db, adminA, {
+        kind: 'teachers',
+        fileName: 't.csv',
+        bytes: csv([
+          'Name,Email,Teaches,Class teacher of',
+          `Uma Four,${uma},"7B Roster S1; 7-b roster s2",7B`,
+          `Tom Two,${tom},7A Roster S2,`,
+          `Vik,vik-${tag}@school.test,7Z Roster S1,`,
+          `Wes,wes-${tag}@school.test,7A Physics,`,
+          `Xan,xan-${tag}@school.test,Maths 7A,`,
+        ]),
+      })
+      expect(bad.counts).toEqual({ new: 2, unchanged: 0, errors: 3 })
+      const msg = (row: number) => bad.rows.find((r) => r.row === row)?.message
+      expect(msg(3)).toMatch(/Section 7Z is not set up/)
+      expect(msg(4)).toMatch(
+        /"Physics" is not a subject of class 7 \(it has: Roster S1, Roster S2\)/,
+      )
+      expect(msg(5)).toMatch(
+        /write the class, section and subject, like 7A Maths/,
+      )
+      expect(msg(1)).toBe(
+        'Teaches 7B Roster S1, 7B Roster S2, class teacher of 7B.',
+      )
+      expect(msg(2)).toBe(
+        'Already a teacher here; adds 7A Roster S2. 7A Roster S2 moves from Tara Three to Tom Two.',
+      )
+
+      const ok = await dryRunRosterImport(db, adminA, {
+        kind: 'teachers',
+        fileName: 't.xlsx.csv',
+        bytes: csv([
+          'Name,Email,Teaches,Class teacher of',
+          `Uma Four,${uma},"7B Roster S1; 7-b roster s2",7B`,
+          `Tom Two,${tom},7A Roster S2,`,
+        ]),
+      })
+      expect(ok.committable).toBe(true)
+      expect(await commitRosterImport(db, adminA, ok.batchId)).toEqual({
+        added: 2,
+      })
+      const pairs = await db
+        .selectFrom('school_teacher_assignments as a')
+        .innerJoin('school_members as m', 'm.id', 'a.member_id')
+        .innerJoin('users as u', 'u.id', 'm.user_id')
+        .innerJoin('school_sections as s', 's.id', 'a.section_id')
+        .innerJoin('school_subjects as ss', 'ss.id', 'a.school_subject_id')
+        .select(['u.email', 's.name as section', 'ss.id as sub'])
+        .where('a.school_id', '=', schoolA)
+        .execute()
+      const who = (section: string, sub: string) =>
+        pairs.find((p) => p.section === section && p.sub === sub)?.email
+      expect(who('B', sub1)).toBe(uma)
+      expect(who('B', sub2)).toBe(uma)
+      expect(who('A', sub2)).toBe(tom) // moved from Tara
+      const secB = await db
+        .selectFrom('school_sections')
+        .select('class_teacher_member_id')
+        .where('id', '=', sectionB)
+        .executeTakeFirstOrThrow()
+      const umaMember = await db
+        .selectFrom('school_members as m')
+        .innerJoin('users as u', 'u.id', 'm.user_id')
+        .select('m.id')
+        .where('u.email', '=', uma)
+        .executeTakeFirstOrThrow()
+      expect(secB.class_teacher_member_id).toBe(umaMember.id)
+      // the same file again changes nothing
+      const again = await dryRunRosterImport(db, adminA, {
+        kind: 'teachers',
+        fileName: 't.csv',
+        bytes: csv([
+          'Name,Email,Teaches,Class teacher of',
+          `Uma Four,${uma},"7B Roster S1; 7B Roster S2",7B`,
+          `Tom Two,${tom},7A Roster S2,`,
+        ]),
+      })
+      expect(again.counts).toEqual({ new: 0, unchanged: 2, errors: 0 })
+      expect(again.committable).toBe(false)
+    })
+
+    it("the sample Excel: an empty first sheet to fill, an example made from the school's own classes, office only", async () => {
+      const { bytes, fileName } = await buildRosterTemplate(
+        db,
+        adminA,
+        'teachers',
+      )
+      expect(fileName).toBe('prepplan-teachers-sample.xlsx')
+      // the untouched sample uploads nobody: the example is on another sheet, so the check says it is empty
+      await expect(parseRosterFile(fileName, bytes)).rejects.toThrow(
+        /no data rows/,
+      )
+      const wb = new ExcelJS.Workbook()
+      await wb.xlsx.load(bytes as unknown as ArrayBuffer)
+      expect(wb.worksheets.map((w) => w.name)).toEqual([
+        'Teachers',
+        'Example',
+        'How to fill',
+      ])
+      expect(String(wb.getWorksheet('Example')!.getCell('C2').value)).toMatch(
+        /^7A Roster S1; 7B Roster S1$/,
+      )
+      const st = await buildRosterTemplate(db, adminA, 'students')
+      const sw = new ExcelJS.Workbook()
+      await sw.xlsx.load(st.bytes as unknown as ArrayBuffer)
+      expect(
+        (sw.worksheets[0].getRow(1).values as Array<unknown>).filter(Boolean),
+      ).toEqual([
+        'Name',
+        'Class',
+        'Section',
+        'Roll No',
+        'Admission No',
+        'Parent Name',
+        'Parent Phone',
+      ])
+      // the example rows, uploaded as they are, would pass the check
+      const example = await dryRunRosterImport(db, adminA, {
+        kind: 'teachers',
+        fileName: 'example.csv',
+        bytes: csv([
+          'Name,Email,Teaches,Class teacher of',
+          `Meena ${tag},meena-${tag}@school.test,${String(wb.getWorksheet('Example')!.getCell('C2').value)},7A`,
+        ]),
+      })
+      expect(example.counts.errors).toBe(0)
+      await refuses(
+        buildRosterTemplate(db, { ...adminA, role: 'teacher' }, 'teachers'),
+        'forbidden',
+      )
     })
   })
 })

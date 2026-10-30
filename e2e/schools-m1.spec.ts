@@ -1,4 +1,5 @@
 import { mkdirSync } from 'node:fs'
+import ExcelJS from 'exceljs'
 import { expect, test } from '@playwright/test'
 import type { Browser, Page } from '@playwright/test'
 import { createDb } from '../src/db/connection'
@@ -514,6 +515,48 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     ).toBeVisible()
     await shot(page, 'm1-10-results-empty-real-school')
     await looksRight(page)
+  })
+
+  test('teachers from Excel: download the sample, copy the example onto the first sheet, upload; one teacher gets several classes', async () => {
+    const bar = page.getByRole('navigation', { name: 'School' }).last()
+    await bar.getByRole('link', { name: 'Settings' }).click()
+    await page.getByRole('link', { name: /^Teachers/ }).click()
+    await page.getByRole('button', { name: 'Add teachers from a file' }).click()
+    const download = page.waitForEvent('download')
+    await page
+      .getByRole('button', { name: 'Download the sample Excel' })
+      .click()
+    const file = await download
+    expect(file.suggestedFilename()).toBe('prepplan-teachers-sample.xlsx')
+    await shot(page, 'm1-22-teachers-excel')
+    await looksRight(page)
+    // as a school would: the example row, copied onto the first sheet with a real teacher's name
+    const wb = new ExcelJS.Workbook()
+    await wb.xlsx.readFile(await file.path())
+    const teaches = String(wb.getWorksheet('Example')!.getCell('C2').value)
+    expect(teaches).toMatch(/^\d+[A-Z]+ .+; \d+[A-Z]+ .+$/)
+    const first = teaches.split(' ')[0] // e.g. 7A
+    wb.getWorksheet('Teachers')!.addRow([
+      'Priya Nair',
+      `priya-${tag}@e2e.school`,
+      teaches,
+      first,
+    ])
+    await page.locator('input[type=file]').setInputFiles({
+      name: 'teachers.xlsx',
+      mimeType:
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      buffer: Buffer.from(await wb.xlsx.writeBuffer()),
+    })
+    await page.getByRole('button', { name: 'Check my file' }).click()
+    const notes = page.getByTestId('upload-notes')
+    await expect(notes).toContainText(`Line 1: Teaches ${first} `)
+    await expect(notes).toContainText(`class teacher of ${first}`)
+    await shot(page, 'm1-23-teachers-excel-checked')
+    await looksRight(page)
+    await page.getByRole('button', { name: 'Add 1 teacher' }).click()
+    await expect(page.getByText('Done. 1 teacher added.')).toBeVisible()
+    await page.getByRole('button', { name: 'Close' }).click()
   })
 
   test('Settings: choose only AI correction; home and tabs follow; then both again', async () => {

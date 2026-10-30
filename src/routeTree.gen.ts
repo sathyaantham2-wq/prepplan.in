@@ -164,6 +164,7 @@ import { Route as ApiSchoolsSchoolIdImportsRouteImport } from './routes/api/scho
 import { Route as ApiSchoolsSchoolIdOverviewRouteImport } from './routes/api/schools/$schoolId/overview'
 import { Route as ApiSchoolsSchoolIdOwnPapersRouteImport } from './routes/api/schools/$schoolId/own-papers'
 import { Route as ApiSchoolsSchoolIdResultsRouteImport } from './routes/api/schools/$schoolId/results'
+import { Route as ApiSchoolsSchoolIdRosterTemplateRouteImport } from './routes/api/schools/$schoolId/roster-template'
 import { Route as ApiSchoolsSchoolIdSettingsRouteImport } from './routes/api/schools/$schoolId/settings'
 import { Route as ApiSchoolsSchoolIdSetupRouteImport } from './routes/api/schools/$schoolId/setup'
 import { Route as ApiSchoolsSchoolIdTemplatesRouteImport } from './routes/api/schools/$schoolId/templates'
@@ -1030,6 +1031,12 @@ const ApiSchoolsSchoolIdResultsRoute =
     path: '/api/schools/$schoolId/results',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiSchoolsSchoolIdRosterTemplateRoute =
+  ApiSchoolsSchoolIdRosterTemplateRouteImport.update({
+    id: '/api/schools/$schoolId/roster-template',
+    path: '/api/schools/$schoolId/roster-template',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiSchoolsSchoolIdSettingsRoute =
   ApiSchoolsSchoolIdSettingsRouteImport.update({
     id: '/api/schools/$schoolId/settings',
@@ -1613,6 +1620,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/results': typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  '/api/schools/$schoolId/roster-template': typeof ApiSchoolsSchoolIdRosterTemplateRoute
   '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
@@ -1840,6 +1848,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/results': typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  '/api/schools/$schoolId/roster-template': typeof ApiSchoolsSchoolIdRosterTemplateRoute
   '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
@@ -2071,6 +2080,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/results': typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  '/api/schools/$schoolId/roster-template': typeof ApiSchoolsSchoolIdRosterTemplateRoute
   '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
@@ -2303,6 +2313,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/results'
+    | '/api/schools/$schoolId/roster-template'
     | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
@@ -2530,6 +2541,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/results'
+    | '/api/schools/$schoolId/roster-template'
     | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
@@ -2760,6 +2772,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/results'
+    | '/api/schools/$schoolId/roster-template'
     | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
@@ -2920,6 +2933,7 @@ export interface RootRouteChildren {
   ApiSchoolsSchoolIdOverviewRoute: typeof ApiSchoolsSchoolIdOverviewRoute
   ApiSchoolsSchoolIdOwnPapersRoute: typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   ApiSchoolsSchoolIdResultsRoute: typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  ApiSchoolsSchoolIdRosterTemplateRoute: typeof ApiSchoolsSchoolIdRosterTemplateRoute
   ApiSchoolsSchoolIdSettingsRoute: typeof ApiSchoolsSchoolIdSettingsRoute
   ApiSchoolsSchoolIdSetupRoute: typeof ApiSchoolsSchoolIdSetupRoute
   ApiSchoolsSchoolIdTemplatesRoute: typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
@@ -4025,6 +4039,13 @@ declare module '@tanstack/react-router' {
       path: '/api/schools/$schoolId/results'
       fullPath: '/api/schools/$schoolId/results'
       preLoaderRoute: typeof ApiSchoolsSchoolIdResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/roster-template': {
+      id: '/api/schools/$schoolId/roster-template'
+      path: '/api/schools/$schoolId/roster-template'
+      fullPath: '/api/schools/$schoolId/roster-template'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdRosterTemplateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/schools/$schoolId/settings': {
@@ -5327,6 +5348,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdOwnPapersRoute:
     ApiSchoolsSchoolIdOwnPapersRouteWithChildren,
   ApiSchoolsSchoolIdResultsRoute: ApiSchoolsSchoolIdResultsRouteWithChildren,
+  ApiSchoolsSchoolIdRosterTemplateRoute: ApiSchoolsSchoolIdRosterTemplateRoute,
   ApiSchoolsSchoolIdSettingsRoute: ApiSchoolsSchoolIdSettingsRoute,
   ApiSchoolsSchoolIdSetupRoute: ApiSchoolsSchoolIdSetupRoute,
   ApiSchoolsSchoolIdTemplatesRoute:

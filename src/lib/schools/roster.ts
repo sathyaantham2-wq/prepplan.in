@@ -10,7 +10,9 @@ import {
 import type { SchoolScope } from '../../db/school-scope'
 import { SchoolError, assertAdmin, auditSchool } from './common'
 import { createSchoolStudent, createSchoolTeacher } from './people'
+import { assignTeacher, setClassTeacher } from './setup'
 import {
+  matchSubject,
   parseRosterFile,
   validateStudentRow,
   validateTeacherRow,
@@ -39,6 +41,117 @@ export interface DryRunResult {
   committable: boolean
 }
 
+/** A teacher row as stored by the preview: who, and the section-subjects and sections it gives her. */
+interface TeacherPayload extends TeacherRow {
+  existingMemberId: string | null
+  assignments: Array<{
+    sectionId: string
+    schoolSubjectId: string
+    label: string
+  }>
+  classTeacherSections: Array<{ sectionId: string; label: string }>
+}
+
+/** The school's classes (this year), sections, subjects and who teaches what now, to read a Teaches cell. */
+async function teachingIndex(db: Db, scope: SchoolScope) {
+  const classes = await schoolClassesRepository.list(db, scope)
+  const year = classes
+    .map((c) => c.academic_year)
+    .sort()
+    .at(-1)
+  const current = classes.filter((c) => c.academic_year === year)
+  const sections = await schoolSectionsRepository.list(db, scope)
+  const subjects = await db
+    .selectFrom('school_subjects as ss')
+    .innerJoin('subjects as s', 's.id', 'ss.subject_id')
+    .select(['ss.id', 'ss.class_id', 's.name'])
+    .where('ss.school_id', '=', scope.schoolId)
+    .execute()
+  const assigned = await db
+    .selectFrom('school_teacher_assignments as a')
+    .innerJoin('school_members as m', 'm.id', 'a.member_id')
+    .innerJoin('users as u', 'u.id', 'm.user_id')
+    .select(['a.section_id', 'a.school_subject_id', 'a.member_id', 'u.name'])
+    .where('a.school_id', '=', scope.schoolId)
+    .execute()
+  return { year, current, sections, subjects, assigned }
+}
+
+function resolveTeaching(
+  t: TeacherRow,
+  w: Awaited<ReturnType<typeof teachingIndex>>,
+  memberId: string | null,
+):
+  | { error: string }
+  | {
+      assignments: TeacherPayload['assignments']
+      classTeacherOf: TeacherPayload['classTeacherSections']
+      moves: Array<string>
+    } {
+  type Cls = (typeof w.current)[number]
+  type Sec = (typeof w.sections)[number]
+  const sectionOf = (
+    grade: number,
+    name: string,
+  ): { error: string } | { cls: Cls; sec: Sec } => {
+    const cls = w.current.find((c) => c.grade === grade)
+    if (!cls)
+      return {
+        error: `Class ${grade} is not set up${w.year ? ` for ${w.year}` : ''}. Add it in Classes first.`,
+      }
+    const sec = w.sections.find(
+      (s) => s.class_id === cls.id && s.name.toUpperCase() === name,
+    )
+    if (!sec)
+      return {
+        error: `Section ${grade}${name} is not set up. Add it in Classes first.`,
+      }
+    return { cls, sec }
+  }
+  const assignments: TeacherPayload['assignments'] = []
+  const moves: Array<string> = []
+  for (const item of t.teaches) {
+    const found = sectionOf(item.grade, item.section)
+    if ('error' in found) return { error: found.error }
+    const choices = w.subjects.filter((s) => s.class_id === found.cls.id)
+    const subject = matchSubject(item.subject, choices)
+    if (!subject)
+      return {
+        error: `"${item.subject}" is not a subject of class ${item.grade}${choices.length ? ` (it has: ${choices.map((c) => c.name).join(', ')})` : ''}.`,
+      }
+    const label = `${item.grade}${found.sec.name} ${subject.name}`
+    if (
+      assignments.some(
+        (a) => a.sectionId === found.sec.id && a.schoolSubjectId === subject.id,
+      )
+    )
+      continue
+    const now = w.assigned.find(
+      (a) =>
+        a.section_id === found.sec.id && a.school_subject_id === subject.id,
+    )
+    if (now && now.member_id !== memberId)
+      moves.push(`${label} moves from ${now.name} to ${t.name}.`)
+    if (now && now.member_id === memberId) continue
+    assignments.push({
+      sectionId: found.sec.id,
+      schoolSubjectId: subject.id,
+      label,
+    })
+  }
+  const classTeacherOf: TeacherPayload['classTeacherSections'] = []
+  for (const c of t.classTeacherOf) {
+    const found = sectionOf(c.grade, c.section)
+    if ('error' in found) return { error: found.error }
+    if (found.sec.class_teacher_member_id === memberId && memberId) continue
+    classTeacherOf.push({
+      sectionId: found.sec.id,
+      label: `${c.grade}${found.sec.name}`,
+    })
+  }
+  return { assignments, classTeacherOf, moves }
+}
+
 export async function dryRunRosterImport(
   db: Db,
   scope: SchoolScope,
@@ -61,7 +174,7 @@ export async function dryRunRosterImport(
     )
   }
   const reports: Array<RowReport> = []
-  const payload: Array<StudentRow | TeacherRow> = []
+  const payload: Array<StudentRow | TeacherPayload> = []
 
   if (input.kind === 'students') {
     const year = (input.academicYear ?? '').trim()
@@ -165,25 +278,72 @@ export async function dryRunRosterImport(
       db,
       valid.map((v) => v.value.email),
     )
+    // teachers already at this school may appear again, to be given more classes
+    const ours = new Map(
+      (
+        await db
+          .selectFrom('school_members as m')
+          .innerJoin('users as u', 'u.id', 'm.user_id')
+          .select(['m.id', 'u.email', 'u.name'])
+          .where('m.school_id', '=', scope.schoolId)
+          .where('m.role', '=', 'teacher')
+          .execute()
+      ).map((t) => [t.email.toLowerCase(), t]),
+    )
+    const where = await teachingIndex(db, scope)
     const seen = new Set<string>()
     for (const { row, value } of valid) {
-      if (seen.has(value.email))
+      if (seen.has(value.email)) {
         reports.push({
           row,
           status: 'error',
-          message: `${value.email} appears twice in the file.`,
+          message: `${value.email} appears twice in the file. Put all her classes on one line.`,
         })
-      else if (taken.has(value.email))
+        continue
+      }
+      seen.add(value.email)
+      const mine = ours.get(value.email)
+      if (!mine && taken.has(value.email)) {
         reports.push({
           row,
           status: 'error',
           message: `${value.email} already has a PrepPlan account; teachers with an existing account are not added in this version.`,
         })
-      else {
-        reports.push({ row, status: 'new' })
-        payload.push(value)
+        continue
       }
-      seen.add(value.email)
+      const resolved = resolveTeaching(value, where, mine?.id ?? null)
+      if ('error' in resolved) {
+        reports.push({ row, status: 'error', message: resolved.error })
+        continue
+      }
+      const what = [
+        ...resolved.assignments.map((a) => a.label),
+        ...resolved.classTeacherOf.map((c) => `class teacher of ${c.label}`),
+      ]
+      if (mine && what.length === 0) {
+        reports.push({ row, status: 'unchanged' })
+        continue
+      }
+      reports.push({
+        row,
+        status: 'new',
+        message: [
+          mine
+            ? `Already a teacher here; adds ${what.join(', ')}.`
+            : what.length
+              ? `Teaches ${what.join(', ')}.`
+              : '',
+          ...resolved.moves,
+        ]
+          .filter(Boolean)
+          .join(' '),
+      })
+      payload.push({
+        ...value,
+        existingMemberId: mine?.id ?? null,
+        assignments: resolved.assignments,
+        classTeacherSections: resolved.classTeacherOf,
+      })
     }
     reports.sort((a, b) => a.row - b.row)
   }
@@ -234,7 +394,7 @@ export async function commitRosterImport(
       'invalid',
       'This upload has row errors. Fix the file and upload it again.',
     )
-  const payload = batch.payload as unknown as Array<StudentRow & TeacherRow>
+  const payload = batch.payload as unknown as Array<StudentRow & TeacherPayload>
   if (payload.length === 0)
     throw new SchoolError('invalid', 'There is nobody new to add.')
 
@@ -270,11 +430,26 @@ export async function commitRosterImport(
           })
         }
       } else {
-        for (const row of payload)
-          await createSchoolTeacher(trx, scope, {
-            name: row.name,
-            email: row.email,
-          })
+        for (const row of payload) {
+          const memberId =
+            row.existingMemberId ??
+            (
+              await createSchoolTeacher(trx, scope, {
+                name: row.name,
+                email: row.email,
+              })
+            ).member.id
+          // a preview saved before the Teaches column existed carries no classes
+          const older = row as Partial<TeacherPayload>
+          for (const a of older.assignments ?? [])
+            await assignTeacher(trx, scope, {
+              memberId,
+              sectionId: a.sectionId,
+              schoolSubjectId: a.schoolSubjectId,
+            })
+          for (const c of older.classTeacherSections ?? [])
+            await setClassTeacher(trx, scope, c.sectionId, memberId)
+        }
       }
       await schoolImportBatchesRepository.update(trx, scope, batch.id, {
         status: 'committed',

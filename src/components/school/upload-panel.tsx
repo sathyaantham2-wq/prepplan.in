@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Btn, Card, Notice, TextInput } from './ui'
-import { api, downloadText, fileToBase64 } from '../../lib/school-client'
+import { api, downloadFile, fileToBase64 } from '../../lib/school-client'
 
 interface Preview {
   batchId: string
@@ -11,12 +11,6 @@ interface Preview {
     message?: string
   }>
   committable: boolean
-}
-
-const SAMPLE = {
-  students:
-    'Name,Class,Section,Roll No,Admission No,Parent Phone\nAsha Rao,7,A,1,2024/0101,9876543210\n',
-  teachers: 'Name,Email\nMeena Iyer,meena@yourschool.in\n',
 }
 
 /** Choose a file, check it, see what is wrong, then add. Nobody is added until "Add them" is pressed. */
@@ -40,6 +34,7 @@ export function UploadPanel({
   const [error, setError] = useState<string | null>(null)
   const [added, setAdded] = useState<number | null>(null)
   const noun = kind === 'students' ? 'students' : 'teachers'
+  const one = kind === 'students' ? 'student' : 'teacher'
 
   async function check() {
     if (!file) return
@@ -88,7 +83,7 @@ export function UploadPanel({
     return (
       <Card className="space-y-3">
         <Notice kind="good">
-          Done. {added} {noun} added.
+          Done. {added} {added === 1 ? one : noun} added.
         </Notice>
         <Btn kind="plain" className="w-full" onClick={onCancel}>
           Close
@@ -100,16 +95,32 @@ export function UploadPanel({
   return (
     <Card className="space-y-4">
       <h2 className="text-xl font-bold">Add {noun} from a file</h2>
-      <p className="text-base text-slate-700">
-        Use an Excel or CSV file with one{' '}
-        {kind === 'students' ? 'student' : 'teacher'} on each line.
-      </p>
+      <ol className="list-decimal space-y-1 pl-5 text-base text-slate-700">
+        <li>Download the sample Excel file.</li>
+        <li>
+          Copy your {noun} into it, one{' '}
+          {kind === 'students' ? 'student' : 'teacher'} on each row.
+          {kind === 'teachers'
+            ? ' In "Teaches", write every class, section and subject, like 7A Maths; 7B Maths; 8A Science.'
+            : ''}
+        </li>
+        <li>
+          Upload it here. We check it first; nobody is added until you say so.
+        </li>
+      </ol>
       <Btn
         kind="plain"
         className="w-full"
-        onClick={() => downloadText(`${kind}-sample.csv`, SAMPLE[kind])}
+        disabled={busy}
+        onClick={() =>
+          void downloadFile(
+            `/api/schools/${schoolId}/roster-template?kind=${kind}`,
+          ).catch((e: unknown) =>
+            setError(e instanceof Error ? e.message : 'Something went wrong.'),
+          )
+        }
       >
-        Download a sample file
+        Download the sample Excel
       </Btn>
       <label className="block">
         <span className="mb-1.5 block text-base font-medium">Your file</span>
@@ -171,9 +182,28 @@ export function UploadPanel({
                   ))}
               </ul>
             </>
-          ) : preview.committable ? (
+          ) : null}
+          {!preview.counts.errors &&
+          preview.rows.some((r) => r.status === 'new' && r.message) ? (
+            <ul className="space-y-1.5" data-testid="upload-notes">
+              {preview.rows
+                .filter((r) => r.status === 'new' && r.message)
+                .slice(0, 50)
+                .map((r) => (
+                  <li
+                    key={r.row}
+                    className={`rounded-xl border px-3 py-2 text-[15px] ${r.message?.includes(' moves from ') ? 'border-amber-300 bg-amber-50' : 'border-slate-200 bg-white'}`}
+                  >
+                    <b>Line {r.row}:</b> {r.message}
+                  </li>
+                ))}
+            </ul>
+          ) : null}
+          {preview.counts.errors ? null : preview.committable ? (
             <Btn className="w-full" disabled={busy} onClick={commit}>
-              {busy ? 'Adding…' : `Add ${preview.counts.new} ${noun}`}
+              {busy
+                ? 'Adding…'
+                : `Add ${preview.counts.new} ${preview.counts.new === 1 ? one : noun}`}
             </Btn>
           ) : (
             <Notice>Everyone in this file is already added.</Notice>
