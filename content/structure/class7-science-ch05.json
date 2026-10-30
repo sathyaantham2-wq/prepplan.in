@@ -1,0 +1,130 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "SCI",
+  "name": "Science",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Curiosity: Textbook of Science",
+  "edition": "Grade 7, 2025",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 5,
+  "name": "Changes Around Us: Physical and Chemical",
+  "blurb": "Physical and chemical changes, the lime water test, combustion and ignition temperature, the burning candle, reversible and desirable changes, and weathering and erosion.",
+  "order_index": 5,
+  "source_code": "gecu105"
+ },
+ "scope": [
+  [
+   "IN",
+   "Reversible and desirable changes",
+   "66-67"
+  ],
+  [
+   "IN",
+   "Weathering and erosion",
+   "67-68"
+  ],
+  [
+   "IN",
+   "Physical changes",
+   "57-59"
+  ],
+  [
+   "OUT",
+   "Exercises needing figures",
+   "Not answerable without figures"
+  ],
+  [
+   "IN",
+   "Chemical changes and lime water",
+   "60-61"
+  ],
+  [
+   "IN",
+   "Burning candle",
+   "64-65"
+  ],
+  [
+   "IN",
+   "Ignition temperature and fire triangle",
+   "64"
+  ],
+  [
+   "IN",
+   "Rusting and combustion",
+   "62-63"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7SC-5.1",
+   "name": "Changes around us and physical changes",
+   "description": "Observing changes, and physical changes in which only shape, size or state change and no new substance forms.",
+   "idea": "In a physical change the appearance or state changes but no new substance is formed.",
+   "rule": "We observe changes with our senses of sight, smell, touch, hearing and taste. Changes may be in size, shape, smell or another property. Folding paper, inflating and deflating a balloon and crushing chalk into powder change appearance, yet the paper, rubber and chalk remain the same materials. Water can change between solid, liquid and gas states. Changes in which only physical properties like shape, size and state change and no new substance forms are physical changes. Examples: melting ice, chopping vegetables, cutting paper, boiling water and drying wet clothes.",
+   "example": "Crushing chalk gives powder, but it is still chalk.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-5.2",
+   "name": "Chemical changes and the lime water test",
+   "description": "Chemical changes, chemical reactions and equations, the carbon dioxide test with lime water, and vinegar with baking soda.",
+   "idea": "In a chemical change new substances form, as lime water turning milky shows carbon dioxide.",
+   "rule": "Changes in which one or more new substances are formed are chemical changes, through a chemical reaction that can be written as a chemical equation. Blowing exhaled air into lime water turns it milky because carbon dioxide reacts with calcium hydroxide to form white calcium carbonate that is insoluble in water, along with a little water: calcium hydroxide + carbon dioxide gives calcium carbonate + water. Milky lime water is a test for carbon dioxide. Vinegar or lemon juice with baking soda fizzes and gives carbon dioxide (the gas turns lime water milky): vinegar + baking soda gives carbon dioxide + other substances, a chemical change. Baking soda with plain water gives no bubbles.",
+   "example": "Blowing air into tap water gives only bubbles, but into lime water gives milkiness.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-5.3",
+   "name": "Rusting and combustion",
+   "description": "Rusting as a chemical change, combustion of magnesium and candles, oxygen for combustion, fire safety and bioluminescence.",
+   "idea": "Combustion is a reaction with oxygen that gives heat or light and needs a supply of air.",
+   "rule": "Rusting is a chemical change because a new brown substance, iron oxide, forms. Burning magnesium ribbon forms magnesium oxide with heat and light: magnesium + oxygen gives magnesium oxide + heat + light. A reaction in which a substance reacts with oxygen to produce heat or light is combustion, and substances that undergo it are combustible, such as wood, paper, cotton and kerosene. A candle covered with a tumbler goes out because the air supply runs out; oxygen supports combustion, and carbon dioxide formed from the carbon in wax and oxygen turns lime water milky. To put out clothes on fire, wrap a blanket or cloth around the person to cut off air; never use synthetic cloth as it can melt and stick to skin. Fireflies produce light by a chemical change without heat, called bioluminescence.",
+   "example": "A covered candle goes out soon, while an uncovered one keeps burning.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-5.4",
+   "name": "Ignition temperature and the fire triangle",
+   "description": "How a substance catches fire, ignition temperature and the three requirements for combustion.",
+   "idea": "Combustion needs fuel, oxygen and heat enough to reach the ignition temperature.",
+   "rule": "Paper can be kept in air without catching fire, so air alone is not enough. Paper held to a lighted matchstick catches fire quickly. Focusing sunrays on paper with a magnifying glass to the smallest, brightest spot heats it until it gives out smoke and catches fire, so a substance can burn without a flame. The minimum temperature at which a substance catches fire is its ignition temperature. The lighted matchstick is already hotter than the ignition temperature of paper. For combustion three things are needed, the fire triangle: a combustible substance (fuel), oxygen, and heat that lets the fuel reach its ignition temperature. Removing any one stops the fire.",
+   "example": "Sunlight focused by a magnifying glass can set paper alight.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-5.5",
+   "name": "Burning a candle: physical and chemical changes together",
+   "description": "What happens as a candle burns, and Faraday's Chemical History of a Candle.",
+   "idea": "A burning candle involves both physical changes (melting, evaporation) and a chemical change (burning of wax vapour).",
+   "rule": "When a candle burns the wax melts, is carried up the wick and evaporates due to the heat of the flame. The vapour of wax burns to produce the flame. The melting of wax, its solidifying and its evaporation are physical changes; the burning of wax vapour is a chemical change. So burning a candle involves both physical and chemical changes. Michael Faraday delivered a nineteenth-century series of lectures called Chemical History of a Candle, believing a candle to be the perfect object to introduce scientific study. He discussed melting, vapourisation and combustion.",
+   "example": "Melted wax flows and solidifies in different shapes.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-5.6",
+   "name": "Reversible and irreversible, desirable and undesirable changes",
+   "description": "Changes that can and cannot be reversed, desirable and undesirable changes and environmental impact.",
+   "idea": "Some changes can be reversed and some cannot, and changes may be useful or harmful depending on the situation.",
+   "rule": "Some changes can be reversed: ice can be refrozen after melting and water vapour condensed back to water. Others cannot: chopped vegetables cannot return to their size and shape and popcorn cannot become corn again. Desirable changes include milk turning into curd, ripening of fruit, cutting fruit and cooking food. Undesirable changes include rusting of iron and decay of stored food. A change undesirable in one situation can be desirable in another: decomposition of food waste into compost. Human activity causes long-term changes: burning more fuel in vehicles raises carbon dioxide in the atmosphere, and drying of paint releases substances that cause air pollution.",
+   "example": "Food decaying in storage is undesirable, but decomposing waste makes compost.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-5.7",
+   "name": "Slow natural changes: weathering and erosion",
+   "description": "Weathering of rocks by physical and chemical changes, sediments, soil formation and erosion.",
+   "idea": "Rocks slowly break down by weathering and are moved by erosion to form soil and new rocks.",
+   "rule": "Sand, soil and stones at the base of mountains are sediments formed when large rocks break into smaller pieces by physical changes: temperature changes, growing roots of trees and freezing of water in cracks. Water or chemicals in water can react with rocks and cause chemical changes; a black iron-containing rock called basalt can form a red layer of iron oxide after long exposure to water or moist air. These changes are collectively called weathering and eventually lead to the formation of soil. Erosion is the breaking down and moving of rock pebbles, soil and sediments from one place to another by wind and flowing water. Erosion during a landslide is a physical change. River pebbles are smooth from erosion. When water or wind slows the material settles, and sediments harden into new rocks. These changes take thousands of years and cannot be reversed.",
+   "example": "River pebbles are smoothed by constant flowing water.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

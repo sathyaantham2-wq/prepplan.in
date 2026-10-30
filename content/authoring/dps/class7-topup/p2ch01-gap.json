@@ -1,0 +1,841 @@
+{
+  "kind": "dps_topup",
+  "subject": {
+    "code": "MATH",
+    "class": 7,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 1,
+    "name": "Geometric Twins"
+  },
+  "source_code": "gegp201",
+  "concepts": [
+    {
+      "code": "C7M-1.1",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "p. 2",
+          "q": "A rubber stamp has a raised letter F on its face. It prints the letter on paper so that the print reads the right way, while the F on the rubber looks reversed.\nStatement 1: The F on the rubber and the printed F are not congruent, because one looks reversed.\nStatement 2: Two prints from this stamp, one made with the stamp turned through a quarter turn, are congruent.\nStatement 3: A printed F and a photocopy of it enlarged to one and a half times its size are congruent, because the shape is unchanged.\nWhich statement or statements are correct?",
+          "o": [
+            "2 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ],
+          "a": "2 only: flipping and turning are both allowed when checking congruence, so the rubber F and the print are congruent (Statement 1 is wrong) and the two prints are congruent. The enlarged copy has the same shape but a different size, so it is not congruent."
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 3-4",
+          "q": "A washer is a flat metal ring: a circular disc with a circular hole. Washer W has outer radius 10 mm and a hole of radius 6 mm exactly at its centre. The width of the ring is the outer radius minus the hole radius. (a) Washer X has outer diameter 20 mm, ring width 4 mm and its hole at the centre. Is it congruent to W? (b) Washer Y has a hole of diameter 12 mm at its centre and ring width 5 mm. Is it congruent to W? (c) Washer Z has outer radius 10 mm and hole radius 6 mm, but the hole is not at the centre. Is it congruent to W? Say what this shows about the measurements needed to fix a washer.",
+          "a": "(a) Yes. X has outer radius 10 mm and hole radius 10 − 4 = 6 mm, the same as W, so it fits exactly over W. (b) No. Its hole radius is 6 mm but its outer radius is 6 + 5 = 11 mm, not 10 mm. (c) No. The two circles are the same size as those of W, but the ring is not of even width, so Z will not fit over W. A washer is fixed by the two radii together with the position of the hole; the two radii are enough only when the hole is at the centre.",
+          "s": [
+            [
+              "(a) finds X has outer radius 10 mm and hole radius 6 mm, so X is congruent to W; and (b) finds Y has outer radius 11 mm, so Y is not congruent to W",
+              2
+            ],
+            [
+              "(c) says Z is not congruent, and that the position of the hole must be fixed as well as the two radii",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 3-4",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A framer in Kochi has two rectangular photo frames. Frame P is 30 cm by 40 cm. Frame Q is 14 cm by 48 cm. He measures the diagonal of each and gets 50 cm both times. He says: 'A rectangle is fixed by one measurement, its diagonal, so equal diagonals mean congruent frames.' (a) Use the two frames to test his claim. (b) State the measurements that do fix a rectangle. (c) A third frame R, also with a 50 cm diagonal, is 40 cm wide and 30 cm tall. Is R congruent to P, to Q or to neither? Give the reason.",
+          "a": "(a) His claim is wrong. P and Q have the same diagonal, but their sides are different (30 cm and 40 cm against 14 cm and 48 cm), so one cannot fit exactly over the other. (b) A rectangle is fixed by its two sides, the length and the breadth. (c) R has sides 40 cm and 30 cm, the same two sides as P, so R is congruent to P (a turn may be needed). It is not congruent to Q.",
+          "s": [
+            [
+              "(a) says the claim is wrong, because P and Q have equal diagonals but different sides",
+              1
+            ],
+            [
+              "(b) states that the length and the breadth (the two sides) fix a rectangle",
+              1
+            ],
+            [
+              "(c) says R is congruent to P, because both have sides 30 cm and 40 cm, and not to Q",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 1-3",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A sign shop gets four jobs: a circular badge, a square plaque, a rectangular board, and a V-shaped symbol made of two arms with an angle between them. The shop owner tells the new helper: 'Whatever the shape, phone the workshop three measurements, as for the V-shaped symbol, and they can make an exact copy.' (a) Is the owner right? Say how many measurements the circular badge, the square plaque and the rectangular board each need, with the reason. (b) Which three measurements are given for the V-shaped symbol? (c) The helper phones only the two arm lengths of a V-shaped symbol. Why can the workshop still not be sure of an exact copy?",
+          "a": "(a) No, the owner is wrong. A circle needs only one measurement (its radius or diameter), a square needs only one (its side, since all four sides are equal), and a rectangle needs two (its length and its width). Three are not needed for every shape. (b) The two arm lengths and the angle between the arms. (c) With the same two arm lengths, the arms can be opened wider or narrower, and each opening gives a symbol of a different shape, so the angle between the arms must also be given.",
+          "s": [
+            [
+              "(a) says the owner is wrong, with one measurement for the circle, one for the square and two for the rectangle",
+              1
+            ],
+            [
+              "(b) names the two arm lengths and the angle between them",
+              1
+            ],
+            [
+              "(c) says the same arm lengths can be opened to different angles, so the angle is also needed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 2-3",
+          "q": "A sign painter at a Madurai bus stand cuts one stencil for each different shape and uses it on either face, in any position. Each stencil paints a whole shape, never a part of one. In his lettering, b is a circle of radius 3 cm with a straight stem 10 cm long touching it on the left and rising above it. The letter d has the same stem on the right, rising above the circle. The letter p has the stem on the left, going below the circle. The letter q has the stem on the right, going below the circle. The letter o is the circle alone. The letter n is an arch, and u is the same arch upside down.\n(a) Starting from b, say what move of the stencil gives d, what move gives p and what move gives q.\n(b) The letter L has arms of 9 cm and 5 cm at a right angle. A tick mark on the same board has arms of 5 cm and 9 cm at a right angle, tilted across the board. Another tick has arms of 9 cm and 5 cm with 80° between them. Which of these can the L stencil paint?\n(c) How many stencils does he need for the two words 'bun' and 'pod'? List which letters share a stencil.\n(d) His helper says a small q, with a circle of radius 2 cm and a stem in the same proportion, needs no new stencil because it is the same shape as the big q. Judge this.",
+          "a": "(a) d comes from flipping b over a vertical line; p comes from flipping b over a horizontal line; q comes from a half turn of b. (b) The right-angled tick: it has the same two arms and the same angle, so it is congruent to L after a turn or flip. The 80° tick has the same arms but a different angle, so it is not congruent to L. (c) 3 stencils: b, p and d share one; u and n share one; o needs its own. (d) The helper is wrong. A small q has the same shape but not the same size, so it is not congruent to the big q and cannot be painted with that stencil. It needs a new stencil.",
+          "s": [
+            [
+              "(a) gives the moves: flip over a vertical line for d, flip over a horizontal line for p, half turn for q",
+              2
+            ],
+            [
+              "(b) says the right-angled tick can be painted (same arms and angle) and the 80° tick cannot (angle differs)",
+              1
+            ],
+            [
+              "(c) finds 3 stencils: b, p, d together; u, n together; o alone",
+              1
+            ],
+            [
+              "(d) says the helper is wrong because same shape but different size is not congruent",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.2",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 6-7",
+          "tags": [
+            "scenario"
+          ],
+          "q": "A triangular brass stencil ΔPQR lies in its outline on a board. Isha lifts it, flips it and drops it back. It fits the outline exactly, with P back in place and Q and R having changed places, so ΔPQR ≅ ΔPRQ. What must be true of the stencil?",
+          "o": [
+            "PQ = PR and ∠Q = ∠R",
+            "PQ = QR and ∠P = ∠R",
+            "PR = QR and ∠P = ∠Q",
+            "All sides equal and each angle 60°"
+          ],
+          "a": "PQ = PR and ∠Q = ∠R: in ΔPQR ≅ ΔPRQ the side PQ matches PR and the angle at Q matches the angle at R. Nothing forces QR to equal the other two sides."
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 5-6",
+          "q": "Three students each construct a triangle with sides 5 cm, 7 cm and 9 cm. Gita takes the 9 cm side as the base, Hari the 5 cm side and Lata the 7 cm side. Each draws circles from the two ends of the base with the other two lengths as radii, and each finds two points where the circles meet.\nStatement 1: The two triangles Gita gets, one above her base and one below it, are congruent.\nStatement 2: Gita's and Hari's triangles are not congruent, because they were built on different bases.\nStatement 3: The angle opposite the 7 cm side measures the same in all the triangles drawn.\nWhich statement or statements are correct?",
+          "o": [
+            "1 and 3 only",
+            "1 and 2 only",
+            "3 only",
+            "1, 2 and 3"
+          ],
+          "a": "1 and 3 only: every triangle drawn has sides 5 cm, 7 cm and 9 cm, so all are congruent by SSS, whichever side was the base, and the angles opposite the 7 cm sides correspond. Statement 2 is wrong because the choice of base does not matter."
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 21",
+          "q": "There are six ways to pair the vertices of ΔABC with those of a second triangle, namely writing ΔABC ≅ ΔPQR, ΔPRQ, ΔQPR, ΔQRP, ΔRPQ or ΔRQP. For each case, say how many of these six statements are true, and give the reason. (a) AB = PQ = 6 cm, BC = QR = 7 cm, CA = RP = 8 cm. (b) AB = AC = PQ = PR = 7 cm, BC = QR = 5 cm. (c) All six sides are 7 cm.",
+          "a": "(a) 1: the three lengths are all different, so each side can match only one side, and only ΔABC ≅ ΔPQR is true. (b) 2: A must match P because BC and QR are the only 5 cm sides, but B may match Q or R, so ΔABC ≅ ΔPQR and ΔABC ≅ ΔPRQ are true. (c) 6: every side equals every side, so any pairing keeps the sides equal and all six statements are true.",
+          "s": [
+            [
+              "(a) gives 1, because all three sides are different",
+              1
+            ],
+            [
+              "(b) gives 2, naming ΔABC ≅ ΔPQR and ΔABC ≅ ΔPRQ; and (c) gives 6, because every pairing matches equal sides",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 5-6",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Each pupil gets a box of four sticks and makes a triangle from three of them, leaving out each stick in turn, so she makes four triangles. All the sticks in this question are close enough in length for every set of three to form a triangle. (a) Ruchi's box has sticks of 4, 4, 6 and 6 cm. She says she has four triangles, no two of them congruent. Test her claim. (b) Sohan's box has sticks of 4, 5, 6 and 6 cm. How many different triangles, no two congruent, does he get? (c) Write the lengths of a box in which exactly three of the four triangles are congruent to one another and the fourth is not.",
+          "a": "(a) Her claim is wrong. Her sets are 4, 4, 6 (twice) and 4, 6, 6 (twice). Sets with the same three lengths are congruent by SSS, so she has only 2 different triangles. (b) His sets are 5, 6, 6 and 4, 6, 6 and 4, 5, 6 (twice), so he gets 3 different triangles. (c) Any box with three sticks equal and one different, for example 5, 5, 5 and 7 cm: leaving out a 5 cm stick three times gives 5, 5, 7, and leaving out the 7 cm stick gives 5, 5, 5.",
+          "s": [
+            [
+              "(a) lists 4, 4, 6 twice and 4, 6, 6 twice and says only 2 different triangles by SSS, so the claim is wrong",
+              1
+            ],
+            [
+              "(b) lists the sets and gets 3 different triangles",
+              1
+            ],
+            [
+              "(c) gives a box of three equal sticks and one different stick and shows the four sets",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 9",
+          "q": "A silver pendant ABCD has four straight edges, each 5 cm long, joined in the order A, B, C, D. Thin wires AC and BD join its opposite corners, and ∠BAD = 70°. The wires make four triangles when taken one at a time: ΔABC, ΔADC, ΔABD and ΔCBD. Neel says: 'All four triangles are congruent, because each of them has two sides of 5 cm.'\n(a) Sort the four triangles into groups that are certainly congruent, using SSS, and write each congruence in order.\n(b) Find the three angles of ΔABC.\n(c) Find the three angles of ΔABD.\n(d) Use your angles to judge Neel's statement.\n(e) For what size of ∠BAD would all four triangles be congruent to one another? Show how you get it.",
+          "a": "(a) ΔABC ≅ ΔADC, since AB = AD, CB = CD and AC is common. ΔABD ≅ ΔCBD, since AB = CB, AD = CD and BD is common. (b) From the first congruence ∠BAC = ∠DAC, so each is 35°. As AB = BC, ∠BCA = 35°, and ∠ABC = 180° − 70° = 110°. (c) As AB = AD, the angles at B and D are equal, and each is (180° − 70°) ÷ 2 = 55°, with 70° at A. (d) Neel is wrong: ΔABC has angles 35°, 35°, 110° and ΔABD has 70°, 55°, 55°, so they cannot fit over each other. Two equal sides are not enough; the third sides, AC and BD, differ. (e) If ∠BAD = a, ΔABC has angles a/2, a/2, 180° − a and ΔABD has a, 90° − a/2, 90° − a/2. Both have the same angles when a = 90°, giving 45°, 45°, 90° in each. Then all four triangles have a right angle between two 5 cm sides, so they are congruent by SAS.",
+          "s": [
+            [
+              "(a) gives ΔABC ≅ ΔADC and ΔABD ≅ ΔCBD by SSS, naming the common side each time",
+              1
+            ],
+            [
+              "(b) finds 35°, 35°, 110° for ΔABC",
+              1
+            ],
+            [
+              "(c) finds 70°, 55°, 55° for ΔABD",
+              1
+            ],
+            [
+              "(d) rejects Neel's statement because the angle sets differ",
+              1
+            ],
+            [
+              "(e) finds ∠BAD = 90° with the reason that each triangle then has a right angle between two 5 cm sides",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.3",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 9-10",
+          "tags": [
+            "scenario"
+          ],
+          "q": "Two set squares from different geometry boxes each have angles of 30°, 60° and 90°. Ravi says this shows they are congruent. Which single further check would settle the matter?",
+          "o": [
+            "Compare the two sides opposite the 30° angle",
+            "Compare any one side of each, whichever is handy",
+            "Measure all three angles again more exactly",
+            "No check is needed, since equal angles are enough"
+          ],
+          "a": "Compare the two sides opposite the 30° angle: equal angles alone give the same shape but perhaps different sizes. If this one pair of corresponding sides is equal, the set squares are congruent; if not, they are not. Two sides chosen at random need not correspond."
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 10",
+          "tags": [
+            "scenario"
+          ],
+          "q": "A door hinged at H has its free edge at F when shut and at E when opened, so ΔHEF has HE = HF. Room A has a door 90 cm wide opened through 40°. Room B has a door 90 cm wide, hinged on the opposite side, opened through 40°. Room C has a door 80 cm wide opened through 40°. Room D has a door 90 cm wide opened through 50°. Which room's gap EF is certain to equal the gap EF of Room A?",
+          "o": [
+            "Room B",
+            "Room C",
+            "Room D",
+            "No room, the hinges differ"
+          ],
+          "a": "Room B: its triangle has sides 90 cm and 90 cm with 40° between them, the same as Room A, so the two are congruent by SAS and the third sides are equal. A flipped triangle is still congruent. Room C differs in a side and Room D in the included angle."
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 10",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A wall clock has an hour hand 6 cm long and a minute hand 9 cm long. For any time, think of the triangle made by the centre of the clock and the two tips of the hands. Sunil says: 'The tips are exactly as far apart at 2:00 as at 10:00, even though the hour hand points to opposite sides.' (a) Find the angle between the hands at each time. (b) Is Sunil right? Name the condition you use. (c) Give another pair of different exact-hour times with equal gaps between the tips, and say why.",
+          "a": "(a) Neighbouring numbers on the clock are 30° apart, so the angle is 2 × 30° = 60° at 2:00 and also 60° at 10:00, measured the other way from 12. (b) Sunil is right. Both triangles have sides 6 cm and 9 cm with 60° between them, so they are congruent by SAS and the third sides, the gaps between the tips, are equal. (c) For example 4:00 and 8:00: the angle is 120° at each, so SAS applies again. (1:00 and 11:00, 3:00 and 9:00, or 5:00 and 7:00 are equally good.)",
+          "s": [
+            [
+              "(a) finds 60° between the hands at both times; and (b) agrees with Sunil, using SAS with sides 6 cm, 9 cm and the included 60°",
+              2
+            ],
+            [
+              "(c) gives a pair such as 4:00 and 8:00 with the equal included angle stated",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 10",
+          "q": "A paper triangle ABC has AC = 10 cm, ∠BAC = 40° and ∠ABC = 80°, and AB measures 8.8 cm (to the nearest mm). It is folded along a line AD, with D on BC, so that B lands at a point E on AC. Because the fold lays one part exactly on the other, AB = AE and ∠BAD = ∠EAD. (a) Name the condition that shows ΔABD ≅ ΔAED, and list the three pairs of equal parts. (b) Find the length EC, to the nearest mm. (c) Find ∠DEC.",
+          "a": "(a) SAS: AB = AE, ∠BAD = ∠EAD (each 20°) and AD is common, with the angle between the two sides in each triangle. (b) AE = AB = 8.8 cm, so EC = 10 − 8.8 = 1.2 cm (about, as AB was measured). (c) ∠AED = ∠ABD = 80°, as corresponding parts. AEC is a straight line, so ∠DEC = 180° − 80° = 100°.",
+          "s": [
+            [
+              "(a) names SAS with AB = AE, ∠BAD = ∠EAD and common side AD",
+              1
+            ],
+            [
+              "(b) finds EC = 1.2 cm (about)",
+              1
+            ],
+            [
+              "(c) uses ∠AED = 80° from the congruence and the straight line to get ∠DEC = 100°",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 11-12",
+          "q": "A reading stand has a straight base PQ = 10 cm, and a straight back rail starts at P and makes ∠QPR = 35° with the base. A support strut 7.5 cm long turns about Q, and its free end clicks into a notch on the back rail. There are two notches, R nearer P and S farther from P, and the strut reaches both, so QR = QS = 7.5 cm. P, R and S lie on one straight line. The maker measures ∠PSQ = 50°, PR = 3.4 cm and PS = 13 cm.\n(a) Show that ΔPQR and ΔPQS have the same two sides and the same non-included angle, and name this kind of data.\n(b) Find ∠QRS, giving your reason.\n(c) Find ∠PRQ, ∠PQR and ∠PQS.\n(d) Use two different facts from your answers and the data to show that ΔPQR and ΔPQS are not congruent.\n(e) A customer phones to ask for a copy of the stand 'with base 10 cm, strut 7.5 cm and rail at 35°'. Why might the strut of the copy not click in where his own does, and what one extra measurement should he give?",
+          "a": "(a) Both triangles have PQ = 10 cm, a 7.5 cm side from Q, and the 35° angle at P. The 35° angle is not between the sides PQ and QR (or QS), so this is SSA data. (b) In ΔQRS, QR = QS, so the angles opposite them are equal: ∠QRS = ∠QSR = 50°. (c) ∠PRQ = 180° − 50° = 130°, as PRS is a straight line. ∠PQR = 180° − 35° − 130° = 15°. ∠PQS = 180° − 35° − 50° = 95°. (d) ΔPQR has PR = 3.4 cm where ΔPQS has PS = 13 cm, and it has an angle of 130° where the largest angle of ΔPQS is 95°. (e) The data is SSA, which does not guarantee congruence: the strut can sit at either notch, so the copy may be ΔPQR or ΔPQS. He should give the distance of the notch from P, for example PS = 13 cm, which makes the data SSS (∠PQS = 95° would also do, making it SAS).",
+          "s": [
+            [
+              "(a) shows the same 10 cm side, 7.5 cm side and 35° angle in both, and calls it SSA",
+              1
+            ],
+            [
+              "(b) gets ∠QRS = 50° because angles opposite the equal sides QR and QS are equal",
+              1
+            ],
+            [
+              "(c) finds ∠PRQ = 130°, ∠PQR = 15° and ∠PQS = 95°",
+              1
+            ],
+            [
+              "(d) shows non-congruence from two facts, such as 3.4 cm against 13 cm and 130° against a largest angle of 95°",
+              1
+            ],
+            [
+              "(e) says the strut has two possible positions and asks for one extra measurement that fixes it, such as PS",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.4",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 15",
+          "tags": [
+            "scenario"
+          ],
+          "q": "Two triangular mirrors are compared. Mirror 1 has angles 50°, 60° and 70°, and its side opposite the 60° angle is 8 cm. On Mirror 2, the corners at the two ends of the 8 cm side measure 50° and 70°. What can be said?",
+          "o": [
+            "Congruent: the 8 cm side is opposite 60° in both",
+            "Not certain: the 8 cm side is described differently",
+            "Not congruent: Mirror 2 has no 60° angle given",
+            "Not congruent: the sides were never compared"
+          ],
+          "a": "Congruent: the 8 cm side is opposite 60° in both. The third angle of Mirror 2 is 180° − 50° − 70° = 60°, and it lies opposite the side between the 50° and 70° corners, so both mirrors have the 8 cm side between the 50° and 70° angles and ASA applies."
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 15-16",
+          "q": "Two triangular wooden bookends have ∠A = ∠D = 44°, ∠B = ∠E = 71° and AC = DF = 9 cm. (a) Which condition do these three given pairs fit directly? Give the reason. (b) Find ∠C and ∠F, and state a set of three equal parts that fits ASA instead.",
+          "a": "(a) AAS: the equal side AC is not between the two given angles ∠A and ∠B. (b) ∠C = ∠F = 180° − 44° − 71° = 65°. Then ∠A = ∠D, AC = DF and ∠C = ∠F fit ASA, because AC lies between ∠A and ∠C. So ΔABC ≅ ΔDEF.",
+          "s": [
+            [
+              "(a) names AAS, because AC does not lie between ∠A and ∠B",
+              1
+            ],
+            [
+              "(b) finds 65° and gives ∠A, AC, ∠C with their matching parts as the ASA set",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 12",
+          "q": "A shrine P stands on an island in a lake, and nobody may cross the water to measure. Deepa and Jai stand at A and B on the straight shore, 120 m apart, and measure ∠PAB = 62° and ∠PBA = 54°. On the dry land behind the shore they fix a stake C so that ∠CAB = 62° and ∠CBA = 54°. They find AC = 108 m and BC = 118 m. (a) Show that ΔPAB ≅ ΔCAB, naming the condition. (b) Find the distance from A to the shrine and from B to the shrine. (c) In another park they copy the same two angles on a line A′B′ that is 150 m long and stake C′. Can they take A′C′ as the distance from A to the shrine? Give the reason.",
+          "a": "(a) ASA: ∠PAB = ∠CAB = 62°, AB is common and lies between the two angles, and ∠PBA = ∠CBA = 54°. (b) P matches C, so AP = AC = 108 m and BP = BC = 118 m. (c) No. ΔC′A′B′ has the same angles as ΔPAB, but the side between the angles is 150 m, not 120 m. Equal angles alone do not give congruence, so A′C′ need not equal AP.",
+          "s": [
+            [
+              "(a) names ASA with the two equal angles and the common included side AB",
+              1
+            ],
+            [
+              "(b) gives AP = 108 m and BP = 118 m as corresponding sides",
+              1
+            ],
+            [
+              "(c) says no, because the included side differs, so the triangles have equal angles but are not congruent",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 17-18",
+          "q": "The chapter shows that equal sides of a triangle have equal angles opposite them. Asif wants to go the other way. In a triangular signboard ABC, ∠B = ∠C = 55° and BC = 7.4 cm, and AD is the altitude from A to BC. (a) List the three pairs of equal parts of ΔABD and ΔACD. (b) Which condition do they fit? Write the congruence with the vertices in the correct order. (c) What does this show about AB and AC, and what is the length of BD?",
+          "a": "(a) ∠B = ∠C (given), ∠ADB = ∠ADC = 90° (AD is an altitude) and AD is common. (b) AD is not between ∠B and ∠ADB, so this is AAS: ΔABD ≅ ΔACD, with A matching A, B matching C and D matching D. (c) AB and AC are corresponding sides, so AB = AC. Also BD and CD correspond, so BD = 7.4 ÷ 2 = 3.7 cm.",
+          "s": [
+            [
+              "(a) lists ∠B = ∠C, the two right angles at D and common side AD",
+              1
+            ],
+            [
+              "(b) names AAS (ASA is accepted after finding the third angles) and writes ΔABD ≅ ΔACD",
+              1
+            ],
+            [
+              "(c) concludes AB = AC and finds BD = 3.7 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 14",
+          "q": "One steel panel of a bridge has a level bottom beam BC. Points A and D are above it, on the same side of BC. Struts AB, DC, AC and DB are bolted in place, and AC and DB cross at O. The engineer's sheet says ∠ABD = ∠DCA = 25° and ∠ACB = ∠DBC = 35°. No lengths are given.\n(a) Find ∠ABC and ∠DCB.\n(b) Show that ΔABC ≅ ΔDCB, naming the condition and the three pairs of equal parts.\n(c) What follows for AB and DC, and for ∠BAC and ∠CDB? Find ∠BAC.\n(d) Show that ΔAOB ≅ ΔDOC. What follows for OA and OD?\n(e) Find ∠AOD and ∠OAD. Use them to decide whether the top line AD is parallel to the beam BC.",
+          "a": "(a) ∠ABC = 25° + 35° = 60° and ∠DCB = 25° + 35° = 60°. (b) ASA: ∠ABC = ∠DCB, BC is common, and ∠ACB = ∠DBC. A matches D, B matches C and C matches B. (c) AB = DC and ∠BAC = ∠CDB as corresponding parts. ∠BAC = 180° − 60° − 35° = 85°. (d) ∠BAO = ∠CDO = 85°, ∠ABO = ∠DCO = 25° and AB = DC, so the triangles are congruent by ASA. So OA = OD. (e) In ΔBOC, ∠BOC = 180° − 35° − 35° = 110°, so ∠AOD = 110° (vertically opposite). OA = OD, so ∠OAD = (180° − 110°) ÷ 2 = 35°. Then ∠OAD = ∠OCB = 35°, and these are equal alternate angles for the lines AD and BC with AC as transversal. So AD is parallel to BC.",
+          "s": [
+            [
+              "(a) adds the two parts to get ∠ABC = ∠DCB = 60°",
+              1
+            ],
+            [
+              "(b) shows ΔABC ≅ ΔDCB by ASA with common side BC",
+              1
+            ],
+            [
+              "(c) gets AB = DC and ∠BAC = ∠CDB = 85°",
+              1
+            ],
+            [
+              "(d) shows ΔAOB ≅ ΔDOC with AB = DC and two pairs of equal angles, and concludes OA = OD",
+              1
+            ],
+            [
+              "(e) finds ∠AOD = 110° and ∠OAD = 35°, and concludes AD is parallel to BC from equal alternate angles",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.5",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "p": "pp. 16-17",
+          "tags": [
+            "match"
+          ],
+          "q": "ΔABC has its right angle at B and ΔPQR has its right angle at Q. Each row of Column I gives the only other equal parts known. Match it with Column II.\nColumn I:\n1. AC = PR and AB = PQ\n2. AB = PQ and BC = QR\n3. ∠A = ∠P and AB = PQ\n4. ∠A = ∠P and ∠C = ∠R\nColumn II:\na. SAS guarantees congruence\nb. ASA guarantees congruence\nc. RHS guarantees congruence\nd. Congruence is not guaranteed",
+          "o": [
+            "1-c, 2-a, 3-b, 4-d",
+            "1-a, 2-c, 3-b, 4-d",
+            "1-c, 2-a, 3-d, 4-b",
+            "1-d, 2-c, 3-b, 4-a"
+          ],
+          "a": "1-c, 2-a, 3-b, 4-d: Row 1 has the hypotenuses and one more side (RHS). Row 2 has the right angle between the equal sides (SAS). Row 3 has AB between ∠A and the right angle (ASA). Row 4 has equal angles only, so the sizes may differ."
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 17",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A round well cover has centre O. Two straight steel bars AB and CD are fixed across it, with their ends on the rim. OM is drawn at right angles to AB, with M on AB, and ON at right angles to CD, with N on CD. The fitter finds OM = ON and AM = 18 cm. Reshma says: 'Then the bar CD must be 36 cm long.' (a) Show that M is the midpoint of AB. (b) Show that AM = CN. (c) Is Reshma right? Give your working.",
+          "a": "(a) ΔOMA and ΔOMB have right angles at M, equal hypotenuses OA = OB (radii) and the common side OM, so they are congruent by RHS and AM = MB. (b) ΔOMA and ΔONC have right angles at M and N, hypotenuses OA = OC (radii) and OM = ON, so they are congruent by RHS and AM = CN. (c) Yes. CN = 18 cm, and in the same way as in (a), N is the midpoint of CD, so CD = 2 × 18 = 36 cm.",
+          "s": [
+            [
+              "(a) shows ΔOMA ≅ ΔOMB by RHS with radii as hypotenuses, so AM = MB",
+              1
+            ],
+            [
+              "(b) shows ΔOMA ≅ ΔONC by RHS using OA = OC and OM = ON, so AM = CN; and (c) agrees with Reshma: N is the midpoint of CD, so CD = 36 cm",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 17",
+          "q": "Two straight walls of a courtyard meet at a corner O at an angle of 70°. A round water tank with centre C stands in the corner. CA is the shortest distance from C to one wall and CB the shortest distance from C to the other, so CA and CB are at right angles to the walls, and CA = CB = 1.2 m. (a) Show that ΔCAO ≅ ΔCBO, listing the equal parts. (b) Find ∠COA. (c) Find ∠OCA. Then say which of OA and OB is longer, or whether they are equal.",
+          "a": "(a) Both triangles have a right angle (at A and at B), the common hypotenuse OC and CA = CB, so they are congruent by RHS. (b) ∠COA = ∠COB as corresponding angles, and together they make 70°, so ∠COA = 35°. (c) ∠OCA = 180° − 90° − 35° = 55°. OA and OB are corresponding sides, so they are equal.",
+          "s": [
+            [
+              "(a) shows RHS with the right angles at A and B, common hypotenuse OC and CA = CB",
+              1
+            ],
+            [
+              "(b) gets ∠COA = 35° because the two corresponding angles share the 70°",
+              1
+            ],
+            [
+              "(c) finds ∠OCA = 55° and says OA = OB as corresponding sides",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 17",
+          "q": "ABCD is a square courtyard of side 40 m, with its corners in the order A, B, C, D. Straight paths run from the gate at A to a point E on BC and to a point F on CD, and the two paths are equal: AE = AF. Also BE = 9 m. (a) Show that ΔABE ≅ ΔADF. (b) Find CE and CF. (c) Find ∠CEF, giving your reason.",
+          "a": "(a) ∠B = ∠D = 90°, the hypotenuses AE and AF are equal, and AB = AD as sides of the square, so ΔABE ≅ ΔADF by RHS. (b) DF = BE = 9 m as corresponding sides, so CE = 40 − 9 = 31 m and CF = 40 − 9 = 31 m. (c) In ΔCEF, CE = CF, so ∠CEF = ∠CFE. ∠C = 90°, so ∠CEF = (180° − 90°) ÷ 2 = 45°.",
+          "s": [
+            [
+              "(a) shows RHS with ∠B = ∠D = 90°, AE = AF and AB = AD; and (b) gets DF = 9 m and so CE = CF = 31 m",
+              2
+            ],
+            [
+              "(c) uses the equal sides CE and CF and the right angle at C to get 45°",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 16-17",
+          "q": "For Annual Day, an entrance has two upright bamboo poles AD and BC standing at right angles to level ground at A and B, with D and C at their tops and AB = 7 m. Strings of lights run from the foot of each pole to the top of the other, and they cross at O. Each string measures 7.4 m, so AC = BD = 7.4 m. Pole AD is 2.4 m tall, and ∠BAC measures about 19°.\n(a) Show that ΔABC ≅ ΔBAD, writing the three pairs of equal parts, and find the height of pole BC.\n(b) Find ∠ABD, and find ∠OAD and ∠OBC.\n(c) Show that ΔAOD ≅ ΔBOC. What follows for OA and OB?\n(d) The decorator plans to cut pole BC to 1.8 m and keep both strings at 7.4 m, so that the strings still cross. Decide, with a reason, whether AB = 7 m and both poles upright can all still hold.",
+          "a": "(a) ∠ABC = ∠BAD = 90°, the hypotenuses AC and BD are equal, and AB is common, so ΔABC ≅ ΔBAD by RHS, with A matching B, B matching A and C matching D. So BC = AD = 2.4 m. (b) ∠ABD = ∠BAC = 19° as corresponding angles. ∠OAD = 90° − 19° = 71° and ∠OBC = 90° − 19° = 71°. (c) ∠OAD = ∠OBC, ∠AOD = ∠BOC (vertically opposite) and AD = BC, so ΔAOD ≅ ΔBOC by AAS, and OA = OB, as corresponding sides. (d) They cannot all hold. If AB is common, both poles are upright and the strings are equal, RHS makes ΔABC ≅ ΔBAD, which forces BC = AD = 2.4 m. So a 1.8 m pole cannot go with equal 7.4 m strings: one of the conditions must change.",
+          "s": [
+            [
+              "(a) shows RHS with the right angles at B and A, AC = BD and common side AB",
+              1
+            ],
+            [
+              "(a) writes the congruence in order and gets BC = 2.4 m",
+              1
+            ],
+            [
+              "(b) finds ∠ABD = 19° and ∠OAD = ∠OBC = 71°",
+              1
+            ],
+            [
+              "(c) shows ΔAOD ≅ ΔBOC by AAS and concludes OA = OB",
+              1
+            ],
+            [
+              "(d) says the plan cannot hold, because RHS forces BC = AD = 2.4 m",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.6",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 19",
+          "tags": [
+            "scenario"
+          ],
+          "q": "A stage backdrop has an equilateral board ABC with its bottom edge BC. The line BC is carried on past C to a peg D, so that CD = CA, and a rope joins A to D. What is ∠BAD, the angle between the edge AB and the rope?",
+          "o": [
+            "90°",
+            "60°",
+            "120°",
+            "75°"
+          ],
+          "a": "90°: ∠ACB = 60°, so ∠ACD = 120° on the straight line. As CA = CD, ∠CAD = (180° − 120°) ÷ 2 = 30°, and ∠BAD = 60° + 30° = 90°."
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 18-19",
+          "q": "A logo is drawn on a square ABCD, with its corners in the order A, B, C, D. Point E lies inside the square so that ΔABE is equilateral, and E is joined to D and C. (a) Find ∠DAE, and then ∠ADE. (b) Find ∠EDC. (c) Show that DE = CE, and find ∠DEC.",
+          "a": "(a) ∠DAE = 90° − 60° = 30°. AD = AB = AE, so ∠ADE = (180° − 30°) ÷ 2 = 75°. (b) ∠EDC = 90° − 75° = 15°. (c) In the same way ∠CBE = 30°. Then AD = BC, AE = BE and ∠DAE = ∠CBE, so ΔDAE ≅ ΔCBE by SAS and DE = CE. So ∠ECD = ∠EDC = 15°, and ∠DEC = 180° − 15° − 15° = 150°.",
+          "s": [
+            [
+              "(a) finds ∠DAE = 30° and ∠ADE = 75° using AD = AE",
+              1
+            ],
+            [
+              "(b) finds ∠EDC = 15°",
+              1
+            ],
+            [
+              "(c) shows DE = CE by SAS and finds ∠DEC = 150°",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 21",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A semicircular arch has its straight base BC with centre O as the midpoint of BC, so OB = OC = radius. Tara marks a point A on the curve and ties ropes from A to B and to C. She tries two points and then says: 'Wherever A is on the curve, ∠BAC is the same, and ∠ABC is the same too.' (a) Take ∠ABC = 35°, join OA and find ∠BAC. (b) Now take ∠ABC = x° and find ∠BAC in general. (c) How much of Tara's claim is right?",
+          "a": "(a) OA = OB, so ∠OAB = 35°. Then ∠AOB = 110°, and ∠AOC = 70° on the straight line BC. OA = OC, so ∠OAC = (180° − 70°) ÷ 2 = 55°. So ∠BAC = 35° + 55° = 90°. (b) Let ∠OAC = ∠OCA = y°. The angles of ΔABC give x + (x + y) + y = 180, so x + y = 90, and ∠BAC = x° + y° = 90°. (c) Tara is partly right. ∠BAC is 90° wherever A is, but ∠ABC is not fixed: it was 35° in (a), and it changes as A moves. For example, a point with ∠ABC = 62° is also on the curve, with ∠ACB = 28°.",
+          "s": [
+            [
+              "(a) uses OA = OB and OA = OC to get ∠BAC = 90°",
+              1
+            ],
+            [
+              "(b) shows x + y = 90 from the angle sum, so ∠BAC is always 90°; and (c) says the claim is partly right: ∠BAC stays 90° but ∠ABC changes with A",
+              2
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 18",
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "A triangular road sign ABC has ∠A = 52° and ∠B = 61°. Two of its sides look equal to Priya, so she says it is isosceles. (a) Show that no two sides of this sign can be equal. (b) The maker may change only ∠B, keeping ∠A = 52°, to make a new sign that really is isosceles. Find every value of ∠B that works, and for each say which two sides are then equal.",
+          "a": "(a) ∠C = 180° − 52° − 61° = 67°. Equal sides would need equal angles opposite them, but 52°, 61° and 67° are all different, so no two sides are equal. (b) Two angles must be equal. If ∠B = ∠A = 52°, then ∠C = 76° and the sides opposite A and B are equal: BC = AC. If ∠B = ∠C, then 2∠B = 180° − 52° = 128°, so ∠B = 64° and AB = AC. If ∠C = ∠A = 52°, then ∠B = 180° − 104° = 76° and AB = BC. So ∠B can be 52°, 64° or 76°.",
+          "s": [
+            [
+              "(a) finds ∠C = 67° and concludes no two sides are equal because the three angles differ",
+              1
+            ],
+            [
+              "(b) finds two of the cases correctly, each with its angle sum and equal sides",
+              1
+            ],
+            [
+              "(b) finds all three values 52°, 64° and 76° with the equal sides BC = AC, AB = AC and AB = BC",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 18",
+          "q": "Two straight strips OX and OY are hinged at O and held open at 15°. Equal bars are fixed in a zigzag between them, all the same length. The first bar lies along OX, from O to P1. The second joins P1 to P2 on OY. The third joins P2 to P3 on OX, the fourth joins P3 to P4 on OY, and so on, with each new point farther from O than the last point on that strip.\n(a) Using OP1 = P1P2, find ∠OP2P1 and ∠OP1P2, and then ∠P2P1P3.\n(b) Using P2P1 = P2P3, find ∠P1P3P2 and ∠P1P2P3, and then ∠P3P2P4.\n(c) Write the pattern of the angles that the bars make with the strips, and find the next two.\n(d) Find how many bars, counting OP1, can be fitted. Say why no further bar is possible.\n(e) If the strips were held open at 20° instead, how many bars could be fitted?",
+          "a": "(a) ΔOP1P2 is isosceles with OP1 = P1P2, so ∠OP2P1 = ∠P1OP2 = 15° and ∠OP1P2 = 150°. On the straight strip OX, ∠P2P1P3 = 180° − 150° = 30°. (b) P2P1 = P2P3, so ∠P1P3P2 = 30° and ∠P1P2P3 = 120°. On the straight strip OY, ∠P3P2P4 = 180° − 15° − 120° = 45°. (c) The angles go 15°, 30°, 45°, each 15° more than the last, so the next two are 60° and 75°. (d) 6 bars: OP1, P1P2, P2P3, P3P4, P4P5 and P5P6, the last isosceles triangle having base angles of 75°. The next isosceles triangle would need base angles of 90°, which is impossible because two right angles leave nothing for the third angle. (e) 5 bars: the base angles would be 20°, 40°, 60° and 80°, and the next, 100°, is impossible.",
+          "s": [
+            [
+              "(a) finds 15°, 150° and ∠P2P1P3 = 30°",
+              1
+            ],
+            [
+              "(b) finds 30°, 120° and ∠P3P2P4 = 45°",
+              1
+            ],
+            [
+              "(c) states the rise of 15° each time and gives 60° and 75°",
+              1
+            ],
+            [
+              "(d) gets 6 bars, because base angles of 90° are impossible in a triangle",
+              1
+            ],
+            [
+              "(e) gets 5 bars from 20°, 40°, 60°, 80°, with 100° impossible",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.7",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 14-16",
+          "tags": [
+            "scenario"
+          ],
+          "q": "A mason checks two triangular tiles ΔPQR and ΔSTU, with ∠Q = ∠T and QR = TU. He wants to conclude that ΔPQR ≅ ΔSTU using the AAS condition, with P matching S, Q matching T and R matching U. Which one further measurement would let him do this?",
+          "o": [
+            "∠P = ∠S",
+            "PR = SU",
+            "∠R = ∠S",
+            "The two tiles have equal perimeters"
+          ],
+          "a": "∠P = ∠S. Then two angles (P and Q) and a side QR that is not between them are equal to the matching parts of the other tile, which is AAS. PR = SU gives two sides and a non-included angle (SSA), which does not settle congruence. ∠R = ∠S pairs angles that do not correspond. Equal perimeters say nothing about how the parts match."
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 20-21",
+          "q": "ABCD is a rectangle with AB = 8 cm and BC = 5 cm, its corners in the order A, B, C, D. Its diagonals cross at O, and they are equal in length and cut each other into equal parts.\nStatement 1: ΔAOB ≅ ΔCOD\nStatement 2: ΔABC ≅ ΔBAD\nStatement 3: ΔAOB ≅ ΔAOD\nWhich statement or statements are correct?",
+          "o": [
+            "1 and 2 only",
+            "2 and 3 only",
+            "2 only",
+            "1, 2 and 3"
+          ],
+          "a": "1 and 2 only: in Statement 1, OA = OC, OB = OD and the sides AB and CD are equal (SSS). In Statement 2, AB = BA, BC = AD and AC = BD (SSS). In Statement 3 the sides AB = 8 cm and AD = 5 cm would have to match, and they differ."
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 12-18",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "In ΔABC, AB = AC and ∠A = 40°. The sides AB and AC are extended beyond B and C to points D and E with BD = CE = 4 cm, and the segments DC and EB are joined. Rahul says: 'No angle of ΔDBC or ΔECB is given, so SAS cannot be used to compare them.' (a) Find ∠ABC and ∠DBC. (b) Is Rahul right? Show ΔDBC ≅ ΔECB, naming the condition and the equal parts. (c) EB measures 9.0 cm (to the nearest mm), and ∠BDC measures about 45°. Find DC, and find ∠BCD to the nearest degree.",
+          "a": "(a) AB = AC, so ∠ABC = ∠ACB = (180° − 40°) ÷ 2 = 70°. ABD is a straight line, so ∠DBC = 180° − 70° = 110°, and in the same way ∠ECB = 110°. (b) Rahul is wrong: the angles can be worked out. In ΔDBC and ΔECB, BD = CE, ∠DBC = ∠ECB = 110° (the angle between these sides) and BC is common, so ΔDBC ≅ ΔECB by SAS. (c) DC and EB are corresponding sides, so DC = EB = 9.0 cm (about). ∠BDC = 45° (about), so in ΔDBC, ∠BCD = 180° − 110° − 45° = 25° (about).",
+          "s": [
+            [
+              "(a) finds ∠ABC = 70° and ∠DBC = 110° using the straight line",
+              1
+            ],
+            [
+              "(b) says Rahul is wrong and shows ΔDBC ≅ ΔECB by SAS (BD = CE, ∠DBC = ∠ECB, BC common)",
+              1
+            ],
+            [
+              "(c) gives DC = 9.0 cm and ∠BCD = 25° (about)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 13-14",
+          "q": "A slanted garden trellis ABCD has AB parallel to DC and AD parallel to BC, its corners in the order A, B, C, D. Nothing is known about its lengths except AB = 1.4 m and AC = 1.8 m. The diagonals AC and BD cross at O. (a) Show that ΔABD ≅ ΔCDB, naming the condition and giving the reason for each pair of equal parts. (b) Find CD. (c) Show that ΔAOB ≅ ΔCOD and find OA.",
+          "a": "(a) ∠ABD = ∠CDB (alternate angles, as AB is parallel to DC), BD is common, and ∠ADB = ∠CBD (alternate angles, as AD is parallel to BC), so ΔABD ≅ ΔCDB by ASA. (b) CD = AB = 1.4 m, as corresponding sides. (c) ∠OAB = ∠OCD and ∠OBA = ∠ODC (alternate angles), and AB = CD, so ΔAOB ≅ ΔCOD by ASA. So OA = OC, and OA = 1.8 ÷ 2 = 0.9 m.",
+          "s": [
+            [
+              "(a) shows ASA with two pairs of alternate angles and common side BD",
+              1
+            ],
+            [
+              "(b) gets CD = 1.4 m as corresponding sides",
+              1
+            ],
+            [
+              "(c) shows ΔAOB ≅ ΔCOD by ASA using AB = CD, and finds OA = 0.9 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 13",
+          "q": "A science-fair model has a triangular base plate ABC with AB = 6 cm, AC = 9 cm and ∠BAC = 50°. An equilateral flap ABD is hinged on AB, outside the plate, and an equilateral flap ACE is hinged on AC, outside the plate. Lying flat, the three pieces make one figure. Wires join D to C and B to E, and they cross at F. Wire BE is measured as 12.4 cm, and ∠ABE is measured as 43°.\n(a) Find ∠DAC and ∠BAE.\n(b) Show that ΔDAC ≅ ΔBAE, naming the condition and the three pairs of equal parts. Write the congruence with the vertices in the correct order.\n(c) Find the length of wire DC and the size of ∠ADC.\n(d) Find ∠BDF and ∠DBF, and so the angle at which the wires cross, ∠DFB.",
+          "a": "(a) ∠DAC = 60° + 50° = 110° and ∠BAE = 50° + 60° = 110°. (b) DA = BA (sides of the equilateral flap), AC = AE (sides of the other flap) and ∠DAC = ∠BAE, with each angle between the two sides, so ΔDAC ≅ ΔBAE by SAS, with D matching B, A matching A and C matching E. (c) DC and BE are corresponding sides, so DC = 12.4 cm. ∠ADC and ∠ABE are corresponding angles, so ∠ADC = 43°. (d) ∠BDF = ∠BDA − ∠ADC = 60° − 43° = 17°. ∠DBF = ∠DBA + ∠ABE = 60° + 43° = 103°. So ∠DFB = 180° − 17° − 103° = 60°.",
+          "s": [
+            [
+              "(a) finds ∠DAC = ∠BAE = 110° by adding 60° to 50°",
+              1
+            ],
+            [
+              "(b) shows SAS with DA = BA, AC = AE and the equal included angles, written as ΔDAC ≅ ΔBAE",
+              2
+            ],
+            [
+              "(c) gets DC = 12.4 cm and ∠ADC = 43° as corresponding parts",
+              1
+            ],
+            [
+              "(d) finds ∠BDF = 17°, ∠DBF = 103° and ∠DFB = 60°",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

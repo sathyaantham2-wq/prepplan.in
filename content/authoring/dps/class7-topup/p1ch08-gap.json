@@ -1,0 +1,809 @@
+{
+  "kind": "dps_topup",
+  "subject": {
+    "code": "MATH",
+    "class": 7,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 8,
+    "name": "Working with Fractions"
+  },
+  "source_code": "gegp108",
+  "concepts": [
+    {
+      "code": "C7M-8.1",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 176",
+          "q": "A jug holds exactly 5 litres of juice, and it is shared equally among 7 glasses so that each glass is filled to the brim. (a) How much juice does one glass hold? (b) How much do 3 glasses hold? (c) Kiran pours out 4 glasses and says, '2 1/7 litres are still left in the jug.' Check whether he is right.",
+          "a": "(a) 5 ÷ 7 = 5/7 litre. (b) 3 × 5/7 = 15/7 = 2 1/7 litres. (c) 4 glasses hold 4 × 5/7 = 20/7 litres, so 5 − 20/7 = 15/7 = 2 1/7 litres are left. Kiran is right (the 3 glasses still in the jug hold exactly this much).",
+          "s": [
+            [
+              "(a) Finds 5/7 litre a glass",
+              1
+            ],
+            [
+              "(b) Finds 15/7 = 2 1/7 litres for 3 glasses",
+              1
+            ],
+            [
+              "(c) Finds 20/7 poured, 15/7 left, and says Kiran is right",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 176",
+          "q": "A cycle stall in Mysuru charges ₹24 per hour and bills the exact time used. In one week Priya rides for 1 1/4 hours on Monday, 2 2/3 hours on Tuesday and 3/4 hour on Wednesday. (a) Write each mixed fraction as an improper fraction. (b) Find her bill for each of the three days. (c) Find the total for the week. (d) The stall also sells a weekly pass for ₹100 with unlimited riding. Was the pass the better choice for this week, and by how much? (e) A friend has only ₹14 to spend at the stall. For what fraction of an hour can he ride, and how many minutes is that?",
+          "a": "(a) 1 1/4 = 5/4 and 2 2/3 = 8/3. (b) Monday 5/4 × 24 = ₹30; Tuesday 8/3 × 24 = ₹64; Wednesday 3/4 × 24 = ₹18. (c) 30 + 64 + 18 = ₹112. (d) Yes, the pass was better: 112 − 100 = ₹12 saved. (e) ₹14 buys 14 ÷ 24 = 7/12 of an hour, and 7/12 × 60 = 35 minutes.",
+          "s": [
+            [
+              "(a) Writes 5/4 and 8/3",
+              1
+            ],
+            [
+              "(b) Finds ₹30, ₹64 and ₹18",
+              1
+            ],
+            [
+              "(c) Finds the total ₹112",
+              1
+            ],
+            [
+              "(d) Says the pass was better and saves ₹12",
+              1
+            ],
+            [
+              "(e) Finds 7/12 of an hour and 35 minutes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 176",
+          "q": "A coil of 9 m wire is cut into 4 equal pieces. What is the total length of 3 of these pieces?",
+          "o": [
+            "6 3/4 m",
+            "2 1/4 m",
+            "3 m",
+            "27 m"
+          ],
+          "a": "6 3/4 m: each piece is 9 ÷ 4 = 9/4 m, and 3 × 9/4 = 27/4 = 6 3/4 m.",
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 175-176",
+          "q": "A boat drifts 5 km in one hour. Nandini says, 'I cannot find how far it drifts in 2/7 hour by dividing and then multiplying, because 5 does not divide exactly by 7.' (a) Is she right? (b) Carry out her method: divide by the denominator, then multiply by the numerator. (c) Check your answer by adding 2/7 five times.",
+          "a": "(a) No. A whole number divided by a larger one simply gives a fraction, so the method still works. (b) 5 ÷ 7 = 5/7 km in 1/7 hour, and 2 × 5/7 = 10/7 km = 1 3/7 km. (c) 2/7 + 2/7 + 2/7 + 2/7 + 2/7 = 10/7, the same answer.",
+          "s": [
+            [
+              "(a) Says she is not right, since 5 ÷ 7 is the fraction 5/7",
+              1
+            ],
+            [
+              "(b) Finds 5/7 and then 2 × 5/7 = 10/7 km",
+              1
+            ],
+            [
+              "(c) Shows that five lots of 2/7 also give 10/7",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-8.2",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 180-181",
+          "q": "Hema divides a paper square into 6 rows and 7 columns and shades a block that is 4 rows tall and 5 columns wide. Which product does NOT give the shaded fraction of the square?",
+          "o": [
+            "4/5 × 6/7",
+            "4/6 × 5/7",
+            "5/7 × 2/3",
+            "4/7 × 5/6"
+          ],
+          "a": "4/5 × 6/7: it equals 24/35, but the block is 20 of the 42 parts, which is 10/21. The other three products all equal 10/21.",
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 178-181",
+          "q": "Sita divides a unit square into 5 rows and 3 columns. She wants to show 7/15 by shading one solid rectangular block of the small parts. (a) Show that she cannot do it with this square. (b) She now divides a unit square into 10 rows and 3 columns. What size of block gives the same fraction? (c) Write the product of two fractions that this new block shows, and find its value.",
+          "a": "(a) The whole has 15 parts, so the block needs 7 parts. A block of 7 parts must be 7 by 1, but the square has only 5 rows and 3 columns, so it does not fit. (b) The whole now has 30 parts and 7/15 = 14/30, so the block has 14 parts: 7 rows by 2 columns. (c) 7/10 × 2/3 = 14/30 = 7/15.",
+          "s": [
+            [
+              "(a) Says 7 parts can only be 7 by 1, which does not fit 5 rows and 3 columns",
+              1
+            ],
+            [
+              "(b) Finds a block of 7 rows by 2 columns",
+              1
+            ],
+            [
+              "(c) Writes 7/10 × 2/3 and shows it equals 7/15",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 180",
+          "q": "A classroom window is 1 1/2 m wide and 1 1/3 m tall. Inside its wooden frame the glass is 1 1/4 m wide and 1 1/5 m tall. (a) Find the area of the whole window and the area of the glass. (b) Find the area of the wooden frame. (c) Vikram takes the differences of the sides and finds the frame's area as (1 1/2 − 1 1/4) × (1 1/3 − 1 1/5). Find his value, and say why it cannot be the area of the frame. (d) Glass costs ₹480 per square metre and the wooden frame ₹900 per square metre. Find the total cost of the window. (e) What fraction of the window's area is glass?",
+          "a": "(a) Window: 3/2 × 4/3 = 2 sq m. Glass: 5/4 × 6/5 = 3/2 sq m. (b) Frame: 2 − 3/2 = 1/2 sq m. (c) His value is 1/4 × 2/15 = 1/30 sq m. That is the area of one small rectangle with those two widths as sides, not of the strip that runs right round the glass, so it is far less than the true 1/2 sq m. (d) Glass 3/2 × 480 = ₹720; frame 1/2 × 900 = ₹450; total ₹1,170. (e) 3/2 ÷ 2 = 3/4 of the window.",
+          "s": [
+            [
+              "(a) Finds 2 sq m and 3/2 sq m",
+              1
+            ],
+            [
+              "(b) Finds the frame's area 1/2 sq m by subtracting",
+              1
+            ],
+            [
+              "(c) Finds 1/30 sq m and says it is one small rectangle, not the strip round the glass",
+              1
+            ],
+            [
+              "(d) Finds ₹720 + ₹450 = ₹1,170",
+              1
+            ],
+            [
+              "(e) Finds 3/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 180",
+          "q": "Priti has a photo 3/8 m long and 2/5 m wide. She says, 'If I double only the length, the area doubles. If I double both the length and the width, the area becomes four times as much.' (a) Find the area of the photo. (b) Test both parts of her statement with the areas. (c) What happens to the area if the length is doubled and the width is cut to half?",
+          "a": "(a) 3/8 × 2/5 = 3/20 sq m. (b) Priti is right. Doubling the length: 3/4 × 2/5 = 3/10 sq m, which is 2 × 3/20. Doubling both: 3/4 × 4/5 = 3/5 sq m, which is 4 × 3/20. (c) 3/4 × 1/5 = 3/20 sq m, so the area does not change.",
+          "s": [
+            [
+              "(a) Finds 3/20 sq m",
+              1
+            ],
+            [
+              "(b) Finds 3/10 and 3/5 sq m and agrees with both parts",
+              1
+            ],
+            [
+              "(c) Finds 3/20 sq m and says the area stays the same",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-8.3",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 182-183",
+          "q": "Tina cancels common factors in 15/14 × 7/10 × 4/3. Every number on top and below reduces, and she says, 'Everything has cancelled, so the product is 0.' (a) Do the cancelling, showing each pair you divide and the factor. (b) Is Tina right? Give the correct product and say what is left behind when two numbers cancel. (c) Without starting again, find 15/14 × 7/10 × 4/3 × 5/6.",
+          "a": "(a) Divide 15 and 10 by 5 to get 3 and 2; 7 and 14 by 7 to get 1 and 2; 4 and the two 2s by 2 twice to get 1, 1 and 1; 3 and 3 by 3 to get 1 and 1. (b) No. The product is 1, because dividing a number by itself leaves 1, not 0. (c) 1 × 5/6 = 5/6.",
+          "s": [
+            [
+              "(a) Shows valid cancelling of a numerator with a denominator throughout",
+              1
+            ],
+            [
+              "(b) Rejects Tina's claim, gives the product 1 and says each cancelled number leaves 1",
+              1
+            ],
+            [
+              "(c) Finds 5/6 using the product 1",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 182-183",
+          "q": "A carpenter's plan lists four cuts. He wants the cut whose length comes to a whole number of metres after cancelling. Which cut is it?",
+          "o": [
+            "8/15 of 45/4 m",
+            "9/16 of 32/27 m",
+            "7/12 of 18/14 m",
+            "25/6 of 9/10 m"
+          ],
+          "a": "8/15 of 45/4 m: cancelling 8 with 4 and 45 with 15 gives 2 × 3 = 6 m. The others come to 2/3 m, 3/4 m and 15/4 m.",
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 182-183",
+          "q": "A sapling is 8 cm tall. In the first week it grows by 1/2 of its height. In the second week it grows by 1/3 of its new height, in the third week by 1/4 of its new height, and so on. (a) Find its height after 1, 2 and 3 weeks. (b) Write the height after 3 weeks as one product of 8 and three fractions, and show which numbers cancel. (c) Using the same cancelling, find the height after 9 weeks. (d) Say in words what fraction 8 cm is multiplied by after any number of weeks. (e) Monika says, 'The height after 18 weeks will be double the height after 9 weeks.' Test her claim.",
+          "a": "(a) 8 + 4 = 12 cm, 12 + 4 = 16 cm, 16 + 4 = 20 cm. (b) Each week multiplies the height by 3/2, 4/3, 5/4: 8 × 3/2 × 4/3 × 5/4 = 8 × 5/2 = 20 cm, as each numerator cancels with the next denominator. (c) 8 × 3/2 × 4/3 × ... × 11/10 = 8 × 11/2 = 44 cm. (d) The numbers between cancel and leave (number of weeks + 2)/2. (e) After 18 weeks the height is 8 × 20/2 = 80 cm, but double 44 is 88 cm, so she is wrong.",
+          "s": [
+            [
+              "(a) Finds 12, 16 and 20 cm",
+              1
+            ],
+            [
+              "(b) Writes 8 × 3/2 × 4/3 × 5/4 and shows the cancelling to reach 20 cm",
+              1
+            ],
+            [
+              "(c) Finds 8 × 11/2 = 44 cm",
+              1
+            ],
+            [
+              "(d) States the multiplier as (weeks + 2)/2 in words or symbols",
+              1
+            ],
+            [
+              "(e) Finds 80 cm against 88 cm and rejects the claim",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 183",
+          "q": "Charger X fills 3/5 of a phone battery in one hour. Charger Y fills 5/8 of the same battery in one hour. (a) What part does X fill in 5/6 hour? (b) What part does Y fill in 4/5 hour? (c) Which charger fills more in 2/3 hour, and by how much of the battery? Cancel common factors in your working.",
+          "a": "(a) 3/5 × 5/6 = 1/2. (b) 5/8 × 4/5 = 1/2. (c) X fills 3/5 × 2/3 = 2/5 and Y fills 5/8 × 2/3 = 5/12. Since 2/5 = 24/60 and 5/12 = 25/60, Y fills more, by 1/60 of the battery.",
+          "s": [
+            [
+              "(a) Finds 1/2 by cancelling",
+              1
+            ],
+            [
+              "(b) Finds 1/2 by cancelling",
+              1
+            ],
+            [
+              "(c) Finds 2/5 and 5/12, names Y and the difference 1/60",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 182-183",
+          "q": "Consider the statements.\nStatement 1: 21/16 × 8/35 = 3/10.\nStatement 2: In 6 × 5/9 the 6 cannot be cancelled with the 9, because 6 is a whole number and not a fraction.\nStatement 3: 9/14 × 7/6 × 4/3 = 1.\nWhich of the statements are correct?",
+          "o": [
+            "1 and 3 only",
+            "1 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ],
+          "a": "1 and 3 only"
+        }
+      ]
+    },
+    {
+      "code": "C7M-8.4",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 185-186",
+          "q": "In a card game a player starts with a score of 240 and picks two different cards from 5/4, 3/4, 7/6 and 9/10. The score is multiplied by both cards. (a) Without finding any score, say which two cards give the highest final score and which two give the lowest, with a reason. (b) Find those two final scores. (c) Find all the pairs that end with a score greater than 240 and less than 300. (d) Ravi says, 'The order of the two cards changes the score.' Test this with 7/6 and 9/10, showing the score after each card in both orders. (e) A new card is added so that 3/4 followed by the new card brings the score back to 240. What number is on the new card?",
+          "a": "(a) Highest: 5/4 and 7/6, the two cards greater than 1. Lowest: 3/4 and 9/10, the two cards between 0 and 1. (b) 240 × 5/4 × 7/6 = 350 and 240 × 3/4 × 9/10 = 162. (c) 5/4 and 9/10 give 270; 7/6 and 9/10 give 252. The other two pairs give 225 and 210, which are below 240. (d) 240 → 280 → 252 and 240 → 216 → 252. Both orders give 252, so Ravi is wrong. (e) 3/4 × new card must be 1, so the card is 4/3.",
+          "s": [
+            [
+              "(a) Names both pairs with a reason from greater than 1 / between 0 and 1",
+              1
+            ],
+            [
+              "(b) Finds 350 and 162",
+              1
+            ],
+            [
+              "(c) Names exactly the two pairs that give 270 and 252",
+              1
+            ],
+            [
+              "(d) Shows both orders reach 252 and rejects Ravi's claim",
+              1
+            ],
+            [
+              "(e) Finds 4/3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 186",
+          "q": "Mat A is 5/9 m wide and 4/7 m long. Mat B is 4/7 m wide and has exactly the same area as mat A. What is the length of mat B?",
+          "o": [
+            "5/9 m",
+            "4/7 m",
+            "20/63 m",
+            "16/49 m"
+          ],
+          "a": "5/9 m: the area is 5/9 × 4/7, and the order of the factors does not change a product, so B (4/7 wide) must be 5/9 long.",
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 185",
+          "q": "A teacher marks three answers from a homework book: (i) 8/9 × 5/7 = 40/37 (ii) 9/4 × 7/3 = 7/4 (iii) 5/6 × 9/2 = 15/4. (a) Without multiplying, use the size of the numbers to say which of the answers cannot be right, and why. (b) Multiply to give the correct product for each answer you rejected. (c) Find whether the answer you did not reject is really correct.",
+          "a": "(a) (i) cannot be right: both numbers are between 0 and 1, so the product must be less than both, but 40/37 is more than 1. (ii) cannot be right: both numbers are greater than 1, so the product must be greater than both, but 7/4 is less than 9/4. (iii) passes: 15/4 lies between 5/6 and 9/2. (b) (i) 40/63 (ii) 21/4. (c) 5/6 × 9/2 = 45/12 = 15/4, so (iii) is correct.",
+          "s": [
+            [
+              "(a) Rejects (i) and (ii) with the size reason for each",
+              1
+            ],
+            [
+              "(b) Finds 40/63 and 21/4",
+              1
+            ],
+            [
+              "(c) Multiplies to confirm that 15/4 is correct",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 186",
+          "q": "On a unit square, the picture for 2/3 × 5/7 has 7 rows and 3 columns, with a block of 5 rows and 2 columns shaded. (a) Find how many small parts the whole has, how many are shaded, and the product. (b) Describe the picture for 5/7 × 2/3 in the same way, with the rows and columns for this order. (c) Explain, by turning a shape, why the two products must always be equal.",
+          "a": "(a) 21 small parts, 10 shaded, so the product is 10/21. (b) It has 3 rows and 7 columns with a block of 2 rows and 5 columns shaded: again 10 of 21, so 10/21. (c) Turning the square through a right angle changes rows into columns. The block is the same rectangle with its length and breadth interchanged, and its area stays the same, so the order does not change the product.",
+          "s": [
+            [
+              "(a) Finds 21 parts, 10 shaded and 10/21",
+              1
+            ],
+            [
+              "(b) Gives 3 rows, 7 columns and a 2 by 5 block, again 10/21",
+              1
+            ],
+            [
+              "(c) Explains that turning interchanges length and breadth and leaves the area the same",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 184-185",
+          "q": "Consider the statements about positive numbers.\nStatement 1: Multiplying 5/9 by itself gives a number greater than 5/9.\nStatement 2: 7/6 × 6/5 × 4/5 is greater than 1.\nStatement 3: If the product of two numbers is less than each of them, then both numbers lie between 0 and 1.\nWhich of the statements are correct?",
+          "o": [
+            "2 and 3 only",
+            "1 and 2 only",
+            "3 only",
+            "1, 2 and 3"
+          ],
+          "a": "2 and 3 only"
+        }
+      ]
+    },
+    {
+      "code": "C7M-8.5",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 187-188",
+          "q": "A rectangular cloth banner has an area of 9/14 square metre and a width of 3/8 m. What is its length?",
+          "o": [
+            "1 5/7 m",
+            "27/112 m",
+            "7/12 m",
+            "15/56 m"
+          ],
+          "a": "1 5/7 m: rewriting as 3/8 × ? = 9/14, the length is 9/14 × 8/3 = 12/7 m.",
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 188",
+          "q": "Zubin says, 'A fraction and its reciprocal can never both be greater than 1.' (a) Test his statement on 7/4 and on 3/5. (b) Give a reason why it is true for every fraction, using what a fraction multiplied by its reciprocal must give. (c) Which positive number is equal to its own reciprocal?",
+          "a": "(a) Zubin is right in both tests: the reciprocal of 7/4 is 4/7, which is less than 1; the reciprocal of 3/5 is 5/3, where 3/5 is less than 1. (b) A fraction times its reciprocal is 1. If both were greater than 1, their product would be greater than both and so greater than 1, which cannot be. (c) 1 is the positive number, since 1 × 1 = 1.",
+          "s": [
+            [
+              "(a) Finds 4/7 and 5/3 and sees that one of each pair is less than 1",
+              1
+            ],
+            [
+              "(b) Reasons that two numbers greater than 1 cannot have the product 1",
+              1
+            ],
+            [
+              "(c) Says the number is 1",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 188-189",
+          "q": "Sushma's phone pack gives her 3/4 GB of data a day. A video uses 3/8 GB in one hour. A study app uses 1/16 GB in 1/3 hour. (a) How much data does the study app use in one hour? (b) For how many hours can she watch video if she uses all her data on video? (c) For how many hours can she use the app if she uses all her data on the app? (d) One day she watches video for 2/3 hour first. How long can she then use the app? Give a mixed fraction. (e) Another day she must use the app for 3 hours. What is the longest she can watch video that day?",
+          "a": "(a) 1/16 ÷ 1/3 = 1/16 × 3 = 3/16 GB. (b) 3/4 ÷ 3/8 = 3/4 × 8/3 = 2 hours. (c) 3/4 ÷ 3/16 = 3/4 × 16/3 = 4 hours. (d) Video uses 2/3 × 3/8 = 1/4 GB, leaving 3/4 − 1/4 = 1/2 GB; 1/2 ÷ 3/16 = 8/3 = 2 2/3 hours. (e) The app uses 3 × 3/16 = 9/16 GB, leaving 3/4 − 9/16 = 3/16 GB; 3/16 ÷ 3/8 = 1/2 hour.",
+          "s": [
+            [
+              "(a) Finds 3/16 GB per hour by dividing by 1/3",
+              1
+            ],
+            [
+              "(b) Finds 2 hours",
+              1
+            ],
+            [
+              "(c) Finds 4 hours",
+              1
+            ],
+            [
+              "(d) Finds 1/2 GB left and 2 2/3 hours",
+              1
+            ],
+            [
+              "(e) Finds 9/16 GB used, 3/16 GB left and 1/2 hour",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 190",
+          "q": "A tailor has a lace strip 4 1/2 m long. (a) How many pieces of 3/8 m can be cut from it? (b) Rina says, 'If each piece is made twice as long, the number of pieces is also halved.' Test this with pieces of 3/4 m. (c) How many whole pieces of 5/6 m can be cut, and what length of lace is left over?",
+          "a": "(a) 9/2 ÷ 3/8 = 9/2 × 8/3 = 12 pieces. (b) 9/2 ÷ 3/4 = 6 pieces, which is half of 12, so Rina is right. (c) 9/2 ÷ 5/6 = 27/5 = 5 2/5, so 5 whole pieces. They use 5 × 5/6 = 25/6 m, leaving 9/2 − 25/6 = 1/3 m.",
+          "s": [
+            [
+              "(a) Finds 12 pieces",
+              1
+            ],
+            [
+              "(b) Finds 6 pieces and says Rina is right",
+              1
+            ],
+            [
+              "(c) Finds 5 whole pieces and 1/3 m left",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-8.6",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 189",
+          "q": "Yash predicts two results: (i) 7/5 ÷ 7/3 is less than 7/5, because the divisor is greater than 1. (ii) 2/9 ÷ 1/3 is less than 2/9, because 2/9 is so small that dividing can only make it smaller. (a) Find both quotients. (b) Say which prediction and which reason hold. (c) Now divide 2/9 by 4/5: find the quotient and say whether it is greater or less than 2/9.",
+          "a": "(a) 7/5 ÷ 7/3 = 7/5 × 3/7 = 3/5, and 2/9 ÷ 1/3 = 2/9 × 3 = 2/3. (b) Yash is partly right. (i) holds: 3/5 is less than 7/5, for the reason he gives. (ii) fails: 2/3 is greater than 2/9. (c) 2/9 ÷ 4/5 = 2/9 × 5/4 = 5/18. Since 4/5 is less than 1 and 5/18 is more than 4/18 = 2/9, the quotient is greater than 2/9.",
+          "s": [
+            [
+              "(a) Finds 3/5 and 2/3",
+              1
+            ],
+            [
+              "(b) Accepts (i) and rejects (ii), so partly right",
+              1
+            ],
+            [
+              "(c) Finds 5/18 and says it is greater than 2/9",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 189",
+          "q": "Four pupils each work out one division: Anu 3/4 ÷ 3/2, Babu 5/2 ÷ 5/4, Charu 3/5 ÷ 9/10, Dinu 7/3 ÷ 1/2. Whose quotient is greater than both the dividend and the divisor?",
+          "o": [
+            "Dinu's",
+            "Babu's",
+            "Charu's",
+            "Anu's"
+          ],
+          "a": "Dinu's: 7/3 ÷ 1/2 = 14/3, which is more than both 7/3 and 1/2. The other quotients are 1/2, 2 and 2/3, and each of these is less than the dividend or the divisor.",
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "p. 189",
+          "q": "Consider the statements.\nStatement 1: 5/7 ÷ 3/2 is greater than 5/7.\nStatement 2: If dividing 6/5 by a positive number d gives a quotient less than 6/5, then d must be greater than 1.\nStatement 3: 4 ÷ 8/9 is less than 4, because 8/9 is close to 1.\nWhich of the statements are correct?",
+          "o": [
+            "2 only",
+            "1 and 2 only",
+            "2 and 3 only",
+            "1, 2 and 3"
+          ],
+          "a": "2 only"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 187-189",
+          "q": "A rectangular flower bed has an area of 15/4 square metres, and one side is 5/2 m long. (a) Find the other side by writing a division. (b) Find 15/4 ÷ 3/2. What do you notice about the divisor and the quotient in your two divisions? (c) Rewrite each division as a missing-factor multiplication, and use the order of multiplication to explain what you noticed. (d) You are told that 14/15 ÷ 2/5 = 7/3. Without any working, write down the value of 14/15 ÷ 7/3, and say which of these two quotients is greater than 14/15, with a reason from the divisor. (e) Using the same idea, find the number by which 5/6 must be divided to give 1/4, and check that it agrees with the rule for a quotient less than the dividend.",
+          "a": "(a) 15/4 ÷ 5/2 = 15/4 × 2/5 = 3/2 m. (b) 15/4 ÷ 3/2 = 15/4 × 2/3 = 5/2. The divisor and the quotient have changed places. (c) 5/2 × ? = 15/4 and 3/2 × ? = 15/4. Since 5/2 × 3/2 = 3/2 × 5/2, each missing factor is the other number. (d) 14/15 ÷ 7/3 = 2/5. The quotient 7/3 is greater than 14/15, because its divisor 2/5 is between 0 and 1; the quotient 2/5 is less, because its divisor 7/3 is greater than 1. (e) 5/6 ÷ 1/4 = 10/3, and 5/6 ÷ 10/3 = 1/4. The divisor 10/3 is greater than 1, which agrees with a quotient less than the dividend.",
+          "s": [
+            [
+              "(a) Finds the other side 3/2 m",
+              1
+            ],
+            [
+              "(b) Finds 5/2 and says the divisor and quotient change places",
+              1
+            ],
+            [
+              "(c) Writes both missing-factor forms and explains using the order of multiplication",
+              1
+            ],
+            [
+              "(d) Gives 2/5 and says 7/3 is the greater one, with the divisor reason",
+              1
+            ],
+            [
+              "(e) Finds 10/3 and checks it against the rule",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 189",
+          "q": "Ramu has 5/2 kg of honey and jars that each hold 15/4 kg. (a) Without dividing, say whether 5/2 ÷ 15/4 will be more or less than 5/2, and why. (b) Find the quotient. (c) Say what this quotient tells Ramu about his jar, and how much more honey would fill one jar.",
+          "a": "(a) Less, because the divisor 15/4 is greater than 1. (b) 5/2 ÷ 15/4 = 5/2 × 4/15 = 2/3. (c) His honey fills only 2/3 of one jar. He needs 15/4 − 5/2 = 5/4 kg more to fill it.",
+          "s": [
+            [
+              "(a) Says less, because the divisor is greater than 1",
+              1
+            ],
+            [
+              "(b) Finds 2/3",
+              1
+            ],
+            [
+              "(c) Says 2/3 of one jar is filled and 5/4 kg more is needed",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-8.7",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 184",
+          "q": "A courier desk weighs four parcels: P is 3/5 of 2 kg, Q is 5/6 of 1 1/2 kg, R is 7/10 of 1700 g and S is 11/20 of 2 kg. Which parcel is the heaviest?",
+          "o": [
+            "Q",
+            "P",
+            "R",
+            "S"
+          ],
+          "a": "Q: in grams the four parcels are P 1200 g, Q 1250 g, R 1190 g and S 1100 g.",
+          "tags": [
+            "scenario"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 192-193",
+          "q": "A square card is divided into 9 equal small squares. One small square is cut along its diagonal into two equal triangles. One of these triangles is divided into 3 equal parts and 2 of the parts are shaded. (a) What fraction of the card is one such triangle? (b) What fraction of the card is shaded? (c) The card has an area of 54 square cm. Find the shaded area.",
+          "a": "(a) 1/2 × 1/9 = 1/18. (b) 2/3 × 1/18 = 1/27. (c) 1/27 × 54 = 2 square cm.",
+          "s": [
+            [
+              "(a) Finds 1/18",
+              1
+            ],
+            [
+              "(b) Finds 1/27",
+              1
+            ],
+            [
+              "(c) Finds 2 square cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 193-194",
+          "q": "A village panchayat has a community garden of 720 square m. 5/9 of the garden is under vegetables, and 3/10 of the vegetable area grows tomatoes. 4/9 of the garden is under flowers, and 5/8 of the flower area grows marigolds. (a) What fraction of the whole garden grows tomatoes, and how many square m is that? (b) What fraction of the whole garden grows marigolds, and how many square m is that? (c) Which of the two crops covers more, and by what fraction of the garden? (d) 3/4 of the marigold area is sold as garlands' flowers. How many square m is that? (e) The sarpanch says, 'Half the garden grows neither tomatoes nor marigolds.' Test her claim.",
+          "a": "(a) 5/9 × 3/10 = 1/6 of the garden, which is 120 square m. (b) 4/9 × 5/8 = 5/18 of the garden, which is 200 square m. (c) 5/18 = 5/18 and 1/6 = 3/18, so marigolds cover more, by 2/18 = 1/9 of the garden (80 square m). (d) 3/4 × 200 = 150 square m. (e) The two crops cover 1/6 + 5/18 = 3/18 + 5/18 = 8/18 = 4/9 of the garden, so 1 − 4/9 = 5/9 grows neither, which is 400 square m. Since 5/9 is not 1/2 (it is 1/18, or 40 square m, more), the claim is wrong.",
+          "s": [
+            [
+              "(a) Finds 1/6 and 120 square m",
+              1
+            ],
+            [
+              "(b) Finds 5/18 and 200 square m",
+              1
+            ],
+            [
+              "(c) Finds marigolds larger by 1/9",
+              1
+            ],
+            [
+              "(d) Finds 150 square m",
+              1
+            ],
+            [
+              "(e) Finds 5/9 (400 square m) and says the claim is wrong",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "p": "p. 196",
+          "q": "An electrician works with wire. Match each situation in Column I with its value in Column II.\nColumn I: 1. number of 2/3 m pieces cut from 6 m of wire   2. length in m of each piece when 2/3 m of wire is cut into 6 equal pieces   3. total length in m of 6 wires of 2/3 m each   4. length in m of 2/3 of a 3/4 m wire\nColumn II: A. 1/9   B. 1/2   C. 4   D. 9",
+          "o": [
+            "1-D, 2-A, 3-C, 4-B",
+            "1-C, 2-A, 3-D, 4-B",
+            "1-A, 2-D, 3-C, 4-B",
+            "1-D, 2-B, 3-C, 4-A"
+          ],
+          "a": "1-D, 2-A, 3-C, 4-B",
+          "tags": [
+            "match"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 183-184",
+          "q": "On Monday a ration shop sells 3/5 of its rice. On Tuesday it sells 1/4 of the rice left after Monday. At closing time on Tuesday 18 kg of rice is left. (a) What fraction of the original rice is left after Monday? (b) What fraction of the original rice is sold on Tuesday, and what fraction is left at the end? (c) How much rice did the shop have at the start? Check your answer by following the two days through.",
+          "a": "(a) 1 − 3/5 = 2/5. (b) Sold on Tuesday: 1/4 × 2/5 = 1/10. Left: 2/5 − 1/10 = 3/10. (c) 3/10 × ? = 18, so the rice at the start is 18 ÷ 3/10 = 18 × 10/3 = 60 kg. Check: Monday leaves 2/5 × 60 = 24 kg, and Tuesday sells 6 kg, leaving 18 kg.",
+          "s": [
+            [
+              "(a) Finds 2/5",
+              1
+            ],
+            [
+              "(b) Finds 1/10 sold and 3/10 left",
+              1
+            ],
+            [
+              "(c) Finds 60 kg by dividing 18 by 3/10, with the check through 24 kg to 18 kg",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

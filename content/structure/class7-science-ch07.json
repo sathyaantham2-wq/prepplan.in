@@ -1,0 +1,111 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "SCI",
+  "name": "Science",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Curiosity: Textbook of Science",
+  "edition": "Grade 7, 2025",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "Heat Transfer in Nature",
+  "blurb": "Conduction, convection and radiation, conductors and insulators, land and sea breeze, the water cycle, infiltration and groundwater.",
+  "order_index": 7,
+  "source_code": "gecu107"
+ },
+ "scope": [
+  [
+   "IN",
+   "Conduction and conductors",
+   "90-92"
+  ],
+  [
+   "IN",
+   "Land and sea breeze",
+   "94-96"
+  ],
+  [
+   "IN",
+   "Radiation and all three modes",
+   "96-97"
+  ],
+  [
+   "IN",
+   "Water cycle, infiltration and groundwater",
+   "98-101"
+  ],
+  [
+   "IN",
+   "Convection",
+   "92-94"
+  ],
+  [
+   "OUT",
+   "Exploratory projects",
+   "Activity based"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7SC-7.1",
+   "name": "Conduction of heat",
+   "description": "How heat moves through solids from the hot end to the cold end, shown by the pins on a metal strip.",
+   "idea": "In conduction heat passes from particle to neighbouring particle, and the particles do not move.",
+   "rule": "In Activity 7.1 pins are attached with wax to a metal strip that is heated at one end. The pin nearest the flame falls first, then the next, and so on, because heat travels along the strip and melts the wax. The transfer of heat from the hotter part of an object to the colder part is called conduction. The particle that gets heated passes the heat to its neighbour, and so on, but the particles themselves do not move from their positions. In solids, heat transfer takes place mainly through conduction. Conduction needs a medium, that is, matter whose particles pass on the heat.",
+   "example": "The handle of a spoon left in hot tea slowly becomes warm.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-7.2",
+   "name": "Good and poor conductors and their uses",
+   "description": "Conductors and insulators, air as an insulator, and how materials are used in utensils, clothing and houses.",
+   "idea": "Metals are good conductors; wood, glass, clay and trapped air are poor conductors that keep things warm.",
+   "rule": "Materials such as metals that allow heat to pass easily are good conductors of heat, so cooking utensils are made of metal. Glass, wood, clay and porcelain do not allow heat to pass easily and are poor conductors (insulators), so tea or coffee in clay or porcelain cups stays hot longer. Air is a poor conductor. Woollen fabric traps air in its pores, so it reduces heat flow from our bodies to the surroundings and keeps us warm. Two thin blankets keep us warmer than one thick blanket because of the air between them. Houses in the upper Himalayas have walls of two wooden layers filled with cow dung and mud, and hollow bricks trap air, keeping houses warm in winter and cool in summer.",
+   "example": "A wooden handle on a metal pan protects the hand from heat.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-7.3",
+   "name": "Convection in air and liquids",
+   "description": "Convection by movement of warm air and water, the paper cup and potassium permanganate activities, and smoke.",
+   "idea": "In convection, heat is carried by the actual movement of particles of liquids and gases.",
+   "rule": "In Activity 7.2 the cup above a burning candle rises because the air around the flame heats, expands, becomes lighter and rises. Smoke rises because it is a mixture of hot gases and tiny particles that is warmer than the surrounding air. In Activity 7.3 a crystal of potassium permanganate in water heated at the centre of the base shows a coloured streak going up in the middle and coming down at the sides: hot water expands, becomes lighter and rises, and cooler, heavier water from the sides comes down to take its place. This cycle continues until all the water is heated. The process in which heat is transferred by the actual movement of particles of liquids and gases from one place to another is called convection. In liquids and gases heat is mainly transferred by convection.",
+   "example": "A smoke detector is fitted on the ceiling because smoke rises.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-7.4",
+   "name": "Land and sea breeze",
+   "description": "Soil heating and cooling faster than water, and the day and night breezes in coastal areas.",
+   "idea": "Land heats and cools faster than water, causing sea breeze by day and land breeze at night.",
+   "rule": "In Activity 7.4 soil and water in identical bowls are placed in sunlight. After 20 minutes the soil is hotter than the water, so soil heats faster than water, and when cooled indoors it also cools faster. In coastal areas, during the day the land is warmer than the sea, so warm air above the land rises and cooler air from the sea moves towards the land: this is sea breeze. Windows of houses in coastal areas face the sea. At night the land cools faster, so the air above the sea is warmer and rises, and cooler air from the land moves towards the sea: this is land breeze. Thus the wind direction reverses during day and night. Large water bodies help prevent extremes of temperature nearby.",
+   "example": "In Kerala winter is comparatively warm and humid because of the long coastline.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-7.5",
+   "name": "Radiation and all three modes together",
+   "description": "Radiation of heat without a medium, colours of clothes, and how the three modes work together.",
+   "idea": "Radiation transfers heat directly without needing any medium, and the Sun's heat reaches us this way.",
+   "rule": "Radiation is the heat transfer that takes place directly from a hot object to us, as when we sit around a fire, and it does not need any medium. The heat of the Sun reaches the Earth through radiation. All objects radiate heat, and a hot utensil kept away from the flame cools by radiating heat to its surroundings. Light-coloured clothes reflect most of the heat that falls on them, so we prefer them in summer, while dark surfaces absorb more heat, so dark clothes are more comfortable in winter. When water is heated in a pan, heat goes from the flame to the pan by conduction, the water warms by convection, and the warmth we feel near the flame is by radiation. Conduction and convection need a medium, but radiation does not. The bukhari heater uses all three processes.",
+   "example": "Sitting around a fireplace, Pema and Palden felt warm by radiation.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-7.6",
+   "name": "Water cycle, infiltration and groundwater",
+   "description": "The water cycle, seepage through clay, sand and gravel, aquifers, groundwater conservation and the ice stupa.",
+   "idea": "Heat from the Sun drives the water cycle, and water seeping through the ground is stored as groundwater in aquifers.",
+   "rule": "Sun's heat evaporates water from oceans, rivers and lakes and from plants by transpiration. Water vapour rises, cools and condenses to form clouds, which bring rain, snow and hail; this is precipitation. The continuous movement of water upward as vapour and downward through precipitation, passing through soil, rocks and plants and returning to water bodies is the water cycle. Water seeps fastest through gravel, slower through sand and slowest through clay, since gaps between gravel particles are wider; the process of surface water seeping through soil and rocks is called infiltration. Groundwater is stored in pore spaces of sediments and openings in rocks; the layers that store it are aquifers, tapped by wells and bore wells. Rainwater harvesting and recharge pits replenish groundwater. In Ladakh people make ice stupas in winter that melt slowly in spring. Varahamihira (6th century CE) gave methods for predicting seasonal rainfall in his Brihatsamhita.",
+   "example": "Wells and handpumps draw the water that has seeped into the ground.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "SST",
+  "name": "Social Science",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Exploring Society: India and Beyond",
+  "edition": "Grade 7 Parts 1 and 2, 2026",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Understanding the Weather",
+  "blurb": "Weather and its five elements, the instruments used to measure them, weather stations and how forecasts are used.",
+  "order_index": 2,
+  "source_code": "gees102"
+ },
+ "scope": [
+  [
+   "IN",
+   "Weather, the atmosphere and the elements of weather",
+   "28-29"
+  ],
+  [
+   "OUT",
+   "Reading the IMD warning map and daily weather tables in detail",
+   "Depends on figures and tables not reproduced"
+  ],
+  [
+   "IN",
+   "Wind and humidity",
+   "36-38"
+  ],
+  [
+   "IN",
+   "Weather stations and forecasting",
+   "39-42"
+  ],
+  [
+   "IN",
+   "Traditional weather signs and the need for common measures",
+   "29-30"
+  ],
+  [
+   "IN",
+   "Rainfall and atmospheric pressure",
+   "33-36"
+  ],
+  [
+   "IN",
+   "Measuring temperature",
+   "31-33"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7S-2.1",
+   "name": "Weather, the atmosphere and the elements of weather",
+   "description": "What weather is, the atmosphere and troposphere, and the five elements of weather.",
+   "idea": "Weather is the state of the atmosphere at a place and time, described by five elements.",
+   "rule": "Weather is the state of the Earth's atmosphere at a particular time and place. The atmosphere is the layer of gases around Earth. The troposphere is the layer closest to the ground, 6 to 18 km high, where almost all weather happens; it is thinner at the poles and thicker in the tropics. The elements are temperature, precipitation, atmospheric pressure, wind and humidity.",
+   "example": "Wearing thick clothes on a cold morning is a response to the weather.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-2.2",
+   "name": "Traditional weather signs and the need to measure weather",
+   "description": "Reading nature's signals, why common standards are needed and what meteorology does.",
+   "idea": "People read natural signs to forecast weather, and scientists use common measures and instruments.",
+   "rule": "Humans have long read nature's signals, such as ants carrying eggs to higher ground, frogs croaking loudly, low-flying birds and pine cones opening and closing, to forecast rain. Meteorology is the systematic study of weather and its evolution and is the basis of forecasting. To compare weather across places we need commonly agreed standards of measurement.",
+   "example": "Krishnan and Amir need a common measure of temperature to compare how cold it feels.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-2.3",
+   "name": "Measuring temperature: thermometers, range and mean",
+   "description": "Thermometers, Celsius and Fahrenheit, the range and the mean daily temperature, and the IMD.",
+   "idea": "Temperature is measured with thermometers; the range and mean summarise a day's readings.",
+   "rule": "Thermometers measure temperature, often using a coloured liquid that expands when heated; digital ones are more precise. Scales include Celsius and Fahrenheit (15 degrees C is 59 degrees F). Range is the maximum temperature minus the minimum in a period, usually 24 hours. Mean daily temperature is (maximum + minimum) divided by 2. The India Meteorological Department was set up in 1875.",
+   "example": "A day with maximum 30 and minimum 16 degrees C has a range of 14 and a mean of 23.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-2.4",
+   "name": "Rainfall and atmospheric pressure",
+   "description": "Measuring rainfall with a rain gauge, atmospheric pressure, the barometer, altitude effects and depressions.",
+   "idea": "Rain is measured in millimetres with a rain gauge; pressure is measured with a barometer in millibars.",
+   "rule": "A rain gauge collects rain in a funnel and cylinder with a scale; 5 mm of water means 5 mm of rainfall. Atmospheric pressure is the pressure from the weight of the air. It is higher near the coast and lower at altitude, where the thinner air holds less oxygen. A barometer measures it in millibars; normal sea-level pressure is about 1013 mb, and below 1000 mb indicates a depression, which can become a storm or cyclone.",
+   "example": "Soldiers at Khardung La (over 5600 m) face pressure of about 650 mb.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-2.5",
+   "name": "Measuring wind and humidity",
+   "description": "Wind speed and direction, the wind vane and anemometer, humidity, relative humidity and the hygrometer.",
+   "idea": "Wind is measured with a wind vane and an anemometer, and humidity with a hygrometer.",
+   "rule": "Wind is the movement of air from high to low pressure; its speed and direction matter. A wind vane shows direction and a wind sock is used at airfields. An anemometer has metal cups that spin faster in stronger wind and shows speed in km/h. Humidity is the amount of water vapour in the air, measured as relative humidity: 0% is no vapour, 100% is saturated. Dry weather is 20-40% and humid weather is 60-80%. A hygrometer measures it.",
+   "example": "With 84% humidity in Kochi versus 52% in Delhi, wet clothes dry more slowly in Kochi.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-2.6",
+   "name": "Weather stations, automated stations and forecasting",
+   "description": "Weather stations, the Automated Weather Station, how forecasts are made and IMD warnings.",
+   "idea": "Weather stations gather all instruments; forecasts help us prepare for extreme weather.",
+   "rule": "A weather station brings the instruments together and readings are taken at regular intervals for mapping and forecasting. An Automated Weather Station (AWS) uses sensors to record temperature, humidity, wind, precipitation and pressure without human help. In 2023 an AWS was set up at a glacial lake in Sikkim over 4800 m high. Forecasts warn of droughts, floods and cyclones so governments can mobilise resources, warn fishermen and evacuate coasts. IMD maps use colours: no warning, watch, alert and warning.",
+   "example": "Fishermen are warned not to sail when storms are expected at sea.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

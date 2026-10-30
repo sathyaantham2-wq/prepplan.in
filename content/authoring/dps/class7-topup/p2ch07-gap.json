@@ -1,0 +1,942 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 7,
+  "name": "Finding the Unknown"
+ },
+ "source_code": "gegp207",
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 167",
+     "q": "A strip of matchstick triangles uses 2n + 1 sticks at position n (3, 5, 7, ... sticks). Pooja has a box of exactly 150 sticks and wants one arrangement of this strip that uses every stick. What is the correct conclusion?",
+     "a": "None, since 2n + 1 is always odd; position 74 uses 149.",
+     "o": [
+      "None, since 2n + 1 is always odd; position 74 uses 149.",
+      "Position 75, because 2 × 75 = 150 and every one of her sticks gets used up.",
+      "Position 74.5, because 2n + 1 = 150 gives n = 149/2, so half of position 75 is built.",
+      "Position 50, because each triangle needs 3 sticks and 150 ÷ 3 = 50 triangles fit."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 165-167",
+     "q": "A balanced scale has 4 identical tins and a 7-unit weight on the left pan, and 2 of the same tins and a 19-unit weight on the right pan. Let t be the weight of one tin.\nStatement 1: The LHS of the equation for this scale is 2t + 19.\nStatement 2: Removing 2 tins and the 7 units from each side leaves 2t = 12, so t = 6.\nStatement 3: If one more tin is put on each pan, the scale stays balanced and t is still 6.\nWhich of the statements are correct?",
+     "a": "2 and 3 only",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "2 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 165-168",
+     "q": "A fruit seller's scale balances with 7 identical apples on the left pan, and 4 of the same apples and a 27-unit weight on the right pan. (a) Taking the weight of one apple as a, frame the equation and name its LHS and RHS. (b) Remove equal weights from both pans to find a, and check that both pans then show the same weight.",
+     "a": "(a) 7a = 4a + 27; the LHS is 7a and the RHS is 4a + 27. (b) Removing 4 apples from each pan leaves 3a = 27, so a = 9 units. Check: 7 × 9 = 63 and 4 × 9 + 27 = 36 + 27 = 63.",
+     "s": [
+      [
+       "(a) frames 7a = 4a + 27 and names LHS 7a, RHS 4a + 27",
+       1
+      ],
+      [
+       "(b) removes 4 apples from each pan to get 3a = 27, a = 9, and checks both pans are 63",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 167-168",
+     "q": "The matchstick pattern uses 2n + 1 sticks at position n. Aditi says: 'Position 30 uses 61 sticks. Position 60 is double position 30, so it must use double the sticks, which is 122.' Test both of her sentences and give your verdict.",
+     "a": "Aditi is partly right. Position 30: 2 × 30 + 1 = 61, so her first sentence is right. Position 60: 2 × 60 + 1 = 121, not 122, so her second sentence is wrong. Doubling the position doubles only the 2n part; the extra 1 stick stays as it is, so doubling 61 counts that stick twice.",
+     "s": [
+      [
+       "checks 2 × 30 + 1 = 61, so the first sentence is right",
+       1
+      ],
+      [
+       "finds position 60 uses 2 × 60 + 1 = 121, not 122",
+       1
+      ],
+      [
+       "explains that only 2n doubles and the 1 does not, and gives the verdict partly right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "show_impossible"
+     ],
+     "p": "pp. 167-168",
+     "q": "A stick pattern uses 5 sticks at position 1, 8 sticks at position 2 and 11 sticks at position 3, and grows by the same number of sticks each time. (a) Write the number of sticks at position n. (b) Frame an equation for an arrangement with 50 sticks and find its position. (c) Show that no arrangement in this pattern uses exactly 60 sticks.",
+     "a": "(a) The pattern grows by 3 each time and position 1 has 5 = 3 × 1 + 2, so position n uses 3n + 2 sticks. (b) 3n + 2 = 50 gives 3n = 48, so n = 16; check: 3 × 16 + 2 = 50. (c) 3n + 2 = 60 gives 3n = 58 and n = 58/3, which is not a whole number. Positions are whole numbers (position 19 uses 59 sticks and position 20 uses 62), so no arrangement uses exactly 60 sticks.",
+     "s": [
+      [
+       "(a) writes 3n + 2 for position n",
+       1
+      ],
+      [
+       "(b) frames 3n + 2 = 50 and finds n = 16",
+       1
+      ],
+      [
+       "(c) gets n = 58/3, not a whole number (or 59 at position 19 and 62 at position 20), so 60 is impossible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 165-168",
+     "q": "A shopkeeper's scale balances with 6 identical soap bars and a 50 g weight on the left pan, and 2 of the same bars and a 250 g weight on the right pan. (a) Frame the equation, taking the weight of one bar as s grams. (b) Solve it by removing equal weights from both pans, saying what you remove at each step. (c) Check your answer by finding the weight on each pan. (d) The shopkeeper now moves the 50 g weight from the left pan to the right pan. Which pan goes down, and by how many grams is it heavier? (e) Without moving any weights back, how many soap bars must be taken off the heavier pan to balance the scale again?",
+     "a": "(a) 6s + 50 = 2s + 250. (b) Remove 2 bars from each pan: 4s + 50 = 250. Remove 50 g from each pan: 4s = 200. So s = 200 ÷ 4 = 50 g. (c) Left pan: 6 × 50 + 50 = 350 g; right pan: 2 × 50 + 250 = 350 g, so the scale balances. (d) Now the left pan holds 6 bars = 300 g and the right pan holds 2 bars + 250 g + 50 g = 400 g, so the right pan goes down and is 100 g heavier. (e) The right pan must lose 100 g, which is 2 bars (2 × 50 = 100 g). Then both pans hold 300 g.",
+     "s": [
+      [
+       "(a) frames 6s + 50 = 2s + 250",
+       1
+      ],
+      [
+       "(b) removes 2 bars and 50 g from each pan to reach 4s = 200 and s = 50 g",
+       1
+      ],
+      [
+       "(c) checks that both pans weigh 350 g",
+       1
+      ],
+      [
+       "(d) finds left 300 g and right 400 g, so the right pan goes down by 100 g",
+       1
+      ],
+      [
+       "(e) takes 2 bars off the right pan so both pans are 300 g",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "pp. 169-170",
+     "q": "Kiran is told that 3604 - 917 + 85 - (-39) = 2811. He wants the value of 3604 - 917 + 85 without working it out. Which reasoning and value are correct?",
+     "a": "Add (-39) to both sides to remove the term -(-39): the value is 2811 + (-39) = 2772.",
+     "o": [
+      "Add (-39) to both sides to remove the term -(-39): the value is 2811 + (-39) = 2772.",
+      "Add 39 to both sides to remove the term -(-39): the value is 2811 + 39 = 2850.",
+      "Subtract (-39) from both sides to remove the term: the value is 2811 - (-39) = 2850.",
+      "Subtract 39 twice, once for each minus sign: the value is 2811 - 78 = 2733."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "p": "p. 169",
+     "q": "True or False: Since 36 × 48 = 1728, halving both factors gives 18 × 24 = 1728 ÷ 2 = 864. Give the reason for your verdict, and correct the statement if it is false.",
+     "a": "False. Halving the factor 36 divides the product by 2, and halving the factor 48 divides it by 2 again, so 18 × 24 = 1728 ÷ 2 ÷ 2 = 432. (Check: 432 × 4 = 1728.)",
+     "s": [
+      [
+       "states False",
+       1
+      ],
+      [
+       "reason: each halved factor divides the product by 2, so 18 × 24 = 1728 ÷ 4 = 432",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 169-170",
+     "q": "It is known that 250 × 12 - 36 = 2964. Without multiplying anything out, use operations on both sides to find: (a) 250 × 12 (b) 125 × 12 (c) 125 × 12 - 18. Name the operation you use on both sides each time.",
+     "a": "(a) Add 36 to both sides: 250 × 12 = 2964 + 36 = 3000. (b) Divide both sides of 250 × 12 = 3000 by 2; this halves the factor 250: 125 × 12 = 1500. (c) Divide both sides of the original equation by 2. The LHS becomes (250 × 12) ÷ 2 - 36 ÷ 2 = 125 × 12 - 18, so 125 × 12 - 18 = 2964 ÷ 2 = 1482. (Check: 1500 - 18 = 1482.)",
+     "s": [
+      [
+       "(a) adds 36 to both sides to get 3000",
+       1
+      ],
+      [
+       "(b) divides both sides by 2 to get 125 × 12 = 1500",
+       1
+      ],
+      [
+       "(c) divides every term of the original equation by 2 to get 1482 (or 1500 - 18 = 1482)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 169",
+     "q": "Lata starts from 42 - 17 = 25 and says: 'If I divide both sides by 5, the equality still holds. And if I subtract 17 from the LHS and add 17 to the RHS, it still holds, because I used the same number on both sides.' Test each part of her claim with the numbers, and give your verdict.",
+     "a": "Lata is only partly right. Dividing both sides by 5: (42 - 17) ÷ 5 = 25 ÷ 5 = 5, and 25 ÷ 5 = 5, so the equality holds. Second part: 42 - 17 - 17 = 8 but 25 + 17 = 42, and 8 is not 42. Using the same number is not enough; the same operation must be done to both sides. So the first part is right and the second part is wrong.",
+     "s": [
+      [
+       "shows that dividing both sides by 5 gives 5 = 5 (first part right)",
+       1
+      ],
+      [
+       "shows that the second part gives 8 on the LHS and 42 on the RHS",
+       1
+      ],
+      [
+       "verdict partly right: the same operation, not just the same number, must be done to both sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 169-170",
+     "q": "Machine P takes a number, multiplies it by 6 and then subtracts 15. Machine Q takes a number, adds 5 to it and then multiplies the result by 6. (a) Machine P gives the output 69. Write the equation for its input x and find x by undoing the steps. (b) Check your input by running it through Machine P. (c) Machine Q also gives the output 69. Write its equation and find its input. (d) Can one input give the same output from both machines? Write the expressions for both outputs and decide.",
+     "a": "(a) 6x - 15 = 69. Add 15 to both sides: 6x = 84. Divide both sides by 6: x = 14. (b) 14 × 6 = 84 and 84 - 15 = 69. (c) 6(x + 5) = 69. Divide both sides by 6: x + 5 = 69/6 = 23/2. Subtract 5: x = 23/2 - 5 = 13/2. (Check: 13/2 + 5 = 23/2 and 23/2 × 6 = 69.) (d) Machine P gives 6x - 15 and Machine Q gives 6(x + 5) = 6x + 30. Setting 6x - 15 = 6x + 30 and subtracting 6x from both sides gives -15 = 30, which is false. So no input gives the same output: for every input, Machine Q's output is 45 more than Machine P's.",
+     "s": [
+      [
+       "(a) frames 6x - 15 = 69 and undoes by adding 15 then dividing by 6",
+       1
+      ],
+      [
+       "(a)/(b) gets x = 14 and checks it gives 69",
+       1
+      ],
+      [
+       "(c) frames 6(x + 5) = 69 and finds x = 13/2",
+       1
+      ],
+      [
+       "(d) writes the outputs as 6x - 15 and 6x + 30",
+       1
+      ],
+      [
+       "(d) shows 6x - 15 = 6x + 30 leads to -15 = 30, so no input works (Q is always 45 more)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 173",
+     "q": "A tailor can cut a roll of r metres of cloth into 8 equal pieces, or the same roll into 10 equal pieces. A piece from the first cutting is 3 m longer than a piece from the second, so r/8 = r/10 + 3. What is the value of r?",
+     "a": "r = 120, as 40 × 3 = 120 and r/8 - r/10 = r/40.",
+     "o": [
+      "r = 120, as 40 × 3 = 120 and r/8 - r/10 = r/40.",
+      "r = 240, as 80 × 3 = 240 and r/8 - r/10 = r/80.",
+      "r = 54, as 8 + 10 = 18 pieces and 18 × 3 = 54 in all.",
+      "r = 6, as 2 fewer pieces are cut and 2 × 3 = 6 in all."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 171-173",
+     "q": "Look at the equation 3(5 - k) = 7(k - 5). (a) Without expanding, explain why k = 5 must be a solution. (b) Expand both brackets and solve step by step to show that the steps lead to the same value of k.",
+     "a": "(a) At k = 5 both brackets are 0, so the LHS is 3 × 0 = 0 and the RHS is 7 × 0 = 0, and the two sides are equal. (b) 15 - 3k = 7k - 35. Adding 3k and 35 to both sides gives 50 = 10k, so k = 5.",
+     "s": [
+      [
+       "(a) says both brackets are 0 at k = 5, so both sides are 0",
+       1
+      ],
+      [
+       "(b) expands to 15 - 3k = 7k - 35 and reaches 10k = 50, k = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 173",
+     "q": "Solve 2x/3 = x - 4. (a) Remove the divisor 3 from the LHS and write the new equation. (b) Collect the x terms on one side and find x. (c) Check your answer in the original equation.",
+     "a": "(a) The LHS is the quotient (2x) ÷ 3, so removing the divisor 3 means multiplying the other side by 3: 2x = 3(x - 4) = 3x - 12. (b) Subtracting 2x from both sides: 0 = x - 12, so x = 12. (c) LHS = (2 × 12)/3 = 24/3 = 8; RHS = 12 - 4 = 8. LHS = RHS.",
+     "s": [
+      [
+       "(a) multiplies the RHS by 3 to get 2x = 3x - 12",
+       1
+      ],
+      [
+       "(b) collects the x terms and gets x = 12",
+       1
+      ],
+      [
+       "(c) checks that both sides equal 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 171-173",
+     "q": "Farah says that the equations 7 - 2(x - 3) = x + 1 and 7 - 2x - 6 = x + 1 are the same equation, because she has only opened the bracket. Is she right? Solve the first equation correctly and use your answer to support your verdict.",
+     "a": "Farah is wrong. Opening -2(x - 3) gives -2x + 6, because (-2) × (-3) = +6, so the first equation is 7 - 2x + 6 = x + 1, i.e. 13 - 2x = x + 1. Then 12 = 3x and x = 4. Check: 7 - 2(4 - 3) = 5 and 4 + 1 = 5. Her version 7 - 2x - 6 = x + 1 becomes 1 - 2x = x + 1, which gives x = 0, a different solution, so the two equations are not the same.",
+     "s": [
+      [
+       "points out that -2 × -3 = +6, so the bracket opens to -2x + 6",
+       1
+      ],
+      [
+       "solves 13 - 2x = x + 1 to get x = 4 and checks 5 = 5",
+       1
+      ],
+      [
+       "shows her version gives x = 0, a different solution, so she is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 171-173",
+     "q": "(a) Solve 5(2 - w) = 3(w + 6) step by step. (b) Check your answer by finding both sides. (c) Every number written in this equation is positive, yet the solution is negative. Explain, using the two sides at w = 0, why the solution must be below 0.",
+     "a": "(a) 10 - 5w = 3w + 18. Adding 5w to both sides: 10 = 8w + 18. Subtracting 18: -8 = 8w, so w = -1. (b) LHS = 5(2 - (-1)) = 5 × 3 = 15; RHS = 3(-1 + 6) = 3 × 5 = 15. (c) At w = 0 the LHS is 10 and the RHS is 18, so the RHS is already larger. Increasing w makes the LHS smaller and the RHS larger, so the gap only grows; the sides can meet only if w is made smaller than 0.",
+     "s": [
+      [
+       "(a) expands and collects to 8w = -8 (or -8 = 8w)",
+       1
+      ],
+      [
+       "(a)/(b) gets w = -1 and checks both sides are 15",
+       1
+      ],
+      [
+       "(c) compares LHS 10 and RHS 18 at w = 0 and explains that raising w widens the gap, so w < 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 171-173",
+     "q": "Ms Bhatt wants one equation for a class test, and her rule is that the solution must be a positive whole number. She has three candidates. P: 5(x - 3) = 2(x + 4) - 5. Q: 6 - (2y - 5) = 3y - 2. R: (w + 7)/2 = 2w + 8. (a) Solve P and check it. (b) Solve Q and check it. (c) Solve R and check it. (d) Which candidate meets her rule, and why does each of the others fail? (e) Change only the constant -2 in Q to another number so that Q also meets her rule, and give the new solution.",
+     "a": "(a) 5x - 15 = 2x + 3, so 3x = 18 and x = 6. Check: 5 × 3 = 15 and 2 × 10 - 5 = 15. (b) 11 - 2y = 3y - 2, so 13 = 5y and y = 13/5. Check: both sides are 29/5. (c) Removing the divisor 2: w + 7 = 2(2w + 8) = 4w + 16, so -9 = 3w and w = -3. Check: 4/2 = 2 and -6 + 8 = 2. (d) Only P meets the rule: Q's solution is not a whole number and R's is negative. (e) With constant c the equation is 11 - 2y = 3y + c, so 5y = 11 - c, and 11 - c must be a positive multiple of 5. For example c = 1 gives y = 2 (check: 6 - (-1) = 7 and 3 × 2 + 1 = 7); c = 6, c = -4 and c = -9 also work.",
+     "s": [
+      [
+       "(a) reaches 3x = 18, x = 6 and checks both sides are 15",
+       1
+      ],
+      [
+       "(b) opens the bracket with the sign change to get y = 13/5, with a check",
+       1
+      ],
+      [
+       "(c) multiplies the RHS by 2 to get w = -3, with a check",
+       1
+      ],
+      [
+       "(d) chooses P, saying Q is not a whole number and R is negative",
+       1
+      ],
+      [
+       "(e) gives any constant that makes 11 minus it a positive multiple of 5, with the solution it gives",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "pp. 174-175",
+     "q": "A gardener lays a border pattern in which Step k uses 5k + 2 bricks. She has exactly 87 bricks and wants to use all of them for one step of the pattern. Which conclusion is correct?",
+     "a": "Yes, Step 17, because 5k + 2 = 87 gives 5k = 85 and k = 17.",
+     "o": [
+      "Yes, Step 17, because 5k + 2 = 87 gives 5k = 85 and k = 17.",
+      "Yes, Step 18, because 87 ÷ 5 is about 17.4, which rounds up to 18.",
+      "No, because 87 is not a multiple of 5, so no step uses 87 bricks.",
+      "No, because moving the 2 across gives 5k = 89, not a multiple of 5."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "p": "pp. 175-177",
+     "q": "Match each situation in Column I with the equation in Column II that models it (x is the unknown in each).\nColumn I: 1. An auto charges ₹20 for every km plus a fixed ₹30, and the fare is ₹230; x km   2. A hall charges ₹30 for every hour plus a fixed ₹20 for cleaning, and the bill is ₹230; x hours   3. Snacks cost ₹20 a plate for x friends and 3 family members, and the bill is ₹260   4. A tank holds 230 litres and loses 20 litres each minute; after x minutes it holds 30 litres\nColumn II: A. 230 - 20x = 30   B. 20x + 30 = 230   C. 20(x + 3) = 260   D. 30x + 20 = 230",
+     "a": "1-B, 2-D, 3-C, 4-A",
+     "o": [
+      "1-B, 2-D, 3-C, 4-A",
+      "1-D, 2-B, 3-C, 4-A",
+      "1-B, 2-D, 3-A, 4-C",
+      "1-D, 2-B, 3-A, 4-C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 179",
+     "q": "A library has two shelves. Shelf P holds 3 times as many books as Shelf Q. After 24 books are moved from Shelf P to Shelf Q, the two shelves hold the same number. (a) Using only one unknown, q for the books on Shelf Q at the start, write the number on each shelf after the move and frame one equation. (b) Solve it to find how many books each shelf held at the start.",
+     "a": "(a) After the move Shelf P holds 3q - 24 and Shelf Q holds q + 24, so 3q - 24 = q + 24. (b) 2q = 48, so q = 24. Shelf Q held 24 books and Shelf P held 72. Check: 72 - 24 = 48 and 24 + 24 = 48.",
+     "s": [
+      [
+       "(a) writes 3q - 24 and q + 24 and frames 3q - 24 = q + 24",
+       1
+      ],
+      [
+       "(b) solves to q = 24, so Shelf Q 24 and Shelf P 72",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 175-176",
+     "q": "Rohan is planning a birthday party. A sweet shop charges ₹40 for each plate and a fixed ₹80 for delivery. There are 4 people in Rohan's family, including him, and he may spend ₹1000. He says, 'I can invite exactly 19 friends, and not a single rupee will be left over.' Frame an equation for the total number of people p, solve it, and test his claim.",
+     "a": "40p + 80 = 1000. Subtracting 80 from both sides: 40p = 920, so p = 920 ÷ 40 = 23 people in all. Removing the 4 family members leaves 23 - 4 = 19 friends. Since 40 × 23 + 80 = 920 + 80 = 1000 exactly, no money is left over. Rohan is right.",
+     "s": [
+      [
+       "frames 40p + 80 = 1000 (or 40(f + 4) + 80 = 1000)",
+       1
+      ],
+      [
+       "solves to p = 23, so 19 friends",
+       1
+      ],
+      [
+       "checks 40 × 23 + 80 = 1000 exactly and gives the verdict that Rohan is right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 179",
+     "q": "Vani is 10 years old and her aunt is 34. Let y be a number of years from now. (a) Frame and solve an equation for when the aunt's age is exactly 3 times Vani's age. (b) Frame and solve an equation for when the aunt's age is exactly 4 times Vani's age. (c) What does your answer to (b) mean in the story? Check it with their ages.",
+     "a": "(a) 34 + y = 3(10 + y), so 34 + y = 30 + 3y, 4 = 2y and y = 2. (Ages 12 and 36.) (b) 34 + y = 4(10 + y), so 34 + y = 40 + 4y, -6 = 3y and y = -2. (c) y = -2 means 2 years ago, not 2 years from now. Then Vani was 8 and her aunt was 32, and 32 = 4 × 8.",
+     "s": [
+      [
+       "(a) frames 34 + y = 3(10 + y) and gets y = 2",
+       1
+      ],
+      [
+       "(b) frames 34 + y = 4(10 + y) and gets y = -2",
+       1
+      ],
+      [
+       "(c) reads y = -2 as 2 years ago and checks the ages 8 and 32",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 179",
+     "q": "A parking lot holds only scooters and cars: 40 vehicles in all, with 112 wheels on the ground. (a) Taking the number of cars as c, write the number of scooters and an expression for the total number of wheels. (b) Frame and solve an equation to find the number of cars and scooters, and check the wheels. (c) The morning attendant notes 40 vehicles and 75 wheels. Show that his count must be wrong. (d) The evening attendant notes 40 vehicles and 170 wheels. Show that this count must also be wrong, for a different reason.",
+     "a": "(a) Scooters = 40 - c. Wheels = 2(40 - c) + 4c = 80 + 2c. (b) 80 + 2c = 112, so 2c = 32 and c = 16 cars; scooters = 40 - 16 = 24. Check: 24 × 2 + 16 × 4 = 48 + 64 = 112. (c) 80 + 2c is always even (both 80 and 2c are even), but 75 is odd; solving gives 2c = -5, c = -5/2, which is not a possible number of cars. (d) 80 + 2c = 170 gives 2c = 90 and c = 45 cars, but there are only 40 vehicles, so there cannot be 45 cars (the greatest number of wheels possible is 40 × 4 = 160).",
+     "s": [
+      [
+       "(a) writes scooters as 40 - c and wheels as 2(40 - c) + 4c = 80 + 2c",
+       1
+      ],
+      [
+       "(b) solves 80 + 2c = 112 to get 16 cars and 24 scooters",
+       1
+      ],
+      [
+       "(b) checks 48 + 64 = 112 wheels",
+       1
+      ],
+      [
+       "(c) shows 80 + 2c is even (or c = -5/2), so 75 wheels is impossible",
+       1
+      ],
+      [
+       "(d) gets c = 45, more than the 40 vehicles (or more than 160 wheels), so 170 is impossible",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.5",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "pp. 180-181",
+     "q": "In a quiz, Ishaan is given 10h + 6 = 86 and asked for the value of 5h + 7 without first finding h. Which working is correct?",
+     "a": "Halve both sides: 5h + 3 = 43, then add 4: 5h + 7 = 47.",
+     "o": [
+      "Halve both sides: 5h + 3 = 43, then add 4: 5h + 7 = 47.",
+      "Halve both sides to get 5h + 3 = 43, which means 5h + 7 is also 43 here.",
+      "Halve only 10h and 86 to get 5h + 6 = 43, then add 1 to get 5h + 7 = 44.",
+      "Half of 86 is 43, and since 7 is added to that, 5h + 7 comes to 50 in all."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "p": "p. 180",
+     "q": "True or False: The equations 3a - 4 = 11 and 12 - 9a = -33 have the same solution, although every term looks different. Give a reason and a check.",
+     "a": "True. Multiplying both sides of 3a - 4 = 11 by -3 gives -9a + 12 = -33, which is 12 - 9a = -33, and the same operation on both sides keeps the solution. Check: a = 5 gives 3 × 5 - 4 = 11 and 12 - 45 = -33.",
+     "s": [
+      [
+       "states True",
+       1
+      ],
+      [
+       "shows that multiplying both sides by -3 gives the second equation, and checks a = 5 in both",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "reverse"
+     ],
+     "p": "p. 180",
+     "q": "(a) Start from w = -3 and, using exactly two operations on both sides, reach the equation 2w + 9 = 3. Name each operation. (b) Now go back from 2w + 9 = 3 to w = -3, naming each operation. (c) Compare the two chains: how are the operations and their order related?",
+     "a": "(a) Multiply both sides by 2: 2w = -6. Add 9 to both sides: 2w + 9 = 3. (b) Subtract 9 from both sides: 2w = -6. Divide both sides by 2: w = -3. (c) Going back uses the inverse operations (subtract 9 undoes add 9, divide by 2 undoes multiply by 2), and they are done in the reverse order.",
+     "s": [
+      [
+       "(a) multiplies by 2 then adds 9 to reach 2w + 9 = 3",
+       1
+      ],
+      [
+       "(b) subtracts 9 then divides by 2 to return to w = -3",
+       1
+      ],
+      [
+       "(c) states the operations are inverses, used in the reverse order",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 180-181",
+     "q": "Kunal knows that 5n - 2 = 18. Without solving it, he writes three new equations and says all three are true: (i) 15n - 6 = 54 (ii) 5n = 20 (iii) 10n - 2 = 36. Test each one, say which operation on both sides (if any) gives it, and give your verdict on Kunal's claim.",
+     "a": "Kunal is partly right. (i) Multiplying both sides by 3 gives 15n - 6 = 54, so it is true. (ii) Adding 2 to both sides gives 5n = 20, so it is true. (iii) Multiplying both sides by 2 gives 10n - 4 = 36, not 10n - 2 = 36; he doubled 5n and 18 but not the -2. With n = 4 (from 5n = 20), 10n - 2 = 38, not 36. So (i) and (ii) are right and (iii) is wrong.",
+     "s": [
+      [
+       "shows (i) comes from multiplying both sides by 3",
+       1
+      ],
+      [
+       "shows (ii) comes from adding 2 to both sides",
+       1
+      ],
+      [
+       "shows (iii) is wrong (doubling gives 10n - 4 = 36, or 10n - 2 = 38 at n = 4), so Kunal is partly right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 180-181",
+     "q": "You are given 9 - 2q = 1. Without first finding q, use operations on both sides to find: (a) the value of 2q - 9 (b) the value of 18 - 4q (c) the value of 2q (d) the value of q. (e) Show by operations on both sides of 9 - 2q = 1 that 9 - q = 5 has the same solution, and check it with your value of q.",
+     "a": "(a) Multiply both sides by -1: 2q - 9 = -1. (b) Multiply both sides by 2: 18 - 4q = 2. (c) Add 9 to both sides of 2q - 9 = -1: 2q = 8. (d) Divide both sides by 2: q = 4. (e) Divide both sides of 9 - 2q = 1 by 2: 9/2 - q = 1/2. Add 9/2 to both sides: 9 - q = 1/2 + 9/2 = 5. Check: 9 - 4 = 5.",
+     "s": [
+      [
+       "(a) multiplies by -1 to get 2q - 9 = -1",
+       1
+      ],
+      [
+       "(b) multiplies by 2 to get 18 - 4q = 2",
+       1
+      ],
+      [
+       "(c) gets 2q = 8 by adding 9 (or adding 2q and subtracting 1)",
+       1
+      ],
+      [
+       "(d) divides by 2 to get q = 4",
+       1
+      ],
+      [
+       "(e) divides by 2 and adds 9/2 to reach 9 - q = 5, and checks with q = 4",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 181",
+     "q": "A student solves 9 - 4x = 21 like this. Line 1: 4x = 21 - 9. Line 2: 4x = 12. Line 3: x = 3.\nStatement 1: The first mistake is in Line 1, because removing 9 from the LHS should leave -4x, not 4x.\nStatement 2: Line 2 follows correctly from Line 1.\nStatement 3: x = 3 is the correct solution, since 4 × 3 = 12.\nWhich of the statements are correct?",
+     "a": "1 and 2 only",
+     "o": [
+      "1 and 2 only",
+      "1 only",
+      "2 and 3 only",
+      "1, 2 and 3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 181",
+     "q": "Ravi solves 5 - 2(x + 1) = 9 like this: '5 - 2 = 3, so 3(x + 1) = 9, so x + 1 = 3, so x = 2.' (a) Describe his mistake. (b) Solve the equation correctly and check your answer.",
+     "a": "(a) He subtracted 5 - 2 first, but the 2 is a factor of (x + 1), not a number to be taken from 5; the bracket must be multiplied by 2 before anything is subtracted. (b) 5 - 2x - 2 = 9, so 3 - 2x = 9, -6 = 2x and x = -3. Check: 5 - 2(-3 + 1) = 5 + 4 = 9.",
+     "s": [
+      [
+       "(a) says the 2 belongs to the bracket, so 5 - 2 cannot be done first",
+       1
+      ],
+      [
+       "(b) gets x = -3 and checks 5 + 4 = 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 181",
+     "q": "Tara solves 6(n - 1) = 2n + 10 in three lines: '6n - 6 = 2n + 10, so 4n = 16, so n = 4.' Her friend says, 'You jumped straight from the first line to 4n = 16, so your solution must contain a mistake.' Check each line of Tara's working and decide who is right.",
+     "a": "Tara is right. Line 1: 6(n - 1) = 6n - 6, correct. Line 2: subtracting 2n and adding 6 to both sides gives 4n = 16, correct; two steps were done at once, which is allowed. Line 3: n = 16 ÷ 4 = 4. Check in the original: 6(4 - 1) = 18 and 2 × 4 + 10 = 18. Skipping the writing of a step is not a mistake.",
+     "s": [
+      [
+       "checks the expansion 6n - 6 is correct",
+       1
+      ],
+      [
+       "checks that 4n = 16 follows from subtracting 2n and adding 6",
+       1
+      ],
+      [
+       "substitutes n = 4 in the original (18 = 18) and concludes Tara is right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 181",
+     "q": "Sneha solves 3k + 20 = 8k - 15 like this. Line 1: 3k - 8k = -15 - 20. Line 2: -5k = -35. Line 3: k = -7. (a) Find the first wrong line and describe the mistake. (b) Write the correct value of k. (c) Check it in the original equation.",
+     "a": "(a) Lines 1 and 2 are correct. Line 3 is wrong: dividing -35 by -5 gives +7, because a negative divided by a negative is positive. (b) k = 7. (c) LHS = 3 × 7 + 20 = 41; RHS = 8 × 7 - 15 = 41.",
+     "s": [
+      [
+       "(a) identifies Line 3 as the first wrong line",
+       1
+      ],
+      [
+       "(a)/(b) explains -35 ÷ -5 = +7, so k = 7",
+       1
+      ],
+      [
+       "(c) checks both sides are 41",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 181",
+     "q": "Three students solve (y + 4)/3 = y - 2. Anu writes: y + 4 = 3y - 2, so 6 = 2y, y = 3. Bilal writes: y + 4 = 3y - 6, so 10 = 2y, y = 5. Chetan writes: y/3 + 4 = y - 2, so y + 12 = 3y - 6, 18 = 2y, y = 9. (a) Substitute each student's answer in the original equation and find which answer is right. (b) For each wrong answer, describe the mistake. (c) Anu checks her answer by putting y = 3 into her own line 6 = 2y. Explain why this check does not catch her mistake, and say what check she should use.",
+     "a": "(a) Anu, y = 3: LHS = 7/3, RHS = 1, not equal. Bilal, y = 5: LHS = 9/3 = 3, RHS = 3, equal. Chetan, y = 9: LHS = 13/3, RHS = 7, not equal. So only Bilal is right, y = 5. (b) Anu removed the divisor 3 but multiplied only y by 3 on the RHS, not the -2; it should be 3(y - 2) = 3y - 6. Chetan divided only y by 3, treating (y + 4)/3 as y/3 + 4; the whole numerator y + 4 is divided by 3. (c) 6 = 2y comes after her mistake, so any value that fits it fits the wrong equation. She should substitute in the original equation, where y = 3 gives 7/3 on one side and 1 on the other.",
+     "s": [
+      [
+       "(a) substitutes all three answers in the original equation",
+       1
+      ],
+      [
+       "(a) concludes only y = 5 (Bilal) makes both sides 3",
+       1
+      ],
+      [
+       "(b) describes Anu's mistake: the -2 was not multiplied by 3",
+       1
+      ],
+      [
+       "(b) describes Chetan's mistake: only y, not y + 4, was divided by 3",
+       1
+      ],
+      [
+       "(c) explains a check on a line after the mistake cannot catch it, so substitute in the original equation",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 184",
+     "q": "Leena solves 4x + 9 = 7x - 6 by Brahmagupta's formula x = (D - B)/(A - C) and gets x = 5. Her partner first swaps the two sides, writing 7x - 6 = 4x + 9, and then uses the same formula. What happens to the top and the bottom of the fraction, and to x?",
+     "a": "Both parts change sign, so x is still 5.",
+     "o": [
+      "Both parts change sign, so x is still 5.",
+      "Only the top changes sign, so x becomes -5.",
+      "Only the bottom changes sign, so x becomes -5.",
+      "Neither part changes at all, so x is still 5."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 184",
+     "q": "Brahmagupta's formula says that the solution of Ax + B = Cx + D is x = (D - B)/(A - C). (a) Starting from Ax + B = Cx + D, subtract Cx from both sides and write the result with x as a common factor. (b) Then subtract B from both sides and divide, to reach the formula. (c) Using your steps, explain why the formula cannot be used when A = C.",
+     "a": "(a) Ax - Cx + B = D, that is (A - C)x + B = D. (b) Subtracting B: (A - C)x = D - B. Dividing both sides by (A - C): x = (D - B)/(A - C). (c) If A = C, then A - C = 0, and we cannot divide by 0; the equation becomes 0 = D - B, so the x terms vanish and the formula gives no value.",
+     "s": [
+      [
+       "(a) gets (A - C)x + B = D",
+       1
+      ],
+      [
+       "(b) gets (A - C)x = D - B and divides by (A - C) to reach the formula",
+       1
+      ],
+      [
+       "(c) explains A - C = 0 would mean dividing by 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 184",
+     "q": "Nisha says, 'Brahmagupta's formula cannot be used for 5x - 7 = 18, because there is no x term on the right side.' Is she right? Decide by writing the equation in the form Ax + B = Cx + D (a side with no x term can be read as having 0x) and, if possible, using the formula. Check your answer.",
+     "a": "Nisha is wrong. The RHS 18 can be read as 0x + 18, so A = 5, B = -7, C = 0, D = 18. The formula gives x = (18 - (-7))/(5 - 0) = 25/5 = 5. Check: 5 × 5 - 7 = 25 - 7 = 18.",
+     "s": [
+      [
+       "writes the RHS as 0x + 18 and names A = 5, B = -7, C = 0, D = 18",
+       1
+      ],
+      [
+       "uses the formula to get x = 25/5 = 5",
+       1
+      ],
+      [
+       "checks 25 - 7 = 18 and concludes Nisha is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 182",
+     "q": "A class timeline shows: Brahmagupta's chapter on unknowns, 628 CE; Indian mathematical ideas translated into Arabic, 8th century; Al-Khwarizmi's book Hisab al-jabr wal-muqabala, around 825 CE. Priya says, 'Al-Khwarizmi's book came before Brahmagupta's chapter.' Imran says, 'Indian ideas could have reached Al-Khwarizmi before he wrote his book.' Tanu says, 'Our word algebra comes from the word bīja.' Put the three events in order and decide who is right, giving a reason for each.",
+     "a": "Order: 628 CE, then the 8th century (the years 701 to 800), then about 825 CE. Priya is wrong: 825 is about 200 years after 628, so Brahmagupta's chapter came first. Imran is right: the translation into Arabic was finished by 800 at the latest, before about 825, and the chapter says these ideas influenced Al-Khwarizmi. Tanu is wrong: the word algebra comes from al-jabr in the title of his book; bīja gave the Indian name bījagaṇita.",
+     "s": [
+      [
+       "orders 628 CE, 8th century, about 825 CE and says Priya is wrong",
+       1
+      ],
+      [
+       "says Imran is right, because the 8th century ends before about 825",
+       1
+      ],
+      [
+       "says Tanu is wrong: algebra comes from al-jabr in the book's title, and bīja gave the name bījagaṇita",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 184",
+     "q": "Use Brahmagupta's formula x = (D - B)/(A - C) for (a) and (b), first writing each equation in the form Ax + B = Cx + D. (a) 4(x + 3) = 7x - 9 (b) x/2 + 5 = 2x - 4. Check each solution. (c) For 12 - 5x = 3x - 4, Ali reads A = 5, B = 12, C = 3, D = -4, and Bela reads A = -5, B = 12, C = 3, D = -4. Decide whose reading is right, find x and check it. (d) If the RHS of (c) were changed to -5x - 4, what would happen to the formula, and what does that tell you about the new equation?",
+     "a": "(a) 4x + 12 = 7x - 9, so A = 4, B = 12, C = 7, D = -9. x = (-9 - 12)/(4 - 7) = -21/-3 = 7. Check: 4(10) = 40 and 49 - 9 = 40. (b) A = 1/2, B = 5, C = 2, D = -4. x = (-4 - 5)/(1/2 - 2) = (-9)/(-3/2) = 6. Check: 3 + 5 = 8 and 12 - 4 = 8. (c) Bela is right: the term is -5x, so A = -5. x = (-4 - 12)/(-5 - 3) = -16/-8 = 2. Check: 12 - 10 = 2 and 6 - 4 = 2. (Ali's reading gives -8, which fails: 52 on the LHS and -28 on the RHS.) (d) Then A = C = -5, so A - C = 0 and the formula would divide by 0. Here D - B = -16, not 0, so the equation 12 - 5x = -5x - 4 reduces to 12 = -4, which is false: it has no solution.",
+     "s": [
+      [
+       "(a) expands to 4x + 12 = 7x - 9 and names A, B, C, D",
+       1
+      ],
+      [
+       "(a) gets x = 7 and checks 40 = 40",
+       1
+      ],
+      [
+       "(b) uses A = 1/2 to get x = 6 and checks 8 = 8",
+       1
+      ],
+      [
+       "(c) says Bela is right because A = -5, gets x = 2 and checks 2 = 2",
+       1
+      ],
+      [
+       "(d) says A - C = 0 so the formula fails, and the equation has no solution (12 = -4)",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

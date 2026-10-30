@@ -1,0 +1,74 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "SCI",
+  "name": "Science",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Curiosity: Textbook of Science",
+  "edition": "Grade 7, 2025",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 1,
+  "name": "The Ever-Evolving World of Science",
+  "blurb": "An introduction to the Grade 7 Science book: science as a way of thinking and an overview of the chapters on materials, changes, heat, life processes, time, light and the Earth, Moon and Sun.",
+  "order_index": 1,
+  "source_code": "gecu101"
+ },
+ "scope": [
+  [
+   "IN",
+   "Science as a way of thinking",
+   "1-2"
+  ],
+  [
+   "IN",
+   "Overview: life processes, time, light and Earth-Moon-Sun",
+   "4-5"
+  ],
+  [
+   "OUT",
+   "Activity 1.1 question-making",
+   "Open-ended activity"
+  ],
+  [
+   "IN",
+   "Overview: materials, changes, heat and water",
+   "2-3"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7SC-1.1",
+   "name": "Science as a way of thinking",
+   "description": "Science as a process of curiosity, questions and experiments, and why asking good questions matters.",
+   "idea": "Science is a way of thinking that welcomes curiosity, asks questions and is open to the unknown.",
+   "rule": "The Grade 7 book invites students to question, experiment and explore. Science is a process, a way of thinking that welcomes curiosity and asks questions. In Grade 7 we ask deeper questions: How do things work? Why do events happen the way they do? What can we learn from patterns in nature? Activities and experiments serve as stepping stones to understanding the environment. Science is also about responsibility, since human activities are linked to the natural world, and it can help address environmental challenges and create a more sustainable world. Great scientists ask amazing questions, as in the saying 'to be a wise person you must be a whys person'. Experiments that confirm what we expect can still lead to more questions.",
+   "example": "Activity 1.1 asks students to invent creative questions for given answers.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-1.2",
+   "name": "A journey through the book: materials, changes, heat and water",
+   "description": "The first topics of the year: properties of materials, acids and bases, electric circuits, metals, changes, heat and the water cycle.",
+   "idea": "The book moves from properties of materials to changes, heat and water.",
+   "rule": "We start with properties of materials around us, such as why some fruits are sour and what happens when a haldi stain is washed. We then play with batteries, lamps and wires to find other properties of materials and ask what materials make a lamp glow, which leads to classifying materials as metals and non-metals. Since a torch battery runs out, we explore changes that can or cannot be reversed: ice melts, fruits ripen and rocks break into pebbles. Some changes happen faster when things are heated, so we study how heat flows, from an ice cube melting to a glacier melting. Heat from the Sun evaporates water from the seas, which falls as rain and may trickle underground.",
+   "example": "A torch battery eventually runs out and cannot be used again.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-1.3",
+   "name": "A journey through the book: life, time, light and the Earth-Moon-Sun system",
+   "description": "Life processes in animals and plants, measuring time, light and shadows, eclipses and the movements of Earth and Moon.",
+   "idea": "The later topics cover life processes, time, light and the movements of Earth, Moon and Sun.",
+   "rule": "Our bodies change rapidly in the middle-school years. All animals have life processes: they eat and breathe, and blood circulates nutrients around the body. Plants also need food to grow and breathe in their own way. We also ask how we measure time. Early humans used the positions of shadows in the Sun to tell the time. Light helps us see and asking questions about light has given a deep understanding of the universe. The Earth and Moon cast shadows, leading to eclipses, and day and night depend on light from the Sun. To understand this we need to know how the Earth rotates on its axis, the Moon goes around the Earth and the Earth around the Sun.",
+   "example": "Early humans told the time from the position of shadows.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

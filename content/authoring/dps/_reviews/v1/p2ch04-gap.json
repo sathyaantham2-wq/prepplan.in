@@ -1,0 +1,874 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 4,
+  "name": "Another Peek Beyond the Point"
+ },
+ "source_code": "gegp204",
+ "concepts": [
+  {
+   "code": "C7M-4.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "show_impossible"
+     ],
+     "p": "pp. 68-69",
+     "q": "Gautam picks a counting number, divides it by 1000 and says the answer on his calculator is 0.4567. Show that this cannot be right, and write a division by 10, 100, 1000 or 10000 of a counting number that really does give 0.4567.",
+     "a": "A counting number has no digits after the point. Dividing by 1000 moves the point 3 places left, so the answer can have at most 3 digits after the point, but 0.4567 has 4 (the last digit, 7, is not zero). In other words, 0.4567 × 1000 = 456.7, which is not a counting number. The division that works is 4567 ÷ 10000 = 0.4567.",
+     "s": [
+      [
+       "states that dividing a counting number by 1000 gives at most 3 digits after the point",
+       1
+      ],
+      [
+       "points out 0.4567 has 4 digits after the point, or that 0.4567 × 1000 = 456.7 is not a counting number",
+       1
+      ],
+      [
+       "gives 4567 ÷ 10000 = 0.4567",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 75",
+     "q": "In an agriculture lab, 10000 mustard seeds together weigh 21.1 g. Given 1 g = 1000 mg, one seed weighs",
+     "o": [
+      "2.11 mg",
+      "0.211 mg",
+      "21.1 mg",
+      "0.00211 mg"
+     ],
+     "a": "2.11 mg: 21.1 ÷ 10000 = 0.00211 g, and 0.00211 × 1000 = 2.11 mg."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 73-75",
+     "q": "Students are building a model of a dam for their science fair. The real wall is 28.5 m high and the model is 100 times smaller. A drawing on their chart is 10 times smaller than the model.\n(a) Find the height of the wall in the model, in metres and in centimetres.\n(b) Find its height in the drawing, in metres and in centimetres.\n(c) How many times smaller is the drawing than the real wall? Explain using the movement of the decimal point.\n(d) The real wall is 63 m long. How long is it in the drawing, in centimetres?\n(e) A gate in the drawing is 4.05 cm wide. Find its real width in metres. (1 + 1 + 1 + 1 + 1)",
+     "a": "(a) 28.5 ÷ 100 = 0.285 m = 28.5 cm. (b) 0.285 ÷ 10 = 0.0285 m = 2.85 cm. (c) 1000 times: the point moved 2 places left and then 1 more, 3 places in all, which is a division by 1000 (100 × 10 = 1000). (d) 63 ÷ 1000 = 0.063 m = 6.3 cm. (e) 4.05 × 1000 = 4050 cm = 40.5 m.",
+     "s": [
+      [
+       "(a) finds 0.285 m and 28.5 cm",
+       1
+      ],
+      [
+       "(b) finds 0.0285 m and 2.85 cm",
+       1
+      ],
+      [
+       "(c) says 1000 times, with 2 + 1 = 3 places moved",
+       1
+      ],
+      [
+       "(d) finds 6.3 cm",
+       1
+      ],
+      [
+       "(e) multiplies by 1000 and converts to 40.5 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "p": "p. 75",
+     "q": "True or False: Dividing 62.5 by 100 and then by 10 gives the same result as dividing it by 10 and then by 100, and that result is 0.0625. Give a reason.",
+     "a": "True. 62.5 ÷ 100 = 0.625 and 0.625 ÷ 10 = 0.0625; 62.5 ÷ 10 = 6.25 and 6.25 ÷ 100 = 0.0625. Either way the point moves 3 places left in all.",
+     "s": [
+      [
+       "states True",
+       1
+      ],
+      [
+       "shows both orders give 0.0625, or that the point moves 3 places left either way",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 68",
+     "q": "A lab balance reading has 3 ones, no tenths, 4 hundredths, 6 thousandths and 2 ten-thousandths.\n(a) Write the reading as a decimal.\n(b) Write it as one fraction with denominator 10000.\n(c) Which is the smallest of 10, 100, 1000, 10000 that turns the reading into a counting number when multiplied? Explain. (1 + 1 + 1)",
+     "a": "(a) 3.0462. (b) 30462/10000. (c) 10000: the reading has 4 digits after the point, so the point must move 4 places right. Multiplying by 1000 gives only 3046.2.",
+     "s": [
+      [
+       "(a) writes 3.0462, with 0 in the tenths place",
+       1
+      ],
+      [
+       "(b) writes 30462/10000",
+       1
+      ],
+      [
+       "(c) chooses 10000 and explains using the 4 digits after the point",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 70",
+     "q": "Ravi says, \"If both numbers have a non-zero digit after the point, the product must also have a non-zero digit after the point.\"\n(a) Find 7.5 × 0.4.\n(b) Use your answer to say whether Ravi is right, and explain what happened to the decimal places. (1 + 1)",
+     "a": "(a) 75 × 4 = 300 and there are 1 + 1 = 2 decimal places, so 7.5 × 0.4 = 3.00 = 3. (b) Ravi is wrong: the product is the counting number 3. The rule gives 2 decimal places, but both digits there are zeroes, so they can be dropped.",
+     "s": [
+      [
+       "(a) finds 7.5 × 0.4 = 3",
+       1
+      ],
+      [
+       "(b) says Ravi is wrong because the two decimal places in 3.00 hold only zeroes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "reverse"
+     ],
+     "p": "p. 73",
+     "q": "A bill was worked out as 6 × 12.75 + 2.5 × 40, in rupees.\n(a) Write a shopping situation that this expression fits, saying what each number stands for.\n(b) Find the value of the bill.\n(c) How much change is left from ₹200? (1 + 1 + 1)",
+     "a": "(a) Any fitting story, for example: 6 pens at ₹12.75 each and 2.5 kg of onions at ₹40 per kg. (b) 6 × 12.75 = 76.5 and 2.5 × 40 = 100, so the bill is ₹176.50. (c) 200 - 176.5 = ₹23.50.",
+     "s": [
+      [
+       "(a) writes a situation in which 6 and 2.5 are quantities and 12.75 and 40 are the rates",
+       1
+      ],
+      [
+       "(b) finds ₹176.50",
+       1
+      ],
+      [
+       "(c) finds ₹23.50 change",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "p": "p. 73",
+     "q": "Match each product in Column I with its value in Column II.\nColumn I: 1. 12 × 5 tenths  2. 12 × 5 hundredths  3. 5 × 12 thousandths  4. 12 hundredths × 5 hundredths\nColumn II: a. 0.06  b. 6  c. 0.006  d. 0.6",
+     "o": [
+      "1-b, 2-d, 3-a, 4-c",
+      "1-d, 2-a, 3-c, 4-b",
+      "1-b, 2-a, 3-d, 4-c",
+      "1-b, 2-d, 3-c, 4-a"
+     ],
+     "a": "1-b, 2-d, 3-a, 4-c: 60 tenths = 6, 60 hundredths = 0.6, 60 thousandths = 0.06, and 0.12 × 0.05 = 60 ten-thousandths = 0.006."
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 69-71",
+     "q": "Tina goes to her coaching class by auto-rickshaw, 6.8 km each way. The minimum fare is ₹30 and covers the first 1.5 km of a trip; every further kilometre costs ₹14.50. The auto stand also offers a monthly plan: a fixed ₹650, and then only ₹4.25 for each kilometre after the first 1.5 km of a trip.\n(a) Find the ordinary fare for one trip.\n(b) Find the ordinary fare for 8 trips in a month.\n(c) Find the cost of 8 trips on the monthly plan.\n(d) Which is cheaper for 8 trips, and by how much?\n(e) In a month with exam leave she makes only 6 trips. Compare the two costs, and advise her how to decide each month. (1 + 1 + 1 + 1 + 1)",
+     "a": "(a) 6.8 - 1.5 = 5.3 km beyond the minimum; 5.3 × 14.5 = 76.85; fare = 30 + 76.85 = ₹106.85. (b) 8 × 106.85 = ₹854.80. (c) 8 × 5.3 = 42.4 km; 42.4 × 4.25 = 180.20; cost = 650 + 180.20 = ₹830.20. (d) The plan is cheaper by 854.80 - 830.20 = ₹24.60. (e) Ordinary: 6 × 106.85 = ₹641.10. Plan: 31.8 × 4.25 = 135.15, and 650 + 135.15 = ₹785.15, so the ordinary fare saves ₹144.05. She should take the plan only in months with 8 or more trips; with 6 trips it costs more.",
+     "s": [
+      [
+       "(a) finds 5.3 km and the fare ₹106.85",
+       1
+      ],
+      [
+       "(b) finds ₹854.80",
+       1
+      ],
+      [
+       "(c) finds 42.4 km and the plan cost ₹830.20",
+       1
+      ],
+      [
+       "(d) says the plan is cheaper by ₹24.60",
+       1
+      ],
+      [
+       "(e) finds ₹641.10 and ₹785.15 and advises by the number of trips",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 71",
+     "q": "Ayaan finds 3.06 × 0.24. He works out 306 × 24 = 7344, counts 2 + 2 = 4 decimal places and writes 0.7344. Dia says the answer has to be 7.344, because 3.06 is more than 3 and \"the product cannot be smaller than 1 when one number is more than 3\". Who is right? Check by using fractions, and find where the other person's reasoning fails.",
+     "a": "Ayaan is right. 3.06 × 0.24 = 306/100 × 24/100 = 7344/10000 = 0.7344. Dia's reasoning fails because 0.24 is less than 1, so the product is smaller than 3.06; it is only about a quarter of 3.06 and can be below 1.",
+     "s": [
+      [
+       "writes 306/100 × 24/100 = 7344/10000",
+       1
+      ],
+      [
+       "concludes Ayaan is right and the product is 0.7344",
+       1
+      ],
+      [
+       "explains that multiplying by 0.24, which is less than 1, makes 3.06 smaller, so Dia's reason fails",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.3",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 72",
+     "q": "A photocopier multiplies every length by the zoom number that is set on it. Fatima's drawing is 12.4 cm wide. She enlarges it at zoom 1.5, then copies the copy at zoom 0.5, expecting to get her original size back.\n(a) Find the width after each copy.\n(b) Is the final copy wider or narrower than the original? Which one zoom number would give the final copy in a single step? Check it on 12.4.\n(c) Among 0.5, 0.6, 0.75 and 0.8, which zoom undoes an enlargement at zoom 1.25? Show it by multiplying.\n(d) Without working on the width, say whether copying at zoom 1.1 and then at zoom 0.9 gives a copy wider or narrower than the original, with a reason.\n(e) Find the width of Fatima's drawing after those two copies in (d). (1 + 1 + 1 + 1 + 1)",
+     "a": "(a) 12.4 × 1.5 = 18.6 cm, then 18.6 × 0.5 = 9.3 cm. (b) Narrower. 1.5 × 0.5 = 0.75, and 12.4 × 0.75 = 9.3 cm, the same as the two steps. (c) 0.8, because 1.25 × 0.8 = 1, so the length comes back unchanged. (d) Narrower: 1.1 × 0.9 = 0.99, which is between 0 and 1, so it makes the length smaller. (e) 12.4 × 0.99 = 12.276 cm.",
+     "s": [
+      [
+       "(a) finds 18.6 cm and 9.3 cm",
+       1
+      ],
+      [
+       "(b) says narrower and shows the single zoom 0.75 gives 9.3 cm",
+       1
+      ],
+      [
+       "(c) chooses 0.8 with 1.25 × 0.8 = 1",
+       1
+      ],
+      [
+       "(d) says narrower because 1.1 × 0.9 = 0.99 is less than 1",
+       1
+      ],
+      [
+       "(e) finds 12.276 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 72",
+     "q": "Sita thinks of a decimal k greater than 0. She finds that k × 3.2 is less than 3.2 but greater than k. What must be true of k?",
+     "o": [
+      "k lies between 0 and 1",
+      "k lies between 1 and 3.2",
+      "k is greater than 3.2",
+      "k is exactly 1"
+     ],
+     "a": "k lies between 0 and 1: the product is less than 3.2 only when the other number is less than 1, and then it lies between the two numbers. If k = 1 the product equals 3.2, and if k is greater than 1 the product is more than 3.2."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 73",
+     "q": "You are told that 2.4 × 3.5 = 8.4. Without doing any new long multiplication, find the missing number in each: (a) 0.24 × ___ = 0.84 (b) ___ × 0.35 = 84 (c) 240 × ___ = 8.4. Give the place-shift reason for each. (1 + 1 + 1)",
+     "a": "(a) 3.5: 0.24 is 10 times smaller than 2.4 and 0.84 is 10 times smaller than 8.4, so the other number is unchanged. (b) 240: 0.35 is 10 times smaller than 3.5 and 84 is 10 times larger than 8.4, so 2.4 must be 100 times larger. (c) 0.035: 240 is 100 times larger than 2.4 and the product is unchanged, so 3.5 must be 100 times smaller.",
+     "s": [
+      [
+       "(a) finds 3.5 with the reason",
+       1
+      ],
+      [
+       "(b) finds 240 with the reason",
+       1
+      ],
+      [
+       "(c) finds 0.035 with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "p": "pp. 71-73",
+     "q": "True or False: Given 37 × 43 = 1591, the two products 3.7 × 4.3 and 0.37 × 43 are equal, even though their factors are different. Give a reason.",
+     "a": "True. 3.7 × 4.3 has 1 + 1 = 2 decimal places and 0.37 × 43 has 2 + 0 = 2 decimal places, so both are 15.91.",
+     "s": [
+      [
+       "states True",
+       1
+      ],
+      [
+       "shows both products have 2 decimal places and equal 15.91",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 94",
+     "q": "Using each of the digits 2, 3, 7 and 8 once, Meher fills the boxes □.□ × □.□. She puts the two largest digits in the ones places and tries 8.3 × 7.2. She says, \"The larger tenths digit should go with the larger ones digit, so this is the greatest product possible.\" Test her claim against 8.2 × 7.3 and give your verdict.",
+     "a": "Her claim is wrong, although her first idea of using 8 and 7 in the ones places is sound. 8.3 × 7.2 = 59.76 and 8.2 × 7.3 = 59.86, so 8.2 × 7.3 is greater by 0.10. The larger tenths digit should go with the smaller ones digit.",
+     "s": [
+      [
+       "finds 8.3 × 7.2 = 59.76",
+       1
+      ],
+      [
+       "finds 8.2 × 7.3 = 59.86",
+       1
+      ],
+      [
+       "concludes her claim is wrong because 59.86 is greater",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 87",
+     "q": "The running track of a park is a regular 8-sided shape, and one lap is 30.6 m. A second track, a regular 6-sided shape, has the same lap length.\n(a) Find the side of the 8-sided track.\n(b) Find the side of the 6-sided track.\n(c) How many centimetres longer is a side of the 6-sided track? (1 + 1 + 1)",
+     "a": "(a) 30.6 ÷ 8 = 3.825 m. (b) 30.6 ÷ 6 = 5.1 m. (c) 5.1 - 3.825 = 1.275 m = 127.5 cm.",
+     "s": [
+      [
+       "(a) finds 3.825 m",
+       1
+      ],
+      [
+       "(b) finds 5.1 m",
+       1
+      ],
+      [
+       "(c) finds 1.275 m and converts it to 127.5 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 81",
+     "q": "Hema shares 261 m of rope equally among 8 teams, dividing by place value. She has reached 32 in the quotient and 5 Ones remain. What should she do next?",
+     "o": [
+      "Put the point after 32, regroup 5 Ones as 50 Tenths, and give each team 6 Tenths",
+      "Write 32.5 as the quotient, because 5 Ones remain",
+      "Regroup 5 Ones as 5 Tenths and give each team 0 Tenths",
+      "Put the point after 32, regroup 5 Ones as 50 Hundredths, and give each team 6 Hundredths"
+     ],
+     "a": "She puts the point after 32, regroups 5 Ones as 50 Tenths, and each team gets 6 Tenths with 2 Tenths remaining. Going on, 261 ÷ 8 = 32.625."
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 75-83",
+     "q": "Rupa divides counting numbers by first making the denominator 10, 100, 1000 or 10000.\n(a) By what number should she multiply the numerator and the denominator of 347/40, of 347/125 and of 347/16?\n(b) Write 347/40 as a decimal this way.\n(c) Write 347/125 as a decimal this way.\n(d) Write 347/16 as a decimal this way.\n(e) Check (d) by long division, saying at which step the decimal point enters the quotient, and say which method you would choose for 347/16, with a reason. (1 + 1 + 1 + 1 + 1)",
+     "a": "(a) 25 (40 × 25 = 1000), 8 (125 × 8 = 1000) and 625 (16 × 625 = 10000). (b) 8675/1000 = 8.675. (c) 2776/1000 = 2.776. (d) 216875/10000 = 21.6875. (e) 347 ÷ 16: 21 Ones and 11 Ones remain; regrouping them as 110 Tenths is when the point enters; then 6 Tenths with 14 remaining, 8 Hundredths with 12 remaining, 7 Thousandths with 8 remaining, 5 Ten-thousandths with 0 remaining, giving 21.6875, the same. Either choice is accepted with a reason: for example, long division, because 625 is not an easy multiplier to spot, or the fraction method, because it needs only one multiplication.",
+     "s": [
+      [
+       "(a) gives 25, 8 and 625",
+       1
+      ],
+      [
+       "(b) finds 8.675",
+       1
+      ],
+      [
+       "(c) finds 2.776",
+       1
+      ],
+      [
+       "(d) finds 21.6875",
+       1
+      ],
+      [
+       "(e) confirms 21.6875 by long division, placing the point when Ones become Tenths, and chooses a method with a reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 83",
+     "q": "Tara finds 12.18 ÷ 6 and writes 2.3. She explains, \"12 Ones gives 2, and 18 ÷ 6 gives 3.\" Test her answer by multiplying, find the exact step of her mistake, and give the correct quotient.",
+     "a": "2.3 × 6 = 13.8, not 12.18, so she is wrong. After 12 Ones ÷ 6 = 2, the next place holds 1 Tenth, which cannot be shared among 6, so the quotient needs 0 Tenths. Regrouping gives 18 Hundredths, and 18 ÷ 6 = 3 Hundredths. So 12.18 ÷ 6 = 2.03.",
+     "s": [
+      [
+       "multiplies 2.3 × 6 = 13.8 and says it does not give 12.18",
+       1
+      ],
+      [
+       "identifies that 1 Tenth cannot be shared, so a 0 goes in the Tenths place",
+       1
+      ],
+      [
+       "gives 2.03",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 87",
+     "q": "At a school fête, 5 litres of nimbu pani is poured equally into 8 jugs.\n(a) Using an equivalent fraction with denominator 1000, find how many millilitres go in one jug.\n(b) How many litres are in 3 such jugs? (1 + 1)",
+     "a": "(a) 5/8 = (5 × 125)/(8 × 125) = 625/1000 litre = 0.625 litre = 625 mL. (b) 3 × 0.625 = 1.875 litres.",
+     "s": [
+      [
+       "(a) writes 625/1000 and gives 625 mL",
+       1
+      ],
+      [
+       "(b) finds 1.875 litres",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 94",
+     "q": "In the style of a problem from Sridharacharya's Patiganita: 7 1/2 is divided by 1 1/4.\n(a) Write both mixed numbers as decimals.\n(b) Find the quotient by first making the divisor a counting number. (1 + 1)",
+     "a": "(a) 7 1/2 = 7.5 and 1 1/4 = 1.25. (b) 7.5 ÷ 1.25 = 750 ÷ 125 = 6.",
+     "s": [
+      [
+       "(a) writes 7.5 and 1.25",
+       1
+      ],
+      [
+       "(b) rewrites as 750 ÷ 125 and finds 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 94",
+     "q": "Given 1147 ÷ 37 = 31, Nitya fills three cells of a table: 114.7 ÷ 3.7 = 31, 11.47 ÷ 0.37 = 31 and 1147 ÷ 3.7 = 31. She says all three are right, because \"the digits are the same\". How far is she right? Check each cell.",
+     "a": "She is partly right: two cells are right and one is wrong. 114.7 ÷ 3.7 = 1147 ÷ 37 = 31 (both multiplied by 10). 11.47 ÷ 0.37 = 1147 ÷ 37 = 31 (both multiplied by 100). But 1147 ÷ 3.7 = 11470 ÷ 37 = 310, because only the divisor has been made 10 times smaller. The same digits are not enough; the dividend and divisor must change by the same factor.",
+     "s": [
+      [
+       "confirms 114.7 ÷ 3.7 = 31 by multiplying both numbers by 10",
+       1
+      ],
+      [
+       "confirms 11.47 ÷ 0.37 = 31 by multiplying both numbers by 100",
+       1
+      ],
+      [
+       "shows 1147 ÷ 3.7 = 310 and concludes she is only partly right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 84-86",
+     "q": "Ishan and his sister Pihu walk 540 m from their gate to school. One stride of Ishan's is 0.72 m and one of Pihu's is 0.6 m. Ishan takes 100 strides a minute and Pihu takes 125. They leave together.\n(a) Find the number of strides Ishan needs, showing how you make the divisor a counting number.\n(b) Find the number of strides Pihu needs. Explain why both quotients are greater than 540.\n(c) Find the time each of them takes.\n(d) Who reaches first, and by how many seconds?\n(e) Ishan says, \"A longer stride always gets you there first.\" Judge this, using the metres each covers in a minute. (1 + 1 + 1 + 1 + 1)",
+     "a": "(a) 540 ÷ 0.72 = 54000 ÷ 72 = 750 strides. (b) 540 ÷ 0.6 = 5400 ÷ 6 = 900 strides. Both divisors are less than 1, so the quotient is greater than the dividend. (c) Ishan: 750 ÷ 100 = 7.5 minutes. Pihu: 900 ÷ 125 = 7.2 minutes. (d) Pihu, by 0.3 minute = 18 seconds. (e) His claim is not always true. In a minute Ishan covers 0.72 × 100 = 72 m and Pihu covers 0.6 × 125 = 75 m. His stride is longer, but she takes more strides each minute, and it is the product of the two that decides.",
+     "s": [
+      [
+       "(a) rewrites as 54000 ÷ 72 and finds 750",
+       1
+      ],
+      [
+       "(b) finds 900 and explains that a divisor below 1 gives a quotient above the dividend",
+       1
+      ],
+      [
+       "(c) finds 7.5 minutes and 7.2 minutes",
+       1
+      ],
+      [
+       "(d) says Pihu by 18 seconds",
+       1
+      ],
+      [
+       "(e) finds 72 m and 75 m a minute and rejects the claim",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 86",
+     "q": "Consider the following statements, to be judged without long division.\nStatement 1: 6.4 ÷ 16 is greater than 6.4.\nStatement 2: 64 ÷ 0.8 is greater than 64.\nStatement 3: 0.64 ÷ 0.8 is greater than 0.64.\nWhich of the statements are correct?",
+     "o": [
+      "2 and 3 only",
+      "1 and 2 only",
+      "2 only",
+      "1, 2 and 3"
+     ],
+     "a": "2 and 3 only. In statements 2 and 3 the divisor 0.8 is less than 1, so the quotient is greater than the dividend (80 and 0.8). In statement 1 the divisor 16 is greater than 1, so the quotient 0.4 is less than the dividend."
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "show_impossible"
+     ],
+     "p": "p. 93",
+     "q": "A laboratory bench is 3 m long, and each microscope needs 0.45 m of it. Aman says 7 microscopes will fit in a row.\n(a) Show that this cannot be.\n(b) Find the largest number that does fit.\n(c) Find how much of the bench is left over. (1 + 1 + 1)",
+     "a": "(a) 7 × 0.45 = 3.15 m, which is more than 3 m. (b) 3 ÷ 0.45 = 300 ÷ 45 = 6.66..., so 6 fit whole: 6 × 0.45 = 2.7 m. (c) 3 - 2.7 = 0.3 m (30 cm) is left over.",
+     "s": [
+      [
+       "(a) finds 7 × 0.45 = 3.15 m, more than 3 m",
+       1
+      ],
+      [
+       "(b) gets 6 microscopes taking 2.7 m",
+       1
+      ],
+      [
+       "(c) finds 0.3 m left over",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 85",
+     "q": "Naina says, \"When dividing by 41 there are at most 40 different non-zero remainders, so the repeating block of 1 ÷ 41 must be exactly 40 digits long.\" Divide 1 by 41 until a remainder returns, and say how much of her statement is right.",
+     "a": "Partly right. Long division gives digits 0, 2, 4, 3, 9 with remainders 10, 18, 16, 37, 1. The remainder 1 has returned, so 1 ÷ 41 = 0.0243902439... with a block of only 5 digits. The limit of 40 remainders is correct, but it is only the most that can occur, not the number that must occur.",
+     "s": [
+      [
+       "carries out the division and gets remainders 10, 18, 16, 37, 1",
+       1
+      ],
+      [
+       "states the repeating block is 02439, 5 digits long",
+       1
+      ],
+      [
+       "says she is partly right: 40 is the greatest possible number, not the exact one",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "p": "p. 85",
+     "q": "True or False: In the decimal for 100 ÷ 11, the 9th digit after the decimal point is 9. Give a reason.",
+     "a": "False. Long division gives 100 ÷ 11 = 9.0909..., with the remainders 1 and 10 taking turns. The digits after the point go 0, 9, 0, 9, ..., so every odd place holds 0 and the 9th digit is 0.",
+     "s": [
+      [
+       "states False",
+       1
+      ],
+      [
+       "shows the digits after the point alternate 0, 9 and so the 9th digit is 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 85",
+     "q": "A Maths Day banner shows the decimal of 5 ÷ 27, one digit in each box after the point.\n(a) Divide until a remainder returns, listing each digit and remainder.\n(b) Write the repeating block.\n(c) Which digit goes in the 50th box? (1 + 1 + 1)",
+     "a": "(a) 50 ÷ 27 gives digit 1, remainder 23; 230 ÷ 27 gives digit 8, remainder 14; 140 ÷ 27 gives digit 5, remainder 5. (b) The remainder 5 has returned, so the block is 185 (0.185185...). (c) 50 = 3 × 16 + 2, so after 16 full blocks the 50th box is the 2nd digit of the block, 8.",
+     "s": [
+      [
+       "(a) lists digits 1, 8, 5 and remainders 23, 14, 5",
+       1
+      ],
+      [
+       "(b) gives the block 185",
+       1
+      ],
+      [
+       "(c) uses 50 = 3 × 16 + 2 to get 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 85-87",
+     "q": "A page of a notebook shows two lists. Dividing 1 by 2 again and again gives 0.5, 0.25, 0.125, 0.0625, and dividing 1 by 5 again and again gives 0.2, 0.04, 0.008, 0.0016.\n(a) Write the next number in each list.\n(b) Multiply the first numbers of the lists, then the second numbers, then the third. What pattern do you see, and why does it happen?\n(c) Use the fact that 16 × 625 = 10000 to write 1/16 as a decimal, and check it against the first list.\n(d) Divide 1 by 24 until a remainder repeats, giving each digit and remainder.\n(e) Explain why 1/24 cannot be changed into a fraction with denominator 10, 100, 1000 and so on, and what this means for its decimal. (1 + 1 + 1 + 1 + 1)",
+     "a": "(a) 0.0625 ÷ 2 = 0.03125 and 0.0016 ÷ 5 = 0.00032. (b) 0.5 × 0.2 = 0.1, 0.25 × 0.04 = 0.01 and 0.125 × 0.008 = 0.001. Each pair is 1 over a product of equal numbers of 2s and 5s, and every 2 × 5 makes a 10. (c) 1/16 = 625/10000 = 0.0625, the fourth number in the first list. (d) Digits 0, 4, 1, 6, 6... with remainders 10, 4, 16, 16...; so 1 ÷ 24 = 0.041666... (e) 24 = 2 × 2 × 2 × 3. Numbers such as 10, 100, 1000 are made only of 2s and 5s, so none of them is a multiple of 3 and none is a multiple of 24. The remainder 16 keeps repeating, so the decimal never ends.",
+     "s": [
+      [
+       "(a) gives 0.03125 and 0.00032",
+       1
+      ],
+      [
+       "(b) gets 0.1, 0.01, 0.001 and links the pattern to 2 × 5 = 10",
+       1
+      ],
+      [
+       "(c) writes 625/10000 = 0.0625 and matches it to the list",
+       1
+      ],
+      [
+       "(d) gets digits 0, 4, 1, 6, 6 and remainders 10, 4, 16, 16",
+       1
+      ],
+      [
+       "(e) explains that the factor 3 of 24 blocks the equivalent fraction and that the decimal never ends",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 75-85",
+     "q": "Priya says, \"1 ÷ 12 never ends but 3 ÷ 12 does, so whether a division ends can depend on the dividend and not just the divisor.\" Is she right? Show both divisions and explain.",
+     "a": "Yes, she is right. 1 ÷ 12 gives digits 0, 8, 3, 3, ... with remainders 10, 4, 4, ..., so it never ends: 0.08333... 3 ÷ 12 gives digits 2, 5 with remainders 6, 0, so it ends at 0.25. The reason is that 3/12 = 1/4 = 25/100, so an equivalent fraction with denominator 100 exists for 3/12, while 3 cannot be cancelled from 1/12.",
+     "s": [
+      [
+       "shows 1 ÷ 12 has remainder 4 repeating, so it never ends",
+       1
+      ],
+      [
+       "shows 3 ÷ 12 = 0.25",
+       1
+      ],
+      [
+       "agrees with Priya and explains using 3/12 = 1/4",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-4.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 92",
+     "q": "Kunal has read that the 1000 calendar years from year 1 to year 1000 have 3,65,242 days. He says, \"So every block of 1000 calendar years has 3,65,242 days, and the calendar is always 0.2 day behind the Earth.\" Test him on the block from year 1001 to year 2000. The Earth needs 365.2422 days for one revolution.",
+     "a": "He is wrong. From 1001 to 2000: 250 years are divisible by 4, 10 of them are divisible by 100, and 3 of those (1200, 1600, 2000) are divisible by 400, so there are 250 - 10 + 3 = 243 leap years (one more than the 242 from year 1 to year 1000). The block has 1000 × 365 + 243 = 3,65,243 days. The Earth needs 3,65,242.2 days, so this block is 0.8 day ahead, not 0.2 day behind.",
+     "s": [
+      [
+       "counts 243 leap years, with 1200, 1600 and 2000 as the years divisible by 400",
+       1
+      ],
+      [
+       "finds 3,65,243 days",
+       1
+      ],
+      [
+       "compares with 3,65,242.2, finds 0.8 day ahead and rejects the claim",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 88-92",
+     "q": "Imagine a planet that takes 90.185 of its days to go round its star. Its calendar has 90 days in a normal year and 91 in a leap year.\n(a) If there were no leap years, by how many days would the calendar be behind after 100 years?\n(b) Rule 1: every 5th year is a leap year. Is the calendar ahead or behind after 100 years, and by how much?\n(c) Rule 2: every 5th year is a leap year, but not every 50th year. Is it ahead or behind after 100 years, and by how much?\n(d) Using Rule 2, find the gap after 1000 years.\n(e) Design one more adjustment, of the kind used for the Earth's calendar, that makes the calendar match exactly over 1000 years, and check it by counting the leap years. (1 + 1 + 1 + 1 + 1)",
+     "a": "(a) 0.185 × 100 = 18.5 days behind. (b) The planet needs 100 × 90.185 = 9018.5 days. Rule 1 gives 20 leap years: 9000 + 20 = 9020 days, 1.5 days ahead. (c) Rule 2 gives 20 - 2 = 18 leap years: 9018 days, 0.5 day behind. (d) In 1000 years there are 200 - 20 = 180 leap years: 90180 days. The planet needs 90185 days, so the calendar is 5 days behind. (e) Put back 5 leap years: for example, every 200th year is a leap year after all. Then there are 5 years divisible by 200, 20 - 5 = 15 years divisible by 50 but not by 200, and 200 - 20 = 180 years divisible by 5 but not by 50. Leap years = 180 + 5 = 185, so the days are 90000 + 185 = 90185, an exact match. Any rule that restores exactly 5 of the 20 skipped years in 1000 years earns the mark.",
+     "s": [
+      [
+       "(a) finds 18.5 days behind",
+       1
+      ],
+      [
+       "(b) finds 9020 against 9018.5, 1.5 days ahead",
+       1
+      ],
+      [
+       "(c) finds 18 leap years, 9018 days, 0.5 day behind",
+       1
+      ],
+      [
+       "(d) finds 90180 against 90185, 5 days behind",
+       1
+      ],
+      [
+       "(e) states a rule restoring 5 leap years and checks 185 leap years give 90185 days",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 90",
+     "q": "Sohan's calendar app asks two things in order. \"Divisible by 100? Then 365 days.\" If not, \"Divisible by 4? Then 366 days, otherwise 365.\" For which of these years does the app give the wrong number of days under today's rule?",
+     "o": [
+      "2000",
+      "1900",
+      "2100",
+      "2024"
+     ],
+     "a": "2000: the app gives 365 days, because it stops at \"divisible by 100\" and has no step for years divisible by 400, but 2000 has 366 days. It is correct for 1900 and 2100 (365 days) and for 2024 (366 days)."
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "reverse"
+     ],
+     "p": "pp. 90-92",
+     "q": "For the years 1 to 1200, a student writes the number of leap years as 1200/4 - 1200/100 + 1200/400.\n(a) Explain what each of the three terms counts, and why the second is subtracted and the third added.\n(b) Find the number of days in these 1200 calendar years.\n(c) Find how far the calendar is from the days the Earth takes for 1200 revolutions at 365.2422 days each, and say which is more. (1 + 1 + 1)",
+     "a": "(a) 1200/4 = 300 counts the years divisible by 4. 1200/100 = 12 counts the century years, which are subtracted because they lose their extra day. 1200/400 = 3 counts the years divisible by 400, which get it back. So there are 300 - 12 + 3 = 291 leap years. (b) 1200 × 365 + 291 = 438000 + 291 = 438291 days. (c) 1200 × 365.2422 = 438290.64 days, so the calendar is more, by 438291 - 438290.64 = 0.36 day.",
+     "s": [
+      [
+       "(a) explains the three terms and gets 291 leap years",
+       1
+      ],
+      [
+       "(b) finds 438291 days",
+       1
+      ],
+      [
+       "(c) finds 438290.64 and says the calendar is more by 0.36 day",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

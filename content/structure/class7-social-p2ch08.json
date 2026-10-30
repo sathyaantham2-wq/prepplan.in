@@ -1,0 +1,116 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "SST",
+  "name": "Social Science",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Exploring Society: India and Beyond",
+  "edition": "Grade 7 Parts 1 and 2, 2026",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 8,
+  "name": "Banks and the Magic of Finance",
+  "blurb": "Financial infrastructure, banks and deposits, compounding, loans and Jan Dhan, the RBI and other institutions, payment modes and UPI, the stock market and financial safety.",
+  "order_index": 20,
+  "source_code": "gees208"
+ },
+ "scope": [
+  [
+   "IN",
+   "Financial infrastructure, banks and deposits",
+   "194-197"
+  ],
+  [
+   "IN",
+   "Loans, how banks earn and Jan Dhan",
+   "199-200"
+  ],
+  [
+   "IN",
+   "Other institutions and the RBI",
+   "201-202"
+  ],
+  [
+   "OUT",
+   "Cash withdrawal slip and family interview activities",
+   "Activity based"
+  ],
+  [
+   "IN",
+   "Interest and compounding",
+   "197-198"
+  ],
+  [
+   "IN",
+   "Payment modes and UPI",
+   "203-207"
+  ],
+  [
+   "IN",
+   "Stock market and financial safety",
+   "207-210"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7S-8.1",
+   "name": "Financial infrastructure, banks and deposits",
+   "description": "What financial infrastructure is, what banks do, and the savings, current and fixed deposit accounts.",
+   "idea": "Banks keep savings safe, pay interest and offer different accounts.",
+   "rule": "Financial infrastructure is a network of banks, payment systems, stock markets and other financial institutions that help people, businesses and government carry out transactions and manage money. A bank collects money from people as deposits and lends it to borrowers as loans. Navdeep deposits Rs 3000 a month because keeping cash at home is unsafe, and Rima takes a loan for her bamboo business. A person who opens a bank account is an account holder. Banks pay interest on deposits. A savings account is for individuals, earns interest and has limits on withdrawals. A current account is for businesses and traders, earns no interest and has no limit on transactions. A fixed deposit is a one-time deposit for a fixed period, like 3 or 5 years, with interest usually higher than a savings account.",
+   "example": "A passbook records receipts and payments in a bank account.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-8.2",
+   "name": "Interest and the magic of compounding",
+   "description": "How interest works, compound interest with the Rs 1000 example, the passbook and the king and sage story.",
+   "idea": "Interest on interest makes savings grow faster over time, as the chessboard story shows.",
+   "rule": "Interest is the money a bank pays for deposits or charges for loans. Rs 1000 deposited at 6 per cent gives Rs 1000 + 6% of 1000 = Rs 1060 after one year. In the second year interest is earned on Rs 1060, that is Rs 63.60, giving Rs 1,123.60. Earning interest on previous interest is compounding; after 12 years the amount becomes Rs 2012.20. In the story, a sage asked a king for one grain of rice on the first square, two on the second, four on the third, doubling each time for 64 squares. The eighth square had 128 grains, the 16th had 32,768 and by the 32nd there were over 210 crore. A passbook records debits (money out) and credits (money in).",
+   "example": "The chess king realised the power of exponential growth only after paying a heavy price.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-8.3",
+   "name": "Loans, how banks earn and Jan Dhan Yojana",
+   "description": "How loans work, the interest difference by which banks earn, reserves, and the Pradhan Mantri Jan Dhan Yojana.",
+   "idea": "Banks earn from the gap between loan interest and deposit interest, and Jan Dhan Yojana widened banking.",
+   "rule": "Banks lend money as loans for purposes like buying a house or vehicle, funding education, or buying machinery and raw materials. The borrower repays the loan with interest. Banks pay lower interest on savings and charge higher interest on loans; the difference is income. Anand deposits Rs 200 at 2 per cent; the bank lends it to Shreya at 5 per cent. She repays Rs 210, the bank pays Rs 204 to Anand and earns Rs 6. Banks keep reserves and do not lend all deposits. Before 2014 only 15 crore Indians had bank accounts; the Pradhan Mantri Jan Dhan Yojana launched in 2014 to give everyone, especially the poor, accounts without a minimum balance or fees, and over 50 crore accounts were opened, mainly by women. Direct transfers reduced middlemen.",
+   "example": "Wages and scholarships can be paid directly into bank accounts.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-8.4",
+   "name": "Other financial institutions and the Reserve Bank of India",
+   "description": "Post offices, IFCI, NABARD, the RBI as central bank, its functions, and temples as banks in ancient India.",
+   "idea": "The RBI regulates banks, and post offices and special institutions widen finance.",
+   "rule": "Post offices offer savings schemes such as National Savings Certificates, Kisan Vikas Patra and Sukanya Samriddhi accounts and reach even remote places. The Industrial Finance Corporation of India funds businesses in areas like power and textiles. NABARD supports rural development by funding banks that give loans for farming, village industries, roads and irrigation. The Reserve Bank of India, India's central bank, supervises the banking system. Established in 1935, it has been the central bank owned by the Government of India since 1949. It is the banker of banks, keeping their accounts, facilitating fund exchange and lending to banks and the government. It sets rules on printing and distributing currency and fixing benchmark interest rates. In ancient India temples lent money to artisans, merchants and local governments, and a 13th-century inscription at Kodumbalur records communities borrowing from a temple with an agreement to pay interest.",
+   "example": "The RBI office entrance in Delhi has statues of a yaksha and yakshini.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-8.5",
+   "name": "Payment modes and UPI",
+   "description": "Cash withdrawal, ATMs, cheques, debit cards and POS, internet banking, mobile payments and how UPI works.",
+   "idea": "Payments have moved from cash and cheques to fast digital modes, especially UPI.",
+   "rule": "Savings can be withdrawn with a withdrawal slip at a counter or with a debit card at an ATM, which is available 24x7 and needs a PIN. A cheque is a paper instrument to pay from an account; it needs a visit to the bank and takes time, and the amount is debited from one account and credited to another. Electronic methods are instant: debit cards at POS machines, internet banking and mobile payments through apps such as BHIM using UPI with a QR code or phone number. In 2016 NPCI launched UPI, a fast and secure digital payment system; in a UPI payment the payer scans a QR code, enters the amount and UPI PIN, the app asks the bank which forwards the request to NPCI, which verifies the PIN and processes the transfer to the payee's bank. UPI grew during COVID-19 for cashless payments and is multilingual. Nepal adopted UPI first in 2022; the UAE, France, Sri Lanka, Bhutan and Mauritius have also adopted it.",
+   "example": "UPI reduced the reliance on cash used without any record.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7S-8.6",
+   "name": "The stock market and financial safety",
+   "description": "Shares, stock exchanges, the BSE, share price changes, crashes and booms, and how to avoid financial fraud.",
+   "idea": "Shares give part-ownership of a company, and safe digital habits protect us from fraud.",
+   "rule": "A share is part-ownership in a company; a collection of shares is a stock. Companies issue shares to raise funds and people buy them expecting the price to rise. Buying and selling take place at the stock exchange. The Bombay Stock Exchange, established in 1875, is one of the oldest in the world. Share prices rise and fall: a company doing well makes its shares more valuable, while problems like a strike or a big loss lower them. Government policy, tax rules, political instability, wars or economic shocks can also change prices. A fall in many shares is a stock market crash and a rise is a boom. Fraudsters trick people through fake calls or messages to share bank details or OTPs. Never share personal information or OTPs, avoid unknown links, do not store PINs on devices, and report fraud on helpline 1930 or the National Cybercrime Reporting Portal.",
+   "example": "If a company is like a big chapati, each share is one piece.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

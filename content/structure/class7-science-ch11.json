@@ -1,0 +1,111 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "SCI",
+  "name": "Science",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Curiosity: Textbook of Science",
+  "edition": "Grade 7, 2025",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 11,
+  "name": "Light: Shadows and Reflections",
+  "blurb": "Sources of light, straight-line travel of light, shadows, reflection, plane mirror images, and the pinhole camera, periscope and kaleidoscope.",
+  "order_index": 11,
+  "source_code": "gecu111"
+ },
+ "scope": [
+  [
+   "IN",
+   "Sources of light",
+   "154"
+  ],
+  [
+   "OUT",
+   "Exploratory projects",
+   "Activity based"
+  ],
+  [
+   "IN",
+   "Light travels in a straight line",
+   "155-156"
+  ],
+  [
+   "IN",
+   "Reflection and plane mirror images",
+   "159-162"
+  ],
+  [
+   "IN",
+   "Transparent, translucent and opaque; shadows",
+   "156-159"
+  ],
+  [
+   "IN",
+   "Pinhole camera and useful items",
+   "162-165"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7SC-11.1",
+   "name": "Sources of light: luminous and non-luminous objects",
+   "description": "Natural and artificial light sources, the Moon as a non-luminous object, and LED lamps.",
+   "idea": "Luminous objects emit their own light; non-luminous objects only reflect it.",
+   "rule": "The Sun emits its own light and is the main natural source of light on Earth. Stars, lightning, natural fire and certain animals such as fireflies also emit their own light. Humans first created fire as artificial light, using fuels like animal fat, oil, wax and gas, and later electric light sources. Objects that emit their own light are luminous; objects that do not are non-luminous. The Moon is non-luminous and shines by reflecting the sunlight falling on it. LED lamps use much less power, are brighter and last longer than traditional lamps, and at the end of life should be disposed of or recycled properly. Fireflies are decreasing due to light pollution, reduced forest cover and excessive tourism.",
+   "example": "Moonlight is only reflected sunlight.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-11.2",
+   "name": "Light travels in a straight line",
+   "description": "Matchbox and bent pipe activities showing straight-line travel of light.",
+   "idea": "Light travels in a straight line.",
+   "rule": "In Activity 11.1 three matchboxes with holes at the same position are arranged in a line, with a torch at one end and a cardboard screen at the other. A bright spot appears on the screen only when all three holes are in one straight line; moving one box stops it. In Activity 11.2 a candle flame is seen through a straight pipe but not through a bent pipe. Both show that light travels in a straight line. A laser beam in water with a drop of milk also follows a straight path. Laser pointers must be low-power, used only under teacher supervision, and never pointed at anyone's eyes. Light can bend around corners, but that is learnt in higher grades. A lighted candle is used only under adult supervision.",
+   "example": "A headlight beam appears as a straight beam.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-11.3",
+   "name": "Transparent, translucent and opaque materials and shadows",
+   "description": "How materials let light pass, and how shadows form.",
+   "idea": "A shadow forms when an opaque object blocks light from a source falling on a screen.",
+   "rule": "Light passes almost completely through transparent materials, partially through translucent materials, and not at all through opaque materials. When an opaque object blocks light, the dark patch where light does not reach is its shadow. Opaque objects form darker shadows, translucent objects lighter shadows, and even some transparent objects create faint shadows. To see a shadow we need a source of light, an opaque object and a screen such as a wall or ground. The shape, size and sharpness depend on the positions of the object, source and screen; a shadow does not form if the light is off, and changing the colour of an opaque object does not change the colour of its shadow. Shadow puppetry, such as Tholu Bommalata and Togalu Gombeyaata, is an art form using shadows.",
+   "example": "A bird high in the sky casts no visible shadow on the ground, but one near the ground does.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-11.4",
+   "name": "Reflection of light",
+   "description": "Reflection by shiny surfaces and mirrors, and redirecting sunlight.",
+   "idea": "A mirror changes the direction of light falling on it, called reflection.",
+   "rule": "A shiny flat steel plate or a plane mirror (flat, not curved) can redirect sunlight onto a wall that the Sun does not reach directly. The change in the direction of light by a mirror is called reflection of light. Tilting the mirror changes the position of the light spot, but light still travels in straight lines. In Activity 11.6 a comb with a single slit and a torch make a thin beam on white paper; placing a plane mirror in its path changes the path of the beam, showing reflection. The Moon shines by reflecting sunlight. Seeing our face in a mirror is also due to reflection. Earlier mirrors were made by polishing stone or metal; the Aranmula Kannadi of Kerala is a metal surface mirror made for centuries.",
+   "example": "Redirecting sunlight with a mirror onto a dark corner of a wall.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-11.5",
+   "name": "Images in a plane mirror and lateral inversion",
+   "description": "Properties of the image formed by a plane mirror, and lateral inversion.",
+   "idea": "A plane mirror forms an erect image, same in size as the object, that cannot be obtained on a screen and is laterally inverted.",
+   "rule": "The image seen in a plane mirror appears to be behind the mirror. It is of the same size as the object, and it is erect (upright). It cannot be obtained on a screen, whether the screen is placed behind or in front of the mirror. The image appears as far behind the mirror as the object is in front of it. In the image, left appears right and right appears left; this perceived left-right reversal is called lateral inversion. The word AMBULANCE is written laterally inverted on the front of an ambulance so it can be read correctly in the rear-view mirror of vehicles ahead. Letters like T and O look identical to themselves in a plane mirror. The image of a plane mirror is not upside down.",
+   "example": "Raising your left hand makes your image seem to raise its right hand.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-11.6",
+   "name": "Pinhole camera, periscope and kaleidoscope",
+   "description": "Image formation through a pinhole, and useful devices based on straight-line travel and reflection.",
+   "idea": "A pinhole camera forms an inverted image; periscopes and kaleidoscopes use mirrors.",
+   "rule": "A pinhole camera is a device in which light rays from an object pass through a tiny hole and form an image on a screen. In Activity 11.9 light from a candle flame passing through a small hole in cardboard forms an image on the screen, and the image is upside down (inverted). In Activity 11.10 a sliding pinhole camera is made from two boxes, with tracing paper as the screen, and the smaller box is moved to focus the image of a distant object in bright sunlight. A periscope has two plane mirrors placed in a Z-shaped box; reflection from both allows us to see objects not directly visible, and periscopes are used in submarines, tanks and by soldiers to see out of bunkers. A kaleidoscope uses three plane mirror strips joined in a triangle in a tube, with coloured bangle pieces, giving a new pattern every time it is turned, since reflections of reflections make multiple images. Designers and artists use kaleidoscopes for ideas.",
+   "example": "A pinhole camera image is inverted but a mirror image is only laterally inverted.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

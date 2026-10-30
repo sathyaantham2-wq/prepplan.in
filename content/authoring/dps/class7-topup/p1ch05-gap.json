@@ -1,0 +1,1018 @@
+{
+ "kind": "dps_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 5,
+  "name": "Parallel and Intersecting Lines"
+ },
+ "source_code": "gegp105",
+ "concepts": [
+  {
+   "code": "C7M-5.1",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 107-108",
+     "tags": [
+      "scenario"
+     ],
+     "q": "Two straight laser beams cross on a school stage. The light engineer notes that one angle at the crossing is 34 degrees more than the angle next to it. What is the angle vertically opposite the smaller of these two angles?",
+     "o": [
+      "73 degrees",
+      "107 degrees",
+      "146 degrees",
+      "34 degrees"
+     ],
+     "a": "73 degrees. The two neighbouring angles form a linear pair, so they add to 180 and differ by 34: the larger is (180 + 34)/2 = 107 and the smaller is 73. The angle vertically opposite the smaller one equals it, 73 degrees."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 107",
+     "q": "Two straight iron rods of a gate cross at O. One angle at O is 4 times the angle next to it. (a) Find these two angles. (b) Find the total of the two obtuse angles at O.",
+     "a": "(a) The two angles form a linear pair: x + 4x = 180, so x = 36. The angles are 36 and 144 degrees. (b) The angle vertically opposite the 144 degree angle is also 144 degrees, so the two obtuse angles total 144 + 144 = 288 degrees.",
+     "s": [
+      [
+       "(a) uses x + 4x = 180 for the linear pair and gets 36 and 144 degrees",
+       1
+      ],
+      [
+       "(b) uses vertically opposite angles to get a second 144 degree angle and the total 288 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 107-108",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: When two straight lines cross and one of the four angles is acute, exactly two of the four angles are acute. Give the verdict and the reason.",
+     "a": "True. The angle vertically opposite the acute angle is equal to it, so it is acute too. Each of the other two angles forms a linear pair with the acute angle, so it is 180 minus an angle less than 90, which is more than 90 (obtuse). So exactly two angles are acute.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: the vertically opposite angle is equal (acute) and the two linear-pair angles are 180 minus an acute angle, so they are obtuse",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 107-108",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Lines PQ and RS cross at O. Angle POR is (5k - 20) degrees and the angle vertically opposite it, angle QOS, is (3k + 30) degrees. Aman writes: 'k = 25, so every one of the four angles at O is 105 degrees.' Check Aman's work and say whether he is right, partly right or wrong.",
+     "a": "Partly right. Vertically opposite angles are equal, so 5k - 20 = 3k + 30, giving k = 25 and POR = QOS = 105 degrees: this part is correct. But angle POS forms a linear pair with POR, so POS = 180 - 105 = 75 degrees, and angle QOR, opposite POS, is also 75 degrees. So only two of the angles are 105 degrees; the other two are 75 degrees.",
+     "s": [
+      [
+       "Sets the vertically opposite angles equal and gets k = 25, POR = QOS = 105 degrees",
+       1
+      ],
+      [
+       "Uses the linear pair to get the other two angles as 180 - 105 = 75 degrees",
+       1
+      ],
+      [
+       "Verdict: partly right (k and two angles correct, the other two angles wrong)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 107",
+     "q": "Lines l and m cross, and the four angles in order round the crossing are a, b, c and d. (a) Using only the fact that a linear pair adds to 180 degrees, explain why angle b must equal angle d, without measuring. (b) Nisha finds that b + d is equal to a. Use (a) to find all four angles.",
+     "a": "(a) Angles a and b form a linear pair, so a + b = 180; angles a and d also form a linear pair, so a + d = 180. Both b and d are 180 - a, so b = d. (b) Since b = d, b + d = 2b. Also a = 180 - b. So 2b = 180 - b, 3b = 180 and b = 60. Then b = d = 60 degrees and a = c = 120 degrees.",
+     "s": [
+      [
+       "(a) writes a + b = 180 and a + d = 180, so b = d = 180 - a",
+       1
+      ],
+      [
+       "(b) forms 2b = 180 - b using b = d and the linear pair",
+       1
+      ],
+      [
+       "(b) gets b = d = 60 degrees and a = c = 120 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 107-108",
+     "q": "Two straight strips AB and CD of a festival banner cross at O. Going round O the rays come in the order OA, OC, OB, OD. The designer marks angle AOC = (3x + 12) degrees, angle BOD = (5x - 28) degrees and angle BOC = (x + 2y) degrees. (a) Which angle fact links AOC and BOD? Use it to find x and angle AOC. (b) Find y. (c) Write all four angles at O and check their total. (d) The designer wants every angle at O to be between 80 and 100 degrees (both included). One strip is turned about O. What is the smallest change in angle AOC that does this, and what are the four angles then?",
+     "a": "(a) AOC and BOD are vertically opposite, so they are equal: 3x + 12 = 5x - 28 gives x = 20, and AOC = 72 degrees. (b) BOC forms a linear pair with AOC, so BOC = 180 - 72 = 108. Then 20 + 2y = 108 gives y = 44. (c) AOC = BOD = 72 degrees and BOC = AOD = 108 degrees; total 72 + 108 + 72 + 108 = 360 degrees. (d) The acute pair must rise to at least 80 degrees, so AOC must grow by at least 80 - 72 = 8 degrees. Then the angles are 80, 100, 80 and 100 degrees, all inside the range.",
+     "s": [
+      [
+       "(a) names vertically opposite angles and solves 3x + 12 = 5x - 28 to get x = 20",
+       1
+      ],
+      [
+       "(a) gets angle AOC = 72 degrees",
+       1
+      ],
+      [
+       "(b) uses the linear pair to get BOC = 108 degrees and y = 44",
+       1
+      ],
+      [
+       "(c) lists 72, 108, 72, 108 degrees and checks the total is 360 degrees",
+       1
+      ],
+      [
+       "(d) finds the smallest change 8 degrees, giving 80, 100, 80 and 100 degrees",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.2",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 108-109",
+     "q": "Two straight lines cross at a point. Consider the following statements. Statement 1: If two adjacent angles at the crossing are equal, the lines are perpendicular. Statement 2: If two vertically opposite angles at the crossing are equal, the lines are perpendicular. Statement 3: If three of the four angles at the crossing add up to 270 degrees, the lines are perpendicular. Which of the statements is/are correct?",
+     "o": [
+      "1 and 3 only",
+      "1 only",
+      "2 and 3 only",
+      "All three"
+     ],
+     "a": "1 and 3 only. Two equal adjacent angles form a linear pair, so each is 90 degrees. Three angles totalling 270 leave 360 - 270 = 90 degrees for the fourth, so the lines are perpendicular. Statement 2 is wrong: vertically opposite angles are equal at every crossing, so this tells nothing."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 109",
+     "q": "Lines AB and CD are perpendicular and cross at O. Going round O the rays come in the order OA, OC, OB, OD. A ray OE is drawn inside angle BOD so that angle BOE is twice angle EOD. (a) Find angles BOE and EOD. (b) Find angle COE.",
+     "a": "(a) Angle BOD = 90 degrees because the lines are perpendicular. BOE + EOD = 90 with BOE = 2 x EOD, so EOD = 30 degrees and BOE = 60 degrees. (b) Angle COB is also 90 degrees, and OB lies between OC and OE, so COE = COB + BOE = 90 + 60 = 150 degrees.",
+     "s": [
+      [
+       "(a) uses BOD = 90 degrees to get EOD = 30 degrees and BOE = 60 degrees",
+       1
+      ],
+      [
+       "(b) adds COB = 90 degrees and BOE = 60 degrees to get COE = 150 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 109",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Through a point O on a straight line AB, two different lines can be drawn that are both perpendicular to AB. Give the verdict and the reason.",
+     "a": "False. On one side of AB, each such line would give a ray from O making 90 degrees with OA. If the two rays were different, one would lie inside the angle made by the other with OA, so it would make less than 90 degrees. So the two rays are the same and only one line through O is perpendicular to AB.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: two different rays from O on one side of AB cannot both make 90 degrees with OA, since one would lie inside the other's angle, so only one perpendicular passes through O",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 107-109",
+     "tags": [
+      "show_impossible"
+     ],
+     "q": "Farhan says the four angles at the crossing of two straight lines, taken in order round the point, are in the ratio 1 : 2 : 1 : 3. Show that this cannot happen.",
+     "a": "Let the angles be x, 2x, x and 3x in order. The second and fourth angles are vertically opposite, so they must be equal, but 2x is not equal to 3x (x is not 0). The linear pairs also clash: x + 2x = 180 gives x = 60, while x + 3x = 180 gives x = 45. One angle cannot have two values, so the ratio 1 : 2 : 1 : 3 is impossible.",
+     "s": [
+      [
+       "States that the second and fourth angles are vertically opposite and so must be equal, but 2x and 3x are not",
+       1
+      ],
+      [
+       "Shows the linear pairs give x = 60 from x + 2x = 180 and x = 45 from x + 3x = 180",
+       1
+      ],
+      [
+       "Concludes the ratio cannot occur",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 107-109",
+     "q": "Two straight beams AB and CD of a roof cross at O. Going round O the rays come in the order OA, OC, OB, OD. Angle AOC = (6x - 30) degrees, angle BOD = (3x + 15) degrees and angle COB = (4y + 8) degrees. (a) Find x and angle AOC. (b) Find y. (c) A third beam EF is fixed through O perpendicular to AB, with OE on the same side of AB as OC. Find the two angles between EF and CD. (d) The builder may turn beam CD about O. What is the smallest turn that makes CD perpendicular to AB? (e) What is the smallest turn of CD, starting again from its first position, that makes it perpendicular to EF, and along which beam does it then lie?",
+     "a": "(a) AOC and BOD are vertically opposite, so 6x - 30 = 3x + 15, x = 15 and AOC = 60 degrees. (b) COB forms a linear pair with AOC, so COB = 120 = 4y + 8 and y = 28. (c) Angle AOE = 90 and OC lies inside it because AOC = 60 is less than 90, so COE = 90 - 60 = 30 degrees. EF and CD meet at 30 and 180 - 30 = 150 degrees. (d) To be perpendicular to AB, AOC must go from 60 to 90 degrees: a turn of 30 degrees (towards OE). (e) To be perpendicular to EF, the 30 degree angle between them must become 90: a turn of 60 degrees the other way, after which CD lies along AB.",
+     "s": [
+      [
+       "(a) equates the vertically opposite angles, x = 15 and AOC = 60 degrees",
+       1
+      ],
+      [
+       "(b) uses the linear pair COB = 120 degrees to get y = 28",
+       1
+      ],
+      [
+       "(c) gets COE = 30 degrees, so EF and CD meet at 30 and 150 degrees",
+       1
+      ],
+      [
+       "(d) smallest turn of 30 degrees, from AOC = 60 to 90 degrees",
+       1
+      ],
+      [
+       "(e) smallest turn of 60 degrees the other way, with CD then along AB",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.3",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 110",
+     "tags": [
+      "scenario"
+     ],
+     "q": "Kiran draws a straight line across the top of his desk. Lata draws a straight line on the blackboard. However far the two lines are extended, they never meet. Kiran says, 'So our two lines are parallel.' Which is the best reply?",
+     "o": [
+      "They need not be parallel: the desk top and the board are two different planes",
+      "They are parallel: two lines that never meet, however far extended, are always parallel",
+      "They are not parallel: two lines of different lengths can never be called parallel",
+      "They are parallel: both lines were drawn straight with a ruler on a flat surface"
+     ],
+     "a": "They need not be parallel: the desk top and the board are two different planes. Parallel lines must lie on the same plane, so never meeting is not enough here; the lengths of the lines and the use of a ruler have nothing to do with being parallel."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 116-118",
+     "q": "Sita draws line l and marks points P and Q on it. At P she uses the 60 degree corner of her set square to draw line a, so that the angle above l and to the right of a is 60 degrees. At Q she flips the set square by mistake, and line b makes 60 degrees with l above l but to the LEFT of b. (a) Find the angle above l and to the right of b. (b) Are a and b parallel? Give the reason.",
+     "a": "(a) The angle above l to the right of b forms a linear pair with the 60 degree angle above l to its left, so it is 180 - 60 = 120 degrees. (b) No. With l as the transversal, the angles above l and to the right of the lines are corresponding angles: 60 degrees at a and 120 degrees at b. They are not equal, so a and b are not parallel.",
+     "s": [
+      [
+       "(a) uses the linear pair to get 120 degrees",
+       1
+      ],
+      [
+       "(b) compares the corresponding angles 60 and 120 degrees and concludes a and b are not parallel",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 116-119",
+     "q": "Rani has a line l and a point A not on l. Her set square has lost its right-angle corner, but its 60 degree corner is fine. (a) Describe how she can still draw a line through A parallel to l with a ruler and this corner. (b) Name the pair of equal angles that makes her line parallel to l.",
+     "a": "(a) She draws a straight line t through A that crosses l at a point X, placed so that it makes 60 degrees with l (using the 60 degree corner on l at X). Then, at A, she places the 60 degree corner on t and draws a line m through A that makes 60 degrees with t in the same position as the angle at X (same side of t, same side of the line). (b) The 60 degree angle at X and the 60 degree angle at A are corresponding angles made by the transversal t; because they are equal, m is parallel to l.",
+     "s": [
+      [
+       "(a) draws a transversal t through A meeting l, and at A copies the same 60 degree angle; the answer must name t and say the copied angle is on the same side of t and of the line as the angle at l",
+       1
+      ],
+      [
+       "(b) names the equal corresponding angles at X and at A as the reason m is parallel to l",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 118",
+     "q": "Meena holds a ruler firmly along a line r. She rests one edge of her set square on the ruler so that the long side of the set square makes 30 degrees with r, and draws line a along the long side. She slides the set square along the ruler and draws line b along the long side in the same way. (a) What angles do a and b make with r, and where are they? (b) Why are a and b parallel? (c) While drawing line c, the ruler slipped, and c makes 34 degrees with the original line r in the same position. Is c parallel to a? Give the reason.",
+     "a": "(a) Both a and b make 30 degrees with r, in the same position (same side of the line and same side of r), because the set square was only slid, not turned. (b) With r as the transversal, these 30 degree angles are corresponding angles, and they are equal, so a and b are parallel. (c) No. The corresponding angles made with r are 30 degrees at a and 34 degrees at c. They are not equal, so c is not parallel to a.",
+     "s": [
+      [
+       "(a) both lines make 30 degrees with r in the same position",
+       1
+      ],
+      [
+       "(b) names them as equal corresponding angles with r as the transversal, so a is parallel to b",
+       1
+      ],
+      [
+       "(c) compares 30 and 34 degrees and concludes c is not parallel to a",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 112-118",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "A figure has five lines. Lines a, b and c carry one arrow mark each, lines d and e carry two arrow marks each, and a small square is drawn only where a crosses d. Zara says: 'There are exactly 6 crossings, and that one square forces all 24 angles at them to be right angles.' Is Zara right? Justify.",
+     "a": "Yes. a, b and c are parallel (one arrow) and d and e are parallel (two arrows), so lines with the same mark do not meet, while each of a, b, c crosses each of d, e: 3 x 2 = 6 crossings. The square shows a is perpendicular to d. With d as a transversal of a, b and c, the angles at b and c corresponding to the 90 degree angle at a are 90 degrees, so b and c are perpendicular to d. With a as a transversal of d and e, the angle at e corresponding to the 90 degree angle at d is 90 degrees, so e is perpendicular to a, and in the same way to b and c. So each of the 6 crossings has four 90 degree angles: 24 right angles.",
+     "s": [
+      [
+       "Uses the arrow marks: a, b, c parallel and d, e parallel, so 3 x 2 = 6 crossings",
+       1
+      ],
+      [
+       "Uses equal corresponding angles to show b and c are perpendicular to d and e is perpendicular to a, b and c",
+       1
+      ],
+      [
+       "Verdict: Zara is right, 6 crossings x 4 right angles = 24",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.4",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 115",
+     "tags": [
+      "scenario"
+     ],
+     "q": "A straight canal t crosses two straight roads l and m. A surveyor finds that the roads are NOT parallel and that the canal is not perpendicular to either road. How many different angle measures can there be among the eight angles at the two crossings?",
+     "o": [
+      "Either 2 or 4",
+      "Always exactly 4",
+      "Always exactly 2",
+      "Any number from 2 to 8"
+     ],
+     "a": "Either 2 or 4. At each crossing the angles are x, 180 - x, x, 180 - x, so each crossing gives only two measures and there are at most 4 in all. If the angle at m in the same position as x is 180 - x (not equal to x, so the roads are not parallel), the two crossings share the same pair of measures and there are only 2. Exactly 2 is not forced: if the second crossing has a different pair of measures, there are 4."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 115",
+     "q": "A straight kite string t crosses two straight clothes-lines l and m that are not parallel, and it is not perpendicular to either. Of the eight angles formed, the four acute angles add up to 210 degrees, and the acute angle at l is 40 degrees. (a) Find the acute angle at m. (b) Find the total of the four obtuse angles.",
+     "a": "(a) Each crossing has two equal acute angles (vertically opposite). So 2 x 40 + 2y = 210, which gives 2y = 130 and y = 65 degrees. (b) The obtuse angles are 180 - 40 = 140 degrees at l and 180 - 65 = 115 degrees at m, two of each: 2 x 140 + 2 x 115 = 510 degrees. (Check: the eight angles total 2 x 360 = 720, and 720 - 210 = 510.)",
+     "s": [
+      [
+       "(a) uses two equal acute angles at each crossing: 2 x 40 + 2y = 210, so the angle at m is 65 degrees",
+       1
+      ],
+      [
+       "(b) gets obtuse angles 140 and 115 degrees, two of each, total 510 degrees (or 720 - 210 = 510)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 115",
+     "q": "(a) A transversal crosses two lines. Explain why the eight angles formed can never all have different measures. (b) A transversal is perpendicular to line l but not to line m; at m one angle is 70 degrees. How many different measures do the eight angles have?",
+     "a": "(a) At each crossing there are two pairs of vertically opposite angles, and each pair is equal, so the eight angles come in four equal pairs: at most four different measures. (b) At l all four angles are 90 degrees. At m the angles are 70 and 180 - 70 = 110 degrees. So there are 3 different measures: 90, 70 and 110 degrees.",
+     "s": [
+      [
+       "(a) explains that the four pairs of vertically opposite angles are equal, so at most four measures",
+       1
+      ],
+      [
+       "(b) finds 90 degrees at l and 70 and 110 degrees at m, so 3 different measures",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 107-115",
+     "tags": [
+      "show_impossible"
+     ],
+     "q": "Arjun says that when a transversal crosses two lines, he can arrange it so that the eight angles include three different acute measures. Show that this is impossible.",
+     "a": "At one crossing the four angles are x, 180 - x, x and 180 - x (vertically opposite angles are equal and linear pairs add to 180). If x is acute, 180 - x is obtuse; if x is 90, none is acute. So each crossing gives at most one acute measure. With only two crossings there can be at most two different acute measures, never three.",
+     "s": [
+      [
+       "Writes the angles at one crossing as x, 180 - x, x, 180 - x",
+       1
+      ],
+      [
+       "Shows only one of x and 180 - x can be acute, so each crossing has at most one acute measure",
+       1
+      ],
+      [
+       "Concludes at most two acute measures from two crossings, so three is impossible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 115-118",
+     "q": "Two straight rails l and m of a toy train track are crossed by two straight sleepers s and t, which do not meet between the rails. At each crossing the angles are called upper-left, upper-right, lower-right and lower-left, with l above m. Exact readings: where s crosses l, the upper-right angle is 72 degrees; where s crosses m, the lower-left angle is 72 degrees; where t crosses l, the upper-left angle is 115 degrees. No reading could be taken where t crosses m. (a) Find all four angles where s crosses l and where s crosses m. (b) Are l and m parallel? Justify. (c) Find all four angles where t crosses l. (d) Use (b) to find all four angles where t crosses m, without measuring. (e) How many angles are there at the four crossings, and how many different measures do they have? What is the greatest number of different measures four crossings could have?",
+     "a": "(a) s and l: upper-right 72, lower-left 72 (vertically opposite), upper-left and lower-right 180 - 72 = 108 degrees. s and m: lower-left 72, so upper-right 72, and upper-left and lower-right 108 degrees. (b) Yes. The upper-right angles at l and m on s are corresponding angles and both are 72 degrees, so l is parallel to m. (c) t and l: upper-left 115, lower-right 115, upper-right and lower-left 180 - 115 = 65 degrees. (d) Since l is parallel to m, each angle where t crosses m equals the corresponding angle where t crosses l: upper-left 115, upper-right 65, lower-right 115 and lower-left 65 degrees. (e) 4 crossings x 4 = 16 angles, with only 4 different measures: 72, 108, 115 and 65 degrees. Each crossing can give at most 2 measures, so four crossings could give at most 8.",
+     "s": [
+      [
+       "(a) finds 72 and 108 degrees at both crossings of s using vertically opposite angles and linear pairs",
+       1
+      ],
+      [
+       "(b) uses equal corresponding angles (72 = 72) to conclude l is parallel to m",
+       1
+      ],
+      [
+       "(c) finds 115 and 65 degrees at the crossing of t and l",
+       1
+      ],
+      [
+       "(d) uses corresponding angles on parallel l and m to get 115, 65, 115 and 65 degrees where t crosses m",
+       1
+      ],
+      [
+       "(e) 16 angles, 4 different measures here, at most 8 in general",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 117-118",
+     "tags": [
+      "scenario"
+     ],
+     "q": "In a cycle stand, two straight bars l and m are crossed by a slanting rod t, with l above m. The angle above l and to the right of t is (5n - 12) degrees, and the angle below m and to the left of t is (2n + 39) degrees. For l and m to be parallel, what must each of these two angles measure?",
+     "o": [
+      "73 degrees",
+      "107 degrees",
+      "17 degrees",
+      "90 degrees"
+     ],
+     "a": "73 degrees. The angle below m to the left of t is vertically opposite the angle above m to the right of t, which is the corresponding angle of the angle above l to the right of t. For parallel bars they are equal: 5n - 12 = 2n + 39, so n = 17 and each angle is 73 degrees (17 is the value of n, not the angle)."
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 117-118",
+     "q": "Asha is given two lines l and m that are not parallel. She draws three different transversals and each time measures a pair of corresponding angles exactly: 70 and 85 degrees, 40 and 55 degrees, 110 and 125 degrees. (a) Will she ever find a transversal that makes equal corresponding angles with l and m? Give the reason. (b) She now draws a transversal perpendicular to l. Can the corresponding angle at m be 90 degrees? Explain.",
+     "a": "(a) No. If any transversal made equal corresponding angles with l and m, the lines would be parallel. Since l and m are not parallel, the corresponding angles can never be equal for any transversal. (b) No. If the angle at m were also 90 degrees, the corresponding angles would be equal (90 = 90) and l and m would be parallel, which they are not.",
+     "s": [
+      [
+       "(a) No, because equal corresponding angles would make l and m parallel, and they are not",
+       1
+      ],
+      [
+       "(b) No, because 90 at both lines would be equal corresponding angles, forcing l and m to be parallel",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 117-118",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A transversal t crosses lines l and m. All four angles at l are known. Measuring just one angle at m, in any one of the four positions, is enough to decide whether l is parallel to m. Give the verdict and the reason.",
+     "a": "True. Whichever position the angle at m is in, the angle in the same position at l is known, and the two are corresponding angles. If they are equal, l is parallel to m; if they are not equal, l is not parallel to m. So one reading at m settles it.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: any angle at m has a corresponding angle at l that is already known; equal means parallel, unequal means not parallel",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 116-118",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "A transversal t crosses lines l and m, with l above m. The angle above l and to the left of t is 3x degrees, and the angle above m and to the right of t is (x + 80) degrees. Mitra writes: 'For l to be parallel to m these corresponding angles must be equal, so 3x = x + 80 and x = 40.' Check Mitra's working and find the correct value of x.",
+     "a": "Mitra is wrong: the two angles are not corresponding, because one is to the left of t and the other to the right. The corresponding angle of the angle above l, left of t, is the angle above m, left of t, which forms a linear pair with (x + 80), so it is 180 - (x + 80) = 100 - x. For l parallel to m: 3x = 100 - x, so x = 25 (both are 75 degrees). With Mitra's x = 40 the angles above l left of t and above m left of t would be 120 and 60 degrees, so the lines would not be parallel.",
+     "s": [
+      [
+       "Points out that the two given angles are on opposite sides of t, so they are not corresponding angles",
+       1
+      ],
+      [
+       "Finds the true corresponding angle 180 - (x + 80) = 100 - x",
+       1
+      ],
+      [
+       "Solves 3x = 100 - x to get x = 25 and says Mitra's claim is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 116-118",
+     "tags": [
+      "reverse"
+     ],
+     "q": "A transversal t crosses lines l and m, with l above m. Write an expression in w for the angle above l to the right of t, and an expression in w for the angle below m to the right of t, so that l is parallel to m exactly when w = 14, and neither angle is 90 degrees then. Show the check.",
+     "a": "The angle below m to the right of t forms a linear pair with the angle above m to the right of t, which is the corresponding angle of the angle above l to the right of t. So l is parallel to m exactly when the two given angles add to 180 degrees. One answer: above l, right of t = (4w + 10) degrees; below m, right of t = (6w + 30) degrees. Their sum is 10w + 40 = 180 only when w = 14. Check: at w = 14 they are 66 and 114 degrees, so the angle above m, right of t, is 180 - 114 = 66 degrees, equal to its corresponding angle 66 degrees.",
+     "s": [
+      [
+       "States the condition: the two angles must add to 180 degrees (linear pair with the corresponding angle)",
+       1
+      ],
+      [
+       "Gives two expressions in w whose sum is 180 only at w = 14 and neither is 90 then",
+       1
+      ],
+      [
+       "Checks at w = 14 that the corresponding angles come out equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 116-118",
+     "q": "A fitter in Kanpur is fixing two straight pipes l and m, crossed by a straight support t at P on l and Q on m, with l above m. At P, the angle above l and to the left of t is (5a - 2) degrees and the angle above l and to the right of t is (3a + 22) degrees. At Q, the angle below m and to the right of t is (4b + 6) degrees. (a) Find a and the two angles at P. (b) Find the value of b that makes l parallel to m. (c) The fitter reads b = 20. Are the pipes parallel? Justify. (d) With b = 20, by how many degrees must pipe m be turned about Q to make it parallel to l?",
+     "a": "(a) The two angles at P form a linear pair: (5a - 2) + (3a + 22) = 180, so 8a + 20 = 180 and a = 20. The angles are 98 degrees (left) and 82 degrees (right). (b) For l parallel to m, the angle above m to the right of t must equal its corresponding angle 82 degrees, so the angle below m to the right of t is 180 - 82 = 98 degrees. Then 4b + 6 = 98 and b = 23. (c) No. With b = 20 the angle below m to the right is 86 degrees, so the angle above m to the right is 180 - 86 = 94 degrees. Its corresponding angle at P is 82 degrees; 94 is not 82, so the pipes are not parallel. (d) The angle above m to the right of t must change from 94 to 82 degrees, a turn of 94 - 82 = 12 degrees.",
+     "s": [
+      [
+       "(a) uses the linear pair to get a = 20",
+       1
+      ],
+      [
+       "(a) finds the angles at P: 98 and 82 degrees",
+       1
+      ],
+      [
+       "(b) uses corresponding angles and the linear pair to get 98 degrees and b = 23",
+       1
+      ],
+      [
+       "(c) with b = 20 gets 94 degrees above m, compares it with 82 and concludes not parallel",
+       1
+      ],
+      [
+       "(d) finds the turn 94 - 82 = 12 degrees",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.6",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 120",
+     "tags": [
+      "scenario"
+     ],
+     "q": "Two shelves of a bookcase are parallel lines l (upper) and m (lower). A straight slanting support t crosses both. The angle below l and to the right of t is 47 degrees. What is the angle below the lower shelf m and to the left of t?",
+     "o": [
+      "133 degrees",
+      "47 degrees",
+      "43 degrees",
+      "94 degrees"
+     ],
+     "a": "133 degrees. The angle above m to the left of t is the alternate angle of the 47 degree angle, and alternate angles on parallel lines are equal, so it is 47 degrees. The required angle forms a linear pair with it, so it is 180 - 47 = 133 degrees."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 120",
+     "q": "Parallel lines l (above) and m (below) are cut by a transversal t. Between the lines, the angle at l on the right of t is 3 times the angle at l on the left of t. (a) Find these two angles. (b) Find the two angles between the lines at m, naming the fact you use.",
+     "a": "(a) The two angles below l form a linear pair: x + 3x = 180, so x = 45. The angle on the left is 45 degrees and the one on the right is 135 degrees. (b) Alternate angles on parallel lines are equal. The angle above m on the left of t is the alternate angle of the 135 degree angle, so it is 135 degrees; the angle above m on the right of t is the alternate angle of the 45 degree angle, so it is 45 degrees.",
+     "s": [
+      [
+       "(a) uses the linear pair x + 3x = 180 to get 45 and 135 degrees",
+       1
+      ],
+      [
+       "(b) uses alternate angles to get 135 degrees on the left and 45 degrees on the right at m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 117-120",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Gauri cuts two lines l and m with a transversal and measures a pair of alternate angles exactly: both are 71 degrees. She says: 'Alternate angles are equal only when I already know the lines are parallel, so my readings tell me nothing about whether l and m are parallel.' Is she right? Justify using corresponding angles.",
+     "a": "No. Take one of the 71 degree angles, at l. Its vertically opposite angle at l is also 71 degrees, and that angle is the corresponding angle of the other 71 degree angle at m (an alternate angle is found from the corresponding angle and its vertically opposite angle). So a pair of corresponding angles are equal, 71 = 71, and by the corresponding angles test l and m are parallel. Equal alternate angles do tell her the lines are parallel.",
+     "s": [
+      [
+       "Uses the vertically opposite angle of one 71 degree angle to reach the corresponding angle of the other",
+       1
+      ],
+      [
+       "States that the corresponding angles are equal (71 = 71), so l is parallel to m by the corresponding angles test",
+       1
+      ],
+      [
+       "Verdict: Gauri is wrong; equal alternate angles show the lines are parallel",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 117-120",
+     "q": "The front edges of three steps of a staircase are parallel lines l1 (top), l2 and l3 (bottom). A straight handrail t crosses all three. At l1, the angle below l1 and to the right of t is 146 degrees. Find, naming the fact used at each step: (a) the angle above l1 to the right of t; (b) the angle above l3 to the right of t; (c) the angle below l2 to the left of t.",
+     "a": "(a) It forms a linear pair with the 146 degree angle, so it is 180 - 146 = 34 degrees. (b) It is the corresponding angle of the angle in (a), and l1 is parallel to l3, so it is 34 degrees. (c) Between l2 and l3, the angle below l2 to the left of t and the angle above l3 to the right of t are alternate angles. Since l2 is parallel to l3, it is 34 degrees.",
+     "s": [
+      [
+       "(a) linear pair: 180 - 146 = 34 degrees",
+       1
+      ],
+      [
+       "(b) corresponding angles on parallel l1 and l3: 34 degrees",
+       1
+      ],
+      [
+       "(c) alternate angles between l2 and l3: 34 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 120-122",
+     "q": "AB and CD are parallel lines, AB above CD, with A and C on the left. A transversal meets AB at E and CD at F. A second transversal from E meets CD at G, with G to the right of F. Angle AEF = 115 degrees and angle FEG = 30 degrees, where ray EG lies between rays EF and EB. (a) Find angle EFD, naming the pair of angles used. (b) Find angle AEG. (c) Find angle EGD. (d) Find angle EGC in two different ways. (e) Pooja says: 'EGD must also be 115 degrees, because EGD and EFD are both alternate to an angle at E.' Explain her mistake.",
+     "a": "(a) With EF as the transversal, angles AEF and EFD are alternate angles, and AB is parallel to CD, so EFD = 115 degrees. (b) Ray EG lies between EF and EB, so AEG = AEF + FEG = 115 + 30 = 145 degrees. (c) With EG as the transversal, AEG and EGD are alternate angles, so EGD = 145 degrees. (d) First way: EGC and EGD form a linear pair, so EGC = 180 - 145 = 35 degrees. Second way: BEG = 180 - 145 = 35 degrees (linear pair at E), and BEG and EGC are alternate angles with EG as the transversal, so EGC = 35 degrees. (e) Alternate angles pair up along the same transversal. EFD is alternate to AEF on transversal EF, but EGD is alternate to AEG on transversal EG. AEG is 145 degrees, not 115, so EGD = 145 degrees.",
+     "s": [
+      [
+       "(a) alternate angles on transversal EF: EFD = 115 degrees",
+       1
+      ],
+      [
+       "(b) AEG = 115 + 30 = 145 degrees",
+       1
+      ],
+      [
+       "(c) alternate angles on transversal EG: EGD = 145 degrees",
+       1
+      ],
+      [
+       "(d) EGC = 35 degrees both by the linear pair with EGD and by alternate angles with BEG = 35 degrees",
+       1
+      ],
+      [
+       "(e) explains that alternate angles belong to one transversal, so EGD matches AEG (145 degrees), not AEF",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.7",
+   "questions": [
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 121-122",
+     "tags": [
+      "scenario"
+     ],
+     "q": "Three parallel wires p, q and r (top to bottom) on electric poles are crossed by a straight cable t. Between p and q, on the right of t, the angle at p is 3y degrees and the angle at q is (y + 40) degrees. What is the angle above r and to the left of t?",
+     "o": [
+      "105 degrees",
+      "75 degrees",
+      "35 degrees",
+      "140 degrees"
+     ],
+     "a": "105 degrees. The two angles between p and q on the right of t are co-interior, so 3y + (y + 40) = 180, y = 35, giving 105 and 75 degrees. At q the angle above q to the left of t forms a linear pair with 75 degrees, so it is 105 degrees, and the angle above r to the left of t is its corresponding angle, 105 degrees."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 122",
+     "q": "In a folding table, the table top and the floor are parallel lines and a straight slanting leg crosses both. On one side of the leg, the interior angle at the table top is 30 degrees more than twice the interior angle at the floor. (a) Find both angles. (b) Find the interior angle at the floor on the other side of the leg.",
+     "a": "(a) The two interior angles on the same side of the leg are co-interior, so they add to 180: (2y + 30) + y = 180, 3y = 150, y = 50. The angle at the floor is 50 degrees and at the table top 130 degrees. (b) The interior angle at the floor on the other side forms a linear pair with 50 degrees, so it is 130 degrees.",
+     "s": [
+      [
+       "(a) uses co-interior angles adding to 180 to get 50 and 130 degrees",
+       1
+      ],
+      [
+       "(b) uses the linear pair to get 130 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 122",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Parallel lines l and m, with l above m, are cut by a slanting transversal t. On the left of t, the larger of the two interior angles is the one at l. So on the right of t, the larger of the two interior angles must also be the one at l. Give the verdict and the reason.",
+     "a": "False. Call the interior angle at l on the left a; it is the larger, so a is more than 90 degrees. The interior angle at l on the right forms a linear pair with it, so it is 180 - a, which is less than 90 degrees. The interior angle at m on the right is co-interior with that angle, so it is 180 - (180 - a) = a. The larger angle on the right is therefore at m, not at l. For example, 110 and 70 degrees on the left (at l, then at m) give 70 and 110 degrees on the right.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: by the linear pair at l and co-interior angles on the right, the right angles are 180 - a at l and a at m, so the larger one is at m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 121-122",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Lines l and m are parallel, l above m, and a transversal t cuts both. Kunal says: 'The two angles OUTSIDE the lines on the same side of t, that is the angle above l to the left of t and the angle below m to the left of t, also add up to 180 degrees.' Is Kunal right? Justify with a general angle x.",
+     "a": "Yes. Let the angle above l to the left of t be x. Its corresponding angle, above m to the left of t, is also x because l is parallel to m. The angle below m to the left of t forms a linear pair with it, so it is 180 - x. The sum is x + (180 - x) = 180 degrees for every x, so Kunal is right.",
+     "s": [
+      [
+       "Uses corresponding angles: the angle above m to the left of t is x",
+       1
+      ],
+      [
+       "Uses the linear pair: the angle below m to the left of t is 180 - x",
+       1
+      ],
+      [
+       "Adds to get 180 for every x and gives the verdict that Kunal is right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 117-122",
+     "q": "A window pane is bounded by two parallel horizontal bars l (top) and m (bottom) and two parallel slanting bars s (left) and t (right). At the corner where s meets l, the angle of the pane (below l, to the right of s) is 64 degrees. Find the other three corner angles of the pane, naming the fact used for each: (a) at t and l (below l, left of t); (b) at t and m (above m, left of t); (c) at s and m (above m, right of s).",
+     "a": "(a) With l as the transversal of parallel s and t, the angle below l to the right of t corresponds to the 64 degree angle, so it is 64; the corner angle below l to the left of t forms a linear pair with it: 180 - 64 = 116 degrees. (b) With t as the transversal of parallel l and m, the corner angle above m left of t is co-interior with the 116 degree angle: 180 - 116 = 64 degrees. (c) With s as the transversal, the corner angle above m right of s is co-interior with the 64 degree angle at l: 180 - 64 = 116 degrees.",
+     "s": [
+      [
+       "(a) corresponding angle 64 then linear pair, giving 116 degrees",
+       1
+      ],
+      [
+       "(b) co-interior angles on t: 64 degrees",
+       1
+      ],
+      [
+       "(c) co-interior angles on s: 116 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 117-122",
+     "q": "In a shed in Nashik, the roof beam l and the floor beam m are parallel and horizontal, l above m. An upright post v is fixed at right angles to m and meets l at B. A straight strut s runs from A on l down to the left to C on m; below l, the angle between AC and the part of l to the right of A is 128 degrees. A second strut u runs from A to D on m, lying between AC and the part of l to the right of A, with angle CAD = 20 degrees. (a) Show that v is also at right angles to l. (b) Find the angle above m to the right of s at C. (c) Find the angle below l to the right of u at A, and the angle above m to the right of u at D. (d) The builder wants a third strut from A that makes 60 degrees with m, above m on its right side. What angle must it make with l below l on the right? (e) Will this strut lie between s and u? How far is it from each?",
+     "a": "(a) With v as the transversal, the interior angles on one side at m and at l are co-interior, so they add to 180: the angle at l is 180 - 90 = 90 degrees, so v is at right angles to l. (b) With s as the transversal, the angle below l right of s (128) and the angle above m right of s are co-interior: 180 - 128 = 52 degrees. (c) The angle below l right of u is 128 - 20 = 108 degrees; with u as the transversal the co-interior angle above m right of u is 180 - 108 = 72 degrees. (d) The co-interior angle at A must be 180 - 60 = 120 degrees. (e) Yes: 120 lies between 108 (u) and 128 (s). It is 128 - 120 = 8 degrees from s and 120 - 108 = 12 degrees from u.",
+     "s": [
+      [
+       "(a) co-interior angles with v: 180 - 90 = 90 degrees at l",
+       1
+      ],
+      [
+       "(b) co-interior angles with s: 52 degrees",
+       1
+      ],
+      [
+       "(c) 108 degrees at A and 72 degrees at D",
+       1
+      ],
+      [
+       "(d) 180 - 60 = 120 degrees",
+       1
+      ],
+      [
+       "(e) the strut lies between s and u, 8 degrees from s and 12 degrees from u",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C7M-5.8",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 111-112",
+     "tags": [
+      "match"
+     ],
+     "q": "A square sheet is folded horizontally in half again and again, and opened after each fold; lines are counted with the two edges included. Match Column I with Column II. Column I: I. Parallel lines after 6 folds   II. New lines added by the 6th fold   III. Equal gaps between neighbouring lines after 6 folds   IV. New lines added by the 4th fold. Column II: A. 32   B. 8   C. 65   D. 64",
+     "o": [
+      "I-C, II-A, III-D, IV-B",
+      "I-D, II-A, III-C, IV-B",
+      "I-C, II-D, III-A, IV-B",
+      "I-A, II-C, III-D, IV-B"
+     ],
+     "a": "I-C, II-A, III-D, IV-B. After n folds there are 2^n + 1 lines, so 6 folds give 65 lines and 64 gaps between them. Each fold puts one new line in every old gap: the 6th fold adds the 32 gaps left after 5 folds, and the 4th fold adds the 8 gaps left after 3 folds."
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 117-125",
+     "q": "In an illusion picture, short slanting strokes make two long lines u and v (u above v) seem to lean towards each other. Tanvi draws a transversal t and measures exactly: the angle above u to the right of t is 74 degrees, and the angle below v to the left of t is 74 degrees. (a) Find the angle above v to the right of t, naming the fact used. (b) Are u and v parallel? What does this show about judging by appearance?",
+     "a": "(a) It is vertically opposite the angle below v to the left of t, so it is 74 degrees. (b) Yes. The angles above u and above v to the right of t are corresponding angles and both are 74 degrees, so u and v are parallel even though they seem to lean together. Appearance can mislead; the angle test decides.",
+     "s": [
+      [
+       "(a) uses vertically opposite angles to get 74 degrees above v to the right of t",
+       1
+      ],
+      [
+       "(b) equal corresponding angles, so u and v are parallel; the eye was misled and the angle test decides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 111-112",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "A square sheet has side 48 cm. It is folded horizontally in half again and again, so each fold halves every gap between neighbouring parallel lines. (a) After 4 folds, how many parallel lines are there (edges included) and how wide is each strip? (b) Riya says: 'Doubling the number of folds halves the strip width, so strips after 4 folds are half as wide as strips after 2 folds.' Is she right? Justify. (c) What is the smallest number of folds that makes every strip narrower than 2 cm, and how many lines are there then?",
+     "a": "(a) 2^4 + 1 = 17 lines and 16 strips, each 48 / 16 = 3 cm wide. (b) No. Each single fold halves the width, so 2 folds give 48 / 4 = 12 cm and 4 folds give 3 cm. That is one quarter of 12 cm, not half. (c) 4 folds give 3 cm, not under 2 cm; 5 folds give 48 / 32 = 1.5 cm. So 5 folds, with 2^5 + 1 = 33 lines.",
+     "s": [
+      [
+       "(a) 17 lines and 3 cm strips",
+       1
+      ],
+      [
+       "(b) finds 12 cm after 2 folds and 3 cm after 4 folds, one quarter and not half, so Riya is wrong",
+       1
+      ],
+      [
+       "(c) 5 folds give 1.5 cm strips and 33 lines",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 111-118",
+     "q": "Neha takes a square sheet, folds it horizontally in half twice, opens it, then folds it vertically in half once and opens it. Count lines with the edges included. (a) How many horizontal lines and how many vertical lines are there, and how would you mark them with arrow notation? (b) At how many points does a horizontal line meet a vertical line, and what angle is formed there? Give the reason. (c) From P, where the vertical fold meets the bottom edge, she rules a straight pencil line t up to the top edge. On the right of t, the angle at P between t and the bottom edge is 70 degrees. Find the angle at P between t and the vertical fold. (d) What angles does t make with each of the other horizontal lines? Give the reason. (e) Ravi says: 't makes a smaller angle with the top edge than with the bottom edge, because t has moved further away from the vertical fold by then.' Evaluate his claim.",
+     "a": "(a) 2^2 + 1 = 5 horizontal lines, marked with single arrows, and 2^1 + 1 = 3 vertical lines, marked with double arrows (a second set of parallel lines). (b) 5 x 3 = 15 points. Each angle is 90 degrees: the vertical edges are perpendicular to the bottom edge, and every vertical fold is perpendicular to the horizontal ones, so the square symbol can be marked at each point. (c) The vertical fold is perpendicular to the bottom edge, so the 90 degree angle on the right of the fold at P is made up of the 70 degree angle and the angle between t and the fold: 90 - 70 = 20 degrees. (d) Every horizontal line is parallel to the bottom edge, so with t as the transversal the corresponding angles are equal: 70 degrees, and the other angle of each linear pair is 180 - 70 = 110 degrees. (e) Ravi is wrong. The angle depends only on the directions of the lines, not on how far t has moved from the fold; equal corresponding angles give 70 degrees at the top edge too.",
+     "s": [
+      [
+       "(a) 5 horizontal lines with single arrows and 3 vertical lines with double arrows",
+       1
+      ],
+      [
+       "(b) 15 meeting points, each a right angle with the reason",
+       1
+      ],
+      [
+       "(c) uses the right angle at P: 90 - 70 = 20 degrees",
+       1
+      ],
+      [
+       "(d) corresponding angles give 70 degrees (and 110 degrees) at every horizontal line",
+       1
+      ],
+      [
+       "(e) rejects Ravi's claim: the angle is the same 70 degrees at every parallel line",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

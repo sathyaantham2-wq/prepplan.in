@@ -1,0 +1,111 @@
+{
+ "_note": "Chapter structure copied READ-ONLY from production (examprep-ai-dev) on 2026-10-30, so the local test database has the concepts a DPS pack attaches to. Contains no questions. source_code is the NCERT file code (CLAUDE.md), not stored in production.",
+ "subject": {
+  "code": "SCI",
+  "name": "Science",
+  "board": "CBSE",
+  "class": 7
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Curiosity: Textbook of Science",
+  "edition": "Grade 7, 2025",
+  "year": 2025
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 8,
+  "name": "Measurement of Time and Motion",
+  "blurb": "Early timekeeping, the pendulum and its time period, units and modern clocks, speed, and uniform and non-uniform motion.",
+  "order_index": 8,
+  "source_code": "gecu108"
+ },
+ "scope": [
+  [
+   "IN",
+   "Early timekeeping and Indian methods",
+   "106-108"
+  ],
+  [
+   "IN",
+   "Simple pendulum",
+   "109-110"
+  ],
+  [
+   "IN",
+   "Uniform and non-uniform motion",
+   "116-117"
+  ],
+  [
+   "OUT",
+   "Exploratory projects",
+   "Activity based"
+  ],
+  [
+   "IN",
+   "Units and modern clocks",
+   "111-112"
+  ],
+  [
+   "IN",
+   "Speed",
+   "113-115"
+  ]
+ ],
+ "concepts": [
+  {
+   "code": "C7SC-8.1",
+   "name": "Early ways of measuring time",
+   "description": "Natural cycles used for timekeeping, and sundials, water clocks, hourglasses and candle clocks.",
+   "idea": "People used repeating events in nature and simple devices to measure time before modern clocks.",
+   "rule": "Humans noticed that events in nature repeat after definite intervals, such as the rising and setting of the Sun, the phases of the Moon and the changing seasons, and used these cycles for timekeeping. They first devised calendars, and a day was defined by the cycle of sunrise and sunset. To measure smaller intervals within a day they made sundials, water clocks, hourglasses and candle clocks. In a sundial, time is found from the changing position of the shadow of an object cast by sunlight. Water clocks used the flow of water out of or into a vessel; in one type a bowl with a fine hole floated on water, filled in a fixed time and sank. An hourglass measures time by the flow of sand from one bulb to another. A candle clock is a candle with markings that show the passage of time as it burns. In Activity 8.1 a simple water clock is made from a plastic bottle with a small hole in the cap.",
+   "example": "A sundial shows time by the moving shadow of its pointer.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-8.2",
+   "name": "Timekeeping in India and the pendulum clock",
+   "description": "Samrat Yantra, the Arthasastra, Ghatika-yantra, ghatika, Galileo and Huygens.",
+   "idea": "Ancient India measured time by shadows and water clocks; the pendulum clock was a breakthrough.",
+   "rule": "The Samrat Yantra at Jantar Mantar, Jaipur, built around 300 years ago, is the world's largest stone sundial, 27 metres high, and its shadow moves at about 1 millimetre per second; it measures local solar time. In ancient India time was measured by shadows and water clocks; the Arthasastra by Kautilya has the earliest reference to shadow-based timekeeping, and Varahamihira gave an accurate expression around 530 CE. Water flowing out clocks were inaccurate because the flow rate decreased as the level dropped, which led to the sinking bowl clock, the Ghatika-yantra, first mentioned by Aryabhata. The hole was made so that the bowl took 24 minutes to fill and sink, and this gave the unit ghatika (ghati); a day was divided into 60 ghatis. Mechanical clocks driven by weights, gears and springs came from the fourteenth century, and the pendulum clock, invented by Christiaan Huygens in 1656 and inspired by Galileo's study of pendulums, was a breakthrough.",
+   "example": "Galileo noticed a swinging lamp in a church and timed it with his pulse.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-8.3",
+   "name": "The simple pendulum and its time period",
+   "description": "Parts of a simple pendulum, oscillation, time period and what it depends on.",
+   "idea": "A pendulum oscillates with a time period that depends on its length but not on the mass of the bob.",
+   "rule": "A simple pendulum has a small metallic ball, the bob, hung from a rigid support by a long thread. At rest it is in its mean position. If the bob is moved slightly to one side and released it oscillates, and the motion is periodic because it repeats after a fixed interval of time. One oscillation is complete when the bob goes from the mean position O to an extreme A, to the other extreme B and back to O, or from A to B and back to A. The time taken to complete one oscillation is the time period. In Activity 8.2 the time for 10 oscillations is measured and divided by 10 to get the time period. The time period of a simple pendulum depends on its length but not on the bob's mass, and for a given length it is constant at a place, a property used to measure time.",
+   "example": "A swing is an example of a pendulum.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-8.4",
+   "name": "Units of time and modern clocks",
+   "description": "The second as the SI unit of time, minutes and hours, rules for writing units, and quartz and atomic clocks.",
+   "idea": "The SI unit of time is the second, and modern clocks use rapid vibrations of quartz or atoms.",
+   "rule": "The SI unit of time is the second, with symbol s. Larger units are the minute (min) and hour (h), and 60 s = 1 min and 60 min = 1 h. Unit names such as second, minute and hour begin with a lowercase letter except at the start of a sentence; symbols s, min and h are lowercase and singular, with no full stop after them except at the end of a sentence; a space is left between the number and the unit; writing sec or hrs is incorrect. All clocks are based on a process that repeats continuously to mark equal intervals. Modern clocks use tiny and very rapid vibrations of a quartz crystal (quartz clocks) or specific atoms (atomic clocks). Huygens' early pendulum clocks could gain or lose 10 seconds a day, while atomic clocks lose only one second in millions of years. Sports timers, ECG machines and computers measure fractions of a second such as milliseconds and microseconds.",
+   "example": "An ECG machine measures millisecond variations in heartbeats.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-8.5",
+   "name": "Speed: distance and time",
+   "description": "Speed as distance covered per unit time, units m/s and km/h, and the relations among speed, distance and time.",
+   "idea": "Speed = total distance covered / total time taken.",
+   "rule": "The one who covers more distance in the same time is faster. The speed of an object is the total distance covered divided by the total time taken: Speed = Total distance covered / Total time taken. The SI unit of speed is metre per second (m/s); other units include kilometre per hour (km/h). The relations are: distance = speed x time, and time = distance / speed. Example: a bicycle covers 3.6 km in 15 min, so speed = 3600 m / 900 s = 4 m/s. A bus at 50 km/h for 2 h goes 100 km, and a train at 90 km/h takes 4 h to cover 360 km. To convert km/h to m/s multiply by 1000/3600 = 5/18.",
+   "example": "Prerna won the 100 m sprint because she covered the distance in the least time.",
+   "difficulty_base": "Easy"
+  },
+  {
+   "code": "C7SC-8.6",
+   "name": "Uniform and non-uniform linear motion and average speed",
+   "description": "Linear motion, constant and changing speed, distance-time tables, average speed, speedometer and odometer.",
+   "idea": "Uniform motion covers equal distances in equal times; otherwise the motion is non-uniform.",
+   "rule": "Motion along a straight line is linear motion. An object moving along a straight line with constant speed is in uniform linear motion, and covers equal distances in equal intervals of time. If its speed keeps changing it is in non-uniform linear motion, and covers unequal distances in equal intervals. In Table 8.3 Train X covers 20 km every 10 minutes, so it is uniform, while Train Y covers 20, 15, 15, 25, 20 and 25 km, so it is non-uniform. A train that speeds up, moves steadily and then slows to a halt shows both kinds. The speed calculated as total distance divided by total time is the average speed, and the book uses 'speed' for average speed. Uniform motion is an idealisation, and non-uniform motion is more common in everyday life. A speedometer shows a vehicle's speed in km/h and an odometer records the distance travelled in km.",
+   "example": "A car on an empty highway may be nearly uniform, while a car in city traffic is non-uniform.",
+   "difficulty_base": "Easy"
+  }
+ ]
+}

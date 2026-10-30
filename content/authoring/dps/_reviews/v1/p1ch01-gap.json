@@ -1,0 +1,618 @@
+{
+  "kind": "dps_topup",
+  "subject": {
+    "code": "MATH",
+    "class": 7,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 1,
+    "name": "Large Numbers Around Us"
+  },
+  "source_code": "gegp101",
+  "concepts": [
+    {
+      "code": "C7M-1.1",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 4-5",
+          "q": "A rubber-stamp shop in Jaipur has run out of the word stamp 'thousand', so it can print the name of a number only if the name does not need that word. (a) Write the largest 7-digit number the shop can still print, and its name. (b) Write the smallest 7-digit number whose name does need the word 'thousand'. (c) How far apart are your two numbers? (1+1+1)",
+          "a": "(a) The name needs no 'thousand' only if the ten-thousands and thousands digits are both 0, so the largest is 99,00,999: ninety nine lakh nine hundred ninety nine. (b) 10,00,000 has no 'thousand' part, and neither does anything up to 10,00,999, so the smallest is 10,01,000: ten lakh one thousand. (c) 99,00,999 - 10,01,000 = 88,99,999.",
+          "s": [
+            [
+              "(a) 99,00,999 with its name, the ten-thousands and thousands digits being 0",
+              1
+            ],
+            [
+              "(b) 10,01,000 identified as the smallest",
+              1
+            ],
+            [
+              "(c) subtraction shown, 88,99,999",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 4",
+          "q": "A national entrance exam has 73,47,516 registered candidates. (a) Write this number in words in the Indian system. (b) The digit 7 appears twice. How many times the value of the right-hand 7 is the value of the left-hand 7? (1+1)",
+          "a": "(a) Seventy three lakh forty seven thousand five hundred sixteen. (b) The left 7 stands for 70,00,000 and the right 7 stands for 7,000, so the left 7 has 1,000 times the value of the right 7.",
+          "s": [
+            [
+              "(a) correct Indian number name",
+              1
+            ],
+            [
+              "(b) values 70,00,000 and 7,000 stated, 1,000 times",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.2",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 8-9",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or false: a space research budget of 2 billion rupees is the same as 20,000 lakh rupees. Give the reason or the correction.",
+          "a": "True. 1 billion = 1 arab = 100 crore, so 2 billion = 200 crore; and 1 crore = 100 lakh, so 200 crore = 200 x 100 = 20,000 lakh.",
+          "s": [
+            [
+              "verdict: True",
+              1
+            ],
+            [
+              "reason: 2 billion = 200 crore, and 200 x 100 lakh = 20,000 lakh",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 8",
+          "q": "A newspaper printed a dam's cost as ₹2,40,500,000. (a) Explain why this comma pattern belongs to neither the Indian nor the American system. (b) Rewrite the figure correctly in each system. (c) Read it in words in each system. (1+1+1)",
+          "a": "(a) Reading from the right, the digits are grouped 3-3-2-1. The Indian pattern is 3-2-2-2 and the American pattern is 3-3-3, so it fits neither. (b) Indian: 24,05,00,000. American: 240,500,000. (c) Indian: twenty four crore five lakh. American: two hundred forty million five hundred thousand.",
+          "s": [
+            [
+              "(a) grouping 3-3-2-1 compared with 3-2-2-2 and 3-3-3",
+              1
+            ],
+            [
+              "(b) 24,05,00,000 and 240,500,000",
+              1
+            ],
+            [
+              "(c) twenty four crore five lakh; two hundred forty million five hundred thousand",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 8",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Farhan says, 'Because the Indian system groups digits in twos after the first three, a number always has more commas in the Indian system than in the American system.' Test his claim by counting the commas in both systems for 45,830, for 12,78,830 and for the 9-digit number 472615038, and give your verdict.",
+          "a": "45,830 has 1 comma in both systems. 12,78,830 has 2 commas, and 1,278,830 also has 2. 472615038 is 47,26,15,038 with 3 commas in the Indian system and 472,615,038 with 2 in the American system. Verdict: Farhan is only partly right. The Indian form has more commas for the 9-digit number, but the two are equal for the 5-digit and 7-digit numbers, so 'always more' is wrong.",
+          "s": [
+            [
+              "comma counts for 45,830 (1 and 1) and 12,78,830 (2 and 2)",
+              1
+            ],
+            [
+              "comma count for the 9-digit number (3 and 2), with both forms written",
+              1
+            ],
+            [
+              "verdict: partly right, more in some cases and equal in others, so 'always' fails",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.3",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 7",
+          "q": "Systematic Sippy (buttons +1 to +100000) shows 2,345 in the fewest clicks. Then, without clearing the screen, it adds 3,456 by pressing the fewest buttons for 3,456. (a) How many clicks were used in all? (b) What number is on the screen, and how many clicks would Sippy need to show it from zero? (c) Explain the difference between your two click counts, using what happens when ten presses of one button are replaced by one press of the next button. (1+1+1)",
+          "a": "(a) 2,345 needs 2 + 3 + 4 + 5 = 14 clicks and 3,456 needs 3 + 4 + 5 + 6 = 18 clicks, 32 in all. (b) The screen shows 5,801, which needs 5 + 8 + 0 + 1 = 14 clicks. (c) The difference is 32 - 14 = 18. Each time ten presses of a button are replaced by one press of the next button, 9 clicks are saved. There are two such exchanges: 11 presses of +1 give one +10 and one +1, and then 10 presses of +10 give one +100. That saves 2 x 9 = 18 clicks.",
+          "s": [
+            [
+              "(a) 14 + 18 = 32 clicks",
+              1
+            ],
+            [
+              "(b) 5,801 and 14 clicks",
+              1
+            ],
+            [
+              "(c) difference 18 explained as two exchanges saving 9 clicks each",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 7",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or false: Systematic Sippy (buttons +1 to +100000, always the fewest clicks) needs more clicks for 7,000 than for 6,999, because 7,000 is the bigger number. Give the reason or the correction.",
+          "a": "False. Sippy's fewest clicks equal the sum of the digits: 6,999 needs 6 + 9 + 9 + 9 = 33 clicks, and 7,000 needs only 7. So the bigger number needs 26 fewer clicks.",
+          "s": [
+            [
+              "verdict: False",
+              1
+            ],
+            [
+              "33 clicks for 6,999 and 7 clicks for 7,000 shown",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.4",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 11",
+          "q": "Riddhi has a number. Its nearest thousand, nearest ten thousand, nearest lakh, nearest ten lakh and nearest crore are all 3,00,00,000. A number exactly halfway between two round values rounds up. (a) What is the lowest such number? (b) What is the highest? (c) How many such numbers are there? (1+1+1)",
+          "a": "The nearest thousand is the tightest condition; a number that meets it also meets the other four. (a) Lowest: 2,99,99,500, which is exactly halfway between 2,99,99,000 and 3,00,00,000 and rounds up. (b) Highest: 3,00,00,499; one more gives 3,00,00,500, which rounds up to 3,00,01,000. (c) 3,00,00,499 - 2,99,99,500 + 1 = 1,000 numbers.",
+          "s": [
+            [
+              "(a) 2,99,99,500",
+              1
+            ],
+            [
+              "(b) 3,00,00,499",
+              1
+            ],
+            [
+              "(c) 1,000 numbers, counting both ends",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 10",
+          "q": "The number 2,318 appears twice in a trust's plans. (a) 2,318 pilgrims need seats, and seats can be booked only in lots of 100. (b) The trust has ₹2,318 for rice, and rice is sold only in lots costing ₹100. For each case, write the rounded number the trust should use and say whether it rounds up or down, with the reason. (1+1)",
+          "a": "(a) 2,400 seats: round up, because no pilgrim may be left without a seat. (b) ₹2,300: round down, because the trust cannot spend more money than it has.",
+          "s": [
+            [
+              "(a) 2,400, round up, reason that no pilgrim is left out",
+              1
+            ],
+            [
+              "(b) ₹2,300, round down, reason that spending cannot exceed the money held",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 10-11",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Two godowns hold 1,46,800 and 2,46,300 bags of rice. Mahesh says, 'To get the total to the nearest lakh, I can round each godown's figure to the nearest lakh and add. It gives the same answer as adding first and rounding afterwards.' Test his claim on these two figures and explain what you find. (1+1+1)",
+          "a": "Rounding first: 1,00,000 + 2,00,000 = 3,00,000. Adding first: 1,46,800 + 2,46,300 = 3,93,100, whose nearest lakh is 4,00,000. The two answers differ by 1,00,000, so his claim is false. Each figure was rounded down by more than 46,000, and these two losses add up to more than half a lakh, so the rounded sum falls a whole lakh below.",
+          "s": [
+            [
+              "rounding first gives 3,00,000",
+              1
+            ],
+            [
+              "adding first gives 3,93,100, nearest lakh 4,00,000",
+              1
+            ],
+            [
+              "claim false, with the reason that two round-downs build up to more than half a lakh",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.5",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 11",
+          "q": "Two solar farms generated 6,27,345 units and 2,98,760 units of electricity in a month. (a) Without adding in full, decide whether the total is more or less than 9,27,345 units, and give your reason. (b) Find by how many units the total differs from 9,27,345. (1+1)",
+          "a": "(a) 9,27,345 = 6,27,345 + 3,00,000. Since 2,98,760 is less than 3,00,000, the total is less than 9,27,345. (b) 3,00,000 - 2,98,760 = 1,240, so the total is 1,240 units less (it is 9,26,105).",
+          "s": [
+            [
+              "(a) less, using 2,98,760 < 3,00,000 with the first number kept whole",
+              1
+            ],
+            [
+              "(b) 1,240 units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 11-12",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "A state textbook depot held 13,52,416 books and sent 3,97,850 to schools. Sohan says, 'Since 3,97,850 is less than 4,00,000, the books left must be less than 9,52,416.' (a) Is Sohan right? Decide without subtracting in full and explain. (b) Find the exact number of books left and how far it is from 9,52,416. (2+1)",
+          "a": "(a) No. 13,52,416 - 4,00,000 = 9,52,416, and the depot took away less than 4,00,000. Taking away less leaves more, so the books left are more than 9,52,416. Sohan has the direction reversed. (b) 13,52,416 - 3,97,850 = 9,54,566, which is 2,150 more than 9,52,416, the same as 4,00,000 - 3,97,850.",
+          "s": [
+            [
+              "(a) 13,52,416 - 4,00,000 = 9,52,416 recognised",
+              1
+            ],
+            [
+              "(a) verdict: not right, because taking away less leaves more",
+              1
+            ],
+            [
+              "(b) 9,54,566, which is 2,150 more",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 12-13",
+          "q": "A table of city populations gives Chennai 43,43,645 in 2001 and 46,81,087 in 2011, and Kolkata 45,72,876 in 2001 and 44,86,679 in 2011. (a) Round all four figures to the nearest lakh. (b) Using the rounded figures, say which city was larger in each year and by about how much. (c) Using the rounded figures, about how much did each city's population change from 2001 to 2011, and in which direction? (1+1+1)",
+          "a": "(a) Chennai: 43,00,000 and 47,00,000. Kolkata: 46,00,000 and 45,00,000. (b) In 2001 Kolkata was larger by about 3,00,000. In 2011 Chennai was larger by about 2,00,000. (c) Chennai rose by about 4,00,000 and Kolkata fell by about 1,00,000.",
+          "s": [
+            [
+              "(a) all four nearest lakhs",
+              1
+            ],
+            [
+              "(b) Kolkata larger by about 3 lakh in 2001; Chennai larger by about 2 lakh in 2011",
+              1
+            ],
+            [
+              "(c) Chennai up by about 4 lakh, Kolkata down by about 1 lakh",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.6",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 14",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Tara says, 'If I halve one factor and double the other, the product does not change.' (a) Test her claim on 18 x 25 and 9 x 50. (b) Explain in one line why the product stays the same. (c) Use her idea again and again to change 48 x 125 into a product with 1000 as a factor, and find the answer. (1+1+1)",
+          "a": "(a) 18 x 25 = 450 and 9 x 50 = 450, so the claim holds here; Tara is right. (b) One factor is divided by 2 and the other multiplied by 2, and these two steps cancel each other. (c) 48 x 125 = 24 x 250 = 12 x 500 = 6 x 1000 = 6,000.",
+          "s": [
+            [
+              "(a) both products 450, claim accepted",
+              1
+            ],
+            [
+              "(b) reason: dividing by 2 and multiplying by 2 cancel",
+              1
+            ],
+            [
+              "(c) chain to 6 x 1000 shown, answer 6,000",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 14",
+          "q": "A wedding decorator needs 1,648 garlands with 75 marigolds in each. (a) Using 75 = 300 / 4, find the number of marigolds without long multiplication. (b) Use your answer to (a), not a new multiplication, to find how many marigolds she would need with 25 in each garland. (1+1)",
+          "a": "(a) 1,648 x 75 = 1,648 / 4 x 300 = 412 x 300 = 1,23,600 marigolds. (b) 25 is one third of 75, so 1,23,600 / 3 = 41,200 marigolds.",
+          "s": [
+            [
+              "(a) 412 x 300 shown, 1,23,600",
+              1
+            ],
+            [
+              "(b) 25 = 75 / 3 used, 41,200",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.7",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 14-15",
+          "q": "Look at two patterns. Pattern P: 3 x 5 = 15, 33 x 35 = 1,155, 333 x 335 = 1,11,555. Pattern Q: 11 x 11 = 121, 111 x 111 = 12,321, 1,111 x 1,111 = 12,34,321. (a) Extend P to find 3,33,333 x 3,33,335 and count its digits. (b) Extend Q to find 1,11,111 x 1,11,111 and count its digits. (c) Both products are of two 6-digit numbers. Explain why different digit-counts are not a contradiction. (1+1+1)",
+          "a": "(a) 1,11,11,15,55,555, which has 12 digits. (b) 12,34,56,54,321, which has 11 digits. (c) A 6-digit x 6-digit product is at least 1,00,000 x 1,00,000 = 10,00,00,00,000 (11 digits) and is less than 10,00,000 x 10,00,000 = 10,00,00,00,00,000 (the smallest 13-digit number), so it has at most 12 digits. So such a product can have 11 or 12 digits, and these two products show both cases.",
+          "s": [
+            [
+              "(a) product extended correctly, 12 digits",
+              1
+            ],
+            [
+              "(b) product extended correctly, 11 digits",
+              1
+            ],
+            [
+              "(c) bounds used to show that 11 and 12 digits are both possible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 15",
+          "q": "A fertiliser depot sold 8,000 bags at a price of a 3-digit number of rupees per bag. Its old billing screen shows at most 6 digits. (a) A 4-digit x 3-digit product has 6 or 7 digits. For this depot, what are the lowest and the highest bill amounts possible? (b) Without trying every price, find the highest price per bag for which the bill still fits the screen. Use 125 x 8 = 1000. (c) Out of all the 3-digit prices, how many give a bill that does not fit? (1+1+1)",
+          "a": "(a) Lowest: 8,000 x 100 = ₹8,00,000. Highest: 8,000 x 999 = ₹79,92,000. (b) 8,000 x 125 = 8 x 125 x 1000 = ₹10,00,000, the smallest 7-digit number, so ₹125 does not fit. The highest price that fits is ₹124 (bill ₹9,92,000). (c) The prices ₹125 to ₹999 do not fit: 999 - 125 + 1 = 875 prices.",
+          "s": [
+            [
+              "(a) ₹8,00,000 and ₹79,92,000",
+              1
+            ],
+            [
+              "(b) 8,000 x 125 = 10,00,000 used, highest fitting price ₹124",
+              1
+            ],
+            [
+              "(c) 875 prices, counting both ends",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.8",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 17",
+          "q": "India's longest train route, Dibrugarh to Kanyakumari, covers 4,219 km in about 76 hours. A catering supervisor works on this train, one way per trip. (a) What is the fewest number of one-way trips he needs to cover more than 1 lakh km? (b) How many hours, and how many full days, is that on the train? (1+1)",
+          "a": "(a) 23 trips give 4,219 x 23 = 97,037 km, which is less than 1 lakh, and 24 trips give 1,01,256 km, so 24 trips. (b) 24 x 76 = 1,824 hours; 1,824 / 24 = 76 days.",
+          "s": [
+            [
+              "(a) 97,037 km for 23 trips and 1,01,256 km for 24 trips, so 24 trips",
+              1
+            ],
+            [
+              "(b) 1,824 hours, which is 76 days",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 17-19",
+          "q": "The Amazon river discharges about 6,400 x 62,500 litres of water into the Atlantic Ocean every second. Assume a city of 1 crore people where each person uses 200 litres of water a day. Work in stages. (a) Use regrouping to find the litres discharged per second, and write the number in crore and in million. (b) Find the litres the city uses in a day, in arab. (c) How many seconds of the Amazon's flow would meet the city's need for one day? (d) How many days of the city's need would one minute of flow meet? (e) Anu says, 'One hour of the Amazon's flow would last this city more than 2 years.' Take 365 days in a year, test her claim and say by how many days it passes or fails. (1+1+1+1+1)",
+          "a": "(a) 6,400 x 62,500 = 64 x 625 x 10,000, and 64 x 625 = 8 x 8 x 625 = 8 x 5,000 = 40,000, so the flow is 40,000 x 10,000 = 40,00,00,000 litres, which is 40 crore or 400 million. (b) 1,00,00,000 x 200 = 2,00,00,00,000 litres = 2 arab. (c) 2 arab = 200 crore, and 200 crore / 40 crore = 5 seconds. (d) One minute gives 60 x 40 crore = 2,400 crore = 24 arab litres, and 24 / 2 = 12 days. (e) One hour is 60 minutes, so it meets 60 x 12 = 720 days. Two years are 365 x 2 = 730 days, so Anu's claim fails by 10 days.",
+          "s": [
+            [
+              "(a) regrouping shown, 40,00,00,000 = 40 crore = 400 million",
+              1
+            ],
+            [
+              "(b) 2 arab litres a day",
+              1
+            ],
+            [
+              "(c) 5 seconds",
+              1
+            ],
+            [
+              "(d) 24 arab litres a minute, so 12 days",
+              1
+            ],
+            [
+              "(e) 720 days against 730 days; claim fails by 10 days",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 22",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Rafi has 6 free hours every day and says, 'I could watch 1,000 films in a year.' Assume each film runs for 2 hours and a year has 365 days. (a) Find the hours he needs and the free hours he has, and decide whether he is right. (b) How many free hours are left over or missing? (c) If he had only 5 free hours a day, how many complete films could he finish in the year? (1+1+1)",
+          "a": "(a) He needs 1,000 x 2 = 2,000 hours and has 6 x 365 = 2,190 hours, so Rafi is right. (b) 2,190 - 2,000 = 190 hours are left over. (c) 5 x 365 = 1,825 hours; 1,825 / 2 gives 912 complete films, with 1 hour left.",
+          "s": [
+            [
+              "(a) 2,000 hours needed, 2,190 available, claim accepted",
+              1
+            ],
+            [
+              "(b) 190 hours left over",
+              1
+            ],
+            [
+              "(c) 1,825 hours, 912 complete films",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.9",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 4",
+          "q": "A town plans a human chain along its 18 km ring road. Each person takes up about 40 cm of the road. (a) How many people are needed? (b) If 1 lakh people joined instead, how many km would the chain stretch, and how far beyond the ring road's length is that? (1+1)",
+          "a": "(a) 18 km = 18,00,000 cm, and 18,00,000 / 40 = 45,000 people. (b) 1,00,000 x 40 = 40,00,000 cm = 40 km, which is 40 - 18 = 22 km more than the ring road.",
+          "s": [
+            [
+              "(a) km changed to cm, 45,000 people",
+              1
+            ],
+            [
+              "(b) 40 km, 22 km beyond",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 3",
+          "q": "To get a feel for one lakh, a class imagines stacking coins 2 mm thick. The Statue of Unity is about 180 metres tall, the Kunchikal waterfall drops about 450 metres, and one floor of a building is about 4 metres. (a) How tall is a stack of 1 lakh coins, and how does it compare with the statue? (b) About how many floors of a building is that? (c) How many coins would match the waterfall's drop? Write your answer in lakh and thousand. (1+1+1)",
+          "a": "(a) 1,00,000 x 2 mm = 2,00,000 mm = 200 m, which is 20 m taller than the statue. (b) 200 / 4 = 50 floors. (c) 450 m = 4,50,000 mm, and 4,50,000 / 2 = 2,25,000 coins, which is 2 lakh 25 thousand.",
+          "s": [
+            [
+              "(a) 200 m, 20 m taller than the statue",
+              1
+            ],
+            [
+              "(b) 50 floors",
+              1
+            ],
+            [
+              "(c) 2,25,000 coins = 2 lakh 25 thousand",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C7M-1.10",
+      "questions": [
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 23",
+          "tags": [
+            "show_impossible"
+          ],
+          "q": "Stick digits need: 0 needs 6, 1 needs 2, 2 needs 5, 3 needs 5, 4 needs 4, 5 needs 5, 6 needs 6, 7 needs 3, 8 needs 7, 9 needs 6. Niharika wants the smallest number that uses exactly 24 sticks. (a) Show that it cannot have 3 or fewer digits. (b) Show that a 4-digit answer cannot start with 1. (c) Find the smallest number and check its sticks. (1+1+1)",
+          "a": "(a) The costliest digit is 8 with 7 sticks, so 3 digits use at most 3 x 7 = 21 sticks, which is less than 24. (b) If the first digit is 1, it uses 2 sticks and 22 are left for 3 digits, but 3 digits use at most 21. (c) The next smallest first digit is 2 (5 sticks), leaving 19. Put 0 next (6 sticks, 13 left), then 0 again (6 sticks, 7 left), and the last digit must be 8. The number is 2,008, and 5 + 6 + 6 + 7 = 24.",
+          "s": [
+            [
+              "(a) 3 x 7 = 21 < 24 shown",
+              1
+            ],
+            [
+              "(b) 22 sticks left for 3 digits, more than 21",
+              1
+            ],
+            [
+              "(c) 2,008 with the stick check 5 + 6 + 6 + 7 = 24",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 21",
+          "q": "Priya has seven number cards: 6000, 15000, 400, 90000, 120000, 30 and 5. Each card can be used at most once, with any operations. (a) Add all seven cards and use the result to explain why addition alone cannot reach 3,00,000. (b) Priya writes 6000 x (30 + 5) + 90000. Find its value. (c) By adding some of her unused cards, she reaches exactly 4,35,000. Which cards does she add, and which card stays unused? (1+1+1)",
+          "a": "(a) 6,000 + 15,000 + 400 + 90,000 + 1,20,000 + 30 + 5 = 2,31,435, which is less than 3,00,000, so some multiplying is needed. (b) 6,000 x 35 = 2,10,000, and 2,10,000 + 90,000 = 3,00,000. (c) The unused cards are 15000, 400 and 120000. 3,00,000 + 1,20,000 + 15,000 = 4,35,000, so she adds 120000 and 15000, and 400 stays unused.",
+          "s": [
+            [
+              "(a) sum 2,31,435 compared with 3,00,000",
+              1
+            ],
+            [
+              "(b) 3,00,000 shown",
+              1
+            ],
+            [
+              "(c) 120000 and 15000 added, 400 unused",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
