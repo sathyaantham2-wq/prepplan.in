@@ -7,12 +7,14 @@ import {
 import { hashPassword } from 'better-auth/crypto'
 import { SchoolError, auditSchoolEvent } from './common'
 import { checkPassword, signInUser } from './credentials'
+import { DEMO_AI_SPEND_CAP_INR } from './school-ai-budget'
 import type { SignInResult } from './credentials'
 
 // A school starts itself (owner decision 2026-10-29): the person who creates the school becomes its
-// office admin. No e-mail confirmation and no approval: the account is active at once. Everything
-// else about a school still works as before: students and teachers are created by the school, never
-// by themselves.
+// office admin, and the account is active at once with no e-mail confirmation. It starts as a DEMO
+// school with the demo AI allowance until the owner approves it (owner decision 2026-10-30;
+// approveSchool below, run with scripts/approve-school.ts). Everything else about a school still works
+// as before: students and teachers are created by the school, never by themselves.
 //
 // What stands between this and abuse is deliberately small and honest:
 //  - a hidden "website" field that a person never fills in (a form-filling robot does),
@@ -73,12 +75,11 @@ export type SignUpResult =
   | { ok: true; schoolId: string; setCookies: Array<string> }
   | { ok: false; status: number; message: string }
 
-/** How many schools were started lately (demo schools do not count). */
+/** How many schools were started lately. */
 async function startedSince(db: Db, since: Date): Promise<number> {
   const r = await db
     .selectFrom('schools')
     .select((eb) => eb.fn.countAll<string>().as('n'))
-    .where('is_demo', '=', false)
     .where('created_at', '>=', since)
     .executeTakeFirstOrThrow()
   return Number(r.n)
@@ -108,6 +109,49 @@ function checkSchoolFields(
       'Please type the name of your school (at least 3 letters).',
     )
   return { name: n, city: city.trim().slice(0, 80) }
+}
+
+/** Every school that starts itself begins here, whichever way it signed up. */
+async function startAsDemo(db: Db, schoolId: string): Promise<void> {
+  await db
+    .updateTable('schools')
+    .set({ is_demo: true, ai_spend_cap_inr: String(DEMO_AI_SPEND_CAP_INR) })
+    .where('id', '=', schoolId)
+    .execute()
+}
+
+/**
+ * The owner's approval (scripts/approve-school.ts; there is no web route): the school stops being a
+ * demo and gets the normal AI allowance.
+ */
+export async function approveSchool(
+  db: Db,
+  code: string,
+): Promise<{ schoolId: string; name: string }> {
+  const school = await db
+    .selectFrom('schools')
+    .select(['id', 'name', 'is_demo', 'ai_spend_cap_inr'])
+    .where('code', '=', code)
+    .executeTakeFirst()
+  if (!school)
+    throw new SchoolError('not_found', `No school has the code "${code}".`)
+  if (!school.is_demo)
+    throw new SchoolError('conflict', `"${school.name}" is already approved.`)
+  await db
+    .updateTable('schools')
+    .set({ is_demo: false, ai_spend_cap_inr: null })
+    .where('id', '=', school.id)
+    .execute()
+  await auditSchoolEvent(db, {
+    schoolId: school.id,
+    actorUserId: null,
+    action: 'school.approved',
+    entity: 'schools',
+    entityId: school.id,
+    before: { is_demo: true, ai_spend_cap_inr: school.ai_spend_cap_inr },
+    after: { is_demo: false, ai_spend_cap_inr: null },
+  })
+  return { schoolId: school.id, name: school.name }
 }
 
 async function uniqueCode(db: Db, name: string): Promise<string> {
@@ -174,6 +218,7 @@ export async function signUpSchoolWithEmail(
     adminName: yourName,
     adminEmail: email,
   })
+  await startAsDemo(db, created.school.id)
   await schoolLoginRepository.setPassword(
     db,
     created.adminUserId,
@@ -186,7 +231,7 @@ export async function signUpSchoolWithEmail(
     entity: 'schools',
     entityId: created.school.id,
     before: null,
-    after: { via: 'email' },
+    after: { via: 'email', demo: true },
   })
   const signed = await signInUser(email, input.password)
   if (!signed.ok)
@@ -249,6 +294,7 @@ export async function createSchoolForSignedInUser(
     board: 'CBSE',
     city: school.city || undefined,
   })
+  await startAsDemo(db, created.school.id)
   await auditSchoolEvent(db, {
     schoolId: created.school.id,
     actorUserId: userId,
@@ -256,7 +302,7 @@ export async function createSchoolForSignedInUser(
     entity: 'schools',
     entityId: created.school.id,
     before: null,
-    after: { via: 'google' },
+    after: { via: 'google', demo: true },
   })
   return { schoolId: created.school.id }
 }

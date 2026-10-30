@@ -9,8 +9,9 @@ import { DEMO_LABEL, generateDemoResults } from './demo-results'
 import type { DemoResults } from './demo-results'
 import { loadExam } from './exam-service'
 
-// The demo school (M1): a safe, fully separate school to show the product. It is made only by the
-// provisioning script (`--demo`), never from the web. Its data sits under its own school_id like any
+// The demo school (M1): a safe, fully separate school to show the product. The full sample school is
+// made only by the provisioning script (`--demo`); a school that starts itself on the web is also a demo
+// (no sample students) until the owner approves it (signup.ts). Its data sits under its own school_id like any
 // tenant; the sample results are generated, use no AI and no scanned image, and every screen that
 // shows them carries the label "DEMO - sample data".
 

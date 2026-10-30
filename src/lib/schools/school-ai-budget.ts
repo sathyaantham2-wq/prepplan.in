@@ -10,6 +10,8 @@ import { SchoolError } from './common'
 // 2026-10-30 (it was Rs 100).
 
 export const DEFAULT_SCHOOL_AI_CAP_INR = 10_000
+/** The allowance of a demo school: the owner's demo school, and every school that started itself until the owner approves it. */
+export const DEMO_AI_SPEND_CAP_INR = 50
 
 export function monthStartUtc(now: Date): Date {
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))

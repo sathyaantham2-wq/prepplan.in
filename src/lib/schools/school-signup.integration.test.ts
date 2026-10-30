@@ -11,9 +11,15 @@ import {
   createSchoolForSignedInUser,
   signUpSchoolWithEmail,
   startState,
+  approveSchool,
   startedTooMany,
 } from './signup'
 import type { SignUpInput } from './signup'
+import {
+  DEFAULT_SCHOOL_AI_CAP_INR,
+  DEMO_AI_SPEND_CAP_INR,
+  schoolAiStatus,
+} from './school-ai-budget'
 
 type Handler = (o: {
   request: Request
@@ -40,6 +46,7 @@ const call = (
   })
 const cookieOf = (set: Array<string>) =>
   set.map((c) => c.split(';')[0]).join('; ')
+
 const HIGH = { perHour: 1000, perDay: 1000 }
 
 describe('a school starts itself (e-mail form and the Google follow-up)', () => {
@@ -123,7 +130,7 @@ describe('a school starts itself (e-mail form and the Google follow-up)', () => 
       name: `Signup School ${tag}`,
       city: 'Pune',
       board: 'CBSE',
-      is_demo: false,
+      is_demo: true,
       status: 'active',
       wizard_done_at: null,
     })
@@ -354,7 +361,52 @@ describe('a school starts itself (e-mail form and the Google follow-up)', () => 
     expect((await call(MeRoute, 'GET', null)).status).toBe(401)
   })
 
-  it('the brake: too many schools in an hour or a day are refused with a plain sentence, demo schools do not count', async () => {
+  it('a school that starts itself is a demo with the demo AI allowance until the owner approves it', async () => {
+    const r = await signUpSchoolWithEmail(
+      db,
+      input({ email: `demo-${tag}@school.test` }),
+      new Date(),
+      HIGH,
+    )
+    if (!r.ok) throw new Error(r.message)
+    made.push(r.schoolId)
+    const read = () =>
+      db
+        .selectFrom('schools')
+        .select(['code', 'is_demo', 'ai_spend_cap_inr', 'wizard_done_at'])
+        .where('id', '=', r.schoolId)
+        .executeTakeFirstOrThrow()
+    const before = await read()
+    expect(before.is_demo).toBe(true)
+    expect(Number(before.ai_spend_cap_inr)).toBe(DEMO_AI_SPEND_CAP_INR)
+    expect(before.wizard_done_at).toBeNull() // it still gets the set-up wizard
+    expect((await schoolAiStatus(db, r.schoolId)).cap).toBe(
+      DEMO_AI_SPEND_CAP_INR,
+    )
+
+    await approveSchool(db, before.code)
+    const after = await read()
+    expect(after.is_demo).toBe(false)
+    expect(after.ai_spend_cap_inr).toBeNull()
+    expect((await schoolAiStatus(db, r.schoolId)).cap).toBe(
+      DEFAULT_SCHOOL_AI_CAP_INR,
+    )
+    await expect(approveSchool(db, before.code)).rejects.toThrow(
+      'already approved',
+    )
+    await expect(approveSchool(db, 'no-such-school')).rejects.toThrow(
+      'No school has the code',
+    )
+    const logged = await db
+      .selectFrom('audit_log')
+      .select('action')
+      .where('entity_id', '=', r.schoolId)
+      .where('action', '=', 'school.approved')
+      .execute()
+    expect(logged).toHaveLength(1)
+  })
+
+  it('the brake: too many schools in an hour or a day are refused with a plain sentence', async () => {
     const now = new Date()
     expect(await startedTooMany(db, now, { perHour: 0, perDay: 1000 })).toBe(
       true,

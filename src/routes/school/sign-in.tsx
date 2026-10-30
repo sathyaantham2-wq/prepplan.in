@@ -3,6 +3,7 @@ import { AuthShell } from '../../components/school/auth-shell'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Btn, Card, Notice, TextInput } from '../../components/school/ui'
 import { GoogleSchoolButton } from '../../components/school/google-button'
+import { StoryPanel } from '../../components/school/story-panel'
 import { signIn } from '../../lib/auth-client'
 import { api } from '../../lib/school-client'
 
@@ -46,7 +47,7 @@ function SchoolSignIn() {
   }
 
   return (
-    <AuthShell title="Sign in to your school">
+    <AuthShell title="Sign in to your school" story={<StoryPanel />}>
       <div
         className="mb-4 grid grid-cols-2 gap-1 rounded-2xl bg-slate-200/70 p-1"
         role="tablist"

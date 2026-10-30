@@ -36,8 +36,7 @@ function SchoolHome() {
   const [demoBusy, setDemoBusy] = useState(false)
 
   // The school admin's first sign-in starts the setup wizard.
-  const needsWizard =
-    o.role === 'school_admin' && !o.wizardDone && !o.school.isDemo
+  const needsWizard = o.role === 'school_admin' && !o.wizardDone
   useEffect(() => {
     if (needsWizard)
       void navigate({
@@ -124,12 +123,12 @@ function SchoolHome() {
   const demoBox = o.school.isDemo ? (
     <Card className="space-y-2 border-amber-300! bg-amber-50!">
       <p className="font-display text-lg font-bold text-amber-950">
-        This is the demo school
+        This is a demo school
       </p>
       <p className="text-base text-amber-950">
-        One Class 7 section with 30 invented students. Make a paper, open it,
-        and press “Use sample answer sheets” to see sample results. Nothing here
-        is real.
+        Make a paper, open it, and press “Use sample answer sheets” to see
+        sample results. To use PrepPlan for real, write to support@prepplan.in;
+        we switch your school on after a check.
       </p>
       <p className="text-sm text-amber-950" data-testid="demo-cap">
         AI spend cap for this demo: ₹{o.school.aiSpendCapInr ?? 0}. The sample

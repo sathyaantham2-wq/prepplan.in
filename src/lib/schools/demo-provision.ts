@@ -12,13 +12,14 @@ import {
   createSection,
   setClassTeacher,
 } from './setup'
+import { DEMO_AI_SPEND_CAP_INR } from './school-ai-budget'
 import { adoptDefaultTemplate } from './template-service'
 import { acceptSchoolTerms } from './terms'
 
 // Creating the demo school (M1). Kept apart from demo.ts so the provisioning script can load it
 // without the PDF code (which a plain script runner cannot import).
 
-export const DEMO_AI_SPEND_CAP_INR = 50
+export { DEMO_AI_SPEND_CAP_INR }
 export const DEMO_STUDENT_COUNT = 30
 
 /** Thirty invented names. None is meant to be a real person; the whole school is labelled DEMO. */

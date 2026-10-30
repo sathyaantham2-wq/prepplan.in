@@ -64,6 +64,7 @@ async function main() {
       .selectFrom('schools')
       .select('code')
       .where('is_demo', '=', true)
+      .where('city', '=', 'Demo city') // a school that started itself is also a demo until approved; it is not this one
       .where('status', '=', 'active')
       .executeTakeFirst()
     if (other)

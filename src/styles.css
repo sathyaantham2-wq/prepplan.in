@@ -870,3 +870,335 @@ pre code {
 [data-school-area] a {
   color: revert-layer;
 }
+
+/* The story panel of the school sign-in (src/components/school/story-panel.tsx). CSS 3D only.
+   --story-x and --story-y run from -1 to 1 with the mouse. */
+.story-panel {
+  --story-x: 0;
+  --story-y: 0;
+  --story-gold: #f7dc9b;
+  background: linear-gradient(145deg, #065f46 0%, #064e3b 48%, #042f2e 100%);
+}
+.story-glow {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 9999px;
+  filter: blur(64px);
+  pointer-events: none;
+  transform: translate3d(calc(var(--story-x) * 18px), calc(var(--story-y) * 18px), 0);
+  transition: transform 0.4s ease-out;
+}
+.story-glow-a {
+  top: -6rem;
+  right: -6rem;
+  background: rgb(52 211 153 / 0.16);
+}
+.story-glow-b {
+  bottom: -8rem;
+  left: -5rem;
+  background: rgb(94 234 212 / 0.1);
+}
+.story-tab {
+  position: relative;
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.45rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.15;
+  font-weight: 600;
+  text-align: left;
+  color: rgb(236 253 245 / 0.85);
+  background: rgb(255 255 255 / 0.06);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+  transition: background-color 0.2s, color 0.2s;
+}
+.story-tab:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+.story-tab[aria-selected='true'] {
+  color: #fff;
+  background: rgb(255 255 255 / 0.17);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.3);
+}
+.story-tab-no {
+  display: flex;
+  width: 1.3rem;
+  height: 1.3rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  background: rgb(255 255 255 / 0.14);
+}
+.story-tab[aria-selected='true'] .story-tab-no {
+  color: #064e3b;
+  background: var(--story-gold);
+}
+.story-tab-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transform-origin: left;
+  background: var(--story-gold);
+  animation: story-progress 5s linear forwards;
+}
+[data-paused='true'] .story-tab-progress {
+  animation-play-state: paused;
+}
+@keyframes story-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.story-pause {
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  color: rgb(236 253 245 / 0.9);
+  background: rgb(255 255 255 / 0.06);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+}
+.story-pause:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+[data-school-area] .story-panel :where(button, [tabindex]):focus-visible {
+  outline: 3px solid var(--story-gold);
+  outline-offset: 2px;
+}
+.story-stage {
+  position: relative;
+  width: min(100%, 26rem);
+  height: clamp(205px, 30vh, 280px);
+  margin-inline: auto;
+  perspective: 1000px;
+}
+.story-layer {
+  position: absolute;
+  inset: 6% 8%;
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 0.07);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
+  transition: transform 0.3s ease-out;
+}
+.story-layer-1 {
+  transform: translate3d(calc(var(--story-x) * -10px - 34px), calc(var(--story-y) * -8px + 6px), 0) rotate(-7deg);
+}
+.story-layer-2 {
+  transform: translate3d(calc(var(--story-x) * -18px + 36px), calc(var(--story-y) * -12px - 4px), 0) rotate(6deg);
+}
+.story-layer-3 {
+  background: rgb(255 255 255 / 0.04);
+  transform: translate3d(calc(var(--story-x) * -26px), calc(var(--story-y) * -18px - 16px), 0) rotate(2deg) scale(0.92);
+}
+.story-card {
+  position: absolute;
+  inset: 0 6%;
+  padding: 0.5rem;
+  border-radius: 1.1rem;
+  background: rgb(255 255 255 / 0.14);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.28),
+    0 24px 44px -14px rgb(2 44 34 / 0.75),
+    0 8px 16px -8px rgb(2 44 34 / 0.5);
+  backdrop-filter: blur(6px);
+  transform: rotateX(calc(var(--story-y) * -5deg)) rotateY(calc(var(--story-x) * 7deg));
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+}
+.story-scene {
+  position: absolute;
+  inset: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: rotateY(-14deg) scale(0.97);
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+    visibility 0s linear 0.45s;
+}
+.story-scene[data-active='true'] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.story-paper {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  padding: 0.7rem 0.85rem;
+  color: var(--color-slate-800);
+  background: linear-gradient(160deg, #fff 0%, #f8fafc 100%);
+}
+.story-paper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgb(255 255 255 / 0.5) 0%, transparent 34%);
+}
+.story-qline {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+  font-size: 12px;
+  color: var(--color-slate-600);
+}
+.story-qline span {
+  width: 0.85rem;
+  font-weight: 700;
+}
+.story-qline i {
+  display: block;
+  height: 0.3rem;
+  border-radius: 9999px;
+  background: var(--color-slate-300);
+}
+.story-qline b {
+  margin-left: auto;
+  color: var(--color-slate-700);
+}
+.story-pill {
+  border-radius: 9999px;
+  padding: 0.05rem 0.55rem;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--color-emerald-800);
+  background: var(--color-emerald-100);
+}
+.story-hand {
+  font-family: 'Segoe Print', 'Bradley Hand', 'Chalkboard SE', 'Comic Sans MS', cursive;
+  font-size: clamp(15px, 2.2vh, 19px);
+  line-height: 1.5;
+  color: #1e3a8a;
+}
+.story-hand p {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.story-badge {
+  flex-shrink: 0;
+  border-radius: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  background: #047857;
+  box-shadow: 0 3px 8px -2px rgb(4 120 87 / 0.6);
+}
+.story-chip {
+  border-radius: 9999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 12.5px;
+  font-weight: 700;
+  opacity: 0;
+  /* they start on the 3/5 badge at the top right, and split away from it */
+  transform: translate3d(9rem, -9rem, 0) scale(0.5);
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1.2);
+}
+.story-chip-a {
+  color: #991b1b;
+  background: #fee2e2;
+}
+.story-chip-b {
+  color: #92400e;
+  background: #fef3c7;
+  transform: translate3d(3rem, -9rem, 0) scale(0.5);
+}
+[data-active='true'] .story-chip {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.9s;
+}
+[data-active='true'] .story-chip-b {
+  transition-delay: 1.1s;
+}
+.story-bar {
+  transform: scaleX(0.05);
+  transform-origin: left;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-active='true'] .story-bar {
+  transform: none;
+}
+.story-highlight {
+  border-left: 3px solid var(--story-gold);
+  padding-left: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--story-gold);
+}
+.story-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.story-track::-webkit-scrollbar {
+  display: none;
+}
+.story-slide {
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+.story-dot {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem; /* the tap size; the negative margin keeps the strip short */
+  margin-block: -0.75rem;
+}
+.story-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin: -0.225rem;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.35);
+}
+.story-dot[aria-current='step']::after {
+  background: var(--story-gold);
+}
+@media (max-height: 700px) and (max-width: 1023px) {
+  /* a short phone: the form matters more than the brand row */
+  .story-strip-brand {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-panel *,
+  .story-panel *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .story-tab-progress {
+    display: none;
+  }
+}
