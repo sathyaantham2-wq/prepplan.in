@@ -829,6 +829,8 @@ export interface SchoolOwnQuestions {
 }
 
 export interface SchoolOwnSheets {
+  check_state: string | null;
+  check_summary: string | null;
   created_at: Generated<Timestamp>;
   id: Generated<string>;
   image_key: string | null;
@@ -836,12 +838,14 @@ export interface SchoolOwnSheets {
   original_key: string | null;
   original_name: string | null;
   paper_id: string;
+  phash: Int8 | null;
   placed_by: string | null;
   purged_at: Timestamp | null;
   reason: string | null;
   school_id: string;
   school_student_id: string | null;
   seq: number | null;
+  sha256: string | null;
   size_bytes: number | null;
   status: string;
   uploaded_by_user_id: string;
@@ -904,6 +908,7 @@ export interface Schools {
   household_id: string;
   id: Generated<string>;
   is_demo: Generated<boolean>;
+  modules: Generated<string[]>;
   name: string;
   plan: Generated<string>;
   sample_rate: Generated<Numeric>;
@@ -1015,6 +1020,18 @@ export interface SchoolTermsAcceptances {
   id: Generated<string>;
   school_id: string;
   terms_version: string;
+}
+
+export interface SchoolUploadChecks {
+  ai_job_id: string | null;
+  check: string;
+  created_at: Generated<Timestamp>;
+  decided_by_user_id: string | null;
+  detail: Generated<Json>;
+  id: Generated<string>;
+  result: string;
+  school_id: string;
+  sheet_id: string;
 }
 
 export interface Sessions {
@@ -1266,6 +1283,7 @@ export interface DB {
   school_subjects: SchoolSubjects;
   school_teacher_assignments: SchoolTeacherAssignments;
   school_terms_acceptances: SchoolTermsAcceptances;
+  school_upload_checks: SchoolUploadChecks;
   schools: Schools;
   sessions: Sessions;
   sources: Sources;

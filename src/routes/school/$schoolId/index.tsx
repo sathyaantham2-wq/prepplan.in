@@ -67,40 +67,58 @@ function SchoolHome() {
     }
   }
 
+  // Only the parts the school chose (Settings): making papers, AI correction, or both.
+  const usePapers = o.school.modules.includes('papers')
+  const useCorrection = o.school.modules.includes('correction')
+  const actions = [
+    usePapers ? (
+      <BigAction
+        key="make"
+        to="/school/$schoolId/exams/new"
+        schoolId={schoolId}
+        title="Make a paper"
+        hint="Choose the chapters and a pattern. Get the paper and the answer key."
+        icon={FilePlus2}
+        lead
+      />
+    ) : null,
+    useCorrection ? (
+      <BigAction
+        key="correct"
+        to="/school/$schoolId/own-papers"
+        schoolId={schoolId}
+        title="Correct answer sheets"
+        hint="Upload the question paper, then each student's answer sheets."
+        icon={ScanLine}
+        lead={!usePapers}
+      />
+    ) : null,
+    <BigAction
+      key="results"
+      to="/school/$schoolId/results"
+      schoolId={schoolId}
+      title="See results"
+      hint="Marks, strong topics and topics to fix for each student."
+      icon={BarChart3}
+    />,
+  ].filter(Boolean)
   const bigActions = (
     <div className="space-y-3" data-testid="big-actions">
-      <div className="grid gap-3 sm:grid-cols-3">
-        <BigAction
-          to="/school/$schoolId/exams/new"
-          schoolId={schoolId}
-          title="Make a paper"
-          hint="Choose the chapters. We make the question paper."
-          icon={FilePlus2}
-          lead
-        />
-        <BigAction
-          to="/school/$schoolId/exams"
-          schoolId={schoolId}
-          title="Upload answer sheets"
-          hint="Pick the exam, then add the scanned answer sheets."
-          icon={ScanLine}
-        />
-        <BigAction
-          to="/school/$schoolId/results"
-          schoolId={schoolId}
-          title="See results"
-          hint="Marks, strong topics and topics to fix for each student."
-          icon={BarChart3}
-        />
-      </div>
-      <Link
-        to="/school/$schoolId/own-papers"
-        params={{ schoolId }}
-        className={`${linkButton.plain} w-full`}
+      <div
+        className={`grid gap-3 ${actions.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}
       >
-        <FileUp aria-hidden="true" className="size-5 text-emerald-700" />
-        Or use your own paper
-      </Link>
+        {actions}
+      </div>
+      {usePapers && !useCorrection ? (
+        <Link
+          to="/school/$schoolId/exams"
+          params={{ schoolId }}
+          className={`${linkButton.plain} w-full`}
+        >
+          <FileUp aria-hidden="true" className="size-5 text-emerald-700" />
+          Your exam papers
+        </Link>
+      ) : null}
     </div>
   )
   const demoBox = o.school.isDemo ? (
@@ -377,7 +395,7 @@ function BigAction({
 }: {
   to:
     | '/school/$schoolId/exams/new'
-    | '/school/$schoolId/exams'
+    | '/school/$schoolId/own-papers'
     | '/school/$schoolId/results'
   schoolId: string
   title: string

@@ -49,6 +49,8 @@ import {
   teacherCopyHtml,
 } from './exam-service'
 import { Route as WizardRoute } from '../../routes/api/schools/$schoolId/wizard'
+import { Route as SettingsRoute } from '../../routes/api/schools/$schoolId/settings'
+import { Route as OverviewRoute } from '../../routes/api/schools/$schoolId/overview'
 import { Route as ResultsRoute } from '../../routes/api/schools/$schoolId/results'
 import { Route as ResultsExamRoute } from '../../routes/api/schools/$schoolId/results/$examId'
 import { Route as DemoSampleRoute } from '../../routes/api/schools/$schoolId/demo/sample-results'
@@ -533,12 +535,23 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
   })
 
   afterAll(async () => {
+    const { sql } = await import('kysely')
     const ids = schoolIds
     await deleteTestCredentials(userIds)
     await db
       .deleteFrom('school_scan_chunks')
       .where('school_id', 'in', ids)
       .execute()
+    await sql`alter table school_upload_checks disable trigger school_upload_checks_append_only`.execute(
+      db,
+    )
+    await db
+      .deleteFrom('school_upload_checks')
+      .where('school_id', 'in', ids)
+      .execute()
+    await sql`alter table school_upload_checks enable trigger school_upload_checks_append_only`.execute(
+      db,
+    )
     await db
       .deleteFrom('school_own_sheets')
       .where('school_id', 'in', ids)
@@ -3941,6 +3954,64 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         expect(rows).toHaveLength(kept.length)
         expect(rows.every((r) => r.purged_at !== null)).toBe(true)
       }, 60_000)
+    })
+  })
+
+  /** Owner direction 2026-10-30: the parts a school uses (papers, correction). */
+  describe('the parts a school uses', () => {
+    it('only the office changes them; at least one stays; every change is logged; the overview shows them', async () => {
+      const ov = async () =>
+        (
+          await db
+            .selectFrom('schools')
+            .select('modules')
+            .where('id', '=', schoolA)
+            .executeTakeFirstOrThrow()
+        ).modules
+      expect(await ov()).toEqual(['papers', 'correction']) // both, by default
+      const params = { schoolId: schoolA }
+      const post = (cookie: string | null, modules: unknown) =>
+        call(SettingsRoute, 'POST', cookie, params, { modules })
+      expect((await post(teacherS.cookie, ['papers'])).status).toBe(403)
+      expect((await post(studentS.cookie, ['papers'])).status).toBe(403)
+      expect((await post(outsiderS.cookie, ['papers'])).status).toBe(404)
+      expect((await post(null, ['papers'])).status).toBe(401)
+      const none = await post(adminS.cookie, [])
+      expect(none.status).toBe(400)
+      expect(((await none.json()) as { message: string }).message).toMatch(
+        /at least one/,
+      )
+      expect((await post(adminS.cookie, ['nonsense'])).status).toBe(400)
+      const ok = await post(adminS.cookie, ['correction', 'papers', 'papers'])
+      expect(await ok.json()).toEqual({ modules: ['papers', 'correction'] })
+      expect((await post(adminS.cookie, ['correction'])).status).toBe(200)
+      expect(await ov()).toEqual(['correction'])
+      const o = (await (
+        await call(OverviewRoute, 'GET', teacherS.cookie, params)
+      ).json()) as { school: { modules: Array<string> } }
+      expect(o.school.modules).toEqual(['correction'])
+      const log = await db
+        .selectFrom('audit_log')
+        .select(['before', 'after'])
+        .where('school_id', '=', schoolA)
+        .where('action', '=', 'school.modules_changed')
+        .orderBy('created_at')
+        .execute()
+      expect(log.at(-1)).toMatchObject({
+        before: { modules: ['papers', 'correction'] },
+        after: { modules: ['correction'] },
+      })
+      // the wizard's last question saves the same thing
+      const w = await call(WizardRoute, 'POST', adminS.cookie, params, {
+        action: 'parts',
+        modules: ['papers', 'correction'],
+      })
+      expect(w.status).toBe(200)
+      expect(((await w.json()) as { modules: Array<string> }).modules).toEqual([
+        'papers',
+        'correction',
+      ])
+      expect(await ov()).toEqual(['papers', 'correction'])
     })
   })
 })

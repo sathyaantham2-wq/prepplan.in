@@ -238,7 +238,10 @@ test.describe.serial('use your own paper (phone)', () => {
 
   test('the home screen links to it, and the list starts empty', async () => {
     await page.goto(`/school/${schoolId}`, { waitUntil: 'networkidle' })
-    await page.getByRole('link', { name: 'Or use your own paper' }).click()
+    await page
+      .getByTestId('big-actions')
+      .getByRole('link', { name: /Correct answer sheets/ })
+      .click()
     await expect(
       page.getByRole('heading', { name: 'Your own papers' }),
     ).toBeVisible()

@@ -371,7 +371,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await expect(
       page.getByRole('heading', { name: 'Welcome. What should we call you?' }),
     ).toBeVisible()
-    await expect(page.getByText('Question 1 of 5')).toBeVisible()
+    await expect(page.getByText('Question 1 of 6')).toBeVisible()
     await expect(
       page.getByRole('progressbar', { name: 'Setup progress' }),
     ).toHaveAttribute('aria-valuenow', '1')
@@ -389,7 +389,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await expect(
       page.getByRole('heading', { name: 'What is your school called?' }),
     ).toBeVisible()
-    await expect(page.getByText('Question 2 of 5')).toBeVisible()
+    await expect(page.getByText('Question 2 of 6')).toBeVisible()
     await page.getByLabel('School name').fill('Greenfield Public School')
     await page.getByLabel('Town or city').fill('Pune')
     await page.getByLabel(/I accept the PrepPlan school terms/).check()
@@ -439,7 +439,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await expect(
       page.getByRole('heading', { name: 'Now your students' }),
     ).toBeVisible()
-    await expect(page.getByText('Question 5 of 5')).toBeVisible()
+    await expect(page.getByText('Question 5 of 6')).toBeVisible()
     await shot(page, 'm1-06-wizard-students')
     await page.getByRole('button', { name: 'Choose my student list' }).click()
     await page.locator('input[type=file]').setInputFiles({
@@ -462,14 +462,31 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await looksRight(page)
   })
 
+  test('question 6: which parts of PrepPlan the school will use', async () => {
+    // a student list was added, so that step has no "skip"; the others do
+    await page.getByRole('button', { name: 'Next' }).click()
+    await expect(
+      page.getByRole('heading', { name: 'What will you use PrepPlan for?' }),
+    ).toBeVisible()
+    await expect(page.getByText('Question 6 of 6')).toBeVisible()
+    const picker = page.getByTestId('module-picker')
+    // both are on at first; at least one always stays on
+    await expect(picker.getByRole('checkbox')).toHaveCount(2)
+    await expect(picker.getByRole('checkbox', { checked: true })).toHaveCount(2)
+    await shot(page, 'm1-07b-wizard-parts')
+    await looksRight(page)
+  })
+
   test('every step can be skipped, and "You are ready" sums up what was done', async () => {
-    // a student list was added, so this step has no "skip"; the others do
     await page.getByRole('button', { name: 'Next' }).click()
     await expect(
       page.getByRole('heading', { name: 'You are ready' }),
     ).toBeVisible()
     await expect(page.getByText('School terms accepted')).toBeVisible()
     await expect(page.getByText('3 students added')).toBeVisible()
+    await expect(
+      page.getByText('You will use: exam papers and AI correction'),
+    ).toBeVisible()
     await shot(page, 'm1-08-wizard-done')
     await looksRight(page)
     await page.getByRole('button', { name: 'Go to my school' }).click()
@@ -480,7 +497,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     const big = page.getByTestId('big-actions')
     await expect(big.getByRole('link', { name: /Make a paper/ })).toBeVisible()
     await expect(
-      big.getByRole('link', { name: /Upload answer sheets/ }),
+      big.getByRole('link', { name: /Correct answer sheets/ }),
     ).toBeVisible()
     await expect(big.getByRole('link', { name: /See results/ })).toBeVisible()
     await expect(page.getByTestId('demo-banner')).toHaveCount(0)
@@ -499,6 +516,41 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await looksRight(page)
   })
 
+  test('Settings: choose only AI correction; home and tabs follow; then both again', async () => {
+    const bar = page.getByRole('navigation', { name: 'School' }).last()
+    await bar.getByRole('link', { name: 'Settings' }).click()
+    await expect(page.getByRole('heading', { name: 'Settings', exact: true })).toBeVisible()
+    await shot(page, 'm1-20-settings')
+    await looksRight(page)
+    const picker = page.getByTestId('module-picker')
+    // untick "Make exam papers"; "AI correction" is then the last one and cannot be unticked
+    await picker.getByText('Make exam papers').click()
+    await expect(picker.getByText('At least one part stays on.')).toBeVisible()
+    await page.getByRole('button', { name: 'Save', exact: true }).click()
+    await expect(
+      page.getByText('Saved. Your home screen now shows'),
+    ).toBeVisible()
+    await expect(bar.getByRole('link', { name: 'Exams' })).toHaveCount(0)
+    await expect(bar.getByRole('link', { name: 'Correction' })).toBeVisible()
+    await bar.getByRole('link', { name: 'Home' }).click()
+    const big = page.getByTestId('big-actions')
+    await expect(big.getByRole('link', { name: /Make a paper/ })).toHaveCount(0)
+    await expect(
+      big.getByRole('link', { name: /Correct answer sheets/ }),
+    ).toBeVisible()
+    await shot(page, 'm1-21-home-correction-only')
+    await looksRight(page)
+    // and back to both
+    await bar.getByRole('link', { name: 'Settings' }).click()
+    await picker.getByText('Make exam papers').click()
+    await page.getByRole('button', { name: 'Save', exact: true }).click()
+    await expect(
+      page.getByText('Saved. Your home screen now shows'),
+    ).toBeVisible()
+    await expect(bar.getByRole('link', { name: 'Exams' })).toBeVisible()
+    await bar.getByRole('link', { name: 'Home' }).click()
+  })
+
   test('a skipped wizard: the office can leave at question 1 and still reach the home screen', async () => {
     // a second admin would be needed for a pristine school; instead reopen this school's wizard
     const res = await page.request.post(`/api/schools/${wizSchoolId}/wizard`, {
@@ -508,9 +560,9 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await open(page, `/school/${wizSchoolId}`)
     await page.waitForURL(`**/welcome`)
     await page.getByRole('button', { name: 'Skip for now' }).click()
-    await expect(page.getByText('Question 2 of 5')).toBeVisible()
+    await expect(page.getByText('Question 2 of 6')).toBeVisible()
     await page.getByRole('button', { name: 'Back' }).click()
-    await expect(page.getByText('Question 1 of 5')).toBeVisible()
+    await expect(page.getByText('Question 1 of 6')).toBeVisible()
     await page
       .getByRole('button', { name: 'Leave setup, I will do it later' })
       .click()

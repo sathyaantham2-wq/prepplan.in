@@ -1,4 +1,6 @@
 import { blockedFixtureSubject } from '../fixture-subjects'
+import { SCHOOL_MODULES } from './modules'
+import type { SchoolModule } from './modules'
 import type { Db } from '../../db/connection'
 import {
   schoolClassesRepository,
@@ -39,6 +41,8 @@ export interface SchoolOverview {
     board: string
     /** A demo school: every screen is labelled "DEMO - sample data". */
     isDemo: boolean
+    /** The parts the school uses: 'papers' (make exam papers) and/or 'correction' (AI correction). */
+    modules: Array<SchoolModule>
     /** Spend cap for the AI steps, in rupees; null means none is set. */
     aiSpendCapInr: number | null
   }
@@ -79,6 +83,7 @@ export async function loadSchoolOverview(
       'is_demo',
       'ai_spend_cap_inr',
       'wizard_done_at',
+      'modules',
     ])
     .where('id', '=', scope.schoolId)
     .executeTakeFirstOrThrow()
@@ -101,6 +106,7 @@ export async function loadSchoolOverview(
       code: school.code,
       board: school.board,
       isDemo: school.is_demo,
+      modules: SCHOOL_MODULES.filter((m) => school.modules.includes(m)),
       aiSpendCapInr:
         school.ai_spend_cap_inr === null
           ? null

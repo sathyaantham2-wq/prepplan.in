@@ -19,6 +19,8 @@ import {
   createClass,
   createSection,
 } from './setup'
+import { SCHOOL_MODULES } from './modules'
+import type { SchoolModule } from './modules'
 import { CURRENT_SCHOOL_TERMS_VERSION, acceptSchoolTerms } from './terms'
 
 // The first-sign-in wizard for the school admin (M1). It stores only where the admin is
@@ -31,6 +33,7 @@ export const WIZARD_STEPS = [
   'classes',
   'teachers',
   'students',
+  'parts',
   'done',
 ] as const
 export type WizardStep = (typeof WIZARD_STEPS)[number]
@@ -50,6 +53,7 @@ export interface WizardState {
   }>
   teachers: Array<{ memberId: string; name: string; email: string }>
   studentCount: number
+  modules: Array<SchoolModule>
 }
 
 /** The school year the wizard suggests: the year that starts in June. */
@@ -69,7 +73,14 @@ export async function getWizard(
   assertAdmin(scope)
   const school = await db
     .selectFrom('schools')
-    .select(['name', 'city', 'board', 'wizard_step', 'wizard_done_at'])
+    .select([
+      'name',
+      'city',
+      'board',
+      'wizard_step',
+      'wizard_done_at',
+      'modules',
+    ])
     .where('id', '=', scope.schoolId)
     .executeTakeFirstOrThrow()
   const user = await db
@@ -129,6 +140,7 @@ export async function getWizard(
       })),
     teachers,
     studentCount: roster.length,
+    modules: SCHOOL_MODULES.filter((m) => school.modules.includes(m)),
   }
 }
 

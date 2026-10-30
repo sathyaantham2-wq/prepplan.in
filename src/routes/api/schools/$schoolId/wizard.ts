@@ -4,6 +4,7 @@ import { wrapRouteHandlers } from '../../../../lib/error-log'
 import { requireSchoolRole } from '../../../../lib/school-session'
 import { SchoolError } from '../../../../lib/schools/common'
 import { readJson, str } from '../../../../lib/schools/http'
+import { saveModules } from '../../../../lib/schools/modules'
 import {
   addWizardTeacher,
   finishWizard,
@@ -89,6 +90,9 @@ export const Route = createFileRoute('/api/schools/$schoolId/wizard')({
                 sectionId: str(b?.section_id) ?? '',
                 schoolSubjectId: str(b?.school_subject_id) ?? '',
               })
+              break
+            case 'parts':
+              await saveModules(db, scope, b?.modules)
               break
             case 'step':
               await saveWizardStep(db, scope, str(b?.step) ?? '')

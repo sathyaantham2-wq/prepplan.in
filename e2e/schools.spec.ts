@@ -27,6 +27,12 @@ const PASSWORD = 'a-good-password-1'
 test.use({ viewport: PHONE, hasTouch: true, isMobile: true })
 
 /** A clean picture of the whole page: the window is made as tall as the page so the fixed bottom menu stays at the bottom. */
+/** Classes, Teachers and the paper patterns are reached from Settings (a phone's bar has no room). */
+async function viaSettings(page: Page, name: RegExp) {
+  await page.getByRole('link', { name: 'Settings' }).last().click()
+  await page.getByRole('link', { name }).click()
+}
+
 async function shot(page: Page, name: string) {
   const size = page.viewportSize()
   const height = await page.evaluate(
@@ -505,7 +511,7 @@ test.describe.serial('school screens on a phone', () => {
 
   test('teachers: add from a file (errors shown first), then print a code', async () => {
     const page = adminPage
-    await page.getByRole('link', { name: 'Teachers' }).last().click()
+    await viaSettings(page, /^Teachers/)
     await expect(page.getByRole('heading', { name: 'Teachers' })).toBeVisible()
     await page.getByRole('button', { name: 'Add teachers from a file' }).click()
     await page.locator('input[type=file]').setInputFiles({
@@ -544,7 +550,7 @@ test.describe.serial('school screens on a phone', () => {
 
   test('classes: add a class, sections, a subject, class teachers and who teaches what', async () => {
     const page = adminPage
-    await page.getByRole('link', { name: 'Classes' }).last().click()
+    await viaSettings(page, /^Classes and sections/)
     await expect(page.getByRole('heading', { name: 'Classes' })).toBeVisible()
     await shot(page, '12-classes-empty')
     await page.getByRole('button', { name: 'Add class' }).click()
@@ -697,7 +703,7 @@ test.describe.serial('school screens on a phone', () => {
 
   test('the class teacher gets a code, signs in, sees her class and her students', async () => {
     const page = adminPage
-    await page.getByRole('link', { name: 'Teachers' }).last().click()
+    await viaSettings(page, /^Teachers/)
     const card = page.locator('li', { hasText: 'Tina Class' })
     await card.getByRole('button', { name: 'Print a code instead' }).click()
     const dialog = page.getByRole('dialog')
@@ -741,7 +747,7 @@ test.describe.serial('school screens on a phone', () => {
 
   test('paper layouts: a ready-made one is saved, and your own is built with the marks checked as you go', async () => {
     const page = adminPage
-    await page.getByRole('link', { name: 'Papers' }).last().click()
+    await viaSettings(page, /^Paper patterns/)
     await expect(
       page.getByRole('heading', { name: 'Paper layouts' }),
     ).toBeVisible()
@@ -832,7 +838,7 @@ test.describe.serial('school screens on a phone', () => {
 
   test('coverage preview: choose chapters by book, part and chapter, then see marks, thinking and every gap', async () => {
     const page = adminPage
-    await page.getByRole('link', { name: 'Papers' }).last().click()
+    await viaSettings(page, /^Paper patterns/)
     await page
       .getByRole('button', { name: 'Check against the bank' })
       .first()

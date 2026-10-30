@@ -7,11 +7,12 @@ import {
 } from '@tanstack/react-router'
 import {
   BookOpenCheck,
-  FileText,
   GraduationCap,
   Home,
   LayoutGrid,
   LogOut,
+  ScanLine,
+  Settings,
   UserRound,
   Users,
 } from 'lucide-react'
@@ -32,45 +33,66 @@ interface NavItem {
     | '/school/$schoolId/classes'
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/students'
-    | '/school/$schoolId/papers'
     | '/school/$schoolId/exams'
+    | '/school/$schoolId/own-papers'
+    | '/school/$schoolId/settings'
   label: string
   icon: LucideIcon
+  /** Shown on wide screens only; on a phone it is reached from Settings. */
+  wideOnly?: boolean
 }
 
-function navFor(role: SchoolOverview['role']): Array<NavItem> {
+// The tabs follow the parts the school chose (owner direction 2026-10-30): "Exams" for making papers,
+// "Correction" for AI correction. Paper patterns live under Settings > Advanced.
+function navFor(o: SchoolOverview): Array<NavItem> {
   const home: NavItem = { to: '/school/$schoolId', label: 'Home', icon: Home }
   const students: NavItem = {
     to: '/school/$schoolId/students',
     label: 'Students',
     icon: Users,
   }
-  const papers: NavItem = {
-    to: '/school/$schoolId/papers',
-    label: 'Papers',
-    icon: FileText,
-  }
-  const exams: NavItem = {
-    to: '/school/$schoolId/exams',
-    label: 'Exams',
-    icon: BookOpenCheck,
-  }
-  if (role === 'school_admin') {
+  const parts: Array<NavItem> = [
+    ...(o.school.modules.includes('papers')
+      ? [
+          {
+            to: '/school/$schoolId/exams' as const,
+            label: 'Exams',
+            icon: BookOpenCheck,
+          },
+        ]
+      : []),
+    ...(o.school.modules.includes('correction')
+      ? [
+          {
+            to: '/school/$schoolId/own-papers' as const,
+            label: 'Correction',
+            icon: ScanLine,
+          },
+        ]
+      : []),
+  ]
+  if (o.role === 'school_admin') {
     return [
       home,
-      { to: '/school/$schoolId/classes', label: 'Classes', icon: LayoutGrid },
+      {
+        to: '/school/$schoolId/classes',
+        label: 'Classes',
+        icon: LayoutGrid,
+        wideOnly: true,
+      },
       {
         to: '/school/$schoolId/teachers',
         label: 'Teachers',
         icon: UserRound,
+        wideOnly: true,
       },
       students,
-      papers,
-      exams,
+      ...parts,
+      { to: '/school/$schoolId/settings', label: 'Settings', icon: Settings },
     ]
   }
-  if (role === 'teacher' || role === 'principal')
-    return [home, students, papers, exams]
+  if (o.role === 'teacher' || o.role === 'principal')
+    return [home, students, ...parts]
   return [home]
 }
 
@@ -116,7 +138,8 @@ function SchoolLayout() {
         <Loading />
       </div>
     )
-  const items = navFor(overview.role)
+  const items = navFor(overview)
+  const phoneItems = items.filter((i) => !i.wideOnly)
   const initials = overview.me.name
     .split(/\s+/)
     .filter(Boolean)
@@ -205,9 +228,9 @@ function SchoolLayout() {
         <nav
           aria-label="School"
           className="fixed inset-x-0 bottom-0 z-20 grid border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md sm:hidden"
-          style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}
+          style={{ gridTemplateColumns: `repeat(${phoneItems.length}, 1fr)` }}
         >
-          {items.map((i) => (
+          {phoneItems.map((i) => (
             <Link
               key={i.to}
               to={i.to}
@@ -220,7 +243,9 @@ function SchoolLayout() {
               <span className="flex h-7 w-12 items-center justify-center rounded-full transition-colors group-[.is-active]:bg-emerald-100">
                 <i.icon aria-hidden="true" className="size-5" />
               </span>
-              <span className={items.length > 5 ? 'text-[11px]' : 'text-xs'}>
+              <span
+                className={phoneItems.length > 5 ? 'text-[11px]' : 'text-xs'}
+              >
                 {i.label}
               </span>
             </Link>

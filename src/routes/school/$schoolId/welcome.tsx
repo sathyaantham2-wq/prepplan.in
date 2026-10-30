@@ -12,18 +12,22 @@ import {
 } from '../../../components/school/ui'
 import { api } from '../../../lib/school-client'
 import type { WizardState, WizardStep } from '../../../lib/schools/wizard'
+import type { SchoolModule } from '../../../lib/schools/modules'
+import { ModulePicker } from '../../../components/school/module-picker'
 
 export const Route = createFileRoute('/school/$schoolId/welcome')({
   component: Welcome,
 })
 
-// Five questions, one per screen: you, your school, your classes, your teachers, your students.
+// Six questions, one per screen: you, your school, your classes, your teachers, your students, and
+// which parts of PrepPlan the school will use.
 const QUESTIONS: Array<{ step: WizardStep; title: string }> = [
   { step: 'you', title: 'About you' },
   { step: 'school', title: 'Your school' },
   { step: 'classes', title: 'Your classes' },
   { step: 'teachers', title: 'Your teachers' },
   { step: 'students', title: 'Your students' },
+  { step: 'parts', title: 'What you will use' },
 ]
 const ORDER: Array<WizardStep> = [...QUESTIONS.map((q) => q.step), 'done']
 
@@ -166,8 +170,16 @@ function Welcome() {
           setW={setW}
           busy={busy}
           onBack={() => go('teachers')}
-          onNext={() => go('done')}
-          onSkip={() => go('done')}
+          onNext={() => go('parts')}
+          onSkip={() => go('parts')}
+        />
+      ) : null}
+      {step === 'parts' ? (
+        <PartsScreen
+          w={w}
+          busy={busy}
+          onBack={() => go('students')}
+          onNext={(modules) => go('done', { action: 'parts', modules })}
         />
       ) : null}
       {step === 'done' ? (
@@ -628,6 +640,31 @@ function StudentsScreen({
   )
 }
 
+function PartsScreen({
+  w,
+  busy,
+  onBack,
+  onNext,
+}: {
+  w: WizardState
+  busy: boolean
+  onBack: () => void
+  onNext: (modules: Array<SchoolModule>) => void
+}) {
+  const [modules, setModules] = useState<Array<SchoolModule>>(w.modules)
+  return (
+    <Card className="space-y-4">
+      <h1 className="text-2xl font-bold">What will you use PrepPlan for?</h1>
+      <p className="text-base text-slate-700">
+        Choose one or both. Your home screen shows only what you choose. You can
+        change this later in Settings.
+      </p>
+      <ModulePicker value={modules} onChange={setModules} disabled={busy} />
+      <Nav busy={busy} onBack={onBack} onNext={() => onNext(modules)} />
+    </Card>
+  )
+}
+
 function DoneScreen({
   w,
   busy,
@@ -650,6 +687,10 @@ function DoneScreen({
       text: `${w.teachers.length} ${w.teachers.length === 1 ? 'teacher' : 'teachers'} added`,
     },
     { ok: w.studentCount > 0, text: `${w.studentCount} students added` },
+    {
+      ok: true,
+      text: `You will use: ${w.modules.map((m) => (m === 'papers' ? 'exam papers' : 'AI correction')).join(' and ')}`,
+    },
   ]
   return (
     <Card className="space-y-4">

@@ -129,6 +129,7 @@ import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$s
 import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/report'
 import { Route as SchoolSchoolIdIndexRouteImport } from './routes/school/$schoolId/index'
 import { Route as SchoolSchoolIdClassesRouteImport } from './routes/school/$schoolId/classes'
+import { Route as SchoolSchoolIdSettingsRouteImport } from './routes/school/$schoolId/settings'
 import { Route as SchoolSchoolIdStudentsRouteImport } from './routes/school/$schoolId/students'
 import { Route as SchoolSchoolIdTeachersRouteImport } from './routes/school/$schoolId/teachers'
 import { Route as SchoolSchoolIdTermsRouteImport } from './routes/school/$schoolId/terms'
@@ -163,6 +164,7 @@ import { Route as ApiSchoolsSchoolIdImportsRouteImport } from './routes/api/scho
 import { Route as ApiSchoolsSchoolIdOverviewRouteImport } from './routes/api/schools/$schoolId/overview'
 import { Route as ApiSchoolsSchoolIdOwnPapersRouteImport } from './routes/api/schools/$schoolId/own-papers'
 import { Route as ApiSchoolsSchoolIdResultsRouteImport } from './routes/api/schools/$schoolId/results'
+import { Route as ApiSchoolsSchoolIdSettingsRouteImport } from './routes/api/schools/$schoolId/settings'
 import { Route as ApiSchoolsSchoolIdSetupRouteImport } from './routes/api/schools/$schoolId/setup'
 import { Route as ApiSchoolsSchoolIdTemplatesRouteImport } from './routes/api/schools/$schoolId/templates'
 import { Route as ApiSchoolsSchoolIdWizardRouteImport } from './routes/api/schools/$schoolId/wizard'
@@ -841,6 +843,11 @@ const SchoolSchoolIdClassesRoute = SchoolSchoolIdClassesRouteImport.update({
   path: '/classes',
   getParentRoute: () => SchoolSchoolIdRoute,
 } as any)
+const SchoolSchoolIdSettingsRoute = SchoolSchoolIdSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
 const SchoolSchoolIdStudentsRoute = SchoolSchoolIdStudentsRouteImport.update({
   id: '/students',
   path: '/students',
@@ -1019,6 +1026,12 @@ const ApiSchoolsSchoolIdResultsRoute =
   ApiSchoolsSchoolIdResultsRouteImport.update({
     id: '/api/schools/$schoolId/results',
     path: '/api/schools/$schoolId/results',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiSchoolsSchoolIdSettingsRoute =
+  ApiSchoolsSchoolIdSettingsRouteImport.update({
+    id: '/api/schools/$schoolId/settings',
+    path: '/api/schools/$schoolId/settings',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ApiSchoolsSchoolIdSetupRoute = ApiSchoolsSchoolIdSetupRouteImport.update({
@@ -1550,6 +1563,7 @@ export interface FileRoutesByFullPath {
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
   '/school/$schoolId/terms': typeof SchoolSchoolIdTermsRoute
@@ -1585,6 +1599,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/results': typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
   '/api/schools/$schoolId/wizard': typeof ApiSchoolsSchoolIdWizardRoute
@@ -1773,6 +1788,7 @@ export interface FileRoutesByTo {
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
   '/school/$schoolId/terms': typeof SchoolSchoolIdTermsRoute
@@ -1808,6 +1824,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/results': typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
   '/api/schools/$schoolId/wizard': typeof ApiSchoolsSchoolIdWizardRoute
@@ -2000,6 +2017,7 @@ export interface FileRoutesById {
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
   '/school/$schoolId/terms': typeof SchoolSchoolIdTermsRoute
@@ -2035,6 +2053,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/results': typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
   '/api/schools/$schoolId/wizard': typeof ApiSchoolsSchoolIdWizardRoute
@@ -2228,6 +2247,7 @@ export interface FileRouteTypes {
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
     | '/school/$schoolId/classes'
+    | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/terms'
@@ -2263,6 +2283,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/results'
+    | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
     | '/api/schools/$schoolId/wizard'
@@ -2451,6 +2472,7 @@ export interface FileRouteTypes {
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
     | '/school/$schoolId/classes'
+    | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/terms'
@@ -2486,6 +2508,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/results'
+    | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
     | '/api/schools/$schoolId/wizard'
@@ -2677,6 +2700,7 @@ export interface FileRouteTypes {
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
     | '/school/$schoolId/classes'
+    | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/terms'
@@ -2712,6 +2736,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/results'
+    | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
     | '/api/schools/$schoolId/wizard'
@@ -2869,6 +2894,7 @@ export interface RootRouteChildren {
   ApiSchoolsSchoolIdOverviewRoute: typeof ApiSchoolsSchoolIdOverviewRoute
   ApiSchoolsSchoolIdOwnPapersRoute: typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   ApiSchoolsSchoolIdResultsRoute: typeof ApiSchoolsSchoolIdResultsRouteWithChildren
+  ApiSchoolsSchoolIdSettingsRoute: typeof ApiSchoolsSchoolIdSettingsRoute
   ApiSchoolsSchoolIdSetupRoute: typeof ApiSchoolsSchoolIdSetupRoute
   ApiSchoolsSchoolIdTemplatesRoute: typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
   ApiSchoolsSchoolIdWizardRoute: typeof ApiSchoolsSchoolIdWizardRoute
@@ -3729,6 +3755,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SchoolSchoolIdClassesRouteImport
       parentRoute: typeof SchoolSchoolIdRoute
     }
+    '/school/$schoolId/settings': {
+      id: '/school/$schoolId/settings'
+      path: '/settings'
+      fullPath: '/school/$schoolId/settings'
+      preLoaderRoute: typeof SchoolSchoolIdSettingsRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
     '/school/$schoolId/students': {
       id: '/school/$schoolId/students'
       path: '/students'
@@ -3965,6 +3998,13 @@ declare module '@tanstack/react-router' {
       path: '/api/schools/$schoolId/results'
       fullPath: '/api/schools/$schoolId/results'
       preLoaderRoute: typeof ApiSchoolsSchoolIdResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/settings': {
+      id: '/api/schools/$schoolId/settings'
+      path: '/api/schools/$schoolId/settings'
+      fullPath: '/api/schools/$schoolId/settings'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdSettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/schools/$schoolId/setup': {
@@ -4494,6 +4534,7 @@ const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface SchoolSchoolIdRouteChildren {
   SchoolSchoolIdClassesRoute: typeof SchoolSchoolIdClassesRoute
+  SchoolSchoolIdSettingsRoute: typeof SchoolSchoolIdSettingsRoute
   SchoolSchoolIdStudentsRoute: typeof SchoolSchoolIdStudentsRoute
   SchoolSchoolIdTeachersRoute: typeof SchoolSchoolIdTeachersRoute
   SchoolSchoolIdTermsRoute: typeof SchoolSchoolIdTermsRoute
@@ -4514,6 +4555,7 @@ interface SchoolSchoolIdRouteChildren {
 
 const SchoolSchoolIdRouteChildren: SchoolSchoolIdRouteChildren = {
   SchoolSchoolIdClassesRoute: SchoolSchoolIdClassesRoute,
+  SchoolSchoolIdSettingsRoute: SchoolSchoolIdSettingsRoute,
   SchoolSchoolIdStudentsRoute: SchoolSchoolIdStudentsRoute,
   SchoolSchoolIdTeachersRoute: SchoolSchoolIdTeachersRoute,
   SchoolSchoolIdTermsRoute: SchoolSchoolIdTermsRoute,
@@ -5241,6 +5283,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdOwnPapersRoute:
     ApiSchoolsSchoolIdOwnPapersRouteWithChildren,
   ApiSchoolsSchoolIdResultsRoute: ApiSchoolsSchoolIdResultsRouteWithChildren,
+  ApiSchoolsSchoolIdSettingsRoute: ApiSchoolsSchoolIdSettingsRoute,
   ApiSchoolsSchoolIdSetupRoute: ApiSchoolsSchoolIdSetupRoute,
   ApiSchoolsSchoolIdTemplatesRoute:
     ApiSchoolsSchoolIdTemplatesRouteWithChildren,

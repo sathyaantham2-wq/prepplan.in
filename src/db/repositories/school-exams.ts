@@ -414,6 +414,33 @@ export const schoolOwnCoversRepository = {
       .executeTakeFirst()
   },
 }
+/** The checks made on each uploaded answer page before marking (append-only). */
+export const schoolUploadChecksRepository = {
+  ...createSchoolScopedRepository('school_upload_checks'),
+  async listForSheets(
+    db: Db,
+    scope: SchoolScope,
+    sheetIds: ReadonlyArray<string>,
+  ) {
+    if (sheetIds.length === 0) return []
+    return db
+      .selectFrom('school_upload_checks')
+      .select([
+        'id',
+        'sheet_id',
+        'check',
+        'result',
+        'detail',
+        'decided_by_user_id',
+        'created_at',
+      ])
+      .where('school_id', '=', scope.schoolId)
+      .where('sheet_id', 'in', sheetIds)
+      .orderBy('created_at')
+      .execute()
+  },
+}
+
 export const schoolOwnSheetsRepository = {
   ...createSchoolScopedRepository('school_own_sheets'),
   /** Every scanned page of a paper, in the order they came, without the files. */
