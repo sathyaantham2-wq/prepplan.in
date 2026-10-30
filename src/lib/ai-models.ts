@@ -32,6 +32,7 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
   'SCH-03': 'strong', // Draft an answer key and marking scheme (a teacher must approve it)
   'SCH-04': 'mid', // Read the school's own answer key
   'SCH-05': 'cheap', // Read the name and roll number written at the top of an answer sheet (top strip only)
+  'SCH-07': 'strong', // Find each answer on a student's pages and mark it against the approved key (three passes; content only, never a name)
   'SCH-06': 'cheap', // Say what kind of page a photo is (answer sheet, question paper, blank) and its subject
 }
 

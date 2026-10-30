@@ -1022,6 +1022,41 @@ export interface SchoolTermsAcceptances {
   terms_version: string;
 }
 
+export interface SchoolSheetMarking {
+  created_at: Generated<Timestamp>;
+  finished_at: Timestamp | null;
+  id: Generated<string>;
+  max_marks: Numeric | null;
+  message: string | null;
+  paper_id: string;
+  school_id: string;
+  school_student_id: string;
+  started_at: Generated<Timestamp>;
+  status: string;
+  total_marks: Numeric | null;
+}
+
+export interface SchoolAnswerMarks {
+  ai_marks: Numeric;
+  answer_text: string | null;
+  changed_at: Timestamp | null;
+  changed_by_user_id: string | null;
+  created_at: Generated<Timestamp>;
+  final_marks: Numeric;
+  flag_reason: string | null;
+  found: boolean;
+  id: Generated<string>;
+  loss_kind: Generated<string>;
+  loss_reason: string | null;
+  max_marks: Numeric;
+  own_question_id: string;
+  paper_id: string;
+  runs: Generated<Json>;
+  school_id: string;
+  school_student_id: string;
+  state: string;
+}
+
 export interface SchoolUploadChecks {
   ai_job_id: string | null;
   check: string;
@@ -1284,6 +1319,8 @@ export interface DB {
   school_teacher_assignments: SchoolTeacherAssignments;
   school_terms_acceptances: SchoolTermsAcceptances;
   school_upload_checks: SchoolUploadChecks;
+  school_sheet_marking: SchoolSheetMarking;
+  school_answer_marks: SchoolAnswerMarks;
   schools: Schools;
   sessions: Sessions;
   sources: Sources;

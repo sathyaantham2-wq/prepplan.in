@@ -69,6 +69,25 @@ async function studentsFor(
   )
 }
 
+/** The student, if she is in a class this person may handle for the paper (a teacher: only her own sections). */
+export async function studentOfPaper(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+) {
+  const paper = await loadOwnPaper(db, scope, paperId)
+  const st = (await studentsFor(db, scope, paper)).find(
+    (s) => s.school_student_id === studentId,
+  )
+  if (!st)
+    throw new SchoolError(
+      'not_found',
+      'That student is not in your class for this paper.',
+    )
+  return st
+}
+
 function assertApproved(paper: Paper) {
   if (paper.status !== 'approved')
     throw new SchoolError(

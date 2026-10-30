@@ -497,3 +497,47 @@ export const schoolOwnSheetsRepository = {
     return Number(r.numUpdatedRows)
   },
 }
+
+export const schoolSheetMarkingRepository = {
+  ...createSchoolScopedRepository('school_sheet_marking'),
+  async listForPaper(db: Db, scope: SchoolScope, paperId: string) {
+    return db
+      .selectFrom('school_sheet_marking')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('paper_id', '=', paperId)
+      .execute()
+  },
+  async forStudent(
+    db: Db,
+    scope: SchoolScope,
+    paperId: string,
+    studentId: string,
+  ) {
+    return db
+      .selectFrom('school_sheet_marking')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('paper_id', '=', paperId)
+      .where('school_student_id', '=', studentId)
+      .executeTakeFirst()
+  },
+}
+
+export const schoolAnswerMarksRepository = {
+  ...createSchoolScopedRepository('school_answer_marks'),
+  async forStudent(
+    db: Db,
+    scope: SchoolScope,
+    paperId: string,
+    studentId: string,
+  ) {
+    return db
+      .selectFrom('school_answer_marks')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('paper_id', '=', paperId)
+      .where('school_student_id', '=', studentId)
+      .execute()
+  },
+}

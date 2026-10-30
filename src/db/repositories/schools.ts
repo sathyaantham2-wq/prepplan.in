@@ -23,6 +23,8 @@ import {
   schoolScanBatchesRepository,
   schoolScanPagesRepository,
   schoolUploadChecksRepository,
+  schoolSheetMarkingRepository,
+  schoolAnswerMarksRepository,
 } from './school-exams'
 
 // The tenant root: never itself school-scoped (it *is* the school). Reached only through a
@@ -347,6 +349,8 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_own_covers: schoolOwnCoversRepository,
   school_own_sheets: schoolOwnSheetsRepository,
   school_upload_checks: schoolUploadChecksRepository,
+  school_sheet_marking: schoolSheetMarkingRepository,
+  school_answer_marks: schoolAnswerMarksRepository,
   school_own_questions: schoolOwnQuestionsRepository,
   school_exam_absences: schoolExamAbsencesRepository,
   school_print_jobs: schoolPrintJobsRepository,
