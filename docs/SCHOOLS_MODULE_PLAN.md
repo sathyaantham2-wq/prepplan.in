@@ -710,3 +710,70 @@ One design pass over the whole school area, done in the shared pieces so every s
 - **A real fix found on the way:** the app's global link colour (unlayered CSS) beat every colour class on a link, which is why the school code had to force colours with `!`. In the school area it now steps back (`color: revert-layer`), so a link's own colour works.
 
 Screens of the new look: `docs/schools/screens-design/` (phone 390 px; `26-admin-home-desktop.png` for a wide screen).
+
+## 12. Owner direction 2026-10-30: two parts, student-wise upload, wrong-upload checks (PLAN, not built)
+
+### 12.0 The PDF bug on the live site (read-only findings, nothing changed)
+
+- **What happened:** both tries of "Open the question paper (PDF)" on the demo school's exam (2026-10-30, started 06:49 and 07:04 IST) ran for 300 seconds and were stopped by Vercel ("Task timed out after 300 seconds", route `/api/schools/…/exams/…/question-paper`). No other error. These are the only PDF requests in the last 7 days, so there is no successful production PDF to compare with; git history has no proof a PDF ever completed on Vercel after the switch to serverless Chromium (2026-10-04, `7164eca`).
+- **Not the storage bucket (suspect a):** the question paper and the teacher copy are made and sent straight back; they never touch storage. Answer booklets do go to storage, and without the bucket they are refused at once in plain words, not after 5 minutes.
+- **Not sharp (suspect b, first half):** the question paper does not use sharp.
+- **Chromium on Vercel (suspect b, second half): the cause.** The only steps with no time limit are inside the Chromium render (`src/lib/pdf/render.ts`): extracting/launching `@sparticuz/chromium`, `document.fonts.ready`, `page.pdf()`. One of them never returns on Vercel. Which one cannot be read from the logs: Vercel Hobby keeps runtime logs for one hour and a timeout leaves no stack.
+- **Proposed fix (needs your approval to deploy):** (1) every Chromium step gets a time limit and a log line, so a failure ends in under a minute with a plain message ("The PDF could not be made. Download the Word file instead.") and the log names the step; (2) then fix that step (most likely the serverless Chromium settings: `headless: 'shell'`, its own fonts, more function memory). Until then, **the Word download works** (it does not use Chromium).
+- Separate, older: "max clients reached" database errors on 2026-10-13 to 10-27 (connection pool of 15 full). Not related to PDFs; worth a look later.
+
+**Live in production now:** school code `demo-prepplan` ("PrepPlan Demo School", demo, active, AI cap Rs 50, 30 students, 1 exam); it is the only school. Migrations: 88 applied, the last 13 being 0076 and 0078–0089 (0078–0087 on 2026-10-29 15:24 UTC, 0088 at 17:35 UTC, 0089 on 2026-10-30 00:35 UTC). 0077 is the retired WhatsApp branch's and was never applied. Code: `b93d814`.
+
+### 12.1 Two parts, chosen after set-up
+
+- After the set-up (school details → teachers → students) a last wizard question: **What will you use PrepPlan for?** "Make exam papers", "AI correction of answer sheets", or both (both ticked by default). Stored as `schools.modules` (`text[]`, migration 0090). Changeable later in a new **Settings** screen (office only), with the same two ticks.
+- The home screen shows only the chosen part(s): papers → "Make a paper"; correction → "Correct answer sheets" and "See results". The nav follows: "Papers" (layouts) disappears from the bar; "Exams" stays for papers; a new "Correction" tab appears for correction. Turning a part off hides it; nothing is deleted.
+
+### 12.2 "Make exam papers", simpler
+
+- The layout editor (today's "Papers" tab) moves under **Settings → Advanced: paper patterns**.
+- "Make a paper" asks for: class and sections, subject, chapters, and a **pattern**: *Unit Test, 40 marks*, *Half-yearly, 80 marks* (the two ready ones that already exist) or any pattern the school saved. No layout screen in between.
+- The made paper offers four downloads: **question paper (PDF, Word)** and **answer key (PDF, Word)**. The answer key Word file is new (same builder as the Word paper, with the answers and marking steps). Answer booklets stay available, but under "Answer booklets (optional)".
+
+### 12.3 "AI correction", usable on its own
+
+A new **Correction** area, `/school/:id/correction`:
+1. **Choose the paper**: "Upload your own paper" (today's own-paper reader) or "Use a paper made here" (one of the school's PrepPlan exams; it is turned into the same kind of record, every unchanged question keeping the bank's reviewed answer). Either way the **answer key must be approved by a teacher** first (the existing rule, `assertPaperReadyForMarking`).
+2. **Upload answer sheets student by student**: choose the section, tap a student, add that student's pages (camera or files, in order). Students write **name and roll number at the top of every sheet**; no QR booklet or cover page is needed. The list shows each student as *not yet / checking / ready / needs you / refused*.
+3. The QR cover pages and booklets stay as an optional faster way for schools that print them; they are not required.
+
+### 12.4 Wrong-upload checks, before any marking (per student upload)
+
+Run when a student's pages are added; nothing is marked until they pass or a teacher confirms.
+
+| Check | How | Sent to the AI |
+|---|---|---|
+| Same image used for two students | SHA-256 of the file (exact copy) and a 64-bit perceptual hash of the straightened page (same photo re-saved, resized or re-compressed), compared with every page of this paper | nothing (done on our server) |
+| Blank page | share of dark pixels on the straightened page | nothing |
+| Unreadable page | sharpness (blur) and size checks | nothing |
+| Name and roll on the sheet | AI reads the handwritten **top strip only** (a crop of the top ~12% of each page) and returns the name and roll it sees; **the comparison with the class list is done on our server**, never by the AI | the top-strip crop only; no student list, no names from us |
+| Right exam and subject | AI looks at the page (downscaled) and says whether it is a handwritten answer sheet, a question paper, or something else, and which question numbers it can see; we compare those numbers and the subject with this paper | the downscaled page, the subject name and the question numbers of this paper |
+| Photo of the question paper / not an answer | same AI look as above ("question paper" or "other") | as above |
+
+**Decisions:** a *clear* mismatch is **refused with a plain reason** ("This page is the same photo as Ravi K's page 2", "This is a photo of the question paper, not an answer sheet", "The page is blank"). An *unsure* result asks the teacher ("The name on this sheet looks like **Ravi K** (roll 2). You chose **Asha Rao** (roll 1). Is this Asha's sheet?" → Yes, it is hers / No, move it to Ravi K / Remove). A clear pass is accepted. **Every decision is logged** (new append-only table `school_upload_checks`: page, check, result, the AI's raw answer where one was used, who decided, when) and in `audit_log`. The AI calls are cheap (one small vision call per page, the cheapest tier), go through the existing provider chain, and count against the school's monthly AI allowance; when the allowance is used up, the AI checks are skipped and the teacher is asked to confirm instead (never silently accepted).
+
+Thresholds (starting values, tuned on the owner's real photos): perceptual-hash distance ≤ 6 of 64 = same image; ≥ 98.5% white = blank; name match by a forgiving comparison (initials, spelling slips), "unsure" in between.
+
+### 12.5 Data changes (migration 0090, local first)
+
+- `schools.modules text[] not null default '{papers,correction}'`.
+- `school_own_sheets`: `sha256`, `phash` (bigint), `check_state` (`pending | passed | needs_confirm | refused`), `check_summary` (short plain reason). Existing rows untouched.
+- New `school_upload_checks` (append-only, school-scoped, in the tenant registry): `sheet_id`, `check`, `result` (`pass | unsure | fail | skipped`), `detail jsonb`, `ai_job_id`, `decided_by_user_id`, `created_at`.
+- No file bytes in Postgres (as now).
+
+### 12.6 Screens (each gets a phone screenshot)
+
+Wizard "What will you use PrepPlan for?"; Settings (parts + Advanced: paper patterns); Home for papers-only, correction-only and both; Make a paper with the pattern picker; the made paper's four downloads; Correction list; choose a paper; student list with states; one student's upload; the teacher-confirm prompt; a refused upload.
+
+### 12.7 Order of work
+
+1. Migration 0090 + modules + wizard question + Settings + home/nav (tests: each combination shows the right things).
+2. Make-a-paper with patterns; layouts under Advanced; answer key Word + PDF.
+3. Correction area: choose a paper (own or made here), student-wise upload.
+4. Checks: fingerprints, blank, blur (no AI) first; then the AI top-strip and page-kind reads (fake AI in tests; prompts tried on real photos when you send them).
+5. Screenshots, docs, full test run, one local commit per step. **Nothing to production without your approval** (0090 and the PDF fix both need it).

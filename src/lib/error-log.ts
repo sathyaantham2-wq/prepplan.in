@@ -44,8 +44,12 @@ export async function captureError(input: {
 
 // Shared by withErrorCapture (server) and /api/errors (client) so both extract message/stack
 // from an `unknown` the exact same way.
-export function describeError(error: unknown): { message: string; stack: string | null } {
-  if (error instanceof Error) return { message: error.message, stack: error.stack ?? null }
+export function describeError(error: unknown): {
+  message: string
+  stack: string | null
+} {
+  if (error instanceof Error)
+    return { message: error.message, stack: error.stack ?? null }
   return { message: String(error), stack: null }
 }
 
@@ -62,7 +66,18 @@ type RouteHandler = (opts: {
  * try/catch/business logic already inside each handler -- those already return their own typed
  * 4xx responses for expected failures; this only catches what nothing else does.
  */
-export function withErrorCapture(routeLabel: string, handler: RouteHandler): RouteHandler {
+function hasOwnResponse(e: unknown): e is { toResponse: () => Response } {
+  return (
+    e instanceof Error &&
+    e.name === 'PdfRenderError' &&
+    typeof (e as { toResponse?: unknown }).toResponse === 'function'
+  )
+}
+
+export function withErrorCapture(
+  routeLabel: string,
+  handler: RouteHandler,
+): RouteHandler {
   return async (opts) => {
     const requestId = randomUUID()
     try {
@@ -83,6 +98,13 @@ export function withErrorCapture(routeLabel: string, handler: RouteHandler): Rou
         userId: user?.id,
         householdId: user?.householdId,
       })
+      // An error that knows how to explain itself (a PDF that could not be made) is logged above
+      // and then answered in its own plain words instead of a bare 500.
+      if (hasOwnResponse(err)) {
+        const response = err.toResponse()
+        response.headers.set('x-request-id', requestId)
+        return response
+      }
       return Response.json(
         { error: 'Internal server error', request_id: requestId },
         { status: 500, headers: { 'x-request-id': requestId } },
@@ -114,12 +136,14 @@ export function wrapRouteHandlers(
   methods: Array<string>,
 ): void {
   const server = route.options.server as
-    | { handlers: Partial<Record<string, RouteHandler>> }
-    | undefined
+    { handlers: Partial<Record<string, RouteHandler>> } | undefined
   if (!server) return
   for (const method of methods) {
     const original = server.handlers[method]
     if (!original) continue
-    server.handlers[method] = withErrorCapture(`${method} ${routePath}`, original)
+    server.handlers[method] = withErrorCapture(
+      `${method} ${routePath}`,
+      original,
+    )
   }
 }
