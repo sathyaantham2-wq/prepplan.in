@@ -6,9 +6,10 @@ import { SchoolError } from './common'
 // kept in schools.ai_spend_cap_inr (the demo school has Rs 50). A school with no figure of its own gets
 // the default below. The spend is the sum of what its AI calls cost (ai_jobs, attributed to the
 // school's own household). The check is made BEFORE each AI call; a call cannot be priced in advance,
-// so the last call before the cap may run a little over it.
+// so the last call before the cap may run a little over it. Default Rs 10,000 a month: owner decision
+// 2026-10-30 (it was Rs 100).
 
-export const DEFAULT_SCHOOL_AI_CAP_INR = 100
+export const DEFAULT_SCHOOL_AI_CAP_INR = 10_000
 
 export function monthStartUtc(now: Date): Date {
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))
