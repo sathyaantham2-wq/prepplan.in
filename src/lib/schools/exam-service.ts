@@ -222,9 +222,24 @@ export async function createExam(
     weight: c.concepts,
   }))
 
+  // Questions already printed in this school's earlier papers for these chapters are avoided, so a
+  // second and third paper on the same chapter and layout do not repeat them while the bank has others.
+  const earlier = await db
+    .selectFrom('school_exam_questions as q')
+    .innerJoin('school_exams as e', 'e.id', 'q.exam_id')
+    .select('q.question_id')
+    .where('q.school_id', '=', scope.schoolId)
+    .where('e.class_id', '=', classId)
+    .where('e.subject_id', '=', input.subjectId)
+    .where('e.template_id', '=', template.id)
+    .where('e.archived_at', 'is', null)
+    .where('q.chapter_id', 'in', input.chapterIds)
+    .execute()
+  const avoid = new Set(earlier.map((r) => r.question_id))
+
   let master: Awaited<ReturnType<typeof buildMasterPaper>>
   try {
-    master = await buildMasterPaper(db, layout, examChapters)
+    master = await buildMasterPaper(db, layout, examChapters, avoid)
   } catch (e) {
     // The paper is checked before it is saved (numbering, four options, section totals). A failed
     // check means a question in the bank is incomplete: say so plainly instead of a bare error.

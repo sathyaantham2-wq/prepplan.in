@@ -119,6 +119,7 @@ export async function buildMasterPaper(
   db: Db,
   layout: Layout,
   chapters: ReadonlyArray<ExamChapter>,
+  avoid: ReadonlySet<string> = new Set(),
 ): Promise<MasterPaper> {
   if (chapters.length === 0) throw new Error('Choose at least one chapter')
   const weights = Object.fromEntries(
@@ -140,7 +141,13 @@ export async function buildMasterPaper(
 
     for (const ch of chapters) {
       const want = need[ch.id] ?? 0
-      const rows = await eligible(db, slot, ch.conceptIds, used, want * 3)
+      const rows = await eligible(
+        db,
+        slot,
+        ch.conceptIds,
+        new Set([...used, ...avoid]),
+        want * 3,
+      )
       for (const r of spread(rows, want)) {
         got.push(r)
         used.add(r.id)
@@ -153,9 +160,19 @@ export async function buildMasterPaper(
         db,
         slot,
         all,
-        used,
+        new Set([...used, ...avoid]),
         (printed - got.length) * 3,
       )
+      for (const r of spread(rows, printed - got.length)) {
+        got.push(r)
+        used.add(r.id)
+      }
+    }
+    // Questions from earlier papers are left out while the bank has others; only when it has not,
+    // they are used again (a repeat is better than a short paper).
+    if (got.length < printed && avoid.size > 0) {
+      const all = chapters.flatMap((c) => c.conceptIds)
+      const rows = await eligible(db, slot, all, used, (printed - got.length) * 3)
       for (const r of spread(rows, printed - got.length)) {
         got.push(r)
         used.add(r.id)
