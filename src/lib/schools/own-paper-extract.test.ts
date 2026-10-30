@@ -228,6 +228,29 @@ describe('reading back a Word paper that PrepPlan made (no AI)', () => {
         plainMath(input.questions[i].text),
       )
   })
+  it('a question that starts with its sub-part "(a)" (the part sits on the number line) reads back whole', async () => {
+    const text =
+      '(a) Round 8,47,300 to the nearest lakh. (b) Is 3/4 of it more than 6,00,000?'
+    const paras = await docxParagraphs(
+      await buildPaperDocx({
+        ...input,
+        questions: [
+          q({
+            id: hex(7),
+            position: 1,
+            section: B,
+            marks: 2,
+            type: 'short_answer',
+            text,
+            mark_split: '(1+1)',
+          }),
+        ],
+      }),
+    )
+    const [x] = parsePrepPlanParagraphs(paras)!
+    expect(x).toMatchObject({ number: '1', marks: 2 })
+    expect(plainMath(x.text)).toBe(plainMath(text))
+  })
   it('sees an edit', async () => {
     const edited = {
       ...input,

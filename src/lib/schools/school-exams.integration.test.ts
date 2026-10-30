@@ -1315,7 +1315,7 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         ).toBeGreaterThanOrEqual(qs.length)
         for (const q of qs)
           expect(xml).toContain(`ppq_${q.id.replace(/-/g, '')}`)
-        expect(xml).toContain('General instructions')
+        expect(xml).toContain('General Instructions')
       }
       const logged = await db
         .selectFrom('audit_log')

@@ -220,9 +220,10 @@ describe('the question paper as a .docx file', () => {
       'Unit Test 1',
       'Mathematics',
       '90 minutes',
-      'General instructions',
+      'General Instructions:',
       'All questions are compulsory.',
-      'Section A — Multiple choice (1 mark each)',
+      'SECTION A',
+      'Multiple choice (1 mark each)',
       '[3 marks]',
       '[4 marks]',
       'What is ',
@@ -236,12 +237,13 @@ describe('the question paper as a .docx file', () => {
     expect(xml).toMatch(/>OR</)
   })
 
-  it('writes fractions and roots as real Word equations, and powers as raised text', async () => {
+  it('writes fractions, roots, powers and subscripts as real Word equations', async () => {
     const { xml } = await xmlOf(await buildPaperDocx(input))
     expect((xml.match(/<m:f>/g) ?? []).length).toBeGreaterThanOrEqual(4) // 3/4, 1/4, 1/2 (option), x/2
     expect(xml).toContain('<m:rad>')
-    expect(xml).toMatch(/<w:vertAlign w:val="superscript"\/>/)
-    expect(xml).toMatch(/<w:vertAlign w:val="subscript"\/>/)
+    expect(xml).toContain('<m:sSup>')
+    expect(xml).toContain('<m:sSub>')
+    expect(xml).not.toMatch(/<w:vertAlign w:val="superscript"\/>/) // no raised text any more
     expect(xml).toContain('xmlns:m=')
   })
 

@@ -33,6 +33,18 @@ export function ommlToText(xml: string): string {
       /<m:f>(?:(?!<m:f>)[\s\S])*?<m:num>([\s\S]*?)<\/m:num>[\s\S]*?<m:den>([\s\S]*?)<\/m:den>[\s\S]*?<\/m:f>/g,
       (_m, n: string, d: string) => `${ommlToText(n)}/${ommlToText(d)}`,
     )
+    // powers and subscripts (x^2, H₂ written as Word equations)
+    s = s.replace(
+      /<m:sSup>(?:(?!<m:sSup>)[\s\S])*?<m:e>([\s\S]*?)<\/m:e>[\s\S]*?<m:sup>([\s\S]*?)<\/m:sup>[\s\S]*?<\/m:sSup>/g,
+      (_m, e: string, p: string) => {
+        const exp = ommlToText(p)
+        return `${ommlToText(e)}^${exp.length > 1 && !/^-?\d+$/.test(exp) ? `(${exp})` : exp}`
+      },
+    )
+    s = s.replace(
+      /<m:sSub>(?:(?!<m:sSub>)[\s\S])*?<m:e>([\s\S]*?)<\/m:e>[\s\S]*?<m:sub>([\s\S]*?)<\/m:sub>[\s\S]*?<\/m:sSub>/g,
+      (_m, e: string, b: string) => `${ommlToText(e)}${ommlToText(b)}`,
+    )
     s = s.replace(
       /<m:rad>(?:(?!<m:rad>)[\s\S])*?<m:e>([\s\S]*?)<\/m:e>[\s\S]*?<\/m:rad>/g,
       (_m, e: string) => {
@@ -54,6 +66,8 @@ export interface DocxParagraph {
   text: string
   /** The ppq_ bookmark on this paragraph, if any. */
   bookmark: string | null
+  /** The paragraph's Word style id (PrepPlan papers use PPQuestion, PPOption, ...), if any. */
+  style?: string | null
 }
 
 /** The paragraphs of a .docx, with equations and raised or lowered text turned back into plain text. */
@@ -94,7 +108,8 @@ export async function docxParagraphs(
             ? run
             : run
     }
-    out.push({ text, bookmark })
+    const style = /<w:pStyle w:val="([^"]+)"\/>/.exec(para)?.[1] ?? null
+    out.push({ text, bookmark, style })
   }
   return out
 }
@@ -127,44 +142,97 @@ export function parsePrepPlanParagraphs(
   let pendingOr = false
   let groupSeq = 0
   let currentGroup: string | null = null
+  // the question whose lines are being read (a question may run over several paragraphs: statement
+  // lines, sub-parts (a), (b)); options and the next question or heading end it
+  let open: ParsedQuestion | null = null
+  let afterSection = false
+  const takeMarks = (q: ParsedQuestion, t: string): string => {
+    const m = MARKS_AT_END.exec(t)
+    if (!m) return t
+    q.marks = Number(m[1])
+    return t.slice(0, m.index)
+  }
   for (const p of paras) {
     const t = p.text.replaceAll('\u00a0', ' ')
+    const style = p.style ?? ''
     if (p.bookmark) {
-      const m = MARKS_AT_END.exec(t)
-      const body = m ? t.slice(0, m.index) : t
-      const numMatch = /^(\d+)\.\t/.exec(body)
-      const text = body.replace(/^(\d+\.)?\t/, '').trim()
       if (pendingOr) pendingOr = false
       else currentGroup = null
-      out.push({
-        number: numMatch?.[1] ?? null,
+      const q: ParsedQuestion = {
+        number: null,
         section,
-        text,
-        marks: m ? Number(m[1]) : 0,
+        text: '',
+        marks: 0,
         options: [],
         orGroup: null,
         ppqId: p.bookmark.slice(4),
-      })
+      }
+      const body = takeMarks(q, t)
+      q.number = /^(\d+)\.\t/.exec(body)?.[1] ?? null
+      q.text = body
+        .replace(/^(\d+\.)?\t/, '')
+        .replace(/^\(([a-h]|i{1,3}|iv|vi{0,3})\)\t/, '($1) ')
+        .trim()
+      out.push(q)
       // the second member of an OR pair has no number of its own and follows an "OR" line
-      if (out.length >= 2 && currentGroup !== null)
-        out[out.length - 1].orGroup = currentGroup
+      if (out.length >= 2 && currentGroup !== null) q.orGroup = currentGroup
+      open = q
+      afterSection = false
       continue
     }
-    if (t.trim() === 'OR') {
+    if (style === 'PPOr' || t.trim() === 'OR') {
       pendingOr = true
       groupSeq += 1
       currentGroup = `or${groupSeq}`
-      const prev = out[out.length - 1]
-      prev.orGroup = currentGroup
+      const prev = out.at(-1)
+      if (prev) prev.orGroup = currentGroup
+      open = null
       continue
     }
-    const opt = /^\(([A-Z])\)\t(.*)$/s.exec(t)
-    if (opt && out.length > 0) {
-      out[out.length - 1].options.push({ label: opt[1], text: opt[2].trim() })
+    const opt = /^\(([A-Za-z])\)\t(.*)$/s.exec(t)
+    if (
+      opt &&
+      style !== 'PPPart' &&
+      (style === 'PPOption' || /^[a-dA-D]$/.test(opt[1])) &&
+      out.length > 0 &&
+      (style === 'PPOption' ||
+        !open ||
+        open.options.length > 0 ||
+        !/^\([a-h]\)/.test(t) ||
+        style === '')
+    ) {
+      if (style === 'PPOption' || style === '') {
+        const q = out[out.length - 1]
+        q.options.push({ label: opt[1].toUpperCase(), text: opt[2].trim() })
+        continue
+      }
+    }
+    if (style === 'PPSection' || (style === '' && SECTION.test(t.trim()))) {
+      // the Word heading "SECTION A" reads back as "Section A", as the paper's own name has it
+      section = t
+        .replace(/\s*\[[\d.]+ marks?\]\s*$/, '')
+        .trim()
+        .replace(/^SECTION\b/, 'Section')
+      open = null
+      afterSection = true
       continue
     }
-    if (SECTION.test(t.trim())) {
-      section = t.replace(/\s*\[[\d.]+ marks?\]\s*$/, '').trim()
+    if (style === 'PPSectionNote' && afterSection) {
+      const note = t.replace(/\s*\[[\d.]+ marks?\]\s*$/, '').trim()
+      if (note) section = `${section} — ${note}`
+      afterSection = false
+      continue
+    }
+    if (
+      open &&
+      (style === 'PPQuestionMore' || style === 'PPPart') &&
+      t.trim()
+    ) {
+      const line = takeMarks(open, t)
+        .replace(/^\(([a-h]|i{1,3}|iv|vi{0,3})\)\t/, '($1) ')
+        .trim()
+      if (line)
+        open.text = `${open.text}${style === 'PPPart' ? ' ' : '\n'}${line}`
       continue
     }
   }
