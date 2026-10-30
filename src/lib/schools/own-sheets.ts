@@ -1,9 +1,12 @@
 import { randomUUID } from 'node:crypto'
+import { checkPage, sheetCheckAiFor } from './upload-checks'
+import type { PageCheckVerdict, SheetCheckAi } from './upload-checks'
 import type { Db } from '../../db/connection'
 import {
   examPrintRepository,
   schoolOwnCoversRepository,
   schoolOwnSheetsRepository,
+  schoolUploadChecksRepository,
   schoolScanChunksRepository,
   schoolSectionsRepository,
 } from '../../db/repositories'
@@ -181,6 +184,10 @@ export interface OwnSheetResult {
   studentId: string | null
   student: string | null
   message: string
+  /** Where the wrong-upload checks stand for a page (covers are not checked). */
+  checkState?: 'passed' | 'needs_confirm' | 'refused'
+  /** For a page whose name looks like another student's: that student. */
+  suggest?: { schoolStudentId: string; name: string; rollNo: string } | null
 }
 
 /**
@@ -197,6 +204,7 @@ export async function ingestOwnSheet(
     currentStudentId?: string | null
     studentId?: string | null
   },
+  ai?: SheetCheckAi,
 ): Promise<OwnSheetResult> {
   const paper = await loadOwnPaper(db, scope, paperId)
   assertApproved(paper)
@@ -262,6 +270,7 @@ export async function ingestOwnSheet(
   const originalKey = `${scope.schoolId}/_own/${paperId}/sheets/${id}-original.bin`
   const imageKey = `${scope.schoolId}/_own/${paperId}/sheets/${id}-cover.bin`
   const written: Array<string> = []
+  let page: OwnSheetResult | null = null
   try {
     if (coverToken) {
       const found = await schoolOwnCoversRepository.findByToken(db, coverToken)
@@ -325,7 +334,7 @@ export async function ingestOwnSheet(
           'No cover page came before this page, so we do not know whose it is. Choose the student.',
         original_key: originalKey,
       })
-      return {
+      page = {
         sheetId: row.id,
         status: 'unplaced',
         kind: 'page',
@@ -333,35 +342,108 @@ export async function ingestOwnSheet(
         student: null,
         message: 'No cover page came before this page. Choose whose it is.',
       }
-    }
-    const seq =
-      (await schoolOwnSheetsRepository.listForPaper(db, scope, paperId))
-        .filter((x) => x.school_student_id === target && x.status === 'placed')
-        .reduce((m, x) => Math.max(m, x.seq ?? 0), 0) + 1
-    const row = await schoolOwnSheetsRepository.insert(db, scope, {
-      ...base,
-      id,
-      school_student_id: target,
-      kind: 'page',
-      status: 'placed',
-      placed_by: named ? 'teacher' : 'order',
-      seq,
-      original_key: originalKey,
-    })
-    const st = byId.get(target)
-    return {
-      sheetId: row.id,
-      status: 'placed',
-      kind: 'page',
-      studentId: target,
-      student: st?.name ?? null,
-      message: `Page ${seq} of ${st?.name ?? 'the student'}.`,
+    } else {
+      const seq =
+        (await schoolOwnSheetsRepository.listForPaper(db, scope, paperId))
+          .filter(
+            (x) => x.school_student_id === target && x.status === 'placed',
+          )
+          .reduce((m, x) => Math.max(m, x.seq ?? 0), 0) + 1
+      const row = await schoolOwnSheetsRepository.insert(db, scope, {
+        ...base,
+        id,
+        school_student_id: target,
+        kind: 'page',
+        status: 'placed',
+        placed_by: named ? 'teacher' : 'order',
+        seq,
+        original_key: originalKey,
+      })
+      const st = byId.get(target)
+      page = {
+        sheetId: row.id,
+        status: 'placed',
+        kind: 'page',
+        studentId: target,
+        student: st?.name ?? null,
+        message: `Page ${seq} of ${st?.name ?? 'the student'}.`,
+      }
     }
   } catch (e) {
     await Promise.all(
       written.map((k) => store.remove(k).catch(() => undefined)),
     )
     throw e
+  }
+  // (set inside the try above; TypeScript cannot follow that)
+  const saved = page as OwnSheetResult | null
+  if (!saved) throw new SchoolError('conflict', 'This page could not be saved.')
+  // the wrong-upload checks, before anything is marked (SCHOOLS_MODULE_PLAN.md 12.4)
+  const chosen = saved.studentId ? byId.get(saved.studentId) : undefined
+  let verdict: PageCheckVerdict
+  try {
+    const own = await db
+      .selectFrom('school_own_questions')
+      .select('position')
+      .where('school_id', '=', scope.schoolId)
+      .where('paper_id', '=', paperId)
+      .where('removed_at', 'is', null)
+      .orderBy('position')
+      .execute()
+    const school = await db
+      .selectFrom('schools')
+      .select('household_id')
+      .where('id', '=', scope.schoolId)
+      .executeTakeFirstOrThrow()
+    verdict = await checkPage(
+      db,
+      scope,
+      ai ??
+        sheetCheckAiFor(db, {
+          schoolId: scope.schoolId,
+          householdId: school.household_id,
+        }),
+      {
+        sheetId: saved.sheetId,
+        paperId,
+        bytes: input.bytes,
+        student: chosen ?? null,
+        classmates: chosen
+          ? students.filter((s) => s.section_id === chosen.section_id)
+          : students,
+        subject: paper.subject.name,
+        grade: paper.grade,
+        questionNumbers: own.map((q) => String(q.position)),
+      },
+    )
+  } catch (e) {
+    console.error('[own-sheets] checks failed', e)
+    const summary =
+      'We could not check this saved. Please look at it and confirm.'
+    await schoolOwnSheetsRepository.update(db, scope, saved.sheetId, {
+      check_state: 'needs_confirm',
+      check_summary: summary,
+    })
+    verdict = { state: 'needs_confirm', summary, suggest: null }
+  }
+  if (verdict.state === 'refused')
+    return {
+      ...saved,
+      status: 'rejected',
+      studentId: null,
+      student: null,
+      message: verdict.summary ?? 'This page was refused.',
+      checkState: 'refused',
+      suggest: null,
+    }
+  return {
+    ...saved,
+    message:
+      verdict.state === 'needs_confirm'
+        ? `${saved.message} Please check: ${verdict.summary}`
+        : saved.message,
+    checkState: verdict.state,
+    suggest: verdict.suggest,
   }
 }
 
@@ -373,7 +455,9 @@ export interface OwnSheetsSummary {
     section: string
     covers: number
     pages: number
-    state: 'received' | 'none'
+    /** none: nothing yet; received: pages in and passed; checking: checks not finished; needs_you: a
+     *  teacher must confirm a page; refused: a page was refused and nothing usable is in. */
+    state: 'received' | 'none' | 'checking' | 'needs_you' | 'refused'
   }>
   unplaced: Array<{
     id: string
@@ -385,6 +469,7 @@ export interface OwnSheetsSummary {
     students: number
     received: number
     none: number
+    needsYou: number
     unplaced: number
     rejected: number
   }
@@ -409,6 +494,20 @@ export async function ownSheetsSummary(
     )
     const covers = mine.filter((x) => x.kind === 'cover').length
     const pages = mine.filter((x) => x.kind === 'page').length
+    const refused = sheets.some(
+      (x) =>
+        x.school_student_id === s.school_student_id &&
+        x.check_state === 'refused',
+    )
+    const state = mine.some((x) => x.check_state === 'needs_confirm')
+      ? ('needs_you' as const)
+      : mine.some((x) => x.check_state === 'pending')
+        ? ('checking' as const)
+        : covers + pages > 0
+          ? ('received' as const)
+          : refused
+            ? ('refused' as const)
+            : ('none' as const)
     return {
       schoolStudentId: s.school_student_id,
       name: s.name,
@@ -416,7 +515,7 @@ export async function ownSheetsSummary(
       section: s.section_name,
       covers,
       pages,
-      state: covers + pages > 0 ? ('received' as const) : ('none' as const),
+      state,
     }
   })
   const unplaced = sheets
@@ -434,6 +533,7 @@ export async function ownSheetsSummary(
       students: rows.length,
       received: rows.filter((r) => r.state === 'received').length,
       none: rows.filter((r) => r.state === 'none').length,
+      needsYou: rows.filter((r) => r.state === 'needs_you').length,
       unplaced: unplaced.length,
       rejected: sheets.filter((x) => x.status === 'rejected').length,
     },
@@ -445,6 +545,179 @@ const signedUrl = (schoolId: string, sheetId: string) =>
     '/api/scan-pages/',
     `/api/schools/${schoolId}/own-sheet-images/`,
   )
+
+/** One student's pages for this paper, in order, with a short-lived picture link and where the checks stand. */
+export async function studentSheets(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+) {
+  const paper = await loadOwnPaper(db, scope, paperId)
+  const students = await studentsFor(db, scope, paper)
+  const st = students.find((s) => s.school_student_id === studentId)
+  if (!st)
+    throw new SchoolError(
+      'not_found',
+      'That student is not in your class for this paper.',
+    )
+  const sheets = (
+    await schoolOwnSheetsRepository.listForPaper(db, scope, paperId)
+  ).filter(
+    (x) =>
+      x.school_student_id === studentId &&
+      (x.status === 'placed' || x.check_state === 'refused'),
+  )
+  // for a page whose name looked like a classmate's: who (from the logged name check)
+  const looksLike = new Map<string, string>()
+  for (const c of await schoolUploadChecksRepository.listForSheets(
+    db,
+    scope,
+    sheets.map((x) => x.id),
+  )) {
+    const d = c.detail as { looks_like?: string } | null
+    if (c.check === 'name' && d?.looks_like)
+      looksLike.set(c.sheet_id, d.looks_like)
+  }
+  return {
+    student: {
+      schoolStudentId: st.school_student_id,
+      name: st.name,
+      rollNo: st.roll_no,
+      section: st.section_name,
+    },
+    pages: sheets
+      .sort(
+        (a, b) =>
+          (a.status === 'placed' ? 0 : 1) - (b.status === 'placed' ? 0 : 1) ||
+          (a.seq ?? 0) - (b.seq ?? 0),
+      )
+      .map((x) => ({
+        id: x.id,
+        seq: x.seq,
+        kind: x.kind,
+        status: x.status,
+        name: x.original_name,
+        checkState: x.check_state,
+        checkSummary: x.check_summary,
+        suggestId: looksLike.get(x.id) ?? null,
+        url:
+          x.has_file && x.purged_at === null
+            ? signedUrl(scope.schoolId, x.id)
+            : null,
+      })),
+  }
+}
+
+/**
+ * A teacher takes a wrong page out (a page of another student, a blurred photo sent again). It is kept,
+ * marked as removed, and no longer counts for the student; nothing is deleted.
+ */
+export async function removeOwnSheet(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  sheetId: string,
+): Promise<void> {
+  await loadOwnPaper(db, scope, paperId)
+  const sheet = await schoolOwnSheetsRepository.findById(db, scope, sheetId)
+  if (!sheet || sheet.paper_id !== paperId)
+    throw new SchoolError('not_found', 'Page not found.')
+  if (sheet.status === 'rejected') return
+  await schoolOwnSheetsRepository.update(db, scope, sheetId, {
+    status: 'rejected',
+    reason: 'Removed by a teacher.',
+  })
+  await auditSchool(
+    db,
+    scope,
+    'school.own_sheet_removed',
+    'school_own_sheets',
+    sheetId,
+    { status: sheet.status, school_student_id: sheet.school_student_id },
+    { status: 'rejected' },
+  )
+}
+
+/**
+ * A teacher answers a page the checks were unsure of: it is hers (keep), it is another student's (move),
+ * or it is a wrong page (remove; kept, never deleted). The decision is logged with who made it.
+ */
+export async function confirmOwnSheet(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  sheetId: string,
+  decision: string,
+  toStudentId?: string | null,
+): Promise<void> {
+  const paper = await loadOwnPaper(db, scope, paperId)
+  const sheet = await schoolOwnSheetsRepository.findById(db, scope, sheetId)
+  if (!sheet || sheet.paper_id !== paperId)
+    throw new SchoolError('not_found', 'Page not found.')
+  if (sheet.check_state !== 'needs_confirm')
+    throw new SchoolError('conflict', 'This page does not need a decision.')
+  if (decision !== 'keep' && decision !== 'move' && decision !== 'remove')
+    throw new SchoolError('invalid', 'Choose keep, move or remove.')
+  let target = sheet.school_student_id
+  if (decision === 'move') {
+    const students = await studentsFor(db, scope, paper)
+    if (
+      !toStudentId ||
+      !students.some((x) => x.school_student_id === toStudentId)
+    )
+      throw new SchoolError(
+        'not_found',
+        'That student is not in your class for this paper.',
+      )
+    target = toStudentId
+  }
+  const seq =
+    decision === 'move'
+      ? (await schoolOwnSheetsRepository.listForPaper(db, scope, paperId))
+          .filter(
+            (x) => x.school_student_id === target && x.status === 'placed',
+          )
+          .reduce((m, x) => Math.max(m, x.seq ?? 0), 0) + 1
+      : sheet.seq
+  await db.transaction().execute(async (trx) => {
+    await schoolUploadChecksRepository.insert(trx, scope, {
+      sheet_id: sheetId,
+      check: 'teacher',
+      result: decision === 'remove' ? 'fail' : 'pass',
+      detail: JSON.stringify({
+        decision,
+        from: sheet.school_student_id,
+        to: target,
+        was: sheet.check_summary,
+      }),
+      decided_by_user_id: scope.userId,
+    })
+    await schoolOwnSheetsRepository.update(trx, scope, sheetId, {
+      check_state: decision === 'remove' ? 'refused' : 'passed',
+      ...(decision === 'remove'
+        ? { status: 'rejected' as const, reason: 'Removed by a teacher.' }
+        : {
+            status: 'placed' as const,
+            school_student_id: target,
+            seq,
+            placed_by: 'teacher' as const,
+          }),
+    })
+    await auditSchool(
+      trx,
+      scope,
+      'school.own_sheet_confirmed',
+      'school_own_sheets',
+      sheetId,
+      {
+        school_student_id: sheet.school_student_id,
+        check_state: 'needs_confirm',
+      },
+      { decision, school_student_id: target },
+    )
+  })
+}
 
 /** A teacher says whose an unplaced page is. */
 export async function assignOwnSheet(

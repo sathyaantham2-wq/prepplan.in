@@ -838,7 +838,6 @@ export interface SchoolOwnSheets {
   original_key: string | null;
   original_name: string | null;
   paper_id: string;
-  phash: Int8 | null;
   placed_by: string | null;
   purged_at: Timestamp | null;
   reason: string | null;
@@ -848,6 +847,7 @@ export interface SchoolOwnSheets {
   sha256: string | null;
   size_bytes: number | null;
   status: string;
+  thumb: string | null;
   uploaded_by_user_id: string;
 }
 

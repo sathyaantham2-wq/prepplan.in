@@ -64,7 +64,8 @@ test.describe.serial('use your own paper (phone)', () => {
   let subjectId = ''
   let sourceId = ''
   let page: Page
-  let written: Buffer = Buffer.alloc(0)
+  // different answer pages (the same picture twice is refused as a duplicate, rightly)
+  let answers: Array<Buffer> = []
 
   test.beforeAll(async ({ browser }) => {
     db = createDb()
@@ -181,6 +182,20 @@ test.describe.serial('use your own paper (phone)', () => {
         .deleteFrom(t as 'sessions')
         .where('user_id', 'in', mu)
         .execute()
+    // the check log is append-only (a trigger), like the terms log below
+    {
+      const { sql } = await import('kysely')
+      await sql`alter table school_upload_checks disable trigger school_upload_checks_append_only`.execute(
+        db,
+      )
+      await db
+        .deleteFrom('school_upload_checks')
+        .where('school_id', 'in', ids)
+        .execute()
+      await sql`alter table school_upload_checks enable trigger school_upload_checks_append_only`.execute(
+        db,
+      )
+    }
     for (const t of [
       'school_scan_chunks',
       'school_own_sheets',
@@ -243,11 +258,17 @@ test.describe.serial('use your own paper (phone)', () => {
       .getByRole('link', { name: /Correct answer sheets/ })
       .click()
     await expect(
-      page.getByRole('heading', { name: 'Your own papers' }),
+      page.getByRole('heading', { name: 'AI correction' }),
     ).toBeVisible()
     await expect(page.getByText('No papers yet.')).toBeVisible()
     await shot(page, 'op-01-list')
     await looksRight(page)
+    // "Use a paper made here" lists the school's exam papers (none yet in this school)
+    await page.getByRole('button', { name: /Use a paper made here/ }).click()
+    await expect(page.getByTestId('exam-picker')).toContainText(
+      'No exam papers made here yet.',
+    )
+    await shot(page, 'op-01b-paper-made-here')
   })
 
   test('upload a Word paper: it is read, matched to chapters, and the teacher is told what to check', async () => {
@@ -343,7 +364,7 @@ test.describe.serial('use your own paper (phone)', () => {
     await shot(page, 'op-05-approved')
     await looksRight(page)
     // and the list shows it as approved
-    await page.getByRole('link', { name: 'Your own papers' }).click()
+    await page.getByRole('link', { name: 'AI correction' }).click()
     await expect(page.getByText('Approved').first()).toBeVisible()
   })
 
@@ -378,6 +399,8 @@ test.describe.serial('use your own paper (phone)', () => {
     // the previous test left the list of own papers open
     await page.reload()
     await page.getByRole('link', { name: /Unit Test 2 Approved/ }).click()
+    await expect(page.getByTestId('student-sheets')).toBeVisible()
+    await page.getByText('Other ways (optional):').click()
     const card = page.getByTestId('own-sheets')
     await expect(card).toBeVisible()
     await expect(card.getByLabel('For which section')).toContainText(
@@ -433,27 +456,32 @@ test.describe.serial('use your own paper (phone)', () => {
       await pg.locator('.page').nth(0).screenshot({ type: 'png' }),
       await pg.locator('.page').nth(1).screenshot({ type: 'png' }),
     ]
-    await pg.setContent(
-      '<div style="width:794px;height:1123px;background:#fff;font:20px serif;padding:40px">Answer: x = 8</div>',
-    )
-    written = await pg.screenshot({ type: 'png' })
+    answers = []
+    for (let i = 0; i < 8; i++) {
+      await pg.setContent(
+        `<div style="width:794px;height:1123px;background:#fff;font:22px serif;padding:40px;line-height:${36 + i * 6}px">Name: ________ Roll: __<br>${Array.from({ length: 6 + i }, (_, k) => `Q${k + 1}. x/2 + ${k + i} = ${7 + k * i}, so x = ${2 * (7 + k * i - k - i)}`).join('<br>')}</div>`,
+      )
+      answers.push(await pg.screenshot({ type: 'png' }))
+    }
     await ctx.close()
     await card.getByTestId('own-stack-input').setInputFiles([
       { name: 'scan-01.png', mimeType: 'image/png', buffer: coverPng[0] },
-      { name: 'scan-02.png', mimeType: 'image/png', buffer: written },
+      { name: 'scan-02.png', mimeType: 'image/png', buffer: answers[0] },
       { name: 'scan-03.png', mimeType: 'image/png', buffer: coverPng[1] },
-      { name: 'scan-04.png', mimeType: 'image/png', buffer: written },
-      { name: 'scan-05.png', mimeType: 'image/png', buffer: written },
+      { name: 'scan-04.png', mimeType: 'image/png', buffer: answers[1] },
+      { name: 'scan-05.png', mimeType: 'image/png', buffer: answers[2] },
     ])
     const log = card.getByTestId('own-sheet-log')
     await expect(log).toContainText('scan-05.png', { timeout: 60_000 })
     await expect(log).toContainText('Cover page: Asha Rao')
     await expect(log).toContainText('Cover page: Ravi Kumar')
-    await expect(card).toContainText('2 received')
+    // the browser-test reader always reads "Asha Rao" at the top: her page passes; Ravi's ask the teacher
+    await expect(card).toContainText('1 received')
+    await expect(card).toContainText('1 need you')
     const list = card.getByTestId('own-sheet-students')
     await expect(list).toContainText('1 · Asha Rao')
     await expect(list.locator('li').nth(0)).toContainText('1 page')
-    await expect(list.locator('li').nth(1)).toContainText('2 pages')
+    await expect(list.locator('li').nth(1)).toContainText('2 pages · needs you')
     await shot(page, 'op-08-stack-sorted')
     await looksRight(page)
   })
@@ -461,10 +489,9 @@ test.describe.serial('use your own paper (phone)', () => {
   test('no cover pages: one file per student named by roll number; a page nobody can place waits for the teacher', async () => {
     const card = page.getByTestId('own-sheets')
     await card.getByText('No cover pages? Upload one file per student').click()
-    const blank = written
     await card.getByTestId('own-roll-input').setInputFiles([
-      { name: '1-p3.png', mimeType: 'image/png', buffer: blank },
-      { name: '9.png', mimeType: 'image/png', buffer: blank },
+      { name: '1-p3.png', mimeType: 'image/png', buffer: answers[3] },
+      { name: '9.png', mimeType: 'image/png', buffer: answers[4] },
     ])
     const log = card.getByTestId('own-sheet-log')
     await expect(log).toContainText(
@@ -478,7 +505,7 @@ test.describe.serial('use your own paper (phone)', () => {
     await card
       .getByTestId('own-stack-input')
       .setInputFiles([
-        { name: 'loose.png', mimeType: 'image/png', buffer: blank },
+        { name: 'loose.png', mimeType: 'image/png', buffer: answers[5] },
       ])
     await expect(card).toContainText('1 waiting for a student', {
       timeout: 30_000,
@@ -493,7 +520,73 @@ test.describe.serial('use your own paper (phone)', () => {
     ).toContainText('3 pages')
     await shot(page, 'op-10-page-placed')
     await looksRight(page)
-    await page.getByRole('link', { name: 'Your own papers' }).click()
+  })
+
+  test('student by student: add pages, the checks pass, a doubtful page asks "is that right?", the same photo twice is refused', async () => {
+    const box = page.getByTestId('student-sheets')
+    await box.scrollIntoViewIfNeeded()
+    await shot(page, 'op-11-student-list')
+    await looksRight(page)
+    // Asha: a new page is checked and kept
+    await box.getByRole('button', { name: /Asha Rao/ }).click()
+    const asha = box.getByTestId('one-student')
+    await asha
+      .getByTestId('student-pages-input')
+      .setInputFiles([
+        { name: 'asha-4.png', mimeType: 'image/png', buffer: answers[6] },
+      ])
+    await expect(asha.getByTestId('upload-results')).toContainText(
+      'asha-4.png: Page 3 of Asha Rao.',
+      { timeout: 30_000 },
+    )
+    await expect(asha.getByText('Checked').first()).toBeVisible()
+    // the page pictures really load (signed, short-lived links)
+    const pic = asha.getByRole('img', { name: /Page 3 of Asha Rao/ })
+    await pic.scrollIntoViewIfNeeded()
+    await expect
+      .poll(() => pic.evaluate((i: HTMLImageElement) => i.naturalWidth), {
+        timeout: 15_000,
+      })
+      .toBeGreaterThan(100)
+    await shot(page, 'op-12-student-pages')
+    await looksRight(page)
+    // Ravi: his two pages from the stack say "Asha Rao" at the top, so the teacher is asked
+    await box.getByRole('button', { name: /Ravi Kumar/ }).click()
+    const ravi = box.getByTestId('one-student')
+    const ask = ravi.getByTestId('confirm-page')
+    await expect(ask).toHaveCount(2)
+    await expect(ask.first()).toContainText(
+      'The name on this sheet looks like Asha Rao (roll 1). You chose Ravi Kumar (roll 2).',
+    )
+    await expect(
+      ask.first().getByRole('button', { name: 'No, move it to Asha Rao' }),
+    ).toBeVisible()
+    await shot(page, 'op-13-is-that-right')
+    await looksRight(page)
+    await ask
+      .first()
+      .getByRole('button', { name: "Yes, it is Ravi Kumar's" })
+      .click()
+    await expect(ask).toHaveCount(1)
+    await ask
+      .first()
+      .getByRole('button', { name: "Yes, it is Ravi Kumar's" })
+      .click()
+    await expect(ask).toHaveCount(0)
+    // the very photo already sent as Asha's page, sent again for Ravi: refused, in plain words
+    await ravi
+      .getByTestId('student-pages-input')
+      .setInputFiles([
+        { name: 'copy.png', mimeType: 'image/png', buffer: answers[6] },
+      ])
+    await expect(ravi.getByTestId('upload-results')).toContainText(
+      "copy.png: This page is the same photo as Asha Rao's page 3.",
+      { timeout: 30_000 },
+    )
+    await expect(ravi.getByText('Refused')).toBeVisible()
+    await shot(page, 'op-14-same-photo-refused')
+    await looksRight(page)
+    await page.getByRole('link', { name: 'AI correction' }).first().click()
   })
 
   test('a file that cannot be read is told so in plain words', async () => {

@@ -51,6 +51,8 @@ import {
 } from './exam-service'
 import { Route as WizardRoute } from '../../routes/api/schools/$schoolId/wizard'
 import { Route as SettingsRoute } from '../../routes/api/schools/$schoolId/settings'
+import { Route as CorrectionExamsRoute } from '../../routes/api/schools/$schoolId/correction/exams'
+import { ownPaperFromExam } from './correction'
 import { Route as OverviewRoute } from '../../routes/api/schools/$schoolId/overview'
 import { Route as ResultsRoute } from '../../routes/api/schools/$schoolId/results'
 import { Route as ResultsExamRoute } from '../../routes/api/schools/$schoolId/results/$examId'
@@ -67,12 +69,15 @@ import type { MemoryScanStore } from '../scan-storage'
 import { getScanStore } from '../scan-storage'
 import { buildBookletsHtml } from './booklet-html'
 import { buildCoversHtml, ownCoverToken } from './own-cover'
+import type { SheetCheckAi } from './upload-checks'
 import {
   assignOwnSheet,
+  confirmOwnSheet,
   coverSections,
   ingestOwnSheet,
   ownSheetsSummary,
   renderCovers,
+  studentSheets,
   saveOwnSheetChunk,
   takeOwnSheetUpload,
 } from './own-sheets'
@@ -3660,6 +3665,56 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect([400, 413]).toContain(big.status)
     }, 60_000)
 
+    it('a paper made here goes into AI correction as it was printed; its answers wait for a teacher; twice gives the same one', async () => {
+      const made = await ownPaperFromExam(db, teacher, examId)
+      expect(made.existed).toBe(false)
+      const v = await getOwnPaper(db, teacher, made.paperId)
+      const printed = await db
+        .selectFrom('school_exam_questions')
+        .select(['id', 'marks', 'section'])
+        .where('exam_id', '=', examId)
+        .execute()
+      expect(v.questions).toHaveLength(printed.length)
+      expect(v.status).toBe('needs_review')
+      expect(v.questions.every((q) => q.keyStatus === 'draft')).toBe(true)
+      expect(v.questions.every((q) => q.keySource === 'bank')).toBe(true)
+      expect(v.questions.every((q) => q.chapterId !== null)).toBe(true)
+      await refuses(
+        assertPaperReadyForMarking(db, teacher, made.paperId),
+        'conflict',
+      )
+      await approveOwnPaper(db, teacher, made.paperId)
+      await approveOwnKeys(db, teacher, made.paperId, 'all')
+      await assertPaperReadyForMarking(db, teacher, made.paperId)
+      expect(await ownPaperFromExam(db, admin, examId)).toEqual({
+        paperId: made.paperId,
+        existed: true,
+      })
+      const params = { schoolId: schoolA }
+      const list = (await (
+        await call(CorrectionExamsRoute, 'GET', teacherS.cookie, params)
+      ).json()) as { exams: Array<{ id: string; paperId: string | null }> }
+      expect(list.exams.find((e) => e.id === examId)?.paperId).toBe(
+        made.paperId,
+      )
+      for (const who of [studentS, parentS])
+        expect(
+          (
+            await call(CorrectionExamsRoute, 'POST', who.cookie, params, {
+              exam_id: examId,
+            })
+          ).status,
+        ).toBe(403)
+      expect(
+        (
+          await call(CorrectionExamsRoute, 'POST', outsiderS.cookie, params, {
+            exam_id: examId,
+          })
+        ).status,
+      ).toBe(404)
+      await refuses(ownPaperFromExam(db, otherTeacher(), examId), 'not_found')
+    }, 60_000)
+
     describe('cover pages and answer sheets', () => {
       let sectionId = ''
       let coverStudents: Array<{
@@ -3676,6 +3731,73 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         })
           .jpeg()
           .toBuffer()
+      /** A page with writing on it, different for every seed (a stand-in for a student's answer sheet). */
+      const writtenPage = (seed: number, name = 'Student') => {
+        let r = seed * 9301 + 49297
+        const rnd = () => (r = (r * 9301 + 49297) % 233280) / 233280
+        let t = `<text x="40" y="60" font-size="30">Name: ${name}   Roll: ${seed}</text>`
+        for (let i = 0; i < 6 + Math.floor(rnd() * 10); i++)
+          t += `<text x="${40 + rnd() * 120}" y="${140 + i * 70}" font-size="${26 + rnd() * 10}">Q${i + 1}. x = ${Math.floor(rnd() * 99)} so the answer ${'is '.repeat(1 + Math.floor(rnd() * 6))}${Math.floor(rnd() * 999)}</text>`
+        return sharp({
+          create: {
+            width: 900,
+            height: 1200,
+            channels: 3,
+            background: '#fdfdf8',
+          },
+        })
+          .composite([
+            { input: Buffer.from(`<svg width="900" height="1200">${t}</svg>`) },
+          ])
+          .jpeg({ quality: 85 })
+          .toBuffer()
+      }
+      // the AI checks, scripted: what the "reader" says it sees, and what it was sent
+      let sheetName: string | null = null
+      let kindReply: Record<string, unknown> | null = null
+      let aiOn = true
+      const sent: Array<{ fn: string; w: number; h: number; text: string }> = []
+      const checkAi: SheetCheckAi = {
+        available: () => aiOn,
+        readHeader: async (img) => {
+          const m = await sharp(Buffer.from(img.base64, 'base64')).metadata()
+          sent.push({ fn: 'header', w: m.width, h: m.height, text: '' })
+          return JSON.stringify({
+            name: sheetName,
+            roll: null,
+            confidence: 0.9,
+          })
+        },
+        pageKind: async (i) => {
+          const buf = Buffer.from(i.page.base64, 'base64')
+          const m = await sharp(buf).metadata()
+          // the top strip (the name) must arrive blanked out
+          const top = await sharp(
+            await sharp(buf)
+              .extract({
+                left: 0,
+                top: 0,
+                width: m.width,
+                height: Math.floor(m.height * 0.1),
+              })
+              .toBuffer(),
+          ).stats()
+          sent.push({
+            fn: 'kind',
+            w: m.width,
+            h: Math.round(top.channels[0].min),
+            text: JSON.stringify({ subject: i.subject, q: i.questionNumbers }),
+          })
+          return JSON.stringify(
+            kindReply ?? {
+              kind: 'answer_sheet',
+              subject: i.subject,
+              question_numbers: ['1'],
+              confidence: 0.9,
+            },
+          )
+        },
+      }
 
       it('prints one cover page per student, with the same code every time', async () => {
         const secs = await coverSections(db, admin, paperId)
@@ -3760,16 +3882,27 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
           kind: 'cover',
           studentId: a.school_student_id,
         })
-        // the pages that follow the cover are hers, in order
-        const blank = await blankJpeg('#ffffff')
-        const p1 = await ingestOwnSheet(db, admin, paperId, {
-          bytes: blank,
-          currentStudentId: r.studentId,
-        })
-        const p2 = await ingestOwnSheet(db, admin, paperId, {
-          bytes: blank,
-          currentStudentId: p1.studentId,
-        })
+        // the pages that follow the cover are hers, in order (and pass the checks)
+        sheetName = a.name
+        const blank = await writtenPage(1, a.name)
+        const p1 = await ingestOwnSheet(
+          db,
+          admin,
+          paperId,
+          { bytes: blank, currentStudentId: r.studentId },
+          checkAi,
+        )
+        const p2 = await ingestOwnSheet(
+          db,
+          admin,
+          paperId,
+          {
+            bytes: await writtenPage(2, a.name),
+            currentStudentId: p1.studentId,
+          },
+          checkAi,
+        )
+        expect(p1.checkState).toBe('passed')
         expect(p1).toMatchObject({
           status: 'placed',
           studentId: a.school_student_id,
@@ -3797,9 +3930,13 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       }, 180_000)
 
       it('a page with no cover before it waits for the teacher, who names the student', async () => {
-        const lost = await ingestOwnSheet(db, admin, paperId, {
-          bytes: await blankJpeg('#eeeeee'),
-        })
+        const lost = await ingestOwnSheet(
+          db,
+          admin,
+          paperId,
+          { bytes: await writtenPage(3) },
+          checkAi,
+        )
         expect(lost.status).toBe('unplaced')
         let sum = await ownSheetsSummary(db, admin, paperId)
         expect(sum.unplaced.map((u) => u.id)).toContain(lost.sheetId)
@@ -3825,10 +3962,17 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
 
       it('one file named by roll number: the student is named, no cover needed', async () => {
         const c = coverStudents[0]
-        const r = await ingestOwnSheet(db, admin, paperId, {
-          bytes: await blankJpeg('#dddddd', 800, 1100),
-          studentId: c.school_student_id,
-        })
+        sheetName = c.name
+        const r = await ingestOwnSheet(
+          db,
+          admin,
+          paperId,
+          {
+            bytes: await writtenPage(4, c.name),
+            studentId: c.school_student_id,
+          },
+          checkAi,
+        )
         expect(r).toMatchObject({
           status: 'placed',
           studentId: c.school_student_id,
@@ -3847,6 +3991,229 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         expect(rollFromFileName('12p3.jpg')).toBe('12')
         expect(rollFromFileName('12_2.png')).toBe('12')
       }, 60_000)
+
+      describe('wrong-upload checks (student by student)', () => {
+        const as = async (bytes: Buffer, who: { school_student_id: string }) =>
+          ingestOwnSheet(
+            db,
+            admin,
+            paperId,
+            { bytes, studentId: who.school_student_id },
+            checkAi,
+          )
+        const logOf = async (sheetId: string) =>
+          db
+            .selectFrom('school_upload_checks')
+            .select(['check', 'result', 'detail', 'decided_by_user_id'])
+            .where('sheet_id', '=', sheetId)
+            .orderBy('created_at')
+            .execute()
+
+        it('the same photo under two students is refused, even re-saved smaller; a different page passes', async () => {
+          const [a, b] = coverStudents
+          sheetName = a.name
+          const photo = await writtenPage(11, a.name)
+          const first = await as(photo, a)
+          expect(first.checkState).toBe('passed')
+          sheetName = b.name
+          const copy = await as(photo, b)
+          expect(copy).toMatchObject({
+            status: 'rejected',
+            checkState: 'refused',
+          })
+          expect(copy.message).toMatch(
+            new RegExp(`same photo as ${a.name}'s page`),
+          )
+          const resaved = await sharp(photo)
+            .resize({ width: 640 })
+            .jpeg({ quality: 55 })
+            .toBuffer()
+          expect((await as(resaved, b)).message).toMatch(/same photo as/)
+          expect((await as(await writtenPage(12, b.name), b)).checkState).toBe(
+            'passed',
+          )
+          // twice for the same student is refused too, in its own words
+          sheetName = a.name
+          expect((await as(photo, a)).message).toMatch(
+            /already sent for this student/,
+          )
+          const log = await logOf(copy.sheetId)
+          expect(log.find((l) => l.check === 'duplicate')).toMatchObject({
+            result: 'fail',
+          })
+        }, 120_000)
+
+        it('a blank page and a photo too small to read are refused, with no AI', async () => {
+          const [a] = coverStudents
+          sent.length = 0
+          const blank = await as(await blankJpeg('#ffffff'), a)
+          expect(blank).toMatchObject({ checkState: 'refused' })
+          expect(blank.message).toMatch(/blank/)
+          const small = await as(
+            await sharp(await writtenPage(13, a.name))
+              .resize({ width: 300 })
+              .jpeg()
+              .toBuffer(),
+            a,
+          )
+          expect(small.message).toMatch(/too small to read/)
+          expect(sent).toHaveLength(0) // nothing went to the AI
+        }, 60_000)
+
+        it('a photo of the question paper, or of another subject, is refused; an unsure read asks the teacher', async () => {
+          const [a] = coverStudents
+          sheetName = a.name
+          kindReply = {
+            kind: 'question_paper',
+            subject: null,
+            question_numbers: [],
+            confidence: 0.92,
+          }
+          const qp = await as(await writtenPage(14, a.name), a)
+          expect(qp.message).toMatch(/photo of the question paper/)
+          kindReply = {
+            kind: 'answer_sheet',
+            subject: 'Science',
+            question_numbers: ['1'],
+            confidence: 0.9,
+          }
+          const sci = await as(await writtenPage(15, a.name), a)
+          expect(sci.message).toMatch(/Science answer sheet/)
+          kindReply = {
+            kind: 'question_paper',
+            subject: null,
+            question_numbers: [],
+            confidence: 0.4,
+          }
+          const unsure = await as(await writtenPage(16, a.name), a)
+          expect(unsure.checkState).toBe('needs_confirm')
+          kindReply = {
+            kind: 'answer_sheet',
+            subject: 'Maths',
+            question_numbers: ['99'],
+            confidence: 0.9,
+          }
+          const strange = await as(await writtenPage(17, a.name), a)
+          expect(strange.checkState).toBe('needs_confirm')
+          expect(strange.message).toMatch(
+            /question 99, which this paper does not have/,
+          )
+          kindReply = null
+          // tidy: these two go out, by the teacher
+          for (const p of [unsure, strange])
+            await confirmOwnSheet(db, admin, paperId, p.sheetId, 'remove')
+        }, 120_000)
+
+        it('a sheet whose name is another student\'s asks "Is that right?"; the teacher moves it, and it is logged', async () => {
+          const [a, b] = coverStudents
+          sheetName = b.name // the sheet says Ravi; the teacher chose Asha
+          const r = await as(await writtenPage(18, b.name), a)
+          expect(r.checkState).toBe('needs_confirm')
+          expect(r.message).toMatch(new RegExp(`looks like ${b.name}`))
+          expect(r.suggest).toMatchObject({
+            schoolStudentId: b.school_student_id,
+          })
+          const sum = await ownSheetsSummary(db, admin, paperId)
+          expect(
+            sum.students.find((x) => x.schoolStudentId === a.school_student_id)
+              ?.state,
+          ).toBe('needs_you')
+          await refuses(
+            confirmOwnSheet(
+              db,
+              admin,
+              paperId,
+              r.sheetId,
+              'move',
+              '00000000-0000-4000-8000-000000000000',
+            ),
+            'not_found',
+          )
+          await confirmOwnSheet(
+            db,
+            teacher,
+            paperId,
+            r.sheetId,
+            'move',
+            b.school_student_id,
+          )
+          const row = await db
+            .selectFrom('school_own_sheets')
+            .select(['school_student_id', 'status', 'check_state', 'placed_by'])
+            .where('id', '=', r.sheetId)
+            .executeTakeFirstOrThrow()
+          expect(row).toMatchObject({
+            school_student_id: b.school_student_id,
+            status: 'placed',
+            check_state: 'passed',
+            placed_by: 'teacher',
+          })
+          const log = await logOf(r.sheetId)
+          expect(log.map((l) => `${l.check}:${l.result}`)).toEqual(
+            expect.arrayContaining(['name:unsure', 'teacher:pass']),
+          )
+          expect(
+            log.find((l) => l.check === 'teacher')?.decided_by_user_id,
+          ).toBe(teacher.userId)
+          await refuses(
+            confirmOwnSheet(db, admin, paperId, r.sheetId, 'keep'),
+            'conflict',
+          ) // already decided
+        }, 60_000)
+
+        it('with the AI off the teacher confirms every page; the AI is sent only the top strip and the page without it, never a name of ours', async () => {
+          const [a] = coverStudents
+          aiOn = false
+          const off = await as(await writtenPage(19, a.name), a)
+          aiOn = true
+          expect(off.checkState).toBe('needs_confirm')
+          expect(off.message).toMatch(/AI checks are not set up/)
+          await confirmOwnSheet(db, admin, paperId, off.sheetId, 'keep')
+          sent.length = 0
+          sheetName = a.name
+          await as(await writtenPage(20, a.name), a)
+          const header = sent.find((x) => x.fn === 'header')!
+          expect(header.h).toBeLessThan(header.w / 4) // a strip, not the page
+          const kind = sent.find((x) => x.fn === 'kind')!
+          expect(kind.h).toBeGreaterThan(245) // its top strip arrived white
+          for (const st of coverStudents)
+            expect(JSON.stringify(sent)).not.toContain(st.name)
+          // a big photo (wider than what the AI is sent) is blanked and shrunk the same way
+          sent.length = 0
+          const wide = await as(
+            await sharp(await writtenPage(21, a.name))
+              .resize({ width: 1600 })
+              .jpeg()
+              .toBuffer(),
+            a,
+          )
+          expect(wide.checkState).toBe('passed')
+          const wideKind = sent.find((x) => x.fn === 'kind')!
+          expect(wideKind.w).toBe(1024)
+          expect(wideKind.h).toBeGreaterThan(245)
+        }, 60_000)
+
+        it('the check log cannot be changed or deleted', async () => {
+          const one = await db
+            .selectFrom('school_upload_checks')
+            .select('id')
+            .where('school_id', '=', schoolA)
+            .executeTakeFirstOrThrow()
+          await expect(
+            db
+              .updateTable('school_upload_checks')
+              .set({ result: 'pass' })
+              .where('id', '=', one.id)
+              .execute(),
+          ).rejects.toThrow(/append-only/)
+          await expect(
+            db
+              .deleteFrom('school_upload_checks')
+              .where('id', '=', one.id)
+              .execute(),
+          ).rejects.toThrow(/append-only/)
+        })
+      })
 
       it('refuses and keeps nothing: an exam booklet page, a cover PrepPlan never made, a file that is not a picture', async () => {
         const store = getScanStore() as MemoryScanStore
@@ -3982,6 +4349,42 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
             })
           ).status,
         ).toBe(403)
+        // and the office does get the picture, through its signed link
+        const one = (await (
+          await call(SheetsRoute, 'GET', adminS.cookie, params)
+        ).json()) as {
+          students: Array<{ schoolStudentId: string; pages: number }>
+        }
+        const withPages = one.students.find((x) => x.pages > 0)!
+        const pages = await studentSheets(
+          db,
+          admin,
+          paperId,
+          withPages.schoolStudentId,
+        )
+        const picUrl = new URL(
+          pages.pages.find((x) => x.url)!.url!,
+          'http://localhost',
+        )
+        const picRes = await (
+          SheetImageRoute.options.server as {
+            handlers: Record<string, Handler>
+          }
+        ).handlers.GET({
+          request: new Request(picUrl, { headers: { cookie: adminS.cookie } }),
+          params: {
+            schoolId: schoolA,
+            sheetId: picUrl.pathname.split('/').at(-1)!,
+          },
+        })
+        expect(
+          picRes.status,
+          await picRes
+            .clone()
+            .text()
+            .catch(() => ''),
+        ).toBe(200)
+        expect(picRes.headers.get('content-type')).toMatch(/^image\//)
         const res = await call(SheetsRoute, 'GET', adminS.cookie, params)
         const text = await res.text()
         const body = JSON.parse(text) as {

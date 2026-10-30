@@ -196,6 +196,7 @@ import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/eval
 import { Route as ApiFixitCardsIdAnswerRouteImport } from './routes/api/fixit/cards/$id/answer'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
 import { Route as ApiSchoolsSchoolIdBankChaptersRouteImport } from './routes/api/schools/$schoolId/bank/chapters'
+import { Route as ApiSchoolsSchoolIdCorrectionExamsRouteImport } from './routes/api/schools/$schoolId/correction/exams'
 import { Route as ApiSchoolsSchoolIdCredentialsStaffRouteImport } from './routes/api/schools/$schoolId/credentials/staff'
 import { Route as ApiSchoolsSchoolIdCredentialsStudentsRouteImport } from './routes/api/schools/$schoolId/credentials/students'
 import { Route as ApiSchoolsSchoolIdDemoResetRouteImport } from './routes/api/schools/$schoolId/demo/reset'
@@ -1209,6 +1210,12 @@ const ApiSchoolsSchoolIdBankChaptersRoute =
     path: '/api/schools/$schoolId/bank/chapters',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiSchoolsSchoolIdCorrectionExamsRoute =
+  ApiSchoolsSchoolIdCorrectionExamsRouteImport.update({
+    id: '/api/schools/$schoolId/correction/exams',
+    path: '/api/schools/$schoolId/correction/exams',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiSchoolsSchoolIdCredentialsStaffRoute =
   ApiSchoolsSchoolIdCredentialsStaffRouteImport.update({
     id: '/api/schools/$schoolId/credentials/staff',
@@ -1638,6 +1645,7 @@ export interface FileRoutesByFullPath {
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/schools/$schoolId/bank/chapters': typeof ApiSchoolsSchoolIdBankChaptersRoute
+  '/api/schools/$schoolId/correction/exams': typeof ApiSchoolsSchoolIdCorrectionExamsRoute
   '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
@@ -1864,6 +1872,7 @@ export interface FileRoutesByTo {
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/schools/$schoolId/bank/chapters': typeof ApiSchoolsSchoolIdBankChaptersRoute
+  '/api/schools/$schoolId/correction/exams': typeof ApiSchoolsSchoolIdCorrectionExamsRoute
   '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
@@ -2094,6 +2103,7 @@ export interface FileRoutesById {
   '/api/fixit/cards/$id/answer': typeof ApiFixitCardsIdAnswerRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/schools/$schoolId/bank/chapters': typeof ApiSchoolsSchoolIdBankChaptersRoute
+  '/api/schools/$schoolId/correction/exams': typeof ApiSchoolsSchoolIdCorrectionExamsRoute
   '/api/schools/$schoolId/credentials/staff': typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   '/api/schools/$schoolId/credentials/students': typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
@@ -2325,6 +2335,7 @@ export interface FileRouteTypes {
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
     | '/api/schools/$schoolId/bank/chapters'
+    | '/api/schools/$schoolId/correction/exams'
     | '/api/schools/$schoolId/credentials/staff'
     | '/api/schools/$schoolId/credentials/students'
     | '/api/schools/$schoolId/demo/reset'
@@ -2551,6 +2562,7 @@ export interface FileRouteTypes {
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
     | '/api/schools/$schoolId/bank/chapters'
+    | '/api/schools/$schoolId/correction/exams'
     | '/api/schools/$schoolId/credentials/staff'
     | '/api/schools/$schoolId/credentials/students'
     | '/api/schools/$schoolId/demo/reset'
@@ -2780,6 +2792,7 @@ export interface FileRouteTypes {
     | '/api/fixit/cards/$id/answer'
     | '/api/questions/generate-batch/$id/resume'
     | '/api/schools/$schoolId/bank/chapters'
+    | '/api/schools/$schoolId/correction/exams'
     | '/api/schools/$schoolId/credentials/staff'
     | '/api/schools/$schoolId/credentials/students'
     | '/api/schools/$schoolId/demo/reset'
@@ -2915,6 +2928,7 @@ export interface RootRouteChildren {
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   ApiFixitCardsIdAnswerRoute: typeof ApiFixitCardsIdAnswerRoute
   ApiSchoolsSchoolIdBankChaptersRoute: typeof ApiSchoolsSchoolIdBankChaptersRoute
+  ApiSchoolsSchoolIdCorrectionExamsRoute: typeof ApiSchoolsSchoolIdCorrectionExamsRoute
   ApiSchoolsSchoolIdCredentialsStaffRoute: typeof ApiSchoolsSchoolIdCredentialsStaffRoute
   ApiSchoolsSchoolIdCredentialsStudentsRoute: typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   ApiSchoolsSchoolIdDemoResetRoute: typeof ApiSchoolsSchoolIdDemoResetRoute
@@ -4237,6 +4251,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdBankChaptersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/schools/$schoolId/correction/exams': {
+      id: '/api/schools/$schoolId/correction/exams'
+      path: '/api/schools/$schoolId/correction/exams'
+      fullPath: '/api/schools/$schoolId/correction/exams'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdCorrectionExamsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/schools/$schoolId/credentials/staff': {
       id: '/api/schools/$schoolId/credentials/staff'
       path: '/api/schools/$schoolId/credentials/staff'
@@ -5316,6 +5337,8 @@ const rootRouteChildren: RootRouteChildren = {
     ApiAdaptiveConceptsConceptIdWrongQuestionsRoute,
   ApiFixitCardsIdAnswerRoute: ApiFixitCardsIdAnswerRoute,
   ApiSchoolsSchoolIdBankChaptersRoute: ApiSchoolsSchoolIdBankChaptersRoute,
+  ApiSchoolsSchoolIdCorrectionExamsRoute:
+    ApiSchoolsSchoolIdCorrectionExamsRoute,
   ApiSchoolsSchoolIdCredentialsStaffRoute:
     ApiSchoolsSchoolIdCredentialsStaffRoute,
   ApiSchoolsSchoolIdCredentialsStudentsRoute:

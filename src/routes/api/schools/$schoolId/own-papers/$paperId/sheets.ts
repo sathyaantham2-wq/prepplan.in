@@ -6,15 +6,19 @@ import { SchoolError } from '../../../../../../lib/schools/common'
 import { readJson, str } from '../../../../../../lib/schools/http'
 import {
   assignOwnSheet,
+  confirmOwnSheet,
   coverSections,
   ingestOwnSheet,
   ownSheetsSummary,
+  removeOwnSheet,
+  studentSheets,
   takeOwnSheetUpload,
 } from '../../../../../../lib/schools/own-sheets'
 
 // The scanned answer sheets of an own paper. GET: who has sent what, the sections to print covers for, the
-// pages waiting for a student. POST { action: 'add' | 'assign' }: one page (its file arrives in pieces
-// sent to .../sheet-chunks/:uploadId first), or a teacher saying whose a waiting page is.
+// pages waiting for a student; with ?student_id= one student's pages. POST { action: 'add' | 'assign' |
+// 'confirm' | 'remove' }: one page (its file arrives in pieces sent to .../sheet-chunks/:uploadId first), a teacher
+// saying whose a waiting page is, or a teacher taking a wrong page out (kept, never deleted).
 export const Route = createFileRoute(
   '/api/schools/$schoolId/own-papers/$paperId/sheets',
 )({
@@ -30,6 +34,12 @@ export const Route = createFileRoute(
         if (scope instanceof Response) return scope
         try {
           const db = getSharedDb()
+          const studentId = new URL(request.url).searchParams.get('student_id')
+          if (studentId)
+            return Response.json(
+              await studentSheets(db, scope, params.paperId, studentId),
+              { headers: { 'cache-control': 'private, no-store' } },
+            )
           return Response.json(
             {
               sections: await coverSections(db, scope, params.paperId),
@@ -60,6 +70,26 @@ export const Route = createFileRoute(
               params.paperId,
               str(b?.sheet_id) ?? '',
               str(b?.student_id) ?? '',
+            )
+            return Response.json({ ok: true })
+          }
+          if (str(b?.action) === 'confirm') {
+            await confirmOwnSheet(
+              db,
+              scope,
+              params.paperId,
+              str(b?.sheet_id) ?? '',
+              str(b?.decision) ?? '',
+              str(b?.student_id),
+            )
+            return Response.json({ ok: true })
+          }
+          if (str(b?.action) === 'remove') {
+            await removeOwnSheet(
+              db,
+              scope,
+              params.paperId,
+              str(b?.sheet_id) ?? '',
             )
             return Response.json({ ok: true })
           }

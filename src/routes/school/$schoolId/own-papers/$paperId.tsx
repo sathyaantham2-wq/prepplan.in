@@ -11,6 +11,7 @@ import {
 } from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 import { AnswerSheets } from '../../../../components/school/own-sheets-panel'
+import { StudentSheets } from '../../../../components/school/student-sheets'
 import type {
   OwnPaperView,
   OwnQuestionView,
@@ -37,6 +38,7 @@ function OwnPaperPage() {
   const [running, setRunning] = useState(false)
   const [progress, setProgress] = useState<PaperProgress | null>(null)
   const started = useRef(false)
+  const [otherOpen, setOtherOpen] = useState(false)
 
   const load = useCallback(async () => {
     try {
@@ -101,7 +103,7 @@ function OwnPaperPage() {
           params={{ schoolId }}
           className="inline-flex min-h-11 items-center text-base font-semibold text-emerald-900 underline"
         >
-          Your own papers
+          AI correction
         </Link>
         <h1 className="text-2xl font-bold">{v.title}</h1>
         <p className="text-base text-slate-700">
@@ -216,7 +218,36 @@ function OwnPaperPage() {
           <QuestionCard key={q.id} q={q} v={v} editable={editable} act={act} />
         ))}
       </ul>
-      {v.status === 'approved' ? <AnswerSheets base={base} /> : null}
+      {v.status === 'approved' ? (
+        v.markable ? (
+          <>
+            <Card>
+              <StudentSheets base={base} />
+            </Card>
+            <details
+              className="rounded-2xl border border-slate-200 bg-white px-4 py-3"
+              data-testid="other-ways"
+              onToggle={(e) => setOtherOpen(e.currentTarget.open)}
+            >
+              <summary className="min-h-11 cursor-pointer content-center text-base font-semibold">
+                Other ways (optional): printed cover pages, files named by roll
+                number
+              </summary>
+              {/* loaded each time it is opened, so its counts are never stale */}
+              {otherOpen ? (
+                <div className="mt-3">
+                  <AnswerSheets base={base} />
+                </div>
+              ) : null}
+            </details>
+          </>
+        ) : (
+          <Notice>
+            Approve every answer above. Then you can upload the students' answer
+            sheets.
+          </Notice>
+        )
+      ) : null}
       {editable && v.status === 'needs_review' ? (
         <AddQuestion v={v} act={act} />
       ) : null}

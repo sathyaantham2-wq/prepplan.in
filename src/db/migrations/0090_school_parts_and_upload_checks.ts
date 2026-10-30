@@ -11,9 +11,9 @@ import { sql } from 'kysely'
 // (no file); its questions keep the bank's reviewed answers and still need a teacher's approval.
 //
 // school_own_sheets: answer pages are now uploaded student by student (the teacher chooses the student;
-// no QR is needed). Each page is checked before marking: sha256 (an exact copy of a file) and phash (a
-// 64-bit perceptual hash of the page, the same photo re-saved or resized) find the same image under two
-// students; check_state is where the checks stand, check_summary the plain reason shown to the teacher.
+// no QR is needed). Each page is checked before marking: sha256 (an exact copy of a file) and thumb (the
+// page shrunk to 32 x 32 grey pixels, base64; the same photo re-saved or resized correlates above 0.97
+// with it, two different pages stay well below) find the same image under two students; check_state is where the checks stand, check_summary the plain reason shown to the teacher.
 //
 // school_upload_checks: one row per check per page, append-only: what was checked, the result, what the
 // AI answered when it was asked, and who decided when a teacher was asked to confirm.
@@ -38,7 +38,7 @@ export async function up(db: Kysely<any>): Promise<void> {
   await db.schema
     .alterTable('school_own_sheets')
     .addColumn('sha256', 'text')
-    .addColumn('phash', 'bigint')
+    .addColumn('thumb', 'text')
     .addColumn('check_state', 'text', (col) =>
       col.check(
         sql`check_state in ('pending', 'passed', 'needs_confirm', 'refused')`,
@@ -122,7 +122,7 @@ export async function down(db: Kysely<any>): Promise<void> {
     .alterTable('school_own_sheets')
     .dropColumn('check_summary')
     .dropColumn('check_state')
-    .dropColumn('phash')
+    .dropColumn('thumb')
     .dropColumn('sha256')
     .execute()
   // never deletes a school's papers: going back is refused while a paper of the new kind exists

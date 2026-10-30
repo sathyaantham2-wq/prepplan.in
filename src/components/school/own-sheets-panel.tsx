@@ -231,6 +231,9 @@ export function AnswerSheets({ base }: { base: string }) {
       <div className="flex flex-wrap gap-2">
         <Chip tone="good">{d.totals.received} received</Chip>
         <Chip>{d.totals.none} not yet</Chip>
+        {d.totals.needsYou > 0 ? (
+          <Chip tone="wait">{d.totals.needsYou} need you</Chip>
+        ) : null}
         {d.totals.unplaced > 0 ? (
           <Chip tone="wait">{d.totals.unplaced} waiting for a student</Chip>
         ) : null}
@@ -241,13 +244,9 @@ export function AnswerSheets({ base }: { base: string }) {
             <span>
               {s.rollNo} · {s.name}
             </span>
-            <span
-              className={
-                s.state === 'received' ? 'font-medium' : 'text-slate-600'
-              }
-            >
-              {s.state === 'received'
-                ? `${s.pages} ${s.pages === 1 ? 'page' : 'pages'}`
+            <span className={s.pages > 0 ? 'font-medium' : 'text-slate-600'}>
+              {s.pages > 0
+                ? `${s.pages} ${s.pages === 1 ? 'page' : 'pages'}${s.state === 'needs_you' ? ' · needs you' : ''}`
                 : 'none'}
             </span>
           </li>

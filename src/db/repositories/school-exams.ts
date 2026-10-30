@@ -459,6 +459,8 @@ export const schoolOwnSheetsRepository = {
         'size_bytes',
         'purged_at',
         'created_at',
+        'check_state',
+        'check_summary',
         sql<boolean>`(image_key is not null or original_key is not null)`.as(
           'has_file',
         ),
