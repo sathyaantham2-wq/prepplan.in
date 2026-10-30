@@ -1,5 +1,7 @@
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { chromium } from 'playwright-core'
-import type { Browser } from 'playwright-core'
+import type { Page } from 'playwright-core'
 
 /**
  * F033: server-side HTML->PDF on headless Chromium (tab09's locked choice). A single browser
@@ -12,7 +14,25 @@ import type { Browser } from 'playwright-core'
  * concretely, per test run in this suite -- launch/teardown churn across repeated PDF tests was
  * observed contributing to Vitest worker crashes on this memory-constrained host).
  */
-let browserPromise: Promise<Browser> | null = null
+/** Whatever opens pages: a launched browser, or (on Vercel, as a second way) a persistent context. */
+interface Opener {
+  way: 'local' | 'browser' | 'persistent'
+  newPage: () => Promise<Page>
+  alive: () => boolean
+  close: () => Promise<void>
+}
+let openerPromise: Promise<Opener> | null = null
+
+/**
+ * On Vercel, how Chromium is started. @sparticuz/chromium passes --single-process, and Playwright
+ * cannot open a page in single-process mode: browser.newPage() makes a new browser context, which
+ * never comes back (production 2026-10-30: every PDF stopped at "open page"). So the browser is first
+ * started without that flag. If that start or its first page fails on the host (sparticuz warns some
+ * hosts need single-process), the second way is a persistent context with the flag kept: its pages
+ * live in the browser's own default context, so no new context is needed. The way that works is kept
+ * for the life of the process.
+ */
+let serverlessWay: 'browser' | 'persistent' = 'browser'
 
 /**
  * Where the browser comes from. On a developer machine, in tests and in CI it is Playwright's own
@@ -21,24 +41,57 @@ let browserPromise: Promise<Browser> | null = null
  * used instead; its version is pinned to the one Playwright 1.63 expects (153). The import is
  * dynamic so nothing else ever loads that package.
  */
-async function launchBrowser(): Promise<Browser> {
-  if (process.env.VERCEL) {
-    const serverlessChromium = (await import('@sparticuz/chromium')).default
-    // No WebGL is needed to print a page; this also skips unpacking the graphics stack.
-    serverlessChromium.setGraphicsMode = false
-    const executablePath = await step(
-      'unpack chromium',
-      STEP_LIMIT_MS.unpack,
-      serverlessChromium.executablePath(),
-    )
-    return chromium.launch({
+async function launchOpener(): Promise<Opener> {
+  if (!process.env.VERCEL) {
+    const browser = await chromium.launch({ timeout: STEP_LIMIT_MS.launch })
+    return {
+      way: 'local',
+      newPage: () => browser.newPage(),
+      alive: () => browser.isConnected(),
+      close: () => browser.close(),
+    }
+  }
+  const serverlessChromium = (await import('@sparticuz/chromium')).default
+  // No WebGL is needed to print a page; this also skips unpacking the graphics stack.
+  serverlessChromium.setGraphicsMode = false
+  const executablePath = await step(
+    'unpack chromium',
+    STEP_LIMIT_MS.unpack,
+    serverlessChromium.executablePath(),
+  )
+  if (serverlessWay === 'browser') {
+    const browser = await chromium.launch({
+      executablePath,
+      args: serverlessChromium.args.filter((a) => a !== '--single-process'),
+      headless: true,
+      timeout: STEP_LIMIT_MS.launch,
+    })
+    return {
+      way: 'browser',
+      newPage: () => browser.newPage(),
+      alive: () => browser.isConnected(),
+      close: () => browser.close(),
+    }
+  }
+  const context = await chromium.launchPersistentContext(
+    join(tmpdir(), 'prepplan-chromium'),
+    {
       executablePath,
       args: serverlessChromium.args,
       headless: true,
       timeout: STEP_LIMIT_MS.launch,
-    })
+    },
+  )
+  let open = true
+  context.on('close', () => {
+    open = false
+  })
+  return {
+    way: 'persistent',
+    newPage: () => context.newPage(),
+    alive: () => open,
+    close: () => context.close(),
   }
-  return chromium.launch({ timeout: STEP_LIMIT_MS.launch })
 }
 
 /**
@@ -110,8 +163,8 @@ async function step<T>(name: string, ms: number, work: Promise<T>): Promise<T> {
 
 /** Forget a browser that failed or hung, so the next PDF starts a fresh one. */
 async function dropBrowser() {
-  const p = browserPromise
-  browserPromise = null
+  const p = openerPromise
+  openerPromise = null
   try {
     await (await p)?.close()
   } catch {
@@ -119,26 +172,41 @@ async function dropBrowser() {
   }
 }
 
-async function getBrowser(): Promise<Browser> {
+async function getOpener(): Promise<Opener> {
   try {
-    if (!browserPromise) browserPromise = launchBrowser()
-    let browser = await step(
+    if (!openerPromise) openerPromise = launchOpener()
+    let opener = await step(
       'launch chromium',
       STEP_LIMIT_MS.launch + STEP_LIMIT_MS.unpack,
-      browserPromise,
+      openerPromise,
     )
-    if (!browser.isConnected()) {
-      browserPromise = launchBrowser()
-      browser = await step(
+    if (!opener.alive()) {
+      openerPromise = launchOpener()
+      opener = await step(
         'relaunch chromium',
         STEP_LIMIT_MS.launch + STEP_LIMIT_MS.unpack,
-        browserPromise,
+        openerPromise,
       )
     }
-    return browser
+    return opener
   } catch (e) {
     await dropBrowser()
     throw e
+  }
+}
+
+/** A page to print on. On Vercel, the first way failing (start or first page) switches to the second. */
+async function openPage(limitMs: number): Promise<Page> {
+  try {
+    const opener = await getOpener()
+    return await step('open page', limitMs, opener.newPage())
+  } catch (e) {
+    await dropBrowser()
+    if (!process.env.VERCEL || serverlessWay === 'persistent') throw e
+    console.error('[pdf] switching to a persistent context (single-process)')
+    serverlessWay = 'persistent'
+    const opener = await getOpener()
+    return step('open page (persistent context)', limitMs, opener.newPage())
   }
 }
 
@@ -174,8 +242,7 @@ export async function renderHtmlToPdf(
   } = {},
 ): Promise<Buffer> {
   const limit = { ...STEP_LIMIT_MS, ...options.limits }
-  const browser = await getBrowser()
-  const page = await step('open page', limit.content, browser.newPage())
+  const page = await openPage(limit.content)
   try {
     // 'load' (not 'networkidle') -- the templates embed everything (styles, no remote images or
     // fonts), so there is no network activity to wait out.
