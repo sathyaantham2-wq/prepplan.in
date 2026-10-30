@@ -38,7 +38,7 @@ async function looksRight(page: Page) {
   const r = await page.evaluate(() => {
     const small: Array<string> = []
     for (const el of document.querySelectorAll<HTMLElement>(
-      '[data-no-sound] :is(button, select, input:not([type=checkbox]):not([type=file]), a[class*="min-h"])',
+      '[data-no-sound] :is(button, select, input:not([type=checkbox]):not([type=radio]):not([type=file]), a[class*="min-h"])',
     )) {
       const b = el.getBoundingClientRect()
       if (b.width > 0 && b.height > 0 && b.height < 44)

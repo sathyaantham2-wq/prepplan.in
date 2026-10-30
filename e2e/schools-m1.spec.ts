@@ -59,7 +59,7 @@ async function looksRight(page: Page) {
   const r = await page.evaluate(() => {
     const small: Array<string> = []
     for (const el of document.querySelectorAll<HTMLElement>(
-      '[data-no-sound] :is(button, select, input:not([type=checkbox]):not([type=file]), a[class*="min-h"])',
+      '[data-no-sound] :is(button, select, input:not([type=checkbox]):not([type=radio]):not([type=file]), a[class*="min-h"])',
     )) {
       const b = el.getBoundingClientRect()
       if (b.width > 0 && b.height > 0 && b.height < 44)
@@ -519,7 +519,9 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
   test('Settings: choose only AI correction; home and tabs follow; then both again', async () => {
     const bar = page.getByRole('navigation', { name: 'School' }).last()
     await bar.getByRole('link', { name: 'Settings' }).click()
-    await expect(page.getByRole('heading', { name: 'Settings', exact: true })).toBeVisible()
+    await expect(
+      page.getByRole('heading', { name: 'Settings', exact: true }),
+    ).toBeVisible()
     await shot(page, 'm1-20-settings')
     await looksRight(page)
     const picker = page.getByTestId('module-picker')
@@ -604,9 +606,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
       teacher.getByRole('heading', { name: 'Make an exam paper' }),
     ).toBeVisible()
     await teacher.getByLabel('Name of the exam').fill('Unit Test 1')
-    await teacher
-      .getByLabel('Paper layout')
-      .selectOption({ label: 'Unit Test, 40 marks' })
+    await teacher.getByRole('radio', { name: /Unit Test, 40 marks/ }).check()
     await teacher.getByLabel(/Chapter 3 · Fractions and Decimals/).check()
     await teacher.getByLabel(/Chapter 4 · Simple Equations/).check()
     await teacher.getByLabel(/Chapter 5 · Data Handling/).check()

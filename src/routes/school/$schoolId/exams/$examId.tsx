@@ -78,12 +78,12 @@ function ExamPage() {
       setSectionId(sectionChoices[0].id)
   }, [sectionChoices, sectionId])
 
-  async function word() {
-    setBusy('word')
+  async function word(which: 'question-paper-docx' | 'answer-key-docx') {
+    setBusy(which)
     setMessage(null)
     setError(null)
     try {
-      await downloadFile(`${base}/question-paper-docx`)
+      await downloadFile(`${base}/${which}`)
       setMessage('The Word file is downloaded. Edit it as you like.')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.')
@@ -196,106 +196,128 @@ function ExamPage() {
 
       <Card className="space-y-3">
         <h2 className="text-lg font-bold">Print</h2>
-        <Btn
-          className="w-full"
-          disabled={busy !== null}
-          onClick={() => run('paper', `${base}/question-paper`)}
-        >
-          {busy === 'paper'
-            ? 'Making the file…'
-            : 'Open the question paper (PDF)'}
-        </Btn>
-        <Btn
-          kind="plain"
-          className="w-full"
-          disabled={busy !== null}
-          onClick={() => void word()}
-        >
-          {busy === 'word'
-            ? 'Making the Word file…'
-            : 'Download the question paper (Word)'}
-        </Btn>
+        <h3 className="text-base font-bold">Question paper</h3>
+        <div className="grid gap-2 sm:grid-cols-2">
+          <Btn
+            className="w-full"
+            disabled={busy !== null}
+            onClick={() => run('paper', `${base}/question-paper`)}
+          >
+            {busy === 'paper'
+              ? 'Making the file…'
+              : 'Open the question paper (PDF)'}
+          </Btn>
+          <Btn
+            kind="plain"
+            className="w-full"
+            disabled={busy !== null}
+            onClick={() => void word('question-paper-docx')}
+          >
+            {busy === 'question-paper-docx'
+              ? 'Making the Word file…'
+              : 'Download the question paper (Word)'}
+          </Btn>
+        </div>
         {d.mayHandle ? (
           <>
-            <Btn
-              kind="plain"
-              className="w-full"
-              disabled={busy !== null}
-              onClick={() => run('copy', `${base}/teacher-copy`)}
-            >
-              {busy === 'copy'
-                ? 'Making the file…'
-                : 'Open the teacher copy (PDF)'}
-            </Btn>
-            <div className="space-y-2 border-t border-slate-200 pt-3">
-              <h3 className="text-base font-bold">Answer booklets</h3>
-              <p className="text-base text-slate-700">
-                One booklet for each student, with her name and ID printed and a
-                code on every page.
-              </p>
-              <Select
-                label="For which section"
-                value={sectionId}
-                onChange={(e) => setSectionId(e.target.value)}
-              >
-                {sectionChoices.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.label}
-                  </option>
-                ))}
-              </Select>
+            <h3 className="pt-1 text-base font-bold">
+              Answer key and marking scheme
+            </h3>
+            <div className="grid gap-2 sm:grid-cols-2">
               <Btn
                 kind="plain"
                 className="w-full"
-                disabled={busy !== null || !sectionId}
-                onClick={makeBooklets}
+                disabled={busy !== null}
+                onClick={() => run('copy', `${base}/teacher-copy`)}
               >
-                {busy === 'booklets'
-                  ? 'Making the booklets…'
-                  : 'Make the answer booklets'}
+                {busy === 'copy'
+                  ? 'Making the file…'
+                  : 'Open the answer key (PDF)'}
               </Btn>
-              {job ? (
-                <div className="space-y-2" data-testid="booklet-progress">
-                  <div
-                    role="progressbar"
-                    aria-valuemin={0}
-                    aria-valuemax={job.total}
-                    aria-valuenow={job.done}
-                    className="h-3 w-full overflow-hidden rounded-full bg-slate-200"
-                  >
-                    <div
-                      className="h-full bg-emerald-800 transition-all"
-                      style={{
-                        width: `${job.total === 0 ? 0 : Math.round((job.done / job.total) * 100)}%`,
-                      }}
-                    />
-                  </div>
-                  <p className="text-base text-slate-700">
-                    {job.ready
-                      ? `Ready: ${job.total} booklets, ${job.pages} pages.`
-                      : `${job.done} of ${job.total} booklets made…`}
-                  </p>
-                  {job.ready ? (
-                    <Btn
-                      className="w-full"
-                      onClick={() =>
-                        void openPdf(
-                          `${base}/booklet-jobs/${job.jobId}/result`,
-                        ).catch((e: unknown) =>
-                          setError(
-                            e instanceof Error
-                              ? e.message
-                              : 'Something went wrong.',
-                          ),
-                        )
-                      }
-                    >
-                      Open the answer booklets (PDF)
-                    </Btn>
-                  ) : null}
-                </div>
-              ) : null}
+              <Btn
+                kind="plain"
+                className="w-full"
+                disabled={busy !== null}
+                onClick={() => void word('answer-key-docx')}
+              >
+                {busy === 'answer-key-docx'
+                  ? 'Making the Word file…'
+                  : 'Download the answer key (Word)'}
+              </Btn>
             </div>
+            <details className="rounded-xl border border-slate-200 px-3.5 py-3">
+              <summary className="cursor-pointer text-base font-bold">
+                Answer booklets (optional)
+              </summary>
+              <div className="mt-3 space-y-2">
+                <p className="text-base text-slate-700">
+                  One booklet for each student, with her name and ID printed and
+                  a code on every page.
+                </p>
+                <Select
+                  label="For which section"
+                  value={sectionId}
+                  onChange={(e) => setSectionId(e.target.value)}
+                >
+                  {sectionChoices.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.label}
+                    </option>
+                  ))}
+                </Select>
+                <Btn
+                  kind="plain"
+                  className="w-full"
+                  disabled={busy !== null || !sectionId}
+                  onClick={makeBooklets}
+                >
+                  {busy === 'booklets'
+                    ? 'Making the booklets…'
+                    : 'Make the answer booklets'}
+                </Btn>
+                {job ? (
+                  <div className="space-y-2" data-testid="booklet-progress">
+                    <div
+                      role="progressbar"
+                      aria-valuemin={0}
+                      aria-valuemax={job.total}
+                      aria-valuenow={job.done}
+                      className="h-3 w-full overflow-hidden rounded-full bg-slate-200"
+                    >
+                      <div
+                        className="h-full bg-emerald-800 transition-all"
+                        style={{
+                          width: `${job.total === 0 ? 0 : Math.round((job.done / job.total) * 100)}%`,
+                        }}
+                      />
+                    </div>
+                    <p className="text-base text-slate-700">
+                      {job.ready
+                        ? `Ready: ${job.total} booklets, ${job.pages} pages.`
+                        : `${job.done} of ${job.total} booklets made…`}
+                    </p>
+                    {job.ready ? (
+                      <Btn
+                        className="w-full"
+                        onClick={() =>
+                          void openPdf(
+                            `${base}/booklet-jobs/${job.jobId}/result`,
+                          ).catch((e: unknown) =>
+                            setError(
+                              e instanceof Error
+                                ? e.message
+                                : 'Something went wrong.',
+                            ),
+                          )
+                        }
+                      >
+                        Open the answer booklets (PDF)
+                      </Btn>
+                    ) : null}
+                  </div>
+                ) : null}
+              </div>
+            </details>
           </>
         ) : null}
         <p className="text-sm text-slate-600">
@@ -326,7 +348,10 @@ function ExamPage() {
           </Btn>
         </Card>
       ) : null}
-      {d.mayHandle ? <ScanPanel base={base} /> : null}
+      {/* the printed booklets' scans belong to AI correction; a papers-only school does not see them */}
+      {d.mayHandle && overview.school.modules.includes('correction') ? (
+        <ScanPanel base={base} />
+      ) : null}
     </div>
   )
 }

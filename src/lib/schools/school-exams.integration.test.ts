@@ -37,6 +37,7 @@ import {
   updateOwnQuestion,
 } from './own-paper-service'
 import {
+  renderAnswerKeyDocx,
   renderQuestionPaperDocx,
   bookletStudents,
   createExam,
@@ -98,6 +99,7 @@ import { Route as BookletsRoute } from '../../routes/api/schools/$schoolId/exams
 import { Route as BookletJobRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId'
 import { Route as BookletResultRoute } from '../../routes/api/schools/$schoolId/exams/$examId/booklet-jobs/$jobId/result'
 import { Route as QuestionPaperDocxRoute } from '../../routes/api/schools/$schoolId/exams/$examId/question-paper-docx'
+import { Route as AnswerKeyDocxRoute } from '../../routes/api/schools/$schoolId/exams/$examId/answer-key-docx'
 import JSZip from 'jszip'
 import { Route as QuestionPaperRoute } from '../../routes/api/schools/$schoolId/exams/$examId/question-paper'
 import { Route as TeacherCopyRoute } from '../../routes/api/schools/$schoolId/exams/$examId/teacher-copy'
@@ -898,6 +900,73 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         'invalid',
       )
     })
+    it('a ready pattern needs no layout screen: "Unit Test, 40 marks" is saved on first use and reused after', async () => {
+      const before = await db
+        .selectFrom('school_paper_templates')
+        .select('id')
+        .where('school_id', '=', schoolA)
+        .where('based_on', '=', 'unit_test_40')
+        .execute()
+      expect(before).toHaveLength(0)
+      const a = await createExam(db, teacher, {
+        ...input(),
+        title: 'Ready pattern 1',
+        templateKey: 'ready:unit_test_40',
+      })
+      const b = await createExam(db, teacher, {
+        ...input(),
+        title: 'Ready pattern 2',
+        templateKey: 'ready:unit_test_40',
+      })
+      const saved = await db
+        .selectFrom('school_paper_templates')
+        .select(['template_key', 'name'])
+        .where('school_id', '=', schoolA)
+        .where('based_on', '=', 'unit_test_40')
+        .execute()
+      expect(saved).toHaveLength(1) // saved once, then reused
+      const exams = await db
+        .selectFrom('school_exams')
+        .select(['template_name', 'nominal_marks'])
+        .where('id', 'in', [a.id, b.id])
+        .execute()
+      expect(exams.every((e) => e.nominal_marks === 40)).toBe(true)
+      await refuses(
+        createExam(db, teacher, {
+          ...input(),
+          templateKey: 'ready:no_such_pattern',
+        }),
+        'not_found',
+      )
+    }, 120_000)
+
+    it('the answer key comes as a Word file too: every answer and step mark; staff only', async () => {
+      const { docx, fileName } = await renderAnswerKeyDocx(db, teacher, examId)
+      expect(fileName).toMatch(/-answer-key\.docx$/)
+      const xml = await (
+        await JSZip.loadAsync(docx)
+      )
+        .file('word/document.xml')!
+        .async('string')
+      expect(xml).toContain('SECRET-ANSWER') // the answers are in the key
+      expect(xml).toContain('Answer key and marking scheme')
+      const header = Object.keys((await JSZip.loadAsync(docx)).files).filter(
+        (n) => n.startsWith('word/header'),
+      )
+      expect(header.length).toBeGreaterThan(0)
+      const params = { schoolId: schoolA, examId }
+      expect(
+        (await call(AnswerKeyDocxRoute, 'GET', teacherS.cookie, params)).status,
+      ).toBe(200)
+      for (const who of [studentS, parentS, principalS])
+        expect(
+          (await call(AnswerKeyDocxRoute, 'GET', who.cookie, params)).status,
+        ).toBe(403)
+      expect(
+        (await call(AnswerKeyDocxRoute, 'GET', outsiderS.cookie, params))
+          .status,
+      ).toBe(404)
+    }, 60_000)
   })
 
   describe('what is printed', () => {
@@ -1277,9 +1346,11 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
     it('lists: the office sees every exam, the right teacher sees theirs, the other teacher none', async () => {
       expect((await listExams(db, admin)).map((e) => e.title).sort()).toEqual([
         'Half-yearly',
+        'Ready pattern 1', // made by the ready-pattern test above
+        'Ready pattern 2',
         'Unit Test 1',
       ])
-      expect((await listExams(db, teacher)).length).toBe(2)
+      expect((await listExams(db, teacher)).length).toBe(4)
       const otherScope = await loadSchoolScope(
         db,
         (

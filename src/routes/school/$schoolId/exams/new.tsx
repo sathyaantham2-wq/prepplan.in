@@ -18,7 +18,45 @@ export const Route = createFileRoute('/school/$schoolId/exams/new')({
 
 interface Listing {
   templates: Array<SavedTemplate>
+  defaults: Array<{
+    key: string
+    name: string
+    blurb: string
+    totalMarks: number
+    durationMin: number
+  }>
   subjects: Array<{ id: string; name: string; grade: number }>
+}
+
+/** The ready patterns by the names schools use for them (owner direction 2026-10-30). */
+const READY_NAMES: Record<string, string> = {
+  unit_test_40: 'Unit Test, 40 marks',
+  cbse_80: 'Half-yearly, 80 marks',
+}
+
+interface Pattern {
+  key: string
+  name: string
+  blurb: string
+}
+
+function patternsOf(l: Listing): Array<Pattern> {
+  const ready = [...l.defaults]
+    .sort((a, b) => a.totalMarks - b.totalMarks)
+    .map((d) => ({
+      key: `ready:${d.key}`,
+      name: READY_NAMES[d.key] ?? d.name,
+      blurb: d.blurb,
+    }))
+  // the school's own: anything it built or changed (an unchanged copy of a ready one is that ready one)
+  const own = l.templates
+    .filter((t) => !(t.basedOn && t.version === 1))
+    .map((t) => ({
+      key: t.key,
+      name: t.name,
+      blurb: `Your school's pattern · ${t.totalMarks} marks · ${t.durationMin} minutes`,
+    }))
+  return [...ready, ...own]
 }
 
 function NewExam() {
@@ -38,7 +76,7 @@ function NewExam() {
     api<Listing>(`/api/schools/${schoolId}/templates`)
       .then((l) => {
         setListing(l)
-        setKey(l.templates[0]?.key ?? '')
+        setKey(patternsOf(l)[0]?.key ?? '')
         setSubjectId(l.subjects[0]?.id ?? '')
       })
       .catch((e: unknown) =>
@@ -96,18 +134,15 @@ function NewExam() {
     ) : (
       <p className="text-base text-slate-700">Loading…</p>
     )
-  if (listing.templates.length === 0 || listing.subjects.length === 0) {
+  if (listing.subjects.length === 0) {
     return (
       <div className="space-y-3">
         <h1 className="text-2xl font-bold">Make an exam paper</h1>
-        <Notice>
-          {listing.templates.length === 0
-            ? 'Save a paper layout first (see Papers).'
-            : 'You need a subject you teach in a class first.'}
-        </Notice>
+        <Notice>You need a subject you teach in a class first.</Notice>
       </div>
     )
   }
+  const patterns = patternsOf(listing)
   const ready =
     title.trim() && picked.size > 0 && sections.size > 0 && key && subjectId
 
@@ -141,17 +176,31 @@ function NewExam() {
             </option>
           ))}
         </Select>
-        <Select
-          label="Paper layout"
-          value={key}
-          onChange={(e) => setKey(e.target.value)}
-        >
-          {listing.templates.map((t) => (
-            <option key={t.key} value={t.key}>
-              {t.name}
-            </option>
+        <fieldset className="space-y-2">
+          <legend className="mb-1.5 text-[15px] font-semibold text-slate-800">
+            Pattern
+          </legend>
+          {patterns.map((p) => (
+            <label
+              key={p.key}
+              className={`flex cursor-pointer items-start gap-3 rounded-xl border-2 px-3.5 py-3 transition-colors ${key === p.key ? 'border-emerald-600 bg-emerald-50/60' : 'border-slate-200 bg-white hover:border-slate-300'}`}
+            >
+              <input
+                type="radio"
+                name="pattern"
+                className="mt-1 size-5 shrink-0"
+                checked={key === p.key}
+                onChange={() => setKey(p.key)}
+              />
+              <span className="min-w-0">
+                <span className="block text-base font-semibold text-slate-900">
+                  {p.name}
+                </span>
+                <span className="block text-sm text-slate-600">{p.blurb}</span>
+              </span>
+            </label>
           ))}
-        </Select>
+        </fieldset>
       </Card>
 
       <Card className="space-y-1">

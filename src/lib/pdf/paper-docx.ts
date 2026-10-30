@@ -112,7 +112,7 @@ export function parseMathText(input: string): Array<MathSeg> {
 const FONT = 'Cambria'
 const SIZE = 23 // half-points: 11.5 pt, the PDF's size
 
-function runsFor(
+export function runsFor(
   text: string,
   extra: { bold?: boolean; size?: number } = {},
 ): Array<TextRun | WordMath> {

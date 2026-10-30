@@ -14,7 +14,9 @@ import {
   schoolSubjectsRepository,
 } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
+import { buildAnswerKeyDocx } from '../pdf/key-docx'
 import { buildAnswerKeyHtml } from '../pdf/key-template'
+import type { KeyTemplateInput } from '../pdf/key-template'
 import { buildPaperDocx } from '../pdf/paper-docx'
 import { buildPaperHtml } from '../pdf/paper-template'
 import type { PaperTemplateInput } from '../pdf/paper-template'
@@ -33,6 +35,7 @@ import { computeCoverage, shortfallLines } from './template-coverage'
 import type { BankRow, CoverageChapter } from './template-coverage'
 import { parseSections, toLayout } from './templates'
 import type { TemplateDefinition } from './templates'
+import { adoptDefaultTemplate } from './template-service'
 import { requireSchoolTerms } from './terms'
 
 // One question paper per class and exam, the teacher's copy, and a Smart Answer Booklet for every
@@ -106,6 +109,25 @@ export interface CreateExamInput {
   examDate?: string | null
 }
 
+/**
+ * A ready pattern ('ready:unit_test_40', 'ready:cbse_80') needs no layout screen first (owner direction
+ * 2026-10-30): the school's unchanged copy of it is used, or saved on first use. Any other key is a
+ * pattern the school saved itself.
+ */
+export async function resolvePatternKey(
+  db: Db,
+  scope: SchoolScope,
+  key: string,
+): Promise<string> {
+  if (!key.startsWith('ready:')) return key
+  const defaultKey = key.slice('ready:'.length)
+  const copy = (
+    await schoolPaperTemplatesRepository.listActive(db, scope)
+  ).find((t) => t.based_on === defaultKey && t.version === 1)
+  if (copy) return copy.template_key
+  return (await adoptDefaultTemplate(db, scope, defaultKey)).key
+}
+
 export async function createExam(
   db: Db,
   scope: SchoolScope,
@@ -163,7 +185,7 @@ export async function createExam(
   const template = await schoolPaperTemplatesRepository.activeByKey(
     db,
     scope,
-    input.templateKey,
+    await resolvePatternKey(db, scope, input.templateKey),
   )
   if (!template) throw new SchoolError('not_found', 'Layout not found.')
   const definition: TemplateDefinition = {
@@ -577,11 +599,12 @@ export async function renderQuestionPaper(
 }
 
 /** The HTML of the teacher's copy: answer key, step-wise marking scheme and every gap. For the teacher only. */
-export async function teacherCopyHtml(
+/** What the teacher copy holds (answers, step marks, details, gaps), for the PDF and the Word file alike. */
+async function teacherCopyInput(
   db: Db,
   scope: SchoolScope,
   examId: string,
-): Promise<{ html: string; title: string }> {
+): Promise<{ input: KeyTemplateInput; title: string }> {
   const { exam, sectionIds } = await loadExam(db, scope, examId, 'handle')
   const d = await loadPrintData(db, scope, exam)
   const secs = (await schoolSectionsRepository.list(db, scope))
@@ -589,7 +612,7 @@ export async function teacherCopyHtml(
     .map((s) => s.name)
     .sort()
   const gaps = exam.teacher_copy_lines as unknown as Array<string>
-  const html = buildAnswerKeyHtml({
+  const input: KeyTemplateInput = {
     title: `${d.school.name} — ${exam.title}`,
     coverage: [],
     questions: d.rows.map((r) => {
@@ -625,8 +648,37 @@ export async function teacherCopyHtml(
       ],
       gaps,
     },
-  })
-  return { html, title: exam.title }
+  }
+  return { input, title: exam.title }
+}
+
+export async function teacherCopyHtml(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+): Promise<{ html: string; title: string }> {
+  const { input, title } = await teacherCopyInput(db, scope, examId)
+  return { html: buildAnswerKeyHtml(input), title }
+}
+
+/** The answer key and marking scheme as a Word file (the same content as the teacher copy PDF). */
+export async function renderAnswerKeyDocx(
+  db: Db,
+  scope: SchoolScope,
+  examId: string,
+): Promise<{ docx: Buffer; fileName: string }> {
+  const { input, title } = await teacherCopyInput(db, scope, examId)
+  const docx = await buildAnswerKeyDocx(input)
+  await auditSchool(
+    db,
+    scope,
+    'school.answer_key_docx_downloaded',
+    'school_exams',
+    examId,
+    null,
+    { bytes: docx.length },
+  )
+  return { docx, fileName: `${slug(title)}-answer-key.docx` }
 }
 
 export async function renderTeacherCopy(

@@ -75,7 +75,7 @@ async function looksRight(page: Page) {
     const small: Array<string> = []
     for (const el of document.querySelectorAll<HTMLElement>(
       // only the school screens themselves (not the developer tools shown in dev)
-      '[data-no-sound] :is(button, select, input:not([type=checkbox]):not([type=file]), a[class*="min-h"])',
+      '[data-no-sound] :is(button, select, input:not([type=checkbox]):not([type=radio]):not([type=file]), a[class*="min-h"])',
     )) {
       const b = el.getBoundingClientRect()
       if (b.width > 0 && b.height > 0 && b.height < 44)
@@ -882,9 +882,7 @@ test.describe.serial('school screens on a phone', () => {
       page.getByRole('heading', { name: 'Make an exam paper' }),
     ).toBeVisible()
     await page.getByLabel('Name of the exam').fill('Half-yearly Maths')
-    await page
-      .getByLabel('Paper layout')
-      .selectOption({ label: 'CBSE-style paper, 80 marks' })
+    await page.getByRole('radio', { name: /Half-yearly, 80 marks/ }).check()
     await expect(page.getByLabel(/Section A/)).toBeChecked()
     await page.getByLabel(/Chapter 3 · Fractions and Decimals/).check()
     await page.getByLabel(/Chapter 3 · Data Handling/).check()
@@ -966,6 +964,19 @@ test.describe.serial('school screens on a phone', () => {
     expect(bytes.length).toBeGreaterThan(5_000)
     await expect(page.getByText(/The Word file is downloaded/)).toBeVisible()
     await shot(page, '43-exam-word-downloaded')
+
+    // and the answer key, as an editable Word file as well
+    const keyDownload = page.waitForEvent('download')
+    await page
+      .getByRole('button', { name: 'Download the answer key (Word)' })
+      .click()
+    const keyFile = await keyDownload
+    expect(keyFile.suggestedFilename()).toMatch(/-answer-key\.docx$/)
+    expect(
+      readFileSync(await keyFile.path())
+        .subarray(0, 2)
+        .toString(),
+    ).toBe('PK')
   })
 
   test("scans: a section's photographed booklets are sorted by their codes; missing pages are listed and can be fixed", async () => {
