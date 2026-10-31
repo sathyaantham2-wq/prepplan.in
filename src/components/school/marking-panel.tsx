@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { AlertTriangle, CheckCircle2, Loader2, Pencil } from 'lucide-react'
 import { Btn, Chip, Notice } from './ui'
 import { api } from '../../lib/school-client'
+import { MathText } from '../math-text'
 import type {
   MarkingStatus,
   StudentRow,
@@ -259,7 +260,7 @@ function AnswerRow({
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <p className="min-w-0 flex-1 text-base">
-          <b>Q{a.questionNo}.</b> {a.text}
+          <b>Q{a.questionNo}.</b> <MathText text={a.text} />
         </p>
         <p className="text-lg font-bold">
           {a.finalMarks === null ? '—' : num(a.finalMarks)}{' '}

@@ -1,6 +1,7 @@
 import type { QuestionType } from '../../db/enums'
 import { PDF_FONT_FACES, withTelugu } from './fonts'
 import { escapeHtml } from './html-utils'
+import { MATH_CSS, mathHtml } from '../math-text'
 import type { CoverageRow } from './coverage'
 import { renderDiagramSvg } from './diagrams'
 import { DEFAULT_THEME, THEME_STYLES } from './themes'
@@ -37,9 +38,9 @@ function renderExpectedAnswer(q: KeyTemplateQuestion): string {
     (q.type === 'mcq' || q.type === 'assertion_reason') &&
     q.correctOptionLabel
   ) {
-    return `Correct option: <strong>${escapeHtml(q.correctOptionLabel)}</strong> — ${escapeHtml(q.answer)}`
+    return `Correct option: <strong>${escapeHtml(q.correctOptionLabel)}</strong> — ${mathHtml(q.answer)}`
   }
-  return escapeHtml(q.answer)
+  return mathHtml(q.answer)
 }
 
 function renderStepMarks(
@@ -54,7 +55,7 @@ function renderStepMarks(
         ${sorted
           .map(
             (s) =>
-              `<tr><td>${s.step_no}</td><td>${escapeHtml(s.description)}</td><td>${s.marks}</td></tr>`,
+              `<tr><td>${s.step_no}</td><td>${mathHtml(s.description)}</td><td>${s.marks}</td></tr>`,
           )
           .join('')}
       </tbody>
@@ -160,6 +161,7 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
 <head>
 <meta charset="utf-8" />
 <style>${PDF_FONT_FACES}
+${MATH_CSS}
   * { box-sizing: border-box; }
   body { font-family: ${withTelugu("Georgia, 'Times New Roman', serif")}; font-size: 11pt; color: #111; margin: 0; }
   h1 { font-size: 15pt; margin: 0 0 4px; }

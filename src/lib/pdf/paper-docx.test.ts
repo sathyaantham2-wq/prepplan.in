@@ -74,7 +74,7 @@ describe('maths in the Word paper: what becomes a real equation, what stays text
   })
 
   it('symbols and everything the converter is unsure of stay exactly as typed', () => {
-    const t = 'If a ≤ b and 3 × 4 ÷ 2 = π° then (a+b)/(a-b) is unchanged.'
+    const t = 'If a ≤ b and 3 × 4 ÷ 2 = π° then a/b is unchanged.'
     expect(parseMathText(t)).toEqual([{ kind: 'text', text: t }])
     expect(parseMathText('')).toEqual([])
   })

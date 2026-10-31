@@ -1202,3 +1202,13 @@ pre code {
     display: none;
   }
 }
+
+/* maths typed as plain text, drawn as maths (src/lib/math-text.ts; the same rules print in the PDF papers) */
+.m-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; line-height: 1.15; margin: 0 0.12em; font-size: 0.92em; }
+.m-frac > .m-n { border-bottom: 1px solid currentColor; padding: 0 0.2em 0.05em; }
+.m-frac > .m-d { padding: 0.05em 0.2em 0; }
+.m-sqrt { white-space: nowrap; }
+.m-sqrt > .m-rad { font-size: 1.05em; }
+.m-sqrt > .m-in { border-top: 1px solid currentColor; padding: 0 0.1em; margin-left: -0.05em; }
+.m-deg { font-size: 0.65em; vertical-align: super; margin-right: -0.15em; }
+.m-sup, .m-sub { font-size: 0.75em; line-height: 0; }

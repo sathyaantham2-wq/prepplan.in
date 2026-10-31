@@ -1,6 +1,7 @@
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
 import { PDF_FONT_FACES, withTelugu } from './fonts'
 import { escapeHtml } from './html-utils'
+import { MATH_CSS, mathHtml } from '../math-text'
 import { renderDiagramSvg } from './diagrams'
 import { DEFAULT_THEME, THEME_PACKS, THEME_STYLES } from './themes'
 import type { PaperTheme } from './themes'
@@ -74,7 +75,7 @@ function renderOptions(
   return `<div class="options">${sorted
     .map(
       (o) =>
-        `<div class="option">(${escapeHtml(o.label)}) ${escapeHtml(o.text)}</div>`,
+        `<div class="option">(${escapeHtml(o.label)}) ${mathHtml(o.text)}</div>`,
     )
     .join('')}</div>`
 }
@@ -114,7 +115,7 @@ function renderQuestionBody(q: PaperTemplateQuestion): string {
   const drawBoxHtml = q.diagram_kind ? '<div class="draw-box"></div>' : ''
 
   return `
-        <div class="q-text">${escapeHtml(q.text)}</div>
+        <div class="q-text">${mathHtml(q.text)}</div>
         ${optionsHtml}
         ${diagramHtml}
         ${drawBoxHtml}
@@ -287,6 +288,7 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
 <head>
 <meta charset="utf-8" />
 <style>${PDF_FONT_FACES}
+${MATH_CSS}
   * { box-sizing: border-box; }
   body { font-family: ${withTelugu("Georgia, 'Times New Roman', serif")}; font-size: 11.5pt; color: #111; margin: 0; }
   .rough-column {

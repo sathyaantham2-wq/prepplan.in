@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { ArrowDown, ArrowRight, ArrowUp, ChevronDown, Flag, Printer, Share2, Sparkles, Trophy } from 'lucide-react'
 import { api } from '../../lib/school-client'
+import { MathText } from '../math-text'
 import { focusWhy } from '../../lib/school-i18n'
 import type { Lang, Key } from '../../lib/school-i18n'
 import type { HabitCode } from '../../lib/schools/marking-logic'
@@ -442,7 +443,9 @@ function GridRow({
           <span className={`flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${full ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200' : g.lossKind === 'writing_habit' ? 'bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-200' : g.lossKind === 'knowledge_gap' ? 'bg-sky-100 text-sky-900 dark:bg-sky-950 dark:text-sky-200' : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200'}`}>
             {g.questionNo}
           </span>
-          <span className={`min-w-0 flex-1 truncate text-base ${strong}`}>{g.text}</span>
+          <span className={`min-w-0 flex-1 truncate text-base ${strong}`}>
+            <MathText text={g.text} />
+          </span>
           <span className={`text-base font-bold ${strong}`}>
             {g.marks ?? '—'}/{g.maxMarks}
           </span>
@@ -455,7 +458,9 @@ function GridRow({
               <ul className="mt-1 space-y-1">
                 {g.steps.map((s) => (
                   <li key={s.no} className={`flex items-center justify-between text-base ${strong}`}>
-                    <span>{s.description}</span>
+                    <span>
+                      <MathText text={s.description} />
+                    </span>
                     <span className={s.awarded >= s.max ? 'text-emerald-700 dark:text-emerald-300' : 'text-amber-700 dark:text-amber-300'}>
                       {s.awarded}/{s.max}
                     </span>

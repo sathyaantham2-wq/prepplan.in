@@ -52,76 +52,10 @@ import type {
 // Every question carries a hidden bookmark named ppq_<question id> and every paragraph a PrepPlan
 // style, so a paper edited in Word can be read back exactly (own-paper-extract.ts).
 
-export type MathSeg =
-  | { kind: 'text'; text: string }
-  | { kind: 'frac'; num: string; den: string }
-  | { kind: 'sqrt'; inner: string }
-  | { kind: 'sup'; text: string }
-  | { kind: 'sub'; text: string }
+import { parseMathText } from '../math-text'
 
-const SUP: Record<string, string> = {
-  '⁰': '0',
-  '¹': '1',
-  '²': '2',
-  '³': '3',
-  '⁴': '4',
-  '⁵': '5',
-  '⁶': '6',
-  '⁷': '7',
-  '⁸': '8',
-  '⁹': '9',
-  '⁺': '+',
-  '⁻': '-',
-  ⁿ: 'n',
-}
-const SUB: Record<string, string> = {
-  '₀': '0',
-  '₁': '1',
-  '₂': '2',
-  '₃': '3',
-  '₄': '4',
-  '₅': '5',
-  '₆': '6',
-  '₇': '7',
-  '₈': '8',
-  '₉': '9',
-}
-
-const NUM = String.raw`\d+(?:\.\d+)?`
-// 3/4, 2.5/10, x/2, 3/y: at least one side is a number, neither touches a word or another slash.
-const FRACTION = String.raw`(?<![\w./])(?<fn>${NUM}|[a-zA-Z])\/(?<fd>${NUM}|[a-zA-Z])(?![\w/])`
-const SQRT = String.raw`√(?:\((?<sq>[^()]{1,40})\)|(?<sn>${NUM}|[a-zA-Z]))`
-const CARET = String.raw`\^(?<cp>-?\d+|[a-zA-Z])`
-const SUPS = `(?<us>[${Object.keys(SUP).join('')}]+)`
-const SUBS = `(?<ub>[${Object.keys(SUB).join('')}]+)`
-const MASTER = new RegExp(`${FRACTION}|${SQRT}|${CARET}|${SUPS}|${SUBS}`, 'g')
-
-/** Splits a question's text into plain text and the few pieces that become real Word maths. */
-export function parseMathText(input: string): Array<MathSeg> {
-  const out: Array<MathSeg> = []
-  let last = 0
-  const push = (t: string) => {
-    if (t) out.push({ kind: 'text', text: t })
-  }
-  for (const m of input.matchAll(MASTER)) {
-    const g: Record<string, string | undefined> = m.groups ?? {}
-    // a fraction needs a digit on one side ("km/h" and "and/or" are words, not fractions)
-    if (g.fn !== undefined && !/\d/.test(g.fn + (g.fd ?? ''))) continue
-    push(input.slice(last, m.index))
-    if (g.fn !== undefined)
-      out.push({ kind: 'frac', num: g.fn, den: g.fd ?? '' })
-    else if (g.sq !== undefined || g.sn !== undefined)
-      out.push({ kind: 'sqrt', inner: (g.sq ?? g.sn) as string })
-    else if (g.cp !== undefined) out.push({ kind: 'sup', text: g.cp })
-    else if (g.us !== undefined)
-      out.push({ kind: 'sup', text: [...g.us].map((c) => SUP[c]).join('') })
-    else if (g.ub !== undefined)
-      out.push({ kind: 'sub', text: [...g.ub].map((c) => SUB[c]).join('') })
-    last = m.index + m[0].length
-  }
-  push(input.slice(last))
-  return out
-}
+export type { MathSeg } from '../math-text'
+export { parseMathText }
 
 const FONT = 'Times New Roman'
 const SIZE = 24 // half-points: 12 pt
@@ -198,7 +132,7 @@ export function runsFor(
       let t = seg.text
       let base2: string | null = null
       if (next && (next.kind === 'sup' || next.kind === 'sub')) {
-        const m = /([A-Za-z0-9.]+|\))$/.exec(t)
+        const m = /(\d+(?:\.\d+)?|[A-Za-z])$/.exec(t)
         if (m) {
           base2 = m[1]
           t = t.slice(0, m.index)
@@ -222,11 +156,17 @@ export function runsFor(
     else if (seg.kind === 'sqrt')
       runs.push(
         new WordMath({
-          children: [new MathRadical({ children: [new MathRun(seg.inner)] })],
+          children: [
+            new MathRadical({
+              children: [new MathRun(seg.inner)],
+              degree: seg.degree ? [new MathRun(seg.degree)] : undefined,
+            }),
+          ],
         }),
       )
     else {
-      const b = pendingBase ?? ''
+      // the base is carried by the segment (a bracket group) or was left at the end of the text before it
+      const b = seg.base ?? pendingBase ?? ''
       pendingBase = null
       runs.push(
         new WordMath({

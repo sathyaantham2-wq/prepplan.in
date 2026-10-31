@@ -12,6 +12,7 @@ import {
 import { api } from '../../../../lib/school-client'
 import { AnswerSheets } from '../../../../components/school/own-sheets-panel'
 import { StudentSheets } from '../../../../components/school/student-sheets'
+import { MathText } from '../../../../components/math-text'
 import { ClassResults } from '../../../../components/school/marking-panel'
 import { ReleasePanel } from '../../../../components/school/release-panel'
 import type {
@@ -376,7 +377,9 @@ function QuestionCard({
         </div>
       ) : (
         <>
-          <p className="text-base break-words whitespace-pre-wrap">{q.text}</p>
+          <p className="text-base break-words whitespace-pre-wrap">
+            <MathText text={q.text} />
+          </p>
           {q.options.length > 0 ? (
             <ul className="space-y-0.5 pl-3 text-base">
               {q.options.map((o) => (
@@ -455,7 +458,7 @@ function QuestionCard({
         ) : (
           <>
             <p className="text-base break-words whitespace-pre-wrap">
-              {q.keyText ?? 'Nothing yet. Write the answer.'}
+              {q.keyText ? <MathText text={q.keyText} /> : 'Nothing yet. Write the answer.'}
             </p>
             {q.markingNote ? (
               <p className="text-sm text-slate-700" data-testid="note-shown">

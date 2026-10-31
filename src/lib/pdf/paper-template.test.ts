@@ -143,3 +143,25 @@ describe('buildPaperHtml theming (F034/F120)', () => {
     expect(html).not.toContain('Comic Sans MS')
   })
 })
+
+describe('buildPaperHtml maths (typed as plain text, printed as real maths)', () => {
+  it('prints fractions, powers and roots as maths and carries the CSS they need, escaping the rest', () => {
+    const html = buildPaperHtml({
+      ...baseInput,
+      questions: [
+        baseQuestion({
+          type: 'mcq',
+          text: 'Simplify (x+1)/(x-1) and find (a+b)^2 when a < b. Then √16 of 3/4.',
+          options: [{ label: 'A', text: '1/2', order_index: 1 }],
+        }),
+      ],
+    })
+    expect(html).toContain('class="m-frac"')
+    expect(html).toContain('<sup class="m-sup">2</sup>')
+    expect(html).toContain('class="m-sqrt"')
+    expect(html).toContain('.m-frac{')
+    expect(html).toContain('a &lt; b')
+    // an option too
+    expect(html).toMatch(/\(A\) <span class="m-frac">/)
+  })
+})
