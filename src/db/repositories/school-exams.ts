@@ -552,3 +552,10 @@ export const schoolAnswerDisputesRepository = createSchoolScopedRepository(
 export const schoolExamReflectionsRepository = createSchoolScopedRepository(
   'school_exam_reflections',
 )
+
+export const schoolMarkingJobsRepository = createSchoolScopedRepository(
+  'school_marking_jobs',
+)
+export const schoolMarkingJobItemsRepository = createSchoolScopedRepository(
+  'school_marking_job_items',
+)

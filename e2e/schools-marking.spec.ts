@@ -59,7 +59,7 @@ test.describe.serial('AI marking (phone)', () => {
   let sourceId = ''
   let paperId = ''
   let page: Page
-  const names = ['Asha Rao', 'Ravi Kumar', 'Meena Iyer', 'Kiran Shah']
+  const names = ['Asha Rao', 'Ravi Kumar', 'Meena Iyer', 'Kiran Shah', 'Zoya Khan']
   const studentUser: Record<string, string> = {}
 
   test.beforeAll(async ({ browser }) => {
@@ -163,7 +163,7 @@ test.describe.serial('AI marking (phone)', () => {
       })
       studentUser[n] = s.user.id
       // the first three have handed in one page; the fourth has not
-      if (i < 3) {
+      if (i < 3 || i === 4) {
         const key = `e2e/${schoolId}/${n}.png`
         await getScanStore().put(key, encryptScan(await pagePng(n)))
         await db
@@ -210,6 +210,8 @@ test.describe.serial('AI marking (phone)', () => {
     await db.deleteFrom('school_upload_checks').where('school_id', 'in', ids).execute()
     await sql`alter table school_upload_checks enable trigger school_upload_checks_append_only`.execute(db)
     for (const t of [
+      'school_marking_job_items',
+      'school_marking_jobs',
       'school_answer_disputes',
       'school_paper_releases',
       'school_answer_marks',
@@ -311,6 +313,21 @@ test.describe.serial('AI marking (phone)', () => {
     await page.reload({ waitUntil: 'networkidle' })
     await page.getByTestId('class-results').scrollIntoViewIfNeeded()
     await shot(page, 'mk-7-class-results-desktop')
+  })
+
+  test('mark all ready students: a job the page drives, with its result shown', async () => {
+    await page.goto(`/school/${schoolId}/own-papers/${paperId}`, { waitUntil: 'networkidle' })
+    const all = page.getByTestId('mark-all')
+    await all.scrollIntoViewIfNeeded()
+    await expect(all).toContainText('Mark all 1 ready student')
+    await shot(page, 'mk-17-mark-all-ready')
+    await page.getByTestId('mark-all-btn').click()
+    await expect(page.getByTestId('mark-all-result')).toContainText('1 marked', { timeout: 60_000 })
+    await expect(page.getByTestId('student-sheets').getByRole('button', { name: /^\d+\s+Zoya Khan/ })).toContainText('Marked')
+    await shot(page, 'mk-18-mark-all-done')
+    await noOverflow(page)
+    // nothing is left to mark: the button is gone
+    await expect(page.getByTestId('mark-all-btn')).toHaveCount(0)
   })
 
   test('the teacher releases the section to its students', async () => {

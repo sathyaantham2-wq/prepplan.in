@@ -245,6 +245,7 @@ import { Route as ApiSchoolsSchoolIdExamsExamIdTeacherCopyRouteImport } from './
 import { Route as ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport } from './routes/api/schools/$schoolId/imports/$batchId/commit'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdCoversRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/covers'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/marking'
+import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/release'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/sheets'
 import { Route as ApiSchoolsSchoolIdProgressExamPaperIdRouteImport } from './routes/api/schools/$schoolId/progress/exam.$paperId'
@@ -1523,6 +1524,12 @@ const ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute =
     path: '/marking',
     getParentRoute: () => ApiSchoolsSchoolIdOwnPapersPaperIdRoute,
   } as any)
+const ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute =
+  ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRouteImport.update({
+    id: '/marking-jobs',
+    path: '/marking-jobs',
+    getParentRoute: () => ApiSchoolsSchoolIdOwnPapersPaperIdRoute,
+  } as any)
 const ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute =
   ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRouteImport.update({
     id: '/release',
@@ -1827,6 +1834,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
+  '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
   '/api/schools/$schoolId/own-papers/$paperId/release': typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   '/api/schools/$schoolId/own-papers/$paperId/sheets': typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   '/api/schools/$schoolId/progress/exam/$paperId': typeof ApiSchoolsSchoolIdProgressExamPaperIdRoute
@@ -2073,6 +2081,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
+  '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
   '/api/schools/$schoolId/own-papers/$paperId/release': typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   '/api/schools/$schoolId/own-papers/$paperId/sheets': typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   '/api/schools/$schoolId/progress/exam/$paperId': typeof ApiSchoolsSchoolIdProgressExamPaperIdRoute
@@ -2323,6 +2332,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
+  '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
   '/api/schools/$schoolId/own-papers/$paperId/release': typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   '/api/schools/$schoolId/own-papers/$paperId/sheets': typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   '/api/schools/$schoolId/progress/exam/$paperId': typeof ApiSchoolsSchoolIdProgressExamPaperIdRoute
@@ -2574,6 +2584,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
+    | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
     | '/api/schools/$schoolId/own-papers/$paperId/release'
     | '/api/schools/$schoolId/own-papers/$paperId/sheets'
     | '/api/schools/$schoolId/progress/exam/$paperId'
@@ -2820,6 +2831,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
+    | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
     | '/api/schools/$schoolId/own-papers/$paperId/release'
     | '/api/schools/$schoolId/own-papers/$paperId/sheets'
     | '/api/schools/$schoolId/progress/exam/$paperId'
@@ -3069,6 +3081,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/imports/$batchId/commit'
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
+    | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
     | '/api/schools/$schoolId/own-papers/$paperId/release'
     | '/api/schools/$schoolId/own-papers/$paperId/sheets'
     | '/api/schools/$schoolId/progress/exam/$paperId'
@@ -4846,6 +4859,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdRoute
     }
+    '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': {
+      id: '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
+      path: '/marking-jobs'
+      fullPath: '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdRoute
+    }
     '/api/schools/$schoolId/own-papers/$paperId/release': {
       id: '/api/schools/$schoolId/own-papers/$paperId/release'
       path: '/release'
@@ -5592,6 +5612,7 @@ const ApiSchoolsSchoolIdMyResultsRouteWithChildren =
 interface ApiSchoolsSchoolIdOwnPapersPaperIdRouteChildren {
   ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
+  ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdSheetChunksUploadIdRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetChunksUploadIdRoute
@@ -5603,6 +5624,8 @@ const ApiSchoolsSchoolIdOwnPapersPaperIdRouteChildren: ApiSchoolsSchoolIdOwnPape
       ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute,
     ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute:
       ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute,
+    ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute:
+      ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute,
     ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute:
       ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute,
     ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute:

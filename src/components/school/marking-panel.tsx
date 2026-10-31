@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { AlertTriangle, CheckCircle2, Loader2, Pencil } from 'lucide-react'
 import { Btn, Chip, Notice } from './ui'
 import { api } from '../../lib/school-client'
 import { MathText } from '../math-text'
+import type { JobProgress } from '../../lib/schools/marking-jobs'
 import type {
   MarkingStatus,
   StudentRow,
@@ -435,5 +436,134 @@ export function ClassResults({
         </>
       ) : null}
     </section>
+  )
+}
+
+const wait = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+/**
+ * "Mark all ready students": a job the page drives. Two workers each ask for the next student until none is left;
+ * closing the page stops them and opening it again carries on (the job lives on the server).
+ */
+export function MarkAllPanel({
+  base,
+  ready,
+  onChanged,
+}: {
+  base: string
+  /** How many students have sheets in and are not marked yet. */
+  ready: number
+  onChanged: () => Promise<void> | void
+}) {
+  const [job, setJob] = useState<JobProgress | null>(null)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const stop = useRef(false)
+  const url = `${base}/marking-jobs`
+
+  const run = useCallback(
+    async (jobId: string) => {
+      setBusy(true)
+      stop.current = false
+      const worker = async () => {
+        while (!stop.current) {
+          const t0 = Date.now()
+          const r = await api<{ job: JobProgress }>(url, { body: { action: 'step', job_id: jobId } })
+          setJob(r.job)
+          if (r.job.status !== 'running' || r.job.remaining === 0) return
+          // nothing was left to claim (the other worker has the last one): wait a little before asking again
+          if (Date.now() - t0 < 800) await wait(2000)
+        }
+      }
+      try {
+        await Promise.all([worker(), worker()])
+      } catch (e) {
+        setError(e instanceof Error ? e.message : 'Something went wrong.')
+      } finally {
+        setBusy(false)
+        await onChanged()
+      }
+    },
+    [url, onChanged],
+  )
+
+  // a job already running (this page was closed and opened again): carry on
+  useEffect(() => {
+    let gone = false
+    void api<{ job: JobProgress | null }>(url)
+      .then((r) => {
+        if (gone || !r.job) return
+        setJob(r.job)
+        if (r.job.status === 'running' && r.job.remaining > 0) void run(r.job.jobId)
+      })
+      .catch(() => undefined)
+    return () => {
+      gone = true
+      stop.current = true
+    }
+  }, [url, run])
+
+  async function start() {
+    setError(null)
+    try {
+      const r = await api<{ job: JobProgress }>(url, { body: { action: 'start' } })
+      setJob(r.job)
+      void run(r.job.jobId)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Something went wrong.')
+    }
+  }
+  async function cancel() {
+    if (!job) return
+    stop.current = true
+    const r = await api<{ job: JobProgress }>(url, { body: { action: 'cancel', job_id: job.jobId } })
+    setJob(r.job)
+    setBusy(false)
+    await onChanged()
+  }
+
+  const running = job?.status === 'running' && job.remaining > 0
+  const pct = job && job.total > 0 ? Math.round((job.finished / job.total) * 100) : 0
+  if (!running && ready === 0 && !job) return null
+  return (
+    <div className="space-y-2 rounded-2xl border border-slate-200 bg-white p-3.5" data-testid="mark-all">
+      {error ? <Notice kind="error">{error}</Notice> : null}
+      {running ? (
+        <>
+          <p className="text-base font-semibold">
+            Marking the class: {job.finished} of {job.total} done
+          </p>
+          <div className="h-3 overflow-hidden rounded-full bg-slate-100" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+            <div className="h-full rounded-full bg-emerald-600 transition-all" style={{ width: `${pct}%` }} />
+          </div>
+          <p className="text-sm text-slate-600">You can leave this page: marking carries on when you come back. About a minute for each student.</p>
+          <Btn kind="plain" onClick={() => void cancel()}>
+            Stop
+          </Btn>
+        </>
+      ) : (
+        <>
+          {ready > 0 ? (
+            <Btn disabled={busy} onClick={() => void start()} data-testid="mark-all-btn">
+              {busy ? <Loader2 aria-hidden="true" className="size-5 animate-spin" /> : null}
+              Mark all {ready} ready {ready === 1 ? 'student' : 'students'}
+            </Btn>
+          ) : null}
+          {job && job.status !== 'running' ? (
+            <p className="text-base" data-testid="mark-all-result">
+              Last time: {job.marked} marked, {job.needsTeacher} need a teacher, {job.rejected} could not be read
+              {job.failed > 0 ? `, ${job.failed} not marked` : ''}.
+            </p>
+          ) : null}
+          {job?.failures.length ? (
+            <ul className="list-disc pl-5 text-sm text-amber-950">
+              {job.failures.map((f) => (
+                <li key={f.studentId}>{f.message}</li>
+              ))}
+            </ul>
+          ) : null}
+        </>
+      )}
+    </div>
   )
 }

@@ -8,7 +8,7 @@ import {
   XCircle,
 } from 'lucide-react'
 import { Btn, Chip, Notice, Select } from './ui'
-import { STATUS_LOOK, StudentMarking } from './marking-panel'
+import { MarkAllPanel, STATUS_LOOK, StudentMarking } from './marking-panel'
 import type { Overview } from './marking-panel'
 import { api } from '../../lib/school-client'
 import {
@@ -101,6 +101,15 @@ export function StudentSheets({
         </p>
       </div>
       {error ? <Notice kind="error">{error}</Notice> : null}
+      <MarkAllPanel
+        base={base}
+        ready={
+          marking?.students.filter(
+            (s) => s.status === 'ready' || s.status === 'rejected',
+          ).length ?? 0
+        }
+        onChanged={load}
+      />
       <Select
         label="Section"
         value={sectionId}

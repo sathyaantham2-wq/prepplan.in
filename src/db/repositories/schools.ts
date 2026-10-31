@@ -26,6 +26,8 @@ import {
   schoolSheetMarkingRepository,
   schoolAnswerMarksRepository,
   schoolPaperReleasesRepository,
+  schoolMarkingJobsRepository,
+  schoolMarkingJobItemsRepository,
   schoolExamReflectionsRepository,
   schoolAnswerDisputesRepository,
 } from './school-exams'
@@ -355,6 +357,8 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_sheet_marking: schoolSheetMarkingRepository,
   school_answer_marks: schoolAnswerMarksRepository,
   school_paper_releases: schoolPaperReleasesRepository,
+  school_marking_jobs: schoolMarkingJobsRepository,
+  school_marking_job_items: schoolMarkingJobItemsRepository,
   school_exam_reflections: schoolExamReflectionsRepository,
   school_answer_disputes: schoolAnswerDisputesRepository,
   school_own_questions: schoolOwnQuestionsRepository,

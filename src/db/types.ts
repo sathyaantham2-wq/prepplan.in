@@ -1103,6 +1103,29 @@ export interface SchoolExamReflections {
   updated_at: Generated<Timestamp>;
 }
 
+export interface SchoolMarkingJobs {
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  finished_at: Timestamp | null;
+  id: Generated<string>;
+  paper_id: string;
+  school_id: string;
+  status: string;
+}
+
+export interface SchoolMarkingJobItems {
+  attempts: Generated<number>;
+  id: Generated<string>;
+  job_id: string;
+  lease_until: Timestamp | null;
+  message: string | null;
+  result: string | null;
+  school_id: string;
+  school_student_id: string;
+  status: string;
+  updated_at: Generated<Timestamp>;
+}
+
 export interface SchoolUploadChecks {
   ai_job_id: string | null;
   check: string;
@@ -1368,6 +1391,8 @@ export interface DB {
   school_sheet_marking: SchoolSheetMarking;
   school_answer_marks: SchoolAnswerMarks;
   school_paper_releases: SchoolPaperReleases;
+  school_marking_jobs: SchoolMarkingJobs;
+  school_marking_job_items: SchoolMarkingJobItems;
   school_exam_reflections: SchoolExamReflections;
   school_answer_disputes: SchoolAnswerDisputes;
   schools: Schools;

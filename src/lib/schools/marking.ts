@@ -163,7 +163,14 @@ export function createFakeMarkingAi(): MarkingAi {
   const mixed = process.env.FAKE_MARKING === 'mixed'
   return {
     available: () => true,
-    markPass: ({ questions }) => {
+    markPass: ({ questions, note }) => {
+      // a pupil's "read it again" (it carries her reason): the stand-in keeps the mark, whatever the call count
+      if (mixed && note !== undefined)
+        return Promise.resolve(
+          JSON.stringify({
+            answers: questions.map((q) => ({ question: q.no, found: true, answer_text: 'read again', choice: null, marks: 0, steps: [], loss_kind: 'none', loss_reason: null, confidence: 0.9 })),
+          }),
+        )
       const call = fakeCalls++
       const student = Math.floor(call / PASSES) % 3
       const pass = call % PASSES
