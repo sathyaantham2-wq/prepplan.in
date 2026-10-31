@@ -813,3 +813,75 @@ Local and test database only. Built: migration `0092_school_release_and_disputes
 - **Lock:** `lockDueReleases` locks a release once its window has closed and no flag is still with a teacher (a flag the student left after the AI's answer does not hold it). It runs when results are read, and can be called by a scheduled job. Locked marks are what mastery and reports use. `school.marks_locked`, `school.results_released`, `school.answer_flagged`, `school.dispute_to_teacher`, `school.dispute_decided` go to `audit_log`.
 - **Purpose limit kept:** no e-mail, no notification, no points or ranking, no analytics event for any of this.
 - **Not built:** the 5 % spot-check queue; the student's own answer picture next to her marks (she sees the text read from it); a scheduled job to lock without anyone opening a page; the principal's view; parents. The 7-day deletion of the original scan files after the lock is not connected to own papers yet.
+
+## 15. Progress Report (student and parent) and Class Progress (teacher): PLAN, awaiting the owner's approval
+
+Owner direction 2026-10-31. **Plan only: nothing in this section is built.** No F-number (the owner assigns one). Original design and wording; no other product's layout, names or copy. Local and test database only until the owner approves.
+
+### 15.1 What this stands on, and what is missing
+
+Already built and reused: locked marks (`school_paper_releases.locked_at`, section 14), per-answer marks with `loss_kind` (knowledge gap / writing habit) and a free-text reason (`school_answer_marks`), the student's "My results" screens and flags, the teacher's release panel and flag queue, the demo school and its sample-results generator (`demo-results.ts`, whose five habits are the starting list), the dark theme (`.dark`), the server PDF renderer, the Excel library.
+
+**Missing, and therefore part of this build** (stated plainly so it is not discovered later):
+1. **No language toggle exists in the web app.** Telugu is only in PDF fonts. This build adds a small dictionary and a toggle for these screens. **Scope of Telugu:** all screen text, level names, habit names and tips, the PDF and the WhatsApp text. **Not translated:** question text, the AI's per-answer reasons and the school's own wording (they stay as authored, in English). A translation of those would be a second AI step; not proposed here.
+2. **The AI does not yet name the habit.** Marking stores `writing_habit` plus a sentence. Habit trends need a code, so the marking output gains a `habit` field (`skipped_steps`, `units_missing`, `stopped_early`, `misread_question`, `other`). Older marks have none and count as `other`.
+3. **Marks per step are not stored** (the AI returns them; they are dropped). The exam report's "marks per step" needs them stored. Older marks show the total only.
+4. **A topic is not recorded on an answer.** A paper made here keeps the bank question, so its topic is the **concept** (through `source_exam_question_id`); a school's own paper has only the **chapter**. Rule: topic = concept where there is one, else chapter. Both are shown under the same word "topic".
+5. **Parents.** The role `parent` and `school_student_guardians` exist, but nothing lets a parent sign in or see a child. CLAUDE.md allows no guardian invite and no account linking. Proposal: **the school creates the parent login** like it creates staff (a code on a slip), read-only, one login per guardian, seeing only their own child's Progress screens and PDF. See decision D2.
+
+### 15.2 The level rule (exact)
+
+Words: **Beginner, Progressing, Proficient** (the CBSE Holistic Progress Card words). "Not yet assessed" when a topic has no evidence.
+
+**Evidence.** A topic's score in one exam = marks earned / marks available on that topic, from **locked** marks only (never a paper whose window is open, never a flag still with a teacher). An exam counts as evidence for a topic only if the topic carried **at least 2 marks** in it (one 1-mark question is luck, not evidence).
+
+**Band of one score:** high ≥ 75 %, middle 50 to 74 %, low < 50 %. (Proposed thresholds; a school setting later.)
+
+**Walk the exams in date order, keeping a current level.** First evidence: low → Beginner, middle → Progressing, high → **Progressing** (one exam never makes anyone Proficient).
+- **Up:** the level rises one step when the **two latest** scores are both at or above that step's bar: Beginner to Progressing needs two scores ≥ 50 %; Progressing to Proficient needs two scores ≥ 75 %.
+- **Down:** the level falls one step only when the **two latest** scores are both below the current level's bar (below 50 % for Progressing; below 75 % for Proficient). **One bad test changes nothing** except a "dip" mark shown beside the level.
+- Otherwise the level stays.
+
+So the level is the most recent *consistent* performance, with memory: someone Proficient who scores 40 % once stays Proficient (with a dip mark); a second weak score in a row brings her to Progressing. Worked examples and a table test will be in the code (`topic-level.ts`, pure, no database). Exams of different weight do not change the rule; the score of a topic is a fraction.
+
+**Subject tile:** "ring of topics at Proficient" = Proficient topics / assessed topics. **Subject trend arrow:** the latest locked exam % of the subject against the one before (up, flat within 2 points, down).
+
+### 15.3 Student and parent screens (phone first)
+
+Header on every screen: **name, class, school** only. Language toggle (English / తెలుగు) and dark mode in the profile menu. Bottom bar: Progress, Subjects, Topics, Habits. Reached from "My results" too.
+
+1. **My Progress.** One growth line (percentage per locked exam, this academic year, all subjects together, each point labelled with the exam). **This week's focus:** three items (topics or habits), chosen by rule: the topic with the biggest marks lost to "didn't know" in the latest exam; the habit that cost most marks over the last two exams; the Progressing topic closest to Proficient. **Personal best:** a badge when the latest exam is her best overall (or best in a subject), and always "your best so far: X %". Class rank is shown **only if the school turned it on** (default off); personal best is always shown.
+2. **Subjects.** A tile per subject: latest %, trend arrow, the ring of topics at Proficient. Tap for the subject's exams and topics.
+3. **Exam report, insight first.** Score and grade. **Where marks went:** one bar split "Didn't know" (blue) and "Writing habits" (amber), with the marks counted in each. **Three things to fix**, each with **Practise this** (see 15.6). Below, expandable: the **question grid** and, for each answer, her scanned page, **marks per step**, the reason, and **Flag this mark** while the dispute window is open (the existing flag flow).
+4. **Topic map.** Every topic of the year at a level, grouped by subject then chapter, with the dip mark and "how this level was decided" in one plain line.
+5. **Writing habits.** For each habit (steps skipped, units missing, stopped early, misread the question, other): marks lost per exam, as a small trend, and one tip.
+
+**Also:** a **one-page parent summary PDF** (English or Telugu, chosen when it is made) and a **WhatsApp share** (a text summary through the share sheet; no stored link, as for PrepPlan students). An optional **three-question self-reflection** after each released exam: "Which question was hardest?" (pick a question), "What will you do differently next time?" (a short choice list plus free text), "How did you feel about this exam?" (a 3-step scale). It is stored for the Holistic Progress Card export and is **not** used for marking, levels, ranking or analytics.
+
+### 15.4 Teacher "Class Progress" (a tab next to Correction)
+
+1. **Topic heatmap:** students by topics, three level colours plus "not assessed", with the dip mark; filter by section and subject.
+2. **Habit heatmap** per section: students by habit, marks lost over the last two exams.
+3. **Flag queue:** the existing flags waiting for a teacher, brought into this screen.
+4. **Students who need attention this week**, by a visible rule (any one): Beginner in 3 or more topics; latest exam 15 or more points below the one before; the same habit cost marks in each of the last two exams; no sheets handed in for the latest exam. Each row says which rule fired. (Proposed numbers.)
+5. **Export** (CSV and Excel): one row per student and topic with the level and the number of exams behind it, and a second sheet with the self-reflections, shaped for entering into the Holistic Progress Card. The exact HPC column names are not known to me: I will use plain headers and the owner may send the sheet to match.
+
+### 15.5 Data, in one migration (0093) and one pure module
+
+`school_answer_marks`: `habit` (text, checked), `steps` (jsonb). `schools`: `show_class_rank` (default false). `school_exam_reflections`: one row per student and paper, her three answers, append-only in spirit (an edit is logged). Language is a per-person preference in the browser (no new column); the PDF takes the language at creation. Topic levels and trends are **computed on read** from locked marks (pure functions, no stored copy that could drift). Nothing here adds an e-mail, a notification, points or an analytics event; the school-student purpose-limit test sweep is extended to the new routes.
+
+### 15.6 "Practise this"
+
+The bank has questions per concept. A school student has no practice-attempt flow (CLAUDE.md consumer-flow guard), so this makes a **printable worksheet only**: a short PDF of bank questions for that topic (not the ones in her exam), with an answer page after it. No attempt, no marking, no mastery recorded. For a topic known only by chapter, it is a chapter worksheet. The answer page follows the CLAUDE.md exception (she has seen her marks for that topic).
+
+### 15.7 Demo data
+
+The demo school gets **three locked exams** (about four weeks apart) across Maths, Science and Social Science for its 30 students, written by a deterministic generator as real rows (papers, releases, marking, per-step marks, habits, flags, reflections), so every screen above is alive and the same each time. No AI, no image. The demo draws on whatever question bank the database has: on this machine that is small test content, so topic names in local screenshots will be the test bank's; in production they are the real Class 7 topics. Marked DEMO as before.
+
+### 15.8 Build order (each slice tested, shown with phone screenshots)
+
+P1 level rule + habit code + step storage + migration + tests. P2 student Progress, Subjects, Topic map. P3 Exam report with Where marks went, fixes, grid and flags, plus Habits. P4 Class Progress (heatmaps, attention, export). P5 PDF, WhatsApp text, Telugu dictionary, reflection. P6 demo seed and the full screenshot set. Out of scope: the Holistic Progress Card itself, parent chat, notifications, rank by default, Telugu translation of question text.
+
+### 15.9 Decisions needed from the owner (my default if you say nothing is in brackets)
+
+D1. Level thresholds 75 / 50 and the "two in a row" rule above [accept]. D2. Parents get a read-only login created by the school [accept; otherwise parents see only the PDF and WhatsApp text the student shares]. D3. Telugu covers screen text and fixed labels, not question text or AI reasons [accept]. D4. A topic needs at least 2 marks in an exam to count [accept]. D5. "Practise this" is a printable worksheet, no tracked attempt [accept]. D6. The "needs attention" numbers in 15.4 [accept]. D7. The first migration to production is run by the owner, as for 0091 and 0092 [accept].
