@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test'
 import type { Page } from '@playwright/test'
 import sharp from 'sharp'
 import { createDb } from '../src/db/connection'
+import { signInSchoolUserForTest } from '../src/db/test-helpers'
 import type { Db } from '../src/db/connection'
 import { schoolsRepository } from '../src/db/repositories'
 import { loadSchoolScope } from '../src/lib/school-session'
@@ -59,6 +60,7 @@ test.describe.serial('AI marking (phone)', () => {
   let paperId = ''
   let page: Page
   const names = ['Asha Rao', 'Ravi Kumar', 'Meena Iyer', 'Kiran Shah']
+  const studentUser: Record<string, string> = {}
 
   test.beforeAll(async ({ browser }) => {
     db = createDb()
@@ -159,6 +161,7 @@ test.describe.serial('AI marking (phone)', () => {
         guardianPhone: null,
         guardianName: null,
       })
+      studentUser[n] = s.user.id
       // the first three have handed in one page; the fourth has not
       if (i < 3) {
         const key = `e2e/${schoolId}/${n}.png`
@@ -207,6 +210,8 @@ test.describe.serial('AI marking (phone)', () => {
     await db.deleteFrom('school_upload_checks').where('school_id', 'in', ids).execute()
     await sql`alter table school_upload_checks enable trigger school_upload_checks_append_only`.execute(db)
     for (const t of [
+      'school_answer_disputes',
+      'school_paper_releases',
       'school_answer_marks',
       'school_sheet_marking',
       'school_scan_chunks',
@@ -306,6 +311,77 @@ test.describe.serial('AI marking (phone)', () => {
     await page.reload({ waitUntil: 'networkidle' })
     await page.getByTestId('class-results').scrollIntoViewIfNeeded()
     await shot(page, 'mk-7-class-results-desktop')
+  })
+
+  test('the teacher releases the section to its students', async () => {
+    await page.setViewportSize(PHONE)
+    await page.goto(`/school/${schoolId}/own-papers/${paperId}`, { waitUntil: 'networkidle' })
+    const panel = page.getByTestId('release-panel')
+    await panel.scrollIntoViewIfNeeded()
+    await expect(panel.getByTestId('release-button')).toBeEnabled()
+    await shot(page, 'mk-8-release-ready')
+    await panel.getByTestId('release-button').click()
+    await expect(panel).toContainText('Released on')
+    await expect(panel).toContainText('until')
+    await panel.scrollIntoViewIfNeeded()
+    await shot(page, 'mk-9-released')
+    await noOverflow(page)
+    // after release the marks are fixed: the teacher can no longer mark again
+    const box = page.getByTestId('student-sheets')
+    await box.getByRole('button', { name: /^\d+\s+Asha Rao/ }).click()
+    await box.getByTestId('mark-student').click()
+    await expect(box.getByText(/have been released to the students/)).toBeVisible({ timeout: 15_000 })
+  })
+
+  test('a student sees her own result, flags an answer, asks her teacher; the teacher decides', async ({ browser }) => {
+    const session = await signInSchoolUserForTest(studentUser['Asha Rao'])
+    const eq = session.cookie.indexOf('=')
+    const ctx = await browser.newContext({ viewport: PHONE, hasTouch: true, isMobile: true })
+    await ctx.addCookies([{ name: session.cookie.slice(0, eq), value: session.cookie.slice(eq + 1), url: 'http://localhost:3000' }])
+    const sp = await ctx.newPage()
+    await sp.goto(`/school/${schoolId}`, { waitUntil: 'networkidle' })
+    await shot(sp, 'mk-10-student-home')
+    await sp.getByRole('link', { name: 'My results' }).first().click()
+    await expect(sp.getByTestId('my-results')).toContainText('Unit Test 2')
+    await expect(sp.getByTestId('my-results')).toContainText('3')
+    await shot(sp, 'mk-11-student-results-list')
+    await sp.getByRole('link', { name: /Unit Test 2/ }).click()
+    const mine = sp.getByTestId('my-result')
+    await expect(mine).toContainText('Correct answer:')
+    await expect(mine).toContainText('You can flag 5 more answers'.replace('You can flag', 'You can flag'))
+    await expect(mine).not.toContainText('Ravi')
+    await shot(sp, 'mk-12-student-result')
+    await noOverflow(sp)
+    // flag question 2
+    const q2 = mine.getByTestId('my-answer').nth(1)
+    await q2.getByRole('button', { name: 'I think this mark is wrong' }).click()
+    await q2.getByLabel(/Why do you think/).fill('I wrote the comparison of tenths and hundredths')
+    await shot(sp, 'mk-13-student-flagging')
+    await q2.getByRole('button', { name: 'Send' }).click()
+    await expect(q2.getByTestId('my-dispute')).toContainText('You flagged this', { timeout: 30_000 })
+    await expect(q2.getByTestId('my-dispute')).toContainText('kept the mark')
+    await shot(sp, 'mk-14-ai-kept-the-mark')
+    await q2.getByRole('button', { name: 'Ask my teacher to look at it' }).click()
+    await expect(q2.getByTestId('my-dispute')).toContainText('Your teacher is looking at it')
+    // the teacher sees it and decides
+    await page.goto(`/school/${schoolId}/own-papers/${paperId}`, { waitUntil: 'networkidle' })
+    const queue = page.getByTestId('dispute-queue')
+    await queue.scrollIntoViewIfNeeded()
+    await expect(queue).toContainText('Asha Rao')
+    await expect(queue).toContainText('I wrote the comparison')
+    await shot(page, 'mk-15-teacher-flag-queue')
+    await queue.getByLabel('Final mark').fill('3')
+    await queue.getByLabel(/Why \(the student/).fill('Both comparisons are there; full marks')
+    await queue.getByRole('button', { name: 'Decide (final)' }).click()
+    await expect(page.getByTestId('dispute-queue')).toHaveCount(0)
+    await sp.reload({ waitUntil: 'networkidle' })
+    await expect(sp.getByTestId('my-result')).toContainText('Your teacher decided')
+    await expect(sp.getByTestId('my-result')).toContainText('4')
+    await shot(sp, 'mk-16-student-after-decision')
+    // a student cannot open the teacher's marking, and a classmate's result is not found
+    const marking = await sp.request.get(`/api/schools/${schoolId}/own-papers/${paperId}/marking`)
+    expect([401, 403, 404]).toContain(marking.status())
+    await ctx.close()
   })
 
   test('a teacher of another class cannot read the marking', async () => {

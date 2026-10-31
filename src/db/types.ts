@@ -1057,6 +1057,35 @@ export interface SchoolAnswerMarks {
   state: string;
 }
 
+export interface SchoolPaperReleases {
+  id: Generated<string>;
+  locked_at: Timestamp | null;
+  paper_id: string;
+  released_at: Generated<Timestamp>;
+  released_by_user_id: string;
+  school_id: string;
+  section_id: string;
+  window_closes_at: Timestamp;
+  window_days: number;
+}
+
+export interface SchoolAnswerDisputes {
+  ai_reply: string | null;
+  answer_mark_id: string;
+  created_at: Generated<Timestamp>;
+  decided_at: Timestamp | null;
+  decided_by_user_id: string | null;
+  decision_note: string | null;
+  id: Generated<string>;
+  marks_after: Numeric | null;
+  marks_before: Numeric;
+  paper_id: string;
+  reason: string;
+  school_id: string;
+  school_student_id: string;
+  status: string;
+}
+
 export interface SchoolUploadChecks {
   ai_job_id: string | null;
   check: string;
@@ -1321,6 +1350,8 @@ export interface DB {
   school_upload_checks: SchoolUploadChecks;
   school_sheet_marking: SchoolSheetMarking;
   school_answer_marks: SchoolAnswerMarks;
+  school_paper_releases: SchoolPaperReleases;
+  school_answer_disputes: SchoolAnswerDisputes;
   schools: Schools;
   sessions: Sessions;
   sources: Sources;

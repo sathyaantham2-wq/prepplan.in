@@ -155,6 +155,15 @@ function SchoolHome() {
           <p className="text-base text-slate-700">
             Your exams and results will show here when your school sets them up.
           </p>
+          {o.role === 'student' ? (
+            <Link
+              to="/school/$schoolId/my-results"
+              params={{ schoolId: o.school.id }}
+              className="mt-3 flex min-h-12 items-center justify-center rounded-xl bg-emerald-700 px-4 text-base font-semibold text-white hover:bg-emerald-800"
+            >
+              My results
+            </Link>
+          ) : null}
         </Card>
       </div>
     )

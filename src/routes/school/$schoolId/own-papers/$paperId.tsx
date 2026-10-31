@@ -13,6 +13,7 @@ import { api } from '../../../../lib/school-client'
 import { AnswerSheets } from '../../../../components/school/own-sheets-panel'
 import { StudentSheets } from '../../../../components/school/student-sheets'
 import { ClassResults } from '../../../../components/school/marking-panel'
+import { ReleasePanel } from '../../../../components/school/release-panel'
 import type {
   OwnPaperView,
   OwnQuestionView,
@@ -232,6 +233,13 @@ function OwnPaperPage() {
             </Card>
             <Card>
               <ClassResults base={base} version={resultsVersion} />
+            </Card>
+            <Card>
+              <ReleasePanel
+                base={base}
+                version={resultsVersion}
+                onChanged={bumpResults}
+              />
             </Card>
             <details
               className="rounded-2xl border border-slate-200 bg-white px-4 py-3"

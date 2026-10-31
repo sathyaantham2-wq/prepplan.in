@@ -541,3 +541,10 @@ export const schoolAnswerMarksRepository = {
       .execute()
   },
 }
+
+export const schoolPaperReleasesRepository = createSchoolScopedRepository(
+  'school_paper_releases',
+)
+export const schoolAnswerDisputesRepository = createSchoolScopedRepository(
+  'school_answer_disputes',
+)

@@ -7,6 +7,7 @@ import {
 } from '@tanstack/react-router'
 import {
   BookOpenCheck,
+  ClipboardList,
   GraduationCap,
   Home,
   LayoutGrid,
@@ -35,6 +36,7 @@ interface NavItem {
     | '/school/$schoolId/students'
     | '/school/$schoolId/exams'
     | '/school/$schoolId/own-papers'
+    | '/school/$schoolId/my-results'
     | '/school/$schoolId/settings'
   label: string
   icon: LucideIcon
@@ -93,6 +95,15 @@ function navFor(o: SchoolOverview): Array<NavItem> {
   }
   if (o.role === 'teacher' || o.role === 'principal')
     return [home, students, ...parts]
+  if (o.role === 'student')
+    return [
+      home,
+      {
+        to: '/school/$schoolId/my-results',
+        label: 'My results',
+        icon: ClipboardList,
+      },
+    ]
   return [home]
 }
 

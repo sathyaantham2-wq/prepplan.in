@@ -33,6 +33,9 @@ import { assertPaperReadyForMarking, loadOwnPaper } from './own-paper-service'
 import { ownSheetsSummary, studentOfPaper } from './own-sheets'
 import { assertSchoolAiBudget } from './school-ai-budget'
 
+const RELEASED_SAY =
+  'These results have been released to the students. A mark can now only change when a student flags it and a teacher decides.'
+
 // AI marking of one student's answer sheets (M4 stage 1; owner direction 2026-10-30).
 //
 //   - Only an approved paper with an approved key is marked (assertPaperReadyForMarking).
@@ -56,6 +59,8 @@ export interface MarkingAi {
     subject: string
     grade: number
     questions: Array<MarkQuestion>
+    /** A pupil's own reason for a flagged mark (the re-read only). */
+    note?: string
   }) => Promise<string>
 }
 
@@ -66,6 +71,7 @@ export function markingPrompt(
   grade: number,
   questions: ReadonlyArray<MarkQuestion>,
   pages: number,
+  note?: string,
 ): string {
   const list = questions
     .map((q) => {
@@ -83,7 +89,7 @@ export function markingPrompt(
 For every question below, say whether you found an answer, copy a short version of what the pupil wrote, and mark it against the approved answer and marking scheme. Be fair: award a mark for every step the pupil shows correctly, even if worded differently; accept a different valid method. Only OR questions are alternatives of each other: mark whichever the pupil attempted. For each question where marks are lost, say whether the pupil did not know it ("knowledge_gap") or knew it but wrote it badly, too briefly, skipped working or stopped early ("writing_habit"). Say how sure you are (confidence 0 to 1); if the handwriting is hard to read, lower it. If a question's answer is not on any page, give found false and marks 0.
 
 ${list}
-
+${note ? `\nThe pupil asked for this answer to be read again and said: "${note}". Re-read the pages carefully; do not give a mark the writing does not earn.\n` : ''}
 ${ONLY_JSON}
 Shape: {"answers":[{"question":"1","found":true,"answer_text":"...","choice":null,"marks":2,"steps":[{"step":1,"awarded":1}],"loss_kind":"none"|"knowledge_gap"|"writing_habit","loss_reason":"...","confidence":0.9}]}`
 }
@@ -94,7 +100,7 @@ export function createMarkingAi(
 ): MarkingAi {
   return {
     available: () => isAiConfigured(),
-    markPass: async ({ pages, subject, grade, questions }) => {
+    markPass: async ({ pages, subject, grade, questions, note }) => {
       await assertSchoolAiBudget(db, school.schoolId)
       await enforceAiCallBudget(db, {
         feature: 'SCH-07',
@@ -109,7 +115,7 @@ export function createMarkingAi(
             completeText(
               {
                 model,
-                prompt: markingPrompt(subject, grade, questions, pages.length),
+                prompt: markingPrompt(subject, grade, questions, pages.length, note),
                 maxTokens: 6000,
                 images: pages,
               },
@@ -279,6 +285,49 @@ async function studentPages(
     .execute()
 }
 
+/** The pictures of a student's usable pages, ready to send; null when a file is missing. */
+export async function loadMarkingPages(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+): Promise<Array<MarkingPage> | null> {
+  const sheets = await studentPages(db, scope, paperId, studentId)
+  const usable = sheets.filter(
+    (s) =>
+      s.check_state !== 'refused' &&
+      s.purged_at === null &&
+      (s.image_key !== null || s.original_key !== null),
+  )
+  if (usable.length === 0) return null
+  const store = getScanStore()
+  const pages: Array<MarkingPage> = []
+  for (const [i, s] of usable.entries()) {
+    const sealed = await store.get((s.image_key ?? s.original_key) as string)
+    if (!sealed) return null
+    pages.push(await pageForMarking(decryptScan(sealed), i === 0))
+  }
+  return pages
+}
+
+/** Refuses once the student's section has had these results released (marks are then fixed). */
+export async function assertNotReleased(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+): Promise<void> {
+  const released = await db
+    .selectFrom('school_paper_releases as r')
+    .innerJoin('school_students as s', 's.section_id', 'r.section_id')
+    .select('r.id')
+    .where('r.school_id', '=', scope.schoolId)
+    .where('r.paper_id', '=', paperId)
+    .where('s.id', '=', studentId)
+    .executeTakeFirst()
+  if (released) throw new SchoolError('conflict', RELEASED_SAY)
+}
+
 // ---------------------------------------------------------------- marking one student
 
 const MARKED_BY = new Set(['school_admin', 'teacher'])
@@ -291,7 +340,7 @@ export interface MarkResult {
   flagged: number
 }
 
-async function markingQuestions(
+export async function markingQuestions(
   db: Db,
   scope: SchoolScope,
   paperId: string,
@@ -364,6 +413,7 @@ export async function markStudentSheets(
   const paper = await loadOwnPaper(db, scope, paperId)
   await assertPaperReadyForMarking(db, scope, paperId)
   await studentOfPaper(db, scope, paperId, studentId)
+  await assertNotReleased(db, scope, paperId, studentId)
 
   const sheets = await studentPages(db, scope, paperId, studentId)
   const usable = sheets.filter(
@@ -570,6 +620,7 @@ export async function setAnswerMark(
   const row = await schoolAnswerMarksRepository.findById(db, scope, answerMarkId)
   if (!row) throw new SchoolError('not_found', 'That answer was not found.')
   await studentOfPaper(db, scope, row.paper_id, row.school_student_id)
+  await assertNotReleased(db, scope, row.paper_id, row.school_student_id)
   const max = Number(row.max_marks)
   if (!Number.isFinite(marks) || marks < 0 || marks > max)
     throw new SchoolError('invalid', `Give a mark from 0 to ${max}.`)
@@ -636,6 +687,16 @@ export async function studentMarking(
   studentId: string,
 ) {
   await studentOfPaper(db, scope, paperId, studentId)
+  return studentMarkingUnchecked(db, scope, paperId, studentId)
+}
+
+/** Same, for a caller that has already checked the person may see this student (the student herself). */
+export async function studentMarkingUnchecked(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+) {
   const state = await schoolSheetMarkingRepository.forStudent(
     db,
     scope,
@@ -669,6 +730,7 @@ export async function studentMarking(
         flagReason: m?.flag_reason ?? null,
         lossKind: m?.loss_kind ?? null,
         lossReason: m?.loss_reason ?? null,
+        keyText: q.keyText,
       }
     }),
   }
@@ -800,7 +862,12 @@ export async function studentReport(
   paperId: string,
   studentId: string,
 ) {
-  const v = await studentMarking(db, scope, paperId, studentId)
+  return reportFrom(await studentMarking(db, scope, paperId, studentId))
+}
+
+export function reportFrom(
+  v: Awaited<ReturnType<typeof studentMarkingUnchecked>>,
+) {
   const scored = v.answers.filter((a) => a.finalMarks !== null)
   const lostOf = (a: (typeof scored)[number]) => a.maxMarks - (a.finalMarks ?? 0)
   const habits = new Map<string, number>()

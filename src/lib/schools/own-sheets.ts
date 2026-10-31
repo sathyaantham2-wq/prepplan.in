@@ -36,7 +36,7 @@ import { MAX_CHUNK_BYTES, MAX_SCAN_BYTES } from './scan-service'
 type Paper = Awaited<ReturnType<typeof loadOwnPaper>>
 
 /** The sections of the paper's class the person may handle: the office all of them, a teacher hers. */
-async function sectionsFor(db: Db, scope: SchoolScope, paper: Paper) {
+export async function sectionsFor(db: Db, scope: SchoolScope, paper: Paper) {
   const all = (await schoolSectionsRepository.list(db, scope)).filter(
     (s) => s.class_id === paper.class_id,
   )
