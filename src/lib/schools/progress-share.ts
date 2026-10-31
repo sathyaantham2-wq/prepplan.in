@@ -1,12 +1,13 @@
 import type { Db } from '../../db/connection'
 import type { SchoolScope } from '../../db/school-scope'
 import { PDF_FONT_FACES, withTelugu } from '../pdf/fonts'
+import { MATH_CSS, mathHtml } from '../math-text'
 import { escapeHtml } from '../pdf/html-utils'
 import { renderHtmlToPdf } from '../pdf/render'
 import { focusWhy, tr } from '../school-i18n'
 import type { Key, Lang } from '../school-i18n'
-import { SchoolError } from './common'
-import { myProgress, viewerFor } from './progress'
+import { candidates, topicFor } from './practice'
+import { myProgress } from './progress'
 import type { Level } from './topic-level'
 
 // The things a student or parent takes away from the Progress screens (owner direction 2026-10-31): a one-page
@@ -127,49 +128,9 @@ export async function practiseHtml(
   lang: Lang,
   childId?: string | null,
 ): Promise<string> {
-  const { viewer } = await viewerFor(db, scope, childId)
-  const m = /^([ch]):([0-9a-f-]{36})$/.exec(topicKey)
-  if (!m) throw new SchoolError('invalid', 'That topic is not known.')
-  let label: string
-  let conceptIds: Array<string>
-  if (m[1] === 'c') {
-    const c = await db.selectFrom('concepts').select(['id', 'name']).where('id', '=', m[2]).executeTakeFirst()
-    if (!c) throw new SchoolError('not_found', 'That topic is not known.')
-    label = c.name
-    conceptIds = [c.id]
-  } else {
-    const ch = await db.selectFrom('chapters').select(['id', 'name']).where('id', '=', m[2]).executeTakeFirst()
-    if (!ch) throw new SchoolError('not_found', 'That topic is not known.')
-    label = ch.name
-    conceptIds = (await db.selectFrom('concepts').select('id').where('chapter_id', '=', ch.id).execute()).map((x) => x.id)
-  }
-  // a student may only ask for a topic she has actually met in one of her exams
-  const met = await db
-    .selectFrom('school_answer_marks as am')
-    .innerJoin('school_own_questions as q', 'q.id', 'am.own_question_id')
-    .leftJoin('school_exam_questions as eq', 'eq.id', 'q.source_exam_question_id')
-    .leftJoin('questions as qq', 'qq.id', 'eq.question_id')
-    .select(['q.chapter_id', 'qq.concept_id', 'eq.question_id'])
-    .where('am.school_id', '=', scope.schoolId)
-    .where('am.school_student_id', '=', viewer.studentId)
-    .execute()
-  const ok = m[1] === 'c' ? met.some((x) => x.concept_id === m[2]) : met.some((x) => x.chapter_id === m[2])
-  if (!ok) throw new SchoolError('not_found', 'That topic is not known.')
-  const used = new Set(met.map((x) => x.question_id).filter((x): x is string => x !== null))
-  const rows = conceptIds.length
-    ? await db
-        .selectFrom('questions')
-        .select(['id', 'text', 'type', 'marks', 'answer', 'tags'])
-        .where('concept_id', 'in', conceptIds)
-        .where('status', '=', 'approved')
-        .where('type', 'in', ['mcq', 'short_answer'])
-        .orderBy('marks')
-        .limit(80)
-        .execute()
-    : []
-  const picked = rows
-    .filter((r) => !used.has(r.id) && !r.tags.some((x) => ['figure', 'map', 'case_study'].includes(x)))
-    .slice(0, 8)
+  const topic = await topicFor(db, scope, topicKey, childId)
+  const { viewer, label } = topic
+  const picked = (await candidates(db, topic)).slice(0, 8)
   const opts = picked.length
     ? await db
         .selectFrom('question_options')
@@ -182,6 +143,7 @@ export async function practiseHtml(
   const t = (k: Key) => tr(lang, k)
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${PDF_FONT_FACES}
+${MATH_CSS}
 @page { size: A4; margin: 16mm }
 body { font-family: ${withTelugu("'Helvetica Neue', Arial, sans-serif")}; font-size:13px; line-height:1.45; color:#0f172a }
 h1 { font-size:20px; margin:0 0 4px } .muted { color:#475569 } li { margin:0 0 12px } .opt { margin-left:18px } .page { page-break-before: always }
@@ -192,16 +154,16 @@ ${picked.length === 0 ? `<p>${e('No new questions for this topic yet.')}</p>` : 
 <ol>${picked
     .map(
       (r) =>
-        `<li>${e(r.text)} <span class="muted">[${r.marks}]</span>${opts
+        `<li>${mathHtml(r.text)} <span class="muted">[${r.marks}]</span>${opts
           .filter((o) => o.question_id === r.id)
-          .map((o) => `<div class="opt">(${e(o.label)}) ${e(o.text)}</div>`)
+          .map((o) => `<div class="opt">(${e(o.label)}) ${mathHtml(o.text)}</div>`)
           .join('')}</li>`,
     )
     .join('')}</ol>
 <div class="page"><h1>Answers</h1><ol>${picked
     .map((r) => {
       const right = opts.find((o) => o.question_id === r.id && o.is_correct)
-      return `<li>${e(right ? `(${right.label}) ${right.text}` : r.answer)}</li>`
+      return `<li>${mathHtml(right ? `(${right.label}) ${right.text}` : r.answer)}</li>`
     })
     .join('')}</ol></div>
 </body></html>`

@@ -9,6 +9,7 @@ import { classProgress, exportProgress } from './class-progress'
 import { createSchoolStudent, createSchoolTeacher } from './people'
 import { examInsight, myProgress } from './progress'
 import { seedProgressDemo } from './progress-demo'
+import { practiceCheck, practiceHint, practiceSet } from './practice'
 import { practiseHtml, summaryHtml, summaryText } from './progress-share'
 import { getReflection, saveReflection } from './reflection'
 import { saveProgressSettings } from './school-settings'
@@ -301,5 +302,59 @@ describe('progress report and class progress', () => {
     expect(html).toContain('Practice answer')
     await expect(practiseHtml(db, students.Asha.scope, 'h:00000000-0000-4000-8000-000000000000', 'en')).rejects.toThrow()
     await expect(practiseHtml(db, students.Asha.scope, 'nonsense', 'en')).rejects.toThrow()
+  })
+
+  it('interactive practice: questions come without answers, one hint on request, the answer after her turn, nothing is stored', async () => {
+    const chapter = await db.selectFrom('chapters').select('id').where('source_id', '=', sourceId).where('chapter_no', '=', 1).executeTakeFirstOrThrow()
+    const topic = `h:${chapter.id}`
+    const marksBefore = await db.selectFrom('school_answer_marks').select('id').where('school_id', '=', schoolId).execute()
+    const set = await practiceSet(db, students.Asha.scope, topic)
+    expect(set.topic.label).toBe('Chapter 1 topic')
+    expect(set.rounds).toHaveLength(1)
+    expect(set.rounds[0].fresh).not.toBeNull()
+    expect(set.rounds[0].first.id).not.toBe(set.rounds[0].fresh?.id)
+    // no answer is in what is handed out
+    expect(JSON.stringify(set)).not.toContain('Practice answer')
+    const qid = set.rounds[0].first.id
+    const hint = await practiceHint(db, students.Asha.scope, topic, qid)
+    expect(hint.hint.length).toBeGreaterThan(3)
+    const checked = await practiceCheck(db, students.Asha.scope, topic, qid, null)
+    expect(checked).toMatchObject({ type: 'short_answer', correct: null })
+    expect(checked.answer).toContain('Practice answer')
+    // a question of another topic, or another student's topic, is not available
+    await expect(practiceCheck(db, students.Asha.scope, topic, '00000000-0000-4000-8000-000000000000', null)).rejects.toThrow(/not available/)
+    await expect(practiceSet(db, students.Asha.scope, 'h:00000000-0000-4000-8000-000000000000')).rejects.toThrow(/not known/)
+    await expect(practiceSet(db, admin, topic)).rejects.toThrow()
+    // nothing was written: no attempt, no mark
+    const marksAfter = await db.selectFrom('school_answer_marks').select('id').where('school_id', '=', schoolId).execute()
+    expect(marksAfter).toHaveLength(marksBefore.length)
+  })
+
+  it('a multiple-choice practice question is checked here and its options carry no answer flag', async () => {
+    const chapter = await db.selectFrom('chapters').select('id').where('source_id', '=', sourceId).where('chapter_no', '=', 1).executeTakeFirstOrThrow()
+    const cid = (await db.selectFrom('concepts').select('id').where('chapter_id', '=', chapter.id).executeTakeFirstOrThrow()).id
+    const made = [] as Array<string>
+    for (const i of [1, 2]) {
+      const q = await db
+        .insertInto('questions')
+        .values({ concept_id: cid, board: 'CBSE', class: 7, bloom: 'Apply', difficulty: 'Easy', marks: 1, type: 'mcq', text: `Choice question ${tag} ${i}`, text_hash: `${tag}-mc-${i}`, answer: 'B', status: 'approved', origin: 'manual', created_by: 'test', tags: [] })
+        .returning('id')
+        .executeTakeFirstOrThrow()
+      made.push(q.id)
+      for (const [k, label] of ['A', 'B', 'C', 'D'].entries())
+        await db.insertInto('question_options').values({ question_id: q.id, label, text: `option ${label}`, is_correct: label === 'B', order_index: k + 1 }).execute()
+    }
+    const topic = `h:${chapter.id}`
+    const set = await practiceSet(db, students.Asha.scope, topic, null, (xs) => xs)
+    const mcq = set.rounds.find((r) => r.first.type === 'mcq')
+    expect(mcq).toBeTruthy()
+    expect(mcq?.first.options).toHaveLength(4)
+    expect(JSON.stringify(mcq)).not.toContain('is_correct')
+    const id = mcq!.first.id
+    expect((await practiceCheck(db, students.Asha.scope, topic, id, 'B')).correct).toBe(true)
+    expect((await practiceCheck(db, students.Asha.scope, topic, id, 'c')).correct).toBe(false)
+    expect((await practiceCheck(db, students.Asha.scope, topic, id, null)).answer).toBe('(B) option B')
+    await db.deleteFrom('question_options').where('question_id', 'in', made).execute()
+    await db.deleteFrom('questions').where('id', 'in', made).execute()
   })
 })

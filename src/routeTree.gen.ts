@@ -194,6 +194,7 @@ import { Route as SchoolSchoolIdPapersIndexRouteImport } from './routes/school/$
 import { Route as SchoolSchoolIdPapersCheckRouteImport } from './routes/school/$schoolId/papers/check'
 import { Route as SchoolSchoolIdPapersEditRouteImport } from './routes/school/$schoolId/papers/edit'
 import { Route as SchoolSchoolIdProgressIndexRouteImport } from './routes/school/$schoolId/progress/index'
+import { Route as SchoolSchoolIdProgressPractiseRouteImport } from './routes/school/$schoolId/progress/practise'
 import { Route as SchoolSchoolIdResultsIndexRouteImport } from './routes/school/$schoolId/results/index'
 import { Route as SchoolSchoolIdResultsExamIdRouteImport } from './routes/school/$schoolId/results/$examId'
 import { Route as ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport } from './routes/api/adaptive/concepts/$conceptId/wrong-questions'
@@ -215,6 +216,7 @@ import { Route as ApiSchoolsSchoolIdMySheetImagesSheetIdRouteImport } from './ro
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId'
 import { Route as ApiSchoolsSchoolIdOwnSheetImagesSheetIdRouteImport } from './routes/api/schools/$schoolId/own-sheet-images/$sheetId'
 import { Route as ApiSchoolsSchoolIdProgressPractiseRouteImport } from './routes/api/schools/$schoolId/progress/practise'
+import { Route as ApiSchoolsSchoolIdProgressPractiseSetRouteImport } from './routes/api/schools/$schoolId/progress/practise-set'
 import { Route as ApiSchoolsSchoolIdProgressReflectionRouteImport } from './routes/api/schools/$schoolId/progress/reflection'
 import { Route as ApiSchoolsSchoolIdProgressSummaryRouteImport } from './routes/api/schools/$schoolId/progress/summary'
 import { Route as ApiSchoolsSchoolIdResultsExamIdRouteImport } from './routes/api/schools/$schoolId/results/$examId'
@@ -1218,6 +1220,12 @@ const SchoolSchoolIdProgressIndexRoute =
     path: '/progress/',
     getParentRoute: () => SchoolSchoolIdRoute,
   } as any)
+const SchoolSchoolIdProgressPractiseRoute =
+  SchoolSchoolIdProgressPractiseRouteImport.update({
+    id: '/progress/practise',
+    path: '/progress/practise',
+    getParentRoute: () => SchoolSchoolIdRoute,
+  } as any)
 const SchoolSchoolIdResultsIndexRoute =
   SchoolSchoolIdResultsIndexRouteImport.update({
     id: '/results/',
@@ -1339,6 +1347,12 @@ const ApiSchoolsSchoolIdProgressPractiseRoute =
   ApiSchoolsSchoolIdProgressPractiseRouteImport.update({
     id: '/practise',
     path: '/practise',
+    getParentRoute: () => ApiSchoolsSchoolIdProgressRoute,
+  } as any)
+const ApiSchoolsSchoolIdProgressPractiseSetRoute =
+  ApiSchoolsSchoolIdProgressPractiseSetRouteImport.update({
+    id: '/practise-set',
+    path: '/practise-set',
     getParentRoute: () => ApiSchoolsSchoolIdProgressRoute,
   } as any)
 const ApiSchoolsSchoolIdProgressReflectionRoute =
@@ -1757,6 +1771,7 @@ export interface FileRoutesByFullPath {
   '/school/$schoolId/own-papers/new': typeof SchoolSchoolIdOwnPapersNewRoute
   '/school/$schoolId/papers/check': typeof SchoolSchoolIdPapersCheckRoute
   '/school/$schoolId/papers/edit': typeof SchoolSchoolIdPapersEditRoute
+  '/school/$schoolId/progress/practise': typeof SchoolSchoolIdProgressPractiseRoute
   '/school/$schoolId/results/$examId': typeof SchoolSchoolIdResultsExamIdRoute
   '/school/$schoolId/exams/': typeof SchoolSchoolIdExamsIndexRoute
   '/school/$schoolId/my-results/': typeof SchoolSchoolIdMyResultsIndexRoute
@@ -1783,6 +1798,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
   '/api/schools/$schoolId/own-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute
   '/api/schools/$schoolId/progress/practise': typeof ApiSchoolsSchoolIdProgressPractiseRoute
+  '/api/schools/$schoolId/progress/practise-set': typeof ApiSchoolsSchoolIdProgressPractiseSetRoute
   '/api/schools/$schoolId/progress/reflection': typeof ApiSchoolsSchoolIdProgressReflectionRoute
   '/api/schools/$schoolId/progress/summary': typeof ApiSchoolsSchoolIdProgressSummaryRoute
   '/api/schools/$schoolId/results/$examId': typeof ApiSchoolsSchoolIdResultsExamIdRoute
@@ -2001,6 +2017,7 @@ export interface FileRoutesByTo {
   '/school/$schoolId/own-papers/new': typeof SchoolSchoolIdOwnPapersNewRoute
   '/school/$schoolId/papers/check': typeof SchoolSchoolIdPapersCheckRoute
   '/school/$schoolId/papers/edit': typeof SchoolSchoolIdPapersEditRoute
+  '/school/$schoolId/progress/practise': typeof SchoolSchoolIdProgressPractiseRoute
   '/school/$schoolId/results/$examId': typeof SchoolSchoolIdResultsExamIdRoute
   '/school/$schoolId/exams': typeof SchoolSchoolIdExamsIndexRoute
   '/school/$schoolId/my-results': typeof SchoolSchoolIdMyResultsIndexRoute
@@ -2027,6 +2044,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
   '/api/schools/$schoolId/own-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute
   '/api/schools/$schoolId/progress/practise': typeof ApiSchoolsSchoolIdProgressPractiseRoute
+  '/api/schools/$schoolId/progress/practise-set': typeof ApiSchoolsSchoolIdProgressPractiseSetRoute
   '/api/schools/$schoolId/progress/reflection': typeof ApiSchoolsSchoolIdProgressReflectionRoute
   '/api/schools/$schoolId/progress/summary': typeof ApiSchoolsSchoolIdProgressSummaryRoute
   '/api/schools/$schoolId/results/$examId': typeof ApiSchoolsSchoolIdResultsExamIdRoute
@@ -2249,6 +2267,7 @@ export interface FileRoutesById {
   '/school/$schoolId/own-papers/new': typeof SchoolSchoolIdOwnPapersNewRoute
   '/school/$schoolId/papers/check': typeof SchoolSchoolIdPapersCheckRoute
   '/school/$schoolId/papers/edit': typeof SchoolSchoolIdPapersEditRoute
+  '/school/$schoolId/progress/practise': typeof SchoolSchoolIdProgressPractiseRoute
   '/school/$schoolId/results/$examId': typeof SchoolSchoolIdResultsExamIdRoute
   '/school/$schoolId/exams/': typeof SchoolSchoolIdExamsIndexRoute
   '/school/$schoolId/my-results/': typeof SchoolSchoolIdMyResultsIndexRoute
@@ -2275,6 +2294,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
   '/api/schools/$schoolId/own-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute
   '/api/schools/$schoolId/progress/practise': typeof ApiSchoolsSchoolIdProgressPractiseRoute
+  '/api/schools/$schoolId/progress/practise-set': typeof ApiSchoolsSchoolIdProgressPractiseSetRoute
   '/api/schools/$schoolId/progress/reflection': typeof ApiSchoolsSchoolIdProgressReflectionRoute
   '/api/schools/$schoolId/progress/summary': typeof ApiSchoolsSchoolIdProgressSummaryRoute
   '/api/schools/$schoolId/results/$examId': typeof ApiSchoolsSchoolIdResultsExamIdRoute
@@ -2498,6 +2518,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId/own-papers/new'
     | '/school/$schoolId/papers/check'
     | '/school/$schoolId/papers/edit'
+    | '/school/$schoolId/progress/practise'
     | '/school/$schoolId/results/$examId'
     | '/school/$schoolId/exams/'
     | '/school/$schoolId/my-results/'
@@ -2524,6 +2545,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/own-papers/$paperId'
     | '/api/schools/$schoolId/own-sheet-images/$sheetId'
     | '/api/schools/$schoolId/progress/practise'
+    | '/api/schools/$schoolId/progress/practise-set'
     | '/api/schools/$schoolId/progress/reflection'
     | '/api/schools/$schoolId/progress/summary'
     | '/api/schools/$schoolId/results/$examId'
@@ -2742,6 +2764,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId/own-papers/new'
     | '/school/$schoolId/papers/check'
     | '/school/$schoolId/papers/edit'
+    | '/school/$schoolId/progress/practise'
     | '/school/$schoolId/results/$examId'
     | '/school/$schoolId/exams'
     | '/school/$schoolId/my-results'
@@ -2768,6 +2791,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/own-papers/$paperId'
     | '/api/schools/$schoolId/own-sheet-images/$sheetId'
     | '/api/schools/$schoolId/progress/practise'
+    | '/api/schools/$schoolId/progress/practise-set'
     | '/api/schools/$schoolId/progress/reflection'
     | '/api/schools/$schoolId/progress/summary'
     | '/api/schools/$schoolId/results/$examId'
@@ -2989,6 +3013,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId/own-papers/new'
     | '/school/$schoolId/papers/check'
     | '/school/$schoolId/papers/edit'
+    | '/school/$schoolId/progress/practise'
     | '/school/$schoolId/results/$examId'
     | '/school/$schoolId/exams/'
     | '/school/$schoolId/my-results/'
@@ -3015,6 +3040,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/own-papers/$paperId'
     | '/api/schools/$schoolId/own-sheet-images/$sheetId'
     | '/api/schools/$schoolId/progress/practise'
+    | '/api/schools/$schoolId/progress/practise-set'
     | '/api/schools/$schoolId/progress/reflection'
     | '/api/schools/$schoolId/progress/summary'
     | '/api/schools/$schoolId/results/$examId'
@@ -4463,6 +4489,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SchoolSchoolIdProgressIndexRouteImport
       parentRoute: typeof SchoolSchoolIdRoute
     }
+    '/school/$schoolId/progress/practise': {
+      id: '/school/$schoolId/progress/practise'
+      path: '/progress/practise'
+      fullPath: '/school/$schoolId/progress/practise'
+      preLoaderRoute: typeof SchoolSchoolIdProgressPractiseRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
     '/school/$schoolId/results/': {
       id: '/school/$schoolId/results/'
       path: '/results'
@@ -4608,6 +4641,13 @@ declare module '@tanstack/react-router' {
       path: '/practise'
       fullPath: '/api/schools/$schoolId/progress/practise'
       preLoaderRoute: typeof ApiSchoolsSchoolIdProgressPractiseRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdProgressRoute
+    }
+    '/api/schools/$schoolId/progress/practise-set': {
+      id: '/api/schools/$schoolId/progress/practise-set'
+      path: '/practise-set'
+      fullPath: '/api/schools/$schoolId/progress/practise-set'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdProgressPractiseSetRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdProgressRoute
     }
     '/api/schools/$schoolId/progress/reflection': {
@@ -4934,6 +4974,7 @@ interface SchoolSchoolIdRouteChildren {
   SchoolSchoolIdOwnPapersNewRoute: typeof SchoolSchoolIdOwnPapersNewRoute
   SchoolSchoolIdPapersCheckRoute: typeof SchoolSchoolIdPapersCheckRoute
   SchoolSchoolIdPapersEditRoute: typeof SchoolSchoolIdPapersEditRoute
+  SchoolSchoolIdProgressPractiseRoute: typeof SchoolSchoolIdProgressPractiseRoute
   SchoolSchoolIdResultsExamIdRoute: typeof SchoolSchoolIdResultsExamIdRoute
   SchoolSchoolIdExamsIndexRoute: typeof SchoolSchoolIdExamsIndexRoute
   SchoolSchoolIdMyResultsIndexRoute: typeof SchoolSchoolIdMyResultsIndexRoute
@@ -4960,6 +5001,7 @@ const SchoolSchoolIdRouteChildren: SchoolSchoolIdRouteChildren = {
   SchoolSchoolIdOwnPapersNewRoute: SchoolSchoolIdOwnPapersNewRoute,
   SchoolSchoolIdPapersCheckRoute: SchoolSchoolIdPapersCheckRoute,
   SchoolSchoolIdPapersEditRoute: SchoolSchoolIdPapersEditRoute,
+  SchoolSchoolIdProgressPractiseRoute: SchoolSchoolIdProgressPractiseRoute,
   SchoolSchoolIdResultsExamIdRoute: SchoolSchoolIdResultsExamIdRoute,
   SchoolSchoolIdExamsIndexRoute: SchoolSchoolIdExamsIndexRoute,
   SchoolSchoolIdMyResultsIndexRoute: SchoolSchoolIdMyResultsIndexRoute,
@@ -5591,6 +5633,7 @@ const ApiSchoolsSchoolIdOwnPapersRouteWithChildren =
 
 interface ApiSchoolsSchoolIdProgressRouteChildren {
   ApiSchoolsSchoolIdProgressPractiseRoute: typeof ApiSchoolsSchoolIdProgressPractiseRoute
+  ApiSchoolsSchoolIdProgressPractiseSetRoute: typeof ApiSchoolsSchoolIdProgressPractiseSetRoute
   ApiSchoolsSchoolIdProgressReflectionRoute: typeof ApiSchoolsSchoolIdProgressReflectionRoute
   ApiSchoolsSchoolIdProgressSummaryRoute: typeof ApiSchoolsSchoolIdProgressSummaryRoute
   ApiSchoolsSchoolIdProgressExamPaperIdRoute: typeof ApiSchoolsSchoolIdProgressExamPaperIdRoute
@@ -5600,6 +5643,8 @@ const ApiSchoolsSchoolIdProgressRouteChildren: ApiSchoolsSchoolIdProgressRouteCh
   {
     ApiSchoolsSchoolIdProgressPractiseRoute:
       ApiSchoolsSchoolIdProgressPractiseRoute,
+    ApiSchoolsSchoolIdProgressPractiseSetRoute:
+      ApiSchoolsSchoolIdProgressPractiseSetRoute,
     ApiSchoolsSchoolIdProgressReflectionRoute:
       ApiSchoolsSchoolIdProgressReflectionRoute,
     ApiSchoolsSchoolIdProgressSummaryRoute:

@@ -31,11 +31,11 @@ export type Insight = Awaited<ReturnType<typeof examInsight>>
 const habitKey = (h: HabitCode) => `habit_${h}` as Key
 const tipKey = (h: HabitCode) => `tip_${h}` as Key
 
-/** "Practise this": a printable worksheet of bank questions for the topic (no attempt is recorded). */
-export function practiseHref(schoolId: string, topicKey: string, lang: Lang, child?: string | null) {
-  const q = new URLSearchParams({ topic: topicKey, lang })
+/** "Practise this": the interactive page (try, hint, steps, a fresh one). The printable PDF is offered from there. */
+export function practiseHref(schoolId: string, topicKey: string, _lang: Lang, child?: string | null) {
+  const q = new URLSearchParams({ topic: topicKey })
   if (child) q.set('child', child)
-  return `/api/schools/${schoolId}/progress/practise?${q.toString()}`
+  return `/school/${schoolId}/progress/practise?${q.toString()}`
 }
 
 const trendIcon = (tr: 'up' | 'flat' | 'down' | null) =>
@@ -107,8 +107,6 @@ export function HomeTab({
                   <a
                     className={ghostBtn('mt-2')}
                     href={practiseHref(schoolId, f.topicKey, lang, child)}
-                    target="_blank"
-                    rel="noreferrer"
                   >
                     <Printer aria-hidden="true" className="size-4" /> {t('practise')}
                   </a>
@@ -361,8 +359,6 @@ export function ExamReport({
                 <a
                   className={ghostBtn()}
                   href={practiseHref(schoolId, f.topicKey, lang, child)}
-                  target="_blank"
-                  rel="noreferrer"
                 >
                   {t('practise')}
                 </a>
