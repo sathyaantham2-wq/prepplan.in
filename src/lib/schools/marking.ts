@@ -86,12 +86,12 @@ export function markingPrompt(
     .join('\n\n')
   return `You are marking a CBSE Class ${grade} ${subject} answer sheet. The ${pages} picture${pages === 1 ? '' : 's'} are the pupil's handwritten pages, in order. The pupil may answer in any order and the answers have no boxes: find each answer by its question number.
 
-For every question below, say whether you found an answer, copy a short version of what the pupil wrote, and mark it against the approved answer and marking scheme. Be fair: award a mark for every step the pupil shows correctly, even if worded differently; accept a different valid method. Only OR questions are alternatives of each other: mark whichever the pupil attempted. For each question where marks are lost, say whether the pupil did not know it ("knowledge_gap") or knew it but wrote it badly, too briefly, skipped working or stopped early ("writing_habit"). Say how sure you are (confidence 0 to 1); if the handwriting is hard to read, lower it. If a question's answer is not on any page, give found false and marks 0.
+For every question below, say whether you found an answer, copy a short version of what the pupil wrote, and mark it against the approved answer and marking scheme. Be fair: award a mark for every step the pupil shows correctly, even if worded differently; accept a different valid method. Only OR questions are alternatives of each other: mark whichever the pupil attempted. For each question where marks are lost, say whether the pupil did not know it ("knowledge_gap") or knew it but wrote it badly, too briefly, skipped working or stopped early ("writing_habit"). For a writing habit also name which one in "habit": skipped_steps (working left out), units_missing (no unit or final line), stopped_early (ended before the answer was complete), misread_question (answered something else), or other. Say how sure you are (confidence 0 to 1); if the handwriting is hard to read, lower it. If a question's answer is not on any page, give found false and marks 0.
 
 ${list}
 ${note ? `\nThe pupil asked for this answer to be read again and said: "${note}". Re-read the pages carefully; do not give a mark the writing does not earn.\n` : ''}
 ${ONLY_JSON}
-Shape: {"answers":[{"question":"1","found":true,"answer_text":"...","choice":null,"marks":2,"steps":[{"step":1,"awarded":1}],"loss_kind":"none"|"knowledge_gap"|"writing_habit","loss_reason":"...","confidence":0.9}]}`
+Shape: {"answers":[{"question":"1","found":true,"answer_text":"...","choice":null,"marks":2,"steps":[{"step":1,"awarded":1}],"loss_kind":"none"|"knowledge_gap"|"writing_habit","habit":null|"skipped_steps"|"units_missing"|"stopped_early"|"misread_question"|"other","loss_reason":"...","confidence":0.9}]}`
 }
 
 export function createMarkingAi(
@@ -187,8 +187,15 @@ export function createFakeMarkingAi(): MarkingAi {
                 : 'Tenths are bigger than hundredths',
               choice: wrong ? (choice === 'A' ? 'C' : 'A') : choice,
               marks,
-              steps: [],
               loss_kind: mixed && marks < full ? 'writing_habit' : 'none',
+              habit: mixed && marks < full ? 'stopped_early' : null,
+              steps:
+                mixed && q.keySteps.length > 0
+                  ? q.keySteps.map((k, i) => ({
+                      step: i + 1,
+                      awarded: Math.min(k.marks, Math.max(0, marks - i)),
+                    }))
+                  : [],
               loss_reason:
                 mixed && marks < full ? 'Stopped before writing the conclusion' : null,
               confidence: 0.9,
@@ -540,6 +547,8 @@ export async function markStudentSheets(
           flag_reason: c.flagReason,
           loss_kind: c.lossKind,
           loss_reason: c.lossReason,
+          habit: c.habit,
+          steps: JSON.stringify(c.steps),
           changed_by_user_id: null,
           changed_at: null,
         }

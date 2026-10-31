@@ -8,6 +8,8 @@ import {
 import {
   BookOpenCheck,
   ClipboardList,
+  TrendingUp,
+  Grid3x3,
   GraduationCap,
   Home,
   LayoutGrid,
@@ -37,6 +39,8 @@ interface NavItem {
     | '/school/$schoolId/exams'
     | '/school/$schoolId/own-papers'
     | '/school/$schoolId/my-results'
+    | '/school/$schoolId/progress'
+    | '/school/$schoolId/class-progress'
     | '/school/$schoolId/settings'
   label: string
   icon: LucideIcon
@@ -72,6 +76,15 @@ function navFor(o: SchoolOverview): Array<NavItem> {
           },
         ]
       : []),
+    ...(o.school.modules.includes('correction')
+      ? [
+          {
+            to: '/school/$schoolId/class-progress' as const,
+            label: 'Progress',
+            icon: Grid3x3,
+          },
+        ]
+      : []),
   ]
   if (o.role === 'school_admin') {
     return [
@@ -103,8 +116,13 @@ function navFor(o: SchoolOverview): Array<NavItem> {
         label: 'My results',
         icon: ClipboardList,
       },
+      { to: '/school/$schoolId/progress', label: 'Progress', icon: TrendingUp },
     ]
-  return [home]
+  // a parent
+  return [
+    home,
+    { to: '/school/$schoolId/progress', label: 'Progress', icon: TrendingUp },
+  ]
 }
 
 function SchoolLayout() {
@@ -160,7 +178,7 @@ function SchoolLayout() {
 
   return (
     <SchoolContext.Provider value={{ schoolId, overview, reload }}>
-      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/80">
+      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 dark:border-slate-800 dark:bg-slate-900/90 dark:supports-[backdrop-filter]:bg-slate-900/80">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3">
           <div className="flex min-w-0 items-center gap-3">
             <span
@@ -170,10 +188,10 @@ function SchoolLayout() {
               <GraduationCap className="size-5" />
             </span>
             <div className="min-w-0">
-              <p className="font-display truncate text-[17px] leading-tight font-bold text-slate-900">
+              <p className="font-display truncate text-[17px] leading-tight font-bold text-slate-900 dark:text-slate-100">
                 {overview.school.name}
               </p>
-              <p className="truncate text-sm text-slate-600">
+              <p className="truncate text-sm text-slate-600 dark:text-slate-400">
                 {overview.me.name} ·{' '}
                 {ROLE_LABEL[overview.role] ?? overview.role}
               </p>
@@ -189,7 +207,7 @@ function SchoolLayout() {
             <button
               type="button"
               onClick={leave}
-              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-xl border border-slate-300 bg-white px-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 sm:px-3"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-xl border border-slate-300 bg-white px-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 sm:px-3 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
             >
               <LogOut aria-hidden="true" className="size-5 text-slate-500" />
               <span className="sr-only sm:not-sr-only">Sign out</span>
@@ -218,11 +236,11 @@ function SchoolLayout() {
                 className="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-[15px] font-semibold"
                 activeProps={{
                   className:
-                    'bg-emerald-50 text-emerald-800 ring-1 ring-emerald-600/15',
+                    'bg-emerald-50 text-emerald-800 ring-1 ring-emerald-600/15 dark:bg-emerald-950 dark:text-emerald-200',
                 }}
                 inactiveProps={{
                   className:
-                    'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
+                    'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100',
                 }}
               >
                 <i.icon aria-hidden="true" className="size-4" />
@@ -238,7 +256,7 @@ function SchoolLayout() {
       {items.length > 1 ? (
         <nav
           aria-label="School"
-          className="fixed inset-x-0 bottom-0 z-20 grid border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md sm:hidden"
+          className="fixed inset-x-0 bottom-0 z-20 grid border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] dark:border-slate-800 dark:bg-slate-900/95 backdrop-blur-md sm:hidden"
           style={{ gridTemplateColumns: `repeat(${phoneItems.length}, 1fr)` }}
         >
           {phoneItems.map((i) => (
@@ -248,10 +266,10 @@ function SchoolLayout() {
               params={{ schoolId }}
               activeOptions={{ exact: i.to === '/school/$schoolId' }}
               className="group flex min-h-16 flex-col items-center justify-center gap-1 font-semibold"
-              activeProps={{ className: 'is-active text-emerald-800' }}
-              inactiveProps={{ className: 'text-slate-500' }}
+              activeProps={{ className: 'is-active text-emerald-800 dark:text-emerald-200' }}
+              inactiveProps={{ className: 'text-slate-500 dark:text-slate-400' }}
             >
-              <span className="flex h-7 w-12 items-center justify-center rounded-full transition-colors group-[.is-active]:bg-emerald-100">
+              <span className="flex h-7 w-12 items-center justify-center rounded-full transition-colors group-[.is-active]:bg-emerald-100 dark:group-[.is-active]:bg-emerald-900">
                 <i.icon aria-hidden="true" className="size-5" />
               </span>
               <span

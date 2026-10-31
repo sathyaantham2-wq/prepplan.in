@@ -559,10 +559,14 @@ export async function ownSheetsSummary(
   }
 }
 
-const signedUrl = (schoolId: string, sheetId: string) =>
+export const signedUrl = (
+  schoolId: string,
+  sheetId: string,
+  folder: 'own-sheet-images' | 'my-sheet-images' = 'own-sheet-images',
+) =>
   signedScanPageUrl(sheetId).replace(
     '/api/scan-pages/',
-    `/api/schools/${schoolId}/own-sheet-images/`,
+    `/api/schools/${schoolId}/${folder}/`,
   )
 
 /** One student's pages for this paper, in order, with a short-lived picture link and where the checks stand. */

@@ -916,6 +916,7 @@ export interface Schools {
   status: SchoolStatus;
   wizard_done_at: Timestamp | null;
   wizard_step: string | null;
+  show_class_rank: Generated<boolean>;
 }
 
 export interface SchoolScanBatches {
@@ -1038,6 +1039,8 @@ export interface SchoolSheetMarking {
 
 export interface SchoolAnswerMarks {
   ai_marks: Numeric;
+  habit: string | null;
+  steps: Generated<Json>;
   answer_text: string | null;
   changed_at: Timestamp | null;
   changed_by_user_id: string | null;
@@ -1084,6 +1087,19 @@ export interface SchoolAnswerDisputes {
   school_id: string;
   school_student_id: string;
   status: string;
+}
+
+export interface SchoolExamReflections {
+  created_at: Generated<Timestamp>;
+  feeling: number | null;
+  hardest_question_no: string | null;
+  id: Generated<string>;
+  next_time: string | null;
+  next_time_note: string | null;
+  paper_id: string;
+  school_id: string;
+  school_student_id: string;
+  updated_at: Generated<Timestamp>;
 }
 
 export interface SchoolUploadChecks {
@@ -1351,6 +1367,7 @@ export interface DB {
   school_sheet_marking: SchoolSheetMarking;
   school_answer_marks: SchoolAnswerMarks;
   school_paper_releases: SchoolPaperReleases;
+  school_exam_reflections: SchoolExamReflections;
   school_answer_disputes: SchoolAnswerDisputes;
   schools: Schools;
   sessions: Sessions;

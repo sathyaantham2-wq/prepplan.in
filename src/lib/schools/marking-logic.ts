@@ -16,6 +16,23 @@ export const MIN_CONFIDENCE = 0.5
 
 export type LossKind = 'none' | 'knowledge_gap' | 'writing_habit' | 'unclear'
 
+/** The writing habits a lost mark can be put down to (Progress Report, owner direction 2026-10-31). */
+export const HABIT_CODES = [
+  'skipped_steps',
+  'units_missing',
+  'stopped_early',
+  'misread_question',
+  'other',
+] as const
+export type HabitCode = (typeof HABIT_CODES)[number]
+
+export interface StepMark {
+  no: number
+  description: string
+  awarded: number
+  max: number
+}
+
 export const PassAnswerSchema = z.object({
   question: z.string().max(12),
   found: z.boolean(),
@@ -27,6 +44,7 @@ export const PassAnswerSchema = z.object({
     .max(20)
     .default([]),
   loss_kind: z.enum(['none', 'knowledge_gap', 'writing_habit']).default('none'),
+  habit: z.enum(HABIT_CODES).nullable().default(null),
   loss_reason: z.string().max(400).nullable().default(null),
   confidence: z.number().min(0).max(1).default(0.5),
 })
@@ -65,6 +83,10 @@ export interface CombinedAnswer {
   flagReason: string | null
   lossKind: LossKind
   lossReason: string | null
+  /** Which writing habit cost the marks (only when the reason is a writing habit). */
+  habit: HabitCode | null
+  /** Marks per step of the approved scheme, from the pass that gave the middle mark. */
+  steps: Array<StepMark>
 }
 
 const half = (n: number) => Math.round(n * 2) / 2
@@ -98,6 +120,33 @@ function majority<T>(xs: Array<T>): T | null {
   return n * 2 > xs.length ? best : null
 }
 
+/** The habit most readings named; 'other' when none was named or they all differ. */
+function habitOf(seen: ReadonlyArray<PassAnswer>): HabitCode {
+  const named = seen
+    .filter((p) => p.loss_kind === 'writing_habit' && p.habit !== null)
+    .map((p) => p.habit as HabitCode)
+  return majority(named) ?? 'other'
+}
+
+/** Marks per step of the approved scheme, from the first reading whose total is the middle mark. */
+function stepsOf(
+  q: MarkQuestion,
+  seen: ReadonlyArray<PassAnswer>,
+  mid: number,
+): Array<StepMark> {
+  const run = seen.find((p) => clamp(p.marks, q.marks) === mid)
+  if (!run || run.steps.length === 0 || q.keySteps.length === 0) return []
+  return q.keySteps.map((k, i) => {
+    const got = run.steps.find((x) => x.step === i + 1)
+    return {
+      no: i + 1,
+      description: k.description,
+      awarded: Math.min(k.marks, Math.max(0, half(got?.awarded ?? 0))),
+      max: k.marks,
+    }
+  })
+}
+
 /**
  * What stands for one answer, from what each pass said about it (`passes[i]` is pass i's reading of this
  * question, or undefined when that pass did not mention it).
@@ -123,6 +172,8 @@ export function combinePasses(
     flagReason: reason,
     lossKind: 'unclear',
     lossReason: null,
+    habit: null,
+    steps: [],
     ...rest,
   })
 
@@ -156,6 +207,8 @@ export function combinePasses(
       flagReason: null,
       lossKind: 'knowledge_gap',
       lossReason: 'No answer to this question was found on the pages handed in.',
+      habit: null,
+      steps: [],
     }
   if (foundVotes < PASSES)
     return flag(
@@ -197,6 +250,8 @@ export function combinePasses(
       flagReason: null,
       lossKind: right ? 'none' : 'knowledge_gap',
       lossReason: right ? null : `Chose ${choices[0]}; the key is ${key}.`,
+      habit: null,
+      steps: [],
     }
   }
 
@@ -229,6 +284,8 @@ export function combinePasses(
     flagReason,
     lossKind: kind,
     lossReason: lost > 0 ? reason : null,
+    habit: kind === 'writing_habit' ? habitOf(seen) : null,
+    steps: stepsOf(q, seen, mid),
   }
 }
 

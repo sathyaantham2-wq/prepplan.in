@@ -42,6 +42,7 @@ const pass = (over: Partial<PassAnswer> = {}): PassAnswer => ({
   marks: 2,
   steps: [],
   loss_kind: 'writing_habit',
+  habit: 'stopped_early',
   loss_reason: 'stopped before the conclusion',
   confidence: 0.9,
   ...over,
@@ -92,6 +93,30 @@ describe('combinePasses (written)', () => {
   })
   it('fewer than three usable readings is flagged', () => {
     expect(combinePasses(written, [pass(), undefined, pass()]).flagged).toBe(true)
+  })
+})
+
+describe('habit and marks per step', () => {
+  it('the habit most readings named is kept; none named is "other"; no habit when nothing was lost to writing', () => {
+    expect(combinePasses(written, [pass(), pass(), pass()]).habit).toBe('stopped_early')
+    expect(
+      combinePasses(written, [pass({ habit: 'units_missing' }), pass({ habit: 'units_missing' }), pass({ habit: 'skipped_steps' })]).habit,
+    ).toBe('units_missing')
+    expect(combinePasses(written, [pass({ habit: null }), pass({ habit: null }), pass({ habit: null })]).habit).toBe('other')
+    expect(
+      combinePasses(written, [pass({ loss_kind: 'knowledge_gap' }), pass({ loss_kind: 'knowledge_gap' }), pass({ loss_kind: 'knowledge_gap' })]).habit,
+    ).toBeNull()
+    expect(combinePasses(written, [pass({ marks: 3, loss_kind: 'none' }), pass({ marks: 3, loss_kind: 'none' }), pass({ marks: 3, loss_kind: 'none' })]).habit).toBeNull()
+  })
+  it('marks per step come from the reading with the middle mark, against the approved scheme', () => {
+    const steps = [{ step: 1, awarded: 1 }, { step: 2, awarded: 1 }]
+    const r = combinePasses(written, [pass({ steps }), pass({ steps }), pass({ steps })])
+    expect(r.steps).toEqual([
+      { no: 1, description: 'compares tenths', awarded: 1, max: 1 },
+      { no: 2, description: 'compares hundredths', awarded: 1, max: 1 },
+      { no: 3, description: 'concludes', awarded: 0, max: 1 },
+    ])
+    expect(combinePasses(written, [pass(), pass(), pass()]).steps).toEqual([])
   })
 })
 

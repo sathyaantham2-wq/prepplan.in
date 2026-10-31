@@ -17,7 +17,7 @@ function SchoolArea() {
     <div
       data-no-sound
       data-school-area
-      className="relative z-10 min-h-screen bg-[#f5f6f8] text-slate-900"
+      className="relative z-10 min-h-screen bg-[#f5f6f8] text-slate-900 dark:bg-[#0b1220] dark:text-slate-100"
     >
       <Outlet />
     </div>

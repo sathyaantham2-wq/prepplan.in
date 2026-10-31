@@ -885,3 +885,15 @@ P1 level rule + habit code + step storage + migration + tests. P2 student Progre
 ### 15.9 Decisions needed from the owner (my default if you say nothing is in brackets)
 
 D1. Level thresholds 75 / 50 and the "two in a row" rule above [accept]. D2. Parents get a read-only login created by the school [accept; otherwise parents see only the PDF and WhatsApp text the student shares]. D3. Telugu covers screen text and fixed labels, not question text or AI reasons [accept]. D4. A topic needs at least 2 marks in an exam to count [accept]. D5. "Practise this" is a printable worksheet, no tracked attempt [accept]. D6. The "needs attention" numbers in 15.4 [accept]. D7. The first migration to production is run by the owner, as for 0091 and 0092 [accept].
+
+### 15.10 Status, 2026-10-31 (built locally, owner approved the plan the same day)
+
+Built: migration `0093_school_progress` (habit and marks per step on each answer, `schools.show_class_rank`, `school_exam_reflections`); `topic-level.ts` (the level rule of 15.2, with a table test), `progress-calc.ts`, `progress.ts` (locked marks only; the exam report also shows a paper whose flag window is still open, marked "not final", leaving it out of levels and the growth line), `class-progress.ts`, `progress-share.ts` (parent summary PDF and text, "Practise this" worksheet), `reflection.ts`, `progress-demo.ts` (three locked exams in each of three subjects), the five student/parent screens (`/school/:id/progress`, `/progress/exam/:paperId`), "Class progress" for teachers, the Telugu/English dictionary (`school-i18n.ts`), dark mode, settings for class rank and the flag window.
+
+Decisions taken while building (all inside the approved plan): the growth line has **one point per exam round** (exams released on the same day, scored by all their marks together), so three subjects do not zig-zag; a habit counts as "repeated" for the attention list only if it cost **2 or more marks in each of the last two exams**; the focus sentences are built from numbers on the screen (so they follow the language toggle), not stored text; dark mode also darkens the school layout.
+
+**Not built, stated plainly:**
+- **The school's way to create a parent login (D2).** A parent who is linked to a child (`school_student_guardians.user_id`) already sees that child's screens read-only, and this is tested; but there is no screen or slip for the school to create the login. The staff sign-in code path only accepts staff roles, so it needs a careful change of its own.
+- The Telugu of **question text and the AI's per-answer reasons** (they stay as written, as agreed in D3).
+- Marks per step and habits exist only for marks made after migration 0093; older marks show the total only.
+- The PDF pages were checked as the HTML they are printed from (no PDF-to-image tool on this machine); the real PDF files were produced and opened as PDFs by the browser test.

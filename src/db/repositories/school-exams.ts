@@ -548,3 +548,7 @@ export const schoolPaperReleasesRepository = createSchoolScopedRepository(
 export const schoolAnswerDisputesRepository = createSchoolScopedRepository(
   'school_answer_disputes',
 )
+
+export const schoolExamReflectionsRepository = createSchoolScopedRepository(
+  'school_exam_reflections',
+)

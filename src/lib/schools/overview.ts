@@ -41,6 +41,8 @@ export interface SchoolOverview {
     board: string
     /** A demo school: every screen is labelled "DEMO - sample data". */
     isDemo: boolean
+    showClassRank: boolean
+    disputeWindowDays: number
     /** The parts the school uses: 'papers' (make exam papers) and/or 'correction' (AI correction). */
     modules: Array<SchoolModule>
     /** Spend cap for the AI steps, in rupees; null means none is set. */
@@ -84,6 +86,8 @@ export async function loadSchoolOverview(
       'ai_spend_cap_inr',
       'wizard_done_at',
       'modules',
+      'show_class_rank',
+      'dispute_window_days',
     ])
     .where('id', '=', scope.schoolId)
     .executeTakeFirstOrThrow()
@@ -106,6 +110,8 @@ export async function loadSchoolOverview(
       code: school.code,
       board: school.board,
       isDemo: school.is_demo,
+      showClassRank: school.show_class_rank,
+      disputeWindowDays: school.dispute_window_days,
       modules: SCHOOL_MODULES.filter((m) => school.modules.includes(m)),
       aiSpendCapInr:
         school.ai_spend_cap_inr === null
