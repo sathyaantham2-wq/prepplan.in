@@ -11,7 +11,8 @@ import { loadSchoolScope } from '../school-session'
 import { createSchoolStudent, createSchoolTeacher } from './people'
 import { addSchoolSubject, createClass, createSection } from './setup'
 import { acceptSchoolTerms } from './terms'
-import { markStudentSheets, setAnswerMark, studentMarking, pageForMarking  } from './marking'
+import { markStudentSheets, markingPrompt, setAnswerMark, studentMarking, pageForMarking } from './marking'
+import { setOwnKey } from './own-paper-service'
 import type { MarkingAi } from './marking'
 
 // M4 stage 1: marking one student's sheets. Local test database only; the AI is a stand-in that records
@@ -316,6 +317,33 @@ describe('AI marking of a student (M4 stage 1)', () => {
     const { ai } = scripted([[]])
     await expect(markStudentSheets(db, admin, paperId, studentId, ai)).rejects.toThrow(/answer key is not approved/)
     await db.updateTable('school_own_questions').set({ key_status: 'approved' }).where('id', '=', q['2']).execute()
+  })
+
+  it('a teacher\'s marking note is saved, cleared, limited, shown to the AI and never mentions a student', async () => {
+    const steps = [
+      { description: 'compares tenths', marks: 1 },
+      { description: 'compares hundredths', marks: 1 },
+      { description: 'concludes', marks: 1 },
+    ]
+    const base = { answer: 'Because tenths are larger than hundredths.', steps }
+    await setOwnKey(db, admin, paperId, q['2'], { ...base, approve: true, note: '  Accept any valid method; no marks off for a missing unit  ' })
+    const saved = await db.selectFrom('school_own_questions').select('marking_note').where('id', '=', q['2']).executeTakeFirstOrThrow()
+    expect(saved.marking_note).toBe('Accept any valid method; no marks off for a missing unit')
+    // leaving the note out of a later save keeps it
+    await setOwnKey(db, admin, paperId, q['2'], { ...base, approve: true })
+    expect((await db.selectFrom('school_own_questions').select('marking_note').where('id', '=', q['2']).executeTakeFirstOrThrow()).marking_note).toContain('Accept any valid method')
+    // the AI is sent it with the question
+    const { ai, sent } = scripted([[answer('1', { choice: 'B' }), answer('2', { marks: 3 })]])
+    await markStudentSheets(db, admin, paperId, studentId, ai)
+    expect(sent[0].qs).toContain('Accept any valid method')
+    expect(sent[0].qs).not.toContain(STUDENT_NAME)
+    const qs = JSON.parse(sent[0].qs) as Array<{ id: string; no: string; text: string; marks: number; type: string; options: Array<{ label: string; text: string }>; keyText: string; keySteps: Array<{ description: string; marks: number }>; note?: string | null; orGroup: string | null }>
+    const prompt = markingPrompt('Mathematics', 7, qs, 1)
+    expect(prompt).toContain("Teacher's marking note (follow it): Accept any valid method")
+    // a note is limited, and an empty text clears it
+    await expect(setOwnKey(db, admin, paperId, q['2'], { ...base, note: 'x'.repeat(401) })).rejects.toThrow(/400/)
+    await setOwnKey(db, admin, paperId, q['2'], { ...base, approve: true, note: '' })
+    expect((await db.selectFrom('school_own_questions').select('marking_note').where('id', '=', q['2']).executeTakeFirstOrThrow()).marking_note).toBeNull()
   })
 
   it('an AI that is not set up gives a plain rejected result, not an error', async () => {

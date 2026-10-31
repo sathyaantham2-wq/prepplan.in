@@ -95,6 +95,12 @@ export const Route = createFileRoute(
                   ? (b.steps as Array<{ description: string; marks: number }>)
                   : undefined,
                 approve: b?.approve === true,
+                note:
+                  typeof b?.note === 'string'
+                    ? b.note
+                    : b?.note === null
+                      ? null
+                      : undefined,
               })
               break
             case 'approve_keys':

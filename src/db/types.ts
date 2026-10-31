@@ -802,6 +802,7 @@ export interface SchoolOwnPapers {
 }
 
 export interface SchoolOwnQuestions {
+  marking_note: string | null;
   changed_from_source: Generated<boolean>;
   chapter_id: string | null;
   created_at: Generated<Timestamp>;

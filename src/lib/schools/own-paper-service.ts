@@ -848,6 +848,8 @@ export interface OwnQuestionView {
   keySteps: Array<{ description: string; marks: number }>
   keySource: string | null
   keyStatus: string
+  /** The teacher's note to whoever marks this question (the AI reads it too). */
+  markingNote: string | null
 }
 
 export interface OwnPaperView {
@@ -915,6 +917,7 @@ export async function getOwnPaper(
       }>,
       keySource: q.key_source,
       keyStatus: q.key_status,
+      markingNote: q.marking_note,
     }
   })
   const keysApproved = questions.filter(
@@ -1198,6 +1201,8 @@ export async function setOwnKey(
     answer: string
     steps?: Array<{ description: string; marks: number }>
     approve?: boolean
+    /** undefined leaves the note as it is; an empty text clears it. */
+    note?: string | null
   },
 ) {
   const paper = await loadOwnPaper(db, scope, paperId)
@@ -1223,7 +1228,15 @@ export async function setOwnKey(
         `The steps add up to ${sum} marks but the question is worth ${Number(q.marks)}.`,
       )
   }
+  let markingNote: { marking_note: string | null } | Record<string, never> = {}
+  if (input.note !== undefined) {
+    const note = (input.note ?? '').trim()
+    if (note.length > 400)
+      throw new SchoolError('invalid', 'The marking note can be up to 400 letters.')
+    markingNote = { marking_note: note === '' ? null : note }
+  }
   await schoolOwnQuestionsRepository.update(db, scope, questionId, {
+    ...markingNote,
     key_text: answer,
     key_steps: JSON.stringify(
       steps.map((s) => ({ description: s.description.trim(), marks: s.marks })),

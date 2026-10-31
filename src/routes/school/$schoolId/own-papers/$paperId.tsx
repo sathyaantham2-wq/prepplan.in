@@ -309,6 +309,7 @@ function QuestionCard({
   const [marks, setMarks] = useState(String(q.marks))
   const [chapter, setChapter] = useState(q.chapterId ?? '')
   const [answer, setAnswer] = useState(q.keyText ?? '')
+  const [note, setNote] = useState(q.markingNote ?? '')
   const structural = v.status === 'needs_review' || v.status === 'reading'
   return (
     <li
@@ -418,6 +419,18 @@ function QuestionCard({
               onChange={(e) => setAnswer(e.target.value)}
               aria-label={`Answer to question ${q.position}`}
             />
+            <label className="block text-sm font-semibold text-slate-700">
+              Marking note (optional): anything the marker should know
+              <input
+                type="text"
+                maxLength={400}
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
+                placeholder="For example: accept any valid method; no marks off for a missing unit"
+                data-testid="marking-note"
+                className="mt-1 block min-h-11 w-full rounded-lg border border-slate-400 px-3 text-base font-normal"
+              />
+            </label>
             <div className="grid grid-cols-2 gap-2">
               <Btn
                 onClick={async () => {
@@ -427,6 +440,7 @@ function QuestionCard({
                     answer,
                     steps: q.keySteps,
                     approve: true,
+                    note,
                   })
                   setKeyOpen(false)
                 }}
@@ -443,6 +457,11 @@ function QuestionCard({
             <p className="text-base break-words whitespace-pre-wrap">
               {q.keyText ?? 'Nothing yet. Write the answer.'}
             </p>
+            {q.markingNote ? (
+              <p className="text-sm text-slate-700" data-testid="note-shown">
+                <b>Marking note:</b> {q.markingNote}
+              </p>
+            ) : null}
             {q.keySteps.length > 0 ? (
               <ul className="list-disc pl-5 text-sm text-slate-700">
                 {q.keySteps.map((s, i) => (

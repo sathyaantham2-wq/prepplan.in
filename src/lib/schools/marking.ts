@@ -81,7 +81,8 @@ export function markingPrompt(
       const steps = q.keySteps.length
         ? `\n  Marking scheme: ${q.keySteps.map((s, i) => `step ${i + 1}: ${s.description} [${s.marks}]`).join('; ')}`
         : ''
-      return `${head}\n  Approved answer: ${q.keyText}${steps}`
+      const teacherNote = q.note ? `\n  Teacher's marking note (follow it): ${q.note}` : ''
+      return `${head}\n  Approved answer: ${q.keyText}${steps}${teacherNote}`
     })
     .join('\n\n')
   return `You are marking a CBSE Class ${grade} ${subject} answer sheet. The ${pages} picture${pages === 1 ? '' : 's'} are the pupil's handwritten pages, in order. The pupil may answer in any order and the answers have no boxes: find each answer by its question number.
@@ -367,6 +368,7 @@ export async function markingQuestions(
       keySteps: (
         q.key_steps as Array<{ description: string; marks: number }>
       ).map((s) => ({ description: s.description, marks: Number(s.marks) })),
+      note: q.marking_note,
       orGroup: q.or_group,
     }))
 }
