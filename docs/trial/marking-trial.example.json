@@ -1,0 +1,21 @@
+{
+  "subject": "Mathematics",
+  "grade": 7,
+  "questions": [
+    { "type": "mcq", "marks": 1, "text": "Which is the greatest: 0.5, 0.05, 0.005, 0.55?", "options": ["0.5", "0.05", "0.55", "0.005"], "correct": "C" },
+    {
+      "type": "short_answer",
+      "marks": 3,
+      "text": "Explain why 0.5 is greater than 0.05.",
+      "key": "0.5 is 5 tenths; 0.05 is 5 hundredths. A tenth is larger than a hundredth, so 0.5 > 0.05.",
+      "steps": [["Writes 0.5 as 5 tenths", 1], ["Writes 0.05 as 5 hundredths", 1], ["Concludes using tenths > hundredths", 1]]
+    }
+  ],
+  "students": [
+    {
+      "name": "Sample Student One",
+      "pages": ["/full/path/to/student-one-page-1.jpg", "/full/path/to/student-one-page-2.jpg"],
+      "ownMarks": [1, 2]
+    }
+  ]
+}
