@@ -69,6 +69,15 @@ function ratesFor(model: string | undefined): {
       input: env.ANTHROPIC_TOP_USD_PER_1M_INPUT,
       output: env.ANTHROPIC_TOP_USD_PER_1M_OUTPUT,
     }
+  if (
+    model?.startsWith('claude-haiku') &&
+    env.ANTHROPIC_CHEAP_USD_PER_1M_INPUT !== undefined &&
+    env.ANTHROPIC_CHEAP_USD_PER_1M_OUTPUT !== undefined
+  )
+    return {
+      input: env.ANTHROPIC_CHEAP_USD_PER_1M_INPUT,
+      output: env.ANTHROPIC_CHEAP_USD_PER_1M_OUTPUT,
+    }
   const provider = providerFromModel(model)
   return (
     (provider && FREE_TIER_RATES[provider]) || {

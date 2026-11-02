@@ -227,13 +227,13 @@ describe('releasing results, flags and the lock (M4)', () => {
 
   it('cannot be released while an answer is flagged for a teacher', async () => {
     // Kiran's three passes disagree on one answer
-    let call = 0
+    let q2Reads = 0
     const unsure: MarkingAi = {
       available: () => true,
-      markPass: ({ questions }) => {
-        const pass = call++
-        return Promise.resolve(JSON.stringify({ answers: questions.map((q) => answer(Number(q.no), Number(q.no) === 2 ? { marks: pass } : {})) }))
-      },
+      markPass: ({ questions }) =>
+        Promise.resolve(
+          JSON.stringify({ answers: questions.map((q) => answer(Number(q.no), Number(q.no) === 2 ? { marks: q2Reads++ } : {})) }),
+        ),
     }
     const r = await markStudentSheets(db, admin, paperId, sid.Kiran, unsure)
     expect(r.status).toBe('needs_teacher')

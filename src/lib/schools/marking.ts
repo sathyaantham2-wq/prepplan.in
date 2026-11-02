@@ -65,6 +65,8 @@ export interface MarkingAi {
     note?: string
     /** The stronger model's third reading of answers the two main readings did not settle. */
     tieBreak?: boolean
+    /** Multiple-choice answers only, read by the cheap model (which letter was ticked). */
+    choiceOnly?: boolean
   }) => Promise<string>
 }
 
@@ -105,8 +107,8 @@ export function createMarkingAi(
 ): MarkingAi {
   return {
     available: () => isAiConfigured(),
-    markPass: async ({ pages, subject, grade, questions, note, tieBreak }) => {
-      const feature = tieBreak ? 'SCH-07T' : 'SCH-07'
+    markPass: async ({ pages, subject, grade, questions, note, tieBreak, choiceOnly }) => {
+      const feature = tieBreak ? 'SCH-07T' : choiceOnly ? 'SCH-07M' : 'SCH-07'
       await assertSchoolAiBudget(db, school.schoolId)
       await enforceAiCallBudget(db, {
         feature,
@@ -544,6 +546,7 @@ export async function markStudentSheets(
     const ask = async (
       qs: Array<MarkQuestion>,
       tieBreak: boolean,
+      choiceOnly = false,
     ): Promise<Array<{ part: Array<MarkQuestion>; read: ReturnType<typeof parsePass> }>> => {
       const out: Array<{ part: Array<MarkQuestion>; read: ReturnType<typeof parsePass> }> = []
       for (const part of chunkQuestions(qs))
@@ -556,6 +559,7 @@ export async function markStudentSheets(
               grade: paper.grade,
               questions: part,
               tieBreak,
+              choiceOnly,
             }),
           ),
         })
@@ -569,7 +573,16 @@ export async function markStudentSheets(
         .find((r) => r.part.some((x) => x.id === q.id))
         ?.read?.answers.find((a) => a.question.trim() === q.no)
     const rounds: Array<Awaited<ReturnType<typeof ask>>> = []
-    for (let i = 0; i < PASSES; i++) rounds.push(await ask(questions, false))
+    // Reading 1: the cheap model reads the ticked letters (the key decides the mark, in code); the main model
+    // reads the written answers. Reading 2: the main model reads everything, so every multiple-choice answer
+    // has been read by two different models, and Opus reads those they do not settle.
+    const choices = questions.filter((q) => isChoiceQuestion(q))
+    const written = questions.filter((q) => !isChoiceQuestion(q))
+    rounds.push([
+      ...(written.length > 0 ? await ask(written, false) : []),
+      ...(choices.length > 0 ? await ask(choices, false, true) : []),
+    ])
+    for (let i = 1; i < PASSES; i++) rounds.push(await ask(questions, false))
     const unsettled = questions.filter((q) => needsTieBreak(q, rounds.map((r) => readingOf(r, q))))
     // The stronger reading is an extra: if it cannot be had (the model is off, over its allowance, refuses),
     // the two readings still stand and the unsettled answers are flagged for the teacher, never lost.

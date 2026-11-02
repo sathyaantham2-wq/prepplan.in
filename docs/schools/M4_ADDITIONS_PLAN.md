@@ -229,3 +229,12 @@ An earlier run of the same size failed because Opus refuses `thinking: disabled`
 failed tie-break discarded the two good readings. Fixed: Opus runs with adaptive thinking at low effort, and a failed
 tie-break now leaves the unsettled answers flagged instead of throwing the marking away.
 Trial spend to date: about Rs 179.
+
+### Cheap model for multiple choice (built 2026-11-02)
+Comparison on the same 6 pages (part 1, 37 answers): Haiku read all **20 of 20 multiple-choice letters the same as Sonnet**,
+but skipped 9 written answers (Q29 to Q37) and disagreed on whether 11 of 17 written answers were found. So Haiku is used for
+the ticked letters only. Reading 1: Haiku (feature `SCH-07M`) reads the multiple-choice answers, Sonnet reads the written
+ones; reading 2: Sonnet reads everything; Opus reads what the two do not settle. Every multiple-choice answer is therefore
+read by two different models. One student, one set: re-check on more sheets in the pilot. **Haiku's price is not known to the
+app:** set `ANTHROPIC_CHEAP_USD_PER_1M_INPUT` and `ANTHROPIC_CHEAP_USD_PER_1M_OUTPUT`. The saving of this change has not been
+measured on a full paper yet (a run costs about Rs 35).
