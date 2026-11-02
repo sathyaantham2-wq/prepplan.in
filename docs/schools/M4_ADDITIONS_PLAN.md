@@ -209,7 +209,7 @@ batch results arrive unattended, so "failed" must never look like "marked".
   Claude Opus 5.5 by default, `ANTHROPIC_MODEL_TOP` to change). **Opus's price is not known to the app:** set
   `ANTHROPIC_TOP_USD_PER_1M_INPUT` and `ANTHROPIC_TOP_USD_PER_1M_OUTPUT`, otherwise its calls are priced like Sonnet's and cost
   figures will be too low.
-- Still to build: exam-week board, batch, pilot study.
+- Still to build: batch, pilot study.
 - Still to measure: a full 25-page, three-part run with caching and tie-break (needs the owner's go-ahead; expected Rs 20 to 40).
 
 ### Masking template and disclosure (2026-11-02, decision B built)
@@ -266,6 +266,21 @@ batch results arrive unattended, so "failed" must never look like "marked".
   still assumed two calls per student and had been failing since the cheap-model routing; it now tells students apart by call kind.
 - Not built: keyboard shortcuts, a zoom on the crop, and a test that a teacher not assigned to the section-subject (but in the same
   school) is refused is the existing `studentOfPaper` rule, covered by the "does not teach this class" test.
+
+### Exam-week board (2026-11-03, built)
+- `src/lib/schools/exam-board.ts` counts, per approved paper and section, from existing tables only (nothing new stored, **no
+  migration**): students (active), sheets uploaded (a page that passed the checks), AI-marked (marking `marked`), waiting for a
+  teacher (`needs_teacher` or still `checking`), failed (marking `rejected`, or every page refused by the upload checks) and whether
+  the section is released. Totals across all papers on top. `boardStudents` lists the students behind one count; a failed one carries
+  its plain reason.
+- `GET /api/schools/:schoolId/exam-board` (principal and office; teachers and the student role are refused, other schools see
+  nothing). Screen `/school/:id/board`: a card per paper, a row per section, tap a count to see who. The office has "Try again" on
+  a failed student (it re-runs the same marking call as the correction screen); the principal's view is read-only. Reached from
+  the "Board" tab on wide screens, Settings for the office on a phone and a card on the principal's Home.
+- Tests: counts add up to the roster, reasons for failed, released section, principal sees / teacher and student refused, other
+  school empty (`exam-board.integration.test.ts`); browser test opens the board and a count.
+- Not built: a per-exam grouping (it lists papers; a paper linked to an exam is not yet grouped by it), a "released" count per
+  section beyond the badge, auto-refresh.
 
 ### Full-paper measurement (2026-11-02, Nainika, 25 pages, 61 answers, reconstructed paper)
 Two readings in three parts, page pictures cached, Opus tie-break only where needed:

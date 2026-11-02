@@ -358,6 +358,18 @@ test.describe.serial('AI marking (phone)', () => {
     await shot(page, 'mk-19-journey-release')
   })
 
+  test('the exam-week board counts the sheets by section and shows who is behind a count', async () => {
+    await page.goto(`/school/${schoolId}/board`, { waitUntil: 'networkidle' })
+    const board = page.getByTestId('exam-board')
+    await expect(board.getByTestId('board-totals')).toBeVisible()
+    const section = board.getByTestId('board-section').first()
+    await expect(section.getByTestId('count-marked')).not.toHaveText('0')
+    await section.getByTestId('count-marked').click()
+    await expect(board.getByTestId('board-students')).toContainText('Zoya Khan')
+    await shot(page, 'mk-19b-board')
+    await noOverflow(page)
+  })
+
   test('the teacher releases the section to its students', async () => {
     await page.setViewportSize(PHONE)
     await page.goto(`/school/${schoolId}/own-papers/${paperId}`, { waitUntil: 'networkidle' })

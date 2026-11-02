@@ -298,6 +298,16 @@ function SchoolHome() {
           icon={<Users className="size-4" />}
         />
       </div>
+      {o.role === 'principal' && o.school.modules.includes('correction') ? (
+        <Link
+          to="/school/$schoolId/board"
+          params={{ schoolId }}
+          className="flex min-h-14 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-base font-semibold text-slate-900! hover:bg-slate-50"
+        >
+          Exam-week board: where every answer sheet stands
+          <ChevronRight aria-hidden="true" className="size-5 shrink-0 text-slate-400" />
+        </Link>
+      ) : null}
       {o.role === 'school_admin' ? (
         <Card className="space-y-4">
           <div>

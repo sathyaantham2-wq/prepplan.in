@@ -3,6 +3,7 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import {
   ChevronRight,
   FileText,
+  Gauge,
   LayoutGrid,
   MessageSquare,
   ScrollText,
@@ -98,6 +99,15 @@ function SettingsPage() {
           title="Parent messages"
           hint="Who agreed to get results on WhatsApp, and in which language"
         />
+        {overview.school.modules.includes('correction') ? (
+          <SettingsLink
+            to="/school/$schoolId/board"
+            schoolId={schoolId}
+            icon={Gauge}
+            title="Exam-week board"
+            hint="Which sheets are uploaded, marked, waiting for a teacher or failed"
+          />
+        ) : null}
         <SettingsLink
           to="/school/$schoolId/terms"
           schoolId={schoolId}
@@ -135,6 +145,7 @@ function SettingsLink({
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/terms'
     | '/school/$schoolId/messages'
+    | '/school/$schoolId/board'
     | '/school/$schoolId/papers'
   schoolId: string
   icon: LucideIcon

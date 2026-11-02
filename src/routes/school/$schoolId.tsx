@@ -9,6 +9,7 @@ import {
   BookOpenCheck,
   ClipboardList,
   TrendingUp,
+  Gauge,
   Grid3x3,
   GraduationCap,
   Home,
@@ -42,6 +43,7 @@ interface NavItem {
     | '/school/$schoolId/my-results'
     | '/school/$schoolId/progress'
     | '/school/$schoolId/class-progress'
+    | '/school/$schoolId/board'
     | '/school/$schoolId/messages'
     | '/school/$schoolId/settings'
   label: string
@@ -88,6 +90,9 @@ function navFor(o: SchoolOverview): Array<NavItem> {
         ]
       : []),
   ]
+  const board: Array<NavItem> = o.school.modules.includes('correction')
+    ? [{ to: '/school/$schoolId/board', label: 'Board', icon: Gauge, wideOnly: true }]
+    : []
   if (o.role === 'school_admin') {
     return [
       home,
@@ -105,6 +110,7 @@ function navFor(o: SchoolOverview): Array<NavItem> {
       },
       students,
       ...parts,
+      ...board,
       {
         to: '/school/$schoolId/messages',
         label: 'Messages',
@@ -119,6 +125,7 @@ function navFor(o: SchoolOverview): Array<NavItem> {
       home,
       students,
       ...parts,
+      ...(o.role === 'principal' ? board : []),
       { to: '/school/$schoolId/messages', label: 'Messages', icon: MessageSquare },
     ]
   if (o.role === 'student')
