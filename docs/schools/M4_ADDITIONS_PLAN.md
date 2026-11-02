@@ -209,8 +209,22 @@ batch results arrive unattended, so "failed" must never look like "marked".
   Claude Opus 5.5 by default, `ANTHROPIC_MODEL_TOP` to change). **Opus's price is not known to the app:** set
   `ANTHROPIC_TOP_USD_PER_1M_INPUT` and `ANTHROPIC_TOP_USD_PER_1M_OUTPUT`, otherwise its calls are priced like Sonnet's and cost
   figures will be too low.
-- Still to build: masking template and disclosure text (B), rubric, side-by-side review, exam-week board, batch, pilot study.
+- Still to build: rubric, side-by-side review, exam-week board, batch, pilot study.
 - Still to measure: a full 25-page, three-part run with caching and tie-break (needs the owner's go-ahead; expected Rs 20 to 40).
+
+### Masking template and disclosure (2026-11-02, decision B built)
+- `schools.mask_template` (jsonb, NULL = default; migration `0099_school_mask_template`, **local scratch DB only; the owner runs it on
+  production**). Shape: `{ boxes: [{x,y,w,h}] (fractions of the upright first page, at most 6), everyPageStrip }`. Default = the top
+  12 % of the first page, as before. `src/lib/schools/mask-template.ts` validates it; a damaged stored value falls back to the
+  default, never to "mask nothing".
+- `pageForMarking(bytes, firstPage, mask)` paints the boxes (and the top strip of every page when asked) white on our server before
+  any marking picture leaves it. Both callers (`loadMarkingPages`, `markStudentSheets`) read the school's template.
+- Office and principal set it at School > Settings > "Name area on answer sheets" (percent boxes with a small preview; a drag-on-a-
+  sample-sheet picker is not built). Every change is written to the audit log (`school.mask_template`).
+- Tests: pixel tests (box white in the outgoing picture, rest untouched, later pages unmasked unless asked), validation, teacher
+  forbidden, audit, default restore.
+- Disclosure bullet added to the school-terms page (name area masked; the one exception is the upload check SCH-05). **The terms
+  version was NOT bumped** (`2026-10-v1`): bumping makes every school accept again. The full terms document is the owner's.
 
 ### Full-paper measurement (2026-11-02, Nainika, 25 pages, 61 answers, reconstructed paper)
 Two readings in three parts, page pictures cached, Opus tie-break only where needed:

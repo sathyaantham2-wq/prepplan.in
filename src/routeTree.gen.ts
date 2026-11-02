@@ -168,6 +168,7 @@ import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remedi
 import { Route as ApiSchoolsSchoolIdClassProgressRouteImport } from './routes/api/schools/$schoolId/class-progress'
 import { Route as ApiSchoolsSchoolIdExamsRouteImport } from './routes/api/schools/$schoolId/exams'
 import { Route as ApiSchoolsSchoolIdImportsRouteImport } from './routes/api/schools/$schoolId/imports'
+import { Route as ApiSchoolsSchoolIdMaskRouteImport } from './routes/api/schools/$schoolId/mask'
 import { Route as ApiSchoolsSchoolIdMyResultsRouteImport } from './routes/api/schools/$schoolId/my-results'
 import { Route as ApiSchoolsSchoolIdOverviewRouteImport } from './routes/api/schools/$schoolId/overview'
 import { Route as ApiSchoolsSchoolIdOwnPapersRouteImport } from './routes/api/schools/$schoolId/own-papers'
@@ -1079,6 +1080,11 @@ const ApiSchoolsSchoolIdImportsRoute =
     path: '/api/schools/$schoolId/imports',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiSchoolsSchoolIdMaskRoute = ApiSchoolsSchoolIdMaskRouteImport.update({
+  id: '/api/schools/$schoolId/mask',
+  path: '/api/schools/$schoolId/mask',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSchoolsSchoolIdMyResultsRoute =
   ApiSchoolsSchoolIdMyResultsRouteImport.update({
     id: '/api/schools/$schoolId/my-results',
@@ -1822,6 +1828,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/class-progress': typeof ApiSchoolsSchoolIdClassProgressRoute
   '/api/schools/$schoolId/exams': typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  '/api/schools/$schoolId/mask': typeof ApiSchoolsSchoolIdMaskRoute
   '/api/schools/$schoolId/my-results': typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
@@ -2079,6 +2086,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/class-progress': typeof ApiSchoolsSchoolIdClassProgressRoute
   '/api/schools/$schoolId/exams': typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  '/api/schools/$schoolId/mask': typeof ApiSchoolsSchoolIdMaskRoute
   '/api/schools/$schoolId/my-results': typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
@@ -2340,6 +2348,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/class-progress': typeof ApiSchoolsSchoolIdClassProgressRoute
   '/api/schools/$schoolId/exams': typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  '/api/schools/$schoolId/mask': typeof ApiSchoolsSchoolIdMaskRoute
   '/api/schools/$schoolId/my-results': typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
@@ -2602,6 +2611,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/class-progress'
     | '/api/schools/$schoolId/exams'
     | '/api/schools/$schoolId/imports'
+    | '/api/schools/$schoolId/mask'
     | '/api/schools/$schoolId/my-results'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
@@ -2859,6 +2869,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/class-progress'
     | '/api/schools/$schoolId/exams'
     | '/api/schools/$schoolId/imports'
+    | '/api/schools/$schoolId/mask'
     | '/api/schools/$schoolId/my-results'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
@@ -3119,6 +3130,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/class-progress'
     | '/api/schools/$schoolId/exams'
     | '/api/schools/$schoolId/imports'
+    | '/api/schools/$schoolId/mask'
     | '/api/schools/$schoolId/my-results'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
@@ -3307,6 +3319,7 @@ export interface RootRouteChildren {
   ApiSchoolsSchoolIdClassProgressRoute: typeof ApiSchoolsSchoolIdClassProgressRoute
   ApiSchoolsSchoolIdExamsRoute: typeof ApiSchoolsSchoolIdExamsRouteWithChildren
   ApiSchoolsSchoolIdImportsRoute: typeof ApiSchoolsSchoolIdImportsRouteWithChildren
+  ApiSchoolsSchoolIdMaskRoute: typeof ApiSchoolsSchoolIdMaskRoute
   ApiSchoolsSchoolIdMyResultsRoute: typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
   ApiSchoolsSchoolIdOverviewRoute: typeof ApiSchoolsSchoolIdOverviewRoute
   ApiSchoolsSchoolIdOwnPapersRoute: typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
@@ -4451,6 +4464,13 @@ declare module '@tanstack/react-router' {
       path: '/api/schools/$schoolId/imports'
       fullPath: '/api/schools/$schoolId/imports'
       preLoaderRoute: typeof ApiSchoolsSchoolIdImportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/mask': {
+      id: '/api/schools/$schoolId/mask'
+      path: '/api/schools/$schoolId/mask'
+      fullPath: '/api/schools/$schoolId/mask'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdMaskRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/schools/$schoolId/my-results': {
@@ -6017,6 +6037,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdClassProgressRoute: ApiSchoolsSchoolIdClassProgressRoute,
   ApiSchoolsSchoolIdExamsRoute: ApiSchoolsSchoolIdExamsRouteWithChildren,
   ApiSchoolsSchoolIdImportsRoute: ApiSchoolsSchoolIdImportsRouteWithChildren,
+  ApiSchoolsSchoolIdMaskRoute: ApiSchoolsSchoolIdMaskRoute,
   ApiSchoolsSchoolIdMyResultsRoute:
     ApiSchoolsSchoolIdMyResultsRouteWithChildren,
   ApiSchoolsSchoolIdOverviewRoute: ApiSchoolsSchoolIdOverviewRoute,
@@ -6066,12 +6087,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

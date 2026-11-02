@@ -56,6 +56,14 @@ function Terms() {
           <li>
             Student accounts are never joined to personal PrepPlan accounts.
           </li>
+          <li>
+            When answer sheets are marked by AI, the name and roll area of each
+            sheet is painted white on our server before any page is sent to the
+            AI. The one exception is the upload check, which reads that name
+            area with a small, low-cost AI model, only to match the sheet to
+            the right student in your class list; the match itself is made by
+            PrepPlan, and the result is shown to your staff to confirm.
+          </li>
         </ul>
         {TERMS_DOCUMENT ? (
           <a

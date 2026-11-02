@@ -922,6 +922,7 @@ export interface Schools {
   messaging_enabled: Generated<boolean>;
   message_log_days: Generated<number>;
   parent_weekly_limit: number | null;
+  mask_template: Json | null;
 }
 
 export interface SchoolScanBatches {

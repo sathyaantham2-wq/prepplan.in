@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
+import { MaskSettings } from '../../../components/school/mask-settings'
 import { ModulePicker } from '../../../components/school/module-picker'
 import { Btn, Card, Notice, PageHeader } from '../../../components/school/ui'
 import { api } from '../../../lib/school-client'
@@ -71,6 +72,8 @@ function SettingsPage() {
       </Card>
 
       <ProgressSettings />
+
+      <MaskSettings />
 
       <Card className="space-y-2">
         <h2 className="text-lg font-bold">Your school</h2>

@@ -17,6 +17,8 @@ import { isProductionRuntime } from '../fixture-subjects'
 import { decryptScan } from '../scan-crypto'
 import { getScanStore } from '../scan-storage'
 import { SchoolError, auditSchool } from './common'
+import { DEFAULT_MASK, maskFor, maskRects } from './mask-template'
+import type { MaskTemplate } from './mask-template'
 import {
   PASSES,
   chunkQuestions,
@@ -265,14 +267,25 @@ export async function markingAiFor(
 
 // ---------------------------------------------------------------- the pictures sent to the AI
 
+/** The school's mask template (the default when it has not set one). */
+export async function schoolMaskTemplate(db: Db, scope: SchoolScope): Promise<MaskTemplate> {
+  const s = await db
+    .selectFrom('schools')
+    .select('mask_template')
+    .where('id', '=', scope.schoolId)
+    .executeTakeFirstOrThrow()
+  return maskFor(s.mask_template)
+}
+
 /**
- * The top strip of a page is where a pupil writes her name; the AI marking an answer never needs it. It is
- * painted white on the FIRST page, the same strip the name check reads (12 % of the height). The picture
- * is turned upright and shrunk to at most 1400 px wide.
+ * The name and roll area of a sheet is where a pupil writes who she is; the AI marking an answer never needs it.
+ * The school's mask template (default: the top 12 % of the first page, the strip the name check reads) is painted
+ * white before the picture leaves our server. The picture is turned upright and shrunk to at most 1400 px wide.
  */
 export async function pageForMarking(
   bytes: Buffer,
   firstPage: boolean,
+  mask: MaskTemplate = DEFAULT_MASK,
 ): Promise<MarkingPage> {
   // Shrink first: sharp applies a resize before a composite, so a strip sized to the full photo would be
   // wider than the shrunk picture and the first page of any photo over 1400 px wide would be refused.
@@ -281,23 +294,23 @@ export async function pageForMarking(
     .resize({ width: 1400, withoutEnlargement: true })
     .toBuffer()
   let img = sharp(oriented)
-  if (firstPage) {
-    const meta = await sharp(oriented).metadata()
-    const stripH = Math.max(1, Math.round(meta.height * 0.12))
-    img = sharp(oriented).composite([
-      {
+  const meta = await sharp(oriented).metadata()
+  const rects = maskRects(mask, firstPage, meta.width, meta.height)
+  if (rects.length > 0) {
+    img = sharp(oriented).composite(
+      rects.map((r) => ({
         input: {
           create: {
-            width: meta.width,
-            height: stripH,
-            channels: 3,
+            width: r.width,
+            height: r.height,
+            channels: 3 as const,
             background: '#ffffff',
           },
         },
-        top: 0,
-        left: 0,
-      },
-    ])
+        top: r.top,
+        left: r.left,
+      })),
+    )
   }
   const out = await img.jpeg({ quality: 80 }).toBuffer()
   return { mediaType: 'image/jpeg', base64: out.toString('base64') }
@@ -347,11 +360,12 @@ export async function loadMarkingPages(
   )
   if (usable.length === 0) return null
   const store = getScanStore()
+  const mask = await schoolMaskTemplate(db, scope)
   const pages: Array<MarkingPage> = []
   for (const [i, s] of usable.entries()) {
     const sealed = await store.get((s.image_key ?? s.original_key) as string)
     if (!sealed) return null
-    pages.push(await pageForMarking(decryptScan(sealed), i === 0))
+    pages.push(await pageForMarking(decryptScan(sealed), i === 0, mask))
   }
   return pages
 }
@@ -534,11 +548,12 @@ export async function markStudentSheets(
 
   try {
     const store = getScanStore()
+    const mask = await schoolMaskTemplate(db, scope)
     const pages: Array<MarkingPage> = []
     for (const [i, s] of usable.entries()) {
       const sealed = await store.get((s.image_key ?? s.original_key) as string)
       if (!sealed) return reject('A page picture could not be found. Please upload it again.')
-      pages.push(await pageForMarking(decryptScan(sealed), i === 0))
+      pages.push(await pageForMarking(decryptScan(sealed), i === 0, mask))
     }
 
     // A paper too long for one reply is asked in parts (same pages, some of the questions each time).
