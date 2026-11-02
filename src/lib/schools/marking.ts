@@ -18,6 +18,8 @@ import { decryptScan } from '../scan-crypto'
 import { getScanStore } from '../scan-storage'
 import { SchoolError, auditSchool } from './common'
 import { DEFAULT_MASK, maskFor, maskRects } from './mask-template'
+import { RUBRIC_RULE, criteriaAsSteps } from './rubric'
+import type { Criterion } from './rubric'
 import type { MaskTemplate } from './mask-template'
 import {
   PASSES,
@@ -90,7 +92,8 @@ export function markingPrompt(
         ? `\n  Marking scheme: ${q.keySteps.map((s, i) => `step ${i + 1}: ${s.description} [${s.marks}]`).join('; ')}`
         : ''
       const teacherNote = q.note ? `\n  Teacher's marking note (follow it): ${q.note}` : ''
-      return `${head}\n  Approved answer: ${q.keyText}${steps}${teacherNote}`
+      const rubric = q.rubric ? `\n  ${RUBRIC_RULE}` : ''
+      return `${head}\n  Approved answer: ${q.keyText}${steps}${rubric}${teacherNote}`
     })
     .join('\n\n')
   return `You are marking a CBSE Class ${grade} ${subject} answer sheet. The ${pages} picture${pages === 1 ? '' : 's'} are the pupil's handwritten pages, in order. The pupil may answer in any order and the answers have no boxes: find each answer by its question number.
@@ -417,9 +420,13 @@ export async function markingQuestions(
       type: q.type,
       options: q.options as Array<{ label: string; text: string }>,
       keyText: q.key_text ?? '',
-      keySteps: (
-        q.key_steps as Array<{ description: string; marks: number }>
-      ).map((s) => ({ description: s.description, marks: Number(s.marks) })),
+      keySteps:
+        q.key_kind === 'rubric'
+          ? criteriaAsSteps(q.key_criteria as unknown as Array<Criterion>)
+          : (
+              q.key_steps as Array<{ description: string; marks: number }>
+            ).map((s) => ({ description: s.description, marks: Number(s.marks) })),
+      rubric: q.key_kind === 'rubric',
       note: q.marking_note,
       orGroup: q.or_group,
     }))

@@ -397,6 +397,42 @@ describe('AI marking of a student (M4 stage 1)', () => {
     expect((await db.selectFrom('school_own_questions').select('marking_note').where('id', '=', q['2']).executeTakeFirstOrThrow()).marking_note).toBeNull()
   })
 
+  it('a rubric key: criteria must add up, the AI is sent them, a draft rubric blocks marking, awards are clamped', async () => {
+    const criteria = [
+      { kind: 'concept', marks: 1, descriptor: 'names the idea', levels: [{ marks: 1, says: 'names it' }, { marks: 0, says: 'does not' }] },
+      { kind: 'key_points', marks: 1, descriptor: 'gives two causes', levels: [] },
+      { kind: 'conclusion', marks: 1, descriptor: 'ends with a conclusion', levels: [] },
+    ]
+    const base = { answer: 'Tenths are larger.' }
+    // criteria that do not add up to the question's 3 marks are refused and nothing is saved
+    await expect(setOwnKey(db, admin, paperId, q['2'], { ...base, criteria: criteria.slice(0, 2), approve: true })).rejects.toThrow(/add up to 2/)
+    await expect(setOwnKey(db, admin, paperId, q['2'], { ...base, criteria: [{ ...criteria[0], kind: 'vibes' }, criteria[1], criteria[2]] })).rejects.toThrow(/kind/)
+    // saved as a draft: marking is blocked until the teacher approves it
+    await setOwnKey(db, admin, paperId, q['2'], { ...base, criteria })
+    const { ai: blocked } = scripted([[]])
+    await expect(markStudentSheets(db, admin, paperId, studentId, blocked)).rejects.toThrow(/answer key is not approved/)
+    await setOwnKey(db, admin, paperId, q['2'], { ...base, criteria, approve: true })
+    const row = await db.selectFrom('school_own_questions').select(['key_kind', 'key_steps']).where('id', '=', q['2']).executeTakeFirstOrThrow()
+    expect(row.key_kind).toBe('rubric')
+    expect(row.key_steps).toEqual([])
+    // the AI is sent the criteria as the marking scheme, with the rule about language marks; a 5 for a 1-mark criterion is clamped
+    const { ai, sent } = scripted([[answer('1', { choice: 'B' }), answer('2', { marks: 3, steps: [{ step: 1, awarded: 5 }, { step: 2, awarded: 1 }, { step: 3, awarded: 0.5 }] })]])
+    await markStudentSheets(db, admin, paperId, studentId, ai)
+    const qs = JSON.parse(sent[0].qs) as Array<{ no: string; keySteps: Array<{ description: string; marks: number }>; rubric?: boolean }>
+    const two = qs.find((x) => x.no === '2')
+    expect(two?.rubric).toBe(true)
+    expect(two?.keySteps.map((k) => k.marks)).toEqual([1, 1, 1])
+    expect(two?.keySteps[0].description).toContain('concept: names the idea')
+    const prompt = markingPrompt('Social Science', 7, qs as never, 1)
+    expect(prompt).toContain('criterion by criterion')
+    const m = await db.selectFrom('school_answer_marks').select(['final_marks', 'steps']).where('own_question_id', '=', q['2']).executeTakeFirstOrThrow()
+    expect(Number(m.final_marks)).toBeLessThanOrEqual(3)
+    for (const st of m.steps as unknown as Array<{ awarded: number; max: number }>) expect(st.awarded).toBeLessThanOrEqual(st.max)
+    // back to a working-steps key for the tests that follow
+    await setOwnKey(db, admin, paperId, q['2'], { ...base, steps: [{ description: 'compares tenths', marks: 1 }, { description: 'compares hundredths', marks: 1 }, { description: 'concludes', marks: 1 }], approve: true })
+    expect((await db.selectFrom('school_own_questions').select(['key_kind', 'key_criteria']).where('id', '=', q['2']).executeTakeFirstOrThrow())).toEqual({ key_kind: 'steps', key_criteria: [] })
+  })
+
   it('an AI that is not set up gives a plain rejected result, not an error', async () => {
     const off: MarkingAi = { available: () => false, markPass: () => Promise.resolve('') }
     const r = await markStudentSheets(db, admin, paperId, studentId, off)

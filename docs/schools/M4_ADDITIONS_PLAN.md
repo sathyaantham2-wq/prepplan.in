@@ -209,7 +209,7 @@ batch results arrive unattended, so "failed" must never look like "marked".
   Claude Opus 5.5 by default, `ANTHROPIC_MODEL_TOP` to change). **Opus's price is not known to the app:** set
   `ANTHROPIC_TOP_USD_PER_1M_INPUT` and `ANTHROPIC_TOP_USD_PER_1M_OUTPUT`, otherwise its calls are priced like Sonnet's and cost
   figures will be too low.
-- Still to build: rubric, side-by-side review, exam-week board, batch, pilot study.
+- Still to build: rubric editor screen and AI rubric draft, side-by-side review, exam-week board, batch, pilot study.
 - Still to measure: a full 25-page, three-part run with caching and tie-break (needs the owner's go-ahead; expected Rs 20 to 40).
 
 ### Masking template and disclosure (2026-11-02, decision B built)
@@ -225,6 +225,21 @@ batch results arrive unattended, so "failed" must never look like "marked".
   forbidden, audit, default restore.
 - Disclosure bullet added to the school-terms page (name area masked; the one exception is the upload check SCH-05). **The terms
   version was NOT bumped** (`2026-10-v1`): bumping makes every school accept again. The full terms document is the owner's.
+
+### Rubric answer keys (2026-11-02, core built)
+- `school_own_questions.key_kind` ('steps' | 'rubric', default 'steps') and `key_criteria` (jsonb); migration `0100_own_question_rubric`
+  (**local scratch DB only; the owner runs it on production**).
+- `src/lib/schools/rubric.ts`: `parseCriteria` (1 to 8 criteria, kinds concept/key_points/explanation/conclusion/diagram/language,
+  half-mark steps, levels within the criterion's marks, **sum must equal the question's marks**), `criteriaAsSteps` (a rubric is read
+  by the marker as one step per criterion, levels in the text, so the existing award, clamp, half-mark and total code is reused and
+  `school_answer_marks.steps` stores per-criterion awards), and the rule sent with a rubric question (no spelling/grammar marks unless
+  a `language` criterion exists).
+- Teacher saves a rubric through `set_key` (`criteria`); it goes through the same draft/approved status as steps, so an unapproved
+  rubric blocks marking exactly as before. Saving steps again switches the question back to a steps key.
+- Tests: sum rule, bad kinds/levels/NaN, Telugu round trip, refusal, draft blocks marking, prompt carries the criteria and the rule,
+  awards clamped (`rubric.test.ts`, `school-marking.integration.test.ts`).
+- **Not built yet:** the teacher's rubric editor on the key screen, and the AI drafting a rubric (SCH-03 extension). Until then a rubric
+  can only be saved through the API.
 
 ### Full-paper measurement (2026-11-02, Nainika, 25 pages, 61 answers, reconstructed paper)
 Two readings in three parts, page pictures cached, Opus tie-break only where needed:

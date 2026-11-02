@@ -814,6 +814,8 @@ export interface SchoolOwnQuestions {
   key_source: string | null;
   key_status: Generated<string>;
   key_steps: Generated<Json>;
+  key_kind: Generated<string>;
+  key_criteria: Generated<Json>;
   key_text: string | null;
   map_confidence: Numeric | null;
   marks: Numeric;

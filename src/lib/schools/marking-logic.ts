@@ -63,6 +63,8 @@ export interface MarkQuestion {
   options: Array<{ label: string; text: string }>
   keyText: string
   keySteps: Array<{ description: string; marks: number }>
+  /** The key is a rubric: keySteps are its criteria. */
+  rubric?: boolean
   /** The teacher's marking note for this question, if any. */
   note?: string | null
   orGroup: string | null

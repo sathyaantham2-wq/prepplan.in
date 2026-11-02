@@ -94,6 +94,7 @@ export const Route = createFileRoute(
                 steps: Array.isArray(b?.steps)
                   ? (b.steps as Array<{ description: string; marks: number }>)
                   : undefined,
+                criteria: b?.criteria,
                 approve: b?.approve === true,
                 note:
                   typeof b?.note === 'string'

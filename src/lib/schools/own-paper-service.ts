@@ -1,3 +1,5 @@
+import { parseCriteria } from './rubric'
+import type { Criterion } from './rubric'
 import type { Db } from '../../db/connection'
 import {
   bankRepository,
@@ -846,6 +848,8 @@ export interface OwnQuestionView {
   fromPrepPlan: boolean
   keyText: string | null
   keySteps: Array<{ description: string; marks: number }>
+  keyKind: string
+  keyCriteria: Array<Criterion>
   keySource: string | null
   keyStatus: string
   /** The teacher's note to whoever marks this question (the AI reads it too). */
@@ -915,6 +919,8 @@ export async function getOwnPaper(
         description: string
         marks: number
       }>,
+      keyKind: q.key_kind,
+      keyCriteria: q.key_criteria as unknown as Array<Criterion>,
       keySource: q.key_source,
       keyStatus: q.key_status,
       markingNote: q.marking_note,
@@ -1200,6 +1206,8 @@ export async function setOwnKey(
   input: {
     answer: string
     steps?: Array<{ description: string; marks: number }>
+    /** A rubric key for a descriptive question (instead of steps). */
+    criteria?: unknown
     approve?: boolean
     /** undefined leaves the note as it is; an empty text clears it. */
     note?: string | null
@@ -1217,7 +1225,13 @@ export async function setOwnKey(
   const answer = input.answer.trim()
   if (answer.length < 1 || answer.length > 3000)
     throw new SchoolError('invalid', 'Write the answer (up to 3000 letters).')
-  const steps = (input.steps ?? []).filter((s) => s.description.trim() !== '')
+  let rubric: Array<Criterion> | null = null
+  if (Array.isArray(input.criteria) && input.criteria.length > 0) {
+    const r = parseCriteria(input.criteria, Number(q.marks))
+    if (!r.ok) throw new SchoolError('invalid', r.reason)
+    rubric = r.criteria
+  }
+  const steps = rubric ? [] : (input.steps ?? []).filter((s) => s.description.trim() !== '')
   if (steps.length > 0) {
     if (steps.some((s) => !Number.isFinite(s.marks) || s.marks < 0))
       throw new SchoolError('invalid', 'Check the marks of each step.')
@@ -1241,6 +1255,8 @@ export async function setOwnKey(
     key_steps: JSON.stringify(
       steps.map((s) => ({ description: s.description.trim(), marks: s.marks })),
     ),
+    key_kind: rubric ? 'rubric' : 'steps',
+    key_criteria: JSON.stringify(rubric ?? []),
     key_source: 'teacher',
     key_status: input.approve ? 'approved' : 'draft',
     key_approved_by_user_id: input.approve ? scope.userId : null,
