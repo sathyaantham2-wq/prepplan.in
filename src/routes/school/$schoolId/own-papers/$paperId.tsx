@@ -14,9 +14,11 @@ import { AnswerSheets } from '../../../../components/school/own-sheets-panel'
 import { StudentSheets } from '../../../../components/school/student-sheets'
 import { MathText } from '../../../../components/math-text'
 import { ClassResults } from '../../../../components/school/marking-panel'
+import { RubricEditor, blankCriterion } from '../../../../components/school/rubric-editor'
 import { ReleasePanel } from '../../../../components/school/release-panel'
 import { CorrectionHelp } from '../../../../components/school/correction-help'
 import { ExamJourney } from '../../../../components/school/exam-journey'
+import type { Criterion } from '../../../../lib/schools/rubric'
 import type {
   OwnPaperView,
   OwnQuestionView,
@@ -307,6 +309,9 @@ function QuestionCard({
   const [chapter, setChapter] = useState(q.chapterId ?? '')
   const [answer, setAnswer] = useState(q.keyText ?? '')
   const [note, setNote] = useState(q.markingNote ?? '')
+  // A descriptive answer can be marked by a rubric of criteria instead of working steps.
+  const [criteria, setCriteria] = useState<Array<Criterion>>(q.keyCriteria)
+  const [useRubric, setUseRubric] = useState(q.keyKind === 'rubric')
   const structural = v.status === 'needs_review' || v.status === 'reading'
   return (
     <li
@@ -430,6 +435,22 @@ function QuestionCard({
                 className="mt-1 block min-h-11 w-full rounded-lg border border-slate-400 px-3 text-base font-normal"
               />
             </label>
+            {q.marks >= 2 ? (
+              <label className="flex min-h-11 items-center gap-3 text-base">
+                <input
+                  type="checkbox"
+                  className="size-5"
+                  checked={useRubric}
+                  onChange={(e) => {
+                    setUseRubric(e.target.checked)
+                    if (e.target.checked && criteria.length === 0) setCriteria([blankCriterion(q.marks)])
+                  }}
+                  data-testid="use-rubric"
+                />
+                Mark by criteria (a rubric) instead of steps
+              </label>
+            ) : null}
+            {useRubric ? <RubricEditor value={criteria} onChange={setCriteria} questionMarks={q.marks} /> : null}
             <div className="grid grid-cols-2 gap-2">
               <Btn
                 onClick={async () => {
@@ -437,7 +458,8 @@ function QuestionCard({
                     action: 'set_key',
                     question_id: q.id,
                     answer,
-                    steps: q.keySteps,
+                    steps: useRubric ? [] : q.keySteps,
+                    criteria: useRubric ? criteria : [],
                     approve: true,
                     note,
                   })
@@ -461,7 +483,17 @@ function QuestionCard({
                 <b>Marking note:</b> {q.markingNote}
               </p>
             ) : null}
-            {q.keySteps.length > 0 ? (
+            {q.keyKind === 'rubric' ? (
+              <ul className="list-disc pl-5 text-sm text-slate-700" data-testid="rubric-shown">
+                {q.keyCriteria.map((c, i) => (
+                  <li key={i}>
+                    <b>{c.kind.replace('_', ' ')}</b> ({c.marks}): {c.descriptor}
+                    {c.levels.length > 0 ? ` — ${c.levels.map((l) => `${l.marks}: ${l.says}`).join('; ')}` : ''}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            {q.keyKind !== 'rubric' && q.keySteps.length > 0 ? (
               <ul className="list-disc pl-5 text-sm text-slate-700">
                 {q.keySteps.map((s, i) => (
                   <li key={i}>

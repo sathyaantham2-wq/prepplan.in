@@ -1,4 +1,4 @@
-import { parseCriteria } from './rubric'
+import { keptDraft, parseCriteria, wantsRubric } from './rubric'
 import type { Criterion } from './rubric'
 import type { Db } from '../../db/connection'
 import {
@@ -725,6 +725,7 @@ export async function stepOwnPaper(
               label: string
               text: string
             }>,
+            rubric: wantsRubric(paper.subject.name, q.type, Number(q.marks)),
           })),
           subject: paper.subject.name,
           grade: paper.grade,
@@ -734,13 +735,18 @@ export async function stepOwnPaper(
           return progressOf(await loadOwnPaper(db, scope, paperId))
         for (const k of parsed) {
           const q = need.find((x) => x.position === k.q)
-          if (q)
+          if (q) {
+            // A rubric the AI drafted is kept only if it adds up; otherwise the question gets steps (or none) as before.
+            const kept = keptDraft(paper.subject.name, { type: q.type, marks: Number(q.marks) }, k)
             await schoolOwnQuestionsRepository.update(db, scope, q.id, {
               key_text: k.answer,
-              key_steps: JSON.stringify(cleanSteps(k.steps, Number(q.marks))),
+              key_steps: JSON.stringify(kept.steps),
+              key_kind: kept.kind,
+              key_criteria: JSON.stringify(kept.criteria),
               key_source: 'ai_draft',
               key_status: 'draft',
             })
+          }
         }
       } else if (
         !(await advance({
@@ -802,15 +808,6 @@ async function toDraftPhase(db: Db, scope: SchoolScope, paperId: string) {
   ).filter((q) => q.key_status === 'none').length
   if (left === 0) return moveTo(db, scope, paperId, 'done', 0)
   await moveTo(db, scope, paperId, 'draft', Math.ceil(left / DRAFT_BATCH))
-}
-
-/** Marks that add up to the question's marks, or none (a teacher then writes the steps). */
-function cleanSteps(
-  steps: Array<{ description: string; marks: number }>,
-  marks: number,
-) {
-  const sum = steps.reduce((n, s) => n + s.marks, 0)
-  return Math.abs(sum - marks) < 0.01 ? steps : []
 }
 
 function totalOf(

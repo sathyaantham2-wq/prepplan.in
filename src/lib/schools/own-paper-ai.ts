@@ -50,6 +50,8 @@ export interface OwnPaperAi {
       marks: number
       type: string
       options: Array<{ label: string; text: string }>
+      /** Draft a rubric (criteria with levels) instead of working steps. */
+      rubric?: boolean
     }>
     subject: string
     grade: number
@@ -85,7 +87,8 @@ Shape: [{"q": 1, "answer": "...", "steps": [{"description": "...", "marks": 1}]}
     grade: number,
   ) => `You are drafting the answer key for a CBSE Class ${grade} ${subject} paper for a teacher to check. For each question write the correct answer (for a choice question, the correct option letter and its text) and, for written answers worth 2 or more marks, 2 to 5 marking steps whose marks add up to the question's marks. Be exact and short. If you are not certain of an answer, say so in the answer text. Write maths in plain text (3/4, x^2, √(x+1)).
 ${ONLY_JSON}
-Shape: [{"q": 1, "answer": "...", "steps": [{"description": "...", "marks": 1}]}]`,
+A question tagged [RUBRIC] is a descriptive answer: give "criteria" instead of "steps": 2 to 5 criteria whose marks add up to the question's marks (half marks allowed). Each has a "kind" (one of concept, key_points, explanation, conclusion, diagram, language), "marks", a "descriptor" of what earns it, and "levels" listing the marks that can be awarded and what the pupil's answer says to earn them. Add a "language" criterion only if the question really tests writing quality.
+Shape: [{"q": 1, "answer": "...", "steps": [{"description": "...", "marks": 1}]}] or, for a [RUBRIC] question, [{"q": 2, "answer": "...", "criteria": [{"kind": "concept", "marks": 2, "descriptor": "...", "levels": [{"marks": 2, "says": "..."}, {"marks": 1, "says": "..."}]}]}]`,
 }
 
 export function createOwnPaperAi(
@@ -176,7 +179,7 @@ export function createOwnPaperAi(
         `${PROMPTS.draftKey(subject, grade)}\n\n--- QUESTIONS ---\n${questions
           .map(
             (q) =>
-              `${q.n}. [${q.marks} marks, ${q.type}] ${q.text}${q.options.length ? `\n${q.options.map((o) => `   (${o.label}) ${o.text}`).join('\n')}` : ''}`,
+              `${q.n}. [${q.marks} marks, ${q.type}${q.rubric ? ', RUBRIC' : ''}] ${q.text}${q.options.length ? `\n${q.options.map((o) => `   (${o.label}) ${o.text}`).join('\n')}` : ''}`,
           )
           .join('\n\n')}`,
         undefined,
@@ -232,8 +235,18 @@ export function createFakeOwnPaperAi(): OwnPaperAi {
           questions.map((q) => ({
             q: q.n,
             answer: `Draft answer for question ${q.n}`,
+            ...(q.rubric
+              ? {
+                  criteria: [
+                    { kind: 'concept', marks: q.marks - 1, descriptor: 'States the main idea', levels: [{ marks: q.marks - 1, says: 'fully' }] },
+                    { kind: 'conclusion', marks: 1, descriptor: 'Ends with a conclusion', levels: [] },
+                  ],
+                }
+              : {}),
             steps:
-              q.marks >= 2
+              q.rubric
+                ? []
+                : q.marks >= 2
                 ? [
                     { description: 'Method', marks: q.marks - 1 },
                     { description: 'Answer', marks: 1 },

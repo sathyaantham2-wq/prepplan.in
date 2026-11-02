@@ -62,3 +62,27 @@ export function criteriaAsSteps(criteria: ReadonlyArray<Criterion>): Array<{ des
 /** Said to the marking AI for a rubric question. */
 export const RUBRIC_RULE =
   'Mark this question criterion by criterion; award each criterion only what the pupil’s words earn at the levels given. Do not give marks for spelling or grammar unless a "language" criterion is listed.'
+
+const DESCRIPTIVE_SUBJECT = /social|history|geograph|civic|econom|english|telugu|hindi|sanskrit|urdu|kannada|tamil|literature|language/i
+
+/** Does a drafted key for this question get a rubric (SST, English and the languages, written answers of 3 or more marks)? */
+export function wantsRubric(subjectName: string, type: string, marks: number): boolean {
+  return DESCRIPTIVE_SUBJECT.test(subjectName) && ['short_answer', 'long_answer', 'case_study'].includes(type) && marks >= 3
+}
+
+/**
+ * What is kept of one drafted key: a rubric only when one was asked for, was drafted and adds up to the question's marks;
+ * otherwise the drafted steps if they add up, otherwise none (a teacher then writes them).
+ */
+export function keptDraft(
+  subjectName: string,
+  q: { type: string; marks: number },
+  drafted: { steps: Array<{ description: string; marks: number }>; criteria?: Array<unknown> },
+): { kind: 'steps' | 'rubric'; steps: Array<{ description: string; marks: number }>; criteria: Array<Criterion> } {
+  if (drafted.criteria && wantsRubric(subjectName, q.type, q.marks)) {
+    const r = parseCriteria(drafted.criteria, q.marks)
+    if (r.ok) return { kind: 'rubric', steps: [], criteria: r.criteria }
+  }
+  const sum = drafted.steps.reduce((n, s) => n + s.marks, 0)
+  return { kind: 'steps', steps: Math.abs(sum - q.marks) < 0.01 ? drafted.steps : [], criteria: [] }
+}

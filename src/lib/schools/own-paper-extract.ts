@@ -408,5 +408,7 @@ export const KeySchema = z.array(
       .max(12)
       .optional()
       .default([]),
+    /** A drafted rubric (checked by parseCriteria before it is kept). */
+    criteria: z.array(z.unknown()).max(8).optional(),
   }),
 )

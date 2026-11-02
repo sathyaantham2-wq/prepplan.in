@@ -209,7 +209,7 @@ batch results arrive unattended, so "failed" must never look like "marked".
   Claude Opus 5.5 by default, `ANTHROPIC_MODEL_TOP` to change). **Opus's price is not known to the app:** set
   `ANTHROPIC_TOP_USD_PER_1M_INPUT` and `ANTHROPIC_TOP_USD_PER_1M_OUTPUT`, otherwise its calls are priced like Sonnet's and cost
   figures will be too low.
-- Still to build: rubric editor screen and AI rubric draft, side-by-side review, exam-week board, batch, pilot study.
+- Still to build: side-by-side review, exam-week board, batch, pilot study.
 - Still to measure: a full 25-page, three-part run with caching and tie-break (needs the owner's go-ahead; expected Rs 20 to 40).
 
 ### Masking template and disclosure (2026-11-02, decision B built)
@@ -238,8 +238,12 @@ batch results arrive unattended, so "failed" must never look like "marked".
   rubric blocks marking exactly as before. Saving steps again switches the question back to a steps key.
 - Tests: sum rule, bad kinds/levels/NaN, Telugu round trip, refusal, draft blocks marking, prompt carries the criteria and the rule,
   awards clamped (`rubric.test.ts`, `school-marking.integration.test.ts`).
-- **Not built yet:** the teacher's rubric editor on the key screen, and the AI drafting a rubric (SCH-03 extension). Until then a rubric
-  can only be saved through the API.
+- **Rubric editor** on the key screen (`rubric-editor.tsx`): tick "Mark by criteria", add criteria (kind, marks, what earns it, levels),
+  a live "add up to N of M marks" line; saving keeps the rubric (a steps save sends `criteria: []`, a rubric save sends the criteria).
+- **AI rubric draft** (SCH-03 extended): for descriptive subjects (Social Science, English, the languages) the draft prompt tags written
+  questions of 3 or more marks `RUBRIC` and asks for `criteria`; `keptDraft` keeps it only if it adds up to the question's marks,
+  otherwise the drafted steps (if they add up) or none. Maths and Science never get a rubric. Always a draft: a teacher approves it.
+  **No real AI call has been made for this prompt yet** (tests use stand-ins); try it on one real descriptive paper before relying on it.
 
 ### Full-paper measurement (2026-11-02, Nainika, 25 pages, 61 answers, reconstructed paper)
 Two readings in three parts, page pictures cached, Opus tie-break only where needed:
