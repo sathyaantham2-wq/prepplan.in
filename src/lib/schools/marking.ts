@@ -25,6 +25,7 @@ import {
   PASSES,
   chunkQuestions,
   combinePasses,
+  locationOf,
   needsTieBreak,
   isChoiceQuestion,
   mcqKeyLabel,
@@ -34,7 +35,7 @@ import {
   
   
 } from './marking-logic'
-import type {CombinedAnswer, MarkQuestion, PassAnswer} from './marking-logic';
+import type {AnswerLocation, CombinedAnswer, MarkQuestion, PassAnswer} from './marking-logic';
 import { assertPaperReadyForMarking, loadOwnPaper } from './own-paper-service'
 import { ownSheetsSummary, studentOfPaper } from './own-sheets'
 import { assertSchoolAiBudget } from './school-ai-budget'
@@ -98,12 +99,12 @@ export function markingPrompt(
     .join('\n\n')
   return `You are marking a CBSE Class ${grade} ${subject} answer sheet. The ${pages} picture${pages === 1 ? '' : 's'} are the pupil's handwritten pages, in order. The pupil may answer in any order and the answers have no boxes: find each answer by its question number.
 
-For every question below, say whether you found an answer, copy a short version of what the pupil wrote, and mark it against the approved answer and marking scheme. Be fair: award a mark for every step the pupil shows correctly, even if worded differently; accept a different valid method. Only OR questions are alternatives of each other: mark whichever the pupil attempted. For each question where marks are lost, say whether the pupil did not know it ("knowledge_gap") or knew it but wrote it badly, too briefly, skipped working or stopped early ("writing_habit"). For a writing habit also name which one in "habit": skipped_steps (working left out), units_missing (no unit or final line), stopped_early (ended before the answer was complete), misread_question (answered something else), or other. Say how sure you are (confidence 0 to 1); if the handwriting is hard to read, lower it, and write [illegible] in answer_text for any part you cannot read: never guess a word, a number or a letter. If a question's answer is not on any page, give found false and marks 0.
+For every question below, say whether you found an answer, copy a short version of what the pupil wrote, and mark it against the approved answer and marking scheme. Be fair: award a mark for every step the pupil shows correctly, even if worded differently; accept a different valid method. Only OR questions are alternatives of each other: mark whichever the pupil attempted. For each question where marks are lost, say whether the pupil did not know it ("knowledge_gap") or knew it but wrote it badly, too briefly, skipped working or stopped early ("writing_habit"). For a writing habit also name which one in "habit": skipped_steps (working left out), units_missing (no unit or final line), stopped_early (ended before the answer was complete), misread_question (answered something else), or other. Say how sure you are (confidence 0 to 1); if the handwriting is hard to read, lower it, and write [illegible] in answer_text for any part you cannot read: never guess a word, a number or a letter. For every answer you found, say which picture it is on ("page", counting from 1) and roughly where, as "box" [left, top, right, bottom] in fractions 0 to 1 of that picture; use null for the box if you are not sure. If a question's answer is not on any page, give found false and marks 0.
 
 ${list}
 ${note ? `\nThe pupil asked for this answer to be read again and said: "${note}". Re-read the pages carefully; do not give a mark the writing does not earn.\n` : ''}
 ${ONLY_JSON}
-Shape: {"answers":[{"question":"1","found":true,"answer_text":"...","choice":null,"marks":2,"steps":[{"step":1,"awarded":1}],"loss_kind":"none"|"knowledge_gap"|"writing_habit","habit":null|"skipped_steps"|"units_missing"|"stopped_early"|"misread_question"|"other","loss_reason":"...","confidence":0.9}]}`
+Shape: {"answers":[{"question":"1","found":true,"answer_text":"...","choice":null,"marks":2,"steps":[{"step":1,"awarded":1}],"loss_kind":"none"|"knowledge_gap"|"writing_habit","habit":null|"skipped_steps"|"units_missing"|"stopped_early"|"misread_question"|"other","loss_reason":"...","confidence":0.9,"page":1,"box":[0.05,0.2,0.95,0.45]}]}`
 }
 
 export function createMarkingAi(
@@ -190,16 +191,18 @@ export function createMarkingAi(
  * A stand-in for the automated tests only (OWN_PAPER_AI=fake, ignored in a production runtime). Every
  * question is found; a multiple-choice answer reads as the key's option, a written answer gets full marks.
  */
-// counted across requests, so the browser tests see student 1, 2, 3 in turn
-let fakeCalls = 0
+// counted across requests, so the browser tests see student 1, 2, 3 in turn: the number of students started so far
+let fakeStudents = -1
 
 export function createFakeMarkingAi(): MarkingAi {
   // FAKE_MARKING=mixed (browser tests): student 1 is marked cleanly with one writing-habit loss, student 2's
-  // three passes disagree on the written answer, student 3 chooses a wrong option. Three calls per student.
+  // readings disagree on the written answer (so the stronger tie-break reading is asked), student 3 chooses a wrong
+  // option. A student is told apart by the kind of call: reading 1 asks the written questions alone, then the
+  // multiple-choice ones alone, reading 2 asks everything, the tie-break asks only the unsettled answers.
   const mixed = process.env.FAKE_MARKING === 'mixed'
   return {
     available: () => true,
-    markPass: ({ questions, note }) => {
+    markPass: ({ questions, note, tieBreak, choiceOnly }) => {
       // a pupil's "read it again" (it carries her reason): the stand-in keeps the mark, whatever the call count
       if (mixed && note !== undefined)
         return Promise.resolve(
@@ -207,9 +210,10 @@ export function createFakeMarkingAi(): MarkingAi {
             answers: questions.map((q) => ({ question: q.no, found: true, answer_text: 'read again', choice: null, marks: 0, steps: [], loss_kind: 'none', loss_reason: null, confidence: 0.9 })),
           }),
         )
-      const call = fakeCalls++
-      const student = Math.floor(call / PASSES) % 3
-      const pass = call % PASSES
+      const asksChoice = questions.some((q) => isChoiceQuestion(q))
+      if (!tieBreak && !choiceOnly && !asksChoice) fakeStudents++ // reading 1, written questions: a new student
+      const student = Math.max(0, fakeStudents) % 3
+      const pass = tieBreak ? 2 : !choiceOnly && asksChoice ? 1 : 0
       return Promise.resolve(
         JSON.stringify({
           answers: questions.map((q) => {
@@ -243,6 +247,8 @@ export function createFakeMarkingAi(): MarkingAi {
               loss_reason:
                 mixed && marks < full ? 'Stopped before writing the conclusion' : null,
               confidence: 0.9,
+              page: 1,
+              box: choice ? [0.05, 0.2, 0.4, 0.27] : [0.05, 0.33, 0.95, 0.52],
             }
           }),
         }),
@@ -617,11 +623,12 @@ export async function markStudentSheets(
       }
 
     const combined = new Map<string, CombinedAnswer>()
-    for (const q of questions)
-      combined.set(
-        q.id,
-        combinePasses(q, [...rounds.map((r) => readingOf(r, q)), readingOf(tie, q)]),
-      )
+    const places = new Map<string, AnswerLocation | null>()
+    for (const q of questions) {
+      const readings = [...rounds.map((r) => readingOf(r, q)), readingOf(tie, q)]
+      combined.set(q.id, combinePasses(q, readings))
+      places.set(q.id, locationOf(readings, pages.length))
+    }
 
     const before = await schoolAnswerMarksRepository.forStudent(
       db,
@@ -650,6 +657,7 @@ export async function markStudentSheets(
           loss_reason: c.lossReason,
           habit: c.habit,
           steps: JSON.stringify(c.steps),
+          location: places.get(c.questionId) ? JSON.stringify(places.get(c.questionId)) : null,
           changed_by_user_id: null,
           changed_at: null,
         }
@@ -966,6 +974,75 @@ export async function markingOverview(
 }
 
 /** One student's report: score, what she did well, what to fix, and her writing habits. */
+/**
+ * What the teacher's side-by-side screen needs for one student: the usual answers plus, for each, the steps or
+ * criteria with the marks awarded, the model answer's scheme and where on the pages the AI found it. Teacher side
+ * only (a student's results view never gets these).
+ */
+export async function reviewData(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+) {
+  if (!MARKED_BY.has(scope.role))
+    throw new SchoolError('forbidden', 'Only the school office and teachers can review marking.')
+  const v = await studentMarking(db, scope, paperId, studentId)
+  const [questions, rows, sheets] = await Promise.all([
+    markingQuestions(db, scope, paperId),
+    schoolAnswerMarksRepository.forStudent(db, scope, paperId, studentId),
+    usableSheets(db, scope, paperId, studentId),
+  ])
+  return {
+    ...v,
+    pageCount: sheets.length,
+    answers: v.answers.map((a) => {
+      const q = questions.find((x) => x.id === a.questionId)
+      const m = rows.find((x) => x.own_question_id === a.questionId)
+      return {
+        ...a,
+        rubric: q?.rubric === true,
+        keySteps: q?.keySteps ?? [],
+        steps: (m?.steps ?? []) as unknown as Array<{ no: number; description: string; awarded: number; max: number }>,
+        location: (m?.location ?? null) as unknown as AnswerLocation | null,
+        aiMarks: m ? Number(m.ai_marks) : null,
+      }
+    }),
+  }
+}
+
+/** The pages the AI was shown, in order (page 1 is the first usable one), as stored sheets. */
+async function usableSheets(db: Db, scope: SchoolScope, paperId: string, studentId: string) {
+  const sheets = await studentPages(db, scope, paperId, studentId)
+  return sheets.filter(
+    (s) => s.check_state !== 'refused' && s.purged_at === null && (s.image_key !== null || s.original_key !== null),
+  )
+}
+
+/**
+ * One page of a student's sheet for the teacher or the office (never a student): the same pictures the AI was shown,
+ * numbered the same way. Each look is written to the audit log.
+ */
+export async function markingPageImage(
+  db: Db,
+  scope: SchoolScope,
+  paperId: string,
+  studentId: string,
+  pageNo: number,
+): Promise<Buffer> {
+  if (!MARKED_BY.has(scope.role))
+    throw new SchoolError('forbidden', 'Only the school office and teachers can see the answer pages.')
+  await studentOfPaper(db, scope, paperId, studentId)
+  if (!Number.isInteger(pageNo) || pageNo < 1) throw new SchoolError('not_found', 'We could not find that page.')
+  const sheet = (await usableSheets(db, scope, paperId, studentId)).at(pageNo - 1)
+  const key = sheet?.image_key ?? sheet?.original_key
+  if (!sheet || !key) throw new SchoolError('not_found', 'We could not find that page.')
+  const sealed = await getScanStore().get(key)
+  if (!sealed) throw new SchoolError('not_found', 'We could not find that page.')
+  await auditSchool(db, scope, 'school.marking_page_viewed', 'school_own_sheets', sheet.id, null, { page: pageNo })
+  return decryptScan(sealed)
+}
+
 export async function studentReport(
   db: Db,
   scope: SchoolScope,

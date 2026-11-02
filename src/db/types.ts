@@ -1063,6 +1063,7 @@ export interface SchoolAnswerMarks {
   own_question_id: string;
   paper_id: string;
   runs: Generated<Json>;
+  location: Json | null;
   school_id: string;
   school_student_id: string;
   state: string;

@@ -48,6 +48,9 @@ export const PassAnswerSchema = z.object({
   habit: z.enum(HABIT_CODES).nullable().default(null),
   loss_reason: z.string().max(400).nullable().default(null),
   confidence: z.number().min(0).max(1).default(0.5),
+  // where the answer is: a bad place never costs the answer its mark, it is just not used
+  page: z.number().int().nullable().default(null).catch(null),
+  box: z.array(z.number()).length(4).nullable().default(null).catch(null),
 })
 export type PassAnswer = z.infer<typeof PassAnswerSchema>
 
@@ -436,4 +439,33 @@ export function chunkQuestions(
   }
   if (current.length > 0) chunks.push(current)
   return chunks
+}
+
+/** Where an answer sits on the pupil's pages: a page (1-based) and, when sensible, a box as fractions of that page. */
+export interface AnswerLocation {
+  page: number
+  box: [number, number, number, number] | null
+}
+
+/**
+ * The place the AI gave for an answer, kept only if it is real: the page must exist, and a box must be four numbers
+ * inside the page with some size; otherwise the box is dropped (the whole page is shown). Never invented.
+ */
+export function cleanLocation(page: number | null, box: ReadonlyArray<number> | null, pageCount: number): AnswerLocation | null {
+  if (page === null || !Number.isInteger(page) || page < 1 || page > pageCount) return null
+  if (box && box.length === 4 && box.every((n) => Number.isFinite(n))) {
+    const c = box.map((n) => Math.min(1, Math.max(0, n)))
+    if (c[2] - c[0] >= 0.02 && c[3] - c[1] >= 0.02) return { page, box: [c[0], c[1], c[2], c[3]] }
+  }
+  return { page, box: null }
+}
+
+/** The first reading that found the answer and gave a real place for it. */
+export function locationOf(readings: ReadonlyArray<PassAnswer | undefined>, pageCount: number): AnswerLocation | null {
+  for (const r of readings) {
+    if (!r?.found) continue
+    const l = cleanLocation(r.page, r.box, pageCount)
+    if (l) return l
+  }
+  return null
 }

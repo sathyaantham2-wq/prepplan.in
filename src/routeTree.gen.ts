@@ -257,6 +257,7 @@ import { Route as ApiSchoolsSchoolIdMessagingRetryMessageIdRouteImport } from '.
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdCoversRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/covers'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/marking'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
+import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/marking-page'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/release'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/sheets'
 import { Route as ApiSchoolsSchoolIdProgressExamPaperIdRouteImport } from './routes/api/schools/$schoolId/progress/exam.$paperId'
@@ -1601,6 +1602,12 @@ const ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute =
     path: '/marking-jobs',
     getParentRoute: () => ApiSchoolsSchoolIdOwnPapersPaperIdRoute,
   } as any)
+const ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute =
+  ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRouteImport.update({
+    id: '/marking-page',
+    path: '/marking-page',
+    getParentRoute: () => ApiSchoolsSchoolIdOwnPapersPaperIdRoute,
+  } as any)
 const ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute =
   ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRouteImport.update({
     id: '/release',
@@ -1917,6 +1924,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
+  '/api/schools/$schoolId/own-papers/$paperId/marking-page': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute
   '/api/schools/$schoolId/own-papers/$paperId/release': typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   '/api/schools/$schoolId/own-papers/$paperId/sheets': typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   '/api/schools/$schoolId/progress/exam/$paperId': typeof ApiSchoolsSchoolIdProgressExamPaperIdRoute
@@ -2175,6 +2183,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
+  '/api/schools/$schoolId/own-papers/$paperId/marking-page': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute
   '/api/schools/$schoolId/own-papers/$paperId/release': typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   '/api/schools/$schoolId/own-papers/$paperId/sheets': typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   '/api/schools/$schoolId/progress/exam/$paperId': typeof ApiSchoolsSchoolIdProgressExamPaperIdRoute
@@ -2437,6 +2446,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
+  '/api/schools/$schoolId/own-papers/$paperId/marking-page': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute
   '/api/schools/$schoolId/own-papers/$paperId/release': typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   '/api/schools/$schoolId/own-papers/$paperId/sheets': typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   '/api/schools/$schoolId/progress/exam/$paperId': typeof ApiSchoolsSchoolIdProgressExamPaperIdRoute
@@ -2700,6 +2710,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
     | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
+    | '/api/schools/$schoolId/own-papers/$paperId/marking-page'
     | '/api/schools/$schoolId/own-papers/$paperId/release'
     | '/api/schools/$schoolId/own-papers/$paperId/sheets'
     | '/api/schools/$schoolId/progress/exam/$paperId'
@@ -2958,6 +2969,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
     | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
+    | '/api/schools/$schoolId/own-papers/$paperId/marking-page'
     | '/api/schools/$schoolId/own-papers/$paperId/release'
     | '/api/schools/$schoolId/own-papers/$paperId/sheets'
     | '/api/schools/$schoolId/progress/exam/$paperId'
@@ -3219,6 +3231,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
     | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
+    | '/api/schools/$schoolId/own-papers/$paperId/marking-page'
     | '/api/schools/$schoolId/own-papers/$paperId/release'
     | '/api/schools/$schoolId/own-papers/$paperId/sheets'
     | '/api/schools/$schoolId/progress/exam/$paperId'
@@ -5089,6 +5102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdRoute
     }
+    '/api/schools/$schoolId/own-papers/$paperId/marking-page': {
+      id: '/api/schools/$schoolId/own-papers/$paperId/marking-page'
+      path: '/marking-page'
+      fullPath: '/api/schools/$schoolId/own-papers/$paperId/marking-page'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdRoute
+    }
     '/api/schools/$schoolId/own-papers/$paperId/release': {
       id: '/api/schools/$schoolId/own-papers/$paperId/release'
       path: '/release'
@@ -5838,6 +5858,7 @@ interface ApiSchoolsSchoolIdOwnPapersPaperIdRouteChildren {
   ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
+  ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdSheetChunksUploadIdRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdSheetChunksUploadIdRoute
@@ -5851,6 +5872,8 @@ const ApiSchoolsSchoolIdOwnPapersPaperIdRouteChildren: ApiSchoolsSchoolIdOwnPape
       ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute,
     ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute:
       ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute,
+    ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute:
+      ApiSchoolsSchoolIdOwnPapersPaperIdMarkingPageRoute,
     ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute:
       ApiSchoolsSchoolIdOwnPapersPaperIdReleaseRoute,
     ApiSchoolsSchoolIdOwnPapersPaperIdSheetsRoute:
@@ -6087,3 +6110,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

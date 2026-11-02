@@ -209,7 +209,7 @@ batch results arrive unattended, so "failed" must never look like "marked".
   Claude Opus 5.5 by default, `ANTHROPIC_MODEL_TOP` to change). **Opus's price is not known to the app:** set
   `ANTHROPIC_TOP_USD_PER_1M_INPUT` and `ANTHROPIC_TOP_USD_PER_1M_OUTPUT`, otherwise its calls are priced like Sonnet's and cost
   figures will be too low.
-- Still to build: side-by-side review, exam-week board, batch, pilot study.
+- Still to build: exam-week board, batch, pilot study.
 - Still to measure: a full 25-page, three-part run with caching and tie-break (needs the owner's go-ahead; expected Rs 20 to 40).
 
 ### Masking template and disclosure (2026-11-02, decision B built)
@@ -244,6 +244,28 @@ batch results arrive unattended, so "failed" must never look like "marked".
   questions of 3 or more marks `RUBRIC` and asks for `criteria`; `keptDraft` keeps it only if it adds up to the question's marks,
   otherwise the drafted steps (if they add up) or none. Maths and Science never get a rubric. Always a draft: a teacher approves it.
   **No real AI call has been made for this prompt yet** (tests use stand-ins); try it on one real descriptive paper before relying on it.
+
+### Side-by-side review screen (2026-11-02, built)
+- The marking prompt now also asks, for each answer found, `page` (1-based, among the pictures sent) and `box` [left, top, right,
+  bottom] as fractions 0 to 1. `cleanLocation` keeps a page that exists and a box inside the page with some size; a nonsense box falls
+  back to the whole page; no page means no place (never invented). A bad `page`/`box` in a reply never costs the answer its mark.
+  Stored in `school_answer_marks.location` (migration `0101_answer_location`, **local scratch DB only; the owner runs it on
+  production**).
+- `GET .../own-papers/:paperId/marking?student_id=&review=1` (teacher and office) returns the usual answers plus, per answer, the
+  steps or criteria with marks awarded, the model scheme and the location. Kept off the student's results view on purpose: nothing
+  new reaches the student role.
+- `GET .../own-papers/:paperId/marking-page?student_id=&page=N` returns the decrypted page picture (the same pictures the AI saw,
+  numbered the same way), teacher/office of that class only (a teacher outside the class and the student role are refused), every
+  look written to the audit log (`school.marking_page_viewed`). Query parameters instead of the plan's path segments; same effect.
+  The screen fetches it into memory (a plain image request gets a 404 from the dev server, as for the other page pictures).
+- Screen (`review-screen.tsx`, opened from a marked student): left the page cropped to the box (whole page if no box, a note if no
+  place), page buttons; right the question, what the AI read, the approved answer, marks per step/criterion, "Accept", "Full marks",
+  "No marks" (each logged through the existing `set_mark`, with a reason), Next to check, Previous/Next. Stacks on a phone.
+- Tests: crop/clamp/fallback rules, stored location, page route refused for outsider and student role, audit; browser test on a
+  phone-size screen opens the review and checks the picture loads. Repaired along the way: the browser tests' stand-in marking AI
+  still assumed two calls per student and had been failing since the cheap-model routing; it now tells students apart by call kind.
+- Not built: keyboard shortcuts, a zoom on the crop, and a test that a teacher not assigned to the section-subject (but in the same
+  school) is refused is the existing `studentOfPaper` rule, covered by the "does not teach this class" test.
 
 ### Full-paper measurement (2026-11-02, Nainika, 25 pages, 61 answers, reconstructed paper)
 Two readings in three parts, page pictures cached, Opus tie-break only where needed:

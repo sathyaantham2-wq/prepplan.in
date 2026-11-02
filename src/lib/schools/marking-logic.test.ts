@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import {
   chunkQuestions,
+  cleanLocation,
   combinePasses,
+  locationOf,
   needsTieBreak,
   mcqKeyLabel,
   parsePass,
@@ -47,6 +49,8 @@ const pass = (over: Partial<PassAnswer> = {}): PassAnswer => ({
   habit: 'stopped_early',
   loss_reason: 'stopped before the conclusion',
   confidence: 0.9,
+  page: null,
+  box: null,
   ...over,
 })
 
@@ -262,5 +266,29 @@ describe('hard rules of the marks', () => {
     const r = combinePasses(written, [pass(), undefined])
     expect(r.flagged).toBe(true)
     expect(r.finalMarks).toBe(0)
+  })
+})
+
+describe('where the AI found an answer', () => {
+  it('keeps a real page and box, clamps a box that pokes out of the page', () => {
+    expect(cleanLocation(2, [0.1, 0.2, 0.9, 0.5], 3)).toEqual({ page: 2, box: [0.1, 0.2, 0.9, 0.5] })
+    expect(cleanLocation(1, [-0.2, 0.2, 1.4, 0.5], 3)).toEqual({ page: 1, box: [0, 0.2, 1, 0.5] })
+  })
+  it('a nonsense box falls back to the whole page; a missing or impossible page gives nothing (never invented)', () => {
+    for (const box of [[0.5, 0.5, 0.4, 0.9], [0.1, 0.1, 0.11, 0.9], [0, 0, Number.NaN, 1], [0.1, 0.2, 0.3]])
+      expect(cleanLocation(1, box, 3)).toEqual({ page: 1, box: null })
+    expect(cleanLocation(null, [0, 0, 1, 1], 3)).toBeNull()
+    expect(cleanLocation(4, null, 3)).toBeNull()
+    expect(cleanLocation(0, null, 3)).toBeNull()
+    expect(cleanLocation(1.5, null, 3)).toBeNull()
+  })
+  it('takes the first reading that found the answer and gave a real place', () => {
+    const readings = [pass({ found: false, page: 1 }), pass({ page: 9 }), pass({ page: 2, box: [0, 0.5, 1, 0.8] })]
+    expect(locationOf(readings, 3)).toEqual({ page: 2, box: [0, 0.5, 1, 0.8] })
+    expect(locationOf([undefined, pass({ page: null })], 3)).toBeNull()
+  })
+  it('a bad page or box in the AI reply never costs the answer its mark', () => {
+    const r = parsePass('{"answers":[{"question":"1","found":true,"marks":2,"page":"two","box":"top"}]}')
+    expect(r?.answers[0]).toMatchObject({ marks: 2, page: null, box: null })
   })
 })

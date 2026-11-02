@@ -3,6 +3,7 @@ import { AlertTriangle, CheckCircle2, Loader2, Pencil } from 'lucide-react'
 import { Btn, Chip, Notice } from './ui'
 import { api } from '../../lib/school-client'
 import { MathText } from '../math-text'
+import { ReviewScreen } from './review-screen'
 import type { JobProgress } from '../../lib/schools/marking-jobs'
 import type {
   MarkingStatus,
@@ -52,6 +53,7 @@ export function StudentMarking({
   const [r, setR] = useState<Report | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [reviewing, setReviewing] = useState(false)
 
   const load = useCallback(async () => {
     setR(await api<Report>(`${base}/marking?student_id=${studentId}`))
@@ -113,6 +115,21 @@ export function StudentMarking({
       {r && (r.status === 'marked' || r.status === 'needs_teacher') ? (
         <>
           <Report r={r} />
+          {reviewing ? (
+            <ReviewScreen
+              base={base}
+              studentId={studentId}
+              onClose={() => setReviewing(false)}
+              onChanged={async () => {
+                await load()
+                await onChanged()
+              }}
+            />
+          ) : (
+            <Btn kind="plain" onClick={() => setReviewing(true)} data-testid="open-review">
+              Review side by side (the page next to the AI's reading)
+            </Btn>
+          )}
           <Answers r={r} base={base} reload={load} onChanged={onChanged} />
         </>
       ) : null}

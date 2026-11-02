@@ -11,7 +11,7 @@ import { loadSchoolScope } from '../school-session'
 import { createSchoolStudent, createSchoolTeacher } from './people'
 import { addSchoolSubject, createClass, createSection } from './setup'
 import { acceptSchoolTerms } from './terms'
-import { markStudentSheets, markingPrompt, setAnswerMark, studentMarking, pageForMarking } from './marking'
+import { markStudentSheets, markingPageImage, markingPrompt, reviewData, setAnswerMark, studentMarking, pageForMarking } from './marking'
 import { setOwnKey } from './own-paper-service'
 import type { MarkingAi } from './marking'
 
@@ -368,6 +368,29 @@ describe('AI marking of a student (M4 stage 1)', () => {
     const { ai } = scripted([[]])
     await expect(markStudentSheets(db, admin, paperId, studentId, ai)).rejects.toThrow(/answer key is not approved/)
     await db.updateTable('school_own_questions').set({ key_status: 'approved' }).where('id', '=', q['2']).execute()
+  })
+
+  it('review screen: the place the AI found is stored, only staff of the class get the page, and each look is audited', async () => {
+    const { ai } = scripted([[answer('1', { choice: 'B', page: 1, box: [0.1, 0.1, 0.9, 0.2] }), answer('2', { marks: 3, page: 99, box: [0.2, 0.2, 0.4, 0.3] })]])
+    await markStudentSheets(db, admin, paperId, studentId, ai)
+    const r = await reviewData(db, admin, paperId, studentId)
+    expect(r.pageCount).toBeGreaterThan(0)
+    expect(r.answers.find((a) => a.questionNo === '1')?.location).toEqual({ page: 1, box: [0.1, 0.1, 0.9, 0.2] })
+    // a page that does not exist is dropped, never shown
+    expect(r.answers.find((a) => a.questionNo === '2')?.location).toBeNull()
+    expect(r.answers.find((a) => a.questionNo === '2')?.keySteps.length).toBeGreaterThan(0)
+    // the page picture: the same one the AI saw, decrypted for staff only
+    const img = await markingPageImage(db, admin, paperId, studentId, 1)
+    expect(img.subarray(0, 4).toString('hex')).toBe('89504e47')
+    await expect(markingPageImage(db, admin, paperId, studentId, 99)).rejects.toThrow(/could not find/)
+    await expect(markingPageImage(db, admin, paperId, studentId, 0)).rejects.toThrow(/could not find/)
+    await expect(markingPageImage(db, outsider, paperId, studentId, 1)).rejects.toThrow()
+    await expect(reviewData(db, outsider, paperId, studentId)).rejects.toThrow()
+    const asStudent = { ...admin, role: 'student' } as unknown as SchoolScope
+    await expect(markingPageImage(db, asStudent, paperId, studentId, 1)).rejects.toThrow(/Only the school office and teachers/)
+    await expect(reviewData(db, asStudent, paperId, studentId)).rejects.toThrow(/Only the school office and teachers/)
+    const looks = await db.selectFrom('audit_log').select('id').where('school_id', '=', schoolId).where('action', '=', 'school.marking_page_viewed').execute()
+    expect(looks.length).toBeGreaterThanOrEqual(1)
   })
 
   it('a teacher\'s marking note is saved, cleared, limited, shown to the AI and never mentions a student', async () => {

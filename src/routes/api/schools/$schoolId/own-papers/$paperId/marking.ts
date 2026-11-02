@@ -7,6 +7,7 @@ import { readJson, str } from '../../../../../../lib/schools/http'
 import {
   markStudentSheets,
   markingOverview,
+  reviewData,
   setAnswerMark,
   studentReport,
 } from '../../../../../../lib/schools/marking'
@@ -30,9 +31,12 @@ export const Route = createFileRoute(
         if (scope instanceof Response) return scope
         try {
           const db = getSharedDb()
-          const studentId = new URL(request.url).searchParams.get('student_id')
+          const q = new URL(request.url).searchParams
+          const studentId = q.get('student_id')
           return Response.json(
-            studentId
+            studentId && q.get('review') === '1'
+              ? await reviewData(db, scope, params.paperId, studentId)
+              : studentId
               ? await studentReport(db, scope, params.paperId, studentId)
               : await markingOverview(db, scope, params.paperId),
             { headers: { 'cache-control': 'private, no-store' } },

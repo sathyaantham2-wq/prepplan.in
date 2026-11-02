@@ -273,6 +273,19 @@ test.describe.serial('AI marking (phone)', () => {
     await one.getByTestId('student-report').scrollIntoViewIfNeeded()
     await shot(page, 'mk-2-marked-report')
     await noOverflow(page)
+    // side by side: the page cropped to where the AI found the answer, what it read, the approved answer
+    await one.getByTestId('open-review').click()
+    const review = one.getByTestId('review-screen')
+    await expect(review).toBeVisible()
+    await expect(review.getByTestId('review-key')).not.toBeEmpty()
+    await expect(review.getByTestId('review-read')).not.toBeEmpty()
+    await expect
+      .poll(() => review.locator('img').evaluate((el) => (el as HTMLImageElement).naturalWidth))
+      .toBeGreaterThan(0)
+    await review.scrollIntoViewIfNeeded()
+    await shot(page, 'mk-2b-review')
+    await noOverflow(page)
+    await review.getByRole('button', { name: 'Close' }).click()
   })
 
   test('disagreeing passes: flagged for the teacher, who changes the mark', async () => {
