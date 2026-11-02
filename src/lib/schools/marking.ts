@@ -88,7 +88,7 @@ export function markingPrompt(
     .join('\n\n')
   return `You are marking a CBSE Class ${grade} ${subject} answer sheet. The ${pages} picture${pages === 1 ? '' : 's'} are the pupil's handwritten pages, in order. The pupil may answer in any order and the answers have no boxes: find each answer by its question number.
 
-For every question below, say whether you found an answer, copy a short version of what the pupil wrote, and mark it against the approved answer and marking scheme. Be fair: award a mark for every step the pupil shows correctly, even if worded differently; accept a different valid method. Only OR questions are alternatives of each other: mark whichever the pupil attempted. For each question where marks are lost, say whether the pupil did not know it ("knowledge_gap") or knew it but wrote it badly, too briefly, skipped working or stopped early ("writing_habit"). For a writing habit also name which one in "habit": skipped_steps (working left out), units_missing (no unit or final line), stopped_early (ended before the answer was complete), misread_question (answered something else), or other. Say how sure you are (confidence 0 to 1); if the handwriting is hard to read, lower it. If a question's answer is not on any page, give found false and marks 0.
+For every question below, say whether you found an answer, copy a short version of what the pupil wrote, and mark it against the approved answer and marking scheme. Be fair: award a mark for every step the pupil shows correctly, even if worded differently; accept a different valid method. Only OR questions are alternatives of each other: mark whichever the pupil attempted. For each question where marks are lost, say whether the pupil did not know it ("knowledge_gap") or knew it but wrote it badly, too briefly, skipped working or stopped early ("writing_habit"). For a writing habit also name which one in "habit": skipped_steps (working left out), units_missing (no unit or final line), stopped_early (ended before the answer was complete), misread_question (answered something else), or other. Say how sure you are (confidence 0 to 1); if the handwriting is hard to read, lower it, and write [illegible] in answer_text for any part you cannot read: never guess a word, a number or a letter. If a question's answer is not on any page, give found false and marks 0.
 
 ${list}
 ${note ? `\nThe pupil asked for this answer to be read again and said: "${note}". Re-read the pages carefully; do not give a mark the writing does not earn.\n` : ''}
@@ -123,6 +123,7 @@ export function createMarkingAi(
                 maxTokens: Math.min(16000, Math.max(6000, 1000 + 250 * questions.length)),
                 images: pages,
                 noThinking: true,
+                cacheImages: true,
               },
               provider,
             ),
@@ -139,6 +140,8 @@ export function createMarkingAi(
             householdId: school.householdId,
             tokensIn: outcome.result.tokensIn,
             tokensOut: outcome.result.tokensOut,
+            cacheWriteTokens: outcome.result.cacheWriteTokens,
+            cacheReadTokens: outcome.result.cacheReadTokens,
             latencyMs: Date.now() - startedAt,
             status: 'error',
             error: why,
@@ -151,6 +154,8 @@ export function createMarkingAi(
           householdId: school.householdId,
           tokensIn: outcome.result.tokensIn,
           tokensOut: outcome.result.tokensOut,
+          cacheWriteTokens: outcome.result.cacheWriteTokens,
+          cacheReadTokens: outcome.result.cacheReadTokens,
           latencyMs: Date.now() - startedAt,
           status: 'success',
         })

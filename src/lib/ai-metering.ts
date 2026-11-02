@@ -70,12 +70,20 @@ function ratesFor(model: string | undefined): {
 }
 
 export function estimateCostInr(
-  usage: { inputTokens: number; outputTokens: number },
+  usage: {
+    inputTokens: number
+    outputTokens: number
+    // Prompt caching (Anthropic): a write costs a quarter more than a normal input token, a read a tenth.
+    cacheWriteTokens?: number
+    cacheReadTokens?: number
+  },
   model?: string,
 ): number {
   const rates = ratesFor(model)
   const usd =
     (usage.inputTokens / 1_000_000) * rates.input +
+    ((usage.cacheWriteTokens ?? 0) / 1_000_000) * rates.input * 1.25 +
+    ((usage.cacheReadTokens ?? 0) / 1_000_000) * rates.input * 0.1 +
     (usage.outputTokens / 1_000_000) * rates.output
   return usd * USD_TO_INR
 }
@@ -100,6 +108,9 @@ export async function logAiJob(
     studentId?: string | null
     tokensIn?: number | null
     tokensOut?: number | null
+    // Cached prompt tokens, kept apart because they are priced differently. tokens_in stores all prompt tokens.
+    cacheWriteTokens?: number
+    cacheReadTokens?: number
     latencyMs: number
     status: AiJobStatus
     error?: string | null
@@ -108,7 +119,12 @@ export async function logAiJob(
   const costInr =
     input.tokensIn != null && input.tokensOut != null
       ? estimateCostInr(
-          { inputTokens: input.tokensIn, outputTokens: input.tokensOut },
+          {
+            inputTokens: input.tokensIn,
+            outputTokens: input.tokensOut,
+            cacheWriteTokens: input.cacheWriteTokens,
+            cacheReadTokens: input.cacheReadTokens,
+          },
           input.model,
         )
       : null
@@ -118,7 +134,10 @@ export async function logAiJob(
       student_id: input.studentId ?? null,
       feature: input.feature,
       model: input.model,
-      tokens_in: input.tokensIn ?? null,
+      tokens_in:
+        input.tokensIn == null
+          ? null
+          : input.tokensIn + (input.cacheWriteTokens ?? 0) + (input.cacheReadTokens ?? 0),
       tokens_out: input.tokensOut ?? null,
       cost_inr: costInr,
       latency_ms: input.latencyMs,

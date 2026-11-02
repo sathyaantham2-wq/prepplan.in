@@ -96,6 +96,9 @@ export interface CompletionInput {
   // true: the model must not spend its room thinking first. Marking sets this: with thinking on, a long
   // paper used all 10,249 of 10,250 tokens thinking and wrote nothing (real trial 2026-11-02).
   noThinking?: boolean
+  // true: mark the end of the pictures as cacheable, so a second call with the same pictures first reads
+  // them at a tenth of the price (Anthropic only; the prefix must be identical, so pictures come first).
+  cacheImages?: boolean
 }
 
 export interface CompletionResult {
@@ -108,6 +111,9 @@ export interface CompletionResult {
   stopReason?: string | null
   // Tokens the model spent thinking before it wrote (they count against max_tokens).
   thinkingTokens?: number
+  // Prompt-cache usage (Anthropic). tokensIn above does NOT include these.
+  cacheWriteTokens?: number
+  cacheReadTokens?: number
 }
 
 /** Models sometimes wrap JSON in a markdown fence even when told not to. */
@@ -134,7 +140,7 @@ async function completeAnthropic(
       {
         role: 'user',
         content: [
-          ...(input.images ?? []).map((image) => ({
+          ...(input.images ?? []).map((image, i, all) => ({
             type: 'image' as const,
             source: {
               type: 'base64' as const,
@@ -142,6 +148,9 @@ async function completeAnthropic(
                 'image/jpeg' | 'image/png' | 'image/webp' | 'image/gif',
               data: image.base64,
             },
+            ...(input.cacheImages && i === all.length - 1
+              ? { cache_control: { type: 'ephemeral' as const } }
+              : {}),
           })),
           { type: 'text' as const, text: input.prompt },
         ],
@@ -153,6 +162,8 @@ async function completeAnthropic(
     text: block ? stripCodeFence(block.text) : null,
     tokensIn: response.usage.input_tokens,
     tokensOut: response.usage.output_tokens,
+    cacheWriteTokens: response.usage.cache_creation_input_tokens ?? 0,
+    cacheReadTokens: response.usage.cache_read_input_tokens ?? 0,
     stopReason: response.stop_reason,
     thinkingTokens:
       (response.usage as { output_tokens_details?: { thinking_tokens?: number } })

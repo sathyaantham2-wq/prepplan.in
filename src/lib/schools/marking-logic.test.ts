@@ -204,3 +204,41 @@ describe('chunkQuestions', () => {
     expect(withG[0].filter((q) => q.orGroup === 'g')).toHaveLength(2)
   })
 })
+
+describe('hard rules of the marks', () => {
+  it('a total or any extra figure in the AI reply is ignored; only our own sum is used', () => {
+    const p = parsePass('{"total":999,"marks_total":999,"answers":[{"question":"1","found":true,"answer_text":"a","marks":2,"total":50,"confidence":0.9}]}')
+    expect(p).not.toBeNull()
+    expect(JSON.stringify(p)).not.toContain('999')
+    expect(totalsOf([written], new Map([['q1', 2]]))).toEqual({ total: 2, max: 3 })
+  })
+  it('no mark can be above the question maximum, below zero or not a number', () => {
+    for (const marks of [99, 3.4]) {
+      const r = combinePasses(written, [pass({ marks }), pass({ marks }), pass({ marks })])
+      expect(r.finalMarks).toBeLessThanOrEqual(3)
+      expect(r.finalMarks).toBeGreaterThanOrEqual(0)
+      expect(r.finalMarks % 0.5).toBe(0)
+    }
+    expect(parsePass('{"answers":[{"question":"1","found":true,"marks":"lots"}]}')).toBeNull()
+    expect(parsePass('{"answers":[{"question":"1","found":true,"marks":-1}]}')).toBeNull()
+    expect(parsePass('{"answers":[{"question":"1","found":true,"marks":101}]}')).toBeNull()
+  })
+  it('step awards are held to each step maximum and the sum to the question marks', () => {
+    const steps = [{ step: 1, awarded: 9 }, { step: 2, awarded: 9 }, { step: 3, awarded: 9 }]
+    const r = combinePasses(written, [pass({ marks: 3, steps }), pass({ marks: 3, steps }), pass({ marks: 3, steps })])
+    expect(r.steps.reduce((n, x) => n + x.awarded, 0)).toBeLessThanOrEqual(3)
+    expect(r.steps.every((x) => x.awarded <= x.max)).toBe(true)
+  })
+  it('handwriting that could not be read is flagged, not guessed', () => {
+    for (const answer_text of ['', '   ', 'x = [illegible] + 3', null]) {
+      const r = combinePasses(written, [pass({ answer_text }), pass({ answer_text }), pass({ answer_text })])
+      expect(r.flagged).toBe(true)
+      expect(r.flagReason).toContain('could not be read')
+    }
+  })
+  it('a missing reading is never turned into a mark', () => {
+    const r = combinePasses(written, [pass(), undefined, pass()])
+    expect(r.flagged).toBe(true)
+    expect(r.finalMarks).toBe(0)
+  })
+})

@@ -104,6 +104,10 @@ export function isChoiceQuestion(q: Pick<MarkQuestion, 'type' | 'options'>) {
   return q.type === 'mcq' && q.options.length >= 2
 }
 
+/** A written answer the AI says it found but could not (or did not) transcribe is never marked on a guess. */
+export const unreadable = (text: string | null) =>
+  text === null || text.trim() === '' || /\[illegible\]/i.test(text)
+
 const median = (xs: Array<number>) => {
   const s = [...xs].sort((a, b) => a - b)
   return s[Math.floor(s.length / 2)]
@@ -275,6 +279,8 @@ export function combinePasses(
     flagReason = `The three readings gave ${[...marks].sort((a, b) => a - b).join(', ')} out of ${max}.`
   else if (unsure)
     flagReason = 'The handwriting was hard to read, so the AI is not sure of this mark.'
+  else if (seen.some((p) => unreadable(p.answer_text)))
+    flagReason = 'Part of the handwriting could not be read, so a teacher should look. Nothing was guessed.'
   return {
     ...base,
     found: true,
