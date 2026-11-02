@@ -1,0 +1,201 @@
+# M4 (AI correction): nine additions, plan only
+
+Status: **Owner decisions A and B taken 2026-11-02 (section 12). Step 0 done (section 0). The rest is not built yet.** Local/test database only. No change of tech stack. No F-numbers:
+section 11 proposes tab 03 rows for the owner to number.
+
+Written for the PrepPlan owner. Source: the nine points pasted on 2026-11-02 from a review of an outside proposal.
+
+## 0. What we know first (measured on Nainika's real sheets, 2026-11-02)
+
+These facts decide the plan, so they come before it.
+
+| Fact | Evidence |
+|---|---|
+| The marking engine now asks a long paper in parts and survives wide phone photos. | commit `ab8c378` (local) |
+| **Real AI replies came back EMPTY on a 25-page, 61-question call** (text 0 characters, 115 s, 67k tokens, Rs 17.99). The earlier belief "the reply was cut off" is not proven. Cause unknown: our provider code discards `stop_reason` and thinking tokens. | trial `out-part1` |
+| 2 pages, 20 multiple-choice answers: the AI read them correctly, valid JSON, Rs 7.09 for one pass, 39 s. | trial `out-onepass2` |
+| Rs 123.5 spent so far on trials. The only usable result is the 2-page one. | |
+| Pricing is dominated by the **page pictures** (about 60k input tokens for 25 pages), which today are re-sent in **every** call (3 passes x 3 parts = 9 times). | token counts above |
+
+**Step 0 (before anything below): make the provider record `stop_reason`, thinking tokens and an empty-text error, then one small
+paid test (5 to 8 pages, one part, about Rs 8 to 10).** No cost figure in this plan is trustworthy until that is done.
+
+## 1. Model tiers
+
+Today: SCH-05/06 (name, page kind) already use the **cheap** model; SCH-07 (marking) uses `strong` = Sonnet 5 for all three
+passes. `mid` is not provisioned (it resolves to Sonnet 5).
+
+Plan:
+- Pre-checks stay cheap (Haiku tier). Add the missing ones to the same family: *page belongs to which student* (already
+  SCH-05 plus roll match), *blank/unreadable* (already local pixels, no AI), *name match* (compared in our code).
+- Marking: pass 1 and pass 2 on the main model (Sonnet 5).
+- **Third pass only when pass 1 and 2 disagree** (or any is below the confidence line). New tier `top` in `ai-models.ts`
+  (Opus 5.5) used for that re-check only; if the top pass resolves it, the answer is not flagged; if not, it is flagged for
+  the teacher as today.
+- **Owner decision A:** today the rule is "three passes, median". Two passes plus a tie-break is about one third cheaper but
+  is a change of an approved rule. Recommended: yes, keep three passes for the pilot, switch to 2 + tie-break only if the pilot
+  (section 9) shows the same agreement.
+- Cost per student, with and without (estimate, to be replaced by the trial harness figure; it already prints
+  cost per student): a 25-page, 80-mark paper.
+
+| Setup | Estimate per student |
+|---|---|
+| Today (3 passes x 3 parts, pictures re-sent each time, no caching) | Rs 150 to 200 |
+| + tiers only | Rs 130 to 180 (main model still does most of the work) |
+| + image caching (section 2) | Rs 40 to 60 |
+| + caching + 2 passes + tie-break | Rs 30 to 45 |
+| + caching + batch (section 3) | Rs 20 to 30 |
+
+The demo school's allowance is Rs 50 a month: it can mark **less than one** full paper at today's cost. This matters for the
+pilot (see section 10).
+
+- Tests: tier resolution (`ai-models.test`), "third pass is called only on disagreement" (stub counts calls), cost rows
+  written to `ai_jobs` with the tier.
+
+## 2. Prompt caching
+
+The outside proposal says: cache the paper, key and scheme once per exam. That text is small (about 5k tokens). **The big
+repeated cost is the student's own page pictures** (about 60k tokens) sent in all 9 calls. So:
+- Put the pictures first (already true) and mark the end of the pictures with a cache breakpoint, so calls 2 to 9 for the same
+  student read them at the cached price (about a tenth of the input price). The 5-minute cache life fits because one student's
+  calls run back to back.
+- Also cache the paper/key/scheme block per exam (second breakpoint) for the batch of students marked together.
+- Needs `cache_control` support in `completeAnthropic` (SDK already supports it); Gemini path unchanged.
+- Hard check: record cache read/creation tokens in `ai_jobs` so the saving is measured, not assumed.
+- Tests: request builder puts the breakpoint after the images; usage fields stored; a stub provider proves the pictures
+  are identical across calls (cache can only hit on an identical prefix).
+
+## 3. Batch mode ("results by next morning")
+
+- Anthropic Message Batches API: half price, normally done within an hour, at most 24 hours. Instant mode stays for a small
+  test (rule: up to 10 students, or chosen by the teacher).
+- UI: on "Mark all", two buttons: **Mark now** and **Results by tomorrow morning (cheaper)**, with an estimated ready time
+  (rule of thumb shown honestly: "usually within a few hours, never later than tomorrow morning").
+- New table `school_marking_batches` (batch id at the provider, school_id, paper_id, state, submitted/finished at); results
+  fetched by the school-messages-style dispatcher job.
+- **Dependency (open, from earlier work):** `CRON_SECRET` is not set in production and the 30-minute cron is not in
+  `vercel.json` (needs the Vercel Pro plan). Batch mode needs a poller; until then a "Check now" button works.
+- Cache and batch can combine but cache hits inside a batch are best effort; the estimate in section 1 assumes half the benefit.
+- Tests: submit builds one request per student-part with a custom id; results map back by id; a failed or expired item
+  becomes "failed", never a mark; re-submission is idempotent.
+
+## 4. Points-based rubric for descriptive answers (SST, English, Telugu)
+
+Today the key is `key_text` plus `key_steps` (`{description, marks}`), which fits Maths/Science working steps.
+- Add `rubric` as a second key kind on `school_own_questions`: `key_kind` ('steps' | 'rubric') and `key_criteria` JSON:
+  `[{ "kind": "concept" | "key_points" | "explanation" | "conclusion" | "diagram" | "language", "marks": 2, "descriptor": "...", "levels": [{ "marks": 2, "says": "..." }, { "marks": 1, "says": "..." }] }]`. The sum of criteria marks must equal the
+  question marks (checked in code, like steps today).
+- The AI drafts the rubric (SCH-03 extended); the teacher approves it **together with the answer key** (same
+  `key_status` approval, same screen). A question with a draft rubric cannot be marked (existing rule).
+- The marking prompt gets the rubric; the AI returns per criterion `{criterion, awarded, reason}`; our code sums them and
+  clamps (section 7). Half marks stay allowed.
+- **Telugu and English language answers:** subject language comes from `subjects.language`; the prompt states the language;
+  the transcription is kept in the script written. Spelling/grammar marks only if the rubric has a `language` criterion.
+- Storage: `school_answer_marks.steps` already holds per-step awards; reuse it for per-criterion awards (no new column).
+- Tests: rubric sum must equal marks; unapproved rubric blocks marking; criterion awards above their max are clamped;
+  a Telugu fixture round-trips through parse, store and screen.
+
+## 5. Teacher review screen (side by side)
+
+Today (`marking-panel.tsx`): the AI's transcription line, the reason and the loss kind. **Missing:** the original image and the
+model answer next to it.
+- The AI returns, per answer, `page` (1-based) and an approximate box `[x0, y0, x1, y1]` (0 to 1) of where it found it.
+  A box that is missing or nonsense falls back to the whole page; never invented.
+- New route `GET /api/schools/:schoolId/marking/:paperId/students/:studentId/pages/:seq` returning the **decrypted page image**
+  (teacher/admin/principal of that school and subject only; **never the student role**; audited). Images stay in the encrypted
+  scan store; no public URL.
+- Screen, one answer at a time: left = cropped original; right column = AI transcription, model answer (key), per step or
+  criterion: marks awarded, max, one-line reason; bottom = the final mark and the teacher's accept/change buttons.
+  On a phone the columns stack.
+- Keyboard/one-tap: Accept AI mark, Set full, Set zero, Next flagged.
+- Tests: route refuses a student, another school's teacher, a teacher not assigned to the section-subject; crop box
+  clamped inside the page; screenshot at desktop and phone sizes.
+
+## 6. Exam-week board (office and principal)
+
+One screen per exam (and a cross-exam summary), a grid of **sections** with counts: *uploaded, AI-marked, waiting for
+teacher, failed, released*. All values come from existing tables (`school_own_sheets`, `school_sheet_marking`,
+`school_answer_marks`, release state); "failed" = marking row `rejected` or a page refused by the upload checks.
+- Click a count to see the students behind it; failed shows the plain reason and a Retry.
+- Read-only for the principal; the office admin can retry. Teachers keep their own narrower list.
+- Tests: counts add up to the roster per section; a teacher cannot read another section's row; school scoping lint passes.
+
+## 7. Hard rules, each with a test
+
+| Rule | Today | Plan |
+|---|---|---|
+| **Totals are computed by our code, never by the AI** | `totalsOf` sums our own final marks; the AI's JSON has no total field | Add an explicit test that a reply containing `total`/`marks_total` is ignored, and that the stored total equals the recomputed sum |
+| **AI marks can never exceed the question maximum** | `clamp()` per pass, per step | Test: marks 99, negative, NaN, a string, step awards above their max, steps whose sum exceeds the question |
+| **Unreadable handwriting is flagged, never guessed** | low confidence flags; not-found is "no answer" | Add: `found: true` with empty/"?" transcription, or the AI writing a guess for an `[illegible]` span, flags the answer; prompt tells the AI to write `[illegible]` rather than guess; test with stub replies |
+| An empty or unparsable reply never produces a mark | flagged "0 of 3 readings used" | Keep; add the recorded `stop_reason` to the flag text |
+| The student role never sees the model answer before release | enforced | Re-run the existing key-leak tests against the new image route and review screen |
+
+## 8. Privacy: mask the name and roll area before a page goes to the AI
+
+Today `pageForMarking` whites out the top 12% of the **first page** only. Gaps: a sheet with the name box elsewhere, or a name on
+every supplementary sheet.
+- Per-school **mask template** set in the wizard on a sample sheet: the teacher drags a box; default is the first-page top strip
+  as now. Option "also mask the top strip of every page".
+- Masking happens on our server before the AI call; the original stays in the encrypted store.
+- A pixel-level test: the masked region of the outgoing image is white; the AI-bound image never equals the original.
+- **Conflict to decide (owner decision B):** the *upload check* SCH-05 deliberately sends that same strip to the cheap model to
+  read the name and roll number and match them to the class list (the match is made in our code). Masking before every AI call
+  means that check must go. Options: (1) keep SCH-05 as a separate, disclosed, cheap, name-reading step (recommended; it is the
+  only place a name is read and it is what stops a sheet being marked for the wrong child); (2) drop it and rely on the
+  teacher's yes plus a printed barcode/roll sticker read locally. Recommended: (1), with the school terms saying so.
+
+## 9. Pilot accuracy test (100 double-marked papers)
+
+- **Sample:** 100 papers, spread across at least Maths, Science, Social Science, English and Telugu, with at least 20 in each of
+  the descriptive subjects and at least 20 handwritten in Telugu. Mixed handwriting quality, including some poor.
+- **Double marking:** two teachers mark each paper **independently** (blind to the AI and to each other) on a simple sheet or
+  our teacher screen set to "blind"; a third settles differences for the reference mark.
+- **Metrics per subject and per question type** (script extends `marking-trial.manual.test.ts`, which already prints the AI's
+  reading, three marks, flags, cost): exact agreement, within half a mark, mean absolute error of the total, weighted kappa
+  between AI and the reference, and the teacher-vs-teacher agreement as the ceiling; **flag precision** (flagged answers the
+  teacher changed) and **flag recall** (answers the teacher changed that were flagged); cost and time per paper.
+- **Proposed pass line (owner to set):** AI total within 2 marks of the reference on at least 90% of papers; flag recall at
+  least 90%; no paper with an unflagged answer wrong by more than 2 marks.
+- **Handling:** real sheets stay in the git-ignored `local-private/`; never committed; the school consents in writing for the
+  pilot; names removed before any file leaves the school's folder. The report goes to the owner per subject.
+
+## 10. Order, cost and risk
+
+1. Step 0: record `stop_reason`; one small paid test (Rs 8 to 10). Decide whether empty replies were thinking, a refusal or a limit.
+2. Image caching (section 2) and hard-rule tests (section 7): cheapest, biggest saving, no screens.
+3. Tiers and tie-break (section 1), masking template (section 8).
+4. Rubric (section 4) then review screen (section 5), board (section 6).
+5. Batch (section 3) last: it depends on the cron/Pro-plan decision.
+6. Pilot accuracy test (section 9) after 1 to 5; budget for real AI spend about Rs 3,000 to 5,000 at today's per-paper cost,
+   about Rs 1,000 to 1,500 after caching and tiers. **Raise the pilot school's allowance deliberately** (the demo cap of Rs 50
+   cannot mark one paper).
+
+Risks: the empty-reply cause may change the design of section 1 and 2; Opus pricing for the tie-break pass is unmeasured;
+batch results arrive unattended, so "failed" must never look like "marked".
+
+## 11. Proposed tab 03 rows (no numbers; owner assigns F-numbers)
+
+| Working title | User story (one line) | Acceptance (short) |
+|---|---|---|
+| M4-a Tiered marking with tie-break | As the office, I want AI cost to stay low without losing accuracy | Tie-break pass only on disagreement; cost per student reported with and without |
+| M4-b Page-picture caching | As the owner, I want repeated page pictures not re-billed | Cache read tokens recorded; saving measured on the trial |
+| M4-c Overnight batch marking | As a teacher, I want cheaper next-morning marking for big uploads | Batch submit/fetch, ready-time estimate, failures never become marks |
+| M4-d Rubric answer keys | As a teacher of SST/English/Telugu, I want criteria-based marking | Rubric drafted, teacher-approved with the key, criteria sum = marks |
+| M4-e Side-by-side review | As a teacher, I want to see the answer image next to the AI's reading | Crop, transcription, model answer, per-criterion marks, final mark |
+| M4-f Exam-week board | As the principal, I want to see where every section is | Five counts per section, drill-down, retry on failed |
+| M4-g Marking hard-rule tests | As the owner, I want the AI unable to break the marks | Tests for totals, maximum, illegible, empty reply |
+| M4-h Name-area masking template | As a school, I want the name area never sent to the AI | Per-school mask box, pixel test, disclosed name check |
+| M4-i Pilot accuracy study | As the owner, I want evidence before selling | 100 double-marked papers, per-subject agreement report |
+
+## 12. Owner decisions and progress (2026-11-02)
+
+- **Decision A = 2 passes plus a tie-break pass** (not three passes). Passes 1 and 2 on the main model; a third pass on the
+  stronger `top` model only where they disagree or either is below the confidence line. `PASSES` and the "readings used"
+  rules in `marking-logic.ts` change accordingly (build step 3).
+- **Decision B = option 1:** keep the name-reading upload check (SCH-05) as a separate, disclosed, cheap-model step; every
+  other AI call gets the masked pages. The school terms will say so (build step 3).
+- **Step 0 result (done, paid test Rs 11.40 then Rs 6.28):** the empty replies were **thinking, not a cut-off**:
+  `stop_reason max_tokens, 10250 tokens written, 10249 spent thinking`. Marking now sends `thinking: disabled`
+  (`noThinking` on `CompletionInput`); an empty reply is now a visible error with its stop reason, never a quiet blank.
+  Re-test on 6 pages, part 1 of 3: valid JSON, 37 answers, 27 found, Rs 6.28, 31 s.
+- Trial spend to date: about Rs 141. Estimates in section 1 stand until a full 25-page, three-part run is measured.

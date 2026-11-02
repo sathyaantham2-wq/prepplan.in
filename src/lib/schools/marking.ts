@@ -122,12 +122,29 @@ export function createMarkingAi(
                 // paper of 61 answers off mid-way (real trial 2026-11-02), so the room grows with the paper.
                 maxTokens: Math.min(16000, Math.max(6000, 1000 + 250 * questions.length)),
                 images: pages,
+                noThinking: true,
               },
               provider,
             ),
           undefined,
           { only: VISION_PROVIDERS },
         )
+        const text = stripCodeFence(outcome.result.text ?? '')
+        if (text === '') {
+          // An empty reply is a failure to explain, never a quiet "nothing found".
+          const why = `The AI returned no text (stop_reason ${outcome.result.stopReason ?? 'unknown'}, ${outcome.result.tokensOut} tokens written, ${outcome.result.thinkingTokens ?? 0} spent thinking).`
+          await logAiJob(db, {
+            feature: 'SCH-07',
+            model: outcome.label,
+            householdId: school.householdId,
+            tokensIn: outcome.result.tokensIn,
+            tokensOut: outcome.result.tokensOut,
+            latencyMs: Date.now() - startedAt,
+            status: 'error',
+            error: why,
+          })
+          throw new Error(why)
+        }
         await logAiJob(db, {
           feature: 'SCH-07',
           model: outcome.label,
@@ -137,7 +154,7 @@ export function createMarkingAi(
           latencyMs: Date.now() - startedAt,
           status: 'success',
         })
-        return stripCodeFence(outcome.result.text ?? '')
+        return text
       } catch (err) {
         await logAiJob(db, {
           feature: 'SCH-07',

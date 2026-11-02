@@ -93,6 +93,9 @@ export interface CompletionInput {
   // checked here -- a text-only model asked to read a photo just answers about the prompt text
   // alone. Callers that send images restrict the chain to ai-models.ts's VISION_PROVIDERS.
   images?: Array<CompletionImage>
+  // true: the model must not spend its room thinking first. Marking sets this: with thinking on, a long
+  // paper used all 10,249 of 10,250 tokens thinking and wrote nothing (real trial 2026-11-02).
+  noThinking?: boolean
 }
 
 export interface CompletionResult {
@@ -100,6 +103,11 @@ export interface CompletionResult {
   text: string | null
   tokensIn: number
   tokensOut: number
+  // Why the model stopped ("end_turn", "max_tokens", "refusal", ...). Recorded so an empty or cut-off
+  // reply can be explained instead of guessed at (real marking trial 2026-11-02).
+  stopReason?: string | null
+  // Tokens the model spent thinking before it wrote (they count against max_tokens).
+  thinkingTokens?: number
 }
 
 /** Models sometimes wrap JSON in a markdown fence even when told not to. */
@@ -121,6 +129,7 @@ async function completeAnthropic(
   const response = await anthropicClient.client.messages.create({
     model: input.model,
     max_tokens: input.maxTokens,
+    ...(input.noThinking ? { thinking: { type: 'disabled' as const } } : {}),
     messages: [
       {
         role: 'user',
@@ -144,6 +153,10 @@ async function completeAnthropic(
     text: block ? stripCodeFence(block.text) : null,
     tokensIn: response.usage.input_tokens,
     tokensOut: response.usage.output_tokens,
+    stopReason: response.stop_reason,
+    thinkingTokens:
+      (response.usage as { output_tokens_details?: { thinking_tokens?: number } })
+        .output_tokens_details?.thinking_tokens ?? 0,
   }
 }
 
