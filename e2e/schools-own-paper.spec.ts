@@ -481,7 +481,7 @@ test.describe.serial('use your own paper (phone)', () => {
     const list = card.getByTestId('own-sheet-students')
     await expect(list).toContainText('1 · Asha Rao')
     await expect(list.locator('li').nth(0)).toContainText('1 page')
-    await expect(list.locator('li').nth(1)).toContainText('2 pages · needs you')
+    await expect(list.locator('li').nth(1)).toContainText('2 pages · check these pages')
     await shot(page, 'op-08-stack-sorted')
     await looksRight(page)
   })
@@ -583,7 +583,7 @@ test.describe.serial('use your own paper (phone)', () => {
       "copy.png: This page is the same photo as Asha Rao's page 3.",
       { timeout: 30_000 },
     )
-    await expect(ravi.getByText('Refused')).toBeVisible()
+    await expect(ravi.getByText('Could not be used')).toBeVisible()
     await shot(page, 'op-14-same-photo-refused')
     await looksRight(page)
     await page.getByRole('link', { name: 'AI correction' }).first().click()

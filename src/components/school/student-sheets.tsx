@@ -8,7 +8,7 @@ import {
   XCircle,
 } from 'lucide-react'
 import { Btn, Chip, Notice, Select } from './ui'
-import { MarkAllPanel, STATUS_LOOK, StudentMarking } from './marking-panel'
+import { STATUS_LOOK, StudentMarking } from './marking-panel'
 import type { Overview } from './marking-panel'
 import { api } from '../../lib/school-client'
 import {
@@ -56,16 +56,19 @@ const STATE: Record<
   none: { text: 'Not yet', tone: 'plain' },
   received: { text: 'Ready', tone: 'good' },
   checking: { text: 'Checking', tone: 'plain' },
-  needs_you: { text: 'Needs you', tone: 'wait' },
-  refused: { text: 'Refused', tone: 'bad' },
+  needs_you: { text: 'Check pages', tone: 'wait' },
+  refused: { text: 'Could not be used', tone: 'bad' },
 }
 
 export function StudentSheets({
   base,
   onMarkingChanged,
+  refreshKey = 0,
 }: {
   base: string
   onMarkingChanged?: () => void
+  /** Changes when something outside (marking the whole class) has changed the marks: the list is read again. */
+  refreshKey?: number
 }) {
   const [d, setD] = useState<Loaded | null>(null)
   const [marking, setMarking] = useState<Overview | null>(null)
@@ -86,7 +89,7 @@ export function StudentSheets({
   }, [base, onMarkingChanged])
   useEffect(() => {
     void load()
-  }, [load])
+  }, [load, refreshKey])
 
   if (!d) return error ? <Notice kind="error">{error}</Notice> : null
   const sectionName = d.sections.find((s) => s.id === sectionId)?.name ?? ''
@@ -101,15 +104,6 @@ export function StudentSheets({
         </p>
       </div>
       {error ? <Notice kind="error">{error}</Notice> : null}
-      <MarkAllPanel
-        base={base}
-        ready={
-          marking?.students.filter(
-            (s) => s.status === 'ready' || s.status === 'rejected',
-          ).length ?? 0
-        }
-        onChanged={load}
-      />
       <Select
         label="Section"
         value={sectionId}
@@ -135,6 +129,7 @@ export function StudentSheets({
         {mine.map((s) => (
           <li
             key={s.schoolStudentId}
+            id={`stu-${s.schoolStudentId}`}
             className="rounded-2xl border border-slate-200 bg-white"
           >
             <button
@@ -173,9 +168,9 @@ export function StudentSheets({
                       : ''}
                   </Chip>
                 ) : s.state === 'received' ? (
-                  <Chip>Ready to mark</Chip>
+                  <Chip>Ready for AI</Chip>
                 ) : s.state === 'none' ? (
-                  <Chip>Not uploaded</Chip>
+                  <Chip>No sheets yet</Chip>
                 ) : (
                   <Chip tone={STATE[s.state].tone}>{STATE[s.state].text}</Chip>
                 )
@@ -422,7 +417,7 @@ function OneStudent({
                 {x.checkState === 'passed' ? (
                   <span className="text-emerald-700">Checked</span>
                 ) : x.checkState === 'needs_confirm' ? (
-                  <span className="text-amber-700">Needs you</span>
+                  <span className="text-amber-700">Check these pages</span>
                 ) : null}
               </div>
             </li>
@@ -516,7 +511,7 @@ function OneStudent({
 
       {refused.length > 0 ? (
         <div className="space-y-1">
-          <p className="text-sm font-semibold text-slate-700">Refused</p>
+          <p className="text-sm font-semibold text-slate-700">Could not be used</p>
           <ul className="space-y-1 text-[15px] text-slate-700">
             {refused.map((x) => (
               <li key={x.id} className="flex items-start gap-2">

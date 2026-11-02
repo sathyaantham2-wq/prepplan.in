@@ -22,12 +22,12 @@ export const STATUS_LOOK: Record<
   MarkingStatus,
   { text: string; tone: 'plain' | 'good' | 'wait' | 'bad' }
 > = {
-  not_uploaded: { text: 'Not uploaded', tone: 'plain' },
-  ready: { text: 'Ready to mark', tone: 'plain' },
-  checking: { text: 'Checking', tone: 'plain' },
+  not_uploaded: { text: 'No sheets yet', tone: 'plain' },
+  ready: { text: 'Ready for AI', tone: 'plain' },
+  checking: { text: 'AI is marking', tone: 'plain' },
   marked: { text: 'Marked', tone: 'good' },
-  needs_teacher: { text: 'Needs teacher', tone: 'wait' },
-  rejected: { text: 'Rejected', tone: 'bad' },
+  needs_teacher: { text: 'You need to look', tone: 'wait' },
+  rejected: { text: 'Could not be read', tone: 'bad' },
 }
 
 const LOSS: Record<string, string> = {
@@ -203,9 +203,16 @@ function Answers({
       Number(b.state === 'flagged') - Number(a.state === 'flagged') ||
       Number(a.questionNo) - Number(b.questionNo),
   )
+  const toCheck = sorted.filter((a) => a.state === 'flagged').length
   return (
     <section className="space-y-2" data-testid="answers">
       <h3 className="text-lg font-bold">Answers</h3>
+      {toCheck > 0 ? (
+        <Notice kind="info">
+          {toCheck} answer{toCheck === 1 ? ' is' : 's are'} yellow: the AI was not sure. Each shows what it read and the mark it would give.
+          Tap <b>Accept</b> if you agree, or choose another mark.
+        </Notice>
+      ) : null}
       <ul className="space-y-2">
         {sorted.map((a) => (
           <AnswerRow key={a.questionId} a={a} base={base} reload={reload} onChanged={onChanged} />
@@ -227,12 +234,12 @@ function AnswerRow({
   onChanged: () => Promise<void>
 }) {
   const flagged = a.state === 'flagged'
-  const [open, setOpen] = useState(flagged)
+  const [open, setOpen] = useState(false)
   const [marks, setMarks] = useState(String(a.finalMarks ?? 0))
   const [why, setWhy] = useState('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  async function save() {
+  async function save(value = Number(marks), reason = why) {
     setBusy(true)
     setError(null)
     try {
@@ -240,8 +247,8 @@ function AnswerRow({
         body: {
           action: 'set_mark',
           answer_mark_id: a.answerMarkId,
-          marks: Number(marks),
-          reason: why,
+          marks: value,
+          reason,
         },
       })
       setWhy('')
@@ -271,7 +278,7 @@ function AnswerRow({
       <div className="mt-1 flex flex-wrap items-center gap-2">
         {flagged ? (
           <Chip tone="wait">
-            <AlertTriangle aria-hidden="true" className="size-3.5" /> Flagged
+            <AlertTriangle aria-hidden="true" className="size-3.5" /> Please check
           </Chip>
         ) : a.state === 'teacher_set' ? (
           <Chip>Set by a teacher</Chip>
@@ -294,6 +301,29 @@ function AnswerRow({
         <p className="mt-1 text-[15px] text-slate-600">
           Read from the sheet: “{a.answerText}”
         </p>
+      ) : null}
+      {flagged && a.answerMarkId ? (
+        <div className="mt-2 space-y-2 border-t border-amber-300 pt-2" data-testid="review-actions">
+          {error ? <Notice kind="error">{error}</Notice> : null}
+          <p className="text-sm font-semibold text-amber-950">
+            The AI would give {a.finalMarks === null ? '—' : num(a.finalMarks)} out of {num(a.maxMarks)}.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Btn
+              disabled={busy || a.finalMarks === null}
+              onClick={() => void save(a.finalMarks ?? 0, 'Teacher accepted the AI mark')}
+              data-testid="accept-ai-mark"
+            >
+              Accept {a.finalMarks === null ? '' : num(a.finalMarks)}
+            </Btn>
+            <Btn kind="plain" disabled={busy} onClick={() => void save(a.maxMarks, 'Teacher gave full marks')}>
+              Full marks ({num(a.maxMarks)})
+            </Btn>
+            <Btn kind="plain" disabled={busy} onClick={() => void save(0, 'Teacher gave no marks')}>
+              No marks (0)
+            </Btn>
+          </div>
+        </div>
       ) : null}
       {a.answerMarkId ? (
         open ? (
@@ -333,7 +363,7 @@ function AnswerRow({
         ) : (
           <div className="mt-2">
             <Btn kind="plain" onClick={() => setOpen(true)}>
-              <Pencil aria-hidden="true" className="size-4" /> Change this mark
+              <Pencil aria-hidden="true" className="size-4" /> {flagged ? 'Choose another mark' : 'Change this mark'}
             </Btn>
           </div>
         )
@@ -551,7 +581,7 @@ export function MarkAllPanel({
           ) : null}
           {job && job.status !== 'running' ? (
             <p className="text-base" data-testid="mark-all-result">
-              Last time: {job.marked} marked, {job.needsTeacher} need a teacher, {job.rejected} could not be read
+              Last time: {job.marked} marked, {job.needsTeacher} need your look, {job.rejected} could not be read
               {job.failed > 0 ? `, ${job.failed} not marked` : ''}.
             </p>
           ) : null}

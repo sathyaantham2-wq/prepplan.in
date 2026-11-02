@@ -15,6 +15,8 @@ import { StudentSheets } from '../../../../components/school/student-sheets'
 import { MathText } from '../../../../components/math-text'
 import { ClassResults } from '../../../../components/school/marking-panel'
 import { ReleasePanel } from '../../../../components/school/release-panel'
+import { CorrectionHelp } from '../../../../components/school/correction-help'
+import { ExamJourney } from '../../../../components/school/exam-journey'
 import type {
   OwnPaperView,
   OwnQuestionView,
@@ -44,6 +46,11 @@ function OwnPaperPage() {
   const [otherOpen, setOtherOpen] = useState(false)
   const [resultsVersion, setResultsVersion] = useState(0)
   const bumpResults = useCallback(() => setResultsVersion((n) => n + 1), [])
+  const [sheetsVersion, setSheetsVersion] = useState(0)
+  const refreshAll = useCallback(() => {
+    bumpResults()
+    setSheetsVersion((n) => n + 1)
+  }, [bumpResults])
 
   const load = useCallback(async () => {
     try {
@@ -118,6 +125,8 @@ function OwnPaperPage() {
       </div>
 
       {error ? <Notice kind="error">{error}</Notice> : null}
+      <ExamJourney base={base} v={v} version={resultsVersion} onChanged={refreshAll} act={act} />
+      <CorrectionHelp />
       {v.message && v.status === 'reading' && !running ? (
         <Notice>{v.message}</Notice>
       ) : null}
@@ -181,8 +190,8 @@ function OwnPaperPage() {
           </div>
           {v.status === 'needs_review' ? (
             <p className="text-base text-slate-800">
-              Check the questions, marks and chapters below. Then approve the
-              paper.{' '}
+              Check the questions, marks and chapters below. Then press the green
+              button above to approve the paper.{' '}
               <b>
                 No answer sheet can be marked until you also approve every
                 answer.
@@ -195,47 +204,34 @@ function OwnPaperPage() {
                 : 'The paper is approved. Approve every answer below before anything can be marked.'}
             </Notice>
           )}
-          <div className="space-y-2">
-            {v.status === 'needs_review' ? (
-              <Btn
-                className="w-full"
-                disabled={!v.canApprove}
-                onClick={() => void act({ action: 'approve' })}
-              >
-                Approve this paper
-              </Btn>
-            ) : null}
-            {v.summary.keysDraft > 0 ? (
-              <Btn
-                kind="plain"
-                className="w-full"
-                onClick={() => void act({ action: 'approve_keys' })}
-              >
-                Approve all {v.summary.keysDraft} answers shown as drafts
-              </Btn>
-            ) : null}
-          </div>
         </Card>
       ) : null}
 
-      <ul className="space-y-3">
-        {v.questions.map((q) => (
-          <QuestionCard key={q.id} q={q} v={v} editable={editable} act={act} />
-        ))}
-      </ul>
+      {/* once the paper and every answer are approved the questions fold away: the work is now the students' sheets */}
+      <details id="step-questions" open={!v.markable} className="rounded-2xl border border-slate-200 bg-white px-3 py-2" data-testid="questions">
+        <summary className="min-h-11 cursor-pointer content-center text-base font-semibold">
+          Questions and answers ({v.summary.questions})
+        </summary>
+        <ul className="mt-2 space-y-3">
+          {v.questions.map((q) => (
+            <QuestionCard key={q.id} q={q} v={v} editable={editable} act={act} />
+          ))}
+        </ul>
+      </details>
       {v.status === 'approved' ? (
         v.markable ? (
           <>
-            <Card>
+            <Card id="step-sheets">
               <StudentSheets
                 base={base}
                 onMarkingChanged={bumpResults}
+                refreshKey={sheetsVersion}
               />
             </Card>
-            <Card>
+            <Card id="step-results">
               <ClassResults base={base} version={resultsVersion} />
             </Card>
-            <Card>
+            <Card id="step-release">
               <ReleasePanel
                 base={base}
                 version={resultsVersion}

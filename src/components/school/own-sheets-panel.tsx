@@ -246,7 +246,7 @@ export function AnswerSheets({ base }: { base: string }) {
             </span>
             <span className={s.pages > 0 ? 'font-medium' : 'text-slate-600'}>
               {s.pages > 0
-                ? `${s.pages} ${s.pages === 1 ? 'page' : 'pages'}${s.state === 'needs_you' ? ' · needs you' : ''}`
+                ? `${s.pages} ${s.pages === 1 ? 'page' : 'pages'}${s.state === 'needs_you' ? ' · check these pages' : ''}`
                 : 'none'}
             </span>
           </li>

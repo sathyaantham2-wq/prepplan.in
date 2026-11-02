@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useSchool } from '../../../../components/school/context'
+import { CorrectionHelp } from '../../../../components/school/correction-help'
 import { BookOpenCheck, FileUp } from 'lucide-react'
 import {
   Btn,
@@ -103,6 +104,7 @@ function OwnPapers() {
         title="AI correction"
         subtitle="Three steps: the question paper, its answers approved by a teacher, then each student's answer sheets."
       />
+      <CorrectionHelp />
       <div className="grid gap-3 sm:grid-cols-2">
         <Link
           to="/school/$schoolId/own-papers/new"
