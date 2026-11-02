@@ -316,12 +316,72 @@ export function totalsOf(
   return { total, max }
 }
 
-/** Parses one pass's reply. Returns null when it is not the agreed shape (the pass then counts as unusable). */
+/**
+ * Parses one pass's reply. Returns null when it is not the agreed shape (the pass then counts as unusable).
+ * A reply cut off mid-way (the AI ran out of room) keeps every answer that arrived whole; the answers that
+ * did not arrive are simply missing, so those questions count that reading as unusable and are flagged.
+ */
 export function parsePass(text: string): z.infer<typeof PassSchema> | null {
-  try {
-    const parsed = PassSchema.safeParse(JSON.parse(text))
-    return parsed.success ? parsed.data : null
-  } catch {
-    return null
+  const attempt = (t: string) => {
+    try {
+      const parsed = PassSchema.safeParse(JSON.parse(t))
+      return parsed.success ? parsed.data : null
+    } catch {
+      return null
+    }
   }
+  const whole = attempt(text)
+  if (whole) return whole
+  const starts: Array<number> = []
+  for (const m of text.matchAll(/\{\s*"question"/g)) starts.push(m.index)
+  for (let i = starts.length - 1; i > 0; i--) {
+    const cut = text.slice(0, starts[i]).replace(/,\s*$/, '')
+    const salvaged = attempt(`${cut}]}`)
+    if (salvaged) return salvaged
+  }
+  return null
+}
+
+/** How much room one question's reply takes: a multiple-choice answer is short, a written one is not. */
+const WRITTEN_WEIGHT = 4
+/** One call carries about this much reply (about 20 multiple-choice and 17 written answers). */
+export const CHUNK_WEIGHT = 90
+
+/**
+ * Splits a paper's questions into calls the AI's reply can hold. A short paper is one call, as before.
+ * The alternatives of one internal-choice question always stay together (the AI marks whichever the
+ * pupil attempted), and the paper's order is kept.
+ */
+export function chunkQuestions(
+  questions: ReadonlyArray<MarkQuestion>,
+  budget = CHUNK_WEIGHT,
+): Array<Array<MarkQuestion>> {
+  const units: Array<Array<MarkQuestion>> = []
+  const byGroup = new Map<string, Array<MarkQuestion>>()
+  for (const q of questions) {
+    const g = q.orGroup ? byGroup.get(q.orGroup) : undefined
+    if (g) g.push(q)
+    else {
+      const unit = [q]
+      units.push(unit)
+      if (q.orGroup) byGroup.set(q.orGroup, unit)
+    }
+  }
+  const weight = (u: Array<MarkQuestion>) =>
+    u.reduce((n, q) => n + (isChoiceQuestion(q) ? 1 : WRITTEN_WEIGHT), 0)
+  const chunks: Array<Array<MarkQuestion>> = []
+  let current: Array<MarkQuestion> = []
+  let used = 0
+  for (const u of units) {
+    const w = weight(u)
+    if (current.length > 0 && used + w > budget) {
+      chunks.push(current)
+      current = []
+      used = 0
+    }
+    current.push(...u)
+    used += w
+  }
+  if (current.length > 0) chunks.push(current)
+  return chunks
 }

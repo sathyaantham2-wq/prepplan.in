@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  chunkQuestions,
   combinePasses,
   mcqKeyLabel,
   parsePass,
@@ -165,5 +166,41 @@ describe('parsePass', () => {
     expect(parsePass('{"answers":[{"question":"1","found":true,"marks":2}]}')?.answers[0].marks).toBe(2)
     expect(parsePass('not json')).toBeNull()
     expect(parsePass('{"answers":"x"}')).toBeNull()
+  })
+})
+
+describe('a reply that was cut off', () => {
+  const entry = (n: number) =>
+    `{"question":"${n}","found":true,"answer_text":"x","choice":null,"marks":1,"steps":[{"step":1,"awarded":1}],"loss_kind":"none","habit":null,"loss_reason":"ok","confidence":0.9}`
+  it('keeps the answers that arrived whole and drops the cut one', () => {
+    const cut = `{"answers":[\n${entry(1)},\n${entry(2)},\n{"question":"3","found":true,"answer_text":"y","choice":null,"marks":1,"steps":[{"step":1,"awarded":1}],"loss_kind":"none","habit"`
+    const p = parsePass(cut)
+    expect(p?.answers.map((a) => a.question)).toEqual(['1', '2'])
+  })
+  it('is still unusable when nothing arrived whole', () => {
+    expect(parsePass('{"answers":[\n{"question":"1","found":tr')).toBeNull()
+    expect(parsePass('not json')).toBeNull()
+  })
+})
+
+describe('chunkQuestions', () => {
+  const mk = (n: number, over: Partial<MarkQuestion> = {}): MarkQuestion => ({ ...written, id: `c${n}`, no: String(n), ...over })
+  const choice = (n: number) => mk(n, { type: 'mcq', options: [{ label: 'A', text: 'a' }, { label: 'B', text: 'b' }], marks: 1 })
+
+  it('keeps a short paper in one call', () => {
+    expect(chunkQuestions([choice(1), mk(2)])).toHaveLength(1)
+  })
+  it('splits a long paper, keeps its order and loses nothing', () => {
+    const qs = [...Array.from({ length: 20 }, (_, i) => choice(i + 1)), ...Array.from({ length: 41 }, (_, i) => mk(i + 21))]
+    const chunks = chunkQuestions(qs)
+    expect(chunks.length).toBeGreaterThan(1)
+    expect(chunks.flat().map((q) => q.id)).toEqual(qs.map((q) => q.id))
+  })
+  it('keeps the alternatives of an internal-choice question together', () => {
+    const qs = [...Array.from({ length: 21 }, (_, i) => mk(i + 1)), mk(22, { orGroup: 'g' }), mk(23, { orGroup: 'g' })]
+    const chunks = chunkQuestions(qs, 90)
+    const withG = chunks.filter((c) => c.some((q) => q.orGroup === 'g'))
+    expect(withG).toHaveLength(1)
+    expect(withG[0].filter((q) => q.orGroup === 'g')).toHaveLength(2)
   })
 })

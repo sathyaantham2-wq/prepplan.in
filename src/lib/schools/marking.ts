@@ -19,6 +19,7 @@ import { getScanStore } from '../scan-storage'
 import { SchoolError, auditSchool } from './common'
 import {
   PASSES,
+  chunkQuestions,
   combinePasses,
   isChoiceQuestion,
   mcqKeyLabel,
@@ -117,7 +118,9 @@ export function createMarkingAi(
               {
                 model,
                 prompt: markingPrompt(subject, grade, questions, pages.length, note),
-                maxTokens: 6000,
+                // A whole paper is one JSON reply: about 100-250 tokens a question. 6000 cut an 80-mark
+                // paper of 61 answers off mid-way (real trial 2026-11-02), so the room grows with the paper.
+                maxTokens: Math.min(16000, Math.max(6000, 1000 + 250 * questions.length)),
                 images: pages,
               },
               provider,
@@ -243,18 +246,21 @@ export async function pageForMarking(
   bytes: Buffer,
   firstPage: boolean,
 ): Promise<MarkingPage> {
-  const oriented = await sharp(bytes).rotate().toBuffer()
-  const meta = await sharp(oriented).metadata()
-  const w = meta.width
-  const h = meta.height
+  // Shrink first: sharp applies a resize before a composite, so a strip sized to the full photo would be
+  // wider than the shrunk picture and the first page of any photo over 1400 px wide would be refused.
+  const oriented = await sharp(bytes)
+    .rotate()
+    .resize({ width: 1400, withoutEnlargement: true })
+    .toBuffer()
   let img = sharp(oriented)
   if (firstPage) {
-    const stripH = Math.max(1, Math.round(h * 0.12))
+    const meta = await sharp(oriented).metadata()
+    const stripH = Math.max(1, Math.round(meta.height * 0.12))
     img = sharp(oriented).composite([
       {
         input: {
           create: {
-            width: w,
+            width: meta.width,
             height: stripH,
             channels: 3,
             background: '#ffffff',
@@ -265,10 +271,7 @@ export async function pageForMarking(
       },
     ])
   }
-  const out = await img
-    .resize({ width: 1400, withoutEnlargement: true })
-    .jpeg({ quality: 80 })
-    .toBuffer()
+  const out = await img.jpeg({ quality: 80 }).toBuffer()
   return { mediaType: 'image/jpeg', base64: out.toString('base64') }
 }
 
@@ -510,23 +513,30 @@ export async function markStudentSheets(
       pages.push(await pageForMarking(decryptScan(sealed), i === 0))
     }
 
-    const passes: Array<ReturnType<typeof parsePass>> = []
-    for (let i = 0; i < PASSES; i++)
-      passes.push(
-        parsePass(
-          await ai.markPass({
-            pages,
-            subject: paper.subject.name,
-            grade: paper.grade,
-            questions,
-          }),
-        ),
-      )
+    // A paper too long for one reply is asked in parts (same pages, some of the questions each time).
+    const chunks = chunkQuestions(questions)
+    const passes: Array<Array<ReturnType<typeof parsePass>>> = []
+    for (let i = 0; i < PASSES; i++) {
+      const parts: Array<ReturnType<typeof parsePass>> = []
+      for (const part of chunks)
+        parts.push(
+          parsePass(
+            await ai.markPass({
+              pages,
+              subject: paper.subject.name,
+              grade: paper.grade,
+              questions: part,
+            }),
+          ),
+        )
+      passes.push(parts)
+    }
 
     const combined = new Map<string, CombinedAnswer>()
     for (const q of questions) {
-      const per: Array<PassAnswer | undefined> = passes.map((p) =>
-        p?.answers.find((a) => a.question.trim() === q.no),
+      const ci = chunks.findIndex((c) => c.some((x) => x.id === q.id))
+      const per: Array<PassAnswer | undefined> = passes.map((parts) =>
+        parts[ci]?.answers.find((a) => a.question.trim() === q.no),
       )
       combined.set(q.id, combinePasses(q, per))
     }

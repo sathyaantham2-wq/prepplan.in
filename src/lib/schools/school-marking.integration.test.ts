@@ -361,6 +361,13 @@ describe('AI marking of a student (M4 stage 1)', () => {
     expect(later.data[0]).toBeLessThan(15)
   })
 
+  it('pageForMarking accepts a first page wider than 1400 px (a real phone photo)', async () => {
+    const big = await sharp({ create: { width: 3000, height: 4000, channels: 3, background: '#000000' } }).jpeg().toBuffer()
+    const out = await sharp(Buffer.from((await pageForMarking(big, true)).base64, 'base64')).raw().toBuffer({ resolveWithObject: true })
+    expect(out.info.width).toBe(1400)
+    expect(out.data[0]).toBeGreaterThan(240)
+  })
+
   it('the marks are stored, one row per question', async () => {
     const rows = await db.selectFrom('school_answer_marks').select('id').where('school_id', '=', schoolId).execute()
     expect(rows).toHaveLength(2)

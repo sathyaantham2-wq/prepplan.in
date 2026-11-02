@@ -7,7 +7,7 @@ import { isAiConfigured } from '../ai-provider'
 import { encryptScan } from '../scan-crypto'
 import { getScanStore } from '../scan-storage'
 import { loadSchoolScope } from '../school-session'
-import { markStudentSheets, studentMarking } from './marking'
+import { createMarkingAi, markStudentSheets, studentMarking } from './marking'
 import { createSchoolStudent } from './people'
 import { addSchoolSubject, createClass, createSection } from './setup'
 import { acceptSchoolTerms } from './terms'
@@ -142,8 +142,32 @@ describe.skipIf(!file)('marking trial (real AI)', () => {
       }
       const before = await db.selectFrom('ai_jobs').select(['cost_inr', 'tokens_in', 'tokens_out', 'latency_ms']).where('household_id', '=', p.school.household_id).execute()
       const t0 = Date.now()
-      const r = await markStudentSheets(db, admin, paper.id, s.schoolStudent.id)
+      // MARKING_TRIAL_ONEPASS=1: call the real AI once per part of the paper (not three times), save each raw reply
+      // to <out>/raw-part-N.txt and hand the same reply back for the other passes (no extra cost).
+      // MARKING_TRIAL_MAXCALLS=N also stops after N real calls (later parts get an empty reply).
+      let override: Parameters<typeof markStudentSheets>[4]
+      if (process.env.MARKING_TRIAL_ONEPASS === '1') {
+        const real = createMarkingAi(db, { schoolId, householdId: p.school.household_id })
+        const maxCalls = Number(process.env.MARKING_TRIAL_MAXCALLS ?? '999')
+        const seen = new Map<string, string>()
+        override = {
+          available: () => real.available(),
+          markPass: async (input) => {
+            const key = input.questions.map((q) => q.no).join(',')
+            const hit = seen.get(key)
+            if (hit !== undefined) return hit
+            const text = seen.size < maxCalls ? await real.markPass(input) : '{"answers":[]}'
+            seen.set(key, text)
+            const dir = process.env.MARKING_TRIAL_OUT ?? 'test-results/marking-trial'
+            mkdirSync(dir, { recursive: true })
+            writeFileSync(`${dir}/raw-part-${seen.size}.txt`, text)
+            return text
+          },
+        }
+      }
+      const r = await markStudentSheets(db, admin, paper.id, s.schoolStudent.id, override)
       const seconds = (Date.now() - t0) / 1000
+      process.stderr.write(`[trial] ${st.name}: ${r.status}${r.message ? ' - ' + r.message : ''}\n`)
       const after = await db.selectFrom('ai_jobs').select(['cost_inr', 'tokens_in', 'tokens_out']).where('household_id', '=', p.school.household_id).execute()
       const mine = after.slice(before.length)
       const v = await studentMarking(db, admin, paper.id, s.schoolStudent.id)
