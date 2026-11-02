@@ -18,6 +18,10 @@ export interface StudentRow {
   admissionNo: string | null
   guardianPhone: string | null
   guardianName: string | null
+  /** Parent WhatsApp contact permission from the file: true, false, or null when the cell is empty (leave as it is). */
+  whatsappOk: boolean | null
+  /** The language the parent wants messages in, or null when the cell is empty. */
+  parentLanguage: 'en' | 'te' | null
 }
 /** One "7A Maths" from a teacher's Teaches cell: class, section and the subject as the school wrote it. */
 export interface TeachItem {
@@ -63,6 +67,13 @@ const ALIASES: Record<string, string> = {
   mobile: 'parentphone',
   parentname: 'parentname',
   guardianname: 'parentname',
+  parentwhatsappok: 'whatsappok',
+  whatsappok: 'whatsappok',
+  whatsapp: 'whatsappok',
+  parentwhatsapp: 'whatsappok',
+  parentlanguage: 'parentlanguage',
+  preferredlanguage: 'parentlanguage',
+  messagelanguage: 'parentlanguage',
   email: 'email',
   emailid: 'email',
   emailaddress: 'email',
@@ -212,6 +223,14 @@ export function validateStudentRow(row: RawRow): RowResult<StudentRow> {
         error: `Parent phone "${row.parentphone}" is not a valid number.`,
       }
   }
+  const ok = parseYesNo(row.whatsappok ?? '')
+  if (ok === 'bad')
+    return { ok: false, error: `Parent WhatsApp OK "${row.whatsappok}" must be yes or no.` }
+  const lang = parseParentLanguage(row.parentlanguage ?? '')
+  if (lang === 'bad')
+    return { ok: false, error: `Parent language "${row.parentlanguage}" must be English or Telugu.` }
+  if (ok === true && !guardianPhone)
+    return { ok: false, error: 'Parent WhatsApp OK is yes but there is no parent phone on this row.' }
   return {
     ok: true,
     value: {
@@ -222,8 +241,27 @@ export function validateStudentRow(row: RawRow): RowResult<StudentRow> {
       admissionNo: admissionRaw ? admissionRaw.toUpperCase() : null,
       guardianPhone,
       guardianName: (row.parentname ?? '').trim() || null,
+      whatsappOk: ok,
+      parentLanguage: lang,
     },
   }
+}
+
+/** yes/no for the parent WhatsApp column. Empty is "not said" (null); anything else unreadable is "bad". Never defaults to yes. */
+export function parseYesNo(text: string): boolean | null | 'bad' {
+  const t = text.trim().toLowerCase()
+  if (!t) return null
+  if (['yes', 'y', 'true', '1', 'ok', 'అవును'].includes(t)) return true
+  if (['no', 'n', 'false', '0', 'కాదు', 'లేదు'].includes(t)) return false
+  return 'bad'
+}
+
+export function parseParentLanguage(text: string): 'en' | 'te' | null | 'bad' {
+  const t = text.trim().toLowerCase()
+  if (!t) return null
+  if (['english', 'en', 'eng'].includes(t)) return 'en'
+  if (['telugu', 'te', 'tel', 'తెలుగు'].includes(t)) return 'te'
+  return 'bad'
 }
 
 const CLASS_SECTION = /^(?:class\s*)?(\d{1,2})\s*[-\s]?\s*([a-z]{1,3})$/i

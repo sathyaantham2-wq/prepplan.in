@@ -65,6 +65,7 @@ import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
+import { Route as PTokenRouteImport } from './routes/p.$token'
 import { Route as PaperIdRouteImport } from './routes/paper/$id'
 import { Route as ScanAttemptIdRouteImport } from './routes/scan/$attemptId'
 import { Route as SchoolIndexRouteImport } from './routes/school/index'
@@ -89,6 +90,7 @@ import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiCronDailyNudgeRouteImport } from './routes/api/cron/daily-nudge'
+import { Route as ApiCronSchoolMessagesRouteImport } from './routes/api/cron/school-messages'
 import { Route as ApiCronWeeklySummaryRouteImport } from './routes/api/cron/weekly-summary'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$id'
@@ -99,12 +101,14 @@ import { Route as ApiHabitDrillsIdRouteImport } from './routes/api/habit-drills/
 import { Route as ApiHabitDrillsGenerateRouteImport } from './routes/api/habit-drills/generate'
 import { Route as ApiHouseholdsMeRouteImport } from './routes/api/households/me'
 import { Route as ApiHouseholdsUsersRouteImport } from './routes/api/households/users'
+import { Route as ApiMessagingCallbackRouteImport } from './routes/api/messaging/callback'
 import { Route as ApiNotificationsUnsubscribeRouteImport } from './routes/api/notifications/unsubscribe'
 import { Route as ApiNudgesIdRouteImport } from './routes/api/nudges/$id'
 import { Route as ApiNudgesTodayRouteImport } from './routes/api/nudges/today'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
 import { Route as ApiPapersGenerateCivilRouteImport } from './routes/api/papers/generate-civil'
+import { Route as ApiParentLinkTokenRouteImport } from './routes/api/parent-link/$token'
 import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
 import { Route as ApiPrivacyDeleteSelfRouteImport } from './routes/api/privacy/delete-self'
 import { Route as ApiPrivacyExportRouteImport } from './routes/api/privacy/export'
@@ -130,6 +134,7 @@ import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/
 import { Route as SchoolSchoolIdIndexRouteImport } from './routes/school/$schoolId/index'
 import { Route as SchoolSchoolIdClassProgressRouteImport } from './routes/school/$schoolId/class-progress'
 import { Route as SchoolSchoolIdClassesRouteImport } from './routes/school/$schoolId/classes'
+import { Route as SchoolSchoolIdMessagesRouteImport } from './routes/school/$schoolId/messages'
 import { Route as SchoolSchoolIdSettingsRouteImport } from './routes/school/$schoolId/settings'
 import { Route as SchoolSchoolIdStudentsRouteImport } from './routes/school/$schoolId/students'
 import { Route as SchoolSchoolIdTeachersRouteImport } from './routes/school/$schoolId/teachers'
@@ -211,6 +216,9 @@ import { Route as ApiSchoolsSchoolIdCredentialsStudentsRouteImport } from './rou
 import { Route as ApiSchoolsSchoolIdDemoResetRouteImport } from './routes/api/schools/$schoolId/demo/reset'
 import { Route as ApiSchoolsSchoolIdDemoSampleResultsRouteImport } from './routes/api/schools/$schoolId/demo/sample-results'
 import { Route as ApiSchoolsSchoolIdExamsExamIdRouteImport } from './routes/api/schools/$schoolId/exams/$examId'
+import { Route as ApiSchoolsSchoolIdMessagingLogRouteImport } from './routes/api/schools/$schoolId/messaging/log'
+import { Route as ApiSchoolsSchoolIdMessagingPermissionsRouteImport } from './routes/api/schools/$schoolId/messaging/permissions'
+import { Route as ApiSchoolsSchoolIdMessagingSettingsRouteImport } from './routes/api/schools/$schoolId/messaging/settings'
 import { Route as ApiSchoolsSchoolIdMyResultsPaperIdRouteImport } from './routes/api/schools/$schoolId/my-results/$paperId'
 import { Route as ApiSchoolsSchoolIdMySheetImagesSheetIdRouteImport } from './routes/api/schools/$schoolId/my-sheet-images/$sheetId'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId'
@@ -243,6 +251,8 @@ import { Route as ApiSchoolsSchoolIdExamsExamIdScanSummaryRouteImport } from './
 import { Route as ApiSchoolsSchoolIdExamsExamIdScansRouteImport } from './routes/api/schools/$schoolId/exams/$examId/scans'
 import { Route as ApiSchoolsSchoolIdExamsExamIdTeacherCopyRouteImport } from './routes/api/schools/$schoolId/exams/$examId/teacher-copy'
 import { Route as ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport } from './routes/api/schools/$schoolId/imports/$batchId/commit'
+import { Route as ApiSchoolsSchoolIdMessagingPermissionsStudentIdRouteImport } from './routes/api/schools/$schoolId/messaging/permissions/$studentId'
+import { Route as ApiSchoolsSchoolIdMessagingRetryMessageIdRouteImport } from './routes/api/schools/$schoolId/messaging/retry/$messageId'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdCoversRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/covers'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/marking'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
@@ -539,6 +549,11 @@ const EvaluateAttemptIdRoute = EvaluateAttemptIdRouteImport.update({
   path: '/evaluate/$attemptId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PTokenRoute = PTokenRouteImport.update({
+  id: '/p/$token',
+  path: '/p/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PaperIdRoute = PaperIdRouteImport.update({
   id: '/paper/$id',
   path: '/paper/$id',
@@ -660,6 +675,11 @@ const ApiCronDailyNudgeRoute = ApiCronDailyNudgeRouteImport.update({
   path: '/api/cron/daily-nudge',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCronSchoolMessagesRoute = ApiCronSchoolMessagesRouteImport.update({
+  id: '/api/cron/school-messages',
+  path: '/api/cron/school-messages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiCronWeeklySummaryRoute = ApiCronWeeklySummaryRouteImport.update({
   id: '/api/cron/weekly-summary',
   path: '/api/cron/weekly-summary',
@@ -711,6 +731,11 @@ const ApiHouseholdsUsersRoute = ApiHouseholdsUsersRouteImport.update({
   path: '/api/households/users',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMessagingCallbackRoute = ApiMessagingCallbackRouteImport.update({
+  id: '/api/messaging/callback',
+  path: '/api/messaging/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiNotificationsUnsubscribeRoute =
   ApiNotificationsUnsubscribeRouteImport.update({
     id: '/api/notifications/unsubscribe',
@@ -741,6 +766,11 @@ const ApiPapersGenerateCivilRoute = ApiPapersGenerateCivilRouteImport.update({
   id: '/generate-civil',
   path: '/generate-civil',
   getParentRoute: () => ApiPapersRoute,
+} as any)
+const ApiParentLinkTokenRoute = ApiParentLinkTokenRouteImport.update({
+  id: '/api/parent-link/$token',
+  path: '/api/parent-link/$token',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPrivacyDeleteRoute = ApiPrivacyDeleteRouteImport.update({
   id: '/api/privacy/delete',
@@ -869,6 +899,11 @@ const SchoolSchoolIdClassProgressRoute =
 const SchoolSchoolIdClassesRoute = SchoolSchoolIdClassesRouteImport.update({
   id: '/classes',
   path: '/classes',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
+const SchoolSchoolIdMessagesRoute = SchoolSchoolIdMessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
   getParentRoute: () => SchoolSchoolIdRoute,
 } as any)
 const SchoolSchoolIdSettingsRoute = SchoolSchoolIdSettingsRouteImport.update({
@@ -1320,6 +1355,24 @@ const ApiSchoolsSchoolIdExamsExamIdRoute =
     path: '/$examId',
     getParentRoute: () => ApiSchoolsSchoolIdExamsRoute,
   } as any)
+const ApiSchoolsSchoolIdMessagingLogRoute =
+  ApiSchoolsSchoolIdMessagingLogRouteImport.update({
+    id: '/api/schools/$schoolId/messaging/log',
+    path: '/api/schools/$schoolId/messaging/log',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiSchoolsSchoolIdMessagingPermissionsRoute =
+  ApiSchoolsSchoolIdMessagingPermissionsRouteImport.update({
+    id: '/api/schools/$schoolId/messaging/permissions',
+    path: '/api/schools/$schoolId/messaging/permissions',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiSchoolsSchoolIdMessagingSettingsRoute =
+  ApiSchoolsSchoolIdMessagingSettingsRouteImport.update({
+    id: '/api/schools/$schoolId/messaging/settings',
+    path: '/api/schools/$schoolId/messaging/settings',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiSchoolsSchoolIdMyResultsPaperIdRoute =
   ApiSchoolsSchoolIdMyResultsPaperIdRouteImport.update({
     id: '/$paperId',
@@ -1512,6 +1565,18 @@ const ApiSchoolsSchoolIdImportsBatchIdCommitRoute =
     path: '/$batchId/commit',
     getParentRoute: () => ApiSchoolsSchoolIdImportsRoute,
   } as any)
+const ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute =
+  ApiSchoolsSchoolIdMessagingPermissionsStudentIdRouteImport.update({
+    id: '/$studentId',
+    path: '/$studentId',
+    getParentRoute: () => ApiSchoolsSchoolIdMessagingPermissionsRoute,
+  } as any)
+const ApiSchoolsSchoolIdMessagingRetryMessageIdRoute =
+  ApiSchoolsSchoolIdMessagingRetryMessageIdRouteImport.update({
+    id: '/api/schools/$schoolId/messaging/retry/$messageId',
+    path: '/api/schools/$schoolId/messaging/retry/$messageId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute =
   ApiSchoolsSchoolIdOwnPapersPaperIdCoversRouteImport.update({
     id: '/covers',
@@ -1653,6 +1718,7 @@ export interface FileRoutesByFullPath {
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/p/$token': typeof PTokenRoute
   '/paper/$id': typeof PaperIdRoute
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/school/$schoolId': typeof SchoolSchoolIdRouteWithChildren
@@ -1678,6 +1744,7 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/daily-nudge': typeof ApiCronDailyNudgeRoute
+  '/api/cron/school-messages': typeof ApiCronSchoolMessagesRoute
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
@@ -1688,12 +1755,14 @@ export interface FileRoutesByFullPath {
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/households/users': typeof ApiHouseholdsUsersRouteWithChildren
+  '/api/messaging/callback': typeof ApiMessagingCallbackRoute
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/nudges/$id': typeof ApiNudgesIdRoute
   '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/papers/generate-civil': typeof ApiPapersGenerateCivilRoute
+  '/api/parent-link/$token': typeof ApiParentLinkTokenRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
@@ -1718,6 +1787,7 @@ export interface FileRoutesByFullPath {
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/school/$schoolId/class-progress': typeof SchoolSchoolIdClassProgressRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/messages': typeof SchoolSchoolIdMessagesRoute
   '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
@@ -1800,6 +1870,9 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
   '/api/schools/$schoolId/demo/sample-results': typeof ApiSchoolsSchoolIdDemoSampleResultsRoute
   '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
+  '/api/schools/$schoolId/messaging/log': typeof ApiSchoolsSchoolIdMessagingLogRoute
+  '/api/schools/$schoolId/messaging/permissions': typeof ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren
+  '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
   '/api/schools/$schoolId/my-results/$paperId': typeof ApiSchoolsSchoolIdMyResultsPaperIdRoute
   '/api/schools/$schoolId/my-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRoute
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
@@ -1832,6 +1905,8 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/exams/$examId/scans': typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
   '/api/schools/$schoolId/exams/$examId/teacher-copy': typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/messaging/permissions/$studentId': typeof ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute
+  '/api/schools/$schoolId/messaging/retry/$messageId': typeof ApiSchoolsSchoolIdMessagingRetryMessageIdRoute
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
@@ -1901,6 +1976,7 @@ export interface FileRoutesByTo {
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/p/$token': typeof PTokenRoute
   '/paper/$id': typeof PaperIdRoute
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/school/set-password': typeof SchoolSetPasswordRoute
@@ -1925,6 +2001,7 @@ export interface FileRoutesByTo {
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/daily-nudge': typeof ApiCronDailyNudgeRoute
+  '/api/cron/school-messages': typeof ApiCronSchoolMessagesRoute
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
@@ -1935,12 +2012,14 @@ export interface FileRoutesByTo {
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/households/users': typeof ApiHouseholdsUsersRouteWithChildren
+  '/api/messaging/callback': typeof ApiMessagingCallbackRoute
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/nudges/$id': typeof ApiNudgesIdRoute
   '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/papers/generate-civil': typeof ApiPapersGenerateCivilRoute
+  '/api/parent-link/$token': typeof ApiParentLinkTokenRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
@@ -1965,6 +2044,7 @@ export interface FileRoutesByTo {
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/school/$schoolId/class-progress': typeof SchoolSchoolIdClassProgressRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/messages': typeof SchoolSchoolIdMessagesRoute
   '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
@@ -2047,6 +2127,9 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
   '/api/schools/$schoolId/demo/sample-results': typeof ApiSchoolsSchoolIdDemoSampleResultsRoute
   '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
+  '/api/schools/$schoolId/messaging/log': typeof ApiSchoolsSchoolIdMessagingLogRoute
+  '/api/schools/$schoolId/messaging/permissions': typeof ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren
+  '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
   '/api/schools/$schoolId/my-results/$paperId': typeof ApiSchoolsSchoolIdMyResultsPaperIdRoute
   '/api/schools/$schoolId/my-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRoute
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
@@ -2079,6 +2162,8 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/exams/$examId/scans': typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
   '/api/schools/$schoolId/exams/$examId/teacher-copy': typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/messaging/permissions/$studentId': typeof ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute
+  '/api/schools/$schoolId/messaging/retry/$messageId': typeof ApiSchoolsSchoolIdMessagingRetryMessageIdRoute
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
@@ -2151,6 +2236,7 @@ export interface FileRoutesById {
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/p/$token': typeof PTokenRoute
   '/paper/$id': typeof PaperIdRoute
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/school/$schoolId': typeof SchoolSchoolIdRouteWithChildren
@@ -2176,6 +2262,7 @@ export interface FileRoutesById {
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/daily-nudge': typeof ApiCronDailyNudgeRoute
+  '/api/cron/school-messages': typeof ApiCronSchoolMessagesRoute
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
@@ -2186,12 +2273,14 @@ export interface FileRoutesById {
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/households/users': typeof ApiHouseholdsUsersRouteWithChildren
+  '/api/messaging/callback': typeof ApiMessagingCallbackRoute
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/nudges/$id': typeof ApiNudgesIdRoute
   '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/papers/generate-civil': typeof ApiPapersGenerateCivilRoute
+  '/api/parent-link/$token': typeof ApiParentLinkTokenRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
@@ -2216,6 +2305,7 @@ export interface FileRoutesById {
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/school/$schoolId/class-progress': typeof SchoolSchoolIdClassProgressRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
+  '/school/$schoolId/messages': typeof SchoolSchoolIdMessagesRoute
   '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
@@ -2298,6 +2388,9 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
   '/api/schools/$schoolId/demo/sample-results': typeof ApiSchoolsSchoolIdDemoSampleResultsRoute
   '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
+  '/api/schools/$schoolId/messaging/log': typeof ApiSchoolsSchoolIdMessagingLogRoute
+  '/api/schools/$schoolId/messaging/permissions': typeof ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren
+  '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
   '/api/schools/$schoolId/my-results/$paperId': typeof ApiSchoolsSchoolIdMyResultsPaperIdRoute
   '/api/schools/$schoolId/my-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRoute
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
@@ -2330,6 +2423,8 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/exams/$examId/scans': typeof ApiSchoolsSchoolIdExamsExamIdScansRoute
   '/api/schools/$schoolId/exams/$examId/teacher-copy': typeof ApiSchoolsSchoolIdExamsExamIdTeacherCopyRoute
   '/api/schools/$schoolId/imports/$batchId/commit': typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
+  '/api/schools/$schoolId/messaging/permissions/$studentId': typeof ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute
+  '/api/schools/$schoolId/messaging/retry/$messageId': typeof ApiSchoolsSchoolIdMessagingRetryMessageIdRoute
   '/api/schools/$schoolId/own-papers/$paperId/covers': typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
   '/api/schools/$schoolId/own-papers/$paperId/marking-jobs': typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingJobsRoute
@@ -2403,6 +2498,7 @@ export interface FileRouteTypes {
     | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/p/$token'
     | '/paper/$id'
     | '/scan/$attemptId'
     | '/school/$schoolId'
@@ -2428,6 +2524,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/cron/daily-nudge'
+    | '/api/cron/school-messages'
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
@@ -2438,12 +2535,14 @@ export interface FileRouteTypes {
     | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/households/users'
+    | '/api/messaging/callback'
     | '/api/notifications/unsubscribe'
     | '/api/nudges/$id'
     | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/papers/generate-civil'
+    | '/api/parent-link/$token'
     | '/api/privacy/delete'
     | '/api/privacy/delete-self'
     | '/api/privacy/export'
@@ -2468,6 +2567,7 @@ export interface FileRouteTypes {
     | '/evaluation/$id/report'
     | '/school/$schoolId/class-progress'
     | '/school/$schoolId/classes'
+    | '/school/$schoolId/messages'
     | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
@@ -2550,6 +2650,9 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/demo/reset'
     | '/api/schools/$schoolId/demo/sample-results'
     | '/api/schools/$schoolId/exams/$examId'
+    | '/api/schools/$schoolId/messaging/log'
+    | '/api/schools/$schoolId/messaging/permissions'
+    | '/api/schools/$schoolId/messaging/settings'
     | '/api/schools/$schoolId/my-results/$paperId'
     | '/api/schools/$schoolId/my-sheet-images/$sheetId'
     | '/api/schools/$schoolId/own-papers/$paperId'
@@ -2582,6 +2685,8 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/scans'
     | '/api/schools/$schoolId/exams/$examId/teacher-copy'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/messaging/permissions/$studentId'
+    | '/api/schools/$schoolId/messaging/retry/$messageId'
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
     | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
@@ -2651,6 +2756,7 @@ export interface FileRouteTypes {
     | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/p/$token'
     | '/paper/$id'
     | '/scan/$attemptId'
     | '/school/set-password'
@@ -2675,6 +2781,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/cron/daily-nudge'
+    | '/api/cron/school-messages'
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
@@ -2685,12 +2792,14 @@ export interface FileRouteTypes {
     | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/households/users'
+    | '/api/messaging/callback'
     | '/api/notifications/unsubscribe'
     | '/api/nudges/$id'
     | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/papers/generate-civil'
+    | '/api/parent-link/$token'
     | '/api/privacy/delete'
     | '/api/privacy/delete-self'
     | '/api/privacy/export'
@@ -2715,6 +2824,7 @@ export interface FileRouteTypes {
     | '/evaluation/$id/report'
     | '/school/$schoolId/class-progress'
     | '/school/$schoolId/classes'
+    | '/school/$schoolId/messages'
     | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
@@ -2797,6 +2907,9 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/demo/reset'
     | '/api/schools/$schoolId/demo/sample-results'
     | '/api/schools/$schoolId/exams/$examId'
+    | '/api/schools/$schoolId/messaging/log'
+    | '/api/schools/$schoolId/messaging/permissions'
+    | '/api/schools/$schoolId/messaging/settings'
     | '/api/schools/$schoolId/my-results/$paperId'
     | '/api/schools/$schoolId/my-sheet-images/$sheetId'
     | '/api/schools/$schoolId/own-papers/$paperId'
@@ -2829,6 +2942,8 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/scans'
     | '/api/schools/$schoolId/exams/$examId/teacher-copy'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/messaging/permissions/$studentId'
+    | '/api/schools/$schoolId/messaging/retry/$messageId'
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
     | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
@@ -2900,6 +3015,7 @@ export interface FileRouteTypes {
     | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/p/$token'
     | '/paper/$id'
     | '/scan/$attemptId'
     | '/school/$schoolId'
@@ -2925,6 +3041,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/cron/daily-nudge'
+    | '/api/cron/school-messages'
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
@@ -2935,12 +3052,14 @@ export interface FileRouteTypes {
     | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/households/users'
+    | '/api/messaging/callback'
     | '/api/notifications/unsubscribe'
     | '/api/nudges/$id'
     | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/papers/generate-civil'
+    | '/api/parent-link/$token'
     | '/api/privacy/delete'
     | '/api/privacy/delete-self'
     | '/api/privacy/export'
@@ -2965,6 +3084,7 @@ export interface FileRouteTypes {
     | '/evaluation/$id/report'
     | '/school/$schoolId/class-progress'
     | '/school/$schoolId/classes'
+    | '/school/$schoolId/messages'
     | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
@@ -3047,6 +3167,9 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/demo/reset'
     | '/api/schools/$schoolId/demo/sample-results'
     | '/api/schools/$schoolId/exams/$examId'
+    | '/api/schools/$schoolId/messaging/log'
+    | '/api/schools/$schoolId/messaging/permissions'
+    | '/api/schools/$schoolId/messaging/settings'
     | '/api/schools/$schoolId/my-results/$paperId'
     | '/api/schools/$schoolId/my-sheet-images/$sheetId'
     | '/api/schools/$schoolId/own-papers/$paperId'
@@ -3079,6 +3202,8 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/scans'
     | '/api/schools/$schoolId/exams/$examId/teacher-copy'
     | '/api/schools/$schoolId/imports/$batchId/commit'
+    | '/api/schools/$schoolId/messaging/permissions/$studentId'
+    | '/api/schools/$schoolId/messaging/retry/$messageId'
     | '/api/schools/$schoolId/own-papers/$paperId/covers'
     | '/api/schools/$schoolId/own-papers/$paperId/marking'
     | '/api/schools/$schoolId/own-papers/$paperId/marking-jobs'
@@ -3140,6 +3265,7 @@ export interface RootRouteChildren {
   ApiStudyPlanRoute: typeof ApiStudyPlanRouteWithChildren
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
+  PTokenRoute: typeof PTokenRoute
   PaperIdRoute: typeof PaperIdRoute
   ScanAttemptIdRoute: typeof ScanAttemptIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
@@ -3158,14 +3284,17 @@ export interface RootRouteChildren {
   ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiCronDailyNudgeRoute: typeof ApiCronDailyNudgeRoute
+  ApiCronSchoolMessagesRoute: typeof ApiCronSchoolMessagesRoute
   ApiCronWeeklySummaryRoute: typeof ApiCronWeeklySummaryRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
   ApiFixitTodayRoute: typeof ApiFixitTodayRoute
   ApiHouseholdsMeRoute: typeof ApiHouseholdsMeRoute
   ApiHouseholdsUsersRoute: typeof ApiHouseholdsUsersRouteWithChildren
+  ApiMessagingCallbackRoute: typeof ApiMessagingCallbackRoute
   ApiNotificationsUnsubscribeRoute: typeof ApiNotificationsUnsubscribeRoute
   ApiNudgesIdRoute: typeof ApiNudgesIdRoute
   ApiNudgesTodayRoute: typeof ApiNudgesTodayRoute
+  ApiParentLinkTokenRoute: typeof ApiParentLinkTokenRoute
   ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
   ApiPrivacyDeleteSelfRoute: typeof ApiPrivacyDeleteSelfRoute
   ApiPrivacyExportRoute: typeof ApiPrivacyExportRoute
@@ -3197,10 +3326,14 @@ export interface RootRouteChildren {
   ApiSchoolsSchoolIdCredentialsStudentsRoute: typeof ApiSchoolsSchoolIdCredentialsStudentsRoute
   ApiSchoolsSchoolIdDemoResetRoute: typeof ApiSchoolsSchoolIdDemoResetRoute
   ApiSchoolsSchoolIdDemoSampleResultsRoute: typeof ApiSchoolsSchoolIdDemoSampleResultsRoute
+  ApiSchoolsSchoolIdMessagingLogRoute: typeof ApiSchoolsSchoolIdMessagingLogRoute
+  ApiSchoolsSchoolIdMessagingPermissionsRoute: typeof ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren
+  ApiSchoolsSchoolIdMessagingSettingsRoute: typeof ApiSchoolsSchoolIdMessagingSettingsRoute
   ApiSchoolsSchoolIdMySheetImagesSheetIdRoute: typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRoute
   ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute: typeof ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute
   ApiSchoolsSchoolIdScanImagesPageIdRoute: typeof ApiSchoolsSchoolIdScanImagesPageIdRoute
   ApiSchoolsSchoolIdTermsAcceptRoute: typeof ApiSchoolsSchoolIdTermsAcceptRoute
+  ApiSchoolsSchoolIdMessagingRetryMessageIdRoute: typeof ApiSchoolsSchoolIdMessagingRetryMessageIdRoute
   ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute: typeof ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute
   ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute: typeof ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute
 }
@@ -3599,6 +3732,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EvaluateAttemptIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/p/$token': {
+      id: '/p/$token'
+      path: '/p/$token'
+      fullPath: '/p/$token'
+      preLoaderRoute: typeof PTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/paper/$id': {
       id: '/paper/$id'
       path: '/paper/$id'
@@ -3767,6 +3907,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiCronDailyNudgeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/cron/school-messages': {
+      id: '/api/cron/school-messages'
+      path: '/api/cron/school-messages'
+      fullPath: '/api/cron/school-messages'
+      preLoaderRoute: typeof ApiCronSchoolMessagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/cron/weekly-summary': {
       id: '/api/cron/weekly-summary'
       path: '/api/cron/weekly-summary'
@@ -3837,6 +3984,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiHouseholdsUsersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/messaging/callback': {
+      id: '/api/messaging/callback'
+      path: '/api/messaging/callback'
+      fullPath: '/api/messaging/callback'
+      preLoaderRoute: typeof ApiMessagingCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/notifications/unsubscribe': {
       id: '/api/notifications/unsubscribe'
       path: '/api/notifications/unsubscribe'
@@ -3878,6 +4032,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/papers/generate-civil'
       preLoaderRoute: typeof ApiPapersGenerateCivilRouteImport
       parentRoute: typeof ApiPapersRoute
+    }
+    '/api/parent-link/$token': {
+      id: '/api/parent-link/$token'
+      path: '/api/parent-link/$token'
+      fullPath: '/api/parent-link/$token'
+      preLoaderRoute: typeof ApiParentLinkTokenRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/privacy/delete': {
       id: '/api/privacy/delete'
@@ -4052,6 +4213,13 @@ declare module '@tanstack/react-router' {
       path: '/classes'
       fullPath: '/school/$schoolId/classes'
       preLoaderRoute: typeof SchoolSchoolIdClassesRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
+    '/school/$schoolId/messages': {
+      id: '/school/$schoolId/messages'
+      path: '/messages'
+      fullPath: '/school/$schoolId/messages'
+      preLoaderRoute: typeof SchoolSchoolIdMessagesRouteImport
       parentRoute: typeof SchoolSchoolIdRoute
     }
     '/school/$schoolId/settings': {
@@ -4621,6 +4789,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdExamsRoute
     }
+    '/api/schools/$schoolId/messaging/log': {
+      id: '/api/schools/$schoolId/messaging/log'
+      path: '/api/schools/$schoolId/messaging/log'
+      fullPath: '/api/schools/$schoolId/messaging/log'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdMessagingLogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/messaging/permissions': {
+      id: '/api/schools/$schoolId/messaging/permissions'
+      path: '/api/schools/$schoolId/messaging/permissions'
+      fullPath: '/api/schools/$schoolId/messaging/permissions'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdMessagingPermissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/messaging/settings': {
+      id: '/api/schools/$schoolId/messaging/settings'
+      path: '/api/schools/$schoolId/messaging/settings'
+      fullPath: '/api/schools/$schoolId/messaging/settings'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdMessagingSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/schools/$schoolId/my-results/$paperId': {
       id: '/api/schools/$schoolId/my-results/$paperId'
       path: '/$paperId'
@@ -4845,6 +5034,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdImportsBatchIdCommitRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdImportsRoute
     }
+    '/api/schools/$schoolId/messaging/permissions/$studentId': {
+      id: '/api/schools/$schoolId/messaging/permissions/$studentId'
+      path: '/$studentId'
+      fullPath: '/api/schools/$schoolId/messaging/permissions/$studentId'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdMessagingPermissionsStudentIdRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdMessagingPermissionsRoute
+    }
+    '/api/schools/$schoolId/messaging/retry/$messageId': {
+      id: '/api/schools/$schoolId/messaging/retry/$messageId'
+      path: '/api/schools/$schoolId/messaging/retry/$messageId'
+      fullPath: '/api/schools/$schoolId/messaging/retry/$messageId'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdMessagingRetryMessageIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/schools/$schoolId/own-papers/$paperId/covers': {
       id: '/api/schools/$schoolId/own-papers/$paperId/covers'
       path: '/covers'
@@ -4981,6 +5184,7 @@ const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 interface SchoolSchoolIdRouteChildren {
   SchoolSchoolIdClassProgressRoute: typeof SchoolSchoolIdClassProgressRoute
   SchoolSchoolIdClassesRoute: typeof SchoolSchoolIdClassesRoute
+  SchoolSchoolIdMessagesRoute: typeof SchoolSchoolIdMessagesRoute
   SchoolSchoolIdSettingsRoute: typeof SchoolSchoolIdSettingsRoute
   SchoolSchoolIdStudentsRoute: typeof SchoolSchoolIdStudentsRoute
   SchoolSchoolIdTeachersRoute: typeof SchoolSchoolIdTeachersRoute
@@ -5008,6 +5212,7 @@ interface SchoolSchoolIdRouteChildren {
 const SchoolSchoolIdRouteChildren: SchoolSchoolIdRouteChildren = {
   SchoolSchoolIdClassProgressRoute: SchoolSchoolIdClassProgressRoute,
   SchoolSchoolIdClassesRoute: SchoolSchoolIdClassesRoute,
+  SchoolSchoolIdMessagesRoute: SchoolSchoolIdMessagesRoute,
   SchoolSchoolIdSettingsRoute: SchoolSchoolIdSettingsRoute,
   SchoolSchoolIdStudentsRoute: SchoolSchoolIdStudentsRoute,
   SchoolSchoolIdTeachersRoute: SchoolSchoolIdTeachersRoute,
@@ -5710,6 +5915,21 @@ const ApiSchoolsSchoolIdTemplatesRouteWithChildren =
     ApiSchoolsSchoolIdTemplatesRouteChildren,
   )
 
+interface ApiSchoolsSchoolIdMessagingPermissionsRouteChildren {
+  ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute: typeof ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute
+}
+
+const ApiSchoolsSchoolIdMessagingPermissionsRouteChildren: ApiSchoolsSchoolIdMessagingPermissionsRouteChildren =
+  {
+    ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute:
+      ApiSchoolsSchoolIdMessagingPermissionsStudentIdRoute,
+  }
+
+const ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren =
+  ApiSchoolsSchoolIdMessagingPermissionsRoute._addFileChildren(
+    ApiSchoolsSchoolIdMessagingPermissionsRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -5755,6 +5975,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiStudyPlanRoute: ApiStudyPlanRouteWithChildren,
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
+  PTokenRoute: PTokenRoute,
   PaperIdRoute: PaperIdRoute,
   ScanAttemptIdRoute: ScanAttemptIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
@@ -5773,14 +5994,17 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiCronDailyNudgeRoute: ApiCronDailyNudgeRoute,
+  ApiCronSchoolMessagesRoute: ApiCronSchoolMessagesRoute,
   ApiCronWeeklySummaryRoute: ApiCronWeeklySummaryRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
   ApiFixitTodayRoute: ApiFixitTodayRoute,
   ApiHouseholdsMeRoute: ApiHouseholdsMeRoute,
   ApiHouseholdsUsersRoute: ApiHouseholdsUsersRouteWithChildren,
+  ApiMessagingCallbackRoute: ApiMessagingCallbackRoute,
   ApiNotificationsUnsubscribeRoute: ApiNotificationsUnsubscribeRoute,
   ApiNudgesIdRoute: ApiNudgesIdRoute,
   ApiNudgesTodayRoute: ApiNudgesTodayRoute,
+  ApiParentLinkTokenRoute: ApiParentLinkTokenRoute,
   ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,
   ApiPrivacyDeleteSelfRoute: ApiPrivacyDeleteSelfRoute,
   ApiPrivacyExportRoute: ApiPrivacyExportRoute,
@@ -5820,6 +6044,11 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdDemoResetRoute: ApiSchoolsSchoolIdDemoResetRoute,
   ApiSchoolsSchoolIdDemoSampleResultsRoute:
     ApiSchoolsSchoolIdDemoSampleResultsRoute,
+  ApiSchoolsSchoolIdMessagingLogRoute: ApiSchoolsSchoolIdMessagingLogRoute,
+  ApiSchoolsSchoolIdMessagingPermissionsRoute:
+    ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren,
+  ApiSchoolsSchoolIdMessagingSettingsRoute:
+    ApiSchoolsSchoolIdMessagingSettingsRoute,
   ApiSchoolsSchoolIdMySheetImagesSheetIdRoute:
     ApiSchoolsSchoolIdMySheetImagesSheetIdRoute,
   ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute:
@@ -5827,6 +6056,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdScanImagesPageIdRoute:
     ApiSchoolsSchoolIdScanImagesPageIdRoute,
   ApiSchoolsSchoolIdTermsAcceptRoute: ApiSchoolsSchoolIdTermsAcceptRoute,
+  ApiSchoolsSchoolIdMessagingRetryMessageIdRoute:
+    ApiSchoolsSchoolIdMessagingRetryMessageIdRoute,
   ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute:
     ApiSchoolsSchoolIdSectionsSectionIdStudentsRoute,
   ApiSchoolsSchoolIdStudentsSchoolStudentIdResetPasswordRoute:

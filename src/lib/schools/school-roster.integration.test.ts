@@ -279,7 +279,7 @@ describe('school roster, assignments and terms (S2)', () => {
           'Bad,notanemail',
         ]),
       })
-      expect(pre.counts).toEqual({ new: 3, unchanged: 0, errors: 2 })
+      expect(pre.counts).toEqual({ new: 3, unchanged: 0, update: 0, errors: 2 })
       expect(pre.committable).toBe(false)
       await refuses(commitRosterImport(db, adminA, pre.batchId), 'invalid')
       const ok = await dryRunRosterImport(db, adminA, {
@@ -330,7 +330,7 @@ describe('school roster, assignments and terms (S2)', () => {
           'Lee,7,A,5,12345',
         ]),
       })
-      expect(bad.counts).toEqual({ new: 1, unchanged: 0, errors: 4 })
+      expect(bad.counts).toEqual({ new: 1, unchanged: 0, update: 0, errors: 4 })
       expect(
         bad.rows.filter((r) => r.status === 'error').map((r) => r.row),
       ).toEqual([2, 3, 4, 5])
@@ -349,7 +349,7 @@ describe('school roster, assignments and terms (S2)', () => {
         fileName: 's.csv',
         bytes: file,
       })
-      expect(pre.counts).toEqual({ new: 4, unchanged: 0, errors: 0 })
+      expect(pre.counts).toEqual({ new: 4, unchanged: 0, update: 0, errors: 0 })
       expect(await commitRosterImport(db, adminA, pre.batchId)).toEqual({
         added: 4,
       })
@@ -360,7 +360,7 @@ describe('school roster, assignments and terms (S2)', () => {
         fileName: 's.csv',
         bytes: file,
       })
-      expect(again.counts).toEqual({ new: 0, unchanged: 4, errors: 0 })
+      expect(again.counts).toEqual({ new: 0, unchanged: 4, update: 0, errors: 0 })
       expect(again.committable).toBe(false)
       await refuses(commitRosterImport(db, adminA, again.batchId), 'invalid')
       const taken = await dryRunRosterImport(db, adminA, {
@@ -710,7 +710,7 @@ describe('school roster, assignments and terms (S2)', () => {
           'Clash,7,B,34,' + 'x'.repeat(31),
         ]),
       })
-      expect(pre.counts).toEqual({ new: 2, unchanged: 0, errors: 2 })
+      expect(pre.counts).toEqual({ new: 2, unchanged: 0, update: 0, errors: 2 })
       expect(pre.rows.find((r) => r.row === 3)?.message).toMatch(
         /appears twice/,
       )
@@ -862,7 +862,7 @@ describe('school roster, assignments and terms (S2)', () => {
           `Xan,xan-${tag}@school.test,Maths 7A,`,
         ]),
       })
-      expect(bad.counts).toEqual({ new: 2, unchanged: 0, errors: 3 })
+      expect(bad.counts).toEqual({ new: 2, unchanged: 0, update: 0, errors: 3 })
       const msg = (row: number) => bad.rows.find((r) => r.row === row)?.message
       expect(msg(3)).toMatch(/Section 7Z is not set up/)
       expect(msg(4)).toMatch(
@@ -927,7 +927,7 @@ describe('school roster, assignments and terms (S2)', () => {
           `Tom Two,${tom},7A Roster S2,`,
         ]),
       })
-      expect(again.counts).toEqual({ new: 0, unchanged: 2, errors: 0 })
+      expect(again.counts).toEqual({ new: 0, unchanged: 2, update: 0, errors: 0 })
       expect(again.committable).toBe(false)
     })
 
@@ -965,6 +965,8 @@ describe('school roster, assignments and terms (S2)', () => {
         'Admission No',
         'Parent Name',
         'Parent Phone',
+        'Parent WhatsApp OK',
+        'Parent Language',
       ])
       // the example rows, uploaded as they are, would pass the check
       const example = await dryRunRosterImport(db, adminA, {

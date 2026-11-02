@@ -760,6 +760,7 @@ export interface SchoolMembers {
   id: Generated<string>;
   locked_until: Timestamp | null;
   phone_e164: string | null;
+  message_language: Generated<string>;
   role: SchoolRole;
   school_id: string;
   status: SchoolMemberStatus;
@@ -918,6 +919,9 @@ export interface Schools {
   wizard_done_at: Timestamp | null;
   wizard_step: string | null;
   show_class_rank: Generated<boolean>;
+  messaging_enabled: Generated<boolean>;
+  message_log_days: Generated<number>;
+  parent_weekly_limit: number | null;
 }
 
 export interface SchoolScanBatches {
@@ -1310,6 +1314,59 @@ export interface Verifications {
   value: string;
 }
 
+export interface SchoolParentMessaging {
+  confirmed_at: Timestamp | null;
+  confirmed_by_user_id: string | null;
+  id: Generated<string>;
+  language: Generated<string>;
+  opted_out_at: Timestamp | null;
+  opted_out_how: string | null;
+  school_id: string;
+  school_student_id: string;
+  updated_at: Generated<Timestamp>;
+  whatsapp_ok: Generated<boolean>;
+}
+
+export interface SchoolMessages {
+  attempts: Generated<number>;
+  audience: string;
+  created_at: Generated<Timestamp>;
+  dedupe_key: string;
+  id: Generated<string>;
+  language: string;
+  next_attempt_at: Timestamp | null;
+  not_before: Generated<Timestamp>;
+  reason: string | null;
+  recipient_guardian_id: string | null;
+  recipient_member_id: string | null;
+  recipient_student_id: string | null;
+  ref_paper_id: string | null;
+  school_id: string;
+  sent_at: Timestamp | null;
+  status: Generated<string>;
+  template: string;
+  variables: Json | null;
+  variables_purged_at: Timestamp | null;
+}
+
+export interface SchoolMessageEvents {
+  created_at: Generated<Timestamp>;
+  detail: string | null;
+  id: Generated<string>;
+  message_id: string;
+  school_id: string;
+  status: string;
+}
+
+export interface SchoolMessageCounts {
+  count: number;
+  id: Generated<string>;
+  month: Timestamp;
+  school_id: string;
+  status: string;
+  template: string;
+}
+
 export interface DB {
   accounts: Accounts;
   ai_jobs: AiJobs;
@@ -1393,6 +1450,10 @@ export interface DB {
   school_paper_releases: SchoolPaperReleases;
   school_marking_jobs: SchoolMarkingJobs;
   school_marking_job_items: SchoolMarkingJobItems;
+  school_parent_messaging: SchoolParentMessaging;
+  school_messages: SchoolMessages;
+  school_message_events: SchoolMessageEvents;
+  school_message_counts: SchoolMessageCounts;
   school_exam_reflections: SchoolExamReflections;
   school_answer_disputes: SchoolAnswerDisputes;
   schools: Schools;

@@ -49,6 +49,10 @@ const envSchema = z.object({
   // Optional, same graceful-degradation shape as ANTHROPIC_API_KEY: without it, transactional
   // email is simply not sent (logged as 'failed' with a reason), never a startup failure.
   MAKE_EMAIL_WEBHOOK_URL: z.string().url().optional(),
+  // School messaging (delivery only, docs/schools/MESSAGING_PLAN.md): where PrepPlan posts one message, and the
+  // shared secret that signs it and the callback. Both unset = messages are queued as "not sent".
+  MAKE_MESSAGING_WEBHOOK_URL: z.string().url().optional(),
+  MAKE_MESSAGING_SECRET: z.string().min(16).optional(),
   // F080: authenticates GET /api/cron/weekly-summary -- Vercel Cron sends this as a Bearer
   // token on every scheduled invocation so the route can't be triggered by anyone else who
   // finds the URL. Optional so local dev (no Vercel Cron) doesn't need it set; the route

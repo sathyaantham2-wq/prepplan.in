@@ -559,3 +559,16 @@ export const schoolMarkingJobsRepository = createSchoolScopedRepository(
 export const schoolMarkingJobItemsRepository = createSchoolScopedRepository(
   'school_marking_job_items',
 )
+
+export const schoolParentMessagingRepository = createSchoolScopedRepository(
+  'school_parent_messaging',
+)
+export const schoolMessagesRepository = createSchoolScopedRepository(
+  'school_messages',
+)
+export const schoolMessageEventsRepository = createSchoolScopedRepository(
+  'school_message_events',
+)
+export const schoolMessageCountsRepository = createSchoolScopedRepository(
+  'school_message_counts',
+)

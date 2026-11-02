@@ -4,10 +4,10 @@ import { api, downloadFile, fileToBase64 } from '../../lib/school-client'
 
 interface Preview {
   batchId: string
-  counts: { new: number; unchanged: number; errors: number }
+  counts: { new: number; unchanged: number; update?: number; errors: number }
   rows: Array<{
     row: number
-    status: 'new' | 'unchanged' | 'error'
+    status: 'new' | 'unchanged' | 'update' | 'error'
     message?: string
   }>
   committable: boolean
@@ -33,6 +33,7 @@ export function UploadPanel({
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [added, setAdded] = useState<number | null>(null)
+  const [updated, setUpdated] = useState(0)
   const noun = kind === 'students' ? 'students' : 'teachers'
   const one = kind === 'students' ? 'student' : 'teacher'
 
@@ -64,11 +65,12 @@ export function UploadPanel({
     setBusy(true)
     setError(null)
     try {
-      const r = await api<{ added: number }>(
+      const r = await api<{ added: number; updated?: number }>(
         `/api/schools/${schoolId}/imports/${preview.batchId}/commit`,
         { method: 'POST', body: {} },
       )
       setAdded(r.added)
+      setUpdated(r.updated ?? 0)
       onDone()
     } catch (e) {
       setError(
@@ -83,7 +85,8 @@ export function UploadPanel({
     return (
       <Card className="space-y-3">
         <Notice kind="good">
-          Done. {added} {added === 1 ? one : noun} added.
+          Done. {added} {added === 1 ? one : noun} added
+          {updated > 0 ? `, ${updated} parent messaging setting${updated === 1 ? '' : 's'} updated` : ''}.
         </Notice>
         <Btn kind="plain" className="w-full" onClick={onCancel}>
           Close
@@ -157,6 +160,11 @@ export function UploadPanel({
           <p className="text-base">
             <b>{preview.counts.new}</b> ready to add ·{' '}
             <b>{preview.counts.unchanged}</b> already there ·{' '}
+            {preview.counts.update ? (
+              <>
+                <b>{preview.counts.update}</b> messaging updates ·{' '}
+              </>
+            ) : null}
             <b className={preview.counts.errors ? 'text-red-700' : ''}>
               {preview.counts.errors}
             </b>{' '}
@@ -184,10 +192,10 @@ export function UploadPanel({
             </>
           ) : null}
           {!preview.counts.errors &&
-          preview.rows.some((r) => r.status === 'new' && r.message) ? (
+          preview.rows.some((r) => (r.status === 'new' || r.status === 'update') && r.message) ? (
             <ul className="space-y-1.5" data-testid="upload-notes">
               {preview.rows
-                .filter((r) => r.status === 'new' && r.message)
+                .filter((r) => (r.status === 'new' || r.status === 'update') && r.message)
                 .slice(0, 50)
                 .map((r) => (
                   <li
@@ -203,7 +211,9 @@ export function UploadPanel({
             <Btn className="w-full" disabled={busy} onClick={commit}>
               {busy
                 ? 'Adding…'
-                : `Add ${preview.counts.new} ${preview.counts.new === 1 ? one : noun}`}
+                : preview.counts.new === 0
+                  ? `Update ${preview.counts.update ?? 0} messaging setting${preview.counts.update === 1 ? '' : 's'}`
+                  : `Add ${preview.counts.new} ${preview.counts.new === 1 ? one : noun}`}
             </Btn>
           ) : (
             <Notice>Everyone in this file is already added.</Notice>

@@ -151,7 +151,7 @@ export async function releaseStatus(
     const plural = (n: number, one: string, many: string) =>
       `${n} ${n === 1 ? one : many}`
     if (waiting > 0)
-      blockers.push(`${plural(waiting, 'student has', 'students have')} answers waiting for a teacher's look.`)
+      blockers.push(`${plural(waiting, 'student has', 'students have')} answers that need your look.`)
     if (busy > 0) blockers.push(`${plural(busy, 'student is', 'students are')} still being marked.`)
     if (unmarked > 0)
       blockers.push(`${plural(unmarked, 'student has', 'students have')} sheets that are not marked yet.`)
@@ -216,7 +216,24 @@ export async function releaseSection(
     marked: sec.marked,
     window_days: days,
   })
+  await messageParents(db, scope.schoolId, paperId, sectionId)
   return { windowClosesAt: closes.toISOString() }
+}
+
+/**
+ * Queues the "results are ready" messages and tries one quick send. Whatever goes wrong here (messaging switched
+ * off, not connected, the webhook down) must never undo or fail the release: it is caught and only logged.
+ */
+export async function messageParents(db: Db, schoolId: string, paperId: string, sectionId: string): Promise<void> {
+  try {
+    // loaded here, not at the top: the events read progress data, which itself imports this file
+    const { queueResultReady } = await import('./messaging/events')
+    const { dispatchDue } = await import('./messaging/dispatch')
+    await queueResultReady(db, schoolId, paperId, sectionId)
+    await dispatchDue(db, { schoolId, budgetMs: 4_000, limit: 25 })
+  } catch (e) {
+    console.error('school result messages not queued', e)
+  }
 }
 
 // ---------------------------------------------------------------- the student

@@ -30,6 +30,10 @@ import {
   schoolMarkingJobItemsRepository,
   schoolExamReflectionsRepository,
   schoolAnswerDisputesRepository,
+  schoolParentMessagingRepository,
+  schoolMessagesRepository,
+  schoolMessageEventsRepository,
+  schoolMessageCountsRepository,
 } from './school-exams'
 
 // The tenant root: never itself school-scoped (it *is* the school). Reached only through a
@@ -282,6 +286,7 @@ export const schoolStudentsRepository = {
       .selectFrom('school_students')
       .innerJoin('students', 'students.id', 'school_students.student_id')
       .select([
+        'school_students.id',
         'school_students.section_id',
         'school_students.roll_no',
         'school_students.admission_no',
@@ -359,6 +364,10 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_paper_releases: schoolPaperReleasesRepository,
   school_marking_jobs: schoolMarkingJobsRepository,
   school_marking_job_items: schoolMarkingJobItemsRepository,
+  school_parent_messaging: schoolParentMessagingRepository,
+  school_messages: schoolMessagesRepository,
+  school_message_events: schoolMessageEventsRepository,
+  school_message_counts: schoolMessageCountsRepository,
   school_exam_reflections: schoolExamReflectionsRepository,
   school_answer_disputes: schoolAnswerDisputesRepository,
   school_own_questions: schoolOwnQuestionsRepository,

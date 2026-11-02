@@ -4,6 +4,7 @@ import {
   ChevronRight,
   FileText,
   LayoutGrid,
+  MessageSquare,
   ScrollText,
   UserRound,
 } from 'lucide-react'
@@ -88,6 +89,13 @@ function SettingsPage() {
           hint="Add teachers and give them their sign-in"
         />
         <SettingsLink
+          to="/school/$schoolId/messages"
+          schoolId={schoolId}
+          icon={MessageSquare}
+          title="Parent messages"
+          hint="Who agreed to get results on WhatsApp, and in which language"
+        />
+        <SettingsLink
           to="/school/$schoolId/terms"
           schoolId={schoolId}
           icon={ScrollText}
@@ -123,6 +131,7 @@ function SettingsLink({
     | '/school/$schoolId/classes'
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/terms'
+    | '/school/$schoolId/messages'
     | '/school/$schoolId/papers'
   schoolId: string
   icon: LucideIcon

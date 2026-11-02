@@ -48,8 +48,26 @@ describe('validateStudentRow', () => {
         admissionNo: null,
         guardianPhone: '+919876543210',
         guardianName: null,
+        whatsappOk: null,
+        parentLanguage: null,
       },
     })
+  })
+  it('reads the parent WhatsApp and language columns; empty means "not said", never yes', () => {
+    const r = validateStudentRow({ ...good, whatsappok: 'Yes', parentlanguage: 'Telugu' })
+    expect(r.ok && [r.value.whatsappOk, r.value.parentLanguage]).toEqual([true, 'te'])
+    const n = validateStudentRow({ ...good, whatsappok: 'no', parentlanguage: 'english' })
+    expect(n.ok && [n.value.whatsappOk, n.value.parentLanguage]).toEqual([false, 'en'])
+    const e = validateStudentRow({ ...good, whatsappok: '', parentlanguage: '' })
+    expect(e.ok && [e.value.whatsappOk, e.value.parentLanguage]).toEqual([null, null])
+  })
+  it.each([
+    [{ ...good, whatsappok: 'maybe' }, /yes or no/],
+    [{ ...good, parentlanguage: 'Hindi' }, /English or Telugu/],
+    [{ ...good, whatsappok: 'yes', parentphone: '' }, /no parent phone/],
+  ])('rejects bad messaging cells %#', (row, message) => {
+    const r = validateStudentRow(row)
+    expect(!r.ok && r.error).toMatch(message)
   })
   it('accepts "7th" and a missing phone', () => {
     const r = validateStudentRow({ ...good, class: '7th', parentphone: '' })

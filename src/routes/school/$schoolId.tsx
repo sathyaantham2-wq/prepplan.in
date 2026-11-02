@@ -14,6 +14,7 @@ import {
   Home,
   LayoutGrid,
   LogOut,
+  MessageSquare,
   ScanLine,
   Settings,
   UserRound,
@@ -41,6 +42,7 @@ interface NavItem {
     | '/school/$schoolId/my-results'
     | '/school/$schoolId/progress'
     | '/school/$schoolId/class-progress'
+    | '/school/$schoolId/messages'
     | '/school/$schoolId/settings'
   label: string
   icon: LucideIcon
@@ -103,11 +105,22 @@ function navFor(o: SchoolOverview): Array<NavItem> {
       },
       students,
       ...parts,
+      {
+        to: '/school/$schoolId/messages',
+        label: 'Messages',
+        icon: MessageSquare,
+        wideOnly: true,
+      },
       { to: '/school/$schoolId/settings', label: 'Settings', icon: Settings },
     ]
   }
   if (o.role === 'teacher' || o.role === 'principal')
-    return [home, students, ...parts]
+    return [
+      home,
+      students,
+      ...parts,
+      { to: '/school/$schoolId/messages', label: 'Messages', icon: MessageSquare },
+    ]
   if (o.role === 'student')
     return [
       home,

@@ -13,11 +13,13 @@ import { createSchoolStudent, createSchoolTeacher } from './people'
 import { assignTeacher, setClassTeacher } from './setup'
 import {
   matchSubject,
+  normalizePhone,
   parseRosterFile,
   validateStudentRow,
   validateTeacherRow,
 } from './roster-parse'
 import type { StudentRow, TeacherRow } from './roster-parse'
+import { optedOutPhones, setParentPermission } from './messaging/permissions'
 import { requireSchoolTerms } from './terms'
 
 // Roster upload (students and teachers) in two steps. A dry run validates every row against the
@@ -29,16 +31,21 @@ import { requireSchoolTerms } from './terms'
 
 export interface RowReport {
   row: number // 1-based data row, as the spreadsheet shows it minus the header
-  status: 'new' | 'unchanged' | 'error'
+  status: 'new' | 'unchanged' | 'update' | 'error'
   message?: string
 }
 
 export interface DryRunResult {
   batchId: string
   kind: 'students' | 'teachers'
-  counts: { new: number; unchanged: number; errors: number }
+  counts: { new: number; unchanged: number; update: number; errors: number }
   rows: Array<RowReport>
   committable: boolean
+}
+
+/** A student row as stored by the preview; existingStudentId is set when she is already on the roll. */
+interface StudentPayload extends StudentRow {
+  existingStudentId?: string
 }
 
 /** A teacher row as stored by the preview: who, and the section-subjects and sections it gives her. */
@@ -174,7 +181,7 @@ export async function dryRunRosterImport(
     )
   }
   const reports: Array<RowReport> = []
-  const payload: Array<StudentRow | TeacherPayload> = []
+  const payload: Array<StudentPayload | TeacherPayload> = []
 
   if (input.kind === 'students') {
     const year = (input.academicYear ?? '').trim()
@@ -189,13 +196,59 @@ export async function dryRunRosterImport(
     const sections = await schoolSectionsRepository.list(db, scope)
     const index = await schoolStudentsRepository.rosterIndex(db, scope)
     const held = new Map(
-      index.map((r) => [`${r.section_id}|${r.roll_no}`, r.name]),
+      index.map((r) => [`${r.section_id}|${r.roll_no}`, { name: r.name, id: r.id }]),
     )
     const byAdmission = new Map(
       index.map((r) => [r.admission_no.toUpperCase(), r]),
     )
     const admissionInFile = new Set<string>()
     const inFile = new Set<string>()
+    const current = new Map(
+      (
+        await db
+          .selectFrom('school_parent_messaging')
+          .select(['school_student_id', 'whatsapp_ok', 'language', 'opted_out_at'])
+          .where('school_id', '=', scope.schoolId)
+          .execute()
+      ).map((p) => [p.school_student_id, p]),
+    )
+    const hasGuardian = new Set(
+      (
+        await db
+          .selectFrom('school_student_guardians')
+          .select('school_student_id')
+          .where('school_id', '=', scope.schoolId)
+          .execute()
+      ).map((g) => g.school_student_id),
+    )
+    // a row for a student who is already on the roll: only the parent messaging cells can change anything
+    const existing = (
+      row: number,
+      value: StudentRow,
+      studentId: string,
+    ): RowReport => {
+      if (value.whatsappOk === null && value.parentLanguage === null)
+        return { row, status: 'unchanged' }
+      const cur = current.get(studentId)
+      const nextOk = value.whatsappOk ?? cur?.whatsapp_ok ?? false
+      const nextLang = value.parentLanguage ?? cur?.language ?? 'en'
+      if (nextOk && !hasGuardian.has(studentId) && !value.guardianPhone)
+        return { row, status: 'error', message: 'Parent WhatsApp OK is yes but there is no parent phone for this student.' }
+      if (value.whatsappOk === true && (cur?.opted_out_at != null || (value.guardianPhone !== null && stopped.has(value.guardianPhone))))
+        return { row, status: 'unchanged', message: 'This parent replied STOP earlier, so messaging stays off. The office can switch it on again.' }
+      if (nextOk === (cur?.whatsapp_ok ?? false) && nextLang === (cur?.language ?? 'en'))
+        return { row, status: 'unchanged' }
+      payload.push({ ...value, existingStudentId: studentId })
+      return {
+        row,
+        status: 'update',
+        message: `Parent messaging: ${nextOk ? 'WhatsApp yes' : 'WhatsApp no'}, ${nextLang === 'te' ? 'Telugu' : 'English'}.`,
+      }
+    }
+    const filePhones = raw
+      .map((r) => normalizePhone(r.parentphone ?? ''))
+      .filter((p): p is string => p !== null)
+    const stopped = await optedOutPhones(db, filePhones)
     raw.forEach((r, i) => {
       const row = i + 1
       const v = validateStudentRow(r)
@@ -237,7 +290,7 @@ export async function dryRunRosterImport(
             owner.name.trim().toLowerCase() === v.value.name.toLowerCase()
           return void reports.push(
             same
-              ? { row, status: 'unchanged' }
+              ? existing(row, v.value, owner.id)
               : {
                   row,
                   status: 'error',
@@ -256,15 +309,20 @@ export async function dryRunRosterImport(
       inFile.add(key)
       const holder = held.get(key)
       if (holder !== undefined) {
-        if (holder.trim().toLowerCase() === v.value.name.toLowerCase())
-          return void reports.push({ row, status: 'unchanged' })
+        if (holder.name.trim().toLowerCase() === v.value.name.toLowerCase())
+          return void reports.push(existing(row, v.value, holder.id))
         return void reports.push({
           row,
           status: 'error',
           message: `Roll number ${v.value.rollNo} in class ${v.value.grade}-${v.value.section} already belongs to another student.`,
         })
       }
-      reports.push({ row, status: 'new' })
+      const optedOut = v.value.whatsappOk === true && v.value.guardianPhone !== null && stopped.has(v.value.guardianPhone)
+      reports.push(
+        optedOut
+          ? { row, status: 'new', message: 'This parent replied STOP earlier, so messaging stays off.' }
+          : { row, status: 'new' },
+      )
       payload.push(v.value)
     })
   } else {
@@ -351,6 +409,7 @@ export async function dryRunRosterImport(
   const counts = {
     new: reports.filter((r) => r.status === 'new').length,
     unchanged: reports.filter((r) => r.status === 'unchanged').length,
+    update: reports.filter((r) => r.status === 'update').length,
     errors: reports.filter((r) => r.status === 'error').length,
   }
   const batch = await schoolImportBatchesRepository.insert(db, scope, {
@@ -370,7 +429,7 @@ export async function dryRunRosterImport(
     kind: input.kind,
     counts,
     rows: reports,
-    committable: counts.errors === 0 && counts.new > 0,
+    committable: counts.errors === 0 && counts.new + counts.update > 0,
   }
 }
 
@@ -394,7 +453,7 @@ export async function commitRosterImport(
       'invalid',
       'This upload has row errors. Fix the file and upload it again.',
     )
-  const payload = batch.payload as unknown as Array<StudentRow & TeacherPayload>
+  const payload = batch.payload as unknown as Array<StudentPayload & TeacherPayload>
   if (payload.length === 0)
     throw new SchoolError('invalid', 'There is nobody new to add.')
 
@@ -406,6 +465,25 @@ export async function commitRosterImport(
         )
         const sections = await schoolSectionsRepository.list(trx, scope)
         for (const row of payload) {
+          const known = (row as StudentPayload).existingStudentId
+          if (known) {
+            // a student already on the roll: only her parent messaging cells change
+            if (row.guardianPhone) {
+              const has = await trx
+                .selectFrom('school_student_guardians')
+                .select('id')
+                .where('school_id', '=', scope.schoolId)
+                .where('school_student_id', '=', known)
+                .executeTakeFirst()
+              if (!has)
+                await trx
+                  .insertInto('school_student_guardians')
+                  .values({ school_id: scope.schoolId, school_student_id: known, name: row.guardianName, phone_e164: row.guardianPhone })
+                  .execute()
+            }
+            await setParentPermission(trx, scope, known, { whatsappOk: row.whatsappOk ?? undefined, language: row.parentLanguage ?? undefined }, 'roster')
+            continue
+          }
           const cls = classes.find((c) => c.grade === row.grade)
           const section =
             cls &&
@@ -418,7 +496,7 @@ export async function commitRosterImport(
               'conflict',
               `Class ${row.grade}-${row.section} is no longer set up.`,
             )
-          await createSchoolStudent(trx, scope, {
+          const created = await createSchoolStudent(trx, scope, {
             name: row.name,
             grade: row.grade,
             sectionId: section.id,
@@ -428,6 +506,8 @@ export async function commitRosterImport(
             guardianPhone: row.guardianPhone,
             guardianName: row.guardianName,
           })
+          if ((row.whatsappOk ?? null) !== null || (row.parentLanguage ?? null) !== null)
+            await setParentPermission(trx, scope, created.schoolStudent.id, { whatsappOk: row.whatsappOk ?? undefined, language: row.parentLanguage ?? undefined }, 'roster')
         }
       } else {
         for (const row of payload) {
@@ -478,5 +558,7 @@ export async function commitRosterImport(
       'Someone else changed the roster since the preview. Nothing was added; upload the file again.',
     )
   }
-  return { added: payload.length }
+  const updated = payload.filter((p) => (p as StudentPayload).existingStudentId).length
+  const added = payload.length - updated
+  return updated > 0 ? { added, updated } : { added }
 }

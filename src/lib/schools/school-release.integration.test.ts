@@ -238,7 +238,7 @@ describe('releasing results, flags and the lock (M4)', () => {
     const r = await markStudentSheets(db, admin, paperId, sid.Kiran, unsure)
     expect(r.status).toBe('needs_teacher')
     const [sec] = await releaseStatus(db, admin, paperId)
-    expect(sec.blockers.join(' ')).toMatch(/waiting for a teacher/)
+    expect(sec.blockers.join(' ')).toMatch(/need your look/)
     // the teacher settles it
     const { studentMarking } = await import('./marking')
     const v = await studentMarking(db, admin, paperId, sid.Kiran)

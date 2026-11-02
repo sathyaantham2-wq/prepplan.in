@@ -99,6 +99,8 @@ export async function buildRosterTemplate(
       ['Admission No', 15],
       ['Parent Name', 24],
       ['Parent Phone', 15],
+      ['Parent WhatsApp OK', 20],
+      ['Parent Language', 16],
     ]
     // the first sheet is the one read on upload: headers only, so no example is ever added by mistake
     const fill = wb.addWorksheet('Students')
@@ -114,6 +116,8 @@ export async function buildRosterTemplate(
       '2026/0101',
       'Lakshmi Rao',
       '9876543210',
+      'yes',
+      'Telugu',
     ])
     ws.addRow([
       'Ravi Kumar',
@@ -123,6 +127,8 @@ export async function buildRosterTemplate(
       '',
       'Suresh Kumar',
       '',
+      'no',
+      'English',
     ])
     ws.getColumn(7).numFmt = '@'
     ws.getColumn(5).numFmt = '@'
@@ -143,6 +149,11 @@ export async function buildRosterTemplate(
       ],
       ['Parent Name', 'Optional.'],
       ['Parent Phone', 'Optional. A 10-digit mobile number.'],
+      [
+        'Parent WhatsApp OK',
+        'Optional. Write yes only if the parent has agreed to get results and reminders on WhatsApp at this number; otherwise no or leave it empty (empty means no). A parent who replied STOP is never switched back on by a file.',
+      ],
+      ['Parent Language', 'Optional. English or Telugu: the language of the messages. Empty means English.'],
       [
         '',
         'Paste your students on the first sheet, "Students", one per row (the "Example" sheet shows how), save as .xlsx and upload. Nothing is added until you press "Add" after the check.',
