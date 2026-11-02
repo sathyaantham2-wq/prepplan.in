@@ -211,3 +211,21 @@ batch results arrive unattended, so "failed" must never look like "marked".
   figures will be too low.
 - Still to build: masking template and disclosure text (B), rubric, side-by-side review, exam-week board, batch, pilot study.
 - Still to measure: a full 25-page, three-part run with caching and tie-break (needs the owner's go-ahead; expected Rs 20 to 40).
+
+### Full-paper measurement (2026-11-02, Nainika, 25 pages, 61 answers, reconstructed paper)
+Two readings in three parts, page pictures cached, Opus tie-break only where needed:
+
+| | Result |
+|---|---|
+| Cost | **Rs 36.70** per student (it was estimated Rs 150 to 200 before caching); the Opus part is priced like Sonnet until its price is set, so the true figure is somewhat higher |
+| Time | 207 s |
+| AI total vs GenEval | 66 / 80 vs 67.5 / 80 (the harness total of 70.5 counts optional alternatives too) |
+| Per answer | 89% exactly the same mark, 94% within half a mark (54 answers with a GenEval mark); 6 differ |
+| Flagged | 1 of 61 |
+| Where it differed | Q38 and Q40 (AI found no answer; GenEval gave 1 each), Q42 (AI 5, GenEval 3), Q37 (AI 1, GenEval 0.5), Q45, Q46 |
+
+Caveat: the questions of this paper are a reconstruction, so a per-answer comparison is an indication, not an accuracy figure.
+An earlier run of the same size failed because Opus refuses `thinking: disabled`; that left all 61 answers unmarked and a
+failed tie-break discarded the two good readings. Fixed: Opus runs with adaptive thinking at low effort, and a failed
+tie-break now leaves the unsettled answers flagged instead of throwing the marking away.
+Trial spend to date: about Rs 179.

@@ -123,6 +123,16 @@ export function stripCodeFence(text: string): string {
   return match ? match[1] : trimmed
 }
 
+/**
+ * "Thinking off" for a call. Opus 5.x refuses `thinking: disabled`; for it the way to keep thinking small is
+ * adaptive thinking at low effort (its answer is then a short think, then the text, within max_tokens).
+ */
+function thinkingOff(model: string): Record<string, unknown> {
+  return model.startsWith('claude-opus')
+    ? { thinking: { type: 'adaptive' }, output_config: { effort: 'low' } }
+    : { thinking: { type: 'disabled' } }
+}
+
 let anthropicClient: { key: string; client: Anthropic } | null = null
 
 async function completeAnthropic(
@@ -135,7 +145,7 @@ async function completeAnthropic(
   const response = await anthropicClient.client.messages.create({
     model: input.model,
     max_tokens: input.maxTokens,
-    ...(input.noThinking ? { thinking: { type: 'disabled' as const } } : {}),
+    ...(input.noThinking ? thinkingOff(input.model) : {}),
     messages: [
       {
         role: 'user',

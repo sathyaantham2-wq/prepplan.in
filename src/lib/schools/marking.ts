@@ -571,7 +571,15 @@ export async function markStudentSheets(
     const rounds: Array<Awaited<ReturnType<typeof ask>>> = []
     for (let i = 0; i < PASSES; i++) rounds.push(await ask(questions, false))
     const unsettled = questions.filter((q) => needsTieBreak(q, rounds.map((r) => readingOf(r, q))))
-    const tie = unsettled.length > 0 ? await ask(unsettled, true) : []
+    // The stronger reading is an extra: if it cannot be had (the model is off, over its allowance, refuses),
+    // the two readings still stand and the unsettled answers are flagged for the teacher, never lost.
+    let tie: Awaited<ReturnType<typeof ask>> = []
+    if (unsettled.length > 0)
+      try {
+        tie = await ask(unsettled, true)
+      } catch (err) {
+        console.error('marking: tie-break reading failed, the answers stay flagged', err)
+      }
 
     const combined = new Map<string, CombinedAnswer>()
     for (const q of questions)

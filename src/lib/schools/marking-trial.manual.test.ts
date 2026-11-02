@@ -7,7 +7,9 @@ import { isAiConfigured } from '../ai-provider'
 import { encryptScan } from '../scan-crypto'
 import { getScanStore } from '../scan-storage'
 import { loadSchoolScope } from '../school-session'
-import { createMarkingAi, markStudentSheets, studentMarking } from './marking'
+import { logAiJob } from '../ai-metering'
+import { completeText, stripCodeFence } from '../ai-provider'
+import { createMarkingAi, markStudentSheets, markingPrompt, studentMarking } from './marking'
 import { createSchoolStudent } from './people'
 import { addSchoolSubject, createClass, createSection } from './setup'
 import { acceptSchoolTerms } from './terms'
@@ -148,6 +150,19 @@ describe.skipIf(!file)('marking trial (real AI)', () => {
       let override: Parameters<typeof markStudentSheets>[4]
       if (process.env.MARKING_TRIAL_ONEPASS === '1') {
         const real = createMarkingAi(db, { schoolId, householdId: p.school.household_id })
+        // MARKING_TRIAL_MODEL=<anthropic model id>: ask that model directly instead of the configured one (comparison runs)
+        const model = process.env.MARKING_TRIAL_MODEL
+        const direct: typeof real.markPass | null = model
+          ? async ({ pages, subject, grade, questions, note }) => {
+              const t0 = Date.now()
+              const res = await completeText(
+                { model, prompt: markingPrompt(subject, grade, questions, pages.length, note), maxTokens: 10000, images: pages, noThinking: true },
+                'anthropic',
+              )
+              await logAiJob(db, { feature: 'SCH-07', model, householdId: p.school.household_id, tokensIn: res.tokensIn, tokensOut: res.tokensOut, latencyMs: Date.now() - t0, status: 'success' })
+              return stripCodeFence(res.text ?? '')
+            }
+          : null
         const maxCalls = Number(process.env.MARKING_TRIAL_MAXCALLS ?? '999')
         const seen = new Map<string, string>()
         override = {
@@ -156,7 +171,7 @@ describe.skipIf(!file)('marking trial (real AI)', () => {
             const key = input.questions.map((q) => q.no).join(',')
             const hit = seen.get(key)
             if (hit !== undefined) return hit
-            const text = seen.size < maxCalls ? await real.markPass(input) : '{"answers":[]}'
+            const text = seen.size < maxCalls ? await (direct ?? real.markPass)(input) : '{"answers":[]}'
             seen.set(key, text)
             const dir = process.env.MARKING_TRIAL_OUT ?? 'test-results/marking-trial'
             mkdirSync(dir, { recursive: true })
