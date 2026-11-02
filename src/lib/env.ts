@@ -27,6 +27,10 @@ const envSchema = z.object({
     .enum(['anthropic', 'gemini', 'groq', 'cerebras', 'openrouter'])
     .optional(),
   GEMINI_MODEL_STRONG: z.string().min(1).optional(),
+  ANTHROPIC_MODEL_TOP: z.string().min(1).optional(),
+  // Opus's price is not known to this app: set both, or its tie-break calls are priced like Sonnet's.
+  ANTHROPIC_TOP_USD_PER_1M_INPUT: z.coerce.number().nonnegative().optional(),
+  ANTHROPIC_TOP_USD_PER_1M_OUTPUT: z.coerce.number().nonnegative().optional(),
   GEMINI_MODEL_CHEAP: z.string().min(1).optional(),
   GROQ_MODEL_STRONG: z.string().min(1).optional(),
   GROQ_MODEL_CHEAP: z.string().min(1).optional(),

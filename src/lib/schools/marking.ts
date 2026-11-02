@@ -21,6 +21,7 @@ import {
   PASSES,
   chunkQuestions,
   combinePasses,
+  needsTieBreak,
   isChoiceQuestion,
   mcqKeyLabel,
   parsePass,
@@ -62,6 +63,8 @@ export interface MarkingAi {
     questions: Array<MarkQuestion>
     /** A pupil's own reason for a flagged mark (the re-read only). */
     note?: string
+    /** The stronger model's third reading of answers the two main readings did not settle. */
+    tieBreak?: boolean
   }) => Promise<string>
 }
 
@@ -102,17 +105,18 @@ export function createMarkingAi(
 ): MarkingAi {
   return {
     available: () => isAiConfigured(),
-    markPass: async ({ pages, subject, grade, questions, note }) => {
+    markPass: async ({ pages, subject, grade, questions, note, tieBreak }) => {
+      const feature = tieBreak ? 'SCH-07T' : 'SCH-07'
       await assertSchoolAiBudget(db, school.schoolId)
       await enforceAiCallBudget(db, {
-        feature: 'SCH-07',
+        feature,
         model: 'SCH-07',
         householdId: school.householdId,
       })
       const startedAt = Date.now()
       try {
         const outcome = await callWithProviderChain(
-          'SCH-07',
+          feature,
           (provider, model) =>
             completeText(
               {
@@ -135,7 +139,7 @@ export function createMarkingAi(
           // An empty reply is a failure to explain, never a quiet "nothing found".
           const why = `The AI returned no text (stop_reason ${outcome.result.stopReason ?? 'unknown'}, ${outcome.result.tokensOut} tokens written, ${outcome.result.thinkingTokens ?? 0} spent thinking).`
           await logAiJob(db, {
-            feature: 'SCH-07',
+            feature,
             model: outcome.label,
             householdId: school.householdId,
             tokensIn: outcome.result.tokensIn,
@@ -149,7 +153,7 @@ export function createMarkingAi(
           throw new Error(why)
         }
         await logAiJob(db, {
-          feature: 'SCH-07',
+          feature,
           model: outcome.label,
           householdId: school.householdId,
           tokensIn: outcome.result.tokensIn,
@@ -162,7 +166,7 @@ export function createMarkingAi(
         return text
       } catch (err) {
         await logAiJob(db, {
-          feature: 'SCH-07',
+          feature,
           model: err instanceof ModelCallError ? err.label : 'SCH-07',
           householdId: school.householdId,
           latencyMs: Date.now() - startedAt,
@@ -536,32 +540,45 @@ export async function markStudentSheets(
     }
 
     // A paper too long for one reply is asked in parts (same pages, some of the questions each time).
-    const chunks = chunkQuestions(questions)
-    const passes: Array<Array<ReturnType<typeof parsePass>>> = []
-    for (let i = 0; i < PASSES; i++) {
-      const parts: Array<ReturnType<typeof parsePass>> = []
-      for (const part of chunks)
-        parts.push(
-          parsePass(
+    // Two readings of every answer; then the stronger model reads only the answers those two did not settle.
+    const ask = async (
+      qs: Array<MarkQuestion>,
+      tieBreak: boolean,
+    ): Promise<Array<{ part: Array<MarkQuestion>; read: ReturnType<typeof parsePass> }>> => {
+      const out: Array<{ part: Array<MarkQuestion>; read: ReturnType<typeof parsePass> }> = []
+      for (const part of chunkQuestions(qs))
+        out.push({
+          part,
+          read: parsePass(
             await ai.markPass({
               pages,
               subject: paper.subject.name,
               grade: paper.grade,
               questions: part,
+              tieBreak,
             }),
           ),
-        )
-      passes.push(parts)
+        })
+      return out
     }
+    const readingOf = (
+      rounds: Array<{ part: Array<MarkQuestion>; read: ReturnType<typeof parsePass> }>,
+      q: MarkQuestion,
+    ): PassAnswer | undefined =>
+      rounds
+        .find((r) => r.part.some((x) => x.id === q.id))
+        ?.read?.answers.find((a) => a.question.trim() === q.no)
+    const rounds: Array<Awaited<ReturnType<typeof ask>>> = []
+    for (let i = 0; i < PASSES; i++) rounds.push(await ask(questions, false))
+    const unsettled = questions.filter((q) => needsTieBreak(q, rounds.map((r) => readingOf(r, q))))
+    const tie = unsettled.length > 0 ? await ask(unsettled, true) : []
 
     const combined = new Map<string, CombinedAnswer>()
-    for (const q of questions) {
-      const ci = chunks.findIndex((c) => c.some((x) => x.id === q.id))
-      const per: Array<PassAnswer | undefined> = passes.map((parts) =>
-        parts[ci]?.answers.find((a) => a.question.trim() === q.no),
+    for (const q of questions)
+      combined.set(
+        q.id,
+        combinePasses(q, [...rounds.map((r) => readingOf(r, q)), readingOf(tie, q)]),
       )
-      combined.set(q.id, combinePasses(q, per))
-    }
 
     const before = await schoolAnswerMarksRepository.forStudent(
       db,

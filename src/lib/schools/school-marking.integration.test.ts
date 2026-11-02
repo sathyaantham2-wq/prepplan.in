@@ -238,11 +238,11 @@ describe('AI marking of a student (M4 stage 1)', () => {
     await db.updateTable('school_own_sheets').set({ check_state: 'passed' }).where('id', '=', waiting.id).execute()
   })
 
-  it('three agreeing passes: marked, multiple choice from the key, nothing flagged, totals worked out', async () => {
+  it('two agreeing passes: marked, multiple choice from the key, nothing flagged, totals worked out', async () => {
     const { ai, sent } = scripted([[answer('1', { choice: 'B', marks: 0 }), answer('2', { marks: 2, loss_kind: 'writing_habit', loss_reason: 'stopped early' })]])
     const r = await markStudentSheets(db, admin, paperId, studentId, ai)
     expect(r).toMatchObject({ status: 'marked', totalMarks: 3, maxMarks: 4, flagged: 0 })
-    expect(sent).toHaveLength(3)
+    expect(sent).toHaveLength(2)
     const v = await studentMarking(db, admin, paperId, studentId)
     expect(v.status).toBe('marked')
     expect(v.answers[0]).toMatchObject({ finalMarks: 1, state: 'ai_final', lossKind: 'none' })
@@ -263,6 +263,31 @@ describe('AI marking of a student (M4 stage 1)', () => {
     let darkest = 255
     for (let i = 0; i < stripRows * info.width * info.channels; i++) darkest = Math.min(darkest, data[i])
     expect(darkest).toBeGreaterThan(240)
+  })
+
+  it('the stronger third reading is asked only about the answer the two readings did not settle, and settles it', async () => {
+    const calls: Array<{ qs: Array<string>; tieBreak: boolean }> = []
+    const script = [
+      [answer('1', { choice: 'B' }), answer('2', { marks: 1 })],
+      [answer('1', { choice: 'B' }), answer('2', { marks: 2 })],
+      [answer('2', { marks: 2 })],
+    ]
+    const ai: MarkingAi = {
+      available: () => true,
+      markPass: (input) => {
+        calls.push({ qs: input.questions.map((one) => one.no), tieBreak: input.tieBreak === true })
+        return Promise.resolve(JSON.stringify({ answers: script[calls.length - 1] }))
+      },
+    }
+    const r = await markStudentSheets(db, admin, paperId, studentId, ai)
+    expect(calls).toEqual([
+      { qs: ['1', '2'], tieBreak: false },
+      { qs: ['1', '2'], tieBreak: false },
+      { qs: ['2'], tieBreak: true },
+    ])
+    expect(r).toMatchObject({ status: 'marked', flagged: 0 })
+    const v = await studentMarking(db, admin, paperId, studentId)
+    expect(v.answers[1]).toMatchObject({ finalMarks: 2, state: 'ai_final' })
   })
 
   it('passes that disagree flag the answer; the teacher resolves it, the total follows, and it is logged', async () => {

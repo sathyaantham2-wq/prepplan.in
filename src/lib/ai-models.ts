@@ -9,7 +9,7 @@ import { resolveProviderChain } from './ai-provider'
 import type { AiProvider } from './ai-provider'
 import { env } from './env'
 
-export type ModelTier = 'strong' | 'mid' | 'cheap'
+export type ModelTier = 'top' | 'strong' | 'mid' | 'cheap'
 
 export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
   'AI-01': 'strong', // Question generation
@@ -32,6 +32,7 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
   'SCH-03': 'strong', // Draft an answer key and marking scheme (a teacher must approve it)
   'SCH-04': 'mid', // Read the school's own answer key
   'SCH-05': 'cheap', // Read the name and roll number written at the top of an answer sheet (top strip only)
+  'SCH-07T': 'top', // The tie-break reading of an answer the two main readings of SCH-07 did not settle
   'SCH-07': 'strong', // Find each answer on a student's pages and mark it against the approved key (three passes; content only, never a name)
   'SCH-06': 'cheap', // Say what kind of page a photo is (answer sheet, question paper, blank) and its subject
 }
@@ -44,6 +45,8 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
 // defaults to the strong model until one is, so a mid-tier feature never silently downgrades
 // quality by resolving to an unintended tier.
 const ANTHROPIC_MODELS: Record<ModelTier, string> = {
+  // Opus reads only the answers two Sonnet readings could not settle. Override with ANTHROPIC_MODEL_TOP.
+  top: env.ANTHROPIC_MODEL_TOP ?? 'claude-opus-5-5',
   strong: 'claude-sonnet-5',
   mid: 'claude-sonnet-5',
   cheap: 'claude-haiku-4-5-20251001',
@@ -62,6 +65,7 @@ const ANTHROPIC_MODELS: Record<ModelTier, string> = {
 function geminiModels(): Record<ModelTier, string> {
   const strong = env.GEMINI_MODEL_STRONG ?? 'gemini-3.5-flash'
   return {
+    top: strong,
     strong,
     mid: strong,
     cheap: env.GEMINI_MODEL_CHEAP ?? 'gemini-3.5-flash-lite',
@@ -93,6 +97,7 @@ function geminiModels(): Record<ModelTier, string> {
 function groqModels(): Record<ModelTier, string> {
   const strong = env.GROQ_MODEL_STRONG ?? 'openai/gpt-oss-120b'
   return {
+    top: strong,
     strong,
     mid: strong,
     cheap: env.GROQ_MODEL_CHEAP ?? 'openai/gpt-oss-20b',
@@ -102,6 +107,7 @@ function groqModels(): Record<ModelTier, string> {
 function cerebrasModels(): Record<ModelTier, string> {
   const strong = env.CEREBRAS_MODEL_STRONG ?? 'gpt-oss-120b'
   return {
+    top: strong,
     strong,
     mid: strong,
     cheap: env.CEREBRAS_MODEL_CHEAP ?? 'llama3.1-8b',
@@ -112,6 +118,7 @@ function openrouterModels(): Record<ModelTier, string> {
   const strong =
     env.OPENROUTER_MODEL_STRONG ?? 'meta-llama/llama-3.3-70b-instruct'
   return {
+    top: strong,
     strong,
     mid: strong,
     cheap: env.OPENROUTER_MODEL_CHEAP ?? 'meta-llama/llama-3.2-3b-instruct',

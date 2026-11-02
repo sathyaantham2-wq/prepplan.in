@@ -199,3 +199,15 @@ batch results arrive unattended, so "failed" must never look like "marked".
   (`noThinking` on `CompletionInput`); an empty reply is now a visible error with its stop reason, never a quiet blank.
   Re-test on 6 pages, part 1 of 3: valid JSON, 37 answers, 27 found, Rs 6.28, 31 s.
 - Trial spend to date: about Rs 141. Estimates in section 1 stand until a full 25-page, three-part run is measured.
+
+### Built so far (local commits, tests green: 438 passed in `src/lib/schools`)
+- Thinking off for marking; empty reply = visible error with stop reason (`63dc67f`).
+- Page-picture caching (`cache_control` on the last picture), cache read/write priced and stored in `ai_jobs`; hard-rule tests;
+  unreadable writing flagged (`6be7c08`).
+- **Two readings + stronger tie-break** (decision A): `PASSES = 2`; `needsTieBreak`, `combinePasses` takes 2 readings and an
+  optional third; the third is asked only about the answers the two did not settle, on a new `top` tier (feature `SCH-07T`,
+  Claude Opus 5.5 by default, `ANTHROPIC_MODEL_TOP` to change). **Opus's price is not known to the app:** set
+  `ANTHROPIC_TOP_USD_PER_1M_INPUT` and `ANTHROPIC_TOP_USD_PER_1M_OUTPUT`, otherwise its calls are priced like Sonnet's and cost
+  figures will be too low.
+- Still to build: masking template and disclosure text (B), rubric, side-by-side review, exam-week board, batch, pilot study.
+- Still to measure: a full 25-page, three-part run with caching and tie-break (needs the owner's go-ahead; expected Rs 20 to 40).

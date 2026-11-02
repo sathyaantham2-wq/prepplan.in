@@ -157,15 +157,15 @@ describe('marking a class as a job (M4)', () => {
     expect(end).toMatchObject({ status: 'done', total: 4, finished: 4, remaining: 0, marked: 3, failed: 1 })
     expect(last.finished).toBeGreaterThanOrEqual(3)
     expect(end.failures[0].message).toMatch(/waiting for your yes/)
-    // each marked student was read exactly three times and has exactly one row per question
-    expect(calls).toHaveLength(3 * 3)
+    // each marked student was read exactly twice and has exactly one row per question
+    expect(calls).toHaveLength(3 * 2)
     const rows = await db.selectFrom('school_answer_marks').select('school_student_id').where('school_id', '=', schoolId).execute()
     expect(rows).toHaveLength(3 * 2)
     const attempts = await db.selectFrom('school_marking_job_items').select('attempts').where('job_id', '=', job.jobId).execute()
     expect(attempts.every((a) => a.attempts === 1)).toBe(true)
     // a finished job takes no more work
     expect((await markingJobStep(db, admin, job.jobId, ai)).status).toBe('done')
-    expect(calls).toHaveLength(9)
+    expect(calls).toHaveLength(6)
   })
 
   it('a worker that died: its lease runs out and the item is taken again; after three tries it is failed with a plain reason', async () => {

@@ -1,16 +1,17 @@
 import { z } from 'zod'
 
 // AI marking of a school's answer sheets (M4, stage 1). This file is the pure part: no database, no AI,
-// no images. It decides, from what three marking passes said about one answer, what mark stands and
+// no images. It decides, from what the marking passes (two, and a tie-break where they differ) said about one answer, what mark stands and
 // whether a teacher must look. The rules (owner direction 2026-10-30, CLAUDE.md "School module rules"):
-//   - every written answer is marked three times; if the passes disagree, it is flagged;
+//   - every written answer is marked twice; where the two differ a stronger model reads it a third time, and it is flagged only if that does not settle it;
 //   - an answer the AI is unsure about, or could not read, is flagged;
 //   - multiple choice is marked from the key in code (the AI only reads which letter was chosen);
 //   - every lost mark is classed as knowledge gap (did not know it) or writing habit (knew it, wrote it
 //     badly or too short).
 // Marks are in half-mark steps and never above the question's marks.
 
-export const PASSES = 3
+/** Two readings of every answer; a third, by the stronger model, only where they do not settle it (owner decision A, 2026-11-02). */
+export const PASSES = 2
 /** Below this a reading is "unsure" and the answer goes to a teacher. */
 export const MIN_CONFIDENCE = 0.5
 
@@ -157,12 +158,55 @@ function stepsOf(
  * What stands for one answer, from what each pass said about it (`passes[i]` is pass i's reading of this
  * question, or undefined when that pass did not mention it).
  */
+/** Do two readings of one answer say the same thing? (found or not; the option chosen; the mark.) */
+function agree(q: MarkQuestion, a: PassAnswer, b: PassAnswer): boolean {
+  if (a.found !== b.found) return false
+  if (!a.found) return true
+  if (isChoiceQuestion(q)) {
+    const x = a.choice?.trim().toUpperCase() ?? null
+    return x !== null && x === (b.choice?.trim().toUpperCase() ?? null)
+  }
+  return clamp(a.marks, q.marks) === clamp(b.marks, q.marks)
+}
+
+/** True when the first two readings of an answer do not settle it, so the stronger model should read it too. */
+export function needsTieBreak(
+  q: MarkQuestion,
+  readings: ReadonlyArray<PassAnswer | undefined>,
+): boolean {
+  const [a, b] = readings
+  if (!a || !b) return true
+  return !agree(q, a, b) || a.confidence < MIN_CONFIDENCE || b.confidence < MIN_CONFIDENCE
+}
+
+/** The readings that decide the answer: the first two, or the pair of three that agree (preferring sure ones). */
+function deciding(
+  q: MarkQuestion,
+  seen: ReadonlyArray<PassAnswer>,
+): ReadonlyArray<PassAnswer> {
+  if (seen.length < 3) return seen
+  const pairs: Array<[PassAnswer, PassAnswer]> = [
+    [seen[0], seen[1]],
+    [seen[0], seen[2]],
+    [seen[1], seen[2]],
+  ]
+  const agreeing = pairs.filter(([a, b]) => agree(q, a, b))
+  const sure = agreeing.find(([a, b]) => a.confidence >= MIN_CONFIDENCE && b.confidence >= MIN_CONFIDENCE)
+  return sure ?? (agreeing.length > 0 ? agreeing[0] : seen)
+}
+
+/**
+ * What stands for one answer, from what each pass said about it (`passes[i]` is pass i's reading of this
+ * question, or undefined when that pass did not mention it). passes[0] and passes[1] are the two main
+ * readings; passes[2], if present, is the stronger model's tie-break and only decides where they differ.
+ */
 export function combinePasses(
   q: MarkQuestion,
   passes: ReadonlyArray<PassAnswer | undefined>,
 ): CombinedAnswer {
   const max = q.marks
-  const seen = passes.filter((p): p is PassAnswer => p !== undefined)
+  const all = passes.filter((p): p is PassAnswer => p !== undefined)
+  const seen = deciding(q, all)
   const base = {
     questionId: q.id,
     maxMarks: max,
@@ -200,7 +244,7 @@ export function combinePasses(
   const answerText = seen.find((p) => p.found && p.answer_text)?.answer_text ?? null
   const foundVotes = seen.filter((p) => p.found).length
 
-  // not on any page, in any of the three readings: not attempted (or not handed in)
+  // not on any page, in any of the readings: not attempted (or not handed in)
   if (foundVotes === 0)
     return {
       ...base,
@@ -216,7 +260,7 @@ export function combinePasses(
       habit: null,
       steps: [],
     }
-  if (foundVotes < PASSES)
+  if (foundVotes < seen.length)
     return flag(
       'The readings disagree on whether this question was answered at all.',
       0,
@@ -261,7 +305,7 @@ export function combinePasses(
     }
   }
 
-  // ---- written: three marks, compared
+  // ---- written: the marks, compared
   const marks = seen.map((p) => clamp(p.marks, max))
   runs.forEach((r, i) => (r.marks = marks[i]))
   const mid = median(marks)
@@ -276,7 +320,7 @@ export function combinePasses(
 
   let flagReason: string | null = null
   if (!same)
-    flagReason = `The three readings gave ${[...marks].sort((a, b) => a - b).join(', ')} out of ${max}.`
+    flagReason = `The readings gave ${[...marks].sort((a, b) => a - b).join(', ')} out of ${max}.`
   else if (unsure)
     flagReason = 'The handwriting was hard to read, so the AI is not sure of this mark.'
   else if (seen.some((p) => unreadable(p.answer_text)))

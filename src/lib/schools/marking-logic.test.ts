@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   chunkQuestions,
   combinePasses,
+  needsTieBreak,
   mcqKeyLabel,
   parsePass,
   totalsOf
@@ -64,9 +65,26 @@ describe('combinePasses (written)', () => {
     expect(r.flagReason).toContain('1, 2, 3 out of 3')
   })
   it('an unsure reading is flagged even when the marks agree', () => {
-    const r = combinePasses(written, [pass(), pass({ confidence: 0.3 }), pass()])
+    const r = combinePasses(written, [pass(), pass({ confidence: 0.3 })])
     expect(r.flagged).toBe(true)
     expect(r.flagReason).toContain('hard to read')
+  })
+  it('the stronger third reading settles it when it is sure and agrees with one of the two', () => {
+    const r = combinePasses(written, [pass(), pass({ confidence: 0.3 }), pass()])
+    expect(r.flagged).toBe(false)
+    expect(r.finalMarks).toBe(2)
+  })
+  it('two readings that agree need no third; two that differ do', () => {
+    expect(needsTieBreak(written, [pass(), pass()])).toBe(false)
+    expect(needsTieBreak(written, [pass({ marks: 1 }), pass({ marks: 2 })])).toBe(true)
+    expect(needsTieBreak(written, [pass(), pass({ confidence: 0.2 })])).toBe(true)
+    expect(needsTieBreak(written, [pass(), undefined])).toBe(true)
+    expect(needsTieBreak(mcq, [pass({ choice: 'B' }), pass({ choice: 'b' })])).toBe(false)
+  })
+  it('a third reading that agrees with neither leaves it flagged, with the middle mark provisional', () => {
+    const r = combinePasses(written, [pass({ marks: 1 }), pass({ marks: 3, loss_kind: 'none' }), pass({ marks: 2 })])
+    expect(r.flagged).toBe(true)
+    expect(r.finalMarks).toBe(2)
   })
   it('marks above the question or in odd steps are brought into range', () => {
     const r = combinePasses(written, [pass({ marks: 7 }), pass({ marks: 7 }), pass({ marks: 3.2 })])
@@ -88,12 +106,13 @@ describe('combinePasses (written)', () => {
     expect(r.finalMarks).toBe(0)
     expect(r.found).toBe(false)
   })
-  it('found in some readings only is flagged', () => {
-    const r = combinePasses(written, [pass(), pass({ found: false }), pass()])
-    expect(r.flagged).toBe(true)
+  it('found in one of two readings only is flagged; a third that agrees with one settles it', () => {
+    expect(combinePasses(written, [pass(), pass({ found: false })]).flagged).toBe(true)
+    expect(combinePasses(written, [pass(), pass({ found: false }), pass()]).flagged).toBe(false)
   })
-  it('fewer than three usable readings is flagged', () => {
-    expect(combinePasses(written, [pass(), undefined, pass()]).flagged).toBe(true)
+  it('fewer than two usable readings is flagged', () => {
+    expect(combinePasses(written, [pass(), undefined]).flagged).toBe(true)
+    expect(combinePasses(written, [pass(), undefined, pass()]).flagged).toBe(false)
   })
 })
 
@@ -132,9 +151,12 @@ describe('combinePasses (multiple choice)', () => {
     expect(wrong.flagged).toBe(false)
   })
   it('readings that name different options are flagged', () => {
-    const r = combinePasses(mcq, [pass({ choice: 'B' }), pass({ choice: 'D' }), pass({ choice: 'B' })])
+    const r = combinePasses(mcq, [pass({ choice: 'B' }), pass({ choice: 'D' })])
     expect(r.flagged).toBe(true)
     expect(r.finalMarks).toBe(0)
+    const settled = combinePasses(mcq, [pass({ choice: 'B' }), pass({ choice: 'D' }), pass({ choice: 'B' })])
+    expect(settled.flagged).toBe(false)
+    expect(settled.finalMarks).toBe(1)
   })
   it('a key that names no option is flagged, never guessed', () => {
     const r = combinePasses({ ...mcq, keyText: 'twelve' }, [pass({ choice: 'B' }), pass({ choice: 'B' }), pass({ choice: 'B' })])
@@ -237,7 +259,7 @@ describe('hard rules of the marks', () => {
     }
   })
   it('a missing reading is never turned into a mark', () => {
-    const r = combinePasses(written, [pass(), undefined, pass()])
+    const r = combinePasses(written, [pass(), undefined])
     expect(r.flagged).toBe(true)
     expect(r.finalMarks).toBe(0)
   })
