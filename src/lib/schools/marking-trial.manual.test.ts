@@ -29,6 +29,9 @@ interface Q {
   correct?: string
   key?: string
   steps?: Array<[string, number]>
+  /** Internal choice: the alternatives of one question share a group; the section the question belongs to. */
+  orGroup?: string
+  section?: string
 }
 interface Trial {
   subject: string
@@ -112,7 +115,8 @@ describe.skipIf(!file)('marking trial (real AI)', () => {
           school_id: schoolId,
           paper_id: paper.id,
           position: i + 1,
-          section: 'A',
+          section: q.section ?? 'A',
+          or_group: q.orGroup ?? null,
           type: q.type,
           text: q.text,
           original_text: q.text,
