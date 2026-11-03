@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
+import { LayoutGrid, Plus } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
+import { Drawer, InfoTip, useShell } from '../../../components/school/kit'
 import {
   Btn,
   Card,
   Chip,
+  EmptyState,
   Notice,
+  PageHeader,
   Select,
   TextInput,
 } from '../../../components/school/ui'
@@ -18,43 +22,60 @@ export const Route = createFileRoute('/school/$schoolId/classes')({
 
 function Classes() {
   const { overview, schoolId, reload } = useSchool()
-  const [message, setMessage] = useState<{
-    kind: 'error' | 'good'
-    text: string
-  } | null>(null)
+  const { toast } = useShell()
+  const [error, setError] = useState<string | null>(null)
+  const [adding, setAdding] = useState(false)
   const teachers = overview.teachers.filter((t) => t.role === 'teacher')
 
   async function act(body: Record<string, unknown>, ok?: string) {
-    setMessage(null)
+    setError(null)
     try {
       await api(`/api/schools/${schoolId}/setup`, { body })
       await reload()
-      if (ok) setMessage({ kind: 'good', text: ok })
+      if (ok) toast(ok)
     } catch (e) {
-      setMessage({
-        kind: 'error',
-        text: e instanceof Error ? e.message : 'Something went wrong.',
-      })
+      setError(e instanceof Error ? e.message : 'Something went wrong.')
     }
   }
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Classes</h1>
-      {message ? <Notice kind={message.kind}>{message.text}</Notice> : null}
+    <div className="space-y-6">
+      <PageHeader
+        title="Classes"
+        help="Each class with its sections and subjects, the class teacher of each section, and who teaches what."
+        primary={
+          <Btn onClick={() => setAdding(true)}>
+            <Plus aria-hidden="true" className="size-5" />
+            Add a class
+          </Btn>
+        }
+      />
+      {error ? <Notice kind="error">{error}</Notice> : null}
       {overview.classes.length === 0 ? (
-        <Notice>No classes yet. Add your first class below.</Notice>
+        <EmptyState
+          icon={<LayoutGrid className="size-6" />}
+          title="No classes yet"
+          action={
+            <Btn onClick={() => setAdding(true)}>
+              <Plus aria-hidden="true" className="size-5" />
+              Add your first class
+            </Btn>
+          }
+        >
+          Add a class (for example Class 7), then its sections (A, B) and the subjects it studies.
+        </EmptyState>
       ) : null}
       {overview.classes.map((c) => (
-        <ClassCard
-          key={c.id}
-          cls={c}
-          teachers={teachers}
-          assignments={overview.assignments}
-          act={act}
-        />
+        <ClassCard key={c.id} cls={c} teachers={teachers} assignments={overview.assignments} act={act} />
       ))}
-      <AddClass act={act} />
+      <Drawer open={adding} title="Add a class" help="Choose the class and the school year. You add its sections and subjects next." onClose={() => setAdding(false)}>
+        <AddClass
+          act={async (b, ok) => {
+            await act(b, ok)
+            setAdding(false)
+          }}
+        />
+      </Drawer>
     </div>
   )
 }
@@ -67,8 +88,7 @@ function AddClass({
   const [grade, setGrade] = useState('7')
   const [year, setYear] = useState('2026-27')
   return (
-    <Card className="space-y-3">
-      <h2 className="text-lg font-bold">Add a class</h2>
+    <div className="space-y-4">
       <Select
         label="Class"
         value={grade}
@@ -100,7 +120,7 @@ function AddClass({
       >
         Add class
       </Btn>
-    </Card>
+    </div>
   )
 }
 
@@ -118,23 +138,33 @@ function ClassCard({
   const [section, setSection] = useState('')
   const [subject, setSubject] = useState('')
   return (
-    <Card className="space-y-4">
-      <h2 className="text-xl font-bold">
-        Class {cls.grade}{' '}
-        <span className="text-base font-normal text-slate-600">
-          · {cls.academicYear}
-        </span>
-      </h2>
+    <Card className="space-y-5">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="text-xl font-bold">
+          Class {cls.grade}{' '}
+          <span className="text-base font-normal text-slate-600">
+            · {cls.academicYear}
+          </span>
+        </h2>
+        <p className="text-[15px] text-slate-600">
+          {cls.sections.length} section{cls.sections.length === 1 ? '' : 's'} · {cls.subjects.length} subject{cls.subjects.length === 1 ? '' : 's'} ·{' '}
+          {cls.sections.reduce((n, x) => n + x.studentCount, 0)} students
+        </p>
+      </div>
 
-      <div className="space-y-2">
-        <h3 className="text-base font-bold">Sections</h3>
+      <div className="space-y-3">
+        <h3 className="flex items-center gap-1 text-base font-bold">
+          Sections
+          <InfoTip>For each section choose the class teacher, and the teacher of each subject. The class teacher prints the sign-in slips and does the spot-checks unless you choose the subject teacher.</InfoTip>
+        </h3>
         {cls.sections.length === 0 ? (
           <p className="text-base text-slate-700">No sections yet.</p>
         ) : null}
+        <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
         {cls.sections.map((s) => (
           <div
             key={s.id}
-            className="space-y-2 rounded-lg border border-slate-200 p-3"
+            className="space-y-3 rounded-lg border border-slate-200 bg-slate-50 p-4"
           >
             <div className="flex items-center justify-between gap-2">
               <b className="text-base">Section {s.name}</b>
@@ -196,7 +226,7 @@ function ClassCard({
                       {a ? (
                         <Select
                           label="Spot-checks done by"
-                          hint="A few answers are picked for a person to look over."
+                          hint="About 1 in 20 answers the AI marked is picked for a person to look over (a sample check)."
                           value={a.sampleChecker}
                           onChange={(e) =>
                             act(
@@ -224,7 +254,8 @@ function ClassCard({
             ) : null}
           </div>
         ))}
-        <div className="flex gap-2">
+        </div>
+        <div className="flex max-w-md gap-2">
           <div className="flex-1">
             <TextInput
               label="New section"
@@ -267,7 +298,7 @@ function ClassCard({
           ))}
         </div>
         {cls.availableSubjects.length > 0 ? (
-          <div className="flex gap-2">
+          <div className="flex max-w-md gap-2">
             <div className="flex-1">
               <Select
                 label="Add a subject"

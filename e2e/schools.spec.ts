@@ -543,7 +543,7 @@ test.describe.serial('school screens on a phone', () => {
     await shot(page, '10-teachers-upload-ready')
     await page.getByRole('button', { name: /^Add 2 teachers$/ }).click()
     await expect(page.getByText('Done. 2 teachers added.')).toBeVisible()
-    await page.getByRole('button', { name: 'Close' }).click()
+    await page.getByRole('button', { name: 'Close', exact: true }).click()
     await expect(page.getByText('Tina Class')).toBeVisible()
     await shot(page, '11-teachers-list')
     await looksRight(page)
@@ -554,7 +554,8 @@ test.describe.serial('school screens on a phone', () => {
     await viaSettings(page, /^Classes and sections/)
     await expect(page.getByRole('heading', { name: 'Classes' })).toBeVisible()
     await shot(page, '12-classes-empty')
-    await page.getByRole('button', { name: 'Add class' }).click()
+    await page.getByRole('button', { name: 'Add a class' }).first().click()
+    await page.getByRole('button', { name: 'Add class', exact: true }).click()
     await expect(page.getByRole('heading', { name: /Class 7/ })).toBeVisible()
     for (const s of ['A', 'B']) {
       await page.getByLabel('New section').fill(s)
@@ -614,7 +615,7 @@ test.describe.serial('school screens on a phone', () => {
     await shot(page, '15-students-upload-ready')
     await page.getByRole('button', { name: /^Add 3 students$/ }).click()
     await expect(page.getByText('Done. 3 students added.')).toBeVisible()
-    await page.getByRole('button', { name: 'Close' }).click()
+    await page.getByRole('button', { name: 'Close', exact: true }).click()
     await expect(page.getByText('Asha Rao')).toBeVisible()
     await expect(page.getByText('2024/0101')).toBeVisible()
     await shot(page, '16-students-list')
@@ -649,7 +650,7 @@ test.describe.serial('school screens on a phone', () => {
     expect(studentId).toMatch(/^[A-Z0-9/._-]+$/)
     await shot(page, '19-student-code')
     await looksRight(page)
-    await page.getByRole('button', { name: 'Close' }).click()
+    await page.getByRole('button', { name: 'Close', exact: true }).click()
   })
 
   test('the student sets her own password, lands on her page, and the personal app is out of reach', async () => {
@@ -711,7 +712,7 @@ test.describe.serial('school screens on a phone', () => {
     await expect(dialog).toBeVisible()
     const code = (await dialog.getByText(CODE).innerText()).trim()
     await shot(page, '23-teacher-code')
-    await page.getByRole('button', { name: 'Close' }).click()
+    await page.getByRole('button', { name: 'Close', exact: true }).click()
 
     const ctx = await browserRef.newContext({
       viewport: PHONE,

@@ -253,7 +253,7 @@ function TodayPanel({ today, schoolId, role }: { today: Today | null; schoolId: 
 }
 
 function TodayButton({ item, schoolId, role, label }: { item: TodayItem; schoolId: string; role: SchoolOverview['role']; label: string }) {
-  const cls = `${linkButton.plain} min-h-10! shrink-0`
+  const cls = `${linkButton.plain} shrink-0`
   if (item.kind === 'not_sent')
     return (
       <Link to="/school/$schoolId/messages" params={{ schoolId }} className={cls}>

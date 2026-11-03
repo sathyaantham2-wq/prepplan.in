@@ -20,13 +20,17 @@ export function UploadPanel({
   defaultYear,
   onDone,
   onCancel,
+  bare = false,
 }: {
   schoolId: string
   kind: 'students' | 'teachers'
   defaultYear: string
   onDone: () => void
   onCancel: () => void
+  /** inside a side panel that already has the title: no card and no heading of its own */
+  bare?: boolean
 }) {
+  const Box = bare ? Plain : Card
   const [file, setFile] = useState<File | null>(null)
   const [year, setYear] = useState(defaultYear)
   const [preview, setPreview] = useState<Preview | null>(null)
@@ -83,7 +87,7 @@ export function UploadPanel({
 
   if (added !== null) {
     return (
-      <Card className="space-y-3">
+      <Box className="space-y-3">
         <Notice kind="good">
           Done. {added} {added === 1 ? one : noun} added
           {updated > 0 ? `, ${updated} parent messaging setting${updated === 1 ? '' : 's'} updated` : ''}.
@@ -91,13 +95,13 @@ export function UploadPanel({
         <Btn kind="plain" className="w-full" onClick={onCancel}>
           Close
         </Btn>
-      </Card>
+      </Box>
     )
   }
 
   return (
-    <Card className="space-y-4">
-      <h2 className="text-xl font-bold">Add {noun} from a file</h2>
+    <Box className="space-y-4">
+      {bare ? null : <h2 className="text-xl font-bold">Add {noun} from a file</h2>}
       <ol className="list-decimal space-y-1 pl-5 text-base text-slate-700">
         <li>Download the sample Excel file.</li>
         <li>
@@ -223,6 +227,10 @@ export function UploadPanel({
       <Btn kind="plain" className="w-full" onClick={onCancel}>
         Cancel
       </Btn>
-    </Card>
+    </Box>
   )
+}
+
+function Plain({ className, children }: { className?: string; children: React.ReactNode }) {
+  return <div className={className}>{children}</div>
 }

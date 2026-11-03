@@ -286,7 +286,7 @@ test.describe.serial('AI marking (phone)', () => {
     await review.scrollIntoViewIfNeeded()
     await shot(page, 'mk-2b-review')
     await noOverflow(page)
-    await review.getByRole('button', { name: 'Close' }).click()
+    await review.getByRole('button', { name: 'Close', exact: true }).click()
   })
 
   test('disagreeing passes: flagged for the teacher, who changes the mark', async () => {

@@ -210,7 +210,7 @@ test.describe.serial('parent link page (phone)', () => {
     await page.getByTestId(`perm-${studentIds[1]}`).getByRole('button', { name: 'Parent asked again…' }).click()
     await expect(page.getByRole('dialog')).toBeVisible()
     await shot(page, 'msg-admin-reenable')
-    await page.getByRole('button', { name: 'Close' }).click()
+    await page.getByRole('button', { name: 'Close', exact: true }).click()
     await ctx.close()
   })
 

@@ -1,7 +1,23 @@
-import { createContext, useCallback, useContext, useEffect, useId, useMemo, useRef, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import type { ReactNode } from 'react'
 import { useBlocker } from '@tanstack/react-router'
-import { CheckCircle2, ChevronLeft, ChevronRight, HelpCircle, Search, X } from 'lucide-react'
+import {
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  HelpCircle,
+  Search,
+  X,
+} from 'lucide-react'
 import { Btn, inputClass } from './ui'
 
 // The shared parts of the redesigned school screens (docs/schools/UI_REDESIGN_PLAN.md, section 4): toasts, a confirm
@@ -44,10 +60,18 @@ export function useShell(): ShellCtx {
 
 const THEME_KEY = 'prepplan-school-theme'
 
-export function ShellProvider({ children, render }: { children?: ReactNode; render: (dark: boolean) => ReactNode }) {
+export function ShellProvider({
+  children,
+  render,
+}: {
+  children?: ReactNode
+  render: (dark: boolean) => ReactNode
+}) {
   const [dark, setDarkState] = useState(false)
   const [toasts, setToasts] = useState<Array<{ id: number; text: string }>>([])
-  const [ask, setAsk] = useState<(ConfirmOptions & { resolve: (ok: boolean) => void }) | null>(null)
+  const [ask, setAsk] = useState<
+    (ConfirmOptions & { resolve: (ok: boolean) => void }) | null
+  >(null)
   const next = useRef(1)
   useEffect(() => {
     try {
@@ -67,13 +91,20 @@ export function ShellProvider({ children, render }: { children?: ReactNode; rend
   const toast = useCallback((text: string) => {
     const id = next.current++
     setToasts((t) => [...t, { id, text }])
-    window.setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), 3500)
+    window.setTimeout(
+      () => setToasts((t) => t.filter((x) => x.id !== id)),
+      3500,
+    )
   }, [])
   const confirm = useCallback(
-    (o: ConfirmOptions) => new Promise<boolean>((resolve) => setAsk({ ...o, resolve })),
+    (o: ConfirmOptions) =>
+      new Promise<boolean>((resolve) => setAsk({ ...o, resolve })),
     [],
   )
-  const value = useMemo(() => ({ dark, setDark, toast, confirm }), [dark, setDark, toast, confirm])
+  const value = useMemo(
+    () => ({ dark, setDark, toast, confirm }),
+    [dark, setDark, toast, confirm],
+  )
   const close = (ok: boolean) => {
     ask?.resolve(ok)
     setAsk(null)
@@ -82,7 +113,10 @@ export function ShellProvider({ children, render }: { children?: ReactNode; rend
     <ShellContext.Provider value={value}>
       {render(dark)}
       {children}
-      <div aria-live="polite" className="pointer-events-none fixed right-4 bottom-4 z-[70] flex flex-col items-end gap-2">
+      <div
+        aria-live="polite"
+        className="pointer-events-none fixed right-4 bottom-4 z-[70] flex flex-col items-end gap-2"
+      >
         {toasts.map((t) => (
           <div
             key={t.id}
@@ -90,7 +124,10 @@ export function ShellProvider({ children, render }: { children?: ReactNode; rend
             data-testid="toast"
             className="pointer-events-auto flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-[15px] font-semibold text-slate-900 shadow-lg"
           >
-            <CheckCircle2 aria-hidden="true" className="size-5 text-emerald-700" />
+            <CheckCircle2
+              aria-hidden="true"
+              className="size-5 text-emerald-700"
+            />
             {t.text}
           </div>
         ))}
@@ -100,7 +137,13 @@ export function ShellProvider({ children, render }: { children?: ReactNode; rend
   )
 }
 
-function ConfirmBox({ o, onClose }: { o: ConfirmOptions; onClose: (ok: boolean) => void }) {
+function ConfirmBox({
+  o,
+  onClose,
+}: {
+  o: ConfirmOptions
+  onClose: (ok: boolean) => void
+}) {
   const titleId = useId()
   const okRef = useRef<HTMLButtonElement>(null)
   useEffect(() => {
@@ -111,16 +154,29 @@ function ConfirmBox({ o, onClose }: { o: ConfirmOptions; onClose: (ok: boolean) 
   }, [onClose])
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/50 p-4">
-      <div role="alertdialog" aria-modal="true" aria-labelledby={titleId} data-testid="confirm" className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-6 shadow-2xl">
+      <div
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        data-testid="confirm"
+        className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-6 shadow-2xl"
+      >
         <h2 id={titleId} className="text-lg font-bold text-slate-900">
           {o.title}
         </h2>
-        {o.body ? <div className="mt-2 text-[15px] text-slate-700">{o.body}</div> : null}
+        {o.body ? (
+          <div className="mt-2 text-[15px] text-slate-700">{o.body}</div>
+        ) : null}
         <div className="mt-6 flex flex-wrap justify-end gap-2">
           <Btn kind="plain" onClick={() => onClose(false)}>
             {o.cancelLabel ?? 'Cancel'}
           </Btn>
-          <Btn ref={okRef} kind={o.danger ? 'danger' : 'primary'} onClick={() => onClose(true)} data-testid="confirm-yes">
+          <Btn
+            ref={okRef}
+            kind={o.danger ? 'danger' : 'primary'}
+            onClick={() => onClose(true)}
+            data-testid="confirm-yes"
+          >
             {o.confirmLabel ?? 'Yes'}
           </Btn>
         </div>
@@ -135,7 +191,13 @@ export function useUnsavedGuard(dirty: boolean) {
   useBlocker({
     shouldBlockFn: async () =>
       dirty &&
-      !(await confirm({ title: 'Leave without saving?', body: 'Your changes on this page will be lost.', confirmLabel: 'Leave', cancelLabel: 'Stay', danger: true })),
+      !(await confirm({
+        title: 'Leave without saving?',
+        body: 'Your changes on this page will be lost.',
+        confirmLabel: 'Leave',
+        cancelLabel: 'Stay',
+        danger: true,
+      })),
     enableBeforeUnload: () => dirty,
   })
 }
@@ -166,13 +228,24 @@ export function Drawer({
   const titleId = useId()
   const panel = useRef<HTMLDivElement>(null)
   const tryClose = useCallback(async () => {
-    if (dirty && !(await confirm({ title: 'Close without saving?', body: 'What you typed here will be lost.', confirmLabel: 'Close', cancelLabel: 'Keep editing', danger: true })))
+    if (
+      dirty &&
+      !(await confirm({
+        title: 'Close without saving?',
+        body: 'What you typed here will be lost.',
+        confirmLabel: 'Close',
+        cancelLabel: 'Keep editing',
+        danger: true,
+      }))
+    )
       return
     onClose()
   }, [dirty, confirm, onClose])
   useEffect(() => {
     if (!open) return
-    const first = panel.current?.querySelector<HTMLElement>('input, select, textarea, button:not([data-drawer-close])')
+    const first = panel.current?.querySelector<HTMLElement>(
+      'input, select, textarea, button:not([data-drawer-close])',
+    )
     first?.focus()
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && void tryClose()
     window.addEventListener('keydown', onKey)
@@ -181,7 +254,11 @@ export function Drawer({
   if (!open) return null
   return (
     <div className="fixed inset-0 z-[60]">
-      <div aria-hidden="true" className="absolute inset-0 bg-black/40" onClick={() => void tryClose()} />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-black/40"
+        onClick={() => void tryClose()}
+      />
       <div
         ref={panel}
         role="dialog"
@@ -195,20 +272,28 @@ export function Drawer({
             <h2 id={titleId} className="text-lg font-bold text-slate-900">
               {title}
             </h2>
-            {help ? <p className="mt-0.5 text-[15px] text-slate-600">{help}</p> : null}
+            {help ? (
+              <p className="mt-0.5 text-[15px] text-slate-600">{help}</p>
+            ) : null}
           </div>
           <button
             type="button"
             data-drawer-close
             onClick={() => void tryClose()}
-            aria-label="Close"
-            className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100"
+            aria-label="Close the panel"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100"
           >
             <X aria-hidden="true" className="size-5" />
           </button>
         </div>
-        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-5">{children}</div>
-        {footer ? <div className="flex flex-wrap justify-end gap-2 border-t border-slate-200 px-5 py-4">{footer}</div> : null}
+        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-5">
+          {children}
+        </div>
+        {footer ? (
+          <div className="flex flex-wrap justify-end gap-2 border-t border-slate-200 px-5 py-4">
+            {footer}
+          </div>
+        ) : null}
       </div>
     </div>
   )
@@ -217,11 +302,21 @@ export function Drawer({
 // ---------------------------------------------------------------- small parts
 
 /** A "?" that explains a word a teacher may not know. Opens on tap, hover or keyboard focus. */
-export function InfoTip({ children, label = 'What does this mean?' }: { children: ReactNode; label?: string }) {
+export function InfoTip({
+  children,
+  label = 'What does this mean?',
+}: {
+  children: ReactNode
+  label?: string
+}) {
   const [open, setOpen] = useState(false)
   const id = useId()
   return (
-    <span className="relative inline-flex align-middle" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+    <span
+      className="relative inline-flex align-middle"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
       <button
         type="button"
         aria-label={label}
@@ -277,7 +372,9 @@ export function Checkbox({
       />
       <label htmlFor={id} className="cursor-pointer text-[15px] text-slate-900">
         {label}
-        {hint ? <span className="block text-sm text-slate-600">{hint}</span> : null}
+        {hint ? (
+          <span className="block text-sm text-slate-600">{hint}</span>
+        ) : null}
       </label>
     </div>
   )
@@ -302,7 +399,9 @@ export function Switch({
     <div className="flex items-start justify-between gap-4">
       <label htmlFor={id} className="cursor-pointer text-[15px] text-slate-900">
         {label}
-        {hint ? <span className="block text-sm text-slate-600">{hint}</span> : null}
+        {hint ? (
+          <span className="block text-sm text-slate-600">{hint}</span>
+        ) : null}
       </label>
       <button
         id={id}
@@ -317,7 +416,9 @@ export function Switch({
           aria-hidden="true"
           className={`relative inline-flex h-7 w-12 items-center rounded-full border transition-colors ${checked ? 'border-emerald-700 bg-emerald-700' : 'border-slate-400 bg-slate-200'}`}
         >
-          <span className={`inline-block size-5 rounded-full bg-white shadow transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`} />
+          <span
+            className={`inline-block size-5 rounded-full bg-white shadow transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`}
+          />
         </span>
       </button>
     </div>
@@ -325,6 +426,19 @@ export function Switch({
 }
 
 // ---------------------------------------------------------------- the table
+
+/** True on a phone-width screen (under 768 px). Starts false so the first paint matches the server's. */
+export function useNarrow(): boolean {
+  const [narrow, setNarrow] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    const on = () => setNarrow(mq.matches)
+    on()
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+  return narrow
+}
 
 export interface Column<T> {
   key: string
@@ -365,9 +479,12 @@ export function DataTable<T>({
 }) {
   const [q, setQ] = useState('')
   const [page, setPage] = useState(0)
+  const narrow = useNarrow()
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase()
-    return needle && search ? rows.filter((r) => search(r).toLowerCase().includes(needle)) : rows
+    return needle && search
+      ? rows.filter((r) => search(r).toLowerCase().includes(needle))
+      : rows
   }, [rows, q, search])
   const pages = Math.max(1, Math.ceil(shown.length / pageSize))
   const at = Math.min(page, pages - 1)
@@ -380,7 +497,10 @@ export function DataTable<T>({
           {search ? (
             <label className="relative block min-w-0 flex-1 basis-60">
               <span className="sr-only">{searchLabel}</span>
-              <Search aria-hidden="true" className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-500" />
+              <Search
+                aria-hidden="true"
+                className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-500"
+              />
               <input
                 type="search"
                 value={q}
@@ -397,73 +517,106 @@ export function DataTable<T>({
         </div>
       ) : null}
       {shown.length === 0 ? (
-        <p className="rounded-lg border border-slate-200 bg-white px-4 py-6 text-center text-[15px] text-slate-600">Nothing matches your search.</p>
+        <p className="rounded-lg border border-slate-200 bg-white px-4 py-6 text-center text-[15px] text-slate-600">
+          Nothing matches your search.
+        </p>
       ) : (
         <>
-          <div className="hidden overflow-hidden rounded-xl border border-slate-200 bg-white md:block">
-            <table className="w-full text-left text-[15px]">
-              <thead className="bg-slate-50">
-                <tr>
-                  {columns.map((c) => (
-                    <th key={c.key} scope="col" className={`px-4 py-2.5 text-sm font-semibold text-slate-600 ${c.className ?? ''}`}>
-                      {c.header}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {slice.map((r) => (
-                  <tr
-                    key={rowKey(r)}
-                    className={`border-t border-slate-200 ${onRowClick ? 'cursor-pointer hover:bg-slate-50' : ''}`}
-                    onClick={onRowClick ? () => onRowClick(r) : undefined}
-                  >
+          {narrow ? null : (
+            <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+              <table className="w-full text-left text-[15px]">
+                <thead className="bg-slate-50">
+                  <tr>
                     {columns.map((c) => (
-                      <td key={c.key} className={`px-4 py-3 align-middle text-slate-900 ${c.className ?? ''}`}>
-                        {c.cell(r)}
-                      </td>
+                      <th
+                        key={c.key}
+                        scope="col"
+                        className={`px-4 py-2.5 text-sm font-semibold text-slate-600 ${c.className ?? ''}`}
+                      >
+                        {c.header}
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <ul className="space-y-2 md:hidden">
-            {slice.map((r) => (
-              <li
-                key={rowKey(r)}
-                className={`rounded-xl border border-slate-200 bg-white p-4 ${onRowClick ? 'cursor-pointer' : ''}`}
-                onClick={onRowClick ? () => onRowClick(r) : undefined}
-              >
-                <dl className="space-y-1">
-                  {columns
-                    .filter((c) => !c.hideOnPhone)
-                    .map((c, i) =>
-                      i === 0 ? (
-                        <div key={c.key} className="text-base font-semibold text-slate-900">
+                </thead>
+                <tbody>
+                  {slice.map((r) => (
+                    <tr
+                      key={rowKey(r)}
+                      className={`border-t border-slate-200 ${onRowClick ? 'cursor-pointer hover:bg-slate-50' : ''}`}
+                      onClick={onRowClick ? () => onRowClick(r) : undefined}
+                    >
+                      {columns.map((c) => (
+                        <td
+                          key={c.key}
+                          className={`px-4 py-3 align-middle text-slate-900 ${c.className ?? ''}`}
+                        >
                           {c.cell(r)}
-                        </div>
-                      ) : (
-                        <div key={c.key} className="flex flex-wrap items-center justify-between gap-2 text-[15px]">
-                          <dt className="text-slate-600">{c.header}</dt>
-                          <dd className="text-slate-900">{c.cell(r)}</dd>
-                        </div>
-                      ),
-                    )}
-                </dl>
-              </li>
-            ))}
-          </ul>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          {narrow ? (
+            <ul className="space-y-2">
+              {slice.map((r) => (
+                <li
+                  key={rowKey(r)}
+                  className={`rounded-xl border border-slate-200 bg-white p-4 ${onRowClick ? 'cursor-pointer' : ''}`}
+                  onClick={onRowClick ? () => onRowClick(r) : undefined}
+                >
+                  <dl className="space-y-1">
+                    {columns
+                      .filter((c) => !c.hideOnPhone)
+                      .map((c, i) =>
+                        i === 0 ? (
+                          <div
+                            key={c.key}
+                            className="text-base font-semibold text-slate-900"
+                          >
+                            {c.cell(r)}
+                          </div>
+                        ) : (
+                          <div
+                            key={c.key}
+                            className="flex flex-wrap items-center justify-between gap-2 text-[15px]"
+                          >
+                            <dt className="text-slate-600">{c.header}</dt>
+                            <dd className="text-slate-900">{c.cell(r)}</dd>
+                          </div>
+                        ),
+                      )}
+                  </dl>
+                </li>
+              ))}
+            </ul>
+          ) : null}
           {pages > 1 ? (
-            <nav aria-label="Pages" className="flex items-center justify-between gap-2 text-[15px] text-slate-700">
+            <nav
+              aria-label="Pages"
+              className="flex items-center justify-between gap-2 text-[15px] text-slate-700"
+            >
               <span>
-                {at * pageSize + 1}–{Math.min(shown.length, (at + 1) * pageSize)} of {shown.length}
+                {at * pageSize + 1}–
+                {Math.min(shown.length, (at + 1) * pageSize)} of {shown.length}
               </span>
               <span className="flex gap-2">
-                <Btn kind="plain" disabled={at === 0} onClick={() => setPage(at - 1)} aria-label="Previous page">
+                <Btn
+                  kind="plain"
+                  disabled={at === 0}
+                  onClick={() => setPage(at - 1)}
+                  aria-label="Previous page"
+                >
                   <ChevronLeft aria-hidden="true" className="size-4" />
                 </Btn>
-                <Btn kind="plain" disabled={at >= pages - 1} onClick={() => setPage(at + 1)} aria-label="Next page">
+                <Btn
+                  kind="plain"
+                  disabled={at >= pages - 1}
+                  onClick={() => setPage(at + 1)}
+                  aria-label="Next page"
+                >
                   <ChevronRight aria-hidden="true" className="size-4" />
                 </Btn>
               </span>

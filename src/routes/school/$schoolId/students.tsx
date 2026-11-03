@@ -1,14 +1,19 @@
 import { useCallback, useEffect, useState } from 'react'
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
+import { Plus, Printer, Users } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
+import { DataTable, Drawer, InfoTip, useShell } from '../../../components/school/kit'
 import { UploadPanel } from '../../../components/school/upload-panel'
 import {
   Btn,
-  Card,
   Chip,
   Dialog,
+  EmptyState,
+  Loading,
   Notice,
+  PageHeader,
   Select,
+  linkButton,
 } from '../../../components/school/ui'
 import { api, printCodeSlip } from '../../../lib/school-client'
 
@@ -53,7 +58,7 @@ function Students() {
   } | null>(null)
   const [adding, setAdding] = useState(false)
   const [shown, setShown] = useState<Slip | null>(null)
-  const [confirmReset, setConfirmReset] = useState<StudentRow | null>(null)
+  const { confirm, toast } = useShell()
   const isAdmin = overview.role === 'school_admin'
   const current = sections.find((s) => s.id === sectionId)
   const mayHandle =
@@ -112,8 +117,19 @@ function Students() {
     }
   }
 
+  async function askReset(row: StudentRow) {
+    if (
+      await confirm({
+        title: `New password code for ${row.name}?`,
+        body: 'Her old password will stop working straight away and she will be signed out. She will choose a new password with the code.',
+        confirmLabel: 'Yes, give a new code',
+        danger: true,
+      })
+    )
+      await reset(row)
+  }
+
   async function reset(row: StudentRow) {
-    setConfirmReset(null)
     setMessage(null)
     try {
       const r = await api<{
@@ -134,111 +150,148 @@ function Students() {
 
   if (sections.length === 0) {
     return (
-      <div className="space-y-4">
-        <h1 className="text-2xl font-bold">Students</h1>
-        <Notice>
-          {isAdmin
-            ? 'Add a class and a section first (see Classes).'
-            : 'You have no classes yet.'}
-        </Notice>
+      <div className="space-y-6">
+        <PageHeader title="Students" help="Everyone in each class, and whether they have signed in." />
+        <EmptyState
+          icon={<Users className="size-6" />}
+          title={isAdmin ? 'No classes yet' : 'You have no classes yet'}
+          action={
+            isAdmin ? (
+              <Link to="/school/$schoolId/classes" params={{ schoolId }} className={linkButton.primary}>
+                Add a class first
+              </Link>
+            ) : undefined
+          }
+        >
+          {isAdmin ? 'Students are added to a class and section. Add a class and a section first.' : 'The school office will add you to your classes.'}
+        </EmptyState>
       </div>
     )
   }
 
-  return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Students</h1>
-      <Select
-        label="Class"
-        value={sectionId}
-        onChange={(e) => setSectionId(e.target.value)}
-      >
+  const templateLink = isAdmin ? (
+    <a href={`/api/schools/${schoolId}/roster-template?kind=students`} className="font-semibold text-emerald-800 underline">
+      Download the Excel template
+    </a>
+  ) : null
+  const filter = (
+    <div className="w-full sm:w-72">
+      <Select label="Class" value={sectionId} onChange={(e) => setSectionId(e.target.value)}>
         {sections.map((s) => (
           <option key={s.id} value={s.id}>
             {s.label}
           </option>
         ))}
       </Select>
+    </div>
+  )
+
+  return (
+    <div className="space-y-6">
+      <PageHeader
+        title="Students"
+        help="Everyone in each class, and whether they have signed in. Pick a class to see its students."
+        actions={
+          mayHandle ? (
+            <Btn kind="plain" disabled={!rows?.some((r) => !r.signedUp)} onClick={printSlips}>
+              <Printer aria-hidden="true" className="size-5" />
+              Print sign-in slips for students who have not signed in
+            </Btn>
+          ) : null
+        }
+        primary={
+          isAdmin ? (
+            <Btn onClick={() => setAdding(true)}>
+              <Plus aria-hidden="true" className="size-5" />
+              Add students from a file
+            </Btn>
+          ) : null
+        }
+      />
       {message ? <Notice kind={message.kind}>{message.text}</Notice> : null}
 
-      {isAdmin ? (
-        adding ? (
-          <UploadPanel
-            schoolId={schoolId}
-            kind="students"
-            defaultYear={year}
-            onDone={() => void Promise.all([load(), reload()])}
-            onCancel={() => setAdding(false)}
-          />
-        ) : (
-          <Btn className="w-full" onClick={() => setAdding(true)}>
-            Add students from a file
-          </Btn>
-        )
-      ) : null}
-      {mayHandle ? (
-        <Btn
-          kind="plain"
-          className="w-full"
-          disabled={!rows?.some((r) => !r.signedUp)}
-          onClick={printSlips}
-        >
-          Print sign-in slips for students who have not signed in
-        </Btn>
-      ) : null}
-
       {rows === null ? (
-        <p className="text-base text-slate-700">Loading…</p>
-      ) : null}
-      {rows?.length === 0 ? (
-        <Notice>No students in this class yet.</Notice>
-      ) : null}
-      <ul className="space-y-2">
-        {rows?.map((r) => (
-          <li key={r.schoolStudentId}>
-            <Card className="space-y-2">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <b className="text-lg">{r.name}</b>
-                <Chip tone={r.signedUp ? 'good' : 'wait'}>
-                  {r.signedUp ? 'Has signed in' : 'Not signed in yet'}
-                </Chip>
-              </div>
-              <p className="text-base text-slate-700">
-                ID <b className="break-all">{r.admissionNo}</b> · Roll{' '}
-                {r.rollNo}
-              </p>
-              {mayHandle ? (
-                <Btn
-                  kind="plain"
-                  className="w-full"
-                  onClick={() => setConfirmReset(r)}
-                >
-                  Give a new password code
-                </Btn>
-              ) : null}
-            </Card>
-          </li>
-        ))}
-      </ul>
+        <Loading />
+      ) : (
+        <DataTable
+          testId="students-table"
+          rows={rows}
+          rowKey={(r) => r.schoolStudentId}
+          search={(r) => `${r.name} ${r.admissionNo} ${r.rollNo}`}
+          searchLabel="Search by name, ID or roll number"
+          filters={filter}
+          empty={
+            <div className="space-y-4">
+              {filter}
+              <EmptyState
+                icon={<Users className="size-6" />}
+                title="No students in this class yet"
+                action={
+                  isAdmin ? (
+                    <Btn onClick={() => setAdding(true)}>
+                      <Plus aria-hidden="true" className="size-5" />
+                      Upload your Excel list
+                    </Btn>
+                  ) : undefined
+                }
+                extra={templateLink}
+              >
+                {isAdmin ? 'Add the whole class at once from an Excel or CSV list.' : 'The school office adds students.'}
+              </EmptyState>
+            </div>
+          }
+          columns={[
+            { key: 'name', header: 'Name', cell: (r) => <span className="font-semibold">{r.name}</span> },
+            { key: 'id', header: 'ID', cell: (r) => <span className="break-all">{r.admissionNo}</span> },
+            { key: 'roll', header: 'Roll', cell: (r) => r.rollNo },
+            {
+              key: 'signed',
+              header: (
+                <span className="inline-flex items-center gap-0.5">
+                  Sign-in
+                  <InfoTip>Whether the student has set her own password with the code from her sign-in slip.</InfoTip>
+                </span>
+              ),
+              cell: (r) => <Chip tone={r.signedUp ? 'good' : 'wait'}>{r.signedUp ? 'Has signed in' : 'Not signed in yet'}</Chip>,
+            },
+            ...(mayHandle
+              ? [
+                  {
+                    key: 'code',
+                    header: <span className="sr-only">Actions</span>,
+                    className: 'text-right',
+                    cell: (r: StudentRow) => (
+                      <Btn kind="plain"  onClick={() => void askReset(r)}>
+                        Give a new password code
+                      </Btn>
+                    ),
+                  },
+                ]
+              : []),
+          ]}
+        />
+      )}
 
-      {confirmReset ? (
-        <Dialog
-          title={`New password code for ${confirmReset.name}?`}
-          onClose={() => setConfirmReset(null)}
-        >
-          <p className="text-base">
-            Her old password will stop working straight away and she will be
-            signed out. She will choose a new password with the code.
-          </p>
-          <Btn
-            kind="danger"
-            className="mt-3 w-full"
-            onClick={() => reset(confirmReset)}
-          >
-            Yes, give a new code
-          </Btn>
-        </Dialog>
-      ) : null}
+      <Drawer
+        open={adding}
+        title="Add students from a file"
+        help="Upload your Excel or CSV list. We check it first and show any mistakes before anything is added."
+        onClose={() => setAdding(false)}
+        testId="add-students-drawer"
+      >
+        <UploadPanel
+          schoolId={schoolId}
+          kind="students"
+          defaultYear={year}
+          onDone={() => {
+            toast('Students added')
+            void Promise.all([load(), reload()])
+          }}
+          onCancel={() => setAdding(false)}
+          bare
+        />
+      </Drawer>
+
       {shown ? (
         <Dialog title={`Code for ${shown.name}`} onClose={() => setShown(null)}>
           <p className="text-base">

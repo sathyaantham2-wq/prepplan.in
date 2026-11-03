@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
+import { Plus, UserRound } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
+import { DataTable, Drawer, useShell } from '../../../components/school/kit'
 import { UploadPanel } from '../../../components/school/upload-panel'
-import { Btn, Card, Chip, Dialog, Notice } from '../../../components/school/ui'
+import { Btn, Chip, Dialog, EmptyState, Notice, PageHeader } from '../../../components/school/ui'
 import { api, printCodeSlip } from '../../../lib/school-client'
 
 export const Route = createFileRoute('/school/$schoolId/teachers')({
@@ -30,6 +32,7 @@ function Teachers() {
     kind: 'error' | 'good'
     text: string
   } | null>(null)
+  const { toast } = useShell()
   const staff = overview.teachers
   const year = overview.classes[0]?.academicYear ?? '2026-27'
 
@@ -63,56 +66,118 @@ function Teachers() {
     }
   }
 
+  // what each person teaches, from the assignments ("7A Maths")
+  const teaches = (memberId: string) =>
+    overview.assignments
+      .filter((a) => a.memberId === memberId)
+      .map((a) => {
+        const c = overview.classes.find((x) => x.sections.some((sec) => sec.id === a.sectionId))
+        const sec = c?.sections.find((x) => x.id === a.sectionId)
+        const sub = c?.subjects.find((x) => x.id === a.schoolSubjectId)
+        return c && sec ? `${c.grade}${sec.name} ${sub?.name ?? ''}`.trim() : null
+      })
+      .filter((x): x is string => x !== null)
+
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Teachers</h1>
+    <div className="space-y-6">
+      <PageHeader
+        title="Teachers"
+        help="Everyone on your staff, what they teach, and whether they can sign in."
+        primary={
+          <Btn onClick={() => setAdding(true)}>
+            <Plus aria-hidden="true" className="size-5" />
+            Add teachers from a file
+          </Btn>
+        }
+      />
       {message ? <Notice kind={message.kind}>{message.text}</Notice> : null}
-      {adding ? (
+      <DataTable
+        testId="teachers-table"
+        rows={staff}
+        rowKey={(t) => t.memberId}
+        search={(t) => `${t.name} ${t.email} ${teaches(t.memberId).join(' ')}`}
+        searchLabel="Search by name, email or class"
+        empty={
+          <EmptyState
+            icon={<UserRound className="size-6" />}
+            title="No teachers yet"
+            action={
+              <Btn onClick={() => setAdding(true)}>
+                <Plus aria-hidden="true" className="size-5" />
+                Upload your Excel list
+              </Btn>
+            }
+            extra={
+              <a href={`/api/schools/${schoolId}/roster-template?kind=teachers`} className="font-semibold text-emerald-800 underline">
+                Download the Excel template
+              </a>
+            }
+          >
+            Add all your teachers at once, with the classes each one teaches.
+          </EmptyState>
+        }
+        columns={[
+          {
+            key: 'name',
+            header: 'Name',
+            cell: (t) => (
+              <span className="flex flex-wrap items-center gap-2">
+                <span className="font-semibold">{t.name}</span>
+                {t.role === 'school_admin' ? <Chip>School office</Chip> : null}
+              </span>
+            ),
+          },
+          { key: 'email', header: 'Email', cell: (t) => <span className="break-all">{t.email}</span> },
+          {
+            key: 'teaches',
+            header: 'Teaches',
+            hideOnPhone: true,
+            cell: (t) => {
+              const list = teaches(t.memberId)
+              return list.length ? list.join('; ') : <span className="text-slate-600">Nothing yet</span>
+            },
+          },
+          {
+            key: 'status',
+            header: 'Sign-in',
+            cell: (t) => <Chip tone={t.hasPassword ? 'good' : 'wait'}>{t.hasPassword ? 'Can sign in' : 'Not set up yet'}</Chip>,
+          },
+          {
+            key: 'actions',
+            header: <span className="sr-only">Actions</span>,
+            className: 'text-right',
+            cell: (t) => (
+              <span className="flex flex-wrap justify-end gap-2">
+                <Btn kind="plain"  onClick={() => void issue(t.memberId, t.name, 'email')}>
+                  {t.hasPassword ? 'Email a new sign-in link' : 'Email a sign-in link'}
+                </Btn>
+                <Btn kind="plain"  onClick={() => void issue(t.memberId, t.name, 'slip')}>
+                  Print a code instead
+                </Btn>
+              </span>
+            ),
+          },
+        ]}
+      />
+      <Drawer
+        open={adding}
+        title="Add teachers from a file"
+        help="Upload your Excel or CSV list. We check it first and show any mistakes before anything is added."
+        onClose={() => setAdding(false)}
+        testId="add-teachers-drawer"
+      >
         <UploadPanel
           schoolId={schoolId}
           kind="teachers"
           defaultYear={year}
-          onDone={() => void reload()}
+          onDone={() => {
+            toast('Teachers added')
+            void reload()
+          }}
           onCancel={() => setAdding(false)}
+          bare
         />
-      ) : (
-        <Btn className="w-full" onClick={() => setAdding(true)}>
-          Add teachers from a file
-        </Btn>
-      )}
-      {staff.length === 0 ? <Notice>No teachers yet.</Notice> : null}
-      <ul className="space-y-3">
-        {staff.map((t) => (
-          <li key={t.memberId}>
-            <Card className="space-y-3">
-              <div className="flex flex-wrap items-center gap-2">
-                <b className="text-lg">{t.name}</b>
-                {t.role === 'school_admin' ? <Chip>School office</Chip> : null}
-                <Chip tone={t.hasPassword ? 'good' : 'wait'}>
-                  {t.hasPassword ? 'Can sign in' : 'Not set up yet'}
-                </Chip>
-              </div>
-              <p className="text-base break-all text-slate-700">{t.email}</p>
-              <div className="grid gap-2 sm:grid-cols-2">
-                <Btn
-                  kind="plain"
-                  onClick={() => issue(t.memberId, t.name, 'email')}
-                >
-                  {t.hasPassword
-                    ? 'Email a new sign-in link'
-                    : 'Email a sign-in link'}
-                </Btn>
-                <Btn
-                  kind="plain"
-                  onClick={() => issue(t.memberId, t.name, 'slip')}
-                >
-                  Print a code instead
-                </Btn>
-              </div>
-            </Card>
-          </li>
-        ))}
-      </ul>
+      </Drawer>
       {slip ? (
         <Dialog title={`Code for ${slip.name}`} onClose={() => setSlip(null)}>
           <p className="text-base">

@@ -556,7 +556,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await looksRight(page)
     await page.getByRole('button', { name: 'Add 1 teacher' }).click()
     await expect(page.getByText('Done. 1 teacher added.')).toBeVisible()
-    await page.getByRole('button', { name: 'Close' }).click()
+    await page.getByRole('button', { name: 'Close', exact: true }).click()
   })
 
   test('Settings: choose only AI correction; home and tabs follow; then both again', async () => {
