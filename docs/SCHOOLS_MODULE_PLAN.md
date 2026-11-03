@@ -1095,7 +1095,13 @@ must be picked first.
 - In the picker they appear with an "Our question" badge, filterable, and behave like bank questions (swap, lock, used
   before, versions). The office can see and retire them; nothing is deleted.
 
-### 16.14 Decisions needed from the owner
+### 16.14 Owner decisions (2026-11-03)
+
+Approved. 1 to 4 as proposed (recent = this school year from 1 April; set B shuffles question order only; a finished
+paper can be changed as a new version; drafts are seen by their maker and the office). 5: **Quick stays a separate
+choice.** The builder must be very friendly: plain words, one obvious next step, nothing hidden behind jargon.
+
+### 16.14a The questions as first asked
 
 1. **"Recently used"** for Swap and the default of "Hide used before": this school year (since 1 April)? (Proposed: yes.)
 2. **Set B shuffle**: shuffle MCQ options too, or only the question order? (Proposed: question order only; options stay, so

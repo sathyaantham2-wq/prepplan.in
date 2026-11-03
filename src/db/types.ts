@@ -707,6 +707,18 @@ export interface SchoolExamQuestions {
   school_id: string;
   section: string;
   slot: string;
+  locked: Generated<boolean>;
+}
+
+export interface SchoolExamVersions {
+  exam_id: string;
+  finalized_at: Generated<Timestamp>;
+  finalized_by_user_id: string;
+  id: Generated<string>;
+  printed_marks: number;
+  questions: Json;
+  school_id: string;
+  version: number;
 }
 
 export interface SchoolExams {
@@ -729,6 +741,12 @@ export interface SchoolExams {
   template_id: string;
   template_name: string;
   title: string;
+  stage: Generated<string>;
+  mode: Generated<string>;
+  version: Generated<number>;
+  set_label: string | null;
+  set_of: string | null;
+  edited_at: Timestamp | null;
 }
 
 export interface SchoolExamSections {
@@ -1430,6 +1448,7 @@ export interface DB {
   school_exam_questions: SchoolExamQuestions;
   school_exam_sections: SchoolExamSections;
   school_exams: SchoolExams;
+  school_exam_versions: SchoolExamVersions;
   school_import_batches: SchoolImportBatches;
   school_members: SchoolMembers;
   school_own_covers: SchoolOwnCovers;

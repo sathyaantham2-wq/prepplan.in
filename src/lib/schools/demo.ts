@@ -34,6 +34,7 @@ export async function useSampleAnswerSheets(
   await assertDemo(db, scope)
   const { exam, sectionIds } = await loadExam(db, scope, examId, 'handle')
   if (exam.archived_at) throw new SchoolError('not_found', 'Exam not found.')
+  if (exam.stage !== 'final') throw new SchoolError('conflict', 'Finish choosing the questions of this paper first ("Make paper").')
   const questions = await db
     .selectFrom('school_exam_questions as q')
     .innerJoin('questions as qq', 'qq.id', 'q.question_id')

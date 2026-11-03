@@ -109,6 +109,8 @@ export interface CreateExamInput {
   chapterIds: Array<string>
   sectionIds: Array<string>
   examDate?: string | null
+  /** quick: finished at once (as before); auto_edit: filled, then open for changes; hand_pick: empty, open for changes */
+  mode?: 'quick' | 'auto_edit' | 'hand_pick'
 }
 
 /**
@@ -134,7 +136,7 @@ export async function createExam(
   db: Db,
   scope: SchoolScope,
   input: CreateExamInput,
-): Promise<{ id: string }> {
+): Promise<{ id: string; stage: string }> {
   if (scope.role !== 'school_admin' && scope.role !== 'teacher')
     throw new SchoolError(
       'forbidden',
@@ -239,9 +241,21 @@ export async function createExam(
     .execute()
   const avoid = new Set(earlier.map((r) => r.question_id))
 
+  const mode = input.mode ?? 'quick'
+  if (!['quick', 'auto_edit', 'hand_pick'].includes(mode))
+    throw new SchoolError('invalid', 'Choose one of the three ways to make the paper.')
   let master: Awaited<ReturnType<typeof buildMasterPaper>>
   try {
-    master = await buildMasterPaper(db, layout, examChapters, avoid)
+    // hand-pick starts with empty sections; the other two start from the automatic paper
+    master =
+      mode === 'hand_pick'
+        ? {
+            picks: [],
+            shortfalls: [],
+            nominalMarks: layout.sections.reduce((n, s) => n + s.marks_per_question * s.count, 0),
+            printedMarks: 0,
+          }
+        : await buildMasterPaper(db, layout, examChapters, avoid)
   } catch (e) {
     // The paper is checked before it is saved (numbering, four options, section totals). A failed
     // check means a question in the bank is incomplete: say so plainly instead of a bare error.
@@ -299,6 +313,8 @@ export async function createExam(
       nominal_marks: master.nominalMarks,
       printed_marks: master.printedMarks,
       created_by_user_id: scope.userId,
+      stage: mode === 'quick' ? 'final' : 'building',
+      mode,
     })
     for (const sectionId of input.sectionIds)
       await schoolExamSectionsRepository.insert(trx, scope, {
@@ -319,6 +335,29 @@ export async function createExam(
         expected_words: p.expectedWords,
       })
     }
+    // a Quick paper is finished at once: record exactly which questions it uses (version 1, for "used before")
+    if (mode === 'quick')
+      await trx
+        .insertInto('school_exam_versions')
+        .values({
+          school_id: scope.schoolId,
+          exam_id: exam.id,
+          version: 1,
+          finalized_by_user_id: scope.userId,
+          questions: JSON.stringify(
+            master.picks.map((p) => ({
+              question_id: p.questionId,
+              section: p.section,
+              slot: p.slot,
+              position: p.position,
+              marks: p.marks,
+              choice_group: p.choiceGroup,
+              is_alternate: p.isAlternate,
+            })),
+          ),
+          printed_marks: master.printedMarks,
+        })
+        .execute()
     await schoolBookletLayoutsRepository.insert(trx, scope, {
       exam_id: exam.id,
       version: 1,
@@ -339,9 +378,10 @@ export async function createExam(
         printed_marks: master.printedMarks,
         nominal_marks: master.nominalMarks,
         gaps: lines.length,
+        mode,
       },
     )
-    return { id: exam.id }
+    return { id: exam.id, stage: mode === 'quick' ? 'final' : 'building' }
   })
 }
 
@@ -379,6 +419,11 @@ export interface ExamSummary {
   printedMarks: number
   gaps: number
   status: string
+  /** 'building' while the teacher is still choosing questions; 'final' when it can be printed */
+  stage: string
+  version: number
+  setLabel: string | null
+  editedAt: string
   examDate: string | null
 }
 
@@ -402,6 +447,10 @@ async function summarize(
     printedMarks: exam.printed_marks,
     gaps: (exam.teacher_copy_lines as unknown as Array<string>).length,
     status: exam.status,
+    stage: exam.stage,
+    version: exam.version,
+    setLabel: exam.set_label,
+    editedAt: (exam.edited_at ?? exam.created_at).toISOString(),
     examDate: exam.exam_date
       ? new Date(exam.exam_date).toISOString().slice(0, 10)
       : null,
@@ -424,6 +473,8 @@ export async function listExams(
       !teachesExam(scope, e.subject_id, sectionIds)
     )
       continue
+    // a paper still being made is seen by its maker and the office only; the principal sees finished papers
+    if (e.stage === 'building' && scope.role !== 'school_admin' && e.created_by_user_id !== scope.userId) continue
     out.push(await summarize(db, scope, e, sectionIds))
   }
   return out

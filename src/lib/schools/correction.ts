@@ -31,6 +31,8 @@ export async function ownPaperFromExam(
     )
   await requireSchoolTerms(db, scope)
   const { exam } = await loadExam(db, scope, examId, 'handle')
+  if (exam.stage !== 'final')
+    throw new SchoolError('conflict', 'Finish choosing the questions of this paper first ("Make paper").')
   const already = (await schoolOwnPapersRepository.list(db, scope)).find(
     (p) =>
       p.exam_id === examId &&
@@ -158,7 +160,8 @@ export async function examsForCorrection(db: Db, scope: SchoolScope) {
       )
       .map((p) => [p.exam_id as string, p.id]),
   )
-  return exams.map((e) => ({
+  // a paper still being made cannot be corrected yet
+  return exams.filter((e) => e.stage === 'final').map((e) => ({
     id: e.id,
     title: e.title,
     className: e.className,

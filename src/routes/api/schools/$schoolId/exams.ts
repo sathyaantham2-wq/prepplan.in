@@ -58,6 +58,7 @@ export const Route = createFileRoute('/api/schools/$schoolId/exams')({
               chapterIds: strings(b?.chapter_ids),
               sectionIds: strings(b?.section_ids),
               examDate: str(b?.exam_date),
+              mode: (['quick', 'auto_edit', 'hand_pick'] as const).find((m) => m === b?.mode) ?? 'quick',
             }),
           )
         } catch (e) {

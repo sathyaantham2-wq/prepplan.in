@@ -248,6 +248,7 @@ import { Route as ApiAttemptsIdScanPagesPageIdRouteImport } from './routes/api/a
 import { Route as ApiSchoolsSchoolIdExamsExamIdAbsencesRouteImport } from './routes/api/schools/$schoolId/exams/$examId/absences'
 import { Route as ApiSchoolsSchoolIdExamsExamIdAnswerKeyDocxRouteImport } from './routes/api/schools/$schoolId/exams/$examId/answer-key-docx'
 import { Route as ApiSchoolsSchoolIdExamsExamIdBookletsRouteImport } from './routes/api/schools/$schoolId/exams/$examId/booklets'
+import { Route as ApiSchoolsSchoolIdExamsExamIdBuilderRouteImport } from './routes/api/schools/$schoolId/exams/$examId/builder'
 import { Route as ApiSchoolsSchoolIdExamsExamIdQuestionPaperRouteImport } from './routes/api/schools/$schoolId/exams/$examId/question-paper'
 import { Route as ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRouteImport } from './routes/api/schools/$schoolId/exams/$examId/question-paper-docx'
 import { Route as ApiSchoolsSchoolIdExamsExamIdScanBatchesRouteImport } from './routes/api/schools/$schoolId/exams/$examId/scan-batches'
@@ -1549,6 +1550,12 @@ const ApiSchoolsSchoolIdExamsExamIdBookletsRoute =
     path: '/booklets',
     getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
   } as any)
+const ApiSchoolsSchoolIdExamsExamIdBuilderRoute =
+  ApiSchoolsSchoolIdExamsExamIdBuilderRouteImport.update({
+    id: '/builder',
+    path: '/builder',
+    getParentRoute: () => ApiSchoolsSchoolIdExamsExamIdRoute,
+  } as any)
 const ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute =
   ApiSchoolsSchoolIdExamsExamIdQuestionPaperRouteImport.update({
     id: '/question-paper',
@@ -1934,6 +1941,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/exams/$examId/absences': typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   '/api/schools/$schoolId/exams/$examId/answer-key-docx': typeof ApiSchoolsSchoolIdExamsExamIdAnswerKeyDocxRoute
   '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  '/api/schools/$schoolId/exams/$examId/builder': typeof ApiSchoolsSchoolIdExamsExamIdBuilderRoute
   '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
   '/api/schools/$schoolId/exams/$examId/question-paper-docx': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   '/api/schools/$schoolId/exams/$examId/scan-batches': typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
@@ -2196,6 +2204,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/exams/$examId/absences': typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   '/api/schools/$schoolId/exams/$examId/answer-key-docx': typeof ApiSchoolsSchoolIdExamsExamIdAnswerKeyDocxRoute
   '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  '/api/schools/$schoolId/exams/$examId/builder': typeof ApiSchoolsSchoolIdExamsExamIdBuilderRoute
   '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
   '/api/schools/$schoolId/exams/$examId/question-paper-docx': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   '/api/schools/$schoolId/exams/$examId/scan-batches': typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
@@ -2462,6 +2471,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/exams/$examId/absences': typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   '/api/schools/$schoolId/exams/$examId/answer-key-docx': typeof ApiSchoolsSchoolIdExamsExamIdAnswerKeyDocxRoute
   '/api/schools/$schoolId/exams/$examId/booklets': typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  '/api/schools/$schoolId/exams/$examId/builder': typeof ApiSchoolsSchoolIdExamsExamIdBuilderRoute
   '/api/schools/$schoolId/exams/$examId/question-paper': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
   '/api/schools/$schoolId/exams/$examId/question-paper-docx': typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   '/api/schools/$schoolId/exams/$examId/scan-batches': typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
@@ -2729,6 +2739,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/absences'
     | '/api/schools/$schoolId/exams/$examId/answer-key-docx'
     | '/api/schools/$schoolId/exams/$examId/booklets'
+    | '/api/schools/$schoolId/exams/$examId/builder'
     | '/api/schools/$schoolId/exams/$examId/question-paper'
     | '/api/schools/$schoolId/exams/$examId/question-paper-docx'
     | '/api/schools/$schoolId/exams/$examId/scan-batches'
@@ -2991,6 +3002,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/absences'
     | '/api/schools/$schoolId/exams/$examId/answer-key-docx'
     | '/api/schools/$schoolId/exams/$examId/booklets'
+    | '/api/schools/$schoolId/exams/$examId/builder'
     | '/api/schools/$schoolId/exams/$examId/question-paper'
     | '/api/schools/$schoolId/exams/$examId/question-paper-docx'
     | '/api/schools/$schoolId/exams/$examId/scan-batches'
@@ -3256,6 +3268,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/exams/$examId/absences'
     | '/api/schools/$schoolId/exams/$examId/answer-key-docx'
     | '/api/schools/$schoolId/exams/$examId/booklets'
+    | '/api/schools/$schoolId/exams/$examId/builder'
     | '/api/schools/$schoolId/exams/$examId/question-paper'
     | '/api/schools/$schoolId/exams/$examId/question-paper-docx'
     | '/api/schools/$schoolId/exams/$examId/scan-batches'
@@ -5078,6 +5091,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdBookletsRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
     }
+    '/api/schools/$schoolId/exams/$examId/builder': {
+      id: '/api/schools/$schoolId/exams/$examId/builder'
+      path: '/builder'
+      fullPath: '/api/schools/$schoolId/exams/$examId/builder'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdBuilderRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdExamsExamIdRoute
+    }
     '/api/schools/$schoolId/exams/$examId/question-paper': {
       id: '/api/schools/$schoolId/exams/$examId/question-paper'
       path: '/question-paper'
@@ -5827,6 +5847,7 @@ interface ApiSchoolsSchoolIdExamsExamIdRouteChildren {
   ApiSchoolsSchoolIdExamsExamIdAbsencesRoute: typeof ApiSchoolsSchoolIdExamsExamIdAbsencesRoute
   ApiSchoolsSchoolIdExamsExamIdAnswerKeyDocxRoute: typeof ApiSchoolsSchoolIdExamsExamIdAnswerKeyDocxRoute
   ApiSchoolsSchoolIdExamsExamIdBookletsRoute: typeof ApiSchoolsSchoolIdExamsExamIdBookletsRoute
+  ApiSchoolsSchoolIdExamsExamIdBuilderRoute: typeof ApiSchoolsSchoolIdExamsExamIdBuilderRoute
   ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute
   ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute: typeof ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute
   ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute: typeof ApiSchoolsSchoolIdExamsExamIdScanBatchesRoute
@@ -5846,6 +5867,8 @@ const ApiSchoolsSchoolIdExamsExamIdRouteChildren: ApiSchoolsSchoolIdExamsExamIdR
       ApiSchoolsSchoolIdExamsExamIdAnswerKeyDocxRoute,
     ApiSchoolsSchoolIdExamsExamIdBookletsRoute:
       ApiSchoolsSchoolIdExamsExamIdBookletsRoute,
+    ApiSchoolsSchoolIdExamsExamIdBuilderRoute:
+      ApiSchoolsSchoolIdExamsExamIdBuilderRoute,
     ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute:
       ApiSchoolsSchoolIdExamsExamIdQuestionPaperRoute,
     ApiSchoolsSchoolIdExamsExamIdQuestionPaperDocxRoute:
@@ -6174,12 +6197,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

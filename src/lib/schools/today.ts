@@ -132,6 +132,7 @@ export async function schoolToday(db: Db, scope: SchoolScope, now = new Date()) 
     .select(['e.id', 'e.title', 'e.created_at', 'c.grade', 'e.subject_id', 'e.class_id'])
     .where('e.school_id', '=', scope.schoolId)
     .where('e.archived_at', 'is', null)
+    .where('e.stage', '=', 'final')
     .orderBy('e.created_at', 'desc')
     .execute()
   const madeVisible = made.filter(
