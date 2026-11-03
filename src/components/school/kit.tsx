@@ -230,7 +230,7 @@ export function InfoTip({ children, label = 'What does this mean?' }: { children
         onClick={() => setOpen((o) => !o)}
         onFocus={() => setOpen(true)}
         onBlur={() => setOpen(false)}
-        className="inline-flex size-6 items-center justify-center rounded-full text-slate-500 hover:text-slate-800"
+        className="-my-2.5 inline-flex size-11 items-center justify-center rounded-full text-slate-500 hover:text-slate-800"
       >
         <HelpCircle aria-hidden="true" className="size-4" />
       </button>
@@ -238,7 +238,7 @@ export function InfoTip({ children, label = 'What does this mean?' }: { children
         <span
           id={id}
           role="tooltip"
-          className="absolute top-7 left-1/2 z-50 w-64 -translate-x-1/2 rounded-lg border border-slate-200 bg-white p-3 text-left text-sm font-normal text-slate-800 shadow-lg"
+          className="absolute top-9 left-1/2 z-50 w-64 -translate-x-1/2 rounded-lg border border-slate-200 bg-white p-3 text-left text-sm font-normal text-slate-800 shadow-lg"
         >
           {children}
         </span>
@@ -311,9 +311,14 @@ export function Switch({
         aria-checked={checked}
         data-testid={testId}
         onClick={() => onChange(!checked)}
-        className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors ${checked ? 'border-emerald-700 bg-emerald-700' : 'border-slate-400 bg-slate-200'}`}
+        className="inline-flex h-11 w-14 shrink-0 items-center justify-center rounded-full"
       >
-        <span className={`inline-block size-5 rounded-full bg-white shadow transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`} />
+        <span
+          aria-hidden="true"
+          className={`relative inline-flex h-7 w-12 items-center rounded-full border transition-colors ${checked ? 'border-emerald-700 bg-emerald-700' : 'border-slate-400 bg-slate-200'}`}
+        >
+          <span className={`inline-block size-5 rounded-full bg-white shadow transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`} />
+        </span>
       </button>
     </div>
   )

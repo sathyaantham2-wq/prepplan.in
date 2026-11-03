@@ -180,6 +180,7 @@ import { Route as ApiSchoolsSchoolIdRosterTemplateRouteImport } from './routes/a
 import { Route as ApiSchoolsSchoolIdSettingsRouteImport } from './routes/api/schools/$schoolId/settings'
 import { Route as ApiSchoolsSchoolIdSetupRouteImport } from './routes/api/schools/$schoolId/setup'
 import { Route as ApiSchoolsSchoolIdTemplatesRouteImport } from './routes/api/schools/$schoolId/templates'
+import { Route as ApiSchoolsSchoolIdTodayRouteImport } from './routes/api/schools/$schoolId/today'
 import { Route as ApiSchoolsSchoolIdWizardRouteImport } from './routes/api/schools/$schoolId/wizard'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
 import { Route as ApiStudentsMeExamsRouteImport } from './routes/api/students/me/exams'
@@ -1152,6 +1153,11 @@ const ApiSchoolsSchoolIdTemplatesRoute =
     path: '/api/schools/$schoolId/templates',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiSchoolsSchoolIdTodayRoute = ApiSchoolsSchoolIdTodayRouteImport.update({
+  id: '/api/schools/$schoolId/today',
+  path: '/api/schools/$schoolId/today',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSchoolsSchoolIdWizardRoute =
   ApiSchoolsSchoolIdWizardRouteImport.update({
     id: '/api/schools/$schoolId/wizard',
@@ -1860,6 +1866,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
+  '/api/schools/$schoolId/today': typeof ApiSchoolsSchoolIdTodayRoute
   '/api/schools/$schoolId/wizard': typeof ApiSchoolsSchoolIdWizardRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
@@ -2121,6 +2128,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
+  '/api/schools/$schoolId/today': typeof ApiSchoolsSchoolIdTodayRoute
   '/api/schools/$schoolId/wizard': typeof ApiSchoolsSchoolIdWizardRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
@@ -2386,6 +2394,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/settings': typeof ApiSchoolsSchoolIdSettingsRoute
   '/api/schools/$schoolId/setup': typeof ApiSchoolsSchoolIdSetupRoute
   '/api/schools/$schoolId/templates': typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
+  '/api/schools/$schoolId/today': typeof ApiSchoolsSchoolIdTodayRoute
   '/api/schools/$schoolId/wizard': typeof ApiSchoolsSchoolIdWizardRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/students/me/exams': typeof ApiStudentsMeExamsRoute
@@ -2652,6 +2661,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
+    | '/api/schools/$schoolId/today'
     | '/api/schools/$schoolId/wizard'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
@@ -2913,6 +2923,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
+    | '/api/schools/$schoolId/today'
     | '/api/schools/$schoolId/wizard'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
@@ -3177,6 +3188,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/settings'
     | '/api/schools/$schoolId/setup'
     | '/api/schools/$schoolId/templates'
+    | '/api/schools/$schoolId/today'
     | '/api/schools/$schoolId/wizard'
     | '/api/students/$id/login'
     | '/api/students/me/exams'
@@ -3368,6 +3380,7 @@ export interface RootRouteChildren {
   ApiSchoolsSchoolIdSettingsRoute: typeof ApiSchoolsSchoolIdSettingsRoute
   ApiSchoolsSchoolIdSetupRoute: typeof ApiSchoolsSchoolIdSetupRoute
   ApiSchoolsSchoolIdTemplatesRoute: typeof ApiSchoolsSchoolIdTemplatesRouteWithChildren
+  ApiSchoolsSchoolIdTodayRoute: typeof ApiSchoolsSchoolIdTodayRoute
   ApiSchoolsSchoolIdWizardRoute: typeof ApiSchoolsSchoolIdWizardRoute
   ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
@@ -4587,6 +4600,13 @@ declare module '@tanstack/react-router' {
       path: '/api/schools/$schoolId/templates'
       fullPath: '/api/schools/$schoolId/templates'
       preLoaderRoute: typeof ApiSchoolsSchoolIdTemplatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/today': {
+      id: '/api/schools/$schoolId/today'
+      path: '/api/schools/$schoolId/today'
+      fullPath: '/api/schools/$schoolId/today'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdTodayRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/schools/$schoolId/wizard': {
@@ -6116,6 +6136,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdSetupRoute: ApiSchoolsSchoolIdSetupRoute,
   ApiSchoolsSchoolIdTemplatesRoute:
     ApiSchoolsSchoolIdTemplatesRouteWithChildren,
+  ApiSchoolsSchoolIdTodayRoute: ApiSchoolsSchoolIdTodayRoute,
   ApiSchoolsSchoolIdWizardRoute: ApiSchoolsSchoolIdWizardRoute,
   ApiSummaryWeeklyStudentIdRoute: ApiSummaryWeeklyStudentIdRoute,
   ApiAdaptiveConceptsConceptIdWrongQuestionsRoute:

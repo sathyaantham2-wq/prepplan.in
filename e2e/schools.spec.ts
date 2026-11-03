@@ -1244,9 +1244,8 @@ test.describe.serial('school screens on a phone', () => {
     await page.getByLabel('Password', { exact: true }).fill(PASSWORD)
     await page.getByRole('button', { name: 'Sign in', exact: true }).click()
     await page.waitForURL(`**/school/${schoolId}`)
-    await expect(
-      page.getByRole('heading', { name: 'Your school set-up' }),
-    ).toBeVisible()
+    // set-up is finished by now, so Home leads with what is waiting today
+    await expect(page.getByRole('heading', { name: 'Today' })).toBeVisible()
     await shot(page, '26-admin-home-desktop')
     await ctx.close()
   })

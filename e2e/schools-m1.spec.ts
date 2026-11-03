@@ -723,8 +723,8 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
 
   test('Reset demo puts it all away, and the demo is ready to use again', async () => {
     await open(teacher, `/school/${demoSchoolId}`)
-    teacher.once('dialog', (d) => void d.accept())
     await teacher.getByRole('button', { name: 'Reset demo' }).click()
+    await teacher.getByTestId('confirm-yes').click()
     await expect(teacher.getByText('The demo is reset.')).toBeVisible()
     await shot(teacher, 'm1-19-demo-reset')
     await teacher

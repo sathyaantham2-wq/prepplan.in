@@ -334,7 +334,7 @@ test.describe.serial('progress report and class progress (phone)', () => {
     await page.goto(`/school/${schoolId}/settings`, { waitUntil: 'networkidle' })
     await page.getByTestId('progress-settings').scrollIntoViewIfNeeded()
     await shot(page, 'pg-14-settings-rank-and-window')
-    await page.getByTestId('progress-settings').getByRole('checkbox').check()
+    await page.getByTestId('progress-settings').getByRole('switch').click()
     await page.getByTestId('progress-settings').getByRole('button', { name: 'Save' }).click()
     await expect(page.getByTestId('progress-settings')).toContainText('Saved')
     await student.page.goto(`/school/${schoolId}/progress`, { waitUntil: 'networkidle' })

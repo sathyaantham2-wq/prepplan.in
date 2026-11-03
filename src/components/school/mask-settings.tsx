@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSchool } from './context'
+import { useShell } from './kit'
 import { Btn, Card, Notice } from './ui'
 import { api } from '../../lib/school-client'
 import type { MaskTemplate } from '../../lib/schools/mask-template'
@@ -18,6 +19,7 @@ const pct = (v: string) => Number(v) / 100
 
 export function MaskSettings() {
   const { schoolId } = useSchool()
+  const { toast } = useShell()
   const [rows, setRows] = useState<Array<Row>>([])
   const [everyPage, setEveryPage] = useState(false)
   const [custom, setCustom] = useState(false)
@@ -44,6 +46,7 @@ export function MaskSettings() {
       await api(`/api/schools/${schoolId}/mask`, { body })
       apply(await api(`/api/schools/${schoolId}/mask`))
       setMsg('Saved.')
+      toast('Saved')
     } catch (e) {
       setErr(e instanceof Error ? e.message : 'Something went wrong.')
     } finally {

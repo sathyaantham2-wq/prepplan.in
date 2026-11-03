@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import {
   ChevronRight,
@@ -13,7 +13,8 @@ import type { LucideIcon } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
 import { MaskSettings } from '../../../components/school/mask-settings'
 import { ModulePicker } from '../../../components/school/module-picker'
-import { Btn, Card, Notice, PageHeader } from '../../../components/school/ui'
+import { InfoTip, Switch, useShell, useUnsavedGuard } from '../../../components/school/kit'
+import { Btn, Card, Notice, PageHeader, inputClass } from '../../../components/school/ui'
 import { api } from '../../../lib/school-client'
 import type { SchoolModule } from '../../../lib/schools/modules'
 
@@ -21,18 +22,29 @@ export const Route = createFileRoute('/school/$schoolId/settings')({
   component: SettingsPage,
 })
 
-// The office's settings: which parts of PrepPlan the school uses, the paper patterns (advanced), and the
-// set-up screens a phone's bottom bar has no room for.
+// The office's settings (UI redesign plan, section 6): one page in sections with a small menu on the side on wide
+// screens. Each section saves on its own and says "Saved"; leaving with unsaved changes asks first.
+const SECTIONS = [
+  { id: 'parts', label: 'What your school uses' },
+  { id: 'progress', label: "Students' progress" },
+  { id: 'name-area', label: 'Name area on sheets' },
+  { id: 'school', label: 'Your school' },
+  { id: 'advanced', label: 'Advanced' },
+]
+
 function SettingsPage() {
   const { overview, schoolId, reload } = useSchool()
+  const { toast } = useShell()
   const [modules, setModules] = useState<Array<SchoolModule>>(
     overview.school.modules,
   )
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [progressDirty, setProgressDirty] = useState(false)
   const changed =
-    modules.join(',') !== [...overview.school.modules].sort().join(',')
+    [...modules].sort().join(',') !== [...overview.school.modules].sort().join(',')
+  useUnsavedGuard(changed || progressDirty)
 
   if (overview.role !== 'school_admin')
     return (
@@ -47,6 +59,7 @@ function SettingsPage() {
       await api(`/api/schools/${schoolId}/settings`, { body: { modules } })
       await reload()
       setMessage('Saved. Your home screen now shows what you chose.')
+      toast('Saved')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.')
     } finally {
@@ -55,80 +68,103 @@ function SettingsPage() {
   }
 
   return (
-    <div className="space-y-5">
-      <PageHeader title="Settings" subtitle={overview.school.name} />
-      {message ? <Notice kind="good">{message}</Notice> : null}
-      {error ? <Notice kind="error">{error}</Notice> : null}
+    <div className="space-y-6">
+      <PageHeader title="Settings" help={`How ${overview.school.name} uses PrepPlan. Each part saves on its own.`} />
+      <div className="grid gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
+        <nav aria-label="Settings sections" className="hidden lg:block">
+          <ul className="sticky top-24 space-y-1">
+            {SECTIONS.filter((x) => x.id !== 'advanced' || overview.school.modules.includes('papers')).map((x) => (
+              <li key={x.id}>
+                <a href={`#${x.id}`} className="block rounded-lg px-3 py-2 text-[15px] font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                  {x.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="min-w-0 max-w-4xl space-y-6">
+          <Card className="scroll-mt-24 space-y-4" id="parts">
+            <SectionHead title="What your school uses" help="Turn on the parts of PrepPlan your school needs. Home and the menu show only these." />
+            {message ? <Notice kind="good">{message}</Notice> : null}
+            {error ? <Notice kind="error">{error}</Notice> : null}
+            <ModulePicker value={modules} onChange={setModules} disabled={busy} />
+            <div className="flex justify-end">
+              <Btn disabled={busy || !changed} onClick={() => void save()}>
+                {busy ? 'Saving…' : 'Save'}
+              </Btn>
+            </div>
+          </Card>
 
-      <Card className="space-y-4">
-        <h2 className="text-lg font-bold">What your school uses</h2>
-        <ModulePicker value={modules} onChange={setModules} disabled={busy} />
-        <Btn
-          className="w-full"
-          disabled={busy || !changed}
-          onClick={() => void save()}
-        >
-          {busy ? 'Saving…' : 'Save'}
-        </Btn>
-      </Card>
+          <ProgressSettings onDirty={setProgressDirty} />
 
-      <ProgressSettings />
+          <div id="name-area" className="scroll-mt-24">
+            <MaskSettings />
+          </div>
 
-      <MaskSettings />
+          <Card className="scroll-mt-24 space-y-2" id="school">
+            <SectionHead title="Your school" help="Set-up screens and agreements." />
+            <SettingsLink
+              to="/school/$schoolId/classes"
+              schoolId={schoolId}
+              icon={LayoutGrid}
+              title="Classes and sections"
+              hint="Sections, subjects, class teachers, who teaches what"
+            />
+            <SettingsLink
+              to="/school/$schoolId/teachers"
+              schoolId={schoolId}
+              icon={UserRound}
+              title="Teachers"
+              hint="Add teachers and give them their sign-in"
+            />
+            <SettingsLink
+              to="/school/$schoolId/messages"
+              schoolId={schoolId}
+              icon={MessageSquare}
+              title="Parent messages"
+              hint="Who agreed to get results on WhatsApp, and in which language"
+            />
+            {overview.school.modules.includes('correction') ? (
+              <SettingsLink
+                to="/school/$schoolId/board"
+                schoolId={schoolId}
+                icon={Gauge}
+                title="Exam-week board"
+                hint="Which sheets are uploaded, marked, waiting for a teacher or failed"
+              />
+            ) : null}
+            <SettingsLink
+              to="/school/$schoolId/terms"
+              schoolId={schoolId}
+              icon={ScrollText}
+              title="School terms"
+              hint={overview.termsAccepted ? 'Accepted' : 'Not accepted yet'}
+            />
+          </Card>
 
-      <Card className="space-y-2">
-        <h2 className="text-lg font-bold">Your school</h2>
-        <SettingsLink
-          to="/school/$schoolId/classes"
-          schoolId={schoolId}
-          icon={LayoutGrid}
-          title="Classes and sections"
-          hint="Sections, subjects, class teachers, who teaches what"
-        />
-        <SettingsLink
-          to="/school/$schoolId/teachers"
-          schoolId={schoolId}
-          icon={UserRound}
-          title="Teachers"
-          hint="Add teachers and give them their sign-in"
-        />
-        <SettingsLink
-          to="/school/$schoolId/messages"
-          schoolId={schoolId}
-          icon={MessageSquare}
-          title="Parent messages"
-          hint="Who agreed to get results on WhatsApp, and in which language"
-        />
-        {overview.school.modules.includes('correction') ? (
-          <SettingsLink
-            to="/school/$schoolId/board"
-            schoolId={schoolId}
-            icon={Gauge}
-            title="Exam-week board"
-            hint="Which sheets are uploaded, marked, waiting for a teacher or failed"
-          />
-        ) : null}
-        <SettingsLink
-          to="/school/$schoolId/terms"
-          schoolId={schoolId}
-          icon={ScrollText}
-          title="School terms"
-          hint={overview.termsAccepted ? 'Accepted' : 'Not accepted yet'}
-        />
-      </Card>
+          {overview.school.modules.includes('papers') ? (
+            <Card className="scroll-mt-24 space-y-2" id="advanced">
+              <SectionHead title="Advanced" help="Most schools never need these." />
+              <SettingsLink
+                to="/school/$schoolId/papers"
+                schoolId={schoolId}
+                icon={FileText}
+                title="Paper patterns"
+                hint="Your own sections, marks and kinds of question. Most schools use the ready ones."
+              />
+            </Card>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  )
+}
 
-      {overview.school.modules.includes('papers') ? (
-        <Card className="space-y-2">
-          <h2 className="text-lg font-bold">Advanced settings</h2>
-          <SettingsLink
-            to="/school/$schoolId/papers"
-            schoolId={schoolId}
-            icon={FileText}
-            title="Paper patterns"
-            hint="Your own sections, marks and kinds of question. Most schools use the ready ones."
-          />
-        </Card>
-      ) : null}
+function SectionHead({ title, help }: { title: string; help: string }) {
+  return (
+    <div>
+      <h2 className="text-lg font-bold">{title}</h2>
+      <p className="text-[15px] text-slate-600">{help}</p>
     </div>
   )
 }
@@ -156,11 +192,11 @@ function SettingsLink({
     <Link
       to={to}
       params={{ schoolId }}
-      className="group flex min-h-14 items-center gap-3 rounded-xl border border-slate-200 px-3.5 py-3 text-slate-900 transition-colors hover:border-slate-300 hover:bg-slate-50"
+      className="group flex min-h-14 items-center gap-3 rounded-lg border border-slate-200 px-3.5 py-3 text-slate-900 transition-colors hover:border-slate-300 hover:bg-slate-50"
     >
       <span
         aria-hidden="true"
-        className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700"
+        className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-800"
       >
         <Icon className="size-5" />
       </span>
@@ -170,19 +206,22 @@ function SettingsLink({
       </span>
       <ChevronRight
         aria-hidden="true"
-        className="size-5 shrink-0 text-slate-400"
+        className="size-5 shrink-0 text-slate-500"
       />
     </Link>
   )
 }
 
-function ProgressSettings() {
+function ProgressSettings({ onDirty }: { onDirty: (dirty: boolean) => void }) {
   const { schoolId, overview, reload } = useSchool()
+  const { toast } = useShell()
   const [rank, setRank] = useState(overview.school.showClassRank)
   const [days, setDays] = useState(String(overview.school.disputeWindowDays))
   const [busy, setBusy] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
   const [err, setErr] = useState<string | null>(null)
+  const dirty = rank !== overview.school.showClassRank || days !== String(overview.school.disputeWindowDays)
+  useEffect(() => onDirty(dirty), [dirty, onDirty])
   async function save() {
     setBusy(true)
     setMsg(null)
@@ -193,6 +232,7 @@ function ProgressSettings() {
       })
       await reload()
       setMsg('Saved.')
+      toast('Saved')
     } catch (e) {
       setErr(e instanceof Error ? e.message : 'Something went wrong.')
     } finally {
@@ -200,28 +240,40 @@ function ProgressSettings() {
     }
   }
   return (
-    <Card className="space-y-3" data-testid="progress-settings">
-      <h2 className="text-lg font-bold">Students' progress</h2>
+    <Card className="scroll-mt-24 space-y-4" data-testid="progress-settings" id="progress">
+      <SectionHead title="Students' progress" help="What students see after their results come out." />
       {msg ? <Notice kind="good">{msg}</Notice> : null}
       {err ? <Notice kind="error">{err}</Notice> : null}
-      <label className="flex min-h-11 items-center gap-3 text-base">
-        <input type="checkbox" checked={rank} onChange={(e) => setRank(e.target.checked)} className="size-5" />
-        Show each student her class rank (off is kinder; her personal best is always shown)
-      </label>
-      <label className="block text-base font-semibold">
-        Days a student can flag a mark after results are released
+      <Switch
+        label="Show each student her class rank"
+        hint="Off is kinder; her personal best is always shown."
+        checked={rank}
+        onChange={setRank}
+        testId="rank-switch"
+      />
+      <div className="space-y-1.5">
+        <label htmlFor="dispute-days" className="flex items-center gap-1 text-[15px] font-semibold text-slate-900">
+          Days a student can flag a mark after results are released
+          <InfoTip>
+            The question window. After results come out, a student may ask about a mark she thinks is wrong. When these days
+            are over, the marks are final.
+          </InfoTip>
+        </label>
         <input
+          id="dispute-days"
           type="number"
           min={1}
           max={60}
           value={days}
           onChange={(e) => setDays(e.target.value)}
-          className="mt-1 block min-h-11 w-28 rounded-lg border border-slate-300 px-3 text-base"
+          className={`${inputClass} max-w-28`}
         />
-      </label>
-      <Btn disabled={busy} onClick={() => void save()}>
-        {busy ? 'Saving…' : 'Save'}
-      </Btn>
+      </div>
+      <div className="flex justify-end">
+        <Btn disabled={busy || !dirty} onClick={() => void save()}>
+          {busy ? 'Saving…' : 'Save'}
+        </Btn>
+      </div>
     </Card>
   )
 }
