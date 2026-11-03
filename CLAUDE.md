@@ -161,6 +161,12 @@ own students. Do not mix the two. Design: `docs/SCHOOLS_MODULE_PLAN.md` (a draft
   does it by default; the school admin can assign the subject teacher instead, per section-subject.
 - **Answer key.** The student-role key rules above still apply; nothing about the school module relaxes
   them.
+- **No answer booklet (owner decision 2026-11-03).** A school's question paper carries questions only, in the CBSE
+  layout (no answer space, no rough work, no QR, no printed names); students write on the school's own answer sheets.
+  AI correction takes each student's pages under her name (student-wise upload, wrong-upload checks before marking).
+  Printed booklets, cover pages and QR page sorting are kept in code but switched off (`src/lib/schools/features.ts`,
+  `SCHOOL_BOOKLETS=on` outside production only); their API routes refuse while it is off. Do not bring them back
+  into the UI without the owner.
 
 ## Stack
 

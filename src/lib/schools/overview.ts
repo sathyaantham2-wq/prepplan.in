@@ -14,6 +14,7 @@ import {
 import type { SchoolScope } from '../../db/school-scope'
 import { SchoolError } from './common'
 import { CURRENT_SCHOOL_TERMS_VERSION } from './terms'
+import { bookletsEnabled } from './features'
 
 // What the school screens show, in one call. Role decides how much: the admin and principal see
 // the whole school, a teacher only the sections they teach or look after, a student only herself.
@@ -52,6 +53,8 @@ export interface SchoolOverview {
   wizardDone: boolean
   role: SchoolScope['role']
   termsAccepted: boolean
+  /** printed answer booklets and QR page sorting (switched off; see features.ts) */
+  bookletsEnabled: boolean
   classes: Array<OverviewClass>
   teachers: Array<{
     memberId: string
@@ -121,6 +124,7 @@ export async function loadSchoolOverview(
     wizardDone: school.wizard_done_at !== null,
     role: scope.role,
     termsAccepted,
+    bookletsEnabled: bookletsEnabled(),
     me: { name: user.name, memberId: myMemberId },
   }
   if (scope.role === 'student' || scope.role === 'parent') {

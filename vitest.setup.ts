@@ -23,6 +23,10 @@ if (existsSync(testEnvPath)) {
  * this check unchanged. There is deliberately no override flag: "just this once against the real
  * database" is exactly the decision that caused the incident.
  */
+// Answer booklets and QR page sorting are switched off for users (owner decision 2026-11-03), but the code is kept, so
+// its own tests run with the switch on. features.test.ts checks the switch-off itself.
+process.env.SCHOOL_BOOKLETS ??= 'on'
+
 const url = process.env.DATABASE_URL
 if (!url) {
   throw new Error(

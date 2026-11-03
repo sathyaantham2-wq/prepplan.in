@@ -38,7 +38,7 @@ function Exams() {
     <div className="space-y-6">
       <PageHeader
         title="Exams"
-        help="Papers made in PrepPlan from your chapters, ready to print with an answer booklet for every student."
+        help="Papers made in PrepPlan from your chapters: the question paper, and the answer key for teachers. Students write on your school’s own answer sheets."
         primary={
           canMake ? (
             <Btn onClick={() => void navigate({ to: '/school/$schoolId/exams/new', params: { schoolId } })}>
@@ -59,7 +59,7 @@ function Exams() {
           searchLabel="Search papers"
           empty={
             <EmptyState icon={<BookOpenCheck className="size-6" />} title="No exam papers yet.">
-              Make one from your chapters, then print it with an answer booklet for every student.
+              Make one from your chapters. You get the question paper and the answer key, as PDF and Word.
             </EmptyState>
           }
           columns={[

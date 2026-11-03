@@ -15,6 +15,9 @@ import {
 } from '../src/lib/schools/scan-test-support'
 import { goTo, signOutOfSchool } from './school-nav'
 
+/** Answer booklets and QR page sorting are switched off unless the dev server runs with SCHOOL_BOOKLETS=on. */
+const BOOKLETS_ON = process.env.SCHOOL_BOOKLETS === 'on'
+
 /**
  * PrepPlan for Schools, S3: the school screens on a phone-sized screen. Provisions its own school,
  * walks the admin through setup, then signs a teacher and a student in with their one-time codes.
@@ -485,7 +488,9 @@ test.describe.serial('school screens on a phone', () => {
 
   test('the office home shows the steps; the terms come first', async () => {
     const page = adminPage
-    await expect(page.getByText('Sunrise Public School').filter({ visible: true }).first()).toBeVisible()
+    await expect(
+      page.getByText('Sunrise Public School').filter({ visible: true }).first(),
+    ).toBeVisible()
     await shot(page, '06-admin-home-new-school')
     await looksRight(page)
     // the welcome tour opens from Help, steps through four cards and closes
@@ -935,22 +940,34 @@ test.describe.serial('school screens on a phone', () => {
       .where('school_id', '=', schoolId)
       .where('name', '=', 'A')
       .executeTakeFirstOrThrow()
-    const started = await page.request.post(`${base}/booklets`, {
-      data: { section_id: sectionA.id, batch_size: 1 },
-    })
-    expect(started.status()).toBe(200)
-    let job = (await started.json()) as { jobId: string; status: string }
-    for (let i = 0; i < 4 && job.status === 'running'; i++) {
-      const step = await page.request.post(`${base}/booklet-jobs/${job.jobId}`)
-      expect(step.status()).toBe(200)
-      job = (await step.json()) as typeof job
+    // answer booklets are switched off (owner decision 2026-11-03): the office is refused, and nothing on the page offers them
+    if (!BOOKLETS_ON) {
+      const off = await page.request.post(`${base}/booklets`, {
+        data: { section_id: sectionA.id, batch_size: 1 },
+      })
+      expect(off.status()).toBe(403)
+      expect((await off.json()).message).toContain('switched off')
+      await expect(page.getByText(/booklet/i)).toHaveCount(0)
+    } else {
+      const started = await page.request.post(`${base}/booklets`, {
+        data: { section_id: sectionA.id, batch_size: 1 },
+      })
+      expect(started.status()).toBe(200)
+      let job = (await started.json()) as { jobId: string; status: string }
+      for (let i = 0; i < 4 && job.status === 'running'; i++) {
+        const step = await page.request.post(
+          `${base}/booklet-jobs/${job.jobId}`,
+        )
+        expect(step.status()).toBe(200)
+        job = (await step.json()) as typeof job
+      }
+      expect(job.status).toBe('done')
+      const booklets = await page.request.get(
+        `${base}/booklet-jobs/${job.jobId}/result`,
+      )
+      expect(booklets.status()).toBe(200)
+      expect((await booklets.body()).subarray(0, 4).toString()).toBe('%PDF')
     }
-    expect(job.status).toBe('done')
-    const booklets = await page.request.get(
-      `${base}/booklet-jobs/${job.jobId}/result`,
-    )
-    expect(booklets.status()).toBe(200)
-    expect((await booklets.body()).subarray(0, 4).toString()).toBe('%PDF')
 
     // and the buttons open them in a new tab
     const popup = page.waitForEvent('popup')
@@ -992,6 +1009,10 @@ test.describe.serial('school screens on a phone', () => {
   })
 
   test("scans: a section's photographed booklets are sorted by their codes; missing pages are listed and can be fixed", async () => {
+    test.skip(
+      !BOOKLETS_ON,
+      'Answer booklets and QR sorting are switched off (owner decision 2026-11-03); SCHOOL_BOOKLETS=on revives this test',
+    )
     test.setTimeout(240_000)
     const page = adminPage
     // the printed booklets of section A, as pictures (the real pages, then made to look like phone photos)

@@ -27,6 +27,7 @@ import {
 } from './common'
 import { loadExam } from './exam-service'
 import { readBookletPage } from './page-reader'
+import { assertBookletsEnabled } from './features'
 
 // S6: scan intake. Every photographed page of a section's answer booklets comes in one at a time
 // (a phone photo, or one sheet of a scanned PDF), in any order and any way up. The page reader
@@ -75,6 +76,7 @@ export async function startScanBatch(
   scope: SchoolScope,
   examId: string,
 ): Promise<{ batchId: string }> {
+  assertBookletsEnabled()
   await loadExam(db, scope, examId, 'handle')
   const id = await openBatch(db, scope, examId, null)
   await auditSchool(
@@ -105,6 +107,7 @@ export async function ingestScanPage(
   examId: string,
   input: ScanInput,
 ): Promise<ScanUploadResult> {
+  assertBookletsEnabled()
   storageOrRefuse(getScanStore)
   const written: Array<string> = []
   try {
@@ -434,6 +437,7 @@ export async function scanSummary(
   scope: SchoolScope,
   examId: string,
 ): Promise<ScanSummary> {
+  assertBookletsEnabled()
   const { sectionIds } = await loadExam(db, scope, examId, 'handle')
   const students = await examPrintRepository.studentsOfSections(
     db,
@@ -543,6 +547,7 @@ export async function assignScanPage(
   target: { schoolStudentId: string; pageNo: number },
   replace = false,
 ): Promise<ScanUploadResult> {
+  assertBookletsEnabled()
   await loadExam(db, scope, examId, 'handle')
   const page = await schoolScanPagesRepository.findWithImage(db, scope, pageId)
   if (!page || page.exam_id !== examId)
@@ -623,6 +628,7 @@ export async function setStudentAbsent(
   schoolStudentId: string,
   absent: boolean,
 ): Promise<void> {
+  assertBookletsEnabled()
   const { sectionIds } = await loadExam(db, scope, examId, 'handle')
   const mine = (
     await examPrintRepository.studentsOfSections(db, scope, sectionIds)
@@ -870,6 +876,7 @@ export async function saveScanChunk(
   seq: number,
   bytes: Buffer,
 ): Promise<{ received: number }> {
+  assertBookletsEnabled()
   await loadExam(db, scope, examId, 'handle')
   storageOrRefuse(getScanStore)
   if (!/^[0-9a-f-]{36}$/i.test(uploadId))
@@ -923,6 +930,7 @@ export async function takeScanUpload(
   uploadId: string,
   chunks: number,
 ): Promise<Buffer> {
+  assertBookletsEnabled()
   if (!Number.isInteger(chunks) || chunks < 1 || chunks > MAX_CHUNKS)
     throw new SchoolError('invalid', 'That upload is not valid.')
   const pieces = await schoolScanChunksRepository.piecesOf(

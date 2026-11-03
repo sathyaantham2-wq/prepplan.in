@@ -150,7 +150,9 @@ function ExamPage() {
     )
   return (
     <div className="space-y-4">
-      <h1 className="text-[26px] leading-tight font-bold text-slate-900">{d.title}</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">
+        {d.title}
+      </h1>
       <p className="text-base text-slate-700">
         {d.className} · {d.sections.map((s) => `Section ${s}`).join(', ')}
         {d.examDate ? ` · ${d.examDate}` : ''}
@@ -164,7 +166,9 @@ function ExamPage() {
           {d.printedMarks !== d.nominalMarks ? (
             <Chip tone="wait">{d.nominalMarks} planned</Chip>
           ) : null}
-          <Chip>{d.bookletsMade} booklets made</Chip>
+          {overview.bookletsEnabled ? (
+            <Chip>{d.bookletsMade} booklets made</Chip>
+          ) : null}
         </div>
         <ul className="space-y-1 text-base text-slate-700">
           {d.rows.map((r, i) => (
@@ -245,83 +249,88 @@ function ExamPage() {
                   : 'Download the answer key (Word)'}
               </Btn>
             </div>
-            <details className="rounded-xl border border-slate-200 px-3.5 py-3">
-              <summary className="cursor-pointer text-base font-bold">
-                Answer booklets (optional)
-              </summary>
-              <div className="mt-3 space-y-2">
-                <p className="text-base text-slate-700">
-                  One booklet for each student, with her name and ID printed and
-                  a code on every page.
-                </p>
-                <Select
-                  label="For which section"
-                  value={sectionId}
-                  onChange={(e) => setSectionId(e.target.value)}
-                >
-                  {sectionChoices.map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.label}
-                    </option>
-                  ))}
-                </Select>
-                <Btn
-                  kind="plain"
-                  className="w-full"
-                  disabled={busy !== null || !sectionId}
-                  onClick={makeBooklets}
-                >
-                  {busy === 'booklets'
-                    ? 'Making the booklets…'
-                    : 'Make the answer booklets'}
-                </Btn>
-                {job ? (
-                  <div className="space-y-2" data-testid="booklet-progress">
-                    <div
-                      role="progressbar"
-                      aria-valuemin={0}
-                      aria-valuemax={job.total}
-                      aria-valuenow={job.done}
-                      className="h-3 w-full overflow-hidden rounded-full bg-slate-200"
-                    >
+            {/* answer booklets are switched off (owner decision 2026-11-03); the code stays for later */}
+            {overview.bookletsEnabled ? (
+              <details className="rounded-xl border border-slate-200 px-3.5 py-3">
+                <summary className="cursor-pointer text-base font-bold">
+                  Answer booklets (optional)
+                </summary>
+                <div className="mt-3 space-y-2">
+                  <p className="text-base text-slate-700">
+                    One booklet for each student, with her name and ID printed
+                    and a code on every page.
+                  </p>
+                  <Select
+                    label="For which section"
+                    value={sectionId}
+                    onChange={(e) => setSectionId(e.target.value)}
+                  >
+                    {sectionChoices.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.label}
+                      </option>
+                    ))}
+                  </Select>
+                  <Btn
+                    kind="plain"
+                    className="w-full"
+                    disabled={busy !== null || !sectionId}
+                    onClick={makeBooklets}
+                  >
+                    {busy === 'booklets'
+                      ? 'Making the booklets…'
+                      : 'Make the answer booklets'}
+                  </Btn>
+                  {job ? (
+                    <div className="space-y-2" data-testid="booklet-progress">
                       <div
-                        className="h-full bg-emerald-800 transition-all"
-                        style={{
-                          width: `${job.total === 0 ? 0 : Math.round((job.done / job.total) * 100)}%`,
-                        }}
-                      />
-                    </div>
-                    <p className="text-base text-slate-700">
-                      {job.ready
-                        ? `Ready: ${job.total} booklets, ${job.pages} pages.`
-                        : `${job.done} of ${job.total} booklets made…`}
-                    </p>
-                    {job.ready ? (
-                      <Btn
-                        className="w-full"
-                        onClick={() =>
-                          void openPdf(
-                            `${base}/booklet-jobs/${job.jobId}/result`,
-                          ).catch((e: unknown) =>
-                            setError(
-                              e instanceof Error
-                                ? e.message
-                                : 'Something went wrong.',
-                            ),
-                          )
-                        }
+                        role="progressbar"
+                        aria-valuemin={0}
+                        aria-valuemax={job.total}
+                        aria-valuenow={job.done}
+                        className="h-3 w-full overflow-hidden rounded-full bg-slate-200"
                       >
-                        Open the answer booklets (PDF)
-                      </Btn>
-                    ) : null}
-                  </div>
-                ) : null}
-              </div>
-            </details>
+                        <div
+                          className="h-full bg-emerald-800 transition-all"
+                          style={{
+                            width: `${job.total === 0 ? 0 : Math.round((job.done / job.total) * 100)}%`,
+                          }}
+                        />
+                      </div>
+                      <p className="text-base text-slate-700">
+                        {job.ready
+                          ? `Ready: ${job.total} booklets, ${job.pages} pages.`
+                          : `${job.done} of ${job.total} booklets made…`}
+                      </p>
+                      {job.ready ? (
+                        <Btn
+                          className="w-full"
+                          onClick={() =>
+                            void openPdf(
+                              `${base}/booklet-jobs/${job.jobId}/result`,
+                            ).catch((e: unknown) =>
+                              setError(
+                                e instanceof Error
+                                  ? e.message
+                                  : 'Something went wrong.',
+                              ),
+                            )
+                          }
+                        >
+                          Open the answer booklets (PDF)
+                        </Btn>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </div>
+              </details>
+            ) : null}
           </>
         ) : null}
         <p className="text-sm text-slate-600">
-          Students cannot open any of these files. Print them for the exam.
+          The question paper has questions only. Students write their answers on
+          your school’s own answer sheets. Students cannot open any of these
+          files.
         </p>
       </Card>
       {d.mayHandle && overview.school.isDemo ? (
@@ -335,7 +344,7 @@ function ExamPage() {
           <p className="text-base text-amber-950">
             Press the button to fill this exam with sample answer sheets for the
             30 invented students. You then see sample results. Nothing is
-            scanned and no AI is used.
+            uploaded and no AI is used.
           </p>
           <Btn
             className="w-full"
@@ -348,8 +357,10 @@ function ExamPage() {
           </Btn>
         </Card>
       ) : null}
-      {/* the printed booklets' scans belong to AI correction; a papers-only school does not see them */}
-      {d.mayHandle && overview.school.modules.includes('correction') ? (
+      {/* scanning printed booklets (QR) is switched off with the booklets; answer sheets go through AI correction */}
+      {d.mayHandle &&
+      overview.bookletsEnabled &&
+      overview.school.modules.includes('correction') ? (
         <ScanPanel base={base} />
       ) : null}
     </div>

@@ -25,6 +25,7 @@ import { buildCoversHtml, ownCoverToken, parseCoverQr } from './own-cover'
 import { loadOwnPaper } from './own-paper-service'
 import { readBookletPage } from './page-reader'
 import { MAX_CHUNK_BYTES, MAX_SCAN_BYTES } from './scan-service'
+import { assertBookletsEnabled, bookletsEnabled } from './features'
 
 // Answer sheets written on a school's OWN paper. PrepPlan prints a QR cover page per student; the school
 // staples it on top of her sheets and scans or photographs the whole stack IN ORDER, cover first. The
@@ -120,6 +121,7 @@ export async function renderCovers(
   paperId: string,
   sectionId: string,
 ): Promise<{ pdf: Buffer; fileName: string; students: number }> {
+  assertBookletsEnabled()
   const paper = await loadOwnPaper(db, scope, paperId)
   assertApproved(paper)
   const students = await studentsFor(db, scope, paper, sectionId)
@@ -236,6 +238,9 @@ export async function ingestOwnSheet(
   const students = await studentsFor(db, scope, paper)
   const byId = new Map(students.map((s) => [s.school_student_id, s]))
   const named = input.studentId ?? null
+  // a stack sorted by printed QR cover pages is switched off: each upload names its student
+  if (!named && !bookletsEnabled())
+    throw new SchoolError('invalid', 'Choose the student first, then upload her pages.')
   if (named && !byId.has(named))
     throw new SchoolError(
       'not_found',

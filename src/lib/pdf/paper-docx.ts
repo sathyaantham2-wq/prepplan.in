@@ -478,9 +478,11 @@ export async function buildPaperDocx(
     input.durationMin >= 120
       ? `${Number.isInteger(hours) ? hours : hours.toFixed(1)} hours`
       : `${input.durationMin} minutes`
-  const [school, exam] = input.title.includes(' — ')
-    ? (input.title.split(' — ', 2) as [string, string])
-    : [input.title, '']
+  const [school, exam] = input.schoolName
+    ? [input.schoolName, input.title]
+    : input.title.includes(' — ')
+      ? (input.title.split(' — ', 2) as [string, string])
+      : [input.title, '']
   const body: Array<Paragraph | Table> = []
   const header = (t: string) =>
     para({

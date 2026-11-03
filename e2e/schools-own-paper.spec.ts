@@ -370,10 +370,11 @@ test.describe.serial('use your own paper (phone)', () => {
     await expect(page.getByText('Approved').first()).toBeVisible()
   })
 
-  test('an approved paper gets cover pages; a scanned stack is sorted to each student by its cover', async ({
-    browser,
-  }) => {
-    // the office accepts the school terms (no student can be added before), then two students in Section A
+  /** The office accepts the school terms (no student can be added before), then two students in Section A. Once. */
+  let studentsAdded = false
+  async function addTwoStudents() {
+    if (studentsAdded) return
+    studentsAdded = true
     expect(
       (await page.request.post(`/api/schools/${schoolId}/terms/accept`)).ok(),
     ).toBe(true)
@@ -397,6 +398,16 @@ test.describe.serial('use your own paper (phone)', () => {
         )
       ).ok(),
     ).toBe(true)
+  }
+
+  test('an approved paper gets cover pages; a scanned stack is sorted to each student by its cover', async ({
+    browser,
+  }) => {
+    test.skip(
+      process.env.SCHOOL_BOOKLETS !== 'on',
+      'Cover pages, QR sorting and bulk files are switched off (owner decision 2026-11-03); SCHOOL_BOOKLETS=on revives this test',
+    )
+    await addTwoStudents()
 
     // the previous test left the list of own papers open
     await page.reload()
@@ -483,12 +494,18 @@ test.describe.serial('use your own paper (phone)', () => {
     const list = card.getByTestId('own-sheet-students')
     await expect(list).toContainText('1 · Asha Rao')
     await expect(list.locator('li').nth(0)).toContainText('1 page')
-    await expect(list.locator('li').nth(1)).toContainText('2 pages · check these pages')
+    await expect(list.locator('li').nth(1)).toContainText(
+      '2 pages · check these pages',
+    )
     await shot(page, 'op-08-stack-sorted')
     await looksRight(page)
   })
 
   test('no cover pages: one file per student named by roll number; a page nobody can place waits for the teacher', async () => {
+    test.skip(
+      process.env.SCHOOL_BOOKLETS !== 'on',
+      'Cover pages, QR sorting and bulk files are switched off (owner decision 2026-11-03); SCHOOL_BOOKLETS=on revives this test',
+    )
     const card = page.getByTestId('own-sheets')
     await card.getByText('No cover pages? Upload one file per student').click()
     await card.getByTestId('own-roll-input').setInputFiles([
@@ -525,6 +542,125 @@ test.describe.serial('use your own paper (phone)', () => {
   })
 
   test('student by student: add pages, the checks pass, a doubtful page asks "is that right?", the same photo twice is refused', async () => {
+    if (process.env.SCHOOL_BOOKLETS === 'on') {
+      await legacyStudentByStudent()
+      return
+    }
+    // the only way in (owner decision 2026-11-03): choose the student, then upload that student's pages
+    await addTwoStudents()
+    await page.goto(`/school/${schoolId}/own-papers`, {
+      waitUntil: 'networkidle',
+    })
+    await page.getByRole('link', { name: /Unit Test 2 Approved/ }).click()
+    await expect(page.getByTestId('student-sheets')).toBeVisible()
+    if (answers.length === 0) {
+      const pg = await page.context().newPage()
+      await pg.setViewportSize({ width: 794, height: 1123 })
+      for (let i = 0; i < 8; i++) {
+        await pg.setContent(
+          `<div style="width:794px;height:1123px;background:#fff;font:22px serif;padding:40px;line-height:${36 + i * 6}px">Name: ________ Roll: __<br>${Array.from({ length: 6 + i }, (_, k) => `Q${k + 1}. x/2 + ${k + i} = ${7 + k * i}, so x = ${2 * (7 + k * i - k - i)}`).join('<br>')}</div>`,
+        )
+        answers.push(await pg.screenshot({ type: 'png' }))
+      }
+      await pg.close()
+    }
+    const box = page.getByTestId('student-sheets')
+    await box.scrollIntoViewIfNeeded()
+    await expect(page.getByTestId('other-ways')).toHaveCount(0)
+    await expect(page.getByText(/cover page|QR/i)).toHaveCount(0)
+    await shot(page, 'op-11-student-list')
+    await looksRight(page)
+    // Asha: her page is checked and kept (the browser-test reader reads "Asha Rao" at the top)
+    await box.getByRole('button', { name: /Asha Rao/ }).click()
+    const asha = box.getByTestId('one-student')
+    await asha
+      .getByTestId('student-pages-input')
+      .setInputFiles([
+        { name: 'asha-1.png', mimeType: 'image/png', buffer: answers[0] },
+      ])
+    await expect(asha.getByTestId('upload-results')).toContainText(
+      'asha-1.png: Page 1 of Asha Rao.',
+      { timeout: 30_000 },
+    )
+    await expect(asha.getByText('Checked').first()).toBeVisible()
+    const pic = asha.getByRole('img', { name: /Page 1 of Asha Rao/ })
+    await pic.scrollIntoViewIfNeeded()
+    await expect
+      .poll(() => pic.evaluate((i: HTMLImageElement) => i.naturalWidth), {
+        timeout: 15_000,
+      })
+      .toBeGreaterThan(100)
+    await shot(page, 'op-12-student-pages')
+    await looksRight(page)
+    // Ravi: two pages whose name area reads "Asha Rao", so the teacher is asked before they count (the wrong-upload check)
+    await box.getByRole('button', { name: /Ravi Kumar/ }).click()
+    const ravi = box.getByTestId('one-student')
+    await ravi.getByTestId('student-pages-input').setInputFiles([
+      { name: 'ravi-1.png', mimeType: 'image/png', buffer: answers[1] },
+      { name: 'ravi-2.png', mimeType: 'image/png', buffer: answers[2] },
+    ])
+    const ask = ravi.getByTestId('confirm-page')
+    await expect(ask).toHaveCount(2, { timeout: 30_000 })
+    await expect(ask.first()).toContainText(
+      'The name on this sheet looks like Asha Rao (roll 1). You chose Ravi Kumar (roll 2).',
+    )
+    await expect(
+      ask.first().getByRole('button', { name: 'No, move it to Asha Rao' }),
+    ).toBeVisible()
+    await shot(page, 'op-13-is-that-right')
+    await looksRight(page)
+    await ask
+      .first()
+      .getByRole('button', { name: "Yes, it is Ravi Kumar's" })
+      .click()
+    await expect(ask).toHaveCount(1)
+    await ask
+      .first()
+      .getByRole('button', { name: "Yes, it is Ravi Kumar's" })
+      .click()
+    await expect(ask).toHaveCount(0)
+    // the very photo already sent as Asha's page, sent again for Ravi: refused, in plain words
+    await ravi
+      .getByTestId('student-pages-input')
+      .setInputFiles([
+        { name: 'copy.png', mimeType: 'image/png', buffer: answers[0] },
+      ])
+    await expect(ravi.getByTestId('upload-results')).toContainText(
+      "copy.png: This page is the same photo as Asha Rao's page 1.",
+      { timeout: 30_000 },
+    )
+    await expect(ravi.getByText('Could not be used')).toBeVisible()
+    await shot(page, 'op-14-same-photo-refused')
+    await looksRight(page)
+    if (process.env.UI_SHOTS_DIR) {
+      const dir = process.env.UI_SHOTS_DIR
+      mkdirSync(dir, { recursive: true })
+      await page.setViewportSize({ width: 1440, height: 1000 })
+      await page.screenshot({
+        path: `${dir}/ai-correction-paper-1440-light.png`,
+        fullPage: true,
+      })
+      await page.evaluate(() =>
+        document.querySelector('.school-ui')?.classList.add('school-dark'),
+      )
+      await page.screenshot({
+        path: `${dir}/ai-correction-paper-1440-dark.png`,
+        fullPage: true,
+      })
+      await page.evaluate(() =>
+        document.querySelector('.school-ui')?.classList.remove('school-dark'),
+      )
+      await page.setViewportSize({ width: 390, height: 844 })
+      await page.screenshot({
+        path: `${dir}/ai-correction-paper-390-light.png`,
+        fullPage: true,
+      })
+    }
+    await page.getByRole('link', { name: 'AI correction' }).first().click()
+  })
+
+  /** The same test as it ran while cover pages sorted the first pages (SCHOOL_BOOKLETS=on). */
+  async function legacyStudentByStudent() {
     const box = page.getByTestId('student-sheets')
     await box.scrollIntoViewIfNeeded()
     await shot(page, 'op-11-student-list')
@@ -589,7 +725,7 @@ test.describe.serial('use your own paper (phone)', () => {
     await shot(page, 'op-14-same-photo-refused')
     await looksRight(page)
     await page.getByRole('link', { name: 'AI correction' }).first().click()
-  })
+  }
 
   test('a file that cannot be read is told so in plain words', async () => {
     await page.getByRole('link', { name: 'Use your own paper' }).click()

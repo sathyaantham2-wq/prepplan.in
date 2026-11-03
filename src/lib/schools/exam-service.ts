@@ -37,6 +37,7 @@ import { parseSections, toLayout } from './templates'
 import type { TemplateDefinition } from './templates'
 import { adoptDefaultTemplate } from './template-service'
 import { requireSchoolTerms } from './terms'
+import { assertBookletsEnabled } from './features'
 
 // One question paper per class and exam, the teacher's copy, and a Smart Answer Booklet for every
 // student. Who may do what:
@@ -527,7 +528,10 @@ export async function questionPaperHtml(
     printed.some((r) => r.section === s),
   )
   const input = (pageCount?: number): PaperTemplateInput => ({
-    title: `${d.school.name} — ${exam.title}`,
+    title: exam.title,
+    schoolName: d.school.name,
+    // owner decision 2026-11-03: the paper carries questions only; students write on the school's own answer sheets
+    questionsOnly: true,
     studentName: '',
     board: d.school.board,
     class: d.grade,
@@ -724,6 +728,7 @@ export async function bookletStudents(
   examId: string,
   req: BookletRequest,
 ) {
+  assertBookletsEnabled()
   const { exam, sectionIds } = await loadExam(db, scope, examId, 'handle')
   await requireSchoolTerms(db, scope)
   const wanted = req.sectionId ? [req.sectionId] : sectionIds
@@ -759,6 +764,7 @@ export async function ensureBookletRecords(
   students: ReadonlyArray<BookletStudentRow>,
   manifest: BookletManifest,
 ): Promise<void> {
+  assertBookletsEnabled()
   const existing = new Map(
     (await schoolBookletsRepository.list(db, scope))
       .filter((b) => b.exam_id === examId)
@@ -801,6 +807,7 @@ export async function renderBookletBatch(
   manifest: BookletManifest,
   students: ReadonlyArray<BookletStudentRow>,
 ): Promise<{ pdf: Buffer; pages: number }> {
+  assertBookletsEnabled()
   const d = await loadPrintData(db, scope, exam)
   const html = await buildBookletsHtml({
     schoolName: d.school.name,
@@ -845,6 +852,7 @@ export async function renderBooklets(
   examId: string,
   req: BookletRequest = {},
 ): Promise<{ pdf: Buffer; fileName: string; students: number; pages: number }> {
+  assertBookletsEnabled()
   const { exam, students, manifest } = await bookletStudents(
     db,
     scope,

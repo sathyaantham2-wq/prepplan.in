@@ -16,6 +16,7 @@ import {
   renderBookletBatch,
 } from './exam-service'
 import type { BookletRequest } from './exam-service'
+import { assertBookletsEnabled } from './features'
 
 // Printing a class of answer booklets in batches. A browser (or a test) starts a job, then asks for
 // one batch at a time until it is done, so no single request runs long and the teacher sees
@@ -70,6 +71,7 @@ export async function startBookletJob(
   examId: string,
   req: BookletRequest & { batchSize?: number } = {},
 ): Promise<JobProgress> {
+  assertBookletsEnabled()
   const { students, manifest } = await bookletStudents(db, scope, examId, req)
   const batchSize = Math.max(
     1,
@@ -124,6 +126,7 @@ export async function stepBookletJob(
   scope: SchoolScope,
   jobId: string,
 ): Promise<JobProgress> {
+  assertBookletsEnabled()
   const job = await loadJob(db, scope, jobId)
   if (job.status !== 'running') return progress(db, scope, job)
   const parts = (await schoolPrintJobPartsRepository.list(db, scope)).filter(
@@ -233,6 +236,7 @@ export async function bookletJobResult(
   scope: SchoolScope,
   jobId: string,
 ): Promise<{ pdf: Buffer; fileName: string }> {
+  assertBookletsEnabled()
   const job = await loadJob(db, scope, jobId)
   if (job.status !== 'done')
     throw new SchoolError('conflict', 'The booklets are not ready yet.')

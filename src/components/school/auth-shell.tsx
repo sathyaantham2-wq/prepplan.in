@@ -8,7 +8,7 @@ const POINTS = [
   {
     icon: FileText,
     title: 'Papers from your syllabus',
-    text: 'Choose the chapters. Get a question paper, a teacher copy and answer booklets.',
+    text: 'Choose the chapters. Get a question paper and an answer key, as PDF and Word.',
   },
   {
     icon: BarChart3,

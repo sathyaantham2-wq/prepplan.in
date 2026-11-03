@@ -1,4 +1,4 @@
-import { mkdirSync } from 'node:fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
 import ExcelJS from 'exceljs'
 import { expect, test } from '@playwright/test'
 import type { Browser, Page } from '@playwright/test'
@@ -8,6 +8,20 @@ import { schoolsRepository } from '../src/db/repositories'
 import { issueFirstAdminCode } from '../src/lib/schools/credentials'
 import { provisionDemoSchool } from '../src/lib/schools/demo-provision'
 import { goTo, schoolNav } from './school-nav'
+
+/** Extra pictures for a review (only when UI_SHOTS_DIR is set): the page at 1440 px, light and dark, then back to the phone. */
+async function wideShots(page: Page, name: string) {
+  const dir = process.env.UI_SHOTS_DIR as string
+  mkdirSync(dir, { recursive: true })
+  const size = page.viewportSize()
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  await page.screenshot({ path: `${dir}/${name}-1440-light.png`, fullPage: true })
+  await page.evaluate(() => document.querySelector('.school-ui')?.classList.add('school-dark'))
+  await page.screenshot({ path: `${dir}/${name}-1440-dark.png`, fullPage: true })
+  await page.evaluate(() => document.querySelector('.school-ui')?.classList.remove('school-dark'))
+  if (size) await page.setViewportSize(size)
+  await page.screenshot({ path: `${dir}/${name}-390-light.png`, fullPage: true })
+}
 
 /**
  * PrepPlan for Schools, M1 on a phone: the first sign-in wizard (every question), the home screen with
@@ -668,6 +682,16 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
       'm1-13-demo-sample-button',
     )
     await looksRight(teacher)
+    // the exam page offers no answer booklets and no scanning (owner decision 2026-11-03)
+    await expect(teacher.getByText(/booklet|QR/i)).toHaveCount(0)
+    await expect(teacher.getByText('The question paper has questions only.')).toBeVisible()
+    if (process.env.UI_SHOTS_DIR) {
+      await wideShots(teacher, 'exam-page')
+      // the question paper itself, as the school downloads it
+      const pdf = await teacher.request.get(`${examUrl.replace('/school/', '/api/schools/')}/question-paper`)
+      expect(pdf.status()).toBe(200)
+      writeFileSync(`${process.env.UI_SHOTS_DIR}/question-paper.pdf`, await pdf.body())
+    }
   })
 
   test('"Use sample answer sheets" shows the class results: marks, where they were lost, heatmap and flags', async () => {

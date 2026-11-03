@@ -994,6 +994,22 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       expect(html).toContain('Option B') // the options themselves are printed
     })
 
+    it('the question paper is questions only, in the CBSE layout (owner decision 2026-11-03: no answer booklet)', async () => {
+      const html = (await questionPaperHtml(db, teacher, examId)).build(3)
+      // no answer space, no draw-here box, no rough-work column, no name or roll-number lines, no QR code
+      expect(html).not.toContain('class="answer-line"')
+      expect(html).not.toContain('class="draw-box"')
+      expect(html).not.toContain('Rough work')
+      expect(html).not.toMatch(/Name:|Roll No\.|<svg[^>]*qr/i)
+      // the CBSE header: school, exam, time, marks, instructions, section headings
+      expect(html).toContain('class="cbse-school"')
+      expect(html).toContain('Time allowed:')
+      expect(html).toContain('Maximum marks:')
+      expect(html).toContain('This question paper has 3 printed pages.')
+      expect(html).toContain('Write your answers on the answer sheets given by your school.')
+      expect(html).toContain('class="cbse-section"')
+    })
+
     it('the teacher copy carries the answers, the marking steps, the banner and every gap', async () => {
       const full = await teacherCopyHtml(db, admin, examId)
       expect(full.html).toContain('TEACHER COPY — NOT FOR STUDENTS')

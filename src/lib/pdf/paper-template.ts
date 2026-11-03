@@ -42,6 +42,13 @@ export interface PaperTemplateInput {
   questions: Array<PaperTemplateQuestion>
   shortfalls: Array<{ section: string; reason: string; slot?: string }>
   theme?: PaperTheme
+  /**
+   * A school's question paper (owner decision 2026-11-03): questions only, in the CBSE layout. No answer lines, no
+   * draw-here boxes, no rough-work column and no name or roll-number lines; students write on the school's own answer
+   * sheets. `schoolName` heads the paper and `title` is the exam's own title.
+   */
+  questionsOnly?: boolean
+  schoolName?: string
   // School Half-Yearly paper: header block, general instructions, section headings with totals.
   halfYearly?: {
     subjectName: string
@@ -94,7 +101,7 @@ function renderAnswerLines(marks: number, type: QuestionType): string {
     .join('')}</div>`
 }
 
-function renderQuestionBody(q: PaperTemplateQuestion): string {
+function renderQuestionBody(q: PaperTemplateQuestion, questionsOnly = false): string {
   const optionsHtml =
     q.type === 'mcq' ||
     q.type === 'assertion_reason' ||
@@ -102,7 +109,7 @@ function renderQuestionBody(q: PaperTemplateQuestion): string {
     q.type === 'multi_statement'
       ? renderOptions(q.options)
       : ''
-  const answerLinesHtml = renderAnswerLines(q.marks, q.type)
+  const answerLinesHtml = questionsOnly ? '' : renderAnswerLines(q.marks, q.type)
   // F024: a known diagram_kind renders the real SVG figure, printed at the start of the question
   // (the thing the student reads/labels), followed by F035's existing blank draw-box underneath
   // so there is still room to mark it up or work through it by hand. An unrecognised diagram_kind
@@ -112,7 +119,7 @@ function renderQuestionBody(q: PaperTemplateQuestion): string {
   const diagramHtml = diagramSvg
     ? `<div class="diagram">${diagramSvg}</div>`
     : ''
-  const drawBoxHtml = q.diagram_kind ? '<div class="draw-box"></div>' : ''
+  const drawBoxHtml = q.diagram_kind && !questionsOnly ? '<div class="draw-box"></div>' : ''
 
   return `
         <div class="q-text">${mathHtml(q.text)}</div>
@@ -123,14 +130,14 @@ function renderQuestionBody(q: PaperTemplateQuestion): string {
         ${q.concept_name ? `<div class="q-concept">Concept: ${escapeHtml(q.concept_name)}</div>` : ''}`
 }
 
-function renderQuestion(q: PaperTemplateQuestion): string {
+function renderQuestion(q: PaperTemplateQuestion, qo = false): string {
   // q.position is the paper's own running slot number (assigned once, across every section, when
   // generatePaper inserted paper_questions) -- reusing it here keeps numbering continuous across
   // sections (1..N) rather than restarting at 1 in every section.
   return `
     <div class="question">
       <div class="q-number">${q.position}.</div>
-      <div class="q-body">${renderQuestionBody(q)}
+      <div class="q-body">${renderQuestionBody(q, qo)}
       </div>
       <div class="q-marks">[${q.marks}]${q.mark_split ? `<div class="mark-split">${escapeHtml(q.mark_split)}</div>` : ''}</div>
     </div>`
@@ -144,12 +151,13 @@ function renderQuestion(q: PaperTemplateQuestion): string {
 function renderChoicePair(
   primary: PaperTemplateQuestion,
   alternate: PaperTemplateQuestion,
+  qo = false,
 ): string {
   return `
     <div class="question choice-pair">
       <div class="q-number">${primary.position}.</div>
-      <div class="q-body">${renderQuestionBody(primary)}
-        <div class="or-divider">OR</div>${renderQuestionBody(alternate)}
+      <div class="q-body">${renderQuestionBody(primary, qo)}
+        <div class="or-divider">OR</div>${renderQuestionBody(alternate, qo)}
       </div>
       <div class="q-marks">[${primary.marks}]${primary.mark_split ? `<div class="mark-split">${escapeHtml(primary.mark_split)}</div>` : ''}</div>
     </div>`
@@ -162,17 +170,18 @@ function renderChoicePair(
  */
 function renderQuestionsInSection(
   questions: Array<PaperTemplateQuestion>,
+  qo = false,
 ): string {
   const html: Array<string> = []
   for (let i = 0; i < questions.length; i++) {
     const q = questions[i]
     const next = questions.at(i + 1)
     if (q.choice_group !== null && next?.choice_group === q.choice_group) {
-      html.push(renderChoicePair(q, next))
+      html.push(renderChoicePair(q, next, qo))
       i += 1
       continue
     }
-    html.push(renderQuestion(q))
+    html.push(renderQuestion(q, qo))
   }
   return html.join('')
 }
@@ -186,6 +195,7 @@ function renderHalfYearlySection(
   questions: Array<PaperTemplateQuestion>,
   notesBySlot: Map<string, Array<string>>,
   slotOrder: Array<string>,
+  qo = false,
 ): string {
   const bySlot = new Map<string, Array<PaperTemplateQuestion>>()
   for (const q of questions) {
@@ -202,7 +212,7 @@ function renderHalfYearlySection(
       if (qs.length === 0 && notes.length === 0) return ''
       return `
         ${slot ? `<div class="slot-title">${escapeHtml(slot)}</div>` : ''}
-        ${renderQuestionsInSection(qs)}
+        ${renderQuestionsInSection(qs, qo)}
         ${notes.map((n) => `<div class="slot-note">Not printed: ${escapeHtml(n)}</div>`).join('')}`
     })
     .join('')
@@ -275,6 +285,23 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
       ${hy.draftNote ? `<div class="draft-banner">${escapeHtml(hy.draftNote)}</div>` : ''}
       <div class="instructions"><strong>General instructions</strong><ol>${hy.instructions.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ol></div>`
     : ''
+  const qo = input.questionsOnly === true
+  // the CBSE header of a school's questions-only paper: school, exam, class and subject, time and marks, instructions
+  const cbseHeader = qo
+    ? `
+      ${input.schoolName ? `<div class="cbse-school">${escapeHtml(input.schoolName)}</div>` : ''}
+      <div class="cbse-exam">${escapeHtml(input.title)}</div>
+      <table class="cbse-fields">
+        <tr><td>Class: ${input.class}</td><td class="r">Subject: ${escapeHtml(hy?.subjectName ?? '')}</td></tr>
+        <tr><td>Time allowed: ${timeLabel}</td><td class="r">Maximum marks: ${hy?.nominalMarks ?? input.totalMarks}</td></tr>
+      </table>
+      ${hy?.pageCount ? `<div class="cbse-pages">This question paper has ${hy.pageCount} printed page${hy.pageCount === 1 ? '' : 's'}.</div>` : ''}
+      ${
+        hy
+          ? `<div class="instructions"><strong>General instructions:</strong><ol>${[...hy.instructions, 'Write your answers on the answer sheets given by your school.'].map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ol></div>`
+          : ''
+      }`
+    : ''
   const themePack = THEME_PACKS[input.theme ?? DEFAULT_THEME]
   const chaptersLabel = input.chapters
     .map(
@@ -305,7 +332,15 @@ ${MATH_CSS}
     color: #888;
     padding-top: 4mm;
   }
-  .content { margin-right: 18mm; }
+  .content { margin-right: ${qo ? '0' : '18mm'}; }
+  .cbse-school { text-align: center; font-size: 15pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.04em; }
+  .cbse-exam { text-align: center; font-size: 12pt; font-weight: bold; margin: 2px 0 8px; }
+  .cbse-fields { width: 100%; border-collapse: collapse; font-size: 10.5pt; border-top: 1px solid #111; border-bottom: 1px solid #111; }
+  .cbse-fields td { padding: 3px 0; }
+  .cbse-fields td.r { text-align: right; }
+  .cbse-pages { font-size: 9pt; text-align: right; margin-top: 3px; }
+  .cbse-section { text-align: center; font-weight: bold; font-size: 12pt; margin: 16px 0 8px; break-after: avoid; page-break-after: avoid; }
+  .cbse-section .sub { display: block; font-weight: normal; font-size: 9.5pt; }
   header.paper-header { border-bottom: 2px solid #111; padding-bottom: 6px; margin-bottom: 10px; position: relative; }
   header.paper-header h1 { font-size: 15pt; margin: 0 0 4px; }
   .theme-ornament { position: absolute; top: 0; right: 0; }
@@ -360,13 +395,15 @@ ${MATH_CSS}
 </style>
 </head>
 <body>
-  <div class="rough-column"><div class="label">Rough work</div></div>
+  ${qo ? '' : '<div class="rough-column"><div class="label">Rough work</div></div>'}
   <div class="content">
     <header class="paper-header">
-      ${themePack.cornerOrnament ? `<div class="theme-ornament">${themePack.cornerOrnament}</div>` : ''}
-      <h1>${escapeHtml(input.title)}</h1>
+      ${themePack.cornerOrnament && !qo ? `<div class="theme-ornament">${themePack.cornerOrnament}</div>` : ''}
+      ${qo ? '' : `<h1>${escapeHtml(input.title)}</h1>`}
       ${
-        hy
+        qo
+          ? cbseHeader
+          : hy
           ? hyHeader
           : `<div class="meta-row">
         <span>Name: ${escapeHtml(input.studentName)}</span>
@@ -375,14 +412,17 @@ ${MATH_CSS}
         <span>Max Marks: ${input.totalMarks}</span>
       </div>`
       }
-      ${chaptersLabel ? `<div class="chapters">Chapters covered: ${chaptersLabel}</div>` : ''}
+      ${chaptersLabel && !qo ? `<div class="chapters">Chapters covered: ${chaptersLabel}</div>` : ''}
     </header>
     ${sections
       .map(
         (group) => `
       <div class="section">
         ${
-          hy
+          qo
+            ? `<div class="cbse-section">${escapeHtml(group.section.toUpperCase())}${hy?.sectionTotals[group.section] ? `<span class="sub">(${hy.sectionTotals[group.section]} marks)</span>` : ''}</div>
+        ${hy ? renderHalfYearlySection(group.questions, sectionNotes(group.section), [], true) : renderQuestionsInSection(group.questions, true)}`
+            : hy
             ? `<div class="section-title hy-section-title"><span>${escapeHtml(group.section)}</span><span>${hy.sectionTotals[group.section] ?? ''} marks</span></div>
         ${renderHalfYearlySection(group.questions, sectionNotes(group.section), [])}`
             : `<div class="section-title">${escapeHtml(group.section)}</div>

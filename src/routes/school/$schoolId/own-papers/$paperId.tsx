@@ -14,7 +14,10 @@ import { AnswerSheets } from '../../../../components/school/own-sheets-panel'
 import { StudentSheets } from '../../../../components/school/student-sheets'
 import { MathText } from '../../../../components/math-text'
 import { ClassResults } from '../../../../components/school/marking-panel'
-import { RubricEditor, blankCriterion } from '../../../../components/school/rubric-editor'
+import {
+  RubricEditor,
+  blankCriterion,
+} from '../../../../components/school/rubric-editor'
 import { ReleasePanel } from '../../../../components/school/release-panel'
 import { CorrectionHelp } from '../../../../components/school/correction-help'
 import { ExamJourney } from '../../../../components/school/exam-journey'
@@ -37,7 +40,7 @@ const PHASE_TEXT: Record<string, string> = {
 }
 
 function OwnPaperPage() {
-  const { schoolId } = useSchool()
+  const { schoolId, overview } = useSchool()
   const { paperId } = Route.useParams()
   const base = `/api/schools/${schoolId}/own-papers/${paperId}`
   const [v, setV] = useState<OwnPaperView | null>(null)
@@ -119,7 +122,9 @@ function OwnPaperPage() {
         >
           AI correction
         </Link>
-        <h1 className="text-[26px] leading-tight font-bold text-slate-900">{v.title}</h1>
+        <h1 className="text-[26px] leading-tight font-bold text-slate-900">
+          {v.title}
+        </h1>
         <p className="text-base text-slate-700">
           Class {v.grade} · {v.subjectName}
           {v.totalMarks !== null ? ` · ${v.totalMarks} marks` : ''}
@@ -127,7 +132,13 @@ function OwnPaperPage() {
       </div>
 
       {error ? <Notice kind="error">{error}</Notice> : null}
-      <ExamJourney base={base} v={v} version={resultsVersion} onChanged={refreshAll} act={act} />
+      <ExamJourney
+        base={base}
+        v={v}
+        version={resultsVersion}
+        onChanged={refreshAll}
+        act={act}
+      />
       <CorrectionHelp />
       {v.message && v.status === 'reading' && !running ? (
         <Notice>{v.message}</Notice>
@@ -192,8 +203,8 @@ function OwnPaperPage() {
           </div>
           {v.status === 'needs_review' ? (
             <p className="text-base text-slate-800">
-              Check the questions, marks and chapters below. Then press the green
-              button above to approve the paper.{' '}
+              Check the questions, marks and chapters below. Then press the
+              green button above to approve the paper.{' '}
               <b>
                 No answer sheet can be marked until you also approve every
                 answer.
@@ -210,13 +221,24 @@ function OwnPaperPage() {
       ) : null}
 
       {/* once the paper and every answer are approved the questions fold away: the work is now the students' sheets */}
-      <details id="step-questions" open={!v.markable} className="rounded-2xl border border-slate-200 bg-white px-3 py-2" data-testid="questions">
+      <details
+        id="step-questions"
+        open={!v.markable}
+        className="rounded-2xl border border-slate-200 bg-white px-3 py-2"
+        data-testid="questions"
+      >
         <summary className="min-h-11 cursor-pointer content-center text-base font-semibold">
           Questions and answers ({v.summary.questions})
         </summary>
         <ul className="mt-2 space-y-3">
           {v.questions.map((q) => (
-            <QuestionCard key={q.id} q={q} v={v} editable={editable} act={act} />
+            <QuestionCard
+              key={q.id}
+              q={q}
+              v={v}
+              editable={editable}
+              act={act}
+            />
           ))}
         </ul>
       </details>
@@ -240,22 +262,25 @@ function OwnPaperPage() {
                 onChanged={bumpResults}
               />
             </Card>
-            <details
-              className="rounded-2xl border border-slate-200 bg-white px-4 py-3"
-              data-testid="other-ways"
-              onToggle={(e) => setOtherOpen(e.currentTarget.open)}
-            >
-              <summary className="min-h-11 cursor-pointer content-center text-base font-semibold">
-                Other ways (optional): printed cover pages, files named by roll
-                number
-              </summary>
-              {/* loaded each time it is opened, so its counts are never stale */}
-              {otherOpen ? (
-                <div className="mt-3">
-                  <AnswerSheets base={base} />
-                </div>
-              ) : null}
-            </details>
+            {/* cover pages with QR codes and bulk files are switched off: each student's pages are uploaded under her name */}
+            {overview.bookletsEnabled ? (
+              <details
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-3"
+                data-testid="other-ways"
+                onToggle={(e) => setOtherOpen(e.currentTarget.open)}
+              >
+                <summary className="min-h-11 cursor-pointer content-center text-base font-semibold">
+                  Other ways (optional): printed cover pages, files named by
+                  roll number
+                </summary>
+                {/* loaded each time it is opened, so its counts are never stale */}
+                {otherOpen ? (
+                  <div className="mt-3">
+                    <AnswerSheets base={base} />
+                  </div>
+                ) : null}
+              </details>
+            ) : null}
           </>
         ) : (
           <Notice>
@@ -443,14 +468,21 @@ function QuestionCard({
                   checked={useRubric}
                   onChange={(e) => {
                     setUseRubric(e.target.checked)
-                    if (e.target.checked && criteria.length === 0) setCriteria([blankCriterion(q.marks)])
+                    if (e.target.checked && criteria.length === 0)
+                      setCriteria([blankCriterion(q.marks)])
                   }}
                   data-testid="use-rubric"
                 />
                 Mark by criteria (a rubric) instead of steps
               </label>
             ) : null}
-            {useRubric ? <RubricEditor value={criteria} onChange={setCriteria} questionMarks={q.marks} /> : null}
+            {useRubric ? (
+              <RubricEditor
+                value={criteria}
+                onChange={setCriteria}
+                questionMarks={q.marks}
+              />
+            ) : null}
             <div className="grid grid-cols-2 gap-2">
               <Btn
                 onClick={async () => {
@@ -476,7 +508,11 @@ function QuestionCard({
         ) : (
           <>
             <p className="text-base break-words whitespace-pre-wrap">
-              {q.keyText ? <MathText text={q.keyText} /> : 'Nothing yet. Write the answer.'}
+              {q.keyText ? (
+                <MathText text={q.keyText} />
+              ) : (
+                'Nothing yet. Write the answer.'
+              )}
             </p>
             {q.markingNote ? (
               <p className="text-sm text-slate-700" data-testid="note-shown">
@@ -484,11 +520,17 @@ function QuestionCard({
               </p>
             ) : null}
             {q.keyKind === 'rubric' ? (
-              <ul className="list-disc pl-5 text-sm text-slate-700" data-testid="rubric-shown">
+              <ul
+                className="list-disc pl-5 text-sm text-slate-700"
+                data-testid="rubric-shown"
+              >
                 {q.keyCriteria.map((c, i) => (
                   <li key={i}>
-                    <b>{c.kind.replace('_', ' ')}</b> ({c.marks}): {c.descriptor}
-                    {c.levels.length > 0 ? ` — ${c.levels.map((l) => `${l.marks}: ${l.says}`).join('; ')}` : ''}
+                    <b>{c.kind.replace('_', ' ')}</b> ({c.marks}):{' '}
+                    {c.descriptor}
+                    {c.levels.length > 0
+                      ? ` — ${c.levels.map((l) => `${l.marks}: ${l.says}`).join('; ')}`
+                      : ''}
                   </li>
                 ))}
               </ul>
