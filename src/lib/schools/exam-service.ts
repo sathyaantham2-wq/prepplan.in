@@ -99,6 +99,9 @@ export async function loadExam(
   } else if (!teachesExam(scope, exam.subject_id, sectionIds)) {
     throw new SchoolError('not_found', 'Exam not found.')
   }
+  // a paper still being made is its maker's and the office's (docs/SCHOOLS_MODULE_PLAN.md 16.7)
+  if (exam.stage === 'building' && scope.role !== 'school_admin' && exam.created_by_user_id !== scope.userId)
+    throw new SchoolError('not_found', 'Exam not found.')
   return { exam, sectionIds }
 }
 
@@ -518,6 +521,18 @@ export async function getExam(db: Db, scope: SchoolScope, examId: string) {
     bookletPages: layoutRow?.page_count ?? 0,
     bookletsMade: booklets.length,
     mayHandle,
+    mode: exam.mode,
+    setOf: exam.set_of,
+    setB:
+      (
+        await db
+          .selectFrom('school_exams')
+          .select('id')
+          .where('school_id', '=', scope.schoolId)
+          .where('set_of', '=', exam.id)
+          .where('archived_at', 'is', null)
+          .executeTakeFirst()
+      )?.id ?? null,
   }
 }
 

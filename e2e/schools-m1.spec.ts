@@ -304,6 +304,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
       'school_booklet_layouts',
       'school_exam_questions',
       'school_exam_sections',
+      'school_exam_versions',
       'school_exams',
       'school_student_guardians',
       'school_students',
@@ -669,6 +670,8 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await teacher.getByLabel(/Chapter 5 · Data Handling/).check()
     await shot(teacher, 'm1-12-demo-make-paper')
     await looksRight(teacher)
+    // the one-step way (Auto + edit is the default; the builder has its own test)
+    await teacher.getByRole('radio', { name: /^Quick/ }).check()
     await teacher.getByRole('button', { name: 'Make the paper' }).click()
     await teacher.waitForURL(/\/exams\/[0-9a-f-]{36}$/)
     examUrl = teacher.url()

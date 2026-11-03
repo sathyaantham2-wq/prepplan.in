@@ -42,7 +42,14 @@ function Exams() {
         help="Papers made in PrepPlan from your chapters: the question paper, and the answer key for teachers. Students write on your school’s own answer sheets."
         primary={
           canMake ? (
-            <Btn onClick={() => void navigate({ to: '/school/$schoolId/exams/new', params: { schoolId } })}>
+            <Btn
+              onClick={() =>
+                void navigate({
+                  to: '/school/$schoolId/exams/new',
+                  params: { schoolId },
+                })
+              }
+            >
               <Plus aria-hidden="true" className="size-5" />
               Make an exam paper
             </Btn>
@@ -59,8 +66,12 @@ function Exams() {
           search={(e) => `${e.title} ${e.className}`}
           searchLabel="Search papers"
           empty={
-            <EmptyState icon={<BookOpenCheck className="size-6" />} title="No exam papers yet.">
-              Make one from your chapters. You get the question paper and the answer key, as PDF and Word.
+            <EmptyState
+              icon={<BookOpenCheck className="size-6" />}
+              title="No exam papers yet."
+            >
+              Make one from your chapters. You get the question paper and the
+              answer key, as PDF and Word.
             </EmptyState>
           }
           columns={[
@@ -70,6 +81,11 @@ function Exams() {
               cell: (e) => (
                 <span className="flex flex-wrap items-center gap-2">
                   <span className="font-semibold">{e.title}</span>
+                  {e.stage === 'building' ? (
+                    <Chip tone="wait">
+                      Draft · last changed {formatDate(e.editedAt)}
+                    </Chip>
+                  ) : null}
                   {e.gaps > 0 ? (
                     <Chip tone="wait">
                       {e.gaps} {e.gaps === 1 ? 'gap' : 'gaps'}
@@ -78,18 +94,48 @@ function Exams() {
                 </span>
               ),
             },
-            { key: 'class', header: 'Class', cell: (e) => `${e.className} · ${e.sections.map((x) => `Section ${x}`).join(', ')}` },
+            {
+              key: 'class',
+              header: 'Class',
+              cell: (e) =>
+                `${e.className} · ${e.sections.map((x) => `Section ${x}`).join(', ')}`,
+            },
             { key: 'marks', header: 'Marks', cell: (e) => e.printedMarks },
-            { key: 'date', header: 'Date', hideOnPhone: true, cell: (e) => formatDate(e.examDate) },
+            {
+              key: 'date',
+              header: 'Date',
+              hideOnPhone: true,
+              cell: (e) => formatDate(e.examDate),
+            },
             {
               key: 'open',
               header: <span className="sr-only">Open</span>,
               className: 'text-right',
-              cell: (e) => (
-                <Btn kind="plain" onClick={() => void navigate({ to: '/school/$schoolId/exams/$examId', params: { schoolId, examId: e.id } })}>
-                  Open
-                </Btn>
-              ),
+              cell: (e) =>
+                e.stage === 'building' ? (
+                  <Btn
+                    onClick={() =>
+                      void navigate({
+                        to: '/school/$schoolId/exams/build/$examId',
+                        params: { schoolId, examId: e.id },
+                      })
+                    }
+                  >
+                    Go on choosing
+                  </Btn>
+                ) : (
+                  <Btn
+                    kind="plain"
+                    onClick={() =>
+                      void navigate({
+                        to: '/school/$schoolId/exams/$examId',
+                        params: { schoolId, examId: e.id },
+                      })
+                    }
+                  >
+                    Open
+                  </Btn>
+                ),
             },
           ]}
         />

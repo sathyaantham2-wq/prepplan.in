@@ -227,6 +227,8 @@ export async function builderView(db: Db, scope: SchoolScope, examId: string) {
   const picks = await picksOf(db, scope, ctx)
   const check = checkPaper(ctx.layout, toBuilderPicks(picks), ctx.chapters)
   const used = await usedBefore(db, scope, examId, picks.map((p) => p.questionId))
+  // places still open that the bank could fill: until they are filled, "Make paper" waits
+  const fillable = ctx.exam.stage === 'building' && !check.complete ? await stillFillable(db, ctx, check, picks) : []
   return {
     exam: {
       id: ctx.exam.id,
@@ -252,6 +254,9 @@ export async function builderView(db: Db, scope: SchoolScope, examId: string) {
     chapters: ctx.chapters.map((c) => ({ id: c.id, label: c.label, short: c.short })),
     picks: picks.map((p) => ({ ...p, usedBefore: used.get(p.questionId) ?? [] })),
     check,
+    fillable,
+    /** every slot is full, or what is open the bank cannot fill (then it is printed as a gap) */
+    canFinish: picks.length > 0 && !check.slots.some((x) => x.have > x.need) && (check.complete || fillable.length === 0),
   }
 }
 

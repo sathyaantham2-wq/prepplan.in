@@ -240,6 +240,7 @@ import { Route as ApiStudentsIdHabitsTrendRouteImport } from './routes/api/stude
 import { Route as ApiStudentsMeRewardsUnlockRouteImport } from './routes/api/students/me/rewards/unlock'
 import { Route as ApiStudyPlanIdDaysDayNumberRouteImport } from './routes/api/study-plan/$id/days/$dayNumber'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
+import { Route as SchoolSchoolIdExamsBuildExamIdRouteImport } from './routes/school/$schoolId/exams/build.$examId'
 import { Route as SchoolSchoolIdProgressExamPaperIdRouteImport } from './routes/school/$schoolId/progress/exam.$paperId'
 import { Route as ApiAttemptsIdItemsItemIdDisputeRouteImport } from './routes/api/attempts/$id/items/$itemId/dispute'
 import { Route as ApiAttemptsIdItemsItemIdRemoveRouteImport } from './routes/api/attempts/$id/items/$itemId/remove'
@@ -1502,6 +1503,12 @@ const ApiSyllabusChaptersIdScopeRoute =
     path: '/$id/scope',
     getParentRoute: () => ApiSyllabusChaptersRoute,
   } as any)
+const SchoolSchoolIdExamsBuildExamIdRoute =
+  SchoolSchoolIdExamsBuildExamIdRouteImport.update({
+    id: '/exams/build/$examId',
+    path: '/exams/build/$examId',
+    getParentRoute: () => SchoolSchoolIdRoute,
+  } as any)
 const SchoolSchoolIdProgressExamPaperIdRoute =
   SchoolSchoolIdProgressExamPaperIdRouteImport.update({
     id: '/progress/exam/$paperId',
@@ -1933,6 +1940,7 @@ export interface FileRoutesByFullPath {
   '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
   '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
+  '/school/$schoolId/exams/build/$examId': typeof SchoolSchoolIdExamsBuildExamIdRoute
   '/school/$schoolId/progress/exam/$paperId': typeof SchoolSchoolIdProgressExamPaperIdRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
@@ -2196,6 +2204,7 @@ export interface FileRoutesByTo {
   '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
   '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
+  '/school/$schoolId/exams/build/$examId': typeof SchoolSchoolIdExamsBuildExamIdRoute
   '/school/$schoolId/progress/exam/$paperId': typeof SchoolSchoolIdProgressExamPaperIdRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
@@ -2463,6 +2472,7 @@ export interface FileRoutesById {
   '/api/students/me/rewards/unlock': typeof ApiStudentsMeRewardsUnlockRoute
   '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
+  '/school/$schoolId/exams/build/$examId': typeof SchoolSchoolIdExamsBuildExamIdRoute
   '/school/$schoolId/progress/exam/$paperId': typeof SchoolSchoolIdProgressExamPaperIdRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
@@ -2731,6 +2741,7 @@ export interface FileRouteTypes {
     | '/api/students/me/rewards/unlock'
     | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
+    | '/school/$schoolId/exams/build/$examId'
     | '/school/$schoolId/progress/exam/$paperId'
     | '/api/attempts/$id/items/$itemId/dispute'
     | '/api/attempts/$id/items/$itemId/remove'
@@ -2994,6 +3005,7 @@ export interface FileRouteTypes {
     | '/api/students/me/rewards/unlock'
     | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
+    | '/school/$schoolId/exams/build/$examId'
     | '/school/$schoolId/progress/exam/$paperId'
     | '/api/attempts/$id/items/$itemId/dispute'
     | '/api/attempts/$id/items/$itemId/remove'
@@ -3260,6 +3272,7 @@ export interface FileRouteTypes {
     | '/api/students/me/rewards/unlock'
     | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
+    | '/school/$schoolId/exams/build/$examId'
     | '/school/$schoolId/progress/exam/$paperId'
     | '/api/attempts/$id/items/$itemId/dispute'
     | '/api/attempts/$id/items/$itemId/remove'
@@ -5035,6 +5048,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSyllabusChaptersIdScopeRouteImport
       parentRoute: typeof ApiSyllabusChaptersRoute
     }
+    '/school/$schoolId/exams/build/$examId': {
+      id: '/school/$schoolId/exams/build/$examId'
+      path: '/exams/build/$examId'
+      fullPath: '/school/$schoolId/exams/build/$examId'
+      preLoaderRoute: typeof SchoolSchoolIdExamsBuildExamIdRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
     '/school/$schoolId/progress/exam/$paperId': {
       id: '/school/$schoolId/progress/exam/$paperId'
       path: '/progress/exam/$paperId'
@@ -5327,6 +5347,7 @@ interface SchoolSchoolIdRouteChildren {
   SchoolSchoolIdPapersIndexRoute: typeof SchoolSchoolIdPapersIndexRoute
   SchoolSchoolIdProgressIndexRoute: typeof SchoolSchoolIdProgressIndexRoute
   SchoolSchoolIdResultsIndexRoute: typeof SchoolSchoolIdResultsIndexRoute
+  SchoolSchoolIdExamsBuildExamIdRoute: typeof SchoolSchoolIdExamsBuildExamIdRoute
   SchoolSchoolIdProgressExamPaperIdRoute: typeof SchoolSchoolIdProgressExamPaperIdRoute
 }
 
@@ -5356,6 +5377,7 @@ const SchoolSchoolIdRouteChildren: SchoolSchoolIdRouteChildren = {
   SchoolSchoolIdPapersIndexRoute: SchoolSchoolIdPapersIndexRoute,
   SchoolSchoolIdProgressIndexRoute: SchoolSchoolIdProgressIndexRoute,
   SchoolSchoolIdResultsIndexRoute: SchoolSchoolIdResultsIndexRoute,
+  SchoolSchoolIdExamsBuildExamIdRoute: SchoolSchoolIdExamsBuildExamIdRoute,
   SchoolSchoolIdProgressExamPaperIdRoute:
     SchoolSchoolIdProgressExamPaperIdRoute,
 }
@@ -6197,3 +6219,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

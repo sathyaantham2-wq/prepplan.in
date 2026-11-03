@@ -338,6 +338,7 @@ test.describe.serial('school screens on a phone', () => {
       .deleteFrom('school_exam_sections')
       .where('school_id', 'in', ids)
       .execute()
+    await db.deleteFrom('school_exam_versions').where('school_id', 'in', ids).execute()
     await db.deleteFrom('school_exams').where('school_id', 'in', ids).execute()
     await db
       .deleteFrom('school_student_guardians')
@@ -906,6 +907,8 @@ test.describe.serial('school screens on a phone', () => {
     await page.getByLabel(/Chapter 4 · Simple Equations/).check()
     await shot(page, '41-exam-make')
     await looksRight(page)
+    // the one-step way (Auto + edit is the default; the builder has its own test)
+    await page.getByRole('radio', { name: /^Quick/ }).check()
     await page.getByRole('button', { name: 'Make the paper' }).click()
     await page.waitForURL(/\/exams\/[0-9a-f-]{36}$/)
     examId = page.url().split('/').pop()!

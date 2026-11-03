@@ -59,6 +59,24 @@ function patternsOf(l: Listing): Array<Pattern> {
   return [...ready, ...own]
 }
 
+const MODES = [
+  {
+    key: 'quick' as const,
+    title: 'Quick',
+    hint: 'PrepPlan makes the whole paper in one go. Ready to print at once.',
+  },
+  {
+    key: 'auto_edit' as const,
+    title: 'Auto + edit',
+    hint: 'PrepPlan fills the paper; you swap, lock, remove or reorder any question before you finish.',
+  },
+  {
+    key: 'hand_pick' as const,
+    title: 'Hand-pick',
+    hint: 'You choose every question yourself from the question bank, section by section.',
+  },
+]
+
 function NewExam() {
   const { schoolId, overview } = useSchool()
   const navigate = useNavigate()
@@ -71,6 +89,10 @@ function NewExam() {
   const [picked, setPicked] = useState<Set<string>>(new Set())
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
+  // how the teacher wants to choose the questions (docs/SCHOOLS_MODULE_PLAN.md 16.2); Auto + edit is the default
+  const [mode, setMode] = useState<'quick' | 'auto_edit' | 'hand_pick'>(
+    'auto_edit',
+  )
 
   useEffect(() => {
     api<Listing>(`/api/schools/${schoolId}/templates`)
@@ -107,20 +129,30 @@ function NewExam() {
     setBusy(true)
     setError(null)
     try {
-      const r = await api<{ id: string }>(`/api/schools/${schoolId}/exams`, {
-        body: {
-          title,
-          subject_id: subjectId,
-          template_key: key,
-          chapter_ids: [...picked],
-          section_ids: [...sections],
-          exam_date: date || undefined,
+      const r = await api<{ id: string; stage: string }>(
+        `/api/schools/${schoolId}/exams`,
+        {
+          body: {
+            mode,
+            title,
+            subject_id: subjectId,
+            template_key: key,
+            chapter_ids: [...picked],
+            section_ids: [...sections],
+            exam_date: date || undefined,
+          },
         },
-      })
-      await navigate({
-        to: '/school/$schoolId/exams/$examId',
-        params: { schoolId, examId: r.id },
-      })
+      )
+      if (r.stage === 'building')
+        await navigate({
+          to: '/school/$schoolId/exams/build/$examId',
+          params: { schoolId, examId: r.id },
+        })
+      else
+        await navigate({
+          to: '/school/$schoolId/exams/$examId',
+          params: { schoolId, examId: r.id },
+        })
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.')
     } finally {
@@ -137,7 +169,9 @@ function NewExam() {
   if (listing.subjects.length === 0) {
     return (
       <div className="space-y-3">
-        <h1 className="text-[26px] leading-tight font-bold text-slate-900">Make an exam paper</h1>
+        <h1 className="text-[26px] leading-tight font-bold text-slate-900">
+          Make an exam paper
+        </h1>
         <Notice>You need a subject you teach in a class first.</Notice>
       </div>
     )
@@ -148,7 +182,9 @@ function NewExam() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Make an exam paper</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">
+        Make an exam paper
+      </h1>
       <p className="text-base text-slate-700">
         One paper for the whole class. Students never see the answers.
       </p>
@@ -239,9 +275,51 @@ function NewExam() {
         />
       </section>
 
+      <section className="space-y-3" data-testid="mode-choice">
+        <h2 className="text-lg font-bold">
+          How do you want to choose the questions?
+        </h2>
+        <div
+          className="grid gap-3 md:grid-cols-3"
+          role="radiogroup"
+          aria-label="How to choose the questions"
+        >
+          {MODES.map((m) => (
+            <label
+              key={m.key}
+              className={`flex cursor-pointer flex-col gap-1 rounded-xl border-2 p-4 ${mode === m.key ? 'border-emerald-700 bg-emerald-50' : 'border-slate-200 bg-white hover:border-slate-300'}`}
+            >
+              <span className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="mode"
+                  checked={mode === m.key}
+                  onChange={() => setMode(m.key)}
+                />
+                <span className="text-base font-bold text-slate-900">
+                  {m.title}
+                </span>
+                {m.key === 'auto_edit' ? (
+                  <span className="rounded-full bg-emerald-700 px-2 py-0.5 text-xs font-bold text-white">
+                    Suggested
+                  </span>
+                ) : null}
+              </span>
+              <span className="text-[15px] text-slate-700">{m.hint}</span>
+            </label>
+          ))}
+        </div>
+      </section>
+
       {error ? <Notice kind="error">{error}</Notice> : null}
       <Btn className="w-full" disabled={busy || !ready} onClick={make}>
-        {busy ? 'Making the paper…' : 'Make the paper'}
+        {busy
+          ? 'Making the paper…'
+          : mode === 'hand_pick'
+            ? 'Start choosing questions'
+            : mode === 'auto_edit'
+              ? 'Make it, then let me change it'
+              : 'Make the paper'}
       </Btn>
     </div>
   )

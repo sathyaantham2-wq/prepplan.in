@@ -8,6 +8,7 @@ import {
   Notice,
   Select,
 } from '../../../../components/school/ui'
+import { useShell } from '../../../../components/school/kit'
 import { ScanPanel } from '../../../../components/school/scan-panel'
 import {
   api,
@@ -41,10 +42,16 @@ interface Detail {
   bookletPages: number
   bookletsMade: number
   mayHandle: boolean
+  stage: string
+  version: number
+  setLabel: string | null
+  setOf: string | null
+  setB: string | null
 }
 
 function ExamPage() {
   const { schoolId, overview } = useSchool()
+  const { confirm, toast } = useShell()
   const navigate = useNavigate()
   const { examId } = Route.useParams()
   const [d, setD] = useState<Detail | null>(null)
@@ -57,11 +64,21 @@ function ExamPage() {
 
   const load = useCallback(async () => {
     try {
-      setD(await api<Detail>(base))
+      const x = await api<Detail>(base)
+      // a paper whose questions are still being chosen opens in the builder
+      if (x.stage === 'building' && x.mayHandle) {
+        await navigate({
+          to: '/school/$schoolId/exams/build/$examId',
+          params: { schoolId, examId },
+          replace: true,
+        })
+        return
+      }
+      setD(x)
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.')
     }
-  }, [base])
+  }, [base, navigate, schoolId, examId])
   useEffect(() => {
     void load()
   }, [load])
@@ -128,6 +145,26 @@ function ExamPage() {
     }
   }
 
+  async function makeSetB(kind: 'shuffle' | 'alternatives') {
+    setBusy('setb')
+    setError(null)
+    try {
+      const r = await api<{ message: string; options: { examId: string } }>(
+        `${base}/builder`,
+        { body: { action: 'make_set_b', kind } },
+      )
+      toast(r.message)
+      await navigate({
+        to: '/school/$schoolId/exams/$examId',
+        params: { schoolId, examId: r.options.examId },
+      })
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Something went wrong.')
+    } finally {
+      setBusy(null)
+    }
+  }
+
   async function makeBooklets() {
     setBusy('booklets')
     setMessage(null)
@@ -164,6 +201,8 @@ function ExamPage() {
       <Card className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
           <Chip tone="good">{d.printedMarks} marks printed</Chip>
+          <Chip>Version {d.version}</Chip>
+          {d.setLabel ? <Chip>Set {d.setLabel}</Chip> : null}
           {d.printedMarks !== d.nominalMarks ? (
             <Chip tone="wait">{d.nominalMarks} planned</Chip>
           ) : null}
@@ -179,6 +218,91 @@ function ExamPage() {
           ))}
         </ul>
       </Card>
+
+      {d.mayHandle ? (
+        <Card className="space-y-3" data-testid="paper-actions">
+          <h2 className="text-lg font-bold">The questions</h2>
+          <div className="flex flex-wrap gap-2">
+            <Btn
+              kind="plain"
+              disabled={busy !== null}
+              data-testid="change-paper"
+              onClick={async () => {
+                if (
+                  await confirm({
+                    title: 'Change the questions of this paper?',
+                    body: `Your changes become version ${d.version + 1} when you finish. Version ${d.version} stays on record, and printed copies of it are not affected.`,
+                    confirmLabel: 'Change the questions',
+                  })
+                ) {
+                  try {
+                    await api(`${base}/builder`, { body: { action: 'reopen' } })
+                    await navigate({
+                      to: '/school/$schoolId/exams/build/$examId',
+                      params: { schoolId, examId },
+                    })
+                  } catch (e) {
+                    setError(
+                      e instanceof Error ? e.message : 'Something went wrong.',
+                    )
+                  }
+                }
+              }}
+            >
+              Change the questions
+            </Btn>
+            {!d.setOf && !d.setB ? (
+              <>
+                <Btn
+                  kind="plain"
+                  disabled={busy !== null}
+                  onClick={() => void makeSetB('shuffle')}
+                  data-testid="set-b-shuffle"
+                >
+                  Make set B: same questions, new order
+                </Btn>
+                <Btn
+                  kind="plain"
+                  disabled={busy !== null}
+                  onClick={() => void makeSetB('alternatives')}
+                >
+                  Make set B: other questions of the same kind
+                </Btn>
+              </>
+            ) : null}
+            {d.setB ? (
+              <Btn
+                kind="plain"
+                onClick={() =>
+                  void navigate({
+                    to: '/school/$schoolId/exams/$examId',
+                    params: { schoolId, examId: d.setB as string },
+                  })
+                }
+              >
+                Open set B
+              </Btn>
+            ) : null}
+            {d.setOf ? (
+              <Btn
+                kind="plain"
+                onClick={() =>
+                  void navigate({
+                    to: '/school/$schoolId/exams/$examId',
+                    params: { schoolId, examId: d.setOf as string },
+                  })
+                }
+              >
+                Open set A
+              </Btn>
+            ) : null}
+          </div>
+          <p className="text-sm text-slate-600">
+            Two sets stop students copying from a neighbour. Each set has its
+            own question paper and its own answer key.
+          </p>
+        </Card>
+      ) : null}
 
       {d.gapLines.length > 0 ? (
         <div

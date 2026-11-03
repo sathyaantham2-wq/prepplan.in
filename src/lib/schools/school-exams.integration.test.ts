@@ -632,6 +632,8 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       .deleteFrom('school_exam_sections')
       .where('school_id', 'in', ids)
       .execute()
+    await db.deleteFrom('school_exam_versions').where('school_id', 'in', ids).execute()
+    await db.updateTable('school_exams').set({ set_of: null }).where('school_id', 'in', ids).execute()
     await db.deleteFrom('school_exams').where('school_id', 'in', ids).execute()
     await db
       .deleteFrom('school_paper_templates')
