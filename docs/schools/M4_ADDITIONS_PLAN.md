@@ -320,3 +320,7 @@ ones; reading 2: Sonnet reads everything; Opus reads what the two do not settle.
 read by two different models. One student, one set: re-check on more sheets in the pilot. **Haiku's price is not known to the
 app:** set `ANTHROPIC_CHEAP_USD_PER_1M_INPUT` and `ANTHROPIC_CHEAP_USD_PER_1M_OUTPUT`. The saving of this change has not been
 measured on a full paper yet (a run costs about Rs 35).
+
+**Reverted 2026-11-03 (owner decision):** the real-AI run cost more with the split reading 1 (the pages are sent twice),
+so reading 1 is one Sonnet call for every answer again and feature `SCH-07M` is gone. Haiku's price settings stay: the
+name strip (`SCH-05`) and page-type check (`SCH-06`) still use the cheap model.

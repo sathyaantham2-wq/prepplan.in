@@ -70,8 +70,6 @@ export interface MarkingAi {
     note?: string
     /** The stronger model's third reading of answers the two main readings did not settle. */
     tieBreak?: boolean
-    /** Multiple-choice answers only, read by the cheap model (which letter was ticked). */
-    choiceOnly?: boolean
   }) => Promise<string>
 }
 
@@ -113,8 +111,8 @@ export function createMarkingAi(
 ): MarkingAi {
   return {
     available: () => isAiConfigured(),
-    markPass: async ({ pages, subject, grade, questions, note, tieBreak, choiceOnly }) => {
-      const feature = tieBreak ? 'SCH-07T' : choiceOnly ? 'SCH-07M' : 'SCH-07'
+    markPass: async ({ pages, subject, grade, questions, note, tieBreak }) => {
+      const feature = tieBreak ? 'SCH-07T' : 'SCH-07'
       await assertSchoolAiBudget(db, school.schoolId)
       await enforceAiCallBudget(db, {
         feature,
@@ -191,18 +189,17 @@ export function createMarkingAi(
  * A stand-in for the automated tests only (OWN_PAPER_AI=fake, ignored in a production runtime). Every
  * question is found; a multiple-choice answer reads as the key's option, a written answer gets full marks.
  */
-// counted across requests, so the browser tests see student 1, 2, 3 in turn: the number of students started so far
-let fakeStudents = -1
+// counted across requests, so the browser tests see student 1, 2, 3 in turn: the main readings asked so far
+let fakeReads = 0
 
 export function createFakeMarkingAi(): MarkingAi {
   // FAKE_MARKING=mixed (browser tests): student 1 is marked cleanly with one writing-habit loss, student 2's
   // readings disagree on the written answer (so the stronger tie-break reading is asked), student 3 chooses a wrong
-  // option. A student is told apart by the kind of call: reading 1 asks the written questions alone, then the
-  // multiple-choice ones alone, reading 2 asks everything, the tie-break asks only the unsettled answers.
+  // option. Each student gets PASSES main readings of every question, then the tie-break asks only the unsettled answers.
   const mixed = process.env.FAKE_MARKING === 'mixed'
   return {
     available: () => true,
-    markPass: ({ questions, note, tieBreak, choiceOnly }) => {
+    markPass: ({ questions, note, tieBreak }) => {
       // a pupil's "read it again" (it carries her reason): the stand-in keeps the mark, whatever the call count
       if (mixed && note !== undefined)
         return Promise.resolve(
@@ -210,10 +207,9 @@ export function createFakeMarkingAi(): MarkingAi {
             answers: questions.map((q) => ({ question: q.no, found: true, answer_text: 'read again', choice: null, marks: 0, steps: [], loss_kind: 'none', loss_reason: null, confidence: 0.9 })),
           }),
         )
-      const asksChoice = questions.some((q) => isChoiceQuestion(q))
-      if (!tieBreak && !choiceOnly && !asksChoice) fakeStudents++ // reading 1, written questions: a new student
-      const student = Math.max(0, fakeStudents) % 3
-      const pass = tieBreak ? 2 : !choiceOnly && asksChoice ? 1 : 0
+      const read = tieBreak ? fakeReads - 1 : fakeReads++
+      const student = Math.floor(Math.max(0, read) / PASSES) % 3
+      const pass = tieBreak ? 2 : read % PASSES
       return Promise.resolve(
         JSON.stringify({
           answers: questions.map((q) => {
@@ -574,7 +570,6 @@ export async function markStudentSheets(
     const ask = async (
       qs: Array<MarkQuestion>,
       tieBreak: boolean,
-      choiceOnly = false,
     ): Promise<Array<{ part: Array<MarkQuestion>; read: ReturnType<typeof parsePass> }>> => {
       const out: Array<{ part: Array<MarkQuestion>; read: ReturnType<typeof parsePass> }> = []
       for (const part of chunkQuestions(qs))
@@ -587,7 +582,6 @@ export async function markStudentSheets(
               grade: paper.grade,
               questions: part,
               tieBreak,
-              choiceOnly,
             }),
           ),
         })
@@ -601,16 +595,7 @@ export async function markStudentSheets(
         .find((r) => r.part.some((x) => x.id === q.id))
         ?.read?.answers.find((a) => a.question.trim() === q.no)
     const rounds: Array<Awaited<ReturnType<typeof ask>>> = []
-    // Reading 1: the cheap model reads the ticked letters (the key decides the mark, in code); the main model
-    // reads the written answers. Reading 2: the main model reads everything, so every multiple-choice answer
-    // has been read by two different models, and Opus reads those they do not settle.
-    const choices = questions.filter((q) => isChoiceQuestion(q))
-    const written = questions.filter((q) => !isChoiceQuestion(q))
-    rounds.push([
-      ...(written.length > 0 ? await ask(written, false) : []),
-      ...(choices.length > 0 ? await ask(choices, false, true) : []),
-    ])
-    for (let i = 1; i < PASSES; i++) rounds.push(await ask(questions, false))
+    for (let i = 0; i < PASSES; i++) rounds.push(await ask(questions, false))
     const unsettled = questions.filter((q) => needsTieBreak(q, rounds.map((r) => readingOf(r, q))))
     // The stronger reading is an extra: if it cannot be had (the model is off, over its allowance, refuses),
     // the two readings still stand and the unsettled answers are flagged for the teacher, never lost.

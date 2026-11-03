@@ -3,11 +3,12 @@ import { afterAll, describe, expect, it } from 'vitest'
 import { createDb } from '../../db/connection'
 import { schoolsRepository } from '../../db/repositories'
 import { deleteSchoolTermsForTest, deleteTestCredentials } from '../../db/test-helpers'
-import { completeText, isAiConfigured, stripCodeFence } from '../ai-provider'
+import { isAiConfigured } from '../ai-provider'
 import { encryptScan } from '../scan-crypto'
 import { getScanStore } from '../scan-storage'
 import { loadSchoolScope } from '../school-session'
 import { logAiJob } from '../ai-metering'
+import { completeText, stripCodeFence } from '../ai-provider'
 import { createMarkingAi, markStudentSheets, markingPrompt, studentMarking } from './marking'
 import { createSchoolStudent } from './people'
 import { addSchoolSubject, createClass, createSection } from './setup'
@@ -153,12 +154,12 @@ describe.skipIf(!file)('marking trial (real AI)', () => {
         const model = process.env.MARKING_TRIAL_MODEL
         const direct: typeof real.markPass | null = model
           ? async ({ pages, subject, grade, questions, note }) => {
-              const started = Date.now()
+              const t0 = Date.now()
               const res = await completeText(
                 { model, prompt: markingPrompt(subject, grade, questions, pages.length, note), maxTokens: 10000, images: pages, noThinking: true },
                 'anthropic',
               )
-              await logAiJob(db, { feature: 'SCH-07', model, householdId: p.school.household_id, tokensIn: res.tokensIn, tokensOut: res.tokensOut, latencyMs: Date.now() - started, status: 'success' })
+              await logAiJob(db, { feature: 'SCH-07', model, householdId: p.school.household_id, tokensIn: res.tokensIn, tokensOut: res.tokensOut, latencyMs: Date.now() - t0, status: 'success' })
               return stripCodeFence(res.text ?? '')
             }
           : null
