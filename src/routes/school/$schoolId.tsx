@@ -30,6 +30,7 @@ import {
 import type { LucideIcon } from 'lucide-react'
 import { SchoolContext } from '../../components/school/context'
 import { ShellProvider, Switch, useShell } from '../../components/school/kit'
+import { WelcomeTour } from '../../components/school/tour'
 import { Loading, Notice } from '../../components/school/ui'
 import { schoolThemeCss } from '../../lib/schools/school-theme'
 import { signOut } from '../../lib/auth-client'
@@ -495,6 +496,7 @@ function Frame({
           <Outlet />
         </main>
       </div>
+      {path.endsWith('/welcome') ? null : <WelcomeTour role={overview.role} storageKey={`${schoolId}:${overview.me.name}`} />}
     </SchoolContext.Provider>
   )
 }

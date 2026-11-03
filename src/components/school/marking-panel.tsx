@@ -4,6 +4,7 @@ import { Btn, Chip, Notice } from './ui'
 import { api } from '../../lib/school-client'
 import { MathText } from '../math-text'
 import { ReviewScreen } from './review-screen'
+import { InfoTip } from './kit'
 import type { JobProgress } from '../../lib/schools/marking-jobs'
 import type {
   MarkingStatus,
@@ -223,7 +224,13 @@ function Answers({
   const toCheck = sorted.filter((a) => a.state === 'flagged').length
   return (
     <section className="space-y-2" data-testid="answers">
-      <h3 className="text-lg font-bold">Answers</h3>
+      <h3 className="flex items-center gap-1 text-lg font-bold">
+        Answers
+        <InfoTip>
+          A yellow answer is flagged: the AI was not sure of its mark (hard to read, or its readings disagreed). A teacher
+          checks it before the results go out.
+        </InfoTip>
+      </h3>
       {toCheck > 0 ? (
         <Notice kind="info">
           {toCheck} answer{toCheck === 1 ? ' is' : 's are'} yellow: the AI was not sure. Each shows what it read and the mark it would give.

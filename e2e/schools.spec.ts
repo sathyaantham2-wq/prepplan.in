@@ -488,6 +488,16 @@ test.describe.serial('school screens on a phone', () => {
     await expect(page.getByText('Sunrise Public School').filter({ visible: true }).first()).toBeVisible()
     await shot(page, '06-admin-home-new-school')
     await looksRight(page)
+    // the welcome tour opens from Help, steps through four cards and closes
+    await page.getByTestId('help-button').click()
+    await page.getByRole('menuitem', { name: /Show me around/ }).click()
+    const tour = page.getByTestId('tour')
+    await expect(tour).toContainText('Step 1 of 4')
+    await shot(page, '06b-welcome-tour')
+    for (let i = 0; i < 3; i++) await tour.getByTestId('tour-next').click()
+    await expect(tour).toContainText('Step 4 of 4')
+    await tour.getByRole('button', { name: 'Done' }).click()
+    await expect(tour).toHaveCount(0)
     await page
       .getByRole('link', { name: /Accept the PrepPlan school terms/ })
       .click()

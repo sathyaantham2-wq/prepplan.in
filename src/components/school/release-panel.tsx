@@ -1,3 +1,4 @@
+import { InfoTip } from './kit'
 import { useCallback, useEffect, useState } from 'react'
 import { Lock, Send } from 'lucide-react'
 import { Btn, Chip, Notice } from './ui'
@@ -65,7 +66,13 @@ export function ReleasePanel({
   return (
     <section className="space-y-3" data-testid="release-panel">
       <div>
-        <h2 className="text-lg font-bold">Release to students</h2>
+        <h2 className="flex items-center gap-1 text-lg font-bold">
+          Release to students
+          <InfoTip>
+            Releasing shows the marks to the students of a section. They then have a question window (a few days, set in
+            Settings) to flag a mark they think is wrong; after it closes the marks are final.
+          </InfoTip>
+        </h2>
         <p className="text-base text-slate-700">
           Release a section when everyone in it is marked. Students then see
           their own marks and can flag answers for a few days.
