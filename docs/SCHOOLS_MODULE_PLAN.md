@@ -913,3 +913,193 @@ Decisions taken while building (all inside the approved plan): the growth line h
 4. **Maths typed as plain text, drawn as maths** (`src/lib/math-text.ts`): one parser (fractions with bracketed tops and bottoms, powers of brackets, `x^(n+1)`, cube and fourth roots) shared by the app screens, the PDF papers and the Word export; fractions, roots and powers are plain HTML and CSS, so no maths font is needed on the server. Word equations now carry the bracket as the base of a power and the degree of a root. Anything the parser is not sure of stays as typed.
 
 Migrations 0094 and 0095 exist locally and are NOT run on production.
+
+## 16. Teacher control over question selection in "Make paper" (PLAN, awaiting the owner's approval, 2026-11-03)
+
+No F-number yet. Local only; nothing is built until the owner approves this section.
+
+### 16.1 Today
+
+"Make paper" picks every question at once (`buildMasterPaper` in `src/lib/schools/exam-paper.ts`): for each slot of the
+chosen pattern it spreads questions across the chosen chapters, avoids questions this school already printed for the same
+class, subject and pattern, pairs OR alternatives from different concepts, checks the structure (numbering, four options,
+section totals), and saves the picks in `school_exam_questions` (question, position, section, slot, marks, OR group). The
+teacher sees the result only as a finished paper and cannot change a question.
+
+### 16.2 Three modes on one screen
+
+| Mode | What happens | When to use |
+|---|---|---|
+| **Quick** | Today's automatic paper, made and finished in one step. | "Just give me a paper." |
+| **Auto + edit** (default) | The paper is auto-filled, then stays open for editing: per question **Swap**, **Lock**, **Remove**, drag to reorder; **Refill unlocked** re-picks everything that is not locked. | Most teachers: a good start, then their own touches. |
+| **Hand-pick** | Sections start empty; the teacher adds every question from the bank panel. | A teacher who wants full control. |
+
+The mode is a choice at the top of the builder and can be changed while the paper is open (Hand-pick → "Fill the rest
+automatically" turns it into Auto + edit without losing picks).
+
+### 16.3 Screens
+
+**Wide screen (1440 px): Auto + edit, with a swap open**
+
+```
+┌ sidebar ┐┌───────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Home    ││ Unit Test 2 · Class 7 A, B · Mathematics · School Half-Yearly 80     [Save draft] [Make paper]│
+│ Set up  ││ ┌ LIVE CHECKLIST (sticky) ───────────────────────────────────────────────────────────────────┐│
+│ Exams   ││ │ Marks 74 / 80 ▓▓▓▓▓▓▓▓▓░   Questions 35 / 38   Remember 48% · Think 52% (target 50/50)    ││
+│ ▸ Make  ││ │ Ch 3 ▓▓▓▓▓ 22   Ch 4 ▓▓▓▓ 18   Ch 5 ▓▓▓ 14   Ch 6 ░ 0                                     ││
+│   paper ││ │ ⚠ Section C needs 2 more 3-mark questions   ⚠ Chapter 6 has no questions                  ││
+│         ││ └────────────────────────────────────────────────────────────────────────────────────────────┘│
+│         ││ Mode: ( ) Quick  (•) Auto + edit  ( ) Hand-pick            [Refill unlocked] [Fill the rest]   │
+│         ││ ┌ PAPER ───────────────────────────────┐ ┌ QUESTION BANK (chapters 3, 4, 5, 6) ──────────────┐│
+│         ││ │ SECTION A · MCQ 1 mark · 20 of 20 ✓  │ │ Search [_____________]                             ││
+│         ││ │ ⠿ 1. Which fraction is…  Ch3 · MCQ  │ │ Type [Any▾] Marks [Any▾] Difficulty [Any▾]         ││
+│         ││ │      1 m · Easy · Remember          │ │ Level [Any▾]  [✓] Hide used before                 ││
+│         ││ │      [Swap] [🔒 Lock] [Remove]       │ │ ┌──────────────────────────────────────────────┐ ││
+│         ││ │ ⠿ 2. …                              │ │ │ Ch4 · Short answer · 3 m · Hard · Think       │ ││
+│         ││ │ SECTION C · 3 marks · 4 of 6 ⚠       │ │ │ Solve 3x/4 − 5 = 7 and check…   [Used: UT1, │ ││
+│         ││ │ ⠿ 23. Solve …  Ch4 · 3 m · Think 🔒  │ │ │ Sec C, 12/09/2026]  [Show answer] [Add → C]  │ ││
+│         ││ │   ┌ SWAP: 3 alternatives ───────────┐│ │ └──────────────────────────────────────────────┘ ││
+│         ││ │   │ ○ Ch4 · 3 m · Hard: A train…    ││ │ … (25 a page)                                    ││
+│         ││ │   │ ○ Ch4 · 3 m · Hard: Ravi has…   ││ └──────────────────────────────────────────────────┘│
+│         ││ │   │ ○ Ch4 · 3 m · Easy: Find x…     ││                                                     │
+│         ││ │   │ [Use this] [Show more]  [Cancel]││                                                     │
+│         ││ │   └─────────────────────────────────┘│                                                     │
+│         ││ │ 24–25. OR pair: (a) … OR (b) …       │                                                     │
+│         ││ └──────────────────────────────────────┘                                                     │
+└─────────┘└───────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Phone (390 px):** the checklist is a slim sticky bar ("74/80 marks · 2 warnings ▾", tap to open it). Two tabs under it,
+**Paper** and **Bank**. Swap opens a bottom sheet with the 3 alternatives. Filters open in a side panel. Drag-to-reorder
+becomes ↑ ↓ buttons (a drag on a phone is easy to do by accident).
+
+```
+┌──────────────────────────────┐
+│ ☰ Make paper                 │
+│ 74/80 marks · ⚠ 2  ▾         │  ← sticky checklist bar
+│ [ Paper ] [ Bank ]           │
+│ SECTION C · 4 of 6 ⚠         │
+│ 23. Solve …   Ch4 · 3 m 🔒   │
+│ [Swap] [Unlock] [Remove] ↑ ↓ │
+│ …                            │
+│ [Save draft]  [Make paper]   │  ← sticky footer
+└──────────────────────────────┘
+```
+
+**Hand-pick with filters:** the same layout, sections empty ("0 of 20"), every bank card has **Add → Section X**. A card whose
+type or marks fit no open section shows a plain reason instead of the button ("Section C wants 3-mark short answers").
+
+### 16.4 The paper panel
+
+- Sections come from the chosen pattern; each shows **"picked X of Y"** for its type and marks, green when complete.
+- A question card: book part and chapter, type, marks, difficulty, **Remember** (Bloom: remember, understand) or **Think**
+  (apply, analyse, evaluate, create); buttons **Swap**, **Lock**, **Remove**; drag (wide) or ↑ ↓ (phone) to reorder
+  within its section only. Numbering stays continuous across the paper and is recomputed after every change.
+- **OR questions** are a pair in one slot: picked as a pair (Add shows "Add as option (a)" then "(b)"; "Fill the rest" picks
+  the second from a different concept, as today). Swap and Remove act on one side of the pair; Lock locks the pair.
+- **Lock** keeps a question through "Refill unlocked" and "Fill the rest".
+
+### 16.5 The question-bank panel
+
+- Only the chosen chapters. Filters: type, marks, difficulty, Bloom level, text search; 25 a page.
+- **Show answer** expands the answer and the marking scheme. Teacher and office only; the route refuses the student role
+  (and the principal sees the paper but not the bank's answers, as today with the teacher copy).
+- **"Used before"** badge: which exam, which section(s), and the date, for this school only. "Hide used before" filters
+  them out.
+- **Add** puts the question into the section whose slot matches its type, marks and special tag (case study, map, figure);
+  where two sections fit, it asks which. It is refused, with the reason, when the section is full or nothing fits.
+
+### 16.6 Live checklist (sticky)
+
+Computed from the picks by one pure function (shared by the screen and the server, so they always agree):
+- total marks vs the pattern's target (an OR counts once), question count vs target;
+- marks per chapter as mini-bars, with a warning for a chosen chapter that has none;
+- Remember vs Think split against the pattern's level mix (a warning if more than 10 points off);
+- plain warnings: "Section C needs 2 more 3-mark questions", "Section A has a 2-mark question where 1-mark questions
+  belong" (cannot happen through Add, but caught after a pattern change), "Chapter 6 has no questions".
+
+**Make paper** is enabled only when every slot is filled. If a slot cannot be filled because **the bank truly has no more
+eligible questions** for these chapters (the server checks, not the screen), the teacher is told so in plain words and
+may make the paper with the shortfall printed on the teacher copy, as today (F032). Missing questions the bank *does* have
+must be picked first.
+
+### 16.7 Shortcuts
+
+- **Swap**: 3 alternatives with the same type, marks, special tag and chapter, not used by this school in the last school
+  year (from 1 April) when the bank allows; "Show more" for the next 3; if the chapter has none, the same slot from the
+  other chosen chapters, labelled.
+- **Fill the rest automatically** and **Refill unlocked** use today's picker with the locked and picked questions kept.
+- **Save draft**; resume later from the Exams list ("Draft · last edited 03/11/2026"). Drafts are visible to their maker
+  and the office (read and edit), not to other teachers; the principal sees finished papers only.
+- **Sets A/B**: after Make paper, "Make set B" with either (1) the same questions shuffled within each section (OR pairs
+  stay pairs; MCQ options keep their order unless the owner says otherwise), or (2) equal-difficulty alternatives: each
+  question replaced by one with the same slot, chapter and difficulty that set A does not use. Set B is its own paper
+  ("Unit Test 2 · Set B") with its own teacher copy, linked to set A.
+
+### 16.8 Rules
+
+- A teacher builds only for subjects and sections she is assigned to (today's `teachesExam`); the principal can open a
+  finished paper but changes nothing; the office can do everything. Every action is checked on the server.
+- The teacher copy (answer key and marking scheme) and the question paper are always made from the current final
+  selection; no stored copy can go stale.
+- **Versions.** "Make paper" finalises version 1 and records exactly which questions were used (question, section, slot,
+  position, marks, OR group) in an append-only version record. Re-opening a finished paper to change it works on a copy
+  and finalising it makes version 2; nothing is deleted. "Used before" reads these records.
+- Works with the questions-only CBSE question paper; nothing about the printed layout changes.
+
+### 16.9 Data changes (one migration, additive)
+
+- `school_exams`: `stage` ('building' | 'final', default 'final' so every existing paper is final), `mode`, `version`
+  (default 1), `set_label` (null, 'A', 'B'), `set_of` (the set-A exam for a set B), `edited_at`.
+- `school_exam_questions`: `locked` (default false).
+- New `school_exam_versions` (append-only): exam, version, finalised by and when, the exact question list (JSON), printed
+  marks. A backfill writes version 1 for every existing paper from its current questions.
+- Indexes for "used before": (school, question) on the version rows.
+
+### 16.10 Server routes (all school-scoped, all permission-checked)
+
+- `POST /exams` gains `mode` (Quick behaves as today).
+- `GET /exams/:id/builder`: sections, picks, checklist, what the bank still has per slot.
+- `GET /exams/:id/bank?type&marks&difficulty&bloom&q&hideUsed&page`: bank questions for the chosen chapters with
+  used-before; `answer=1` adds the answer and marking scheme (teacher and office only).
+- `POST /exams/:id/builder` actions: `add`, `remove`, `lock`, `unlock`, `reorder`, `swap_options`, `swap_to`,
+  `refill_unlocked`, `fill_rest`, `set_mode`, `save_draft`, `finalize`, `reopen`, `make_set_b`.
+
+### 16.11 Tests
+
+- Pure: the checklist (marks, counts, chapter bars, level split, warnings); Add refuses a full or wrong section; OR pair
+  handling; numbering after reorder.
+- Integration: Quick equals today's paper; Auto + edit keeps locked questions through Refill; Swap offers 3 of the same
+  type, marks and chapter and avoids last year's; Hand-pick finalise refused while a slot is open and the bank has more;
+  allowed with a printed shortfall when the bank has none; versions append and "used before" reads them; a teacher outside
+  the section-subject, the principal (writes) and the student role are refused; answers never reach the student role;
+  set B shuffled vs alternatives; teacher copy follows the final selection.
+- Browser (1440 and 390): Auto + edit with a swap open, Hand-pick with filters, the checklist warning, the final PDF.
+
+### 16.12 Build order (after approval)
+
+1. Migration, version backfill, the checklist function and its tests.
+2. Builder and bank routes with permissions and tests.
+3. The builder screen (wide and phone), Quick / Auto + edit / Hand-pick.
+4. Swap, Lock, Refill, Fill the rest, reorder, drafts in the Exams list.
+5. Versions, "used before", reopen.
+6. Sets A/B.
+7. Browser tests and the screenshot set, then a report.
+
+### 16.13 Phase 2 (plan only, not to be built now): the school's own questions
+
+- A teacher adds a question (text, options, answer, marking steps, marks, type) on a "Our questions" screen; it is stored
+  for that school only (`school_questions`, scoped by `school_id`, never in the shared bank, never used for AI training).
+- Tagging: the AI suggests the chapter and topic (concept) and the Bloom level from the text; the teacher confirms or
+  changes them before the question is usable (no question without a confirmed chapter, keeping invariant 5's spirit).
+- In the picker they appear with an "Our question" badge, filterable, and behave like bank questions (swap, lock, used
+  before, versions). The office can see and retire them; nothing is deleted.
+
+### 16.14 Decisions needed from the owner
+
+1. **"Recently used"** for Swap and the default of "Hide used before": this school year (since 1 April)? (Proposed: yes.)
+2. **Set B shuffle**: shuffle MCQ options too, or only the question order? (Proposed: question order only; options stay, so
+   the answer key differs only in numbering.)
+3. **Changing a finished paper** that was already printed: allowed as a new version (proposed), or locked once finished?
+4. **Drafts**: visible to the maker and the office only (proposed), or to every teacher of that subject?
+5. **Quick mode**: keep it as a separate choice (as asked), or fold it into Auto + edit ("press Make paper straight away")?
