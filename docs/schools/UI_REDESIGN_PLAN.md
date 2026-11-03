@@ -139,3 +139,33 @@ Each phase ends with the full school test suite and browser tests green before t
 3. **Telugu read-through:** who checks the Telugu wording before schools see it?
 4. **Logo:** the frame shows the school's initials. A real logo upload would be a data change (out of scope here); later?
 5. **Student and parent screens:** include them in this redesign (proposed, phase 5), or office/teacher/principal first?
+
+## 12. Build status (2026-11-03, local only, not deployed)
+
+Owner decisions: no Telugu translation (the switch is dropped; the Progress screens keep their own Telugu); the exam-week
+board is the first tab of AI correction; "exams this term" counts from 1 April ("this school year"); no logo upload (initials);
+student and parent screens included.
+
+Built in five commits (`3606af7`, `f4517fd`, `75639eb`, `5429905`, `1cad521`):
+1. **Palette and frame.** `src/lib/schools/school-theme.ts` sets every Tailwind colour the school screens use as CSS
+   variables, light and dark; the dark set turns the greys round, so no screen can put dark text on a dark page.
+   69 text/background pairs pass WCAG AA in both themes (`school-theme.test.ts`). Grouped, collapsible sidebar
+   (drawer below 1024 px), top bar (page title, Help, account menu with the dark theme and Sign out), skip link, focus
+   rings and reduced motion. The kit (`kit.tsx`): toast, confirm box, right-side panel that asks before losing unsaved
+   work, "?" tip, checkbox, switch, and a table with search and pages that becomes cards on a phone.
+2. **Home** (Today, set-up checklist hidden when the first six steps are done, action cards, figures, recent exams;
+   read-only `GET /api/schools/:id/today`, scoped like the screens, tested) and **Settings** in sections with a side menu.
+3. **Students, Teachers** as tables with add-from-file panels and template links; **Classes** in a wide layout with an
+   add-class panel.
+4. **Exams, AI correction** (tabs: Where sheets stand · Papers; the paper picker in a panel), **Results** as tables; one
+   heading style; forms at a readable width.
+5. **Welcome tour** (four steps per role, skippable, from Help; it does not open by itself in an automated browser) and tips
+   for flagged answers and the question window.
+
+Checks: all seven school browser test files pass (68 tests, phone size), tsc and lint clean. Screenshots of Home, Students,
+Add-student panel, Make paper, AI correction, Results and Settings at 1440 and 390 px, light and dark:
+`local-private/ui-redesign/final/` (28 pictures; none scrolls sideways).
+
+Not done: the paper detail screens (own paper, exam paper, class results), Messages and the Progress board keep their
+existing layout inside the new frame and palette (they are wide and readable but not rebuilt as tables/panels); the classes
+page edits inline rather than in a panel; leaving-with-unsaved-changes is wired on Settings and the panels, not on every form.
