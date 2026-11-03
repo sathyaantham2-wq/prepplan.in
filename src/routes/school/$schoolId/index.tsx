@@ -22,6 +22,7 @@ import {
 import { api } from '../../../lib/school-client'
 import type { SchoolOverview } from '../../../lib/school-client'
 import type { RecentPaper, TodayItem, schoolToday } from '../../../lib/schools/today'
+import { formatDate } from '../../../lib/dates'
 
 export const Route = createFileRoute('/school/$schoolId/')({
   component: SchoolHome,
@@ -408,7 +409,7 @@ function RecentPapers({ recent, schoolId }: { recent: Array<RecentPaper> | null;
               <span className="min-w-0 flex-1">
                 <span className="block text-[15px] font-semibold">{r.title}</span>
                 <span className="block text-sm text-slate-600">
-                  Class {r.grade} · {new Date(r.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
+                  Class {r.grade} · {formatDate(r.createdAt)}
                 </span>
               </span>
               <Chip tone={STATE[r.state].tone}>{r.state === 'to_check' ? `${r.toCheck} to check` : STATE[r.state].text}</Chip>

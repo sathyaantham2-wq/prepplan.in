@@ -4,6 +4,7 @@ import { Button } from '../../components/ui/button'
 import { AdminPage, Notice, Panel, Pill, StatTile } from '../../components/admin/admin-ui'
 import { REPORT_REASON_LABEL } from '../../lib/question-reports-shared'
 import type { ReportReason } from '../../lib/question-reports-shared'
+import { formatDate } from '../../lib/dates'
 
 export const Route = createFileRoute('/admin/reports')({
   component: AdminReports,
@@ -121,7 +122,7 @@ function AdminReports() {
               <Pill tone={STATUS_TONE[r.status]}>{r.status}</Pill>
               <Pill>{REPORT_REASON_LABEL[r.reason]}</Pill>
               <span className="text-caption text-muted-foreground">
-                {new Date(r.created_at).toLocaleDateString()}
+                {formatDate(r.created_at)}
               </span>
             </div>
             <h3 className="question-text mb-3 font-semibold">{r.question_text}</h3>

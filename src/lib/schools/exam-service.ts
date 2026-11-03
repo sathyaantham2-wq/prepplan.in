@@ -38,6 +38,7 @@ import type { TemplateDefinition } from './templates'
 import { adoptDefaultTemplate } from './template-service'
 import { requireSchoolTerms } from './terms'
 import { assertBookletsEnabled } from './features'
+import { formatDate } from '../dates'
 
 // One question paper per class and exam, the teacher's copy, and a Smart Answer Booklet for every
 // student. Who may do what:
@@ -662,7 +663,7 @@ async function teacherCopyInput(
         `Layout: ${exam.template_name}. Marks: ${exam.printed_marks} printed${exam.printed_marks !== exam.nominal_marks ? ` of ${exam.nominal_marks} planned` : ''}`,
         `Chapters: ${d.chapters.map((c) => `Part ${c.part} · Chapter ${c.chapter_no} · ${c.name}`).join('; ')}`,
         ...(exam.exam_date
-          ? [`Date: ${new Date(exam.exam_date).toISOString().slice(0, 10)}`]
+          ? [`Date: ${formatDate(new Date(exam.exam_date).toISOString().slice(0, 10))}`]
           : []),
       ],
       gaps,

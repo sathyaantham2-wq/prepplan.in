@@ -3,6 +3,7 @@ import { Share2 } from 'lucide-react'
 import { Button } from './ui/button'
 import { isIstSunday, weeklyCardShareText } from '../lib/weekly-card-text'
 import type { WeeklyCardData } from '../lib/weekly-card-text'
+import { formatDate } from '../lib/dates'
 
 // Fixed light colours for the picture (a canvas cannot follow the page theme), matching the app's
 // soft palette. All artwork is original.
@@ -15,8 +16,7 @@ const YELLOW = '#fbefb8'
 const MINT = '#d3efe0'
 
 function formatDay(key: string): string {
-  const d = new Date(`${key}T00:00:00Z`)
-  return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'UTC' })
+  return formatDate(key)
 }
 
 function weekRange(d: WeeklyCardData): string {

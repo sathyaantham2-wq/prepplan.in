@@ -1,4 +1,5 @@
 import type { StudentSlip } from './credentials'
+import { formatDate } from '../dates'
 
 const esc = (t: string) =>
   t
@@ -29,7 +30,7 @@ export function buildSlipsHtml(input: {
     <tr><td>Your ID</td><td class="mono"><b>${esc(s.loginId)}</b></td></tr>
     <tr><td>One-time code</td><td class="code">${esc(s.code)}</td></tr>
   </table>
-  <div class="note">Go to ${esc(input.signInUrl)}, enter these, then choose your own password. The code works once and expires on ${esc(s.expiresAt.toISOString().slice(0, 10))}. Keep your password to yourself.</div>
+  <div class="note">Go to ${esc(input.signInUrl)}, enter these, then choose your own password. The code works once and expires on ${esc(formatDate(s.expiresAt))}. Keep your password to yourself.</div>
 </div>`,
     )
     .join('\n')

@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { AdminPage, BarChart, Notice, Panel, StatTile } from '../../components/admin/admin-ui'
 import { Button } from '../../components/ui/button'
 import type { ActivityReport } from '../../lib/student-activity'
+import { formatDateTime } from '../../lib/dates'
 
 export const Route = createFileRoute('/admin/activity')({
   component: AdminActivity,
@@ -19,12 +20,7 @@ function formatMinutes(minutes: number): string {
 
 function formatLastSeen(iso: string | null): string {
   if (!iso) return 'never'
-  return new Date(iso).toLocaleString('en-IN', {
-    day: 'numeric',
-    month: 'short',
-    hour: 'numeric',
-    minute: '2-digit',
-  })
+  return formatDateTime(iso)
 }
 
 /**

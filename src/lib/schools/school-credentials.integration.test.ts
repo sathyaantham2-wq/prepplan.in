@@ -799,7 +799,7 @@ describe('school credentials (S2c)', () => {
       })
       expect(html).toContain('7A-1')
       expect(html).toContain('K7M2P-9QXAB')
-      expect(html).toContain('2026-11-05')
+      expect(html).toContain('05/11/2026') // dd/mm/yyyy (owner direction 2026-11-03)
       expect(html).not.toContain('<script>')
       expect(html).toContain('Evil &lt;script&gt;')
     })

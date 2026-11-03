@@ -14,6 +14,7 @@ import {
 import type { TopicRow } from './progress-calc'
 import { lockedFor } from './progress'
 import { LEVEL_WORD } from './topic-level'
+import { formatDate } from '../dates'
 
 // Class Progress for teachers (owner direction 2026-10-31, SCHOOLS_MODULE_PLAN.md section 15.4). The same locked
 // marks and the same level rule as the student's screens, for a whole section. A teacher sees only the
@@ -247,7 +248,7 @@ export async function exportProgress(
     .filter((x) => subjectOk(x.subject_id))
     .map((x) => {
       const st = roster.find((r) => r.school_student_id === x.school_student_id)!
-      return [st.roll_no, st.name, x.title, x.hardest_question_no ?? '', x.next_time ?? '', x.next_time_note ?? '', FEEL[x.feeling ?? 0], x.created_at.toISOString().slice(0, 10)]
+      return [st.roll_no, st.name, x.title, x.hardest_question_no ?? '', x.next_time ?? '', x.next_time_note ?? '', FEEL[x.feeling ?? 0], formatDate(x.created_at)]
     })
   const H1 = ['Roll', 'Student', 'Subject', 'Topic', 'Level', 'Dipped last exam', 'Exams behind it', 'Latest exam %']
   const H2 = ['Roll', 'Student', 'Exam', 'Hardest question', 'Next time', 'Note', 'How it felt', 'Date']

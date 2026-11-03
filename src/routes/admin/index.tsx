@@ -4,13 +4,14 @@ import { RefreshCw } from 'lucide-react'
 import { Button } from '../../components/ui/button'
 import { AdminPage, BarChart, BarList, Delta, Notice, Panel, Pill, StatTile } from '../../components/admin/admin-ui'
 import type { AdminOverview } from '../../db/repositories'
+import { formatDate } from '../../lib/dates'
 
 export const Route = createFileRoute('/admin/')({ component: AdminOverviewPage })
 
 const inr = (n: number) => `₹${n.toLocaleString('en-IN', { maximumFractionDigits: n < 100 ? 2 : 0 })}`
 
 function shortDate(iso: string): string {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'UTC' })
+  return formatDate(iso)
 }
 
 function ago(iso: string): string {

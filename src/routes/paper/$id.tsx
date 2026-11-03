@@ -10,6 +10,7 @@ import {
 } from '../../components/ui/card'
 import { useSession } from '../../lib/auth-client'
 import { PageLoading } from '../../components/page-loading'
+import { formatDateTime } from '../../lib/dates'
 
 export const Route = createFileRoute('/paper/$id')({ component: PaperWorkflow })
 
@@ -248,7 +249,7 @@ function PaperWorkflow() {
                 <p className="font-medium">She submits her answers</p>
                 <p className="text-small text-muted-foreground">
                   {submitted
-                    ? `Submitted${latest.submitted_at ? ` on ${new Date(latest.submitted_at).toLocaleString()}` : ''}.`
+                    ? `Submitted${latest.submitted_at ? ` on ${formatDateTime(latest.submitted_at)}` : ''}.`
                     : 'Waiting for the submission.'}
                 </p>
               </div>

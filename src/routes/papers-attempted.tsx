@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
 import { PageLoading } from '../components/page-loading'
+import { formatDate as indianDate } from '../lib/dates'
 
 export const Route = createFileRoute('/papers-attempted')({ component: PapersAttempted })
 
@@ -17,11 +18,7 @@ interface PaperListItem {
 }
 
 function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString(undefined, {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  })
+  return indianDate(iso)
 }
 
 /**

@@ -1,3 +1,4 @@
+import { formatDate } from '../../dates'
 // India time, for quiet hours and "4 pm" style schedules. India has no daylight saving, so a fixed +5:30 is exact.
 const IST_MS = 5.5 * 3_600_000
 
@@ -35,9 +36,9 @@ export function nextQuietEnd(now: Date): Date {
   return new Date(t)
 }
 
-/** "3 Nov" in India. */
+/** "03/11/2026" in India. */
 export function istDayLabel(d: Date): string {
-  return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' })
+  return formatDate(d)
 }
 
 /** The start of this week in India: Monday 00:00. */

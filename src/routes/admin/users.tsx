@@ -5,6 +5,7 @@ import { Button } from '../../components/ui/button'
 import { Input } from '../../components/ui/input'
 import { useSession } from '../../lib/auth-client'
 import { AdminPage, Notice, Panel, Pill } from '../../components/admin/admin-ui'
+import { formatDate } from '../../lib/dates'
 
 export const Route = createFileRoute('/admin/users')({ component: AdminUsers })
 
@@ -159,7 +160,7 @@ function AdminUsers() {
                       </div>
                     </td>
                     <td className="text-muted-foreground px-4 py-2.5 whitespace-nowrap tabular-nums">
-                      {new Date(user.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      {formatDate(user.created_at)}
                     </td>
                     <td className="px-4 py-2.5 text-right sm:pr-5">
                       <Button

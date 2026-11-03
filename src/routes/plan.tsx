@@ -11,6 +11,7 @@ import { Button } from '../components/ui/button'
 import { ThemeToggle } from '../components/theme-toggle'
 import { useSession } from '../lib/auth-client'
 import { PageLoading } from '../components/page-loading'
+import { formatDate } from '../lib/dates'
 
 export const Route = createFileRoute('/plan')({ component: StudyPlanScreen })
 
@@ -226,7 +227,7 @@ function StudyPlanScreen() {
                         aria-label={`Mark day ${day.day_number} done`}
                       />
                       <span className={day.completed ? 'line-through text-muted-foreground' : ''}>
-                        Day {day.day_number} — {day.date}
+                        Day {day.day_number} — {formatDate(day.date)}
                       </span>
                     </CardTitle>
                     {day.subject_name && (

@@ -12,6 +12,7 @@ import {
 } from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 import type { myResults } from '../../../../lib/schools/results-release'
+import { formatDate } from '../../../../lib/dates'
 
 export const Route = createFileRoute('/school/$schoolId/my-results/')({
   component: MyResults,
@@ -19,8 +20,7 @@ export const Route = createFileRoute('/school/$schoolId/my-results/')({
 
 type Row = Awaited<ReturnType<typeof myResults>>[number]
 
-const day = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
+const day = (iso: string) => formatDate(iso)
 
 // A school student's own results, once her teacher has released them (M4). Nothing else of the school is here.
 function MyResults() {

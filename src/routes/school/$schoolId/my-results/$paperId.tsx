@@ -12,6 +12,7 @@ import {
 import { MathText } from '../../../../components/math-text'
 import { api } from '../../../../lib/school-client'
 import type { myResult } from '../../../../lib/schools/results-release'
+import { formatDate } from '../../../../lib/dates'
 
 export const Route = createFileRoute('/school/$schoolId/my-results/$paperId')({
   component: MyResult,
@@ -20,8 +21,7 @@ export const Route = createFileRoute('/school/$schoolId/my-results/$paperId')({
 type R = Awaited<ReturnType<typeof myResult>>
 type A = R['answers'][number]
 
-const day = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
+const day = (iso: string) => formatDate(iso)
 const num = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1))
 const LOSS: Record<string, string> = {
   knowledge_gap: "You didn't know this one",

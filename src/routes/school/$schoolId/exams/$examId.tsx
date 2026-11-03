@@ -16,6 +16,7 @@ import {
   runBookletJob,
 } from '../../../../lib/school-client'
 import type { BookletJobProgress } from '../../../../lib/school-client'
+import { formatDate } from '../../../../lib/dates'
 
 export const Route = createFileRoute('/school/$schoolId/exams/$examId')({
   component: ExamPage,
@@ -155,7 +156,7 @@ function ExamPage() {
       </h1>
       <p className="text-base text-slate-700">
         {d.className} · {d.sections.map((s) => `Section ${s}`).join(', ')}
-        {d.examDate ? ` · ${d.examDate}` : ''}
+        {d.examDate ? ` · ${formatDate(d.examDate)}` : ''}
       </p>
       {message ? <Notice kind="good">{message}</Notice> : null}
       {error ? <Notice kind="error">{error}</Notice> : null}

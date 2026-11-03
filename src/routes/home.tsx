@@ -15,6 +15,7 @@ import { StatusDistributionBar } from '../components/charts/status-distribution-
 import { useSession } from '../lib/auth-client'
 import { STATUS } from '../components/charts/palette'
 import { PageLoading, PageSkeleton } from '../components/page-loading'
+import { formatDate } from '../lib/dates'
 
 export const Route = createFileRoute('/home')({ component: ParentDashboard })
 
@@ -327,7 +328,7 @@ function ParentDashboard() {
                   <div>
                     <p className="text-body">{e.paper_title}</p>
                     <p className="text-small text-muted-foreground">
-                      Submitted {new Date(e.submitted_at).toLocaleDateString()}
+                      Submitted {formatDate(e.submitted_at)}
                     </p>
                   </div>
                   <a href={`/evaluate/${e.attempt_id}`}>
@@ -642,7 +643,7 @@ function ParentDashboard() {
                             {h.observations.map((o, i) => (
                               <span
                                 key={i}
-                                title={`${o.rating} — ${new Date(o.confirmed_at).toLocaleDateString()}`}
+                                title={`${o.rating} — ${formatDate(o.confirmed_at)}`}
                                 className="flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-medium text-white"
                                 style={{
                                   background: HABIT_RATING_COLOR[o.rating],

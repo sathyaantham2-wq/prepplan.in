@@ -5,6 +5,7 @@ import { Btn, Card, Chip, Dialog, Loading, Notice, PageHeader, Select, Stat, Tex
 import { api } from '../../../lib/school-client'
 import type { MessagingOverview, MessagingSettings } from '../../../lib/schools/messaging/log'
 import type { PermissionRow } from '../../../lib/schools/messaging/permissions'
+import { formatDate, formatDateTime } from '../../../lib/dates'
 
 type Tab = 'activity' | 'permissions' | 'settings'
 
@@ -15,8 +16,7 @@ export const Route = createFileRoute('/school/$schoolId/messages')({
   component: MessagesPage,
 })
 
-const day = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' })
+const day = (iso: string) => formatDate(iso)
 
 // Parent messaging permission (the office only): who agreed to get results and reminders on WhatsApp, in which
 // language, who confirmed it and when, and who replied STOP. A parent without a recorded yes gets nothing; the
@@ -207,8 +207,7 @@ const STATUS: Partial<Record<string, { label: string; tone: 'plain' | 'good' | '
   failed: { label: 'Failed', tone: 'bad' },
   skipped: { label: 'Not sent', tone: 'plain' },
 }
-const when = (iso: string) =>
-  new Date(iso).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Kolkata' })
+const when = (iso: string) => formatDateTime(iso)
 
 function ActivityTab() {
   const { schoolId } = useSchool()

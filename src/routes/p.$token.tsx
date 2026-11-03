@@ -6,6 +6,7 @@ import { tr, useLang } from '../lib/school-i18n'
 import type { Key } from '../lib/school-i18n'
 import type { ParentView } from '../lib/schools/messaging/parent-view'
 import { useDarkMode } from '../components/school/progress-ui'
+import { formatDate } from '../lib/dates'
 
 // A parent's personal report link. No login. The title and the link preview are FIXED text on purpose: WhatsApp
 // shows a preview of a link, and it must never show a child's name or the school (owner rule 2026-11-01).
@@ -23,8 +24,7 @@ export const Route = createFileRoute('/p/$token')({
 })
 
 const card = 'rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-800'
-const day = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' })
+const day = (iso: string) => formatDate(iso)
 
 function ParentLinkPage() {
   const { token } = Route.useParams()

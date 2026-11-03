@@ -7,6 +7,7 @@ import type {
   SectionRelease,
   disputeQueue,
 } from '../../lib/schools/results-release'
+import { formatDate } from '../../lib/dates'
 
 // Releasing marked results to the students, and the flags they raise (M4). A section is released once nobody
 // in it is waiting for marking or a teacher's look; the students then have the school's dispute window to flag
@@ -14,8 +15,7 @@ import type {
 
 type Dispute = Awaited<ReturnType<typeof disputeQueue>>[number]
 
-const day = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
+const day = (iso: string) => formatDate(iso)
 const num = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1))
 
 export function ReleasePanel({

@@ -6,6 +6,7 @@ import { DataTable, Drawer, useShell } from '../../../components/school/kit'
 import { UploadPanel } from '../../../components/school/upload-panel'
 import { Btn, Chip, Dialog, EmptyState, Notice, PageHeader } from '../../../components/school/ui'
 import { api, printCodeSlip } from '../../../lib/school-client'
+import { formatDate } from '../../../lib/dates'
 
 export const Route = createFileRoute('/school/$schoolId/teachers')({
   component: Teachers,
@@ -182,7 +183,7 @@ function Teachers() {
         <Dialog title={`Code for ${slip.name}`} onClose={() => setSlip(null)}>
           <p className="text-base">
             Give this to {slip.name} on paper. It works once and stops working
-            on {slip.result.expiresAt.slice(0, 10)}.
+            on {formatDate(slip.result.expiresAt)}.
           </p>
           <p
             className="my-4 rounded-lg bg-slate-100 p-4 text-center font-mono text-3xl font-bold tracking-widest"

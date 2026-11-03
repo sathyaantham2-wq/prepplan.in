@@ -4,6 +4,7 @@ import { Moon, Sun } from 'lucide-react'
 import type { Key, Lang } from '../../lib/school-i18n'
 import { useMaybeShell } from './kit'
 import type { Level } from '../../lib/schools/topic-level'
+import { formatDate } from '../../lib/dates'
 
 // The building blocks of the Progress screens (original design, owner direction 2026-10-31): soft cards, one
 // growth line, three-step level meters, a two-colour "where marks went" bar and small habit bars. Everything
@@ -346,5 +347,5 @@ export function Bars({ values, max }: { values: Array<number>; max: number }) {
   )
 }
 
-export const dayLabel = (iso: string, lang: Lang) =>
-  new Date(iso).toLocaleDateString(lang === 'te' ? 'te-IN' : 'en-IN', { day: 'numeric', month: 'short' })
+// dd/mm/yyyy in both languages (owner direction 2026-11-03)
+export const dayLabel = (iso: string, _lang: Lang) => formatDate(iso)

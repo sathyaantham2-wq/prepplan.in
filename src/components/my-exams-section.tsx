@@ -3,6 +3,7 @@ import type { FormEvent } from 'react'
 import { Button } from './ui/button'
 import { Label } from './ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
+import { formatDate } from '../lib/dates'
 
 interface Exam {
   name: string
@@ -14,8 +15,7 @@ const fieldClass =
   'border-input flex h-11 w-full rounded-md border bg-transparent px-3 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring'
 
 function prettyDate(date: string): string {
-  const d = new Date(`${date}T00:00:00.000Z`)
-  return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })
+  return formatDate(date)
 }
 
 /** Student settings: her own exam dates, which feed the Home countdown and her revision plan. */

@@ -16,6 +16,7 @@ import {
   linkButton,
 } from '../../../components/school/ui'
 import { api, printCodeSlip } from '../../../lib/school-client'
+import { formatDate } from '../../../lib/dates'
 
 export const Route = createFileRoute('/school/$schoolId/students')({
   validateSearch: (s: Record<string, unknown>) => ({
@@ -296,7 +297,7 @@ function Students() {
         <Dialog title={`Code for ${shown.name}`} onClose={() => setShown(null)}>
           <p className="text-base">
             Give this to {shown.name} on paper. It works once and stops working
-            on {shown.expiresAt.slice(0, 10)}.
+            on {formatDate(shown.expiresAt)}.
           </p>
           <p className="my-3 text-base">
             Her ID: <b>{shown.loginId}</b>

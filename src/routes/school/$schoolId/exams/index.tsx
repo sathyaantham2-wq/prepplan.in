@@ -13,6 +13,7 @@ import {
 } from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 import type { ExamSummary } from '../../../../lib/schools/exam-service'
+import { formatDate } from '../../../../lib/dates'
 
 export const Route = createFileRoute('/school/$schoolId/exams/')({
   component: Exams,
@@ -79,7 +80,7 @@ function Exams() {
             },
             { key: 'class', header: 'Class', cell: (e) => `${e.className} · ${e.sections.map((x) => `Section ${x}`).join(', ')}` },
             { key: 'marks', header: 'Marks', cell: (e) => e.printedMarks },
-            { key: 'date', header: 'Date', hideOnPhone: true, cell: (e) => e.examDate ?? '–' },
+            { key: 'date', header: 'Date', hideOnPhone: true, cell: (e) => formatDate(e.examDate) },
             {
               key: 'open',
               header: <span className="sr-only">Open</span>,
