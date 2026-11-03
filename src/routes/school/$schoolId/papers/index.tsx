@@ -89,7 +89,7 @@ function Papers() {
 
   return (
     <div className="space-y-5">
-      <h1 className="text-2xl font-bold">Paper layouts</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Paper layouts</h1>
       <p className="text-base text-slate-700">
         A layout is the pattern of a paper: how many marks, how long, and how
         many questions of each kind.

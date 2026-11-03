@@ -76,7 +76,7 @@ function Check() {
   if (listing.templates.length === 0 || listing.subjects.length === 0) {
     return (
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold">Check against the bank</h1>
+        <h1 className="text-[26px] leading-tight font-bold text-slate-900">Check against the bank</h1>
         <Notice>
           {listing.templates.length === 0
             ? 'Save a paper layout first (see Papers).'
@@ -87,8 +87,8 @@ function Check() {
   }
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Check against the bank</h1>
+    <div className="mx-auto max-w-4xl space-y-6">
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Check against the bank</h1>
       <p className="text-base text-slate-700">
         See how well the question bank can fill a layout for the chapters you
         choose, before a paper is made.
@@ -182,7 +182,7 @@ function Result({ r }: { r: CoveragePreview }) {
   const chapterGaps = r.shortfalls.filter((s) => s.kind === 'chapter')
   const thinking = (v: number) => Math.round((100 - v) * 10) / 10
   return (
-    <div className="space-y-4" aria-live="polite" data-testid="coverage-result">
+    <div className="mx-auto max-w-4xl space-y-6" aria-live="polite" data-testid="coverage-result">
       <Card
         className={`space-y-2 ${complete ? 'border-emerald-500' : 'border-amber-500'}`}
       >

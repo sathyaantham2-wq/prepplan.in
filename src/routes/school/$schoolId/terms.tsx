@@ -33,8 +33,8 @@ function Terms() {
   }
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">PrepPlan school terms</h1>
+    <div className="mx-auto max-w-4xl space-y-6">
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">PrepPlan school terms</h1>
       {overview.termsAccepted ? (
         <Notice kind="good">Your school has accepted the current terms.</Notice>
       ) : null}

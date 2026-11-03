@@ -130,8 +130,8 @@ function NewOwnPaper() {
   }
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Use your own paper</h1>
+    <div className="mx-auto max-w-4xl space-y-6">
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Use your own paper</h1>
       {choices.length === 0 ? (
         <Notice>
           Add a class and a subject first (and, for a teacher, be given a

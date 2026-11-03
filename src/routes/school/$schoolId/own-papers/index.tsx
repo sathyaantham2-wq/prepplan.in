@@ -2,16 +2,17 @@ import { useEffect, useState } from 'react'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useSchool } from '../../../../components/school/context'
 import { CorrectionHelp } from '../../../../components/school/correction-help'
-import { BookOpenCheck, FileUp } from 'lucide-react'
+import { BookOpenCheck, FileUp, Plus } from 'lucide-react'
+import { CorrectionTabs } from '../../../../components/school/correction-tabs'
+import { DataTable, Drawer } from '../../../../components/school/kit'
 import {
   Btn,
-  Card,
   Chip,
   PageHeader,
   EmptyState,
   Loading,
   Notice,
-  cardClass,
+  linkButton,
 } from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 
@@ -98,119 +99,95 @@ function OwnPapers() {
     }
   }
 
+  const optionCard =
+    'group flex min-h-24 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 text-left text-slate-900! transition-colors hover:border-emerald-700'
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <PageHeader
         title="AI correction"
-        subtitle="Three steps: the question paper, its answers approved by a teacher, then each student's answer sheets."
+        help="Three steps: the question paper, its answers approved by a teacher, then each student's answer sheets. The AI marks; your teachers check."
+        primary={
+          <Link to="/school/$schoolId/own-papers/new" params={{ schoolId }} className={linkButton.primary}>
+            <Plus aria-hidden="true" className="size-5" />
+            Upload a paper
+          </Link>
+        }
       />
+      <CorrectionTabs at="papers" />
       <CorrectionHelp />
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Link
-          to="/school/$schoolId/own-papers/new"
-          params={{ schoolId }}
-          className="group flex min-h-24 items-center gap-4 rounded-2xl border border-emerald-700 bg-emerald-700 p-4 text-white shadow-md shadow-emerald-900/20 hover:bg-emerald-800"
-        >
-          <span
-            aria-hidden="true"
-            className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white/15"
-          >
+      <div className="grid gap-4 md:grid-cols-2">
+        <Link to="/school/$schoolId/own-papers/new" params={{ schoolId }} className={optionCard}>
+          <span aria-hidden="true" className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-800">
             <FileUp className="size-6" />
           </span>
           <span>
-            <span className="font-display block text-lg font-bold">
-              Use your own paper
-            </span>
-            <span className="block text-[15px] text-emerald-50/90">
-              Upload it as Word, PDF or photos. We read it; you check it.
-            </span>
+            <span className="block text-base font-bold">Use your own paper</span>
+            <span className="block text-[15px] text-slate-600">Upload it as Word, PDF or photos. We read it; you check it.</span>
           </span>
         </Link>
-        <button
-          type="button"
-          onClick={() => void showExams()}
-          className="group flex min-h-24 items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 text-left text-slate-900 shadow-[0_1px_2px_rgba(16,24,40,0.04),0_1px_3px_rgba(16,24,40,0.06)] hover:border-emerald-300"
-        >
-          <span
-            aria-hidden="true"
-            className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700"
-          >
+        <button type="button" onClick={() => void showExams()} className={optionCard}>
+          <span aria-hidden="true" className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-800">
             <BookOpenCheck className="size-6" />
           </span>
           <span>
-            <span className="font-display block text-lg font-bold">
-              Use a paper made here
-            </span>
-            <span className="block text-[15px] text-slate-600">
-              One of your exam papers from PrepPlan, with its answers ready to
-              approve.
-            </span>
+            <span className="block text-base font-bold">Use a paper made here</span>
+            <span className="block text-[15px] text-slate-600">One of your exam papers from PrepPlan, with its answers ready to approve.</span>
           </span>
         </button>
       </div>
-      {picking ? (
-        <Card className="space-y-2" data-testid="exam-picker">
-          <h2 className="text-lg font-bold">Which exam paper?</h2>
+      <Drawer open={picking} title="Which exam paper?" help="Pick one of the papers made in PrepPlan. Its answers are ready for a teacher to approve." onClose={() => setPicking(false)}>
+        <div className="space-y-2" data-testid="exam-picker">
           {exams === null ? <Loading /> : null}
-          {exams?.length === 0 ? (
-            <p className="text-base text-slate-600">
-              No exam papers made here yet.
-            </p>
-          ) : null}
+          {exams?.length === 0 ? <p className="text-base text-slate-600">No exam papers made here yet.</p> : null}
           {exams?.map((e) => (
-            <div
-              key={e.id}
-              className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 px-3.5 py-2.5"
-            >
+            <div key={e.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-200 px-3.5 py-2.5">
               <span className="min-w-0">
                 <span className="block font-semibold">{e.title}</span>
                 <span className="block text-sm text-slate-600">
                   {e.className} · {e.printedMarks} marks
                 </span>
               </span>
-              <Btn
-                kind={e.paperId ? 'plain' : 'primary'}
-                disabled={busy !== null}
-                onClick={() => void take(e.id)}
-              >
-                {busy === e.id
-                  ? 'Opening…'
-                  : e.paperId
-                    ? 'Open'
-                    : 'Correct this paper'}
+              <Btn kind={e.paperId ? 'plain' : 'primary'} disabled={busy !== null} onClick={() => void take(e.id)}>
+                {busy === e.id ? 'Opening…' : e.paperId ? 'Open' : 'Correct this paper'}
               </Btn>
             </div>
           ))}
-        </Card>
-      ) : null}
-      <h2 className="pt-1 text-xl font-bold">Your papers</h2>
-      {error ? <Notice kind="error">{error}</Notice> : null}
-      {rows === null && !error ? <Loading /> : null}
-      {rows?.length === 0 ? (
-        <EmptyState icon={<FileUp className="size-6" />} title="No papers yet.">
-          A paper you upload is listed here while it is read, checked and
-          approved.
-        </EmptyState>
-      ) : null}
-      {rows?.map((r) => (
-        <Link
-          key={r.id}
-          to="/school/$schoolId/own-papers/$paperId"
-          params={{ schoolId, paperId: r.id }}
-          className={`${cardClass} block p-4! text-slate-900 transition-colors hover:border-emerald-300`}
-        >
-          <span className="flex flex-wrap items-center gap-2">
-            <b className="font-display text-lg">{r.title}</b>
-            <Chip tone={STATUS[r.status]?.tone ?? 'plain'}>
-              {STATUS[r.status]?.text ?? r.status}
-            </Chip>
-          </span>
-          <span className="mt-1 block text-base text-slate-700">
-            Class {r.grade} · {r.subjectName}
-            {r.totalMarks !== null ? ` · ${r.totalMarks} marks` : ''}
-          </span>
-        </Link>
-      ))}
+        </div>
+      </Drawer>
+      <section className="space-y-3">
+        <h2 className="text-lg font-bold">Your papers</h2>
+        {error ? <Notice kind="error">{error}</Notice> : null}
+        {rows === null && !error ? (
+          <Loading />
+        ) : rows ? (
+          <DataTable
+            testId="papers-table"
+            rows={rows}
+            rowKey={(r) => r.id}
+            search={(r) => `${r.title} ${r.subjectName} ${r.grade}`}
+            searchLabel="Search papers"
+            empty={
+              <EmptyState icon={<FileUp className="size-6" />} title="No papers yet.">
+                A paper you upload is listed here while it is read, checked and approved.
+              </EmptyState>
+            }
+            columns={[
+              {
+                key: 'title',
+                header: 'Paper',
+                cell: (r) => (
+                  <Link to="/school/$schoolId/own-papers/$paperId" params={{ schoolId, paperId: r.id }} className="inline-flex flex-wrap items-center gap-2 font-semibold text-slate-900! hover:underline">
+                    {r.title}
+                    <Chip tone={STATUS[r.status]?.tone ?? 'plain'}>{STATUS[r.status]?.text ?? r.status}</Chip>
+                  </Link>
+                ),
+              },
+              { key: 'class', header: 'Class and subject', cell: (r) => `Class ${r.grade} · ${r.subjectName}` },
+              { key: 'marks', header: 'Marks', cell: (r) => (r.totalMarks !== null ? r.totalMarks : '–') },
+            ]}
+          />
+        ) : null}
+      </section>
     </div>
   )
 }

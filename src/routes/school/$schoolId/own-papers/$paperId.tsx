@@ -119,7 +119,7 @@ function OwnPaperPage() {
         >
           AI correction
         </Link>
-        <h1 className="text-2xl font-bold">{v.title}</h1>
+        <h1 className="text-[26px] leading-tight font-bold text-slate-900">{v.title}</h1>
         <p className="text-base text-slate-700">
           Class {v.grade} · {v.subjectName}
           {v.totalMarks !== null ? ` · ${v.totalMarks} marks` : ''}

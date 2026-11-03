@@ -150,7 +150,7 @@ function ExamPage() {
     )
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold">{d.title}</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">{d.title}</h1>
       <p className="text-base text-slate-700">
         {d.className} · {d.sections.map((s) => `Section ${s}`).join(', ')}
         {d.examDate ? ` · ${d.examDate}` : ''}

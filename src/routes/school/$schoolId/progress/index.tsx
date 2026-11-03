@@ -42,7 +42,7 @@ function ProgressPage() {
   if (error) return <p className="text-base text-red-700 dark:text-red-300">{error}</p>
   if (!d) return <p className={`text-base ${muted}`}>{t('loading')}</p>
   return (
-    <div className="space-y-4" data-testid="progress">
+    <div className="mx-auto max-w-4xl space-y-6" data-testid="progress">
       <Toggles lang={lang} setLang={setLang} dark={dark} toggleDark={toggleDark} t={t} />
       <Who name={d.viewer.name} grade={d.viewer.grade} section={d.viewer.sectionName} school={d.viewer.schoolName} />
       {d.children.length > 1 ? (

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { useSchool } from '../../../components/school/context'
+import { CorrectionTabs } from '../../../components/school/correction-tabs'
 import { Btn, Card, Chip, Notice, PageHeader } from '../../../components/school/ui'
 import { api } from '../../../lib/school-client'
 import type { BoardBucket, BoardSection, examBoard } from '../../../lib/schools/exam-board'
@@ -37,7 +38,8 @@ function BoardPage() {
   const t = data?.totals
   return (
     <div className="space-y-4" data-testid="exam-board">
-      <PageHeader title="Exam-week board" subtitle="Where every answer sheet stands" />
+      <PageHeader title="Exam-week board" help="Where every answer sheet stands, for each paper and section. Tap a number to see the students behind it." />
+      <CorrectionTabs at="board" />
       {error ? <Notice kind="error">{error}</Notice> : null}
       {!data ? (
         error ? null : <p className="text-base">Loading…</p>
@@ -130,7 +132,7 @@ function PaperCard({
       </div>
       {error ? <Notice kind="error">{error}</Notice> : null}
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[34rem] text-left text-base">
+        <table className="w-full min-w-[34rem] text-left text-[15px]">
           <thead>
             <tr className="text-sm text-slate-600">
               <th className="py-1 pr-2 font-semibold">Section</th>

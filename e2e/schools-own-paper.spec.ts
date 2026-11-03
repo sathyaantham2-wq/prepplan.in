@@ -269,6 +269,8 @@ test.describe.serial('use your own paper (phone)', () => {
       'No exam papers made here yet.',
     )
     await shot(page, 'op-01b-paper-made-here')
+    // the list opens in a side panel; close it again
+    await page.getByRole('button', { name: 'Close the panel' }).click()
   })
 
   test('upload a Word paper: it is read, matched to chapters, and the teacher is told what to check', async () => {

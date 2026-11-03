@@ -107,7 +107,7 @@ function ClassView({
         >
           All results
         </Link>
-        <h1 className="text-2xl font-bold">{r.examTitle}</h1>
+        <h1 className="text-[26px] leading-tight font-bold text-slate-900">{r.examTitle}</h1>
         <DemoTag />
       </div>
 
@@ -296,7 +296,7 @@ function Report({
         Back to the class
       </Btn>
       <div className="space-y-1">
-        <h1 className="text-2xl font-bold">{s.name}</h1>
+        <h1 className="text-[26px] leading-tight font-bold text-slate-900">{s.name}</h1>
         <p className="text-base text-slate-700">
           {r.examTitle} · Roll {s.roll}
         </p>

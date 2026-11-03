@@ -48,7 +48,7 @@ function MyResult() {
   if (!r) return <Loading />
   const rep = r.report
   return (
-    <div className="space-y-4" data-testid="my-result">
+    <div className="mx-auto max-w-4xl space-y-6" data-testid="my-result">
       <PageHeader
         back={
           <Link to="/school/$schoolId/my-results" params={{ schoolId }}>

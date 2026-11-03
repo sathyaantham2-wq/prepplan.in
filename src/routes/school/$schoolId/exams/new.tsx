@@ -137,7 +137,7 @@ function NewExam() {
   if (listing.subjects.length === 0) {
     return (
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold">Make an exam paper</h1>
+        <h1 className="text-[26px] leading-tight font-bold text-slate-900">Make an exam paper</h1>
         <Notice>You need a subject you teach in a class first.</Notice>
       </div>
     )
@@ -147,8 +147,8 @@ function NewExam() {
     title.trim() && picked.size > 0 && sections.size > 0 && key && subjectId
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Make an exam paper</h1>
+    <div className="mx-auto max-w-4xl space-y-6">
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Make an exam paper</h1>
       <p className="text-base text-slate-700">
         One paper for the whole class. Students never see the answers.
       </p>

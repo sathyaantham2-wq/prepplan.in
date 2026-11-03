@@ -37,7 +37,7 @@ function MyResults() {
   if (error) return <Notice kind="error">{error}</Notice>
   if (!rows) return <Loading />
   return (
-    <div className="space-y-4" data-testid="my-results">
+    <div className="mx-auto max-w-4xl space-y-6" data-testid="my-results">
       <PageHeader title="My results" subtitle="Your marked papers, and why marks were lost." />
       {rows.length === 0 ? (
         <EmptyState title="No results yet">

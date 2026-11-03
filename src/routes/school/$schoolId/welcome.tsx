@@ -101,7 +101,7 @@ function Welcome() {
   const q = QUESTIONS.findIndex((x) => x.step === step)
 
   return (
-    <div className="space-y-4" data-testid="wizard" data-step={step}>
+    <div className="mx-auto max-w-4xl space-y-6" data-testid="wizard" data-step={step}>
       {q >= 0 ? (
         <div className="space-y-2">
           <p className="text-base font-semibold text-slate-700">
@@ -255,7 +255,7 @@ function YouScreen({
   const [phone, setPhone] = useState(w.me.phone?.replace(/^\+91/, '') ?? '')
   return (
     <Card className="space-y-4">
-      <h1 className="text-2xl font-bold">Welcome. What should we call you?</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Welcome. What should we call you?</h1>
       <p className="text-base text-slate-700">
         This is how your name shows to your teachers.
       </p>
@@ -301,7 +301,7 @@ function SchoolScreen({
   const [agree, setAgree] = useState(w.termsAccepted)
   return (
     <Card className="space-y-4">
-      <h1 className="text-2xl font-bold">What is your school called?</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">What is your school called?</h1>
       <TextInput
         label="School name"
         value={name}
@@ -379,7 +379,7 @@ function ClassesScreen({
   }))
   return (
     <Card className="space-y-4">
-      <h1 className="text-2xl font-bold">
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">
         Which classes does your school have?
       </h1>
       <p className="text-base text-slate-700">
@@ -499,7 +499,7 @@ function TeachersScreen({
 
   return (
     <Card className="space-y-4">
-      <h1 className="text-2xl font-bold">Who teaches at your school?</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Who teaches at your school?</h1>
       {sections.length === 0 ? (
         <Notice>
           Add your classes first (go back one step), or skip this and add
@@ -599,7 +599,7 @@ function StudentsScreen({
   const [open, setOpen] = useState(false)
   return (
     <Card className="space-y-4">
-      <h1 className="text-2xl font-bold">Now your students</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">Now your students</h1>
       <p className="text-base text-slate-700">
         Send us your list of students as an Excel or CSV file. We check it first
         and tell you what to fix. Nobody is added until you say so.
@@ -654,7 +654,7 @@ function PartsScreen({
   const [modules, setModules] = useState<Array<SchoolModule>>(w.modules)
   return (
     <Card className="space-y-4">
-      <h1 className="text-2xl font-bold">What will you use PrepPlan for?</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">What will you use PrepPlan for?</h1>
       <p className="text-base text-slate-700">
         Choose one or both. Your home screen shows only what you choose. You can
         change this later in Settings.
@@ -694,7 +694,7 @@ function DoneScreen({
   ]
   return (
     <Card className="space-y-4">
-      <h1 className="text-2xl font-bold">You are ready</h1>
+      <h1 className="text-[26px] leading-tight font-bold text-slate-900">You are ready</h1>
       <p className="text-base text-slate-700">
         Here is what we have. Anything you skipped can be done later from your
         home screen.

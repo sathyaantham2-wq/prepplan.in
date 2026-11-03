@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { BookOpenCheck } from 'lucide-react'
+import { BookOpenCheck, Plus } from 'lucide-react'
 import { useSchool } from '../../../../components/school/context'
+import { DataTable } from '../../../../components/school/kit'
 import {
   Btn,
-  Card,
   Chip,
   EmptyState,
+  Loading,
   Notice,
+  PageHeader,
 } from '../../../../components/school/ui'
 import { api } from '../../../../lib/school-client'
 import type { ExamSummary } from '../../../../lib/schools/exam-service'
@@ -32,62 +34,65 @@ function Exams() {
       )
   }, [schoolId])
 
-  if (error) return <Notice kind="error">{error}</Notice>
-  if (!exams) return <p className="text-base text-slate-700">Loading…</p>
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Exams</h1>
-      {canMake ? (
-        <Btn
-          className="w-full"
-          onClick={() =>
-            navigate({
-              to: '/school/$schoolId/exams/new',
-              params: { schoolId },
-            })
+    <div className="space-y-6">
+      <PageHeader
+        title="Exams"
+        help="Papers made in PrepPlan from your chapters, ready to print with an answer booklet for every student."
+        primary={
+          canMake ? (
+            <Btn onClick={() => void navigate({ to: '/school/$schoolId/exams/new', params: { schoolId } })}>
+              <Plus aria-hidden="true" className="size-5" />
+              Make an exam paper
+            </Btn>
+          ) : null
+        }
+      />
+      {error ? <Notice kind="error">{error}</Notice> : null}
+      {!exams && !error ? <Loading /> : null}
+      {exams ? (
+        <DataTable
+          testId="exams-table"
+          rows={exams}
+          rowKey={(e) => e.id}
+          search={(e) => `${e.title} ${e.className}`}
+          searchLabel="Search papers"
+          empty={
+            <EmptyState icon={<BookOpenCheck className="size-6" />} title="No exam papers yet.">
+              Make one from your chapters, then print it with an answer booklet for every student.
+            </EmptyState>
           }
-        >
-          Make an exam paper
-        </Btn>
+          columns={[
+            {
+              key: 'title',
+              header: 'Paper',
+              cell: (e) => (
+                <span className="flex flex-wrap items-center gap-2">
+                  <span className="font-semibold">{e.title}</span>
+                  {e.gaps > 0 ? (
+                    <Chip tone="wait">
+                      {e.gaps} {e.gaps === 1 ? 'gap' : 'gaps'}
+                    </Chip>
+                  ) : null}
+                </span>
+              ),
+            },
+            { key: 'class', header: 'Class', cell: (e) => `${e.className} · ${e.sections.map((x) => `Section ${x}`).join(', ')}` },
+            { key: 'marks', header: 'Marks', cell: (e) => e.printedMarks },
+            { key: 'date', header: 'Date', hideOnPhone: true, cell: (e) => e.examDate ?? '–' },
+            {
+              key: 'open',
+              header: <span className="sr-only">Open</span>,
+              className: 'text-right',
+              cell: (e) => (
+                <Btn kind="plain" onClick={() => void navigate({ to: '/school/$schoolId/exams/$examId', params: { schoolId, examId: e.id } })}>
+                  Open
+                </Btn>
+              ),
+            },
+          ]}
+        />
       ) : null}
-      {exams.length === 0 ? (
-        <EmptyState
-          icon={<BookOpenCheck className="size-6" />}
-          title="No exam papers yet."
-        >
-          Make one from your chapters, then print it with an answer booklet for
-          every student.
-        </EmptyState>
-      ) : null}
-      {exams.map((e) => (
-        <Card key={e.id} className="space-y-2">
-          <div className="flex flex-wrap items-center gap-2">
-            <b className="font-display text-lg">{e.title}</b>
-            <Chip tone="good">{e.printedMarks} marks</Chip>
-            {e.gaps > 0 ? (
-              <Chip tone="wait">
-                {e.gaps} {e.gaps === 1 ? 'gap' : 'gaps'}
-              </Chip>
-            ) : null}
-          </div>
-          <p className="text-base text-slate-700">
-            {e.className} · {e.sections.map((s) => `Section ${s}`).join(', ')}
-            {e.examDate ? ` · ${e.examDate}` : ''}
-          </p>
-          <Btn
-            kind="plain"
-            className="w-full"
-            onClick={() =>
-              navigate({
-                to: '/school/$schoolId/exams/$examId',
-                params: { schoolId, examId: e.id },
-              })
-            }
-          >
-            Open
-          </Btn>
-        </Card>
-      ))}
     </div>
   )
 }

@@ -17,7 +17,7 @@ function ExamPage() {
   const [lang, setLang, t] = useLang()
   const [dark, toggleDark] = useDarkMode()
   return (
-    <div className="space-y-4">
+    <div className="mx-auto max-w-4xl space-y-6">
       <Toggles lang={lang} setLang={setLang} dark={dark} toggleDark={toggleDark} t={t} />
       <Link
         to="/school/$schoolId/progress"
