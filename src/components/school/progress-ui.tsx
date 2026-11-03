@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import type { Key, Lang } from '../../lib/school-i18n'
+import { useMaybeShell } from './kit'
 import type { Level } from '../../lib/schools/topic-level'
 
 // The building blocks of the Progress screens (original design, owner direction 2026-10-31): soft cards, one
@@ -12,19 +13,25 @@ export type T = (k: Key) => string
 
 const THEME = 'prepplan-school-dark'
 
-/** Dark mode for the Progress screens: remembered in this browser, put back to light when the screen is left. */
+/**
+ * Dark mode for the Progress screens. Inside the school frame it is the frame's own theme (one switch for every school
+ * screen, built from the school palette). On the public progress link page, which has no frame, it is remembered in
+ * this browser and uses the page-wide dark classes, as before.
+ */
 export function useDarkMode(): [boolean, () => void] {
+  const shell = useMaybeShell()
   const [dark, setDark] = useState(false)
   useEffect(() => {
+    if (shell) return
     try {
       setDark(window.localStorage.getItem(THEME) === '1')
     } catch {
       // ignore
     }
-  }, [])
+  }, [shell])
   useEffect(() => {
+    if (shell) return
     document.documentElement.classList.toggle('dark', dark)
-    // the page behind the cards must go dark too (the school layout has a light background of its own)
     document.body.style.backgroundColor = dark ? '#0b1220' : ''
     document.documentElement.style.backgroundColor = dark ? '#0b1220' : ''
     return () => {
@@ -32,7 +39,8 @@ export function useDarkMode(): [boolean, () => void] {
       document.body.style.backgroundColor = ''
       document.documentElement.style.backgroundColor = ''
     }
-  }, [dark])
+  }, [dark, shell])
+  if (shell) return [shell.dark, () => shell.setDark(!shell.dark)]
   return [
     dark,
     () => {

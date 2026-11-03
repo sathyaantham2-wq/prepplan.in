@@ -7,6 +7,7 @@ import type { Db } from '../src/db/connection'
 import { schoolsRepository } from '../src/db/repositories'
 import { issueFirstAdminCode } from '../src/lib/schools/credentials'
 import { provisionDemoSchool } from '../src/lib/schools/demo-provision'
+import { goTo, schoolNav } from './school-nav'
 
 /**
  * PrepPlan for Schools, M1 on a phone: the first sign-in wizard (every question), the home screen with
@@ -518,8 +519,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
   })
 
   test('teachers from Excel: download the sample, copy the example onto the first sheet, upload; one teacher gets several classes', async () => {
-    const bar = page.getByRole('navigation', { name: 'School' }).last()
-    await bar.getByRole('link', { name: 'Settings' }).click()
+    await goTo(page, 'Settings')
     await page.getByRole('link', { name: /^Teachers/ }).click()
     await page.getByRole('button', { name: 'Add teachers from a file' }).click()
     const download = page.waitForEvent('download')
@@ -560,8 +560,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
   })
 
   test('Settings: choose only AI correction; home and tabs follow; then both again', async () => {
-    const bar = page.getByRole('navigation', { name: 'School' }).last()
-    await bar.getByRole('link', { name: 'Settings' }).click()
+    await goTo(page, 'Settings')
     await expect(
       page.getByRole('heading', { name: 'Settings', exact: true }),
     ).toBeVisible()
@@ -571,13 +570,14 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     // untick "Make exam papers"; "AI correction" is then the last one and cannot be unticked
     await picker.getByText('Make exam papers').click()
     await expect(picker.getByText('At least one part stays on.')).toBeVisible()
-    await page.getByRole('button', { name: 'Save', exact: true }).click()
+    await page.getByRole('button', { name: 'Save', exact: true }).first().click()
     await expect(
       page.getByText('Saved. Your home screen now shows'),
     ).toBeVisible()
-    await expect(bar.getByRole('link', { name: 'Exams' })).toHaveCount(0)
-    await expect(bar.getByRole('link', { name: 'Correction' })).toBeVisible()
-    await bar.getByRole('link', { name: 'Home' }).click()
+    const bar = await schoolNav(page)
+    await expect(bar.getByRole('link', { name: 'Make paper' })).toHaveCount(0)
+    await expect(bar.getByRole('link', { name: 'AI correction' })).toBeVisible()
+    await goTo(page, 'Home')
     const big = page.getByTestId('big-actions')
     await expect(big.getByRole('link', { name: /Make a paper/ })).toHaveCount(0)
     await expect(
@@ -586,14 +586,14 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await shot(page, 'm1-21-home-correction-only')
     await looksRight(page)
     // and back to both
-    await bar.getByRole('link', { name: 'Settings' }).click()
+    await goTo(page, 'Settings')
     await picker.getByText('Make exam papers').click()
-    await page.getByRole('button', { name: 'Save', exact: true }).click()
+    await page.getByRole('button', { name: 'Save', exact: true }).first().click()
     await expect(
       page.getByText('Saved. Your home screen now shows'),
     ).toBeVisible()
-    await expect(bar.getByRole('link', { name: 'Exams' })).toBeVisible()
-    await bar.getByRole('link', { name: 'Home' }).click()
+    await expect((await schoolNav(page)).getByRole('link', { name: 'Make paper' })).toBeVisible()
+    await goTo(page, 'Home')
   })
 
   test('a skipped wizard: the office can leave at question 1 and still reach the home screen', async () => {
@@ -738,7 +738,7 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
         .replace(/\/exams\//, '/results/'),
     )
     expect(old.status()).toBe(404)
-    await teacher.getByRole('link', { name: 'Exams' }).last().click()
+    await goTo(teacher, 'Make paper')
     await expect(teacher.getByText('Unit Test 1')).toHaveCount(0)
   })
 })

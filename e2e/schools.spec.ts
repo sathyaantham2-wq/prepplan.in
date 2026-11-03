@@ -13,6 +13,7 @@ import {
   photograph,
   renderPagePngs,
 } from '../src/lib/schools/scan-test-support'
+import { goTo, signOutOfSchool } from './school-nav'
 
 /**
  * PrepPlan for Schools, S3: the school screens on a phone-sized screen. Provisions its own school,
@@ -29,7 +30,7 @@ test.use({ viewport: PHONE, hasTouch: true, isMobile: true })
 /** A clean picture of the whole page: the window is made as tall as the page so the fixed bottom menu stays at the bottom. */
 /** Classes, Teachers and the paper patterns are reached from Settings (a phone's bar has no room). */
 async function viaSettings(page: Page, name: RegExp) {
-  await page.getByRole('link', { name: 'Settings' }).last().click()
+  await goTo(page, 'Settings')
   await page.getByRole('link', { name }).click()
 }
 
@@ -484,7 +485,7 @@ test.describe.serial('school screens on a phone', () => {
 
   test('the office home shows the steps; the terms come first', async () => {
     const page = adminPage
-    await expect(page.getByText('Sunrise Public School').first()).toBeVisible()
+    await expect(page.getByText('Sunrise Public School').filter({ visible: true }).first()).toBeVisible()
     await shot(page, '06-admin-home-new-school')
     await looksRight(page)
     await page
@@ -582,7 +583,7 @@ test.describe.serial('school screens on a phone', () => {
 
   test('students: a file with a mistake is stopped, a good one loads, the slips and a new code work', async () => {
     const page = adminPage
-    await page.getByRole('link', { name: 'Students' }).last().click()
+    await goTo(page, 'Students')
     await expect(page.getByRole('heading', { name: 'Students' })).toBeVisible()
     await page.getByRole('button', { name: 'Add students from a file' }).click()
     const head = 'Name,Class,Section,Roll No,Admission No,Parent Phone'
@@ -691,7 +692,7 @@ test.describe.serial('school screens on a phone', () => {
     await expect(again.getByRole('alert')).toContainText('not right')
     await shot(again, '22-student-code-used-twice')
     // sign out, sign in again with school code + ID + password
-    await page.getByRole('button', { name: 'Sign out' }).click()
+    await signOutOfSchool(page)
     await page.waitForURL('**/school/sign-in')
     await page.getByLabel('School code').fill(schoolCode)
     await page.getByLabel('Your ID').fill(studentId.toLowerCase())
@@ -873,7 +874,7 @@ test.describe.serial('school screens on a phone', () => {
   let examId = ''
   test('exams: one paper for the class, its gaps shown, and the question paper, teacher copy and booklets open as PDFs', async () => {
     const page = adminPage
-    await page.getByRole('link', { name: 'Exams' }).last().click()
+    await goTo(page, 'Make paper')
     await expect(page.getByRole('heading', { name: 'Exams' })).toBeVisible()
     await shot(page, '40-exams-empty')
     await looksRight(page)

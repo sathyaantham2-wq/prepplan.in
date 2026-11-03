@@ -13,6 +13,7 @@ import { issueFirstAdminCode } from '../src/lib/schools/credentials'
 import { createSchoolStudent } from '../src/lib/schools/people'
 import { addSchoolSubject, createClass, createSection } from '../src/lib/schools/setup'
 import { acceptSchoolTerms } from '../src/lib/schools/terms'
+import { goTo } from './school-nav'
 
 /**
  * AI marking, student by student (M4 stage 2): the student list with its statuses, marking one student,
@@ -401,7 +402,7 @@ test.describe.serial('AI marking (phone)', () => {
     const sp = await ctx.newPage()
     await sp.goto(`/school/${schoolId}`, { waitUntil: 'networkidle' })
     await shot(sp, 'mk-10-student-home')
-    await sp.getByRole('link', { name: 'My results' }).first().click()
+    await goTo(sp, 'My results')
     await expect(sp.getByTestId('my-results')).toContainText('Unit Test 2')
     await expect(sp.getByTestId('my-results')).toContainText('3')
     await shot(sp, 'mk-11-student-results-list')

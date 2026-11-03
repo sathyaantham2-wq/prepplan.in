@@ -171,7 +171,7 @@ test.describe.serial('a school starts itself (phone)', () => {
       page.getByRole('heading', { name: 'Welcome. What should we call you?' }),
     ).toBeVisible()
     await expect(page.getByLabel('Your name')).toHaveValue('Rekha Nair')
-    await expect(page.getByText('Start School ' + tag).first()).toBeVisible()
+    await expect(page.getByText('Start School ' + tag).filter({ visible: true }).first()).toBeVisible()
     await shot(page, 'su-04-lands-in-wizard')
     await looksRight(page)
   })
