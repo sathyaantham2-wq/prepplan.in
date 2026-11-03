@@ -282,6 +282,18 @@ batch results arrive unattended, so "failed" must never look like "marked".
 - Not built: a per-exam grouping (it lists papers; a paper linked to an exam is not yet grouped by it), a "released" count per
   section beyond the badge, auto-refresh.
 
+### Real-AI measurement after the additions (2026-11-03, Nainika, 25 pages, reconstructed paper)
+- Rs 57.90 (Sonnet-rate prices for every model, since Opus/Haiku prices are not set), 207 s, 61 answers, 3 flagged; harness
+  accuracy 91% exact, 96% within half a mark. By call: Sonnet 5 calls Rs 32.54 (278k tokens in), Haiku MCQ reading 1 call Rs 10.76
+  (41k in), Opus tie-break 1 call Rs 14.60 (56k in).
+- **Haiku for the multiple-choice reading does not save money; it adds cost.** Every call sends all page pictures, and the picture
+  cache is per model, so the Haiku call is one more full set of pictures on top of Sonnet's reading 1 (which still sends every page
+  for the written answers). Recommendation: put the MCQ questions back into Sonnet's reading 1 (one call), owner to decide.
+- Answer places: 53 of 61 answers came back with a page and box; a visual check of 7 crops found 6 on the right answer (boxes are
+  generous, full width) and 1 a line off (Q19 showed the printed "20.", possibly the reconstructed numbering).
+- Rubric draft prompt (SCH-03), 3 Social Science written questions and 1 MCQ, Rs 1.19 per call: all three got a valid rubric whose
+  criteria add up (3, 5, 3 marks, half marks used, levels sensible); the MCQ stayed a plain key.
+
 ### Full-paper measurement (2026-11-02, Nainika, 25 pages, 61 answers, reconstructed paper)
 Two readings in three parts, page pictures cached, Opus tie-break only where needed:
 
