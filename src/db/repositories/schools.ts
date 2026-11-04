@@ -4,6 +4,7 @@ import type { SchoolScope } from '../school-scope'
 import { createRepository, createSchoolScopedRepository } from './factory'
 import { schoolCredentialCodesRepository } from './school-credentials'
 import { schoolPaperTemplatesRepository } from './school-templates'
+import { schoolExamVersionsRepository } from './school-exam-builder'
 import {
   schoolBookletLayoutsRepository,
   schoolBookletPagesRepository,
@@ -374,6 +375,7 @@ export const SCHOOL_TABLE_REPOSITORIES = {
   school_exam_absences: schoolExamAbsencesRepository,
   school_print_jobs: schoolPrintJobsRepository,
   school_print_job_parts: schoolPrintJobPartsRepository,
+  school_exam_versions: schoolExamVersionsRepository,
 } as const
 
 /** Which of these e-mail addresses already belong to a PrepPlan account (any role). */

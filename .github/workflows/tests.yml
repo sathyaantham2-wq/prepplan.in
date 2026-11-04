@@ -8,6 +8,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # A normal run takes about 11 minutes. The cap stops a stuck step (one `npm ci` once hung for 44 minutes)
+    # from holding the run for close to an hour.
+    timeout-minutes: 25
     services:
       postgres:
         image: postgres:17
@@ -25,10 +28,12 @@ jobs:
       BETTER_AUTH_SECRET: ci-test-secret-not-used-for-anything-real
       BETTER_AUTH_URL: http://localhost:3000
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
+          # reuse downloaded packages between runs instead of fetching them all again
+          cache: npm
       - run: npm ci
       # F033's PDF renderer (papers-pdf.integration.test.ts) launches a real headless Chromium via
       # Playwright -- npm ci only installs the npm package, not the browser binary itself.
@@ -55,6 +60,8 @@ jobs:
     # slower/heavier than the unit+integration suite and failing independently here shouldn't block
     # on, or be blocked by, that job.
     runs-on: ubuntu-latest
+    # A normal run takes about 10 minutes; see the note on the test job.
+    timeout-minutes: 30
     services:
       postgres:
         image: postgres:17
@@ -72,10 +79,12 @@ jobs:
       BETTER_AUTH_SECRET: ci-test-secret-not-used-for-anything-real
       BETTER_AUTH_URL: http://localhost:3000
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
+          # reuse downloaded packages between runs instead of fetching them all again
+          cache: npm
       - run: npm ci
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
@@ -91,7 +100,7 @@ jobs:
       # throwaway Postgres only. Keep their phone-sized screenshots so a reviewer can look at them.
       - name: Upload school screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: school-screens
           path: test-results/school-screens/
@@ -99,7 +108,7 @@ jobs:
           if-no-files-found: ignore
       - name: Upload trace on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-traces
           path: test-results/

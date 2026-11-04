@@ -47,6 +47,9 @@ if (!LOCAL_HOSTS.has(dbHost)) {
 export default defineConfig({
   testDir: './e2e',
   timeout: 60_000,
+  // GitHub's runners are slower than a laptop: the school specs failed there (and passed locally) when a result
+  // took a little over the default 5 seconds to appear. Locally the default stays, so a real slowdown still shows.
+  expect: { timeout: process.env.CI ? 15_000 : 5_000 },
   fullyParallel: false,
   // fullyParallel:false only serializes tests within one file -- separate spec files still ran as
   // separate workers by default, which raced two files' fixture setup against the same live dev
@@ -55,7 +58,8 @@ export default defineConfig({
   // already documents for fileParallelism -- these E2E specs share one live DB, so they were never
   // safe to run as concurrent workers either.
   workers: 1,
-  retries: 0,
+  // One retry on CI only. A test that passes only on its retry is reported as "flaky" in the run, not hidden.
+  retries: process.env.CI ? 1 : 0,
   reporter: 'list',
   use: {
     baseURL: 'http://localhost:3000',

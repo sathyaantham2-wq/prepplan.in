@@ -40,7 +40,7 @@ jobs:
           --health-timeout 5s
           --health-retries 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Check secrets
         env:
@@ -75,7 +75,7 @@ jobs:
           psql postgresql://postgres:postgres@localhost:5432/postgres -c "create database restore_check"
           bash scripts/db-restore.sh backup/*.dump.enc
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: prepplan-backup-${{ github.run_number }}
           path: |
@@ -83,3 +83,28 @@ jobs:
             backup/*.counts
           retention-days: 30
           if-no-files-found: error
+
+  # A second alarm besides GitHub's own failed-run e-mail (which depends on the owner's notification settings): a
+  # failed scheduled backup opens an issue, and GitHub e-mails the repository owner about every new issue. If an
+  # open "Backup failed" issue already exists, the run adds a comment to it instead of opening another.
+  alert-on-failure:
+    needs: backup
+    if: failure() && github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update the "Backup failed" issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          body="The nightly database backup failed, so there is no new backup from tonight. Open the run to see the error: $RUN_URL . The guide is docs/RESTORE.md; the full runbook is docs/runbooks/backup-restore.md."
+          existing=$(gh issue list --state open --search 'in:title "Backup failed"' --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "Backup failed" --body "$body"
+          fi
