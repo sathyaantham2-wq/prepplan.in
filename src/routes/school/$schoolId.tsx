@@ -26,6 +26,7 @@ import {
   UserRound,
   Users,
   X,
+  FileQuestion,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { SchoolContext } from '../../components/school/context'
@@ -48,6 +49,7 @@ interface NavItem {
     | '/school/$schoolId/teachers'
     | '/school/$schoolId/students'
     | '/school/$schoolId/exams'
+    | '/school/$schoolId/questions'
     | '/school/$schoolId/own-papers'
     | '/school/$schoolId/board'
     | '/school/$schoolId/results'
@@ -74,6 +76,7 @@ function navFor(o: SchoolOverview): { groups: Array<NavGroup>; bottom: Array<Nav
   const home: NavItem = { to: '/school/$schoolId', label: 'Home', icon: Home }
   const students: NavItem = { to: '/school/$schoolId/students', label: 'Students', icon: Users }
   const makePaper: NavItem = { to: '/school/$schoolId/exams', label: 'Make paper', icon: BookOpenCheck }
+  const ourQuestions: NavItem = { to: '/school/$schoolId/questions', label: 'Our questions', icon: FileQuestion }
   const correction: NavItem = { to: '/school/$schoolId/own-papers', label: 'AI correction', icon: ScanLine, also: ['/board'] }
   const results: NavItem = { to: '/school/$schoolId/results', label: 'Results', icon: BarChart3 }
   const board: NavItem = { to: '/school/$schoolId/class-progress', label: 'Progress board', icon: Grid3x3 }
@@ -94,7 +97,7 @@ function navFor(o: SchoolOverview): { groups: Array<NavGroup>; bottom: Array<Nav
             students,
           ],
         },
-        ...exams([has('papers') && makePaper, has('correction') && correction, has('papers') && results, has('correction') && board]),
+        ...exams([has('papers') && makePaper, has('papers') && ourQuestions, has('correction') && correction, has('papers') && results, has('correction') && board]),
         { items: [messages] },
       ],
       bottom: [{ to: '/school/$schoolId/settings', label: 'Settings', icon: Settings, also: ['/terms', '/papers'] }],
@@ -103,7 +106,7 @@ function navFor(o: SchoolOverview): { groups: Array<NavGroup>; bottom: Array<Nav
     return {
       groups: [
         { items: [home, students] },
-        ...exams([has('papers') && makePaper, has('correction') && correction, has('papers') && results, has('correction') && board]),
+        ...exams([has('papers') && makePaper, has('papers') && ourQuestions, has('correction') && correction, has('papers') && results, has('correction') && board]),
         { items: [messages] },
       ],
       bottom: [],
@@ -115,6 +118,7 @@ function navFor(o: SchoolOverview): { groups: Array<NavGroup>; bottom: Array<Nav
         // the principal reads the correction through the exam-week board (the marking screens are the teachers')
         ...exams([
           has('papers') && makePaper,
+          has('papers') && ourQuestions,
           has('correction') && { ...correction, to: '/school/$schoolId/board', also: [] },
           has('correction') && board,
         ]),

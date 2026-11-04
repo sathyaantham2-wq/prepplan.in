@@ -31,7 +31,7 @@ export type QuestionType =
   | 'long_answer'
   | 'fill_blank'
   | 'diagram'
-export type QuestionStatus = 'draft' | 'approved' | 'retired'
+export type QuestionStatus = 'draft' | 'approved' | 'retired' | 'school'
 export type AttemptMode = 'online' | 'uploaded'
 export type AttemptStatus = 'in_progress' | 'submitted' | 'evaluated'
 export type AnswerSource = 'typed' | 'ocr'
@@ -57,7 +57,7 @@ export type ErrorType =
   | 'Incomplete'
   | 'Not Attempted'
   | 'Reading Discipline'
-export type QuestionOrigin = 'manual' | 'ai_generated'
+export type QuestionOrigin = 'manual' | 'ai_generated' | 'school'
 export type GenerationBatchStatus =
   'pending' | 'running' | 'paused' | 'completed' | 'failed'
 export type GenerationBatchItemStatus = 'pending' | 'done' | 'failed' | 'skipped'

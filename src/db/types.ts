@@ -820,6 +820,20 @@ export interface SchoolOwnPapers {
   total_marks: Numeric | null;
 }
 
+export interface SchoolQuestions {
+  ai_suggestion: Json | null;
+  chapter_id: string;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  id: Generated<string>;
+  question_id: string;
+  replaced_by_id: string | null;
+  retired_at: Timestamp | null;
+  retired_by_user_id: string | null;
+  school_id: string;
+  school_subject_id: string;
+}
+
 export interface SchoolOwnQuestions {
   marking_note: string | null;
   changed_from_source: Generated<boolean>;
@@ -1454,6 +1468,7 @@ export interface DB {
   school_own_covers: SchoolOwnCovers;
   school_own_papers: SchoolOwnPapers;
   school_own_questions: SchoolOwnQuestions;
+  school_questions: SchoolQuestions;
   school_own_sheets: SchoolOwnSheets;
   school_paper_templates: SchoolPaperTemplates;
   school_print_job_parts: SchoolPrintJobParts;

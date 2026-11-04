@@ -1,5 +1,5 @@
 import type { Db } from '../../db/connection'
-import { bankRepository, examBuilderRepository, examPrintRepository, schoolExamsRepository } from '../../db/repositories'
+import { bankRepository, examBuilderRepository, examPrintRepository, schoolExamsRepository, schoolQuestionsRepository, usableBySchool } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
 import { SPECIAL_TAGS, checkPaperStructure, expectedWordsFor } from '../school-paper'
@@ -51,6 +51,8 @@ export interface PickView {
   isAlternate: boolean
   choiceGroup: string | null
   locked: boolean
+  /** the school's own question (section 16.13), not one from the PrepPlan bank */
+  ours: boolean
   options: Array<{ label: string; text: string }>
 }
 
@@ -106,6 +108,7 @@ async function picksOf(db: Db, scope: SchoolScope, ctx: Ctx): Promise<Array<Pick
       'q.text as text',
       'q.difficulty as difficulty',
       'q.bloom as bloom',
+      'q.status as status',
     ])
     .where('p.school_id', '=', scope.schoolId)
     .where('p.exam_id', '=', ctx.exam.id)
@@ -130,6 +133,7 @@ async function picksOf(db: Db, scope: SchoolScope, ctx: Ctx): Promise<Array<Pick
     isAlternate: r.is_alternate,
     choiceGroup: r.choice_group,
     locked: r.locked,
+    ours: r.status === 'school',
     // the student's paper prints the options; which one is right is never sent here
     options: options.filter((o) => o.question_id === r.question_id).map((o) => ({ label: o.label, text: o.text })),
   }))
@@ -176,6 +180,7 @@ function questionFitsSlot(q: Pick<Candidate, 'marks' | 'type' | 'tags' | 'diagra
 
 async function candidates(
   db: Db,
+  schoolId: string,
   s: LayoutSection,
   conceptIds: ReadonlyArray<string>,
   exclude: ReadonlySet<string>,
@@ -183,6 +188,7 @@ async function candidates(
 ): Promise<Array<Candidate>> {
   if (conceptIds.length === 0 || limit <= 0) return []
   const rows = await examBuilderRepository.slotCandidates(db, {
+    schoolId,
     conceptIds,
     marks: s.marks_per_question,
     blooms: s.bloom_allowed.length ? s.bloom_allowed : ['Remember', 'Understand', 'Apply', 'Analyse', 'Evaluate', 'Create'],
@@ -218,6 +224,13 @@ async function usedBefore(
 /** Question ids this school printed since 1 April (avoided by Swap and the automatic fill while the bank has others). */
 async function usedThisYear(db: Db, scope: SchoolScope, examId: string): Promise<Set<string>> {
   return new Set(await examBuilderRepository.usedSince(db, scope, examId, schoolYearStart(new Date())))
+}
+
+/** A bank question, or one of this school's own that is not retired (never another school's). */
+async function usableHere(db: Db, scope: SchoolScope, q: { id: string; status: string }): Promise<boolean> {
+  if (q.status === 'approved') return true
+  if (q.status !== 'school') return false
+  return (await schoolQuestionsRepository.activeByQuestion(db, scope, q.id)) !== undefined
 }
 
 // ---------------------------------------------------------------- the view
@@ -273,6 +286,8 @@ export interface BankFilters {
   hideUsed?: boolean
   page?: number
   answers?: boolean
+  /** 'ours': only the school's own questions; 'bank': only PrepPlan's */
+  source?: 'ours' | 'bank' | null
 }
 
 const PAGE = 25
@@ -285,9 +300,11 @@ export async function builderBank(db: Db, scope: SchoolScope, examId: string, f:
   if (conceptIds.length === 0) return { total: 0, page: 0, pages: 0, questions: [] }
   let q = db
     .selectFrom('questions')
-    .select(['id', 'concept_id', 'type', 'marks', 'difficulty', 'bloom', 'tags', 'diagram_kind', 'text', 'answer'])
-    .where('status', '=', 'approved')
+    .select(['id', 'concept_id', 'type', 'marks', 'difficulty', 'bloom', 'tags', 'diagram_kind', 'text', 'answer', 'status'])
+    .where(usableBySchool(scope.schoolId))
     .where('concept_id', 'in', conceptIds)
+  if (f.source === 'ours') q = q.where('status', '=', 'school')
+  if (f.source === 'bank') q = q.where('status', '=', 'approved')
   if (f.type) q = q.where('type', '=', f.type as QuestionType)
   if (f.marks) q = q.where('marks', '=', f.marks)
   if (f.difficulty) q = q.where('difficulty', '=', f.difficulty as DifficultyTier)
@@ -329,6 +346,7 @@ export async function builderBank(db: Db, scope: SchoolScope, examId: string, f:
         level: levelWord(r.bloom),
         chapterId,
         chapter: ctx.chapters.find((c) => c.id === chapterId)?.short ?? '',
+        ours: r.status === 'school',
         inPaper: inPaper.has(r.id),
         usedBefore: used.get(r.id) ?? [],
         fits: fits.map((s) => slotKey({ section: s.name, slot: s.slot })),
@@ -447,7 +465,7 @@ async function fillOpen(db: Db, scope: SchoolScope, ctx: Ctx) {
       let found: Candidate | undefined
       for (const pass of [new Set([...inPaper, ...avoid]), inPaper]) {
         for (const c of order) {
-          found = (await candidates(db, s, c.conceptIds, pass, 1)).at(0)
+          found = (await candidates(db, ctx.exam.school_id, s, c.conceptIds, pass, 1)).at(0)
           if (found) break
         }
         if (found) break
@@ -481,7 +499,7 @@ export async function builderAction(db: Db, scope: SchoolScope, examId: string, 
         .select(['id', 'concept_id', 'type', 'marks', 'tags', 'diagram_kind', 'status'])
         .where('id', '=', a.questionId)
         .executeTakeFirst()
-      if (!q || q.status !== 'approved' || !ctx.chapterOfConcept.has(q.concept_id))
+      if (!q || !(await usableHere(db, scope, q)) || !ctx.chapterOfConcept.has(q.concept_id))
         throw new SchoolError('not_found', 'That question is not in the chosen chapters.')
       const cand = { marks: Number(q.marks), type: q.type, tags: q.tags, diagram_kind: q.diagram_kind }
       const fits = ctx.layout.sections.filter((s) => questionFitsSlot(cand, s) && (!a.slot || slotKey({ section: s.name, slot: s.slot }) === a.slot))
@@ -546,7 +564,7 @@ export async function builderAction(db: Db, scope: SchoolScope, examId: string, 
       const found: Array<Candidate & { otherChapter: boolean }> = []
       const take = async (ids: ReadonlyArray<string>, exclude: ReadonlySet<string>, otherChapter: boolean) => {
         if (found.length >= 3) return
-        for (const c of await candidates(db, s, ids, new Set([...exclude, ...found.map((f) => f.id)]), 3 - found.length)) found.push({ ...c, otherChapter })
+        for (const c of await candidates(db, ctx.exam.school_id, s, ids, new Set([...exclude, ...found.map((f) => f.id)]), 3 - found.length)) found.push({ ...c, otherChapter })
       }
       await take(same, new Set([...inPaper, ...avoid]), false)
       await take(same, inPaper, false)
@@ -573,7 +591,7 @@ export async function builderAction(db: Db, scope: SchoolScope, examId: string, 
       if (picks.some((x) => x.questionId === a.questionId)) throw new SchoolError('conflict', 'That question is already on the paper.')
       const s = ctx.layout.sections.find((x) => x.name === p.section && x.slot === p.slot)
       const q = await db.selectFrom('questions').select(['id', 'concept_id', 'type', 'marks', 'tags', 'diagram_kind', 'status']).where('id', '=', a.questionId).executeTakeFirst()
-      if (!s || !q || q.status !== 'approved' || !ctx.chapterOfConcept.has(q.concept_id) || !questionFitsSlot({ marks: Number(q.marks), type: q.type, tags: q.tags, diagram_kind: q.diagram_kind }, s))
+      if (!s || !q || !(await usableHere(db, scope, q)) || !ctx.chapterOfConcept.has(q.concept_id) || !questionFitsSlot({ marks: Number(q.marks), type: q.type, tags: q.tags, diagram_kind: q.diagram_kind }, s))
         throw new SchoolError('invalid', 'That question does not fit this place on the paper.')
       await db
         .updateTable('school_exam_questions')
@@ -611,7 +629,7 @@ async function stillFillable(db: Db, ctx: Ctx, check: Checklist, picks: Readonly
   for (const st of check.slots) {
     if (st.have >= st.need && st.haveOr >= st.needOr) continue
     const s = ctx.layout.sections.find((x) => x.name === st.section && x.slot === st.slot) as LayoutSection
-    if ((await candidates(db, s, all, inPaper, 1)).length > 0) out.push(`${st.section} (${st.slot})`)
+    if ((await candidates(db, ctx.exam.school_id, s, all, inPaper, 1)).length > 0) out.push(`${st.section} (${st.slot})`)
   }
   return out
 }
@@ -728,7 +746,7 @@ async function makeSetB(db: Db, scope: SchoolScope, ctx: Ctx, kind: 'shuffle' | 
         let chapterId = p.chapterId
         if (kind === 'alternatives') {
           const sameChapter = ctx.chapters.find((c) => c.id === p.chapterId)?.conceptIds ?? []
-          const alt = (await candidates(db, s, sameChapter, avoid, 6)).find((c) => c.difficulty === p.difficulty) ?? (await candidates(db, s, sameChapter, avoid, 1)).at(0)
+          const alt = (await candidates(db, ctx.exam.school_id, s, sameChapter, avoid, 6)).find((c) => c.difficulty === p.difficulty) ?? (await candidates(db, ctx.exam.school_id, s, sameChapter, avoid, 1)).at(0)
           if (alt) {
             questionId = alt.id
             chapterId = ctx.chapterOfConcept.get(alt.concept_id) ?? p.chapterId

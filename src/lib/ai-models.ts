@@ -34,6 +34,7 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
   'SCH-05': 'cheap', // Read the name and roll number written at the top of an answer sheet (top strip only)
   'SCH-07T': 'top', // The tie-break reading of an answer the two main readings of SCH-07 did not settle
   'SCH-07': 'strong', // Find each answer on a student's pages and mark it against the approved key (three passes; content only, never a name)
+  'SCH-08': 'cheap', // Suggest the chapter, topic and level of a teacher's own question (the teacher confirms it)
   'SCH-06': 'cheap', // Say what kind of page a photo is (answer sheet, question paper, blank) and its subject
 }
 

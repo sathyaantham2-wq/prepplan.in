@@ -34,7 +34,8 @@ export async function findExactDuplicate(
     .select(['id', 'text', 'status'])
     .where('concept_id', '=', conceptId)
     .where('text_hash', '=', textHash)
-    .where('status', '!=', 'retired')
+    // a school's own question (status 'school') is never a duplicate of a bank question
+    .where('status', 'not in', ['retired', 'school'])
 
   if (excludeQuestionId) {
     query = query.where('id', '!=', excludeQuestionId)
