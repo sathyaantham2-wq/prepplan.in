@@ -1862,14 +1862,16 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         decryptScan((await store.get(row1.image_key!))!).equals(bytes),
       ).toBe(false)
       // a big file (more than one request may carry) goes up in pieces and is joined exactly
-      const w = 2000
-      const h = 2600
+      // 1500 x 1900 at full quality is just over the 3.6 MB a single request may carry, with 45% fewer pixels to read
+      // than 2000 x 2600 at 90 (that one took about a minute alone and timed out under the full suite)
+      const w = 1500
+      const h = 1900
       const noise = Buffer.alloc(w * h * 3)
       for (let i = 0; i < noise.length; i++) noise[i] = (i * 2654435761) >>> 24
       const big = await sharp(noise, {
         raw: { width: w, height: h, channels: 3 },
       })
-        .jpeg({ quality: 90 })
+        .jpeg({ quality: 100 })
         .toBuffer()
       expect(big.length).toBeGreaterThan(3.6 * 1024 * 1024)
       expect(big.length).toBeLessThan(12 * 1024 * 1024)
@@ -1990,7 +1992,7 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
           })
         ).status,
       ).toBe(401)
-    }, 120_000)
+    }, 240_000)
 
     it('a student marked absent is not chased; marking is refused once pages arrived; a page arriving clears it', async () => {
       const kiran = (
@@ -2924,6 +2926,7 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
     resetScript()
     const fakeAi: OwnPaperAi = {
       available: () => script.available,
+      tag: () => Promise.resolve('{}'),
       extract: async (i) => {
         calls.push({ fn: 'extract', input: i })
         if (script.badExtract) return 'this is not json'
