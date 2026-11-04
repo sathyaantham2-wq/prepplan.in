@@ -226,9 +226,9 @@ async function usedThisYear(db: Db, scope: SchoolScope, examId: string): Promise
   return new Set(await examBuilderRepository.usedSince(db, scope, examId, schoolYearStart(new Date())))
 }
 
-/** A bank question, or one of this school's own that is not retired (never another school's). */
+/** A bank question (shared or schools-only), or one of this school's own that is not retired (never another school's). */
 async function usableHere(db: Db, scope: SchoolScope, q: { id: string; status: string }): Promise<boolean> {
-  if (q.status === 'approved') return true
+  if (q.status === 'approved' || q.status === 'school_bank') return true
   if (q.status !== 'school') return false
   return (await schoolQuestionsRepository.activeByQuestion(db, scope, q.id)) !== undefined
 }
@@ -304,7 +304,7 @@ export async function builderBank(db: Db, scope: SchoolScope, examId: string, f:
     .where(usableBySchool(scope.schoolId))
     .where('concept_id', 'in', conceptIds)
   if (f.source === 'ours') q = q.where('status', '=', 'school')
-  if (f.source === 'bank') q = q.where('status', '=', 'approved')
+  if (f.source === 'bank') q = q.where('status', 'in', ['approved', 'school_bank'])
   if (f.type) q = q.where('type', '=', f.type as QuestionType)
   if (f.marks) q = q.where('marks', '=', f.marks)
   if (f.difficulty) q = q.where('difficulty', '=', f.difficulty as DifficultyTier)

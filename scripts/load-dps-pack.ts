@@ -12,6 +12,11 @@
  * have their full pack (owner request 2026-10-30: enough for three papers per chapter in both school
  * layouts). The per-concept mix and the 24-per-concept ceiling do not apply to it; every question must
  * still pass the question rules below, name its NCERT page ("p"), and fit at least one paper slot.
+ *
+ * A "school_topup" pack (owner decision 2026-11-04, PrepPlan for Schools only, no F-number yet) adds about 60
+ * questions to a chapter at every difficulty: about 30 Easy, 20 Hard and 10 Hardest, across every type a school
+ * paper uses (SCHOOL_TOPUP_RULES). Easy items are allowed here, and Remember items too when they are Easy. It loads
+ * with status 'school_bank', so only school paper builders use it; PrepPlan's own students never get it.
  * A pack is separate from the 20-per-concept Bloom x difficulty grid: it holds the item types the
  * school papers use and the grid lacks (case studies, 5-mark answers, claim-checks, match, ...).
  */
@@ -80,6 +85,13 @@ export const chapterBlankMinimum = (concepts: number) => Math.max(2, Math.ceil(c
 /** Owner decision 2026-10-08: no easy questions. No Remember items, no Easy label, a thinking floor. */
 export const LEVEL_RULES = { maxUnderstand: 0.3, minAnalyseUp: 0.3 }
 
+/** A school top-up chapter file: its size, its difficulty shares and the minimum count of each kind of item. */
+export const SCHOOL_TOPUP_RULES = {
+  total: { min: 55, max: 65 },
+  share: { Easy: [0.45, 0.55], Hard: [0.28, 0.38], Hardest: [0.12, 0.22] } as Record<Tier, [number, number]>,
+  minimums: { mcq: 8, multi_statement: 2, match: 2, assertion_reason: 3, true_false: 2, two_mark: 8, three_mark: 6, four_mark_long: 2, five_mark: 3, case_study: 3 },
+}
+
 function wordCount(s: string) {
   return s.trim().split(/\s+/).filter(Boolean).length
 }
@@ -111,9 +123,10 @@ export function fitsPaperSlot(q: PackQuestion): string | null {
 
 export function validatePack(file: PackFile): Array<string> {
   const problems: Array<string> = []
-  const topup = file.kind === 'dps_topup'
+  const school = file.kind === 'school_topup'
+  const topup = file.kind === 'dps_topup' || school
   if (file.kind !== 'dps_pack' && !topup)
-    problems.push('kind must be "dps_pack" or "dps_topup"')
+    problems.push('kind must be "dps_pack", "dps_topup" or "school_topup"')
   let matchCount = 0
   let blankCount = 0
   let trueFalseCount = 0
@@ -128,10 +141,15 @@ export function validatePack(file: PackFile): Array<string> {
       const where = `${c.code} #${i + 1}`
       const tags = q.tags ?? []
       for (const t of tags) if (!TAGS.includes(t)) problems.push(`${where}: unknown tag "${t}"`)
-      if (q.b === 'Remember') problems.push(`${where}: Remember-level (recall) items are not allowed; raise it to Understand or above with a situation, comparison or reason`)
-      if (q.d === 'Easy') problems.push(`${where}: the "Easy" label is retired; use Hard, or Hardest for 5-mark and case-study items`)
-      else if (!(['Hard', 'Hardest'] as Array<string>).includes(q.d)) problems.push(`${where}: unknown difficulty "${q.d}"; use Hard or Hardest`)
-      if (!(['Understand', 'Apply', 'Analyse', 'Evaluate', 'Create'] as Array<string>).includes(q.b) && q.b !== 'Remember') problems.push(`${where}: unknown Bloom level "${q.b}"`)
+      if (school) {
+        if (!(['Easy', 'Hard', 'Hardest'] as Array<string>).includes(q.d)) problems.push(`${where}: unknown difficulty "${q.d}"; use Easy, Hard or Hardest`)
+        if (q.b === 'Remember' && q.d !== 'Easy') problems.push(`${where}: a Remember-level item is Easy`)
+      } else {
+        if (q.b === 'Remember') problems.push(`${where}: Remember-level (recall) items are not allowed; raise it to Understand or above with a situation, comparison or reason`)
+        if (q.d === 'Easy') problems.push(`${where}: the "Easy" label is retired; use Hard, or Hardest for 5-mark and case-study items`)
+        else if (!(['Hard', 'Hardest'] as Array<string>).includes(q.d)) problems.push(`${where}: unknown difficulty "${q.d}"; use Hard or Hardest`)
+      }
+      if (!(['Remember', 'Understand', 'Apply', 'Analyse', 'Evaluate', 'Create'] as Array<string>).includes(q.b)) problems.push(`${where}: unknown Bloom level "${q.b}"`)
       if (seen.has(q.q)) problems.push(`${where}: duplicate text`)
       seen.add(q.q)
       if (!q.a.trim()) problems.push(`${where}: empty answer`)
@@ -228,6 +246,33 @@ export function validatePack(file: PackFile): Array<string> {
         if (have[key as keyof typeof have] < min) problems.push(`${c.code}: needs at least ${min} ${key}, has ${have[key as keyof typeof have]}`)
       }
   }
+  if (school) {
+    const all = file.concepts.flatMap((c) => c.questions)
+    const R = SCHOOL_TOPUP_RULES
+    if (all.length < R.total.min || all.length > R.total.max) problems.push(`chapter: has ${all.length} questions, wants ${R.total.min} to ${R.total.max}`)
+    for (const [tier, [lo, hi]] of Object.entries(R.share)) {
+      const n = all.filter((q) => q.d === tier).length
+      if (n < all.length * lo || n > all.length * hi) problems.push(`chapter: ${n} ${tier} of ${all.length}; wants ${lo * 100}% to ${hi * 100}%`)
+    }
+    for (const m of [1, 2, 3, 4, 5]) if (!all.some((q) => q.m === m && q.d === 'Easy')) problems.push(`chapter: no Easy ${m}-mark item; every mark size needs at least one Easy`)
+    const tagged = (q: PackQuestion, t: string) => (q.tags ?? []).includes(t)
+    const have: Record<keyof typeof R.minimums, number> = {
+      mcq: all.filter((q) => q.t === 'mcq').length,
+      multi_statement: all.filter((q) => q.t === 'multi_statement').length,
+      match: all.filter((q) => q.t === 'match').length,
+      assertion_reason: all.filter((q) => q.t === 'assertion_reason').length,
+      true_false: all.filter((q) => tagged(q, 'true_false')).length,
+      two_mark: all.filter((q) => q.m === 2).length,
+      three_mark: all.filter((q) => q.m === 3).length,
+      four_mark_long: all.filter((q) => q.m === 4 && !tagged(q, 'case_study')).length,
+      five_mark: all.filter((q) => q.m === 5).length,
+      case_study: all.filter((q) => tagged(q, 'case_study')).length,
+    }
+    for (const [k, min] of Object.entries(R.minimums)) if (have[k as keyof typeof have] < min) problems.push(`chapter: needs at least ${min} ${k}, has ${have[k as keyof typeof have]}`)
+    if (trueFalseCount >= 4 && (trueVerdicts < trueFalseCount * 0.25 || trueVerdicts > trueFalseCount * 0.75))
+      problems.push(`chapter: true_false verdicts must be mixed (25% to 75% True); has ${trueVerdicts} True of ${trueFalseCount}`)
+    return problems
+  }
   if (topup) {
     const all = file.concepts.flatMap((c) => c.questions)
     if (all.filter((q) => q.b === 'Understand').length > all.length * LEVEL_RULES.maxUnderstand)
@@ -269,6 +314,7 @@ async function main() {
   console.log(`${path}: ${file.concepts.length} concepts, ${total} questions, valid`)
   if (check) return
 
+  const school = file.kind === 'school_topup'
   const db = createDb()
   try {
     const { subject: sub, chapter: ch } = file
@@ -312,15 +358,16 @@ async function main() {
           options,
           step_marks: q.s?.map(([description, marks], i) => ({ step_no: i + 1, description, marks })),
           is_reversal_word: q.rev,
-          tags: ['dps', ...(q.tags ?? [])],
-          created_by: `claude-dps-pack-${sub.code}-${ch.part}${ch.chapter_no}`,
+          tags: [school ? 'school_topup' : 'dps', ...(q.tags ?? [])],
+          created_by: `claude-${school ? 'school-topup' : 'dps-pack'}-${sub.code}-${ch.part}${ch.chapter_no}`,
           origin: 'ai_generated',
+          status: school ? 'school_bank' : 'approved',
           source_ref: q.p ? `${file.source_code} ${q.p.trim()}` : file.source_code,
         })
         added++
       }
     }
-    console.log(`DPS pack ${ch.part}${ch.chapter_no}: ${added} questions added, ${skipped} already present`)
+    console.log(`${school ? 'School top-up (schools-only bank)' : 'DPS pack'} ${ch.part}${ch.chapter_no}: ${added} questions added, ${skipped} already present`)
   } finally {
     await db.destroy()
   }

@@ -6,13 +6,13 @@ import type { SchoolScope } from '../school-scope'
 import { createSchoolScopedRepository } from './factory'
 
 /**
- * The questions a school may put on its paper: the shared bank (approved) and its own questions that are not retired.
- * Another school's questions never match.
+ * The questions a school may put on its paper: the shared bank (approved), the schools-only bank (school_bank: never
+ * served to PrepPlan's own students) and its own questions that are not retired. Another school's questions never match.
  */
 export function usableBySchool(schoolId: string) {
   return (eb: ExpressionBuilder<DB, 'questions'>) =>
     eb.or([
-      eb('questions.status', '=', 'approved'),
+      eb('questions.status', 'in', ['approved', 'school_bank']),
       eb.and([
         eb('questions.status', '=', 'school'),
         eb(

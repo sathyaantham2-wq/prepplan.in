@@ -84,7 +84,7 @@ export async function candidates(db: Db, topic: Topic, limit = 80) {
     .selectFrom('questions')
     .select(['id', 'concept_id', 'text', 'type', 'marks', 'answer', 'tags'])
     .where('concept_id', 'in', topic.conceptIds)
-    .where('status', '=', 'approved')
+    .where('status', 'in', ['approved', 'school_bank'])
     .where('type', 'in', ['mcq', 'short_answer'])
     .orderBy('marks')
     .limit(limit)
