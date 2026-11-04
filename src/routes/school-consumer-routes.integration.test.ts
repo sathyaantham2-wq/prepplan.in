@@ -36,6 +36,9 @@ const PUBLIC_ROUTES = [
   './api/auth/$.ts',
   './api/cron/daily-nudge.ts',
   './api/cron/weekly-summary.ts',
+  './api/cron/school-messages.ts', // CRON_SECRET only, like the other cron routes
+  './api/messaging/callback.ts', // Make's signed delivery report: secret only, a bare 401 otherwise
+  './api/parent-link/$token.ts', // a parent's signed 7-day link is the whole key; a bad one gets the same empty answer
   './api/errors.ts',
   './api/guest.ts',
   './api/school-me.ts', // school screens only: reads the session itself, never offers consumer data

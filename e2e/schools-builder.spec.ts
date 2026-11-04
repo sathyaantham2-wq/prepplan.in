@@ -114,6 +114,10 @@ test.describe.serial('paper builder', () => {
     const hh = mu.length ? await db.selectFrom('users').select('household_id').where('id', 'in', mu).execute() : []
     if (mu.length) await db.deleteFrom('users').where('id', 'in', mu).execute()
     await db.deleteFrom('households').where('id', 'in', [...sh.map((h) => h.household_id), ...hh.map((h) => h.household_id)]).execute().catch(() => undefined)
+    // This spec's own "Mathematics" subject keeps its chapters and questions, so it is switched off rather than
+    // deleted. Left on, the next spec's school wizard added it beside the real one and a teacher file saying
+    // "Mathematics" no longer matched a single subject.
+    await db.updateTable('subjects').set({ is_active: false }).where('id', '=', subjectId).execute()
     await db.destroy()
   })
 

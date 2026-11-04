@@ -1,6 +1,7 @@
 import { sql } from 'kysely'
 import type { Db } from '../connection'
 import type { SchoolScope } from '../school-scope'
+import { createSchoolScopedRepository } from './factory'
 
 /**
  * The reads of the paper builder that need raw SQL (docs/SCHOOLS_MODULE_PLAN.md section 16): which questions this school
@@ -52,3 +53,6 @@ export const examBuilderRepository = {
     return q.orderBy(sql`random()`).limit(p.limit).execute()
   },
 }
+
+/** The append-only record of each finished version of a paper (exact questions as printed). */
+export const schoolExamVersionsRepository = createSchoolScopedRepository('school_exam_versions')
