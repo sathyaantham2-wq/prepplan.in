@@ -1,0 +1,20 @@
+VERDICT: FIX
+HIGH: 0  MEDIUM: 9  LOW: 3
+
+Checked: 60 items (Easy 31, Hard 19, Hardest 10); `--check` prints valid; every number recomputed in python
+(320/80 = 4, 30/12 = 2.5, 35x4 = 140, 1800-600-900 = 300, 1980-1861 = 119, 2016-1980 = 36, 26/40 = 65%, 18+12 = 30,
+20/50 = 40%, 45/15 = 3) and all keys are right; every fact found on the cited page (pp. 229-243) and inside IN scope;
+step marks sum to the marks on every item; correct option is first on every MCQ/AR/match/multi_statement. No HIGH.
+
+- [MEDIUM] C7S-11.5 #5: assertion_reason tests only "₹ sign adopted 1947 vs 2010", the same fact as #2 in this concept and the existing DPS item "designed by a committee of the RBI and adopted in 1947"; it is one-step recall labelled Analyse/Hard -> replace with an AR on a different idea (e.g. powerful rulers' coins accepted across kingdoms -> trade across geographies), or relabel Remember/Easy and drop #2.
+- [MEDIUM] C7S-11.6 #6: R ("paper money first used in India, later spread to China") repeats #1 of this concept and statement 1 of the existing DPS multi_statement on paper money; recall labelled Apply/Hard -> build the AR on another idea (e.g. RBI as sole issuer and security features, or coins vs notes for carrying/storing).
+- [MEDIUM] C7S-11.6 #4: tea-stall case (customers split by coins/notes/QR, percentage paid by phone) repeats the setting and number pattern of the existing DPS Bhavna fruit-stall payment-mode table -> change the setting and the data (e.g. not a stall counting customers by payment mode).
+- [MEDIUM] C7S-11.6 #10: "classify note, coin, net banking as tangible/intangible; how does it reach the shopkeeper" repeats #2, #4(c), #8(a), #5/#8(c)/#9(d) in this pack and the existing DPS "Meera's notes sort tangible/intangible" item -> replace with a different idea from p. 242-243 (denominations, RBI role, visually impaired features prompt is an activity, so prefer denominations or currency).
+- [MEDIUM] C7S-11.1 #10: part (b) "Rai stones were money though too heavy to carry" is the same idea as the existing DPS MCQ "Meera's project note: Rai stones too heavy, cannot have been money"; also 6 of the 10 items in this concept (#2, #3, #5, #7, #9, #10) turn on the same three odd moneys (Rai/Tajadero/Tevau) -> replace part (b) with a commodity from the list (e.g. salt or cattle) and move one of #2/#5 to the commodity list or the definition of transaction/money.
+- [MEDIUM] C7S-11.5 #8: coin-hoard case (Chola tiger, Chalukya Varaha/parasol, Roman gold, trade in India's favour) asks the same identifications as the existing DPS "museum card lists four coins P/Q/R/S" item and the Pudukkottai AR/short answer -> change parts (a)-(b) to something new (e.g. metals/alloys, rupas, pana words) and keep (c)-(d) only if the setting differs.
+- [MEDIUM] C7S-11.1 #7: multi_statement labelled Analyse/Hard, but each statement is a direct read of p. 230 (service in barter, Tevau feathers, barter not after coins) -> label Understand/Easy, or rewrite a statement that needs reasoning.
+- [MEDIUM] C7S-11.6 #7: labelled Hardest, but (a) and (c) are direct recall from pp. 241-242 and (b) is one obvious inference -> label Hard (or add a genuine multi-step decision to keep Hardest).
+- [MEDIUM] C7S-11.5 #9: labelled Create/Hardest 5-mark, but parts (a), (b), (d) are recall of today's coins (iron alloy, Hindi and English, coins for small denominations) and (c), (e) are a light link -> label Hard, or make the design call on a real trade-off.
+- [LOW] C7S-11.2 #6: "portability rather than durability" MCQ is one idea with three same-kind distractors -> fair as Easy/Understand rather than Hard.
+- [LOW] C7S-11.4 #10: part (d) "which use would fail first" is defensible (the tin, durability) but the wages paid in tomatoes also fail at once (helper may not want tomatoes) -> ask "which use would tomatoes serve worst over three months" to pin one answer.
+- [LOW] C7S-11.3 #9: part (c) (which chiefs, which century) repeats #10(b) of this concept and several existing DPS Junbeel items -> swap for a part that uses the case's own data.
