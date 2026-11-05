@@ -1,0 +1,1292 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "A Tale of Three Intersecting Lines"
+ },
+ "source_code": "gegp107",
+ "concepts": [
+  {
+   "code": "C7M-7.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In triangle PQR, which short name is used for the angle QPR?",
+     "o": [
+      "∠P",
+      "∠Q",
+      "∠R",
+      "∠PQR"
+     ],
+     "a": "∠P, because the angle QPR has its corner at the vertex P, and an angle of a triangle is named in short by its vertex.",
+     "p": "p. 146"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Neha has drawn the base AB = 6 cm of an equilateral triangle ABC. To find the third vertex C with a compass, what should she draw next?",
+     "o": [
+      "An arc of radius 6 cm from A and an arc of radius 6 cm from B",
+      "An arc of radius 3 cm from A and an arc of radius 3 cm from B",
+      "An arc of radius 6 cm from A and an arc of radius 3 cm from B",
+      "An arc of radius 12 cm from A and an arc of radius 12 cm from B"
+     ],
+     "a": "An arc of radius 6 cm from A and an arc of radius 6 cm from B; their meeting point C is 6 cm from both ends, so all three sides are 6 cm.",
+     "p": "pp. 147-148"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If a compass is opened to 4 cm and arcs are drawn from both ends of a base AB = 4 cm, the meeting point C of the arcs gives an equilateral triangle ABC without measuring BC. Reason (R): C lies on both arcs, so it is 4 cm from A and 4 cm from B.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: C lies on both arcs, so AC = BC = 4 cm, and with AB = 4 cm all three sides are equal.",
+     "p": "pp. 147-148"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Triangle ABC and triangle CAB are two different triangles, because their vertices are written in a different order. Give the reason.",
+     "a": "False. Both names use the same three vertices A, B and C, and while naming a triangle the vertices can come in any order, so they name the same triangle.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Explains that the same three vertices name the same triangle in any order",
+       1
+      ]
+     ],
+     "p": "p. 146"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran must construct an equilateral triangle ABC whose perimeter is 21 cm. He draws AB of the right length, then by mistake draws an arc of radius 7 cm from A and an arc of radius 6 cm from B. (a) What should the side of the triangle be? (b) Which side of his triangle comes out wrong, and is his triangle still equilateral?",
+     "a": "(a) Each side should be 21 ÷ 3 = 7 cm. (b) AB = 7 cm and AC = 7 cm (the arc from A), but BC = 6 cm (the arc from B), so BC is wrong. The triangle has only two equal sides, so it is isosceles, not equilateral.",
+     "s": [
+      [
+       "Part (a): finds the side as 21 ÷ 3 = 7 cm",
+       1
+      ],
+      [
+       "Part (b): says BC = 6 cm is wrong, so the triangle is not equilateral",
+       1
+      ]
+     ],
+     "p": "pp. 147-150"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Leela draws AB = 4 cm. With her compass opened to 4 cm she draws arcs from A and B above AB that meet at C. Then, keeping the same opening, she draws arcs from B and C on the other side of BC (away from A) that meet at D. (a) Find the lengths BD and CD and give the reason. (b) Name the two equilateral triangles in her figure. (c) Find the length of the outer boundary A to B to D to C and back to A.",
+     "a": "(a) D lies on the arcs of radius 4 cm from B and from C, so BD = CD = 4 cm. (b) Triangle ABC (AB = BC = CA = 4 cm) and triangle BCD (BC = CD = DB = 4 cm). (c) AB + BD + DC + CA = 4 + 4 + 4 + 4 = 16 cm.",
+     "s": [
+      [
+       "Part (a): BD = CD = 4 cm because D lies on both 4 cm arcs",
+       1
+      ],
+      [
+       "Part (b): names triangles ABC and BCD as equilateral",
+       1
+      ],
+      [
+       "Part (c): finds the boundary as 16 cm",
+       1
+      ]
+     ],
+     "p": "pp. 146-148"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Anu must construct an equilateral triangle PQR of side 5.5 cm with a ruler and a compass. (a) What does she draw first, and how long is it? (b) What does she do with the compass from P? (c) What does she do with the compass from Q, and how does she get R? (d) Explain why QR and PR both come out 5.5 cm without measuring them.",
+     "a": "(a) She draws the base PQ = 5.5 cm. (b) She opens the compass to 5.5 cm and draws a long arc from P. (c) With the same opening she draws an arc from Q that cuts the first arc; the meeting point is R, and she joins PR and QR. (d) R lies on the arc from P, so PR = 5.5 cm, and on the arc from Q, so QR = 5.5 cm.",
+     "s": [
+      [
+       "Part (a): draws the base PQ = 5.5 cm",
+       1
+      ],
+      [
+       "Part (b): draws an arc of radius 5.5 cm from P",
+       1
+      ],
+      [
+       "Part (c): draws a 5.5 cm arc from Q, marks the meeting point R and joins PR and QR",
+       1
+      ],
+      [
+       "Part (d): explains that R is on both arcs, so PR = QR = 5.5 cm",
+       1
+      ]
+     ],
+     "p": "pp. 146-148"
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.2",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Raju must construct triangle ABC with AB = 5 cm, AC = 6 cm and BC = 7 cm. He has drawn the base AB = 5 cm. Which arcs should he draw to find C?",
+     "o": [
+      "An arc of radius 6 cm from A and an arc of radius 7 cm from B",
+      "An arc of radius 7 cm from A and an arc of radius 6 cm from B",
+      "An arc of radius 5 cm from A and an arc of radius 5 cm from B",
+      "An arc of radius 6 cm from both A and B"
+     ],
+     "a": "An arc of radius 6 cm from A and an arc of radius 7 cm from B, because C must be 6 cm from A (AC) and 7 cm from B (BC).",
+     "p": "pp. 149-150"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "q": "Triangle ABC with sides 5 cm, 7 cm and 8 cm is constructed on the base AB = 5 cm, with AC = 7 cm and BC = 8 cm. Match each item in Column I with its value in Column II. Column I: 1. Length of the base AB, 2. Radius of the arc drawn from A, 3. Radius of the arc drawn from B, 4. Perimeter of the triangle. Column II: A. 8 cm, B. 5 cm, C. 20 cm, D. 7 cm.",
+     "o": [
+      "1-B, 2-D, 3-A, 4-C",
+      "1-B, 2-A, 3-D, 4-C",
+      "1-D, 2-B, 3-A, 4-C",
+      "1-B, 2-D, 3-C, 4-A"
+     ],
+     "a": "1-B, 2-D, 3-A, 4-C: the base is 5 cm, the arc from A is AC = 7 cm, the arc from B is BC = 8 cm, and the perimeter is 5 + 7 + 8 = 20 cm.",
+     "p": "pp. 149-150"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A triangle PQR has sides 4.5 cm, 6 cm and 7 cm. It is constructed on the base PQ = 7 cm, with PR = 4.5 cm and QR = 6 cm. (a) Write the radius of the arc drawn from P and of the arc drawn from Q. (b) Name the triangle by its sides.",
+     "a": "(a) The arc from P has radius 4.5 cm (PR) and the arc from Q has radius 6 cm (QR). (b) All three sides are different, so it is a scalene triangle.",
+     "s": [
+      [
+       "Part (a): arc of 4.5 cm from P and 6 cm from Q",
+       1
+      ],
+      [
+       "Part (b): names it scalene",
+       1
+      ]
+     ],
+     "p": "pp. 149-150"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: To construct a triangle with sides 5 cm, 6 cm and 8 cm on the base AB = 8 cm, Rani draws full circles of radius 5 cm and 6 cm instead of short arcs, so her triangle will be wrong. Give the reason.",
+     "a": "False. The third vertex is a point where the two circles meet, and drawing full circles is allowed; it is only not necessary, since short arcs that cross are enough. Her triangle will be correct.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Explains that full circles still meet at the third vertex; arcs are only a shortcut",
+       1
+      ]
+     ],
+     "p": "pp. 149-150"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In triangle XYZ, XY = 6 cm, YZ is 2 cm longer than XY, and ZX is 1 cm shorter than XY. (a) Find YZ and ZX. (b) The triangle is constructed on the base XY. Write the radius of the arc drawn from X and of the arc drawn from Y. (c) Name the triangle by its sides.",
+     "a": "(a) YZ = 6 + 2 = 8 cm and ZX = 6 - 1 = 5 cm. (b) Z must be 5 cm from X and 8 cm from Y, so the arc from X has radius 5 cm and the arc from Y has radius 8 cm. (c) The sides 6 cm, 8 cm and 5 cm are all different, so it is scalene.",
+     "s": [
+      [
+       "Part (a): finds YZ = 8 cm and ZX = 5 cm",
+       1
+      ],
+      [
+       "Part (b): arc of 5 cm from X and 8 cm from Y",
+       1
+      ],
+      [
+       "Part (c): names it scalene",
+       1
+      ]
+     ],
+     "p": "pp. 149-150"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A teacher asks for a triangle that is isosceles and has a perimeter of 20 cm. Which set of side lengths (in cm) meets both conditions?",
+     "o": [
+      "6, 7, 7",
+      "5, 7, 8",
+      "6, 6, 9",
+      "4, 4, 12"
+     ],
+     "a": "6, 7, 7: it has two equal sides and 6 + 7 + 7 = 20 cm. The set 5, 7, 8 has no equal sides, 6, 6, 9 has a perimeter of 21 cm, and 4, 4, 12 cannot form a triangle because 4 + 4 is less than 12.",
+     "p": "pp. 150-154"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Construct a triangle ABC with sides 5 cm, 6.5 cm and 7 cm, taking AB = 7 cm as the base, AC = 5 cm and BC = 6.5 cm. (a) Write the first step. (b) What arc is drawn from A? (c) What arc is drawn from B? (d) How is the third vertex C found and the triangle finished? (e) Name the triangle by its sides.",
+     "a": "(a) Draw the base AB = 7 cm. (b) From A, draw a long arc of radius 5 cm. (c) From B, draw an arc of radius 6.5 cm that cuts the first arc. (d) The point where the arcs meet is C; join AC and BC. (e) All three sides are different, so it is a scalene triangle.",
+     "s": [
+      [
+       "Part (a): draws AB = 7 cm",
+       1
+      ],
+      [
+       "Part (b): arc of radius 5 cm from A",
+       1
+      ],
+      [
+       "Part (c): arc of radius 6.5 cm from B cutting the first arc",
+       1
+      ],
+      [
+       "Part (d): marks C where the arcs meet and joins AC and BC",
+       1
+      ],
+      [
+       "Part (e): names it scalene",
+       1
+      ]
+     ],
+     "p": "pp. 149-150"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Meena has four sticks of lengths 6 cm, 6 cm, 6 cm and 9 cm. She makes triangles using three sticks at a time. (a) List the different sets of lengths she can use. (b) Name each triangle by its sides. (c) Her teacher wants a triangle that is not equilateral and whose perimeter is more than 20 cm. Which set must Meena use, and which stick should she take as the base so that the arcs from both ends have the same radius? Give that radius.",
+     "a": "(a) Only two different sets are possible: 6, 6, 6 and 6, 6, 9 (both form triangles, since 6 + 6 = 12 is more than 9). (b) 6, 6, 6 is equilateral; 6, 6, 9 is isosceles. (c) The set 6, 6, 9: it is not equilateral and its perimeter is 21 cm, more than 20 cm (6, 6, 6 is equilateral and only 18 cm). She takes the 9 cm stick as the base; then both arcs have radius 6 cm.",
+     "s": [
+      [
+       "Part (a): lists the two sets 6, 6, 6 and 6, 6, 9",
+       1
+      ],
+      [
+       "Part (b): names them equilateral and isosceles",
+       1
+      ],
+      [
+       "Part (c): chooses 6, 6, 9 (perimeter 21 cm) with the 9 cm base and equal arcs of 6 cm",
+       1
+      ]
+     ],
+     "p": "pp. 149-150"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "A carpenter in Rajahmundry makes triangular wooden frames and first draws each one full size on the floor, using a string tied to a nail as a compass. He has three orders. Order 1: sides 35 cm, 50 cm and 60 cm. Order 2: sides 45 cm, 45 cm and 45 cm. Order 3: sides 25 cm, 25 cm and 40 cm. (a) For Order 1 he takes the 60 cm side as the base AB, with AC = 35 cm. What string lengths does he use from A and from B? (b) Name the triangle of each order by its sides. (c) For Order 3, which side should be the base so that both string lengths are the same? (d) He has one wooden strip 4 m long. Is it enough for all three frames? Show the working.",
+     "a": "(a) 35 cm from A and 50 cm from B (the remaining side BC). (b) Order 1 is scalene, Order 2 is equilateral and Order 3 is isosceles. (c) The 40 cm side; then both strings are 25 cm. (d) Total length = (35 + 50 + 60) + (45 + 45 + 45) + (25 + 25 + 40) = 145 + 135 + 90 = 370 cm. 4 m = 400 cm, so the strip is enough, with 30 cm left over.",
+     "s": [
+      [
+       "Part (a): 35 cm from A and 50 cm from B",
+       1
+      ],
+      [
+       "Part (b): scalene, equilateral, isosceles",
+       1
+      ],
+      [
+       "Part (c): takes the 40 cm side as base with equal 25 cm strings",
+       1
+      ],
+      [
+       "Part (d): totals 370 cm and decides 400 cm is enough",
+       1
+      ]
+     ],
+     "p": "pp. 149-150"
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.3",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these sets of lengths can be the sides of a triangle?",
+     "o": [
+      "4 cm, 6 cm, 9 cm",
+      "3 cm, 5 cm, 9 cm",
+      "2 cm, 7 cm, 10 cm",
+      "5 cm, 5 cm, 11 cm"
+     ],
+     "a": "4 cm, 6 cm, 9 cm, because the longest length 9 cm is less than 4 + 6 = 10 cm. In every other set the longest length is more than the sum of the other two.",
+     "p": "pp. 154-159"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sonu checks whether 6 cm, 8 cm and 15 cm can be the sides of a triangle. Which one comparison shows that they cannot?",
+     "o": [
+      "15 > 6 + 8",
+      "6 < 8 + 15",
+      "8 < 6 + 15",
+      "6 + 8 + 15 = 29"
+     ],
+     "a": "15 > 6 + 8: the longest length is more than the sum of the other two (14 cm), so the triangle inequality fails.",
+     "p": "pp. 153-154"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): On a base AB = 7 cm, a circle of radius 3 cm centred at A and a circle of radius 4 cm centred at B only touch each other at one point, so no triangle is formed. Reason (R): When the sum of the two smaller lengths equals the longest length, the two circles touch each other at a point.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: 3 + 4 = 7, which equals AB, so the circles only touch on AB and give no third vertex off the line.",
+     "p": "pp. 157-159"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Check whether the lengths 7 cm, 10 cm and 15 cm can be the sides of a triangle. Show the comparison you make.",
+     "a": "The longest length is 15 cm. The sum of the other two is 7 + 10 = 17 cm, and 15 < 17. So the lengths satisfy the triangle inequality and a triangle exists.",
+     "s": [
+      [
+       "Compares the longest length 15 cm with 7 + 10 = 17 cm",
+       1
+      ],
+      [
+       "Concludes that a triangle exists",
+       1
+      ]
+     ],
+     "p": "pp. 154-159"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: The lengths 4 m, 9 m and 4 m can be the sides of a triangular garden, because 4 < 9 + 4. Give the reason.",
+     "a": "False. Every length must be less than the sum of the other two. The longest length 9 m is more than 4 + 4 = 8 m, so the triangle inequality fails.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Shows that 9 m is more than 4 + 4 = 8 m",
+       1
+      ]
+     ],
+     "p": "pp. 154-159"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two sides of a triangle are 6 cm and 10 cm. (a) Describe all the possible lengths of the third side. (b) Write the smallest and the largest whole number of centimetres it can be.",
+     "a": "(a) The third side must be more than 10 - 6 = 4 cm and less than 10 + 6 = 16 cm, so any length strictly between 4 cm and 16 cm. (b) Smallest whole number 5 cm, largest whole number 15 cm.",
+     "s": [
+      [
+       "Part (a): states the third side is strictly between 4 cm and 16 cm",
+       1
+      ],
+      [
+       "Part (b): gives 5 cm and 15 cm",
+       1
+      ]
+     ],
+     "p": "pp. 159-160"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Three bus stops X, Y and Z are joined by straight roads that form a triangle. The road XY is 9 km long and the road YZ is 14 km long. The road ZX is a whole number of kilometres. (a) Between which two values must ZX lie? (b) How many whole-number values can ZX take? (c) If ZX is to be the shortest of the three roads, which values can it take?",
+     "a": "(a) ZX must be more than 14 - 9 = 5 km and less than 14 + 9 = 23 km. (b) The whole numbers 6, 7, ..., 22, which is 17 values. (c) ZX must also be less than 9 km, so 6, 7 or 8 km (3 values).",
+     "s": [
+      [
+       "Part (a): ZX strictly between 5 km and 23 km",
+       1
+      ],
+      [
+       "Part (b): counts 17 whole-number values",
+       1
+      ],
+      [
+       "Part (c): lists 6 km, 7 km and 8 km",
+       1
+      ]
+     ],
+     "p": "pp. 154-160"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Rohan supposes there is a triangle ABC with BC = 8 cm, AB = 11 cm and CA = 20 cm and draws a rough figure. (a) For each pair of vertices, write the direct path and the roundabout path through the third vertex, with their lengths. (b) Which comparison goes wrong? (c) What does this tell Rohan? (d) He keeps 8 cm and 11 cm and changes only the 20 cm side. What is the largest whole number of centimetres it can be so that a triangle exists? (e) What is the smallest whole number of centimetres the changed side can be?",
+     "a": "(a) B to C: direct 8 cm, roundabout BA + AC = 11 + 20 = 31 cm. A to B: direct 11 cm, roundabout AC + CB = 20 + 8 = 28 cm. C to A: direct 20 cm, roundabout CB + BA = 8 + 11 = 19 cm. (b) Between C and A the direct path (20 cm) is longer than the roundabout path (19 cm), which is absurd. (c) No triangle with these sides exists. (d) The side must be less than 8 + 11 = 19 cm, so the largest whole number is 18 cm. (e) It must be more than 11 - 8 = 3 cm, so the smallest whole number is 4 cm.",
+     "s": [
+      [
+       "Part (a): writes the three direct and roundabout path lengths 8 and 31, 11 and 28, 20 and 19",
+       1
+      ],
+      [
+       "Part (b): picks out 20 > 8 + 11 = 19",
+       1
+      ],
+      [
+       "Part (c): concludes the triangle does not exist",
+       1
+      ],
+      [
+       "Part (d): largest whole number 18 cm",
+       1
+      ],
+      [
+       "Part (e): smallest whole number 4 cm",
+       1
+      ]
+     ],
+     "p": "pp. 152-160"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "Priya's class in Nellore is making a triangular border for a rangoli with three ribbons pinned at the corners. The ribbons available are Red 30 cm, Blue 45 cm, Green 80 cm and Yellow 50 cm. The teacher says the three ribbons they use must be able to form a triangle, with each ribbon as one full side. (a) For Red, Blue and Green, find the sum of the two shorter lengths. (b) Can Red, Blue and Green form a triangle? Why? (c) Can Red, Blue and Yellow form a triangle? Show the check. (d) Which one ribbon can replace Green in the first set so that a triangle is formed?",
+     "a": "(a) 30 + 45 = 75 cm. (b) No. The longest ribbon, 80 cm, is more than 75 cm. (c) Yes. The longest is 50 cm and 30 + 45 = 75 cm is more than 50 cm. (d) Yellow (50 cm), as shown in part (c).",
+     "s": [
+      [
+       "Part (a): finds 75 cm",
+       1
+      ],
+      [
+       "Part (b): says no, since 80 cm is more than 75 cm",
+       1
+      ],
+      [
+       "Part (c): says yes, since 50 cm is less than 75 cm",
+       1
+      ],
+      [
+       "Part (d): names the Yellow ribbon",
+       1
+      ]
+     ],
+     "p": "pp. 154-159"
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.4",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sana must construct triangle ABC with AB = 6 cm, ∠A = 50° and AC = 4 cm. She has drawn AB = 6 cm. What should she do next?",
+     "o": [
+      "Draw an angle of 50° at A by drawing the other arm",
+      "Draw an arc of radius 4 cm from B",
+      "Draw an angle of 50° at B",
+      "Mark a point 4 cm from A on AB and join it to B"
+     ],
+     "a": "Draw an angle of 50° at A by drawing the other arm; then she marks C on this arm with AC = 4 cm and joins BC.",
+     "p": "pp. 160-161"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Angles are drawn at the two ends of a base, on the same side of it. Which pair of angles will give a triangle?",
+     "o": [
+      "70° and 95°",
+      "100° and 80°",
+      "120° and 75°",
+      "90° and 90°"
+     ],
+     "a": "70° and 95°, because their sum, 165°, is less than 180°. The other pairs add up to 180° or more, so the arms never meet.",
+     "p": "pp. 162-164"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: If angles of 65° and 110° are drawn at the two ends of a base, on the same side of it, a triangle is formed. Give the reason.",
+     "a": "True. A triangle exists when the two given angles add up to less than 180°, and 65° + 110° = 175°, which is less than 180°.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Gives the reason that 65° + 110° = 175° is less than 180°",
+       1
+      ]
+     ],
+     "p": "pp. 162-164"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Raghu is given ∠X = 72° and XY = 5 cm for a triangle XYZ, and may choose ∠Y at the other end of XY, on the same side. (a) What is the largest whole number of degrees he can take for ∠Y so that a triangle still exists? Give the reason. (b) With that value of ∠Y, find ∠Z.",
+     "a": "(a) 107°. The two angles at the ends of XY must add up to less than 180°, so ∠Y must be less than 180° - 72° = 108°; the largest whole number below 108 is 107. (b) ∠Z = 180° - (72° + 107°) = 1°.",
+     "s": [
+      [
+       "Part (a): uses 72° + ∠Y < 180° to get ∠Y = 107°",
+       1
+      ],
+      [
+       "Part (b): finds ∠Z = 1°",
+       1
+      ]
+     ],
+     "p": "pp. 162-164"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four students bring data of the type 'two angles and the included side' for triangle ABC. Whose data can NOT be used to construct a triangle?",
+     "o": [
+      "∠A = 105°, AB = 4 cm, ∠B = 75°",
+      "∠A = 105°, AB = 4 cm, ∠B = 70°",
+      "∠A = 30°, AB = 9 cm, ∠B = 140°",
+      "∠A = 89°, AB = 2 cm, ∠B = 89°"
+     ],
+     "a": "∠A = 105°, AB = 4 cm, ∠B = 75°, because 105° + 75° = 180°, so the arms from A and B are parallel and never meet. The other pairs add to 175°, 170° and 178°, all less than 180°.",
+     "p": "pp. 162-164"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Construct triangle KLM with KL = 5.5 cm, ∠K = 75° and KM = 4 cm. Write the construction steps. (a) What is drawn first? (b) What is drawn at K? (c) How are M and the third side obtained?",
+     "a": "(a) Draw the base KL = 5.5 cm. (b) At K, draw the other arm of the angle so that ∠K = 75°. (c) Mark M on this arm with KM = 4 cm, then join LM to get triangle KLM.",
+     "s": [
+      [
+       "Part (a): draws KL = 5.5 cm",
+       1
+      ],
+      [
+       "Part (b): draws a 75° angle at K",
+       1
+      ],
+      [
+       "Part (c): marks M with KM = 4 cm and joins LM",
+       1
+      ]
+     ],
+     "p": "pp. 160-161"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Sameer says: 'If ∠A = 55° on a base AB, then ∠B on the same side can be anything up to 150°, and the triangle will exist as long as AB is long enough.' (a) Find the angle at B for which the arm from B is parallel to the arm from A. (b) Use this to show that Sameer is wrong for ∠B = 130°. (c) State the correct rule for the two angles.",
+     "a": "(a) AB is a transversal of the two arms, and when the arms are parallel the interior angles on the same side add to 180°, so ∠B = 180° - 55° = 125°. (b) For ∠B = 130° the arm from B leans further away than the parallel line, so the two arms never meet, however long AB is: 55° + 130° = 185° is not less than 180°. (c) A triangle exists only when the two angles add up to less than 180°; the length of AB plays no part.",
+     "s": [
+      [
+       "Part (a): finds ∠B = 125° using interior angles on the same side",
+       1
+      ],
+      [
+       "Part (b): shows 130° gives no triangle whatever the length of AB",
+       1
+      ],
+      [
+       "Part (c): states that the two angles must add to less than 180°",
+       1
+      ]
+     ],
+     "p": "pp. 162-164"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two sides of 5 cm and 7 cm with an included angle of 120° give a triangle. Reason (R): For two sides and the included angle, a triangle can be constructed only when the included angle is acute.",
+     "o": [
+      "A is true, but R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, but R is true"
+     ],
+     "a": "A is true, but R is false: the 120° arm can be drawn at the end of the 5 cm base, C marked 7 cm along it and joined to B, so a triangle forms. The included angle need not be acute; any angle less than 180° works.",
+     "p": "pp. 160-161"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "A town planner in Warangal draws triangular traffic islands to scale before they are built. Island 1 has a road edge of 12 m with angles of 70° and 45° at its two ends. Island 2 has two kerbs of 9 m and 14 m with an angle of 110° between them. Island 3 has a road edge of 10 m with angles of 100° and 85° at its two ends, on the same side. (a) Which island is given by two sides and the included angle, and which islands by two angles and the included side? (b) Can Island 3 be drawn? Give the reason. (c) Find the third angle of Island 1. (d) The planner keeps the 10 m edge and the 100° angle of Island 3 and changes only the angle at the other end, so that the island's third angle is 50°. What angle must he use at the other end?",
+     "a": "(a) Island 2 is given by two sides and the included angle; Islands 1 and 3 are given by two angles and the included side. (b) No. 100° + 85° = 185°, which is not less than 180°, so the two arms never meet. (c) 180° - (70° + 45°) = 65°. (d) 180° - (100° + 50°) = 30°; since 100° + 30° = 130° is less than 180°, the island can now be drawn.",
+     "s": [
+      [
+       "Part (a): Island 2 is two sides and the included angle; Islands 1 and 3 are two angles and the included side",
+       1
+      ],
+      [
+       "Part (b): no, because 185° is not less than 180°",
+       1
+      ],
+      [
+       "Part (c): finds the third angle 65°",
+       1
+      ],
+      [
+       "Part (d): finds the other end angle 30°",
+       1
+      ]
+     ],
+     "p": "pp. 160-166"
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the sum of the three angles of any triangle?",
+     "o": [
+      "180°",
+      "90°",
+      "360°",
+      "270°"
+     ],
+     "a": "180°. This is the angle sum property of triangles.",
+     "p": "p. 166"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In triangle ABC, side BC is extended to D. If the exterior angle ACD is 120° and ∠A = 70°, then ∠B = 50°. Reason (R): An exterior angle of a triangle equals the sum of the two interior opposite angles.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: ∠ACD = ∠A + ∠B, so 120° = 70° + ∠B and ∠B = 50°.",
+     "p": "p. 167"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle PQR, ∠P = 90° and ∠Q = 35°. (a) Find ∠R. (b) Side QR is extended beyond R. Find the exterior angle formed at R.",
+     "a": "(a) ∠R = 180° - (90° + 35°) = 55°. (b) The exterior angle and ∠R form a straight angle, so it is 180° - 55° = 125° (also 90° + 35° = 125°).",
+     "s": [
+      [
+       "Part (a): finds ∠R = 55° using the angle sum",
+       1
+      ],
+      [
+       "Part (b): finds the exterior angle 125°",
+       1
+      ]
+     ],
+     "p": "pp. 166-167"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements. Statement I: The three angles of any triangle add up to 180°. Statement II: A triangle can have two right angles. Statement III: The exterior angle at a vertex and the interior angle at the same vertex add up to 180°. Which of the statements are correct?",
+     "o": [
+      "Statements I and III only",
+      "Statements I and II only",
+      "Statement I only",
+      "Statements I, II and III"
+     ],
+     "a": "Statements I and III only. Statement II is wrong: two right angles already add up to 180°, leaving nothing for the third angle.",
+     "p": "pp. 166-167"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In triangle ABC, ∠A and ∠B are equal, and ∠C = 64°. (a) Find the sum ∠A + ∠B. (b) Find ∠A and ∠B. (c) Side AC is extended beyond C to D. Find the exterior angle BCD and check it against ∠A + ∠B.",
+     "a": "(a) ∠A + ∠B = 180° - 64° = 116°. (b) They are equal, so each is 116° ÷ 2 = 58°. (c) ∠BCD = 180° - 64° = 116°, which equals ∠A + ∠B = 58° + 58° = 116°.",
+     "s": [
+      [
+       "Part (a): finds ∠A + ∠B = 116°",
+       1
+      ],
+      [
+       "Part (b): finds ∠A = ∠B = 58°",
+       1
+      ],
+      [
+       "Part (c): finds the exterior angle 116° and checks it equals 58° + 58°",
+       1
+      ]
+     ],
+     "p": "pp. 165-167"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The three angles of a triangle grow by 20° each: the middle angle is 20° more than the smallest, and the largest is 20° more than the middle one. What is its largest angle?",
+     "o": [
+      "80°",
+      "60°",
+      "100°",
+      "40°"
+     ],
+     "a": "80°: taking 20° from the largest angle and giving it to the smallest makes all three angles equal to the middle one, so the middle angle is 180° ÷ 3 = 60°; the angles are 40°, 60° and 80°.",
+     "p": "p. 166"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "q": "In triangle LMN, a line UV is drawn through L parallel to MN, with U on the side of M and V on the side of N. (a) Which angle at L is equal to ∠M, and why? (b) Which angle at L is equal to ∠N? (c) Use these to explain why ∠L + ∠M + ∠N = 180°. (d) If ∠M = 42° and ∠N = 73°, find ∠L. (e) Side MN is extended beyond N to S. Find the exterior angle LNS.",
+     "a": "(a) ∠ULM = ∠M, because they are alternate angles made by the transversal LM with the parallel lines UV and MN. (b) ∠VLN = ∠N (alternate angles with the transversal LN). (c) ∠ULM, ∠MLN and ∠VLN together make the straight angle ULV, so ∠M + ∠L + ∠N = 180°. (d) ∠L = 180° - (42° + 73°) = 65°. (e) ∠LNS = 180° - 73° = 107°, which is also ∠L + ∠M = 65° + 42°.",
+     "s": [
+      [
+       "Part (a): ∠ULM = ∠M as alternate angles",
+       1
+      ],
+      [
+       "Part (b): ∠VLN = ∠N",
+       1
+      ],
+      [
+       "Part (c): explains the three angles at L form a straight angle of 180°",
+       1
+      ],
+      [
+       "Part (d): finds ∠L = 65°",
+       1
+      ],
+      [
+       "Part (e): finds ∠LNS = 107°",
+       1
+      ]
+     ],
+     "p": "pp. 164-167"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "A kite maker in Kakinada ties three sticks into a triangular kite frame ABC. He measures the two angles at the bottom corners as ∠B = 35° and ∠C = 35°. To hang a tail, he lets the bottom stick BC run on beyond C to a point D, making an exterior angle ACD. (a) What is the sum of the three angles of the frame? (b) Find the angle ∠A at the top. (c) Find the exterior angle ACD. (d) Check that ∠ACD equals ∠A + ∠B.",
+     "a": "(a) 180°. (b) ∠A = 180° - (35° + 35°) = 110°. (c) ∠ACD = 180° - 35° = 145°. (d) ∠A + ∠B = 110° + 35° = 145°, which equals ∠ACD.",
+     "s": [
+      [
+       "Part (a): states 180°",
+       1
+      ],
+      [
+       "Part (b): finds ∠A = 110°",
+       1
+      ],
+      [
+       "Part (c): finds ∠ACD = 145°",
+       1
+      ],
+      [
+       "Part (d): checks 110° + 35° = 145°",
+       1
+      ]
+     ],
+     "p": "pp. 166-167"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In triangle ABC, side BC is extended to D. The exterior angle ACD is 4 times ∠A, and ∠B = 30°. (a) Write the relation between ∠ACD, ∠A and ∠B. (b) Find ∠A. (c) Find ∠ACB and check that the three angles add to 180°.",
+     "a": "(a) ∠ACD = ∠A + ∠B. (b) Think of ∠A as 1 part; then ∠ACD is 4 parts. Since ∠ACD = ∠A + ∠B, ∠B is the other 3 parts, so 3 parts = 30° and 1 part = 10°. So ∠A = 10°. (c) ∠ACD = 4 × 10° = 40°, so ∠ACB = 180° - 40° = 140°. Check: 10° + 30° + 140° = 180°.",
+     "s": [
+      [
+       "Part (a): writes ∠ACD = ∠A + ∠B",
+       1
+      ],
+      [
+       "Part (b): sees ∠B as 3 of the 4 parts and gets ∠A = 10°",
+       1
+      ],
+      [
+       "Part (c): finds ∠ACB = 140° and checks the sum is 180°",
+       1
+      ]
+     ],
+     "p": "pp. 166-167"
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is an altitude of a triangle?",
+     "o": [
+      "The perpendicular line segment from a vertex to the opposite side, extended if needed",
+      "The line segment from a vertex to the middle point of the opposite side",
+      "The longest side of the triangle",
+      "A line through a vertex parallel to the opposite side"
+     ],
+     "a": "The perpendicular line segment from a vertex to the opposite side (extended if needed); its length is the height of that vertex from that side.",
+     "p": "pp. 167-168"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair of tools gives an accurate 90° when we draw the altitude from A to the base BC of triangle ABC?",
+     "o": [
+      "A ruler and a set square",
+      "A compass only",
+      "A ruler only",
+      "A protractor and a compass"
+     ],
+     "a": "A ruler and a set square: the ruler is kept along the base and the set square is slid along it so that its right-angle edge touches A.",
+     "p": "pp. 168-169"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: In a right-angled triangle, a side of the triangle can also be one of its altitudes. Give the reason.",
+     "a": "True. In a right-angled triangle the two sides that make the right angle are perpendicular to each other, so each of them is the altitude from its far vertex to the other side.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Explains that the two sides at the right angle are perpendicular, so each is an altitude",
+       1
+      ]
+     ],
+     "p": "p. 169"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In triangle LMN, ∠L = 90°. (a) Where does the altitude from L to MN lie, and where is its foot? (b) Rita says: 'Taking MN as the base, the height of the triangle is the side LM, because LM is a side at L.' Is she right? Give the reason.",
+     "a": "(a) Inside the triangle; its foot is a point on MN between M and N, where the altitude meets MN at right angles. (b) No. The height to the base MN is the length of the perpendicular from L to MN. LM is not perpendicular to MN (the right angle is at L, not at M), so LM is not that altitude.",
+     "s": [
+      [
+       "Part (a): inside, with the foot on MN between M and N",
+       1
+      ],
+      [
+       "Part (b): says no, because the height is the perpendicular from L to MN and LM is not perpendicular to MN",
+       1
+      ]
+     ],
+     "p": "pp. 167-169"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements about altitudes. Statement I: In a triangle with an obtuse angle at B, the altitude from A meets the line CB only after CB is extended. Statement II: The height of a triangle depends on which side is taken as the base. Statement III: The altitude from a vertex is always the shortest side of the triangle. Which of the statements are correct?",
+     "o": [
+      "Statements I and II only",
+      "Statements II and III only",
+      "Statement I only",
+      "Statements I, II and III"
+     ],
+     "a": "Statements I and II only. Statement III is wrong: an altitude is a perpendicular from a vertex to the opposite side, and it need not be a side at all. Even in a right triangle, the altitude from the right-angle vertex to the longest side is not a side.",
+     "p": "pp. 167-169"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Write the three steps used to construct the altitude from A to the base BC of a triangle ABC with a ruler and a set square.",
+     "a": "(1) Keep the ruler along the base BC and place the set square on the ruler so that one edge of its right angle touches the ruler. (2) Slide the set square along the ruler until its other (vertical) edge touches the vertex A. (3) Draw the line from A to BC along the vertical edge of the set square; this is the altitude.",
+     "s": [
+      [
+       "Step 1: ruler along BC with a right-angle edge of the set square on the ruler",
+       1
+      ],
+      [
+       "Step 2: slides the set square until its vertical edge touches A",
+       1
+      ],
+      [
+       "Step 3: draws the altitude from A to BC along that edge",
+       1
+      ]
+     ],
+     "p": "p. 169"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "A flower bed in a park in Tirupati is shaped like triangle PQR. The gardener measures ∠Q = 120° and ∠R = 25°. He wants to lay a straight water pipe from the tap at corner P that meets the line of the edge QR at right angles, so that the pipe is as short as possible. (a) Find ∠P. (b) Classify the bed by its angles. (c) Will the pipe meet QR between Q and R, or on QR extended beyond Q? Give the reason. (d) What is this pipe called in the geometry of the triangle?",
+     "a": "(a) ∠P = 180° - (120° + 25°) = 35°. (b) It has one obtuse angle (120°), so it is obtuse-angled. (c) On QR extended beyond Q. The angle at Q is obtuse, so the perpendicular from P falls outside the edge QR, and QR has to be extended beyond Q to meet it. (d) The altitude from P to QR.",
+     "s": [
+      [
+       "Part (a): finds ∠P = 35°",
+       1
+      ],
+      [
+       "Part (b): says obtuse-angled",
+       1
+      ],
+      [
+       "Part (c): says the pipe meets QR extended beyond Q, because ∠Q is obtuse",
+       1
+      ],
+      [
+       "Part (d): names it the altitude from P",
+       1
+      ]
+     ],
+     "p": "pp. 166-170"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Bhavya must construct triangle ABC with BC = 6 cm, ∠B = 125° and AB = 4 cm, and then construct the altitude from A to BC. (a) Write how she constructs the triangle. (b) Where will the foot of the altitude from A lie, and what must she draw first? (c) How does she use the ruler and set square to draw the altitude? (d) She is next asked for the altitude from C to AB. Will its foot lie on the side AB itself or on AB extended? Decide, and give the reason.",
+     "a": "(a) Draw BC = 6 cm, draw the other arm at B so that ∠B = 125°, mark A on it with BA = 4 cm and join AC. (b) ∠B is obtuse, so the foot lies outside the triangle on the line CB extended beyond B; she must first extend CB beyond B. (c) She keeps the ruler along the extended line CB, slides the set square along it until its vertical edge touches A, and draws the perpendicular from A to the extended line. (d) On AB extended beyond B, not on AB itself. The angle at B between AB and BC is obtuse, so the perpendicular from C meets the line AB only on the far side of B; AB must be extended beyond B first.",
+     "s": [
+      [
+       "Part (a): BC = 6 cm, 125° at B, BA = 4 cm, join AC",
+       1
+      ],
+      [
+       "Part (b): the foot lies on CB extended beyond B, so CB is extended first",
+       1
+      ],
+      [
+       "Part (c): ruler along the extended line, set square slid to touch A, perpendicular drawn",
+       1
+      ],
+      [
+       "Part (d): decides the foot is on AB extended beyond B, because ∠B is obtuse",
+       1
+      ]
+     ],
+     "p": "pp. 160-170"
+    }
+   ]
+  },
+  {
+   "code": "C7M-7.7",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is a triangle with sides of three different lengths called?",
+     "o": [
+      "Scalene",
+      "Isosceles",
+      "Equilateral",
+      "Obtuse-angled"
+     ],
+     "a": "Scalene: a scalene triangle has sides of three different lengths.",
+     "p": "p. 170"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "q": "Match each triangle in Column I with its type in Column II. Column I: 1. Angles 50°, 60° and 70°, 2. Angles 25°, 25° and 130°, 3. Sides 5 cm, 5 cm and 5 cm, 4. Sides 4 cm, 6 cm and 7 cm. Column II: A. Obtuse-angled, B. Scalene, C. Acute-angled, D. Equilateral.",
+     "o": [
+      "1-C, 2-A, 3-D, 4-B",
+      "1-A, 2-C, 3-D, 4-B",
+      "1-C, 2-A, 3-B, 4-D",
+      "1-C, 2-D, 3-A, 4-B"
+     ],
+     "a": "1-C, 2-A, 3-D, 4-B: all of 50°, 60°, 70° are acute; 130° is obtuse; three equal sides make it equilateral; three different sides make it scalene.",
+     "p": "p. 170"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A triangle with angles 100°, 50° and 30° is an obtuse-angled triangle. Reason (R): An obtuse-angled triangle has one obtuse angle.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: the angle of 100° is obtuse, and a triangle with one obtuse angle is obtuse-angled.",
+     "p": "p. 170"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A triangle in which two of the angles are 40° and 50° is a right-angled triangle. Reason (R): The sum of any two angles of a triangle is always less than 180°.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ],
+     "a": "Both A and R are true, but R is not the correct explanation of A: by the angle sum property the third angle is 180° - (40° + 50°) = 90°, so the triangle is right-angled. R is true (the third angle is more than 0°), but it does not show that the third angle is 90°.",
+     "p": "pp. 166-170"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Two angles of a triangle are 38° and 52°. Find the third angle and classify the triangle by its angles. (b) Two angles of another triangle are 27° and 58°. Classify it by its angles.",
+     "a": "(a) Third angle = 180° - (38° + 52°) = 90°, so it is right-angled. (b) Third angle = 180° - (27° + 58°) = 95°, which is obtuse, so it is obtuse-angled.",
+     "s": [
+      [
+       "Part (a): finds 90° and says right-angled",
+       1
+      ],
+      [
+       "Part (b): finds 95° and says obtuse-angled",
+       1
+      ]
+     ],
+     "p": "pp. 166-170"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: An equilateral triangle cannot be a scalene triangle. Give the reason.",
+     "a": "True. An equilateral triangle has all three sides equal, while a scalene triangle has sides of three different lengths, so one triangle cannot be both.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Explains equal sides versus three different sides",
+       1
+      ]
+     ],
+     "p": "p. 170"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In triangle ABC, side BC is extended to D. The exterior angle ACD is 95° and ∠A = 40°. (a) Find ∠B. (b) Find ∠ACB. (c) Classify the triangle by its angles.",
+     "a": "(a) ∠ACD = ∠A + ∠B, so ∠B = 95° - 40° = 55°. (b) ∠ACB = 180° - 95° = 85°. (c) The angles 40°, 55° and 85° are all acute, so it is acute-angled.",
+     "s": [
+      [
+       "Part (a): finds ∠B = 55°",
+       1
+      ],
+      [
+       "Part (b): finds ∠ACB = 85°",
+       1
+      ],
+      [
+       "Part (c): says acute-angled since all three angles are acute",
+       1
+      ]
+     ],
+     "p": "pp. 167-170"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "The angles of a triangle are made of equal parts: the smallest angle has 3 parts, the next has 4 parts and the largest has 5 parts. (a) Find the size of one part and the three angles. (b) Classify this triangle by its angles. (c) Ravi says: 'If every part count is doubled to 6, 8 and 10, the triangle gets bigger angles.' Check his claim. (d) For the part counts 1, 1, 2 and 2, 3, 7, find the angles and say which one gives an obtuse-angled triangle. (e) Meena wants part counts 1, 1 and k, with k a whole number, that give an obtuse-angled triangle. What is the smallest k she can use? Show why a smaller k does not work.",
+     "a": "(a) There are 3 + 4 + 5 = 12 equal parts in 180°, so one part is 180° ÷ 12 = 15°; the angles are 45°, 60° and 75°. (b) All three angles are acute, so it is acute-angled. (c) Ravi is wrong. Now there are 6 + 8 + 10 = 24 parts in 180°, so one part is 7.5°, and the angles are 45°, 60° and 75° again; the angles do not change. (d) 1, 1, 2: 4 parts, one part 45°, angles 45°, 45°, 90° (right-angled). 2, 3, 7: 12 parts, one part 15°, angles 30°, 45°, 105°. So 2, 3, 7 gives the obtuse-angled triangle. (e) k = 3: 5 parts, one part 36°, angles 36°, 36°, 108°, and 108° is obtuse. k = 2 gives 45°, 45°, 90°, which is only right-angled, and k = 1 gives 60°, 60°, 60°, which is acute-angled.",
+     "s": [
+      [
+       "Part (a): one part = 15°, angles 45°, 60°, 75°",
+       1
+      ],
+      [
+       "Part (b): says acute-angled",
+       1
+      ],
+      [
+       "Part (c): shows 24 parts of 7.5° give the same angles, so Ravi is wrong",
+       1
+      ],
+      [
+       "Part (d): finds 45°, 45°, 90° and 30°, 45°, 105°, picks 2, 3, 7",
+       1
+      ],
+      [
+       "Part (e): k = 3 gives 108°; k = 2 gives only 90°",
+       1
+      ]
+     ],
+     "p": "pp. 166-170"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school in Hyderabad is printing triangular badges for its sports teams. The designer gives only two angles of each badge. Badge A has angles 33° and 57°. Badge B has angles 28° and 47°. Badge C has angles 48° and 62°. The principal wants every team to know the type of its badge by angles. The printer's cutting machine can only cut a badge whose largest angle is at most 100°. (a) Find the third angle of each badge. (b) Classify each badge by its angles. (c) Which badge has all three of its altitudes inside it? Give the reason. (d) Which badges can the machine cut?",
+     "a": "(a) Badge A: 180° - (33° + 57°) = 90°. Badge B: 180° - (28° + 47°) = 105°. Badge C: 180° - (48° + 62°) = 70°. (b) A is right-angled, B is obtuse-angled and C is acute-angled. (c) Badge C. All its angles are acute, so the perpendicular from each vertex meets the opposite side itself; in B two altitudes fall outside, and in A two altitudes are sides. (d) The largest angles are 90°, 105° and 70°, so the machine can cut Badges A and C, but not Badge B.",
+     "s": [
+      [
+       "Part (a): third angles 90°, 105° and 70°",
+       1
+      ],
+      [
+       "Part (b): right, obtuse and acute-angled",
+       1
+      ],
+      [
+       "Part (c): Badge C, because all its angles are acute",
+       1
+      ],
+      [
+       "Part (d): Badges A and C, since 105° is more than 100°",
+       1
+      ]
+     ],
+     "p": "pp. 166-170"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1284 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Number Play"
+ },
+ "source_code": "gegp106",
+ "concepts": [
+  {
+   "code": "C7M-6.1",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Four children stand in a line. Their heights, from the front, are 130 cm, 125 cm, 140 cm and 135 cm. Each child calls out the number of children in front of them who are taller than them. What numbers do they call, from the front?",
+     "o": [
+      "0, 1, 0, 1",
+      "0, 0, 1, 1",
+      "0, 1, 0, 2",
+      "3, 2, 0, 1"
+     ],
+     "a": "0, 1, 0, 1: the first child has no one in front; the 125 cm child has one taller child (130 cm) in front; the 140 cm child has no taller child in front; the 135 cm child has one taller child (140 cm) in front.",
+     "p": "pp. 127-128"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Children of different heights stand in a line, and each calls out the number of children in front of them who are taller. Assertion (A): The tallest child in the line always calls 0. Reason (R): No child standing in front of the tallest child is taller than the tallest child.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: a child's number counts only taller children in front, and nobody is taller than the tallest child, so the count is 0.",
+     "p": "p. 128"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "Children of different heights stand in a line, and each calls out the number of children in front of them who are taller. True or False: The child who stands last in the line always calls the largest number.",
+     "a": "False. If the last child is the tallest, nobody in front is taller, so she calls 0, which is the smallest number, not the largest.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Gives a counter-example, such as the last child being the tallest and calling 0",
+       1
+      ]
+     ],
+     "p": "p. 128"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Five children of heights 3, 1, 4, 2 and 5 units (5 is the tallest) stand in this order from the front. Each child calls out the number of children in front of them who are taller. (a) Write the number each child calls. (b) How many children call 0?",
+     "a": "(a) 0, 1, 0, 2, 0. (b) Three children call 0 (the children of heights 3, 4 and 5).",
+     "s": [
+      [
+       "Part (a): writes the calls 0, 1, 0, 2, 0",
+       1
+      ],
+      [
+       "Part (b): counts three children calling 0",
+       1
+      ]
+     ],
+     "p": "pp. 127-128"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "reverse"
+     ],
+     "q": "Five children of heights 1, 2, 3, 4 and 5 units (5 is the tallest) must stand in a line so that, when each calls the number of taller children in front of them, the calls read 0, 1, 1, 1, 1. (a) Write the heights in order from the front. (b) Is there any other order that gives these calls? Give a reason.",
+     "a": "(a) 5, 1, 2, 3, 4. (b) No. The tallest child must call 0, and only the first child calls 0, so the first child is 5. Each of the others has exactly one taller child in front (the 5), so nobody else in front of them may be taller: the rest must stand shortest to tallest, 1, 2, 3, 4.",
+     "s": [
+      [
+       "Part (a): gives the order 5, 1, 2, 3, 4",
+       1
+      ],
+      [
+       "Part (b): says no, because the first child must be the tallest and the rest must increase in height",
+       1
+      ]
+     ],
+     "p": "p. 128"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "reverse"
+     ],
+     "q": "Six children of different heights stand in a line, and each calls the number of taller children in front of them. Their calls, from the front, are 0, 1, 2, 0, 1, 2. Giving the shortest child the height 1 and the tallest the height 6, find the heights of the six children in order. Explain how you decided.",
+     "a": "3, 2, 1, 6, 5, 4. The 4th child calls 0, so is taller than the first three, and the 5th and 6th do not call 0, so the 4th child is the tallest (6). The 5th child has exactly one taller child in front, the 4th, so is taller than the first three: height 5. The 6th child has exactly two taller in front (the 4th and 5th), so is taller than the first three: height 4. The first three call 0, 1, 2, so they stand tallest to shortest: 3, 2, 1.",
+     "s": [
+      [
+       "Shows the 4th child is the tallest (6) and the 5th is next (5)",
+       1
+      ],
+      [
+       "Shows the 6th child has height 4, taller than the first three",
+       1
+      ],
+      [
+       "Orders the first three as 3, 2, 1 and writes 3, 2, 1, 6, 5, 4",
+       1
+      ]
+     ],
+     "p": "p. 128"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Six children of different heights stand in a line, and each calls the number of taller children in front of them. When Ms Rao adds up all six calls, the total is 0. What must be true about the line?",
+     "o": [
+      "They stand in order of height, shortest at the front and tallest at the back.",
+      "They stand in order of height, tallest at the front and shortest at the back.",
+      "The tallest child stands at the front of the line.",
+      "Only the first child is shorter than everyone else; the others can stand in any order."
+     ],
+     "a": "They stand shortest at the front and tallest at the back: a total of 0 means every child calls 0, so nobody has a taller child in front, and each child is taller than everyone ahead.",
+     "p": "p. 128"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "At the morning assembly, eight students of Class 7C stand in a line, one behind the other. Their heights from the front are: Riya 141 cm, Sahil 136 cm, Tanu 148 cm, Uday 132 cm, Vani 145 cm, Wasim 151 cm, Xena 139 cm and Yash 128 cm. Each student calls out the number of students in front of them who are taller. (a) What numbers do Riya, Sahil and Tanu call? (b) Which students call 0? (c) Who calls the largest number, and what is it? (d) Wasim now moves to the very front of the line. What number does Riya call now?",
+     "a": "(a) Riya 0, Sahil 1, Tanu 0. (b) Riya, Tanu and Wasim. (c) Yash calls 7, because all seven students in front of him are taller. (d) Riya now calls 1, because Wasim (151 cm) is in front of her and taller.",
+     "s": [
+      [
+       "Part (a): Riya 0, Sahil 1, Tanu 0",
+       1
+      ],
+      [
+       "Part (b): names Riya, Tanu and Wasim",
+       1
+      ],
+      [
+       "Part (c): Yash, who calls 7",
+       1
+      ],
+      [
+       "Part (d): Riya now calls 1",
+       1
+      ]
+     ],
+     "p": "pp. 127-128"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Six children of different heights stand in a line, and each calls the number of taller children in front of them. For each statement, say whether it is Always True, Only Sometimes True or Never True, and give a reason. (a) A child who calls 2 has at least two children in front of her. (b) If two children standing next to each other both call 0, the one behind is taller. (c) The 3rd child in the line calls 1. (d) If the last child calls 0, then no other child calls 0.",
+     "a": "(a) Always True: the call counts children in front, so calling 2 needs at least two children in front. (b) Always True: the child behind calls 0, so nobody in front of her is taller, including the child just in front. (c) Only Sometimes True: if the first three heights are 3, 2, 1 units the 3rd child calls 2, but if they are 1, 3, 2 units the 3rd child calls 1, so it depends on the heights. (d) Never True: the first child always calls 0, so if the last child also calls 0, at least two children call 0.",
+     "s": [
+      [
+       "Part (a): Always True, with the reason that the call counts children in front",
+       1
+      ],
+      [
+       "Part (b): Always True, because the child behind has no taller child in front",
+       1
+      ],
+      [
+       "Part (c): Only Sometimes True, with one example where it holds and one where it fails",
+       1
+      ],
+      [
+       "Part (d): Never True, because the first child always calls 0",
+       1
+      ]
+     ],
+     "p": "p. 128"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these sums is always an odd number, whatever the actual numbers are?",
+     "o": [
+      "The sum of 2 even numbers and 3 odd numbers",
+      "The sum of 3 even numbers and 2 odd numbers",
+      "The sum of 4 odd numbers",
+      "The sum of 6 even numbers"
+     ],
+     "a": "The sum of 2 even numbers and 3 odd numbers: the even numbers give an even total, and three odd numbers give an odd total, so the whole sum is even + odd = odd.",
+     "p": "pp. 129-131"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "q": "Match each quantity in Column I with the correct statement about its parity in Column II. Column I: 1. The number of small squares in a 9 x 11 grid, 2. The sum of the ages of twins, 3. The sum of the ages of two siblings born exactly one year apart, 4. The number of small squares in a 6 x 13 grid. Column II: A. Always odd, because the two numbers are consecutive, B. Always even, because the two numbers are equal, C. Odd, because both factors are odd, D. Even, because one factor is even.",
+     "o": [
+      "1-C, 2-B, 3-A, 4-D",
+      "1-D, 2-B, 3-A, 4-C",
+      "1-C, 2-A, 3-B, 4-D",
+      "1-A, 2-B, 3-C, 4-D"
+     ],
+     "a": "1-C, 2-B, 3-A, 4-D: 9 x 11 = 99 has two odd factors; twins have equal ages, and a number added to itself is even; consecutive ages are one odd and one even; 6 x 13 = 78 has the even factor 6.",
+     "p": "pp. 130-131"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The difference of two odd numbers is always odd. Reason (R): The sum of two odd numbers is always even.",
+     "o": [
+      "A is false, but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false."
+     ],
+     "a": "A is false, but R is true: odd - odd is even (for example 15 - 9 = 6), while two odd numbers do add up to an even number, because their two leftover items pair up.",
+     "p": "pp. 130-131"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If the product of five whole numbers is odd, then all five numbers are odd. Reason (R): If even one of the numbers being multiplied is even, the product is even.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: any even factor makes the whole product even, so an odd product can only come from five odd factors.",
+     "p": "p. 131"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: The sum of any 4 odd numbers is an even number.",
+     "a": "True. The 4 odd numbers make two pairs of odd numbers; each pair adds up to an even number, and even + even is even. For example, 1 + 3 + 5 + 9 = 18.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Explains by pairing the odd numbers (odd + odd = even, even + even = even) or an equivalent reason",
+       1
+      ]
+     ],
+     "p": "p. 130"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Without multiplying, find the parity (even or odd) of the number of small squares in (a) a 15 x 21 grid and (b) a 34 x 17 grid. Give a reason for each.",
+     "a": "(a) Odd, because both 15 and 21 are odd (15 x 21 = 315). (b) Even, because 34 is even (34 x 17 = 578).",
+     "s": [
+      [
+       "Part (a): odd, as both sides are odd",
+       1
+      ],
+      [
+       "Part (b): even, as one side (34) is even",
+       1
+      ]
+     ],
+     "p": "pp. 131-132"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "show_impossible"
+     ],
+     "q": "On Sports Day, each of 7 house teams scored an odd number of points. The scoreboard shows that the total of all 7 teams is 96. (a) What must the parity of the total be? (b) Can the scoreboard be right? (c) If an 8th team, also with an odd score, had taken part, could the total of 8 teams be 96? Give an example if it can.",
+     "a": "(a) Odd, because the sum of an odd number (7) of odd numbers is odd. (b) No, because 96 is even, so the scoreboard is wrong. (c) Yes: the sum of 8 odd numbers is even, so 96 is possible; for example seven teams with 11 points and one team with 19 points give 77 + 19 = 96.",
+     "s": [
+      [
+       "Part (a): the total of 7 odd scores is odd",
+       1
+      ],
+      [
+       "Part (b): 96 is even, so the scoreboard cannot be right",
+       1
+      ],
+      [
+       "Part (c): yes, 8 odd numbers add to an even number, with a correct example such as seven 11s and one 19",
+       1
+      ]
+     ],
+     "p": "pp. 130-131"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A quiz has 20 questions. A correct answer earns 3 marks, an attempted but wrong answer earns 1 mark for trying, and a skipped question earns 0. (a) Asha attempts all 20 questions and gets 15 right. Find her score. (b) If a student attempts all 20 questions, the numbers of right and wrong answers add up to 20. Explain why these two numbers have the same parity. (c) Use part (b) to show that a student who attempts all 20 questions always gets an even score. (d) Ravi attempts all 20 and says he scored 47. Is that possible? (e) Meena skips exactly one question and scores 41. How many did she get right?",
+     "a": "(a) 15 x 3 + 5 x 1 = 45 + 5 = 50. (b) Their sum, 20, is even; an even sum comes from two evens or two odds, so they have the same parity. (c) 3 x (right) has the same parity as the number right, so the score 3 x (right) + (wrong) is odd + odd or even + even, which is even. (d) No, 47 is odd, and a student who attempts all 20 always scores an even number. (e) She attempted 19, so right + wrong = 19; 3 x (right) + (19 - right) = 41 gives 2 x (right) = 22, so 11 right and 8 wrong (33 + 8 = 41).",
+     "s": [
+      [
+       "Part (a): Asha's score is 50",
+       1
+      ],
+      [
+       "Part (b): two numbers adding to an even number have the same parity",
+       1
+      ],
+      [
+       "Part (c): 3 x right has the parity of right, so the score is even",
+       1
+      ],
+      [
+       "Part (d): 47 is odd, so it is not possible",
+       1
+      ],
+      [
+       "Part (e): 11 right (and 8 wrong), checked as 33 + 8 = 41",
+       1
+      ]
+     ],
+     "p": "pp. 130-131"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "Arjun buys some pens at Rs 7 each and some erasers at Rs 4 each. He pays Rs 87 in all. Which statement must be true?",
+     "o": [
+      "He bought an odd number of pens.",
+      "He bought an even number of pens.",
+      "He bought an odd number of erasers.",
+      "He bought an even number of erasers."
+     ],
+     "a": "He bought an odd number of pens: the erasers cost a multiple of 4, which is even, so the pens must cost an odd amount, and 7 x (pens) is odd only when the number of pens is odd. The erasers can be odd or even (1 pen and 20 erasers, or 5 pens and 13 erasers).",
+     "p": "pp. 130-131"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The nth odd number is 2n - 1. What is the 40th odd number?",
+     "o": [
+      "79",
+      "80",
+      "81",
+      "39"
+     ],
+     "a": "79, because 2 x 40 - 1 = 80 - 1 = 79.",
+     "p": "p. 133"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Nikhil wants an expression that lists every even number and nothing else when n = 1, 2, 3, ... is put in. Which expression should he use?",
+     "o": [
+      "2n",
+      "2n + 2",
+      "4n - 2",
+      "6n + 2"
+     ],
+     "a": "2n gives 2, 4, 6, 8, ..., every even number. The others give only even numbers but miss some: 2n + 2 starts at 4 and misses 2, 4n - 2 gives 2, 6, 10, ... and misses 4, and 6n + 2 gives 8, 14, 20, ... and misses many.",
+     "p": "pp. 132-133"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read these statements, where n and t stand for whole numbers. Statement I: The expression 8t + 5 always gives an odd number. Statement II: The expression 3n + 3 always gives an even number. Statement III: For n = 1, 2, 3, the expression 2n + 2 gives 4, 6 and 8. Which of the statements are true?",
+     "o": [
+      "Only I and III",
+      "Only I",
+      "Only II and III",
+      "All three"
+     ],
+     "a": "Only I and III: 8t is always even, so 8t + 5 is always odd; 2n + 2 gives 4, 6, 8 for n = 1, 2, 3. Statement II is false, because n = 2 gives 3 x 2 + 3 = 9, which is odd.",
+     "p": "pp. 132-133"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The 50th even number is 100. Reason (R): The nth even number is 2n.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: putting n = 50 in 2n gives 2 x 50 = 100.",
+     "p": "p. 133"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: The expression 5n + 1 gives only even numbers when n = 1, 2, 3, ...",
+     "a": "False. For n = 1 it gives 6, which is even, but for n = 2 it gives 11, which is odd. 5n is odd when n is odd and even when n is even, so 5n + 1 can be either.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Gives a value of n, such as n = 2 giving 11, for which 5n + 1 is odd",
+       1
+      ]
+     ],
+     "p": "p. 132"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find the value of 6p + 5 when p = 2 and when p = 7, and write the parity of each value. (b) Can 6p + 5 ever be even? Give a reason.",
+     "a": "(a) p = 2 gives 17 and p = 7 gives 47; both are odd. (b) No: 6p is always even because 6 is even, and even + 5 is always odd.",
+     "s": [
+      [
+       "Part (a): 17 and 47, both odd",
+       1
+      ],
+      [
+       "Part (b): no, because 6p is even and adding the odd number 5 makes it odd",
+       1
+      ]
+     ],
+     "p": "p. 132"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Using the letter t (t = 1, 2, 3, ...), write (a) an expression that is always even, (b) an expression that is always odd, and (c) an expression that can be either even or odd. For each one, find its values for t = 1 and t = 2 to support your answer.",
+     "a": "Sample answer (any correct expressions earn the marks): (a) 4t + 2 gives 6 and 10, always even because 4t and 2 are both even. (b) 4t + 1 gives 5 and 9, always odd because 4t is even and 1 is odd. (c) t + 2 gives 3 (odd) and 4 (even), so it can be either.",
+     "s": [
+      [
+       "Part (a): a correct always-even expression with its two values",
+       1
+      ],
+      [
+       "Part (b): a correct always-odd expression with its two values",
+       1
+      ],
+      [
+       "Part (c): an expression whose two values have different parities, shown by the values",
+       1
+      ]
+     ],
+     "p": "p. 132"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Pinky says: 'Every even number can be written as 6j - 4 for some counting number j = 1, 2, 3, ...' (a) List the values of 6j - 4 for j = 1 to 5. (b) Which is the smallest even number that never appears in the list? (c) Is 6j - 4 always even? Give a reason. (d) Write an expression that does give every even number, and find the value of n that gives 48.",
+     "a": "(a) 2, 8, 14, 20, 26. (b) 4: the values jump by 6, so 4 (and 6, 10, 12, ...) are missed, and Pinky is wrong. (c) Yes: 6j is even and 4 is even, and even - even is even. (d) 2n gives every even number; 2n = 48 when n = 24.",
+     "s": [
+      [
+       "Part (a): lists 2, 8, 14, 20, 26",
+       1
+      ],
+      [
+       "Part (b): names 4 as the smallest missing even number, so the claim is false",
+       1
+      ],
+      [
+       "Part (c): yes, because 6j and 4 are both even",
+       1
+      ],
+      [
+       "Part (d): gives 2n and n = 24",
+       1
+      ]
+     ],
+     "p": "pp. 132-133"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Answer each part. (a) Write the 15th even number. (b) Write the 15th odd number. (c) Find the value of 9n + 1 when n = 3, and say whether it is even or odd. (d) Find the value of 9n + 1 when n = 4, and say whether it is even or odd. (e) Using your answers to (c) and (d), is 9n + 1 always even, always odd, or can it be either?",
+     "a": "(a) 2 x 15 = 30. (b) 30 - 1 = 29. (c) 9 x 3 + 1 = 28, even. (d) 9 x 4 + 1 = 37, odd. (e) It can be either even or odd.",
+     "s": [
+      [
+       "Part (a): 30",
+       1
+      ],
+      [
+       "Part (b): 29",
+       1
+      ],
+      [
+       "Part (c): 28, even",
+       1
+      ],
+      [
+       "Part (d): 37, odd",
+       1
+      ],
+      [
+       "Part (e): it can be either",
+       1
+      ]
+     ],
+     "p": "pp. 132-133"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.4",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 3 x 3 grid is filled with the numbers 1 to 9, each used once. What do the three row sums add up to?",
+     "o": [
+      "45",
+      "90",
+      "15",
+      "30"
+     ],
+     "a": "45, because the three rows together hold every number from 1 to 9 once, and 1 + 2 + ... + 9 = 45.",
+     "p": "p. 134"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 3 x 3 grid is filled with the numbers 1 to 9, each used once. Which of these can NOT be the sum of a row?",
+     "o": [
+      "25",
+      "6",
+      "24",
+      "13"
+     ],
+     "a": "25: the largest possible row sum is 9 + 8 + 7 = 24, so a row can never add up to 25. 6 (1 + 2 + 3), 24 and 13 are all possible.",
+     "p": "p. 134"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 3 x 3 grid is filled with the numbers 1 to 9, each used once. Two of its column sums are 7 and 23. Which numbers must be in the third column?",
+     "o": [
+      "3, 5 and 7",
+      "1, 5 and 9",
+      "4, 5 and 6",
+      "2, 6 and 7"
+     ],
+     "a": "3, 5 and 7: the only way to make 7 is 1 + 2 + 4 and the only way to make 23 is 6 + 8 + 9, so the numbers left for the third column are 3, 5 and 7 (sum 15 = 45 - 7 - 23).",
+     "p": "p. 134"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 3 x 3 grid is to be filled with the numbers 1 to 9, each used once. Which pair of row sums can NOT appear together in the same grid?",
+     "o": [
+      "6 and 7",
+      "6 and 15",
+      "7 and 24",
+      "8 and 23"
+     ],
+     "a": "6 and 7: 6 can only be 1 + 2 + 3 and 7 can only be 1 + 2 + 4, so both rows would need the numbers 1 and 2. The other pairs work, for example rows 1 2 3 / 4 5 6 / 7 8 9 give 6, 15 and 24.",
+     "p": "p. 134"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A 3 x 3 grid filled with the numbers 1 to 9, each used once, can have the row sums 12, 15 and 20.",
+     "a": "False. The three row sums must add up to 1 + 2 + ... + 9 = 45, but 12 + 15 + 20 = 47.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Reason: the row sums must total 45, but these total 47",
+       1
+      ]
+     ],
+     "p": "p. 134"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 3 x 3 grid is filled with the numbers 1 to 9, each used once. (a) Which three numbers must be in a row whose sum is 7? (b) Which three numbers must be in a row whose sum is 23?",
+     "a": "(a) 1, 2 and 4, the only three different numbers from 1 to 9 that add up to 7. (b) 6, 8 and 9, the only three that add up to 23.",
+     "s": [
+      [
+       "Part (a): 1, 2 and 4",
+       1
+      ],
+      [
+       "Part (b): 6, 8 and 9",
+       1
+      ]
+     ],
+     "p": "pp. 133-134"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Fill a 3 x 3 grid with the numbers 1 to 9, each used once, so that the row sums from top to bottom are 12, 17 and 16 and the column sums from left to right are 14, 17 and 14. First check that the puzzle passes the quick test on totals.",
+     "a": "Rows: 12 + 17 + 16 = 45 and columns: 14 + 17 + 14 = 45, so the puzzle passes the test. One solution is 8 1 3 / 2 9 6 / 4 7 5 (rows 12, 17, 16; columns 14, 17, 14). Other correct grids also earn full marks.",
+     "s": [
+      [
+       "Checks that the row sums and the column sums each add up to 45",
+       1
+      ],
+      [
+       "Writes a grid using 1 to 9 once each with the given row sums",
+       1
+      ],
+      [
+       "The column sums of the grid are 14, 17 and 14",
+       1
+      ]
+     ],
+     "p": "pp. 133-134"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "show_impossible"
+     ],
+     "q": "Gopal sets this puzzle: fill a 3 x 3 grid with 1 to 9, each used once, so that the row sums are 8, 13 and 24 and the column sums are 9, 12 and 24. He says, 'Rows and columns both add up to 45, so it can be solved.' Show that the puzzle is impossible.",
+     "a": "The totals are fine (8 + 13 + 24 = 45 and 9 + 12 + 24 = 45), but that is not enough. The only three numbers that add up to 24 are 7, 8 and 9, so the row with sum 24 and the column with sum 24 must both contain 7, 8 and 9. A row and a column share only one square, so the column would need two more of 7, 8, 9 outside that row, but all three are already used in the row. So the puzzle cannot be solved.",
+     "s": [
+      [
+       "Notes that the totals are 45 but this does not guarantee a solution",
+       1
+      ],
+      [
+       "Shows that both the row and the column with sum 24 need 7, 8 and 9",
+       1
+      ],
+      [
+       "Explains that a row and a column share only one square, so this is impossible",
+       1
+      ]
+     ],
+     "p": "p. 134"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "The puzzle corner of the Class 7 school magazine prints a 3 x 3 grid to be filled with the numbers 1 to 9, each used once. The row sums from top to bottom are 15, 20 and 10, and the column sums from left to right are 13, 18 and 14. (a) Check that the row sums and the column sums pass the test on totals. (b) Neha wants 9 in the bottom row. Can she? Give a reason. (c) Hari says the bottom row must contain the number 1. Is he right? (d) Write one complete solution.",
+     "a": "(a) 15 + 20 + 10 = 45 and 13 + 18 + 14 = 45, so both pass. (b) No: 9 + two more numbers is at least 9 + 1 + 2 = 12, more than 10. (c) No: the bottom row can also be 2, 3, 5 (sum 10), as in the solution 1 6 8 / 7 9 4 / 5 3 2. (d) 1 6 8 / 7 9 4 / 5 3 2 (rows 15, 20, 10; columns 13, 18, 14); other correct grids also earn the mark.",
+     "s": [
+      [
+       "Part (a): both sets of sums add up to 45",
+       1
+      ],
+      [
+       "Part (b): no, because 9 plus two other numbers is more than 10",
+       1
+      ],
+      [
+       "Part (c): Hari is wrong, shown by a valid bottom row without 1, such as 5, 3, 2",
+       1
+      ],
+      [
+       "Part (d): a complete correct grid",
+       1
+      ]
+     ],
+     "p": "pp. 133-134"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Chautisa Yantra, found in a 10th century inscription at a Jain temple in Khajuraho, is the first recorded magic square of its size. What is its size, and what is its magic sum?",
+     "o": [
+      "4 x 4, with magic sum 34",
+      "3 x 3, with magic sum 34",
+      "4 x 4, with magic sum 15",
+      "3 x 3, with magic sum 15"
+     ],
+     "a": "It is a 4 x 4 magic square with magic sum 34; 'Chautis' means 34.",
+     "p": "p. 137"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Read these statements about magic squares in history. Statement I: The Lo Shu Square, a 3 x 3 magic square, was recorded in ancient China over 2000 years ago. Statement II: A 3 x 3 magic square is found on a pillar of a temple in Palani, Tamil Nadu, that dates back to the 8th century CE. Statement III: The Chautisa Yantra is found on a pillar of the temple in Palani. Which of the statements are true?",
+     "o": [
+      "Only I and II",
+      "Only I",
+      "Only II and III",
+      "All three"
+     ],
+     "a": "Only I and II: the Lo Shu Square is from ancient China and the Palani temple pillar has a 3 x 3 magic square. Statement III is false, because the Chautisa Yantra is at the Parshvanath Jain temple in Khajuraho.",
+     "p": "pp. 137-138"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number 9 cannot be at the centre of a 3 x 3 magic square made with the numbers 1 to 9. Reason (R): Every other square of the grid lies on a line through the centre, and 9 + 8 is already more than the magic sum 15.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: wherever 8 is placed, it shares a line with the centre, and that line would add up to more than 15 if 9 were at the centre.",
+     "p": "p. 135"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 3 x 3 magic square is made with the numbers 1 to 9, so its magic sum is 15. Every number in it is doubled. What is the magic sum of the new square?",
+     "o": [
+      "30",
+      "17",
+      "15",
+      "45"
+     ],
+     "a": "30: each row, column and diagonal has three numbers, and doubling each of them doubles their sum, so 2 x 15 = 30.",
+     "p": "p. 136"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 3 x 3 magic square is made with nine consecutive numbers, and the number at its centre is 12. (a) What is its magic sum? (b) Which are the smallest and the largest numbers used?",
+     "a": "(a) 3 x 12 = 36. (b) The nine numbers are 8 to 16 (four below 12 and four above), so the smallest is 8 and the largest is 16.",
+     "s": [
+      [
+       "Part (a): magic sum 36",
+       1
+      ],
+      [
+       "Part (b): smallest 8 and largest 16",
+       1
+      ]
+     ],
+     "p": "pp. 136-137"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Make a 3 x 3 magic square whose magic sum is 0, using the magic square 8 1 6 / 3 5 7 / 4 9 2 (magic sum 15). (a) What number must be at the centre? (b) What number should be subtracted from every entry of the given square? (c) Write the new square.",
+     "a": "(a) 0, because the magic sum is 3 times the centre number. (b) 5, so that the centre 5 becomes 0 (each line then drops by 15, from 15 to 0). (c) 3 -4 1 / -2 0 2 / -1 4 -3.",
+     "s": [
+      [
+       "Part (a): the centre is 0",
+       1
+      ],
+      [
+       "Part (b): subtract 5 from every entry",
+       1
+      ],
+      [
+       "Part (c): writes 3 -4 1 / -2 0 2 / -1 4 -3",
+       1
+      ]
+     ],
+     "p": "pp. 136-137"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Shreya wants a 3 x 3 magic square with magic sum 60. (a) If she uses nine consecutive numbers, what number must be at the centre? (b) Which nine consecutive numbers must she use? (c) Write her magic square, starting from 8 1 6 / 3 5 7 / 4 9 2. (d) Her brother instead multiplies every number of 8 1 6 / 3 5 7 / 4 9 2 by 4. Write his square. (e) Are the numbers in his square consecutive? Is his square a magic square, and what does this show?",
+     "a": "(a) 60 / 3 = 20. (b) 16 to 24. (c) Add 15 to each number: 23 16 21 / 18 20 22 / 19 24 17. (d) 32 4 24 / 12 20 28 / 16 36 8. (e) No, they go up in steps of 4, but every row, column and diagonal adds up to 4 x 15 = 60, so it is a magic square: a magic square can also be made with non-consecutive numbers.",
+     "s": [
+      [
+       "Part (a): the centre is 20",
+       1
+      ],
+      [
+       "Part (b): the numbers 16 to 24",
+       1
+      ],
+      [
+       "Part (c): a correct magic square of 16 to 24, such as 23 16 21 / 18 20 22 / 19 24 17",
+       1
+      ],
+      [
+       "Part (d): 32 4 24 / 12 20 28 / 16 36 8",
+       1
+      ],
+      [
+       "Part (e): not consecutive, but still a magic square with magic sum 60",
+       1
+      ]
+     ],
+     "p": "pp. 136-137"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "A craftsperson in Varanasi fixes brass numbers on a temple door as a 3 x 3 magic square made with the nine consecutive numbers 13 to 21. Her sketch shows the top row as 20 13 18 and the middle row as 15 17 19, but the bottom row has been smudged. (a) What is the magic sum? (b) Use the columns to find the bottom row. (c) Check both diagonals. (d) The temple asks for a new door with every number 2 more. The craftsperson says the magic sum will be 51 + 2 = 53. Is she right? Give the correct magic sum.",
+     "a": "(a) 20 + 13 + 18 = 51 (also 3 x 17, the centre). (b) 51 - 20 - 15 = 16, 51 - 13 - 17 = 21, 51 - 18 - 19 = 14, so the bottom row is 16 21 14. (c) 20 + 17 + 14 = 51 and 18 + 17 + 16 = 51. (d) No: each line has three numbers and each goes up by 2, so the magic sum goes up by 6 to 57.",
+     "s": [
+      [
+       "Part (a): magic sum 51",
+       1
+      ],
+      [
+       "Part (b): bottom row 16 21 14",
+       1
+      ],
+      [
+       "Part (c): both diagonals add up to 51",
+       1
+      ],
+      [
+       "Part (d): she is wrong; the new magic sum is 57 because three numbers each rise by 2",
+       1
+      ]
+     ],
+     "p": "pp. 136-137"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Around the year 700 CE, a Prakrit scholar first gave the method for counting rhythms of short and long syllables, written as a poem. Who was he?",
+     "o": [
+      "Virahanka",
+      "Fibonacci",
+      "Pingala",
+      "Hemachandra"
+     ],
+     "a": "Virahanka, the Prakrit scholar who gave the rule around 700 CE; Pingala came earlier (about 300 BCE), Hemachandra later (about 1150 CE) and Fibonacci wrote in 1202 CE.",
+     "p": "p. 141"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "q": "Match each scholar in Column I with the time in Column II when he wrote about these rhythms or numbers. Column I: 1. Pingala, 2. Virahanka, 3. Hemachandra, 4. Fibonacci. Column II: A. about 300 BCE, B. about 700 CE, C. about 1150 CE, D. 1202 CE.",
+     "o": [
+      "1-A, 2-B, 3-C, 4-D",
+      "1-B, 2-A, 3-C, 4-D",
+      "1-A, 2-B, 3-D, 4-C",
+      "1-C, 2-B, 3-A, 4-D"
+     ],
+     "a": "1-A, 2-B, 3-C, 4-D: Pingala about 300 BCE, Virahanka about 700 CE, Hemachandra about 1150 CE and Fibonacci in 1202 CE.",
+     "p": "p. 141"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "In the Virahanka sequence 1, 2, 3, 5, 8, 13, 21, ... Assertion (A): The 12th number of the sequence is even. Reason (R): Every third number of the sequence, starting from the 2nd number, is even.",
+     "o": [
+      "A is false, but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false."
+     ],
+     "a": "A is false, but R is true: the parities go odd, even, odd, odd, even, odd, ..., so the even numbers are the 2nd, 5th, 8th, 11th, 14th, ... The 12th number is 233, which is odd.",
+     "p": "p. 142"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: There are exactly 8 ways to write 5 as a sum of 1s and 2s, where the order matters (so 1 + 2 + 2 and 2 + 1 + 2 count as different).",
+     "a": "True. The number of ways for 5 is the number of ways for 4 (5) plus the number of ways for 3 (3), which is 8.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Reason: 5 + 3 = 8 from the ways for 4 and 3, or a correct list of the 8 ways",
+       1
+      ]
+     ],
+     "p": "pp. 140-141"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The Virahanka sequence goes 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... (a) Write the next three numbers after 89. (b) Write the parity (even or odd) of each of these three numbers.",
+     "a": "(a) 55 + 89 = 144, 89 + 144 = 233, 144 + 233 = 377. (b) 144 is even, 233 is odd and 377 is odd.",
+     "s": [
+      [
+       "Part (a): 144, 233, 377",
+       1
+      ],
+      [
+       "Part (b): even, odd, odd",
+       1
+      ]
+     ],
+     "p": "p. 142"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A short syllable lasts 1 beat and a long syllable lasts 2 beats. (a) Write all the rhythms of 4 beats as sums of 1s and 2s. (b) Write all the 5-beat rhythms that begin with '2 +'. (c) How many 5-beat rhythms are there in all?",
+     "a": "(a) 1 + 1 + 1 + 1, 1 + 1 + 2, 1 + 2 + 1, 2 + 1 + 1, 2 + 2 (5 rhythms). (b) 2 + 1 + 1 + 1, 2 + 1 + 2, 2 + 2 + 1 (a '2 +' in front of each 3-beat rhythm). (c) 5 + 3 = 8.",
+     "s": [
+      [
+       "Part (a): the five rhythms of 4 beats",
+       1
+      ],
+      [
+       "Part (b): the three 5-beat rhythms that begin with 2",
+       1
+      ],
+      [
+       "Part (c): 8 rhythms in all",
+       1
+      ]
+     ],
+     "p": "pp. 140-141"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Angaan climbs a staircase of 9 steps, taking 1 step or 2 steps at a time. Step number 5 is broken, so he must not land on it. (a) In how many ways can he reach step 4? (b) From step 4, what move must he make next, and where does he land? (c) In how many ways can he go from step 6 to the top (step 9)? (d) In how many ways can he climb the whole staircase without landing on step 5? (e) Without the broken step there are 55 ways. How many of these 55 ways land on step 5?",
+     "a": "(a) 5 ways (the number of ways to make 4 from 1s and 2s). (b) He must take 2 steps at once, from step 4 to step 6. (c) 3 steps are left, so 3 ways. (d) Every safe path reaches step 4, jumps to 6 and then finishes, so 5 x 3 = 15 ways. (e) 55 - 15 = 40 (check: 8 ways to reach step 5 and 5 ways for the last 4 steps give 8 x 5 = 40).",
+     "s": [
+      [
+       "Part (a): 5 ways to reach step 4",
+       1
+      ],
+      [
+       "Part (b): a 2-step move from step 4 to step 6",
+       1
+      ],
+      [
+       "Part (c): 3 ways from step 6 to step 9",
+       1
+      ],
+      [
+       "Part (d): 5 x 3 = 15 ways",
+       1
+      ],
+      [
+       "Part (e): 55 - 15 = 40 ways land on step 5",
+       1
+      ]
+     ],
+     "p": "pp. 140-141"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "In a Telugu poetry class, the teacher explains that a short syllable lasts 1 beat and a long syllable lasts 2 beats. She writes on the board how many rhythms there are: 1 beat has 1 rhythm, 2 beats have 2 rhythms and 3 beats have 3 rhythms. She tells the class that each new count is the sum of the two counts before it. (a) Write all the rhythms of 3 beats. (b) How many rhythms of 4 beats are there? (c) How many rhythms of 5 beats are there? (d) Ravi says there are 21 rhythms of 7 beats. Is he right? Show your working.",
+     "a": "(a) 1 + 1 + 1, 1 + 2, 2 + 1. (b) 2 + 3 = 5. (c) 3 + 5 = 8. (d) Yes: 6 beats have 5 + 8 = 13 rhythms, and 7 beats have 8 + 13 = 21 rhythms.",
+     "s": [
+      [
+       "Part (a): the three 3-beat rhythms",
+       1
+      ],
+      [
+       "Part (b): 5 rhythms",
+       1
+      ],
+      [
+       "Part (c): 8 rhythms",
+       1
+      ],
+      [
+       "Part (d): yes, via 13 for 6 beats and 8 + 13 = 21",
+       1
+      ]
+     ],
+     "p": "pp. 139-141"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.7",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a cryptarithm, each letter stands for one digit. Two 2-digit numbers AB and CD add up to a 3-digit number EFG. Which digit must E be?",
+     "o": [
+      "1, because the largest possible sum of two 2-digit numbers is 99 + 99 = 198",
+      "9, because the sum is as large as possible",
+      "0, because nothing is carried into the hundreds place",
+      "Any digit from 1 to 9, depending on the numbers"
+     ],
+     "a": "E must be 1: two 2-digit numbers add up to at most 99 + 99 = 198, so a 3-digit sum begins with 1.",
+     "p": "p. 143"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the sum Q8 + 8Q = 154, the letter Q stands for one digit. Q8 means the 2-digit number with Q in the tens place and 8 in the units place. What is Q?",
+     "o": [
+      "6",
+      "7",
+      "4",
+      "8"
+     ],
+     "a": "Q = 6: the units column needs 8 + Q to end in 4, so Q = 6, and 68 + 86 = 154.",
+     "p": "p. 143"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "In these puzzles each letter stands for one digit, and different letters stand for different digits. Read the statements. Statement I: The first letter of a number with two or more digits cannot stand for 0. Statement II: In the cryptarithm T + T + T = UT, the letter T could be 0. Statement III: In the cryptarithm K2 + K2 = HMM, the letter M stands for 4. Which of the statements are true?",
+     "o": [
+      "Only I and III",
+      "Only I",
+      "Only II and III",
+      "All three"
+     ],
+     "a": "Only I and III: a number does not begin with 0, and in K2 + K2 the units column is 2 + 2 = 4, so M = 4. Statement II is false: if T = 0 the sum is 0, which is not a 2-digit number UT; in fact T = 5 and UT = 15.",
+     "p": "p. 143"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "In this puzzle X and Y stand for different digits, and neither is 0. True or False: The cryptarithm XY + YX = 110 has more than one answer.",
+     "a": "True. XY + YX = 11 x (X + Y), so X + Y must be 10, and many pairs work, for example 19 + 91 = 110 and 28 + 82 = 110.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Shows at least two different answers, such as 19 + 91 and 28 + 82, or explains that any pair with X + Y = 10 works",
+       1
+      ]
+     ],
+     "p": "p. 143"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve the cryptarithm H + H + H + H + H = KH, where H and K are digits and KH is a 2-digit number. (a) Using the units column, which digits could H be? (b) Find H and K.",
+     "a": "(a) 5 x H must end in H, so H is 0 or 5. (b) H = 0 gives 0, which is not a 2-digit number, so H = 5: 5 + 5 + 5 + 5 + 5 = 25, and K = 2.",
+     "s": [
+      [
+       "Part (a): H is 0 or 5 from the units digit",
+       1
+      ],
+      [
+       "Part (b): H = 5 and K = 2, since 25 is a 2-digit number",
+       1
+      ]
+     ],
+     "p": "p. 143"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In this puzzle each letter stands for one digit, different letters stand for different digits, and the first letter of a number is not 0. Solve XY + Y = YX, where XY and YX are 2-digit numbers. Explain each step.",
+     "a": "Tens column: X + carry = Y. X and Y are different, so the carry is 1 and Y = X + 1. Units: Y + Y = 10 + X. Putting Y = X + 1 gives 2X + 2 = 10 + X, so X = 8 and Y = 9. Check: 89 + 9 = 98.",
+     "s": [
+      [
+       "Uses the tens column: Y = X + 1, so the units column must carry 1",
+       1
+      ],
+      [
+       "Uses the units column (Y + Y = 10 + X) to get X = 8 and Y = 9",
+       1
+      ],
+      [
+       "Checks: 89 + 9 = 98",
+       1
+      ]
+     ],
+     "p": "p. 143"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "q": "In this puzzle each letter stands for one digit, different letters stand for different digits, and the first letter of a number is not 0. Sneha solves MA + AM = 1A2 and says: 'The units column needs A + M = 12, so I take M = 8 and A = 4.' Check her answer, and then find the correct solution.",
+     "a": "Her answer is wrong: 84 + 48 = 132, but with A = 4 the sum should read 142. A + M = 12 is right, and it carries 1, so the tens column gives M + A + 1 = 13. The tens digit of the sum is A, so A = 3 and M = 9. Check: 93 + 39 = 132.",
+     "s": [
+      [
+       "Shows that 84 + 48 = 132 does not match 1A2 with A = 4",
+       1
+      ],
+      [
+       "Uses the carry: the tens column gives 13, so A = 3",
+       1
+      ],
+      [
+       "Finds M = 9 and checks 93 + 39 = 132",
+       1
+      ]
+     ],
+     "p": "p. 143"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In this puzzle each letter stands for one digit, different letters stand for different digits, and the first letter of a number is not 0. Solve PQ + PR = QQS, where PQ and PR are 2-digit numbers and QQS is a 3-digit number. (a) Find Q. (b) Use the tens column to find P. (c) Use the units column to find R and S. (d) Check your answer by adding.",
+     "a": "(a) Two 2-digit numbers add up to less than 200, so Q = 1. (b) Tens column: P + P + carry = 11 (the sum begins 1 1). 2P is even, so the carry is 1 and 2P = 10, giving P = 5. (c) Units column: Q + R = 1 + R must carry 1, so 1 + R = 10 + S; this needs R = 9 and S = 0. (d) 51 + 59 = 110.",
+     "s": [
+      [
+       "Part (a): Q = 1, because the sum is less than 200",
+       1
+      ],
+      [
+       "Part (b): the carry must be 1 and P = 5",
+       1
+      ],
+      [
+       "Part (c): R = 9 and S = 0 from 1 + R = 10 + S",
+       1
+      ],
+      [
+       "Part (d): checks 51 + 59 = 110",
+       1
+      ]
+     ],
+     "p": "p. 143"
+    }
+   ]
+  }
+ ]
+}

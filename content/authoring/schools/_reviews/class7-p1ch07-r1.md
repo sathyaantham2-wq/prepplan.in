@@ -1,0 +1,17 @@
+VERDICT: FIX
+HIGH: 0
+MEDIUM: 4
+LOW: 6
+
+All 60 keys were recomputed in python and are correct; every MCQ/AR/match/multi_statement has exactly one correct option, listed first. Cited facts were checked against content/extracted/gegp107 (file NNN = printed p.145+N). `--check` prints valid.
+
+- [MEDIUM] C7M-7.4 #9: the kite-maker case study (designs D1-D4, each two base angles on a fixed base, "which designs give a triangle", third angle of D1) has the same setting and structure as the tent-maker case study in content/authoring/dps/class7/p1ch07.json (C7M-7.4, designs D1-D4 on a 6 m seam) -> use a different frame, e.g. one design whose base angle is varied step by step, or a surveyor sighting a point from both ends of a base, with different angle data.
+- [MEDIUM] C7M-7.3 #7: "Three villages A, B, C not on one straight line, two straight-line distances given, find the range of the third" repeats the idea and setting of p1ch07-la4.json C7M-7.3 (three villages P, Q, R, range of PR) -> change the setting (e.g. a triangular fence or three bus stops) and the demand (e.g. count the whole-number values for which the third side is the shortest, rather than the longest).
+- [MEDIUM] C7M-7.4 #8: the AR item (sides 5 cm and 7 cm, included angle 179°) is labelled Analyse/Hardest, but it is a single recall of the "included angle less than 180°" rule. The 1°-179° edge case is also already tested three times in the existing packs (two items in dps/class7/p1ch07.json C7M-7.4, and Set 1 in p1ch07-la4.json) -> relabel it Understand/Hard and change the angle idea, e.g. "A: 5 cm and 7 cm with an included angle of 120° give a triangle; R: the included angle must be acute", so that the key is "A true, R false".
+- [MEDIUM] C7M-7.7 #4: the AR item is labelled Apply/Hard, but R already does the only calculation (180° - 90° = 90°), so the student only reads the definition of a right-angled triangle. That makes it Easy -> relabel it Easy, or remove the computation from R (e.g. R: "The sum of two angles of a triangle is always less than 180°") so that the student must find the third angle and judge whether R explains A.
+- [LOW] C7M-7.1 #1: the distractor "∠PQ" is not an angle name and nobody would choose it -> replace it with a real misconception, e.g. "∠QRP" (the student takes the last letter) or "∠PQR".
+- [LOW] C7M-7.6 #2: the stem asks "which pair of tools does the textbook use", which points to the book -> ask "which pair of tools gives an accurate 90° for the altitude from A to BC".
+- [LOW] C7M-7.4 #7: part (a) is the book's own worked example on p.163 (∠A = 40°, so ∠B = 140° for parallel arms) and is read straight off the page -> use another base angle, e.g. ∠A = 55°.
+- [LOW] C7M-7.5 #7: the line XY through P parallel to QR, with X on the side of Q, uses the same lettering and setup as the Mehul item in p1ch07-gap.json C7M-7.5. It is the book's proof, so this is acceptable, but the letters could change -> e.g. triangle LMN with a line through L.
+- [LOW] C7M-7.5 #6 and C7M-7.7 #8(d): both ask the student to solve 3x = 120 and 12k = 180. Ganita Prakash 7 Part I does not teach solving equations formally -> keep them only if they can be solved by reasoning, and phrase them as "three angles that grow by 20° each" (or similar) so that no equation is needed.
+- [LOW] C7M-7.1 #6 and C7M-7.2 #8: both are labelled Hardest, but each part is a single direct step (16 cm boundary; list two sets) -> label them Hard, or add a decision part (e.g. what shape is ABDC, or which stick makes the cheapest frame), and keep the Hardest count at 12-22%.

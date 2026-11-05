@@ -1,0 +1,15 @@
+VERDICT: PASS
+HIGH: 0, MEDIUM: 2, LOW: 6
+
+I recomputed all 60 keys in Python, and every value is right. In each multiple-choice, AR, multi_statement and match item, exactly one option is correct, and it is listed first. Step marks add up to the marks on every item. `--check` prints valid (7 concepts, 60 questions). Facts and folios match the gegp102 pages (pp. 24-45). Nothing is out of scope: no BODMAS, no variables, no nested brackets, no decimals.
+
+From r1, these are fixed: C7M-2.5 #9 (the Tuesday is now closed), C7M-2.3 #8 (now "not correct"), C7M-2.7 #2 (a new idea), C7M-2.4 #2 (a new idea), C7M-2.5 #4 (story matching now), C7M-2.3 #3 (a new R), C7M-2.7 #4 and C7M-2.3 #6 (both relabelled Easy). One r1 finding, C7M-2.5 #3, is still open.
+
+- [MEDIUM] C7M-2.5 #3: Still the existing pack's C7M-2.5 #11 template, which r1 flagged and which was not changed. It checks a − (b + c), a + (b − c) and a − (b − c) against bracket-free forms in "which is correct" style, just with new numbers (64, 14, 10). -> Give it a new angle. For example, make the statements about how the value changes when a bracket is removed, or about which story fits a bracket expression. Or use a bracket with a negative first term inside, such as a − (−b + c).
+- [MEDIUM] C7M-2.5 #1: The options repeat the existing pack's exact number set. C7M-2.5 #14 uses "90 − (30 + 12), 90 − 30 − 12, 90 − 30 + 12", and this item asks which form equals 90 − (30 + 12), with the options 90 − 30 − 12 and 90 − 30 + 12. -> Change the numbers, for example 84 − (26 + 9).
+- [LOW] C7M-2.3 #5: The structure is close to the existing C7M-2.3 #17: find the value by pairing terms, then name the property that lets a term move next to another. -> Acceptable as the Easy version of a core textbook skill. Consider asking part (b) as "show the two steps (swap, then group)" instead of naming the property again.
+- [LOW] C7M-2.6 #3: The assertion has the same shape as the existing C7M-2.6 #13 AR (a × b + a × c = a × (b + c) with a round total, A true). The R and the key differ. -> Fine. Consider an assertion with a difference, for example 12 × 25 − 12 × 5 = 12 × 20.
+- [LOW] C7M-2.3 #4 and C7M-2.6 #5: The name "distributive property" appears only on p. 44, in the chapter summary. p. 40 states the property without naming it. -> Add p. 44 to the cited range ("pp. 40, 44" or similar).
+- [LOW] C7M-2.6 #4: All three statements are direct one-step uses of the distributive property, and the key is "I, II and III". Hard/Analyse is generous. -> Relabel it Easy/Understand, or make one statement a near-miss (for example (15 − 6) × 4 = 15 × 4 − 6) so that a decision is needed.
+- [LOW] C7M-2.2 #2: Turning one short story into 6 × 12 + 7 + −10 is close to a single routine step. Hard/Apply is generous. -> Relabel it Easy/Apply, or acceptable as it stands.
+- [LOW] C7M-2.7 #7: Shop Y's one-time ₹400 charge, together with a ₹95 per-unit rate, echoes the existing C7M-2.6 #10 (Shop B, ₹95 per piece plus a fixed ₹400). The break-even part (e) makes it a different question. -> Change ₹95 or ₹400 to another figure.
