@@ -193,7 +193,7 @@
       "P and Q",
       "P and R",
       "Q and R",
-      "R and X"
+      "R and the midpoint of XY"
      ],
      "a": "P and Q: each is equally far from X and Y, so both lie on the perpendicular bisector, and two points fix the line even when they are on the same side of XY. R is not equally far from X and Y.",
      "p": "pp. 139-140"
@@ -439,8 +439,8 @@
      "d": "Easy",
      "t": "short_answer",
      "m": 3,
-     "q": "Angle XOY measures 64°, and Tanvi bisects it with a ruler and compass. (a) What does she first mark on the arms OX and OY? (b) How does she draw the arcs that give the point C? (c) Find angle XOC.",
-     "a": "(a) Points A on OX and B on OY with OA = OB. (b) From A and from B she draws arcs with the same (sufficiently long) radius; they meet at C. (c) OC bisects the angle, so angle XOC = 64° ÷ 2 = 32°.",
+     "q": "Angle XOY measures 76°, and Tanvi bisects it with a ruler and compass. (a) What does she first mark on the arms OX and OY? (b) How does she draw the arcs that give the point C? (c) Find angle XOC.",
+     "a": "(a) Points A on OX and B on OY with OA = OB. (b) From A and from B she draws arcs with the same (sufficiently long) radius; they meet at C. (c) OC bisects the angle, so angle XOC = 76° ÷ 2 = 38°.",
      "s": [
       [
        "Part (a): marks A and B with OA = OB",
@@ -451,7 +451,7 @@
        1
       ],
       [
-       "Part (c): angle XOC = 32°",
+       "Part (c): angle XOC = 38°",
        1
       ]
      ],
@@ -658,8 +658,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "Line m is drawn and A and B are points on it, with B to the right of A. D is a point above m, and AD makes an angle of 70° with AB. Using only an unmarked ruler and a compass, Pooja must draw the line through D parallel to m, and then the line through B parallel to AD. (a) For the first line, which line is the transversal, and which angle is copied at D? (b) Her arc from A cuts AB at P and AD at Q. The arc of the same radius from D cuts AD, extended beyond D, at R. Which length does she mark off from R on this arc to get the point S on the new line? (c) Why is the copied angle at D exactly 70°? (d) For the second line, through B parallel to AD, which line is the transversal, and where is the 70° angle copied? (e) The two new lines meet at C. What can you say about the sides of the four-sided figure ABCD?",
-     "a": "(a) The transversal is AD (line l); the 70° angle between m and AD at A is copied at D as the corresponding angle. (b) The length PQ. (c) AP = AQ = DR = DS (equal radii) and RS = PQ, so triangles APQ and DRS are congruent by SSS, and the angle at D equals the angle at A, 70°. (d) The transversal is m itself; the 70° angle is copied at B, between m (on the side away from A) and the new line. (e) AB is parallel to DC and AD is parallel to BC: both pairs of opposite sides are parallel.",
+     "q": "Line m is drawn and A and B are points on it, with B to the right of A. D is a point above m, and AD makes an angle of 70° with AB. Using only an unmarked ruler and a compass, Pooja must draw the line through D parallel to m, and then the line through B parallel to AD. (a) For the first line, which line is the transversal, and which angle is copied at D? (b) Her arc from A cuts AB at P and AD at Q. The arc of the same radius from D cuts AD, extended beyond D, at R. Which length does she mark off from R on this arc to get the point S on the new line? (c) Why is the copied angle at D exactly 70°? (d) For the second line, through B parallel to AD, which line is the transversal, and where is the 70° angle copied? (e) Each line drawn this way needs 3 arcs: one from the corner on the given line, one of the same radius from the new point, and one of radius PQ. Pooja wants to draw as few arcs as possible in all. Decide which arc of the first construction she can reuse for the second line, and find the fewest arcs needed for both lines together.",
+     "a": "(a) The transversal is AD (line l); the 70° angle between m and AD at A is copied at D as the corresponding angle. (b) The length PQ. (c) AP = AQ = DR = DS (equal radii) and RS = PQ, so triangles APQ and DRS are congruent by SSS, and the angle at D equals the angle at A, 70°. (d) The transversal is m itself; the 70° angle is copied at B, between m (on the side away from A) and the new line. (e) The second construction copies the same 70° angle DAB that the first one copied, so the arc from A (giving P and Q) and the length PQ can be reused. She needs only the arc of the same radius from B, cutting m beyond B, and the arc of radius PQ from that point: 2 arcs. Fewest in all: 3 + 2 = 5 arcs instead of 6.",
      "s": [
       [
        "Part (a): transversal AD, the 70° angle copied at D",
@@ -678,7 +678,7 @@
        1
       ],
       [
-       "Part (e): both pairs of opposite sides are parallel",
+       "Part (e): reuses the arc from A and the length PQ, so the second line needs 2 arcs; total 3 + 2 = 5",
        1
       ]
      ],
@@ -689,14 +689,14 @@
      "d": "Hard",
      "t": "assertion_reason",
      "m": 1,
-     "q": "An arc drawn from a point P outside a line l cuts l at X and Y. Assertion (A): The perpendicular from P to l passes through the midpoint of XY. Reason (R): Only one line through P is perpendicular to l.",
+     "q": "An arc drawn from a point P outside a line l cuts l at X and Y. Assertion (A): The perpendicular from P to l passes through the midpoint of XY. Reason (R): The perpendicular from P to l is as long as PX.",
      "o": [
-      "Both A and R are true, but R is not the correct explanation of A.",
-      "Both A and R are true, and R is the correct explanation of A.",
       "A is true, but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
       "A is false, but R is true."
      ],
-     "a": "Both A and R are true, but R is not the correct explanation of A. A is true because PX = PY (radii of the same arc), so P lies on the perpendicular bisector of XY, which is the perpendicular from P and passes through the midpoint of XY. R is true, but it only says there is one such line; it does not show why that line passes through the midpoint. That needs PX = PY.",
+     "a": "A is true, but R is false. A is true because PX = PY (radii of the same arc), so P lies on the perpendicular bisector of XY; that line is the perpendicular from P, and it passes through the midpoint of XY. R is false: the perpendicular from P meets l at the midpoint M of XY, which is nearer to P than X is, so PM is shorter than PX (PX is the slanting side).",
      "p": "p. 155"
     },
     {
@@ -899,15 +899,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "A regular hexagon ABCDEF with centre O has sides of 7 cm. (a) How far is the vertex A from O? Give a reason. (b) A circle with centre O and radius 7 cm is drawn. How many vertices of the hexagon lie on it?",
-     "a": "(a) 7 cm: triangle OAB is one of the six equilateral triangles, so OA = AB = 7 cm. (b) All 6, since every vertex is 7 cm from O.",
+     "q": "A regular hexagon ABCDEF with centre O has sides of 7 cm. (a) How far is the vertex A from O? Give a reason. (b) How long is the diagonal AD? Give a reason.",
+     "a": "(a) 7 cm: triangle OAB is one of the six equilateral triangles, so OA = AB = 7 cm. (b) 14 cm: the angles AOB, BOC and COD are 60° each, so angle AOD = 180° and A, O, D lie on one line; AD = AO + OD = 7 + 7 = 14 cm.",
      "s": [
       [
        "Part (a): OA = 7 cm because triangle OAB is equilateral",
        1
       ],
       [
-       "Part (b): all 6 vertices",
+       "Part (b): A, O, D in a line (3 × 60° = 180°), so AD = 14 cm",
        1
       ]
      ],
@@ -1175,11 +1175,11 @@
      "tags": [
       "claim_check"
      ],
-     "q": "Rohit says, 'The plane can be tiled only with copies of one single shape.' A tiler places two regular hexagons and two equilateral triangles round one point. (a) Find the total of the angles at the point. (b) What does this show? (c) Is Rohit right? Use part (a) and what the chapter says about tilings.",
-     "a": "(a) 2 × 120° + 2 × 60° = 360°. (b) Two different shapes fill the space round the point with no gap and no overlap. (c) No: the chapter states that a plane can also be tiled using more than one shape, and even with non-regular shapes.",
+     "q": "Rohit says, 'The plane can be tiled only with copies of one single shape.' A tiler places three equilateral triangles and two squares round one point. (a) Find the total of the angles at the point. (b) What does this show? (c) Is Rohit right? Use part (a) and what the chapter says about tilings.",
+     "a": "(a) 3 × 60° + 2 × 90° = 180° + 180° = 360°. (b) Two different shapes fill the space round the point with no gap and no overlap. (c) No: the chapter states that a plane can also be tiled using more than one shape, and even with non-regular shapes.",
      "s": [
       [
-       "Part (a): 2 × 120° + 2 × 60° = 360°",
+       "Part (a): 3 × 60° + 2 × 90° = 360°",
        1
       ],
       [
@@ -1260,7 +1260,7 @@
       "No: four corners make 320°, leaving a 40° gap, and five make 400°, which overlap",
       "Yes: four corners make exactly 360°",
       "Yes: 80° is less than 90°, so it fits round a point like a square corner",
-      "No: two corners make 160°, which is less than 180°"
+      "Yes: 80° × 4.5 = 360°, so four and a half corners fill the point"
      ],
      "a": "No: four corners make 4 × 80° = 320°, leaving 40°, and five make 400°, more than 360°, so no whole number of these corners makes exactly 360°.",
      "p": "p. 152"

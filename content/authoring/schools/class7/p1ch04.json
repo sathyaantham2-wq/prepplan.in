@@ -158,7 +158,7 @@
      "tags": [
       "case_study"
      ],
-     "q": "Lakshmi runs a tiffin service for office workers. Every tiffin she packs holds 3 rotis and 1 bowl of dal. Each morning she also makes 10 extra rotis for customers who walk in without ordering. On one day she packs t tiffins. (a) Write an expression for the number of rotis in the t tiffins. (b) Write an expression for the total number of rotis she makes that day. (c) How many bowls of dal does she pack? (d) Find the total number of rotis she makes on a day when t = 40.",
+     "q": "Lakshmi runs a tiffin service for office workers. Every tiffin she packs holds 3 rotis and 1 bowl of dal. Each morning she also makes 10 extra rotis for customers who walk in without ordering. She writes her counts as expressions so that she can plan the flour and dal she needs each morning. On one day she packs t tiffins. (a) Write an expression for the number of rotis in the t tiffins. (b) Write an expression for the total number of rotis she makes that day. (c) How many bowls of dal does she pack? (d) Find the total number of rotis she makes on a day when t = 40.",
      "a": "(a) 3 × t. (b) 3 × t + 10. (c) t bowls, one in each tiffin. (d) 3 × 40 + 10 = 130 rotis.",
      "s": [
       [
@@ -185,8 +185,8 @@
      "d": "Hard",
      "t": "long_answer",
      "m": 4,
-     "q": "For sports day a school orders t house T-shirts. Each T-shirt costs ₹180, printing the house logo costs ₹25 for each T-shirt, and the printer charges a design fee of ₹300 once for the whole order. (a) Write an expression for the cost of t T-shirts without logos. (b) Write an expression for the full bill. (c) Find the full bill for 40 T-shirts. (d) Ravi writes the bill as 180 × t + 25 + 300. Explain his mistake and find by how much his bill is short for 40 T-shirts.",
-     "a": "(a) 180 × t rupees. (b) 180 × t + 25 × t + 300 rupees. (c) 180 × 40 + 25 × 40 + 300 = 7200 + 1000 + 300 = ₹8500. (d) Ravi adds the ₹25 logo cost only once, but it is paid for every T-shirt, so it must be 25 × t; his bill for 40 T-shirts is 7200 + 25 + 300 = ₹7525, which is ₹975 short.",
+     "q": "For sports day a school orders t house T-shirts. Each T-shirt costs ₹180, printing the house logo costs ₹25 for each T-shirt, and the printer charges a design fee of ₹300 once for the whole order. (a) Write an expression for the cost of t T-shirts without logos. (b) Write an expression for the full bill. (c) Find the full bill for 40 T-shirts. (d) Ravi writes the bill as 180 × t + 300. Explain his mistake and find by how much his bill is short for 40 T-shirts.",
+     "a": "(a) 180 × t rupees. (b) 180 × t + 25 × t + 300 rupees. (c) 180 × 40 + 25 × 40 + 300 = 7200 + 1000 + 300 = ₹8500. (d) Ravi has left out the logo printing, which costs ₹25 for every T-shirt, so 25 × t is missing; his bill for 40 T-shirts is 7200 + 300 = ₹7500, which is ₹1000 short.",
      "s": [
       [
        "Part (a): writes 180 × t",
@@ -201,7 +201,7 @@
        1
       ],
       [
-       "Part (d): explains the logo cost must be multiplied by t and finds ₹975",
+       "Part (d): explains the logo cost 25 × t is missing and finds ₹1000",
        1
       ]
      ],
@@ -334,27 +334,27 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "A phone company offers two monthly plans. Plan X costs 99 + 2m rupees and Plan Y costs 199 + m rupees, where m is the number of call minutes used in the month. (a) Find the cost of each plan for m = 50. (b) Find the cost of each plan for m = 150. (c) Show that the two plans cost the same for m = 100. (d) Shreya expects to use about 120 minutes a month. Which plan should she choose, and how much will she save? (e) Write a short rule telling customers which plan is cheaper.",
-     "a": "(a) X: 99 + 100 = ₹199; Y: 199 + 50 = ₹249. (b) X: 99 + 300 = ₹399; Y: 199 + 150 = ₹349. (c) X: 99 + 200 = ₹299; Y: 199 + 100 = ₹299. (d) X: 99 + 240 = ₹339; Y: 199 + 120 = ₹319, so Plan Y, saving ₹20. (e) From the values found, Plan X is cheaper for fewer than 100 minutes, Plan Y for more than 100 minutes, and they cost the same at 100 minutes.",
+     "q": "A delivery van may carry a load of at most 500 kg. A crate of mangoes weighs 18 kg and a sack of rice weighs 25 kg, so a load of c crates and s sacks weighs 18c + 25s kg. (a) Find the load for c = 10 and s = 8. Is it safe? (b) Find the load for c = 15 and s = 10, and say by how many kg it is over the limit. (c) Meena says, 'Take one crate off the load in (b) and it will be safe.' Is she right? (d) Would taking one sack off the load in (b) make it safe instead? (e) The van must carry 10 sacks. What is the greatest number of crates it can also carry? Show your check.",
+     "a": "(a) 18 × 10 + 25 × 8 = 180 + 200 = 380 kg, which is within 500 kg, so it is safe. (b) 18 × 15 + 25 × 10 = 270 + 250 = 520 kg, which is 20 kg over the limit. (c) No: 14 crates and 10 sacks weigh 252 + 250 = 502 kg, still 2 kg over. (d) Yes: 15 crates and 9 sacks weigh 270 + 225 = 495 kg, within the limit. (e) 13 crates: 18 × 13 + 250 = 484 kg is within 500 kg, but 14 crates give 502 kg, which is over.",
      "s": [
       [
-       "Part (a): ₹199 and ₹249",
+       "Part (a): 380 kg, safe",
        1
       ],
       [
-       "Part (b): ₹399 and ₹349",
+       "Part (b): 520 kg, 20 kg over",
        1
       ],
       [
-       "Part (c): both ₹299",
+       "Part (c): 502 kg, so Meena is wrong",
        1
       ],
       [
-       "Part (d): ₹339 and ₹319, chooses Plan Y saving ₹20",
+       "Part (d): 495 kg, so removing a sack works",
        1
       ],
       [
-       "Part (e): states the rule with 100 minutes as the turning point",
+       "Part (e): 13 crates, checked with 484 kg and 502 kg",
        1
       ]
      ],
@@ -687,7 +687,7 @@
      "t": "long_answer",
      "m": 5,
      "q": "A walking track around a park has five straight parts of lengths 4a m, 4a m, 3a m, 2b m and 2b m. (a) Write the total length of the track as a sum of the five parts. (b) Which of these terms are like terms with 4a? (c) Write the total length in simplest form. (d) Find the total length when a = 6 and b = 5. (e) Can the total length be written as a single term? Give a reason.",
-     "a": "(a) 4a + 4a + 3a + 2b + 2b metres. (b) 4a and 3a (the other 4a as well); they have the same letter-number a. (c) 11a + 4b metres. (d) 11 × 6 + 4 × 5 = 66 + 20 = 86 m. (e) No: 11a and 4b are unlike terms (different letter-numbers), so they cannot be combined.",
+     "a": "(a) 4a + 4a + 3a + 2b + 2b metres. (b) The other 4a and 3a, since they have the same letter-number a. (c) 11a + 4b metres. (d) 11 × 6 + 4 × 5 = 66 + 20 = 86 m. (e) No: 11a and 4b are unlike terms (different letter-numbers), so they cannot be combined.",
      "s": [
       [
        "Part (a): writes the sum of the five parts",
@@ -828,7 +828,7 @@
     },
     {
      "b": "Understand",
-     "d": "Hard",
+     "d": "Easy",
      "t": "short_answer",
      "m": 2,
      "tags": [
@@ -906,7 +906,7 @@
      "tags": [
       "case_study"
      ],
-     "q": "A school bus leaves the depot with (3x + 10) children on board. At the first stop, (x + 4) children get off. At the second stop, (2x - 1) children get on. (a) Write the number of children on the bus after the first stop, in simplest form. (b) Write the number after the second stop, in simplest form. (c) Find this number when x = 8. (d) The conductor wrote the number after the first stop as 3x + 10 - x + 4. What mistake did he make, and by how many children is his count wrong?",
+     "q": "Every morning the conductor of a school bus keeps a record of how many children are on board, because he must report the number reaching school and check it against the seats. One morning the bus leaves the depot with (3x + 10) children on board. At the first stop, (x + 4) children get off. At the second stop, (2x - 1) children get on. (a) Write the number of children on the bus after the first stop, in simplest form. (b) Write the number after the second stop, in simplest form. (c) Find this number when x = 8. (d) The conductor wrote the number after the first stop as 3x + 10 - x + 4. What mistake did he make, and by how many children is his count wrong?",
      "a": "(a) 3x + 10 - x - 4 = 2x + 6. (b) 2x + 6 + 2x - 1 = 4x + 5. (c) 4 × 8 + 5 = 37 children. (d) He did not change the sign of 4 when he removed the bracket; his expression simplifies to 2x + 14, which is 8 more than the correct 2x + 6.",
      "s": [
       [
@@ -1044,7 +1044,7 @@
     },
     {
      "b": "Analyse",
-     "d": "Hardest",
+     "d": "Hard",
      "t": "short_answer",
      "m": 3,
      "tags": [
@@ -1104,23 +1104,23 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "Kabir tests 4(n + 1) and 5n - (n - 4) at n = 0, 1 and 2, gets the same values each time, and says the two expressions are equal for every n. Lata tests 2(n + 3) and n + 6 at n = 0 only, gets 6 both times, and says they are equal too. (a) Check Kabir's three pairs of values. (b) Simplify both of Kabir's expressions to decide whether he is right. (c) Find a value of n for which Lata's two expressions differ. (d) Explain why testing a few values cannot prove two expressions equal, and say what does prove it.",
-     "a": "(a) n = 0: 4 and 4; n = 1: 8 and 8; n = 2: 12 and 12. (b) 4(n + 1) = 4n + 4 and 5n - (n - 4) = 5n - n + 4 = 4n + 4, so Kabir is right. (c) For n = 1, 2(n + 3) = 8 but n + 6 = 7. (d) There are endless values, so a few matches cannot cover them all (Lata's pair matched only at n = 0); simplifying both to the same simplest form proves they are equal, and one mismatch proves they are not.",
+     "q": "Look at E = 5(r + 1) - 2r and the three expressions A = 3(r + 2) - 1, B = 4r + 7 - (r + 2) and C = 4r + 4. (a) Write E in simplest form. (b) Simplify A, B and C. (c) Which of A, B and C are equal to E for every value of r? C gives the same value as E when r = 1; explain how you know C is still not equal to E. (d) Write a new expression, using a bracket, that is equal to E for every r, and show why.",
+     "a": "(a) E = 5r + 5 - 2r = 3r + 5. (b) A = 3r + 6 - 1 = 3r + 5; B = 4r + 7 - r - 2 = 3r + 5; C = 4r + 4 is already in simplest form. (c) A and B, because they have the same simplest form as E. C has simplest form 4r + 4, which is different; for example, at r = 2, C = 12 but E = 11. One matching value (r = 1 gives 8 for both) does not make two expressions equal. (d) For example 2(r + 4) + r - 3 = 2r + 8 + r - 3 = 3r + 5, the same simplest form as E (any correct expression with a bracket earns the mark).",
      "s": [
       [
-       "Part (a): checks 4, 8, 12 for both",
+       "Part (a): E = 3r + 5",
        1
       ],
       [
-       "Part (b): both simplify to 4n + 4",
+       "Part (b): A = 3r + 5, B = 3r + 5, C = 4r + 4",
        1
       ],
       [
-       "Part (c): gives a value such as n = 1 with 8 and 7",
+       "Part (c): picks A and B, and shows C differs (different simplest form or a value such as r = 2)",
        1
       ],
       [
-       "Part (d): explains that simplifying proves equality and a few values do not",
+       "Part (d): gives a bracketed expression that simplifies to 3r + 5",
        1
       ]
      ],
@@ -1294,23 +1294,23 @@
      "tags": [
       "case_study"
      ],
-     "q": "For the school's Diwali display, students build a chain of pentagons from ice-cream sticks. Step 1 is a single pentagon made of 5 sticks. In each new step one more pentagon is added at the end of the chain, sharing one side with the last pentagon, so it needs only 4 new sticks. (a) How many sticks are used in Step 2 and in Step 3? (b) Write an expression for the number of sticks in Step y. (c) How many sticks are needed for Step 50? (d) The class has 100 sticks. Show that this is enough for a chain of 24 pentagons but not for 25.",
-     "a": "(a) Step 2: 9 sticks; Step 3: 13 sticks. (b) 5 + 4 × (y - 1) = 4y + 1. (c) 4 × 50 + 1 = 201 sticks. (d) 24 pentagons need 4 × 24 + 1 = 97 sticks, which is within 100, but 25 pentagons need 4 × 25 + 1 = 101, which is 1 more than 100.",
+     "q": "For the school's Diwali display, students build a chain of hexagons from ice-cream sticks. Step 1 is a single hexagon made of 6 sticks. In each new step one more hexagon is added at the end of the chain, sharing one side with the last hexagon, so it needs only 5 new sticks. (a) How many sticks are used in Step 2 and in Step 3? (b) Write an expression for the number of sticks in Step y. (c) How many sticks are needed for Step 50? (d) The class has 100 sticks. Show that this is enough for a chain of 19 hexagons but not for 20.",
+     "a": "(a) Step 2: 11 sticks; Step 3: 16 sticks. (b) 6 + 5 × (y - 1) = 5y + 1. (c) 5 × 50 + 1 = 251 sticks. (d) 19 hexagons need 5 × 19 + 1 = 96 sticks, which is within 100, but 20 hexagons need 5 × 20 + 1 = 101, which is 1 more than 100.",
      "s": [
       [
-       "Part (a): 9 and 13",
+       "Part (a): 11 and 16",
        1
       ],
       [
-       "Part (b): 4y + 1",
+       "Part (b): 5y + 1",
        1
       ],
       [
-       "Part (c): 201 sticks",
+       "Part (c): 251 sticks",
        1
       ],
       [
-       "Part (d): 97 and 101 compared with 100",
+       "Part (d): 96 and 101 compared with 100",
        1
       ]
      ],

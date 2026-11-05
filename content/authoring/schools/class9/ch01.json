@@ -1,0 +1,1298 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 1,
+  "name": "Orienting Yourself: The Use of Coordinates"
+ },
+ "source_code": "iemh101",
+ "concepts": [
+  {
+   "code": "C9M-1.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 3",
+     "q": "In the 2-D Cartesian coordinate system, what is the point where the x-axis and the y-axis meet called?",
+     "a": "the origin",
+     "o": [
+      "the origin",
+      "Quadrant I",
+      "the x-coordinate",
+      "the midpoint of the plane"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 3",
+     "q": "Distances are marked off from O on both axes. Which distances are counted as negative?",
+     "a": "Distances to the left of O or downwards from O",
+     "o": [
+      "Distances to the left of O or downwards from O",
+      "Distances to the right of O or downwards from O",
+      "Distances to the left of O or upwards from O",
+      "Distances to the right of O or upwards from O"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 3",
+     "q": "A carpenter draws the floor of a kitchen with the scale 1 cm : 50 cm, keeping one corner at the origin. The cooking platform runs along the x-axis and is 7 cm long on the sketch. How long is the real platform?",
+     "a": "3.5 m",
+     "o": [
+      "3.5 m",
+      "350 m",
+      "57 cm",
+      "7 m"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 3",
+     "q": "Assertion (A): One number is enough to locate a point on a number line, but a point on a flat floor needs two numbers.\nReason (R): A number line is one-dimensional, while a floor is two-dimensional, so we use two lines at right angles to each other.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 3",
+     "q": "(a) In the 2-D Cartesian coordinate system, what are the horizontal line and the vertical line called? (b) Write the coordinates of the origin O.",
+     "a": "(a) The horizontal line is the x-axis and the vertical line is the y-axis. (b) O = (0, 0).",
+     "s": [
+      [
+       "Names the horizontal line the x-axis and the vertical line the y-axis",
+       1
+      ],
+      [
+       "Writes the origin as (0, 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 3",
+     "q": "The floor map of a school hall uses the scale 1 cm : 1.5 m, with a corner of the hall at the origin. On the map, the stage edge runs along the x-axis from O for 8 cm and the side wall runs along the y-axis from O for 12 cm. (a) Find the real length of the stage edge and of the side wall. (b) Write the map coordinates of the far end of the stage edge.",
+     "a": "(a) Stage edge = 8 x 1.5 = 12 m; side wall = 12 x 1.5 = 18 m. (b) The far end is 8 cm to the right of O on the x-axis, so it is (8, 0).",
+     "s": [
+      [
+       "Converts with the scale: stage edge 12 m and side wall 18 m",
+       1
+      ],
+      [
+       "Writes the far end of the stage edge as (8, 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 3",
+     "q": "A garden sketch puts the origin at the gate, the x-axis along the front fence (east is positive) and the y-axis along the side fence (north is positive). (a) A tap is 4 units west of the gate, on the front fence. Is its x-coordinate positive or negative? Write its coordinates. (b) Which axis lies along the side fence? (c) A bench is at zero distance from both fences. What are its coordinates, and what is that point called?",
+     "a": "(a) West is the negative direction, so the x-coordinate is negative: the tap is at (-4, 0). (b) The y-axis lies along the side fence. (c) The bench is at (0, 0), the origin (the gate itself).",
+     "s": [
+      [
+       "States the x-coordinate is negative and writes the tap as (-4, 0)",
+       1
+      ],
+      [
+       "Names the y-axis as the side fence",
+       1
+      ],
+      [
+       "Writes (0, 0) and calls it the origin",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 3",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Meera draws a plan of her garden with the gate corner as the origin, using the scale 1 cm : 50 cm. Kabir redraws the same plan with the same origin and axes, but with the scale 1 cm : 25 cm. He says, 'The new scale has a smaller number, so every coordinate on my plan will be half of Meera's.' Is he right? Check using a tree that is 3 m east of the y-axis and 1.5 m north of the x-axis.",
+     "a": "No, Kabir is wrong. 3 m = 300 cm and 1.5 m = 150 cm. On Meera's plan 1 cm stands for 50 cm, so the tree is at (300/50, 150/50) = (6, 3). On Kabir's plan 1 cm stands for 25 cm, so it is at (300/25, 150/25) = (12, 6). Each cm now stands for a shorter real length, so more cm are needed: every coordinate doubles, it does not halve.",
+     "s": [
+      [
+       "Finds the tree at (6, 3) on Meera's plan",
+       1
+      ],
+      [
+       "Finds the tree at (12, 6) on Kabir's plan",
+       1
+      ],
+      [
+       "Concludes Kabir is wrong: the coordinates double, not halve",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 3-10",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A metro depot keeps its plan on a grid. The control room is the origin O, the x-axis runs along the main track (east is positive) and the y-axis along the service road (north is positive). The map uses the scale 1 cm : 20 m, and all map coordinates are in cm. The washing bay is at W (-6, 0), the fuel point is at F (0, -4.5) and the depot gate is at G (16, 0). A power cable must be laid from the washing bay to the fuel point.\n(a) How far, in metres, is the washing bay from the control room, and in which direction?\n(b) A new store is to be built 160 m north of O, on the service road. Write its map coordinates.\n(c) Find the real distance along the main track from the washing bay to the gate.\n(d) Route 1 lays the cable beside the track from W to O and then beside the service road from O to F, at Rs 400 per metre. Route 2 lays it in a straight line from W to F across the yard, at Rs 600 per metre. Which route is cheaper, and by how much? Justify with numbers.",
+     "a": "(a) W is 6 cm from O, so 6 x 20 = 120 m, to the west. (b) 160 / 20 = 8 cm north on the y-axis: (0, 8). (c) |16 - (-6)| = 22 cm, so 22 x 20 = 440 m. (d) Route 1: (6 + 4.5) x 20 = 210 m, costing 210 x 400 = Rs 84,000. Route 2: WF = sqrt(6^2 + 4.5^2) = sqrt(56.25) = 7.5 cm, that is 150 m, costing 150 x 600 = Rs 90,000. Route 1 is cheaper by Rs 6,000, even though it is longer.",
+     "s": [
+      [
+       "(a) Converts 6 cm to 120 m and says west",
+       1
+      ],
+      [
+       "(b) Writes the store as (0, 8)",
+       1
+      ],
+      [
+       "(c) Finds 22 cm and converts to 440 m",
+       1
+      ],
+      [
+       "(d) Finds 210 m and 150 m, the costs Rs 84,000 and Rs 90,000, and chooses Route 1 (cheaper by Rs 6,000)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 3",
+     "q": "An exam hall is a rectangle 30 m long (east-west) and 18 m wide (north-south). Its map uses the scale 1 cm : 2 m, but this time the origin is the centre of the hall, the x-axis runs east and the y-axis runs north, parallel to the walls. All map coordinates are in cm. (a) Write the map coordinates of the four corners of the hall. (b) A fan hook is 5 m east and 6 m south of the centre. Write its map coordinates. (c) Which corner of the hall has a negative x-coordinate and a positive y-coordinate?",
+     "a": "(a) The hall is 15 cm by 9 cm on the map, so each corner is 7.5 cm from the y-axis and 4.5 cm from the x-axis: (7.5, 4.5), (-7.5, 4.5), (-7.5, -4.5), (7.5, -4.5). (b) 5 / 2 = 2.5 cm east and 6 / 2 = 3 cm south: (2.5, -3). (c) The north-west corner, (-7.5, 4.5).",
+     "s": [
+      [
+       "Converts the hall to 15 cm by 9 cm and halves to 7.5 and 4.5",
+       1
+      ],
+      [
+       "Writes all four corners with correct signs",
+       1
+      ],
+      [
+       "Writes the fan hook as (2.5, -3)",
+       1
+      ],
+      [
+       "Names the north-west corner (-7.5, 4.5)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-1.2",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 6",
+     "q": "A point has a negative x-coordinate and a negative y-coordinate. In which quadrant does it lie?",
+     "a": "Quadrant III",
+     "o": [
+      "Quadrant III",
+      "Quadrant II",
+      "Quadrant IV",
+      "Quadrant I"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 6",
+     "q": "Which of these points lies in Quadrant II?",
+     "a": "(-3, 8)",
+     "o": [
+      "(-3, 8)",
+      "(3, -8)",
+      "(-3, -8)",
+      "(8, 3)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 4-6",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each point in Column I with where it lies in Column II.\nColumn I: 1. (0, -7)  2. (-7, 0)  3. (7, -7)  4. (-7, 7)\nColumn II: a. Quadrant IV  b. On the y-axis, below O  c. Quadrant II  d. On the x-axis, left of O",
+     "a": "1-b, 2-d, 3-a, 4-c",
+     "o": [
+      "1-b, 2-d, 3-a, 4-c",
+      "1-d, 2-b, 3-a, 4-c",
+      "1-b, 2-d, 3-c, 4-a",
+      "1-d, 2-b, 3-c, 4-a"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 6",
+     "q": "Consider the following statements.\nI. The x-coordinate of a point gives its perpendicular distance from the y-axis, with a sign that shows the side.\nII. The point (5, -1) is farther from the x-axis than from the y-axis.\nIII. Every point whose two coordinates have opposite signs lies in Quadrant II or Quadrant IV.\nWhich of the statements given above are correct?",
+     "a": "I and III only",
+     "o": [
+      "I and III only",
+      "I and II only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 6",
+     "q": "(a) Write the coordinates of the point that is 4 units to the left of the y-axis and 7 units above the x-axis. (b) Name the quadrant it lies in.",
+     "a": "(a) (-4, 7). (b) Its x-coordinate is negative and its y-coordinate is positive, so it lies in Quadrant II.",
+     "s": [
+      [
+       "Writes the point as (-4, 7)",
+       1
+      ],
+      [
+       "Names Quadrant II from the signs (-, +)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 6",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: If the point (a, b) lies in Quadrant II, then the point (b, a) lies in Quadrant IV. Give a reason.",
+     "a": "True. In Quadrant II, a is negative and b is positive. So (b, a) has a positive x-coordinate and a negative y-coordinate, which is Quadrant IV.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Reasons from the signs: a < 0, b > 0, so (b, a) has signs (+, -), Quadrant IV",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 6",
+     "q": "On the plan of a school parking lot, the ticket booth is the origin. Car P is at (-12, 5), car Q is at (8, -5) and car R is at (-12, -9). (a) Name the quadrant of each car. (b) Which car is farthest from the x-axis? (c) Which two cars are at the same distance from the y-axis?",
+     "a": "(a) P is in Quadrant II, Q in Quadrant IV and R in Quadrant III. (b) R, which is 9 units from the x-axis (P and Q are 5 units). (c) P and R, both 12 units from the y-axis.",
+     "s": [
+      [
+       "Names the quadrants II, IV and III for P, Q and R",
+       1
+      ],
+      [
+       "Picks R as 9 units from the x-axis",
+       1
+      ],
+      [
+       "Picks P and R as both 12 units from the y-axis",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 6",
+     "q": "A point R lies in Quadrant IV. Its distance from the y-axis is 3 units more than its distance from the x-axis, and the two distances add up to 11 units. Find the coordinates of R.",
+     "a": "Let the distance from the x-axis be d; then the distance from the y-axis is d + 3, and d + (d + 3) = 11, so d = 4. The distances are 7 (from the y-axis) and 4 (from the x-axis). In Quadrant IV x is positive and y is negative, so R = (7, -4).",
+     "s": [
+      [
+       "Sets up the distances as d and d + 3 with sum 11",
+       1
+      ],
+      [
+       "Finds the distances 7 from the y-axis and 4 from the x-axis",
+       1
+      ],
+      [
+       "Uses the Quadrant IV signs to write R = (7, -4)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 6",
+     "q": "On a city bus-route map, the bus depot is the origin. The stops are A (4, 6), B (-5, 2), C (-3, -7) and D (6, -1). (a) In which quadrant is stop A? (b) In which quadrant is stop C? (c) Write the x-coordinate of stop B. (d) How far is stop D from the x-axis? (e) Which stop lies in Quadrant IV?",
+     "a": "(a) Quadrant I. (b) Quadrant III. (c) -5. (d) 1 unit. (e) Stop D (6, -1).",
+     "s": [
+      [
+       "(a) Quadrant I for A",
+       1
+      ],
+      [
+       "(b) Quadrant III for C",
+       1
+      ],
+      [
+       "(c) x-coordinate of B is -5",
+       1
+      ],
+      [
+       "(d) D is 1 unit from the x-axis",
+       1
+      ],
+      [
+       "(e) Names stop D as the one in Quadrant IV",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 6",
+     "q": "In a computer game, a robot stands at P (2k - 5, 7 - k), where k is the level number, a whole number 0, 1, 2, 3, .... (a) Find P for k = 1 and for k = 4, and name the quadrant each time. (b) Find all the levels k for which the robot is in Quadrant I. (c) For which level does the robot stand on an axis? Name the axis. (d) Show that the robot can never be in Quadrant III.",
+     "a": "(a) k = 1: P (-3, 6), Quadrant II. k = 4: P (3, 3), Quadrant I. (b) Quadrant I needs 2k - 5 > 0 and 7 - k > 0, so k > 2.5 and k < 7: k = 3, 4, 5, 6. (c) 2k - 5 is never 0 for a whole number k, but 7 - k = 0 when k = 7, giving P (9, 0) on the x-axis. (d) Quadrant III needs 2k - 5 < 0, so k < 2.5, and 7 - k < 0, so k > 7. No number is both less than 2.5 and greater than 7, so the robot is never in Quadrant III.",
+     "s": [
+      [
+       "(a) Finds (-3, 6) in Quadrant II and (3, 3) in Quadrant I",
+       1
+      ],
+      [
+       "(b) Writes both conditions 2k - 5 > 0 and 7 - k > 0",
+       1
+      ],
+      [
+       "(b) Lists k = 3, 4, 5, 6",
+       1
+      ],
+      [
+       "(c) Finds k = 7 with P (9, 0) on the x-axis",
+       1
+      ],
+      [
+       "(d) Shows k < 2.5 and k > 7 cannot both hold",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-1.3",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 4",
+     "q": "Every point that lies on the y-axis has",
+     "a": "x-coordinate 0",
+     "o": [
+      "x-coordinate 0",
+      "y-coordinate 0",
+      "equal x- and y-coordinates",
+      "a positive y-coordinate"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 15",
+     "q": "What is the distance between the points (-3, 7) and (9, 7)?",
+     "a": "12 units",
+     "o": [
+      "12 units",
+      "6 units",
+      "16 units",
+      "14 units"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 7",
+     "q": "Assertion (A): (4, 9) and (9, 4) are two different points.\nReason (R): (x, y) = (y, x) only when x = y.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 15",
+     "q": "Assertion (A): If the point P (a, 3) is 7 units away from the point Q (-2, 3), then a must be 5.\nReason (R): The distance between (x1, y) and (x2, y) is |x2 - x1|.",
+     "a": "A is false but R is true. R is the rule for points on a line parallel to the x-axis. Using it, |a - (-2)| = 7, so a + 2 = 7 or a + 2 = -7, giving a = 5 or a = -9. So a need not be 5, and A is false.",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 15",
+     "q": "On a playground plan in metres, a relay lane runs along the y-axis from the start S (0, -12) to the finish F (0, 18). (a) How long is the lane? (b) A marker is placed on the lane 5 m before the finish. Write its coordinates.",
+     "a": "(a) |18 - (-12)| = 30 m. (b) 18 - 5 = 13, so the marker is at (0, 13).",
+     "s": [
+      [
+       "Finds the lane length |18 - (-12)| = 30 m",
+       1
+      ],
+      [
+       "Writes the marker as (0, 13)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 4",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: The point (-5, 0) lies in Quadrant II because its x-coordinate is negative. Give a reason.",
+     "a": "False. Its y-coordinate is 0, so (-5, 0) lies on the x-axis, 5 units to the left of O. A point on an axis is not in any quadrant.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Explains that y = 0 puts it on the x-axis, left of O, so it is in no quadrant",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 7",
+     "tags": [
+      "show_impossible"
+     ],
+     "q": "Show that, for any number a, the points (a, a + 2) and (a + 2, a) can never be the same point.",
+     "a": "Swapping the coordinates gives the same point only when the two coordinates are equal: (x, y) = (y, x) if and only if x = y. Here that would need a = a + 2, that is 0 = 2, which is impossible. So the two points are always different.",
+     "s": [
+      [
+       "States that (x, y) = (y, x) only when x = y",
+       1
+      ],
+      [
+       "Applies it: needs a = a + 2",
+       1
+      ],
+      [
+       "Shows this gives 0 = 2, impossible, so the points are always different",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 15",
+     "q": "A warehouse robot moves only parallel to the axes. Units are metres. It starts at (-4, 6), moves straight down (in the negative y direction) to a turning point T (-4, k), and then moves straight to (7, k). The total distance it travels is 20 m. (a) Write the length of each move, using k where needed. (b) Find k. (c) In which quadrant is the turning point T?",
+     "a": "(a) First move: same x, so its length is 6 - k (the robot moves down, so k < 6). Second move: same y, so |7 - (-4)| = 11 m. (b) (6 - k) + 11 = 20, so 6 - k = 9 and k = -3. (c) T = (-4, -3) has both coordinates negative, so it is in Quadrant III.",
+     "s": [
+      [
+       "Writes the moves as 6 - k and 11 m",
+       1
+      ],
+      [
+       "Solves (6 - k) + 11 = 20 to get k = -3",
+       1
+      ],
+      [
+       "Names Quadrant III for T (-4, -3)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 15",
+     "q": "A badminton court is drawn on a grid in metres with its sides parallel to the axes and its corners at P (-3, -6.5), Q (3, -6.5), R (3, 6.5) and S (-3, 6.5). The net lies along the x-axis. (a) Find the width PQ. (b) Find the length QR. (c) Find the perimeter of the court. (d) Write the coordinates of the point where the net meets the side PS.",
+     "a": "(a) PQ = |3 - (-3)| = 6 m. (b) QR = |6.5 - (-6.5)| = 13 m. (c) Perimeter = 2 x (6 + 13) = 38 m. (d) The side PS lies on x = -3 and the net is the x-axis (y = 0), so they meet at (-3, 0).",
+     "s": [
+      [
+       "(a) PQ = 6 m",
+       1
+      ],
+      [
+       "(b) QR = 13 m",
+       1
+      ],
+      [
+       "(c) Perimeter 38 m",
+       1
+      ],
+      [
+       "(d) The net meets PS at (-3, 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 15",
+     "q": "The points A (p, 4) and B (-2, 4) are 9 units apart. The point C (-2, q) is 6 units from B and lies below the x-axis. (a) Find the two possible values of p. (b) Find q, and say why only one value works. (c) Take the value of p for which A lies in Quadrant I. D is the fourth corner of rectangle ABCD. Write the coordinates of D. (d) Find the perimeter of ABCD.",
+     "a": "(a) A and B have the same y-coordinate, so |p - (-2)| = 9, giving p = 7 or p = -11. (b) B and C have the same x-coordinate, so |q - 4| = 6, giving q = 10 or q = -2. C is below the x-axis, so q = -2. (c) p = 7 puts A (7, 4) in Quadrant I. D has the x-coordinate of A and the y-coordinate of C: D (7, -2). (d) AB = 9 and BC = 6, so the perimeter is 2 x (9 + 6) = 30 units.",
+     "s": [
+      [
+       "(a) Uses |p + 2| = 9 to get p = 7 or -11",
+       2
+      ],
+      [
+       "(b) Gets q = 10 or -2 and keeps q = -2 since C is below the x-axis",
+       1
+      ],
+      [
+       "(c) Chooses p = 7 and writes D (7, -2)",
+       1
+      ],
+      [
+       "(d) Perimeter 30 units",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-1.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 10",
+     "q": "What is the distance of the point (-9, 12) from the origin?",
+     "a": "15 units",
+     "o": [
+      "15 units",
+      "21 units",
+      "3 units",
+      "sqrt(63) units"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 9",
+     "q": "To find the distance between (1, 2) and (6, 14), we first find the shifts along the two axes. What are they?",
+     "a": "5 along the x-axis and 12 along the y-axis",
+     "o": [
+      "5 along the x-axis and 12 along the y-axis",
+      "7 along the x-axis and 16 along the y-axis",
+      "1 along the x-axis and 6 along the y-axis",
+      "12 along the x-axis and 5 along the y-axis"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "p. 10",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each pair of points in Column I with the distance between them in Column II.\nColumn I: 1. (-1, 4) and (2, 8)  2. (3, -2) and (-9, 14)  3. (0, -7) and (24, 0)  4. (-6, -1) and (-1, 11)\nColumn II: a. 25 units  b. 5 units  c. 13 units  d. 20 units",
+     "a": "1-b, 2-d, 3-a, 4-c",
+     "o": [
+      "1-b, 2-d, 3-a, 4-c",
+      "1-b, 2-c, 3-a, 4-d",
+      "1-d, 2-b, 3-a, 4-c",
+      "1-b, 2-d, 3-c, 4-a"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 10-11",
+     "q": "Consider the following statements.\nI. The distance between (x1, y1) and (x2, y2) is sqrt((x2 - x1)^2 + (y2 - y1)^2).\nII. The distance from P to Q is the same as the distance from Q to P.\nIII. The distance between two points is negative when the shifts along the axes are negative.\nWhich of the statements given above are correct?",
+     "a": "I and II only",
+     "o": [
+      "I and II only",
+      "I and III only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 10",
+     "q": "A ladybird crawls in a straight line from (-2, -3) to (4, 5) on a grid drawn in cm. How far does it crawl?",
+     "a": "Shifts: 4 - (-2) = 6 along the x-axis and 5 - (-3) = 8 along the y-axis. Distance = sqrt(6^2 + 8^2) = sqrt(100) = 10 cm.",
+     "s": [
+      [
+       "Finds the shifts 6 and 8",
+       1
+      ],
+      [
+       "Uses the theorem to get 10 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 10",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Of the three points (5, 5), (7, 0) and (-4, -6), the point (5, 5) is the farthest from the origin. Give a reason.",
+     "a": "False. The squares of the distances from O are 5^2 + 5^2 = 50, 7^2 + 0^2 = 49 and (-4)^2 + (-6)^2 = 52. So (5, 5) is farther than (7, 0), but (-4, -6), at sqrt(52) (about 7.21), is farther than (5, 5), at sqrt(50) (about 7.07).",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Finds 50, 49 and 52 (or the distances) and shows (-4, -6) is the farthest",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 10",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Neha says that the triangle with vertices P (1, 1), Q (4, 5) and R (8, 2) is an isosceles right-angled triangle. Is she right? Show your working.",
+     "a": "Yes. PQ = sqrt(3^2 + 4^2) = 5, QR = sqrt(4^2 + 3^2) = 5 and PR = sqrt(7^2 + 1^2) = sqrt(50). PQ = QR, so it is isosceles. Also PQ^2 + QR^2 = 25 + 25 = 50 = PR^2, so by the Baudhayana-Pythagoras theorem the angle at Q is a right angle. Neha is right.",
+     "s": [
+      [
+       "Finds PQ = 5, QR = 5 and PR = sqrt(50)",
+       1
+      ],
+      [
+       "Notes PQ = QR, so the triangle is isosceles",
+       1
+      ],
+      [
+       "Checks 25 + 25 = 50 to show a right angle at Q and agrees with Neha",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 9-10",
+     "q": "A is the point (-3, 2) and B is the point (5, -13). (a) What is the shift along the x-axis from A to B? (b) What is the shift along the y-axis from A to B? (c) Find the distance AB.",
+     "a": "(a) 5 - (-3) = 8 units. (b) -13 - 2 = -15, that is, 15 units downward. (c) AB = sqrt(8^2 + 15^2) = sqrt(64 + 225) = sqrt(289) = 17 units.",
+     "s": [
+      [
+       "Finds the x-shift 8",
+       1
+      ],
+      [
+       "Finds the y-shift 15 (or -15)",
+       1
+      ],
+      [
+       "Finds AB = 17 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 10",
+     "q": "A point P (x, 3) is 13 units from the point Q (-2, -2). (a) Use the distance formula to write an equation for x. (b) Find both possible values of x. (c) Which of the two possible points lies in Quadrant II? (d) Find the distance between the two possible positions of P.",
+     "a": "(a) (x - (-2))^2 + (3 - (-2))^2 = 13^2, that is (x + 2)^2 + 25 = 169. (b) (x + 2)^2 = 144, so x + 2 = 12 or x + 2 = -12, giving x = 10 or x = -14. (c) (-14, 3), since its x-coordinate is negative and its y-coordinate is positive. (d) Both points have y = 3, so the distance is |10 - (-14)| = 24 units.",
+     "s": [
+      [
+       "(a) Writes (x + 2)^2 + 5^2 = 13^2",
+       1
+      ],
+      [
+       "(b) Gets (x + 2)^2 = 144",
+       1
+      ],
+      [
+       "(b) Finds both x = 10 and x = -14",
+       1
+      ],
+      [
+       "(c) Names (-14, 3) in Quadrant II",
+       1
+      ],
+      [
+       "(d) Finds the distance 24 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 10",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A mobile company is setting up a tower to serve three villages. On its map, 1 unit stands for 1 km and the tower site is the origin T (0, 0). Village A is at (3, 4) with 2,500 people, village B is at (-4, -2) with 3,000 people, and village C is at (5, -3) with 1,200 people. A village gets a signal only if it is at most 5 km from the tower. An engineer suggests moving the tower 1 km east, to (1, 0).\n(a) How far is village A from T?\n(b) Find the distances of villages B and C from T.\n(c) Which villages get a signal if the tower stays at T?\n(d) If the tower is moved to (1, 0), which villages get a signal? Should the company move it, if it wants to serve the most people? Justify.",
+     "a": "(a) TA = sqrt(3^2 + 4^2) = 5 km. (b) TB = sqrt(4^2 + 2^2) = sqrt(20), about 4.47 km; TC = sqrt(5^2 + 3^2) = sqrt(34), about 5.83 km. (c) A (exactly 5 km) and B get a signal; C does not. (d) From (1, 0): A is sqrt(2^2 + 4^2) = sqrt(20), about 4.47 km; B is sqrt(5^2 + 2^2) = sqrt(29), about 5.39 km; C is sqrt(4^2 + 3^2) = 5 km. So A and C get a signal, but B does not. At T the tower serves 2,500 + 3,000 = 5,500 people; at (1, 0) it serves 2,500 + 1,200 = 3,700. The company should not move it.",
+     "s": [
+      [
+       "(a) TA = 5 km",
+       1
+      ],
+      [
+       "(b) TB = sqrt(20) and TC = sqrt(34) km",
+       1
+      ],
+      [
+       "(c) A and B get a signal, C does not",
+       1
+      ],
+      [
+       "(d) Finds A and C served from (1, 0), compares 5,500 with 3,700 people and decides not to move",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-1.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 11",
+     "q": "What is the reflection of the point (-6, 2) in the x-axis?",
+     "a": "(-6, -2)",
+     "o": [
+      "(-6, -2)",
+      "(6, 2)",
+      "(6, -2)",
+      "(2, -6)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 11",
+     "q": "A point and its mirror image in the y-axis always have the same",
+     "a": "y-coordinate",
+     "o": [
+      "y-coordinate",
+      "x-coordinate",
+      "quadrant",
+      "sign of the x-coordinate"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 11",
+     "q": "Assertion (A): The image of the point (-2, -5) in the y-axis lies in Quadrant IV.\nReason (R): Reflection in the y-axis changes the signs of both coordinates of a point.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 11",
+     "q": "Consider the following statements.\nI. Reflecting a point of Quadrant II in the x-axis gives a point of Quadrant III.\nII. If a point and its image in the x-axis are 10 units apart, the point is 5 units from the x-axis.\nIII. Reflecting a point of Quadrant I in the y-axis and then reflecting the image in the x-axis gives a point of Quadrant II.\nWhich of the statements given above are correct?",
+     "a": "I and II only",
+     "o": [
+      "I and II only",
+      "I, II and III",
+      "II and III only",
+      "I and III only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 11",
+     "q": "P is the point (5, -3). (a) Write the image of P in the y-axis. (b) Write the image of P in the x-axis.",
+     "a": "(a) Reflection in the y-axis changes the sign of x: (-5, -3). (b) Reflection in the x-axis changes the sign of y: (5, 3).",
+     "s": [
+      [
+       "Writes the image in the y-axis as (-5, -3)",
+       1
+      ],
+      [
+       "Writes the image in the x-axis as (5, 3)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 11",
+     "q": "A point Q is reflected in the x-axis and its image is Q' (4, 7). (a) Find the coordinates of Q. (b) Find the distance QQ'.",
+     "a": "(a) Reflecting back in the x-axis changes the sign of y, so Q = (4, -7). (b) Q and Q' have the same x-coordinate, so QQ' = |7 - (-7)| = 14 units.",
+     "s": [
+      [
+       "Finds Q = (4, -7)",
+       1
+      ],
+      [
+       "Finds QQ' = 14 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 11",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Arjun says, 'When a triangle is reflected in the y-axis, its side lengths stay the same, and so do the coordinates of every vertex.' Test his claim on the triangle A (0, 3), B (4, 0), C (4, 3). Is he right, wrong or partly right?",
+     "a": "Partly right. The images are A' (0, 3), B' (-4, 0) and C' (-4, 3). Side lengths stay the same, for example AB = sqrt(4^2 + 3^2) = 5 and A'B' = sqrt((-4)^2 + (-3)^2) = 5. But the coordinates do not all stay the same: B and C change to B' (-4, 0) and C' (-4, 3). Only A, which lies on the y-axis, keeps its coordinates.",
+     "s": [
+      [
+       "Writes the images A' (0, 3), B' (-4, 0), C' (-4, 3)",
+       1
+      ],
+      [
+       "Shows a side length is kept, e.g. AB = A'B' = 5",
+       1
+      ],
+      [
+       "Concludes partly right: lengths kept, but only the vertex on the y-axis keeps its coordinates",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 11",
+     "q": "The triangle with vertices K (1, 2), L (7, 10) and N (1, 10) is reflected in the x-axis. (a) Write the vertices K', L' and N' of the image. (b) Find the lengths KL and K'L'. (c) What does your answer to (b) show about reflection?",
+     "a": "(a) K' (1, -2), L' (7, -10), N' (1, -10). (b) KL = sqrt(6^2 + 8^2) = sqrt(100) = 10 units and K'L' = sqrt(6^2 + (-8)^2) = sqrt(100) = 10 units. (c) The length is the same, so reflection preserves lengths.",
+     "s": [
+      [
+       "Writes K' (1, -2), L' (7, -10), N' (1, -10)",
+       1
+      ],
+      [
+       "Finds KL = K'L' = 10 units",
+       1
+      ],
+      [
+       "States that reflection preserves lengths",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 11",
+     "q": "A point Q is reflected in the x-axis to give Q1 (6, -7). The same point Q is reflected in the y-axis to give Q2 (-6, 7). (a) Find Q and explain how you found it. (b) Q1 is now reflected in the y-axis to give Q3. Write Q3 and say which reflection of Q2 also gives Q3. (c) Find the distances QQ1 and QQ2. (d) Show that the triangle Q Q1 Q2 has a right angle at Q. (e) Show that O (0, 0) is at the same distance from Q, Q1 and Q2.",
+     "a": "(a) Reflecting in the x-axis changes only the sign of the y-coordinate, so Q has x = 6 and y = 7: Q = (6, 7). (This agrees with Q2: reflecting (6, 7) in the y-axis gives (-6, 7).) (b) Q3 = (-6, -7); it is also the image of Q2 in the x-axis. (c) QQ1 = |7 - (-7)| = 14 and QQ2 = |6 - (-6)| = 12 units. (d) Q1Q2 = sqrt(12^2 + 14^2) = sqrt(340), and QQ1^2 + QQ2^2 = 196 + 144 = 340 = Q1Q2^2, so by the Baudhayana-Pythagoras theorem the angle at Q is a right angle. (e) OQ = OQ1 = OQ2 = sqrt(6^2 + 7^2) = sqrt(85) units.",
+     "s": [
+      [
+       "(a) Finds Q (6, 7) by undoing the reflection",
+       1
+      ],
+      [
+       "(b) Q3 (-6, -7), the image of Q2 in the x-axis",
+       1
+      ],
+      [
+       "(c) QQ1 = 14 and QQ2 = 12",
+       1
+      ],
+      [
+       "(d) Shows 196 + 144 = 340 = Q1Q2^2 for a right angle at Q",
+       1
+      ],
+      [
+       "(e) Finds OQ = OQ1 = OQ2 = sqrt(85)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 11",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A photo studio has a long mirror fixed along one wall, which is the y-axis of its floor plan; 1 unit stands for 1 m. A lamp stands at L (2, 3) and the camera at C (5, -1). The image of the lamp seen in the mirror is the reflection of L in the y-axis. For a soft photo, the photographer wants the lamp's mirror image to be at most 8 m from the camera, but she also wants the real lamp at least 5 m from the camera.\n(a) Where does the image of the lamp appear?\n(b) How far is the real lamp from the camera?\n(c) How far is the lamp's image from the camera? Does this meet the 8 m wish?\n(d) She can move the lamp to (1, 3) instead. Should she? Check both of her wishes.",
+     "a": "(a) The image is (-2, 3). (b) CL = sqrt(3^2 + 4^2) = 5 m. (c) Distance from C to (-2, 3) = sqrt(7^2 + 4^2) = sqrt(65), about 8.06 m, which is more than 8 m, so the wish is not met. (d) The new image is (-1, 3), at sqrt(6^2 + 4^2) = sqrt(52), about 7.21 m from C, within 8 m. The real lamp at (1, 3) is sqrt(4^2 + 4^2) = sqrt(32), about 5.66 m from C, still at least 5 m. Both wishes are met, so she should move it.",
+     "s": [
+      [
+       "(a) Image at (-2, 3)",
+       1
+      ],
+      [
+       "(b) CL = 5 m",
+       1
+      ],
+      [
+       "(c) Finds sqrt(65), about 8.06 m, and says it is more than 8 m",
+       1
+      ],
+      [
+       "(d) Finds about 7.21 m for the new image and about 5.66 m for the lamp, and decides to move it",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-1.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 13",
+     "q": "What is the midpoint of the segment joining (-5, 9) and (11, -3)?",
+     "a": "(3, 3)",
+     "o": [
+      "(3, 3)",
+      "(8, -6)",
+      "(6, 6)",
+      "(-8, 6)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 13",
+     "q": "A circle K has its centre at the origin O and radius 17 units. Where does the point (8, -15) lie?",
+     "a": "On the circle K",
+     "o": [
+      "On the circle K",
+      "Inside the circle K",
+      "Outside the circle K",
+      "At the centre of the circle K"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 13",
+     "q": "Assertion (A): M (1, 1) is the midpoint of the segment joining S (-3, 4) and T (5, -2).\nReason (R): The distance of M from S is 5 units.",
+     "a": "Both A and R are true, but R is not the correct explanation of A. A: ((-3 + 5)/2, (4 + (-2))/2) = (1, 1), so A is true. R: SM = sqrt(4^2 + 3^2) = 5, so R is true. But the distance from one end alone cannot make M the midpoint; M is the midpoint because its coordinates are the averages of the coordinates of S and T.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "p. 13",
+     "tags": [
+      "match"
+     ],
+     "q": "A is the point (-6, 3) and B is the point (6, -9). Match each point in Column I with its coordinates in Column II.\nColumn I: 1. The midpoint of AB  2. The point of trisection of AB closer to A  3. The point of trisection of AB closer to B  4. The point C such that A is the midpoint of BC\nColumn II: a. (2, -5)  b. (-18, 15)  c. (0, -3)  d. (-2, -1)",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 13",
+     "q": "A rope is tied between a peg at P (2, -5) and a peg at Q (8, 9) on a grid in metres. A ribbon must be tied exactly halfway along the rope. Find the coordinates of the ribbon.",
+     "a": "Midpoint = ((2 + 8)/2, (-5 + 9)/2) = (5, 2).",
+     "s": [
+      [
+       "Finds the x-coordinate (2 + 8)/2 = 5",
+       1
+      ],
+      [
+       "Finds the y-coordinate (-5 + 9)/2 = 2 and writes (5, 2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 13",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Both the points P (-8, 11) and Q (9, -13) lie inside the circle with centre O (0, 0) and radius 15. Give a reason.",
+     "a": "False. OP^2 = 8^2 + 11^2 = 185, which is less than 15^2 = 225, so P lies inside. But OQ^2 = 9^2 + 13^2 = 250, which is more than 225, so Q lies outside the circle.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Finds OP^2 = 185 < 225 (P inside) and OQ^2 = 250 > 225 (Q outside)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 13",
+     "q": "P (1, 2) is the point of trisection of AB that is closer to A, where A is (-1, 5). Find the coordinates of B.",
+     "a": "P is one-third of the way from A to B. The shift from A to P is 1 - (-1) = 2 along the x-axis and 2 - 5 = -3 along the y-axis. The full shift from A to B is three times this: 6 and -9. So B = (-1 + 6, 5 - 9) = (5, -4).",
+     "s": [
+      [
+       "Finds the shift from A to P: 2 and -3",
+       1
+      ],
+      [
+       "Multiplies by 3 to get the shift from A to B: 6 and -9",
+       1
+      ],
+      [
+       "Writes B = (5, -4)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 13",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Sana says, 'If S lies in Quadrant II and T lies in Quadrant IV, then the midpoint of ST is always the origin.' Do you agree? Test her claim with S (-2, 6) and T (4, -2), and say when the midpoint is the origin.",
+     "a": "No. For S (-2, 6) and T (4, -2) the midpoint is ((-2 + 4)/2, (6 - 2)/2) = (1, 2), not the origin. The midpoint is the origin only when the coordinates of T are the negatives of those of S, that is T = (-x, -y) when S = (x, y), because then both averages are 0.",
+     "s": [
+      [
+       "Finds the midpoint (1, 2) for the given points",
+       1
+      ],
+      [
+       "Concludes that the claim is false",
+       1
+      ],
+      [
+       "States that the midpoint is O only when T = (-x, -y)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 13",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school library floor is drawn on a grid in metres. The two reading-room doors are at A (1, 4) and B (13, 20), and the printer is at C (16, 7). The librarian places a Wi-Fi router exactly halfway between the two doors. The router gives a usable signal up to 10 m from itself, and a point exactly 10 m away still gets the signal.\n(a) Find the position M of the router.\n(b) Show that both doors get the signal.\n(c) Does the printer get the signal? Give the distance.\n(d) A student suggests moving the router to the midpoint N of B and C, 'so that door B and the printer are covered and door A still gets the signal'. Find N and test the suggestion. Should the router be moved if both doors must keep the signal? Justify.",
+     "a": "(a) M = ((1 + 13)/2, (4 + 20)/2) = (7, 12). (b) MA = sqrt(6^2 + 8^2) = 10 m and MB = sqrt(6^2 + 8^2) = 10 m, so both doors are exactly at the edge and get the signal. (c) MC = sqrt(9^2 + 5^2) = sqrt(106), about 10.30 m, more than 10 m, so the printer does not get the signal. (d) N = ((13 + 16)/2, (20 + 7)/2) = (14.5, 13.5). NB = NC = sqrt(1.5^2 + 6.5^2) = sqrt(44.5), about 6.67 m, so B and the printer are covered, but NA = sqrt(13.5^2 + 9.5^2) = sqrt(272.5), about 16.51 m, so door A loses the signal. The suggestion is wrong; if both doors must keep the signal, the router should stay at M.",
+     "s": [
+      [
+       "(a) M = (7, 12)",
+       1
+      ],
+      [
+       "(b) MA = MB = 10 m",
+       1
+      ],
+      [
+       "(c) MC is about 10.30 m, so the printer is not covered",
+       1
+      ],
+      [
+       "(d) Finds N (14.5, 13.5), NB = NC about 6.67 m but NA about 16.51 m, and decides to keep M",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 14",
+     "q": "The points A (-4, -1), B (2, -3), C (4, 3) and D (-2, 5) are joined in order. (a) Find the lengths of the four sides AB, BC, CD and DA. (b) Find the lengths of the diagonals AC and BD. (c) Is ABCD a square? Justify. (d) Find the midpoints of AC and BD. What do you notice?",
+     "a": "(a) AB = sqrt(6^2 + 2^2) = sqrt(40), BC = sqrt(2^2 + 6^2) = sqrt(40), CD = sqrt(6^2 + 2^2) = sqrt(40), DA = sqrt(2^2 + 6^2) = sqrt(40). (b) AC = sqrt(8^2 + 4^2) = sqrt(80) and BD = sqrt(4^2 + 8^2) = sqrt(80). (c) Yes. All four sides are equal, so ABCD is a rhombus. AB^2 + BC^2 = 40 + 40 = 80 = AC^2, so the angle at B is a right angle. A rhombus with a right angle is a square. (d) Midpoint of AC = ((-4 + 4)/2, (-1 + 3)/2) = (0, 1); midpoint of BD = ((2 - 2)/2, (-3 + 5)/2) = (0, 1). Both diagonals have the same midpoint (0, 1), so they bisect each other.",
+     "s": [
+      [
+       "(a) Finds all four sides equal to sqrt(40)",
+       2
+      ],
+      [
+       "(b) Finds both diagonals equal to sqrt(80)",
+       1
+      ],
+      [
+       "(c) Uses 40 + 40 = 80 for a right angle and concludes it is a square",
+       1
+      ],
+      [
+       "(d) Finds both midpoints (0, 1) and notes they coincide",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

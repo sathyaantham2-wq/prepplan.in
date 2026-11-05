@@ -87,15 +87,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Kiran must construct an equilateral triangle ABC whose perimeter is 21 cm. He draws AB of the right length, then by mistake draws an arc of radius 7 cm from A and an arc of radius 6 cm from B. (a) What should the side of the triangle be? (b) Which side of his triangle comes out wrong, and is his triangle still equilateral?",
-     "a": "(a) Each side should be 21 ÷ 3 = 7 cm. (b) AB = 7 cm and AC = 7 cm (the arc from A), but BC = 6 cm (the arc from B), so BC is wrong. The triangle has only two equal sides, so it is isosceles, not equilateral.",
+     "q": "A square garden bed has a perimeter of 22 cm on Kiran's plan. He draws an equilateral triangle on its top side as a roof, so that the outline looks like a small house. (a) What compass opening must he use for the two arcs of the roof triangle, and why? (b) Find the length of the outer outline of the house (the roof side shared with the square is not part of the outline).",
+     "a": "(a) The side of the square is 22 ÷ 4 = 5.5 cm. The roof shares this side, and an equilateral triangle has all sides equal, so both arcs are drawn with the compass opened to 5.5 cm. (b) The outline has 3 sides of the square and 2 sides of the roof, all 5.5 cm: 5 × 5.5 = 27.5 cm.",
      "s": [
       [
-       "Part (a): finds the side as 21 ÷ 3 = 7 cm",
+       "Part (a): side 22 ÷ 4 = 5.5 cm, so the compass is opened to 5.5 cm for both arcs",
        1
       ],
       [
-       "Part (b): says BC = 6 cm is wrong, so the triangle is not equilateral",
+       "Part (b): outline = 5 × 5.5 = 27.5 cm",
        1
       ]
      ],
@@ -106,19 +106,19 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 3,
-     "q": "Leela draws AB = 4 cm. With her compass opened to 4 cm she draws arcs from A and B above AB that meet at C. Then, keeping the same opening, she draws arcs from B and C on the other side of BC (away from A) that meet at D. (a) Find the lengths BD and CD and give the reason. (b) Name the two equilateral triangles in her figure. (c) Find the length of the outer boundary A to B to D to C and back to A.",
-     "a": "(a) D lies on the arcs of radius 4 cm from B and from C, so BD = CD = 4 cm. (b) Triangle ABC (AB = BC = CA = 4 cm) and triangle BCD (BC = CD = DB = 4 cm). (c) AB + BD + DC + CA = 4 + 4 + 4 + 4 = 16 cm.",
+     "q": "Leela constructs an equilateral triangle ABC of side 3.5 cm. On each side of ABC she then constructs another equilateral triangle pointing outwards, using arcs of radius 3.5 cm from the two ends of that side. This gives a six-pointed star outline A-D-B-E-C-F. (a) Why is each of the outer triangles ABD, BCE and CAF equilateral? (b) How many equilateral triangles of side 3.5 cm are there in her figure? (c) Find the length of the star outline and compare it with the perimeter of triangle ABC.",
+     "a": "(a) Each outer triangle has a side of ABC (3.5 cm) as its base, and its third vertex lies on arcs of radius 3.5 cm from both ends, so all three of its sides are 3.5 cm. (b) 4: ABC, ABD, BCE and CAF. (c) The outline is made of 6 sides of the outer triangles, each 3.5 cm: 6 × 3.5 = 21 cm. The perimeter of ABC is 3 × 3.5 = 10.5 cm, so the outline is twice the perimeter of ABC.",
      "s": [
       [
-       "Part (a): BD = CD = 4 cm because D lies on both 4 cm arcs",
+       "Part (a): third vertex is on 3.5 cm arcs from both ends, so all sides are 3.5 cm",
        1
       ],
       [
-       "Part (b): names triangles ABC and BCD as equilateral",
+       "Part (b): 4 equilateral triangles named",
        1
       ],
       [
-       "Part (c): finds the boundary as 16 cm",
+       "Part (c): outline 21 cm, twice the 10.5 cm perimeter of ABC",
        1
       ]
      ],
@@ -392,14 +392,14 @@
      "d": "Hard",
      "t": "assertion_reason",
      "m": 1,
-     "q": "Assertion (A): On a base AB = 7 cm, a circle of radius 3 cm centred at A and a circle of radius 4 cm centred at B only touch each other at one point, so no triangle is formed. Reason (R): When the sum of the two smaller lengths equals the longest length, the two circles touch each other at a point.",
+     "q": "Assertion (A): On a base AB = 7 cm, a circle of radius 3 cm centred at A and a circle of radius 4.5 cm centred at B only touch each other at one point, so no triangle is formed. Reason (R): When the sum of the two smaller lengths equals the longest length, the two circles touch each other at a point.",
      "o": [
+      "A is false, but R is true",
       "Both A and R are true, and R is the correct explanation of A",
       "Both A and R are true, but R is not the correct explanation of A",
-      "A is true, but R is false",
-      "A is false, but R is true"
+      "A is true, but R is false"
      ],
-     "a": "Both A and R are true, and R is the correct explanation of A: 3 + 4 = 7, which equals AB, so the circles only touch on AB and give no third vertex off the line.",
+     "a": "A is false, but R is true: 3 + 4.5 = 7.5 cm, which is more than AB = 7 cm, so the circles cross at two points and a triangle is formed. R is true: the circles only touch when the sum equals the longest length.",
      "p": "pp. 157-159"
     },
     {
@@ -608,15 +608,15 @@
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "Raghu is given ∠X = 72° and XY = 5 cm for a triangle XYZ, and may choose ∠Y at the other end of XY, on the same side. (a) What is the largest whole number of degrees he can take for ∠Y so that a triangle still exists? Give the reason. (b) With that value of ∠Y, find ∠Z.",
-     "a": "(a) 107°. The two angles at the ends of XY must add up to less than 180°, so ∠Y must be less than 180° - 72° = 108°; the largest whole number below 108 is 107. (b) ∠Z = 180° - (72° + 107°) = 1°.",
+     "q": "Raghu must construct triangle XYZ with XY = 5 cm and ∠X = 72°, and his teacher wants ∠Y and ∠Z to be equal. (a) Find ∠Y. (b) Can he now construct the triangle by drawing XY and the angles at X and Y? Show the check.",
+     "a": "(a) ∠Y + ∠Z = 180° - 72° = 108°, and they are equal, so ∠Y = 108° ÷ 2 = 54°. (b) Yes. The two angles at the ends of XY are 72° and 54°, and 72° + 54° = 126°, which is less than 180°, so the arms meet; the third angle is 180° - 126° = 54°, as wanted.",
      "s": [
       [
-       "Part (a): uses 72° + ∠Y < 180° to get ∠Y = 107°",
+       "Part (a): ∠Y = (180° - 72°) ÷ 2 = 54°",
        1
       ],
       [
-       "Part (b): finds ∠Z = 1°",
+       "Part (b): 72° + 54° = 126° < 180°, so the triangle exists (third angle 54°)",
        1
       ]
      ],

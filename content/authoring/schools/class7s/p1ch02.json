@@ -95,22 +95,22 @@
      "d": "Easy",
      "t": "short_answer",
      "m": 2,
-     "q": "True or False: The troposphere is thicker in the tropical zone than at the poles. Give a reason for your answer.",
-     "a": "True. In the tropical zone the warmer air expands, so the troposphere is thicker there; at the poles the cold air contracts, so it is less thick.",
+     "q": "True or False: Water vapour, whose amount in the air is called humidity, is water in a gaseous form and not in a liquid form. Give a reason for your answer.",
+     "a": "True. Water vapour is water in gaseous instead of liquid form, and humidity is the amount of this water vapour present in the air.",
      "s": [
       [
        "States True",
        1
       ],
       [
-       "Reason: warm air expands in the tropical zone while cold air contracts at the poles",
+       "Reason: water vapour is water in gaseous, not liquid, form; humidity is the amount of it in the air",
        1
       ]
      ],
      "tags": [
       "true_false"
      ],
-     "p": "p. 28"
+     "p": "p. 29"
     },
     {
      "b": "Remember",
@@ -250,13 +250,13 @@
      "d": "Easy",
      "t": "match",
      "m": 1,
-     "q": "Match Column I with Column II.\nColumn I: 1. Frogs croaking loudly  2. Forecast  3. Meteorologists  4. A commonly agreed way to measure temperature\nColumn II: (a) To predict or find out in advance  (b) A sign from Nature that rain is expected  (c) Use precise measurements to predict how the weather of a region will behave after hours, days or weeks  (d) Lets Krishnan in Chennai tell Amir in Kashmir exactly how cold it is",
-     "a": "1-b, 2-a, 3-c, 4-d: frogs croaking loudly is one of Nature's signs of coming rain; to forecast is to predict in advance; meteorologists use measurements to predict a region's weather hours, days or weeks ahead; a common measure lets Krishnan convey to Amir how cold Chennai is.",
+     "q": "Match Column I with Column II.\nColumn I: 1. Squirrels gathering nuts  2. Hail  3. Meteorologists  4. A commonly agreed way to measure temperature\nColumn II: (a) Use precise measurements to predict how the weather of a region will behave after hours, days or weeks  (b) Lets Krishnan in Chennai tell Amir in Kashmir exactly how cold it is  (c) One of Nature's signals that people have read to forecast coming rain or storms  (d) Small, hard balls of ice that fall from the sky like rain",
+     "a": "1-c, 2-d, 3-a, 4-b: squirrels gathering nuts is one of Nature's signals of coming rain or storms; hail is small, hard balls of ice that fall from the sky like rain; meteorologists use measurements to predict a region's weather hours, days or weeks ahead; a common measure lets Krishnan convey to Amir how cold Chennai is.",
      "o": [
-      "1-b, 2-a, 3-c, 4-d",
-      "1-a, 2-b, 3-c, 4-d",
-      "1-b, 2-c, 3-a, 4-d",
-      "1-d, 2-a, 3-c, 4-b"
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-a, 2-d, 3-c, 4-b"
      ],
      "tags": [
       "match"
@@ -548,8 +548,8 @@
      "d": "Hardest",
      "t": "short_answer",
      "m": 3,
-     "q": "Lata compares two days in Raipur. Day A: maximum 38, minimum 22 degrees Celsius. Day B: maximum 33, minimum 25 degrees Celsius. She says, 'Day B was warmer on the whole, because its minimum was higher.' (a) Find the mean daily temperature of each day. (b) Find the range of each day. (c) Is Lata right? Explain.",
-     "a": "(a) Day A: (38 + 22) / 2 = 30 degrees Celsius; Day B: (33 + 25) / 2 = 29 degrees Celsius. (b) Day A: 38 - 22 = 16 degrees Celsius; Day B: 33 - 25 = 8 degrees Celsius. (c) No. The mean daily temperature uses both the maximum and the minimum. Day B's minimum was 3 degrees higher, but Day A's maximum was 5 degrees higher, so Day A had the higher mean (30 against 29 degrees Celsius). A higher minimum alone does not make a day warmer on the whole.",
+     "q": "Lata compares two days in Raipur. Day A: maximum 38, minimum 22 degrees Celsius. Day B: maximum 33, minimum 25 degrees Celsius. She says, 'Day B was warmer on the whole and its temperature also changed less during the day, because its minimum was higher.' (a) Find the mean daily temperature of each day. (b) Find the range of each day. (c) Check each half of Lata's claim using (a) and (b).",
+     "a": "(a) Day A: (38 + 22) / 2 = 30 degrees Celsius; Day B: (33 + 25) / 2 = 29 degrees Celsius. (b) Day A: 38 - 22 = 16 degrees Celsius; Day B: 33 - 25 = 8 degrees Celsius. (c) The first half is wrong: the mean uses both the maximum and the minimum, and Day A's maximum was 5 degrees higher while Day B's minimum was only 3 degrees higher, so Day A had the higher mean (30 against 29 degrees Celsius). The second half is right: Day B's range (8) is smaller than Day A's (16), so its temperature changed less during the day. A higher minimum alone settles neither half; the mean and the range do.",
      "s": [
       [
        "(a) Means 30 and 29 degrees Celsius",
@@ -560,7 +560,7 @@
        1
       ],
       [
-       "(c) Rejects the claim: Day A has the higher mean because its maximum is 5 degrees higher",
+       "(c) First half rejected (Day A's mean is higher); second half accepted (Day B's range is smaller)",
        1
       ]
      ],
@@ -688,13 +688,13 @@
      "d": "Hard",
      "t": "assertion_reason",
      "m": 1,
-     "q": "Assertion (A): The atmospheric pressure at a sea coast is always above 1000 mb.\nReason (R): The pressure on a coast sometimes drops dramatically, forming a depression or low-pressure system.",
-     "a": "A is false, but R is true: pressure is generally higher near the coast, but it sometimes drops dramatically below 1000 mb in a depression, so 'always' is wrong.",
+     "q": "Assertion (A): People who journey to places at a high altitude are advised to make pauses on the way up.\nReason (R): The air at high altitude is thinner and holds less oxygen, so the body needs time to acclimatise to the new condition.",
+     "a": "Both A and R are true, and R is the correct explanation of A: because the thinner air at altitude gives the lungs less oxygen, pauses on the way up allow the body to acclimatise.",
      "o": [
-      "A is false, but R is true.",
       "Both A and R are true, and R is the correct explanation of A.",
       "Both A and R are true, but R is not the correct explanation of A.",
-      "A is true, but R is false."
+      "A is true, but R is false.",
+      "A is false, but R is true."
      ],
      "p": "pp. 34-35"
     },
@@ -703,37 +703,37 @@
      "d": "Hard",
      "t": "multi_statement",
      "m": 1,
-     "q": "Consider these statements.\nI. People may feel breathless at high altitudes because less oxygen gets into their lungs and blood.\nII. In a rain gauge, the depth of the collected water is read on a scale attached to the cylinder.\nIII. Air pressure on a mountain top is lower than on the plain below, because the air there is thinner.\nWhich of the statements are correct?",
-     "a": "I, II and III: thinner air on a mountain means lower pressure and less oxygen, so people may feel breathless; and the rain gauge's scale is attached to the cylinder in which the rainwater collects.",
+     "q": "Consider these statements.\nI. People may feel breathless at high altitudes because less oxygen gets into their lungs and blood.\nII. A barometer at a coastal town that reads 1008 mb indicates a depression.\nIII. Air pressure on a mountain top is lower than on the plain below, because the air there is thinner.\nWhich of the statements are correct?",
+     "a": "I and III only: thinner air on a mountain means lower pressure and less oxygen, so people may feel breathless. II is wrong because only a pressure below 1000 mb indicates a depression; 1008 mb is a little below the coast's normal 1013 mb but still above 1000 mb.",
      "o": [
+      "I and III only",
       "I, II and III",
       "I and II only",
-      "II and III only",
-      "I and III only"
+      "II and III only"
      ],
-     "p": "pp. 33-35"
+     "p": "pp. 34-35"
     },
     {
      "b": "Understand",
      "d": "Easy",
      "t": "short_answer",
      "m": 2,
-     "q": "True or False: If snow collects in a rain gauge, it should be allowed to melt before the measurement is taken. Give a reason.",
-     "a": "True. A rain gauge measures precipitation as the height of the water collected, read on its measuring scale, so snow must first melt into water before it is measured.",
+     "q": "True or False: Although there are several types of barometers, their readings can usually be compared with one another. Give a reason.",
+     "a": "True. Barometers generally display atmospheric pressure in the same unit, the millibar (mb), so a reading such as 1013 mb means the same pressure whichever type of barometer shows it.",
      "s": [
       [
        "States True",
        1
       ],
       [
-       "Reason: the gauge measures the water collected, so the snow must melt first",
+       "Reason: barometers generally display the same unit, the millibar",
        1
       ]
      ],
      "tags": [
       "true_false"
      ],
-     "p": "p. 34"
+     "p": "p. 35"
     },
     {
      "b": "Remember",
@@ -1096,19 +1096,19 @@
      "p": "p. 41"
     },
     {
-     "b": "Understand",
+     "b": "Analyse",
      "d": "Hard",
      "t": "assertion_reason",
      "m": 1,
-     "q": "Assertion (A): Accurate weather predictions are very important nowadays.\nReason (R): Climate change is making extreme weather, such as droughts, floods and cyclones, more frequent.",
-     "a": "Both A and R are true, and R is the correct explanation of A: because extreme weather is becoming more frequent, accurate predictions help people get ready for it.",
+     "q": "Assertion (A): A district that receives an accurate forecast of very heavy rain three days ahead can reduce the harm the rain does.\nReason (R): Accurate predictions enable local governments to mobilise resources and prepare for disasters before they happen.",
+     "a": "Both A and R are true, and R is the correct explanation of A: the three days' warning lets the local government mobilise resources and prepare, which is why the harm can be reduced.",
      "o": [
       "Both A and R are true, and R is the correct explanation of A.",
       "Both A and R are true, but R is not the correct explanation of A.",
       "A is true, but R is false.",
       "A is false, but R is true."
      ],
-     "p": "p. 40"
+     "p": "p. 41"
     },
     {
      "b": "Analyse",
@@ -1126,19 +1126,19 @@
      "p": "p. 39"
     },
     {
-     "b": "Understand",
+     "b": "Apply",
      "d": "Hard",
      "t": "short_answer",
      "m": 2,
-     "q": "True or False: Meteorologists predict the weather by looking at a single day's readings. Give a reason.",
-     "a": "False. Meteorologists collect data with instruments over long periods of time, study the data and use scientific methods to predict the weather.",
+     "q": "True or False: A weather office that opened last week can already forecast as reliably as an office that has recorded data for ten years, as long as both use the same instruments. Give a reason.",
+     "a": "False. Meteorologists predict the weather by collecting data with instruments over long periods of time and studying it with scientific methods. Having the same instruments is not enough: one week of readings is far too short a record to study, while the older office has ten years of data to work from.",
      "s": [
       [
        "States False",
        1
       ],
       [
-       "Reason: data collected over long periods and studied with scientific methods",
+       "Reason: forecasting needs data collected over long periods and studied; one week's record is too short even with the same instruments",
        1
       ]
      ],
@@ -1175,35 +1175,35 @@
      "d": "Hard",
      "t": "long_answer",
      "m": 4,
-     "q": "The weather office forecasts a heat wave in a district of Rajasthan for the next five days, with maximum temperatures near 46 degrees Celsius. (a) Which element of weather is dominant in this situation? (b) Which instrument will the weather station use to keep checking it? (c) Suggest two ways in which the local government can use this forecast before the heat wave arrives. (d) Why does getting the warning five days in advance matter?",
-     "a": "(a) Temperature. (b) A thermometer. (c) Any two sensible actions, for example arranging drinking water and water tankers, changing school timings, or warning people to stay indoors at midday. (d) It gives time to be ready and to mobilise resources before the event, so that less harm is done.",
+     "q": "The weather office issues a five-day forecast for a district of Rajasthan, in degrees Celsius. Day 1: max 44, min 29. Day 2: max 46, min 31. Day 3: max 47, min 30. Day 4: max 45, min 28. Day 5: max 42, min 27. The district shortens school hours on every day whose maximum is 45 degrees Celsius or above.\n(a) Which is the hottest day? Find its mean daily temperature.\n(b) Find the range of temperature on Day 3 and on Day 5. On which of the two days does the temperature change more?\n(c) On how many of the five days will school hours be shortened? Name them.\n(d) Using the chapter, explain how receiving this forecast before Day 1 helps the local government.",
+     "a": "(a) Day 3, with the highest maximum of 47 degrees Celsius; mean = (47 + 30) / 2 = 38.5 degrees Celsius. (b) Day 3: 47 - 30 = 17 degrees Celsius; Day 5: 42 - 27 = 15 degrees Celsius; the temperature changes more on Day 3. (c) Three days: Day 2 (46), Day 3 (47) and Day 4 (45); Day 4 counts because 45 is 'or above', while Day 1 (44) and Day 5 (42) do not. (d) Accurate predictions in advance enable the local government to mobilise resources and prepare, for example by arranging drinking water and announcing the new school timings before the hot days arrive.",
      "s": [
       [
-       "(a) Temperature",
+       "(a) Day 3; mean 38.5 degrees Celsius",
        1
       ],
       [
-       "(b) Thermometer",
+       "(b) Ranges 17 and 15 degrees Celsius; more change on Day 3",
        1
       ],
       [
-       "(c) Two sensible actions that mobilise resources or warn people",
+       "(c) Three days: Days 2, 3 and 4",
        1
       ],
       [
-       "(d) Advance warning gives time to prepare and mobilise resources",
+       "(d) Advance forecast lets the government mobilise resources and prepare before the event",
        1
       ]
      ],
-     "p": "pp. 40-42"
+     "p": "pp. 32-41"
     },
     {
      "b": "Evaluate",
      "d": "Hardest",
      "t": "long_answer",
      "m": 5,
-     "q": "A town's weather station recorded this for five days. Mon: max 33, min 24 degrees Celsius, rain 0 mm, 1010 mb, wind 12 km/h, humidity 58%. Tue: 31, 23, rain 22 mm, 1004 mb, wind 18 km/h, 79%. Wed: 34, 25, rain 0 mm, 1011 mb, wind 24 km/h, 62%. Thu: 30, 22, rain 4 mm, 998 mb, wind 35 km/h, 76%. Fri: 32, 22, rain 0 mm, 1012 mb, wind 14 km/h, 46%. A school plans a midday nature walk next week. Its rule: no rain, no depression and wind below 20 km/h; among the days that pass, choose the one with the lowest maximum temperature.\n(a) Which days had no rain?\n(b) On which day did the pressure indicate a depression? Explain.\n(c) Which of the dry days had wind below 20 km/h?\n(d) Find the mean daily temperature of each dry day.\n(e) Using the school's rule, which day's weather suits the walk best? Show how the rule picks it.",
-     "a": "(a) Monday, Wednesday and Friday. (b) Thursday: 998 mb is below 1000 mb, which indicates a depression. (c) Monday (12 km/h) and Friday (14 km/h); Wednesday's wind was 24 km/h. (d) Monday (33 + 24) / 2 = 28.5, Wednesday (34 + 25) / 2 = 29.5 and Friday (32 + 22) / 2 = 27 degrees Celsius. (e) Friday. Only Monday and Friday pass all three conditions (no rain, pressure 1000 mb or more, wind below 20 km/h); of these, Friday has the lower maximum temperature, 32 against 33 degrees Celsius.",
+     "q": "A town's weather station recorded this for five days. Mon: max 33, min 24 degrees Celsius, rain 0 mm, 1010 mb, wind 12 km/h, humidity 58%. Tue: 31, 23, rain 22 mm, 1004 mb, wind 18 km/h, 79%. Wed: 34, 25, rain 0 mm, 1011 mb, wind 24 km/h, 62%. Thu: 30, 22, rain 4 mm, 998 mb, wind 35 km/h, 76%. Fri: 32, 22, rain 0 mm, 1012 mb, wind 14 km/h, 46%. A school plans a midday nature walk next week and assumes that next week's weather will repeat this record. Its rule: no rain, no depression and wind below 20 km/h; among the days that pass, choose the one with the lowest mean daily temperature.\n(a) Which days had no rain?\n(b) On which day did the pressure indicate a depression? Explain.\n(c) Which of the dry days had wind below 20 km/h?\n(d) Find the mean daily temperature of each dry day.\n(e) If next week's weather repeats this record, which day should the school choose? Show how the rule picks it.",
+     "a": "(a) Monday, Wednesday and Friday. (b) Thursday: 998 mb is below 1000 mb, which indicates a depression. (c) Monday (12 km/h) and Friday (14 km/h); Wednesday's wind was 24 km/h. (d) Monday (33 + 24) / 2 = 28.5, Wednesday (34 + 25) / 2 = 29.5 and Friday (32 + 22) / 2 = 27 degrees Celsius. (e) Friday. Only Monday and Friday pass all three conditions (no rain, pressure 1000 mb or more, wind below 20 km/h); of these, Friday has the lower mean daily temperature, 27 against 28.5 degrees Celsius.",
      "s": [
       [
        "(a) Monday, Wednesday and Friday",
@@ -1222,7 +1222,7 @@
        1
       ],
       [
-       "(e) Friday: only Monday and Friday pass, and Friday's maximum (32) is lower than Monday's (33)",
+       "(e) Friday: only Monday and Friday pass, and Friday's mean (27) is lower than Monday's (28.5)",
        1
       ]
      ],
@@ -1233,8 +1233,8 @@
      "d": "Hardest",
      "t": "long_answer",
      "m": 4,
-     "q": "A farmers' cooperative near Nashik reads its Automated Weather Station every evening before planning the next day's work in the grape fields. Day 1: rain 18 mm, wind 8 km/h, relative humidity 78%. Day 2: rain 0 mm, wind 10 km/h, 70%. Day 3: rain 0 mm, wind 32 km/h, 34%. Day 4: rain 0 mm, wind 26 km/h, 38%.\n(a) On which days was the air in the chapter's dry-weather range?\n(b) By how many km/h did the wind speed rise from Day 2 to Day 3?\n(c) On which day would the soil have dried fastest? Give two reasons from the data.\n(d) The cooperative waters the fields only after two days in a row with no rain and dry air. On which evening should it first decide to water? Justify.",
-     "a": "(a) Day 3 (34%) and Day 4 (38%), which lie between 20% and 40%. (b) 32 - 10 = 22 km/h. (c) Day 3: it had the greatest wind speed (32 km/h), and a greater wind speed makes the soil dry faster; its air was also the driest (34%), so water evaporates faster. (d) The evening of Day 4: Day 2 had no rain but humid air (70%), so the first two days in a row with no rain and dry air are Day 3 and Day 4.",
+     "q": "A farmers' cooperative near Nashik reads its Automated Weather Station every evening before planning the next day's work in the grape fields. Day 1: rain 18 mm, wind 8 km/h, relative humidity 78%. Day 2: rain 0 mm, wind 10 km/h, 70%. Day 3: rain 0 mm, wind 32 km/h, 34%. Day 4: rain 0 mm, wind 26 km/h, 38%.\n(a) On which days was the air in the chapter's dry-weather range?\n(b) By how many km/h did the wind speed rise from Day 2 to Day 3?\n(c) On which day would the soil have dried fastest? Give two reasons from the data.\n(d) A member says, 'Day 4 was drier than Day 2 because no rain fell on Day 4.' Is the conclusion right? Is the reason right? Use the data.",
+     "a": "(a) Day 3 (34%) and Day 4 (38%), which lie between 20% and 40%. (b) 32 - 10 = 22 km/h. (c) Day 3: it had the greatest wind speed (32 km/h), and a greater wind speed makes the soil dry faster; its air was also the driest (34%), so water evaporates faster. (d) The conclusion is right but the reason is wrong. Day 4's air (38%) was in the dry-weather range, while Day 2's (70%) was in the humid range of 60% to 80%, so Day 4 was drier. But no rain fell on Day 2 either, so 'no rain' cannot be the difference; the difference is the amount of water vapour in the air, shown by the humidity.",
      "s": [
       [
        "(a) Day 3 and Day 4",
@@ -1249,7 +1249,7 @@
        1
       ],
       [
-       "(d) Evening of Day 4, because Day 2's 70% is not dry",
+       "(d) Conclusion right (38% dry against 70% humid); reason wrong, since Day 2 also had no rain",
        1
       ]
      ],
