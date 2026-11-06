@@ -4,6 +4,7 @@ import { Plus, Printer, Users } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
 import { DataTable, Drawer, InfoTip, useShell } from '../../../components/school/kit'
 import { UploadPanel } from '../../../components/school/upload-panel'
+import { ManualAddForm } from '../../../components/school/manual-add-form'
 import {
   Btn,
   Chip,
@@ -58,6 +59,7 @@ function Students() {
     text: string
   } | null>(null)
   const [adding, setAdding] = useState(false)
+  const [addingOne, setAddingOne] = useState(false)
   const [shown, setShown] = useState<Slip | null>(null)
   const { confirm, toast } = useShell()
   const isAdmin = overview.role === 'school_admin'
@@ -202,10 +204,15 @@ function Students() {
         }
         primary={
           isAdmin ? (
-            <Btn onClick={() => setAdding(true)}>
-              <Plus aria-hidden="true" className="size-5" />
-              Add students from a file
-            </Btn>
+            <span className="flex flex-wrap gap-2">
+              <Btn onClick={() => setAddingOne(true)}>
+                <Plus aria-hidden="true" className="size-5" />
+                Add one student
+              </Btn>
+              <Btn kind="plain" onClick={() => setAdding(true)}>
+                Add students from a file
+              </Btn>
+            </span>
           ) : null
         }
       />
@@ -272,6 +279,26 @@ function Students() {
           ]}
         />
       )}
+
+      <Drawer
+        open={addingOne}
+        title="Add one student"
+        help="Type the details of one student. We run the same checks as for an Excel file."
+        onClose={() => setAddingOne(false)}
+        testId="add-one-student-drawer"
+      >
+        <ManualAddForm
+          schoolId={schoolId}
+          kind="students"
+          classes={overview.classes}
+          defaultYear={year}
+          onDone={() => {
+            toast('Student added')
+            void Promise.all([load(), reload()])
+          }}
+          onCancel={() => setAddingOne(false)}
+        />
+      </Drawer>
 
       <Drawer
         open={adding}

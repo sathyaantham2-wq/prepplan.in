@@ -14,6 +14,7 @@ import { SchoolError } from './common'
 import ExcelJS from 'exceljs'
 import { commitRosterImport, dryRunRosterImport } from './roster'
 import { parseRosterFile } from './roster-parse'
+import { addPersonManually } from './roster-manual'
 import { buildRosterTemplate } from './roster-template'
 import {
   addSchoolSubject,
@@ -139,6 +140,7 @@ describe('school roster, assignments and terms (S2)', () => {
       .deleteFrom('school_student_guardians')
       .where('school_id', 'in', ids)
       .execute()
+    await db.deleteFrom('school_parent_messaging').where('school_id', 'in', ids).execute()
     await db
       .deleteFrom('school_students')
       .where('school_id', 'in', ids)
@@ -982,6 +984,27 @@ describe('school roster, assignments and terms (S2)', () => {
         buildRosterTemplate(db, { ...adminA, role: 'teacher' }, 'teachers'),
         'forbidden',
       )
+    })
+
+    it('manual add: one student or teacher goes through the same checks as the file, and adds nobody twice', async () => {
+      const student = { name: `Manual Kid ${tag}`, class: '7', section: 'B', roll_no: '91', parent_phone: '9000000091', whatsapp_ok: 'yes', parent_language: 'Telugu' }
+      expect(await addPersonManually(db, adminA, { kind: 'students', academicYear: YEAR, fields: student })).toMatchObject({ added: 1 })
+      const row = await db.selectFrom('students').select(['name', 'section', 'roll_no', 'school_id']).where('school_id', '=', schoolA).where('roll_no', '=', '91').executeTakeFirstOrThrow()
+      expect(row).toMatchObject({ name: student.name, section: 'B', school_id: schoolA })
+      // the same student again, a roll number held by someone else, an unknown section and a bad phone are all refused in plain words
+      await refuses(addPersonManually(db, adminA, { kind: 'students', academicYear: YEAR, fields: student }), 'conflict')
+      await refuses(addPersonManually(db, adminA, { kind: 'students', academicYear: YEAR, fields: { ...student, name: 'Someone Else' } }), 'invalid')
+      await refuses(addPersonManually(db, adminA, { kind: 'students', academicYear: YEAR, fields: { ...student, name: 'Z', section: 'Z', roll_no: '92' } }), 'invalid')
+      await refuses(addPersonManually(db, adminA, { kind: 'students', academicYear: YEAR, fields: { ...student, name: 'P', roll_no: '93', parent_phone: '12345' } }), 'invalid')
+
+      const teacher = { name: `Manual Teacher ${tag}`, email: `manual-teacher-${tag}@school.test`, teaches: '', class_teacher_of: '' }
+      expect(await addPersonManually(db, adminA, { kind: 'teachers', fields: teacher })).toMatchObject({ added: 1 })
+      const member = await db.selectFrom('users').select(['role', 'signup_type']).where('email', '=', teacher.email).executeTakeFirstOrThrow()
+      expect(member).toMatchObject({ role: 'teacher', signup_type: 'school' })
+      await refuses(addPersonManually(db, adminA, { kind: 'teachers', fields: teacher }), 'conflict')
+      await refuses(addPersonManually(db, adminA, { kind: 'teachers', fields: { name: 'No Mail', email: 'not-an-email' } }), 'invalid')
+      // only the school office may do it
+      await refuses(addPersonManually(db, { ...adminA, role: 'teacher' }, { kind: 'students', academicYear: YEAR, fields: { ...student, name: 'T', roll_no: '94' } }), 'forbidden')
     })
   })
 })

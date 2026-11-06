@@ -4,6 +4,7 @@ import { Plus, UserRound } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
 import { DataTable, Drawer, useShell } from '../../../components/school/kit'
 import { UploadPanel } from '../../../components/school/upload-panel'
+import { ManualAddForm } from '../../../components/school/manual-add-form'
 import { Btn, Chip, Dialog, EmptyState, Notice, PageHeader } from '../../../components/school/ui'
 import { api, printCodeSlip } from '../../../lib/school-client'
 import { formatDate } from '../../../lib/dates'
@@ -26,6 +27,7 @@ interface EmailResult {
 function Teachers() {
   const { overview, schoolId, reload } = useSchool()
   const [adding, setAdding] = useState(false)
+  const [addingOne, setAddingOne] = useState(false)
   const [slip, setSlip] = useState<{ name: string; result: SlipResult } | null>(
     null,
   )
@@ -85,10 +87,15 @@ function Teachers() {
         title="Teachers"
         help="Everyone on your staff, what they teach, and whether they can sign in."
         primary={
-          <Btn onClick={() => setAdding(true)}>
-            <Plus aria-hidden="true" className="size-5" />
-            Add teachers from a file
-          </Btn>
+          <span className="flex flex-wrap gap-2">
+            <Btn onClick={() => setAddingOne(true)}>
+              <Plus aria-hidden="true" className="size-5" />
+              Add one teacher
+            </Btn>
+            <Btn kind="plain" onClick={() => setAdding(true)}>
+              Add teachers from a file
+            </Btn>
+          </span>
         }
       />
       {message ? <Notice kind={message.kind}>{message.text}</Notice> : null}
@@ -160,6 +167,26 @@ function Teachers() {
           },
         ]}
       />
+      <Drawer
+        open={addingOne}
+        title="Add one teacher"
+        help="Type the details of one teacher. We run the same checks as for an Excel file."
+        onClose={() => setAddingOne(false)}
+        testId="add-one-teacher-drawer"
+      >
+        <ManualAddForm
+          schoolId={schoolId}
+          kind="teachers"
+          classes={overview.classes}
+          defaultYear={year}
+          onDone={() => {
+            toast('Teacher added')
+            void reload()
+          }}
+          onCancel={() => setAddingOne(false)}
+        />
+      </Drawer>
+
       <Drawer
         open={adding}
         title="Add teachers from a file"
