@@ -1,7 +1,7 @@
 /**
  * Brings the old Easy questions back FOR SCHOOLS ONLY (owner decision 2026-11-04, PrepPlan for Schools, no F-number yet).
  * The DPS rewrite retired the old Easy/Hard/Hardest grid on 2026-10-22/23; schools then had almost no Easy questions.
- * This moves the old EASY ones from 'retired' to 'school_bank' (migration 0106): school paper builders may use them,
+ * This moves the old EASY ones from 'retired' to 'school_bank' (migration 0107): school paper builders may use them,
  * PrepPlan's own students never do (every student pool takes status 'approved' only). Nothing is deleted.
  *
  *   DATABASE_URL='postgres://...' npx tsx scripts/school-bank-old-easy.ts 7          # dry run: counts only
