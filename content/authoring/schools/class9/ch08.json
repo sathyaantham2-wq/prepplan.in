@@ -1,0 +1,1304 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 8,
+  "name": "Predicting What Comes Next: Exploring Sequences and Progressions"
+ },
+ "source_code": "iemh108",
+ "concepts": [
+  {
+   "code": "C9M-8.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The list of the electricity bill amounts of a house for the 12 months of the year 2025, written in order from January to December, is an example of",
+     "a": "a finite sequence, because the ordered list stops after 12 terms.",
+     "o": [
+      "a finite sequence",
+      "an infinite sequence",
+      "a list that is not a sequence, because the amounts do not follow a rule",
+      "a sequence with no terms"
+     ],
+     "p": "p. 174"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the sequence of square numbers 1, 4, 9, 16, 25, ..., written as t1, t2, t3, ..., what is t6?",
+     "a": "t6 = 36, the term in the sixth position, since 6 x 6 = 36.",
+     "o": [
+      "36",
+      "6",
+      "12",
+      "25"
+     ],
+     "p": "pp. 174-176"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "q": "Match each sequence in Column I with its first four terms in Column II. Column I: 1. Natural numbers; 2. Odd numbers; 3. Triangular numbers; 4. Square numbers. Column II: A. 1, 4, 9, 16; B. 1, 2, 3, 4; C. 1, 3, 6, 10; D. 1, 3, 5, 7.",
+     "a": "1-B, 2-D, 3-C, 4-A: natural numbers 1, 2, 3, 4; odd numbers 1, 3, 5, 7; triangular numbers 1, 3, 6, 10; square numbers 1, 4, 9, 16.",
+     "o": [
+      "1-B, 2-D, 3-C, 4-A",
+      "1-B, 2-C, 3-D, 4-A",
+      "1-D, 2-B, 3-C, 4-A",
+      "1-B, 2-D, 3-A, 4-C"
+     ],
+     "tags": [
+      "match"
+     ],
+     "p": "p. 174"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The list 1, 1/2, 1/3, 1/4, ... is not a sequence, because its terms get smaller instead of bigger. Give a reason.",
+     "a": "False. A sequence is any ordered list of numbers; its terms need not increase. In 1, 1/2, 1/3, 1/4, ... the first term is 1 and the following terms are unit fractions in decreasing order, and it is still a sequence.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: a sequence is an ordered list of numbers and its terms may decrease, as the unit fractions 1, 1/2, 1/3, ... do",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ],
+     "p": "pp. 174-176"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Each square number is the sum of the odd numbers up to that term. (a) Write the 7th square number. (b) Write the sum of the first seven odd numbers and find its value. (c) Which odd number must be added to your answer in (b) to get the 8th square number, and what is the 8th square number?",
+     "a": "(a) 7 x 7 = 49. (b) 1 + 3 + 5 + 7 + 9 + 11 + 13 = 49. (c) The 8th odd number, 15, is added: 49 + 15 = 64, which is 8 x 8.",
+     "s": [
+      [
+       "(a) The 7th square number is 49",
+       1
+      ],
+      [
+       "(b) 1 + 3 + 5 + 7 + 9 + 11 + 13 = 49",
+       1
+      ],
+      [
+       "(c) Add the next odd number 15 to get 64",
+       1
+      ]
+     ],
+     "p": "p. 175"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Apart from 1, which of these numbers is both a triangular number and a square number?",
+     "a": "36, because 36 = 6 x 6 and also 36 = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8, the 8th triangular number.",
+     "o": [
+      "36",
+      "16",
+      "25",
+      "49"
+     ],
+     "p": "pp. 174-175"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sum of the 5th to the 9th odd numbers is equal to 9 x 9 - 4 x 4. Reason (R): The sum of two consecutive triangular numbers is always a square number.",
+     "a": "Both A and R are true, but R is not the correct explanation of A. The 5th to 9th odd numbers are 9, 11, 13, 15, 17, with sum 65, and 9 x 9 - 4 x 4 = 81 - 16 = 65, so A is true. A follows from square numbers being sums of odd numbers (1 + 3 + ... + 17 = 81 and 1 + 3 + 5 + 7 = 16); R is a true fact about triangular numbers but does not explain A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "p": "p. 175"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Lata writes two sequences that both begin 2, 4, ... . In the first, each term is double the one before. In the second, each term is 2 more than the one before. She says: 'They start with the same two terms, so they must be the same sequence.' Check her claim by writing the next three terms of each.",
+     "a": "Her claim is wrong. Doubling gives 2, 4, 8, 16, 32; adding 2 gives 2, 4, 6, 8, 10. The third terms already differ (8 and 6), so the two sequences are different. The first few terms alone do not fix a sequence; the rule does.",
+     "s": [
+      [
+       "Doubling sequence: 2, 4, 8, 16, 32",
+       1
+      ],
+      [
+       "Adding-2 sequence: 2, 4, 6, 8, 10",
+       1
+      ],
+      [
+       "Verdict: the claim is wrong, the sequences differ from the third term on, so the rule decides the sequence",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "pp. 174-176"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Write the 7th triangular number. (b) Show that 8 times this number, plus 1, is a square number.",
+     "a": "(a) t7 = 1 + 2 + ... + 7 = 28. (b) 8 x 28 + 1 = 225 = 15 x 15, a square number.",
+     "s": [
+      [
+       "(a) t7 = 28",
+       1
+      ],
+      [
+       "(b) 8 x 28 + 1 = 225 = 15 x 15, a square number",
+       1
+      ]
+     ],
+     "p": "p. 175"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Sunil arranges coins in triangular arrays: 1 coin, then 3, then 6, then 10, and so on, each triangle having one more row than the one before. (a) Write the first eight terms of this sequence. (b) Find t1 + t2, t2 + t3, t3 + t4 and t4 + t5. What kind of numbers do you get? (c) Using this pattern, write t11 + t12 without listing the terms. (d) Sunil has 150 coins. What is the largest triangular array he can make, and how many coins are left over? (e) If instead he makes the largest possible square array from the 150 coins, how many coins are left over?",
+     "a": "(a) 1, 3, 6, 10, 15, 21, 28, 36. (b) 1 + 3 = 4, 3 + 6 = 9, 6 + 10 = 16, 10 + 15 = 25: square numbers. (c) The sum of the nth and (n + 1)th triangular numbers is (n + 1) x (n + 1), so t11 + t12 = 12 x 12 = 144 (indeed 66 + 78 = 144). (d) The triangular numbers continue 45, 55, 66, 78, 91, 105, 120, 136, 153; 136 is the largest not above 150, so he makes the 16th triangular array and 14 coins are left. (e) 12 x 12 = 144 is the largest square not above 150 (13 x 13 = 169), so 6 coins are left.",
+     "s": [
+      [
+       "(a) 1, 3, 6, 10, 15, 21, 28, 36",
+       1
+      ],
+      [
+       "(b) The sums are 4, 9, 16, 25, square numbers",
+       1
+      ],
+      [
+       "(c) t11 + t12 = 12 x 12 = 144",
+       1
+      ],
+      [
+       "(d) Largest triangular number up to 150 is 136, leaving 14 coins",
+       1
+      ],
+      [
+       "(e) Largest square up to 150 is 144, leaving 6 coins",
+       1
+      ]
+     ],
+     "p": "pp. 174-176"
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.2",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A formula that uses a term's position number n to calculate the value of that term is called",
+     "a": "an explicit rule (explicit formula) for the sequence.",
+     "o": [
+      "an explicit rule",
+      "a recursive rule",
+      "a common difference",
+      "a common ratio"
+     ],
+     "p": "pp. 176-177"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the sequence given by t_n = 6n + 1, what is the 10th term?",
+     "a": "61, since t10 = 6 x 10 + 1 = 61.",
+     "o": [
+      "61",
+      "60",
+      "67",
+      "16"
+     ],
+     "p": "p. 177"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A sequence has the explicit rule s_n = 4n - 5. (a) Write its first four terms. (b) Find s20.",
+     "a": "(a) s1 = -1, s2 = 3, s3 = 7, s4 = 11. (b) s20 = 4 x 20 - 5 = 75.",
+     "s": [
+      [
+       "(a) First four terms -1, 3, 7, 11",
+       1
+      ],
+      [
+       "(b) s20 = 4 x 20 - 5 = 75",
+       1
+      ]
+     ],
+     "p": "pp. 176-177"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A sequence has the explicit rule t_n = 10n - 3. (a) Find t1. (b) Find t2. (c) Find t15. (d) Which term of the sequence is 197? (e) Is 250 a term of the sequence? Give a reason.",
+     "a": "(a) t1 = 10 - 3 = 7. (b) t2 = 20 - 3 = 17. (c) t15 = 150 - 3 = 147. (d) 10n - 3 = 197 gives 10n = 200, n = 20, so 197 is the 20th term. (e) 10n - 3 = 250 gives 10n = 253, n = 25.3, which is not a natural number, so 250 is not a term.",
+     "s": [
+      [
+       "(a) t1 = 7",
+       1
+      ],
+      [
+       "(b) t2 = 17",
+       1
+      ],
+      [
+       "(c) t15 = 147",
+       1
+      ],
+      [
+       "(d) 10n - 3 = 197 gives n = 20, the 20th term",
+       1
+      ],
+      [
+       "(e) 10n - 3 = 250 gives n = 25.3, not a natural number, so 250 is not a term",
+       1
+      ]
+     ],
+     "p": "p. 177"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A sequence has the explicit rule u_n = 3n + 2. (a) Find u1. (b) Explain why the explicit rule lets you find u100 without first knowing u99. (c) Find u100.",
+     "a": "(a) u1 = 3 + 2 = 5. (b) The explicit rule uses only the position number n, so we substitute n = 100 directly; no earlier term is needed. (c) u100 = 3 x 100 + 2 = 302.",
+     "s": [
+      [
+       "(a) u1 = 5",
+       1
+      ],
+      [
+       "(b) The explicit rule needs only the position n, not the earlier terms",
+       1
+      ],
+      [
+       "(c) u100 = 302",
+       1
+      ]
+     ],
+     "p": "p. 177"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "At a mall car park, the nth car to enter on a day gets a token numbered 8n + 15. A token numbered 199 was given to which car?",
+     "a": "The 23rd car, since 8n + 15 = 199 gives 8n = 184 and n = 23.",
+     "o": [
+      "The 23rd car",
+      "The 24th car",
+      "The 26th car",
+      "The 22nd car"
+     ],
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 177"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The number 145 is a term of the sequence t_n = 9n + 1. Give a reason.",
+     "a": "True. Solving 9n + 1 = 145 gives 9n = 144 and n = 16, a natural number, so 145 is the 16th term.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: 9n + 1 = 145 gives n = 16, a natural number, so 145 is the 16th term",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ],
+     "p": "p. 177"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Show that no term of the sequence t_n = 5n + 3 can end in the digit 0 or the digit 5.",
+     "a": "For a natural number n, 5n is a multiple of 5, so it ends in 0 or 5. Adding 3 makes the last digit 3 or 8. So every term ends in 3 or 8, and no term ends in 0 or 5. For example t1 = 8, t2 = 13, t3 = 18.",
+     "s": [
+      [
+       "5n is a multiple of 5, so it ends in 0 or 5",
+       1
+      ],
+      [
+       "Adding 3 makes every term end in 3 or 8",
+       1
+      ],
+      [
+       "Conclusion: no term ends in 0 or 5, with a check such as 8, 13, 18",
+       1
+      ]
+     ],
+     "tags": [
+      "show_impossible"
+     ],
+     "p": "p. 177"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A bus company prints seat codes for its passengers using the explicit rule c_n = 7n + 4 for the nth passenger booked. (a) What code does the first passenger get? (b) A passenger claims the code 2026. Can that be a real code? (c) How many codes lie between 100 and 300? (d) What is the largest code below 1000?",
+     "a": "(a) c1 = 7 + 4 = 11. (b) 7n + 4 = 2026 gives 7n = 2022, n = 288.86..., not a natural number, so 2026 is not a code. (c) 7n + 4 > 100 needs n >= 14 (code 102), and 7n + 4 < 300 needs n <= 42 (code 298), so there are 42 - 14 + 1 = 29 codes. (d) 7n + 4 < 1000 gives n <= 142, so the largest code is 7 x 142 + 4 = 998.",
+     "s": [
+      [
+       "(a) c1 = 11",
+       1
+      ],
+      [
+       "(b) 7n + 4 = 2026 gives n not a natural number, so 2026 is not a code",
+       1
+      ],
+      [
+       "(c) Codes from n = 14 (102) to n = 42 (298): 29 codes",
+       1
+      ],
+      [
+       "(d) n = 142 gives the largest code below 1000, 998",
+       1
+      ]
+     ],
+     "p": "p. 177"
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A gym in Pune charges a joining fee of Rs 500 and then Rs 350 for every month of membership. The total amount a member has paid after n months is given by the explicit rule T_n = 350n + 500. A second gym nearby has no joining fee but charges Rs 400 every month, so its total after n months is 400n. Anu wants to join one of them for exactly one year. (a) Find T1. (b) Find T12. (c) After how many months has a member of the first gym paid Rs 6,800 in all? (d) After how many months have members of the two gyms paid the same total? Using this, say which gym is cheaper for Anu's one year, and by how much.",
+     "a": "(a) T1 = 350 + 500 = Rs 850. (b) T12 = 350 x 12 + 500 = Rs 4,700. (c) 350n + 500 = 6800 gives 350n = 6300, n = 18 months. (d) 350n + 500 = 400n gives 50n = 500, n = 10 months. After that the second gym costs Rs 50 a month more, so for 12 months the first gym is cheaper: Rs 4,700 against 400 x 12 = Rs 4,800, cheaper by Rs 100.",
+     "s": [
+      [
+       "(a) T1 = Rs 850",
+       1
+      ],
+      [
+       "(b) T12 = Rs 4,700",
+       1
+      ],
+      [
+       "(c) 350n + 500 = 6800 gives n = 18 months",
+       1
+      ],
+      [
+       "(d) Same total after 10 months; for 12 months the first gym is cheaper by Rs 100 (Rs 4,700 against Rs 4,800)",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ],
+     "p": "pp. 176-177"
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A sequence is given by the recursive rule t1 = 4, t_n = t_(n-1) + 7 for n >= 2. What is t3?",
+     "a": "18, since t2 = 4 + 7 = 11 and t3 = 11 + 7 = 18.",
+     "o": [
+      "18",
+      "11",
+      "25",
+      "28"
+     ],
+     "p": "p. 178"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sequence 1, 2, 3, 5, 8, 13, ..., in which each term is the sum of the previous two, was first written down explicitly and studied in the 7th century CE by",
+     "a": "Virahanka, in his work Vrttajatisamuchaya, in the context of Prakrit meter and poetry.",
+     "o": [
+      "Virahanka",
+      "Fibonacci",
+      "Aryabhata",
+      "Sierpinski"
+     ],
+     "p": "p. 179"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "What is a recursive rule for a sequence? Give one example of a recursive rule.",
+     "a": "A recursive rule gives the value of a term using the values of earlier terms. Example: t1 = 1, t_n = t_(n-1) + 3 for n >= 2, which gives 1, 4, 7, 10, ... .",
+     "s": [
+      [
+       "Definition: a rule giving a term from the earlier terms",
+       1
+      ],
+      [
+       "A correct example with a first term and a rule, such as t1 = 1, t_n = t_(n-1) + 3",
+       1
+      ]
+     ],
+     "p": "p. 178"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A sequence is given by u1 = 2 and u_n = 3u_(n-1) - 1 for n >= 2. Find (a) u2, (b) u3 and (c) u4.",
+     "a": "(a) u2 = 3 x 2 - 1 = 5. (b) u3 = 3 x 5 - 1 = 14. (c) u4 = 3 x 14 - 1 = 41.",
+     "s": [
+      [
+       "(a) u2 = 5",
+       1
+      ],
+      [
+       "(b) u3 = 14",
+       1
+      ],
+      [
+       "(c) u4 = 41",
+       1
+      ]
+     ],
+     "p": "p. 178"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements. I. To use a recursive rule, the earlier terms of the sequence must be known. II. In the Virahanka-Fibonacci sequence, each term from the third on uses the previous two terms. III. The rule t1 = 5, t_n = t_(n-1) + 2 gives the sequence 5, 10, 20, 40, ... . Which of the statements are correct?",
+     "a": "I and II only. Statement III is wrong: adding 2 each time gives 5, 7, 9, 11, ..., not 5, 10, 20, 40.",
+     "o": [
+      "I and II only",
+      "I only",
+      "II and III only",
+      "I, II and III"
+     ],
+     "p": "pp. 178-179"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A sequence is given by s1 = 2 and s_n = s_(n-1)(s_(n-1) - 1) for n >= 2. What is s4?",
+     "a": "2, because s2 = 2 x (2 - 1) = 2, and every later term repeats the same working, so every term is 2.",
+     "o": [
+      "2",
+      "6",
+      "42",
+      "0"
+     ],
+     "p": "p. 178"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Let T1 = 2, T2 = 1, T3 = 3 and T_n = T_(n-1) + T_(n-2) + T_(n-3) for n >= 4. Assertion (A): T7 = 36. Reason (R): From T4 onwards, each term of this sequence is the sum of the three terms just before it.",
+     "a": "A is false, but R is true. R is the given rule. Using it, T4 = 3 + 1 + 2 = 6, T5 = 6 + 3 + 1 = 10, T6 = 10 + 6 + 3 = 19 and T7 = 19 + 10 + 6 = 35, not 36, so A is false.",
+     "o": [
+      "A is false, but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false."
+     ],
+     "p": "pp. 179-180"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A sequence follows the recursive rule t_n = t_(n-1) + 9 for n >= 2, and its 4th term is 40. (a) Find t1 by working backwards. (b) Write the first four terms. (c) Find t6.",
+     "a": "(a) Each step back subtracts 9: t3 = 31, t2 = 22, t1 = 13. (b) 13, 22, 31, 40. (c) t5 = 49 and t6 = 58.",
+     "s": [
+      [
+       "(a) Working back from 40: t1 = 13",
+       1
+      ],
+      [
+       "(b) First four terms 13, 22, 31, 40",
+       1
+      ],
+      [
+       "(c) t6 = 58",
+       1
+      ]
+     ],
+     "tags": [
+      "reverse"
+     ],
+     "p": "p. 178"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A sequence is given by s1 = 3 and s_n = 2s_(n-1) + 1 for n >= 2. (a) Write its first five terms. (b) Add 1 to each of these terms. What pattern do you see? (c) Use the pattern to write an explicit rule for s_n. (d) Use your explicit rule to find s10. (e) Is 1000 a term of the sequence? Give a reason.",
+     "a": "(a) 3, 7, 15, 31, 63. (b) Adding 1 gives 4, 8, 16, 32, 64, the powers of 2 from 2^2 to 2^6. (c) s_n + 1 = 2^(n + 1), so s_n = 2^(n + 1) - 1. (d) s10 = 2^11 - 1 = 2048 - 1 = 2047. (e) No. s8 = 2^9 - 1 = 511 and s9 = 2^10 - 1 = 1023; the terms keep increasing, and 1000 lies between two consecutive terms, so it is not a term.",
+     "s": [
+      [
+       "(a) 3, 7, 15, 31, 63",
+       1
+      ],
+      [
+       "(b) Adding 1 gives 4, 8, 16, 32, 64, powers of 2",
+       1
+      ],
+      [
+       "(c) Explicit rule s_n = 2^(n + 1) - 1",
+       1
+      ],
+      [
+       "(d) s10 = 2047",
+       1
+      ],
+      [
+       "(e) 1000 lies between s8 = 511 and s9 = 1023, so it is not a term",
+       1
+      ]
+     ],
+     "p": "p. 178"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A village water tank holds 2000 litres on day 1. Every night half of the water in the tank is used, and every morning a pump adds 300 litres. So the amount on day n follows the recursive rule W1 = 2000, W_n = W_(n-1)/2 + 300 for n >= 2. The panchayat has a rule: if the tank holds less than 600 litres on any day, a water tanker must be called. (a) Find W2. (b) Find W3 and W4. (c) For n = 1, 2, 3, 4, find W_n - 600. What pattern do you see? (d) Will the tanker ever have to be called? Give a reason.",
+     "a": "(a) W2 = 2000/2 + 300 = 1300 litres. (b) W3 = 650 + 300 = 950 litres and W4 = 475 + 300 = 775 litres. (c) W_n - 600 is 1400, 700, 350, 175: the amount above 600 litres halves every day. (d) No. Since W_n - 600 = (W_(n-1) - 600)/2, the amount above 600 litres only halves each day and never becomes zero or negative, so the tank always holds more than 600 litres (it settles towards 600) and the tanker is never needed.",
+     "s": [
+      [
+       "(a) W2 = 1300 litres",
+       1
+      ],
+      [
+       "(b) W3 = 950 litres and W4 = 775 litres",
+       1
+      ],
+      [
+       "(c) 1400, 700, 350, 175: the amount above 600 halves each day",
+       1
+      ],
+      [
+       "(d) No: the excess over 600 halves but stays positive, so the tank never falls below 600 litres",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ],
+     "p": "p. 178"
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.4",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an arithmetic progression, the fixed number that is added to each term to get the next term is called the",
+     "a": "common difference, written d.",
+     "o": [
+      "common difference",
+      "common ratio",
+      "first term",
+      "nth term"
+     ],
+     "p": "p. 181"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the common difference of the AP 15, 12, 9, 6, ... ?",
+     "a": "-3, because each term is 3 less than the one before: 12 - 15 = -3.",
+     "o": [
+      "-3",
+      "3",
+      "15",
+      "-6"
+     ],
+     "p": "p. 181"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The sequence 6, 13, 20, 27, ... is an AP whose nth term is 7n - 1. Give a reason.",
+     "a": "True. The difference between consecutive terms is always 7, so it is an AP with a = 6 and d = 7, and t_n = 6 + (n - 1) x 7 = 7n - 1.",
+     "s": [
+      [
+       "Verdict: True",
+       1
+      ],
+      [
+       "Reason: constant difference 7, and t_n = 6 + (n - 1) x 7 = 7n - 1",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ],
+     "p": "pp. 181-182"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An AP has first term a = 7 and common difference d = 6. (a) Write its first four terms. (b) Write its recursive rule.",
+     "a": "(a) 7, 13, 19, 25. (b) t1 = 7, t_n = t_(n-1) + 6 for n >= 2.",
+     "s": [
+      [
+       "(a) 7, 13, 19, 25",
+       1
+      ],
+      [
+       "(b) t1 = 7, t_n = t_(n-1) + 6 for n >= 2",
+       1
+      ]
+     ],
+     "p": "pp. 181-183"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A school library charges a late fine on a book. If the book is returned 1 day late the fine is Rs 15, and for every extra day late the fine goes up by Rs 5. So the fines for returning a book 1, 2, 3, ... days late form an AP. Riya has kept a book for some extra days. (a) Write the fines for 1, 2, 3 and 4 days late. (b) Write the first term and the common difference of this AP. (c) Write the nth term, the fine for n days late. (d) What is the fine for a book returned 12 days late?",
+     "a": "(a) Rs 15, Rs 20, Rs 25, Rs 30. (b) a = 15 and d = 5. (c) t_n = 15 + (n - 1) x 5 = 5n + 10. (d) t12 = 5 x 12 + 10 = Rs 70.",
+     "s": [
+      [
+       "(a) 15, 20, 25, 30",
+       1
+      ],
+      [
+       "(b) a = 15, d = 5",
+       1
+      ],
+      [
+       "(c) t_n = 5n + 10",
+       1
+      ],
+      [
+       "(d) Fine for 12 days = Rs 70",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ],
+     "p": "pp. 181-183"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The first row of a school auditorium has 18 seats, and each row behind it has 3 seats more than the row in front. How many seats are there in the 15th row?",
+     "a": "60 seats, since t15 = 18 + (15 - 1) x 3 = 18 + 42 = 60.",
+     "o": [
+      "60",
+      "63",
+      "57",
+      "45"
+     ],
+     "tags": [
+      "scenario"
+     ],
+     "p": "pp. 181-183"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sequence 0.5, 1.25, 2, 2.75, ... is an arithmetic progression. Reason (R): The terms of an arithmetic progression must all be whole numbers.",
+     "a": "A is true, but R is false. The difference between consecutive terms is always 0.75, so A is an AP; R is false, because the terms of an AP can be fractions or decimals, like 1.5, 3.5, 5.5, ... in the textbook.",
+     "o": [
+      "A is true, but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false, but R is true."
+     ],
+     "p": "pp. 181-182"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "In an AP, the 5th term is 23 and the 12th term is 58. Find the common difference, the first term and the 20th term.",
+     "a": "a + 4d = 23 and a + 11d = 58. Subtracting, 7d = 35, so d = 5. Then a = 23 - 20 = 3. The 20th term is 3 + 19 x 5 = 98.",
+     "s": [
+      [
+       "Writes a + 4d = 23 and a + 11d = 58 and gets d = 5",
+       1
+      ],
+      [
+       "First term a = 3",
+       1
+      ],
+      [
+       "20th term = 3 + 19 x 5 = 98",
+       1
+      ]
+     ],
+     "p": "pp. 181-185"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the AP 40, 33, 26, 19, ... and the following statements. I. Its common difference is -7. II. Its 7th term is 2. III. The number 5 is a term of this AP. Which of the statements are correct?",
+     "a": "I and III only. d = 33 - 40 = -7, and 40 - 7(n - 1) = 5 gives n = 6, so 5 is the 6th term. Statement II is wrong: t7 = 40 + 6 x (-7) = -2, not 2.",
+     "o": [
+      "I and III only",
+      "I only",
+      "I and II only",
+      "I, II and III"
+     ],
+     "p": "pp. 181-185"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Ramesh starts a running plan. In week 1 he runs 2 km a day, and every week he runs 0.5 km a day more than in the week before. (a) Write the explicit rule t_n for the daily distance in week n. (b) How far does he run each day in week 10? (c) In which week does his daily distance first reach 10 km? (d) If the points (n, t_n) are plotted, what shape do they make, and does it rise or fall? Give a reason. (e) His friend Imran starts at 4 km a day in week 1 and adds 0.25 km a day each week. In which week do the two run the same daily distance, and what is that distance?",
+     "a": "(a) t_n = 2 + (n - 1) x 0.5 = 0.5n + 1.5. (b) t10 = 5 + 1.5 = 6.5 km. (c) 0.5n + 1.5 = 10 gives n = 17, so in week 17. (d) The points lie on a straight line, because the distances form an AP; the line rises since d = 0.5 is positive. (e) Imran's rule is 4 + (n - 1) x 0.25 = 0.25n + 3.75. Setting 0.5n + 1.5 = 0.25n + 3.75 gives 0.25n = 2.25, n = 9; both run 6 km a day in week 9.",
+     "s": [
+      [
+       "(a) t_n = 0.5n + 1.5",
+       1
+      ],
+      [
+       "(b) Week 10: 6.5 km",
+       1
+      ],
+      [
+       "(c) 0.5n + 1.5 = 10 gives week 17",
+       1
+      ],
+      [
+       "(d) Points on a straight line that rises, since the AP has d = 0.5 > 0",
+       1
+      ],
+      [
+       "(e) 0.5n + 1.5 = 0.25n + 3.75 gives week 9, at 6 km a day",
+       1
+      ]
+     ],
+     "p": "pp. 181-183"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "In an AP, the sum of the 3rd and 7th terms is 34, and the sum of the 5th and 11th terms is 58. Using a for the first term and d for the common difference, find a and d and write the first three terms of the AP.",
+     "a": "t3 + t7 = (a + 2d) + (a + 6d) = 2a + 8d = 34. t5 + t11 = (a + 4d) + (a + 10d) = 2a + 14d = 58. Subtracting, 6d = 24, so d = 4, and 2a = 34 - 32 = 2, so a = 1. The first three terms are 1, 5, 9. Check: t3 + t7 = 9 + 25 = 34 and t5 + t11 = 17 + 41 = 58.",
+     "s": [
+      [
+       "Writes 2a + 8d = 34 from the 3rd and 7th terms",
+       1
+      ],
+      [
+       "Writes 2a + 14d = 58 from the 5th and 11th terms",
+       1
+      ],
+      [
+       "Solves to get d = 4 and a = 1",
+       1
+      ],
+      [
+       "First three terms 1, 5, 9",
+       1
+      ]
+     ],
+     "p": "pp. 181-185"
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using S_n = n(n + 1)/2, what is the sum 1 + 2 + 3 + ... + 60?",
+     "a": "1830, since 60 x 61 / 2 = 1830.",
+     "o": [
+      "1830",
+      "3660",
+      "1800",
+      "3600"
+     ],
+     "p": "p. 184"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find S = 1 + 2 + ... + 25, the sum is written forwards, then backwards below it, and the two lines are added. This gives 25 pairs, each adding up to 26. What is S?",
+     "a": "325, since the two lines together give 25 x 26 = 650, which is twice S, so S = 650 / 2 = 325.",
+     "o": [
+      "325",
+      "650",
+      "625",
+      "300"
+     ],
+     "p": "p. 183"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Find S16, the sum of the first 16 natural numbers. (b) Using your answer, write S17 without using the formula again.",
+     "a": "(a) S16 = 16 x 17 / 2 = 136. (b) S17 = S16 + 17 = 136 + 17 = 153.",
+     "s": [
+      [
+       "(a) S16 = 136",
+       1
+      ],
+      [
+       "(b) S17 = 136 + 17 = 153",
+       1
+      ]
+     ],
+     "p": "p. 184"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "(a) Find S35. (b) Find S15. (c) Using (a) and (b), find 16 + 17 + 18 + ... + 35.",
+     "a": "(a) S35 = 35 x 36 / 2 = 630. (b) S15 = 15 x 16 / 2 = 120. (c) 16 + 17 + ... + 35 = S35 - S15 = 630 - 120 = 510.",
+     "s": [
+      [
+       "(a) S35 = 630",
+       1
+      ],
+      [
+       "(b) S15 = 120",
+       1
+      ],
+      [
+       "(c) S35 - S15 = 510",
+       1
+      ]
+     ],
+     "p": "pp. 184-185"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A sweet shop stacks boxes of laddoos in a triangle for Diwali: 1 box in the top row, 2 boxes in the next row, 3 in the next, and so on, with 20 rows in all. (a) How many boxes are in the 20th (bottom) row? (b) Write the total number of boxes as a sum. (c) Use the formula for the sum of the first n natural numbers to find the total. (d) Each box costs Rs 50. What is the value of all the boxes? (e) How many boxes are in the top 10 rows?",
+     "a": "(a) 20 boxes. (b) 1 + 2 + 3 + ... + 20. (c) S20 = 20 x 21 / 2 = 210 boxes. (d) 210 x 50 = Rs 10,500. (e) S10 = 10 x 11 / 2 = 55 boxes.",
+     "s": [
+      [
+       "(a) 20 boxes in the bottom row",
+       1
+      ],
+      [
+       "(b) Total = 1 + 2 + ... + 20",
+       1
+      ],
+      [
+       "(c) S20 = 210 boxes",
+       1
+      ],
+      [
+       "(d) Value = Rs 10,500",
+       1
+      ],
+      [
+       "(e) Top 10 rows: S10 = 55 boxes",
+       1
+      ]
+     ],
+     "p": "p. 184"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 231 is a triangular number. Reason (R): The nth triangular number is n(n + 1)/2.",
+     "a": "Both A and R are true, and R is the correct explanation of A: n(n + 1)/2 = 231 gives n(n + 1) = 462 = 21 x 22, so 231 is the 21st triangular number.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "p": "p. 185"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A number chart shows the numbers 1 to 50 in five rows of ten. What is the sum of the numbers in the last row, 41 to 50?",
+     "a": "455, since S50 - S40 = 1275 - 820 = 455.",
+     "o": [
+      "455",
+      "445",
+      "410",
+      "500"
+     ],
+     "tags": [
+      "scenario"
+     ],
+     "p": "p. 185"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Neha says: 'S17 = 153. If I take twice as many numbers, the sum also doubles, so S34 = 2 x 153 = 306.' Check her claim.",
+     "a": "Her claim is wrong. S34 = 34 x 35 / 2 = 595, not 306. The numbers 18 to 34 are each bigger than the numbers 1 to 17, so the second half adds 595 - 153 = 442, much more than 153; S34 is almost four times S17.",
+     "s": [
+      [
+       "Finds S34 = 595",
+       1
+      ],
+      [
+       "Verdict: the claim is wrong, since 595 is not 306",
+       1
+      ],
+      [
+       "Reason: the numbers 18 to 34 are larger and add 442, so the sum more than doubles",
+       1
+      ]
+     ],
+     "tags": [
+      "claim_check"
+     ],
+     "p": "p. 184"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A magazine has its pages numbered 1 to 64. In a maths club activity, students add up page numbers using the formula for the sum of the first n natural numbers. Every sheet of the magazine carries two consecutive page numbers, an odd page on the front and the next even page on the back. (a) Find the sum of all the page numbers from 1 to 64. (b) Find the sum of the page numbers 1 to 24. (c) Find the sum of the page numbers 25 to 64. (d) One sheet is torn out, and the page numbers left add up to 2013. Decide which two pages were on the torn sheet.",
+     "a": "(a) S64 = 64 x 65 / 2 = 2080. (b) S24 = 24 x 25 / 2 = 300. (c) S64 - S24 = 2080 - 300 = 1780. (d) The torn pages add up to 2080 - 2013 = 67. Two consecutive numbers k and k + 1 with sum 67 give k = 33, so the torn sheet carried pages 33 and 34 (odd page 33 on the front, 34 on the back).",
+     "s": [
+      [
+       "(a) S64 = 2080",
+       1
+      ],
+      [
+       "(b) S24 = 300",
+       1
+      ],
+      [
+       "(c) 25 + ... + 64 = 1780",
+       1
+      ],
+      [
+       "(d) Missing sum 67, so the torn sheet had pages 33 and 34",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ],
+     "p": "pp. 184-185"
+    }
+   ]
+  },
+  {
+   "code": "C9M-8.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the common ratio of the GP 7, 21, 63, 189, ... ?",
+     "a": "3, since 21/7 = 63/21 = 189/63 = 3.",
+     "o": [
+      "3",
+      "14",
+      "7",
+      "1/3"
+     ],
+     "p": "p. 187"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Stage 0 of the Sierpinski triangle is one black equilateral triangle. To make each new stage, every black triangle is split into four smaller triangles and the middle one is removed. How many black triangles are there at Stage 2?",
+     "a": "9, since each black triangle is replaced by three smaller ones at every stage: 1, 3, 9.",
+     "o": [
+      "9",
+      "6",
+      "4",
+      "3"
+     ],
+     "p": "p. 189"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "q": "Match each GP in Column I with its nth term in Column II. Column I: 1. 3, 6, 12, 24, ...; 2. 1, 3, 9, 27, ...; 3. 5, 25, 125, ...; 4. 3, 30, 300, .... Column II: A. 5^n; B. 3 x 10^(n-1); C. 3 x 2^(n-1); D. 3^(n-1).",
+     "a": "1-C, 2-D, 3-A, 4-B: 3 x 2^(n-1) gives 3, 6, 12; 3^(n-1) gives 1, 3, 9; 5^n gives 5, 25, 125; 3 x 10^(n-1) gives 3, 30, 300.",
+     "o": [
+      "1-C, 2-D, 3-A, 4-B",
+      "1-C, 2-A, 3-D, 4-B",
+      "1-D, 2-C, 3-A, 4-B",
+      "1-C, 2-D, 3-B, 4-A"
+     ],
+     "tags": [
+      "match"
+     ],
+     "p": "pp. 187-188"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "True or False: The sequence 80, 40, 20, 10, ... is a GP with common ratio 2. Give a reason.",
+     "a": "False. It is a GP, but each term is half of the one before: 40/80 = 20/40 = 10/20 = 1/2, so the common ratio is 1/2, not 2.",
+     "s": [
+      [
+       "Verdict: False",
+       1
+      ],
+      [
+       "Reason: the ratio of consecutive terms is 40/80 = 1/2, so r = 1/2",
+       1
+      ]
+     ],
+     "tags": [
+      "true_false"
+     ],
+     "p": "p. 187"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A poster is 81 cm tall. Each time it is photocopied on a machine set to reduce, the copy is 2/3 as tall as the sheet it was copied from, and the next copy is made from the latest copy. Find the height of (a) the 1st copy, (b) the 2nd copy, (c) the 3rd copy.",
+     "a": "(a) 81 x 2/3 = 54 cm. (b) 54 x 2/3 = 36 cm. (c) 36 x 2/3 = 24 cm.",
+     "s": [
+      [
+       "(a) 54 cm",
+       1
+      ],
+      [
+       "(b) 36 cm",
+       1
+      ],
+      [
+       "(c) 24 cm",
+       1
+      ]
+     ],
+     "p": "pp. 192-193"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a GP the 3rd term is 20 and the common ratio is 2. What is the 7th term?",
+     "a": "320, since going from the 3rd to the 7th term multiplies by 2 four times: 20 x 2^4 = 320.",
+     "o": [
+      "320",
+      "160",
+      "640",
+      "28"
+     ],
+     "p": "p. 187"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Stage 0 of the Sierpinski triangle has a black area of 1 square unit. Assertion (A): The black area at Stage 3 is 27/64 square units. Reason (R): At each stage, the black area becomes 3/4 of the black area at the stage before.",
+     "a": "Both A and R are true, and R is the correct explanation of A: multiplying by 3/4 three times gives (3/4)^3 = 27/64.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "p": "pp. 189-190"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "For the GP 5, 10, 20, 40, ... (a) write its nth term. (b) Which term of the GP is 640? (c) Is 500 a term of this GP? Give a reason.",
+     "a": "(a) t_n = 5 x 2^(n-1). (b) 5 x 2^(n-1) = 640 gives 2^(n-1) = 128 = 2^7, so n = 8: 640 is the 8th term. (c) No. 500/5 = 100, which is not a power of 2, so 500 cannot equal 5 x 2^(n-1); it lies between the consecutive terms 320 and 640.",
+     "s": [
+      [
+       "(a) t_n = 5 x 2^(n-1)",
+       1
+      ],
+      [
+       "(b) 2^(n-1) = 128 gives the 8th term",
+       1
+      ],
+      [
+       "(c) No, 100 is not a power of 2; 500 lies between the terms 320 and 640",
+       1
+      ]
+     ],
+     "p": "p. 187"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A school sends a safety message by phone. On day 1, 5 parents receive it. On each later day, every parent who received it the day before sends it to 4 new parents. (a) Write the numbers of new parents who receive it on days 1 to 4. (b) State the common ratio and write the explicit rule for day n. (c) Write the recursive rule. (d) How many new parents receive it on day 6? (e) On which day does the number of new parents receiving it first go above 1,00,000?",
+     "a": "(a) 5, 20, 80, 320. (b) r = 4, and t_n = 5 x 4^(n-1). (c) t1 = 5, t_n = 4 x t_(n-1) for n >= 2. (d) t6 = 5 x 4^5 = 5 x 1024 = 5120. (e) t8 = 5 x 4^7 = 81920, which is below 1,00,000, and t9 = 5 x 4^8 = 327680, which is above it, so on day 9.",
+     "s": [
+      [
+       "(a) 5, 20, 80, 320",
+       1
+      ],
+      [
+       "(b) r = 4 and t_n = 5 x 4^(n-1)",
+       1
+      ],
+      [
+       "(c) t1 = 5, t_n = 4t_(n-1) for n >= 2",
+       1
+      ],
+      [
+       "(d) Day 6: 5120 new parents",
+       1
+      ],
+      [
+       "(e) t8 = 81920 and t9 = 327680, so day 9",
+       1
+      ]
+     ],
+     "p": "pp. 187-188"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A patient is given a 400 mg dose of a medicine. Every hour the body removes one quarter of the medicine present, so 3/4 of it remains at the end of each hour. The amounts at the end of hours 1, 2, 3, ... therefore form a GP. The doctor's rule is that a second dose may be given only when less than 100 mg is left. (a) How much medicine is left at the end of the 1st hour? (b) Write the amounts left at the end of the 2nd and 3rd hours. (c) How much is left at the end of the 4th hour? (d) Can the second dose be given at the end of the 4th hour, or must the nurse wait? Give a reason using the 5th hour.",
+     "a": "(a) 400 x 3/4 = 300 mg. (b) 300 x 3/4 = 225 mg and 225 x 3/4 = 168.75 mg. (c) 168.75 x 3/4 = 126.5625 mg (about 126.6 mg). (d) Not at the end of the 4th hour, because 126.56 mg is not less than 100 mg. At the end of the 5th hour 126.5625 x 3/4 = 94.92 mg (about), which is below 100 mg, so the nurse must wait until the end of the 5th hour.",
+     "s": [
+      [
+       "(a) 300 mg",
+       1
+      ],
+      [
+       "(b) 225 mg and 168.75 mg",
+       1
+      ],
+      [
+       "(c) About 126.56 mg",
+       1
+      ],
+      [
+       "(d) Wait: 126.56 mg is above 100 mg, and the 5th-hour amount 94.92 mg is the first below it",
+       1
+      ]
+     ],
+     "tags": [
+      "case_study"
+     ],
+     "p": "pp. 187-193"
+    }
+   ]
+  }
+ ]
+}

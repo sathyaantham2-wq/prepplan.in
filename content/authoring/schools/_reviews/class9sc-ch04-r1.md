@@ -1,0 +1,15 @@
+VERDICT: FIX
+HIGH: 0, MEDIUM: 4, LOW: 6
+
+All 60 keys recomputed (python): every numeric answer and option key is correct; every fact checked against iesc104 pages 49-67 is on the cited page and inside IN scope. `--check` prints valid (7 concepts, 60 questions).
+
+- [MEDIUM] C9SC-4.4 #4: labelled Hard, but the true/false statement is the first sentence of p. 55 almost word for word ("average acceleration can result from change in the magnitude of velocity or change in its direction, or both"), so it is one-line recall -> relabel Easy (Understand), or make it Hard by giving a concrete case (e.g. a runner turning a corner at a steady 5 m/s) that the student has to judge.
+- [MEDIUM] Pack-wide multi_statement (C9SC-4.1 #7, C9SC-4.3 #6, C9SC-4.7 #5): all three are keyed "I and II only", with statement III false every time -> change at least one key (e.g. "I, II and III", "II and III only" or "I and III only") by rewriting a statement so the false one moves to I or II.
+- [MEDIUM] C9SC-4.6 #7 and #9: the same idea twice in one concept: initial speed, two braking accelerations, stopping distance from v^2 = u^2 + 2as for each, then compare with a fixed distance and decide (and #6 is a third braking-to-rest item) -> rewrite one, e.g. #9 to use v = u + at / s = ut + 1/2 at^2 for a speeding-up case (a vehicle joining a highway, or an auto-rickshaw starting from a signal), or a reaction-time-free car-overtaking decision.
+- [MEDIUM] C9SC-4.5 #4: repeats the existing DPS item in C9SC-4.5 ("velocity-time graph ... straight sloped line from (0 s, 4 m/s) to (10 s, 24 m/s). What is the displacement?") with only the end numbers changed, and its 4 m/s start plus rectangle+triangle method is used again in #8 of this pack -> change the setting and the method (e.g. an MCQ reading displacement from a line parallel to the time axis, or a v-t line that starts from rest, with a different starting value).
+- [LOW] C9SC-4.6 #1: cites p. 64, but v = u + at (the keyed option) is derived on p. 63 -> cite "pp. 63-64".
+- [LOW] C9SC-4.5 #8: part (e) (shape of the position-time graph) rests on p. 59, which the citation pp. 62-63 does not cover -> cite "pp. 59-63".
+- [LOW] C9SC-4.5 #3 and C9SC-4.4 #8: the stems say "as in Activity 4.3" / "As in Activity 4.2"; both items are self-contained, but the rule is never to lean on the book -> drop the activity reference.
+- [LOW] C9SC-4.4 #3, C9SC-4.4 #1, C9SC-4.7 #1: some distractors are throwaway ("Straight upward from the road", "s/m", "R") -> use chapter confusions (e.g. "Towards the centre of the road's curve", "m s", "2R" or "pi R").
+- [LOW] C9SC-4.7 #5 (statement III) and C9SC-4.7 #7: re-use the marble-in-a-ring and merry-go-round settings already used in the existing DPS C9SC-4.7 items; acceptable as they are the book's own activities, but a fresh setting would be better.
+- [LOW] C9SC-4.4 #8: labelled Hardest, but parts (a)-(c) are a conversion and three divisions and (d) is the p. 55 margin point; closer to Hard -> relabel Hard or add a data-based decision part.

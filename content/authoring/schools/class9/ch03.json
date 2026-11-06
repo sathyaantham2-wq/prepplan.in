@@ -1,0 +1,1267 @@
+{
+  "kind": "school_topup",
+  "subject": {
+    "code": "MATH9",
+    "class": 9,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 3,
+    "name": "The World of Numbers"
+  },
+  "source_code": "iemh103",
+  "concepts": [
+    {
+      "code": "C9M-3.1",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 44",
+          "q": "In which work did Brahmagupta (628 CE) define zero as the result of subtracting a number from itself, a - a = 0?",
+          "a": "The Brahmasphutasiddhanta",
+          "o": [
+            "The Brahmasphutasiddhanta",
+            "The Bakhshali Manuscript",
+            "The Lalitavistara",
+            "The Shulbasutra"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 45",
+          "q": "A farmer in Nashik takes 6 separate loans of Rs 25 each from a cooperative. Writing debts as negative numbers, his position is",
+          "a": "-150",
+          "o": [
+            "-150",
+            "150",
+            "-31",
+            "31"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "p. 45",
+          "q": "Assertion (A): (-4) x (-5) = 20.\nReason (R): By Brahmagupta's rules, the product of a debt and a fortune is a fortune.",
+          "a": "A is true but R is false.",
+          "o": [
+            "A is true but R is false.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 45-46",
+          "q": "Four partners run a stall at a village fair. In Brahmagupta's language, the stall ends the fair with a debt of Rs 96, which the partners share equally. The next week each partner earns a fortune of Rs 30 from other work. Which working gives each partner's final position?",
+          "a": "(-96) ÷ 4 + 30 = -24 + 30 = 6, so each partner has a fortune of Rs 6",
+          "o": [
+            "(-96) ÷ 4 + 30 = -24 + 30 = 6, so each partner has a fortune of Rs 6",
+            "(-96) ÷ 4 - 30 = -24 - 30 = -54, so each partner owes Rs 54",
+            "96 ÷ 4 + 30 = 24 + 30 = 54, so each partner has a fortune of Rs 54",
+            "(-96 + 30) ÷ 4 = -16.5, so each partner owes Rs 16.50"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 44",
+          "q": "(a) State Brahmagupta's rules for adding zero to a number and for multiplying a number by zero. (b) Use them to write the values of 47 + 0 and 47 x 0.",
+          "a": "(a) When zero is added to a number, the number remains unchanged (a + 0 = a); when any number is multiplied by zero, the result is zero (a x 0 = 0). (b) 47 + 0 = 47 and 47 x 0 = 0.",
+          "s": [
+            [
+              "States both rules: a + 0 = a and a x 0 = 0",
+              1
+            ],
+            [
+              "Writes 47 + 0 = 47 and 47 x 0 = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 45",
+          "q": "Using Brahmagupta's rules for debts and fortunes, find: (a) (-13) + (-9) (b) (-6) x 7 (c) (-9) x (-4).",
+          "a": "(a) A debt plus a debt is a debt: (-13) + (-9) = -22. (b) A debt times a fortune is a debt: (-6) x 7 = -42. (c) The product of two debts is a fortune: (-9) x (-4) = 36.",
+          "s": [
+            [
+              "(a) -22",
+              1
+            ],
+            [
+              "(b) -42",
+              1
+            ],
+            [
+              "(c) 36",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 45-46",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: (-8) - (-3) = -5, because removing a debt of Rs 3 from a debt of Rs 8 leaves a debt of Rs 5. Give the working that decides it.",
+          "a": "True. Subtracting a debt is the same as removing it, so (-8) - (-3) = -8 + 3 = -5: a debt of Rs 5 remains.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Shows (-8) - (-3) = -8 + 3 = -5, the debt of Rs 5 left",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 45",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Neel says, 'Multiplying an integer by a negative integer always gives a smaller number than the one you started with.' Test his claim with 6 x (-2) and with (-5) x (-2), and say whether he is right, wrong or only partly right.",
+          "a": "Partly right. 6 x (-2) = -12, which is smaller than 6, so the claim works for a positive starting number. But (-5) x (-2) = 10, which is larger than -5, because the product of two debts is a fortune. So the claim fails when the starting number is negative. (Answering 'wrong, because it is not always true' with the counter-example (-5) x (-2) = 10 is also correct.)",
+          "s": [
+            [
+              "Finds 6 x (-2) = -12, smaller than 6",
+              1
+            ],
+            [
+              "Finds (-5) x (-2) = 10, larger than -5",
+              1
+            ],
+            [
+              "Concludes partly right / not always true: true for positive starting numbers, false for negative ones (either wording, with the counter-example)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 45-46",
+          "q": "A women's self-help group in Madurai starts the month with a bank loan, so its account stands at -Rs 1,200. During the month: each of its 5 members repays Rs 180; the group then takes 3 equal seed loans of Rs 95 each; finally the bank waives (removes) 2 old debts of Rs 150 each. (a) Write the position after the repayments. (b) Write the position after the seed loans, as an integer expression. (c) Explain, using debts, why the waiver is written as - 2 x (-150) and what it does to the account. (d) Find the final position. (e) How much more must the group repay to bring its account to exactly 0?",
+          "a": "(a) -1200 + 5 x 180 = -1200 + 900 = -300. (b) -300 + 3 x (-95) = -300 - 285 = -585. (c) Each old debt is -150; removing (subtracting) two of them is - 2 x (-150) = +300, so the group becomes Rs 300 better off. (d) -585 + 300 = -285, a debt of Rs 285. (e) It must repay Rs 285, since -285 + 285 = 0.",
+          "s": [
+            [
+              "(a) -300 after the repayments",
+              1
+            ],
+            [
+              "(b) -300 + 3 x (-95) = -585",
+              1
+            ],
+            [
+              "(c) Explains that removing two debts of -150 adds 300",
+              1
+            ],
+            [
+              "(d) Final position -285",
+              1
+            ],
+            [
+              "(e) Rs 285 more to reach 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 45-46",
+          "tags": [
+            "case_study"
+          ],
+          "q": "A shopping mall in Hyderabad numbers its floors as integers: the ground floor is 0, the upper floors are 1 to 8 and the basements are -1, -2 and -3. The lift may never go below floor -3. One morning the lift starts at floor 5 and its log reads: down 7 floors, up 3 floors, down 4 floors, up 9 floors. Write 'up' as a positive integer and 'down' as a negative integer.\n(a) On which floor is the lift after the first move?\n(b) On which floor does it end after all four moves?\n(c) What is the total number of floors moved in the four trips?\n(d) Two new requests arrive at the final floor: Request P is 'down 10 floors' and Request Q is 'down 8 floors, then up 2 floors'. Which request can the lift obey under the rule? Justify with integer working.",
+          "a": "(a) 5 + (-7) = -2, the second basement. (b) -2 + 3 = 1, 1 + (-4) = -3, -3 + 9 = 6: it ends on floor 6. (c) 7 + 3 + 4 + 9 = 23 floors. (d) Request P: 6 + (-10) = -4, below -3, so it is not allowed. Request Q: 6 + (-8) = -2, then -2 + 2 = 0; the lowest floor reached is -2, which is allowed. So the lift can obey Q but not P.",
+          "s": [
+            [
+              "(a) Floor -2",
+              1
+            ],
+            [
+              "(b) Floor 6",
+              1
+            ],
+            [
+              "(c) 23 floors",
+              1
+            ],
+            [
+              "(d) P reaches -4 (not allowed), Q reaches -2 then 0 (allowed); chooses Q",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C9M-3.2",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 47",
+          "q": "A rational number is any number that can be written as p/q, where p and q are integers and q is not 0. Which of these is NOT a rational number?",
+          "a": "7/0",
+          "o": [
+            "7/0",
+            "-3/5",
+            "0/4",
+            "9"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 48",
+          "q": "Pooja pours 3/8 litre of milk and then 1/4 litre more into a jug. How much milk is in the jug?",
+          "a": "5/8 litre",
+          "o": [
+            "5/8 litre",
+            "4/12 litre",
+            "3/32 litre",
+            "7/8 litre"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 47-48",
+          "q": "Read the statements.\nStatement I: Every integer is a rational number; for example, -10 = -10/1.\nStatement II: -2/3 and 2/(-3) are the same rational number.\nStatement III: Rational numbers are closed under division, even when we divide by zero.\nWhich of the statements is/are correct?",
+          "a": "I and II only",
+          "o": [
+            "I and II only",
+            "II and III only",
+            "I only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 48",
+          "q": "Using the rule that a/b and c/d are equal when ad = bc, which pair of rational numbers is equal?",
+          "a": "-9/12 and 15/(-20)",
+          "o": [
+            "-9/12 and 15/(-20)",
+            "-9/12 and 15/20",
+            "4/6 and 6/4",
+            "3/5 and 5/7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 48",
+          "q": "(a) Find the product (4/9) × (3/8) in lowest terms. (b) Find the quotient (4/9) ÷ (3/8) in lowest terms.",
+          "a": "(a) (4/9) × (3/8) = 12/72 = 1/6. (b) (4/9) ÷ (3/8) = (4/9) × (8/3) = 32/27.",
+          "s": [
+            [
+              "(a) Product 1/6",
+              1
+            ],
+            [
+              "(b) Inverts the divisor and gets 32/27",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 47-48",
+          "q": "(a) Write -20/45 in its lowest form and name the common factor you divided by. (b) Write the integer 6 in the form p/q. (c) Write a rational number equal to 3/7 whose denominator is 28.",
+          "a": "(a) Dividing numerator and denominator by 5 gives -20/45 = -4/9. (b) 6 = 6/1. (c) 3/7 = 12/28 (multiply both by 4).",
+          "s": [
+            [
+              "(a) -4/9, dividing by 5",
+              1
+            ],
+            [
+              "(b) 6/1",
+              1
+            ],
+            [
+              "(c) 12/28",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 48",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: 2/3 x (3/4 + 1/6) can be worked out as (2/3 x 3/4) + 1/6. Check by finding both values.",
+          "a": "False. The distributive law multiplies 2/3 into BOTH terms: 2/3 x (3/4 + 1/6) = 2/3 x 3/4 + 2/3 x 1/6 = 1/2 + 1/9 = 11/18, whereas (2/3 x 3/4) + 1/6 = 1/2 + 1/6 = 2/3, which is different.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Shows the correct value 11/18 against the wrong value 2/3, naming that 2/3 must multiply both terms",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 48-50",
+          "q": "Find the rational number x for which (2/3)x + 1/4 = (1/2)x + 5/6, and check your answer.",
+          "a": "Collect the x terms: (2/3)x - (1/2)x = 5/6 - 1/4, so (1/6)x = 7/12 and x = 7/12 x 6 = 7/2. Check: left side 2/3 x 7/2 + 1/4 = 7/3 + 1/4 = 31/12; right side 1/2 x 7/2 + 5/6 = 7/4 + 5/6 = 31/12. Both sides agree.",
+          "s": [
+            [
+              "Collects terms to get (1/6)x = 7/12",
+              1
+            ],
+            [
+              "Finds x = 7/2",
+              1
+            ],
+            [
+              "Checks that both sides equal 31/12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 4,
+          "p": "p. 48",
+          "q": "A dairy in Anand has a can holding 13 1/2 kg of ghee. It fills the ghee into small jars that hold 3/4 kg each. (a) Write 13 1/2 as an improper fraction. (b) How many jars can be filled from the can? (c) How much ghee goes into 7 of these jars? (d) After 7 jars are filled, how much ghee is left in the can?",
+          "a": "(a) 13 1/2 = 27/2. (b) 27/2 / 3/4 = 27/2 x 4/3 = 18 jars. (c) 7 x 3/4 = 21/4 = 5 1/4 kg. (d) 27/2 - 21/4 = 54/4 - 21/4 = 33/4 = 8 1/4 kg.",
+          "s": [
+            [
+              "(a) 27/2",
+              1
+            ],
+            [
+              "(b) 18 jars",
+              1
+            ],
+            [
+              "(c) 21/4 kg (5 1/4 kg)",
+              1
+            ],
+            [
+              "(d) 33/4 kg (8 1/4 kg) left",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 48",
+          "q": "A farmer in Punjab owns a field of 7 1/2 acres. He sows 2/5 of the field with wheat. He sows 1/3 of the REST with mustard. The land that is still left is shared equally among his 3 children for vegetables. (a) Find the area under wheat. (b) Find the area left after the wheat is sown. (c) Find the area under mustard. (d) Find the land still left after the mustard. (e) Find each child's share, and check that all the parts add up to the whole field.",
+          "a": "(a) 2/5 x 15/2 = 3 acres. (b) 15/2 - 3 = 9/2 = 4 1/2 acres. (c) 1/3 x 9/2 = 3/2 = 1 1/2 acres. (d) 9/2 - 3/2 = 3 acres. (e) 3 / 3 = 1 acre each. Check: 3 + 3/2 + 3 x 1 = 15/2 = 7 1/2 acres.",
+          "s": [
+            [
+              "(a) Wheat 3 acres",
+              1
+            ],
+            [
+              "(b) 9/2 acres left",
+              1
+            ],
+            [
+              "(c) Mustard 3/2 acres (one third of the rest, not of the whole)",
+              1
+            ],
+            [
+              "(d) 3 acres still left",
+              1
+            ],
+            [
+              "(e) 1 acre per child, with the check 3 + 3/2 + 3 = 15/2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C9M-3.3",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 51",
+          "q": "Between which two consecutive integers does 17/5 lie on the number line?",
+          "a": "3 and 4",
+          "o": [
+            "3 and 4",
+            "4 and 5",
+            "17 and 18",
+            "0 and 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 51",
+          "q": "The absolute value |-9/4| is",
+          "a": "9/4",
+          "o": [
+            "9/4",
+            "-9/4",
+            "4/9",
+            "0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "p": "pp. 50-51",
+          "tags": [
+            "match"
+          ],
+          "q": "Match each rational number in Column I with the place where it lies on the number line in Column II.\nColumn I: 1. 7/3  2. -5/2  3. 3/8  4. -1/6\nColumn II: a. between 2 and 3  b. between -3 and -2  c. between 0 and 1  d. between -1 and 0",
+          "a": "1-a, 2-b, 3-c, 4-d",
+          "o": [
+            "1-a, 2-b, 3-c, 4-d",
+            "1-a, 2-d, 3-c, 4-b",
+            "1-b, 2-a, 3-c, 4-d",
+            "1-c, 2-b, 3-a, 4-d"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 52",
+          "q": "(a) Find the distance between -2 and 3/4 on the number line. (b) Find the average of -2 and 3/4, which is a rational number lying between them.",
+          "a": "(a) |-2 - 3/4| = |-11/4| = 11/4. (b) (-2 + 3/4) / 2 = (-5/4) / 2 = -5/8.",
+          "s": [
+            [
+              "(a) Distance 11/4",
+              1
+            ],
+            [
+              "(b) Average -5/8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 50-51",
+          "q": "(a) To mark 5/6 on the number line, into how many equal parts do you divide the interval from 0 to 1? (b) How many parts do you then move from 0, and in which direction? (c) Write -13/6 as a mixed number and say between which two integers it lies.",
+          "a": "(a) 6 equal parts. (b) Move 5 parts to the right of 0, because 5/6 is positive. (c) -13/6 = -2 1/6, so it lies between -3 and -2.",
+          "s": [
+            [
+              "(a) 6 equal parts",
+              1
+            ],
+            [
+              "(b) 5 parts to the right of 0",
+              1
+            ],
+            [
+              "(c) -2 1/6, between -3 and -2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "p. 52",
+          "q": "Assertion (A): There is a rational number with denominator 60 that lies between -1/5 and -1/6.\nReason (R): The distance between two rational numbers a and b on the number line is |a - b|.",
+          "a": "Both A and R are true, but R is not the correct explanation of A.",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 52",
+          "q": "Which set contains three rational numbers that ALL lie strictly between -1/3 and 1/2?",
+          "a": "-1/4, 0, 1/3",
+          "o": [
+            "-1/4, 0, 1/3",
+            "-1/2, 0, 1/4",
+            "-1/3, 0, 1/2",
+            "0, 1/2, 2/3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 51",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: |x| = x for every rational number x. Justify with an example.",
+          "a": "False. It holds only when x is positive or zero. For a negative number the absolute value is its positive value, e.g. |-2/5| = 2/5, which is not equal to -2/5.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Gives a negative example such as |-2/5| = 2/5 not equal to -2/5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 51-52",
+          "tags": [
+            "case_study"
+          ],
+          "q": "A water-supply engineer in Lucknow fits pressure sensors on a vertical pipe that runs from an underground tank up to a rooftop tank. Heights are measured in metres from ground level, which is 0, with up as positive. Sensor A is at -11/4 m, Sensor B is at 3/2 m and Sensor C is at 13/4 m. The maker's rule is that no two sensors on the pipe may be less than 1 m apart.\n(a) Find the distance between Sensor A and Sensor B.\n(b) Which of the three sensors is nearest to ground level? Use absolute values.\n(c) A sensor H is to be fitted exactly halfway between A and B. Find its height.\n(d) The engineer now wants one more sensor exactly halfway between A and H. Does this obey the 1 m rule? Would a further sensor halfway between A and that new sensor also obey it? Justify with numbers.",
+          "a": "(a) |-11/4 - 3/2| = |-17/4| = 17/4 m. (b) |-11/4| = 11/4, |3/2| = 3/2 = 6/4, |13/4| = 13/4, so B is nearest to ground level. (c) H = (-11/4 + 3/2) / 2 = (-5/4) / 2 = -5/8 m. (d) A to H is |-11/4 - (-5/8)| = 17/8 m, so a sensor halfway between them is 17/16 m from each, which is more than 1 m: allowed. A further sensor halfway between A and that sensor would be 17/32 m from each, less than 1 m: not allowed.",
+          "s": [
+            [
+              "(a) 17/4 m",
+              1
+            ],
+            [
+              "(b) B is nearest (3/2 against 11/4 and 13/4)",
+              1
+            ],
+            [
+              "(c) H at -5/8 m",
+              1
+            ],
+            [
+              "(d) 17/16 m is allowed; 17/32 m breaks the rule",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 52",
+          "tags": [
+            "reverse"
+          ],
+          "q": "Find two rational numbers whose distance apart on the number line is 5/6 and whose average is -1/4. Check both conditions.",
+          "a": "If the numbers are a and b with a > b, then a + b = 2 x (-1/4) = -1/2 and a - b = 5/6. Adding, 2a = 1/3, so a = 1/6; then b = -1/2 - 1/6 = -2/3. Check: |1/6 - (-2/3)| = 5/6 and (1/6 + (-2/3)) / 2 = -1/4.",
+          "s": [
+            [
+              "Writes a + b = -1/2 and a - b = 5/6",
+              1
+            ],
+            [
+              "Finds a = 1/6 and b = -2/3",
+              1
+            ],
+            [
+              "Checks the distance 5/6 and the average -1/4",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C9M-3.4",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 53",
+          "q": "Who gave the first proof that √2 is irrational?",
+          "a": "Hippasus, a member of the Pythagorean school",
+          "o": [
+            "Hippasus, a member of the Pythagorean school",
+            "Baudhayana, in his Shulbasutra",
+            "Lambert, in 1761",
+            "Madhava of Sangamagrama"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 53-56",
+          "q": "Which of these numbers is irrational?",
+          "a": "√7",
+          "o": [
+            "√7",
+            "√16",
+            "22/7",
+            "3.1416"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 53-56",
+          "q": "Read the statements.\nStatement I: Baudhayana's Shulbasutra, composed around 800 BCE, was a manual for constructing geometric fire altars.\nStatement II: Mādhava of Sangamagrama found an exact formula for π in the form of a single fraction.\nStatement III: Hippasus, who proved that √2 is irrational, was a member of the Pythagorean school (c. 400 BCE).\nWhich of the statements is/are correct?",
+          "a": "I and III only",
+          "o": [
+            "I and III only",
+            "I and II only",
+            "II only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 53-56",
+          "q": "(a) What is an irrational number? (b) Name two irrational numbers that appear in this chapter.",
+          "a": "(a) A number on the number line that cannot be written as a ratio p/q of two integers (q not 0). (b) For example √2 and π (also √3, √5 or √10).",
+          "s": [
+            [
+              "(a) Cannot be written as p/q with integers p, q and q not 0",
+              1
+            ],
+            [
+              "(b) Two correct examples such as √2 and π",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 55-56",
+          "q": "On a number line with origin O, Sana marks OA = 4 units along the line. At A she draws a perpendicular and marks AB = 1 unit on it, then joins O to B. With O as centre and OB as radius she draws an arc that cuts the number line at P, to the right of O. (a) Which theorem gives the length OB? (b) Find OB². (c) Find OB. (d) Which number does P represent? (e) Between which two consecutive integers does P lie?",
+          "a": "(a) The Baudhayana-Pythagoras theorem (OAB is right-angled at A). (b) OB² = 4² + 1² = 17. (c) OB = √17 units. (d) OP = OB, so P represents √17. (e) 4² = 16 < 17 < 25 = 5², so P lies between 4 and 5.",
+          "s": [
+            [
+              "(a) Names the Baudhayana-Pythagoras theorem",
+              1
+            ],
+            [
+              "(b) OB² = 17",
+              1
+            ],
+            [
+              "(c) OB = √17",
+              1
+            ],
+            [
+              "(d) P represents √17",
+              1
+            ],
+            [
+              "(e) Between 4 and 5, since 16 < 17 < 25",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 53",
+          "q": "A rectangular fire altar has sides of 1 unit and 3 units. Its diagonal is",
+          "a": "√10 units, an irrational number",
+          "o": [
+            "√10 units, an irrational number",
+            "4 units, a natural number",
+            "√10 units, a rational number since 10 is natural",
+            "10 units, a rational number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 53-55",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: The square root of every natural number is irrational, just like √2. Justify with an example.",
+          "a": "False. Some natural numbers are perfect squares, and their square roots are natural numbers, which are rational: √9 = 3 = 3/1 and √16 = 4.",
+          "s": [
+            [
+              "States False",
+              1
+            ],
+            [
+              "Gives a perfect-square counter-example such as √9 = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "pp. 54-55",
+          "q": "Assertion (A): In the proof that √2 is irrational, we assume √2 = p/q with p/q in its simplest form.\nReason (R): The contradiction in the proof comes from finding that p and q share the factor 2, which simplest form forbids.",
+          "a": "Both A and R are true, and R is the correct explanation of A.",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 52-55",
+          "q": "Hari tries to trap √2 between fractions. He knows 1 < √2 < 2 and starts with the fractions 7/5 and 3/2. (a) Square 7/5 and 3/2 and show that √2 lies between them. (b) Find the average m of 7/5 and 3/2. Is m² more or less than 2, and so which half of the interval holds √2? (c) Find the average of 7/5 and m, and decide again whether its square is above or below 2. (d) Hari says, 'If I keep going long enough, one of my averages will be exactly √2.' Explain why he is wrong.",
+          "a": "(a) (7/5)² = 49/25 = 1.96 < 2 and (3/2)² = 9/4 = 2.25 > 2, so 7/5 < √2 < 3/2. (b) m = (7/5 + 3/2)/2 = 29/20 = 1.45; m² = 841/400 = 2.1025 > 2, so √2 lies between 7/5 and 29/20. (c) (7/5 + 29/20)/2 = 57/40 = 1.425; (57/40)² = 3249/1600 = 2.030625 > 2, so √2 lies between 7/5 and 57/40. (d) Every average of two rational numbers is rational, but √2 has been proved irrational (by contradiction), so no average, however many steps he takes, can equal √2 exactly; he only gets closer.",
+          "s": [
+            [
+              "(a) 49/25 < 2 < 9/4",
+              1
+            ],
+            [
+              "(b) m = 29/20 with m² = 841/400 > 2",
+              1
+            ],
+            [
+              "(c) 57/40 with square 3249/1600 > 2",
+              1
+            ],
+            [
+              "(d) Averages stay rational while √2 is irrational, so none equals it",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 52-55",
+          "tags": [
+            "claim_check"
+          ],
+          "q": "Aman finds 1.41² = 1.9881 and 1.42² = 2.0164. He says, 'So √2 lies between 1.41 and 1.42. There are infinitely many rational numbers between 1.41 and 1.42, so √2 must be one of them.' Is he right? Explain.",
+          "a": "No. His first step is right: since 1.9881 < 2 < 2.0164, √2 lies between 1.41 and 1.42, and there are indeed infinitely many rationals in that interval (they are dense). But √2 has been proved irrational, so it cannot equal any p/q. Infinitely many rationals between two numbers do not fill every point; √2 sits in one of the gaps the rationals leave.",
+          "s": [
+            [
+              "Accepts that the squares place √2 between 1.41 and 1.42",
+              1
+            ],
+            [
+              "States that √2 is irrational, so it is not any rational number",
+              1
+            ],
+            [
+              "Concludes he is wrong: density does not mean the rationals fill every point",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C9M-3.5",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 57",
+          "q": "The decimal expansion of 7/8 is",
+          "a": "0.875",
+          "o": [
+            "0.875",
+            "0.78",
+            "8.75",
+            "0.785"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 61",
+          "q": "The decimal expansion of an irrational number such as √2 or π",
+          "a": "never ends and never repeats",
+          "o": [
+            "never ends and never repeats",
+            "ends after many digits",
+            "repeats a long block of digits",
+            "ends in repeating 9s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "p": "p. 57",
+          "tags": [
+            "match"
+          ],
+          "q": "Match each fraction in Column I with its decimal expansion in Column II.\nColumn I: 1. 9/20  2. 2/9  3. 5/16  4. 7/11\nColumn II: a. 0.3125  b. 0.45  c. 0.636363...  d. 0.222...",
+          "a": "1-b, 2-d, 3-a, 4-c",
+          "o": [
+            "1-b, 2-d, 3-a, 4-c",
+            "1-b, 2-c, 3-a, 4-d",
+            "1-a, 2-d, 3-b, 4-c",
+            "1-d, 2-b, 3-a, 4-c"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 58",
+          "q": "(a) Write the prime factorisation of 50. (b) Without long division, say whether 11/50 has a terminating decimal, and write that decimal.",
+          "a": "(a) 50 = 2 × 5². (b) The denominator has only the prime factors 2 and 5, so the decimal terminates: 11/50 = 22/100 = 0.22.",
+          "s": [
+            [
+              "(a) 50 = 2 × 5²",
+              1
+            ],
+            [
+              "(b) Terminates because the only prime factors are 2 and 5; 0.22",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 58",
+          "q": "Without long division, decide whether each decimal terminates or repeats, giving a one-line reason: (a) 7/32 (b) 5/24 (c) 21/28.",
+          "a": "(a) 32 = 2^5, only the factor 2, so it terminates (0.21875). (b) 24 = 2³ × 3 has the factor 3 and 5/24 is in lowest terms, so it repeats. (c) 21/28 = 3/4 in lowest terms and 4 = 2², so it terminates (0.75).",
+          "s": [
+            [
+              "(a) Terminates: 32 = 2^5",
+              1
+            ],
+            [
+              "(b) Repeats: 24 has the prime factor 3",
+              1
+            ],
+            [
+              "(c) Reduces to 3/4 first, then terminates",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "p. 58",
+          "q": "Assertion (A): The decimal expansion of 1/12 does not terminate.\nReason (R): The denominator 12 is not a power of 10.",
+          "a": "Both A and R are true, but R is not the correct explanation of A.",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 58",
+          "q": "A fraction in lowest terms has the denominator 2^5 × 5². After how many decimal places does its decimal expansion end?",
+          "a": "5",
+          "o": [
+            "5",
+            "2",
+            "7",
+            "10"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 58",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: When 1 is divided by 9, the remainder at every step of the long division is 1, so 1/9 = 0.111... with the digit 1 repeating. Explain.",
+          "a": "True. 10 ÷ 9 gives digit 1 and remainder 1; that remainder brings down 10 again, so the same step repeats for ever and the digit 1 repeats: 1/9 = 0.111...",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Explains that the remainder 1 returns at every step, so the division loops and 1 repeats",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 58",
+          "q": "The book makes a denominator a power of 10 to show a decimal terminates. (a) Write 3/40 with denominator 1000 and give its decimal. (b) Write 7/250 with denominator 1000 and give its decimal. (c) Write 9/64 with a power of 10 as the denominator and give its decimal. (d) For a fraction in lowest terms with denominator 2^a × 5^b, explain how many decimal places the decimal has. (e) Use your rule to predict the number of decimal places of 1/3200, then check by writing the decimal.",
+          "a": "(a) 40 = 2³ × 5, so multiply by 5²: 3/40 = 75/1000 = 0.075. (b) 250 = 2 × 5³, so multiply by 2²: 7/250 = 28/1000 = 0.028. (c) 64 = 2^6, so multiply by 5^6 = 15625: 9/64 = 140625/1000000 = 0.140625. (d) We multiply by enough 2s or 5s to make both powers equal to the larger of a and b, so the denominator becomes 10 to that power and the decimal has that many places (the larger of a and b). (e) 3200 = 2^7 × 5², so 7 places: 1/3200 = 3125/10000000 = 0.0003125.",
+          "s": [
+            [
+              "(a) 75/1000 = 0.075",
+              1
+            ],
+            [
+              "(b) 28/1000 = 0.028",
+              1
+            ],
+            [
+              "(c) 140625/1000000 = 0.140625",
+              1
+            ],
+            [
+              "(d) Number of places is the larger of a and b, with the reason",
+              1
+            ],
+            [
+              "(e) 3200 = 2^7 × 5², predicts 7 places and checks 0.0003125",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 57-58",
+          "tags": [
+            "case_study"
+          ],
+          "q": "A school science lab in Bhopal has a digital dispenser that pours only in steps of 0.125 mL: it can pour 0.125 mL, 0.25 mL, 0.375 mL and so on, but nothing in between. The teacher has 7 mL of an indicator solution and wants to share it equally among the class's groups. Depending on the day's activity, the class works in 4, 6, 8, 10 or 12 groups.\n(a) For which of these numbers of groups is each share a terminating decimal?\n(b) Explain, using prime factors, why the shares for 6 and for 12 groups never terminate.\n(c) Which of the terminating shares can the dispenser pour exactly?\n(d) The teacher prefers as many groups as possible, so that each group is small. Which number of groups should she choose? Justify.",
+          "a": "(a) The shares are 7/4, 7/6, 7/8, 7/10 and 7/12. In lowest terms, 4 = 2², 8 = 2³ and 10 = 2 × 5 have only the prime factors 2 and 5, so the shares for 4, 8 and 10 groups terminate: 1.75, 0.875 and 0.7 mL. (b) 6 = 2 × 3 and 12 = 2² × 3 contain the prime factor 3, and 7/6 and 7/12 are in lowest terms, so they repeat: 1.1666... and 0.58333... (c) A share can be poured only if it is a whole number of steps of 0.125 = 1/8. 1.75 = 14 × 0.125 and 0.875 = 7 × 0.125, so the shares for 4 and 8 groups can be poured; 0.7 ÷ 0.125 = 5.6 is not a whole number, so the share for 10 groups cannot. (d) 8 groups: it is the largest number whose share (0.875 mL) the dispenser can pour exactly; 10 groups need 5.6 steps and 12 groups give a repeating decimal.",
+          "s": [
+            [
+              "(a) 4, 8 and 10 groups, with 1.75, 0.875 and 0.7",
+              1
+            ],
+            [
+              "(b) 6 and 12 contain the prime factor 3",
+              1
+            ],
+            [
+              "(c) Only 1.75 (14 steps) and 0.875 (7 steps); 0.7 is 5.6 steps",
+              1
+            ],
+            [
+              "(d) Chooses 8 groups, ruling out 10 and 12 with reasons",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C9M-3.6",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 59",
+          "q": "The terminating decimal 0.48, written as p/q in lowest terms, is",
+          "a": "12/25",
+          "o": [
+            "12/25",
+            "6/25",
+            "48/99",
+            "4/8"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 59",
+          "q": "The pure repeating decimal 0.777... (the 7 repeats), written as p/q, is",
+          "a": "7/9",
+          "o": [
+            "7/9",
+            "7/10",
+            "77/100",
+            "7/99"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 59-61",
+          "q": "Read the statements.\nStatement I: 142857 × 7 = 142857, so the six digits of 1/7 simply repeat themselves.\nStatement II: In a pure repeating decimal, the repeating digits begin immediately after the decimal point.\nStatement III: 0.5222... (only the 2 repeats) is a pure repeating decimal.\nWhich of the statements is/are correct?",
+          "a": "II only",
+          "o": [
+            "II only",
+            "I and II only",
+            "II and III only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 59",
+          "q": "Write each terminating decimal as p/q in lowest terms: (a) 0.375 (b) 2.6.",
+          "a": "(a) 0.375 = 375/1000 = 3/8. (b) 2.6 = 26/10 = 13/5.",
+          "s": [
+            [
+              "(a) 3/8",
+              1
+            ],
+            [
+              "(b) 13/5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 58-60",
+          "tags": [
+            "case_study"
+          ],
+          "q": "Ravi helps at his uncle's grocery shop in Indore. The digital scale shows weights as decimals, and Ravi copies three readings into the notebook as fractions so that the bill can be checked. Reading A is 0.25 kg. Reading B is 0.444... kg, where the 4 repeats for ever. Reading C is 1.0666... kg, where only the 6 repeats.\n(a) Which of the three readings is a terminating decimal, and which is a general repeating decimal?\n(b) Write reading A as p/q in lowest terms.\n(c) Write reading B as p/q.\n(d) Write reading C as p/q in lowest terms.",
+          "a": "(a) A (0.25) terminates; C (1.0666...) is a general repeating decimal, because the digit 0 after the point does not repeat but the 6 does (B is pure repeating). (b) 0.25 = 25/100 = 1/4. (c) Let x = 0.444...; 10x = 4.444...; 9x = 4, so x = 4/9. (d) Let x = 1.0666...; 10x = 10.666... and 100x = 106.666...; 90x = 96, so x = 96/90 = 16/15.",
+          "s": [
+            [
+              "(a) A terminates; C is general repeating",
+              1
+            ],
+            [
+              "(b) 1/4",
+              1
+            ],
+            [
+              "(c) 4/9",
+              1
+            ],
+            [
+              "(d) 16/15",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "pp. 59-60",
+          "q": "Assertion (A): 0.3888... (only the 8 repeats) is equal to 7/18.\nReason (R): 0.3888... is a pure repeating decimal.",
+          "a": "A is true but R is false.",
+          "o": [
+            "A is true but R is false.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 60",
+          "q": "Leela converts 0.4272727... (the block 27 repeats after the digit 4) into p/q. In lowest terms she should get",
+          "a": "47/110",
+          "o": [
+            "47/110",
+            "427/999",
+            "427/990",
+            "423/999"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 61",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or False: 6/7 = 0.857142857142..., and its repeating block 857142 is the cyclic number 142857 with its digits shifted around the circle. Check.",
+          "a": "True. 6/7 = 0.857142857142..., and 142857 × 6 = 857142: the same six digits 1, 4, 2, 8, 5, 7 in the same cyclic order, starting from 8 instead of 1.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Shows 142857 × 6 = 857142 and that the digits are the same cycle shifted",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 59-61",
+          "q": "Convert x = 0.18405405405... (the digits 18 do not repeat; the block 405 repeats) into p/q in lowest terms. (a) State the number of non-repeating and repeating digits. (b) Write the two multiples of x that you will subtract, with their decimals. (c) Subtract and solve for x, giving the fraction in lowest terms. (d) Check your answer by turning the fraction back into a decimal.",
+          "a": "(a) 2 non-repeating digits (18) and 3 repeating digits (405). (b) 100x = 18.405405... and 100000x = 18405.405405... (c) 99900x = 18405 - 18 = 18387, so x = 18387/99900 = 681/3700 (dividing by 27). (d) 681 ÷ 3700 = 0.18405405..., which matches.",
+          "s": [
+            [
+              "(a) 2 non-repeating and 3 repeating digits",
+              1
+            ],
+            [
+              "(b) 100x and 100000x with their decimals",
+              1
+            ],
+            [
+              "(c) 99900x = 18387, x = 681/3700",
+              1
+            ],
+            [
+              "(d) Checks 681/3700 = 0.18405405...",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 59-60",
+          "q": "Four decimals look almost the same: a = 0.666... (6 repeats), b = 0.65, c = 0.656565... (65 repeats) and d = 0.6555... (only the 5 repeats). (a) Write each as p/q in lowest terms. (b) Arrange the four numbers in increasing order. (c) Which two of them are closest together? Find the difference between them as a fraction. (d) Find a rational number between these two closest numbers, as a fraction in lowest terms. (e) Kiran says, 'a, c and d all go on for ever, so they cannot be compared exactly.' Use your work to say why he is wrong.",
+          "a": "(a) a = 6/9 = 2/3; b = 65/100 = 13/20; c = 65/99; d: 10d = 6.555..., 100d = 65.555..., 90d = 59, so d = 59/90. (b) b = 0.65 < d = 0.6555... < c = 0.6565... < a = 0.666..., so 13/20 < 59/90 < 65/99 < 2/3. (c) c and d: 65/99 - 59/90 = 650/990 - 649/990 = 1/990. (d) Their average (59/90 + 65/99)/2 = (649/990 + 650/990)/2 = 1299/1980 = 433/660. (e) Each repeating decimal is a rational number p/q, so they can be written with a common denominator and compared exactly, as in (b) and (c).",
+          "s": [
+            [
+              "(a) 2/3, 13/20, 65/99 and 59/90",
+              1
+            ],
+            [
+              "(b) 13/20 < 59/90 < 65/99 < 2/3",
+              1
+            ],
+            [
+              "(c) c and d, difference 1/990",
+              1
+            ],
+            [
+              "(d) 433/660 (or any correct rational between them)",
+              1
+            ],
+            [
+              "(e) Repeating decimals are rational, so they compare exactly",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

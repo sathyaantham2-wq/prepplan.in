@@ -1,0 +1,1281 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "The Mathematics of Maybe: Introduction to Probability"
+ },
+ "source_code": "iemh107",
+ "concepts": [
+  {
+   "code": "C9M-7.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 157",
+     "q": "On the probability scale, which value stands for an event that is certain to happen?",
+     "a": "1",
+     "o": [
+      "1",
+      "0",
+      "0.5",
+      "100"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 158",
+     "q": "An ordinary die with faces 1 to 6 is rolled once. Which of these events is impossible?",
+     "a": "Getting a 7",
+     "o": [
+      "Getting a 7",
+      "Getting an even number",
+      "Getting a 6",
+      "Getting a number less than 7"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 157",
+     "q": "A weather report says the probability of rain in Shimla tomorrow is 0.2. Which phrase best describes rain tomorrow?",
+     "a": "Less likely",
+     "o": [
+      "Less likely",
+      "Certain",
+      "More likely",
+      "Even chance"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 157-159",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each probability in Column I with the word that describes it in Column II.\nColumn I: 1. 0  2. 0.5  3. 0.85  4. 1\nColumn II: a. More likely  b. Certain  c. Impossible  d. Even chance",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-b, 2-d, 3-a, 4-c",
+      "1-d, 2-c, 3-a, 4-b"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 157-158",
+     "q": "A fair die is rolled once. Which event lies strictly between 'even chance' and 'certain' on the probability scale?",
+     "a": "The die shows a number greater than 2",
+     "o": [
+      "The die shows a number greater than 2",
+      "The die shows an odd number",
+      "The die shows a 6",
+      "The die shows a number less than 7"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 157",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: The probability of an event can be 1.2 if the event is very, very likely. Give a reason.",
+     "a": "False. Probability is measured on a scale from 0 to 1, so no event can have a probability greater than 1; a certain event has probability 1.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Gives the reason that probability always lies from 0 to 1, with 1 for a certain event",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 156",
+     "q": "Say whether each of these is a random experiment, giving a reason for each. (a) Tossing a coin to decide which cricket team bats first. (b) Letting go of a stone held above the ground and noting whether it falls down. (c) Picking one slip, without looking, from a box holding the names of all 40 students of a class.",
+     "a": "(a) Random: the outcomes (heads, tails) are known but which one will come up cannot be predicted. (b) Not random: the stone always falls down, so the result is known in advance. (c) Random: any of the 40 names could be picked and we cannot know in advance which one.",
+     "s": [
+      [
+       "(a) Random, with the reason that the result cannot be predicted",
+       1
+      ],
+      [
+       "(b) Not random, because the result is known in advance",
+       1
+      ],
+      [
+       "(c) Random, because any one of the 40 names could come up",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 157",
+     "q": "Assertion (A): If the probability that the morning ferry at Alappuzha leaves on time is 7/12, the ferry is more likely than not to leave on time.\nReason (R): On the probability scale, 7/12 lies closer to 1 than to 0.5.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 157-158",
+     "q": "Look at four events. P: a fair die shows a number less than 3. Q: a fair coin shows tails. R: a sweet picked without looking from a jar of 10 sweets, 9 of them orange, is orange. S: a fair die shows 0. (a) Write the probability of each event. (b) Arrange the events from least likely to most likely.",
+     "a": "(a) P = 2/6 = 1/3, Q = 1/2, R = 9/10, S = 0. (b) S, P, Q, R.",
+     "s": [
+      [
+       "(a) Gives 1/3, 1/2, 9/10 and 0",
+       1
+      ],
+      [
+       "(b) Orders them S, P, Q, R",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 155-157",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Arjun says: 'Rain tomorrow is not a random event, because the weather office can tell us that its probability is 0.7.' Is Arjun right? Explain.",
+     "a": "No. Rain tomorrow is random: we know the possible outcomes (rain or no rain) but cannot say in advance which one will happen, because rain depends on many atmospheric factors. A probability of 0.7 only measures how likely rain is, estimated from data; since 0.7 is less than 1, rain is not certain. Giving a probability does not remove the randomness.",
+     "s": [
+      [
+       "States that Arjun is wrong",
+       1
+      ],
+      [
+       "Explains that the outcomes are known but which one occurs cannot be predicted",
+       1
+      ],
+      [
+       "Explains that 0.7 measures likelihood and is less than 1, so rain is not certain",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 157-159",
+     "q": "At a school sports day, four events are discussed. (i) The day after Friday will be Saturday. (ii) A runner will finish the 100 m race in 0 seconds. (iii) One slip drawn without looking from a box of 30 relay slips, 15 of them from Red House, is a Red House slip. (iv) A fair die rolled for the lucky-number prize shows 6. (a) Give a word (impossible, less likely, even chance, more likely, certain) and a probability for events (i) and (ii). (b) Do the same for events (iii) and (iv). (c) The organisers want the lucky-number prize to be more likely than not, but not certain. Suggest a new winning rule for the same die and give its probability. (d) Justify that your rule meets the aim.",
+     "a": "(a) (i) Certain, 1. (ii) Impossible, 0. (b) (iii) Even chance, 15/30 = 1/2. (iv) Less likely, 1/6. (c) One possible rule: the prize is won if the die shows 3 or more; the probability is 4/6 = 2/3. (d) 2/3 is greater than 1/2, so winning is more likely than not. Any rule with 4 or 5 winning faces (probability 2/3 or 5/6) works; 6 winning faces would make the prize certain, which is not allowed.",
+     "s": [
+      [
+       "(a) Certain with 1, and impossible with 0",
+       1
+      ],
+      [
+       "(b) Even chance with 1/2, and less likely with 1/6",
+       1
+      ],
+      [
+       "(c) Gives a rule with 4 or 5 winning faces and its probability",
+       1
+      ],
+      [
+       "(d) Compares the probability with 1/2 to show it is more likely than not",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 160",
+     "q": "A seed company plants 200 seeds of a new mustard variety and 170 of them sprout. What is the experimental probability that a seed of this variety sprouts?",
+     "a": "0.85",
+     "o": [
+      "0.85",
+      "0.17",
+      "0.15",
+      "1.7"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 159-160",
+     "q": "Which of these describes experimental probability?",
+     "a": "The number of times the event occurred divided by the total number of trials",
+     "o": [
+      "The number of times the event occurred divided by the total number of trials",
+      "The number of favourable outcomes divided by the number of equally likely possible outcomes",
+      "The number of times the event occurred in the trials",
+      "The total number of trials divided by the number of times the event occurred"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 159-163",
+     "q": "Consider the following statements.\nI. Experimental probability is found from data collected in actual trials.\nII. The relative frequency of an event is the same as its experimental probability.\nIII. Experimental probability can be used only when all outcomes are equally likely.\nWhich of the statements given above are correct?",
+     "a": "I and II only",
+     "o": [
+      "I and II only",
+      "II and III only",
+      "I only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 160-163",
+     "q": "Kavya's school bus was late on 6 of the 40 school days in a term. (a) What is the experimental probability that the bus is late on a school day? (b) The next term has 60 school days. About how many late days does this estimate suggest?",
+     "a": "(a) 6/40 = 0.15. (b) 0.15 x 60 = 9 days.",
+     "s": [
+      [
+       "(a) Finds 6/40 = 0.15",
+       1
+      ],
+      [
+       "(b) Estimates 0.15 x 60 = 9 late days",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 162-163",
+     "q": "An ice-cream shop asks a random sample of 80 customers which flavour they like most: 36 say vanilla, 20 chocolate, 16 mango and 8 strawberry. The shop expects 1200 customers in May. (a) Find the probability that a customer in the sample likes vanilla most. (b) Find the probability that a customer in the sample likes chocolate most. (c) Estimate how many of the 1200 customers like vanilla most. (d) Estimate how many of the 1200 customers like strawberry most. (e) Show that the four probabilities from the sample add up to 1.",
+     "a": "(a) 36/80 = 0.45. (b) 20/80 = 0.25. (c) 0.45 x 1200 = 540. (d) 8/80 = 0.1, and 0.1 x 1200 = 120. (e) Mango is 16/80 = 0.2, so 0.45 + 0.25 + 0.2 + 0.1 = 1.",
+     "s": [
+      [
+       "(a) Finds 0.45 for vanilla",
+       1
+      ],
+      [
+       "(b) Finds 0.25 for chocolate",
+       1
+      ],
+      [
+       "(c) Estimates 540 vanilla customers",
+       1
+      ],
+      [
+       "(d) Estimates 120 strawberry customers",
+       1
+      ],
+      [
+       "(e) Finds 0.2 for mango and shows the sum is 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 160-163",
+     "tags": [
+      "case_study"
+     ],
+     "q": "An archery club in Bhopal keeps a record of one archer's practice. In a month she shot 250 arrows. Of these, 40 hit the gold ring at the centre, 85 hit the red ring, 95 hit the blue ring and the rest missed the target completely. The coach uses this record to estimate her chances in the next month of practice.\n(a) How many arrows missed the target?\n(b) Find the experimental probability that an arrow hits the gold ring.\n(c) Find the experimental probability that an arrow does not miss the target.\n(d) Next month she will shoot 400 arrows. Estimate how many will hit the gold ring.",
+     "a": "(a) 250 - 40 - 85 - 95 = 30 arrows. (b) 40/250 = 0.16. (c) 250 - 30 = 220 arrows hit the target, so 220/250 = 0.88. (d) 0.16 x 400 = 64 arrows.",
+     "s": [
+      [
+       "(a) Finds 30 missed arrows",
+       1
+      ],
+      [
+       "(b) Finds 40/250 = 0.16",
+       1
+      ],
+      [
+       "(c) Finds 220/250 = 0.88",
+       1
+      ],
+      [
+       "(d) Estimates 0.16 x 400 = 64",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 163",
+     "q": "A survey team wants to estimate what fraction of Class 9 students in a town with 12 schools cycle to school. Which sample will give the most reliable estimate?",
+     "a": "100 students picked at random from all 12 schools",
+     "o": [
+      "100 students picked at random from all 12 schools",
+      "100 students from the one school next to the cycle shop",
+      "20 students picked at random from all 12 schools",
+      "All 40 members of the town's cycling club"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 160-166",
+     "q": "Assertion (A): A drawing pin dropped 200 times landed point-up 124 times, so 0.62 is a reasonable estimate of the probability that it lands point-up.\nReason (R): The two ways a drawing pin can land, point-up and point-down, are equally likely.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 162-163",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: In a sample of 50 members of the school chess club, 35 like solving puzzles. So about 35/50 = 0.7 of all 1000 students in the school like solving puzzles. Give a reason.",
+     "a": "False. The sample is not representative: chess club members are more likely than other students to enjoy puzzles, so 0.7 is not a fair estimate for the whole school. The sample should be chosen at random from students of different classes.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Explains that a chess-club sample does not represent the whole school",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 163",
+     "q": "Two quality teams at a bulb factory estimate the probability that a bulb from a large batch is faulty. Team A tests 20 bulbs and finds 2 faulty. Team B tests 500 bulbs and finds 35 faulty. (a) Find each team's estimate. (b) Which estimate is more reliable, and why? (c) Use the more reliable estimate to find about how many faulty bulbs to expect in a batch of 6000.",
+     "a": "(a) Team A: 2/20 = 0.1. Team B: 35/500 = 0.07. (b) Team B's estimate, because it comes from many more trials (a larger sample), and estimates get closer to the true probability as the number of trials grows. (c) 0.07 x 6000 = 420 faulty bulbs.",
+     "s": [
+      [
+       "(a) Finds 0.1 and 0.07",
+       1
+      ],
+      [
+       "(b) Chooses Team B because its sample is much larger",
+       1
+      ],
+      [
+       "(c) Estimates 0.07 x 6000 = 420",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 161",
+     "q": "A fair 6-sided die is rolled once. What is the probability of getting a number less than 3?",
+     "a": "1/3",
+     "o": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "1/6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 161-162",
+     "q": "A letter is picked at random from the word CHENNAI. What is the probability that it is the letter N?",
+     "a": "2/7",
+     "o": [
+      "2/7",
+      "1/7",
+      "1/6",
+      "2/6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 170",
+     "q": "Which of these experiments has equally likely outcomes?",
+     "a": "Picking one card at random from 10 identical cards numbered 1 to 10",
+     "o": [
+      "Picking one card at random from 10 identical cards numbered 1 to 10",
+      "Noting whether a city bus arrives on time or late",
+      "Picking a ball from a bag of 2 red and 6 blue balls and noting its colour",
+      "Noting whether a student passes or fails a test"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 161-170",
+     "q": "At a Diwali mela, 50 raffle tickets numbered 1 to 50 are sold and one is drawn at random. (a) Find the probability that the number drawn is a multiple of 10. (b) Find the probability that the number drawn is a two-digit number.",
+     "a": "(a) The multiples of 10 are 10, 20, 30, 40, 50, so the probability is 5/50 = 1/10. (b) The two-digit numbers are 10 to 50, which is 41 numbers, so the probability is 41/50.",
+     "s": [
+      [
+       "(a) Counts 5 multiples of 10 and gives 1/10",
+       1
+      ],
+      [
+       "(b) Counts 41 two-digit numbers and gives 41/50",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 161-170",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A card is picked at random from 20 identical cards numbered 1 to 20. Getting an odd number and getting an even number are equally likely. Give a reason.",
+     "a": "True. There are 10 odd numbers and 10 even numbers from 1 to 20, so each event has probability 10/20 = 1/2.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Shows 10 odd and 10 even numbers, so each probability is 1/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 171",
+     "q": "A game spinner has 10 equal sectors numbered 1 to 10, and the arrow is equally likely to stop on any of them. Find the probability that the arrow stops on (a) the number 7, (b) an even number, (c) a number greater than 6, (d) a number less than 11.",
+     "a": "(a) 1/10. (b) 2, 4, 6, 8, 10 give 5/10 = 1/2. (c) 7, 8, 9, 10 give 4/10 = 2/5. (d) Every number is less than 11, so the probability is 10/10 = 1.",
+     "s": [
+      [
+       "(a) Gives 1/10",
+       1
+      ],
+      [
+       "(b) Gives 5/10 = 1/2",
+       1
+      ],
+      [
+       "(c) Gives 4/10 = 2/5",
+       1
+      ],
+      [
+       "(d) Gives 1, since every outcome is favourable",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 161-162",
+     "q": "In a maths-club board game, Riya wins a turn if the arrow stops on yellow. Spinner X has 8 equal sectors, 3 of them yellow. Spinner Y has 10 equal sectors, 4 of them yellow. Which spinner gives Riya the better chance of winning a turn?",
+     "a": "Spinner Y, because 4/10 = 0.4 is greater than 3/8 = 0.375",
+     "o": [
+      "Spinner Y, because 4/10 = 0.4 is greater than 3/8 = 0.375",
+      "Spinner X, because it has fewer sectors that are not yellow",
+      "Spinner X, because 3/8 is greater than 4/10",
+      "Both give the same chance, because each spinner is fair"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 161-170",
+     "q": "Consider the following statements.\nI. When a fair die is rolled, getting an even number and getting an odd number are equally likely.\nII. For a bag of 3 red and 7 blue marbles, the probability of picking red is 1/2, because only two colours are possible.\nIII. If a bag holds 4 white and 6 black balls, the probability of not picking white is 3/5.\nWhich of the statements given above are correct?",
+     "a": "I and III only",
+     "o": [
+      "I and III only",
+      "I and II only",
+      "II and III only",
+      "III only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 161-162",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Rahul says: 'When a letter is picked at random from the word ASSAM, picking an S and picking an A are equally likely, and picking the M is less likely than either of them.' Check both parts of his claim.",
+     "a": "Rahul is right. ASSAM has 5 letters: A appears 2 times, S appears 2 times and M appears once. P(S) = 2/5 and P(A) = 2/5, so they are equally likely. P(M) = 1/5, which is less than 2/5.",
+     "s": [
+      [
+       "Counts the letters: 5 in all, with A twice, S twice and M once",
+       1
+      ],
+      [
+       "Finds P(S) = P(A) = 2/5",
+       1
+      ],
+      [
+       "Finds P(M) = 1/5 and concludes Rahul is right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 161-162",
+     "tags": [
+      "case_study"
+     ],
+     "q": "At a school fair, a lucky-dip box holds 40 identical folded chits. Two chits say 'Rs 50 voucher', six say 'Pen', twelve say 'Sweet' and the rest say 'Try again'. A player picks one chit without looking, so every chit is equally likely to be picked.\n(a) How many chits say 'Try again'?\n(b) Find the probability that a player wins a pen.\n(c) Find the probability that a player wins something.\n(d) The organiser wants the probability of 'Try again' to be exactly 1/4, by rewriting some 'Try again' chits as 'Sweet' chits and keeping 40 chits in all. How many chits must be rewritten?",
+     "a": "(a) 40 - 2 - 6 - 12 = 20 chits. (b) 6/40 = 3/20. (c) 2 + 6 + 12 = 20 winning chits, so 20/40 = 1/2. (d) For probability 1/4, the box needs 40/4 = 10 'Try again' chits, so 20 - 10 = 10 chits must be rewritten.",
+     "s": [
+      [
+       "(a) Finds 20 'Try again' chits",
+       1
+      ],
+      [
+       "(b) Finds 6/40 = 3/20",
+       1
+      ],
+      [
+       "(c) Finds 20/40 = 1/2",
+       1
+      ],
+      [
+       "(d) Finds that 10 'Try again' chits are needed, so 10 must be rewritten",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 161-171",
+     "q": "A stall has 20 identical cards numbered 1 to 20, and a player draws one at random. In Game A the player wins if the number is a prime. In Game B the player wins if the number is a multiple of 3 or a multiple of 5. (a) List the winning numbers for Game A and find its probability of winning. (b) List the winning numbers for Game B and find its probability of winning. (c) Which game should a player choose? Justify. (d) The stall owner adds the number 1 to the winning numbers of Game A. Does the choice in (c) change? (e) Which numbers win in both games, and what is the probability that a drawn card wins in both games?",
+     "a": "(a) 2, 3, 5, 7, 11, 13, 17, 19: probability 8/20 = 2/5. (b) 3, 5, 6, 9, 10, 12, 15, 18, 20: probability 9/20. (c) Game B, because 9/20 is greater than 8/20. (d) Game A becomes 9/20, the same as Game B, so neither game is better; the choice no longer matters. (e) 3 and 5 win in both games: probability 2/20 = 1/10.",
+     "s": [
+      [
+       "(a) Lists 8 primes and gives 2/5",
+       1
+      ],
+      [
+       "(b) Lists 9 numbers and gives 9/20",
+       1
+      ],
+      [
+       "(c) Chooses Game B by comparing 9/20 with 8/20",
+       1
+      ],
+      [
+       "(d) Finds Game A becomes 9/20, so the games are equally good",
+       1
+      ],
+      [
+       "(e) Finds 3 and 5, with probability 1/10",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.4",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 166",
+     "q": "What is the number of elements in the sample space of an experiment called?",
+     "a": "The sample size",
+     "o": [
+      "The sample size",
+      "The event",
+      "The frequency",
+      "The outcome"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 166-168",
+     "q": "Nikhil picks, without looking, one of 2 caps (red, black) and one of 4 different T-shirts. How many elements are in the sample space of his choice?",
+     "a": "8",
+     "o": [
+      "8",
+      "6",
+      "4",
+      "2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 167",
+     "q": "A 6-sided die is rolled. Which set is the event 'the number rolled is a multiple of 3'?",
+     "a": "{3, 6}",
+     "o": [
+      "{3, 6}",
+      "{3}",
+      "{1, 2, 3}",
+      "{3, 6, 9}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "p. 166",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each experiment in Column I with its sample size in Column II.\nColumn I: 1. Tossing one coin  2. Rolling one 6-sided die  3. Tossing two coins together  4. Noting the result of a match as win, lose or draw\nColumn II: a. 4  b. 2  c. 3  d. 6",
+     "a": "1-b, 2-d, 3-a, 4-c",
+     "o": [
+      "1-b, 2-d, 3-a, 4-c",
+      "1-b, 2-d, 3-c, 4-a",
+      "1-d, 2-b, 3-a, 4-c",
+      "1-b, 2-a, 3-d, 4-c"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 166-168",
+     "q": "A tailor has kurtas in 3 colours (white, yellow, blue) and in 2 sizes (M, L). A customer is given one kurta at random. (a) List the sample space. (b) List the event 'the kurta is yellow'.",
+     "a": "(a) S = {White-M, White-L, Yellow-M, Yellow-L, Blue-M, Blue-L}, 6 elements. (b) {Yellow-M, Yellow-L}.",
+     "s": [
+      [
+       "(a) Lists all 6 colour-size pairs once each",
+       1
+      ],
+      [
+       "(b) Lists {Yellow-M, Yellow-L}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 166",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: For the experiment 'a whole number from 1 to 5 is picked at random', S = {1, 2, 3, 3, 4, 5} is a correct sample space. Give a reason.",
+     "a": "False. No outcome should be listed more than once in a sample space; 3 is repeated. The correct sample space is S = {1, 2, 3, 4, 5}.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Says no outcome may be listed twice and gives S = {1, 2, 3, 4, 5}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 166-167",
+     "q": "Two coins are tossed together. Which event has exactly three elements?",
+     "a": "At least one tail",
+     "o": [
+      "At least one tail",
+      "Exactly one tail",
+      "Both coins show the same face",
+      "No tail"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 167",
+     "q": "Assertion (A): When a 6-sided die is rolled, the event 'the number is greater than 6' has exactly one element.\nReason (R): An event is a subset of the sample space.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 166-168",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Vikram spins two spinners: the first has three equal sectors 1, 2, 3 and the second has two equal sectors A, B. He says: 'The sample space has 3 + 2 = 5 elements.' Is he right? List the sample space and write the event 'an odd number with B'.",
+     "a": "No. Each number on the first spinner can go with each letter on the second, so n(S) = 3 x 2 = 6, not 5. S = {1A, 1B, 2A, 2B, 3A, 3B}. The event 'an odd number with B' is {1B, 3B}.",
+     "s": [
+      [
+       "States Vikram is wrong because each number pairs with each letter",
+       1
+      ],
+      [
+       "Lists the 6 elements of S",
+       1
+      ],
+      [
+       "Writes the event {1B, 3B}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 166-168",
+     "q": "A spinner with three equal sectors numbered 1, 2 and 3 is spun twice, and the two numbers are noted in order. (a) List the sample space of ordered pairs and give n(S). (b) Riya says the sample space is {2, 3, 4, 5, 6}, the possible sums. Explain why this list cannot be used to find probabilities by counting. (c) List the event 'the sum is 4' and find its probability. (d) Find the probability that the sum is even. (e) Which sum is the most likely? Justify.",
+     "a": "(a) S = {(1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3)}, n(S) = 9. (b) The sums are not equally likely: sum 2 comes only from (1,1) but sum 4 comes from three pairs, so favourable over possible on this list would give wrong answers. (c) {(1,3), (2,2), (3,1)}: probability 3/9 = 1/3. (d) Sums 2, 4, 6 come from 1 + 3 + 1 = 5 pairs, so the probability is 5/9. (e) Sum 4, because it has 3 pairs while sums 3 and 5 have 2 each and sums 2 and 6 have 1 each.",
+     "s": [
+      [
+       "(a) Lists the 9 ordered pairs",
+       1
+      ],
+      [
+       "(b) Explains that the sums are not equally likely",
+       1
+      ],
+      [
+       "(c) Lists 3 pairs for sum 4 and gives 1/3",
+       1
+      ],
+      [
+       "(d) Finds 5/9 for an even sum",
+       1
+      ],
+      [
+       "(e) Chooses sum 4 by comparing the counts",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.5",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 168",
+     "q": "In a tree diagram for a multi-step experiment, what does one complete path from the start to the end stand for?",
+     "a": "One complete outcome of the experiment",
+     "o": [
+      "One complete outcome of the experiment",
+      "One step of the experiment",
+      "The total number of outcomes",
+      "The probability of an event"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 168",
+     "q": "A spinner with three equal sectors (red, green, blue) is spun and then a coin is tossed. How many complete paths does the tree diagram of this experiment have?",
+     "a": "6",
+     "o": [
+      "6",
+      "5",
+      "3",
+      "9"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 168-169",
+     "q": "On her way to school Pooja passes two traffic signals. Assume each signal is equally likely to be red or green when she reaches it, and the two signals do not affect each other. (a) How many complete paths does the tree diagram have? (b) Find the probability that both signals are green.",
+     "a": "(a) 2 branches for the first signal and 2 from each of them for the second: 2 x 2 = 4 paths (RR, RG, GR, GG). (b) Only GG is favourable, so the probability is 1/4.",
+     "s": [
+      [
+       "(a) Finds 4 paths",
+       1
+      ],
+      [
+       "(b) Finds P(both green) = 1/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 168-169",
+     "q": "At a dhaba, Arun picks at random one main dish (roti or rice) and then one dal (moong, chana or masoor). (a) How many complete paths does the tree diagram have? (b) List all the outcomes. (c) Find the probability that he gets rice with chana dal.",
+     "a": "(a) 2 x 3 = 6 paths. (b) Roti-moong, Roti-chana, Roti-masoor, Rice-moong, Rice-chana, Rice-masoor. (c) 1/6.",
+     "s": [
+      [
+       "(a) Finds 6 paths",
+       1
+      ],
+      [
+       "(b) Lists all 6 outcomes",
+       1
+      ],
+      [
+       "(c) Gives P(rice with chana) = 1/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 171-172",
+     "q": "A pencil box has 2 blue and 3 black pencils. Kiran takes one pencil without looking and keeps it, then takes a second pencil. What is the probability that both pencils are blue?",
+     "a": "1/10",
+     "o": [
+      "1/10",
+      "4/25",
+      "1/4",
+      "3/10"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 168-172",
+     "q": "Consider the following statements.\nI. The tree diagram for rolling a 6-sided die and then tossing a coin has 12 complete paths.\nII. The probabilities along one path of a tree are multiplied to give the probability of that path.\nIII. When two balls are drawn one after the other without replacement from a box of balls numbered 1 to 5, the tree has 25 complete paths.\nWhich of the statements given above are correct?",
+     "a": "I and II only",
+     "o": [
+      "I and II only",
+      "II and III only",
+      "I and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 168-169",
+     "q": "Two friends each choose one day of the week at random, on their own, for a cycle ride. (a) How many complete paths does the tree diagram for their two choices have? (b) Find the probability that they choose the same day.",
+     "a": "(a) 7 x 7 = 49 paths. (b) The same day happens on 7 paths (Mon-Mon, Tue-Tue, ... Sun-Sun), so the probability is 7/49 = 1/7.",
+     "s": [
+      [
+       "(a) Finds 49 paths",
+       1
+      ],
+      [
+       "(b) Counts 7 same-day paths and gives 1/7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 171-172",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "A tin has 3 mango toffees and 2 orange toffees. Nisha takes two toffees one after the other without putting the first back. She says: 'The probability that both are mango is 3/5 x 3/5 = 9/25.' Is she right? Find the correct probability.",
+     "a": "No. After a mango toffee is taken, only 4 toffees are left and 2 of them are mango, so the second branch has probability 2/4, not 3/5. P(both mango) = 3/5 x 2/4 = 6/20 = 3/10.",
+     "s": [
+      [
+       "States Nisha is wrong",
+       1
+      ],
+      [
+       "Explains that the second draw is from 4 toffees, 2 of them mango",
+       1
+      ],
+      [
+       "Finds 3/5 x 2/4 = 3/10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 168-169",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school bus in a small town crosses two railway lines on Route 1. From past records, the gate at the first crossing is closed when the bus arrives with probability 0.3, and the gate at the second crossing with probability 0.4. The two gates work independently of each other. Route 2 is longer but has only one crossing, whose gate is closed with probability 0.5. The driver draws a tree diagram for Route 1, writing the probability on each branch. (Multiply the probabilities along a path to get the probability of that path.)\n(a) Find the probability that both gates on Route 1 are open.\n(b) Find the probability that both gates on Route 1 are closed.\n(c) Find the probability that exactly one gate on Route 1 is closed.\n(d) The driver wants the route with the better chance of meeting no closed gate. Which route should he take? Justify.",
+     "a": "(a) Open gates have probabilities 0.7 and 0.6, so P(both open) = 0.7 x 0.6 = 0.42. (b) 0.3 x 0.4 = 0.12. (c) 0.3 x 0.6 + 0.7 x 0.4 = 0.18 + 0.28 = 0.46 (check: 0.42 + 0.12 + 0.46 = 1). (d) Route 2: its chance of no closed gate is 1 - 0.5 = 0.5, which is greater than 0.42 for Route 1.",
+     "s": [
+      [
+       "(a) Finds 0.7 x 0.6 = 0.42",
+       1
+      ],
+      [
+       "(b) Finds 0.3 x 0.4 = 0.12",
+       1
+      ],
+      [
+       "(c) Adds the two one-closed paths to get 0.46",
+       1
+      ],
+      [
+       "(d) Chooses Route 2 by comparing 0.5 with 0.42",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 168-172",
+     "q": "Three cards show the digits 2, 5 and 7. Meera draws one card for the tens digit and then, without putting it back, draws a second card for the ones digit, making a two-digit number. (a) Explain how many complete paths the tree diagram has. (b) List all the numbers she can make. (c) Find the probability that the number is even. (d) Find the probability that the number is greater than 50.",
+     "a": "(a) 3 branches for the first card and 2 from each for the second, since the first card is not put back: 3 x 2 = 6 paths. (b) 25, 27, 52, 57, 72, 75. (c) 52 and 72 are even: 2/6 = 1/3. (d) 52, 57, 72, 75 are greater than 50: 4/6 = 2/3.",
+     "s": [
+      [
+       "(a) Explains 3 x 2 = 6 paths because the first card is not replaced",
+       1
+      ],
+      [
+       "(b) Lists the 6 numbers",
+       1
+      ],
+      [
+       "(c) Finds 2/6 = 1/3",
+       1
+      ],
+      [
+       "(d) Finds 4/6 = 2/3",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 164",
+     "q": "What is the Gambler's Fallacy?",
+     "a": "Believing that past results of a random experiment change the chance of the next result",
+     "o": [
+      "Believing that past results of a random experiment change the chance of the next result",
+      "Believing that a larger sample gives a more reliable estimate",
+      "Believing that a probability can never be more than 1",
+      "Believing that a fair coin is equally likely to show heads or tails"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 164",
+     "q": "What does it mean to say that a coin is fair, or unbiased?",
+     "a": "It is symmetrical, so there is no reason for it to land more often on one side",
+     "o": [
+      "It is symmetrical, so there is no reason for it to land more often on one side",
+      "It always lands heads and tails one after the other",
+      "It lands heads exactly 5 times in every 10 tosses",
+      "It has a head on one side and a tail on the other"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 163",
+     "q": "According to the Law of Large Numbers, what happens to the experimental probability of an event as the number of trials increases?",
+     "a": "It tends to get closer to the theoretical probability",
+     "o": [
+      "It tends to get closer to the theoretical probability",
+      "It becomes exactly equal to the theoretical probability after 100 trials",
+      "It moves further away from the theoretical probability",
+      "It stops changing after the first 10 trials"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 164",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A coin has a lump of clay stuck to one face. For this coin we cannot simply take the probability of heads as 1/2; it should be estimated by tossing the coin many times. Give a reason.",
+     "a": "True. A fair (unbiased) coin is symmetrical, so there is no reason for it to land more often on one side. The lump of clay makes this coin unsymmetrical, so it may be biased; the probability of heads must be found from the results of many tosses.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Explains that the clay makes the coin unsymmetrical (possibly biased), so 1/2 cannot be assumed and many trials are needed",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 163",
+     "q": "A fair 6-sided die is rolled. (a) Write the theoretical probability of getting a 6. (b) The die is rolled 1800 times. About how many 6s would you expect? (c) In the first 30 rolls, a 6 came up 9 times. Does this show the die is unfair? Give a reason.",
+     "a": "(a) 1/6. (b) About 1/6 x 1800 = 300 sixes. (c) No. With only 30 rolls the experimental probability (9/30 = 0.3) can differ a lot from the theoretical probability; it tends to get closer to 1/6 only as the number of rolls becomes large (Law of Large Numbers).",
+     "s": [
+      [
+       "(a) Gives 1/6",
+       1
+      ],
+      [
+       "(b) Gives about 300",
+       1
+      ],
+      [
+       "(c) Says No, because 30 rolls are too few and results settle only over many rolls",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 163",
+     "q": "Amit tosses a coin 20 times and gets 13 heads. Bina tosses the same coin 2000 times and gets 1012 heads. Which conclusion is best?",
+     "a": "Bina's result is the better evidence, and it fits a fair coin",
+     "o": [
+      "Bina's result is the better evidence, and it fits a fair coin",
+      "Amit's result proves that the coin is biased towards heads",
+      "Both results prove that the coin is biased towards heads",
+      "Amit's result is more reliable because fewer tosses mean fewer mistakes"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 163-164",
+     "q": "Assertion (A): A fair coin is equally likely to show heads or tails on any toss.\nReason (R): As the number of tosses increases, the experimental probability of heads tends to the theoretical probability.",
+     "a": "Both A and R are true, but R is not the correct explanation of A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 163-164",
+     "q": "A hexagonal pencil has its six faces numbered 1 to 6. Students roll it on a desk 1200 times, and face 1 comes up on top 390 times. (a) Find the experimental probability that face 1 comes up. (b) If the pencil were fair, about how many times would face 1 have come up? Use your answers to say whether the pencil is likely to be fair.",
+     "a": "(a) 390/1200 = 13/40 = 0.325. (b) About 1/6 x 1200 = 200 times. After as many as 1200 rolls, the experimental probability of a fair pencil should be close to 1/6 (about 0.17), by the Law of Large Numbers; 390 is far more than 200, so the pencil is likely to be biased, not fair.",
+     "s": [
+      [
+       "(a) Finds 390/1200 = 0.325",
+       1
+      ],
+      [
+       "(b) Gives about 200 and concludes the pencil is likely biased because 1200 is a large number of rolls",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 163-164",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A housing society in Hyderabad holds a lucky draw every month. Each of its 120 flats puts one slip in a box and one slip is drawn at random; the slip goes back into the box afterwards. The Sharma family has not won in the last 10 months. Mrs Sharma says their turn must be coming, and she suggests a new rule: any family that has not won for a year gets 2 slips in the box instead of 1.\n(a) Find the probability that the Sharmas win in any one month under the present rule.\n(b) What is the probability that they win next month, after 10 months without a win? Explain.\n(c) Under the new rule, suppose the Sharmas are the only family with 2 slips. Find their probability of winning a month.\n(d) Is Mrs Sharma right that their turn 'must be coming' under the present rule? Justify.",
+     "a": "(a) 1/120. (b) Still 1/120, because every draw is independent and past draws do not change the chances. (c) The box then holds 121 slips, 2 of them the Sharmas', so the probability is 2/121. (d) No. Under the present rule each draw is a fresh, independent event; believing a win is due after losses is the Gambler's Fallacy. Only a change of rule, such as extra slips, changes their chance.",
+     "s": [
+      [
+       "(a) Gives 1/120",
+       1
+      ],
+      [
+       "(b) Says still 1/120 because draws are independent",
+       1
+      ],
+      [
+       "(c) Counts 121 slips and gives 2/121",
+       1
+      ],
+      [
+       "(d) Rejects the claim as the Gambler's Fallacy",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 163",
+     "q": "Two spinners, A and B, each have 4 equal sectors with one red sector. A class tests them. Spinner A: red came up 7 times in the first 20 spins and 260 times in 1000 spins. Spinner B: red came up 5 times in the first 20 spins and 410 times in 1000 spins. (a) Find the experimental probability of red for each spinner after 20 spins and after 1000 spins. (b) Write the theoretical probability of red for a fair spinner. (c) Which spinner seems to be biased? Justify using the results. (d) Explain why the results after 20 spins alone could not settle the question. (e) Using the better estimate, about how many reds would you expect from Spinner B in the next 3000 spins?",
+     "a": "(a) A: 7/20 = 0.35 and 260/1000 = 0.26. B: 5/20 = 0.25 and 410/1000 = 0.41. (b) 1/4 = 0.25. (c) Spinner B: after 1000 spins its red rate 0.41 is far from 0.25, while A's 0.26 is close to 0.25. (d) With few trials the experimental probability can differ a lot from the theoretical one (after 20 spins A looked biased and B looked fair); by the Law of Large Numbers only many trials give a reliable picture. (e) 0.41 x 3000 = 1230 reds.",
+     "s": [
+      [
+       "(a) Finds 0.35, 0.26, 0.25 and 0.41",
+       1
+      ],
+      [
+       "(b) Gives 0.25",
+       1
+      ],
+      [
+       "(c) Picks Spinner B by comparing the 1000-spin results with 0.25",
+       1
+      ],
+      [
+       "(d) Explains that 20 trials are too few, using the Law of Large Numbers",
+       1
+      ],
+      [
+       "(e) Estimates 1230 reds",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+VERDICT: FIX
+HIGH: 0 | MEDIUM: 10 | LOW: 6
+(60 questions; `--check` valid. Every number recomputed in python: all keys right, every MCQ/match/AR/multi_statement has exactly one correct option, first. All facts found on the cited pages, all inside IN scope.)
+
+- [MEDIUM] C9SC-10.2 #3: multi_statement repeats the existing DPS pack C9SC-10.2 #6 almost idea for idea (bell jar sound returns when air is let back in; astronauts use devices in spacesuits) -> replace with statements on a different idea (e.g. Activity 10.3/10.4 desk and spoons, or what a medium is with solid/liquid/gas examples).
+- [MEDIUM] C9SC-10.2 (#3, #4, #6, #9(c-d), #10): the vacuum bell jar is the setting of 5 of the concept's 10 items; #6 (bell still seen ringing) restates #4's assertion and #10's X-evidence -> rewrite #6 and one other on a different setting (desk/spoons, steel rail, astronaut part on its own).
+- [MEDIUM] C9SC-10.2 #6: labelled Hard but it is a one-line recall of "the bell can be seen ringing" (p. 187) -> relabel Easy, or make it a real reasoning item.
+- [MEDIUM] C9SC-10.1 #6: labelled Hard but the false statement is a direct negation of a sentence on p. 185 ("more than one vibrating part is involved"); one-step recall -> relabel Easy, or base the T/F on a situation that needs reasoning.
+- [MEDIUM] C9SC-10.1 #2: labelled Hard but is recall of one line (p. 194, tuning fork gives nearly single frequency); the same fact is also case-study #9(d) in this concept -> relabel Easy and change #9(d) (or #2) to a different idea.
+- [MEDIUM] C9SC-10.3 #5 and #9(a)-(b): microphone (sound to electrical, diaphragm) and speaker (signal makes cone vibrate) repeat the existing DPS pack C9SC-10.3 #12 (a)/(b) -> change #5 to another energy idea (e.g. Activity 10.6: harder strike, grains jump higher) and replace #9(a)/(b) with parts that are not the DPS item.
+- [MEDIUM] C9SC-10.5 #1 and #3: both test the same single fact (speed of sound in air rises with temperature and humidity, p. 196), and #10(d) tests it again -> keep one; rewrite the other on another p. 196 idea (speed fastest in solids, slowest in gases; or speed independent of frequency in air).
+- [MEDIUM] C9SC-10.5 #6: labelled Hard but is two routine one-step substitutions (1500/3, 1/500), the same shape as Easy items 10.4 #5 and 10.5 #2 -> relabel Easy, or add a genuine second step (e.g. compare with the same frequency in air).
+- [MEDIUM] C9SC-10.6 #4: the 12 m wall / 24/340 = 0.07 s echo number set repeats the existing DPS pack C9SC-10.6 #20(iv)-(v) -> change the distance (e.g. 15 m or 20 m) and recompute both A and R.
+- [MEDIUM] C9SC-10.6 #10: labelled Hardest but is four identical routine depth calculations plus a threshold check, and it re-uses the sonar-depth setting of #5 in the same concept -> relabel Hard, or make the decision need more (e.g. a route choice with a second constraint), and vary the setting from #5.
+- [LOW] C9SC-10.3 #10: the key (rarefaction nearest the piston after the final backward stroke) is right, but Fig. 10.9(d) is labelled "C R C R"; a student copying the figure picks distractor 2 -> add "the piston ends at rest after its last backward motion" to the stem so the reasoning, not the figure, decides.
+- [LOW] C9SC-10.3 #9: labelled Hardest but (a)-(c) are recall; only (d) needs reasoning -> label Hard, or strengthen (d).
+- [LOW] C9SC-10.4 #9: labelled Hardest but (a)-(c) are single-step; Hard would be honest -> relabel Hard or add a decision step.
+- [LOW] C9SC-10.5 #8: the idea "a lower/higher frequency travels slower/faster in air" is also existing DPS C9SC-10.5 #6 statement 2 and #2; the 34 m hall numbers are new, so acceptable -> optional: vary the misconception.
+- [LOW] C9SC-10.2 #10 (ii): astronauts / spanner clank on the space station repeats existing DPS C9SC-10.2 #2 -> use a different space example in (ii).
+- [LOW] C9SC-10.2 #4: R relies on "light can travel through vacuum", which is only in the p. 191 Ready to Go Beyond aside (light as a wave is OUT except as a contrast); the citation should read pp. 187, 191 -> fix the page citation; the contrast use is acceptable.
