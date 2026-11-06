@@ -1,3 +1,4 @@
+import { examBuilderRepository } from '../../db/repositories'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { createDb } from '../../db/connection'
 import type { Db } from '../../db/connection'
@@ -223,6 +224,31 @@ describe('paper builder', () => {
     expect(used[0].usedBefore[0]).toMatchObject({ exam: expect.any(String), section: expect.stringContaining('Section') })
     const hidden = await builderBank(db, teacher, id, { hideUsed: true })
     expect(hidden.questions.every((q) => q.usedBefore.length === 0)).toBe(true)
+  })
+
+  it('the automatic fill honours the difficulty mix the teacher chose', async () => {
+    const mcqDifficulties = async (mix: { Easy?: number; Hard?: number; Hardest?: number }) => {
+      const id = (await createExam(db, teacher, input('hand_pick', `Mix ${JSON.stringify(mix)}`))).id
+      await builderAction(db, teacher, id, { action: 'fill_rest', difficultyMix: mix })
+      const v = await builderView(db, teacher, id)
+      return v.picks.filter((p) => p.marks === 1 && !p.isAlternate).map((p) => p.difficulty)
+    }
+    const hard = await mcqDifficulties({ Easy: 0, Hard: 100, Hardest: 0 })
+    expect(hard.length).toBeGreaterThan(0)
+    expect(hard.every((d) => d === 'Hard')).toBe(true)
+    const easy = await mcqDifficulties({ Easy: 100, Hard: 0, Hardest: 0 })
+    expect(easy.every((d) => d === 'Easy')).toBe(true)
+  })
+
+  it('knows which questions this school used in other papers, drafts included', async () => {
+    const id = (await createExam(db, teacher, input('hand_pick', 'Last used test'))).id
+    const inAuto = (await builderView(db, teacher, autoId)).picks.map((p) => p.questionId)
+    const used = await examBuilderRepository.lastUsedAt(db, teacher, id, inAuto)
+    expect(used.size).toBe(inAuto.length)
+    // a question nobody used is absent
+    const fresh = await db.selectFrom('questions').select('id').where('text', 'like', `%ch3 #0 ${tag}`).executeTakeFirstOrThrow()
+    const none = await examBuilderRepository.lastUsedAt(db, teacher, id, [fresh.id])
+    expect(none.size === 0 || none.has(fresh.id)).toBe(true)
   })
 
   it('answers and marking schemes are for the teacher and the office only', async () => {

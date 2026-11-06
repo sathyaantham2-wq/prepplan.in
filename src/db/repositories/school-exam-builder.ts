@@ -68,6 +68,26 @@ export const examBuilderRepository = {
       where v.school_id = ${scope.schoolId} and v.exam_id <> ${examId} and v.finalized_at >= ${since}`.execute(db)
     return r.rows.map((x) => x.qid)
   },
+  /**
+   * When this school last used each question: printed in a finished version of another paper, or sitting in another
+   * paper (a draft counts as used). Questions it never used are absent from the result.
+   */
+  async lastUsedAt(db: Db, scope: SchoolScope, examId: string, questionIds: ReadonlyArray<string>) {
+    if (questionIds.length === 0) return new Map<string, Date>()
+    const r = await sql<{ qid: string; at: Date }>`
+      select qid, max(at) as at from (
+        select x->>'question_id' as qid, v.finalized_at as at
+        from school_exam_versions v cross join lateral jsonb_array_elements(v.questions) x
+        where v.school_id = ${scope.schoolId} and v.exam_id <> ${examId}
+        union all
+        select p.question_id::text as qid, coalesce(e.edited_at, e.created_at) as at
+        from school_exam_questions p join school_exams e on e.id = p.exam_id and e.school_id = p.school_id
+        where p.school_id = ${scope.schoolId} and p.exam_id <> ${examId}
+      ) used
+      where qid in (${sql.join([...questionIds])})
+      group by qid`.execute(db)
+    return new Map(r.rows.map((x) => [x.qid, new Date(x.at)]))
+  },
   /** Questions for a slot, in random order: the bank's approved ones and this school's own. */
   async slotCandidates(
     db: Db,
