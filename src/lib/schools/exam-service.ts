@@ -594,6 +594,9 @@ export async function questionPaperHtml(
   const sectionOrder = d.layout.config.section_order.filter((s) =>
     printed.some((r) => r.section === s),
   )
+  // The marks on the paper as it stands. `exam.printed_marks` is only written when a paper is finished, so a paper still
+  // being made (Auto + edit, Hand-pick) printed "Maximum marks: 0"; for a finished paper the two are the same number.
+  const printedMarks = printed.reduce((n, r) => n + r.marks, 0)
   const input = (pageCount?: number): PaperTemplateInput => ({
     title: exam.title,
     schoolName: d.school.name,
@@ -603,7 +606,7 @@ export async function questionPaperHtml(
     board: d.school.board,
     class: d.grade,
     durationMin: d.layout.duration_min,
-    totalMarks: exam.printed_marks,
+    totalMarks: printedMarks,
     chapters: d.chapters.map((c) => ({
       part: c.part,
       chapter_no: c.chapter_no,
@@ -645,7 +648,7 @@ export async function questionPaperHtml(
       instructions: d.layout.config.instructions,
       sectionOrder,
       sectionTotals,
-      nominalMarks: exam.printed_marks,
+      nominalMarks: printedMarks,
       pageCount,
       draftNote: null,
     },
