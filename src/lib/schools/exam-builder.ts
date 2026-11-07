@@ -2,7 +2,7 @@ import type { Db } from '../../db/connection'
 import { bankRepository, examBuilderRepository, examPrintRepository, schoolExamsRepository, schoolQuestionsRepository, usableBySchool } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
-import { SPECIAL_TAGS, checkPaperStructure, expectedWordsFor } from '../school-paper'
+import { SPECIAL_TAGS, checkPaperStructure, expectedWordsFor, levelOfBloom } from '../school-paper'
 import type { Layout, LayoutSection } from '../school-paper'
 import { SchoolError, auditSchool } from './common'
 import { checkPaper, fitsSlot, levelWord, renumber, slotKey } from './exam-builder-check'
@@ -12,7 +12,6 @@ import { loadExam } from './exam-service'
 import { schoolYearStart } from './today'
 import { normalizeMix, pickNext } from './fill-rank'
 import type { DifficultyMix } from './fill-rank'
-import { levelOfBloom } from '../school-paper'
 
 /**
  * Teacher control over the questions of a paper (docs/SCHOOLS_MODULE_PLAN.md section 16). A paper in the "building"
