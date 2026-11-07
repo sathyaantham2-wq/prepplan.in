@@ -11,13 +11,11 @@ import {
   createSchoolForSignedInUser,
   signUpSchoolWithEmail,
   startState,
-  approveSchool,
   startedTooMany,
 } from './signup'
 import type { SignUpInput } from './signup'
 import {
   DEFAULT_SCHOOL_AI_CAP_INR,
-  DEMO_AI_SPEND_CAP_INR,
   schoolAiStatus,
 } from './school-ai-budget'
 
@@ -130,7 +128,7 @@ describe('a school starts itself (e-mail form and the Google follow-up)', () => 
       name: `Signup School ${tag}`,
       city: 'Pune',
       board: 'CBSE',
-      is_demo: true,
+      is_demo: false,
       status: 'active',
       wizard_done_at: null,
     })
@@ -361,49 +359,27 @@ describe('a school starts itself (e-mail form and the Google follow-up)', () => 
     expect((await call(MeRoute, 'GET', null)).status).toBe(401)
   })
 
-  it('a school that starts itself is a demo with the demo AI allowance until the owner approves it', async () => {
+  it('a school that starts itself is a normal school at once: the normal AI allowance, no approval step', async () => {
     const r = await signUpSchoolWithEmail(
       db,
-      input({ email: `demo-${tag}@school.test` }),
+      input({ email: `real-${tag}@school.test` }),
       new Date(),
       HIGH,
     )
     if (!r.ok) throw new Error(r.message)
     made.push(r.schoolId)
-    const read = () =>
-      db
-        .selectFrom('schools')
-        .select(['code', 'is_demo', 'ai_spend_cap_inr', 'wizard_done_at'])
-        .where('id', '=', r.schoolId)
-        .executeTakeFirstOrThrow()
-    const before = await read()
-    expect(before.is_demo).toBe(true)
-    expect(Number(before.ai_spend_cap_inr)).toBe(DEMO_AI_SPEND_CAP_INR)
-    expect(before.wizard_done_at).toBeNull() // it still gets the set-up wizard
-    expect((await schoolAiStatus(db, r.schoolId)).cap).toBe(
-      DEMO_AI_SPEND_CAP_INR,
-    )
-
-    await approveSchool(db, before.code)
-    const after = await read()
-    expect(after.is_demo).toBe(false)
-    expect(after.ai_spend_cap_inr).toBeNull()
+    const school = await db
+      .selectFrom('schools')
+      .select(['is_demo', 'status', 'ai_spend_cap_inr', 'wizard_done_at'])
+      .where('id', '=', r.schoolId)
+      .executeTakeFirstOrThrow()
+    expect(school.is_demo).toBe(false)
+    expect(school.status).toBe('active')
+    expect(school.ai_spend_cap_inr).toBeNull()
+    expect(school.wizard_done_at).toBeNull() // it still gets the set-up wizard
     expect((await schoolAiStatus(db, r.schoolId)).cap).toBe(
       DEFAULT_SCHOOL_AI_CAP_INR,
     )
-    await expect(approveSchool(db, before.code)).rejects.toThrow(
-      'already approved',
-    )
-    await expect(approveSchool(db, 'no-such-school')).rejects.toThrow(
-      'No school has the code',
-    )
-    const logged = await db
-      .selectFrom('audit_log')
-      .select('action')
-      .where('entity_id', '=', r.schoolId)
-      .where('action', '=', 'school.approved')
-      .execute()
-    expect(logged).toHaveLength(1)
   })
 
   it('the brake: too many schools in an hour or a day are refused with a plain sentence', async () => {

@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync } from 'node:fs'
 import ExcelJS from 'exceljs'
 import { expect, test } from '@playwright/test'
 import type { Browser, Page } from '@playwright/test'
@@ -6,22 +6,7 @@ import { createDb } from '../src/db/connection'
 import type { Db } from '../src/db/connection'
 import { schoolsRepository } from '../src/db/repositories'
 import { issueFirstAdminCode } from '../src/lib/schools/credentials'
-import { provisionDemoSchool } from '../src/lib/schools/demo-provision'
 import { goTo, schoolNav } from './school-nav'
-
-/** Extra pictures for a review (only when UI_SHOTS_DIR is set): the page at 1440 px, light and dark, then back to the phone. */
-async function wideShots(page: Page, name: string) {
-  const dir = process.env.UI_SHOTS_DIR as string
-  mkdirSync(dir, { recursive: true })
-  const size = page.viewportSize()
-  await page.setViewportSize({ width: 1440, height: 1000 })
-  await page.screenshot({ path: `${dir}/${name}-1440-light.png`, fullPage: true })
-  await page.evaluate(() => document.querySelector('.school-ui')?.classList.add('school-dark'))
-  await page.screenshot({ path: `${dir}/${name}-1440-dark.png`, fullPage: true })
-  await page.evaluate(() => document.querySelector('.school-ui')?.classList.remove('school-dark'))
-  if (size) await page.setViewportSize(size)
-  await page.screenshot({ path: `${dir}/${name}-390-light.png`, fullPage: true })
-}
 
 /**
  * PrepPlan for Schools, M1 on a phone: the first sign-in wizard (every question), the home screen with
@@ -48,27 +33,6 @@ async function shot(page: Page, name: string) {
   await page.waitForTimeout(150)
   await page.screenshot({ path: `${SHOTS}/${name}.png` })
   if (size) await page.setViewportSize(size)
-}
-
-/** One part of a long page, so it is not lost in a very tall picture. */
-async function shotOf(page: Page, selector: string, name: string) {
-  const box = await page
-    .locator(selector)
-    .first()
-    .evaluate((el) => {
-      const r = el.getBoundingClientRect()
-      return {
-        x: 0,
-        y: r.top + window.scrollY,
-        width: window.innerWidth,
-        height: r.height,
-      }
-    })
-  await page.screenshot({
-    path: `${SHOTS}/${name}.png`,
-    fullPage: true,
-    clip: box,
-  })
 }
 
 async function looksRight(page: Page) {
@@ -107,20 +71,16 @@ async function setPassword(page: Page, email: string, code: string) {
   await page.getByRole('button', { name: 'Save and continue' }).click()
 }
 
-test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
+test.describe.serial('M1: wizard and home on a phone', () => {
   let db: Db
   let browserRef: Browser
   const tag = `${Date.now()}`.slice(-8)
   const subjectCode = `E2E-M1-${tag}`
   const wizEmail = `wiz-${tag}@e2e.school`
-  const demoAdminEmail = `demo-office-${tag}@e2e.school`
-  const demoTeacherEmail = `demo-teacher-${tag}@e2e.school`
   let subjectId = ''
   let sourceId = ''
   let wizSchoolId = ''
   let wizCode = ''
-  let demoSchoolId = ''
-  let demoTeacherCode = ''
   const schoolIds: Array<string> = []
 
   async function buildBank() {
@@ -252,18 +212,6 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     wizSchoolId = w.school.id
     schoolIds.push(wizSchoolId)
     wizCode = (await issueFirstAdminCode(db, wizSchoolId, w.adminMemberId)).code
-    const d = await provisionDemoSchool(db, {
-      name: 'PrepPlan Demo School',
-      code: `demo-${tag}`,
-      adminName: 'Demo Office',
-      adminEmail: demoAdminEmail,
-      teacherName: 'Demo Teacher',
-      teacherEmail: demoTeacherEmail,
-      subjectCodes: [subjectCode],
-    })
-    demoSchoolId = d.schoolId
-    schoolIds.push(demoSchoolId)
-    demoTeacherCode = d.teacherCode ?? ''
   })
 
   test.afterAll(async () => {
@@ -516,20 +464,12 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
     await expect(
       big.getByRole('link', { name: /Correct answer sheets/ }),
     ).toBeVisible()
-    await expect(big.getByRole('link', { name: /See results/ })).toBeVisible()
     await expect(page.getByTestId('demo-banner')).toHaveCount(0)
     await shot(page, 'm1-09-home-three-actions')
     await looksRight(page)
-    // the wizard does not come back, and a real school has no results yet
+    // the wizard does not come back
     await page.reload({ waitUntil: 'networkidle' })
     await expect(page.getByTestId('big-actions')).toBeVisible()
-    await big.getByRole('link', { name: /See results/ }).click()
-    await expect(
-      page.getByText(
-        'Results appear here after the answer sheets of an exam have been marked.',
-      ),
-    ).toBeVisible()
-    await shot(page, 'm1-10-results-empty-real-school')
     await looksRight(page)
   })
 
@@ -628,144 +568,5 @@ test.describe.serial('M1: wizard, home and the demo school on a phone', () => {
       .click()
     await page.waitForURL(`**/school/${wizSchoolId}`)
     await expect(page.getByTestId('big-actions')).toBeVisible()
-  })
-
-  let teacher: Page
-  test('the demo teacher signs in and sees the DEMO label, the three actions and Reset demo', async () => {
-    teacher = await (
-      await browserRef.newContext({
-        viewport: PHONE,
-        hasTouch: true,
-        isMobile: true,
-      })
-    ).newPage()
-    await setPassword(teacher, demoTeacherEmail, demoTeacherCode)
-    await teacher.waitForURL(`**/school/${demoSchoolId}`)
-    await expect(teacher.getByTestId('demo-banner')).toHaveText(
-      'DEMO - sample data',
-    )
-    await expect(teacher.getByTestId('big-actions')).toBeVisible()
-    await expect(
-      teacher.getByRole('button', { name: 'Reset demo' }),
-    ).toBeVisible()
-    await expect(teacher.getByTestId('demo-cap')).toContainText('₹50')
-    await expect(teacher.getByText('You are the class teacher')).toBeVisible()
-    await shot(teacher, 'm1-11-demo-home')
-    await looksRight(teacher)
-  })
-
-  let examUrl = ''
-  test('"Make a paper" gives a real paper from the bank in one go', async () => {
-    await teacher
-      .getByTestId('big-actions')
-      .getByRole('link', { name: /Make a paper/ })
-      .click()
-    await expect(
-      teacher.getByRole('heading', { name: 'Make an exam paper' }),
-    ).toBeVisible()
-    await teacher.getByLabel('Name of the exam').fill('Unit Test 1')
-    await teacher.getByRole('radio', { name: /Unit Test, 40 marks/ }).check()
-    await teacher.getByLabel(/Chapter 3 · Fractions and Decimals/).check()
-    await teacher.getByLabel(/Chapter 4 · Simple Equations/).check()
-    await teacher.getByLabel(/Chapter 5 · Data Handling/).check()
-    await shot(teacher, 'm1-12-demo-make-paper')
-    await looksRight(teacher)
-    // the one-step way (Auto + edit is the default; the builder has its own test)
-    await teacher.getByRole('radio', { name: /^Quick/ }).check()
-    await teacher.getByRole('button', { name: 'Make the paper' }).click()
-    await teacher.waitForURL(/\/exams\/[0-9a-f-]{36}$/)
-    examUrl = teacher.url()
-    await expect(
-      teacher.getByRole('heading', { name: 'Unit Test 1' }),
-    ).toBeVisible()
-    await expect(teacher.getByTestId('demo-sample-card')).toBeVisible()
-    await shotOf(
-      teacher,
-      '[data-testid=demo-sample-card]',
-      'm1-13-demo-sample-button',
-    )
-    await looksRight(teacher)
-    // the exam page offers no answer booklets and no scanning (owner decision 2026-11-03)
-    await expect(teacher.getByText(/booklet|QR/i)).toHaveCount(0)
-    await expect(teacher.getByText('The question paper has questions only.')).toBeVisible()
-    if (process.env.UI_SHOTS_DIR) {
-      await wideShots(teacher, 'exam-page')
-      // the question paper itself, as the school downloads it
-      const pdf = await teacher.request.get(`${examUrl.replace('/school/', '/api/schools/')}/question-paper`)
-      expect(pdf.status()).toBe(200)
-      writeFileSync(`${process.env.UI_SHOTS_DIR}/question-paper.pdf`, await pdf.body())
-    }
-  })
-
-  test('"Use sample answer sheets" shows the class results: marks, where they were lost, heatmap and flags', async () => {
-    await teacher
-      .getByRole('button', { name: 'Use sample answer sheets' })
-      .click()
-    await expect(teacher.getByTestId('class-results')).toBeVisible({
-      timeout: 30_000,
-    })
-    await expect(
-      teacher.getByRole('heading', { name: 'Unit Test 1' }),
-    ).toBeVisible()
-    await expect(teacher.getByTestId('demo-banner')).toBeVisible()
-    await expect(teacher.getByText('DEMO - sample data').first()).toBeVisible()
-    await shotOf(
-      teacher,
-      '[data-testid=class-results]',
-      'm1-14-demo-results-class-top',
-    )
-    await expect(teacher.getByTestId('topics-to-fix')).toBeVisible()
-    await shotOf(teacher, '[data-testid=heatmap]', 'm1-15-demo-habit-heatmap')
-    await expect(
-      teacher.getByTestId('heatmap').locator('tbody tr'),
-    ).toHaveCount(30)
-    await shotOf(teacher, '[data-testid=flags]', 'm1-16-demo-teacher-flags')
-    expect(
-      await teacher.getByTestId('flags').locator('li').count(),
-    ).toBeGreaterThanOrEqual(3)
-    await shotOf(
-      teacher,
-      '[data-testid=student-list]',
-      'm1-17-demo-student-list',
-    )
-    await expect(teacher.getByTestId('student-list').locator('li')).toHaveCount(
-      30,
-    )
-    await looksRight(teacher)
-  })
-
-  test('one student report: knowledge gap against writing habit, strengths and topics to fix', async () => {
-    await teacher.getByTestId('student-list').locator('li a').first().click()
-    await expect(teacher.getByTestId('student-report')).toBeVisible()
-    await expect(teacher.getByText('Not learnt yet:')).toBeVisible()
-    await expect(teacher.getByText('Writing habit:')).toBeVisible()
-    await expect(teacher.getByTestId('strengths')).toBeVisible()
-    await expect(teacher.getByTestId('to-fix')).toBeVisible()
-    await expect(teacher.getByText('DEMO - sample data').first()).toBeVisible()
-    await shot(teacher, 'm1-18-demo-student-report')
-    await looksRight(teacher)
-    await teacher.getByRole('button', { name: 'Back to the class' }).click()
-    await expect(teacher.getByTestId('class-results')).toBeVisible()
-  })
-
-  test('Reset demo puts it all away, and the demo is ready to use again', async () => {
-    await open(teacher, `/school/${demoSchoolId}`)
-    await teacher.getByRole('button', { name: 'Reset demo' }).click()
-    await teacher.getByTestId('confirm-yes').click()
-    await expect(teacher.getByText('The demo is reset.')).toBeVisible()
-    await shot(teacher, 'm1-19-demo-reset')
-    await teacher
-      .getByTestId('big-actions')
-      .getByRole('link', { name: /See results/ })
-      .click()
-    await expect(teacher.getByText('No sample results yet.')).toBeVisible()
-    const old = await teacher.request.get(
-      examUrl
-        .replace('/school/', '/api/schools/')
-        .replace(/\/exams\//, '/results/'),
-    )
-    expect(old.status()).toBe(404)
-    await goTo(teacher, 'Make paper')
-    await expect(teacher.getByText('Unit Test 1')).toHaveCount(0)
   })
 })

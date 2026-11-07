@@ -40,8 +40,6 @@ export interface SchoolOverview {
     name: string
     code: string
     board: string
-    /** A demo school: every screen is labelled "DEMO - sample data". */
-    isDemo: boolean
     showClassRank: boolean
     disputeWindowDays: number
     /** The parts the school uses: 'papers' (make exam papers) and/or 'correction' (AI correction). */
@@ -85,7 +83,6 @@ export async function loadSchoolOverview(
       'name',
       'code',
       'board',
-      'is_demo',
       'ai_spend_cap_inr',
       'wizard_done_at',
       'modules',
@@ -112,7 +109,6 @@ export async function loadSchoolOverview(
       name: school.name,
       code: school.code,
       board: school.board,
-      isDemo: school.is_demo,
       showClassRank: school.show_class_rank,
       disputeWindowDays: school.dispute_window_days,
       modules: SCHOOL_MODULES.filter((m) => school.modules.includes(m)),

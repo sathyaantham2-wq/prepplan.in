@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import {
-  BarChart3,
   Check,
   ChevronRight,
   FilePlus2,
@@ -9,13 +8,11 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useSchool } from '../../../components/school/context'
-import { InfoTip, useShell } from '../../../components/school/kit'
+import { InfoTip } from '../../../components/school/kit'
 import {
-  Btn,
   Card,
   Chip,
   Loading,
-  Notice,
   PageHeader,
   linkButton,
 } from '../../../components/school/ui'
@@ -33,12 +30,9 @@ type Today = Awaited<ReturnType<typeof schoolToday>>
 // Home (UI redesign plan, section 5): a greeting with one main button, what is waiting today, the set-up checklist
 // until it is done, the main actions the school turned on, a slim row of figures and the recent papers.
 function SchoolHome() {
-  const { overview: o, schoolId, reload } = useSchool()
+  const { overview: o, schoolId } = useSchool()
   const navigate = useNavigate()
-  const { confirm, toast } = useShell()
-  const [demoMsg, setDemoMsg] = useState<string | null>(null)
-  const [demoBusy, setDemoBusy] = useState(false)
-  const [today, setToday] = useState<Today | null>(null)
+    const [today, setToday] = useState<Today | null>(null)
   const staff = o.role === 'school_admin' || o.role === 'principal' || o.role === 'teacher'
 
   // The school admin's first sign-in starts the setup wizard.
@@ -52,29 +46,6 @@ function SchoolHome() {
     api<Today>(`/api/schools/${schoolId}/today`).then(setToday, () => setToday(null))
   }, [schoolId, staff, needsWizard])
   if (needsWizard) return <Loading />
-
-  async function resetDemo() {
-    if (
-      !(await confirm({
-        title: 'Reset the demo?',
-        body: 'The sample papers and results are put away and you can start again.',
-        confirmLabel: 'Reset demo',
-        danger: true,
-      }))
-    )
-      return
-    setDemoBusy(true)
-    try {
-      await api(`/api/schools/${schoolId}/demo/reset`, { body: {} })
-      setDemoMsg('The demo is reset. Make a new paper to start again.')
-      toast('Demo reset')
-      await reload()
-    } catch (e) {
-      setDemoMsg(e instanceof Error ? e.message : 'Something went wrong.')
-    } finally {
-      setDemoBusy(false)
-    }
-  }
 
   const first = o.me.name.split(/\s+/)[0] || o.me.name
   const usePapers = o.school.modules.includes('papers')
@@ -120,27 +91,7 @@ function SchoolHome() {
     useCorrection && o.role !== 'principal' ? (
       <ActionCard key="correct" to="/school/$schoolId/own-papers" schoolId={schoolId} title="Correct answer sheets" hint="Upload the question paper, then each student's answer sheets. The AI marks them; your teachers check." icon={ScanLine} cta="Open" />
     ) : null,
-    o.role !== 'principal' ? (
-      <ActionCard key="results" to="/school/$schoolId/results" schoolId={schoolId} title="See results" hint="Marks, strong topics and topics to fix for each student." icon={BarChart3} cta="View" />
-    ) : null,
   ].filter(Boolean)
-
-  const demoBox = o.school.isDemo ? (
-    <Card className="space-y-2 border-amber-300! bg-amber-50!">
-      <p className="text-lg font-bold text-amber-950">This is a demo school</p>
-      <p className="text-base text-amber-950">
-        Make a paper, open it, and press “Use sample answer sheets” to see sample results. To use PrepPlan for real, write to
-        support@prepplan.in; we switch your school on after a check.
-      </p>
-      <p className="text-sm text-amber-950" data-testid="demo-cap">
-        AI spend cap for this demo: ₹{o.school.aiSpendCapInr ?? 0}. The sample results use none of it.
-      </p>
-      {demoMsg ? <Notice kind="good">{demoMsg}</Notice> : null}
-      <Btn kind="plain" disabled={demoBusy} onClick={() => void resetDemo()}>
-        {demoBusy ? 'Resetting…' : 'Reset demo'}
-      </Btn>
-    </Card>
-  ) : null
 
   return (
     <div className="space-y-6">
@@ -149,7 +100,6 @@ function SchoolHome() {
         help={o.role === 'principal' ? `How ${o.school.name} is doing today.` : `Here is what needs you today at ${o.school.name}.`}
         primary={primary}
       />
-      {demoBox}
       <div className="grid items-start gap-5 xl:grid-cols-12">
         <div className={setupLeft ? 'xl:col-span-7' : 'xl:col-span-12'}>
           <TodayPanel today={today} schoolId={schoolId} role={o.role} />
@@ -352,7 +302,7 @@ function ActionCard({
   icon: Icon,
   cta,
 }: {
-  to: '/school/$schoolId/exams/new' | '/school/$schoolId/own-papers' | '/school/$schoolId/results'
+  to: '/school/$schoolId/exams/new' | '/school/$schoolId/own-papers'
   schoolId: string
   title: string
   hint: string

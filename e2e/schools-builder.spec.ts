@@ -4,7 +4,7 @@ import type { Browser, Page } from '@playwright/test'
 import { createDb } from '../src/db/connection'
 import type { Db } from '../src/db/connection'
 import { deleteSchoolTermsForTest, signInSchoolUserForTest } from '../src/db/test-helpers'
-import { provisionDemoSchool } from '../src/lib/schools/demo-provision'
+import { provisionSampleSchool } from '../src/lib/schools/sample-school-fixture'
 
 /**
  * The paper builder (docs/SCHOOLS_MODULE_PLAN.md section 16) in a browser: Auto + edit with a swap, Hand-pick with
@@ -75,7 +75,7 @@ test.describe.serial('paper builder', () => {
     db = createDb()
     subjectId = (await db.insertInto('subjects').values({ board: 'CBSE', class: 7, code: `E2E-BU-${tag}`, name: 'Mathematics', language: 'en', is_active: true }).returning('id').executeTakeFirstOrThrow()).id
     await buildBank()
-    const d = await provisionDemoSchool(db, {
+    const d = await provisionSampleSchool(db, {
       name: 'Sri Vidya High School',
       code: `bu-${tag}`,
       adminName: 'Lakshmi Office',

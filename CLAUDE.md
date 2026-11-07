@@ -129,8 +129,9 @@ own students. Do not mix the two. Design: `docs/SCHOOLS_MODULE_PLAN.md` (a draft
 
 - **A school starts itself (owner decision 2026-10-29).** The person who creates a school, by the e-mail
   form at `/school/sign-up` or by "Continue with Google" from a school page, becomes its office admin and
-  the account is active at once (no confirmation). **It starts as a DEMO school (`is_demo`) with the demo AI cap (Rs 50) until the owner
-  approves it (owner decision 2026-10-30): `scripts/approve-school.ts`; no web route.** It still gets the set-up wizard. A platform-wide brake limits new schools to
+  the account is active at once (no confirmation). **There is no demo mode and no approval step (owner decision 2026-11-07: this is a working product).**
+  The school has the normal AI allowance from the first minute (`schools.is_demo` and `school_demo_results` stay in the database,
+  unused; nothing was deleted, and the three existing schools were all switched to normal on 2026-11-07). It still gets the set-up wizard. A platform-wide brake limits new schools to
   10 an hour and 40 a day. An e-mail that already belongs to a PrepPlan student or parent is refused: a
   school login is never joined to a personal one. This opens sign-up for school ADMINS only; school
   students and teachers are still created only by their school. The school terms are accepted in the
