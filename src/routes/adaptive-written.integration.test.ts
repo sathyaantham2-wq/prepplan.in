@@ -222,6 +222,8 @@ describe('adaptive paper with a written answer', () => {
       feedback: 'Good start.',
       confidence: 0.9,
       needsManualMarking: false,
+      model: 'test-model',
+      promptVersion: 'AI-05.v1',
     })
     const result = await submitPaper()
     expect(result.evaluation_id).toBeNull()

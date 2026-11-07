@@ -8,7 +8,7 @@ import type { BuilderAction } from '../../../../../../lib/schools/exam-builder'
 import { readJson } from '../../../../../../lib/schools/http'
 
 // The paper builder (docs/SCHOOLS_MODULE_PLAN.md section 16). GET: the paper, its sections and the live checklist;
-// GET ?bank=1&type=&marks=&difficulty=&bloom=&level=&chapter=&q=&hide_used=1&page=&answers=1: the question bank for
+// GET ?bank=1&source=ours|bank&type=&marks=&difficulty=&bloom=&level=&chapter=&q=&hide_used=1&page=&answers=1: the question bank for
 // the chosen chapters (answers only for the teacher and the office). POST { action, ... }: change the paper.
 // The principal may look; only the office and the teacher of the subject may change. Never a student.
 export const Route = createFileRoute('/api/schools/$schoolId/exams/$examId/builder')({
@@ -33,6 +33,7 @@ export const Route = createFileRoute('/api/schools/$schoolId/exams/$examId/build
                   hideUsed: q.get('hide_used') === '1',
                   page: Number(q.get('page') ?? 0) || 0,
                   answers: q.get('answers') === '1',
+                  source: q.get('source') === 'ours' ? 'ours' : q.get('source') === 'bank' ? 'bank' : null,
                 })
               : await builderView(db, scope, params.examId)
           return Response.json(body, { headers: { 'cache-control': 'private, no-store' } })

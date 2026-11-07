@@ -56,6 +56,16 @@ export interface OwnPaperAi {
     subject: string
     grade: number
   }) => Promise<string>
+  /** A teacher's own question -> the chapter, topic and level it most likely tests, as JSON text. The teacher confirms it. */
+  tag: (input: {
+    text: string
+    type: string
+    marks: number
+    options: Array<{ label: string; text: string }>
+    chapters: Array<{ code: string; label: string; topics: Array<{ code: string; name: string }> }>
+    subject: string
+    grade: number
+  }) => Promise<string>
 }
 
 const ONLY_JSON =
@@ -89,6 +99,12 @@ Shape: [{"q": 1, "answer": "...", "steps": [{"description": "...", "marks": 1}]}
 ${ONLY_JSON}
 A question tagged [RUBRIC] is a descriptive answer: give "criteria" instead of "steps": 2 to 5 criteria whose marks add up to the question's marks (half marks allowed). Each has a "kind" (one of concept, key_points, explanation, conclusion, diagram, language), "marks", a "descriptor" of what earns it, and "levels" listing the marks that can be awarded and what the pupil's answer says to earn them. Add a "language" criterion only if the question really tests writing quality.
 Shape: [{"q": 1, "answer": "...", "steps": [{"description": "...", "marks": 1}]}] or, for a [RUBRIC] question, [{"q": 2, "answer": "...", "criteria": [{"kind": "concept", "marks": 2, "descriptor": "...", "levels": [{"marks": 2, "says": "..."}, {"marks": 1, "says": "..."}]}]}]`,
+  tag: (
+    subject: string,
+    grade: number,
+  ) => `A teacher wrote the question below for a CBSE Class ${grade} ${subject} paper. From the chapters and their topics listed, choose the ONE chapter and the ONE topic it mostly tests. Then give its thinking level (one of Remember, Understand, Apply, Analyse, Evaluate, Create, Bloom's levels as CBSE uses them) and how hard it is for this class (one of Easy, Hard, Hardest), and how sure you are from 0 to 1. Do NOT answer, solve or change the question. If no chapter fits, give null for chapter and topic.
+${ONLY_JSON}
+Shape: {"chapter": "C2", "topic": "C2.3", "bloom": "Apply", "difficulty": "Easy", "confidence": 0.8}`,
 }
 
 export function createOwnPaperAi(
@@ -185,6 +201,15 @@ export function createOwnPaperAi(
         undefined,
         4000,
       ),
+    tag: ({ text, type, marks, options, chapters, subject, grade }) =>
+      run(
+        'SCH-08',
+        `${PROMPTS.tag(subject, grade)}\n\n--- CHAPTERS AND TOPICS ---\n${chapters
+          .map((c) => `${c.code}: ${c.label}\n${c.topics.map((t) => `   ${t.code}: ${t.name}`).join('\n')}`)
+          .join('\n')}\n\n--- QUESTION (${marks} marks, ${type}) ---\n${text.slice(0, 2000)}${options.length ? `\n${options.map((o) => `(${o.label}) ${o.text}`).join('\n')}` : ''}`,
+        undefined,
+        300,
+      ),
   }
 }
 
@@ -229,6 +254,17 @@ export function createFakeOwnPaperAi(): OwnPaperAi {
         ),
       ),
     readKey: () => Promise.resolve('[]'),
+    // the first chapter and topic; a 1-mark question is recall, anything longer is applying
+    tag: ({ chapters, marks }) =>
+      Promise.resolve(
+        JSON.stringify({
+          chapter: chapters[0]?.code ?? null,
+          topic: chapters[0]?.topics[0]?.code ?? null,
+          bloom: marks <= 1 ? 'Remember' : 'Apply',
+          difficulty: 'Easy',
+          confidence: 0.8,
+        }),
+      ),
     draftKey: ({ questions }) =>
       Promise.resolve(
         JSON.stringify(

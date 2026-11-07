@@ -269,6 +269,8 @@ export interface ErrorLog {
 export interface EvaluationItems {
   ai_error_type: ErrorType | null;
   ai_marks: Numeric | null;
+  ai_model: string | null;
+  ai_prompt_version: string | null;
   created_at: Generated<Timestamp>;
   error_type: ErrorType | null;
   evaluation_id: string;
@@ -406,6 +408,23 @@ export interface Households {
   plan: Generated<string>;
 }
 
+export interface MarkCorrections {
+  created_at: Generated<Timestamp>;
+  evaluation_id: string;
+  evaluation_item_id: string;
+  id: Generated<string>;
+  marks_max: Numeric;
+  new_error_type: string | null;
+  new_marks: Numeric;
+  new_question_id: string;
+  old_error_type: string | null;
+  old_marks: Numeric;
+  old_question_id: string;
+  quality_case_id: string;
+  seen_at: Timestamp | null;
+  student_id: string;
+}
+
 export interface MasteryHistory {
   accuracy: Numeric;
   components: Json;
@@ -520,6 +539,23 @@ export interface QuestionOptions {
   text: string;
 }
 
+export interface QuestionQualityCases {
+  ai_review: Json | null;
+  created_at: Generated<Timestamp>;
+  decided_at: Timestamp | null;
+  decided_by_user_id: string | null;
+  decision: string | null;
+  decision_detail: Json | null;
+  decision_note: string | null;
+  id: Generated<string>;
+  question_id: string;
+  severity: number;
+  signals: Json;
+  stats: Json | null;
+  status: Generated<string>;
+  updated_at: Generated<Timestamp>;
+}
+
 export interface QuestionReports {
   attempt_id: string;
   comment: string;
@@ -557,6 +593,19 @@ export interface Questions {
   text: string;
   text_hash: string;
   type: QuestionType;
+}
+
+export interface QuestionStats {
+  blank: number;
+  cell_correct_rate: Numeric | null;
+  computed_at: Generated<Timestamp>;
+  first_correct: number;
+  first_exposures: number;
+  median_time_sec: number | null;
+  option_counts: Generated<Json>;
+  question_id: string;
+  shrunk_correct_rate: Numeric | null;
+  strong_option_counts: Generated<Json>;
 }
 
 export interface QuestionStepMarks {
@@ -818,6 +867,20 @@ export interface SchoolOwnPapers {
   status: Generated<string>;
   title: string;
   total_marks: Numeric | null;
+}
+
+export interface SchoolQuestions {
+  ai_suggestion: Json | null;
+  chapter_id: string;
+  created_at: Generated<Timestamp>;
+  created_by_user_id: string;
+  id: Generated<string>;
+  question_id: string;
+  replaced_by_id: string | null;
+  retired_at: Timestamp | null;
+  retired_by_user_id: string | null;
+  school_id: string;
+  school_subject_id: string;
 }
 
 export interface SchoolOwnQuestions {
@@ -1421,6 +1484,7 @@ export interface DB {
   habit_observations: HabitObservations;
   habits: Habits;
   households: Households;
+  mark_corrections: MarkCorrections;
   mastery_history: MasteryHistory;
   mastery_settings: MasterySettings;
   notifications: Notifications;
@@ -1431,7 +1495,9 @@ export interface DB {
   product_events: ProductEvents;
   question_explanations: QuestionExplanations;
   question_options: QuestionOptions;
+  question_quality_cases: QuestionQualityCases;
   question_reports: QuestionReports;
+  question_stats: QuestionStats;
   question_step_marks: QuestionStepMarks;
   question_usage: QuestionUsage;
   questions: Questions;
@@ -1454,6 +1520,7 @@ export interface DB {
   school_own_covers: SchoolOwnCovers;
   school_own_papers: SchoolOwnPapers;
   school_own_questions: SchoolOwnQuestions;
+  school_questions: SchoolQuestions;
   school_own_sheets: SchoolOwnSheets;
   school_paper_templates: SchoolPaperTemplates;
   school_print_job_parts: SchoolPrintJobParts;

@@ -27,7 +27,7 @@ import { randomUUID } from 'node:crypto'
 
 // A generic placeholder band, not a school- or board-specific grading scale — none is defined
 // anywhere in the plan. Swap this out once a real one is decided.
-function gradeFromPercentage(percentage: number): string {
+export function gradeFromPercentage(percentage: number): string {
   if (percentage >= 90) return 'A'
   if (percentage >= 75) return 'B'
   if (percentage >= 60) return 'C'
@@ -106,6 +106,9 @@ export async function createEvaluation(db: Db, attemptId: string) {
     possible_stopped_early?: boolean
     // Per-part marks (a case study is marked part by part), so a result can show where she stopped.
     step_marks_awarded?: string
+    // which model and marking-prompt version proposed ai_marks (the quality loop compares them)
+    ai_model?: string | null
+    ai_prompt_version?: string | null
   }> = []
 
   type EvaluationItemDraft = (typeof items)[number]
@@ -212,6 +215,8 @@ export async function createEvaluation(db: Db, attemptId: string) {
         ai_error_type: aiResult.errorType,
         feedback: aiResult.feedback,
         possible_stopped_early: stoppedEarly,
+        ai_model: aiResult.model,
+        ai_prompt_version: aiResult.promptVersion,
         ...(aiResult.stepMarksAwarded.length > 0
           ? { step_marks_awarded: JSON.stringify(aiResult.stepMarksAwarded) }
           : {}),

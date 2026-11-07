@@ -39,3 +39,18 @@ test-results/
 
 # local-only inputs that must never be committed (real student sheets, reconstructed papers, marking-trial work)
 local-private/
+
+# owner's local reference files dropped in the project folder (question papers, syllabi, photos): never commit
+/*.pdf
+/*.jpeg
+/*.jpg
+/*.png
+/question papers dps/
+/sample-papers/
+/scratchpad/
+content/reference/
+# built from the copyrighted study notes and PYQ tagging work: local only
+content/authoring/civil/polity/aks/inventory/
+content/authoring/civil/polity/polity-tagged.json
+content/authoring/civil/polity/ISSUES.md
+content/authoring/civil/polity/TAGGER_BRIEF.md

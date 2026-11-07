@@ -38,6 +38,7 @@ import { Route as AdminAdaptiveRouteImport } from './routes/admin/adaptive'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
 import { Route as AdminFunnelRouteImport } from './routes/admin/funnel'
+import { Route as AdminQualityRouteImport } from './routes/admin/quality'
 import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
 import { Route as AdminReportsRouteImport } from './routes/admin/reports'
 import { Route as AdminSyllabusRouteImport } from './routes/admin/syllabus'
@@ -83,6 +84,7 @@ import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage
 import { Route as ApiAdminMasterySettingsRouteImport } from './routes/api/admin/mastery-settings'
 import { Route as ApiAdminOverviewRouteImport } from './routes/api/admin/overview'
 import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/product-funnel'
+import { Route as ApiAdminQualityRouteImport } from './routes/api/admin/quality'
 import { Route as ApiAdminQuestionReportsRouteImport } from './routes/api/admin/question-reports'
 import { Route as ApiAdminStudentActivityRouteImport } from './routes/api/admin/student-activity'
 import { Route as ApiAdminSubjectsRouteImport } from './routes/api/admin/subjects'
@@ -136,6 +138,7 @@ import { Route as SchoolSchoolIdBoardRouteImport } from './routes/school/$school
 import { Route as SchoolSchoolIdClassProgressRouteImport } from './routes/school/$schoolId/class-progress'
 import { Route as SchoolSchoolIdClassesRouteImport } from './routes/school/$schoolId/classes'
 import { Route as SchoolSchoolIdMessagesRouteImport } from './routes/school/$schoolId/messages'
+import { Route as SchoolSchoolIdQuestionsRouteImport } from './routes/school/$schoolId/questions'
 import { Route as SchoolSchoolIdSettingsRouteImport } from './routes/school/$schoolId/settings'
 import { Route as SchoolSchoolIdStudentsRouteImport } from './routes/school/$schoolId/students'
 import { Route as SchoolSchoolIdTeachersRouteImport } from './routes/school/$schoolId/teachers'
@@ -172,6 +175,7 @@ import { Route as ApiSchoolsSchoolIdExamsRouteImport } from './routes/api/school
 import { Route as ApiSchoolsSchoolIdImportsRouteImport } from './routes/api/schools/$schoolId/imports'
 import { Route as ApiSchoolsSchoolIdMaskRouteImport } from './routes/api/schools/$schoolId/mask'
 import { Route as ApiSchoolsSchoolIdMyResultsRouteImport } from './routes/api/schools/$schoolId/my-results'
+import { Route as ApiSchoolsSchoolIdOurQuestionsRouteImport } from './routes/api/schools/$schoolId/our-questions'
 import { Route as ApiSchoolsSchoolIdOverviewRouteImport } from './routes/api/schools/$schoolId/overview'
 import { Route as ApiSchoolsSchoolIdOwnPapersRouteImport } from './routes/api/schools/$schoolId/own-papers'
 import { Route as ApiSchoolsSchoolIdProgressRouteImport } from './routes/api/schools/$schoolId/progress'
@@ -225,6 +229,8 @@ import { Route as ApiSchoolsSchoolIdMessagingPermissionsRouteImport } from './ro
 import { Route as ApiSchoolsSchoolIdMessagingSettingsRouteImport } from './routes/api/schools/$schoolId/messaging/settings'
 import { Route as ApiSchoolsSchoolIdMyResultsPaperIdRouteImport } from './routes/api/schools/$schoolId/my-results/$paperId'
 import { Route as ApiSchoolsSchoolIdMySheetImagesSheetIdRouteImport } from './routes/api/schools/$schoolId/my-sheet-images/$sheetId'
+import { Route as ApiSchoolsSchoolIdOurQuestionsQuestionIdRouteImport } from './routes/api/schools/$schoolId/our-questions/$questionId'
+import { Route as ApiSchoolsSchoolIdOurQuestionsSuggestRouteImport } from './routes/api/schools/$schoolId/our-questions/suggest'
 import { Route as ApiSchoolsSchoolIdOwnPapersPaperIdRouteImport } from './routes/api/schools/$schoolId/own-papers/$paperId'
 import { Route as ApiSchoolsSchoolIdOwnSheetImagesSheetIdRouteImport } from './routes/api/schools/$schoolId/own-sheet-images/$sheetId'
 import { Route as ApiSchoolsSchoolIdProgressPractiseRouteImport } from './routes/api/schools/$schoolId/progress/practise'
@@ -419,6 +425,11 @@ const AdminCoverageRoute = AdminCoverageRouteImport.update({
 const AdminFunnelRoute = AdminFunnelRouteImport.update({
   id: '/funnel',
   path: '/funnel',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminQualityRoute = AdminQualityRouteImport.update({
+  id: '/quality',
+  path: '/quality',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminQuestionsRoute = AdminQuestionsRouteImport.update({
@@ -644,6 +655,11 @@ const ApiAdminOverviewRoute = ApiAdminOverviewRouteImport.update({
 const ApiAdminProductFunnelRoute = ApiAdminProductFunnelRouteImport.update({
   id: '/api/admin/product-funnel',
   path: '/api/admin/product-funnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminQualityRoute = ApiAdminQualityRouteImport.update({
+  id: '/api/admin/quality',
+  path: '/api/admin/quality',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminQuestionReportsRoute = ApiAdminQuestionReportsRouteImport.update({
@@ -918,6 +934,11 @@ const SchoolSchoolIdMessagesRoute = SchoolSchoolIdMessagesRouteImport.update({
   path: '/messages',
   getParentRoute: () => SchoolSchoolIdRoute,
 } as any)
+const SchoolSchoolIdQuestionsRoute = SchoolSchoolIdQuestionsRouteImport.update({
+  id: '/questions',
+  path: '/questions',
+  getParentRoute: () => SchoolSchoolIdRoute,
+} as any)
 const SchoolSchoolIdSettingsRoute = SchoolSchoolIdSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -1106,6 +1127,12 @@ const ApiSchoolsSchoolIdMyResultsRoute =
   ApiSchoolsSchoolIdMyResultsRouteImport.update({
     id: '/api/schools/$schoolId/my-results',
     path: '/api/schools/$schoolId/my-results',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiSchoolsSchoolIdOurQuestionsRoute =
+  ApiSchoolsSchoolIdOurQuestionsRouteImport.update({
+    id: '/api/schools/$schoolId/our-questions',
+    path: '/api/schools/$schoolId/our-questions',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ApiSchoolsSchoolIdOverviewRoute =
@@ -1412,6 +1439,18 @@ const ApiSchoolsSchoolIdMySheetImagesSheetIdRoute =
     id: '/api/schools/$schoolId/my-sheet-images/$sheetId',
     path: '/api/schools/$schoolId/my-sheet-images/$sheetId',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute =
+  ApiSchoolsSchoolIdOurQuestionsQuestionIdRouteImport.update({
+    id: '/$questionId',
+    path: '/$questionId',
+    getParentRoute: () => ApiSchoolsSchoolIdOurQuestionsRoute,
+  } as any)
+const ApiSchoolsSchoolIdOurQuestionsSuggestRoute =
+  ApiSchoolsSchoolIdOurQuestionsSuggestRouteImport.update({
+    id: '/suggest',
+    path: '/suggest',
+    getParentRoute: () => ApiSchoolsSchoolIdOurQuestionsRoute,
   } as any)
 const ApiSchoolsSchoolIdOwnPapersPaperIdRoute =
   ApiSchoolsSchoolIdOwnPapersPaperIdRouteImport.update({
@@ -1737,6 +1776,7 @@ export interface FileRoutesByFullPath {
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
+  '/admin/quality': typeof AdminQualityRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/syllabus': typeof AdminSyllabusRoute
@@ -1783,6 +1823,7 @@ export interface FileRoutesByFullPath {
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/overview': typeof ApiAdminOverviewRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
+  '/api/admin/quality': typeof ApiAdminQualityRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
   '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
   '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
@@ -1835,6 +1876,7 @@ export interface FileRoutesByFullPath {
   '/school/$schoolId/class-progress': typeof SchoolSchoolIdClassProgressRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
   '/school/$schoolId/messages': typeof SchoolSchoolIdMessagesRoute
+  '/school/$schoolId/questions': typeof SchoolSchoolIdQuestionsRoute
   '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
@@ -1872,6 +1914,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/schools/$schoolId/mask': typeof ApiSchoolsSchoolIdMaskRoute
   '/api/schools/$schoolId/my-results': typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
+  '/api/schools/$schoolId/our-questions': typeof ApiSchoolsSchoolIdOurQuestionsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/progress': typeof ApiSchoolsSchoolIdProgressRouteWithChildren
@@ -1925,6 +1968,8 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
   '/api/schools/$schoolId/my-results/$paperId': typeof ApiSchoolsSchoolIdMyResultsPaperIdRoute
   '/api/schools/$schoolId/my-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRoute
+  '/api/schools/$schoolId/our-questions/$questionId': typeof ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute
+  '/api/schools/$schoolId/our-questions/suggest': typeof ApiSchoolsSchoolIdOurQuestionsSuggestRoute
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
   '/api/schools/$schoolId/own-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute
   '/api/schools/$schoolId/progress/practise': typeof ApiSchoolsSchoolIdProgressPractiseRoute
@@ -2002,6 +2047,7 @@ export interface FileRoutesByTo {
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
+  '/admin/quality': typeof AdminQualityRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/syllabus': typeof AdminSyllabusRoute
@@ -2047,6 +2093,7 @@ export interface FileRoutesByTo {
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/overview': typeof ApiAdminOverviewRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
+  '/api/admin/quality': typeof ApiAdminQualityRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
   '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
   '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
@@ -2099,6 +2146,7 @@ export interface FileRoutesByTo {
   '/school/$schoolId/class-progress': typeof SchoolSchoolIdClassProgressRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
   '/school/$schoolId/messages': typeof SchoolSchoolIdMessagesRoute
+  '/school/$schoolId/questions': typeof SchoolSchoolIdQuestionsRoute
   '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
@@ -2136,6 +2184,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/schools/$schoolId/mask': typeof ApiSchoolsSchoolIdMaskRoute
   '/api/schools/$schoolId/my-results': typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
+  '/api/schools/$schoolId/our-questions': typeof ApiSchoolsSchoolIdOurQuestionsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/progress': typeof ApiSchoolsSchoolIdProgressRouteWithChildren
@@ -2189,6 +2238,8 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
   '/api/schools/$schoolId/my-results/$paperId': typeof ApiSchoolsSchoolIdMyResultsPaperIdRoute
   '/api/schools/$schoolId/my-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRoute
+  '/api/schools/$schoolId/our-questions/$questionId': typeof ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute
+  '/api/schools/$schoolId/our-questions/suggest': typeof ApiSchoolsSchoolIdOurQuestionsSuggestRoute
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
   '/api/schools/$schoolId/own-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute
   '/api/schools/$schoolId/progress/practise': typeof ApiSchoolsSchoolIdProgressPractiseRoute
@@ -2269,6 +2320,7 @@ export interface FileRoutesById {
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
+  '/admin/quality': typeof AdminQualityRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/syllabus': typeof AdminSyllabusRoute
@@ -2315,6 +2367,7 @@ export interface FileRoutesById {
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/overview': typeof ApiAdminOverviewRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
+  '/api/admin/quality': typeof ApiAdminQualityRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
   '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
   '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
@@ -2367,6 +2420,7 @@ export interface FileRoutesById {
   '/school/$schoolId/class-progress': typeof SchoolSchoolIdClassProgressRoute
   '/school/$schoolId/classes': typeof SchoolSchoolIdClassesRoute
   '/school/$schoolId/messages': typeof SchoolSchoolIdMessagesRoute
+  '/school/$schoolId/questions': typeof SchoolSchoolIdQuestionsRoute
   '/school/$schoolId/settings': typeof SchoolSchoolIdSettingsRoute
   '/school/$schoolId/students': typeof SchoolSchoolIdStudentsRoute
   '/school/$schoolId/teachers': typeof SchoolSchoolIdTeachersRoute
@@ -2404,6 +2458,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/imports': typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   '/api/schools/$schoolId/mask': typeof ApiSchoolsSchoolIdMaskRoute
   '/api/schools/$schoolId/my-results': typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
+  '/api/schools/$schoolId/our-questions': typeof ApiSchoolsSchoolIdOurQuestionsRouteWithChildren
   '/api/schools/$schoolId/overview': typeof ApiSchoolsSchoolIdOverviewRoute
   '/api/schools/$schoolId/own-papers': typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   '/api/schools/$schoolId/progress': typeof ApiSchoolsSchoolIdProgressRouteWithChildren
@@ -2457,6 +2512,8 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
   '/api/schools/$schoolId/my-results/$paperId': typeof ApiSchoolsSchoolIdMyResultsPaperIdRoute
   '/api/schools/$schoolId/my-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRoute
+  '/api/schools/$schoolId/our-questions/$questionId': typeof ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute
+  '/api/schools/$schoolId/our-questions/suggest': typeof ApiSchoolsSchoolIdOurQuestionsSuggestRoute
   '/api/schools/$schoolId/own-papers/$paperId': typeof ApiSchoolsSchoolIdOwnPapersPaperIdRouteWithChildren
   '/api/schools/$schoolId/own-sheet-images/$sheetId': typeof ApiSchoolsSchoolIdOwnSheetImagesSheetIdRoute
   '/api/schools/$schoolId/progress/practise': typeof ApiSchoolsSchoolIdProgressPractiseRoute
@@ -2538,6 +2595,7 @@ export interface FileRouteTypes {
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/funnel'
+    | '/admin/quality'
     | '/admin/questions'
     | '/admin/reports'
     | '/admin/syllabus'
@@ -2584,6 +2642,7 @@ export interface FileRouteTypes {
     | '/api/admin/mastery-settings'
     | '/api/admin/overview'
     | '/api/admin/product-funnel'
+    | '/api/admin/quality'
     | '/api/admin/question-reports'
     | '/api/admin/student-activity'
     | '/api/admin/subjects'
@@ -2636,6 +2695,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId/class-progress'
     | '/school/$schoolId/classes'
     | '/school/$schoolId/messages'
+    | '/school/$schoolId/questions'
     | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
@@ -2673,6 +2733,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/imports'
     | '/api/schools/$schoolId/mask'
     | '/api/schools/$schoolId/my-results'
+    | '/api/schools/$schoolId/our-questions'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/progress'
@@ -2726,6 +2787,8 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/messaging/settings'
     | '/api/schools/$schoolId/my-results/$paperId'
     | '/api/schools/$schoolId/my-sheet-images/$sheetId'
+    | '/api/schools/$schoolId/our-questions/$questionId'
+    | '/api/schools/$schoolId/our-questions/suggest'
     | '/api/schools/$schoolId/own-papers/$paperId'
     | '/api/schools/$schoolId/own-sheet-images/$sheetId'
     | '/api/schools/$schoolId/progress/practise'
@@ -2803,6 +2866,7 @@ export interface FileRouteTypes {
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/funnel'
+    | '/admin/quality'
     | '/admin/questions'
     | '/admin/reports'
     | '/admin/syllabus'
@@ -2848,6 +2912,7 @@ export interface FileRouteTypes {
     | '/api/admin/mastery-settings'
     | '/api/admin/overview'
     | '/api/admin/product-funnel'
+    | '/api/admin/quality'
     | '/api/admin/question-reports'
     | '/api/admin/student-activity'
     | '/api/admin/subjects'
@@ -2900,6 +2965,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId/class-progress'
     | '/school/$schoolId/classes'
     | '/school/$schoolId/messages'
+    | '/school/$schoolId/questions'
     | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
@@ -2937,6 +3003,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/imports'
     | '/api/schools/$schoolId/mask'
     | '/api/schools/$schoolId/my-results'
+    | '/api/schools/$schoolId/our-questions'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/progress'
@@ -2990,6 +3057,8 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/messaging/settings'
     | '/api/schools/$schoolId/my-results/$paperId'
     | '/api/schools/$schoolId/my-sheet-images/$sheetId'
+    | '/api/schools/$schoolId/our-questions/$questionId'
+    | '/api/schools/$schoolId/our-questions/suggest'
     | '/api/schools/$schoolId/own-papers/$paperId'
     | '/api/schools/$schoolId/own-sheet-images/$sheetId'
     | '/api/schools/$schoolId/progress/practise'
@@ -3069,6 +3138,7 @@ export interface FileRouteTypes {
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/funnel'
+    | '/admin/quality'
     | '/admin/questions'
     | '/admin/reports'
     | '/admin/syllabus'
@@ -3115,6 +3185,7 @@ export interface FileRouteTypes {
     | '/api/admin/mastery-settings'
     | '/api/admin/overview'
     | '/api/admin/product-funnel'
+    | '/api/admin/quality'
     | '/api/admin/question-reports'
     | '/api/admin/student-activity'
     | '/api/admin/subjects'
@@ -3167,6 +3238,7 @@ export interface FileRouteTypes {
     | '/school/$schoolId/class-progress'
     | '/school/$schoolId/classes'
     | '/school/$schoolId/messages'
+    | '/school/$schoolId/questions'
     | '/school/$schoolId/settings'
     | '/school/$schoolId/students'
     | '/school/$schoolId/teachers'
@@ -3204,6 +3276,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/imports'
     | '/api/schools/$schoolId/mask'
     | '/api/schools/$schoolId/my-results'
+    | '/api/schools/$schoolId/our-questions'
     | '/api/schools/$schoolId/overview'
     | '/api/schools/$schoolId/own-papers'
     | '/api/schools/$schoolId/progress'
@@ -3257,6 +3330,8 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/messaging/settings'
     | '/api/schools/$schoolId/my-results/$paperId'
     | '/api/schools/$schoolId/my-sheet-images/$sheetId'
+    | '/api/schools/$schoolId/our-questions/$questionId'
+    | '/api/schools/$schoolId/our-questions/suggest'
     | '/api/schools/$schoolId/own-papers/$paperId'
     | '/api/schools/$schoolId/own-sheet-images/$sheetId'
     | '/api/schools/$schoolId/progress/practise'
@@ -3366,6 +3441,7 @@ export interface RootRouteChildren {
   ApiAdminMasterySettingsRoute: typeof ApiAdminMasterySettingsRoute
   ApiAdminOverviewRoute: typeof ApiAdminOverviewRoute
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
+  ApiAdminQualityRoute: typeof ApiAdminQualityRoute
   ApiAdminQuestionReportsRoute: typeof ApiAdminQuestionReportsRoute
   ApiAdminStudentActivityRoute: typeof ApiAdminStudentActivityRoute
   ApiAdminSubjectsRoute: typeof ApiAdminSubjectsRouteWithChildren
@@ -3398,6 +3474,7 @@ export interface RootRouteChildren {
   ApiSchoolsSchoolIdImportsRoute: typeof ApiSchoolsSchoolIdImportsRouteWithChildren
   ApiSchoolsSchoolIdMaskRoute: typeof ApiSchoolsSchoolIdMaskRoute
   ApiSchoolsSchoolIdMyResultsRoute: typeof ApiSchoolsSchoolIdMyResultsRouteWithChildren
+  ApiSchoolsSchoolIdOurQuestionsRoute: typeof ApiSchoolsSchoolIdOurQuestionsRouteWithChildren
   ApiSchoolsSchoolIdOverviewRoute: typeof ApiSchoolsSchoolIdOverviewRoute
   ApiSchoolsSchoolIdOwnPapersRoute: typeof ApiSchoolsSchoolIdOwnPapersRouteWithChildren
   ApiSchoolsSchoolIdProgressRoute: typeof ApiSchoolsSchoolIdProgressRouteWithChildren
@@ -3632,6 +3709,13 @@ declare module '@tanstack/react-router' {
       path: '/funnel'
       fullPath: '/admin/funnel'
       preLoaderRoute: typeof AdminFunnelRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/quality': {
+      id: '/admin/quality'
+      path: '/quality'
+      fullPath: '/admin/quality'
+      preLoaderRoute: typeof AdminQualityRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/questions': {
@@ -3947,6 +4031,13 @@ declare module '@tanstack/react-router' {
       path: '/api/admin/product-funnel'
       fullPath: '/api/admin/product-funnel'
       preLoaderRoute: typeof ApiAdminProductFunnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/quality': {
+      id: '/api/admin/quality'
+      path: '/api/admin/quality'
+      fullPath: '/api/admin/quality'
+      preLoaderRoute: typeof ApiAdminQualityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/admin/question-reports': {
@@ -4320,6 +4411,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SchoolSchoolIdMessagesRouteImport
       parentRoute: typeof SchoolSchoolIdRoute
     }
+    '/school/$schoolId/questions': {
+      id: '/school/$schoolId/questions'
+      path: '/questions'
+      fullPath: '/school/$schoolId/questions'
+      preLoaderRoute: typeof SchoolSchoolIdQuestionsRouteImport
+      parentRoute: typeof SchoolSchoolIdRoute
+    }
     '/school/$schoolId/settings': {
       id: '/school/$schoolId/settings'
       path: '/settings'
@@ -4570,6 +4668,13 @@ declare module '@tanstack/react-router' {
       path: '/api/schools/$schoolId/my-results'
       fullPath: '/api/schools/$schoolId/my-results'
       preLoaderRoute: typeof ApiSchoolsSchoolIdMyResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schools/$schoolId/our-questions': {
+      id: '/api/schools/$schoolId/our-questions'
+      path: '/api/schools/$schoolId/our-questions'
+      fullPath: '/api/schools/$schoolId/our-questions'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdOurQuestionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/schools/$schoolId/overview': {
@@ -4943,6 +5048,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdMySheetImagesSheetIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/schools/$schoolId/our-questions/$questionId': {
+      id: '/api/schools/$schoolId/our-questions/$questionId'
+      path: '/$questionId'
+      fullPath: '/api/schools/$schoolId/our-questions/$questionId'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdOurQuestionsQuestionIdRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdOurQuestionsRoute
+    }
+    '/api/schools/$schoolId/our-questions/suggest': {
+      id: '/api/schools/$schoolId/our-questions/suggest'
+      path: '/suggest'
+      fullPath: '/api/schools/$schoolId/our-questions/suggest'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdOurQuestionsSuggestRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdOurQuestionsRoute
+    }
     '/api/schools/$schoolId/own-papers/$paperId': {
       id: '/api/schools/$schoolId/own-papers/$paperId'
       path: '/$paperId'
@@ -5295,6 +5414,7 @@ interface AdminRouteChildren {
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminCoverageRoute: typeof AdminCoverageRoute
   AdminFunnelRoute: typeof AdminFunnelRoute
+  AdminQualityRoute: typeof AdminQualityRoute
   AdminQuestionsRoute: typeof AdminQuestionsRoute
   AdminReportsRoute: typeof AdminReportsRoute
   AdminSyllabusRoute: typeof AdminSyllabusRoute
@@ -5310,6 +5430,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminCoverageRoute: AdminCoverageRoute,
   AdminFunnelRoute: AdminFunnelRoute,
+  AdminQualityRoute: AdminQualityRoute,
   AdminQuestionsRoute: AdminQuestionsRoute,
   AdminReportsRoute: AdminReportsRoute,
   AdminSyllabusRoute: AdminSyllabusRoute,
@@ -5326,6 +5447,7 @@ interface SchoolSchoolIdRouteChildren {
   SchoolSchoolIdClassProgressRoute: typeof SchoolSchoolIdClassProgressRoute
   SchoolSchoolIdClassesRoute: typeof SchoolSchoolIdClassesRoute
   SchoolSchoolIdMessagesRoute: typeof SchoolSchoolIdMessagesRoute
+  SchoolSchoolIdQuestionsRoute: typeof SchoolSchoolIdQuestionsRoute
   SchoolSchoolIdSettingsRoute: typeof SchoolSchoolIdSettingsRoute
   SchoolSchoolIdStudentsRoute: typeof SchoolSchoolIdStudentsRoute
   SchoolSchoolIdTeachersRoute: typeof SchoolSchoolIdTeachersRoute
@@ -5356,6 +5478,7 @@ const SchoolSchoolIdRouteChildren: SchoolSchoolIdRouteChildren = {
   SchoolSchoolIdClassProgressRoute: SchoolSchoolIdClassProgressRoute,
   SchoolSchoolIdClassesRoute: SchoolSchoolIdClassesRoute,
   SchoolSchoolIdMessagesRoute: SchoolSchoolIdMessagesRoute,
+  SchoolSchoolIdQuestionsRoute: SchoolSchoolIdQuestionsRoute,
   SchoolSchoolIdSettingsRoute: SchoolSchoolIdSettingsRoute,
   SchoolSchoolIdStudentsRoute: SchoolSchoolIdStudentsRoute,
   SchoolSchoolIdTeachersRoute: SchoolSchoolIdTeachersRoute,
@@ -5961,6 +6084,24 @@ const ApiSchoolsSchoolIdMyResultsRouteWithChildren =
     ApiSchoolsSchoolIdMyResultsRouteChildren,
   )
 
+interface ApiSchoolsSchoolIdOurQuestionsRouteChildren {
+  ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute: typeof ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute
+  ApiSchoolsSchoolIdOurQuestionsSuggestRoute: typeof ApiSchoolsSchoolIdOurQuestionsSuggestRoute
+}
+
+const ApiSchoolsSchoolIdOurQuestionsRouteChildren: ApiSchoolsSchoolIdOurQuestionsRouteChildren =
+  {
+    ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute:
+      ApiSchoolsSchoolIdOurQuestionsQuestionIdRoute,
+    ApiSchoolsSchoolIdOurQuestionsSuggestRoute:
+      ApiSchoolsSchoolIdOurQuestionsSuggestRoute,
+  }
+
+const ApiSchoolsSchoolIdOurQuestionsRouteWithChildren =
+  ApiSchoolsSchoolIdOurQuestionsRoute._addFileChildren(
+    ApiSchoolsSchoolIdOurQuestionsRouteChildren,
+  )
+
 interface ApiSchoolsSchoolIdOwnPapersPaperIdRouteChildren {
   ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdCoversRoute
   ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute: typeof ApiSchoolsSchoolIdOwnPapersPaperIdMarkingRoute
@@ -6138,6 +6279,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminMasterySettingsRoute: ApiAdminMasterySettingsRoute,
   ApiAdminOverviewRoute: ApiAdminOverviewRoute,
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
+  ApiAdminQualityRoute: ApiAdminQualityRoute,
   ApiAdminQuestionReportsRoute: ApiAdminQuestionReportsRoute,
   ApiAdminStudentActivityRoute: ApiAdminStudentActivityRoute,
   ApiAdminSubjectsRoute: ApiAdminSubjectsRouteWithChildren,
@@ -6171,6 +6313,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSchoolsSchoolIdMaskRoute: ApiSchoolsSchoolIdMaskRoute,
   ApiSchoolsSchoolIdMyResultsRoute:
     ApiSchoolsSchoolIdMyResultsRouteWithChildren,
+  ApiSchoolsSchoolIdOurQuestionsRoute:
+    ApiSchoolsSchoolIdOurQuestionsRouteWithChildren,
   ApiSchoolsSchoolIdOverviewRoute: ApiSchoolsSchoolIdOverviewRoute,
   ApiSchoolsSchoolIdOwnPapersRoute:
     ApiSchoolsSchoolIdOwnPapersRouteWithChildren,

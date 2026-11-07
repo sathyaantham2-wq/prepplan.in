@@ -69,6 +69,14 @@ export const Route = createFileRoute('/api/questions/$id')({
           params.id,
           parsed.data,
         )
+        // A cached worked explanation (AI-13) was written for the old wording or key; keeping it would show a
+        // student an explanation of a different answer. It is a cache, so it is dropped and rebuilt on next view.
+        const changed =
+          (parsed.data.text !== undefined && parsed.data.text !== existing.text) ||
+          (parsed.data.answer !== undefined && parsed.data.answer !== existing.answer)
+        if (changed) {
+          await db.deleteFrom('question_explanations').where('question_id', '=', params.id).execute()
+        }
         return Response.json(updated)
       },
     },

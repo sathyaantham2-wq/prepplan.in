@@ -134,7 +134,7 @@ export async function loadOwnPaper(
   return { ...paper, subject: s.subject, grade: s.grade }
 }
 
-const aiFor = async (db: Db, scope: SchoolScope): Promise<OwnPaperAi> => {
+export const aiFor = async (db: Db, scope: SchoolScope): Promise<OwnPaperAi> => {
   // the browser tests read papers with a stand-in that costs nothing; a real deployment never does
   if (process.env.OWN_PAPER_AI === 'fake' && !isProductionRuntime())
     return createFakeOwnPaperAi()

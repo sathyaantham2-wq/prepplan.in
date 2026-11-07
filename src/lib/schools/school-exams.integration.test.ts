@@ -2926,6 +2926,7 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
     resetScript()
     const fakeAi: OwnPaperAi = {
       available: () => script.available,
+      tag: () => Promise.resolve('{}'),
       extract: async (i) => {
         calls.push({ fn: 'extract', input: i })
         if (script.badExtract) return 'this is not json'

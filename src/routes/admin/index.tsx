@@ -65,7 +65,7 @@ function AdminOverviewPage() {
   if (data.usage.awaiting_confirmation > 0)
     attention.push({ text: `${data.usage.awaiting_confirmation} evaluation${data.usage.awaiting_confirmation === 1 ? '' : 's'} not yet confirmed`, href: '/admin/activity', tone: 'warn' })
   if (data.health.open_reports > 0)
-    attention.push({ text: `${data.health.open_reports} open question report${data.health.open_reports === 1 ? '' : 's'}`, href: '/admin/reports', tone: 'warn' })
+    attention.push({ text: `${data.health.open_reports} open question report${data.health.open_reports === 1 ? '' : 's'}`, href: '/admin/quality', tone: 'warn' })
   if (data.health.errors_24h > 0)
     attention.push({ text: `${data.health.errors_24h} error${data.health.errors_24h === 1 ? '' : 's'} in the last 24 hours`, href: '#health', tone: 'bad' })
   if (data.content.concepts_short > 0)

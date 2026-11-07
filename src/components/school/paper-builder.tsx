@@ -621,6 +621,16 @@ function UsedBadge({
   )
 }
 
+/** The school's own question (written on "Our questions"), not one from the PrepPlan bank. */
+function OursBadge({ ours }: { ours: boolean }) {
+  if (!ours) return null
+  return (
+    <span className="rounded-md bg-sky-50 px-2 py-0.5 text-sm font-semibold text-sky-900 ring-1 ring-sky-600/25" data-testid="ours-badge">
+      Our question
+    </span>
+  )
+}
+
 function QuestionCard({
   p,
   editing,
@@ -698,6 +708,7 @@ function QuestionCard({
                 <Lock aria-hidden="true" className="size-3.5" /> Locked
               </span>
             ) : null}
+            <OursBadge ours={p.ours} />
             <UsedBadge used={p.usedBefore} />
           </div>
           {editing ? (
@@ -859,6 +870,7 @@ function BankPanel({
     difficulty: '',
     level: '',
     chapter: '',
+    source: '',
     hideUsed: false,
   })
   const [page, setPage] = useState(0)
@@ -875,6 +887,7 @@ function BankPanel({
     if (f.difficulty) u.set('difficulty', f.difficulty)
     if (f.level) u.set('level', f.level)
     if (f.chapter) u.set('chapter', f.chapter)
+    if (f.source) u.set('source', f.source)
     if (f.hideUsed) u.set('hide_used', '1')
     if (answers.size) u.set('answers', '1')
     return u.toString()
@@ -894,7 +907,7 @@ function BankPanel({
   }
   const select = (
     label: string,
-    k: 'type' | 'marks' | 'difficulty' | 'level' | 'chapter',
+    k: 'type' | 'marks' | 'difficulty' | 'level' | 'chapter' | 'source',
     opts: Array<[string, string]>,
   ) => (
     <label className="text-sm font-semibold text-slate-700">
@@ -956,6 +969,10 @@ function BankPanel({
         {select('Level', 'level', [
           ['Remember', 'Remember'],
           ['Think', 'Think'],
+        ])}
+        {select('From', 'source', [
+          ['ours', 'Ours'],
+          ['bank', 'PrepPlan'],
         ])}
       </div>
       <label className="flex min-h-11 items-center gap-2 text-[15px] text-slate-900">
@@ -1068,6 +1085,7 @@ function BankCard({
         </Meta>
         <Meta>{q.difficulty}</Meta>
         <Meta>{q.level}</Meta>
+        <OursBadge ours={q.ours} />
         <UsedBadge used={q.usedBefore} />
       </div>
       {showAnswer && answer ? (

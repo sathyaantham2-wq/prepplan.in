@@ -1095,6 +1095,26 @@ must be picked first.
 - In the picker they appear with an "Our question" badge, filterable, and behave like bank questions (swap, lock, used
   before, versions). The office can see and retire them; nothing is deleted.
 
+**Built locally 2026-11-04 (owner: "12 … do it now"; F154). Not deployed; production needs migration 0104 (0103 is the composite-key fix from PR #39).**
+- Storage: a school question is a `questions` row with status `school` and origin `school`, so the paper, teacher copy,
+  Word file and AI marking read it by id like any bank question. Every shared-bank pool takes status `approved` only, so it
+  never reaches a PrepPlan student or another school. The admin bank search and the duplicate check skip it too.
+  Ownership is `school_questions` (school_id, question_id, school_subject_id, chapter_id, maker, AI suggestion, retired,
+  replaced_by). Migration 0103 also makes 0102's two keys between school tables composite (the schema lint caught them).
+- Screen `/school/$schoolId/questions` ("Our questions" in the sidebar under Exams): list with class-subject and chapter
+  filters, search, "Show retired"; a drawer to write or change a question in three steps (the question; the answer, four
+  options with the right one ticked, or a model answer with marking steps that must add up; where it belongs, with
+  "Suggest chapter and level"). Kinds: multiple choice, assertion and reason, fill in the blank, short and long answer.
+- AI: feature `SCH-08` (cheap tier) suggests chapter, topic, level and difficulty from the subject's own lists; the
+  teacher sees them filled in and saves. Same school AI budget as the other school AI calls.
+- Who: the office and the teachers of that subject write; only the maker and the office change or retire; the principal
+  only looks; no student route.
+- Changing a question that is on a paper makes a new question and retires the old one (`replaced_by_id`); finished papers
+  keep what they printed, papers still being made switch to the new one.
+- Make paper: in the bank with an "Our question" badge and a "From: Ours / PrepPlan" filter; Swap and "Fill the rest" may
+  use them; Quick mode uses the PrepPlan bank only. A retired question cannot be added again.
+- Tests: `src/lib/schools/school-questions.integration.test.ts` (9), and the fourth test of `e2e/schools-builder.spec.ts`.
+
 ### 16.14 Owner decisions (2026-11-03)
 
 Approved. 1 to 4 as proposed (recent = this school year from 1 April; set B shuffles question order only; a finished

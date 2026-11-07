@@ -21,6 +21,10 @@ const FEATURE = 'AI-05'
 // is what stops an uncertain AI grade from being confirmed automatically on adaptive papers.
 export const MIN_GRADING_CONFIDENCE = 0.7
 
+// Bump whenever the marking prompt below changes, so the quality loop can compare marking before and after the
+// change (stored on evaluation_items.ai_prompt_version next to the model that answered).
+export const GRADING_PROMPT_VERSION = 'AI-05.v1'
+
 export function isAiGradingConfigured(): boolean {
   return isAiConfigured()
 }
@@ -49,6 +53,9 @@ export interface SubjectiveGradingResult {
   feedback: string
   confidence: number
   needsManualMarking: boolean
+  // which vendor model proposed the marks, and which prompt version; null when no AI mark was proposed
+  model: string | null
+  promptVersion: string | null
 }
 
 const NEEDS_MANUAL_MARKING: SubjectiveGradingResult = {
@@ -58,6 +65,8 @@ const NEEDS_MANUAL_MARKING: SubjectiveGradingResult = {
   feedback: 'Needs manual marking.',
   confidence: 0,
   needsManualMarking: true,
+  model: null,
+  promptVersion: null,
 }
 
 /**
@@ -179,6 +188,8 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     feedback: result.feedback ?? '',
     confidence,
     needsManualMarking: false,
+    model: modelUsed,
+    promptVersion: GRADING_PROMPT_VERSION,
   }
 }
 

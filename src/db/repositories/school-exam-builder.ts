@@ -1,7 +1,46 @@
 import { sql } from 'kysely'
+import type { ExpressionBuilder } from 'kysely'
+import type { DB } from '../types'
 import type { Db } from '../connection'
 import type { SchoolScope } from '../school-scope'
 import { createSchoolScopedRepository } from './factory'
+
+/**
+ * The questions a school may put on its paper: the shared bank (approved) and its own questions that are not retired.
+ * Another school's questions never match.
+ */
+export function usableBySchool(schoolId: string) {
+  return (eb: ExpressionBuilder<DB, 'questions'>) =>
+    eb.or([
+      eb('questions.status', '=', 'approved'),
+      eb.and([
+        eb('questions.status', '=', 'school'),
+        eb(
+          'questions.id',
+          'in',
+          eb.selectFrom('school_questions').select('school_questions.question_id').where('school_questions.school_id', '=', schoolId).where('school_questions.retired_at', 'is', null),
+        ),
+      ]),
+    ])
+}
+
+/** The append-only record of each finished version of a paper (exact questions as printed). */
+export const schoolExamVersionsRepository = createSchoolScopedRepository('school_exam_versions')
+
+/** The school's own questions (section 16.13): which `questions` rows (status 'school') belong to this school. */
+export const schoolQuestionsRepository = {
+  ...createSchoolScopedRepository('school_questions'),
+  /** This school's record for a question, if the question is its own and not retired. */
+  async activeByQuestion(db: Db, scope: SchoolScope, questionId: string) {
+    return db
+      .selectFrom('school_questions')
+      .selectAll()
+      .where('school_id', '=', scope.schoolId)
+      .where('question_id', '=', questionId)
+      .where('retired_at', 'is', null)
+      .executeTakeFirst()
+  },
+}
 
 /**
  * The reads of the paper builder that need raw SQL (docs/SCHOOLS_MODULE_PLAN.md section 16): which questions this school
@@ -29,10 +68,11 @@ export const examBuilderRepository = {
       where v.school_id = ${scope.schoolId} and v.exam_id <> ${examId} and v.finalized_at >= ${since}`.execute(db)
     return r.rows.map((x) => x.qid)
   },
-  /** Approved bank questions for a slot, in random order (the global bank; no school data). */
+  /** Questions for a slot, in random order: the bank's approved ones and this school's own. */
   async slotCandidates(
     db: Db,
     p: {
+      schoolId: string
       conceptIds: ReadonlyArray<string>
       marks: number
       blooms: ReadonlyArray<string>
@@ -44,7 +84,7 @@ export const examBuilderRepository = {
     let q = db
       .selectFrom('questions')
       .select(['id', 'concept_id', 'type', 'marks', 'difficulty', 'bloom', 'tags', 'diagram_kind'])
-      .where('status', '=', 'approved')
+      .where(usableBySchool(p.schoolId))
       .where('concept_id', 'in', [...p.conceptIds])
       .where('marks', '=', p.marks)
       .where('bloom', 'in', [...p.blooms] as Array<never>)
@@ -53,6 +93,3 @@ export const examBuilderRepository = {
     return q.orderBy(sql`random()`).limit(p.limit).execute()
   },
 }
-
-/** The append-only record of each finished version of a paper (exact questions as printed). */
-export const schoolExamVersionsRepository = createSchoolScopedRepository('school_exam_versions')

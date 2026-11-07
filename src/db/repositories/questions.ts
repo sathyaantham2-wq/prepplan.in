@@ -43,7 +43,8 @@ export const questionsRepository = {
     limit: number,
     offset: number,
   ) {
-    let query = db.selectFrom('questions').selectAll()
+    // a school's own questions (status 'school') are that school's data, never part of the bank screens
+    let query = db.selectFrom('questions').selectAll().where('status', '!=', 'school')
     if (filters.concept_id)
       query = query.where('concept_id', '=', filters.concept_id)
     if (filters.bloom) query = query.where('bloom', '=', filters.bloom)

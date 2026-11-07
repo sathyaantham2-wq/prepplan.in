@@ -161,6 +161,9 @@ own students. Do not mix the two. Design: `docs/SCHOOLS_MODULE_PLAN.md` (a draft
   does it by default; the school admin can assign the subject teacher instead, per section-subject.
 - **Answer key.** The student-role key rules above still apply; nothing about the school module relaxes
   them.
+- **The school's own questions (F154, 2026-11-04).** Stored as `questions` rows with status `school`, owned through
+  `school_questions`. Any query that builds a pool from the shared bank must take status `approved` only (never "not
+  retired"), or a school's questions leak to students and other schools. Builder pools use `usableBySchool(schoolId)`.
 - **No answer booklet (owner decision 2026-11-03).** A school's question paper carries questions only, in the CBSE
   layout (no answer space, no rough work, no QR, no printed names); students write on the school's own answer sheets.
   AI correction takes each student's pages under her name (student-wise upload, wrong-upload checks before marking).
