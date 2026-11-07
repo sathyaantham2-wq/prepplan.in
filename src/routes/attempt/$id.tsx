@@ -64,6 +64,8 @@ interface AttemptResult {
     mastery_level: string | null
     previous_level: string | null
   }>
+  // Marks changed after an answer key was fixed (quality loop 1b); told to her, never hidden.
+  key_corrections?: Array<{ paper_question_id: string; old_marks: number; new_marks: number; marks_max: number }>
   // Per question: her marks and the correct answer -- allowed here, post-submission, per
   // CLAUDE.md's T09 amendment (2026-09-22). Merged client-side with the question text/her own
   // saved answer this screen already holds from GET /api/attempts/:id.
@@ -514,6 +516,19 @@ function Attempt() {
                         {yourAnswer}
                       </p>
                     </div>
+                    {(() => {
+                      const fixed = result.key_corrections?.find((c) => c.paper_question_id === q.paper_question_id)
+                      if (!fixed) return null
+                      return (
+                        <div className="answer-box">
+                          <p className="field-label">Answer key corrected</p>
+                          <p className="answer-text">
+                            The answer key for this question was wrong and has been fixed. Your mark changed from{' '}
+                            {fixed.old_marks} to {fixed.new_marks} (out of {fixed.marks_max}). We are sorry for the mistake.
+                          </p>
+                        </div>
+                      )
+                    })()}
                     {scored?.correct_answer && (
                       <div className="answer-box answer-box-right">
                         <p className="field-label">Correct answer</p>

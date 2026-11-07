@@ -177,6 +177,8 @@ describe('written answer review: question a mark, remove a question, accept', ()
       feedback: 'Show the last step.',
       confidence: 0.9,
       needsManualMarking: false,
+      model: 'test-model',
+      promptVersion: 'AI-05.v1',
     })
 
     const generated = await handlerFor(GenerateRoute, 'POST')({

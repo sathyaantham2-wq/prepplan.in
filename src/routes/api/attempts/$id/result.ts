@@ -144,8 +144,33 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
           })
         }
 
+        // Quality loop phase 1b: if a wrong answer key was fixed after she was marked, tell her what changed.
+        const correctionRows = await db
+          .selectFrom('mark_corrections as mc')
+          .innerJoin('evaluation_items as ei', 'ei.id', 'mc.evaluation_item_id')
+          .select(['ei.paper_question_id', 'mc.old_marks', 'mc.new_marks', 'mc.marks_max', 'mc.created_at'])
+          .where('mc.evaluation_id', '=', evaluation.id)
+          .where('mc.student_id', '=', student.id)
+          .execute()
+        if (correctionRows.length > 0) {
+          await db
+            .updateTable('mark_corrections')
+            .set({ seen_at: new Date() })
+            .where('evaluation_id', '=', evaluation.id)
+            .where('student_id', '=', student.id)
+            .where('seen_at', 'is', null)
+            .execute()
+        }
+
         return Response.json({
           evaluated: true,
+          key_corrections: correctionRows.map((c) => ({
+            paper_question_id: c.paper_question_id,
+            old_marks: Number(c.old_marks),
+            new_marks: Number(c.new_marks),
+            marks_max: Number(c.marks_max),
+            corrected_at: c.created_at,
+          })),
           score: Number(evaluation.actual_score ?? 0),
           total_marks: Number(evaluation.total_marks),
           percentage: Number(evaluation.percentage ?? 0),

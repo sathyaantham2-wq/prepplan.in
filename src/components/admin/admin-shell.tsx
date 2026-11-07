@@ -16,6 +16,7 @@ import {
   LogOut,
   Menu,
   PlayCircle,
+  ShieldCheck,
   Users,
   X,
   Library,
@@ -45,6 +46,7 @@ const GROUPS: Array<{ title: string; items: Array<NavItem> }> = [
     title: 'Content',
     items: [
       { href: '/admin/questions', label: 'Question bank', icon: <Library className={ic} /> },
+      { href: '/admin/quality', label: 'Question quality', icon: <ShieldCheck className={ic} /> },
       { href: '/admin/reports', label: 'Question reports', icon: <Flag className={ic} /> },
       { href: '/admin/coverage', label: 'Coverage', icon: <LayoutGrid className={ic} /> },
       { href: '/admin/syllabus', label: 'Syllabus', icon: <BookOpen className={ic} /> },

@@ -248,6 +248,18 @@ describe('paper builder', () => {
     const fresh = await db.selectFrom('questions').select('id').where('text', 'like', `%ch3 #0 ${tag}`).executeTakeFirstOrThrow()
     const none = await examBuilderRepository.lastUsedAt(db, teacher, id, [fresh.id])
     expect(none.size === 0 || none.has(fresh.id)).toBe(true)
+
+  it('the paper PDF and Word file of a draft show its real maximum marks, not 0', async () => {
+    const { questionPaperHtml } = await import('./exam-service')
+    const id = (await createExam(db, teacher, input('hand_pick', 'Draft marks'))).id
+    await builderAction(db, teacher, id, { action: 'fill_rest' })
+    const draft = (await questionPaperHtml(db, teacher, id)).input()
+    expect(draft.totalMarks).toBe(8) // 4 one-mark MCQs and 2 two-mark questions (the OR counts once)
+    expect(draft.halfYearly?.nominalMarks).toBe(8)
+    // a finished paper still agrees with its recorded marks
+    const quick = await createExam(db, teacher, input('quick', 'Quick marks'))
+    const recorded = await db.selectFrom('school_exams').select('printed_marks').where('id', '=', quick.id).executeTakeFirstOrThrow()
+    expect((await questionPaperHtml(db, teacher, quick.id)).input().totalMarks).toBe(Number(recorded.printed_marks))
   })
 
   it('answers and marking schemes are for the teacher and the office only', async () => {
