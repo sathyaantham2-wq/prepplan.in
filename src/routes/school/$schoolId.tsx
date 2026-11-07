@@ -8,7 +8,6 @@ import {
   useRouterState,
 } from '@tanstack/react-router'
 import {
-  BarChart3,
   BookOpenCheck,
   ChevronDown,
   ClipboardList,
@@ -52,7 +51,6 @@ interface NavItem {
     | '/school/$schoolId/questions'
     | '/school/$schoolId/own-papers'
     | '/school/$schoolId/board'
-    | '/school/$schoolId/results'
     | '/school/$schoolId/my-results'
     | '/school/$schoolId/progress'
     | '/school/$schoolId/class-progress'
@@ -78,7 +76,6 @@ function navFor(o: SchoolOverview): { groups: Array<NavGroup>; bottom: Array<Nav
   const makePaper: NavItem = { to: '/school/$schoolId/exams', label: 'Make paper', icon: BookOpenCheck }
   const ourQuestions: NavItem = { to: '/school/$schoolId/questions', label: 'Our questions', icon: FileQuestion }
   const correction: NavItem = { to: '/school/$schoolId/own-papers', label: 'AI correction', icon: ScanLine, also: ['/board'] }
-  const results: NavItem = { to: '/school/$schoolId/results', label: 'Results', icon: BarChart3 }
   const board: NavItem = { to: '/school/$schoolId/class-progress', label: 'Progress board', icon: Grid3x3 }
   const messages: NavItem = { to: '/school/$schoolId/messages', label: 'Messages', icon: MessageSquare }
   const exams = (items: Array<NavItem | false>): Array<NavGroup> => {
@@ -97,7 +94,7 @@ function navFor(o: SchoolOverview): { groups: Array<NavGroup>; bottom: Array<Nav
             students,
           ],
         },
-        ...exams([has('papers') && makePaper, has('papers') && ourQuestions, has('correction') && correction, has('papers') && results, has('correction') && board]),
+        ...exams([has('papers') && makePaper, has('papers') && ourQuestions, has('correction') && correction, has('correction') && board]),
         { items: [messages] },
       ],
       bottom: [{ to: '/school/$schoolId/settings', label: 'Settings', icon: Settings, also: ['/terms', '/papers'] }],
@@ -106,7 +103,7 @@ function navFor(o: SchoolOverview): { groups: Array<NavGroup>; bottom: Array<Nav
     return {
       groups: [
         { items: [home, students] },
-        ...exams([has('papers') && makePaper, has('papers') && ourQuestions, has('correction') && correction, has('papers') && results, has('correction') && board]),
+        ...exams([has('papers') && makePaper, has('papers') && ourQuestions, has('correction') && correction, has('correction') && board]),
         { items: [messages] },
       ],
       bottom: [],
@@ -490,11 +487,6 @@ function Frame({
               )}
             </Menu>
           </div>
-          {overview.school.isDemo ? (
-            <p data-testid="demo-banner" className="bg-amber-300 px-4 py-1.5 text-center text-sm font-bold tracking-wide text-amber-950">
-              DEMO - sample data
-            </p>
-          ) : null}
         </header>
         <main id="main" className="mx-auto w-full max-w-[1440px] px-4 pt-6 pb-16 sm:px-6 lg:px-8">
           <Outlet />

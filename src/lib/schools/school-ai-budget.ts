@@ -3,15 +3,13 @@ import { aiJobsRepository } from '../../db/repositories'
 import { SchoolError } from './common'
 
 // A school's AI allowance (owner decision 2026-10-29): a rupee cap per school per calendar month,
-// kept in schools.ai_spend_cap_inr (the demo school has Rs 50). A school with no figure of its own gets
+// kept in schools.ai_spend_cap_inr. A school with no figure of its own gets
 // the default below. The spend is the sum of what its AI calls cost (ai_jobs, attributed to the
 // school's own household). The check is made BEFORE each AI call; a call cannot be priced in advance,
 // so the last call before the cap may run a little over it. Default Rs 10,000 a month: owner decision
 // 2026-10-30 (it was Rs 100).
 
 export const DEFAULT_SCHOOL_AI_CAP_INR = 10_000
-/** The allowance of a demo school: the owner's demo school, and every school that started itself until the owner approves it. */
-export const DEMO_AI_SPEND_CAP_INR = 50
 
 export function monthStartUtc(now: Date): Date {
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))

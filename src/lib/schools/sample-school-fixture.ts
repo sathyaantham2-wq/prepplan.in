@@ -12,18 +12,16 @@ import {
   createSection,
   setClassTeacher,
 } from './setup'
-import { DEMO_AI_SPEND_CAP_INR } from './school-ai-budget'
 import { adoptDefaultTemplate } from './template-service'
 import { acceptSchoolTerms } from './terms'
 
-// Creating the demo school (M1). Kept apart from demo.ts so the provisioning script can load it
-// without the PDF code (which a plain script runner cannot import).
+// A sample school for tests and end-to-end specs only: one Class 7 section, a teacher, 30 invented students. It is NOT a
+// product feature (the demo mode of schools was removed on 2026-11-07); no production code imports it.
 
-export { DEMO_AI_SPEND_CAP_INR }
-export const DEMO_STUDENT_COUNT = 30
+export const SAMPLE_STUDENT_COUNT = 30
 
-/** Thirty invented names. None is meant to be a real person; the whole school is labelled DEMO. */
-export const DEMO_STUDENT_NAMES = [
+/** Thirty invented names. None is meant to be a real person; the sample school is for tests. */
+export const SAMPLE_STUDENT_NAMES = [
   'Aarna Demo',
   'Bhavin Sample',
   'Charu Example',
@@ -56,7 +54,7 @@ export const DEMO_STUDENT_NAMES = [
   'Dhruv Placeholder',
 ] as const
 
-export async function provisionDemoSchool(
+export async function provisionSampleSchool(
   db: Db,
   input: {
     name: string
@@ -81,8 +79,6 @@ export async function provisionDemoSchool(
   await db
     .updateTable('schools')
     .set({
-      is_demo: true,
-      ai_spend_cap_inr: String(DEMO_AI_SPEND_CAP_INR),
       wizard_step: 'done',
       wizard_done_at: new Date(),
     })
@@ -91,7 +87,7 @@ export async function provisionDemoSchool(
   const loaded = await loadSchoolScope(db, result.adminUserId, schoolId, [
     'school_admin',
   ])
-  if (!loaded.ok) throw new Error('Could not open the demo school')
+  if (!loaded.ok) throw new Error('Could not open the sample school')
   const admin = loaded.scope
   await acceptSchoolTerms(db, admin)
 
@@ -136,7 +132,7 @@ export async function provisionDemoSchool(
       schoolSubjectId: s.id,
     })
 
-  for (const [i, name] of DEMO_STUDENT_NAMES.entries())
+  for (const [i, name] of SAMPLE_STUDENT_NAMES.entries())
     await createSchoolStudent(db, admin, {
       name,
       grade: 7,
@@ -160,11 +156,11 @@ export async function provisionDemoSchool(
   await auditSchool(
     db,
     admin,
-    'school.demo_created',
+    'school.sample_created',
     'schools',
     schoolId,
     null,
-    { students: DEMO_STUDENT_COUNT },
+    { students: SAMPLE_STUDENT_COUNT },
   )
   return {
     schoolId,

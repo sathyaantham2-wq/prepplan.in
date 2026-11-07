@@ -54,10 +54,6 @@ import { Route as SettingsRoute } from '../../routes/api/schools/$schoolId/setti
 import { Route as CorrectionExamsRoute } from '../../routes/api/schools/$schoolId/correction/exams'
 import { ownPaperFromExam } from './correction'
 import { Route as OverviewRoute } from '../../routes/api/schools/$schoolId/overview'
-import { Route as ResultsRoute } from '../../routes/api/schools/$schoolId/results'
-import { Route as ResultsExamRoute } from '../../routes/api/schools/$schoolId/results/$examId'
-import { Route as DemoSampleRoute } from '../../routes/api/schools/$schoolId/demo/sample-results'
-import { Route as DemoResetRoute } from '../../routes/api/schools/$schoolId/demo/reset'
 import { Route as ScanChunkRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-chunks.$uploadId'
 import { Route as ScansRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scans'
 import { Route as ScanSummaryRoute } from '../../routes/api/schools/$schoolId/exams/$examId/scan-summary'
@@ -114,12 +110,6 @@ import { countPdfPages } from '../pdf/page-count'
 import { loadSchoolScope } from '../school-session'
 import { bookletPageToken } from './booklet-token'
 import { SchoolError } from './common'
-import {
-  DEMO_STUDENT_NAMES,
-  provisionDemoSchool,
-  resetDemo,
-  useSampleAnswerSheets,
-} from './demo'
 import { createSchoolStudent, createSchoolTeacher } from './people'
 import {
   addWizardTeacher,
@@ -2263,23 +2253,11 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
   })
 
   /** M1: the first-sign-in wizard and the demo school. */
-  describe('wizard and demo school (M1)', () => {
+  describe('wizard (M1)', () => {
     let cScope: SchoolScope
     let cAdminS: TestSession
     let cTeacherS: TestSession
     let cSchoolId = ''
-    let demoId = ''
-    let demoAdmin: SchoolScope
-    let demoTeacher: SchoolScope
-    let demoTeacherS: TestSession
-    let demoAdminS: TestSession
-    let demoExamId = ''
-    let demoCodes: {
-      schoolId: string
-      adminCode: string
-      teacherCode: string | null
-      subjects: number
-    }
     const rp = (id: string) => ({ schoolId: id })
 
     beforeAll(async () => {
@@ -2305,35 +2283,6 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
       })
       userIds.push(t.user.id)
       cTeacherS = await signInSchoolUserForTest(t.user.id)
-
-      demoCodes = await provisionDemoSchool(db, {
-        name: `Demo School ${tag}`,
-        code: `dm-${tag}`,
-        adminName: 'Demo Office',
-        adminEmail: `dmo-${tag}@school.test`,
-        teacherName: 'Demo Teacher',
-        teacherEmail: `dmt-${tag}@school.test`,
-      })
-      demoId = demoCodes.schoolId
-      schoolIds.push(demoId)
-      const da = await db
-        .selectFrom('users')
-        .select('id')
-        .where('email', '=', `dmo-${tag}@school.test`)
-        .executeTakeFirstOrThrow()
-      const dt = await db
-        .selectFrom('users')
-        .select('id')
-        .where('email', '=', `dmt-${tag}@school.test`)
-        .executeTakeFirstOrThrow()
-      userIds.push(da.id, dt.id)
-      const la = await loadSchoolScope(db, da.id, demoId, ['school_admin'])
-      const lt = await loadSchoolScope(db, dt.id, demoId, ['teacher'])
-      if (!la.ok || !lt.ok) throw new Error('scope')
-      demoAdmin = la.scope
-      demoTeacher = lt.scope
-      demoAdminS = await signInSchoolUserForTest(da.id)
-      demoTeacherS = await signInSchoolUserForTest(dt.id)
     }, 120_000)
 
     it('a new school starts at the first question, not done, with nothing added', async () => {
@@ -2586,277 +2535,6 @@ describe('exam papers, teacher copy and answer booklets (S5)', () => {
         /Something is missing/,
       )
     })
-
-    it('the demo school: Class 7 section A, 30 invented students, set up, labelled, with a small AI cap', async () => {
-      const row = await db
-        .selectFrom('schools')
-        .select(['is_demo', 'ai_spend_cap_inr', 'wizard_done_at'])
-        .where('id', '=', demoId)
-        .executeTakeFirstOrThrow()
-      expect(row.is_demo).toBe(true)
-      expect(Number(row.ai_spend_cap_inr)).toBe(50)
-      expect(row.wizard_done_at).not.toBeNull()
-      const roster = await db
-        .selectFrom('school_students as ss')
-        .innerJoin('students as st', 'st.id', 'ss.student_id')
-        .innerJoin('school_sections as sec', 'sec.id', 'ss.section_id')
-        .innerJoin('school_classes as cl', 'cl.id', 'sec.class_id')
-        .select([
-          'st.name',
-          'sec.name as section',
-          'cl.grade',
-          'ss.admission_no',
-        ])
-        .where('ss.school_id', '=', demoId)
-        .execute()
-      expect(roster).toHaveLength(30)
-      expect(roster.every((r) => r.section === 'A' && r.grade === 7)).toBe(true)
-      expect(new Set(roster.map((r) => r.name))).toEqual(
-        new Set(DEMO_STUDENT_NAMES),
-      )
-      expect(roster.every((r) => r.admission_no.startsWith('DEMO-'))).toBe(true)
-      // no real contact detail anywhere in the demo
-      expect(
-        await db
-          .selectFrom('school_student_guardians')
-          .select('id')
-          .where('school_id', '=', demoId)
-          .execute(),
-      ).toEqual([])
-      const emails = await db
-        .selectFrom('students as st')
-        .innerJoin('users as u', 'u.id', 'st.user_id')
-        .select('u.email')
-        .where('st.school_id', '=', demoId)
-        .execute()
-      expect(
-        emails.every((e) =>
-          e.email.endsWith('@school-student.prepplan.invalid'),
-        ),
-      ).toBe(true)
-      expect(demoCodes.adminCode).toMatch(
-        /^[2-9A-HJKMNP-Z]{5}-[2-9A-HJKMNP-Z]{5}$/,
-      )
-      expect(demoCodes.teacherCode).toMatch(
-        /^[2-9A-HJKMNP-Z]{5}-[2-9A-HJKMNP-Z]{5}$/,
-      )
-      const ov = await (
-        await import('./overview')
-      ).loadSchoolOverview(db, demoAdmin)
-      expect(ov.school.isDemo).toBe(true)
-      expect(ov.school.aiSpendCapInr).toBe(50)
-      expect(ov.wizardDone).toBe(true)
-      expect(
-        (await (await import('./overview')).loadSchoolOverview(db, cScope))
-          .school.isDemo,
-      ).toBe(false)
-    })
-
-    it('the teacher makes a real paper from the bank for the demo class, then presses "use sample answer sheets"', async () => {
-      const ov = await (
-        await import('./overview')
-      ).loadSchoolOverview(db, demoAdmin)
-      const section = ov.classes[0].sections[0].id
-      const tpl = await saveTemplate(db, demoAdmin, { definition: TINY })
-      demoExamId = (
-        await createExam(db, demoAdmin, {
-          title: 'Demo Unit Test',
-          subjectId,
-          templateKey: tpl.key,
-          chapterIds: [chapter.p1, chapter.p2],
-          sectionIds: [section],
-        })
-      ).id
-      const r = await useSampleAnswerSheets(db, demoTeacher, demoExamId)
-      expect(r.demo).toBe(true)
-      expect(r.label).toBe('DEMO - sample data')
-      expect(r.students).toHaveLength(30)
-      expect(new Set(r.students.map((s) => s.name))).toEqual(
-        new Set(DEMO_STUDENT_NAMES),
-      )
-      expect(r.totalMarks).toBe(25)
-      expect(r.students.every((s) => s.outOf === 25)).toBe(true)
-      expect(r.flags.length).toBeGreaterThanOrEqual(3)
-      // the topics are the chapters the paper was made from
-      const topics = new Set(
-        r.students.flatMap((s) => s.questions.map((q) => q.topic)),
-      )
-      for (const t of topics) expect(['Fractions', 'Decimals']).toContain(t)
-      // pressing it again replaces the first set (the first is archived, never deleted)
-      await useSampleAnswerSheets(db, demoTeacher, demoExamId)
-      const rows = await db
-        .selectFrom('school_demo_results')
-        .select('archived_at')
-        .where('exam_id', '=', demoExamId)
-        .execute()
-      expect(rows).toHaveLength(2)
-      expect(rows.filter((x) => x.archived_at === null)).toHaveLength(1)
-    }, 120_000)
-
-    it('the results screens are fed by the API: the demo teacher and office see them; nobody else does', async () => {
-      const list = await call(
-        ResultsRoute,
-        'GET',
-        demoTeacherS.cookie,
-        rp(demoId),
-      )
-      expect(list.status).toBe(200)
-      const rows = (await list.json()) as Array<{
-        examId: string
-        demo: boolean
-        students: number
-      }>
-      expect(rows).toEqual([
-        expect.objectContaining({
-          examId: demoExamId,
-          demo: true,
-          students: 30,
-        }),
-      ])
-      const one = await call(ResultsExamRoute, 'GET', demoAdminS.cookie, {
-        schoolId: demoId,
-        examId: demoExamId,
-      })
-      expect(one.status).toBe(200)
-      expect(one.headers.get('cache-control')).toBe('private, no-store')
-      expect(((await one.json()) as { label: string }).label).toBe(
-        'DEMO - sample data',
-      )
-      const p = { schoolId: demoId, examId: demoExamId }
-      expect((await call(ResultsExamRoute, 'GET', null, p)).status).toBe(401)
-      expect(
-        (await call(ResultsExamRoute, 'GET', outsiderS.cookie, p)).status,
-      ).toBe(404) // the admin of another school
-      expect(
-        (await call(ResultsRoute, 'GET', outsiderS.cookie, rp(demoId))).status,
-      ).toBe(404)
-      expect(
-        (await call(ResultsExamRoute, 'GET', cTeacherS.cookie, p)).status,
-      ).toBe(404) // a teacher of another school
-      for (const sess of [principalS, studentS, parentS]) {
-        expect([401, 403, 404]).toContain(
-          (await call(ResultsExamRoute, 'GET', sess.cookie, p)).status,
-        )
-        expect([401, 403, 404]).toContain(
-          (await call(ResultsRoute, 'GET', sess.cookie, rp(demoId))).status,
-        )
-      }
-    })
-
-    it('a real school can never use the demo buttons, and has no sample results', async () => {
-      await refuses(useSampleAnswerSheets(db, admin, examId), 'forbidden')
-      await refuses(resetDemo(db, admin), 'forbidden')
-      expect(
-        (
-          await call(DemoSampleRoute, 'POST', adminS.cookie, rp(schoolA), {
-            exam_id: examId,
-          })
-        ).status,
-      ).toBe(403)
-      expect(
-        (await call(DemoResetRoute, 'POST', adminS.cookie, rp(schoolA), {}))
-          .status,
-      ).toBe(403)
-      // the demo school's own door is closed to other schools too
-      expect(
-        (await call(DemoResetRoute, 'POST', outsiderS.cookie, rp(demoId), {}))
-          .status,
-      ).toBe(404)
-      expect(
-        (await call(ResultsRoute, 'GET', adminS.cookie, rp(schoolA))).status,
-      ).toBe(200)
-      expect(
-        await (
-          await call(ResultsRoute, 'GET', adminS.cookie, rp(schoolA))
-        ).json(),
-      ).toEqual([])
-      expect(
-        (
-          await call(ResultsExamRoute, 'GET', adminS.cookie, {
-            schoolId: schoolA,
-            examId,
-          })
-        ).status,
-      ).toBe(404)
-    })
-
-    it('reset demo puts the exams and sample results away without deleting anything, and touches no other school', async () => {
-      const before = await db
-        .selectFrom('school_exams')
-        .select('id')
-        .where('school_id', '=', demoId)
-        .execute()
-      expect(before.length).toBe(1)
-      const r = await resetDemo(db, demoAdmin)
-      expect(r.exams).toBe(1)
-      expect((await listExams(db, demoAdmin)).length).toBe(0)
-      expect(
-        await (
-          await call(ResultsRoute, 'GET', demoAdminS.cookie, rp(demoId))
-        ).json(),
-      ).toEqual([])
-      // still there, only archived
-      const after = await db
-        .selectFrom('school_exams')
-        .select(['id', 'archived_at'])
-        .where('school_id', '=', demoId)
-        .execute()
-      expect(after).toHaveLength(1)
-      expect(after[0].archived_at).not.toBeNull()
-      const kept = await db
-        .selectFrom('school_demo_results')
-        .select('archived_at')
-        .where('school_id', '=', demoId)
-        .execute()
-      expect(kept.length).toBeGreaterThan(0)
-      expect(kept.every((k) => k.archived_at !== null)).toBe(true)
-      // the 30 students are still there for the next demo
-      expect(
-        (
-          await db
-            .selectFrom('school_students')
-            .select('id')
-            .where('school_id', '=', demoId)
-            .execute()
-        ).length,
-      ).toBe(30)
-      // other schools' exams are untouched
-      expect(
-        (
-          await db
-            .selectFrom('school_exams')
-            .select('id')
-            .where('school_id', '=', schoolA)
-            .where('archived_at', 'is not', null)
-            .execute()
-        ).length,
-      ).toBe(0)
-      expect((await listExams(db, admin)).length).toBeGreaterThan(0)
-      const log = await db
-        .selectFrom('audit_log')
-        .select('action')
-        .where('school_id', '=', demoId)
-        .where('action', '=', 'school.demo_reset')
-        .execute()
-      expect(log).toHaveLength(1)
-      // and the demo can be used again straight away
-      const tpl = await saveTemplate(db, demoAdmin, {
-        definition: { ...TINY, name: 'Tiny again' },
-      })
-      const ov = await (
-        await import('./overview')
-      ).loadSchoolOverview(db, demoAdmin)
-      const again = await createExam(db, demoAdmin, {
-        title: 'Second demo',
-        subjectId,
-        templateKey: tpl.key,
-        chapterIds: [chapter.p1, chapter.p2],
-        sectionIds: [ov.classes[0].sections[0].id],
-      })
-      expect(
-        (await useSampleAnswerSheets(db, demoTeacher, again.id)).students,
-      ).toHaveLength(30)
-    }, 120_000)
   })
 
   /** Step 3: "Use your own paper". The AI is replaced by a scripted stand-in; nothing reaches a vendor. */

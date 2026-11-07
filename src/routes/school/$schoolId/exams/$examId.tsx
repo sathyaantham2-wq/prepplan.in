@@ -110,24 +110,6 @@ function ExamPage() {
     }
   }
 
-  async function useSample() {
-    setBusy('sample')
-    setError(null)
-    try {
-      await api(`/api/schools/${schoolId}/demo/sample-results`, {
-        body: { exam_id: examId },
-      })
-      await navigate({
-        to: '/school/$schoolId/results/$examId',
-        params: { schoolId, examId },
-        search: { student: undefined },
-      })
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Something went wrong.')
-      setBusy(null)
-    }
-  }
-
   async function run(name: string, path: string, body?: unknown) {
     setBusy(name)
     setMessage(null)
@@ -458,30 +440,6 @@ function ExamPage() {
           files.
         </p>
       </Card>
-      {d.mayHandle && overview.school.isDemo ? (
-        <Card
-          className="space-y-3 border-amber-400 bg-amber-50"
-          data-testid="demo-sample-card"
-        >
-          <h2 className="text-lg font-bold text-amber-950">
-            Demo: no answer sheets needed
-          </h2>
-          <p className="text-base text-amber-950">
-            Press the button to fill this exam with sample answer sheets for the
-            30 invented students. You then see sample results. Nothing is
-            uploaded and no AI is used.
-          </p>
-          <Btn
-            className="w-full"
-            disabled={busy !== null}
-            onClick={() => void useSample()}
-          >
-            {busy === 'sample'
-              ? 'Making sample results…'
-              : 'Use sample answer sheets'}
-          </Btn>
-        </Card>
-      ) : null}
       {/* scanning printed booklets (QR) is switched off with the booklets; answer sheets go through AI correction */}
       {d.mayHandle &&
       overview.bookletsEnabled &&
