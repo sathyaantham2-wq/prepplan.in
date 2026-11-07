@@ -1,0 +1,1266 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH9",
+  "class": 9,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Measuring Space: Perimeter and Area"
+ },
+ "source_code": "iemh106",
+ "concepts": [
+  {
+   "code": "C9M-6.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 119",
+     "q": "A rectangle has length a units and width b units. What is its perimeter?",
+     "a": "2(a + b) units",
+     "o": [
+      "2(a + b) units",
+      "ab units",
+      "(a + b) units",
+      "4a units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 125",
+     "q": "A circular well in a village has a radius of 21 m. A low wall is built along its edge. Using pi = 22/7, how long is the wall?",
+     "a": "132 m",
+     "o": [
+      "132 m",
+      "66 m",
+      "264 m",
+      "1386 m"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 120",
+     "q": "Neel draws two circles, one of diameter 4 cm and one of diameter 10 cm. Which quantity is the same for both circles?",
+     "a": "The circumference divided by the diameter",
+     "o": [
+      "The circumference divided by the diameter",
+      "The circumference minus the diameter",
+      "The length of the circumference",
+      "The circumference divided by the radius squared"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 119-120",
+     "q": "Assertion (A): For every equilateral triangle, the ratio of its perimeter to its side is 3 : 1.\nReason (R): All three angles of an equilateral triangle are equal, each being 60 degrees.",
+     "a": "Both A and R are true, but R is not the correct explanation of A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 119",
+     "q": "A shop makes a square photo frame of side 18 cm and a rectangular frame 20 cm long and 15 cm wide. Gold beading is fixed round the edge of each frame. (a) Find the perimeter of each frame. (b) Which frame needs more beading, and by how much?",
+     "a": "(a) Square: 4 x 18 = 72 cm. Rectangle: 2(20 + 15) = 70 cm. (b) The square frame needs 2 cm more beading.",
+     "s": [
+      [
+       "(a) Finds 72 cm for the square and 70 cm for the rectangle",
+       1
+      ],
+      [
+       "(b) Says the square frame needs 2 cm more",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 125",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Using pi = 22/7, a circle of diameter 14 cm has a circumference of 44 cm. Give a reason.",
+     "a": "True. The circumference is pi x d = (22/7) x 14 = 44 cm.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Shows (22/7) x 14 = 44 cm using C = pi d",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 119",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Ritu says: 'If I make a rectangle 3 cm longer and 3 cm wider, its perimeter goes up by 6 cm.' Test her claim on a rectangle 10 cm by 6 cm, and say what the increase is for any rectangle.",
+     "a": "Ritu is wrong. The old perimeter is 2(10 + 6) = 32 cm. The new rectangle is 13 cm by 9 cm, with perimeter 2(13 + 9) = 44 cm, an increase of 12 cm. For any rectangle, 2((a + 3) + (b + 3)) = 2(a + b) + 12, so the perimeter always goes up by 12 cm, because each of the four sides grows by 3 cm.",
+     "s": [
+      [
+       "Finds the old perimeter 32 cm and the new perimeter 44 cm",
+       1
+      ],
+      [
+       "Concludes the increase is 12 cm, so the claim is wrong",
+       1
+      ],
+      [
+       "Shows 2((a + 3) + (b + 3)) = 2(a + b) + 12 for any rectangle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 125",
+     "q": "A circular walking path in a park has a circumference of 220 m. Use pi = 22/7. (a) Find the radius of the path. (b) Raju is at one point of the path and wants to reach the point exactly opposite. How many metres does he save by walking straight across through the centre instead of going half-way round the path?",
+     "a": "(a) 2 x (22/7) x r = 220, so r = 35 m. (b) Half-way round is 220 / 2 = 110 m; straight across is the diameter, 70 m. He saves 110 - 70 = 40 m.",
+     "s": [
+      [
+       "(a) Finds r = 35 m from 2 pi r = 220",
+       1
+      ],
+      [
+       "(b) Compares 110 m with the 70 m diameter and finds 40 m saved",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 125",
+     "q": "The boundary of a circular park has a circumference of 176 m. A jogging track 3.5 m wide is laid all round the outside of the park. Use pi = 22/7. (a) Find the radius of the park. (b) Find the outer radius of the track. (c) Find the circumference of the outer edge of the track. (d) How much longer is the outer edge than the park boundary? (e) Show that this difference would be the same for a park of any size, as long as the track is 3.5 m wide.",
+     "a": "(a) 2 x (22/7) x r = 176, so r = 28 m. (b) 28 + 3.5 = 31.5 m. (c) 2 x (22/7) x 31.5 = 198 m. (d) 198 - 176 = 22 m. (e) For a park of radius r, the outer edge is 2 pi (r + 3.5) = 2 pi r + 2 pi x 3.5. The difference is 2 pi x 3.5 = 2 x (22/7) x 3.5 = 22 m, which does not depend on r.",
+     "s": [
+      [
+       "(a) Finds the radius 28 m",
+       1
+      ],
+      [
+       "(b) Finds the outer radius 31.5 m",
+       1
+      ],
+      [
+       "(c) Finds the outer circumference 198 m",
+       1
+      ],
+      [
+       "(d) Finds the difference 22 m",
+       1
+      ],
+      [
+       "(e) Shows 2 pi (r + 3.5) - 2 pi r = 7 pi = 22 m for every r",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 119-125",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A town council plans to fix LED strip lights round the edges of three features in a market square: a square ticket kiosk of side 4.5 m, a circular fountain of diameter 7 m, and a rectangular stage 8 m long and 5 m wide. The strip is fixed once round the full edge of each feature and costs Rs 240 per metre. The council has a budget of Rs 13,000. Use pi = 22/7.\n(a) Find the length of strip needed for the kiosk.\n(b) Find the length of strip needed for the fountain.\n(c) Find the length for the stage, and the cost of lighting all three features.\n(d) The fountain must be lit. Which one other feature should the council light so that it uses as much of its budget as possible without going over it? How much money is left?",
+     "a": "(a) 4 x 4.5 = 18 m. (b) (22/7) x 7 = 22 m. (c) 2(8 + 5) = 26 m. All three need 18 + 22 + 26 = 66 m, costing 66 x 240 = Rs 15,840, more than the budget. (d) Fountain and stage: 48 m, costing Rs 11,520 (within budget), leaving Rs 1,480. Fountain and kiosk: 40 m, costing Rs 9,600. Both fit, but the fountain and the stage use more of the budget, so the council should light the stage; Rs 1,480 is left.",
+     "s": [
+      [
+       "(a) Kiosk: 18 m",
+       1
+      ],
+      [
+       "(b) Fountain: 22 m",
+       1
+      ],
+      [
+       "(c) Stage 26 m; all three cost Rs 15,840, over the budget",
+       1
+      ],
+      [
+       "(d) Chooses fountain and stage at Rs 11,520, leaving Rs 1,480, after comparing with Rs 9,600",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-6.2",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 122",
+     "q": "Which mathematician gave the value 3.1416 for pi and called it 'asanna', meaning 'approaching' or 'approximate'?",
+     "a": "Aryabhata",
+     "o": [
+      "Aryabhata",
+      "Brahmagupta",
+      "Zu Chongzhi",
+      "Madhava"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 121-122",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each mathematician or civilisation in Column I with the value of pi it used in Column II.\nColumn I: 1. Mesopotamia  2. Zu Chongzhi (close ratio)  3. Aryabhata  4. Brahmagupta\nColumn II: a. 3.1416  b. root 10  c. 3 + 1/8  d. 355/113",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-c, 2-a, 3-d, 4-b",
+      "1-b, 2-d, 3-a, 4-c",
+      "1-c, 2-d, 3-b, 4-a"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 123",
+     "q": "Which one of these numbers is rational?",
+     "a": "22/7",
+     "o": [
+      "22/7",
+      "pi",
+      "root 2",
+      "2 pi"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 123-124",
+     "q": "Assertion (A): pi is exactly equal to 22/7.\nReason (R): pi cannot be written as a ratio of two integers.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 122-123",
+     "q": "Consider the following statements.\nI. Aryabhata proved in 499 CE that pi is irrational.\nII. Brahmagupta chose root 10 for pi because it was easy to work with in equations, even though it is slightly less accurate.\nIII. Zu Chongzhi's ratio 355/113 remained the most accurate value of pi in the world for over 800 years.\nWhich of the statements given above are correct?",
+     "a": "II and III only",
+     "o": [
+      "II and III only",
+      "I and II only",
+      "I and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 122-125",
+     "q": "(a) Why is 22 July celebrated in India as Pi Approximation Day? (b) Write 22/7 as a decimal correct to 4 places. Is it more or less than Aryabhata's value 3.1416?",
+     "a": "(a) In India 22 July is written 22-7, and 22/7 is an approximation of pi. (b) 22/7 = 3.142857..., which is 3.1429 to 4 places. It is more than 3.1416.",
+     "s": [
+      [
+       "(a) Links the date 22-7 to the approximation 22/7",
+       1
+      ],
+      [
+       "(b) Writes 3.1429 and says it is more than 3.1416",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 124",
+     "q": "A student uses the sentence 'How I wish I could recollect pi' to remember pi. (a) Count the letters in each word and write the digits you get. (b) Write the value of pi these digits give, correct to 4 decimal places.",
+     "a": "(a) The word lengths are 3, 1, 4, 1, 5, 9, 2, so pi is about 3.141592. (b) Correct to 4 decimal places, pi is about 3.1416.",
+     "s": [
+      [
+       "(a) Writes the digits 3, 1, 4, 1, 5, 9, 2",
+       1
+      ],
+      [
+       "(b) Rounds 3.141592 to 3.1416",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 121-122",
+     "q": "Archimedes showed that pi lies between 3.1408 and 3.1429 (to 4 places). About 400 years later Ptolemy of Alexandria used 377/120 for pi. Take pi = 3.14159. (a) Write 377/120 as a decimal correct to 5 places. (b) Does Ptolemy's value lie between Archimedes' bounds? (c) Aryabhata later used 3.1416. Find the error of each value from 3.14159 and say whose value is closer to pi, and about how many times closer.",
+     "a": "(a) 377/120 = 3.14167 (to 5 places). (b) Yes, since 3.1408 < 3.14167 < 3.1429. (c) Ptolemy's error is 3.14167 - 3.14159 = 0.00008; Aryabhata's error is 3.1416 - 3.14159 = 0.00001. Aryabhata's value is closer, about 8 times closer than Ptolemy's.",
+     "s": [
+      [
+       "(a) Writes 377/120 = 3.14167",
+       1
+      ],
+      [
+       "(b) Shows 3.1408 < 3.14167 < 3.1429, so it lies between the bounds",
+       1
+      ],
+      [
+       "(c) Finds errors 0.00008 and 0.00001 and says Aryabhata's value is about 8 times closer",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 121-122",
+     "q": "A potter finds the rim length of a round plate of diameter 20 cm twice: once with the Mesopotamian value 3.125 for pi and once with Aryabhata's value 3.1416. By how much do the two answers differ?",
+     "a": "0.332 cm",
+     "o": [
+      "0.332 cm",
+      "0.166 cm",
+      "3.32 cm",
+      "0.0166 cm"
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 121-122",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A sports goods factory must make 500 steel hoops, each a circle of diameter 1.2 m, for a school drill display. Steel strip costs Rs 150 per metre. The factory treats Zu Chongzhi's close ratio 355/113 as the true value of pi. Its supplier offers to cut the strip using either the Mesopotamian value 3.125 or Ptolemy's value 377/120. The factory's rule: the strip must never be shorter than the close-ratio length (a short hoop cannot be closed), and any extra strip must cost less than Rs 100 in all.\n(a) Find the total strip length needed using 355/113, correct to 2 decimal places.\n(b) Find the total length using 3.125 and by how much it falls short.\n(c) Find the total length using 377/120, the extra length and its cost.\n(d) Which value should the supplier use? For the rejected value, how many complete hoops could actually be made?",
+     "a": "(a) Total diameter = 500 x 1.2 = 600 m, so length = (355/113) x 600 = 1,884.96 m. (b) 3.125 x 600 = 1,875 m, which is 9.96 m short. (c) (377/120) x 600 = 1,885 m, which is 0.04 m extra, costing about 0.044 x 150 = Rs 6.64. (d) Ptolemy's 377/120 should be used: it is never short and the extra costs only about Rs 6.64, under Rs 100. The 3.125 value is rejected: each hoop needs (355/113) x 1.2 = 3.77 m, and 1,875 / 3.77 = 497.4, so only 497 complete hoops could be made, 3 fewer than needed.",
+     "s": [
+      [
+       "(a) Length 1,884.96 m from (355/113) x 600",
+       1
+      ],
+      [
+       "(b) Length 1,875 m, short by 9.96 m",
+       1
+      ],
+      [
+       "(c) Length 1,885 m, extra 0.04 m costing about Rs 6.64",
+       1
+      ],
+      [
+       "(d) Chooses 377/120 by the rule and finds only 497 complete hoops with 3.125",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-6.3",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 125",
+     "q": "What is the length of a quarter-circle arc of a circle of radius r?",
+     "a": "pi r / 2",
+     "o": [
+      "pi r / 2",
+      "pi r",
+      "2 pi r",
+      "pi r / 4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 126",
+     "q": "An arc of a circle of radius 35 cm subtends an angle of 72 degrees at the centre. Using pi = 22/7, what is the length of the arc?",
+     "a": "44 cm",
+     "o": [
+      "44 cm",
+      "22 cm",
+      "88 cm",
+      "220 cm"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 129",
+     "q": "A sector of a circle has radius r and its arc has length l. What is the perimeter of the sector?",
+     "a": "l + 2r",
+     "o": [
+      "l + 2r",
+      "l + r",
+      "l",
+      "2l + r"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 125",
+     "q": "Assertion (A): A semicircular arc of radius r has length pi r.\nReason (R): Reflecting a circle in a diameter makes its two semicircles exchange places, so each is half of the circumference 2 pi r.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 126-129",
+     "q": "A folding hand fan opens into a sector of radius 28 cm with an angle of 135 degrees at the centre. Use pi = 22/7. (a) Find the length of the curved edge of the open fan. (b) A coloured tape is stuck along the whole boundary of the open fan. How long is the tape?",
+     "a": "(a) Arc = 2 x (22/7) x 28 x 135/360 = 66 cm. (b) Perimeter = 66 + 28 + 28 = 122 cm.",
+     "s": [
+      [
+       "(a) Finds the arc length 66 cm",
+       1
+      ],
+      [
+       "(b) Adds the two radii to get 122 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 125-126",
+     "q": "A circle has radius 7 cm. Use pi = 22/7. Find the length of: (a) a semicircle of this circle, (b) a quarter circle of this circle, (c) an arc that is three-quarters of this circle.",
+     "a": "(a) pi r = (22/7) x 7 = 22 cm. (b) pi r / 2 = 11 cm. (c) 3/4 x 2 pi r = 3/4 x 44 = 33 cm.",
+     "s": [
+      [
+       "(a) Semicircle 22 cm",
+       1
+      ],
+      [
+       "(b) Quarter circle 11 cm",
+       1
+      ],
+      [
+       "(c) Three-quarter arc 33 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 126",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Asha says: 'If I double both the radius of a circle and the angle at the centre, the arc length only doubles.' Test her claim with a 60 degree arc of a circle of radius 21 cm and a 120 degree arc of a circle of radius 42 cm (pi = 22/7), and then explain what really happens in general.",
+     "a": "Asha is wrong. 60 degree arc, radius 21 cm: 2 x (22/7) x 21 x 60/360 = 22 cm. 120 degree arc, radius 42 cm: 2 x (22/7) x 42 x 120/360 = 88 cm, which is 4 times 22 cm, not 2 times. In general 2 pi (2r) x (2 theta)/360 = 4 x (2 pi r x theta/360): each doubling multiplies the arc by 2, so together they multiply it by 4.",
+     "s": [
+      [
+       "Finds 22 cm for the 60 degree arc of radius 21 cm",
+       1
+      ],
+      [
+       "Finds 88 cm for the 120 degree arc of radius 42 cm and sees it is 4 times, so the claim fails",
+       1
+      ],
+      [
+       "Shows 2 pi (2r)(2 theta)/360 = 4 x 2 pi r theta/360 in general",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 127",
+     "q": "On an athletics track, each lane is 1.22 m wide. Over ONE semicircular bend, how much farther does a runner in lane 2 run than a runner in lane 1, if both keep the same distance from the inner edge of their lane? (Use pi = 3.1416.)",
+     "a": "3.83 m",
+     "o": [
+      "3.83 m",
+      "7.67 m",
+      "1.22 m",
+      "1.92 m"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 125-129",
+     "q": "A garden OAB is a quarter circle with centre O and radius OA = OB = 21 m. Inside it, a semicircular pond is dug with OA as its diameter. Use pi = 22/7. (a) Find the length of the curved edge AB of the garden. (b) Find the perimeter of the garden. (c) Find the length of the curved edge of the pond. (d) The gardener notices that the answers to (a) and (c) are equal. Show that this happens for a quarter circle of any radius r with a semicircle on one radius as diameter. (e) Fencing costs Rs 80 per metre. Find the cost of fencing the whole boundary of the garden.",
+     "a": "(a) Arc AB = pi r / 2 = (22/7) x 21 / 2 = 33 m. (b) 33 + 21 + 21 = 75 m. (c) The pond's radius is 10.5 m, so its curved edge is pi x 10.5 = 33 m. (d) The quarter-circle arc is pi r / 2. The semicircle has radius r/2, so its arc is pi (r/2) = pi r / 2. They are always equal. (e) 75 x 80 = Rs 6,000.",
+     "s": [
+      [
+       "(a) Arc AB = 33 m",
+       1
+      ],
+      [
+       "(b) Perimeter 75 m",
+       1
+      ],
+      [
+       "(c) Pond edge 33 m with radius 10.5 m",
+       1
+      ],
+      [
+       "(d) Shows both arcs equal pi r / 2 for any r",
+       1
+      ],
+      [
+       "(e) Cost Rs 6,000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 126",
+     "tags": [
+      "case_study"
+     ],
+     "q": "In a children's park, a swing hangs from chains 2.1 m long. When a child swings, the seat moves along an arc of a circle whose centre is the top bar and whose radius is the chain length. On a busy day, an older child swings through an angle of 60 degrees at the bar, making 20 swings in a minute (one swing is one pass from one end of the arc to the other). The park's safety rule says the seat must not travel more than 2 m in a single swing. Use pi = 22/7.\n(a) Find the length of the arc in one 60 degree swing.\n(b) How far does the seat travel in one minute?\n(c) Find the arc length if the angle is cut to 40 degrees.\n(d) Does the 60 degree swing break the safety rule? Find the greatest whole number of degrees the swing may make and still obey the rule.",
+     "a": "(a) 2 x (22/7) x 2.1 x 60/360 = 2.2 m. (b) 20 x 2.2 = 44 m. (c) 2 x (22/7) x 2.1 x 40/360 = 1.47 m (about). (d) Yes, 2.2 m is more than 2 m. The arc for angle theta is 13.2 x theta/360 m; this is at most 2 m when theta is at most 720/13.2 = 54.5 degrees. A 54 degree swing gives 1.98 m and 55 degrees gives 2.02 m, so the greatest whole number is 54 degrees.",
+     "s": [
+      [
+       "(a) Arc 2.2 m",
+       1
+      ],
+      [
+       "(b) 44 m in a minute",
+       1
+      ],
+      [
+       "(c) About 1.47 m for 40 degrees",
+       1
+      ],
+      [
+       "(d) Says 60 degrees breaks the rule and finds 54 degrees as the limit",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-6.4",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 150",
+     "q": "A trapezium has parallel sides a and b, and the distance between them is h. What is its area?",
+     "a": "(1/2)(a + b)h",
+     "o": [
+      "(1/2)(a + b)h",
+      "(a + b)h",
+      "(1/2)abh",
+      "2(a + b)h"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 131",
+     "q": "A glass pane in a window is a parallelogram. Its area is 84 square cm and its base is 12 cm. What is the perpendicular distance between the base and the opposite side?",
+     "a": "7 cm",
+     "o": [
+      "7 cm",
+      "14 cm",
+      "72 cm",
+      "1,008 cm"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 132",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: If the base of a triangle is doubled and its height is kept the same, its area is doubled. Give a reason.",
+     "a": "True. Area = (1/2) x base x height. With base 2b and the same height h, the area is (1/2)(2b)h = 2 x (1/2)bh, twice the old area.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Uses (1/2)(2b)h = 2 x (1/2)bh to show the area doubles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 132-133",
+     "q": "Kavya has a triangular sandwich with a base of 12 cm and a height of 10 cm. She makes one straight cut from the top corner to a point on the base so that she and her brother get equal amounts. (a) Find the area of each share. (b) Where on the base must the cut meet it? Give a reason.",
+     "a": "(a) Area of the sandwich = (1/2) x 12 x 10 = 60 square cm, so each share is 30 square cm. (b) At the midpoint of the base, 6 cm from either corner: the cut is then a median, and the two pieces have equal bases (6 cm) and the same height, so their areas are equal.",
+     "s": [
+      [
+       "(a) Finds 60 square cm and each share 30 square cm",
+       1
+      ],
+      [
+       "(b) Says the midpoint (6 cm from each end), giving equal bases and the same height (a median)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 134-150",
+     "q": "Consider the following statements.\nI. A square of side root(ab) has the same area as a rectangle with sides a and b.\nII. Two rectangles with the same perimeter always have the same area.\nIII. The area of a kite is half the product of its diagonals.\nWhich of the statements given above are correct?",
+     "a": "I and III only",
+     "o": [
+      "I and III only",
+      "I and II only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 130-140",
+     "q": "For an art project, a class cuts out five paper shapes. Find the area of each. (a) A rectangle 12 cm by 8 cm. (b) A parallelogram with base 12 cm and height 7 cm. (c) A triangle with base 12 cm and height 7 cm. (d) A trapezium with parallel sides 12 cm and 8 cm that are 5 cm apart. (e) A square that has the same area as a rectangle 18 cm by 8 cm: find the side of this square.",
+     "a": "(a) 12 x 8 = 96 square cm. (b) 12 x 7 = 84 square cm. (c) (1/2) x 12 x 7 = 42 square cm. (d) (1/2)(12 + 8) x 5 = 50 square cm. (e) The rectangle has area 144 square cm, so the square has side root 144 = 12 cm.",
+     "s": [
+      [
+       "(a) Rectangle 96 square cm",
+       1
+      ],
+      [
+       "(b) Parallelogram 84 square cm",
+       1
+      ],
+      [
+       "(c) Triangle 42 square cm",
+       1
+      ],
+      [
+       "(d) Trapezium 50 square cm",
+       1
+      ],
+      [
+       "(e) Square of side 12 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 131-142",
+     "q": "ABCD is a parallelogram of area 96 square cm. P is any point on side AB. (a) Explain why triangle PCD and parallelogram ABCD have the same height when CD is taken as the base. (b) Find the area of triangle PCD. (c) Q is another point on AB. What is the ratio area(PCD) : area(QCD)?",
+     "a": "(a) AB is parallel to CD, so every point of AB, including P, is at the same perpendicular distance from CD as the parallelogram's height. (b) Area(PCD) = (1/2) x CD x h = (1/2) x area(ABCD) = 48 square cm. (c) Triangle QCD also has base CD and the same height, so its area is also 48 square cm; the ratio is 1 : 1.",
+     "s": [
+      [
+       "(a) Uses AB parallel to CD to say P is at the parallelogram's height from CD",
+       1
+      ],
+      [
+       "(b) Area(PCD) = half of 96 = 48 square cm",
+       1
+      ],
+      [
+       "(c) Ratio 1 : 1 because Q gives the same base and height",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 142-150",
+     "q": "A rhombus-shaped badge has an area of 150 square cm and one diagonal of 20 cm. The area of a rhombus is half the product of its diagonals, and its diagonals cut each other in half at right angles. (a) Find the other diagonal. (b) Find the length of a side of the badge.",
+     "a": "(a) (1/2) x 20 x d = 150, so d = 15 cm. (b) The half-diagonals are 10 cm and 7.5 cm and meet at a right angle, so the side is root(10^2 + 7.5^2) = root(156.25) = 12.5 cm.",
+     "s": [
+      [
+       "(a) Other diagonal 15 cm",
+       1
+      ],
+      [
+       "(b) Side 12.5 cm from half-diagonals 10 cm and 7.5 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 131-150",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A family is choosing between two plots of land on the edge of Nashik. Plot P is a trapezium whose parallel sides are 42 m and 30 m, and these sides are 25 m apart; its price is Rs 12 lakh. Plot Q is a parallelogram with a base of 36 m and a perpendicular height of 26 m; its price is Rs 12.6 lakh. The family's house plan needs a plot of at least 920 square m.\n(a) Find the area of plot P.\n(b) Find the area of plot Q.\n(c) Find the price per square metre of each plot, to the nearest rupee.\n(d) Which plot should the family buy? Is it the cheaper one per square metre? Justify.",
+     "a": "(a) (1/2)(42 + 30) x 25 = 900 square m. (b) 36 x 26 = 936 square m. (c) P: 12,00,000 / 900 = about Rs 1,333 per square m. Q: 12,60,000 / 936 = about Rs 1,346 per square m. (d) Plot P is slightly cheaper per square metre, but at 900 square m it is smaller than the 920 square m the house plan needs. Plot Q (936 square m) is big enough, so the family should buy Q even though it costs about Rs 13 more per square metre.",
+     "s": [
+      [
+       "(a) Area of P 900 square m",
+       1
+      ],
+      [
+       "(b) Area of Q 936 square m",
+       1
+      ],
+      [
+       "(c) About Rs 1,333 and Rs 1,346 per square m",
+       1
+      ],
+      [
+       "(d) Chooses Q because P is under 920 square m, noting P is cheaper per square metre",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 133",
+     "q": "Triangle ABC has an area of 120 square cm. D is the midpoint of BC, E is the midpoint of the median AD, and F is the midpoint of BE. (a) Find the area of triangle ABD. (b) Find the areas of triangles ABE and BED, giving the reason. (c) Find the area of triangle BEC. (d) Show that, for every triangle ABC, triangle BEC has half the area of triangle ABC. (e) Find the area of triangle CEF.",
+     "a": "(a) AD is a median of ABC, so area(ABD) = 120 / 2 = 60 square cm. (b) BE is a median of triangle ABD (E is the midpoint of AD), so area(ABE) = area(BED) = 30 square cm. (c) In the same way CE is a median of triangle ACD, so area(CED) = 30 square cm, and area(BEC) = area(BED) + area(CED) = 60 square cm. (d) For any triangle of area T: area(ABD) = area(ACD) = T/2, so area(BED) = area(CED) = T/4, and area(BEC) = T/4 + T/4 = T/2. (e) CF is a median of triangle BEC (F is the midpoint of BE), so area(CEF) = 60 / 2 = 30 square cm.",
+     "s": [
+      [
+       "(a) Area(ABD) = 60 square cm by the median property",
+       1
+      ],
+      [
+       "(b) Area(ABE) = area(BED) = 30 square cm, BE being a median of ABD",
+       1
+      ],
+      [
+       "(c) Area(BEC) = 30 + 30 = 60 square cm",
+       1
+      ],
+      [
+       "(d) Shows area(BEC) = T/4 + T/4 = T/2 for any triangle",
+       1
+      ],
+      [
+       "(e) Area(CEF) = 30 square cm, CF being a median of BEC",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-6.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 137",
+     "q": "Who discovered, in 628 CE, a formula for the area of a cyclic 4-gon from the lengths of its four sides?",
+     "a": "Brahmagupta",
+     "o": [
+      "Brahmagupta",
+      "Heron",
+      "Aryabhata",
+      "Baudhayana"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 134",
+     "q": "A triangular garden bed has sides 5 m, 5 m and 6 m. Using Heron's formula, what is its area?",
+     "a": "12 square m",
+     "o": [
+      "12 square m",
+      "16 square m",
+      "24 square m",
+      "15 square m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 138-139",
+     "q": "Assertion (A): Brahmagupta's formula gives the area of a square of side 5 cm as 25 square cm.\nReason (R): A square is a special kind of rectangle, and all rectangles are cyclic.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 134",
+     "q": "A triangle has sides 11 cm, 13 cm and 20 cm. (a) Find its semi-perimeter s. (b) Use Heron's formula to find its area.",
+     "a": "(a) s = (11 + 13 + 20)/2 = 22 cm. (b) Area = root(22 x 11 x 9 x 2) = root 4356 = 66 square cm.",
+     "s": [
+      [
+       "(a) s = 22 cm",
+       1
+      ],
+      [
+       "(b) Area = root(22 x 11 x 9 x 2) = 66 square cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 134-136",
+     "q": "A triangle has sides 9 cm, 12 cm and 15 cm. (a) Find its semi-perimeter. (b) Use Heron's formula to find its area. (c) Since 9^2 + 12^2 = 15^2, the triangle is right-angled. Check your answer to (b) using half base times height.",
+     "a": "(a) s = (9 + 12 + 15)/2 = 18 cm. (b) Area = root(18 x 9 x 6 x 3) = root 2916 = 54 square cm. (c) The two shorter sides are at right angles, so the area is (1/2) x 9 x 12 = 54 square cm, the same.",
+     "s": [
+      [
+       "(a) s = 18 cm",
+       1
+      ],
+      [
+       "(b) Heron's formula gives 54 square cm",
+       1
+      ],
+      [
+       "(c) (1/2) x 9 x 12 = 54 square cm agrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 134-135",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: For an equilateral triangle of side a units, Heron's formula gives the area (root 3 / 4) a^2 square units. Give a reason.",
+     "a": "True. Here s = 3a/2 and s - a = a/2 for each side, so the area is root((3a/2) x (a/2) x (a/2) x (a/2)) = root(3a^4/16) = (root 3 / 4) a^2 square units.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Uses s = 3a/2 and s - a = a/2 to reach (root 3 / 4) a^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 134-139",
+     "q": "Consider the following statements.\nI. For an isosceles triangle with equal sides a and base 2b, Heron's formula gives the area b x root(a^2 - b^2).\nII. For an isosceles trapezium, Brahmagupta's formula gives the same area as half the sum of the parallel sides times the distance between them.\nIII. Heron's formula needs the height of the triangle as well as the lengths of its three sides.\nWhich of the statements given above are correct?",
+     "a": "I and II only",
+     "o": [
+      "I and II only",
+      "I and III only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 137-138",
+     "q": "ABCD is a cyclic 4-gon with AB = 7 m, BC = 24 m, CD = 20 m and DA = 15 m. Its diagonal AC is 25 m. (a) Find the semi-perimeter s. (b) Use Brahmagupta's formula to find the area of ABCD. (c) Check your answer by noting that triangles ABC (7, 24, 25) and ACD (15, 20, 25) are right-angled, and adding their areas.",
+     "a": "(a) s = (7 + 24 + 20 + 15)/2 = 33 m. (b) Area = root((33 - 7)(33 - 24)(33 - 20)(33 - 15)) = root(26 x 9 x 13 x 18) = root 54756 = 234 square m. (c) Since 7^2 + 24^2 = 25^2 and 15^2 + 20^2 = 25^2, both triangles are right-angled: (1/2) x 7 x 24 + (1/2) x 15 x 20 = 84 + 150 = 234 square m, the same.",
+     "s": [
+      [
+       "(a) s = 33 m",
+       1
+      ],
+      [
+       "(b) Brahmagupta's formula gives 234 square m",
+       1
+      ],
+      [
+       "(c) Adds 84 + 150 = 234 square m from the two right triangles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 134-136",
+     "q": "An isosceles triangle has equal sides of 25 cm and a base of 14 cm. (a) Find its semi-perimeter. (b) Find its area by Heron's formula. (c) Find the height to the base using the Baudhayana-Pythagoras theorem, and check the area. (d) Find the length of the perpendicular from the opposite vertex to one of the equal sides. (e) Ravi says: 'If every side is doubled, the area doubles too.' Test this with sides 50 cm, 50 cm and 28 cm.",
+     "a": "(a) s = (25 + 25 + 14)/2 = 32 cm. (b) Area = root(32 x 7 x 7 x 18) = root 28224 = 168 square cm. (c) The height bisects the base, so h = root(25^2 - 7^2) = root 576 = 24 cm, and (1/2) x 14 x 24 = 168 square cm, the same. (d) (1/2) x 25 x p = 168, so p = 336/25 = 13.44 cm. (e) For 50, 50, 28: s = 64 and area = root(64 x 14 x 14 x 36) = root 451584 = 672 square cm, which is 4 times 168, not 2 times. Ravi is wrong: doubling every side makes the area four times as big.",
+     "s": [
+      [
+       "(a) s = 32 cm",
+       1
+      ],
+      [
+       "(b) Heron's formula gives 168 square cm",
+       1
+      ],
+      [
+       "(c) Height 24 cm and (1/2) x 14 x 24 = 168 square cm",
+       1
+      ],
+      [
+       "(d) Perpendicular to an equal side 13.44 cm",
+       1
+      ],
+      [
+       "(e) Area 672 square cm = 4 x 168, so Ravi is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 134",
+     "q": "A triangular plot of land beside a highway has sides 35 m, 53 m and 66 m. The owner wants to cover the whole plot with grass turf costing Rs 250 per square metre. (a) Find the semi-perimeter. (b) Find s - a, s - b and s - c. (c) Use Heron's formula to find the area of the plot. (d) Find the cost of the turf.",
+     "a": "(a) s = (35 + 53 + 66)/2 = 77 m. (b) s - 35 = 42, s - 53 = 24, s - 66 = 11. (c) Area = root(77 x 42 x 24 x 11) = root 853776 = 924 square m. (d) 924 x 250 = Rs 2,31,000.",
+     "s": [
+      [
+       "(a) s = 77 m",
+       1
+      ],
+      [
+       "(b) Finds 42, 24 and 11",
+       1
+      ],
+      [
+       "(c) Area 924 square m",
+       1
+      ],
+      [
+       "(d) Cost Rs 2,31,000",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-6.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 147",
+     "q": "A sector of a circle of radius r has an angle of theta degrees at the centre. What is its area?",
+     "a": "pi r^2 x theta/360",
+     "o": [
+      "pi r^2 x theta/360",
+      "2 pi r x theta/360",
+      "pi r^2 x theta/180",
+      "pi r x theta/360"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 145",
+     "q": "A round dining-table top has a radius of 35 cm. Using pi = 22/7, what is the area of the table top?",
+     "a": "3,850 square cm",
+     "o": [
+      "3,850 square cm",
+      "220 square cm",
+      "1,925 square cm",
+      "7,700 square cm"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 147",
+     "q": "A segment of a circle is the region bounded by",
+     "a": "an arc of the circle and the chord joining the ends of the arc",
+     "o": [
+      "an arc of the circle and the chord joining the ends of the arc",
+      "an arc of the circle and the two radii to the ends of the arc",
+      "two radii of the circle and the chord joining their ends",
+      "two circles with the same centre but different radii"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 147-148",
+     "tags": [
+      "match"
+     ],
+     "q": "Use pi = 22/7. Match each region in Column I with its area in Column II.\nColumn I: 1. Semicircle of radius 14 cm  2. Quadrant of radius 14 cm  3. Sector of 60 degrees, radius 21 cm  4. Sector of 120 degrees, radius 21 cm\nColumn II: a. 231 square cm  b. 462 square cm  c. 308 square cm  d. 154 square cm",
+     "a": "1-c, 2-d, 3-a, 4-b",
+     "o": [
+      "1-c, 2-d, 3-a, 4-b",
+      "1-d, 2-c, 3-a, 4-b",
+      "1-c, 2-d, 3-b, 4-a",
+      "1-b, 2-d, 3-a, 4-c"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 147",
+     "q": "A semicircular flower bed has a radius of 21 m. Use pi = 22/7. (a) Find the area of the bed. (b) Manure costs Rs 20 per square metre. Find the cost of spreading manure over the whole bed.",
+     "a": "(a) (1/2) x (22/7) x 21 x 21 = 693 square m. (b) 693 x 20 = Rs 13,860.",
+     "s": [
+      [
+       "(a) Area 693 square m",
+       1
+      ],
+      [
+       "(b) Cost Rs 13,860",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 145",
+     "q": "A circular pond of radius 14 m in a colony park is surrounded by a paved path 7 m wide all round it. Use pi = 22/7. (a) Find the area of the pond. (b) Find the outer radius of the path and the area of the pond and path together. (c) Find the area of the path alone. (d) Paving costs Rs 50 per square metre. Find the cost of paving the path.",
+     "a": "(a) (22/7) x 14 x 14 = 616 square m. (b) Outer radius 14 + 7 = 21 m; area (22/7) x 21 x 21 = 1,386 square m. (c) 1,386 - 616 = 770 square m. (d) 770 x 50 = Rs 38,500.",
+     "s": [
+      [
+       "(a) Pond 616 square m",
+       1
+      ],
+      [
+       "(b) Outer radius 21 m and total area 1,386 square m",
+       1
+      ],
+      [
+       "(c) Path 770 square m",
+       1
+      ],
+      [
+       "(d) Cost Rs 38,500",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 144-145",
+     "q": "Assertion (A): The ancient Egyptian rule A = (8d/9)^2 for the area of a circle amounts to using about 3.16 for pi.\nReason (R): With d = 2r, (8d/9)^2 = (256/81) r^2, and 256/81 is about 3.16.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 147",
+     "q": "A garden sprinkler throws water up to 14 m and turns through an angle of 135 degrees, watering a sector. Use pi = 22/7. (a) Find the area watered. (b) A stronger sprinkler throws water up to 21 m through the same angle. Find the area it waters. (c) By what factor is the watered area larger, and how does this factor come from the two radii?",
+     "a": "(a) (22/7) x 14 x 14 x 135/360 = 231 square m. (b) (22/7) x 21 x 21 x 135/360 = 519.75 square m. (c) 519.75 / 231 = 2.25. The area of a sector with a fixed angle is proportional to r^2, and (21/14)^2 = (3/2)^2 = 9/4 = 2.25.",
+     "s": [
+      [
+       "(a) Area 231 square m",
+       1
+      ],
+      [
+       "(b) Area 519.75 square m",
+       1
+      ],
+      [
+       "(c) Factor 2.25 explained as (21/14)^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 147",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A 60 degree sector of a circle of radius 14 cm has the same area as a 30 degree sector of a circle of radius 28 cm. Give a reason.",
+     "a": "False. Using pi = 22/7, the first sector has area (22/7) x 14^2 x 60/360 = 308/3, about 102.67 square cm, and the second has area (22/7) x 28^2 x 30/360 = 616/3, about 205.33 square cm. Halving the angle halves the area, but doubling the radius makes it four times as big, so the second sector is twice the first.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Shows the areas 308/3 and 616/3 square cm (or explains the factor 4 x 1/2 = 2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 148",
+     "q": "A square ABCD is drawn inside a circle of radius 7 cm so that all four corners lie on the circle. Its diagonals are diameters of the circle. Use pi = 22/7. (a) Find the length of a diagonal of the square. (b) Find the area of the square, using the Baudhayana-Pythagoras theorem on two sides and a diagonal. (c) Find the area of the circle. (d) The four regions inside the circle but outside the square are equal segments. Find the area of one segment. (e) Find the ratio of the area of the square to the area of the circle, and explain why, with pi = 22/7, it equals 2/pi exactly.",
+     "a": "(a) The diagonal is a diameter: 14 cm. (b) If the side is a, then a^2 + a^2 = 14^2, so a^2 = 98; the area is 98 square cm. (c) (22/7) x 7 x 7 = 154 square cm. (d) 154 - 98 = 56 square cm outside the square, so each segment is 56 / 4 = 14 square cm. (e) 98 : 154 = 7 : 11. In general the square has area 2r^2 and the circle pi r^2, so the ratio is 2/pi; with pi = 22/7 this is 2 x 7/22 = 7/11, the same.",
+     "s": [
+      [
+       "(a) Diagonal 14 cm",
+       1
+      ],
+      [
+       "(b) Area of square 98 square cm",
+       1
+      ],
+      [
+       "(c) Area of circle 154 square cm",
+       1
+      ],
+      [
+       "(d) Each segment 14 square cm",
+       1
+      ],
+      [
+       "(e) Ratio 7 : 11, shown equal to 2/pi = 7/11 with pi = 22/7",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

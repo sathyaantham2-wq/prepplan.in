@@ -1,0 +1,13 @@
+VERDICT: PASS
+HIGH: 0 | MEDIUM: 3 | LOW: 6
+(60 questions, 7 concepts; `--check` prints valid. Every key re-solved in Python: height calls brute-forced over all orders, every grid/magic square line-summed, every cryptarithm brute-forced for uniqueness, Virahanka terms and staircase counts recomputed. All keys correct and unique. History facts checked against pp. 137, 138 and 141.)
+
+- [MEDIUM] C7M-6.5 #8: repeats the existing pack's number set and setting. dps C7M-6.5 #4 already has a brass craftsman with magic sum 51 and the numbers 13 to 21. Also labelled Hardest, but (a)-(c) are each one direct step and only (d) catches a misconception -> use another consecutive run (for example 22 to 30, centre 26, magic sum 78) and a non-brass setting, and either relabel Hard or make (d) a real data decision.
+- [MEDIUM] C7M-6.6 #7: the 9-step staircase with one condition and "55 ways in all" repeats dps C7M-6.6 #2 (Aarav, 9 steps, top two wet, 55 ways) -> change the staircase length and the broken step (for example 10 steps, step 6 broken: 8 x 5 = 40 safe ways out of 89), recompute, and cite p. 144, where the staircase setting is.
+- [MEDIUM] Chapter (assertion_reason): 4 of the 6 AR keys are "Both true, R explains" (C7M-6.1 #2, 6.2 #4, 6.3 #4, 6.5 #3) and the other 2 are "A false, R true". "R true but not the explanation" and "A true, R false" never appear, so the key is guessable -> rewrite one item to "both true, R does not explain" (for example C7M-6.3 #4 with R: "2n + 2 is always even") and one to "A true, R false".
+- [LOW] C7M-6.4 #4: a 1-mark elimination (find the only triples for 6 and 7 and see that they overlap) is labelled Hardest -> Hard; move the Hardest share to a multi-step item.
+- [LOW] C7M-6.3 #8: Pinky's claim "every even number is 6j - 4" is the textbook's own exercise 10(b) on p. 144, word for word -> use a fresh expression (for example 4j - 2 or 8j - 6) and cite p. 144.
+- [LOW] Chapter (multi_statement): 2 of the 3 keys are "Only I and III" (C7M-6.3 #3, 6.7 #3) and the third is "Only I and II". Statement I is always true and "All three" is never the key -> make one key "Only II and III" or "All three".
+- [LOW] C7M-6.6 #1 and #2: both test "Virahanka, about 700 CE" -> in the match, swap in Gopala (c. 1135 CE, p. 141) for Virahanka or for another row.
+- [LOW] C7M-6.5 #4: "double every entry, magic sum doubles" is also statement 3 of dps C7M-6.5 #6. That is acceptable for an Easy item, but tripling, or adding 3 to every entry, would avoid the overlap.
+- [LOW] C7M-6.2 #6: cited pp. 131-132, but the grid-parity text is on p. 131 (the exercise is on p. 132). This is acceptable; "p. 131" is tighter.

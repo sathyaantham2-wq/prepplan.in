@@ -31,7 +31,7 @@ export type QuestionType =
   | 'long_answer'
   | 'fill_blank'
   | 'diagram'
-export type QuestionStatus = 'draft' | 'approved' | 'retired' | 'school'
+export type QuestionStatus = 'draft' | 'approved' | 'retired' | 'school' | 'school_bank'
 export type AttemptMode = 'online' | 'uploaded'
 export type AttemptStatus = 'in_progress' | 'submitted' | 'evaluated'
 export type AnswerSource = 'typed' | 'ocr'

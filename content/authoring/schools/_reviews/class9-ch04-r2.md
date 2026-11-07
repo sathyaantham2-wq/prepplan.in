@@ -1,0 +1,12 @@
+VERDICT: PASS
+HIGH: 0 | MEDIUM: 2 | LOW: 5
+
+All 60 keys recomputed in python (numeric identity checks at random values, every number and case-study part): every key is correct, every MCQ/AR/match/multi_statement has exactly one correct option (the first), step marks sum to the marks, cited pages (files 001-024 = pp. 68-91) carry the facts, all inside IN scope. `--check` prints valid. All r1 MEDIUMs are fixed: AR keys now mixed (4.4 #6 "A false, R true"), multi_statement keys vary (I and III / I, II, III / II and III), 4.2 #10, 4.3 #10 and 4.6 #9 now end in real data-settled decisions, the 45^2/96^2 and 2x^2 + 7x + 6 repeats are gone.
+
+- [MEDIUM] C9M-4.4 #5: the case study (one x^2 tile, 8 rods of area x, 15 unit squares, x^2 + 8x + 15 = (x + 3)(x + 5), length x + 5, breadth x + 3) is the textbook's own Example 17 (Saira, pp. 87-88) with only the name changed; a student can copy the worked answer -> use a new tile set not in the book, e.g. 10 rods and 21 unit squares ((x + 3)(x + 7), area 247 at x = 10), and cite pp. 78-79.
+- [MEDIUM] C9M-4.2 #9: labelled Hardest, but (a)-(e) are each one direct step (two perfect-square factorisations, one subtraction, one sum, one substitution, one difference); there is no chain or decision. I would label it Hard -> relabel Hard and strengthen another item, or add a final part that uses the earlier answers to decide something (e.g. a frame or budget limit settled by the x = 2 values).
+- [LOW] C9M-4.6 #5: the temple-pool-in-hastas setting mirrors the book's end-of-chapter exercise 8 (pool of area 2x^2 + 7x + 3 square hastas, width 2x + 1, p. 90) with new numbers -> acceptable, but a different setting (a hall floor, a garden bed) would avoid the echo.
+- [LOW] C9M-4.3 #5: part (c) squares 123, the same number as the existing pack C9M-4.3 #21(d) (different method) -> use another number, e.g. 134 = 100 + 30 + 4 (17956).
+- [LOW] C9M-4.5 #9: labelled Hardest; (a)-(c) are direct and (d) is one derivation plus a substitution -> Hard is the more honest label; fine to keep for the Hardest count.
+- [LOW] C9M-4.2 #7 and C9M-4.6 #7: true_false items labelled Hard are single checks (one middle term; one stated identity) -> Easy (Understand) is the honest label; keep if the Hard count needs them.
+- [LOW] C9M-4.3: numeric difference-of-squares products appear in #2, #3(b), #5(e), #6, #7, #9 and #10(a); the settings vary but the one idea recurs often -> consider turning one into a factorising or reverse item.

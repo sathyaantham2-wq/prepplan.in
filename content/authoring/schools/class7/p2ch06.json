@@ -1,0 +1,1271 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH",
+  "class": 7,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 6,
+  "name": "Constructions and Tilings"
+ },
+ "source_code": "gegp206",
+ "concepts": [
+  {
+   "code": "C7M-6.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A line that cuts a line segment into two equal parts and is also perpendicular to it is called the segment's",
+     "o": [
+      "perpendicular bisector",
+      "angle bisector",
+      "transversal",
+      "parallel line"
+     ],
+     "a": "Perpendicular bisector: a line that bisects a segment and is perpendicular to it is called its perpendicular bisector.",
+     "p": "p. 137"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "A garden path XY is 14 m long. The perpendicular bisector of XY meets the path at O. How far is O from X?",
+     "o": [
+      "7 m",
+      "14 m",
+      "3.5 m",
+      "28 m"
+     ],
+     "a": "7 m: the perpendicular bisector passes through the midpoint of XY, so OX = 14 ÷ 2 = 7 m.",
+     "p": "p. 137"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) What is meant by the bisection of a line segment? (b) A point P is 6 cm from X and 6 cm from Y. On which line connected with XY must P lie?",
+     "a": "(a) Bisection is dividing the segment into two identical (equal) parts. (b) P lies on the perpendicular bisector of XY, because any point at the same distance from X and Y lies on it.",
+     "s": [
+      [
+       "Says bisection divides the segment into two identical parts",
+       1
+      ],
+      [
+       "Says P lies on the perpendicular bisector of XY because PX = PY",
+       1
+      ]
+     ],
+     "p": "pp. 137-139"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A point P is 5 cm from X and 7 cm from Y, so P lies on the perpendicular bisector of XY.",
+     "a": "False. Only a point at the same distance from X and from Y lies on the perpendicular bisector; here PX = 5 cm but PY = 7 cm.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Reason: P is not equally far from X and Y (5 cm and 7 cm)",
+       1
+      ]
+     ],
+     "p": "p. 139"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Points A (above XY) and B (below XY) satisfy AX = AY = BX = BY, so AB is the perpendicular bisector of XY. C is another point above XY with CX = CY. Assertion (A): C lies on the line AB. Reason (R): XY has only one perpendicular bisector, and the line CB is also a perpendicular bisector of XY, because C and B are each equally far from X and Y and lie on opposite sides of XY.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: CB is a perpendicular bisector of XY, and since XY has only one perpendicular bisector, CB is the same line as AB, so C lies on AB.",
+     "p": "p. 139"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Points A and B satisfy AX = AY = BX = BY, and AB meets XY at O. (a) By which congruence condition is triangle ABX congruent to triangle ABY? (b) By which congruence condition is triangle AOX congruent to triangle AOY? (c) Angles AOX and AOY are equal and together make a straight angle. What is each of them?",
+     "a": "(a) SSS: AX = AY, BX = BY and AB is common. (b) SAS: AX = AY, AO is common and angle XAO = angle YAO. (c) Each is 180° ÷ 2 = 90°.",
+     "s": [
+      [
+       "Part (a): SSS, with the three pairs of equal sides",
+       1
+      ],
+      [
+       "Part (b): SAS, with the included angle XAO = YAO",
+       1
+      ],
+      [
+       "Part (c): each angle is 90°",
+       1
+      ]
+     ],
+     "p": "pp. 137-138"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Kiran marks three different points P, Q and R on a page. Each of them is equally far from the points X and Y, and PQ = 5 cm and QR = 3 cm. Kiran says, 'P, Q and R are the three corners of a triangle, and PR could be 6 cm.' Is Kiran right? Give reasons, and find every possible length of PR.",
+     "a": "No. Each of P, Q and R is equally far from X and Y, so each lies on the perpendicular bisector of XY. XY has only one perpendicular bisector, so P, Q and R lie on one straight line and cannot be the corners of a triangle. On a line, either Q lies between P and R, giving PR = 5 + 3 = 8 cm, or R lies between P and Q, giving PR = 5 - 3 = 2 cm (P cannot lie between Q and R, since then QR would be more than 5 cm). So PR is 8 cm or 2 cm, never 6 cm.",
+     "s": [
+      [
+       "Says each point lies on the perpendicular bisector of XY, and there is only one such line, so P, Q, R are on one line",
+       1
+      ],
+      [
+       "Concludes the three points cannot form a triangle, so Kiran is wrong",
+       1
+      ],
+      [
+       "Finds PR = 8 cm or 2 cm by the order of points on the line, so 6 cm is impossible",
+       1
+      ]
+     ],
+     "p": "p. 139"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school garden has two flower beds X and Y, 12 m apart along a straight fence. A water pipe runs parallel to the fence, 8 m from it. The gardener wants a sprinkler that is equally far from both beds, so that both get the same water. He measures three taps on the pipe: T1 is 8.1 m from X and 13.4 m from Y, T2 is 10 m from X and 10 m from Y, and T3 is 12 m from X and 8.6 m from Y. The sprinkler throws water up to 9 m. (a) Which tap is equally far from both beds, and on which line must it lie? (b) Why can no other point of the pipe be equally far from both beds? (c) Will a sprinkler at that tap reach the beds? (d) The gardener runs a hose from that tap straight towards the fence along the same line, and puts the sprinkler at S, which he measures to be 7.2 m from X. How far is S from Y, and will the sprinkler at S water both beds? Give a reason.",
+     "a": "(a) T2, which is 10 m from each bed; it lies on the perpendicular bisector of XY. (b) Every point equally far from X and Y lies on the perpendicular bisector of XY, and the straight pipe crosses this line at only one point, T2. (c) No: each bed is 10 m away, more than the 9 m the sprinkler reaches. (d) S is on the same line, the perpendicular bisector, so SY = SX = 7.2 m; 7.2 m is less than 9 m, so the sprinkler at S waters both beds.",
+     "s": [
+      [
+       "Part (a): T2, on the perpendicular bisector of XY",
+       1
+      ],
+      [
+       "Part (b): all such points lie on the perpendicular bisector, which meets the pipe only at T2",
+       1
+      ],
+      [
+       "Part (c): no, 10 m is more than 9 m",
+       1
+      ],
+      [
+       "Part (d): SY = 7.2 m, less than 9 m, so both beds are watered",
+       1
+      ]
+     ],
+     "p": "pp. 137-139"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "XY is 8 cm long. P is 5 cm from X and 5 cm from Y, above XY. Q is 6 cm from X and 6 cm from Y, also above XY. R is 5 cm from X and 6 cm from Y, below XY. Joining which two points gives the perpendicular bisector of XY?",
+     "o": [
+      "P and Q",
+      "P and R",
+      "Q and R",
+      "R and the midpoint of XY"
+     ],
+     "a": "P and Q: each is equally far from X and Y, so both lie on the perpendicular bisector, and two points fix the line even when they are on the same side of XY. R is not equally far from X and Y.",
+     "p": "pp. 139-140"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.2",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which tools does this chapter use for constructing the perpendicular bisector and its other constructions, unless a line of a given length in standard units is needed?",
+     "o": [
+      "An unmarked ruler and a compass",
+      "A protractor and a marked scale",
+      "A set square and a protractor",
+      "A marked scale only"
+     ],
+     "a": "An unmarked ruler and a compass: the chapter uses only these two tools unless lines of specific lengths in standard units must be drawn.",
+     "p": "p. 140"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To construct a 90° angle at a point O on a line, Rehan first marks points X and Y on the line with OX = OY. Why does he do this?",
+     "o": [
+      "So that O is the midpoint of XY and lies on its perpendicular bisector",
+      "So that the angle XOY becomes 90°",
+      "So that X and Y lie on the perpendicular bisector",
+      "So that the arcs from X and Y can have different radii"
+     ],
+     "a": "So that O is the midpoint of XY: the perpendicular bisector of XY then passes through O and is perpendicular to the line.",
+     "p": "p. 141"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) Name the earliest known Indian texts that contain methods to construct perpendiculars and perpendicular bisectors. (b) For what purpose were these constructions used?",
+     "a": "(a) The Śulba-Sūtras, geometric texts of the Vedic period. (b) For the construction of fire altars for rituals.",
+     "s": [
+      [
+       "Part (a): the Śulba-Sūtras",
+       1
+      ],
+      [
+       "Part (b): constructing fire altars for rituals",
+       1
+      ]
+     ],
+     "p": "p. 141"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "scenario"
+     ],
+     "q": "In the rope method, pegs are fixed at X and Y, which are 9 m apart. The rope between its two loops is 14 m long. (a) The midpoint of the rope is pulled above XY until both parts are fully stretched, and marked A. How far is A from X and from Y? (b) Why does A lie on the perpendicular bisector of XY?",
+     "a": "(a) Each part of the rope is 14 ÷ 2 = 7 m, so AX = AY = 7 m. (b) A is equally far from X and Y, and any point equally far from X and Y lies on the perpendicular bisector of XY.",
+     "s": [
+      [
+       "Part (a): AX = AY = 7 m",
+       1
+      ],
+      [
+       "Part (b): A is equally far from X and Y, so it is on the perpendicular bisector",
+       1
+      ]
+     ],
+     "p": "p. 142"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Finding the midpoint of a line segment by constructing its perpendicular bisector is more accurate than measuring the segment with a marked scale and halving the length.",
+     "a": "True. The construction is geometrically exact and does not depend on reading a scale, so it finds the midpoint more accurately than measuring with a marked scale.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Reason: the construction is exact and needs no reading of a scale",
+       1
+      ]
+     ],
+     "p": "p. 141"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "q": "On a straight line, Tara has used her compass to mark the points P, Q, R and S in that order, with PQ = QR = RS = 3 cm. She now needs a 90° angle at Q and a 90° angle at R, using only an unmarked ruler and a compass, and she wants to mark no new points on the line. (a) For the 90° angle at Q, which two of her points can act as X and Y? Give a reason. (b) Which two points can she use for the 90° angle at R? (c) How many pairs of arcs does she need in all for the two angles, and why not four?",
+     "a": "(a) P and R: QP = QR = 3 cm, so Q is the midpoint of PR, and the perpendicular bisector of PR passes through Q at 90°. (b) Q and S, since R is the midpoint of QS. (c) Two pairs: one pair of arcs from P and R, and one from Q and S. Q and R are already points on the two perpendicular bisectors, so one more point on each is enough to draw each line.",
+     "s": [
+      [
+       "Part (a): P and R, because Q is the midpoint of PR",
+       1
+      ],
+      [
+       "Part (b): Q and S",
+       1
+      ],
+      [
+       "Part (c): two pairs, since Q and R already lie on the two bisectors",
+       1
+      ]
+     ],
+     "p": "pp. 140-141"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Vikram has a line segment XY of length 12 cm and only an unmarked ruler and a compass. (a) He tries arcs of radius 5 cm from X and from Y. Will they meet? Give a reason. (b) He then uses a radius of 9 cm above and below XY, gets A and B, and joins AB to meet XY at O. Find OX. (c) He now needs the point P on XY with XP = 3 cm. The perpendicular bisector of which segment gives P? (d) Can he use arcs of radius 5 cm for the construction in part (c)? Give a reason. (e) Suppose he had skipped part (c) but already knew where P is. To make a 90° angle at P, give one suitable pair of end points for the segment he would bisect, and say how many pairs of arcs he would need.",
+     "a": "(a) No. The two arcs together reach only 5 + 5 = 10 cm, which is less than XY = 12 cm, so the arcs cannot reach each other. (b) O is the midpoint of XY, so OX = 12 ÷ 2 = 6 cm. (c) The perpendicular bisector of XO (6 cm long) meets it at its midpoint, 3 cm from X. (d) Yes: 5 + 5 = 10 cm is more than XO = 6 cm, so the arcs meet. (e) Any two points on XY equally far from P, for example X and O (each 3 cm from P); one pair of arcs is enough, because P, the midpoint, is already one point of the perpendicular bisector.",
+     "s": [
+      [
+       "Part (a): no, because 5 + 5 = 10 cm is less than 12 cm",
+       1
+      ],
+      [
+       "Part (b): OX = 6 cm",
+       1
+      ],
+      [
+       "Part (c): the perpendicular bisector of XO",
+       1
+      ],
+      [
+       "Part (d): yes, 10 cm is more than XO = 6 cm",
+       1
+      ],
+      [
+       "Part (e): a pair equally far from P, such as X and O, with one pair of arcs",
+       1
+      ]
+     ],
+     "p": "pp. 139-141"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the rope method, Sunil pulls the midpoint of the rope above XY, but the part of the rope towards X is slack while the part towards Y is fully stretched. Why can the point he marks not be trusted to lie on the perpendicular bisector?",
+     "o": [
+      "AX is then less than half the rope while AY equals half, so A need not be equally far from X and Y",
+      "A slack rope changes the length of XY",
+      "The midpoint of the rope moves to a new place on the rope when it is slack",
+      "The midpoint must always be pulled below XY first"
+     ],
+     "a": "AX is then less than half the rope while AY equals half the rope, so A need not be equally far from X and Y; only with both parts fully stretched is AX = AY.",
+     "p": "p. 142"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements. Statement I: To construct a 90° angle at a point O on a line, after marking X and Y on the line with OX = OY, one pair of intersecting arcs is enough. Statement II: In the rope method of the Kātyāyana-Śulbasūtra, the parts of the rope that go into the end loops are counted when the rope is folded to find its midpoint. Statement III: In the rope method, the midpoint of the rope is pulled above and then below XY to get the two points of the perpendicular bisector. Which of the statements are true?",
+     "o": [
+      "Only I and III",
+      "Only I",
+      "Only II and III",
+      "All three"
+     ],
+     "a": "Only I and III: O is already a point on the perpendicular bisector of XY, so one more point from one pair of arcs is enough; and the rope's midpoint is pulled above XY and then below it. Statement II is false: the parts of the rope in the loops are left out when the midpoint is found.",
+     "p": "pp. 141-142"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An angle of 70° is bisected with a ruler and compass. What is the measure of each of the two angles formed?",
+     "o": [
+      "35°",
+      "140°",
+      "70°",
+      "20°"
+     ],
+     "a": "35°: bisecting divides the angle into two equal parts, so each is 70° ÷ 2 = 35°.",
+     "p": "p. 143"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To bisect angle XOY, points A and B are marked with OA = OB, and equal arcs from A and B meet at C. By which congruence condition are triangles OAC and OBC congruent?",
+     "o": [
+      "SSS",
+      "SAS",
+      "ASA",
+      "AAA"
+     ],
+     "a": "SSS: OA = OB, AC = BC and OC is common, so the three pairs of sides are equal.",
+     "p": "p. 144"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Mona's rangoli has 8 rays drawn from a centre, with all the angles between neighbouring rays equal. (a) What is each of these angles? (b) How can this angle be constructed with only a ruler and compass?",
+     "a": "(a) The full angle of 360° is divided into 8 equal parts, so each is 360° ÷ 8 = 45°. (b) Construct a 90° angle and then bisect it.",
+     "s": [
+      [
+       "Part (a): 360° ÷ 8 = 45°",
+       1
+      ],
+      [
+       "Part (b): construct 90° and bisect it",
+       1
+      ]
+     ],
+     "p": "p. 143"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Angle XOY measures 76°, and Tanvi bisects it with a ruler and compass. (a) What does she first mark on the arms OX and OY? (b) How does she draw the arcs that give the point C? (c) Find angle XOC.",
+     "a": "(a) Points A on OX and B on OY with OA = OB. (b) From A and from B she draws arcs with the same (sufficiently long) radius; they meet at C. (c) OC bisects the angle, so angle XOC = 76° ÷ 2 = 38°.",
+     "s": [
+      [
+       "Part (a): marks A and B with OA = OB",
+       1
+      ],
+      [
+       "Part (b): arcs of the same radius from A and B meeting at C",
+       1
+      ],
+      [
+       "Part (c): angle XOC = 38°",
+       1
+      ]
+     ],
+     "p": "p. 144"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kabir copies an angle A onto a ray from X. His arc from A, of radius 4 cm, cuts the arms at B and C, and BC measures 3.1 cm. His arc from X cuts the ray at Z, and he then marks Y on that arc. (a) What radius must the arc from X have, and how far from Z must Y be? (b) Why is angle X equal to angle A?",
+     "a": "(a) The arc from X must also have radius 4 cm, and Y must be 3.1 cm from Z (YZ = BC). (b) AB = AC = XZ = XY = 4 cm and BC = YZ = 3.1 cm, so triangles ABC and XYZ are congruent by SSS, and the matching angles A and X are equal.",
+     "s": [
+      [
+       "Part (a): radius 4 cm and YZ = 3.1 cm",
+       1
+      ],
+      [
+       "Part (b): triangles ABC and XYZ are congruent by SSS, so angle X = angle A",
+       1
+      ]
+     ],
+     "p": "pp. 146-147"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "q": "Match each angle in Column I with a ruler-and-compass way of getting it in Column II. Column I: 1. 45°  2. 22.5°  3. 135°  4. 67.5°. Column II: a. Bisect a 90° angle  b. Bisect a 45° angle  c. Place a 90° angle and a 45° angle side by side  d. Place a 45° angle and a 22.5° angle side by side",
+     "o": [
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-b, 3-d, 4-c",
+      "1-a, 2-d, 3-c, 4-b"
+     ],
+     "a": "1-a, 2-b, 3-c, 4-d: 90° ÷ 2 = 45°, 45° ÷ 2 = 22.5°, 90° + 45° = 135° and 45° + 22.5° = 67.5°.",
+     "p": "pp. 143-147"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "To bisect angle AOB, Esha marks OA = OB on the two arms and then draws arcs from A and from B that meet at C. Assertion (A): The arcs from A and from B must have the same radius. Reason (R): If the radii were different, triangles OAC and OBC would have OA = OB and OC common but AC not equal to BC, so they need not be congruent and OC need not bisect the angle.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: the SSS condition needs AC = BC as well as OA = OB and the common side OC, and that is exactly what the equal radii give.",
+     "p": "p. 144"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Ishaan draws a straight line through O and starts from the ray OP along it. With a ruler and compass he copies an angle of 25° again and again, each copy placed next to the last one on the same side of the line, and he may also bisect any angle he has drawn. Each copy and each bisection counts as one construction. (a) After how many copies is the angle left over before the straight angle (180°) the smallest, and what is it? (b) Show how he can get a 15° angle, and count the constructions. (c) Show how he can get a 20° angle by bisecting a leftover angle, and count the constructions. (d) Can copies of the 25° angle alone fill the whole space round O with no gap and no overlap? Give a reason.",
+     "a": "(a) 7 copies: 7 × 25° = 175°, leaving 5°; 8 copies would need 200°, more than 180°. (b) 6 copies make 150°, leaving 180° - 150° = 30°; bisecting it gives 15°: 6 + 1 = 7 constructions. (c) 4 copies make 100°, leaving 80°; bisect to get 40°, bisect again to get 20°: 4 + 2 = 6 constructions. (d) No. The space round O is 360°, and 360 ÷ 25 = 14.4 is not a whole number: 14 copies cover 350° and leave a 10° gap, while 15 copies need 375° and overlap.",
+     "s": [
+      [
+       "Part (a): 7 copies, leftover 5°",
+       1
+      ],
+      [
+       "Part (b): 6 copies leave 30°, bisect to 15°, 7 constructions",
+       1
+      ],
+      [
+       "Part (c): 4 copies leave 80°, bisect twice to 20°, 6 constructions",
+       1
+      ],
+      [
+       "Part (d): no, 360 ÷ 25 is not whole (14 copies leave 10°, 15 overlap)",
+       1
+      ]
+     ],
+     "p": "pp. 143-147"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An angle of 100° is bisected, and then each of the two halves is bisected. Counting the two arms, how many rays from the vertex are there now, and what is the smallest angle between neighbouring rays?",
+     "o": [
+      "5 rays; 25°",
+      "4 rays; 25°",
+      "5 rays; 50°",
+      "3 rays; 25°"
+     ],
+     "a": "5 rays; 25°: the two arms, the first bisector and two more bisectors make 5 rays, and the four equal angles are each 100° ÷ 4 = 25°.",
+     "p": "p. 144"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.4",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To draw a line through a point B parallel to a line m with a ruler and compass, a transversal l is drawn through B to meet m. Which angle is then copied at B?",
+     "o": [
+      "The corresponding angle that l makes with m",
+      "A 90° angle",
+      "An angle of 60°",
+      "Half of the angle between l and m"
+     ],
+     "a": "The corresponding angle that l makes with m: a line through B making the same corresponding angle with l is parallel to m.",
+     "p": "p. 147"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A transversal l meets a line m at A and makes an angle of 72° with it. B is a point on l. The line n through B is to be parallel to m. What angle must n make with l at B, in the corresponding position?",
+     "o": [
+      "72°",
+      "108°",
+      "18°",
+      "144°"
+     ],
+     "a": "72°: parallel lines make equal corresponding angles with a transversal, so the angle at A is copied at B.",
+     "p": "p. 147"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A point P is above a line l. Lina draws an arc from P that cuts l at X and Y. She then notices that a point Q below l, already on her page, is 6 cm from X and also 6 cm from Y. (a) On which line do both P and Q lie? Give a reason. (b) What angle does the line PQ make with l, and why does she need no more arcs to draw the perpendicular from P?",
+     "a": "(a) Both lie on the perpendicular bisector of XY, since PX = PY (radii of the same arc) and QX = QY = 6 cm. (b) 90°: PQ is the perpendicular bisector of XY, so joining P and Q already gives the perpendicular from P to l; two points fix the line.",
+     "s": [
+      [
+       "Part (a): the perpendicular bisector of XY, as each point is equally far from X and Y",
+       1
+      ],
+      [
+       "Part (b): 90°, and P and Q already fix the line",
+       1
+      ]
+     ],
+     "p": "p. 155"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: To draw a line through a point B parallel to a line m with a ruler and compass, the transversal l that is drawn to meet m must pass through B.",
+     "a": "True. The angle between m and l is copied at B, so B must be a point of the transversal l.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Reason: the angle between m and l is copied at B, which lies on l",
+       1
+      ]
+     ],
+     "p": "p. 147"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "scenario"
+     ],
+     "q": "A straight road m and a lane l cross at A. The angle between them, north of the road and east of the lane, is 55°. A school gate B is on the lane, north of the road. A new road n is to be drawn through B parallel to m. (a) What angle must n make with l at B, north of n and east of l? (b) What is the angle between n and l at B, north of n and west of l? (c) Which congruence condition makes the copied angle at B exactly equal to the angle at A?",
+     "a": "(a) 55°, the corresponding angle. (b) The two angles on the same side of n make a straight angle, so it is 180° - 55° = 125°. (c) SSS: equal arcs at A and B and the transferred chord make congruent triangles.",
+     "s": [
+      [
+       "Part (a): 55°",
+       1
+      ],
+      [
+       "Part (b): 125°",
+       1
+      ],
+      [
+       "Part (c): SSS congruence",
+       1
+      ]
+     ],
+     "p": "pp. 147-148"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "Line m is drawn and A and B are points on it, with B to the right of A. D is a point above m, and AD makes an angle of 70° with AB. Using only an unmarked ruler and a compass, Pooja must draw the line through D parallel to m, and then the line through B parallel to AD. (a) For the first line, which line is the transversal, and which angle is copied at D? (b) Her arc from A cuts AB at P and AD at Q. The arc of the same radius from D cuts AD, extended beyond D, at R. Which length does she mark off from R on this arc to get the point S on the new line? (c) Why is the copied angle at D exactly 70°? (d) For the second line, through B parallel to AD, which line is the transversal, and where is the 70° angle copied? (e) Each line drawn this way needs 3 arcs: one from the corner on the given line, one of the same radius from the new point, and one of radius PQ. Pooja wants to draw as few arcs as possible in all. Decide which arc of the first construction she can reuse for the second line, and find the fewest arcs needed for both lines together.",
+     "a": "(a) The transversal is AD (line l); the 70° angle between m and AD at A is copied at D as the corresponding angle. (b) The length PQ. (c) AP = AQ = DR = DS (equal radii) and RS = PQ, so triangles APQ and DRS are congruent by SSS, and the angle at D equals the angle at A, 70°. (d) The transversal is m itself; the 70° angle is copied at B, between m (on the side away from A) and the new line. (e) The second construction copies the same 70° angle DAB that the first one copied, so the arc from A (giving P and Q) and the length PQ can be reused. She needs only the arc of the same radius from B, cutting m beyond B, and the arc of radius PQ from that point: 2 arcs. Fewest in all: 3 + 2 = 5 arcs instead of 6.",
+     "s": [
+      [
+       "Part (a): transversal AD, the 70° angle copied at D",
+       1
+      ],
+      [
+       "Part (b): the length PQ",
+       1
+      ],
+      [
+       "Part (c): SSS with equal radii and RS = PQ",
+       1
+      ],
+      [
+       "Part (d): transversal m, angle copied at B",
+       1
+      ],
+      [
+       "Part (e): reuses the arc from A and the length PQ, so the second line needs 2 arcs; total 3 + 2 = 5",
+       1
+      ]
+     ],
+     "p": "pp. 147-148"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "An arc drawn from a point P outside a line l cuts l at X and Y. Assertion (A): The perpendicular from P to l passes through the midpoint of XY. Reason (R): The perpendicular from P to l is as long as PX.",
+     "o": [
+      "A is true, but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false, but R is true."
+     ],
+     "a": "A is true, but R is false. A is true because PX = PY (radii of the same arc), so P lies on the perpendicular bisector of XY; that line is the perpendicular from P, and it passes through the midpoint of XY. R is false: the perpendicular from P meets l at the midpoint M of XY, which is nearer to P than X is, so PM is shorter than PX (PX is the slanting side).",
+     "p": "p. 155"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Write, in order, the four steps to draw a line through a point B parallel to a line m, using only an unmarked ruler and a compass. Name the points you mark with your own letters, and say why the line you get is parallel to m.",
+     "a": "1. Draw a line l through B that meets m at A. 2. With centre A, draw an arc cutting m at C and l at D; with the same radius and centre B, draw an arc cutting l at E. 3. Take the length CD on the compass and, from E, cut the arc from B at F. 4. Join B and F; this line n is parallel to m, because the angle at B equals the corresponding angle at A (triangles congruent by SSS).",
+     "s": [
+      [
+       "Draws a transversal l through B meeting m at A",
+       1
+      ],
+      [
+       "Draws equal-radius arcs from A (cutting m and l) and from B",
+       1
+      ],
+      [
+       "Transfers the chord CD from E to get F",
+       1
+      ],
+      [
+       "Joins BF and says it is parallel because the corresponding angles are equal",
+       1
+      ]
+     ],
+     "p": "pp. 147-148"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the total of all the angles around a point?",
+     "o": [
+      "360°",
+      "180°",
+      "90°",
+      "270°"
+     ],
+     "a": "360°: a degree is defined by taking the complete angle around a point to be 360°.",
+     "p": "p. 152"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Three pieces with angles of 75°, 110° and 85° are placed round a point with no overlap. What angle is left uncovered?",
+     "o": [
+      "90°",
+      "100°",
+      "80°",
+      "270°"
+     ],
+     "a": "90°: the angles round a point add up to 360°, and 360° - (75° + 110° + 85°) = 360° - 270° = 90°.",
+     "p": "p. 152"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) What is each angle of an equilateral triangle? (b) A regular hexagon is made of six equilateral triangles meeting at its centre. Explain why each angle of the hexagon is 120°.",
+     "a": "(a) 60°. (b) At each corner of the hexagon, angles of two equilateral triangles meet, so each angle is 60° + 60° = 120°.",
+     "s": [
+      [
+       "Part (a): 60°",
+       1
+      ],
+      [
+       "Part (b): two triangle angles meet at each corner, 60° + 60° = 120°",
+       1
+      ]
+     ],
+     "p": "pp. 151-152"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Starting from the 60° angle of an equilateral triangle, and using only a ruler and compass, how can you get (a) a 30° angle, (b) a 120° angle, (c) a 150° angle, if for (c) you may also use a 90° angle?",
+     "a": "(a) Bisect the 60° angle: 60° ÷ 2 = 30°. (b) Place two 60° angles side by side: 60° + 60° = 120°. (c) Place a 90° angle and a 60° angle side by side: 90° + 60° = 150°.",
+     "s": [
+      [
+       "Part (a): bisect 60° to get 30°",
+       1
+      ],
+      [
+       "Part (b): two 60° angles side by side",
+       1
+      ],
+      [
+       "Part (c): 90° and 60° side by side",
+       1
+      ]
+     ],
+     "p": "pp. 152-154"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A regular hexagon ABCDEF of side 5 cm is made of six congruent equilateral triangles meeting at its centre O. (a) What is the side of each triangle? (b) Find the perimeter of the hexagon. (c) What is each angle at the centre O? (d) What is each angle of the hexagon? (e) AOD is a straight line. Find the length AD.",
+     "a": "(a) 5 cm, the same as the side of the hexagon. (b) 6 × 5 = 30 cm. (c) 360° ÷ 6 = 60°. (d) 60° + 60° = 120°. (e) AD = AO + OD = 5 + 5 = 10 cm.",
+     "s": [
+      [
+       "Part (a): 5 cm",
+       1
+      ],
+      [
+       "Part (b): 30 cm",
+       1
+      ],
+      [
+       "Part (c): 60°",
+       1
+      ],
+      [
+       "Part (d): 120°",
+       1
+      ],
+      [
+       "Part (e): AD = 10 cm",
+       1
+      ]
+     ],
+     "p": "pp. 151-153"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the following statements. Statement I: If an arc from A cuts AX at B, and an arc of the same radius from B cuts the first arc at C, then angle CAB is 60°. Statement II: Six congruent equilateral triangles fit round a point with no gap and no overlap. Statement III: Five equilateral triangles and one 90° angle fill the space round a point exactly. Which of the statements are true?",
+     "o": [
+      "Only I and II",
+      "Only I",
+      "Only II and III",
+      "All three"
+     ],
+     "a": "Only I and II: AB = AC = BC makes triangle ABC equilateral, so angle CAB = 60°, and 6 × 60° = 360°. Statement III is false because 5 × 60° + 90° = 390°, which overlaps.",
+     "p": "pp. 152-153"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A six-pointed star is drawn on a regular hexagon of side 2 cm: each point of the star is an equilateral triangle standing on one side of the hexagon, made by extending the two neighbouring sides. The star can also be seen as two large triangles placed over each other. What is the side of each large triangle?",
+     "o": [
+      "6 cm",
+      "4 cm",
+      "2 cm",
+      "12 cm"
+     ],
+     "a": "6 cm: each side of a large triangle runs along one side of a star point (2 cm), a side of the hexagon (2 cm) and a side of the next star point (2 cm), so it is 3 × 2 = 6 cm.",
+     "p": "p. 154"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "Farida, a craftswoman in Moradabad, is making a brass wall plate. Around its centre O she fits flat wedge-shaped pieces that all meet at O with no overlap. She has already fixed pieces with angles of 60°, 60°, 45°, 45° and 30° side by side, and one gap remains. She has a stock of 30°, 45° and 60° pieces, and she can construct each of these angles with a ruler and compass. (a) Find the total of the angles already fixed. (b) Find the gap angle. (c) Which construction would give her one piece exactly equal to the gap? (d) She wants to fill the gap with pieces of only one size from her stock, using as few pieces as possible. Which pieces, and how many, should she use? Give a reason.",
+     "a": "(a) 60 + 60 + 45 + 45 + 30 = 240°. (b) 360° - 240° = 120°. (c) A 120° angle, made by constructing two 60° angles side by side. (d) Two 60° pieces: 2 × 60° = 120°. Four 30° pieces also fit but use more pieces, and 45° pieces cannot fit since 120 ÷ 45 is not a whole number.",
+     "s": [
+      [
+       "Part (a): 240°",
+       1
+      ],
+      [
+       "Part (b): gap of 120°",
+       1
+      ],
+      [
+       "Part (c): construct 120° as two 60° angles",
+       1
+      ],
+      [
+       "Part (d): two 60° pieces, with the 30° and 45° options ruled out",
+       1
+      ]
+     ],
+     "p": "pp. 152-154"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A regular hexagon ABCDEF with centre O has sides of 7 cm. (a) How far is the vertex A from O? Give a reason. (b) How long is the diagonal AD? Give a reason.",
+     "a": "(a) 7 cm: triangle OAB is one of the six equilateral triangles, so OA = AB = 7 cm. (b) 14 cm: the angles AOB, BOC and COD are 60° each, so angle AOD = 180° and A, O, D lie on one line; AD = AO + OD = 7 + 7 = 14 cm.",
+     "s": [
+      [
+       "Part (a): OA = 7 cm because triangle OAB is equilateral",
+       1
+      ],
+      [
+       "Part (b): A, O, D in a line (3 × 60° = 180°), so AD = 14 cm",
+       1
+      ]
+     ],
+     "p": "pp. 151-153"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many 2 × 1 tiles are needed to tile a 6 × 8 grid of unit squares?",
+     "o": [
+      "24",
+      "48",
+      "14",
+      "12"
+     ],
+     "a": "24: the grid has 6 × 8 = 48 unit squares and each tile covers 2 of them, so 48 ÷ 2 = 24 tiles.",
+     "p": "p. 157"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "tags": [
+      "scenario"
+     ],
+     "q": "A floor made of unit squares is to be covered exactly with 2 × 1 mats. For which floor is this impossible?",
+     "o": [
+      "A 3 × 5 floor",
+      "A 4 × 7 floor",
+      "A 2 × 9 floor",
+      "A 6 × 6 floor"
+     ],
+     "a": "A 3 × 5 floor: it has 15 squares, an odd number, and each mat covers exactly 2 squares. The others each have an even side and can be covered.",
+     "p": "pp. 157-158"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) What is tiling? (b) Give the reason why a 3 × 9 grid cannot be tiled with 2 × 1 tiles.",
+     "a": "(a) Covering a region with a set of shapes, without gaps or overlaps. (b) The grid has 3 × 9 = 27 unit squares, an odd number, but each tile covers exactly 2 squares, so any number of tiles covers an even number of squares.",
+     "s": [
+      [
+       "Part (a): covering a region without gaps or overlaps",
+       1
+      ],
+      [
+       "Part (b): 27 squares is odd, and each tile covers 2",
+       1
+      ]
+     ],
+     "p": "p. 157"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A 4 × 4 grid is coloured like a chessboard, so that black squares have only white neighbours. (a) How many black squares and how many white squares does it have? (b) How many squares of each colour does one 2 × 1 tile cover when it is placed on the grid? (c) One corner square is removed. Can the rest be tiled with 2 × 1 tiles? Give a reason.",
+     "a": "(a) 8 black and 8 white. (b) One black square and one white square. (c) No: 15 squares are left, an odd number (one colour has 8 squares and the other 7), so tiles covering one black and one white each can never cover it.",
+     "s": [
+      [
+       "Part (a): 8 black and 8 white",
+       1
+      ],
+      [
+       "Part (b): one black and one white",
+       1
+      ],
+      [
+       "Part (c): no, since 15 squares (8 of one colour and 7 of the other) remain",
+       1
+      ]
+     ],
+     "p": "pp. 159-160"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "tags": [
+      "match"
+     ],
+     "q": "Match each region in Column I with the correct statement about tiling it with 2 × 1 tiles in Column II. Column I: 1. A 3 × 7 grid  2. A 3 × 4 grid (3 rows, 4 columns)  3. A 4 × 6 grid with the squares in row 1, column 1 and row 2, column 2 removed  4. A 5 × 5 grid with its centre square removed. Column II: a. Odd number of squares, so it cannot be tiled  b. No square is removed and it has an odd number of rows, but it can still be tiled  c. Even number of squares but unequal numbers of black and white squares, so it cannot be tiled  d. A square has been removed, yet it can still be tiled",
+     "o": [
+      "1-a, 2-b, 3-c, 4-d",
+      "1-b, 2-a, 3-c, 4-d",
+      "1-a, 2-d, 3-c, 4-b",
+      "1-a, 2-b, 3-d, 4-c"
+     ],
+     "a": "1-a, 2-b, 3-c, 4-d: the 3 × 7 grid has 21 squares; each row of the 3 × 4 grid has 4 squares, so horizontal tiles cover it; the two removed squares of the 4 × 6 grid have the same colour, leaving 10 of one colour and 12 of the other; the 5 × 5 grid without its centre has 12 of each colour and can be tiled as a ring of four 2 × 3 blocks round the centre, each covered by three tiles.",
+     "p": "pp. 158-160"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A 7 × 9 grid of unit squares cannot be tiled with 2 × 1 tiles. Reason (R): The grid has 63 unit squares, an odd number, and each tile covers exactly 2 unit squares.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: 7 × 9 = 63 is odd, and tiles covering 2 squares each always cover an even number of squares.",
+     "p": "pp. 157-158"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "A 3 × 11 grid (3 rows, 11 columns) is coloured like a chessboard with black corner squares. Assertion (A): If the white square in row 1, column 2 is removed, the rest cannot be tiled with 2 × 1 tiles. Reason (R): The remaining region has 17 black squares and 15 white squares, and each tile covers one black and one white square.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ],
+     "a": "Both A and R are true, and R is the correct explanation of A: the full grid has 17 black and 16 white squares, so removing a white one leaves 17 black and 15 white, and tiles always cover equal numbers of each colour.",
+     "p": "pp. 159-160"
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "q": "A school courtyard is a grid of 1 m squares with 6 rows and 6 columns. A flower bed will be cut out of it, and the rest covered with 2 × 1 m mats costing ₹180 each, with no gaps, no overlaps and no cut mats. Plan A: the bed is a plus shape of 5 squares, made of the square in row 3, column 3 and its four neighbours. Plan B: the bed is the 2 × 2 block in rows 3 and 4, columns 3 and 4. (a) How many squares are left to cover under each plan? (b) Which plan can be ruled out at once, and why? (c) Colour the courtyard like a chessboard with a black square in row 1, column 1. How many black and white squares are left under Plan B? (d) Describe one way to cover the floor of Plan B with mats. (e) How many mats does Plan B need, and what will they cost?",
+     "a": "(a) Plan A: 36 - 5 = 31 squares; Plan B: 36 - 4 = 32 squares. (b) Plan A: 31 is odd and each mat covers 2 squares, so it can never be covered exactly. (c) The 2 × 2 block has 2 black and 2 white squares, so 16 black and 16 white are left. (d) Rows 1 and 2 and rows 5 and 6 each take 3 mats laid along the row (12 mats); in rows 3 and 4, columns 1, 2, 5 and 6 each take one mat standing across the two rows (4 mats). (e) 32 ÷ 2 = 16 mats, costing 16 × 180 = ₹2880.",
+     "s": [
+      [
+       "Part (a): 31 and 32 squares",
+       1
+      ],
+      [
+       "Part (b): Plan A is ruled out, 31 is odd",
+       1
+      ],
+      [
+       "Part (c): 16 black and 16 white",
+       1
+      ],
+      [
+       "Part (d): a complete layout of the mats",
+       1
+      ],
+      [
+       "Part (e): 16 mats costing ₹2880",
+       1
+      ]
+     ],
+     "p": "pp. 157-160"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A courtyard is a grid of unit squares with 7 rows and 10 columns. (a) Describe one way to tile it with 2 × 1 tiles. (b) How many tiles are used?",
+     "a": "(a) Each row has 10 squares, an even number, so each row can be covered by horizontal tiles placed end to end. (b) 10 ÷ 2 = 5 tiles per row, and 7 × 5 = 35 tiles.",
+     "s": [
+      [
+       "Part (a): covers each row of 10 with horizontal tiles because 10 is even",
+       1
+      ],
+      [
+       "Part (b): 35 tiles",
+       1
+      ]
+     ],
+     "p": "p. 158"
+    }
+   ]
+  },
+  {
+   "code": "C7M-6.7",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which three regular polygons does the chapter show tiling the entire plane on their own?",
+     "o": [
+      "Squares, equilateral triangles and regular hexagons",
+      "Squares, regular pentagons and regular hexagons",
+      "Only squares and rectangles",
+      "Equilateral triangles, squares and regular octagons"
+     ],
+     "a": "Squares, equilateral triangles and regular hexagons: the chapter shows the plane tiled by each of these.",
+     "p": "pp. 160-161"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a tiling of the plane with equilateral triangles, how many triangles meet at each corner point?",
+     "o": [
+      "6",
+      "3",
+      "4",
+      "8"
+     ],
+     "a": "6: each corner of an equilateral triangle is 60°, and 360° ÷ 60° = 6.",
+     "p": "p. 161"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "(a) What shape are the cells on the front face of bee hives? (b) Why is it useful to the bees that these cells tile the region?",
+     "a": "(a) Hexagonal (regular hexagons). (b) Because the region is tiled, no space is wasted in the cells used to keep eggs, larvae and pupae safe and to store food.",
+     "s": [
+      [
+       "Part (a): hexagonal cells",
+       1
+      ],
+      [
+       "Part (b): no space is wasted",
+       1
+      ]
+     ],
+     "p": "p. 162"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: One regular hexagon, one square and two equilateral triangles can meet at a point with no gap and no overlap.",
+     "a": "False. Their corners add up to 120° + 90° + 60° + 60° = 330°, which leaves a gap of 30° round the point.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Shows 120° + 90° + 2 × 60° = 330°, not 360°",
+       1
+      ]
+     ],
+     "p": "p. 161"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Rohit says, 'The plane can be tiled only with copies of one single shape.' A tiler places three equilateral triangles and two squares round one point. (a) Find the total of the angles at the point. (b) What does this show? (c) Is Rohit right? Use part (a) and what the chapter says about tilings.",
+     "a": "(a) 3 × 60° + 2 × 90° = 180° + 180° = 360°. (b) Two different shapes fill the space round the point with no gap and no overlap. (c) No: the chapter states that a plane can also be tiled using more than one shape, and even with non-regular shapes.",
+     "s": [
+      [
+       "Part (a): 3 × 60° + 2 × 90° = 360°",
+       1
+      ],
+      [
+       "Part (b): two different shapes fill the point exactly",
+       1
+      ],
+      [
+       "Part (c): Rohit is wrong; the chapter says more than one shape can tile the plane",
+       1
+      ]
+     ],
+     "p": "p. 161"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "tags": [
+      "case_study"
+     ],
+     "q": "The Sharma family in Pune is tiling a rectangular verandah 3.2 m long and 2.4 m wide. They have chosen square tiles of side 40 cm, to be laid edge to edge with no gaps and no overlaps, and no tile is to be cut. (a) How many tiles fit along the 3.2 m length? (b) How many tiles fit along the 2.4 m width? (c) How many tiles are needed in all? (d) At a point inside the floor where tiles meet, how many tiles meet, and what do their corner angles add up to?",
+     "a": "(a) 320 cm ÷ 40 cm = 8 tiles. (b) 240 cm ÷ 40 cm = 6 tiles. (c) 8 × 6 = 48 tiles. (d) 4 tiles meet, and 4 × 90° = 360°.",
+     "s": [
+      [
+       "Part (a): 8 tiles",
+       1
+      ],
+      [
+       "Part (b): 6 tiles",
+       1
+      ],
+      [
+       "Part (c): 48 tiles",
+       1
+      ],
+      [
+       "Part (d): 4 tiles, with 4 × 90° = 360°",
+       1
+      ]
+     ],
+     "p": "p. 160"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A designer has regular hexagons (each corner 120°) and squares (each corner 90°) of the same side. At every corner point the tile corners must add up to exactly 360°. (a) Show that hexagon and square corners together, with at least one of each, can never fill a point exactly. (b) To fill gaps she can also use a diamond tile with two corners of 30° and two corners of 150°. One hexagon and two squares meet at a point: what gap is left, and how many diamond corners of which size fill it? (c) Show that one hexagon, one square and just one diamond corner can fill a point, and name that corner. (d) A hexagon costs ₹25, a square ₹12 and a diamond ₹8. Counting only the tiles that meet at the point, which arrangement, (b) or (c), costs less, and by how much?",
+     "a": "(a) With 1 hexagon, 360° - 120° = 240° is left, and 240 ÷ 90 is not a whole number; with 2 hexagons, 120° is left, and 120 ÷ 90 is not whole; 3 hexagons already make 360° with no square. So no mix of both fills a point. (b) 360° - 120° - 2 × 90° = 60°, filled by two 30° diamond corners. (c) 120° + 90° + 150° = 360°, using the 150° corner. (d) (b) costs ₹25 + 2 × ₹12 + 2 × ₹8 = ₹65; (c) costs ₹25 + ₹12 + ₹8 = ₹45; so (c) is cheaper by ₹20.",
+     "s": [
+      [
+       "Part (a): checks 1 and 2 hexagons and shows the leftover is not a multiple of 90°",
+       1
+      ],
+      [
+       "Part (b): gap 60°, two 30° corners",
+       1
+      ],
+      [
+       "Part (c): 120° + 90° + 150° = 360°, the 150° corner",
+       1
+      ],
+      [
+       "Part (d): ₹65 against ₹45, so (c) is cheaper by ₹20",
+       1
+      ]
+     ],
+     "p": "pp. 160-161"
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "One corner of a certain tile is 80°. Can copies of this corner alone fill the space round a point, with no gap and no overlap?",
+     "o": [
+      "No: four corners make 320°, leaving a 40° gap, and five make 400°, which overlap",
+      "Yes: four corners make exactly 360°",
+      "Yes: 80° is less than 90°, so it fits round a point like a square corner",
+      "Yes: 80° × 4.5 = 360°, so four and a half corners fill the point"
+     ],
+     "a": "No: four corners make 4 × 80° = 320°, leaving 40°, and five make 400°, more than 360°, so no whole number of these corners makes exactly 360°.",
+     "p": "p. 152"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1286 @@
+{
+  "kind": "school_topup",
+  "subject": {
+    "code": "MATH9",
+    "class": 9,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 2,
+    "name": "Introduction to Linear Polynomials"
+  },
+  "source_code": "iemh102",
+  "concepts": [
+    {
+      "code": "C9M-2.1",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the degree of the polynomial 6 + 4z − z³ + 2z²?",
+          "a": "3, because the highest power of z in the polynomial is z³.",
+          "o": [
+            "3",
+            "6",
+            "4",
+            "2"
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is a quadratic polynomial?",
+          "a": "5 − x², because the highest power of x in it is 2.",
+          "o": [
+            "5 − x²",
+            "x³ − 2",
+            "4x + 9",
+            "11"
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "q": "Match each polynomial in Column I with its name in Column II. Column I: 1. 7m − 2   2. 9   3. m³ + m   4. 4m² − m + 3. Column II: P. constant polynomial   Q. linear polynomial   R. quadratic polynomial   S. cubic polynomial",
+          "a": "1-Q, 2-P, 3-S, 4-R: the highest powers are 1, 0, 3 and 2.",
+          "o": [
+            "1-Q, 2-P, 3-S, 4-R",
+            "1-Q, 2-P, 3-R, 4-S",
+            "1-Q, 2-Q, 3-S, 4-R",
+            "1-R, 2-P, 3-S, 4-Q"
+          ],
+          "tags": [
+            "match"
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): After like terms are combined, 2y − 5 + y² − 2y is a linear polynomial. Reason (R): The expression contains the term 2y, whose power of y is 1.",
+          "a": "A is false, but R is true. The terms 2y and −2y cancel, leaving y² − 5, whose highest power of y is 2, so it is quadratic. R is a true statement about one term, but the degree depends on the highest power left, not on one term.",
+          "o": [
+            "A is false, but R is true.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false."
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) What is meant by the degree of a polynomial in one variable? (b) Write a cubic polynomial in t whose constant term is −6.",
+          "a": "(a) The degree is the highest power of the variable in the polynomial. (b) For example t³ + 2t − 6 (any polynomial whose highest power of t is 3 and whose constant term is −6).",
+          "s": [
+            [
+              "Degree defined as the highest power of the variable",
+              1
+            ],
+            [
+              "A correct cubic in t with constant term −6",
+              1
+            ]
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: The constant polynomial 8 has degree 1, because it has exactly one term. Give the reason for your answer.",
+          "a": "False. The number 8 can be written as 8x⁰, in which the power of the variable is 0, so 8 is a constant polynomial of degree 0. The number of terms does not decide the degree.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "8 = 8x⁰, so the degree is 0 (constant polynomial)",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A square photo frame has side s cm. Its wooden border costs ₹6 for every cm of the perimeter, and its glass costs ₹2 for every square cm of the area. (a) Write the total cost in rupees as a polynomial in s. (b) State the degree of this polynomial and the coefficient of s.",
+          "a": "(a) Border: 6 × 4s = 24s; glass: 2 × s² = 2s². Total cost = 2s² + 24s rupees. (b) The degree is 2 (a quadratic polynomial) and the coefficient of s is 24.",
+          "s": [
+            [
+              "Total cost 2s² + 24s from 6 × 4s and 2 × s²",
+              1
+            ],
+            [
+              "Degree 2 and coefficient of s equal to 24",
+              1
+            ]
+          ],
+          "p": "pp. 16-18"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "For the polynomial 6 − 5p² + 2p³ − p: (a) write it with the powers of p in descending order, (b) write the coefficient of p² and the coefficient of p, (c) state its degree and the name of this type of polynomial.",
+          "a": "(a) 2p³ − 5p² − p + 6. (b) The coefficient of p² is −5 and the coefficient of p is −1. (c) Degree 3, so it is a cubic polynomial.",
+          "s": [
+            [
+              "Descending order 2p³ − 5p² − p + 6",
+              1
+            ],
+            [
+              "Coefficients −5 (of p²) and −1 (of p)",
+              1
+            ],
+            [
+              "Degree 3, cubic polynomial",
+              1
+            ]
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ravi looks at the polynomial 5 − 2y + y⁴ − 3y². He says, 'Its degree is 5, because 5 is the biggest number in it. Also, it is a quadratic polynomial because it has the term −3y².' Check both parts of Ravi's claim.",
+          "a": "Both parts are wrong. The degree is the highest power of the variable, not the biggest number: the highest power of y is 4 (in y⁴), so the degree is 4, and 5 is only the constant term. It is not quadratic either: a polynomial is named by its highest power, and having a y² term does not make it quadratic when y⁴ is present.",
+          "s": [
+            [
+              "Degree is 4, from the highest power y⁴",
+              1
+            ],
+            [
+              "Explains that 5 is the constant term and the biggest number does not decide the degree",
+              1
+            ],
+            [
+              "Not quadratic: the type is decided by the highest power, which is 4, not 2",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "p. 18"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A cardboard box for the school art room has a square base of side x cm and a height of 10 cm. The total area of its six faces is 2x² + 40x square cm. (a) Write the volume of the box as a polynomial in x. (b) The box has 12 edges: 8 of length x cm and 4 of length 10 cm. Write the total length of its edges as a polynomial in x. (c) Name the type of each of the three polynomials: volume, total area and total edge length. (d) Find the volume, the total area and the total edge length when x = 5. (e) Coloured tape is stuck along every edge, and the tape comes in rolls of 100 cm. The art teacher wants the largest box, with x a whole number of cm, whose edges can all be covered from one roll. Find x and the volume of that box.",
+          "a": "(a) Volume = x × x × 10 = 10x² cubic cm. (b) Edge length = 8x + 40 cm. (c) Volume 10x² is quadratic (degree 2), total area 2x² + 40x is quadratic (degree 2), edge length 8x + 40 is linear (degree 1). (d) At x = 5: volume 250 cubic cm, area 50 + 200 = 250 square cm, edge length 80 cm. (e) The edge length 8x + 40 must be at most 100: at x = 7 it is 96 cm (fits) and at x = 8 it is 104 cm (too long), since 8x + 40 = 100 only at x = 7.5. So x = 7 cm, and the volume is 10 × 7² = 490 cubic cm.",
+          "s": [
+            [
+              "(a) Volume 10x²",
+              1
+            ],
+            [
+              "(b) Edge length 8x + 40",
+              1
+            ],
+            [
+              "(c) Quadratic, quadratic, linear with degrees 2, 2, 1",
+              1
+            ],
+            [
+              "(d) 250, 250 and 80 at x = 5",
+              1
+            ],
+            [
+              "(e) 8x + 40 ≤ 100 checked: x = 7 fits (96 cm), x = 8 does not (104 cm); volume 490 cubic cm",
+              1
+            ]
+          ],
+          "p": "pp. 17-20"
+        }
+      ]
+    },
+    {
+      "code": "C9M-2.2",
+      "questions": [
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the value of the linear polynomial 6x + 11 when x = −4?",
+          "a": "−13, because 6 × (−4) + 11 = −24 + 11 = −13.",
+          "o": [
+            "−13",
+            "35",
+            "13",
+            "−35"
+          ],
+          "p": "p. 20"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is a linear equation?",
+          "a": "4y − 9 = 23, because a linear polynomial (4y − 9) is set equal to a constant.",
+          "o": [
+            "4y − 9 = 23",
+            "y² + 2 = 11",
+            "4y − 9",
+            "y³ = 27"
+          ],
+          "p": "p. 20"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements. I. The value of 3x − 4 at x = 0 is −4. II. If 5 more than three times a number is 26, the number is 7. III. The equations 2x + 5 = 17 and 2x = 17 − 5 have the same solution. Which of these statements are correct?",
+          "a": "I, II and III are all correct: 3 × 0 − 4 = −4; 3x + 5 = 26 gives 3x = 21, so x = 7; and both equations give x = 6.",
+          "o": [
+            "I, II and III",
+            "I and II only",
+            "I and III only",
+            "II and III only"
+          ],
+          "p": "p. 20"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The equation 5x + 4 = 3x + 18 has the solution x = 7. Reason (R): Equating a linear polynomial to a constant gives a linear equation.",
+          "a": "Both A and R are true, but R is not the correct explanation of A. Taking 3x and 4 across gives 2x = 14, so x = 7 (check: 39 = 39). R is a true statement from the chapter, but it only says what kind of equation we get; it does not show why the solution is 7.",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "A is true, but R is false.",
+            "A is false, but R is true."
+          ],
+          "p": "p. 20"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the linear polynomial p(x) = 5x − 8: (a) find p(4), (b) find the value of x for which p(x) = 22.",
+          "a": "(a) p(4) = 5 × 4 − 8 = 12. (b) 5x − 8 = 22 gives 5x = 30, so x = 6.",
+          "s": [
+            [
+              "p(4) = 12",
+              1
+            ],
+            [
+              "5x − 8 = 22 solved to x = 6",
+              1
+            ]
+          ],
+          "p": "p. 20"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A mother is 26 years older than her daughter. In 4 years, the mother's age will be twice the daughter's age. (a) Taking the daughter's present age as x years, form a linear equation. (b) Find both their present ages.",
+          "a": "(a) In 4 years the daughter will be x + 4 and the mother x + 26 + 4 = x + 30, so x + 30 = 2(x + 4). (b) x + 30 = 2x + 8 gives x = 22. The daughter is 22 years old and the mother is 48 years old (check: in 4 years, 52 = 2 × 26).",
+          "s": [
+            [
+              "Equation x + 30 = 2(x + 4)",
+              1
+            ],
+            [
+              "Daughter 22 years, mother 48 years",
+              1
+            ]
+          ],
+          "p": "pp. 20-21"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: An input-output machine follows the rule 'multiply the input by 4, then subtract 3'. When the input is 5, the output is 17. Give the reason.",
+          "a": "True. The machine gives the value of the linear polynomial 4x − 3; at x = 5 this is 4 × 5 − 3 = 20 − 3 = 17.",
+          "s": [
+            [
+              "Verdict: True",
+              1
+            ],
+            [
+              "Output = 4 × 5 − 3 = 17 shown",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "p. 20"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "short_answer",
+          "m": 3,
+          "q": "At a school play, an adult ticket costs ₹80 and a child ticket costs ₹50. Twice as many child tickets as adult tickets were sold. (a) If x adult tickets were sold, write the money collected as a linear polynomial in x. (b) The money collected was ₹1,260. Find the number of tickets of each kind. (c) For the next show the costs are ₹1,000, and tickets are again sold in the same 1 adult : 2 children pattern. What is the least number of adult tickets that must be sold to collect at least ₹1,000? Give the reason.",
+          "a": "(a) Child tickets = 2x, so money = 80x + 50 × 2x = 180x rupees. (b) 180x = 1260 gives x = 7: 7 adult tickets and 14 child tickets. (c) 180x = 1000 gives x = 5.55..., not a whole number; 5 adult tickets bring only ₹900, while 6 bring ₹1,080. So at least 6 adult tickets (with 12 child tickets) must be sold.",
+          "s": [
+            [
+              "Money = 80x + 100x = 180x",
+              1
+            ],
+            [
+              "7 adult and 14 child tickets",
+              1
+            ],
+            [
+              "x = 5 gives ₹900 (short), x = 6 gives ₹1,080; least is 6",
+              1
+            ]
+          ],
+          "tags": [
+            "scenario"
+          ],
+          "p": "pp. 20-21"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The Maths Club puts up a board in the school corridor: 'Think of a whole number. Multiply it by 4 and then add 9. Write your answer on the sheet below.' By the end of the day, Dev has written 33, Riya has written 61 and Arjun has written 50. The club wants to find each student's number from the answers. (a) Taking the number thought of as x, write the club's rule as a polynomial in x and state its degree. (b) What number did Dev think of? (c) What number did Riya think of? (d) Show that Arjun must have made a mistake.",
+          "a": "(a) 4x + 9, a linear polynomial of degree 1. (b) 4x + 9 = 33 gives 4x = 24, so Dev thought of 6. (c) 4x + 9 = 61 gives 4x = 52, so Riya thought of 13. (d) 4x + 9 = 50 gives 4x = 41, so x = 10.25, which is not a whole number; Arjun must have made a mistake.",
+          "s": [
+            [
+              "(a) 4x + 9, degree 1",
+              1
+            ],
+            [
+              "(b) Dev's number 6",
+              1
+            ],
+            [
+              "(c) Riya's number 13",
+              1
+            ],
+            [
+              "(d) 4x = 41 gives 10.25, not a whole number",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "p. 20"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "The digits of a two-digit number add up to 9. When the digits are interchanged, the new number is 27 more than the original number. Let the tens digit of the original number be x. (a) Write the units digit in terms of x. (b) Write the original number as a linear polynomial in x. (c) Write the new number (digits interchanged) as a linear polynomial in x. (d) Form a linear equation and solve it for x. (e) Write the original number and check the answer against both conditions.",
+          "a": "(a) Units digit = 9 − x. (b) Original = 10x + (9 − x) = 9x + 9. (c) New = 10(9 − x) + x = 90 − 9x. (d) 90 − 9x = 9x + 9 + 27 gives 54 = 18x, so x = 3. (e) The original number is 36. Check: 3 + 6 = 9, and 63 − 36 = 27.",
+          "s": [
+            [
+              "(a) Units digit 9 − x",
+              1
+            ],
+            [
+              "(b) Original number 9x + 9",
+              1
+            ],
+            [
+              "(c) New number 90 − 9x",
+              1
+            ],
+            [
+              "(d) 90 − 9x = 9x + 36 solved to x = 3",
+              1
+            ],
+            [
+              "(e) Number 36, checked: digit sum 9 and 63 − 36 = 27",
+              1
+            ]
+          ],
+          "p": "p. 37"
+        }
+      ]
+    },
+    {
+      "code": "C9M-2.3",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following sequences is a linear pattern?",
+          "a": "40, 33, 26, 19, …, because the difference between consecutive terms is always the same (each term is 7 less than the one before).",
+          "o": [
+            "40, 33, 26, 19, …",
+            "2, 4, 8, 16, …",
+            "1, 4, 9, 16, …",
+            "3, 5, 8, 12, …"
+          ],
+          "p": "p. 23"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the nth term of the linear pattern 6, 11, 16, 21, …?",
+          "a": "5n + 1: the constant difference is 5, and n = 1 gives 6, n = 2 gives 11.",
+          "o": [
+            "5n + 1",
+            "5n + 6",
+            "6n + 5",
+            "n + 5"
+          ],
+          "p": "pp. 22-23"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each situation in Column I with the expression in Column II for its value at step n. Column I: 1. Stage 1 of a tile pattern has 4 tiles and each stage adds 4 tiles (tiles at stage n).   2. Ali has ₹300 and spends ₹20 every day (rupees left after day n).   3. A parking lot charges ₹25 for the first hour and ₹15 for every further hour (charge for n hours).   4. A 60 m roll of ribbon loses 4 m for every bow made (metres left after n bows). Column II: P. 15n + 10   Q. 4n   R. 300 − 20n   S. 60 − 4n",
+          "a": "1-Q, 2-R, 3-P, 4-S: the tiles are 4n; the money left is 300 − 20n; the parking charge is 25 + 15(n − 1) = 15n + 10; the ribbon left is 60 − 4n.",
+          "o": [
+            "1-Q, 2-R, 3-P, 4-S",
+            "1-S, 2-R, 3-P, 4-Q",
+            "1-Q, 2-P, 3-R, 4-S",
+            "1-Q, 2-R, 3-S, 4-P"
+          ],
+          "tags": [
+            "match"
+          ],
+          "p": "pp. 22-23"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the growing tile pattern 1, 3, 5, 7, …, Stage 10 has 19 tiles. Reason (R): The number of tiles at Stage n of this pattern is 2n − 1.",
+          "a": "Both A and R are true, and R is the correct explanation of A: putting n = 10 in 2n − 1 gives 2 × 10 − 1 = 19 tiles.",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false.",
+            "A is false, but R is true."
+          ],
+          "p": "p. 22"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A stationery shop has 240 notebooks at the start of the school term and sells 12 notebooks every day. (a) Write a linear expression for the number of notebooks left at the end of day n. (b) How many notebooks are left after 5 days?",
+          "a": "(a) 240 − 12n. (b) 240 − 12 × 5 = 240 − 60 = 180 notebooks.",
+          "s": [
+            [
+              "Expression 240 − 12n",
+              1
+            ],
+            [
+              "180 notebooks after 5 days",
+              1
+            ]
+          ],
+          "p": "pp. 22-24"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a linear pattern, the 1st term is 11 and the 6th term is 36. (a) Find the constant difference between consecutive terms. (b) Find the 20th term.",
+          "a": "(a) From the 1st to the 6th term there are 5 equal steps: 36 − 11 = 25, so the difference is 25 ÷ 5 = 5. (b) The nth term is 11 + 5(n − 1) = 5n + 6, so the 20th term is 5 × 20 + 6 = 106.",
+          "s": [
+            [
+              "Constant difference 5 from 25 ÷ 5",
+              1
+            ],
+            [
+              "20th term 106",
+              1
+            ]
+          ],
+          "p": "p. 23"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Look at the linear pattern 9, 13, 17, 21, … (a) What is the constant difference? (b) Write the next two terms. (c) Write the nth term as a linear expression in n.",
+          "a": "(a) 4. (b) 25 and 29. (c) 4n + 5 (check: n = 1 gives 9, n = 2 gives 13).",
+          "s": [
+            [
+              "Constant difference 4",
+              1
+            ],
+            [
+              "Next two terms 25 and 29",
+              1
+            ],
+            [
+              "nth term 4n + 5",
+              1
+            ]
+          ],
+          "p": "pp. 22-23"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Pattern P is 5, 9, 13, 17, … and Pattern Q is 40, 37, 34, 31, … (a) Write the nth term of each pattern. (b) At which stage do the two patterns have the same value, and what is that value? (c) Which pattern has the larger value at every stage after that, and why?",
+          "a": "(a) P: 4n + 1; Q: 43 − 3n. (b) 4n + 1 = 43 − 3n gives 7n = 42, so n = 6, and both terms are 25. (c) P is larger after Stage 6, because P goes up by 4 at each stage while Q goes down by 3.",
+          "s": [
+            [
+              "nth terms 4n + 1 and 43 − 3n",
+              1
+            ],
+            [
+              "Stage 6, common value 25",
+              1
+            ],
+            [
+              "P larger after that, since P rises by 4 and Q falls by 3",
+              1
+            ]
+          ],
+          "p": "pp. 22-23"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A strip of pentagons is made with matchsticks. Stage 1 is one pentagon made of 5 sticks. At each next stage, one new pentagon is added at EACH end of the strip, and each new pentagon shares one side with the pentagon next to it. (a) Find the number of sticks at Stage 2 and Stage 3. (b) Write a rule for the number of sticks at Stage n. (c) How many sticks does Stage 25 need? (d) Mona has 160 sticks. Can she make a stage that uses all of them? If not, find the largest stage she can make and the number of sticks left over.",
+          "a": "(a) Each new pentagon needs 4 new sticks and each stage adds two pentagons, so 8 sticks are added per stage: Stage 2 has 13 and Stage 3 has 21. (b) 5 + 8(n − 1) = 8n − 3. (c) 8 × 25 − 3 = 197 sticks. (d) 8n − 3 = 160 gives n = 20.375, not a whole number, so no. Stage 20 needs 157 sticks, so she can make Stage 20 with 3 sticks left over.",
+          "s": [
+            [
+              "Stage 2: 13 sticks, Stage 3: 21 sticks",
+              1
+            ],
+            [
+              "Rule 8n − 3",
+              1
+            ],
+            [
+              "Stage 25 needs 197 sticks",
+              1
+            ],
+            [
+              "160 is not a term (n = 20.375); Stage 20 with 3 sticks left",
+              1
+            ]
+          ],
+          "p": "pp. 38-39"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Plastic chairs for the annual day are stacked in the school storeroom. A single chair is 85 cm tall, and each extra chair placed on a stack raises the height of the stack by 6 cm. A stack has to be less than 2 m tall to pass under the storeroom door. The school has 130 chairs to put away. (a) How tall is a stack of 5 chairs? (b) Write the height of a stack of n chairs as a linear expression in n. (c) What is the largest number of chairs in one stack that can pass under the door? (d) What is the smallest number of stacks needed for all 130 chairs?",
+          "a": "(a) 85 + 4 × 6 = 109 cm. (b) 85 + 6(n − 1) = 6n + 79 cm. (c) 6n + 79 < 200 gives 6n < 121, so n < 20.17; the largest stack is 20 chairs (199 cm). (d) 130 ÷ 20 = 6.5, so 6 stacks hold only 120 chairs and 7 stacks are needed.",
+          "s": [
+            [
+              "(a) 109 cm",
+              1
+            ],
+            [
+              "(b) 6n + 79",
+              1
+            ],
+            [
+              "(c) 20 chairs, from 6n + 79 < 200",
+              1
+            ],
+            [
+              "(d) 7 stacks, since 6 stacks of 20 hold only 120",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "pp. 22-23"
+        }
+      ]
+    },
+    {
+      "code": "C9M-2.4",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following situations shows linear decay?",
+          "a": "A ₹300 metro card loses ₹25 on every trip: the value falls by the same amount over every equal interval (each trip).",
+          "o": [
+            "A ₹300 metro card loses ₹25 on every trip",
+            "A plant grows 2 cm taller every week",
+            "A ball bounces back to half of its previous height each time",
+            "A savings box gets ₹50 more every month"
+          ],
+          "p": "p. 25"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A savings jar has ₹150 in it, and ₹40 is added to it every week. How much money is in the jar after 6 weeks?",
+          "a": "₹390, because 150 + 40 × 6 = 150 + 240 = 390.",
+          "o": [
+            "₹390",
+            "₹240",
+            "₹190",
+            "₹1,140"
+          ],
+          "tags": [
+            "scenario"
+          ],
+          "p": "pp. 24-25"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "The water left in a tank after t hours is V(t) = 500 − 40t litres. Consider the following statements. I. V(t) shows linear growth, because t increases. II. After 5 hours, 300 litres of water are left. III. The tank becomes empty after exactly 12 hours. Which of these statements is/are correct?",
+          "a": "II only. V falls by 40 litres every hour, so it is linear decay, not growth (I is false). V(5) = 500 − 200 = 300 (II is true). V = 0 when 40t = 500, that is t = 12.5 hours, not 12 (III is false).",
+          "o": [
+            "II only",
+            "I and II only",
+            "II and III only",
+            "I, II and III"
+          ],
+          "p": "pp. 24-25"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A quantity whose values at t = 0, 1, 2, 3 are 5, 10, 20, 40 shows linear growth. Reason (R): The quantity increases in every interval.",
+          "a": "A is false, but R is true. The increases are 5, 10 and 20, which are not equal, so this is not linear growth. R is true (the quantity does increase each time), but linear growth needs the same increase over equal intervals.",
+          "o": [
+            "A is false, but R is true.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false."
+          ],
+          "p": "p. 25"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) What is meant by linear decay? (b) Give one example of linear decay from daily life, with numbers.",
+          "a": "(a) Linear decay is a pattern in which a quantity decreases by a constant amount over equal intervals. (b) For example, a 20 cm candle that becomes 2 cm shorter every hour (any example with a fixed decrease per equal interval).",
+          "s": [
+            [
+              "Definition: decreases by a constant amount over equal intervals",
+              1
+            ],
+            [
+              "A correct real example with a fixed decrease per interval",
+              1
+            ]
+          ],
+          "p": "p. 25"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: A generator's tank holds 42 litres of diesel and the generator uses 3 litres every hour, so the diesel left after t hours is f(t) = 42 − 3t litres. It is switched on at 8:00 am and runs without stopping. Then it will run out of diesel before 9:00 pm. Give the reason.",
+          "a": "False. The tank is empty when 42 − 3t = 0, that is t = 14 hours. 14 hours after 8:00 am is 10:00 pm, which is after 9:00 pm (at 9:00 pm, after 13 hours, 3 litres are still left).",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "42 − 3t = 0 gives t = 14; empty at 10:00 pm, after 9:00 pm",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "pp. 24-25"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A village has 1,200 people. Every year, 80 more people come to live in the village. (a) Find the population after 3 years. (b) Write an expression for the population P after t years. (c) Explain why this is an example of linear growth.",
+          "a": "(a) 1,200 + 80 × 3 = 1,440. (b) P = 1200 + 80t. (c) The population increases by the same amount, 80, every year (equal intervals), so it is linear growth.",
+          "s": [
+            [
+              "Population 1,440 after 3 years",
+              1
+            ],
+            [
+              "P = 1200 + 80t",
+              1
+            ],
+            [
+              "Same increase of 80 every year, so linear growth",
+              1
+            ]
+          ],
+          "p": "pp. 25-26"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The diesel tank of a school's generator holds 120 litres when full. While running, the generator uses 7.5 litres every hour. (a) Write the volume V(t) of diesel left after t hours of running, starting with a full tank. (b) Make a table of V(t) for t = 0, 2, 4 and 6 hours. (c) After how many hours will 30 litres be left? (d) On exam day the generator must run for 18 hours. How much extra diesel is needed beyond one full tank?",
+          "a": "(a) V(t) = 120 − 7.5t. (b) t = 0: 120; t = 2: 105; t = 4: 90; t = 6: 75 litres. (c) 120 − 7.5t = 30 gives 7.5t = 90, so t = 12 hours. (d) 18 hours use 7.5 × 18 = 135 litres, so 135 − 120 = 15 litres extra are needed.",
+          "s": [
+            [
+              "V(t) = 120 − 7.5t",
+              1
+            ],
+            [
+              "Table 120, 105, 90, 75",
+              1
+            ],
+            [
+              "30 litres left after 12 hours",
+              1
+            ],
+            [
+              "135 litres needed, so 15 litres extra",
+              1
+            ]
+          ],
+          "p": "pp. 24-26"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A fish seller in Kochi carries fish to a market in two ice boxes. Box A starts with 60 kg of ice and loses 4 kg of ice every hour as it melts. Box B is better insulated: it starts with 45 kg of ice and loses 1.5 kg every hour. The trip to the market takes 12 hours, and the fish need at least 15 kg of ice in the box at the end of the trip. (a) How much ice is left in Box A after 5 hours? (b) Write the ice left in Box B after t hours. (c) After how many hours do the two boxes hold the same amount of ice, and how much is it? (d) Which box should he use for the fish? Justify with numbers.",
+          "a": "(a) 60 − 4 × 5 = 40 kg. (b) 45 − 1.5t kg. (c) 60 − 4t = 45 − 1.5t gives 15 = 2.5t, so t = 6 hours, when both hold 36 kg. (d) After 12 hours Box A has 60 − 48 = 12 kg (less than 15 kg) and Box B has 45 − 18 = 27 kg, so he should use Box B, even though Box A starts with more ice.",
+          "s": [
+            [
+              "(a) 40 kg",
+              1
+            ],
+            [
+              "(b) 45 − 1.5t",
+              1
+            ],
+            [
+              "(c) 6 hours, 36 kg each",
+              1
+            ],
+            [
+              "(d) Box B, since after 12 hours A has 12 kg and B has 27 kg",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "pp. 24-25"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A factory buys Machine X for ₹1,20,000. Its value falls by ₹9,000 every year. (a) Write the value v(t) of Machine X after t years. (b) Find its value after 5 years. (c) The factory sells a machine as soon as its value is below ₹40,000. After how many whole years will Machine X be sold? (d) Machine Y costs ₹90,000 and its value falls by ₹5,000 every year. After how many years will the two machines have the same value? (e) Which machine is worth more after 10 years, and by how much?",
+          "a": "(a) v(t) = 120000 − 9000t. (b) 120000 − 45000 = ₹75,000. (c) 120000 − 9000t < 40000 gives t > 8.9, so after 9 years (value ₹39,000; after 8 years it is still ₹48,000). (d) 120000 − 9000t = 90000 − 5000t gives 30000 = 4000t, so t = 7.5 years (both worth ₹52,500). (e) After 10 years X is worth ₹30,000 and Y ₹40,000, so Y is worth ₹10,000 more, even though X cost more at the start.",
+          "s": [
+            [
+              "(a) v(t) = 120000 − 9000t",
+              1
+            ],
+            [
+              "(b) ₹75,000",
+              1
+            ],
+            [
+              "(c) Sold after 9 years (₹39,000 < ₹40,000, while ₹48,000 after 8)",
+              1
+            ],
+            [
+              "(d) Equal value after 7.5 years",
+              1
+            ],
+            [
+              "(e) Y worth ₹10,000 more after 10 years (₹40,000 against ₹30,000)",
+              1
+            ]
+          ],
+          "p": "pp. 24-26"
+        }
+      ]
+    },
+    {
+      "code": "C9M-2.5",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A courier company charges y = 12x + 45 rupees to send a parcel of x kg. What does the number 45 stand for?",
+          "a": "A fixed charge that is paid whatever the weight: it is the value of y when x = 0.",
+          "o": [
+            "A fixed charge paid whatever the weight",
+            "The charge for each kilogram",
+            "The weight of the parcel in kilograms",
+            "The total charge for a 1 kg parcel"
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a relation y = ax + b, y = 6 when x = 0, and y = 10 when x = 1. Which relation is it?",
+          "a": "y = 4x + 6: x = 0 gives b = 6, and then 10 = a + 6 gives a = 4.",
+          "o": [
+            "y = 4x + 6",
+            "y = 6x + 4",
+            "y = 10x + 6",
+            "y = 4x + 10"
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "q": "Match each situation in Column I with its relation in Column II, where y is in rupees. Column I: 1. A taxi charges ₹50 plus ₹18 for each km (x km).   2. A ₹500 travel card loses ₹20 every day (x days).   3. Pens cost ₹20 each (x pens).   4. A hall costs ₹500 to book plus ₹20 for each guest (x guests). Column II: P. y = 20x + 500   Q. y = 18x + 50   R. y = 20x   S. y = 500 − 20x",
+          "a": "1-Q, 2-S, 3-R, 4-P: the taxi is y = 18x + 50, the card is y = 500 − 20x, the pens are y = 20x and the hall is y = 20x + 500.",
+          "o": [
+            "1-Q, 2-S, 3-R, 4-P",
+            "1-Q, 2-P, 3-R, 4-S",
+            "1-Q, 2-S, 3-P, 4-R",
+            "1-P, 2-S, 3-R, 4-Q"
+          ],
+          "tags": [
+            "match"
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If the relation y = ax + b gives y = 9 when x = 0, then b = 9. Reason (R): Putting x = 0 in y = ax + b gives y = a × 0 + b = b.",
+          "a": "Both A and R are true, and R is the correct explanation of A: at x = 0 the term ax becomes 0, so y equals b, which is 9.",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false.",
+            "A is false, but R is true."
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A relation y = ax + b gives y = 4 when x = 0, and y = 10 when x = 2. (a) Find b. (b) Find a and write the relation.",
+          "a": "(a) x = 0 gives 4 = b, so b = 4. (b) 10 = 2a + 4 gives 2a = 6, so a = 3. The relation is y = 3x + 4.",
+          "s": [
+            [
+              "b = 4 from the pair with x = 0",
+              1
+            ],
+            [
+              "a = 3, so y = 3x + 4",
+              1
+            ]
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A tuition centre charges a fixed monthly fee plus a fixed amount for each class attended. A student's bill was ₹900 for 6 classes and ₹1,300 for 10 classes. Taking the bill as y = ax + b for x classes, (a) write the two equations, (b) find a and b.",
+          "a": "(a) 900 = 6a + b and 1300 = 10a + b. (b) From the first, b = 900 − 6a; substituting in the second, 1300 = 10a + 900 − 6a, so 4a = 400 and a = 100; then b = 900 − 600 = 300. So y = 100x + 300.",
+          "s": [
+            [
+              "Equations 900 = 6a + b and 1300 = 10a + b",
+              1
+            ],
+            [
+              "a = 100 and b = 300",
+              1
+            ]
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A relation y = ax + b gives y = 11 when x = 2 and y = 20 when x = 5. Sunil says, 'a = (20 − 11) ÷ (5 − 2) = 3, and then b = 11 − 3 = 8, so the relation is y = 3x + 8.' Check Sunil's work and give the correct relation.",
+          "a": "Sunil is partly right. His value a = 3 is correct: 20 = 5a + b and 11 = 2a + b give 3a = 9. But b is wrong: from 11 = 2a + b, b = 11 − 2 × 3 = 5, not 11 − 3 (he forgot to multiply a by x = 2). The correct relation is y = 3x + 5 (check: 3 × 5 + 5 = 20).",
+          "s": [
+            [
+              "a = 3 confirmed correct",
+              1
+            ],
+            [
+              "Finds his error: b = 11 − 2a = 5, not 11 − 3",
+              1
+            ],
+            [
+              "Correct relation y = 3x + 5 with a check",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Farhan noted his monthly phone bill y rupees for x GB of data in three months: (4, 300), (8, 500) and (10, 620). He says all three follow one relation y = ax + b. Show that this cannot be true.",
+          "a": "From (4, 300) and (8, 500): 4a = 200, so a = 50, and b = 300 − 200 = 100, giving y = 50x + 100. For x = 10 this gives y = 600, not 620. So the three pairs cannot all follow one relation y = ax + b.",
+          "s": [
+            [
+              "a = 50 from the first two pairs",
+              1
+            ],
+            [
+              "b = 100, so y = 50x + 100",
+              1
+            ],
+            [
+              "At x = 10 the relation gives 600, not 620, so impossible",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A housing society's water bill is y = ax + b rupees for x kilolitres of water. The bill was ₹380 for 10 kilolitres and ₹530 for 16 kilolitres. (a) Write the two equations you get from these bills. (b) Find a. (c) Find b. (d) Write the relation between y and x. (e) Find the bill for 25 kilolitres.",
+          "a": "(a) 380 = 10a + b and 530 = 16a + b. (b) Substituting b = 380 − 10a in the second gives 530 = 6a + 380, so 6a = 150 and a = 25. (c) b = 380 − 250 = 130. (d) y = 25x + 130. (e) y = 25 × 25 + 130 = 625 + 130 = ₹755.",
+          "s": [
+            [
+              "(a) 380 = 10a + b and 530 = 16a + b",
+              1
+            ],
+            [
+              "(b) a = 25",
+              1
+            ],
+            [
+              "(c) b = 130",
+              1
+            ],
+            [
+              "(d) y = 25x + 130",
+              1
+            ],
+            [
+              "(e) ₹755 for 25 kilolitres",
+              1
+            ]
+          ],
+          "p": "pp. 26-27"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "In the science lab, Class 9 hangs different masses from a spring and measures its length. With a 200 g mass the spring is 14 cm long, and with a 500 g mass it is 20 cm long. The length y cm and the mass x g follow a relation y = ax + b. The teacher warns that the spring is damaged if it is stretched beyond 25 cm. (a) Find a. (b) Find b and say what it means for the spring. (c) Find the length of the spring with a 350 g mass. (d) Can a bag of 800 g be hung safely? Find the greatest mass that is safe.",
+          "a": "(a) 20 = 500a + b and 14 = 200a + b give 300a = 6, so a = 0.02 (cm per g). (b) b = 14 − 0.02 × 200 = 10: the spring is 10 cm long with no mass on it. (c) y = 0.02 × 350 + 10 = 17 cm. (d) For 800 g, y = 16 + 10 = 26 cm, which is beyond 25 cm, so it is not safe. 0.02x + 10 = 25 gives x = 750, so the greatest safe mass is 750 g.",
+          "s": [
+            [
+              "(a) a = 0.02",
+              1
+            ],
+            [
+              "(b) b = 10, the length with no mass",
+              1
+            ],
+            [
+              "(c) 17 cm",
+              1
+            ],
+            [
+              "(d) Not safe (26 cm); greatest safe mass 750 g",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "pp. 26-27"
+        }
+      ]
+    },
+    {
+      "code": "C9M-2.6",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "At which point does the line y = 5x − 2 cut the y-axis?",
+          "a": "(0, −2), because a line y = ax + b cuts the y-axis at (0, b).",
+          "o": [
+            "(0, −2)",
+            "(0, 5)",
+            "(−2, 0)",
+            "(5, −2)"
+          ],
+          "p": "p. 35"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following lines passes through the origin (0, 0)?",
+          "a": "y = −4x, because it has the form y = ax (b = 0), so x = 0 gives y = 0.",
+          "o": [
+            "y = −4x",
+            "y = 4x + 1",
+            "y = x − 4",
+            "y = −4x + 4"
+          ],
+          "p": "p. 31"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following lines is parallel to the line 2y = 6x + 5?",
+          "a": "y = 3x − 4: dividing by 2 gives y = 3x + 2.5, whose slope is 3; y = 3x − 4 has the same slope and a different y-intercept.",
+          "o": [
+            "y = 3x − 4",
+            "y = 6x + 5",
+            "y = 2x + 5",
+            "y = −3x + 5"
+          ],
+          "p": "pp. 36-37"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements. I. The line y = −2x + 7 represents linear decay. II. The lines y = 4x and y = 4x − 9 both pass through the origin. III. The point (3, 10) lies on the line y = 3x + 1. Which of these statements are correct?",
+          "a": "I and III only. y = −2x + 7 has negative slope, so it shows decay (I true). y = 4x − 9 cuts the y-axis at (0, −9), not the origin (II false). 3 × 3 + 1 = 10, so (3, 10) lies on the line (III true).",
+          "o": [
+            "I and III only",
+            "I and II only",
+            "III only",
+            "I, II and III"
+          ],
+          "p": "pp. 31-36"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The line y = 2x − 6 cuts the x-axis at the point (0, −6). Reason (R): A line cuts the x-axis at the point where y = 0.",
+          "a": "A is false, but R is true. On the x-axis y = 0, so 2x − 6 = 0 gives x = 3 and the line cuts the x-axis at (3, 0). The point (0, −6) is where it cuts the y-axis (its y-intercept is −6).",
+          "o": [
+            "A is false, but R is true.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false."
+          ],
+          "p": "pp. 35-36"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the line y = 2x − 3: (a) find y when x = 0 and when x = 4, (b) write the y-intercept of the line and the point where it cuts the y-axis.",
+          "a": "(a) x = 0 gives y = −3; x = 4 gives y = 8 − 3 = 5. (b) The y-intercept is −3, and the line cuts the y-axis at (0, −3).",
+          "s": [
+            [
+              "y = −3 at x = 0 and y = 5 at x = 4",
+              1
+            ],
+            [
+              "y-intercept −3, point (0, −3)",
+              1
+            ]
+          ],
+          "p": "pp. 27-28"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: The lines y = 3x + 2 and y = −3x + 2 are parallel. Give the reason.",
+          "a": "False. Parallel lines have equal slopes, but these slopes are 3 and −3. Both lines have y-intercept 2, so they meet at (0, 2); one shows growth and the other decay.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "Slopes 3 and −3 differ; both pass through (0, 2), so they meet",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "pp. 33-36"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A straight line y = ax + b passes through the points (0, −6) and (2, 0). (a) Find b. (b) Find a and write the equation of the line. (c) Does the point (5, 9) lie on this line? Show why.",
+          "a": "(a) The point (0, −6) gives b = −6. (b) 0 = 2a − 6 gives a = 3, so the line is y = 3x − 6. (c) At x = 5, y = 15 − 6 = 9, so (5, 9) lies on the line.",
+          "s": [
+            [
+              "b = −6",
+              1
+            ],
+            [
+              "a = 3, line y = 3x − 6",
+              1
+            ],
+            [
+              "(5, 9) satisfies the equation, so it lies on the line",
+              1
+            ]
+          ],
+          "p": "pp. 28-35"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Line L1 is y = 2x + 5. Line L2 is parallel to L1 and cuts the y-axis at (0, −1). Line L3 passes through the origin and the point (2, −6). (a) Write the equation of L2. (b) Write the equation of L3. (c) Which of the three lines show linear growth and which shows linear decay? By how much does y change on each line when x increases by 1? (d) Explain why L1 and L2 never meet, and find the distance between the points where they cut the y-axis.",
+          "a": "(a) L2 has the same slope 2 and y-intercept −1: y = 2x − 1. (b) L3 is y = ax through the origin; −6 = 2a gives a = −3, so y = −3x. (c) L1 and L2 have slope 2 (growth: y rises by 2); L3 has slope −3 (decay: y falls by 3). (d) L1 and L2 have equal slopes and different y-intercepts, so they are parallel and never meet; they cut the y-axis at (0, 5) and (0, −1), which are 6 units apart.",
+          "s": [
+            [
+              "L2: y = 2x − 1",
+              1
+            ],
+            [
+              "L3: y = −3x",
+              1
+            ],
+            [
+              "L1, L2 growth (+2 per unit); L3 decay (−3 per unit)",
+              1
+            ],
+            [
+              "Equal slopes, different intercepts, so parallel; intercepts 6 units apart",
+              1
+            ]
+          ],
+          "p": "pp. 31-36"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Three candles are lit at the same time. Candle A is 20 cm tall and burns down 2 cm every hour. Candle B is 15 cm tall and also burns down 2 cm every hour. Candle C is 20 cm tall and burns down 4 cm every hour. Let y be the height in cm after x hours. (a) Write the equations for candles A and B. (b) State the slope and the y-intercept of each of these two lines. (c) Explain why the graphs of A and B are parallel, and what this tells you about the difference in their heights while both burn. (d) Find where the lines for A and B meet the x-axis, and say what these points mean. (e) Write the equation for candle C. Compare its graph with the graph of A, and find when candle C burns out.",
+          "a": "(a) A: y = 20 − 2x; B: y = 15 − 2x. (b) A: slope −2, y-intercept 20; B: slope −2, y-intercept 15. (c) Both have slope −2 with different y-intercepts, so the lines are parallel; the gap between the heights stays 5 cm while both burn. (d) A meets the x-axis at (10, 0) and B at (7.5, 0): candle A burns out after 10 hours and B after 7.5 hours. (e) C: y = 20 − 4x. It cuts the y-axis at the same point (0, 20) as A but falls more steeply (slope −4); 20 − 4x = 0 gives x = 5, so C burns out after 5 hours.",
+          "s": [
+            [
+              "(a) y = 20 − 2x and y = 15 − 2x",
+              1
+            ],
+            [
+              "(b) Slopes −2, −2; y-intercepts 20, 15",
+              1
+            ],
+            [
+              "(c) Equal slopes, so parallel; height gap stays 5 cm",
+              1
+            ],
+            [
+              "(d) (10, 0) and (7.5, 0) as burn-out times",
+              1
+            ],
+            [
+              "(e) y = 20 − 4x, same y-intercept as A, steeper; burns out at 5 hours",
+              1
+            ]
+          ],
+          "p": "pp. 31-36"
+        }
+      ]
+    }
+  ]
+}

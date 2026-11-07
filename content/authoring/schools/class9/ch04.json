@@ -1,0 +1,1341 @@
+{
+  "kind": "school_topup",
+  "subject": {
+    "code": "MATH9",
+    "class": 9,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 4,
+    "name": "Exploring Algebraic Identities"
+  },
+  "source_code": "iemh104",
+  "concepts": [
+    {
+      "code": "C9M-4.1",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An algebraic identity is an equation that is",
+          "a": "true for all values of the variables occurring in it.",
+          "o": [
+            "true for all values of the variables occurring in it",
+            "true for exactly one value of its variable",
+            "true for only two values of its variable",
+            "never true for any value of its variable"
+          ],
+          "p": "p. 70"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Writing 54 as 50 + 4 and using (a + b)^2 = a^2 + 2ab + b^2, the value of 54^2 is",
+          "a": "2916, because 2500 + 2(50)(4) + 16 = 2500 + 400 + 16 = 2916.",
+          "o": [
+            "2916",
+            "2516",
+            "2716",
+            "2896"
+          ],
+          "p": "p. 71"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) What is the difference between an algebraic identity and an equation? (b) Give one example of each.",
+          "a": "(a) An identity is true for all values of its variables; an equation need not be true for all values (it may hold only for some values). (b) For example, (x + y)^2 = x^2 + 2xy + y^2 is an identity, while x^2 - 1 = 24 is an equation, true only for x = 5 or x = -5.",
+          "s": [
+            [
+              "States that an identity holds for all values while an equation need not",
+              1
+            ],
+            [
+              "One correct example of each",
+              1
+            ]
+          ],
+          "p": "pp. 70-71"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: (p + 6)^2 = p^2 + 36 for every value of p. Give the reason for your answer.",
+          "a": "False. By the identity, (p + 6)^2 = p^2 + 12p + 36; the middle term 12p is missing. For example, at p = 1 the left side is 49 but p^2 + 36 is 37.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "Correct form p^2 + 12p + 36, or a value such as p = 1 giving 49 and 37",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "p. 71"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Use suitable identities to: (a) expand (4x + 3)^2, (b) expand (2y - 5)^2, (c) find 59^2 by writing it as (60 - 1)^2.",
+          "a": "(a) 16x^2 + 24x + 9. (b) 4y^2 - 20y + 25. (c) 3600 - 120 + 1 = 3481.",
+          "s": [
+            [
+              "(a) 16x^2 + 24x + 9",
+              1
+            ],
+            [
+              "(b) 4y^2 - 20y + 25",
+              1
+            ],
+            [
+              "(c) 59^2 = 3481",
+              1
+            ]
+          ],
+          "p": "pp. 71-73"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For a = 3 and b = -5, (a + b)^2 is smaller than a^2 + b^2. Reason (R): (a + b)^2 - (a^2 + b^2) = 2ab, and 2ab is negative when a and b have opposite signs.",
+          "a": "Both A and R are true, and R is the correct explanation of A: (3 - 5)^2 = 4 while 9 + 25 = 34, and the difference is 2ab = -30, which is negative because 3 and -5 have opposite signs.",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false.",
+            "A is false, but R is true."
+          ],
+          "p": "p. 71"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If a - b = 5 and ab = 6, then a^2 + b^2 equals",
+          "a": "37, because (a - b)^2 = a^2 + b^2 - 2ab gives 25 = a^2 + b^2 - 12.",
+          "o": [
+            "37",
+            "13",
+            "19",
+            "31"
+          ],
+          "p": "p. 73"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Find 7.9^2 by writing it as (8 - 0.1)^2 and using an identity. (b) Without multiplying, say why the answer must be a little less than 64.",
+          "a": "(a) 64 - 2(8)(0.1) + 0.01 = 64 - 1.6 + 0.01 = 62.41. (b) The amount subtracted, 2ab = 1.6, is far bigger than the amount added back, b^2 = 0.01, so the result must be below 64.",
+          "s": [
+            [
+              "(a) 7.9^2 = 62.41 from 64 - 1.6 + 0.01",
+              1
+            ],
+            [
+              "(b) The amount subtracted, 2ab = 1.6, is far bigger than b^2 = 0.01 added back",
+              1
+            ]
+          ],
+          "p": "p. 73"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Meena says, '(x - 3)^2 and (3 - x)^2 must be different expressions, because one starts with x and the other starts with 3.' Check her claim by expanding both, and test it with x = 10.",
+          "a": "Her claim is wrong. (x - 3)^2 = x^2 - 6x + 9 and (3 - x)^2 = 9 - 6x + x^2, which is the same expression. At x = 10 both are 49 (7^2 and (-7)^2). Squaring removes the sign, since 3 - x = -(x - 3).",
+          "s": [
+            [
+              "Expands (x - 3)^2 = x^2 - 6x + 9",
+              1
+            ],
+            [
+              "Expands (3 - x)^2 = 9 - 6x + x^2 and sees they are equal",
+              1
+            ],
+            [
+              "Test at x = 10 gives 49 for both, so the claim is false",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "p. 73"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "The chapter shows that for three consecutive numbers, the sum of the squares of the smallest and the largest, minus twice the square of the middle one, is always 2. Now take three numbers that go up in steps of 2 instead. (a) Do this for 3, 5 and 7. (b) Do it for 10, 12 and 14. (c) Taking the numbers as n - 2, n and n + 2, prove that the result is always the same. (d) Predict the result for numbers going up in steps of 3, such as 1, 4 and 7, and check it. (e) Write the result for numbers n - d, n and n + d.",
+          "a": "(a) 9 + 49 - 2(25) = 8. (b) 100 + 196 - 2(144) = 8. (c) (n - 2)^2 + (n + 2)^2 = n^2 - 4n + 4 + n^2 + 4n + 4 = 2n^2 + 8; subtracting 2n^2 leaves 8 for every n. (d) The same working gives 2 x 3^2 = 18; check: 1 + 49 - 2(16) = 18. (e) (n - d)^2 + (n + d)^2 - 2n^2 = 2d^2.",
+          "s": [
+            [
+              "(a) 8 for 3, 5, 7",
+              1
+            ],
+            [
+              "(b) 8 for 10, 12, 14",
+              1
+            ],
+            [
+              "(c) Expansion gives 2n^2 + 8, so the result is always 8",
+              1
+            ],
+            [
+              "(d) Predicts 18 and checks 1 + 49 - 32 = 18",
+              1
+            ],
+            [
+              "(e) General result 2d^2",
+              1
+            ]
+          ],
+          "p": "pp. 68-73"
+        }
+      ]
+    },
+    {
+      "code": "C9M-4.2",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When x^2 + 10x + 25 is written in the form (x + b)^2, the value of b is",
+          "a": "5, because x^2 + 10x + 25 = x^2 + 2(x)(5) + 5^2 = (x + 5)^2.",
+          "o": [
+            "5",
+            "10",
+            "25",
+            "2.5"
+          ],
+          "p": "p. 72"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The factorised form of 49m^2 - 14m + 1 is",
+          "a": "(7m - 1)^2, because 49m^2 - 14m + 1 = (7m)^2 - 2(7m)(1) + 1^2.",
+          "o": [
+            "(7m - 1)^2",
+            "(7m + 1)^2",
+            "(49m - 1)^2",
+            "(7m - 1)(7m + 1)"
+          ],
+          "p": "p. 73"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "q": "Match each expression in Column I with its factorised form in Column II. Column I: 1. y^2 + 6y + 9   2. y^2 - 6y + 9   3. 4y^2 + 4y + 1   4. 9y^2 - 12y + 4. Column II: P. (2y + 1)^2   Q. (y - 3)^2   R. (3y - 2)^2   S. (y + 3)^2",
+          "a": "1-S, 2-Q, 3-P, 4-R: each expression is a^2 + 2ab + b^2 or a^2 - 2ab + b^2 with a = y, y, 2y, 3y and b = 3, 3, 1, 2.",
+          "o": [
+            "1-S, 2-Q, 3-P, 4-R",
+            "1-Q, 2-S, 3-P, 4-R",
+            "1-S, 2-Q, 3-R, 4-P",
+            "1-S, 2-R, 3-P, 4-Q"
+          ],
+          "tags": [
+            "match"
+          ],
+          "p": "pp. 72-74"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Factorise 3x^2 + 12x + 12 completely by first taking out the common factor.",
+          "a": "3x^2 + 12x + 12 = 3(x^2 + 4x + 4) = 3(x + 2)^2.",
+          "s": [
+            [
+              "Takes out the common factor: 3(x^2 + 4x + 4)",
+              1
+            ],
+            [
+              "Writes x^2 + 4x + 4 as (x + 2)^2, giving 3(x + 2)^2",
+              1
+            ]
+          ],
+          "p": "pp. 72-73"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Factorise each expression completely using an identity: (a) 16a^2 + 40a + 25, (b) 81 - 18t + t^2, (c) 2p^2 - 20pq + 50q^2 (take out the common factor first). (d) Use your answer to (c) to find the value of 2p^2 - 20pq + 50q^2 when p = 7 and q = 1.",
+          "a": "(a) (4a + 5)^2. (b) (9 - t)^2, which may also be written (t - 9)^2. (c) 2(p^2 - 10pq + 25q^2) = 2(p - 5q)^2. (d) 2(7 - 5)^2 = 2 x 4 = 8 (check: 98 - 140 + 50 = 8).",
+          "s": [
+            [
+              "(a) (4a + 5)^2",
+              1
+            ],
+            [
+              "(b) (9 - t)^2",
+              1
+            ],
+            [
+              "(c) 2(p - 5q)^2",
+              1
+            ],
+            [
+              "(d) Value 8",
+              1
+            ]
+          ],
+          "p": "pp. 72-75"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements. I. 4x^2 + 12x + 9 = (2x + 3)^2. II. x^2 + 8x + 16 = (x + 8)^2. III. 25 - 10y + y^2 = (y - 5)^2. Which of these statements are correct?",
+          "a": "I and III only. I is (2x)^2 + 2(2x)(3) + 3^2. II is false: x^2 + 8x + 16 = (x + 4)^2, since (x + 8)^2 = x^2 + 16x + 64. III is true because 25 - 10y + y^2 = (5 - y)^2 = (y - 5)^2.",
+          "o": [
+            "I and III only",
+            "I only",
+            "I, II and III",
+            "II and III only"
+          ],
+          "p": "pp. 72-74"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: 9x^2 + 6x + 4 is a perfect square, because 9x^2 = (3x)^2 and 4 = 2^2. Give the reason for your answer.",
+          "a": "False. For (3x + 2)^2 the middle term must be 2(3x)(2) = 12x, giving 9x^2 + 12x + 4. The middle term here is only 6x, so the expression is not a perfect square of a binomial.",
+          "s": [
+            [
+              "Verdict: False",
+              1
+            ],
+            [
+              "Middle term would have to be 2(3x)(2) = 12x, not 6x",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "p. 72"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Kiran factorises 12x^2 + 36x + 27 and writes the answer (2x + 3)^2. (a) Work out the correct factorisation. (b) Check both forms at x = 1. (c) Say what Kiran forgot.",
+          "a": "(a) 12x^2 + 36x + 27 = 3(4x^2 + 12x + 9) = 3(2x + 3)^2. (b) At x = 1 the expression is 12 + 36 + 27 = 75; Kiran's form gives 5^2 = 25, while 3(5)^2 = 75. (c) Kiran took out the common factor 3 but then dropped it from the answer.",
+          "s": [
+            [
+              "Correct factorisation 3(2x + 3)^2",
+              1
+            ],
+            [
+              "Check at x = 1: 75 against Kiran's 25",
+              1
+            ],
+            [
+              "Error named: the common factor 3 was left out",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "pp. 72-73"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Two square tiles have areas 25x^2 + 20x + 4 square cm and 25x^2 - 20x + 4 square cm, where x is a whole number of cm greater than 0. (a) Find the side of each tile. (b) By how much is the side of the first tile longer? (c) Show that the two areas together are 50x^2 + 8 square cm. (d) For x = 2, find the side and the area of each tile. (e) Show that the first tile's area is always 40x square cm more than the second's, and check this for x = 2.",
+          "a": "(a) 25x^2 + 20x + 4 = (5x + 2)^2, so the side is (5x + 2) cm; 25x^2 - 20x + 4 = (5x - 2)^2, so the side is (5x - 2) cm. (b) (5x + 2) - (5x - 2) = 4 cm. (c) Adding, the 20x terms cancel: 50x^2 + 8. (d) Sides 12 cm and 8 cm; areas 144 and 64 square cm. (e) (25x^2 + 20x + 4) - (25x^2 - 20x + 4) = 40x; at x = 2, 144 - 64 = 80 = 40 x 2.",
+          "s": [
+            [
+              "(a) Sides (5x + 2) cm and (5x - 2) cm",
+              1
+            ],
+            [
+              "(b) 4 cm longer",
+              1
+            ],
+            [
+              "(c) Sum 50x^2 + 8",
+              1
+            ],
+            [
+              "(d) Sides 12 and 8 cm, areas 144 and 64 square cm",
+              1
+            ],
+            [
+              "(e) Difference 40x, checked as 80 at x = 2",
+              1
+            ]
+          ],
+          "p": "pp. 72-74"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For a wall display, the art teacher at a school in Guwahati gives three groups square sheets of chart paper. The areas, in square cm, are written in terms of the same whole number x. Group A needs one square sheet of area x^2 + 14x + 49. Group B needs one square sheet of area 4x^2 - 4x + 1. Group C needs two identical square sheets whose total area is 2x^2 + 24x + 72. (a) Find the side of Group A's sheet and of Group B's sheet. (b) Find the side of each of Group C's sheets. (c) For x = 10, find the total area of chart paper each group needs. (d) At x = 10 the teacher has only 700 square cm of chart paper. Decide which two groups she can fully supply together, and show that no other pair fits.",
+          "a": "(a) x^2 + 14x + 49 = (x + 7)^2, so A's side is (x + 7) cm; 4x^2 - 4x + 1 = (2x - 1)^2, so B's side is (2x - 1) cm. (b) 2x^2 + 24x + 72 = 2(x^2 + 12x + 36) = 2(x + 6)^2, so each of C's sheets has side (x + 6) cm. (c) At x = 10: A needs 17^2 = 289, B needs 19^2 = 361 and C needs 2 x 16^2 = 512 square cm. (d) A and B together need 289 + 361 = 650, which fits in 700. A and C need 289 + 512 = 801 and B and C need 361 + 512 = 873, both more than 700. So she can supply only Groups A and B together.",
+          "s": [
+            [
+              "(a) Sides x + 7 and 2x - 1",
+              1
+            ],
+            [
+              "(b) 2(x + 6)^2, so each side is x + 6",
+              1
+            ],
+            [
+              "(c) 289, 361 and 512 square cm at x = 10",
+              1
+            ],
+            [
+              "(d) Pair totals 650, 801, 873; only A and B fit in 700",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "pp. 72-75"
+        }
+      ]
+    },
+    {
+      "code": "C9M-4.3",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "(a + b + c)^2 is equal to",
+          "a": "a^2 + b^2 + c^2 + 2ab + 2bc + 2ca.",
+          "o": [
+            "a^2 + b^2 + c^2 + 2ab + 2bc + 2ca",
+            "a^2 + b^2 + c^2",
+            "a^2 + b^2 + c^2 + ab + bc + ca",
+            "a^2 + b^2 + c^2 + 2abc"
+          ],
+          "p": "p. 75"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using a^2 - b^2 = (a + b)(a - b), the value of 57^2 - 43^2 is",
+          "a": "1400, because (57 + 43)(57 - 43) = 100 x 14 = 1400.",
+          "o": [
+            "1400",
+            "196",
+            "1000",
+            "14"
+          ],
+          "p": "p. 77"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Factorise 64x^2 - 25y^2. (b) Find 31 x 29 by writing it as (30 + 1)(30 - 1).",
+          "a": "(a) 64x^2 - 25y^2 = (8x)^2 - (5y)^2 = (8x + 5y)(8x - 5y). (b) 31 x 29 = 30^2 - 1^2 = 900 - 1 = 899.",
+          "s": [
+            [
+              "(a) (8x + 5y)(8x - 5y)",
+              1
+            ],
+            [
+              "(b) 30^2 - 1 = 899",
+              1
+            ]
+          ],
+          "p": "p. 77"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Use Sridharacharya's method, a^2 = (a + b)(a - b) + b^2, to find: (a) 55^2, taking b = 5; (b) 94^2, taking b = 6; (c) 104^2, taking b = 4.",
+          "a": "(a) 60 x 50 + 25 = 3025. (b) 100 x 88 + 36 = 8836. (c) 108 x 100 + 16 = 10816.",
+          "s": [
+            [
+              "(a) 55^2 = 3025",
+              1
+            ],
+            [
+              "(b) 94^2 = 8836",
+              1
+            ],
+            [
+              "(c) 104^2 = 10816",
+              1
+            ]
+          ],
+          "p": "p. 77"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Answer each part using an identity from this chapter. (a) Write the identity for (a + b + c)^2. (b) Expand (a + 2b + 3c)^2. (c) Find 123^2 by writing 123 as 100 + 20 + 3. (d) Factorise 49p^2 - 81. (e) Find 205 x 195 without long multiplication.",
+          "a": "(a) (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca. (b) a^2 + 4b^2 + 9c^2 + 4ab + 12bc + 6ca. (c) 10000 + 400 + 9 + 4000 + 600 + 120 = 15129. (d) (7p + 9)(7p - 9). (e) (200 + 5)(200 - 5) = 40000 - 25 = 39975.",
+          "s": [
+            [
+              "(a) Identity for (a + b + c)^2 written correctly",
+              1
+            ],
+            [
+              "(b) a^2 + 4b^2 + 9c^2 + 4ab + 12bc + 6ca",
+              1
+            ],
+            [
+              "(c) 123^2 = 15129",
+              1
+            ],
+            [
+              "(d) (7p + 9)(7p - 9)",
+              1
+            ],
+            [
+              "(e) 205 x 195 = 39975",
+              1
+            ]
+          ],
+          "p": "pp. 75-77"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square garden of side 85 m has a square lily pond of side 15 m in it. Using an identity, the area of the garden not covered by the pond is",
+          "a": "7000 square m, because 85^2 - 15^2 = (85 + 15)(85 - 15) = 100 x 70.",
+          "o": [
+            "7000 square m",
+            "4900 square m",
+            "7225 square m",
+            "10000 square m"
+          ],
+          "tags": [
+            "scenario"
+          ],
+          "p": "p. 77"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "match",
+          "m": 1,
+          "q": "Match each calculation in Column I with its value in Column II. Column I: 1. 99^2   2. 101 x 99   3. 112^2   4. 52 x 48. Column II: P. 9999   Q. 2496   R. 9801   S. 12544",
+          "a": "1-R, 2-P, 3-S, 4-Q: 99^2 = (100 - 1)^2 = 9801; 101 x 99 = 100^2 - 1 = 9999; 112^2 = (100 + 10 + 2)^2 = 12544; 52 x 48 = 50^2 - 2^2 = 2496.",
+          "o": [
+            "1-R, 2-P, 3-S, 4-Q",
+            "1-P, 2-R, 3-S, 4-Q",
+            "1-R, 2-P, 3-Q, 4-S",
+            "1-R, 2-S, 3-P, 4-Q"
+          ],
+          "tags": [
+            "match"
+          ],
+          "p": "pp. 76-77"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: (a - b - c)^2 = a^2 + b^2 + c^2 - 2ab + 2bc - 2ca. Give the reason for your answer.",
+          "a": "True. Put -b for b and -c for c in (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca. Then 2ab becomes -2ab, 2ca becomes -2ca, but 2bc becomes 2(-b)(-c) = +2bc.",
+          "s": [
+            [
+              "Verdict: True",
+              1
+            ],
+            [
+              "Replaces b by -b and c by -c, so only the bc term stays positive",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "p. 75"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Sohan finds 103 x 97 = 9991 and 108 x 92 = 9936, two pairs of numbers that each add up to 200. He concludes, 'When two numbers add up to 200, their product gets smaller as the numbers move further from 100.' (a) Check both products using a^2 - b^2. (b) Use the identity to explain why his conclusion is always true. (c) Which pair adding up to 200 gives the largest product?",
+          "a": "(a) 103 x 97 = 100^2 - 3^2 = 9991 and 108 x 92 = 100^2 - 8^2 = 9936, both correct. (b) Any such pair is (100 + b) and (100 - b), whose product is 10000 - b^2; the larger b is, the more is subtracted, so the product gets smaller. (c) b = 0, that is 100 x 100 = 10000.",
+          "s": [
+            [
+              "(a) Both products checked as 10000 - 9 and 10000 - 64",
+              1
+            ],
+            [
+              "(b) Product is 10000 - b^2, which falls as b grows",
+              1
+            ],
+            [
+              "(c) 100 x 100 = 10000 is the largest",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "p. 77"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A paper mill in Sivakasi cuts square sheets of side 75 cm. From one corner of a sheet, a worker cuts out a smaller square of side 25 cm. She cuts the L-shaped piece that is left along the line continuing one edge of the small square, and moves the strip to join the rest into a single rectangle. (a) Find the area of the L-shaped piece using an identity. (b) Write the length and breadth of the rectangle it forms. (c) On other sheets she cuts out a square of side s cm instead, where s is a whole number, so the rectangle is (75 + s) cm by (75 - s) cm. The rectangle must fit inside a display frame 100 cm long and 60 cm wide. Find every value of s that works. (d) Which of these values of s gives the rectangle of largest area? Find that area in two ways.",
+          "a": "(a) 75^2 - 25^2 = (75 + 25)(75 - 25) = 100 x 50 = 5000 square cm. (b) Length 75 + 25 = 100 cm, breadth 75 - 25 = 50 cm. (c) The length needs 75 + s <= 100, so s <= 25, and the breadth needs 75 - s <= 60, so s >= 15. So s can be every whole number from 15 to 25 (11 values). (d) The area is 75^2 - s^2, which is largest when s is smallest, so s = 15: 90 x 60 = 5400 square cm, and 75^2 - 15^2 = 5625 - 225 = 5400.",
+          "s": [
+            [
+              "(a) 5000 square cm",
+              1
+            ],
+            [
+              "(b) 100 cm by 50 cm",
+              1
+            ],
+            [
+              "(c) s <= 25 and s >= 15, so s = 15, 16, ..., 25",
+              1
+            ],
+            [
+              "(d) s = 15, area 90 x 60 = 5625 - 225 = 5400 square cm",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "p. 77"
+        }
+      ]
+    },
+    {
+      "code": "C9M-4.4",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To factorise x^2 + 9x + 14 as (x + a)(x + b), we need two numbers a and b with a + b = 9 and ab = 14. The two numbers are",
+          "a": "2 and 7, because 2 + 7 = 9 and 2 x 7 = 14.",
+          "o": [
+            "2 and 7",
+            "1 and 14",
+            "3 and 6",
+            "-2 and -7"
+          ],
+          "p": "p. 81"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using algebra tiles, Asha lays one x^2-tile, 6 x-tiles and 8 unit tiles to form a single rectangle. The sides of her rectangle are",
+          "a": "(x + 2) and (x + 4), because x^2 + 6x + 8 = (x + 2)(x + 4).",
+          "o": [
+            "(x + 2) and (x + 4)",
+            "(x + 1) and (x + 8)",
+            "(x + 3) and (x + 3)",
+            "(x + 1) and (x + 6)"
+          ],
+          "tags": [
+            "scenario"
+          ],
+          "p": "pp. 78-79"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Write the identity for the product (x + a)(x + b). (b) Use it to expand (x + 4)(x + 9).",
+          "a": "(a) (x + a)(x + b) = x^2 + (a + b)x + ab. (b) (x + 4)(x + 9) = x^2 + 13x + 36.",
+          "s": [
+            [
+              "(a) x^2 + (a + b)x + ab",
+              1
+            ],
+            [
+              "(b) x^2 + 13x + 36",
+              1
+            ]
+          ],
+          "p": "pp. 80-81"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Factorise: (a) x^2 + 10x + 21, (b) y^2 - 9y + 20, (c) m^2 + 2m - 15.",
+          "a": "(a) (x + 3)(x + 7), since 3 + 7 = 10 and 3 x 7 = 21. (b) (y - 4)(y - 5), since -4 + (-5) = -9 and (-4)(-5) = 20. (c) (m + 5)(m - 3), since 5 + (-3) = 2 and 5 x (-3) = -15.",
+          "s": [
+            [
+              "(a) (x + 3)(x + 7)",
+              1
+            ],
+            [
+              "(b) (y - 4)(y - 5)",
+              1
+            ],
+            [
+              "(c) (m + 5)(m - 3)",
+              1
+            ]
+          ],
+          "p": "p. 81"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 4,
+          "q": "In the maths lab of a school in Mysuru, Farah is given one big square tile of area x^2 square cm, 8 rods each of area x square cm and 15 small unit squares each of area 1 square cm. She must use all of the pieces, without overlapping, to make one rectangle. (a) Write the total area of the pieces as an expression in x. (b) Find two numbers whose sum is 8 and whose product is 15. (c) Write the length and breadth of Farah's rectangle. (d) If x = 10, find the area of her rectangle.",
+          "a": "(a) x^2 + 8x + 15 square cm. (b) 3 and 5. (c) x^2 + 8x + 15 = (x + 3)(x + 5), so the length is (x + 5) cm and the breadth is (x + 3) cm. (d) 15 x 13 = 195 square cm (check: 100 + 80 + 15 = 195).",
+          "s": [
+            [
+              "(a) Area x^2 + 8x + 15",
+              1
+            ],
+            [
+              "(b) The numbers 3 and 5",
+              1
+            ],
+            [
+              "(c) Length x + 5 and breadth x + 3",
+              1
+            ],
+            [
+              "(d) Area 195 square cm",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "pp. 87-88"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): (2x + 3)(x + 4) = 2x^2 + 10x + 12. Reason (R): In the product (px + a)(qx + b), the coefficient of x is pb + qa.",
+          "a": "A is false, but R is true. R is the rule for the middle term. Here p = 2, a = 3, q = 1, b = 4, so the coefficient of x is 2 x 4 + 1 x 3 = 11, not 10: (2x + 3)(x + 4) = 2x^2 + 11x + 12.",
+          "o": [
+            "A is false, but R is true.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false."
+          ],
+          "p": "p. 80"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Factorise 2x^2 + 9x + 10. (b) Check your factors by putting x = 2 in both the expression and your product.",
+          "a": "(a) Split 9x as 5x + 4x (since 5 x 4 = 2 x 10 = 20): 2x^2 + 4x + 5x + 10 = 2x(x + 2) + 5(x + 2) = (2x + 5)(x + 2). (b) At x = 2: 8 + 18 + 10 = 36 and (9)(4) = 36, so the factors are correct.",
+          "s": [
+            [
+              "(a) (2x + 5)(x + 2)",
+              1
+            ],
+            [
+              "(b) Both sides give 36 at x = 2",
+              1
+            ]
+          ],
+          "p": "pp. 80-81"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Neha factorises x^2 - x - 20 and writes (x - 5)(x - 4), explaining, '5 x 4 = 20 and 5 - 4 = 1.' (a) Test her answer by putting x = 0 in both forms. (b) Write the correct factors. (c) Explain what her mistake was about the signs.",
+          "a": "(a) At x = 0, x^2 - x - 20 = -20, but (0 - 5)(0 - 4) = 20, so her answer is wrong. (b) We need a + b = -1 and ab = -20, so a = -5 and b = 4: x^2 - x - 20 = (x - 5)(x + 4). (c) The constant -20 is negative, so the two numbers must have opposite signs; she made both negative, which gives a product of +20 (and a sum of -9).",
+          "s": [
+            [
+              "(a) x = 0 gives -20 and 20, so the claim fails",
+              1
+            ],
+            [
+              "(b) Correct factors (x - 5)(x + 4)",
+              1
+            ],
+            [
+              "(c) A negative constant needs numbers of opposite signs",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "p. 81"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The chapter shows a rectangle of sides (2x + 3) and (3x + 1) made from algebra tiles. (a) Expand (2x + 3)(3x + 1) and say how many x^2-tiles, x-tiles and unit tiles it uses. (b) A pupil has 2 x^2-tiles, 7 x-tiles and 6 unit tiles. Find the sides of the rectangle she can make. (c) Another pupil has 2 x^2-tiles, 5 x-tiles and 6 unit tiles. Using (2x + a)(x + b) with whole numbers a and b, show that no rectangle can be made with all of them. (d) Give the reason in (c) in terms of the conditions on a and b.",
+          "a": "(a) 6x^2 + 2x + 9x + 3 = 6x^2 + 11x + 3: 6 x^2-tiles, 11 x-tiles and 3 unit tiles. (b) 2x^2 + 7x + 6 = (2x + 3)(x + 2), so the sides are (2x + 3) and (x + 2). (c) (2x + a)(x + b) = 2x^2 + (2b + a)x + ab, so we need ab = 6 and 2b + a = 5. The pairs (a, b) with ab = 6 are (1, 6), (6, 1), (2, 3), (3, 2), giving 2b + a = 13, 8, 8, 7; none is 5. (d) No whole numbers satisfy both ab = 6 and 2b + a = 5 at once, so the tiles cannot form a rectangle.",
+          "s": [
+            [
+              "(a) 6x^2 + 11x + 3: 6, 11 and 3 tiles",
+              1
+            ],
+            [
+              "(b) Sides 2x + 3 and x + 2",
+              1
+            ],
+            [
+              "(c) Tests all pairs with ab = 6 and finds 2b + a is never 5",
+              1
+            ],
+            [
+              "(d) Concludes no rectangle, since both conditions cannot hold together",
+              1
+            ]
+          ],
+          "tags": [
+            "show_impossible"
+          ],
+          "p": "pp. 79-80"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "A rectangular vegetable plot behind a school has area 3x^2 + 14x + 15 square metres, where x is a whole number of metres. (a) Factorise the area to find expressions for the length and the breadth. (b) Find the length and breadth when x = 5. (c) Check that your answer to (b) gives the same area as the expression. (d) Fencing costs Rs 35 per metre. Find the cost of fencing the plot when x = 5. (e) The gardener wants the length and breadth to be in the ratio 7 : 3. Find the value of x for which this happens.",
+          "a": "(a) Split 14x as 9x + 5x (since 9 x 5 = 3 x 15 = 45): 3x(x + 3) + 5(x + 3) = (3x + 5)(x + 3). Length (3x + 5) m, breadth (x + 3) m. (b) 20 m and 8 m. (c) 20 x 8 = 160 and 75 + 70 + 15 = 160. (d) Perimeter 2(20 + 8) = 56 m, cost 56 x 35 = Rs 1960. (e) (3x + 5)/(x + 3) = 7/3 gives 9x + 15 = 7x + 21, so x = 3, a plot 14 m by 6 m.",
+          "s": [
+            [
+              "(a) (3x + 5)(x + 3)",
+              1
+            ],
+            [
+              "(b) 20 m by 8 m",
+              1
+            ],
+            [
+              "(c) Area check 160 square m both ways",
+              1
+            ],
+            [
+              "(d) Fencing cost Rs 1960",
+              1
+            ],
+            [
+              "(e) Ratio 7 : 3 gives x = 3 (14 m by 6 m)",
+              1
+            ]
+          ],
+          "p": "pp. 80-81"
+        }
+      ]
+    },
+    {
+      "code": "C9M-4.5",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "(a - b)^3 is equal to",
+          "a": "a^3 - 3a^2b + 3ab^2 - b^3, in which the signs alternate.",
+          "o": [
+            "a^3 - 3a^2b + 3ab^2 - b^3",
+            "a^3 - b^3",
+            "a^3 - 3a^2b - 3ab^2 - b^3",
+            "a^3 + 3a^2b - 3ab^2 - b^3"
+          ],
+          "p": "p. 84"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements. I. A cube of edge (a + b) can be split into two cubes and six cuboids. II. Three of these cuboids each have volume a^2b. III. x^3 - y^3 = (x - y)(x^2 + xy + y^2). Which of these statements are correct?",
+          "a": "I, II and III are all correct: the cube splits into cubes a^3 and b^3 and six cuboids, three of volume a^2b and three of volume ab^2, and multiplying out (x - y)(x^2 + xy + y^2) gives x^3 - y^3.",
+          "o": [
+            "I, II and III",
+            "I and II only",
+            "II and III only",
+            "I and III only"
+          ],
+          "p": "pp. 83-85"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Expand (y + 3)^3 using the identity for (a + b)^3. (b) Put y = 10 in your answer to find 13^3.",
+          "a": "(a) y^3 + 3(y^2)(3) + 3(y)(9) + 27 = y^3 + 9y^2 + 27y + 27. (b) 1000 + 900 + 270 + 27 = 2197.",
+          "s": [
+            [
+              "(a) y^3 + 9y^2 + 27y + 27",
+              1
+            ],
+            [
+              "(b) 13^3 = 2197",
+              1
+            ]
+          ],
+          "p": "p. 84"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: x^3 + 27 = (x + 3)(x^2 - 3x + 9). Give the reason for your answer.",
+          "a": "True. It is the identity x^3 + y^3 = (x + y)(x^2 - xy + y^2) with y = 3, since 3^3 = 27. Check at x = 1: 1 + 27 = 28 and (4)(1 - 3 + 9) = 4 x 7 = 28.",
+          "s": [
+            [
+              "Verdict: True",
+              1
+            ],
+            [
+              "Matches x^3 + y^3 = (x + y)(x^2 - xy + y^2) with y = 3, or a correct numerical check",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "p. 85"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "(a) Write 8a^3 + 12a^2 + 6a + 1 in the form (p + q)^3. (b) Factorise m^3 - 64. (c) Find 11^3 by writing 11 as 10 + 1.",
+          "a": "(a) (2a)^3 + 3(2a)^2(1) + 3(2a)(1)^2 + 1^3 = (2a + 1)^3. (b) m^3 - 4^3 = (m - 4)(m^2 + 4m + 16). (c) 1000 + 300 + 30 + 1 = 1331.",
+          "s": [
+            [
+              "(a) (2a + 1)^3",
+              1
+            ],
+            [
+              "(b) (m - 4)(m^2 + 4m + 16)",
+              1
+            ],
+            [
+              "(c) 11^3 = 1331",
+              1
+            ]
+          ],
+          "p": "pp. 84-85"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x - y = 3 and xy = 10, then x^3 - y^3 equals",
+          "a": "117, because x^3 - y^3 = (x - y)^3 + 3xy(x - y) = 27 + 90.",
+          "o": [
+            "117",
+            "27",
+            "57",
+            "87"
+          ],
+          "p": "p. 84"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 15^3 - 7^3 - 8^3 = 3 x 15 x 7 x 8. Reason (R): If x + y + z = 0, then x^3 + y^3 + z^3 = 3xyz.",
+          "a": "Both A and R are true, and R is the correct explanation of A. R follows from x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx): if x + y + z = 0 the right side is 0, so x^3 + y^3 + z^3 = 3xyz. Take x = 15, y = -7, z = -8, whose sum is 0: 15^3 - 7^3 - 8^3 = 3(15)(-7)(-8) = 2520, and indeed 3375 - 343 - 512 = 2520.",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true, but R is false.",
+            "A is false, but R is true."
+          ],
+          "p": "p. 85"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Ravi says, '(a + b)^3 = a^3 + b^3, just as the cube of a sum should be.' (a) Test his claim with a = 2 and b = 1. (b) Find the amount by which his answer falls short in this case. (c) Using the cube of edge (a + b) split into pieces, say which pieces his formula leaves out.",
+          "a": "(a) (2 + 1)^3 = 27, but 2^3 + 1^3 = 9, so the claim is false. (b) It falls short by 18, which is 3a^2b + 3ab^2 = 12 + 6. (c) It leaves out the six cuboids: three of volume a^2b and three of volume ab^2; only the two cubes a^3 and b^3 are counted.",
+          "s": [
+            [
+              "(a) 27 against 9, so the claim fails",
+              1
+            ],
+            [
+              "(b) Short by 18 = 3a^2b + 3ab^2",
+              1
+            ],
+            [
+              "(c) The six cuboids (3 of a^2b, 3 of ab^2) are missing",
+              1
+            ]
+          ],
+          "tags": [
+            "claim_check"
+          ],
+          "p": "pp. 82-83"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "An ice factory in Kochi makes ice in cube-shaped moulds of edge 20 cm. On a hot day, a block left outside melts evenly until each edge is 2 cm shorter. (a) Write the new volume as (a - b)^3 and expand it with a = 20 and b = 2. (b) Find the new volume in cubic cm. (c) Find the volume of ice that melted. (d) The factory manager wants a quick rule: for a cube of edge x cm whose edge shrinks by 1 cm, show that the volume lost is 3x^2 - 3x + 1, and use it to find the loss when x = 20.",
+          "a": "(a) (20 - 2)^3 = 20^3 - 3(20^2)(2) + 3(20)(2^2) - 2^3. (b) 8000 - 2400 + 240 - 8 = 5832 cubic cm. (c) 8000 - 5832 = 2168 cubic cm. (d) x^3 - (x - 1)^3 = x^3 - (x^3 - 3x^2 + 3x - 1) = 3x^2 - 3x + 1; at x = 20 this is 1200 - 60 + 1 = 1141 cubic cm (check: 8000 - 19^3 = 8000 - 6859 = 1141).",
+          "s": [
+            [
+              "(a) Expansion of (20 - 2)^3 with alternating signs",
+              1
+            ],
+            [
+              "(b) New volume 5832 cubic cm",
+              1
+            ],
+            [
+              "(c) 2168 cubic cm melted",
+              1
+            ],
+            [
+              "(d) Shows x^3 - (x - 1)^3 = 3x^2 - 3x + 1 and gets 1141 at x = 20",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "p. 84"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "(a) Starting from (x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3, show that x^3 + y^3 = (x + y)^3 - 3xy(x + y). (b) If x + y = 6 and xy = 8, find x^3 + y^3. (c) For the same x and y, find x^2 + y^2. (d) If instead x - y = 2 and xy = 8, use (a - b)^3 to find x^3 - y^3. (e) Find a pair of whole numbers that satisfies both x + y = 6 and xy = 8, and use it to check (b) and (c).",
+          "a": "(a) 3x^2y + 3xy^2 = 3xy(x + y), so x^3 + y^3 = (x + y)^3 - 3xy(x + y). (b) 216 - 3(8)(6) = 216 - 144 = 72. (c) (x + y)^2 - 2xy = 36 - 16 = 20. (d) (x - y)^3 = x^3 - y^3 - 3xy(x - y), so x^3 - y^3 = 8 + 3(8)(2) = 56. (e) x = 4, y = 2 (or 2 and 4): 64 + 8 = 72 and 16 + 4 = 20, as found.",
+          "s": [
+            [
+              "(a) Shows x^3 + y^3 = (x + y)^3 - 3xy(x + y)",
+              1
+            ],
+            [
+              "(b) x^3 + y^3 = 72",
+              1
+            ],
+            [
+              "(c) x^2 + y^2 = 20",
+              1
+            ],
+            [
+              "(d) x^3 - y^3 = 56",
+              1
+            ],
+            [
+              "(e) Numbers 4 and 2 confirm 72 and 20",
+              1
+            ]
+          ],
+          "p": "pp. 82-84"
+        }
+      ]
+    },
+    {
+      "code": "C9M-4.6",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Assuming x + 4 is not zero, the rational expression (x^2 - 16)/(x + 4) simplifies to",
+          "a": "x - 4, because x^2 - 16 = (x + 4)(x - 4) and the non-zero factor x + 4 cancels.",
+          "o": [
+            "x - 4",
+            "x + 4",
+            "x^2 - 4",
+            "x - 16"
+          ],
+          "p": "p. 86"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rectangle has area x^2 + 7x + 10 square units and length (x + 5) units. Its breadth is",
+          "a": "(x + 2) units, because x^2 + 7x + 10 = (x + 5)(x + 2).",
+          "o": [
+            "(x + 2) units",
+            "(x + 5) units",
+            "(x + 10) units",
+            "(x + 7) units"
+          ],
+          "tags": [
+            "scenario"
+          ],
+          "p": "pp. 87-88"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Why must we know that a factor is not equal to zero before we cancel it from the numerator and denominator of a rational expression? (b) Simplify (5x + 15)/(x + 3), assuming x + 3 is not zero.",
+          "a": "(a) Cancelling means dividing the numerator and the denominator by that factor, and we cannot divide by zero; also, the expression is not defined where the denominator is zero. (b) (5x + 15)/(x + 3) = 5(x + 3)/(x + 3) = 5.",
+          "s": [
+            [
+              "(a) Cancelling is division, which is not allowed by zero",
+              1
+            ],
+            [
+              "(b) 5(x + 3)/(x + 3) = 5",
+              1
+            ]
+          ],
+          "p": "p. 86"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Simplify each rational expression, assuming the denominator is not zero: (a) (x^2 + 6x + 9)/(x + 3), (b) (y^2 - 49)/(y - 7), (c) (3a^2 - 12)/(a + 2).",
+          "a": "(a) (x + 3)^2/(x + 3) = x + 3. (b) (y + 7)(y - 7)/(y - 7) = y + 7. (c) 3(a^2 - 4)/(a + 2) = 3(a + 2)(a - 2)/(a + 2) = 3(a - 2).",
+          "s": [
+            [
+              "(a) x + 3",
+              1
+            ],
+            [
+              "(b) y + 7",
+              1
+            ],
+            [
+              "(c) 3(a - 2)",
+              1
+            ]
+          ],
+          "p": "pp. 86-87"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 4,
+          "q": "A rectangular pool in a temple courtyard has area 2x^2 + 9x + 4 square hastas, and its width is (x + 4) hastas. (a) Factorise 2x^2 + 9x + 4. (b) Find an expression for the length of the pool. (c) Find the length and the width when x = 6. (d) Check that your answer to (c) gives the same area as the expression at x = 6.",
+          "a": "(a) Split 9x as 8x + x: 2x(x + 4) + 1(x + 4) = (2x + 1)(x + 4). (b) Length = (2x^2 + 9x + 4)/(x + 4) = (2x + 1) hastas. (c) Length 13 hastas and width 10 hastas. (d) 13 x 10 = 130, and 2(36) + 54 + 4 = 130.",
+          "s": [
+            [
+              "(a) (2x + 1)(x + 4)",
+              1
+            ],
+            [
+              "(b) Length 2x + 1",
+              1
+            ],
+            [
+              "(c) 13 hastas by 10 hastas",
+              1
+            ],
+            [
+              "(d) Area 130 both ways",
+              1
+            ]
+          ],
+          "p": "pp. 86-90"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the following statements. I. (x^2 - 9)/(x - 3) = x - 3 for every value of x except 3. II. (x^2 - 4)/(x + 2) = x - 2 for every value of x except -2. III. (x^2 - 1)/(x^2 + 2x + 1) = (x - 1)/(x + 1) for every value of x except -1. Which of these statements are correct?",
+          "a": "II and III only. I is wrong: x^2 - 9 = (x + 3)(x - 3), so cancelling x - 3 leaves x + 3, not x - 3. In II, x^2 - 4 = (x + 2)(x - 2) and x + 2 cancels when x is not -2. In III, (x - 1)(x + 1)/(x + 1)^2 = (x - 1)/(x + 1) when x is not -1.",
+          "o": [
+            "II and III only",
+            "I and III only",
+            "III only",
+            "I, II and III"
+          ],
+          "p": "pp. 86-87"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "True or False: For every x not equal to 3, (x^3 - 27)/(x - 3) = x^2 + 3x + 9. Give the reason for your answer.",
+          "a": "True. By the identity x^3 - y^3 = (x - y)(x^2 + xy + y^2), x^3 - 27 = (x - 3)(x^2 + 3x + 9), and the factor x - 3 can be cancelled because it is not zero. For example, at x = 4 both sides are 37.",
+          "s": [
+            [
+              "Verdict: True",
+              1
+            ],
+            [
+              "Factorises x^3 - 27 = (x - 3)(x^2 + 3x + 9) and cancels the non-zero factor",
+              1
+            ]
+          ],
+          "tags": [
+            "true_false"
+          ],
+          "p": "pp. 85-86"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Simplify (2x^2 + 5x - 3)/(x^2 + 2x - 3), assuming the denominator is not zero.",
+          "a": "Numerator: split 5x as 6x - x, so 2x^2 + 6x - x - 3 = 2x(x + 3) - 1(x + 3) = (2x - 1)(x + 3). Denominator: x^2 + 2x - 3 = (x + 3)(x - 1). Cancelling the non-zero factor x + 3 gives (2x - 1)/(x - 1).",
+          "s": [
+            [
+              "Numerator factorised as (2x - 1)(x + 3)",
+              1
+            ],
+            [
+              "Denominator factorised as (x + 3)(x - 1)",
+              1
+            ],
+            [
+              "Cancels x + 3 to get (2x - 1)/(x - 1)",
+              1
+            ]
+          ],
+          "p": "pp. 86-87"
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For its sports day, a school in Shimla packs (x^2 + 9x + 18) energy bars equally into (x + 3) boxes, and packs (x^2 - 36) water bottles equally into (x + 6) crates, where x is a whole number greater than 6. (a) Find, as an expression in x, the number of bars in each box. (b) Find the number of bottles in each crate. (c) For x = 10, find the number of bars in a box and of bottles in a crate. (d) 150 children take part, and each must get 2 bars and 1 bottle. Find the smallest whole x for which the school has enough of both, and say which item decides it.",
+          "a": "(a) (x + 3)(x + 6)/(x + 3) = x + 6 bars. (b) (x + 6)(x - 6)/(x + 6) = x - 6 bottles. (c) At x = 10: 16 bars per box (208 bars in 13 boxes) and 4 bottles per crate (64 bottles in 16 crates). (d) Bars need x^2 + 9x + 18 >= 300: at x = 13 there are 304, enough. Bottles need x^2 - 36 >= 150, so x^2 >= 186: at x = 13 there are only 133, at x = 14 there are 160. So the smallest x is 14 (340 bars, 160 bottles), and the bottles decide it.",
+          "s": [
+            [
+              "(a) x + 6 bars per box",
+              1
+            ],
+            [
+              "(b) x - 6 bottles per crate",
+              1
+            ],
+            [
+              "(c) 16 bars and 4 bottles at x = 10",
+              1
+            ],
+            [
+              "(d) Bars enough from x = 13, bottles only from x = 14; x = 14, bottles decide",
+              1
+            ]
+          ],
+          "tags": [
+            "case_study"
+          ],
+          "p": "pp. 86-87"
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "q": "Consider the rational expression (x^2 - 8x + 15)/(x^2 - x - 6). (a) Factorise the numerator and the denominator. (b) Simplify the expression, stating the condition you need. (c) Check your answer at x = 2 using both forms. (d) Name the two values of x at which the original expression is undefined, and the one of these at which the simplified form still gives a value. (e) For which value of x is the expression equal to 0?",
+          "a": "(a) x^2 - 8x + 15 = (x - 3)(x - 5) and x^2 - x - 6 = (x - 3)(x + 2). (b) Cancelling x - 3, which is allowed only when x - 3 is not 0, gives (x - 5)/(x + 2). (c) At x = 2: original 3/(-4) = -3/4, simplified -3/4. (d) The original is undefined at x = 3 and x = -2; the simplified form still gives a value (-2/5) at x = 3, but the original does not. (e) x = 5, where the numerator is 0 and the denominator is 14.",
+          "s": [
+            [
+              "(a) (x - 3)(x - 5) over (x - 3)(x + 2)",
+              1
+            ],
+            [
+              "(b) (x - 5)/(x + 2), cancelling only because x - 3 is not 0",
+              1
+            ],
+            [
+              "(c) Both forms give -3/4 at x = 2",
+              1
+            ],
+            [
+              "(d) Undefined at 3 and -2; the simplified form still gives a value at x = 3",
+              1
+            ],
+            [
+              "(e) Value 0 at x = 5",
+              1
+            ]
+          ],
+          "p": "pp. 86-87"
+        }
+      ]
+    }
+  ]
+}

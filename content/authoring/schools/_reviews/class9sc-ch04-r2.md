@@ -1,0 +1,15 @@
+VERDICT: PASS
+HIGH: 0, MEDIUM: 3, LOW: 7
+
+All 60 keys recomputed (python): every numeric answer, option key and case-study part is correct and the keyed option is the only defensible one. Facts checked against iesc104 pp. 49-67 (extracted files 002-020): all on the cited pages and inside IN scope. `--check` prints valid (7 concepts, 60 questions). The r1 findings are fixed: 4.4 #4 now gives a concrete case, multi_statement keys vary (I and II only / I, II and III / II and III only), 4.6 #9 is now a speeding-up slip-road case, citations and activity references are corrected.
+
+- [MEDIUM] C9SC-4.5 #7: repeats the existing DPS item C9SC-4.5 #20 almost number for number (A straight from the origin to (10 s, 50 m), B straight from (0 s, 20 m); find each velocity from the slope) -> change the setting and the numbers, e.g. one object at rest (a line parallel to the time axis) and one moving with negative velocity, and ask whether the crossing point means equal velocity.
+- [MEDIUM] C9SC-4.5 #4, #6 and #9: three velocity-time lines that all start from rest and run to 8 s, each solved by the same triangle area (24 m, 64 m, 48 m) -> rewrite one, e.g. #6 as a slowing-down line (negative slope, as in the book's Fig. 4.17e) or a constant-velocity line whose rectangle gives the displacement.
+- [MEDIUM] C9SC-4.7 #4 and #7: the same setting twice in one concept (a toy train on a circular floor track, 2 pi R then average speed), and the existing DPS C9SC-4.7 #10 already has a toy car doing laps of a circular track -> give #4 a fresh setting (e.g. the tip of a ceiling-fan blade or a stone whirled on a string, radius and time per round given).
+- [LOW] C9SC-4.5 #9: labelled Hardest, but its four parts are each one routine step (constant check, slope, area, compare two areas) -> relabel Hard, or end with a data-based decision (e.g. whether the drone covers a 40 m row before it must start spraying).
+- [LOW] C9SC-4.1 #2: labelled Hard, but -25 + 40 = +15 is one signed addition -> relabel Easy (Apply), or add a second move so the student must track the sign twice.
+- [LOW] C9SC-4.2 #6: labelled Hard, but R is the p. 50 sentence almost word for word and A is the chapter's headline point -> relabel Easy (Understand).
+- [LOW] Pack-wide assertion_reason (4.1 #3, 4.2 #6, 4.3 #9, 4.4 #9, 4.6 #3): only two outcomes are used (three "both true, R explains A", two "A true, R false") -> rewrite one so that R is true but does not explain A, and one so that A is false.
+- [LOW] C9SC-4.4 #1: the distractor "m s" is still a throwaway -> use a chapter confusion such as "km/h" or "m/s per km".
+- [LOW] C9SC-4.5 #8: the 4 m/s start plus rectangle-and-triangle method echoes the existing DPS C9SC-4.5 #3 and #16; the added constant-velocity stage and position-time shape make it acceptable -> a different starting velocity (e.g. 5 m/s) would separate it further.
+- [LOW] C9SC-4.6 #5 and C9SC-4.7 #3: close to existing DPS items (4.6 #12, stone falls four times as far in 2 s as in 1 s; 4.7 #6 statement 1, velocity towards the centre); both test the chapter's core idea, so acceptable -> optional fresh framing.

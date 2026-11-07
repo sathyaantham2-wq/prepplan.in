@@ -119,6 +119,8 @@ export interface CreateQuestionInput {
   is_reversal_word?: boolean
   // Provenance only (AI-generated vs. hand-typed vs. bulk-imported) -- does not affect status.
   origin?: QuestionOrigin
+  // 'school_bank': a schools-only bank question (school paper builders only, never PrepPlan's own students). Default approved.
+  status?: 'approved' | 'school_bank'
   options?: Array<{
     label: string
     text: string
@@ -139,7 +141,7 @@ export interface CreateQuestionInput {
 export async function createQuestion(db: Db, input: CreateQuestionInput) {
   const language = input.language ?? 'English'
   const origin = input.origin ?? 'manual'
-  const status = 'approved'
+  const status = input.status ?? 'approved'
   const textHash = computeTextHash(input.text)
 
   const duplicate = await findExactDuplicate(db, input.concept_id, textHash)

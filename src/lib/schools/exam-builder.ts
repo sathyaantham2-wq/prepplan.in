@@ -2,7 +2,7 @@ import type { Db } from '../../db/connection'
 import { bankRepository, examBuilderRepository, examPrintRepository, schoolExamsRepository, schoolQuestionsRepository, usableBySchool } from '../../db/repositories'
 import type { SchoolScope } from '../../db/school-scope'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
-import { SPECIAL_TAGS, checkPaperStructure, expectedWordsFor } from '../school-paper'
+import { SPECIAL_TAGS, checkPaperStructure, expectedWordsFor, levelOfBloom } from '../school-paper'
 import type { Layout, LayoutSection } from '../school-paper'
 import { SchoolError, auditSchool } from './common'
 import { checkPaper, fitsSlot, levelWord, renumber, slotKey } from './exam-builder-check'
@@ -10,6 +10,8 @@ import type { BuilderPick, Checklist } from './exam-builder-check'
 import { isWrittenSlot } from './exam-paper'
 import { loadExam } from './exam-service'
 import { schoolYearStart } from './today'
+import { normalizeMix, pickNext } from './fill-rank'
+import type { DifficultyMix } from './fill-rank'
 
 /**
  * Teacher control over the questions of a paper (docs/SCHOOLS_MODULE_PLAN.md section 16). A paper in the "building"
@@ -226,9 +228,9 @@ async function usedThisYear(db: Db, scope: SchoolScope, examId: string): Promise
   return new Set(await examBuilderRepository.usedSince(db, scope, examId, schoolYearStart(new Date())))
 }
 
-/** A bank question, or one of this school's own that is not retired (never another school's). */
+/** A bank question (shared or schools-only), or one of this school's own that is not retired (never another school's). */
 async function usableHere(db: Db, scope: SchoolScope, q: { id: string; status: string }): Promise<boolean> {
-  if (q.status === 'approved') return true
+  if (q.status === 'approved' || q.status === 'school_bank') return true
   if (q.status !== 'school') return false
   return (await schoolQuestionsRepository.activeByQuestion(db, scope, q.id)) !== undefined
 }
@@ -304,7 +306,7 @@ export async function builderBank(db: Db, scope: SchoolScope, examId: string, f:
     .where(usableBySchool(scope.schoolId))
     .where('concept_id', 'in', conceptIds)
   if (f.source === 'ours') q = q.where('status', '=', 'school')
-  if (f.source === 'bank') q = q.where('status', '=', 'approved')
+  if (f.source === 'bank') q = q.where('status', 'in', ['approved', 'school_bank'])
   if (f.type) q = q.where('type', '=', f.type as QuestionType)
   if (f.marks) q = q.where('marks', '=', f.marks)
   if (f.difficulty) q = q.where('difficulty', '=', f.difficulty as DifficultyTier)
@@ -375,8 +377,8 @@ export type BuilderAction =
   | { action: 'move'; pickId: string; direction: 'up' | 'down' }
   | { action: 'swap_options'; pickId: string; seen?: Array<string> }
   | { action: 'swap_to'; pickId: string; questionId: string }
-  | { action: 'refill_unlocked' }
-  | { action: 'fill_rest' }
+  | { action: 'refill_unlocked'; difficultyMix?: Partial<DifficultyMix> }
+  | { action: 'fill_rest'; difficultyMix?: Partial<DifficultyMix> }
   | { action: 'set_mode'; mode: BuilderMode }
   | { action: 'finalize' }
   | { action: 'reopen' }
@@ -448,9 +450,14 @@ async function place(db: Db, scope: SchoolScope, ctx: Ctx, q: { id: string; conc
   throw new SchoolError('conflict', `${s.name} is already full.`)
 }
 
-/** Fills every open place in the paper from the bank, keeping what is there; spreads across chapters; avoids repeats. */
-async function fillOpen(db: Db, scope: SchoolScope, ctx: Ctx) {
-  const avoid = await usedThisYear(db, scope, ctx.exam.id)
+/**
+ * Fills every open place in the paper from the bank, keeping what is there. Spreads across chapters, honours the
+ * difficulty mix and the template's thinking mix, shows every difficulty, and prefers questions this school has not
+ * used (then the least recently used). The rule itself is in fill-rank.ts.
+ */
+async function fillOpen(db: Db, scope: SchoolScope, ctx: Ctx, difficultyMix?: Partial<DifficultyMix>) {
+  const mix = normalizeMix(difficultyMix)
+  const levelMix = ctx.layout.config.level_mix
   for (const s of ctx.layout.sections) {
     for (;;) {
       const picks = await picksOf(db, scope, ctx)
@@ -462,12 +469,24 @@ async function fillOpen(db: Db, scope: SchoolScope, ctx: Ctx) {
       // the chapter with the fewest marks so far goes first
       const marksBy = new Map(ctx.chapters.map((c) => [c.id, picks.filter((p) => p.chapterId === c.id && !p.isAlternate).reduce((n, p) => n + p.marks, 0)]))
       const order = [...ctx.chapters].sort((a, b) => (marksBy.get(a.id) ?? 0) - (marksBy.get(b.id) ?? 0))
+      const state = { marksByDifficulty: {} as Record<string, number>, marksByLevel: {} as Record<string, number>, totalMarks: 0 }
+      for (const p of picks.filter((x) => !x.isAlternate)) {
+        state.marksByDifficulty[p.difficulty] = (state.marksByDifficulty[p.difficulty] ?? 0) + p.marks
+        const l = levelOfBloom(p.bloom)
+        state.marksByLevel[l] = (state.marksByLevel[l] ?? 0) + p.marks
+        state.totalMarks += p.marks
+      }
       let found: Candidate | undefined
-      for (const pass of [new Set([...inPaper, ...avoid]), inPaper]) {
-        for (const c of order) {
-          found = (await candidates(db, ctx.exam.school_id, s, c.conceptIds, pass, 1)).at(0)
-          if (found) break
-        }
+      for (const c of order) {
+        const pool = await candidates(db, ctx.exam.school_id, s, c.conceptIds, inPaper, 40)
+        if (pool.length === 0) continue
+        const used = await examBuilderRepository.lastUsedAt(db, scope, ctx.exam.id, pool.map((q) => q.id))
+        found = pickNext(
+          pool.map((q) => ({ ...q, lastUsedMs: used.get(q.id)?.getTime() ?? null })),
+          state,
+          mix,
+          levelMix,
+        )
         if (found) break
       }
       if (!found) break // the bank has nothing more for this slot: it stays open and is printed as a gap
@@ -605,12 +624,12 @@ export async function builderAction(db: Db, scope: SchoolScope, examId: string, 
     case 'refill_unlocked': {
       const drop = picks.filter((p) => !p.locked).map((p) => p.id)
       if (drop.length) await db.deleteFrom('school_exam_questions').where('school_id', '=', scope.schoolId).where('id', 'in', drop).execute()
-      await fillOpen(db, scope, ctx)
+      await fillOpen(db, scope, ctx, a.difficultyMix)
       await touch(db, scope, examId)
       return { message: 'Everything not locked was picked again.' }
     }
     case 'fill_rest': {
-      await fillOpen(db, scope, ctx)
+      await fillOpen(db, scope, ctx, a.difficultyMix)
       await touch(db, scope, examId)
       return { message: 'The open places were filled.' }
     }
