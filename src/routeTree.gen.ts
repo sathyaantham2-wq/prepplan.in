@@ -224,6 +224,7 @@ import { Route as ApiSchoolsSchoolIdCredentialsStudentsRouteImport } from './rou
 import { Route as ApiSchoolsSchoolIdDemoResetRouteImport } from './routes/api/schools/$schoolId/demo/reset'
 import { Route as ApiSchoolsSchoolIdDemoSampleResultsRouteImport } from './routes/api/schools/$schoolId/demo/sample-results'
 import { Route as ApiSchoolsSchoolIdExamsExamIdRouteImport } from './routes/api/schools/$schoolId/exams/$examId'
+import { Route as ApiSchoolsSchoolIdImportsManualRouteImport } from './routes/api/schools/$schoolId/imports/manual'
 import { Route as ApiSchoolsSchoolIdMessagingLogRouteImport } from './routes/api/schools/$schoolId/messaging/log'
 import { Route as ApiSchoolsSchoolIdMessagingPermissionsRouteImport } from './routes/api/schools/$schoolId/messaging/permissions'
 import { Route as ApiSchoolsSchoolIdMessagingSettingsRouteImport } from './routes/api/schools/$schoolId/messaging/settings'
@@ -1410,6 +1411,12 @@ const ApiSchoolsSchoolIdExamsExamIdRoute =
     path: '/$examId',
     getParentRoute: () => ApiSchoolsSchoolIdExamsRoute,
   } as any)
+const ApiSchoolsSchoolIdImportsManualRoute =
+  ApiSchoolsSchoolIdImportsManualRouteImport.update({
+    id: '/manual',
+    path: '/manual',
+    getParentRoute: () => ApiSchoolsSchoolIdImportsRoute,
+  } as any)
 const ApiSchoolsSchoolIdMessagingLogRoute =
   ApiSchoolsSchoolIdMessagingLogRouteImport.update({
     id: '/api/schools/$schoolId/messaging/log',
@@ -1963,6 +1970,7 @@ export interface FileRoutesByFullPath {
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
   '/api/schools/$schoolId/demo/sample-results': typeof ApiSchoolsSchoolIdDemoSampleResultsRoute
   '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
+  '/api/schools/$schoolId/imports/manual': typeof ApiSchoolsSchoolIdImportsManualRoute
   '/api/schools/$schoolId/messaging/log': typeof ApiSchoolsSchoolIdMessagingLogRoute
   '/api/schools/$schoolId/messaging/permissions': typeof ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren
   '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
@@ -2233,6 +2241,7 @@ export interface FileRoutesByTo {
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
   '/api/schools/$schoolId/demo/sample-results': typeof ApiSchoolsSchoolIdDemoSampleResultsRoute
   '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
+  '/api/schools/$schoolId/imports/manual': typeof ApiSchoolsSchoolIdImportsManualRoute
   '/api/schools/$schoolId/messaging/log': typeof ApiSchoolsSchoolIdMessagingLogRoute
   '/api/schools/$schoolId/messaging/permissions': typeof ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren
   '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
@@ -2507,6 +2516,7 @@ export interface FileRoutesById {
   '/api/schools/$schoolId/demo/reset': typeof ApiSchoolsSchoolIdDemoResetRoute
   '/api/schools/$schoolId/demo/sample-results': typeof ApiSchoolsSchoolIdDemoSampleResultsRoute
   '/api/schools/$schoolId/exams/$examId': typeof ApiSchoolsSchoolIdExamsExamIdRouteWithChildren
+  '/api/schools/$schoolId/imports/manual': typeof ApiSchoolsSchoolIdImportsManualRoute
   '/api/schools/$schoolId/messaging/log': typeof ApiSchoolsSchoolIdMessagingLogRoute
   '/api/schools/$schoolId/messaging/permissions': typeof ApiSchoolsSchoolIdMessagingPermissionsRouteWithChildren
   '/api/schools/$schoolId/messaging/settings': typeof ApiSchoolsSchoolIdMessagingSettingsRoute
@@ -2782,6 +2792,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/demo/reset'
     | '/api/schools/$schoolId/demo/sample-results'
     | '/api/schools/$schoolId/exams/$examId'
+    | '/api/schools/$schoolId/imports/manual'
     | '/api/schools/$schoolId/messaging/log'
     | '/api/schools/$schoolId/messaging/permissions'
     | '/api/schools/$schoolId/messaging/settings'
@@ -3052,6 +3063,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/demo/reset'
     | '/api/schools/$schoolId/demo/sample-results'
     | '/api/schools/$schoolId/exams/$examId'
+    | '/api/schools/$schoolId/imports/manual'
     | '/api/schools/$schoolId/messaging/log'
     | '/api/schools/$schoolId/messaging/permissions'
     | '/api/schools/$schoolId/messaging/settings'
@@ -3325,6 +3337,7 @@ export interface FileRouteTypes {
     | '/api/schools/$schoolId/demo/reset'
     | '/api/schools/$schoolId/demo/sample-results'
     | '/api/schools/$schoolId/exams/$examId'
+    | '/api/schools/$schoolId/imports/manual'
     | '/api/schools/$schoolId/messaging/log'
     | '/api/schools/$schoolId/messaging/permissions'
     | '/api/schools/$schoolId/messaging/settings'
@@ -5013,6 +5026,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSchoolsSchoolIdExamsExamIdRouteImport
       parentRoute: typeof ApiSchoolsSchoolIdExamsRoute
     }
+    '/api/schools/$schoolId/imports/manual': {
+      id: '/api/schools/$schoolId/imports/manual'
+      path: '/manual'
+      fullPath: '/api/schools/$schoolId/imports/manual'
+      preLoaderRoute: typeof ApiSchoolsSchoolIdImportsManualRouteImport
+      parentRoute: typeof ApiSchoolsSchoolIdImportsRoute
+    }
     '/api/schools/$schoolId/messaging/log': {
       id: '/api/schools/$schoolId/messaging/log'
       path: '/api/schools/$schoolId/messaging/log'
@@ -6055,11 +6075,13 @@ const ApiSchoolsSchoolIdExamsRouteWithChildren =
   )
 
 interface ApiSchoolsSchoolIdImportsRouteChildren {
+  ApiSchoolsSchoolIdImportsManualRoute: typeof ApiSchoolsSchoolIdImportsManualRoute
   ApiSchoolsSchoolIdImportsBatchIdCommitRoute: typeof ApiSchoolsSchoolIdImportsBatchIdCommitRoute
 }
 
 const ApiSchoolsSchoolIdImportsRouteChildren: ApiSchoolsSchoolIdImportsRouteChildren =
   {
+    ApiSchoolsSchoolIdImportsManualRoute: ApiSchoolsSchoolIdImportsManualRoute,
     ApiSchoolsSchoolIdImportsBatchIdCommitRoute:
       ApiSchoolsSchoolIdImportsBatchIdCommitRoute,
   }
@@ -6363,12 +6385,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
