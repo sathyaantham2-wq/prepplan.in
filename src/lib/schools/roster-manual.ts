@@ -54,10 +54,10 @@ export async function addPersonManually(
     fileName: 'manual.csv',
     bytes: Buffer.from(csv, 'utf8'),
   })
-  const row = preview.rows[0]
+  const row = preview.rows.at(0)
   if (!row || row.status === 'error') throw new SchoolError('invalid', row?.message ?? 'Please check the details and try again.')
   if (row.status === 'unchanged')
     throw new SchoolError('conflict', input.kind === 'students' ? 'This student is already on the roll.' : 'This teacher is already added.')
   const done = await commitRosterImport(db, scope, preview.batchId)
-  return { added: Number(done.added ?? 0), updated: Number(done.updated ?? 0) }
+  return { added: Number(done.added), updated: Number(done.updated ?? 0) }
 }

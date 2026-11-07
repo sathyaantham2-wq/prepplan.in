@@ -15,7 +15,7 @@ export const Route = createFileRoute('/api/schools/$schoolId/imports/manual')({
         const body = (await request.json().catch(() => null)) as {
           kind?: string
           academic_year?: string
-          fields?: Record<string, unknown>
+          fields?: unknown
         } | null
         if (!body || (body.kind !== 'students' && body.kind !== 'teachers') || typeof body.fields !== 'object' || body.fields === null) {
           return Response.json({ error: 'invalid', message: 'Send kind and fields.' }, { status: 400 })

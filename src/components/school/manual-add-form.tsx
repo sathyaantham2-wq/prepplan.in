@@ -24,7 +24,7 @@ export function ManualAddForm({
   onDone: () => void
   onCancel: () => void
 }) {
-  const [f, setF] = useState<Record<string, string>>({ whatsapp_ok: '', parent_language: '' })
+  const [f, setF] = useState<Record<string, string | undefined>>({ whatsapp_ok: '', parent_language: '' })
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [added, setAdded] = useState<string | null>(null)
