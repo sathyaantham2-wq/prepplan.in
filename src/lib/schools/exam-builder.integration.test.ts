@@ -248,6 +248,7 @@ describe('paper builder', () => {
     const fresh = await db.selectFrom('questions').select('id').where('text', 'like', `%ch3 #0 ${tag}`).executeTakeFirstOrThrow()
     const none = await examBuilderRepository.lastUsedAt(db, teacher, id, [fresh.id])
     expect(none.size === 0 || none.has(fresh.id)).toBe(true)
+  })
 
   it('the paper PDF and Word file of a draft show its real maximum marks, not 0', async () => {
     const { questionPaperHtml } = await import('./exam-service')
