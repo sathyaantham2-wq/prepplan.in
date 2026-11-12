@@ -357,7 +357,10 @@ test.describe.serial('progress report and class progress (phone)', () => {
     await expect(page.getByTestId('exam-link')).toHaveCount(8) // only locked marks feed the home screen
     await page.goto(`/school/${schoolId}/progress/exam/${last.paper_id}`, { waitUntil: 'networkidle' })
     await expect(page.getByTestId('not-final')).toContainText('not final')
-    const row = page.getByTestId('grid-row').nth(9)
+    // A flag is offered only on an answer that lost marks, so take the first such row instead of a fixed index
+    // (row 9 was sometimes a full-marks answer, which made this test flaky).
+    const flagButton = page.getByRole('button', { name: 'I think this mark is wrong', includeHidden: true })
+    const row = page.getByTestId('grid-row').filter({ has: flagButton }).first()
     await row.locator('summary').click()
     await expect(row.getByRole('button', { name: 'I think this mark is wrong' })).toBeVisible()
     await row.scrollIntoViewIfNeeded()
