@@ -1,0 +1,1293 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH6",
+  "class": 6,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 1,
+  "name": "Patterns in Mathematics"
+ },
+ "source_code": "fegp101",
+ "concepts": [
+  {
+   "code": "C6M-1.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 2",
+     "q": "What is the branch of Mathematics that studies patterns in whole numbers called?",
+     "a": "Number theory",
+     "o": [
+      "Number theory",
+      "Geometry",
+      "Arithmetic",
+      "Algebra"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 3",
+     "q": "The Virahanka numbers are 1, 2, 3, 5, 8, 13, 21, ... Which of these numbers comes later in this sequence?",
+     "a": "55",
+     "o": [
+      "55",
+      "42",
+      "63",
+      "29"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 3",
+     "q": "In which of these sequences is the same number added every time to get the next term?",
+     "a": "Even numbers: 2, 4, 6, 8, ...",
+     "o": [
+      "Even numbers: 2, 4, 6, 8, ...",
+      "Triangular numbers: 1, 3, 6, 10, ...",
+      "Powers of 2: 1, 2, 4, 8, ...",
+      "Squares: 1, 4, 9, 16, ..."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "p. 3",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each sequence in Column I with its first four terms in Column II.\nColumn I: I. Powers of 3  II. Cubes  III. Triangular numbers  IV. Virahanka numbers\nColumn II: A. 1, 3, 6, 10  B. 1, 3, 9, 27  C. 1, 2, 3, 5  D. 1, 8, 27, 64",
+     "a": "I-B, II-D, III-A, IV-C",
+     "o": [
+      "I-B, II-D, III-A, IV-C",
+      "I-A, II-D, III-B, IV-C",
+      "I-B, II-C, III-A, IV-D",
+      "I-D, II-B, III-A, IV-C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 3",
+     "q": "Which number between 100 and 300 is a term of both the Squares (1, 4, 9, 16, ...) and the Powers of 2 (1, 2, 4, 8, ...)?",
+     "a": "256",
+     "o": [
+      "256",
+      "128",
+      "196",
+      "225"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 3",
+     "q": "Assertion (A): In the Powers of 3 (1, 3, 9, 27, 81, 243, 729, ...), the term that comes after 729 is 2187.\nReason (R): Each term of the Powers of 3 is 3 times the term before it.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 3",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: the 7th term of the Cubes (1, 8, 27, 64, ...) is 343. Give the reason.",
+     "a": "True. The 7th cube is 7 x 7 x 7 = 49 x 7 = 343.",
+     "s": [
+      [
+       "States the verdict: True",
+       1
+      ],
+      [
+       "Shows 7 x 7 x 7 = 343",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 3",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Lalit says: 'The Powers of 2 (1, 2, 4, 8, ...) start so slowly that they can never get ahead of the Squares (1, 4, 9, 16, ...) term by term.' Write the first 8 terms of both sequences and say whether Lalit is right.",
+     "a": "Powers of 2: 1, 2, 4, 8, 16, 32, 64, 128. Squares: 1, 4, 9, 16, 25, 36, 49, 64. Lalit is wrong: the Powers of 2 are behind from the 2nd to the 6th term, but the 7th term is 64 against 49 and the 8th is 128 against 64, so they get ahead.",
+     "s": [
+      [
+       "Writes the first 8 Powers of 2: 1, 2, 4, 8, 16, 32, 64, 128",
+       1
+      ],
+      [
+       "Writes the first 8 Squares: 1, 4, 9, 16, 25, 36, 49, 64",
+       1
+      ],
+      [
+       "Concludes Lalit is wrong, citing the 7th term (64 > 49) or 8th term (128 > 64)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 3",
+     "q": "Find the 11th term of each sequence. (a) Even numbers 2, 4, 6, 8, ... (b) Triangular numbers 1, 3, 6, 10, ... (c) Squares 1, 4, 9, 16, ...",
+     "a": "(a) 22 (b) 66 (c) 121",
+     "s": [
+      [
+       "(a) 22, the even numbers being 2 x 1, 2 x 2, ..., so 2 x 11",
+       1
+      ],
+      [
+       "(b) 66, by adding 1 + 2 + ... + 11 or continuing 45, 55, 66",
+       1
+      ],
+      [
+       "(c) 121 = 11 x 11",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 3",
+     "q": "A mobile game has three versions. On level 1, 2, 3, ... a player wins this many coins:\nGame P: 1, 3, 5, 7, ... (Odd numbers)\nGame Q: 1, 2, 4, 8, ... (Powers of 2)\nGame R: 1, 2, 3, 5, 8, ... (Virahanka numbers)\n(a) How many coins does each game give on level 9?\n(b) On which level does Game Q first give more coins than Game P?\n(c) On which level does Game R first give more coins than Game P?\n(d) Find the total coins from each game if a player plays only levels 1 to 4.\n(e) Find the total coins from each game for levels 1 to 8. Which game should a player choose if she will play 4 levels, and which if she will play 8 levels?",
+     "a": "(a) P: 17, Q: 256, R: 55. (b) Level 4 (Q gives 8, P gives 7). (c) Level 6 (R gives 13, P gives 11; on level 5 R gives 8 and P gives 9). (d) P: 1 + 3 + 5 + 7 = 16, Q: 1 + 2 + 4 + 8 = 15, R: 1 + 2 + 3 + 5 = 11. (e) P: 64, Q: 255, R: 87. For 4 levels she should choose Game P (16 coins); for 8 levels she should choose Game Q (255 coins).",
+     "s": [
+      [
+       "(a) Level 9: P 17, Q 256, R 55",
+       1
+      ],
+      [
+       "(b) Level 4, comparing 8 with 7",
+       1
+      ],
+      [
+       "(c) Level 6, comparing 13 with 11 (and 8 with 9 on level 5)",
+       1
+      ],
+      [
+       "(d) Totals for 4 levels: P 16, Q 15, R 11",
+       1
+      ],
+      [
+       "(e) Totals for 8 levels P 64, Q 255, R 87, and decides P for 4 levels, Q for 8 levels",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 3",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A bead artist in Hyderabad is making a set of 10 necklaces, numbered 1 to 10, for a festival stall. She is choosing one of three designs. In Design P the necklaces hold the Odd numbers of beads (1, 3, 5, ...); in Design Q they hold the Triangular numbers of beads (1, 3, 6, ...); in Design R they hold the Square numbers of beads (1, 4, 9, ...). She has 250 beads and does not want to buy more.\n(a) How many beads does necklace number 10 need in Design P?\n(b) How many beads does necklace number 10 need in Design Q?\n(c) Find the total number of beads for all 10 necklaces in Design P and in Design Q.\n(d) Can she make the full set in Design R? Which design should she choose to use as many of her 250 beads as possible? Justify.",
+     "a": "(a) 19 beads. (b) 55 beads. (c) Design P: 1 + 3 + 5 + ... + 19 = 100 beads; Design Q: 1 + 3 + 6 + 10 + 15 + 21 + 28 + 36 + 45 + 55 = 220 beads. (d) No: Design R needs 1 + 4 + 9 + ... + 100 = 385 beads, more than 250. Design Q needs 220 beads, which she has, and uses more beads than Design P (100), so she should choose Design Q.",
+     "s": [
+      [
+       "(a) 19 beads, the 10th odd number",
+       1
+      ],
+      [
+       "(b) 55 beads, the 10th triangular number",
+       1
+      ],
+      [
+       "(c) Totals: Design P 100 beads and Design Q 220 beads",
+       1
+      ],
+      [
+       "(d) Finds Design R needs 385 > 250, and chooses Design Q (220 beads) over Design P (100)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 4",
+     "q": "Rahul arranges counters as a triangular staircase with 1, 2, 3, 4, 5, 6 and 7 counters in its rows. How many counters does he use?",
+     "a": "28",
+     "o": [
+      "28",
+      "49",
+      "21",
+      "14"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 4",
+     "q": "Which arrangement of 16 dots shows that 16 is a square number?",
+     "a": "4 rows with 4 dots in each row",
+     "o": [
+      "4 rows with 4 dots in each row",
+      "2 rows with 8 dots in each row",
+      "8 rows with 2 dots in each row",
+      "Rows of 1, 2, 3, 4 and 6 dots"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 4",
+     "q": "A square grid of dots has 9 rows. How many dots are in each row, and how many dots are there in all?",
+     "a": "9 dots in each row, 81 dots in all",
+     "o": [
+      "9 dots in each row, 81 dots in all",
+      "9 dots in each row, 18 dots in all",
+      "9 dots in each row, 45 dots in all",
+      "3 dots in each row, 9 dots in all"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 4-5",
+     "q": "Consider the following statements about dot pictures.\nI. 30 dots can be arranged as a complete triangular staircase (rows of 1, 2, 3, ... dots).\nII. 64 dots can be arranged as a block 4 dots long, 4 dots wide and 4 dots high.\nIII. 121 dots can be arranged as a square grid with 11 rows.\nWhich of the statements are correct?",
+     "a": "II and III only",
+     "o": [
+      "II and III only",
+      "I and II only",
+      "I and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 4-5",
+     "q": "Assertion (A): 45 dots can be arranged as a perfect square grid.\nReason (R): 45 dots can be arranged as a triangular staircase of 9 rows.",
+     "a": "A is false, but R is true",
+     "o": [
+      "A is false, but R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 4",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: the dot picture of a cube number is flat, just like the dot picture of a square number. Give the reason or the correct statement.",
+     "a": "False. A square number is a flat grid of dots, but a cube number is a three-dimensional block of dots, as many dots long, wide and high (for example 27 is a block 3 by 3 by 3).",
+     "s": [
+      [
+       "States the verdict: False",
+       1
+      ],
+      [
+       "Says a cube picture is a 3D block, equal in length, width and height, with an example",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 4",
+     "q": "(a) Describe the dot picture of the 6th triangular number: how many rows does it have, and how many dots are in its bottom row? (b) How many dots does the picture have in all?",
+     "a": "(a) It is a staircase of 6 rows with 1, 2, 3, 4, 5 and 6 dots, so the bottom row has 6 dots. (b) 1 + 2 + 3 + 4 + 5 + 6 = 21 dots.",
+     "s": [
+      [
+       "(a) 6 rows, bottom row of 6 dots",
+       1
+      ],
+      [
+       "(b) 21 dots in all",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 4",
+     "q": "Sana builds a cube block of dots 6 dots long, 6 dots wide and 6 dots high. (a) How many dots are in the whole block? (b) How many dots are in one flat layer of the block? (c) How many dots are hidden inside, not on any outside face of the block? Explain.",
+     "a": "(a) 6 x 6 x 6 = 216 dots. (b) One layer is a 6 by 6 square: 36 dots. (c) Taking away the outer dots leaves a block 4 long, 4 wide and 4 high (one dot is removed at each end in every direction), so 4 x 4 x 4 = 64 dots are hidden inside; the other 152 are on the outside.",
+     "s": [
+      [
+       "(a) 216 dots",
+       1
+      ],
+      [
+       "(b) 36 dots in one layer",
+       1
+      ],
+      [
+       "(c) 64 hidden dots, explaining the inner block is 4 by 4 by 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 4-5",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A housing society in Lucknow has 130 diyas for Diwali. The committee will set them out in one dot-picture shape: a square grid (as many rows as diyas in each row) or a triangular staircase (rows of 1, 2, 3, ... diyas), both laid on the floor, or a cube block (equal length, width and height), which needs one shelf of a stand for each layer. Diyas that do not fit the complete shape are kept aside. The only stand available has 4 shelves.\n(a) What is the largest square grid they can make, and how many diyas are kept aside?\n(b) What is the largest triangular staircase they can make, and how many are kept aside?\n(c) Ignoring the stand, what is the largest cube block they could make, and how many would be kept aside?\n(d) With the 4-shelf stand, which shape keeps the fewest diyas aside? Justify.",
+     "a": "(a) 11 rows of 11 = 121 diyas; 9 kept aside (12 x 12 = 144 is too many). (b) 15 rows: 1 + 2 + ... + 15 = 120 diyas; 10 kept aside (16 rows need 136). (c) 5 x 5 x 5 = 125 diyas; 5 kept aside. (d) The 125 block needs 5 layers, so it does not fit a 4-shelf stand; the largest block that fits is 4 x 4 x 4 = 64, keeping 66 aside. So the square grid (9 aside) is best, just ahead of the staircase (10 aside).",
+     "s": [
+      [
+       "(a) 11 by 11 grid of 121, 9 kept aside",
+       1
+      ],
+      [
+       "(b) 15-row staircase of 120, 10 kept aside",
+       1
+      ],
+      [
+       "(c) 5 by 5 by 5 block of 125, 5 kept aside",
+       1
+      ],
+      [
+       "(d) Rules out the 5-layer block on 4 shelves and chooses the square grid (9 aside against 10)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 4",
+     "q": "Jai has a cube block of dots 4 dots long, 4 wide and 4 high. (a) How many more dots does he need to build the next cube block, 5 dots long, 5 wide and 5 high? (b) How many layers will the new block have, and how many dots in each layer?",
+     "a": "(a) The new block has 5 x 5 x 5 = 125 dots and the old one 4 x 4 x 4 = 64, so he needs 125 - 64 = 61 more dots. (b) 5 layers, each a 5 by 5 square of 25 dots.",
+     "s": [
+      [
+       "(a) 125 - 64 = 61 more dots",
+       1
+      ],
+      [
+       "(b) 5 layers of 25 dots each",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 6",
+     "q": "What is 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15?",
+     "a": "64",
+     "o": [
+      "64",
+      "49",
+      "81",
+      "56"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 7",
+     "q": "Ravi adds the first 10 odd numbers, 1 + 3 + 5 + ... + 19. Gita adds the first 20 odd numbers, 1 + 3 + 5 + ... + 39. Gita's total is how many times Ravi's total?",
+     "a": "4 times",
+     "o": [
+      "4 times",
+      "2 times",
+      "3 times",
+      "8 times"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 7",
+     "q": "Assertion (A): 1 + 3 + 5 + ... + 27 = 196.\nReason (R): A square grid of 14 rows of 14 dots can be split into L-shaped parts of 1, 3, 5, ..., 27 dots.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 7",
+     "q": "(a) How many odd numbers are added in 1 + 3 + 5 + ... + 31? (b) Use the pattern of odd numbers to find the sum.",
+     "a": "(a) 16 odd numbers (1, 3, 5, ..., 31). (b) 16 x 16 = 256.",
+     "s": [
+      [
+       "(a) 16 odd numbers",
+       1
+      ],
+      [
+       "(b) Sum = 16 x 16 = 256",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 7",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: the sum of the first 25 odd numbers, starting from 1, is 625. Give the reason.",
+     "a": "True. Adding the first 25 odd numbers from 1 gives the 25th square number, 25 x 25 = 625.",
+     "s": [
+      [
+       "States the verdict: True",
+       1
+      ],
+      [
+       "Uses the rule that the first 25 odd numbers add to 25 x 25 = 625",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 7",
+     "q": "Neha adds odd numbers one at a time: 1, then 1 + 3, then 1 + 3 + 5, and so on. After how many odd numbers does her total first go above 500?",
+     "a": "23",
+     "o": [
+      "23",
+      "22",
+      "250",
+      "25"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 7",
+     "q": "Meera has already laid a 7 by 7 square of tiles. She grows it by adding L-shaped layers, each layer holding the next odd number of tiles, and she has 100 more tiles. (a) How many tiles are in the first layer she adds? (b) How many complete layers can she add with her 100 tiles, and what square does she end with? (c) How many tiles are left over, and how many more would she need to add one more layer?",
+     "a": "(a) 15 tiles: the 8 by 8 square has 64 tiles and the 7 by 7 square 49, and 64 - 49 = 15. (b) Layers of 15, 17, 19, 21 and 23 tiles use 95 tiles (12 x 12 - 7 x 7 = 144 - 49 = 95), so she adds 5 layers and ends with a 12 by 12 square; a 6th layer of 25 would make the total 120, more than 100. (c) 100 - 95 = 5 tiles are left over; the next layer needs 25, so she needs 20 more.",
+     "s": [
+      [
+       "(a) 15 tiles in the first new layer",
+       1
+      ],
+      [
+       "(b) 5 layers (95 tiles), ending with a 12 by 12 square",
+       1
+      ],
+      [
+       "(c) 5 left over, 20 more needed for the next layer of 25",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 7",
+     "q": "Kiran makes a square of tiles by laying L-shaped layers: the first layer is 1 tile, the second layer is 3 tiles around it, the third is 5 tiles, and so on, each layer making the next bigger square.\n(a) Write the number of tiles in each of the first 6 layers.\n(b) How many tiles are used after 6 layers, and what square do they make?\n(c) Kiran has 150 tiles. How many complete layers can he lay, and how many tiles are left over?\n(d) Which layer has 23 tiles?\n(e) He later wants a 15 by 15 square. Starting from his square in (c), how many more tiles does he need, and how many tiles go into each of the extra layers?",
+     "a": "(a) 1, 3, 5, 7, 9, 11. (b) 36 tiles, a 6 by 6 square. (c) 12 layers use 12 x 12 = 144 tiles (13 layers would need 169), leaving 6 tiles. (d) The 12th layer (1, 3, ..., 23 is the 12th odd number). (e) 15 x 15 - 12 x 12 = 225 - 144 = 81 more tiles, in layers of 25, 27 and 29 tiles.",
+     "s": [
+      [
+       "(a) Layers of 1, 3, 5, 7, 9, 11 tiles",
+       1
+      ],
+      [
+       "(b) 36 tiles, a 6 by 6 square",
+       1
+      ],
+      [
+       "(c) 12 layers (144 tiles), 6 left over",
+       1
+      ],
+      [
+       "(d) The 12th layer",
+       1
+      ],
+      [
+       "(e) 81 more tiles, in layers of 25, 27 and 29",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 7",
+     "q": "Arjun builds a 10 by 10 square of pebbles from L-shaped layers of 1, 3, 5, ..., 19 pebbles. He uses red pebbles for the 1st, 3rd, 5th, 7th and 9th layers and blue pebbles for the 2nd, 4th, 6th, 8th and 10th layers. (a) Write the sizes of the red layers and of the blue layers. (b) How many red pebbles does he need? (c) How many blue pebbles does he need? (d) Which colour does he need more of, by how many, and how can you check your totals using the square?",
+     "a": "(a) Red: 1, 5, 9, 13, 17. Blue: 3, 7, 11, 15, 19. (b) 1 + 5 + 9 + 13 + 17 = 45 red. (c) 3 + 7 + 11 + 15 + 19 = 55 blue. (d) Blue, by 55 - 45 = 10 (each blue layer is 2 more than the red layer before it, and there are 5 pairs). Check: 45 + 55 = 100 = 10 x 10, the whole square.",
+     "s": [
+      [
+       "(a) Red layers 1, 5, 9, 13, 17 and blue layers 3, 7, 11, 15, 19",
+       1
+      ],
+      [
+       "(b) 45 red pebbles",
+       1
+      ],
+      [
+       "(c) 55 blue pebbles",
+       1
+      ],
+      [
+       "(d) Blue by 10, and checks 45 + 55 = 100 = 10 x 10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 7",
+     "q": "Use the pattern of odd numbers to find: (a) the sum of the first 21 odd numbers (b) the sum of the first 40 odd numbers (c) the sum of the first 1000 odd numbers.",
+     "a": "(a) 21 x 21 = 441 (b) 40 x 40 = 1600 (c) 1000 x 1000 = 10,00,000",
+     "s": [
+      [
+       "(a) 441",
+       1
+      ],
+      [
+       "(b) 1600",
+       1
+      ],
+      [
+       "(c) 10,00,000",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.4",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 7",
+     "q": "What is 1 + 2 + 3 + 4 + 5 + 6 + 7 + 6 + 5 + 4 + 3 + 2 + 1?",
+     "a": "49",
+     "o": [
+      "49",
+      "28",
+      "56",
+      "42"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 8",
+     "q": "Which sequence do you get when you start to add up the All 1's sequence: 1, 1 + 1, 1 + 1 + 1, 1 + 1 + 1 + 1, ...?",
+     "a": "Counting numbers",
+     "o": [
+      "Counting numbers",
+      "Odd numbers",
+      "Squares",
+      "All 1's"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 8-9",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each way of combining sequences in Column I with the sequence it gives in Column II.\nColumn I: I. Adding pairs of consecutive triangular numbers: 1 + 3, 3 + 6, 6 + 10, ...  II. Adding up hexagonal numbers: 1, 1 + 7, 1 + 7 + 19, ...  III. Adding up counting numbers: 1, 1 + 2, 1 + 2 + 3, ...  IV. Adding up powers of 2 from 1, then adding 1: 1 + 1, 1 + 2 + 1, 1 + 2 + 4 + 1, ...\nColumn II: A. Cubes  B. Powers of 2  C. Triangular numbers  D. Squares",
+     "a": "I-D, II-A, III-C, IV-B",
+     "o": [
+      "I-D, II-A, III-C, IV-B",
+      "I-C, II-A, III-D, IV-B",
+      "I-D, II-B, III-C, IV-A",
+      "I-A, II-D, III-C, IV-B"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 8",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: 1 + 2 + 4 + 8 + 16 + 32 + 64 = 128. Give the reason or the correct statement.",
+     "a": "False. 1 + 2 + 4 + 8 + 16 + 32 + 64 = 127. A running sum of powers of 2 starting at 1 is always one less than the next power of 2; it is 127 + 1 that equals 128.",
+     "s": [
+      [
+       "States the verdict: False",
+       1
+      ],
+      [
+       "Gives the sum 127 and says adding 1 gives the next power of 2, 128",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 8",
+     "q": "(a) 289 is the square of which number? (b) Hence name the two consecutive triangular numbers that add up to 289, and check by adding.",
+     "a": "(a) 289 = 17 x 17. (b) The 16th and 17th triangular numbers, 136 and 153: 136 + 153 = 289.",
+     "s": [
+      [
+       "(a) 17",
+       1
+      ],
+      [
+       "(b) 136 and 153, with 136 + 153 = 289",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 9",
+     "q": "Assertion (A): 1 + 7 + 19 + 37 + 61 is a cube number.\nReason (R): Each hexagonal number after 1 (7, 19, 37, ...) is 6 times a triangular number, plus 1.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 7-8",
+     "q": "Draw (or picture) a 6 by 6 square grid of dots and look at the slanting lines of dots parallel to one diagonal, starting from one corner. (a) Write the number of dots on each slanting line in order. (b) Add them to find the total. (c) Use the picture to explain why adding the counting numbers up to any number and back down to 1 always gives a square number.",
+     "a": "(a) 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1. (b) The total is 36 = 6 x 6. (c) The slanting lines of a square of any size hold 1, 2, ... up to its side and back down to 1 dots, so adding the counting numbers up to that number and back down counts every dot of the square, which is the side times itself.",
+     "s": [
+      [
+       "(a) Lists 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1",
+       1
+      ],
+      [
+       "(b) Total 36 = 6 x 6",
+       1
+      ],
+      [
+       "(c) Explains that the slanting lines of a square of any size hold 1 up to its side and back to 1, so the sum is the side times the side",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 7-8",
+     "q": "The sum 1 + 2 + 3 + ... + 9 + 10 + 9 + ... + 3 + 2 + 1 is also the sum of two consecutive triangular numbers. Which two?",
+     "a": "45 and 55",
+     "o": [
+      "45 and 55",
+      "55 and 66",
+      "36 and 45",
+      "50 and 50"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 6-8",
+     "q": "Three different sums are given.\n(a) Find 1 + 2 + 3 + ... + 14 + 15 + 14 + ... + 3 + 2 + 1 using the 'up and down' pattern.\n(b) Find 1 + 3 + 5 + ... + 29 using the odd numbers pattern.\n(c) Find the sum of the 14th and 15th triangular numbers, 105 and 120.\n(d) What do the answers to (a), (b) and (c) have in common, and why?\n(e) Using the same three ideas, write three different sums that each equal 400.",
+     "a": "(a) 15 x 15 = 225. (b) 1, 3, ..., 29 is 15 odd numbers, so 225. (c) 105 + 120 = 225. (d) All three are 225, the 15th square, because adding counting numbers up to 15 and down, adding the first 15 odd numbers, and adding the 14th and 15th triangular numbers each give 15 x 15. (e) 400 = 20 x 20: 1 + 2 + ... + 20 + ... + 2 + 1; 1 + 3 + 5 + ... + 39; and 190 + 210 (the 19th and 20th triangular numbers).",
+     "s": [
+      [
+       "(a) 225",
+       1
+      ],
+      [
+       "(b) 225, counting 15 odd numbers",
+       1
+      ],
+      [
+       "(c) 225",
+       1
+      ],
+      [
+       "(d) All are the 15th square, 15 x 15, with the reason for each pattern",
+       1
+      ],
+      [
+       "(e) Three sums for 400: up and down to 20, odd numbers to 39, and 190 + 210",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 8",
+     "q": "Running sums of the powers of 2 are found by starting at 1 and adding the next power of 2 each time. Find (a) 1 + 2 (b) 1 + 2 + 4 + 8 (c) 1 + 2 + 4 + 8 + 16 + 32. (d) Add 1 to each of your three answers. Which sequence do the new numbers belong to?",
+     "a": "(a) 3 (b) 15 (c) 63 (d) 4, 16 and 64, which are powers of 2 (each is the next power of 2 after the last one added).",
+     "s": [
+      [
+       "(a) 3",
+       1
+      ],
+      [
+       "(b) 15",
+       1
+      ],
+      [
+       "(c) 63",
+       1
+      ],
+      [
+       "(d) Gets 4, 16, 64 and names the Powers of 2",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 10",
+     "q": "In the shape sequence of Regular Polygons, which shape comes just after the heptagon?",
+     "a": "Octagon",
+     "o": [
+      "Octagon",
+      "Hexagon",
+      "Nonagon",
+      "Decagon"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 11",
+     "q": "A polygon is called regular when its sides are all of equal length and its angles (corners) are all equal. Which of these shapes is NOT a regular polygon?",
+     "a": "A four-sided shape with all sides 5 cm, two pointed and two wide corners",
+     "o": [
+      "A four-sided shape with all sides 5 cm, two pointed and two wide corners",
+      "A four-sided shape with every side 4 cm and all four corners square",
+      "A three-sided shape with every side 6 cm and all its corners alike",
+      "A six-sided shape with all of its sides equal and all of its corners alike"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 10-12",
+     "q": "Consider the following statements about shape sequences.\nI. In the complete graph K6, each dot is joined to 5 other dots.\nII. In the Stacked Squares sequence, each shape has just one more small square than the shape before it.\nIII. Going from the complete graph K6 to K7 adds 6 new lines.\nWhich of the statements are correct?",
+     "a": "I and III only",
+     "o": [
+      "I and III only",
+      "I and II only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 10",
+     "q": "Look at the pictures K2 to K6 of the Complete Graphs in Table 3. What is a complete graph? Give one example with its number of dots and lines.",
+     "a": "As the pictures K2 to K6 in Table 3 show, a complete graph is a set of dots in which every dot is joined to every other dot by a line. Example: K3 has 3 dots and 3 lines (it looks like a triangle); K4 has 4 dots and 6 lines.",
+     "s": [
+      [
+       "Says every dot is joined to every other dot by a line",
+       1
+      ],
+      [
+       "Gives a correct example such as K3 with 3 dots and 3 lines",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 10-12",
+     "q": "In the Stacked Squares sequence, the 1st shape is 1 small square, and each later shape is a bigger square made of small squares. (a) How many rows of small squares does the 6th shape have, and how many small squares are in each row? (b) How many small squares does the 6th shape have in all?",
+     "a": "(a) 6 rows with 6 small squares in each row. (b) 6 x 6 = 36 small squares.",
+     "s": [
+      [
+       "(a) 6 rows of 6 small squares",
+       1
+      ],
+      [
+       "(b) 36 small squares",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 10",
+     "q": "The Complete Graphs sequence is K2, K3, K4, K5, ..., with K2 as the 1st shape. (a) How many dots does the 10th shape have? (b) In that shape, how many lines meet at each dot?",
+     "a": "(a) The 10th shape is K11, so it has 11 dots. (b) Each dot is joined to the other 10 dots, so 10 lines meet at each dot.",
+     "s": [
+      [
+       "(a) 11 dots, the 10th shape being K11",
+       1
+      ],
+      [
+       "(b) 10 lines at each dot",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 10-12",
+     "q": "Answer briefly. (a) What is the regular polygon with 10 sides called? (b) To get from one Koch Snowflake shape to the next, what is each straight line segment replaced by? (c) How many dots does the complete graph K5 have, and to how many other dots is each one joined?",
+     "a": "(a) Decagon (b) a 'speed bump' (c) 5 dots, each joined to the other 4",
+     "s": [
+      [
+       "(a) Decagon",
+       1
+      ],
+      [
+       "(b) A speed bump",
+       1
+      ],
+      [
+       "(c) 5 dots, each joined to 4 others",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 10-12",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Mona says: 'Each Regular Polygon has 1 more side than the one before it, and each Stacked Squares shape has 3 more small squares than the one before it.' Test both parts of her claim on the first five shapes of each sequence (Stacked Squares: 1, 4, 9, 16, 25 small squares) and give your verdict.",
+     "a": "The polygons have 3, 4, 5, 6, 7 sides, 1 more each time, so the first part is right. The Stacked Squares grow by 4 - 1 = 3, 9 - 4 = 5, 16 - 9 = 7 and 25 - 16 = 9 small squares, so only the first step adds 3 and the second part is wrong. Mona is partly right.",
+     "s": [
+      [
+       "Checks the polygons (3, 4, 5, 6, 7 sides) and finds the first part right",
+       1
+      ],
+      [
+       "Finds the Stacked Squares grow by 3, 5, 7, 9, so the second part is wrong",
+       1
+      ],
+      [
+       "Concludes Mona is partly right",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 10-12",
+     "q": "Answer each part in one step. (a) Name the regular polygon with 9 sides. (b) How many lines does the complete graph K3 have? (c) How many small squares are in the 4th shape of Stacked Squares? (d) The 1st Koch Snowflake shape has 3 line segments. How many does the 2nd shape have? (e) In the Regular Polygons sequence, which shape comes just before the hexagon?",
+     "a": "(a) Nonagon (b) 3 lines (c) 16 small squares (d) 12 line segments (e) Pentagon",
+     "s": [
+      [
+       "(a) Nonagon",
+       1
+      ],
+      [
+       "(b) 3 lines",
+       1
+      ],
+      [
+       "(c) 16 small squares",
+       1
+      ],
+      [
+       "(d) 12 segments",
+       1
+      ],
+      [
+       "(e) Pentagon",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 10-12",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A tile-maker in Jaipur makes floor mosaics in two shape-sequence patterns. Pattern T is a shape of the Stacked Triangles sequence: its rows hold 1, 3, 5, 7, ... small triangular tiles. Pattern S is a shape of the Stacked Squares sequence: a square of small square tiles with as many rows as tiles in each row. A triangular tile costs Rs 6 and a square tile costs Rs 10.\n(a) How many tiles does Pattern T with 7 rows need?\n(b) How many tiles does Pattern S with 7 rows need?\n(c) Find the cost of each 7-row mosaic.\n(d) A client has Rs 400 and wants the mosaic with the most rows she can afford. Which pattern, with how many rows, should the tile-maker offer? Justify.",
+     "a": "(a) 1 + 3 + 5 + 7 + 9 + 11 + 13 = 49 tiles. (b) 7 x 7 = 49 tiles. (c) Pattern T: 49 x 6 = Rs 294; Pattern S: 49 x 10 = Rs 490. (d) Pattern T with 8 rows: 64 tiles cost Rs 384, within Rs 400 (9 rows would be 81 tiles, Rs 486). Pattern S can have only 6 rows (36 tiles, Rs 360), since 7 rows cost Rs 490. So he should offer Pattern T with 8 rows.",
+     "s": [
+      [
+       "(a) 49 triangular tiles",
+       1
+      ],
+      [
+       "(b) 49 square tiles",
+       1
+      ],
+      [
+       "(c) Rs 294 for T and Rs 490 for S",
+       1
+      ],
+      [
+       "(d) Finds T can have 8 rows (Rs 384) but S only 6 (Rs 360), and offers Pattern T with 8 rows",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-1.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 12",
+     "q": "The numbers of line segments in the Koch Snowflake shapes are 3, 12, 48, ... These are 3 times which sequence?",
+     "a": "Powers of 4",
+     "o": [
+      "Powers of 4",
+      "Powers of 3",
+      "Squares",
+      "Counting numbers"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 12",
+     "q": "A shape of the Stacked Triangles sequence has 8 rows, holding 1, 3, 5, ..., 15 small triangles. How many small triangles does it have in all?",
+     "a": "64",
+     "o": [
+      "64",
+      "36",
+      "15",
+      "56"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 12",
+     "q": "The Koch Snowflake shapes have 3, 12, 48, ... line segments, the 1st shape having 3. Which is the first shape with more than 10,000 line segments?",
+     "a": "The 7th shape",
+     "o": [
+      "The 7th shape",
+      "The 6th shape",
+      "The 8th shape",
+      "The 5th shape"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 12",
+     "q": "(a) Write the number of line segments in the 4th Koch Snowflake shape as 3 times a power of 4, and find it. (b) Why is the number of segments multiplied by 4 at each step?",
+     "a": "(a) 3 x 4 x 4 x 4 = 192 segments. (b) Each line segment is replaced by a 'speed bump' made of 4 smaller segments, so every segment becomes 4.",
+     "s": [
+      [
+       "(a) 3 x 4 x 4 x 4 = 192",
+       1
+      ],
+      [
+       "(b) Each segment is replaced by a speed bump of 4 segments",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 11",
+     "q": "The numbers of lines in the complete graphs K2, K3, K4, ... are the triangular numbers 1, 3, 6, .... In the complete graph K9, one dot is coloured red. (a) How many lines touch the red dot? (b) How many lines do not touch the red dot, and which complete graph do they make?",
+     "a": "(a) The red dot is joined to each of the other 8 dots, so 8 lines touch it. (b) K9 has 1 + 2 + ... + 8 = 36 lines, so 36 - 8 = 28 lines do not touch the red dot; they join the other 8 dots to one another and make K8.",
+     "s": [
+      [
+       "(a) 8 lines",
+       1
+      ],
+      [
+       "(b) 36 - 8 = 28 lines, making K8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 12",
+     "q": "In each Stacked Triangles shape, the big triangle points up. Its top row has 1 small triangle pointing up. Each lower row has one more up-pointing triangle than the row above, with a down-pointing triangle fitted between every two neighbouring up-pointing ones. Look at the 4th shape, which has 4 rows. (a) How many small triangles point up? (b) How many point down? (c) Name the number sequence each count belongs to, and explain how they add to the total number of small triangles.",
+     "a": "(a) 1 + 2 + 3 + 4 = 10 point up. (b) 0 + 1 + 2 + 3 = 6 point down. (c) 10 and 6 are consecutive triangular numbers (the 4th and 3rd); two consecutive triangular numbers add to a square, so the shape has 10 + 6 = 16 = 4 x 4 small triangles, matching the square numbers.",
+     "s": [
+      [
+       "(a) 10 up-pointing triangles",
+       1
+      ],
+      [
+       "(b) 6 down-pointing triangles",
+       1
+      ],
+      [
+       "(c) Names both as triangular numbers and links 10 + 6 = 16 to the square numbers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 11-12",
+     "q": "Name the number sequence you get when you count: (a) the sides of the Regular Polygons: triangle, quadrilateral, pentagon, hexagon, ... (b) the lines of the Complete Graphs K2, K3, K4, K5, ... (c) the small squares of the Stacked Squares shapes.",
+     "a": "(a) Counting numbers starting at 3: 3, 4, 5, 6, ... (b) Triangular numbers: 1, 3, 6, 10, ... (c) Square numbers: 1, 4, 9, 16, ...",
+     "s": [
+      [
+       "(a) Counting numbers starting at 3",
+       1
+      ],
+      [
+       "(b) Triangular numbers",
+       1
+      ],
+      [
+       "(c) Square numbers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 11",
+     "q": "A district plans roads so that every pair of villages is joined by its own direct road, like the lines of a complete graph. Each road costs Rs 2 crore and the budget is Rs 150 crore.\n(a) How many roads are needed for 6 villages?\n(b) How many roads are needed for 12 villages?\n(c) A 13th village joins the 12. How many new roads are needed, and what is the new total?\n(d) Can all 13 villages be joined within the budget? Show the cost.\n(e) Another plan gives the 12 villages all their direct roads but links the 13th village by only one road, to its nearest village. How many roads does this plan need, does it fit the budget, and how much money is left?",
+     "a": "(a) 15 roads (K6). (b) 66 roads (K12, the 11th triangular number). (c) 12 new roads, one to each village, making 66 + 12 = 78 roads. (d) No: 78 x Rs 2 crore = Rs 156 crore, which is more than Rs 150 crore. (e) 66 + 1 = 67 roads cost 67 x 2 = Rs 134 crore, which fits the budget and leaves Rs 150 - 134 = Rs 16 crore.",
+     "s": [
+      [
+       "(a) 15 roads",
+       1
+      ],
+      [
+       "(b) 66 roads",
+       1
+      ],
+      [
+       "(c) 12 new roads, total 78",
+       1
+      ],
+      [
+       "(d) Rs 156 crore, more than Rs 150 crore, so no",
+       1
+      ],
+      [
+       "(e) 67 roads, Rs 134 crore, within budget with Rs 16 crore left",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 11-12",
+     "q": "Take the 1st shapes of the sequences to be the triangle (Regular Polygons), K2 (Complete Graphs), 1 small square (Stacked Squares) and 1 small triangle (Stacked Triangles). For the 7th shape of each, find: (a) the number of sides of the regular polygon (b) the number of lines in the complete graph (c) the number of small squares and the number of small triangles in the stacked shapes. (d) In going from the 7th to the 8th shape, which count grows the most, and by how much?",
+     "a": "(a) 9 sides (the nonagon; sides are counting numbers from 3). (b) The 7th complete graph is K8, with 28 lines (7th triangular number). (c) 49 small squares and 49 small triangles (7 x 7). (d) The 8th shapes have 10 sides, 36 lines and 64 small squares or triangles, so the stacked shapes grow the most, by 15 (the sides grow by 1 and the lines by 8).",
+     "s": [
+      [
+       "(a) 9 sides",
+       1
+      ],
+      [
+       "(b) 28 lines in K8",
+       1
+      ],
+      [
+       "(c) 49 small squares and 49 small triangles",
+       1
+      ],
+      [
+       "(d) Finds 10, 36, 64 and says the stacked shapes grow most, by 15",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 11",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A park in Pune is building flower beds, each shaped like a different shape of the Regular Polygons sequence (triangle, quadrilateral, pentagon, ...). Every side of a bed gets one fence panel and every corner gets one post. The store has 40 fence panels and 30 posts. The park wants the beds to be consecutive shapes of the sequence.\n(a) How many fence panels does the hexagon bed need?\n(b) How many posts does the hexagon bed need, and why is it the same number?\n(c) How many posts do the triangle, quadrilateral, pentagon, hexagon and heptagon beds need together?\n(d) What is the largest number of beds the park can build, and which consecutive shapes should it choose so that no post is left over? Justify.",
+     "a": "(a) 6 panels. (b) 6 posts; in a closed shape the number of corners equals the number of sides. (c) 3 + 4 + 5 + 6 + 7 = 25 posts. (d) 5 beds: six beds would need at least 3 + 4 + 5 + 6 + 7 + 8 = 33 posts, more than 30. Five consecutive beds from the quadrilateral to the octagon need 4 + 5 + 6 + 7 + 8 = 30 posts (and 30 of the 40 panels), so no post is left over.",
+     "s": [
+      [
+       "(a) 6 panels",
+       1
+      ],
+      [
+       "(b) 6 posts, because corners equal sides",
+       1
+      ],
+      [
+       "(c) 25 posts",
+       1
+      ],
+      [
+       "(d) Shows 6 beds need 33 > 30 and chooses quadrilateral to octagon (30 posts)",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

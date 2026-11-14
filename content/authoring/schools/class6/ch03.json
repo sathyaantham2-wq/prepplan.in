@@ -1,0 +1,1317 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH6",
+  "class": 6,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 3,
+  "name": "Number Play"
+ },
+ "source_code": "fegp103",
+ "concepts": [
+  {
+   "code": "C6M-3.1",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 56",
+     "q": "Children of different heights stand in a line, and each child says how many of the children standing next to them are taller. What does the tallest child in the line always say?",
+     "a": "0",
+     "o": [
+      "0",
+      "1",
+      "2",
+      "1 or 2, depending on where the child stands"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 56",
+     "q": "Four friends of heights 150 cm, 136 cm, 143 cm and 129 cm stand in a line in this order. Each says the number of taller neighbours they have. What do they say, from left to right?",
+     "a": "0, 2, 0, 1",
+     "o": [
+      "0, 2, 0, 1",
+      "1, 0, 2, 0",
+      "0, 2, 1, 3",
+      "0, 2, 0, 2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 56",
+     "q": "Assertion (A): In the taller-neighbours game, a child standing at either end of the line can never say '2'.\nReason (R): A child standing at an end of the line has only one child standing next to them.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 56",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: Five children, all of different heights, can stand in a line so that every one of them says '1' in the taller-neighbours game. Give the reason or the correct statement.",
+     "a": "False. The tallest of the five has no taller child next to them, so the tallest child always says 0. So the calls 1, 1, 1, 1, 1 are not possible.",
+     "s": [
+      [
+       "States the verdict: False",
+       1
+      ],
+      [
+       "Gives the reason: the tallest child has no taller neighbour and must say 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 56",
+     "q": "(a) In the taller-neighbours game, what number does each child say? (b) Lata is 140 cm tall and stands between a child of 145 cm and a child of 136 cm. What does Lata say?",
+     "a": "(a) Each child says how many of the children standing next to them (the neighbours) are taller than them. (b) Lata says 1, because only the 145 cm child next to her is taller.",
+     "s": [
+      [
+       "(a) States that each child says the number of taller neighbours",
+       1
+      ],
+      [
+       "(b) Says Lata calls 1, as only the 145 cm neighbour is taller",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 56",
+     "tags": [
+      "show_impossible"
+     ],
+     "q": "Five children of different heights play the taller-neighbours game. Show that they can never stand so that their calls, from left to right, are 1, 2, 0, 1, 1.",
+     "a": "The first child says 1. This child has only one neighbour, the second child, so the second child must be taller than the first. The second child says 2, so both neighbours, including the first child, must be taller than the second child. The first child cannot be both shorter and taller than the second child, so these calls are impossible.",
+     "s": [
+      [
+       "Explains that the first child's call 1 means the second child is taller than the first",
+       1
+      ],
+      [
+       "Explains that the second child's call 2 means the first child is taller than the second",
+       1
+      ],
+      [
+       "Concludes that both cannot be true, so the calls are impossible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 55-56",
+     "q": "Six children of heights 121 cm, 126 cm, 133 cm, 138 cm, 144 cm and 150 cm play the taller-neighbours game.\n(a) They stand in the order 133, 150, 121, 144, 126, 138 (in cm). Write the call of each child from left to right.\n(b) The 121 cm child is the shortest. Explain why this child can never say 0, wherever they stand.\n(c) The 150 cm child and the 121 cm child exchange places. Write the new calls from left to right.\n(d) Can the six children stand so that three of them say '2'? Explain.",
+     "a": "(a) 1, 0, 2, 0, 2, 0. (b) Every child next to the shortest child is taller, and every child has at least one neighbour, so the shortest child says 1 or 2, never 0. (c) The order becomes 133, 121, 150, 144, 126, 138 and the calls are 0, 2, 0, 1, 2, 0. (d) No. A child who says 2 must stand in one of the four middle places, because an end child has only one neighbour. Two children standing next to each other cannot both say 2, since each would have to be taller than the other. Among the four middle places, at most two can be chosen with no two side by side, so at most two children can say 2.",
+     "s": [
+      [
+       "(a) Writes the calls 1, 0, 2, 0, 2, 0",
+       1
+      ],
+      [
+       "(b) Explains that all neighbours of the shortest child are taller, so the call is 1 or 2",
+       1
+      ],
+      [
+       "(c) Writes the new order and the calls 0, 2, 0, 1, 2, 0",
+       1
+      ],
+      [
+       "(d) States that a child saying 2 stands in a middle place and two such children cannot be neighbours",
+       1
+      ],
+      [
+       "(d) Concludes that at most two of the four middle places can say 2, so three is not possible",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 57",
+     "q": "A cell in a row is a supercell if its number is greater than the numbers in the cells next to it. Which numbers are supercells in this row?\n415 | 382 | 640 | 518 | 702 | 699 | 233",
+     "a": "415, 640 and 702",
+     "o": [
+      "415, 640 and 702",
+      "640 and 702 only",
+      "702 only",
+      "415, 640, 699 and 702"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 58",
+     "q": "In a grid, the centre cell has four neighbours: 4,316 above it, 4,613 below it, 3,641 to its left and 4,136 to its right. Which number, written in the centre cell, makes it a supercell?",
+     "a": "4,631",
+     "o": [
+      "4,631",
+      "4,603",
+      "4,316",
+      "4,163"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "p. 57",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each row of numbers in Column I with the number of supercells it has in Column II.\nColumn I: I. 10 | 20 | 30 | 40  II. 50 | 10 | 60 | 20  III. 30 | 10 | 40 | 20 | 50  IV. 8 | 3 | 9 | 1 | 6 | 2 | 5\nColumn II: A. 3  B. 1  C. 4  D. 2",
+     "a": "I-B, II-D, III-A, IV-C",
+     "o": [
+      "I-B, II-D, III-A, IV-C",
+      "I-D, II-B, III-A, IV-C",
+      "I-B, II-D, III-C, IV-A",
+      "I-B, II-A, III-D, IV-C"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 58",
+     "q": "(a) In a grid with several rows, when is a cell a supercell? (b) A corner cell holds 6,402, and its only two neighbours hold 6,240 and 4,620. Is it a supercell? Give the reason.",
+     "a": "(a) A cell is a supercell when its number is greater than the numbers in all its neighbouring cells, the cells immediately to its left, right, top and bottom. (b) Yes. 6,402 is greater than both 6,240 and 4,620, its only neighbours.",
+     "s": [
+      [
+       "(a) States that the number must be greater than every neighbour to the left, right, top and bottom",
+       1
+      ],
+      [
+       "(b) Says yes, since 6,402 is greater than 6,240 and 4,620",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 58",
+     "q": "A grid has 2 rows and 3 columns. Fill it with the six numbers 310, 320, 330, 340, 350 and 360 (each once) so that exactly 3 cells are supercells. Then explain why no filling of this grid can have 4 supercells.",
+     "a": "One filling: top row 360, 310, 350; bottom row 320, 340, 330. The supercells are 360 (neighbours 310, 320), 350 (neighbours 310, 330) and 340 (neighbours 320, 330, 310). Four is impossible: the two cells in each column are neighbours, and two neighbouring cells cannot both be supercells, because each would have to be greater than the other. So each of the 3 columns has at most one supercell, giving at most 3.",
+     "s": [
+      [
+       "Gives a filling that uses each number once",
+       1
+      ],
+      [
+       "Shows that exactly 3 cells in the filling are supercells",
+       1
+      ],
+      [
+       "Explains that two neighbouring cells cannot both be supercells, so each column has at most one and 4 is impossible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 58",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A housing society in Nagpur has six flats on two floors. On the upper floor, flats A, B and C used 412, 389 and 405 units of electricity last month, in this order from left to right. Directly below them, flats D, E and F used 440, 471 and 362 units. Two flats are neighbours if they are side by side on a floor or one is directly above the other. The society sends a 'high use' notice to each flat whose units are greater than those of all its neighbours.\n(a) Name the neighbours of flat E and their units.\n(b) Which flats get a notice last month?\n(c) This month flat B uses 480 units and the others stay the same. Which flats get a notice now?\n(d) The secretary wants the notices to go to the two flats that used the most units. Did the notice rule do this last month? Justify with the numbers.",
+     "a": "(a) Flat E's neighbours are D (440), F (362) and B (389), the flat above it. (b) Flats C (405, more than 389 and 362) and E (471, more than 440, 362 and 389). (c) Only flat B, since 480 is more than 412, 405 and 471; A, C and E now each have a bigger neighbour in B, and D still has the bigger neighbour E. (d) No. The two biggest users last month were E (471) and D (440), but the rule picked E and C (405). Flat D was missed because its neighbour E used more, even though D used more than C.",
+     "s": [
+      [
+       "(a) Names D, F and B as E's neighbours with their units",
+       1
+      ],
+      [
+       "(b) Names flats C and E",
+       1
+      ],
+      [
+       "(c) Names flat B only",
+       1
+      ],
+      [
+       "(d) Compares the top two users (E, D) with the flats chosen (E, C) and concludes the rule did not pick them",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 58",
+     "q": "A 3 by 3 grid holds these numbers, row by row:\nRow 1: 2,815 | 5,128 | 1,582\nRow 2: 8,251 | 1,258 | 5,821\nRow 3: 2,158 | 8,512 | 1,825\nEach cell's neighbours are the cells immediately to its left, right, top and bottom.\n(a) List all the supercells.\n(b) Is the centre cell a supercell? Give the reason.\n(c) Rearrange the digits of the centre number 1,258 so that the centre becomes a supercell. Which arrangement works?\n(d) After this change, list all the supercells of the grid.",
+     "a": "(a) 5,128, 8,251, 5,821 and 8,512, the four middle-edge cells. (b) No: 1,258 is smaller than all four of its neighbours 5,128, 8,251, 5,821 and 8,512. (c) The centre must be greater than its largest neighbour, 8,512. Of all the numbers made from 1, 2, 5 and 8, only 8,521 is greater than 8,512, so the arrangement is 8,521. (d) Only 8,521 is a supercell now: each middle-edge number has the centre 8,521 as a bigger neighbour, and each corner number is smaller than its neighbours, as before.",
+     "s": [
+      [
+       "(a) Lists 5,128, 8,251, 5,821 and 8,512",
+       1
+      ],
+      [
+       "(b) Says no, as 1,258 is smaller than its neighbours",
+       1
+      ],
+      [
+       "(c) Finds 8,521 as the only arrangement greater than 8,512",
+       1
+      ],
+      [
+       "(d) Finds that 8,521 is now the only supercell, with the reason",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.3",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 60",
+     "q": "How many 4-digit numbers are there?",
+     "a": "9,000",
+     "o": [
+      "9,000",
+      "9,999",
+      "8,999",
+      "10,000"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 59",
+     "q": "A number line is marked at 7,000, 8,000, 9,000 and 10,000 with equal gaps. Between which two marks should 8,905 be placed?",
+     "a": "Between 8,000 and 9,000",
+     "o": [
+      "Between 8,000 and 9,000",
+      "Between 9,000 and 10,000",
+      "Between 7,000 and 8,000",
+      "Exactly on the mark 9,000"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 60",
+     "q": "Consider the following statements about digit sums.\nI. The digit sum of 40,830 is 16.\nII. The smallest number whose digit sum is 20 is 299.\nIII. The largest 4-digit number whose digit sum is 10 is 9,100.\nWhich of the statements are correct?",
+     "a": "II and III only",
+     "o": [
+      "II and III only",
+      "I and II only",
+      "I and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 60",
+     "q": "(a) Find the digit sum of 70,526. (b) Write a 3-digit number that has the same digit sum.",
+     "a": "(a) 7 + 0 + 5 + 2 + 6 = 20. (b) Any 3-digit number whose digits add up to 20, for example 875 or 992.",
+     "s": [
+      [
+       "(a) Finds the digit sum 20",
+       1
+      ],
+      [
+       "(b) Writes a 3-digit number whose digits add up to 20, such as 875",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 59-60",
+     "q": "A number line has equal gaps. Five marks on it, in order, read 63,480, 63,490, ____, ____, 63,520.\n(a) What is the gap between two neighbouring marks?\n(b) Write the two missing numbers.\n(c) Between which two marks does 63,497 lie?",
+     "a": "(a) The gap is 63,490 − 63,480 = 10. (b) 63,500 and 63,510. (c) Between 63,490 and 63,500.",
+     "s": [
+      [
+       "(a) Finds the gap of 10",
+       1
+      ],
+      [
+       "(b) Writes 63,500 and 63,510",
+       1
+      ],
+      [
+       "(c) Places 63,497 between 63,490 and 63,500",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 60",
+     "q": "A thick diary has its pages numbered from 1 to 999.\n(a) How many pages have 1-digit page numbers?\n(b) How many pages have 2-digit page numbers?\n(c) How many pages have 3-digit page numbers?\n(d) How many times as many 3-digit page numbers are there as 2-digit page numbers?\n(e) What is the digit sum of the last page number?",
+     "a": "(a) 9 (pages 1 to 9). (b) 90 (pages 10 to 99). (c) 900 (pages 100 to 999). (d) 10 times, since 900 = 10 × 90. (e) 9 + 9 + 9 = 27.",
+     "s": [
+      [
+       "(a) Gives 9 pages",
+       1
+      ],
+      [
+       "(b) Gives 90 pages",
+       1
+      ],
+      [
+       "(c) Gives 900 pages",
+       1
+      ],
+      [
+       "(d) States 10 times",
+       1
+      ],
+      [
+       "(e) Finds the digit sum 27",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 60",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school in Bhopal has 900 lockers numbered 100 to 999. To make the corridor colourful, the principal decides that every locker whose number has a digit sum of 9 will be painted blue; all other lockers stay grey. The paint shop has sent enough blue paint for exactly 40 lockers.\n(a) Will locker 504 be painted blue? Show why.\n(b) Which is the smallest locker number that will be painted blue?\n(c) How many blue lockers are there from 100 to 199?\n(d) Is the blue paint enough for all the blue lockers? Justify by finding how many blue lockers there are.",
+     "a": "(a) Yes, 5 + 0 + 4 = 9. (b) 108, since 100 to 107 have digit sums 1 to 8. (c) The other two digits must add up to 8: 108, 117, 126, 135, 144, 153, 162, 171, 180, so 9 lockers. (d) No. In the 200s the other two digits add up to 7 (8 lockers), in the 300s to 6 (7 lockers), and so on down to the 900s (only 900). Total = 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 45 blue lockers, which is 5 more than the 40 the paint covers.",
+     "s": [
+      [
+       "(a) Finds the digit sum 9 and says yes",
+       1
+      ],
+      [
+       "(b) Gives 108",
+       1
+      ],
+      [
+       "(c) Finds 9 lockers from 100 to 199",
+       1
+      ],
+      [
+       "(d) Finds 45 blue lockers in all and decides the paint for 40 is not enough",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.4",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 61",
+     "q": "Which of these numbers is a palindrome?",
+     "a": "48,084",
+     "o": [
+      "48,084",
+      "48,804",
+      "40,884",
+      "84,840"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 61-62",
+     "q": "Gopal starts with 59, adds it to its reverse, and repeats the reverse-and-add on each new sum. After how many additions does he first get a palindrome?",
+     "a": "3",
+     "o": [
+      "3",
+      "2",
+      "4",
+      "1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 61",
+     "q": "Assertion (A): Every odd palindrome begins with an odd digit.\nReason (R): A palindrome reads the same from left to right and from right to left, so its first digit and last digit are the same.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 61",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: 7,007 is a palindrome. Give the reason.",
+     "a": "True. Read from right to left, its digits are 7, 0, 0, 7, the same as from left to right.",
+     "s": [
+      [
+       "States the verdict: True",
+       1
+      ],
+      [
+       "Gives the reason: the digits read 7, 0, 0, 7 both ways",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 61",
+     "q": "(a) Do one round of reverse-and-add starting with 26, showing the addition. (b) Should you stop after this round? Give the reason.",
+     "a": "(a) 26 + 62 = 88. (b) Yes. 88 reads the same from both ends, so it is a palindrome and the process stops.",
+     "s": [
+      [
+       "(a) Shows 26 + 62 = 88",
+       1
+      ],
+      [
+       "(b) Says to stop because 88 is a palindrome",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 61",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Ravi claims: 'If I add 101 to any 3-digit palindrome, I always get another palindrome.' Test his claim with 343 and 909, and say whether he is right.",
+     "a": "343 + 101 = 444, a palindrome. 909 + 101 = 1,010, which is not a palindrome. So Ravi is only partly right: the claim works when the first digit is less than 9 (the first and last digits each go up by 1), but fails for palindromes beginning with 9, such as 909.",
+     "s": [
+      [
+       "Shows 343 + 101 = 444 is a palindrome",
+       1
+      ],
+      [
+       "Shows 909 + 101 = 1,010 is not a palindrome",
+       1
+      ],
+      [
+       "Concludes the claim is only sometimes true, failing when the first digit is 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 61-62",
+     "q": "Use the reverse-and-add process (add the number to its reverse, and repeat until you get a palindrome).\n(a) Start with 38. Show the work and name the palindrome.\n(b) Start with 49. Show each addition and say how many additions it takes.\n(c) Start with 94. Write the first sum.\n(d) Explain, without doing more additions, why 94 ends at the same palindrome as 49.\n(e) Name one other 2-digit number, not a palindrome, that will also end at 484 after exactly two additions.",
+     "a": "(a) 38 + 83 = 121, a palindrome after one addition. (b) 49 + 94 = 143; 143 + 341 = 484, so 2 additions. (c) 94 + 49 = 143. (d) The first sum for 94 is 143, the same as for 49, so every step after that is the same and it also ends at 484. (e) Any of 58, 67, 76 or 85: for each, the first sum is 143 (for example 58 + 85 = 143), and 143 + 341 = 484.",
+     "s": [
+      [
+       "(a) Shows 38 + 83 = 121",
+       1
+      ],
+      [
+       "(b) Shows 143 and then 484, and says 2 additions",
+       1
+      ],
+      [
+       "(c) Writes the first sum 143",
+       1
+      ],
+      [
+       "(d) Explains that the same first sum leads to the same steps and the same palindrome",
+       1
+      ],
+      [
+       "(e) Names one of 58, 67, 76 or 85 and checks its first sum is 143",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 63",
+     "q": "What is the smallest 4-digit number that can be made using each of the digits 5, 0, 9 and 2 exactly once?",
+     "a": "2,059",
+     "o": [
+      "2,059",
+      "0,259",
+      "2,095",
+      "2,509"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 63",
+     "q": "Which number is called the Kaprekar constant?",
+     "a": "6174",
+     "o": [
+      "6174",
+      "495",
+      "1949",
+      "4176"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 64-65",
+     "tags": [
+      "match"
+     ],
+     "q": "On a 12-hour clock, a time is palindromic if its digits, read without the colon, are the same from both ends (like 4:44 or 12:21). Match each time in Column I with the first palindromic time after it in Column II.\nColumn I: I. 2:05  II. 6:40  III. 9:52  IV. 11:20\nColumn II: A. 9:59  B. 12:21  C. 2:12  D. 6:46",
+     "a": "I-C, II-D, III-A, IV-B",
+     "o": [
+      "I-C, II-D, III-A, IV-B",
+      "I-D, II-C, III-A, IV-B",
+      "I-C, II-D, III-B, IV-A",
+      "I-A, II-D, III-C, IV-B"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 64",
+     "q": "(a) Write the largest and the smallest 4-digit numbers that can be made using each of the digits 8, 1, 4 and 6 once. (b) Find their difference.",
+     "a": "(a) Largest 8,641; smallest 1,468. (b) 8,641 − 1,468 = 7,173.",
+     "s": [
+      [
+       "(a) Writes 8,641 and 1,468",
+       1
+      ],
+      [
+       "(b) Finds the difference 7,173",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 63",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Jai says: 'A number with a repeated digit, like 9,195, always needs more rounds of Kaprekar's routine to reach 6174 than a number with four different digits, like 7,251.' (One round: largest number from the digits minus smallest number from the digits.) Test his claim with these two numbers.",
+     "a": "9,195: 9,951 − 1,599 = 8,352; 8,532 − 2,358 = 6,174. So 2 rounds. 7,251: 7,521 − 1,257 = 6,264; 6,642 − 2,466 = 4,176; 7,641 − 1,467 = 6,174. So 3 rounds. The number with a repeated digit took fewer rounds, so Jai's claim is wrong.",
+     "s": [
+      [
+       "Shows 9,195 reaches 6174 in 2 rounds",
+       1
+      ],
+      [
+       "Shows 7,251 reaches 6174 in 3 rounds",
+       1
+      ],
+      [
+       "Concludes that the claim is wrong, since 9,195 took fewer rounds",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 64",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school maths club in Pune sets up a 'Pattern Corner' for Number Day. A time on a 12-hour clock is called palindromic if its digits, read without the colon, are the same from both ends, like 4:44 or 12:21. A date written as DD/MM/YYYY is a mirror date if its eight digits read the same from both ends, like 11/02/2011. The club's event starts at 9:15 in the morning.\n(a) Is 7:17 a palindromic time? Give the reason.\n(b) What is the first palindromic time after 9:15?\n(c) Is 20/02/2002 a mirror date? Give the reason.\n(d) Write the mirror date that falls in the year 2030.",
+     "a": "(a) Yes, its digits 7, 1, 7 read the same from both ends. (b) 9:19. (c) Yes, its digits 2, 0, 0, 2, 2, 0, 0, 2 read the same from both ends. (d) The digits of 2030 reversed are 0, 3, 0, 2, so the date is 03/02/2030.",
+     "s": [
+      [
+       "(a) Says yes, as 7-1-7 reads the same both ways",
+       1
+      ],
+      [
+       "(b) Gives 9:19",
+       1
+      ],
+      [
+       "(c) Says yes, as 20022002 reads the same both ways",
+       1
+      ],
+      [
+       "(d) Writes 03/02/2030",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 63",
+     "q": "The chapter asks you to carry out Kaprekar's steps on 3-digit numbers: make the largest number from the digits, make the smallest, and subtract. Start with 815.\n(a) Do the first round.\n(b) Do the second round on your answer.\n(c) Do the third round.\n(d) Do one more round and say what you notice.",
+     "a": "(a) 851 − 158 = 693. (b) 963 − 369 = 594. (c) 954 − 459 = 495. (d) 954 − 459 = 495 again, so the number 495 starts repeating.",
+     "s": [
+      [
+       "(a) Shows 851 − 158 = 693",
+       1
+      ],
+      [
+       "(b) Shows 963 − 369 = 594",
+       1
+      ],
+      [
+       "(c) Shows 954 − 459 = 495",
+       1
+      ],
+      [
+       "(d) Shows 495 gives 495 again and states that 495 repeats",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.6",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 65",
+     "q": "Only the numbers 700 and 2,500 may be used, each as many times as needed, and only by adding. Which of these makes 6,400?",
+     "a": "2,500 + 2,500 + 700 + 700",
+     "o": [
+      "2,500 + 2,500 + 700 + 700",
+      "2,500 + 2,500 + 700",
+      "2,500 + 700 + 700 + 700 + 700",
+      "2,500 + 2,500 + 700 + 700 + 700"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 66-67",
+     "q": "Which of these statements is never true?",
+     "a": "A 4-digit number plus a 4-digit number gives a 6-digit number.",
+     "o": [
+      "A 4-digit number plus a 4-digit number gives a 6-digit number.",
+      "A 5-digit number minus a 4-digit number gives a 4-digit number.",
+      "A 3-digit number plus a 3-digit number gives a 4-digit number.",
+      "A 5-digit number plus a 5-digit number gives a 6-digit number."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 67-68",
+     "q": "A display has 5 rows with 6 numbers in each row, and every number is 25.\nConsider the following statements.\nI. The total of the display is 750.\nII. The total of each row is 150.\nIII. The total is 11 × 25, because there are 5 rows and 6 numbers in each row.\nWhich of the statements are correct?",
+     "a": "I and II only",
+     "o": [
+      "I and II only",
+      "II and III only",
+      "I and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 65-66",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: Using only the numbers 300 and 1,100, each as many times as you like and only by adding, you can make exactly 2,000. Give the reason.",
+     "a": "True. 1,100 + 300 + 300 + 300 = 2,000.",
+     "s": [
+      [
+       "States the verdict: True",
+       1
+      ],
+      [
+       "Shows a correct sum such as 1,100 + 300 + 300 + 300 = 2,000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 67-68",
+     "q": "Find each total quickly by grouping, not by adding one by one.\n(a) 4 rows with 7 numbers in each row, every number 15.\n(b) A square of 6 rows and 6 columns, every number 50.\n(c) The two displays in (a) and (b) together.",
+     "a": "(a) 4 × 7 = 28 numbers, 28 × 15 = 420. (b) 6 × 6 = 36 numbers, 36 × 50 = 1,800. (c) 420 + 1,800 = 2,220.",
+     "s": [
+      [
+       "(a) Finds 420",
+       1
+      ],
+      [
+       "(b) Finds 1,800",
+       1
+      ],
+      [
+       "(c) Finds 2,220",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 66",
+     "q": "You may use the numbers 20,000, 3,500 and 900, each as many times as you like, with addition and subtraction.\n(a) Make 27,000.\n(b) Make 19,100.\n(c) Make 2,600.\n(d) Rehan says 100 cannot be made, because every number given is bigger than 100. Is he right? Show your working.\n(e) Explain why 150 can never be made from these numbers.",
+     "a": "(a) 20,000 + 3,500 + 3,500 = 27,000. (b) 20,000 − 900 = 19,100. (c) 3,500 − 900 = 2,600. (d) No. 900 + 900 + 900 + 900 − 3,500 = 3,600 − 3,500 = 100. (e) Every number given ends in 00, and adding or subtracting numbers that end in 00 always gives a number ending in 00. 150 ends in 50, so it can never be made.",
+     "s": [
+      [
+       "(a) Makes 27,000 correctly",
+       1
+      ],
+      [
+       "(b) Makes 19,100 correctly",
+       1
+      ],
+      [
+       "(c) Makes 2,600 correctly",
+       1
+      ],
+      [
+       "(d) Says no and shows 900 × 4 − 3,500 = 100",
+       1
+      ],
+      [
+       "(e) Explains that all results end in 00, so 150 is impossible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 67-68",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A tile shop in Jaipur is making a square wall display of 5 rows with 5 tiles in each row. The 3 rows by 3 columns of tiles in the centre are blue tiles costing ₹60 each. All the other tiles, forming a border around them, are white tiles costing ₹40 each. The shop owner has ₹1,250 to spend on the display.\n(a) How many blue tiles are there?\n(b) How many white tiles are there?\n(c) Find the total cost of the display by grouping equal prices.\n(d) A customer asks for the colours to be swapped: ₹60 tiles in the border and ₹40 tiles in the centre. Can the owner afford this design? Justify.",
+     "a": "(a) 3 × 3 = 9 blue tiles. (b) 5 × 5 = 25 tiles in all, so 25 − 9 = 16 white tiles. (c) 9 × ₹60 + 16 × ₹40 = ₹540 + ₹640 = ₹1,180. (d) No. The swapped design costs 16 × ₹60 + 9 × ₹40 = ₹960 + ₹360 = ₹1,320, which is ₹70 more than ₹1,250. (The first design, at ₹1,180, fits the budget.)",
+     "s": [
+      [
+       "(a) Finds 9 blue tiles",
+       1
+      ],
+      [
+       "(b) Finds 16 white tiles",
+       1
+      ],
+      [
+       "(c) Finds ₹1,180",
+       1
+      ],
+      [
+       "(d) Finds ₹1,320 and decides it is more than ₹1,250",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.7",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 69",
+     "q": "In a Collatz sequence (if a number is even, take half of it; if it is odd, multiply it by 3 and add 1), which number comes right after 33?",
+     "a": "100",
+     "o": [
+      "100",
+      "99",
+      "66",
+      "16"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 68-69",
+     "q": "Assertion (A): The Collatz sequence that starts at 6 passes through 10.\nReason (R): In the Collatz rule, an even number is multiplied by 3 and then 1 is added.",
+     "a": "A is true but R is false.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 69",
+     "q": "(a) State the rule used to make a Collatz sequence. (b) Write the next three numbers after 20 in a Collatz sequence.",
+     "a": "(a) If the number is even, take half of it; if it is odd, multiply it by 3 and add 1; then repeat with the new number. (b) 10, 5, 16.",
+     "s": [
+      [
+       "(a) States both parts of the rule: half for even, 3 times plus 1 for odd",
+       1
+      ],
+      [
+       "(b) Writes 10, 5, 16",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 68-69",
+     "q": "The Collatz sequence starting at 13 is 13, 40, 20, 10, 5, 16, 8, 4, 2, 1. Show that the Collatz sequence starting at 11 passes through 13, and use this to find how many steps the sequence from 11 takes to reach 1, without writing the end of it again.",
+     "a": "From 11: 11, 34, 17, 52, 26, 13, so 11 reaches 13 after 5 steps. The sequence from 13 takes 9 steps to reach 1 (13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1). After reaching 13, the sequence from 11 follows exactly the same steps, so it takes 5 + 9 = 14 steps.",
+     "s": [
+      [
+       "Writes 11, 34, 17, 52, 26, 13, showing 5 steps to 13",
+       1
+      ],
+      [
+       "Counts 9 steps from 13 to 1",
+       1
+      ],
+      [
+       "Explains the rest is the same and finds 5 + 9 = 14 steps",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 69",
+     "q": "Meghna starts a Collatz sequence at 30, using the rule: if the number is even, take half of it; if it is odd, multiply it by 3 and add 1.\n(a) Write the first four numbers of her sequence, starting with 30.\n(b) Continue the sequence until it reaches 1.\n(c) How many steps does it take to reach 1?\n(d) What is the largest number in her sequence?",
+     "a": "(a) 30, 15, 46, 23. (b) 30, 15, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1. (c) 18 steps. (d) 160.",
+     "s": [
+      [
+       "(a) Writes 30, 15, 46, 23",
+       1
+      ],
+      [
+       "(b) Continues correctly to 1",
+       1
+      ],
+      [
+       "(c) Counts 18 steps",
+       1
+      ],
+      [
+       "(d) Gives 160 as the largest number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 68-69",
+     "q": "Use the Collatz rule: if a number is even, take half of it; if it is odd, multiply it by 3 and add 1.\n(a) Write the Collatz sequence that starts at 18.\n(b) How many steps does it take to reach 1?\n(c) What is the largest number in this sequence?\n(d) Without writing a new sequence, find how many steps the sequence from 36 takes. Explain.\n(e) Without writing a new sequence, find how many steps the sequence from 9 takes. Explain.",
+     "a": "(a) 18, 9, 28, 14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1. (b) 20 steps. (c) 52. (d) 36 is even, so its first step gives 18; after that it follows the sequence from 18. So it takes 1 + 20 = 21 steps. (e) 9 is the second number in the sequence from 18, so the sequence from 9 is the same sequence without its first step: 20 − 1 = 19 steps.",
+     "s": [
+      [
+       "(a) Writes the sequence from 18 correctly to 1",
+       1
+      ],
+      [
+       "(b) Counts 20 steps",
+       1
+      ],
+      [
+       "(c) Gives 52",
+       1
+      ],
+      [
+       "(d) Uses 36 → 18 to get 21 steps",
+       1
+      ],
+      [
+       "(e) Uses 18 → 9 to get 19 steps",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.8",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 69",
+     "q": "For which of these is an estimate enough, so that an exact count is not needed?",
+     "a": "The number of leaves on a neem tree in the school garden",
+     "o": [
+      "The number of leaves on a neem tree in the school garden",
+      "The number of answer sheets to collect from a class after an exam",
+      "The marks a student scored in a maths test",
+      "The change a shopkeeper must give back to a customer"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 69",
+     "q": "A village school has Classes 1 to 8. Each class has 2 sections, and a section has about 27 children. Which is the best estimate of the number of children in the school?",
+     "a": "About 430",
+     "o": [
+      "About 430",
+      "About 220",
+      "About 54",
+      "About 860"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 70",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or false: If you take about 18 breaths in a minute, you take more than 10,000 breaths in an hour. Give the reason or the correct statement.",
+     "a": "False. An hour has 60 minutes, so you take about 18 × 60 = 1,080 breaths in an hour, which is about one thousand, far less than 10,000.",
+     "s": [
+      [
+       "States the verdict: False",
+       1
+      ],
+      [
+       "Shows 18 × 60 = 1,080, about a thousand breaths in an hour",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 70-71",
+     "q": "A mobile phone shop sells about 45 phones a day and is open 6 days a week. The owner says, 'We sell about 1,500 phones a month.' (a) Estimate the phones sold in a week. (b) Is the owner's monthly estimate reasonable? Justify.",
+     "a": "(a) About 45 × 6 = 270 phones a week. (b) No. A month is about 4 weeks (about 26 working days), so the shop sells about 270 × 4 = 1,080, or about 1,100 to 1,200 phones a month. 1,500 is too high.",
+     "s": [
+      [
+       "(a) Estimates about 270 phones a week",
+       1
+      ],
+      [
+       "(b) Estimates about 1,100 to 1,200 a month and judges 1,500 too high",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 70",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Leena wants to make lemonade for 30 people, one glass each. One lemon is enough for about 2 glasses, lemons cost ₹5 each, and the sugar will cost about ₹50. She estimates the total cost to be ₹100. Do you agree with her? Show your reasoning.",
+     "a": "She needs about 30 ÷ 2 = 15 lemons, costing about 15 × ₹5 = ₹75. With sugar, the total is about ₹75 + ₹50 = ₹125. So ₹100 is a little too low; about ₹125 is a better estimate.",
+     "s": [
+      [
+       "Finds about 15 lemons are needed",
+       1
+      ],
+      [
+       "Finds the cost of about ₹75 + ₹50 = ₹125",
+       1
+      ],
+      [
+       "Judges that ₹100 is too low and gives about ₹125",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 70-72",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A housing colony in Hubballi has 48 flats, with about 4 people living in each flat. Each person uses about 120 litres of water a day. All the water comes from one overhead tank that holds 20,000 litres and is filled once every morning. The committee is told it can add one more tank that holds 5,000 litres.\n(a) Estimate the number of people living in the colony.\n(b) Estimate the water the colony uses in a day.\n(c) Is the present tank enough for one day? Give the reason.\n(d) Will the extra 5,000-litre tank be enough? Judge how safe this plan is.",
+     "a": "(a) About 48 × 4 = 192, roughly 200 people. (b) About 192 × 120 = 23,040 litres, roughly 23,000 to 24,000 litres a day. (c) No. 20,000 litres is about 3,000 to 4,000 litres less than the daily need. (d) Together the tanks hold 25,000 litres, which is just more than the estimated 23,000 to 24,000 litres. So it is enough on a usual day, but the spare is only about 1,000 to 2,000 litres, so on a day of higher use (guests or very hot weather) the water could still run short.",
+     "s": [
+      [
+       "(a) Estimates about 190 to 200 people",
+       1
+      ],
+      [
+       "(b) Estimates about 23,000 to 24,000 litres a day",
+       1
+      ],
+      [
+       "(c) Says the 20,000-litre tank is not enough, with the shortfall",
+       1
+      ],
+      [
+       "(d) Compares 25,000 litres with the need and judges it just enough, with only a small spare",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-3.9",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 71",
+     "q": "In the game called 21, the first player says 1, 2 or 3, and then the players take turns adding to the previous number said. How much may a player add on each turn?",
+     "a": "1, 2 or 3",
+     "o": [
+      "1, 2 or 3",
+      "Any number from 1 to 10",
+      "Any number up to 21",
+      "Only 1 or 2"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 71-73",
+     "q": "Two players start from 0 and take turns adding any number from 1 to 5 to the total. The first player to reach exactly 40 wins.\nConsider the following statements.\nI. The safe numbers the winning player should land on go down from 40 in steps of 6.\nII. The second player can always force a win in this game.\nIII. A player who says 28 can go on to win, whatever the other player does, if they keep playing correctly.\nWhich of the statements are correct?",
+     "a": "I and III only",
+     "o": [
+      "I and III only",
+      "I and II only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 71-73",
+     "q": "Two players start from 0 and take turns adding 1, 2 or 3 to the total; the first player to reach 30 wins.\nAssertion (A): In this game, the second player can always force a win.\nReason (R): In a game where each turn adds 1, 2 or 3, the safe numbers are 4 apart, counting down from the target.",
+     "a": "A is false but R is true.",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 71-72",
+     "q": "Two players start from 0 and take turns adding 1, 2 or 3 to the total. The first player to reach 25 wins. (a) List the safe numbers, counting down from 25 in steps of 4. (b) What should the first player say on the first turn to be sure of winning?",
+     "a": "(a) 25, 21, 17, 13, 9, 5, 1. (b) The first player should say 1, and then always land on the next safe number.",
+     "s": [
+      [
+       "(a) Lists 25, 21, 17, 13, 9, 5, 1",
+       1
+      ],
+      [
+       "(b) Says the first player should say 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 71-73",
+     "q": "Kabir and Lata play a game: starting from 0, they take turns adding any number from 1 to 4, and the first to reach 31 wins. Kabir goes first and says 2.\n(a) List the safe numbers for this game.\n(b) What should Lata say now? Later, Kabir says 9; what should Lata say then?\n(c) Kabir lost the game. What was his first mistake?",
+     "a": "(a) Counting down from 31 in steps of 5: 31, 26, 21, 16, 11, 6, 1. (b) Lata should say 6 (adding 4 to 2), and after Kabir's 9 she should say 11 (adding 2). (c) He should have said 1 on his first turn, since 1 is a safe number; by saying 2 he let Lata land on the safe number 6.",
+     "s": [
+      [
+       "(a) Lists 31, 26, 21, 16, 11, 6, 1",
+       1
+      ],
+      [
+       "(b) Gives Lata's replies 6 and 11",
+       1
+      ],
+      [
+       "(c) Says Kabir should have started with the safe number 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 71-73",
+     "tags": [
+      "case_study"
+     ],
+     "q": "At a school fair in Kochi, a stall runs a token game. A visitor and the stall-keeper start with an empty jar and take turns putting in 1, 2, 3, 4 or 5 tokens. Whoever makes the jar hold exactly 42 tokens wins. The visitor always goes first, and a visitor who wins gets a prize. The stall wants to give prizes only to visitors who do not know the trick.\n(a) How far apart are the safe numbers in this game?\n(b) List the safe numbers.\n(c) If both play correctly, who wins: the visitor or the stall-keeper?\n(d) A helper suggests changing the winning total to 45. Should the stall make this change? Justify.",
+     "a": "(a) 6 apart (one more than the largest move, 5). (b) 42, 36, 30, 24, 18, 12, 6. (c) The stall-keeper. The visitor starts from 0 and cannot put in 6 tokens, so the stall-keeper can always reach the next safe number (6, 12, ... up to 42). (d) No. With 45 the safe numbers are 45, 39, 33, 27, 21, 15, 9, 3, so a visitor who knows the trick starts with 3 tokens and can always win. The stall would then give a prize to every visitor who knows the trick.",
+     "s": [
+      [
+       "(a) States the safe numbers are 6 apart",
+       1
+      ],
+      [
+       "(b) Lists 42, 36, 30, 24, 18, 12, 6",
+       1
+      ],
+      [
+       "(c) Says the stall-keeper wins, with the reason",
+       1
+      ],
+      [
+       "(d) Finds the safe numbers for 45, sees the visitor can start on 3 and win, and decides not to change",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

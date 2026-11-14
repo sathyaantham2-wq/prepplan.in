@@ -1,0 +1,1315 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH8",
+  "class": 8,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 5,
+  "name": "Tales by Dots and Lines"
+ },
+ "source_code": "hegp205",
+ "concepts": [
+  {
+   "code": "C8M-5.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 105",
+     "q": "When a value smaller than the mean is included in a data set, what happens to the mean?",
+     "a": "The mean decreases.",
+     "o": [
+      "The mean decreases.",
+      "The mean increases.",
+      "The mean stays the same.",
+      "The mean becomes equal to the new value."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 104",
+     "q": "The data 3, 4, 8 has mean 5. Which statement explains why 5 is the 'centre' of this data?",
+     "a": "The total distance of 3 and 4 below 5 (2 + 1 = 3) equals the distance of 8 above 5 (3).",
+     "o": [
+      "The total distance of 3 and 4 below 5 equals the distance of 8 above 5.",
+      "5 is exactly halfway between the smallest value 3 and the largest value 8.",
+      "5 is the middle value when the three values are sorted.",
+      "There are as many values below 5 as there are above 5."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "p. 105",
+     "tags": [
+      "match"
+     ],
+     "q": "The data 2, 6, 10, 14, 18 has mean 10. Match each change in Column A with the new mean in Column B. Column A: 1. Include the value 10  2. Include the value 4  3. Remove the value 2  4. Remove the value 18. Column B: P. 8  Q. 9  R. 10  S. 12",
+     "a": "1-R, 2-Q, 3-S, 4-P (including 10 keeps the mean 10; including 4 gives 54/6 = 9; removing 2 gives 48/4 = 12; removing 18 gives 32/4 = 8).",
+     "o": [
+      "1-R, 2-Q, 3-S, 4-P",
+      "1-R, 2-S, 3-Q, 4-P",
+      "1-R, 2-Q, 3-P, 4-S",
+      "1-Q, 2-R, 3-S, 4-P"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 109",
+     "q": "Five friends read 12, 15, 18, 22 and 30 pages of a storybook on Sunday, so the median is 18 pages. A sixth friend, who read 25 pages, is added to the list. What is the new median?",
+     "a": "20 pages: the sorted list 12, 15, 18, 22, 25, 30 has middle values 18 and 22, whose average is 20.",
+     "o": [
+      "20 pages",
+      "18 pages",
+      "21.5 pages",
+      "22 pages"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 105",
+     "q": "(a) Find the mean of 7, 11 and 12. (b) The value 14 is now included. Without working out the new mean, say whether the mean goes up or down, and give the reason.",
+     "a": "(a) (7 + 11 + 12)/3 = 30/3 = 10. (b) The mean goes up, because 14 is greater than the old mean 10. (Check: 44/4 = 11.)",
+     "s": [
+      [
+       "Finds the mean as 30/3 = 10",
+       1
+      ],
+      [
+       "Says the mean goes up because 14 is greater than the mean 10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 104",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: The mean of a data set is always exactly halfway between its smallest and largest values. Give a reason.",
+     "a": "False. The mean is the point where the total distance of the values below it equals the total distance of the values above it; it is not always the midpoint of the extremes. For 2, 3, 10 the midpoint of 2 and 10 is 6, but the mean is 15/3 = 5.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Explains the mean balances total distances, with a counter-example such as 2, 3, 10 (midpoint 6, mean 5)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 104-105",
+     "q": "Assertion (A): Including the value 12 in the data 2, 9, 13 raises the mean. Reason (R): The mean is the point where the total distance of the values below it equals the total distance of the values above it.",
+     "a": "Both A and R are true, and R is the correct explanation of A. The old mean is 24/3 = 8. The value 12 lies 4 above 8, so the distances above now outweigh those below and the balancing point moves up (new mean 36/4 = 9).",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 106",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Kiran says: 'If I include one value above the mean and one value below the mean, the mean will not change.' The data 4, 7, 10 has mean 7. (a) Include the values 12 and 1 together and find the new mean. (b) Is Kiran's claim always right? (c) State the condition that keeps the mean at 7, and give the value that should go with 12 so that the mean stays 7.",
+     "a": "(a) (4 + 7 + 10 + 12 + 1)/5 = 34/5 = 6.8. (b) No. His claim is only partly right: one value above and one below can leave the mean unchanged, but here the mean fell from 7 to 6.8. (c) The value above must be as far above 7 as the value below is below 7. 12 is 5 above 7, so the other value must be 5 below, that is 2. Check: (4 + 7 + 10 + 12 + 2)/5 = 35/5 = 7.",
+     "s": [
+      [
+       "Finds the new mean 34/5 = 6.8",
+       1
+      ],
+      [
+       "Concludes the claim is not always right (only partly right)",
+       1
+      ],
+      [
+       "States the equal-distance condition and gives 2 to go with 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 105-109",
+     "q": "In a 20-mark test, six students scored 8, 11, 12, 14, 15 and 18. Two students who were absent took the test later and scored 9 and 19. (a) Find the mean and the median of the first six marks. (b) Find the mean of all eight marks. (c) Find the median of all eight marks. (d) The mean changed but the median did not. Explain both, using how far 9 and 19 are from the old mean and where they fall in the sorted list.",
+     "a": "(a) Sum 78, mean 78/6 = 13; median (12 + 14)/2 = 13. (b) Sum 78 + 9 + 19 = 106, mean 106/8 = 13.25. (c) Sorted: 8, 9, 11, 12, 14, 15, 18, 19; median (12 + 14)/2 = 13. (d) 19 is 6 above the old mean and 9 is only 4 below it, so the distances above outweigh those below and the mean rises (by 2/8 = 0.25). For the median, one new value falls below the middle and one above it, so the two middle values are still 12 and 14 and the median stays 13.",
+     "s": [
+      [
+       "Finds the mean 13 and the median 13 of the six marks",
+       1
+      ],
+      [
+       "Finds the new mean 106/8 = 13.25",
+       1
+      ],
+      [
+       "Sorts the eight marks and finds the median 13",
+       1
+      ],
+      [
+       "Explains the mean rises because 19 is farther above than 9 is below, and the median stays because one value joins each side",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 105-106",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A village milk cooperative collects milk from five farmers. On one day they poured 18, 22, 25, 27 and 33 litres. The cooperative gets a government bonus only if the mean collection per farmer is at least 25 litres. Two new farmers want to join: Pushpa usually pours 34 litres and Qasim usually pours 14 litres. (a) Find the mean collection of the five farmers. (b) Without calculating, say whether admitting Qasim alone would raise or lower the mean, and why. (c) Find the mean if both Pushpa and Qasim join. (d) The cooperative wants to admit both farmers now and keep the bonus. Can it? If not, which one farmer should it admit now? Justify using distances from the mean.",
+     "a": "(a) 125/5 = 25 litres. (b) Lower, because 14 litres is less than the mean of 25 litres. (c) (125 + 34 + 14)/7 = 173/7 = about 24.7 litres. (d) No. Qasim is 11 litres below 25 but Pushpa is only 9 above, so together they pull the mean below 25 and the bonus is lost. Admitting Pushpa alone gives 159/6 = 26.5 litres, which keeps the bonus, so it should admit Pushpa now.",
+     "s": [
+      [
+       "(a) Finds the mean 125/5 = 25 litres",
+       1
+      ],
+      [
+       "(b) Says the mean would fall because 14 is below the mean",
+       1
+      ],
+      [
+       "(c) Finds the mean of seven as 173/7, about 24.7 litres",
+       1
+      ],
+      [
+       "(d) Decides both cannot join (11 below outweighs 9 above) and Pushpa alone gives 26.5 litres, so admit Pushpa",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-5.2",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 107",
+     "q": "A data set of n values has mean a. The same number k is added to every value. What is the new mean?",
+     "a": "a + k",
+     "o": [
+      "a + k",
+      "a",
+      "a × k",
+      "a + n × k"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 108",
+     "q": "The mean daily wage of 6 workers at a brick kiln is Rs 450. During the festival week, every worker's daily wage is doubled. What is the new mean daily wage?",
+     "a": "Rs 900, because doubling every value doubles the mean.",
+     "o": [
+      "Rs 900",
+      "Rs 452",
+      "Rs 2,700",
+      "Rs 5,400"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 107",
+     "q": "A clinic's weighing machine showed every weight 2 kg more than the true weight. The mean of the recorded weights of 20 patients was 61.5 kg. What is the mean of their true weights?",
+     "a": "59.5 kg: subtracting 2 kg from every value lowers the mean by 2 kg.",
+     "o": [
+      "59.5 kg",
+      "63.5 kg",
+      "61.5 kg",
+      "21.5 kg"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 107",
+     "q": "(a) State what happens to the mean of a data set when the same number is subtracted from every value. (b) Show it with the data 6, 10, 14 by subtracting 5 from every value.",
+     "a": "(a) The mean decreases by the same number. (b) The old mean is 30/3 = 10. The new data 1, 5, 9 has mean 15/3 = 5, which is 10 - 5.",
+     "s": [
+      [
+       "States that the mean decreases by the same number",
+       1
+      ],
+      [
+       "Shows old mean 10 and new mean 5 = 10 - 5 for 1, 5, 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 108",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: If every value in a data set is multiplied by 5, the mean is also multiplied by 5. Give a reason.",
+     "a": "True. If the values x1, x2, ..., xn have mean a, the new mean is (5x1 + 5x2 + ... + 5xn)/n = 5 × (x1 + x2 + ... + xn)/n = 5a, using the distributive property.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Gives the reason: (5x1 + ... + 5xn)/n = 5 × (x1 + ... + xn)/n = 5a, or a correct worked example",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 107-108",
+     "q": "The data 3, 5, 9, 11 has mean 7. Asha first subtracts 2 from every value and then multiplies every result by 3. Ben first multiplies every value by 3 and then subtracts 2 from every result. (a) Find the mean of Asha's final data without listing it. (b) Find the mean of Ben's final data without listing it. (c) Explain why the two means are different.",
+     "a": "(a) Subtracting 2 gives mean 7 - 2 = 5; multiplying by 3 gives 5 × 3 = 15. (b) Multiplying by 3 gives 21; subtracting 2 gives 19. (c) In Asha's order the 2 that was taken away is also multiplied by 3, so 3 × 2 = 6 is taken from 21; in Ben's order only 2 is taken from 21. (Check: Asha's data 3, 9, 21, 27 has mean 60/4 = 15; Ben's data 7, 13, 25, 31 has mean 76/4 = 19.)",
+     "s": [
+      [
+       "Finds Asha's mean (7 - 2) × 3 = 15",
+       1
+      ],
+      [
+       "Finds Ben's mean 7 × 3 - 2 = 19",
+       1
+      ],
+      [
+       "Explains that in Asha's order the subtracted 2 is also tripled (6 less), in Ben's only 2 less",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 104-108",
+     "q": "Assertion (A): If every value of a data set is multiplied by 2, the mean is also multiplied by 2. Reason (R): If every value of a data set is multiplied by 2, the total distance of the values above the mean from the mean stays the same.",
+     "a": "A is true, but R is false. The mean doubles, and so does every distance from it. For 1, 2, 6 (mean 3) the distance above the mean is 3; for the doubled data 2, 4, 12 (mean 6) it is 6.",
+     "o": [
+      "A is true, but R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 107-108",
+     "q": "Let x1, x2, ..., xn be n values whose mean is a. Every value is divided by 4. (a) Write the expression for the new mean. (b) Simplify it to show that the new mean is a/4. (c) A shop sells a mean of 248 kg of rice a month and packs each month's rice into 4 kg bags. Use (b) to find the mean number of bags it fills in a month.",
+     "a": "(a) New mean = (x1/4 + x2/4 + ... + xn/4)/n. (b) This equals ((x1 + x2 + ... + xn)/4)/n = ((x1 + x2 + ... + xn)/n)/4 = a/4. (c) The number of bags each month is that month's kg divided by 4, so the mean is 248/4 = 62 bags.",
+     "s": [
+      [
+       "Writes the new mean as (x1/4 + x2/4 + ... + xn/4)/n",
+       1
+      ],
+      [
+       "Takes out the common factor 1/4 to get a/4",
+       1
+      ],
+      [
+       "Finds the mean number of bags 248/4 = 62",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 107-108",
+     "q": "The 8 members of a cycling club rode a mean of 42.5 km each last week. The coach has two plans for next week. Plan A: every member rides 4 km more than last week. Plan B: every member rides 10% more than last week (each distance is multiplied by 1.1). (a) Find the new mean under Plan A. (b) Find the new mean under Plan B. (c) Which plan gives the larger total distance for the club, and by how many km? (d) For what old mean would the two plans give the same new mean? (e) Another club's members rode a mean of 35 km. Which plan raises that club's mean more? Use (d) to explain.",
+     "a": "(a) 42.5 + 4 = 46.5 km. (b) 42.5 × 1.1 = 46.75 km. (c) Plan A total 8 × 46.5 = 372 km; Plan B total 8 × 46.75 = 374 km; Plan B is larger by 2 km. (d) 1.1 × a = a + 4 gives 0.1 × a = 4, so a = 40 km. (e) Plan A: 35 + 4 = 39 km; Plan B: 35 × 1.1 = 38.5 km. Plan A raises it more, because 35 is below 40, and below 40 km a 10% rise is less than 4 km.",
+     "s": [
+      [
+       "(a) Finds 46.5 km",
+       1
+      ],
+      [
+       "(b) Finds 46.75 km",
+       1
+      ],
+      [
+       "(c) Compares totals 372 km and 374 km: Plan B by 2 km",
+       1
+      ],
+      [
+       "(d) Solves 1.1a = a + 4 to get 40 km",
+       1
+      ],
+      [
+       "(e) Finds 39 km and 38.5 km and chooses Plan A, linking it to 35 being below 40",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 107-108",
+     "tags": [
+      "case_study"
+     ],
+     "q": "An auto-rickshaw driver in Pune noted the lengths of his 10 trips on Monday: 2.5, 3, 3.5, 3.8, 4, 4.2, 4.5, 5, 5.5 and 6 km. Under the old fare rule, each trip costs Rs 30 plus Rs 15 per km. Under the new rule, each trip costs Rs 20 plus Rs 18 per km. The union says the new rule pays every driver more on every trip. (a) Find the mean trip length. (b) Using only the mean trip length, find the mean fare under the old rule. (c) Find the mean fare under the new rule in the same way. (d) Is the union right? Find the trip length at which both rules give the same fare, and name the trips on Monday's list that earn less under the new rule.",
+     "a": "(a) Total 42 km, so the mean is 42/10 = 4.2 km. (b) Each fare is 15 × length + 30, so the mean fare is 15 × 4.2 + 30 = Rs 93. (c) 18 × 4.2 + 20 = Rs 95.60. (d) Only partly. On average the new rule pays Rs 2.60 more per trip, but 30 + 15d = 20 + 18d gives d = 10/3, about 3.33 km, and trips shorter than that earn less under the new rule: the 2.5 km trip (Rs 65 instead of Rs 67.50) and the 3 km trip (Rs 74 instead of Rs 75).",
+     "s": [
+      [
+       "(a) Finds the mean trip length 42/10 = 4.2 km",
+       1
+      ],
+      [
+       "(b) Uses multiply-then-add on the mean: 15 × 4.2 + 30 = Rs 93",
+       1
+      ],
+      [
+       "(c) Finds 18 × 4.2 + 20 = Rs 95.60",
+       1
+      ],
+      [
+       "(d) Finds the equal-fare length of about 3.33 km and says the union is only partly right: the 2.5 km and 3 km trips earn less",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-5.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 115",
+     "q": "The mean age of 8 children at a birthday party is 11 years. What is the total of their ages?",
+     "a": "88 years, because the total equals the mean times the number of values: 11 × 8 = 88.",
+     "o": [
+      "88 years",
+      "19 years",
+      "3 years",
+      "1.375 years"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 109",
+     "q": "A shopkeeper sold 6 kg, 8 kg and 11 kg of rice on three days. Her mean sale over four days was 9 kg. How much rice did she sell on the fourth day?",
+     "a": "11 kg: the four-day total is 9 × 4 = 36 kg, and 36 - (6 + 8 + 11) = 11 kg.",
+     "o": [
+      "11 kg",
+      "9 kg",
+      "25 kg",
+      "8.33 kg"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 109",
+     "q": "(a) Five values have mean 14. Find their sum. (b) Four of the five values add up to 58. Find the fifth value.",
+     "a": "(a) Sum = 14 × 5 = 70. (b) Fifth value = 70 - 58 = 12.",
+     "s": [
+      [
+       "Finds the sum 14 × 5 = 70",
+       1
+      ],
+      [
+       "Finds the fifth value 70 - 58 = 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 109",
+     "q": "The mean number of eggs collected each day at a poultry shed over 10 days was worked out as 48. Later the owner found that one day's count had been written 7 more than the real count. (a) Find the total that was written down. (b) Find the correct total. (c) Find the correct mean.",
+     "a": "(a) 48 × 10 = 480 eggs. (b) 480 - 7 = 473 eggs. (c) 473/10 = 47.3 eggs per day.",
+     "s": [
+      [
+       "Finds the written total 48 × 10 = 480",
+       1
+      ],
+      [
+       "Corrects the total to 480 - 7 = 473",
+       1
+      ],
+      [
+       "Finds the correct mean 473/10 = 47.3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 109",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: In a list of 20 values, one value was written 10 more than its real value. So the correct mean is 0.5 less than the mean that was worked out. Give a reason.",
+     "a": "True. The error makes the total 10 too large. The mean is the total divided by 20, so it is 10/20 = 0.5 too large, and the correct mean is 0.5 less.",
+     "s": [
+      [
+       "States True",
+       1
+      ],
+      [
+       "Explains the total is 10 too high, so the mean is 10/20 = 0.5 too high",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 105-109",
+     "q": "The mean of 8 values is 15. Consider these statements. I. The sum of the 8 values is 120. II. If a ninth value, 24, is included, the new mean is 16. III. If one of the values, 15, is removed, the mean of the remaining 7 values is still 15. Which of these statements is/are correct?",
+     "a": "I, II and III. The sum is 15 × 8 = 120; including 24 gives 144/9 = 16; removing 15 gives 105/7 = 15.",
+     "o": [
+      "I, II and III",
+      "I and II only",
+      "I only",
+      "II and III only"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 127",
+     "tags": [
+      "reverse"
+     ],
+     "q": "(a) Write three different counting numbers whose mean is 8 and whose median is less than 5. (b) Show that the mean of your numbers is 8. (c) Explain why the largest of the three numbers must be at least 17 in every such answer.",
+     "a": "(a) For example 1, 4, 19 (median 4). (b) (1 + 4 + 19)/3 = 24/3 = 8. (c) The three numbers must add to 8 × 3 = 24. The median is at most 4 and the smallest number is less than the median, so it is at most 3. Together the two smaller numbers are at most 3 + 4 = 7, so the largest is at least 24 - 7 = 17.",
+     "s": [
+      [
+       "Gives three different counting numbers with sum 24 and median below 5, such as 1, 4, 19",
+       1
+      ],
+      [
+       "Shows their mean is 24/3 = 8",
+       1
+      ],
+      [
+       "Argues the sum is 24 and the two smaller numbers total at most 3 + 4 = 7, so the largest is at least 17",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 105-109",
+     "q": "A teacher entered the marks of her 25 students in a computer, but by mistake typed one student's mark of 48 twice, so there were 26 entries. The computer showed the mean of the 26 entries as 32. (a) Find the total of the 26 entries. (b) Find the correct total of the 25 marks. (c) Find the correct mean. (d) Using the balancing idea of the mean, explain why the correct mean had to be less than 32.",
+     "a": "(a) 32 × 26 = 832. (b) 832 - 48 = 784. (c) 784/25 = 31.36. (d) The extra entry 48 is above the mean of 32, so it was pulling the balancing point up; removing a value greater than the mean lowers the mean.",
+     "s": [
+      [
+       "(a) Finds the total of 26 entries as 32 × 26 = 832",
+       1
+      ],
+      [
+       "(b) Removes the extra 48 to get 784",
+       1
+      ],
+      [
+       "(c) Divides by 25 to get 31.36",
+       1
+      ],
+      [
+       "(d) Explains that removing 48, a value above the mean, lowers the mean",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 108-109",
+     "q": "The mean of six athletes' long jumps is 310 cm. Five of the jumps were 295 cm, 320 cm, 305 cm, 330 cm and 298 cm. (a) Find the total of all six jumps. (b) Find the total of the five given jumps. (c) Find the sixth jump. (d) Is the sixth jump above or below the mean, and by how much? (e) Find the median of the six jumps.",
+     "a": "(a) 310 × 6 = 1860 cm. (b) 295 + 320 + 305 + 330 + 298 = 1548 cm. (c) 1860 - 1548 = 312 cm. (d) Above the mean, by 312 - 310 = 2 cm. (e) Sorted: 295, 298, 305, 312, 320, 330; median = (305 + 312)/2 = 308.5 cm.",
+     "s": [
+      [
+       "(a) Finds the total 310 × 6 = 1860 cm",
+       1
+      ],
+      [
+       "(b) Adds the five jumps to get 1548 cm",
+       1
+      ],
+      [
+       "(c) Finds the sixth jump 312 cm",
+       1
+      ],
+      [
+       "(d) Says it is 2 cm above the mean",
+       1
+      ],
+      [
+       "(e) Sorts and finds the median (305 + 312)/2 = 308.5 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 109",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A women's self-help group in a village has 12 members. Its register shows that the mean monthly saving per member in March was Rs 450. While checking, the treasurer found that one member's saving of Rs 250 had been written as Rs 520. The bank gives the group a low-interest loan only if the correct mean saving per member is at least Rs 440. (a) Find the total saving written in the register. (b) Find the correct mean saving per member. (c) Plan A: a new member who saves Rs 600 a month joins. Plan B: no one joins, but each of the 12 members saves Rs 10 more. Find the mean saving under each plan. (d) Which plan gets the group the loan? Justify with your answers.",
+     "a": "(a) 450 × 12 = Rs 5,400. (b) The correct total is 5,400 - 520 + 250 = Rs 5,130, so the mean is 5,130/12 = Rs 427.50. (c) Plan A: (5,130 + 600)/13 = 5,730/13 = about Rs 440.77. Plan B: 427.50 + 10 = Rs 437.50. (d) Plan A, because only its mean (about Rs 440.77) reaches Rs 440; Plan B stays at Rs 437.50, below the limit.",
+     "s": [
+      [
+       "(a) Finds the written total Rs 5,400",
+       1
+      ],
+      [
+       "(b) Corrects the total to Rs 5,130 and finds the mean Rs 427.50",
+       1
+      ],
+      [
+       "(c) Finds about Rs 440.77 for Plan A and Rs 437.50 for Plan B",
+       1
+      ],
+      [
+       "(d) Chooses Plan A because only it reaches Rs 440",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-5.4",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 110",
+     "q": "A frequency table shows the value 2 with frequency 5, the value 3 with frequency 8 and the value 4 with frequency 7. How many values are there in the data?",
+     "a": "20, the sum of the frequencies 5 + 8 + 7.",
+     "o": [
+      "20",
+      "9",
+      "3",
+      "62"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 110",
+     "q": "A school football team played 10 matches. It scored 0 goals in 2 matches, 1 goal in 5 matches, 2 goals in 2 matches and 3 goals in 1 match. What is the mean number of goals per match?",
+     "a": "1.2: the total is (0 × 2) + (1 × 5) + (2 × 2) + (3 × 1) = 12 goals in 10 matches.",
+     "o": [
+      "1.2",
+      "1.5",
+      "2.5",
+      "1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 110",
+     "q": "The shoe sizes of 15 students are: size 4 (3 students), size 5 (5 students), size 6 (4 students) and size 7 (3 students). What is the median shoe size?",
+     "a": "5: the median is the 8th value; the running totals are 3 and 8, so the 8th value is size 5.",
+     "o": [
+      "5",
+      "5.5",
+      "6",
+      "4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 110",
+     "q": "A frequency table shows: value 1 (frequency 6), value 2 (frequency 9), value 3 (frequency 5). (a) Write the running totals of the frequencies and find the median. (b) What is the least number of extra values, all equal to 3, that must be added so that the median becomes 3?",
+     "a": "(a) Running totals 6, 15, 20. The median is the average of the 10th and 11th values, which are both 2, so the median is 2. (b) 11. The first 15 values are 1s and 2s, so the median must sit at position 16 or later. With 11 extra 3s there are 31 values and the median is the 16th value, which is 3. (With 10 extra there are 30 values and the median is the average of 2 and 3, which is 2.5.)",
+     "s": [
+      [
+       "Writes running totals 6, 15, 20 and finds the median 2",
+       1
+      ],
+      [
+       "Finds that at least 11 extra 3s are needed (31 values, 16th value is 3)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 110",
+     "q": "At a hostel dinner, 25 students ate rotis as follows: 2 rotis (4 students), 3 rotis (10 students), 4 rotis (8 students), 5 rotis (3 students). (a) Find the total number of rotis eaten. (b) Find the mean number of rotis per student. (c) Find the median number of rotis.",
+     "a": "(a) (2 × 4) + (3 × 10) + (4 × 8) + (5 × 3) = 8 + 30 + 32 + 15 = 85. (b) 85/25 = 3.4. (c) The median is the 13th value; the running totals are 4 and 14, so the 13th value is 3.",
+     "s": [
+      [
+       "Finds the total 85 rotis using value × frequency",
+       1
+      ],
+      [
+       "Finds the mean 85/25 = 3.4",
+       1
+      ],
+      [
+       "Uses running totals 4, 14 to find the median 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 110",
+     "q": "Assertion (A): For the data value 3 (frequency 1), value 6 (frequency 1) and value 30 (frequency 8), the mean is 13. Reason (R): The mean of data in a frequency table is the sum of (value × frequency) for every row divided by the sum of the frequencies.",
+     "a": "A is false, but R is true. Using R, the mean is (3 + 6 + 240)/10 = 249/10 = 24.9, not 13; 13 comes from (3 + 6 + 30)/3, which ignores the frequencies.",
+     "o": [
+      "A is false, but R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 110",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: In a frequency table, the median is always the value in the middle row of the table. Give a reason or a counter-example.",
+     "a": "False. The median depends on the frequencies, not on the number of rows. For value 1 (frequency 10), value 2 (frequency 1), value 3 (frequency 1), the middle row is 2, but there are 12 values and the 6th and 7th are both 1, so the median is 1.",
+     "s": [
+      [
+       "States False",
+       1
+      ],
+      [
+       "Gives a correct counter-example or explains that the median is found from the running totals of frequencies",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 110",
+     "q": "In a dictation test, 40 students made these numbers of spelling mistakes: 0 mistakes (5 students), 1 (8 students), 2 (12 students), 3 (9 students), 4 (4 students), 5 (2 students). (a) Find the total number of mistakes. (b) Find the mean number of mistakes. (c) Find the median number of mistakes. (d) Write the minimum and the maximum. (e) The teacher says, 'More than half the class made 2 or fewer mistakes.' Is she right? Show how you know.",
+     "a": "(a) 0 + 8 + 24 + 27 + 16 + 10 = 85 mistakes. (b) 85/40 = 2.125. (c) The median is the average of the 20th and 21st values; the running totals are 5, 13, 25, so both are 2 and the median is 2. (d) Minimum 0, maximum 5. (e) Yes. 5 + 8 + 12 = 25 students made 2 or fewer mistakes, and 25 is more than half of 40.",
+     "s": [
+      [
+       "(a) Finds the total 85 using value × frequency",
+       1
+      ],
+      [
+       "(b) Finds the mean 85/40 = 2.125",
+       1
+      ],
+      [
+       "(c) Uses running totals to find the 20th and 21st values, median 2",
+       1
+      ],
+      [
+       "(d) States minimum 0 and maximum 5",
+       1
+      ],
+      [
+       "(e) Counts 25 of 40 students with 2 or fewer and agrees with the teacher",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 110",
+     "q": "On Sports Day, 20 children came with members of their families: 7 children came with 1 family member, 6 with 2, 4 with 3 and 3 with 4. (a) Find the total number of family members who came. (b) Find the mean number of family members per child. (c) Write the running totals of the frequencies. (d) Find the median number of family members per child.",
+     "a": "(a) (1 × 7) + (2 × 6) + (3 × 4) + (4 × 3) = 7 + 12 + 12 + 12 = 43. (b) 43/20 = 2.15. (c) 7, 13, 17, 20. (d) The median is the average of the 10th and 11th values; both lie in the row for 2 (positions 8 to 13), so the median is 2.",
+     "s": [
+      [
+       "(a) Finds the total 43",
+       1
+      ],
+      [
+       "(b) Finds the mean 43/20 = 2.15",
+       1
+      ],
+      [
+       "(c) Writes the running totals 7, 13, 17, 20",
+       1
+      ],
+      [
+       "(d) Finds the median 2 from the 10th and 11th values",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 110",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A courier company tested two delivery routes for 30 days each and counted the late deliveries per day. Route P: 0 late on 12 days, 1 on 8 days, 2 on 5 days, 3 on 3 days and 6 on 2 days. Route Q: 0 late on 6 days, 1 on 10 days, 2 on 10 days and 3 on 4 days. A route is kept only if its mean is at most 1.5 late deliveries per day AND it has at most 4 'bad days' (3 or more late deliveries). (a) Find the mean for Route P. (b) Find the mean for Route Q. (c) Find the median for each route. (d) Which route should the company keep? Use the rule and your answers.",
+     "a": "(a) (0 + 8 + 10 + 9 + 12)/30 = 39/30 = 1.3. (b) (0 + 10 + 20 + 12)/30 = 42/30 = 1.4. (c) For both routes the 15th and 16th values are 1 (P running totals 12, 20, ...; Q running totals 6, 16, ...), so both medians are 1. (d) Route Q. Both means are within 1.5, but Route P has 3 + 2 = 5 bad days while Route Q has 4, so only Route Q meets both conditions, even though P has the lower mean.",
+     "s": [
+      [
+       "(a) Finds the mean for P as 39/30 = 1.3",
+       1
+      ],
+      [
+       "(b) Finds the mean for Q as 42/30 = 1.4",
+       1
+      ],
+      [
+       "(c) Finds both medians are 1 using running totals",
+       1
+      ],
+      [
+       "(d) Counts 5 bad days for P and 4 for Q and chooses Route Q",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-5.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 112",
+     "q": "In a spreadsheet, what does the cell name E5 mean?",
+     "a": "The cell in column E and row 5.",
+     "o": [
+      "The cell in column E and row 5",
+      "The cell in row E and column 5",
+      "The five cells from A5 to E5",
+      "The fifth cell from the top of the sheet"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 112",
+     "q": "In a sheet, row 1 holds headings. Cells B2, B3, B4 and B5 hold the Hindi marks 38, 45, 41 and 36 of four students, and cells C2, C3, C4 and C5 hold their English marks 44, 39, 47 and 42. Which formula shows a result greater than 42?",
+     "a": "=AVERAGE(C2:C5), which shows (44 + 39 + 47 + 42)/4 = 43. The others show 40, 41 and 39.",
+     "o": [
+      "=AVERAGE(C2:C5)",
+      "=AVERAGE(B2:B5)",
+      "=AVERAGE(B2:C2)",
+      "=AVERAGE(B5:C5)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "p. 112",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each entry in a spreadsheet (Column A) with what it stands for (Column B). Column A: 1. B9  2. B2:B9  3. =SUM(B2:B9)  4. =AVERAGE(B2:B9). Column B: P. The total of the numbers in cells B2 to B9  Q. The mean of the numbers in cells B2 to B9  R. The single cell in column B and row 9  S. The eight cells of column B from row 2 to row 9",
+     "a": "1-R, 2-S, 3-P, 4-Q",
+     "o": [
+      "1-R, 2-S, 3-P, 4-Q",
+      "1-S, 2-R, 3-P, 4-Q",
+      "1-R, 2-S, 3-Q, 4-P",
+      "1-R, 2-P, 3-S, 4-Q"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 112",
+     "q": "Assertion (A): The range D2:D6 is made up of five cells. Reason (R): A range written as Start:End includes the first cell, the last cell and every cell between them.",
+     "a": "Both A and R are true, and R is the correct explanation of A. D2:D6 covers D2, D3, D4, D5 and D6, the first cell, the last cell and the three between them.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 112",
+     "q": "(a) What is a cell in a spreadsheet? (b) Write the name of the cell in column F and row 12.",
+     "a": "(a) A cell is one of the small boxes, arranged in rows and columns, in which we can type text, a number or a formula. (b) F12.",
+     "s": [
+      [
+       "Says a cell is a small box in the rows and columns of the sheet where text, a number or a formula is typed",
+       1
+      ],
+      [
+       "Writes F12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 112-113",
+     "q": "In a class marks sheet, row 1 holds headings, the students are listed in rows 2 to 23, and columns B to G hold the marks in six subjects, with Odia in column B. (a) Say in words what =AVERAGE(B5:G5) finds. (b) Rani wants the class average in Odia and types =AVERAGE(B2:G2). What has she actually found? (c) Write the formula she should have typed.",
+     "a": "(a) The average mark, over all six subjects, of the student in row 5. (b) She has found the average mark of the first student (row 2) across the six subjects, because B2:G2 runs along a row, not down the Odia column. (c) =AVERAGE(B2:B23).",
+     "s": [
+      [
+       "Says B5:G5 gives the row-5 student's average over six subjects",
+       1
+      ],
+      [
+       "Explains Rani found the row-2 student's average because her range runs along a row",
+       1
+      ],
+      [
+       "Writes =AVERAGE(B2:B23)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 112",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "A sheet lists 4 students in rows 2 to 5, with marks in 3 subjects in columns B, C and D. Row 2: 30, 36, 33. Row 3: 40, 42, 44. Row 4: 25, 28, 31. Row 5: 35, 38, 32. Column E holds each student's average; for example, E2 holds =AVERAGE(B2:D2). Meena says: '=AVERAGE(E2:E5) gives the same result as the average of all 12 marks.' (a) Find E2 to E5 and the value of =AVERAGE(E2:E5). (b) Find the average of all 12 marks and say whether Meena is right here. (c) Explain why this works whenever every student has marks in all three subjects.",
+     "a": "(a) E2 = 33, E3 = 42, E4 = 28, E5 = 35, and =AVERAGE(E2:E5) = 138/4 = 34.5. (b) The 12 marks total 99 + 126 + 84 + 105 = 414, and 414/12 = 34.5, so Meena is right here. (c) Each value in column E is a row total divided by 3. Their average is (sum of the row totals ÷ 3) ÷ 4 = grand total ÷ 12, which is the average of all 12 marks.",
+     "s": [
+      [
+       "Finds E2 to E5 as 33, 42, 28, 35 and their average 34.5",
+       1
+      ],
+      [
+       "Finds the average of all 12 marks 414/12 = 34.5 and agrees with Meena",
+       1
+      ],
+      [
+       "Explains that (total ÷ 3) ÷ 4 = total ÷ 12 when every row has three marks",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 112-113",
+     "q": "A family keeps its monthly electricity use in a sheet. Row 1 holds headings, rows 2 to 13 hold January to December, and column B holds the units used each month. (a) Write a formula for the total units used in the year. (b) Write a formula for the mean monthly units for the whole year. (c) Write a formula for the mean monthly units from January to June. (d) The formula in (a) shows 1,476 and =SUM(B2:B7) shows 690. Find the mean monthly units from July to December.",
+     "a": "(a) =SUM(B2:B13). (b) =AVERAGE(B2:B13). (c) =AVERAGE(B2:B7). (d) July to December used 1,476 - 690 = 786 units over 6 months, so the mean is 786/6 = 131 units.",
+     "s": [
+      [
+       "(a) Writes =SUM(B2:B13)",
+       1
+      ],
+      [
+       "(b) Writes =AVERAGE(B2:B13)",
+       1
+      ],
+      [
+       "(c) Writes =AVERAGE(B2:B7)",
+       1
+      ],
+      [
+       "(d) Finds 1,476 - 690 = 786 and 786/6 = 131 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 112",
+     "q": "A museum records its daily visitors in a sheet. Row 1 holds the headings, columns B to G hold Monday to Saturday, row 2 holds Week 1 and row 3 holds Week 2. Week 1: 120, 135, 110, 150, 185, 260. In Week 2 every day had exactly 10 more visitors than the same day in Week 1. (a) Write the formula for the Week 1 total in H2. (b) Find the value it shows. (c) Write the formula for the Week 1 mean in I2 and find its value. (d) Without adding the Week 2 numbers, find what =AVERAGE(B3:G3) shows, and give the reason. (e) Write a formula for the mean of the two Saturdays and find its value.",
+     "a": "(a) =SUM(B2:G2). (b) 120 + 135 + 110 + 150 + 185 + 260 = 960. (c) =AVERAGE(B2:G2), which shows 960/6 = 160. (d) 170, because adding 10 to every value adds 10 to the mean. (e) =AVERAGE(G2:G3), which shows (260 + 270)/2 = 265.",
+     "s": [
+      [
+       "(a) Writes =SUM(B2:G2)",
+       1
+      ],
+      [
+       "(b) Finds the total 960",
+       1
+      ],
+      [
+       "(c) Writes =AVERAGE(B2:G2) and finds 160",
+       1
+      ],
+      [
+       "(d) Gives 170 because 10 added to every value raises the mean by 10",
+       1
+      ],
+      [
+       "(e) Writes =AVERAGE(G2:G3) and finds 265",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 112",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A village panchayat keeps a sheet of the rainfall, in mm, measured at three rain gauges during one week of July. Row 1 holds the headings. Cells A2 to A8 hold the days Monday to Sunday. Column B holds the readings of the gauge near the school, column C the gauge near the temple and column D the gauge near the pond. The school gauge readings, from Monday to Sunday, are 12, 30, 8, 0, 25, 18 and 33. (a) Which cell holds the school gauge reading for Thursday? (b) Write the range that describes all the school gauge readings of the week. (c) What does =SUM(B2:B8) show? (d) What does =AVERAGE(B2:B8) show?",
+     "a": "(a) B5 (Monday is row 2, so Thursday is row 5). (b) B2:B8. (c) 12 + 30 + 8 + 0 + 25 + 18 + 33 = 126. (d) 126/7 = 18.",
+     "s": [
+      [
+       "(a) Names cell B5",
+       1
+      ],
+      [
+       "(b) Writes the range B2:B8",
+       1
+      ],
+      [
+       "(c) Finds the total 126",
+       1
+      ],
+      [
+       "(d) Finds the mean 126/7 = 18",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-5.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 117",
+     "q": "For which kind of data is a line graph generally used?",
+     "a": "Data that changes over time, like monthly rainfall.",
+     "o": [
+      "Data that changes over time, like monthly rainfall",
+      "Data that splits a whole into parts, such as a budget",
+      "Data with no order, such as favourite fruits of a class",
+      "Data with a single value, such as one day's rainfall"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 120",
+     "q": "A line graph shows a town's population each year. Both the segment from 2015 to 2016 and the segment from 2016 to 2017 go upward, and the first one is steeper. What does this show?",
+     "a": "The population grew more from 2015 to 2016 than from 2016 to 2017, because a steeper segment shows a greater increase.",
+     "o": [
+      "The population grew more from 2015 to 2016 than from 2016 to 2017",
+      "The population fell from 2016 to 2017",
+      "The population grew more from 2016 to 2017 than from 2015 to 2016",
+      "The population was the same in 2016 and in 2017"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 118-120",
+     "q": "A line graph shows a town's monthly maximum temperature (°C): Jan 21, Feb 24, Mar 30, Apr 35, May 39, Jun 38, Jul 31, Aug 30, Sep 31, Oct 30, Nov 26, Dec 22. Between which two consecutive months is the line steepest, rising or falling?",
+     "a": "June to July, where the temperature falls by 7 °C; the largest rise is only 6 °C (February to March).",
+     "o": [
+      "June to July",
+      "February to March",
+      "April to May",
+      "November to December"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 117-118",
+     "q": "Consider these statements about reading a line graph of the monthly maximum temperature of a state through one year. I. In Step 1 we note how the graph is organised and what scale is used. II. In Step 2 we analyse what we noted and write summary or conclusion statements. III. The temperature is usually shown along the horizontal line and the months along the vertical line. Which of these statements is/are correct?",
+     "a": "I and II only. Statement III is wrong: the horizontal line shows the months and the vertical line shows the temperature in °C.",
+     "o": [
+      "I and II only",
+      "I, II and III",
+      "II and III only",
+      "I only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 117",
+     "q": "A state has several weather stations that record the temperature regularly. (a) How is the monthly maximum temperature of the state found from their records? (b) In May the highest readings at four stations were 41 °C, 39.5 °C, 43 °C and 40 °C. What value is plotted for May on the state's line graph?",
+     "a": "(a) By taking the maximum value among all the values recorded across the state in that month. (b) 43 °C, the largest of the readings.",
+     "s": [
+      [
+       "Says the largest value recorded across the state in the month is taken",
+       1
+      ],
+      [
+       "Gives 43 °C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 117-120",
+     "q": "Assertion (A): A line graph is a good choice for showing a child's height measured on every birthday from age 1 to age 15. Reason (R): Line graphs often use different shape markers so that each line can be told apart even when the graph is printed in black and white.",
+     "a": "Both A and R are true, but R is not the correct explanation of A. A line graph suits A because the height changes over time and joining the points shows the trend; the shape markers in R only help tell several lines apart.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 122",
+     "q": "The table gives the average number of days of rainfall in each month, January to December. Mangaluru: 0.1, 0, 0.1, 1.8, 6.2, 24.1, 27.7, 24.5, 14, 8.8, 3.9, 0.9. Rameswaram: 2.6, 1.3, 1.9, 3.4, 2.5, 0.4, 1, 1, 1.9, 8.1, 10.4, 7.8. Both are drawn as lines on one line graph. (a) Name the peak month of each city. (b) Find the average number of rainy days in a year for each city. (c) In how many months is Rameswaram's line above Mangaluru's line?",
+     "a": "(a) Mangaluru peaks in July (27.7 days); Rameswaram peaks in November (10.4 days). (b) Mangaluru: 112.1 days; Rameswaram: 42.3 days. (c) 6 months: January, February, March, April, November and December.",
+     "s": [
+      [
+       "Names July for Mangaluru and November for Rameswaram",
+       1
+      ],
+      [
+       "Adds the months to get 112.1 days and 42.3 days",
+       1
+      ],
+      [
+       "Finds the 6 months (Jan, Feb, Mar, Apr, Nov, Dec) where Rameswaram is higher",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 116-120",
+     "q": "A shopkeeper drew a line graph of the number of woollen sweaters and ceiling fans he sold each month of a year. Sweaters, January to December: 120, 80, 30, 10, 5, 5, 5, 10, 20, 60, 140, 180. Fans, January to December: 4, 15, 45, 90, 130, 110, 60, 50, 40, 20, 8, 4. (a) In which month does each line reach its peak? (b) Between which pairs of consecutive months do the two lines cross? (c) Find the mean monthly sale of fans, and name the months in which fan sales were above this mean. (d) He can give his front shelf to fans for only 3 months in a row. Which 3 months should he choose? Justify with numbers.",
+     "a": "(a) Sweaters peak in December (180); fans peak in May (130). (b) Between February and March (fans go from below to above sweaters) and between September and October (sweaters go back above fans). (c) Total fan sales are 576, so the mean is 576/12 = 48; fan sales were above 48 in April, May, June, July and August. (d) April to June: 90 + 130 + 110 = 330 fans, more than any other 3 months in a row (the next best, May to July, is 300).",
+     "s": [
+      [
+       "(a) Names December for sweaters and May for fans",
+       1
+      ],
+      [
+       "(b) Finds the crossings between February and March and between September and October",
+       1
+      ],
+      [
+       "(c) Finds the mean 48 and the months April to August above it",
+       1
+      ],
+      [
+       "(d) Compares 3-month totals and chooses April to June (330)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 117-120",
+     "q": "A line graph shows the number of train tickets booked online and at the counter at a railway station each year. Online, 2018 to 2024: 2,000; 3,000; 1,500; 4,000; 6,500; 8,000; 9,000. Counter, 2018 to 2024: 9,000; 8,500; 4,000; 6,000; 5,500; 5,000; 4,500. (a) In which year did both lines fall? (b) In which year was the online line above the counter line for the first time? (c) Find the total tickets for each year. Was the total highest in 2024? (d) Between which two consecutive years did online bookings grow by 2 times or more? (e) A newspaper writes: 'This graph proves that counter bookings fell because people switched to booking online.' Is this a valid inference from the graph? Explain.",
+     "a": "(a) 2020 (online 3,000 to 1,500; counter 8,500 to 4,000). (b) 2022 (6,500 online against 5,500 at the counter). (c) Totals: 11,000; 11,500; 5,500; 10,000; 12,000; 13,000; 13,500. Yes, 2024 has the highest total. (d) Only 2020 to 2021, when online bookings went from 1,500 to 4,000, about 2.7 times. (e) No. From 2021 the online line rises while the counter line falls, which fits the claim, but the graph shows only the counts, not the reasons; it cannot prove why counter bookings fell, so the claim goes beyond what the data shows.",
+     "s": [
+      [
+       "(a) Names 2020",
+       1
+      ],
+      [
+       "(b) Names 2022",
+       1
+      ],
+      [
+       "(c) Finds the yearly totals and confirms 2024 is highest (13,500)",
+       1
+      ],
+      [
+       "(d) Finds only 2020 to 2021 (1,500 to 4,000)",
+       1
+      ],
+      [
+       "(e) Judges the claim not valid: the graph shows the trend but not its cause",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 117-120",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A farmer in Nashik drew a line graph of the price of tomatoes per kg at the local mandi in the first week of each month. The points are: January Rs 18, February Rs 15, March Rs 12, April Rs 14, May Rs 25, June Rs 40, July Rs 60 and August Rs 45. He wants to use the graph to plan when to sell next year. (a) In which month was the price highest? (b) In which month was it lowest? (c) By how much did the price rise from May to June? (d) In how many of these months was the price more than Rs 20 per kg?",
+     "a": "(a) July (Rs 60). (b) March (Rs 12). (c) Rs 40 - Rs 25 = Rs 15. (d) 4 months: May, June, July and August.",
+     "s": [
+      [
+       "(a) Names July",
+       1
+      ],
+      [
+       "(b) Names March",
+       1
+      ],
+      [
+       "(c) Finds the rise Rs 15",
+       1
+      ],
+      [
+       "(d) Counts 4 months (May to August)",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

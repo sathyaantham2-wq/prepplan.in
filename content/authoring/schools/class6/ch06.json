@@ -1,0 +1,1324 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH6",
+  "class": 6,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Perimeter and Area"
+ },
+ "source_code": "fegp106",
+ "concepts": [
+  {
+   "code": "C6M-6.1",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 129",
+     "q": "Ritu wants to sew lace along the whole edge of a rectangular handkerchief. Which measure of the handkerchief tells her how much lace she needs?",
+     "a": "Its perimeter",
+     "o": [
+      "Its perimeter",
+      "Its area",
+      "The length of one side",
+      "The length of its diagonal"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 130",
+     "q": "A square chessboard has a side of 32 cm. What length of wooden strip is needed to go once all around its edge?",
+     "a": "128 cm, since 4 x 32 cm = 128 cm.",
+     "o": [
+      "128 cm",
+      "64 cm",
+      "96 cm",
+      "1024 cm"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 130-131",
+     "q": "Consider the following statements.\nI. The perimeter of a rectangle is twice the sum of its length and breadth.\nII. The perimeter of a square is four times the length of one side.\nIII. The perimeter of a triangle is found by multiplying the lengths of its three sides.\nWhich of the statements is/are correct?",
+     "a": "I and II only. The perimeter of a triangle is the sum, not the product, of its three sides.",
+     "o": [
+      "I and II only",
+      "I only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 130",
+     "q": "Assertion (A): A rectangle 11 cm long and 5 cm wide has the same perimeter as a square of side 8 cm.\nReason (R): Two figures that have the same perimeter always have the same area.",
+     "a": "A is true but R is false. Both perimeters are 32 cm, but the areas are 55 sq cm and 64 sq cm.",
+     "o": [
+      "A is true but R is false.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 130-131",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A triangle with sides 7 cm, 9 cm and 12 cm has the same perimeter as a square of side 7 cm. Give a reason.",
+     "a": "True. The triangle's perimeter is 7 + 9 + 12 = 28 cm and the square's perimeter is 4 x 7 = 28 cm.",
+     "s": [
+      [
+       "States the verdict True",
+       1
+      ],
+      [
+       "Shows both perimeters are 28 cm (7 + 9 + 12 and 4 x 7)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 130-132",
+     "q": "A rectangular kitchen garden has a perimeter of 96 m and a length of 30 m.\n(a) Find its breadth.\n(b) A square garden has the same perimeter. Which garden has the longer side, and by how many metres?",
+     "a": "(a) Length + breadth = 96 / 2 = 48 m, so breadth = 48 - 30 = 18 m. (b) The square's side is 96 / 4 = 24 m, so the rectangular garden's 30 m length is the longer side, by 6 m.",
+     "s": [
+      [
+       "(a) Halves the perimeter to 48 m and finds breadth 18 m",
+       1
+      ],
+      [
+       "(b) Finds the square's side 24 m and says the rectangle's length is longer by 6 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 130-131",
+     "q": "Find the perimeter of each of these.\n(a) A rectangular playground 85 m long and 40 m wide.\n(b) A square floor tile of side 15 cm.\n(c) A triangular road sign with sides 35 cm, 40 cm and 45 cm.",
+     "a": "(a) 2 x (85 + 40) = 250 m. (b) 4 x 15 = 60 cm. (c) 35 + 40 + 45 = 120 cm.",
+     "s": [
+      [
+       "(a) Perimeter of the playground 250 m",
+       1
+      ],
+      [
+       "(b) Perimeter of the tile 60 cm",
+       1
+      ],
+      [
+       "(c) Perimeter of the sign 120 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 130",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Neha says, 'If I double both the length and the breadth of a rectangle, its perimeter also doubles.' Test her claim with a rectangle 9 cm by 4 cm, and then say whether it holds for every rectangle, giving a reason.",
+     "a": "The 9 cm by 4 cm rectangle has perimeter 2 x (9 + 4) = 26 cm. The doubled rectangle, 18 cm by 8 cm, has perimeter 2 x (18 + 8) = 52 cm, which is 2 x 26. Neha is right for every rectangle: doubling both sides doubles length + breadth, so twice that sum also doubles.",
+     "s": [
+      [
+       "Finds the original perimeter 26 cm",
+       1
+      ],
+      [
+       "Finds the new perimeter 52 cm and notes it is double",
+       1
+      ],
+      [
+       "Explains that length + breadth doubles, so the claim holds for every rectangle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 130-131",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A handloom unit in Pochampally sells table covers with lace sewn once all around the edge. A rectangular cover is 150 cm long and 90 cm wide. A square cover has a side of 110 cm. A triangular cover has sides of 100 cm, 120 cm and 130 cm. The lace comes in rolls of 25 m each.\n(a) Find the length of lace needed for one rectangular cover.\n(b) Find the length of lace needed for one square cover.\n(c) Find the length of lace needed for one triangular cover.\n(d) An order asks for 3 rectangular, 2 square and 4 triangular covers. Lace is sold only in full rolls. How many rolls must the unit buy, and how much lace will be left over?",
+     "a": "(a) 2 x (150 + 90) = 480 cm. (b) 4 x 110 = 440 cm. (c) 100 + 120 + 130 = 350 cm. (d) The order needs 3 x 480 + 2 x 440 + 4 x 350 = 1440 + 880 + 1400 = 3720 cm = 37.20 m. One roll (25 m) is not enough, so the unit must buy 2 rolls (50 m), and 50 m - 37.20 m = 12.80 m of lace is left over.",
+     "s": [
+      [
+       "(a) Finds 480 cm for the rectangular cover",
+       1
+      ],
+      [
+       "(b) Finds 440 cm for the square cover",
+       1
+      ],
+      [
+       "(c) Finds 350 cm for the triangular cover",
+       1
+      ],
+      [
+       "(d) Finds 3720 cm for the order, decides 2 rolls are needed and finds 12.80 m left over",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 130-132",
+     "q": "A gram panchayat owns a triangular plot with two sides of 48 m and 55 m and a perimeter of 176 m. It also owns a rectangular plot 52 m long whose perimeter is the same as the triangle's.\n(a) Find the third side of the triangular plot.\n(b) Find the breadth of the rectangular plot.\n(c) The triangular plot is fenced with 3 rounds of wire and the rectangular plot with 2 rounds. Find the total length of wire.\n(d) Wire costs Rs 25 per metre. Find the total cost of the wire.",
+     "a": "(a) 176 - (48 + 55) = 73 m. (b) Length + breadth = 176 / 2 = 88 m, so breadth = 88 - 52 = 36 m. (c) 3 x 176 + 2 x 176 = 528 + 352 = 880 m. (d) 880 x 25 = Rs 22,000.",
+     "s": [
+      [
+       "(a) Finds the third side 73 m",
+       1
+      ],
+      [
+       "(b) Finds the breadth 36 m from half the perimeter",
+       1
+      ],
+      [
+       "(c) Finds 528 m and 352 m of wire",
+       1
+      ],
+      [
+       "(c) Adds to get 880 m in all",
+       1
+      ],
+      [
+       "(d) Finds the cost Rs 22,000",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.2",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 135-136",
+     "q": "A floor tile is a regular hexagon with each side 15 cm. What length of border strip goes once around one tile?",
+     "a": "90 cm, since a regular hexagon has 6 equal sides and 6 x 15 cm = 90 cm.",
+     "o": [
+      "90 cm",
+      "60 cm",
+      "75 cm",
+      "225 cm"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 135",
+     "q": "A square and an equilateral triangle are both regular polygons. What do they have in common?",
+     "a": "All their sides are equal and all their angles are equal.",
+     "o": [
+      "All their sides are equal and all their angles are equal.",
+      "Both have all sides equal, but their angles can be different.",
+      "Both have a right angle at every one of their corners.",
+      "Both always have the same perimeter for the same side."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 135-136",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each regular polygon in Column I with its perimeter in Column II.\nColumn I: (P) a regular pentagon of side 13 cm (Q) a square of side 17 cm (R) a regular hexagon of side 11 cm (S) an equilateral triangle of side 21 cm\nColumn II: (1) 63 cm (2) 65 cm (3) 66 cm (4) 68 cm",
+     "a": "P-2, Q-4, R-3, S-1, because 5 x 13 = 65, 4 x 17 = 68, 6 x 11 = 66 and 3 x 21 = 63 cm.",
+     "o": [
+      "P-2, Q-4, R-3, S-1",
+      "P-3, Q-4, R-2, S-1",
+      "P-2, Q-1, R-3, S-4",
+      "P-4, Q-2, R-3, S-1"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "pp. 135-136",
+     "q": "Assertion (A): A regular hexagon of side 7 cm needs a longer border than a square of side 10 cm.\nReason (R): All the angles of a regular polygon are equal.",
+     "a": "Both A and R are true, but R is not the correct explanation of A. The hexagon's border is 6 x 7 = 42 cm against the square's 4 x 10 = 40 cm; this follows from the sides being equal, not from the angles being equal.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 135",
+     "q": "What is a regular polygon? Give one example of a regular polygon.",
+     "a": "A regular polygon is a closed figure in which all sides are equal and all angles are equal. Example: an equilateral triangle (or a square, or a regular pentagon).",
+     "s": [
+      [
+       "States that all sides and all angles are equal",
+       1
+      ],
+      [
+       "Gives a correct example such as an equilateral triangle or a square",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 135-136",
+     "q": "Floor tiles are made as regular polygons, each with a side of 9 cm.\n(a) Find the length of border strip needed to go once around a regular pentagon tile.\n(b) Leela says a border strip of 63 cm fits exactly once around a regular hexagon tile. Is she right? If not, how many sides must the tile have?",
+     "a": "(a) 5 x 9 = 45 cm. (b) No. A regular hexagon tile needs 6 x 9 = 54 cm. A 63 cm strip fits a tile with 63 / 9 = 7 sides.",
+     "s": [
+      [
+       "(a) Finds the pentagon tile's border 45 cm",
+       1
+      ],
+      [
+       "(b) Finds 54 cm for the hexagon, says Leela is wrong and finds 7 sides",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 136",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "A strip of card 12 cm by 2 cm is cut into two equal pieces, each 6 cm by 2 cm. Ravi says, 'Any new shape made by joining the two pieces along a full edge will have a smaller perimeter than the strip.'\n(a) Find the perimeter of the strip.\n(b) Find the perimeter when the pieces are joined along their 6 cm edges to make a rectangle.\n(c) Is Ravi right? Use an L-shape, made by standing one piece upright on one end of the other, to decide.",
+     "a": "(a) 2 x (12 + 2) = 28 cm. (b) The rectangle is 6 cm by 4 cm, perimeter 2 x (6 + 4) = 20 cm, which is smaller. (c) Ravi is not right. In the L-shape the pieces share only a 2 cm edge, so the perimeter is 16 + 16 - 2 x 2 = 28 cm, the same as the strip, not smaller.",
+     "s": [
+      [
+       "(a) Finds the strip's perimeter 28 cm",
+       1
+      ],
+      [
+       "(b) Finds the 6 cm by 4 cm rectangle's perimeter 20 cm",
+       1
+      ],
+      [
+       "(c) Finds the L-shape's perimeter 28 cm and concludes Ravi is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 135-136",
+     "q": "A craft teacher has 3 m of coloured wire. Four groups each bend one frame shaped as a regular polygon: Group A an equilateral triangle of side 20 cm, Group B a square of side 18 cm, Group C a regular pentagon of side 14 cm and Group D a regular hexagon of side 12 cm.\n(a) Find the wire used by each group.\n(b) Find the total wire used and the wire left over.\n(c) A fifth group wants an equilateral triangle from the leftover wire, with each side a whole number of centimetres. What is the longest side it can have?",
+     "a": "(a) A: 3 x 20 = 60 cm, B: 4 x 18 = 72 cm, C: 5 x 14 = 70 cm, D: 6 x 12 = 72 cm. (b) Total 60 + 72 + 70 + 72 = 274 cm; 3 m = 300 cm, so 300 - 274 = 26 cm is left. (c) 26 / 3 is 8 with 2 left over, so the longest whole-number side is 8 cm (using 24 cm of wire).",
+     "s": [
+      [
+       "(a) Finds the four perimeters 60, 72, 70 and 72 cm",
+       2
+      ],
+      [
+       "(b) Finds the total 274 cm and the leftover 26 cm (after changing 3 m to 300 cm)",
+       1
+      ],
+      [
+       "(c) Divides 26 by 3 and gives the longest whole side 8 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 136",
+     "tags": [
+      "case_study"
+     ],
+     "q": "An art club in Bhopal cuts a chart sheet 20 cm by 10 cm into two equal squares of side 10 cm. Members join the two squares edge to edge, without any overlap, and stick gold border along the outside edge of each design. In Design P the squares share one full side. In Design Q one square is slid up so that the two squares share only 4 cm of a side.\n(a) Find the perimeter of one square.\n(b) Find the perimeter of Design P.\n(c) Find the perimeter of Design Q.\n(d) The club wants a design whose border is exactly 70 cm. How many centimetres of a side must the two squares share?",
+     "a": "(a) 4 x 10 = 40 cm. (b) Design P is a 20 cm by 10 cm rectangle, so 2 x (20 + 10) = 60 cm. (c) The two squares have 80 cm of edge in all; the shared 4 cm is hidden on both squares, so 80 - 2 x 4 = 72 cm. (d) 80 - 70 = 10 cm must be hidden, which is 2 x 5 cm, so the squares must share 5 cm of a side.",
+     "s": [
+      [
+       "(a) Finds the square's perimeter 40 cm",
+       1
+      ],
+      [
+       "(b) Finds Design P's perimeter 60 cm",
+       1
+      ],
+      [
+       "(c) Finds Design Q's perimeter 72 cm",
+       1
+      ],
+      [
+       "(d) Works back from 70 cm to a shared length of 5 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 135-136",
+     "q": "A municipal garden has three flower beds shaped as regular polygons: an equilateral triangle of side 9 m, a square of side 7 m and a regular hexagon of side 5 m. A low iron railing is fixed once along the edge of each bed. Railing costs Rs 350 per metre.\n(a) Find the length of railing for each bed.\n(b) Which bed needs the most railing?\n(c) Find the total length of railing and its total cost.\n(d) The garden committee has Rs 30,000 for railing. Is this enough? How much is left over or short?",
+     "a": "(a) Triangle 3 x 9 = 27 m, square 4 x 7 = 28 m, hexagon 6 x 5 = 30 m. (b) The hexagon, with 30 m, even though its side is the shortest. (c) 27 + 28 + 30 = 85 m; 85 x 350 = Rs 29,750. (d) Yes, it is enough: Rs 30,000 - Rs 29,750 = Rs 250 is left over.",
+     "s": [
+      [
+       "(a) Finds the three railing lengths 27 m, 28 m and 30 m",
+       2
+      ],
+      [
+       "(b) Names the hexagon bed as needing the most",
+       1
+      ],
+      [
+       "(c) Finds the total 85 m and the cost Rs 29,750",
+       1
+      ],
+      [
+       "(d) Compares with Rs 30,000 and says enough, Rs 250 left",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.3",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 137",
+     "q": "A rectangular mat is 7 m long and 3 m wide. What is its area?",
+     "a": "21 sq m, since area = length x width = 7 m x 3 m.",
+     "o": [
+      "21 sq m",
+      "20 sq m",
+      "10 sq m",
+      "42 sq m"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 137",
+     "q": "Which of these needs the AREA of the object to be found, not its perimeter?",
+     "a": "Finding how much brown paper covers the front of a notebook",
+     "o": [
+      "Finding how much brown paper covers the front of a notebook",
+      "Finding how much lace goes all around the edge of a tablecloth",
+      "Finding how much wire is needed to fence a field all around",
+      "Finding how much tape goes all around a square photo frame"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 137",
+     "q": "Consider the following statements.\nI. A square of side 5 m has an area of 25 sq m.\nII. A rectangle 8 m long and 3 m wide has a larger area than a square of side 5 m.\nIII. The area of a rectangle is its length multiplied by its width.\nWhich of the statements is/are correct?",
+     "a": "I and III only. The 8 m by 3 m rectangle has area 24 sq m, which is less than 25 sq m.",
+     "o": [
+      "I and III only",
+      "I and II only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 137-138",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each floor in Column I with its area in Column II.\nColumn I: (P) an 11 m by 6 m room with a 2 m by 2 m square corner cut away (Q) a square room of side 7 m (R) a 5 m by 4 m room joined to a 6 m by 3 m room, with no overlap (S) a 9 m by 5 m room\nColumn II: (1) 38 sq m (2) 45 sq m (3) 49 sq m (4) 62 sq m",
+     "a": "P-4, Q-3, R-1, S-2, because 66 - 4 = 62, 7 x 7 = 49, 20 + 18 = 38 and 9 x 5 = 45.",
+     "o": [
+      "P-4, Q-3, R-1, S-2",
+      "P-3, Q-4, R-1, S-2",
+      "P-4, Q-3, R-2, S-1",
+      "P-1, Q-3, R-4, S-2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 137",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A rectangle 25 m long and 4 m wide covers the same area as a square of side 10 m. Give a reason.",
+     "a": "True. The rectangle's area is 25 x 4 = 100 sq m and the square's area is 10 x 10 = 100 sq m, so they cover the same area.",
+     "s": [
+      [
+       "States the verdict True",
+       1
+      ],
+      [
+       "Finds both areas 100 sq m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 137",
+     "q": "A classroom wall is 6 m long and 3 m high. It has a door 2 m high and 1 m wide.\n(a) Find the area of the wall to be painted, leaving out the door.\n(b) Painting costs Rs 40 per sq m. Find the cost of painting the wall.",
+     "a": "(a) 6 x 3 - 2 x 1 = 18 - 2 = 16 sq m. (b) 16 x 40 = Rs 640.",
+     "s": [
+      [
+       "(a) Subtracts the door area to get 16 sq m",
+       1
+      ],
+      [
+       "(b) Finds the cost Rs 640",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 137-138",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "An L-shaped floor is a 10 m by 8 m rectangle with a 4 m by 3 m rectangle cut away from its top right corner (the 4 m along the 10 m side). Arjun says, 'If I split the L into two rectangles in two different ways, I may get two different areas.' Split the floor in two different ways, find the area each way, and say whether Arjun is right.",
+     "a": "Way 1 (cut across): a 10 m by 5 m strip (50 sq m) and a 6 m by 3 m piece (18 sq m), total 68 sq m. Way 2 (cut down): a 6 m by 8 m piece (48 sq m) and a 4 m by 5 m piece (20 sq m), total 68 sq m. Arjun is not right: any correct split covers the same floor, so the area is 68 sq m either way (also 80 - 12 = 68).",
+     "s": [
+      [
+       "Way 1: finds 50 + 18 = 68 sq m",
+       1
+      ],
+      [
+       "Way 2: finds 48 + 20 = 68 sq m",
+       1
+      ],
+      [
+       "Concludes Arjun is wrong because the split does not change the region covered",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 137-138",
+     "q": "A rectangular courtyard is 16 m long and 12 m wide. A path 2 m wide runs along the inside of all four sides, and the middle part is a lawn.\n(a) Find the area of the courtyard.\n(b) Find the length and width of the lawn.\n(c) Find the area of the lawn.\n(d) Find the area of the path and the cost of paving it at Rs 50 per sq m.",
+     "a": "(a) 16 x 12 = 192 sq m. (b) The path takes 2 m from each end, so the lawn is 16 - 4 = 12 m long and 12 - 4 = 8 m wide. (c) 12 x 8 = 96 sq m. (d) Path = 192 - 96 = 96 sq m; cost = 96 x 50 = Rs 4,800.",
+     "s": [
+      [
+       "(a) Finds the courtyard area 192 sq m",
+       1
+      ],
+      [
+       "(b) Finds the lawn's size 12 m by 8 m",
+       1
+      ],
+      [
+       "(c) Finds the lawn area 96 sq m",
+       1
+      ],
+      [
+       "(d) Finds the path area 96 sq m and the cost Rs 4,800",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 137-138",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school in Guwahati has a rectangular ground 60 m long and 40 m wide. Inside it there is a basketball court 28 m long and 15 m wide, and a square flower bed of side 3 m in each of the four corners, with no overlap between the court and the beds. The rest of the ground is to be covered with grass, which costs Rs 30 per sq m to lay. The school has kept Rs 58,000 for this work.\n(a) Find the area of the whole ground.\n(b) Find the total area of the four flower beds.\n(c) Find the area to be covered with grass.\n(d) Is Rs 58,000 enough to grass this area? Justify with numbers.",
+     "a": "(a) 60 x 40 = 2400 sq m. (b) 4 x (3 x 3) = 36 sq m. (c) Court = 28 x 15 = 420 sq m, so grass area = 2400 - 420 - 36 = 1944 sq m. (d) No. The cost is 1944 x 30 = Rs 58,320, which is Rs 320 more than Rs 58,000.",
+     "s": [
+      [
+       "(a) Finds the ground's area 2400 sq m",
+       1
+      ],
+      [
+       "(b) Finds the four beds' area 36 sq m",
+       1
+      ],
+      [
+       "(c) Finds the court's area 420 sq m and the grass area 1944 sq m",
+       1
+      ],
+      [
+       "(d) Finds the cost Rs 58,320 and decides the money is short by Rs 320",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 137",
+     "q": "Answer each part.\n(a) Find the area of a rectangular tile 30 cm long and 20 cm wide.\n(b) Find the area of a square handkerchief of side 25 cm.\n(c) How much more area does the handkerchief have than the tile?\n(d) Find the area of a rectangular garden 45 m long and 16 m wide.\n(e) A rectangle has an area of 72 sq cm and a length of 9 cm. Find its width.",
+     "a": "(a) 30 x 20 = 600 sq cm. (b) 25 x 25 = 625 sq cm. (c) 625 - 600 = 25 sq cm more. (d) 45 x 16 = 720 sq m. (e) 72 / 9 = 8 cm.",
+     "s": [
+      [
+       "(a) Finds the tile's area 600 sq cm",
+       1
+      ],
+      [
+       "(b) Finds the handkerchief's area 625 sq cm",
+       1
+      ],
+      [
+       "(c) Finds the difference 25 sq cm",
+       1
+      ],
+      [
+       "(d) Finds the garden's area 720 sq m",
+       1
+      ],
+      [
+       "(e) Divides the area by the length to get width 8 cm",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.4",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 140",
+     "q": "While estimating the area of a shape on squared paper, how is a square that is MORE than half covered by the shape counted?",
+     "a": "As 1 sq unit",
+     "o": [
+      "As 1 sq unit",
+      "As 1/2 sq unit",
+      "As 0 sq unit (it is ignored)",
+      "As 2 sq units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 140",
+     "q": "A footprint traced on squared paper (1 square = 1 sq unit) covers 8 squares fully, 5 squares more than half, 2 squares exactly half and 6 squares less than half. What is its estimated area?",
+     "a": "14 sq units, since 8 + 5 + 2 x 1/2 = 14 and the 6 less-than-half squares are ignored.",
+     "o": [
+      "14 sq units",
+      "15 sq units",
+      "13 sq units",
+      "21 sq units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "p. 140",
+     "tags": [
+      "match"
+     ],
+     "q": "Each shape is traced on squared paper where 1 square = 1 sq unit. Match the counts in Column I with the estimated area in Column II.\nColumn I: (P) 6 full squares and 2 exactly-half squares (Q) 5 full squares and 3 more-than-half squares (R) 9 full squares and 4 less-than-half squares (S) 4 full squares, 3 more-than-half squares and 6 exactly-half squares\nColumn II: (1) 7 sq units (2) 8 sq units (3) 9 sq units (4) 10 sq units",
+     "a": "P-1, Q-2, R-3, S-4, because 6 + 1 = 7, 5 + 3 = 8, 9 + 0 = 9 and 4 + 3 + 3 = 10.",
+     "o": [
+      "P-1, Q-2, R-3, S-4",
+      "P-2, Q-1, R-3, S-4",
+      "P-1, Q-2, R-4, S-3",
+      "P-1, Q-3, R-2, S-4"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 140",
+     "q": "Assertion (A): Counting squares on a grid usually gives only an estimate, not the exact area, of a leaf with a curved edge.\nReason (R): Squares less than half covered are left out and squares more than half covered are counted as full squares.",
+     "a": "Both A and R are true, and R is the correct explanation of A. Leaving out small bits and counting large bits as whole squares makes the count close to, but not exactly, the true area.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false.",
+      "A is false but R is true."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 140",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: When estimating area on squared paper, a square that is less than half covered by the shape is counted as half a square unit. Give a reason.",
+     "a": "False. By the counting rule, a square that is less than half covered is ignored (counted as 0); only an exactly-half square is taken as 1/2 sq unit.",
+     "s": [
+      [
+       "States the verdict False",
+       1
+      ],
+      [
+       "Gives the rule that less-than-half squares are ignored (0 sq unit)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 140",
+     "q": "A shape traced on a 1 cm squared grid covers 10 squares fully and 6 squares exactly half.\n(a) How much area do the 6 exactly-half squares add?\n(b) Find the estimated area of the shape.",
+     "a": "(a) 6 x 1/2 = 3 sq cm. (b) 10 + 3 = 13 sq cm.",
+     "s": [
+      [
+       "(a) Finds 3 sq cm from the half squares",
+       1
+      ],
+      [
+       "(b) Finds the estimated area 13 sq cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 140",
+     "q": "A tracing on squared paper (1 square = 1 sq unit) has 7 fully covered squares, 4 exactly-half squares, some more-than-half squares and no other covered squares. Its estimated area is 15 sq units.\n(a) How much area do the full and exactly-half squares give together?\n(b) How many more-than-half squares are there?",
+     "a": "(a) 7 + 4 x 1/2 = 9 sq units. (b) Each more-than-half square counts as 1, so there are 15 - 9 = 6 of them.",
+     "s": [
+      [
+       "(a) Finds 9 sq units from the full and half squares",
+       1
+      ],
+      [
+       "(b) Works back to 6 more-than-half squares",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 140",
+     "q": "A rangoli design is traced on squared paper where 1 square = 1 sq unit. It covers 15 squares fully, 6 squares more than half, 4 squares exactly half and 7 squares less than half.\n(a) How many square units do the full and more-than-half squares give together?\n(b) How many square units do the exactly-half squares give?\n(c) Find the estimated area of the design.",
+     "a": "(a) 15 + 6 = 21 sq units. (b) 4 x 1/2 = 2 sq units. (c) 21 + 2 = 23 sq units; the 7 less-than-half squares are ignored.",
+     "s": [
+      [
+       "(a) Finds 21 sq units",
+       1
+      ],
+      [
+       "(b) Finds 2 sq units",
+       1
+      ],
+      [
+       "(c) Finds the estimate 23 sq units, ignoring the less-than-half squares",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 140",
+     "tags": [
+      "case_study"
+     ],
+     "q": "Class 6 students in a school in Shillong trace the outline of a small pond in their school garden onto squared paper, where each small square stands for 1 sq m of ground. They count 20 squares fully covered, 8 squares more than half covered, 6 squares exactly half covered and 10 squares less than half covered. They want to buy a net to lay over the pond. The shop sells nets of 30 sq m and 40 sq m.\n(a) How many square metres do the more-than-half squares add?\n(b) How many square metres do the exactly-half squares add?\n(c) Find the estimated area of the pond.\n(d) Which net should they buy to cover the estimated area? Give a reason.",
+     "a": "(a) 8 x 1 = 8 sq m. (b) 6 x 1/2 = 3 sq m. (c) 20 + 8 + 3 = 31 sq m. (d) The 40 sq m net, because 31 sq m is more than 30 sq m, so the smaller net is too small.",
+     "s": [
+      [
+       "(a) Counts the more-than-half squares as 8 sq m",
+       1
+      ],
+      [
+       "(b) Counts the exactly-half squares as 3 sq m",
+       1
+      ],
+      [
+       "(c) Finds the estimate 31 sq m, ignoring the less-than-half squares",
+       1
+      ],
+      [
+       "(d) Chooses the 40 sq m net because 31 is more than 30",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 140",
+     "q": "A farmer traces two oddly shaped fields on a village map drawn on squared paper. Each small square stands for a patch 10 m by 10 m, that is 100 sq m. Field A covers 18 squares fully, 7 more than half, 4 exactly half and 9 less than half. Field B covers 21 squares fully, 3 more than half, 2 exactly half and 12 less than half. He sows 1 kg of seed for every 100 sq m, and seed costs Rs 120 per kg.\n(a) Estimate the area of Field A in squares.\n(b) Estimate the area of Field B in squares.\n(c) Write both areas in square metres.\n(d) Find the seed needed for both fields and its total cost.\n(e) He has only 26 kg of seed this week. Which field can he sow completely? Give a reason.",
+     "a": "(a) 18 + 7 + 4 x 1/2 = 27 squares. (b) 21 + 3 + 2 x 1/2 = 25 squares. (c) A = 27 x 100 = 2700 sq m; B = 25 x 100 = 2500 sq m. (d) 27 + 25 = 52 kg; 52 x 120 = Rs 6,240. (e) Field B, which needs 25 kg (less than 26 kg); Field A needs 27 kg, which is more than he has.",
+     "s": [
+      [
+       "(a) Estimates Field A as 27 squares",
+       1
+      ],
+      [
+       "(b) Estimates Field B as 25 squares",
+       1
+      ],
+      [
+       "(c) Converts to 2700 sq m and 2500 sq m",
+       1
+      ],
+      [
+       "(d) Finds 52 kg of seed and the cost Rs 6,240",
+       1
+      ],
+      [
+       "(e) Chooses Field B by comparing 25 kg and 27 kg with 26 kg",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.5",
+   "questions": [
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 142",
+     "q": "A rectangular sheet 18 cm long and 14 cm wide is cut along one diagonal into two triangles. What is the area of each triangle?",
+     "a": "126 sq cm, which is half of the sheet's area of 252 sq cm.",
+     "o": [
+      "126 sq cm",
+      "252 sq cm",
+      "63 sq cm",
+      "64 sq cm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 143-144",
+     "q": "ABCD is a rectangle with AB = 14 cm and AD = 11 cm. E is any point on side DC. What is the area of triangle ABE?",
+     "a": "77 sq cm, which is half of the rectangle's area of 14 x 11 = 154 sq cm, wherever E lies on DC.",
+     "o": [
+      "77 sq cm",
+      "154 sq cm",
+      "50 sq cm",
+      "It cannot be found without knowing where E is on DC."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 142-144",
+     "q": "Consider the following statements.\nI. A triangle formed by cutting a 12 cm by 7 cm rectangle along its diagonal has an area of 84 sq cm.\nII. The two triangles formed by cutting a rectangle along a diagonal have equal areas.\nIII. A triangle drawn on one full side of a rectangle as base, with its third corner on the opposite side, has half the perimeter of the rectangle.\nWhich of the statements is/are correct?",
+     "a": "II only. Statement I is wrong because each triangle is half of 84 sq cm, that is 42 sq cm; Statement III is wrong because the halving is true of area, not of perimeter.",
+     "o": [
+      "II only",
+      "I and II only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 142",
+     "q": "A rectangle is cut along one of its diagonals.\n(a) How do the two triangles formed compare with each other?\n(b) How is the area of each triangle related to the area of the rectangle?",
+     "a": "(a) The two triangles overlap each other exactly, so they have the same area. (b) The area of each triangle is half the area of the rectangle.",
+     "s": [
+      [
+       "(a) States that the two triangles overlap exactly and have equal areas",
+       1
+      ],
+      [
+       "(b) States that each triangle is half the rectangle's area",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 143-144",
+     "q": "A rectangular cardboard is 20 cm long and 15 cm wide. A triangle is drawn on it with the 20 cm bottom edge as its base and its third corner on the top edge.\n(a) Find the area of the cardboard.\n(b) Find the area of the triangle.",
+     "a": "(a) 20 x 15 = 300 sq cm. (b) The triangle has the same base and height as the cardboard, so its area is half of 300 = 150 sq cm.",
+     "s": [
+      [
+       "(a) Finds the cardboard's area 300 sq cm",
+       1
+      ],
+      [
+       "(b) Halves it to get the triangle's area 150 sq cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 142-144",
+     "q": "Find the area of each triangle.\n(a) One of the two triangles made by cutting a 10 cm by 8 cm rectangle along its diagonal.\n(b) A triangle that is half of a rectangle of area 64 sq cm with the same base and height.\n(c) A triangle with a base of 12 m and a height of 5 m, using the rectangle 12 m by 5 m around it.",
+     "a": "(a) Half of 10 x 8 = 40 sq cm. (b) Half of 64 = 32 sq cm. (c) Half of 12 x 5 = half of 60 = 30 sq m.",
+     "s": [
+      [
+       "(a) Finds 40 sq cm",
+       1
+      ],
+      [
+       "(b) Finds 32 sq cm",
+       1
+      ],
+      [
+       "(c) Finds 30 sq m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 143-144",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Raju says, 'Every triangle drawn inside a rectangle 12 cm long and 8 cm wide has an area of 48 sq cm.'\n(a) For which triangles inside the rectangle is his statement true? Give the reason.\n(b) Give one triangle inside the rectangle for which it is false, with its area.\n(c) Is Raju's statement correct as he has made it?",
+     "a": "(a) It is true for a triangle whose base is one full side of the rectangle and whose third corner is on the opposite side: it has the same base and height as the rectangle, so its area is half of 12 x 8 = 48 sq cm. (b) A triangle with a base of only 6 cm on the 12 cm side and its third corner on the opposite side has area half of 6 x 8 = 24 sq cm. (c) No. As stated (every triangle) it is wrong; it is true only for triangles on a full side with the third corner on the opposite side.",
+     "s": [
+      [
+       "(a) States the condition (base a full side, third corner on the opposite side) and shows half of 96 = 48 sq cm",
+       1
+      ],
+      [
+       "(b) Gives a triangle with a different area, such as a 6 cm base giving 24 sq cm",
+       1
+      ],
+      [
+       "(c) Concludes the statement is wrong as stated, true only under the condition in (a) (accept 'partly right' with that condition)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 142",
+     "q": "A rectangular sheet of coloured paper is 26 cm long and 16 cm wide. It is cut along one diagonal into two triangles.\n(a) Find the area of the sheet.\n(b) Find the area of each triangle.\n(c) A shop prices such triangles at Rs 1 for every 8 sq cm. Find the price of one triangle.\n(d) How many such triangles have a total area equal to that of a board of area 1248 sq cm?",
+     "a": "(a) 26 x 16 = 416 sq cm. (b) Half of 416 = 208 sq cm. (c) 208 / 8 = Rs 26. (d) 1248 / 208 = 6 triangles.",
+     "s": [
+      [
+       "(a) Finds the sheet's area 416 sq cm",
+       1
+      ],
+      [
+       "(b) Finds each triangle's area 208 sq cm",
+       1
+      ],
+      [
+       "(c) Finds the price Rs 26",
+       1
+      ],
+      [
+       "(d) Finds that 6 triangles have a total area of 1248 sq cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 143-144",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A designer in Jaipur makes a rectangular poster 60 cm long and 40 cm high for a school fair. She paints a large red triangle whose base is the whole 60 cm bottom edge and whose top corner touches the top edge of the poster. The rest of the poster is painted yellow. Red paint costs Rs 3 for every 100 sq cm covered and yellow paint costs Rs 2 for every 100 sq cm covered. She has Rs 55 for paint.\n(a) Find the area of the poster.\n(b) Find the area of the red triangle.\n(c) Find the area painted yellow.\n(d) Is Rs 55 enough to paint the whole poster? Justify with numbers.",
+     "a": "(a) 60 x 40 = 2400 sq cm. (b) The triangle has the same base and height as the poster, so it is half: 1200 sq cm. (c) 2400 - 1200 = 1200 sq cm. (d) No. Red costs 12 x 3 = Rs 36 and yellow costs 12 x 2 = Rs 24, a total of Rs 60, which is Rs 5 more than Rs 55.",
+     "s": [
+      [
+       "(a) Finds the poster's area 2400 sq cm",
+       1
+      ],
+      [
+       "(b) Uses half the rectangle to get 1200 sq cm red",
+       1
+      ],
+      [
+       "(c) Finds the yellow area 1200 sq cm",
+       1
+      ],
+      [
+       "(d) Finds the paint cost Rs 60 and decides Rs 55 is not enough",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 142-144",
+     "q": "A road sign is shaped like an arrow. It is made of a rectangle 60 cm long and 20 cm wide, with a triangle joined at one end. The triangle's base is 40 cm long and lies along the 20 cm end of the rectangle, sticking out 10 cm on each side, and its tip is 30 cm from that base, straight out from the middle of the base.\n(a) Find the area of the rectangle part.\n(b) Find the area of the rectangle that has the same base and height as the triangle.\n(c) Find the area of the triangle part.\n(d) Find the area of the whole arrow.\n(e) A factory makes 15 such signs and coats their front with reflective paint. One bottle covers 5000 sq cm. How many bottles must it buy?",
+     "a": "(a) 60 x 20 = 1200 sq cm. (b) 40 x 30 = 1200 sq cm. (c) Half of 1200 = 600 sq cm. (d) 1200 + 600 = 1800 sq cm. (e) 15 x 1800 = 27,000 sq cm; 5 bottles cover only 25,000 sq cm, so it must buy 6 bottles.",
+     "s": [
+      [
+       "(a) Finds the rectangle part 1200 sq cm",
+       1
+      ],
+      [
+       "(b) Finds the enclosing rectangle 1200 sq cm",
+       1
+      ],
+      [
+       "(c) Halves it to get the triangle 600 sq cm",
+       1
+      ],
+      [
+       "(d) Adds to get the arrow 1800 sq cm",
+       1
+      ],
+      [
+       "(e) Finds 27,000 sq cm for 15 signs and rounds up to 6 bottles",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.6",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 150",
+     "q": "A rectangle is 8 cm long and 2 cm wide. A square has a side of 4 cm. Which statement about them is true?",
+     "a": "They have the same area but different perimeters.",
+     "o": [
+      "They have the same area but different perimeters.",
+      "They have the same perimeter but different areas.",
+      "They have the same area and the same perimeter.",
+      "They have different areas and different perimeters."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 141-142",
+     "q": "Rectangles are made from 28 unit squares, with whole-number sides and no gaps. Which of them has the smallest perimeter?",
+     "a": "The 4 by 7 rectangle, with perimeter 22 units.",
+     "o": [
+      "The 4 by 7 rectangle",
+      "The 2 by 14 rectangle",
+      "The 1 by 28 rectangle",
+      "All of them have the same perimeter"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 150",
+     "q": "Assertion (A): A rectangle 7 cm long and 3 cm wide has a larger perimeter than a square of side 5 cm.\nReason (R): Two closed figures can have the same perimeter but different areas.",
+     "a": "A is false but R is true. Both perimeters are 20 cm, so A is false; R is true, as these two figures show (areas 21 sq cm and 25 sq cm).",
+     "o": [
+      "A is false but R is true.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true but R is false."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 150",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A garden 16 m long and 4 m wide and a square garden of side 8 m need the same length of fencing, because they have the same area. Give a reason.",
+     "a": "False. Both have area 64 sq m, but the fencing needed is 2 x (16 + 4) = 40 m for the first and 4 x 8 = 32 m for the square. The same area does not mean the same perimeter.",
+     "s": [
+      [
+       "States the verdict False",
+       1
+      ],
+      [
+       "Shows equal areas of 64 sq m but perimeters 40 m and 32 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 150",
+     "q": "Plot P is 13 m long and 5 m wide. Plot Q is a square of side 9 m.\n(a) Show that both plots need the same length of fencing.\n(b) Which plot gives more land for growing vegetables, and by how many square metres?",
+     "a": "(a) Plot P: 2 x (13 + 5) = 36 m; Plot Q: 4 x 9 = 36 m, so both need 36 m. (b) Plot Q: 9 x 9 = 81 sq m against 13 x 5 = 65 sq m for Plot P, so Plot Q gives 16 sq m more.",
+     "s": [
+      [
+       "(a) Finds both perimeters equal to 36 m",
+       1
+      ],
+      [
+       "(b) Finds the areas 65 sq m and 81 sq m and says Plot Q has 16 sq m more",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 137",
+     "q": "A rectangular sandpit is 9 m long and 4 m wide.\n(a) Find its area.\n(b) Find its perimeter.\n(c) Find the side of a square sandpit with the same area.",
+     "a": "(a) 9 x 4 = 36 sq m. (b) 2 x (9 + 4) = 26 m. (c) 6 m, since 6 x 6 = 36 sq m.",
+     "s": [
+      [
+       "(a) Finds the area 36 sq m",
+       1
+      ],
+      [
+       "(b) Finds the perimeter 26 m",
+       1
+      ],
+      [
+       "(c) Finds the square's side 6 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 150",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Priya says, 'A field with a larger area always needs a longer fence.' Field X is a rectangle 11 m long and 3 m wide. Field Y is a rectangle 7 m long and 6 m wide.\n(a) Find the area of each field.\n(b) Find the length of fence needed for each field.\n(c) Is Priya right? Use your answers to decide.",
+     "a": "(a) Field X: 11 x 3 = 33 sq m; Field Y: 7 x 6 = 42 sq m. (b) Field X: 2 x (11 + 3) = 28 m; Field Y: 2 x (7 + 6) = 26 m. (c) Priya is wrong. Field Y has the larger area but needs the shorter fence, so a larger area does not always need a longer fence.",
+     "s": [
+      [
+       "(a) Finds the areas 33 sq m and 42 sq m",
+       1
+      ],
+      [
+       "(b) Finds the fence lengths 28 m and 26 m",
+       1
+      ],
+      [
+       "(c) Concludes Priya is wrong because the larger field needs less fencing",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 141-142",
+     "q": "A teacher has 40 square cardboard tiles, each of side 1 dm. She wants to arrange all of them into one rectangle, with whole-number sides, and put a ribbon once around its edge.\n(a) List every possible rectangle and its perimeter.\n(b) Which rectangle needs the least ribbon?\n(c) She has only 30 dm of ribbon. Which rectangles can she use?",
+     "a": "(a) 1 by 40: 82 dm; 2 by 20: 44 dm; 4 by 10: 28 dm; 5 by 8: 26 dm. (b) The 5 by 8 rectangle, needing 26 dm. (c) Only the 5 by 8 (26 dm) and the 4 by 10 (28 dm) rectangles, since the others need more than 30 dm.",
+     "s": [
+      [
+       "(a) Lists all four rectangles with perimeters 82, 44, 28 and 26 dm",
+       1
+      ],
+      [
+       "(b) Picks 5 by 8 with 26 dm as the least",
+       1
+      ],
+      [
+       "(c) Names the 5 by 8 and 4 by 10 rectangles as the only ones within 30 dm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 146-147",
+     "tags": [
+      "case_study"
+     ],
+     "q": "Ramesh's house in Nagpur stands on a rectangular plot 40 ft wide and 25 ft deep. The front part, 15 ft deep, holds a hall 22 ft by 15 ft and a bedroom next to it, 18 ft by 15 ft. The back part, 10 ft deep, holds a kitchen 16 ft by 10 ft, a toilet of area 60 sq ft and a store room that takes the rest of the width. His cousin's plot is 50 ft by 20 ft. A compound wall around a plot costs Rs 500 per foot.\n(a) Find the area of Ramesh's plot.\n(b) Find the width of the toilet.\n(c) Find the size and area of the store room.\n(d) Which of the two plots is cheaper to wall all around, and by how much?",
+     "a": "(a) 40 x 25 = 1000 sq ft. (b) The toilet is 10 ft deep, so its width is 60 / 10 = 6 ft. (c) Width = 40 - 16 - 6 = 18 ft, so the store is 18 ft by 10 ft = 180 sq ft. (d) Both plots have area 1000 sq ft, but Ramesh's perimeter is 2 x (40 + 25) = 130 ft and his cousin's is 2 x (50 + 20) = 140 ft, so Ramesh's plot is cheaper by 10 x 500 = Rs 5,000.",
+     "s": [
+      [
+       "(a) Finds the plot area 1000 sq ft",
+       1
+      ],
+      [
+       "(b) Finds the toilet width 6 ft",
+       1
+      ],
+      [
+       "(c) Finds the store room 18 ft by 10 ft, 180 sq ft",
+       1
+      ],
+      [
+       "(d) Finds perimeters 130 ft and 140 ft and says Ramesh's plot is cheaper by Rs 5,000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 150",
+     "q": "A school has 48 m of fencing for a rectangular garden. It is considering four shapes: 20 m by 4 m, 16 m by 8 m, 15 m by 9 m and 12 m by 12 m.\n(a) Show that each shape uses exactly 48 m of fencing.\n(b) Find the area of each shape.\n(c) Which shape encloses the most land?\n(d) The garden must have one side at least 15 m long, for a row of fruit trees, and an area of at least 130 sq m. Which shape should the school choose? Give a reason.",
+     "a": "(a) 2 x (20 + 4) = 2 x (16 + 8) = 2 x (15 + 9) = 2 x (12 + 12) = 48 m. (b) 80 sq m, 128 sq m, 135 sq m and 144 sq m. (c) The 12 m by 12 m square, with 144 sq m. (d) The 15 m by 9 m shape: the square has no side of 15 m, while 20 m by 4 m (80 sq m) and 16 m by 8 m (128 sq m) have less than 130 sq m; 15 m by 9 m has a 15 m side and 135 sq m.",
+     "s": [
+      [
+       "(a) Shows all four perimeters are 48 m",
+       1
+      ],
+      [
+       "(b) Finds the areas 80, 128, 135 and 144 sq m",
+       2
+      ],
+      [
+       "(c) Names the 12 m by 12 m square as enclosing the most",
+       1
+      ],
+      [
+       "(d) Applies both conditions and chooses 15 m by 9 m",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
