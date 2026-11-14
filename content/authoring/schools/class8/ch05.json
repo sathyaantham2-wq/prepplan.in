@@ -1,0 +1,1339 @@
+{
+  "kind": "school_topup",
+  "subject": {
+    "code": "MATH8",
+    "class": 8,
+    "board": "CBSE"
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 5,
+    "name": "Number Play"
+  },
+  "source_code": "hegp105",
+  "concepts": [
+    {
+      "code": "C8M-5.1",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 114",
+          "q": "At a book fair, a stall sells 351 story books on Saturday and 128 comic books on Sunday. Without adding, what can you say about the total number of books sold on the two days?",
+          "a": "The total is odd, because odd + even is odd.",
+          "o": [
+            "The total is odd, because odd + even is odd.",
+            "The total is even, because 128 is even.",
+            "The total is even, because both are whole numbers.",
+            "Nothing can be said without adding."
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "p. 116",
+          "q": "Assertion (A): For every integer m and n, the expression 6m + 4n gives an even number.\nReason (R): 6m + 4n can be written as 2(3m + 2n), which has 2 as a factor.",
+          "a": "Both A and R are true, and R is the correct explanation of A.",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 114",
+          "q": "(a) Without calculating, state whether 4,317 + 2,806 is odd or even. (b) State whether 4,317 - 2,806 is odd or even. Give a reason for each.",
+          "a": "(a) Odd, because odd + even is odd. (b) Odd, because odd - even is odd.",
+          "s": [
+            [
+              "States that the sum is odd, with the reason odd + even = odd",
+              1
+            ],
+            [
+              "States that the difference is odd, with the reason odd - even = odd",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 114",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or false: For every integer x, the expression 2x + 7 is an odd number. Give the reason or the correct statement.",
+          "a": "True. 2x is even for every integer x, and even + odd (7) is odd.",
+          "s": [
+            [
+              "States the verdict: True",
+              1
+            ],
+            [
+              "Gives the reason: 2x is even and 7 is odd, so the sum is odd",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 112-114",
+          "q": "Take the four consecutive numbers 9, 10, 11, 12. (a) Evaluate 9 + 10 - 11 + 12. (b) Evaluate 9 - 10 - 11 - 12. (c) What do you notice about the parity of the two results?",
+          "a": "(a) 9 + 10 - 11 + 12 = 20. (b) 9 - 10 - 11 - 12 = -24. (c) Both results are even numbers, so they have the same parity.",
+          "s": [
+            [
+              "Evaluates 9 + 10 - 11 + 12 = 20",
+              1
+            ],
+            [
+              "Evaluates 9 - 10 - 11 - 12 = -24",
+              1
+            ],
+            [
+              "Observes that both results are even (same parity)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 114-115",
+          "q": "a, b and c are integers and a + b + c is an even number. Which of the following must also be even?",
+          "a": "a - b - c",
+          "o": [
+            "a - b - c",
+            "a + b",
+            "a + 2b + c",
+            "a x b"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 112-114",
+          "q": "Ravi claims: 'When I put + and - signs in all 8 ways between four consecutive numbers, every result is a multiple of 4.' (a) Evaluate 3 + 4 - 5 + 6 and 3 + 4 + 5 + 6. (b) Is Ravi right? (c) What is always true about the results?",
+          "a": "(a) 3 + 4 - 5 + 6 = 8 and 3 + 4 + 5 + 6 = 18. (b) Ravi is wrong: 18 is not a multiple of 4. (c) Every result is an even number (same parity), because switching a sign changes the value by an even number.",
+          "s": [
+            [
+              "Evaluates the two expressions as 8 and 18",
+              1
+            ],
+            [
+              "Says Ravi is wrong, using 18 (not a multiple of 4) as the counterexample",
+              1
+            ],
+            [
+              "States that all the results are even because a sign switch changes the value by an even number",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 114-115",
+          "q": "Tanvi has four integers a, b, c and d. She forms P = a + b + c + d and Q = a - b + c - d. (a) Write P - Q in terms of b and d. (b) Explain why P and Q have the same parity. (c) Without knowing the four integers, state the parity of P + Q and explain. (d) With P = 87, b = 5 and d = 9, find Q.",
+          "a": "(a) P - Q = 2b + 2d = 2(b + d). (b) P - Q is a multiple of 2, so it is even, and two numbers whose difference is even have the same parity. (c) P + Q = 2a + 2c = 2(a + c), which is always even (two numbers of the same parity add up to an even number). (d) P - Q = 2(5 + 9) = 28, so Q = 87 - 28 = 59, which is odd like P.",
+          "s": [
+            [
+              "Finds P - Q = 2b + 2d = 2(b + d)",
+              1
+            ],
+            [
+              "Explains that an even difference means the same parity",
+              1
+            ],
+            [
+              "Shows P + Q = 2(a + c), so P + Q is always even",
+              1
+            ],
+            [
+              "Finds Q = 87 - 28 = 59",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 112-114",
+          "tags": [
+            "case_study"
+          ],
+          "q": "At the school maths fair, the 'Consecutive Chain' stall shows a target card. A team scores if it writes the number on the target card as a sum of a chain of 2, 3 or 4 consecutive natural numbers. Today's target cards are 27, 38 and 40. (a) Write n + (n + 1) in its simplest form and state its parity. (b) Show that the sum of four consecutive numbers n, n + 1, n + 2, n + 3 is always even. (c) Write 27 as a chain of 2 and as a chain of 3 consecutive numbers. (d) The team holding card 40 says, 'Our number is even, just like 38, so it must also be a chain of 4.' Check both cards and decide whether the team is right.",
+          "a": "(a) n + (n + 1) = 2n + 1, which is always odd. (b) n + (n + 1) + (n + 2) + (n + 3) = 4n + 6 = 2(2n + 3), which has a factor 2, so it is always even. (c) 27 = 13 + 14 and 27 = 8 + 9 + 10. (d) The team is wrong. For 38, 4n + 6 = 38 gives n = 8, and 8 + 9 + 10 + 11 = 38. For 40, 4n + 6 = 40 gives 4n = 34, so n is not a whole number. Being even is needed for a chain of 4, but it is not enough.",
+          "s": [
+            [
+              "Writes 2n + 1 and says it is always odd",
+              1
+            ],
+            [
+              "Shows the sum is 4n + 6 = 2(2n + 3), so it is even",
+              1
+            ],
+            [
+              "Writes 27 = 13 + 14 and 27 = 8 + 9 + 10",
+              1
+            ],
+            [
+              "Shows 38 = 8 + 9 + 10 + 11 but 4n + 6 = 40 has no whole-number n, so the team is wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 113-115",
+          "q": "Kavya writes the puzzle 12 [ ] 7 [ ] 9 [ ] 15 [ ] 4 and fills each box with + or -. (a) Find the value when every box has + and state its parity. (b) Explain why changing any one sign from + to - cannot change the parity of the value. (c) Her friend's target is 20. Decide, without trying the signs, whether it can be reached. (d) Kavya wants the value 3. Find which numbers must get a - sign, and write the expression. (e) Her friend says, 'Every value is odd, so the largest value below 47 that can be made is 45.' Evaluate the claim and find the largest value below 47.",
+          "a": "(a) 12 + 7 + 9 + 15 + 4 = 47, which is odd. (b) Changing +x to -x lowers the value by 2x, an even number, so the parity stays the same. (c) No. Every value is odd like 47, and 20 is even. (d) The value must fall by 47 - 3 = 44, so the numbers that get a - sign must add up to 22. From 7, 9, 15 and 4, only 7 + 15 = 22, so the expression is 12 - 7 + 9 - 15 + 4 = 3. (e) The claim is wrong. A value of 45 needs the switched numbers to add up to 1, but the smallest number that can be switched is 4. Switching only 4 gives 47 - 8 = 39, and every other switch lowers the value by at least 2 x 7 = 14, so the largest value below 47 is 39.",
+          "s": [
+            [
+              "Finds 47 and says it is odd",
+              1
+            ],
+            [
+              "Explains that changing +x to -x changes the value by 2x, which is even",
+              1
+            ],
+            [
+              "Rejects 20 because every value is odd",
+              1
+            ],
+            [
+              "Shows the numbers with a - sign must add to 22 and writes 12 - 7 + 9 - 15 + 4 = 3",
+              1
+            ],
+            [
+              "Judges the claim wrong and finds 39 by switching only 4",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.2",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 118-119",
+          "q": "Ritu has 40 pencils and Sana has 48 pencils. Both numbers are multiples of 8. Which statement about the total number of pencils is certain?",
+          "a": "The total is divisible by 8.",
+          "o": [
+            "The total is divisible by 8.",
+            "The total is divisible by 16.",
+            "The total is divisible by 7.",
+            "The total is a prime number."
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "p": "pp. 118-121",
+          "tags": [
+            "match"
+          ],
+          "q": "Match each description of a number N in Column I with the number it is certain to be divisible by in Column II.\nColumn I: I. N = 35 + 63  II. N is a multiple of 45  III. N is divisible by both 4 and 9  IV. N is divisible by both 3 and 8\nColumn II: A. 24  B. 7  C. 36  D. 5",
+          "a": "I-B, II-D, III-C, IV-A",
+          "o": [
+            "I-B, II-D, III-C, IV-A",
+            "I-B, II-D, III-A, IV-C",
+            "I-D, II-B, III-C, IV-A",
+            "I-B, II-C, III-D, IV-A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 118-119",
+          "q": "(a) State what happens to M + N and M - N when 6 divides both M and N. (b) Check your statement for M = 48 and N = 30.",
+          "a": "(a) 6 divides both M + N and M - N. (b) 48 + 30 = 78 = 6 x 13 and 48 - 30 = 18 = 6 x 3, so both are multiples of 6.",
+          "s": [
+            [
+              "States that 6 divides both the sum and the difference",
+              1
+            ],
+            [
+              "Checks with 78 = 6 x 13 and 18 = 6 x 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 120",
+          "q": "A number is divisible by 20. (a) List all the factors of 20. (b) State which of these factors must divide the number. (c) Write one number divisible by 20 and test it with the factors 4 and 5.",
+          "a": "(a) 1, 2, 4, 5, 10 and 20. (b) All of them, because a number divisible by k is divisible by every factor of k. (c) For example 60: 60 / 4 = 15 and 60 / 5 = 12, so both divide it.",
+          "s": [
+            [
+              "Lists the factors 1, 2, 4, 5, 10, 20",
+              1
+            ],
+            [
+              "States that all the factors must divide the number",
+              1
+            ],
+            [
+              "Tests a multiple of 20 such as 60 with 4 and 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 119-120",
+          "q": "A number N is a multiple of 9. (a) Write N in the form 9m. (b) Write 3N in a form that shows it is a multiple of 9. (c) State whether 3N is divisible by 9. (d) Check with m = 4.",
+          "a": "(a) N = 9m. (b) 3N = 3 x 9m = 9(3m). (c) Yes, 3N is divisible by 9 because 9 is a factor of it. (d) For m = 4, N = 36 and 3N = 108 = 9 x 12.",
+          "s": [
+            [
+              "Writes N = 9m",
+              1
+            ],
+            [
+              "Writes 3N = 9(3m)",
+              1
+            ],
+            [
+              "Concludes 3N is divisible by 9",
+              1
+            ],
+            [
+              "Checks with N = 36 and 3N = 108 = 9 x 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 120-121",
+          "q": "A bookshop's stock of notebooks can be packed exactly in bundles of 6 and also exactly in bundles of 14, with none left over either way. Which of the following numbers must divide the number of notebooks?",
+          "a": "42",
+          "o": [
+            "42",
+            "84",
+            "20",
+            "28"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 118-121",
+          "q": "N is a number divisible by 18. Consider the following statements.\nI. N is divisible by 12.\nII. N is divisible by 6.\nIII. N + 36 is divisible by 18.\nWhich of the statements are always true?",
+          "a": "II and III only",
+          "o": [
+            "II and III only",
+            "I and II only",
+            "I and III only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 120-121",
+          "q": "Tara says: 'A number divisible by both 10 and 15 must be divisible by 150, because 10 x 15 = 150.' (a) Test her claim with the number 60. (b) Find the LCM of 10 and 15. (c) State the correct conclusion.",
+          "a": "(a) 60 is divisible by 10 and by 15, but 60 / 150 is not a whole number, so the claim fails. (b) LCM(10, 15) = 30. (c) A number divisible by both 10 and 15 must be divisible by 30, not necessarily by 150.",
+          "s": [
+            [
+              "Tests with 60, which is divisible by 10 and 15 but not by 150",
+              1
+            ],
+            [
+              "Finds LCM(10, 15) = 30",
+              1
+            ],
+            [
+              "Concludes divisibility by 30 is what is guaranteed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 118-121",
+          "q": "Decide whether each statement is Always True, Sometimes True or Never True, with a reason. (a) The sum of a multiple of 8 and a multiple of 12 is a multiple of 4. (b) If a number is divisible by 6, it is divisible by 24. (c) The difference of two multiples of 12 is a multiple of 8. (d) A multiple of 8 plus 4 is a multiple of 8. (e) The sum of three consecutive multiples of 4 is a multiple of 12.",
+          "a": "(a) Always true: 8a + 12b = 4(2a + 3b). (b) Sometimes true: 24 and 48 are divisible by 6 and by 24, but 18 is divisible by 6 and not by 24. (c) Sometimes true: 36 - 12 = 24 is a multiple of 8, but 24 - 12 = 12 is not. (d) Never true: 8a + 4 is 4 more than a multiple of 8, so it leaves a remainder of 4 when divided by 8. (e) Always true: 4n + 4(n + 1) + 4(n + 2) = 12n + 12 = 12(n + 1).",
+          "s": [
+            [
+              "(a) Always true, with 8a + 12b = 4(2a + 3b)",
+              1
+            ],
+            [
+              "(b) Sometimes true, with an example such as 24 and a non-example such as 18",
+              1
+            ],
+            [
+              "(c) Sometimes true, with an example and a non-example",
+              1
+            ],
+            [
+              "(d) Never true, because 8a + 4 leaves a remainder of 4 on division by 8",
+              1
+            ],
+            [
+              "(e) Always true, with 4n + 4(n + 1) + 4(n + 2) = 12(n + 1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 118-121",
+          "q": "At a book fair, a lucky draw uses tickets numbered 72,001 to 73,000. A ticket wins a pen if its number is a multiple of 45. The organiser knows that 45 x 1,600 = 72,000. (a) Use this fact, without dividing, to write the first three tickets that win a pen. (b) Find the last ticket that wins a pen and the number of tickets that win a pen. (c) A pen-winning ticket also wins a book if its number is even. What is the largest number that must divide every book-winning ticket number? (d) How many tickets win a book?",
+          "a": "(a) Adding 45 to a multiple of 45 gives another multiple of 45, so the first three are 72,045, 72,090 and 72,135. (b) 73,000 - 72,000 = 1,000 = 45 x 22 + 10, so the last is 72,000 + 45 x 22 = 72,990, and 22 tickets win a pen. (c) 90. The number must be divisible by both 2 and 45, so by their LCM, 90; no larger number works, because 72,090 and 72,180 both win a book and differ by only 90. (d) 72,000 = 90 x 800 and 72,990 = 90 x 811, so the book-winning tickets are 90 x 801 to 90 x 811, which is 11 tickets.",
+          "s": [
+            [
+              "Writes 72,045, 72,090 and 72,135 by adding 45",
+              1
+            ],
+            [
+              "Finds the last ticket 72,990 and the count 22",
+              1
+            ],
+            [
+              "States that the largest such number is LCM(2, 45) = 90",
+              1
+            ],
+            [
+              "Uses 72,000 = 90 x 800 and 72,990 = 90 x 811 to count 11 tickets",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.3",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 121",
+          "q": "Which expression gives all the numbers that leave a remainder of 3 when divided by 7 (k = 0, 1, 2, 3, ...)?",
+          "a": "7k + 3",
+          "o": [
+            "7k + 3",
+            "3k + 7",
+            "7k - 3",
+            "7k"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "pp. 121-122",
+          "q": "Assertion (A): The numbers 7, 13, 19, 25, ... all leave a remainder of 1 when divided by 6.\nReason (R): The numbers 7, 13, 19, 25, ... are all odd numbers.",
+          "a": "Both A and R are true, but R is not the correct explanation of A.",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 121",
+          "q": "(a) Write the general form of the numbers that leave a remainder of 4 when divided by 9. (b) List the first three such numbers, taking k = 0, 1, 2.",
+          "a": "(a) 9k + 4. (b) For k = 0, 1, 2 the numbers are 4, 13 and 22.",
+          "s": [
+            [
+              "Writes the general form 9k + 4",
+              1
+            ],
+            [
+              "Lists 4, 13 and 22",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 122",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or false: The expressions 5k + 3 and 5k - 3 (with k = 1, 2, 3, ...) describe the same set of numbers. Give the reason or the correct statement.",
+          "a": "False. 5k + 3 gives 8, 13, 18, ... with remainder 3, while 5k - 3 gives 2, 7, 12, ... with remainder 2. The expression that matches 5k + 3 is 5k - 2.",
+          "s": [
+            [
+              "States the verdict: False",
+              1
+            ],
+            [
+              "Gives the reason, such as 5k - 3 leaves remainder 2 (or that 5k - 2 is the equivalent form)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 121-122",
+          "q": "Consider the numbers that leave a remainder of 4 when divided by 6. (a) Write their general form using k. (b) List the first four such numbers with k = 0, 1, 2, 3. (c) Each of these numbers is a few less than a multiple of 6. Write them in the form 6k - (a number), with k = 1, 2, 3, ... (d) List the first four values of your expression in (c). (e) Explain why the two forms describe the same numbers.",
+          "a": "(a) 6k + 4. (b) 4, 10, 16, 22. (c) Each number is 2 less than a multiple of 6 (4 = 6 - 2, 10 = 12 - 2), so the form is 6k - 2. (d) For k = 1, 2, 3, 4 the values are 4, 10, 16, 22. (e) 6k + 4 = 6(k + 1) - 2, so every number of the first form is 2 less than a multiple of 6, which is the second form, and the two lists match.",
+          "s": [
+            [
+              "Writes 6k + 4",
+              1
+            ],
+            [
+              "Lists 4, 10, 16, 22",
+              1
+            ],
+            [
+              "Finds the form 6k - 2",
+              1
+            ],
+            [
+              "Lists 4, 10, 16, 22 from 6k - 2",
+              1
+            ],
+            [
+              "Explains 6k + 4 = 6(k + 1) - 2 so the forms match",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 123",
+          "q": "When divided by 9, a number x leaves a remainder of 5 and a number y leaves a remainder of 7. What remainder does x + y leave when divided by 9?",
+          "a": "3",
+          "o": [
+            "3",
+            "12",
+            "5",
+            "7"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 121-123",
+          "q": "Each of two numbers leaves a remainder of 3 when divided by 9. (a) Write the two numbers as 9a + 3 and 9b + 3 and find their sum in the form 9 x (something) + (remainder). (b) What remainder does the sum leave when divided by 9? (c) Can the sum ever be divisible by 9? Why?",
+          "a": "(a) (9a + 3) + (9b + 3) = 9(a + b) + 6. (b) The remainder is 6. (c) No, because the sum is always 6 more than a multiple of 9, so the remainder is never 0.",
+          "s": [
+            [
+              "Shows the sum is 9(a + b) + 6",
+              1
+            ],
+            [
+              "States the remainder 6",
+              1
+            ],
+            [
+              "Concludes the sum is never divisible by 9, because the remainder is never 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "p. 123",
+          "q": "Assertion (A): If x leaves a remainder of 2 and y leaves a remainder of 5 when divided by 7, and x is greater than y, then x - y leaves a remainder of 4 when divided by 7.\nReason (R): (7p + 2) - (7q + 5) = 7(p - q - 1) + 4.",
+          "a": "Both A and R are true, and R is the correct explanation of A.",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true but R is false.",
+            "A is false but R is true."
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 121-123",
+          "tags": [
+            "case_study"
+          ],
+          "q": "St. Anne's school library packs all its new books together into cartons, and any books that do not fill a carton go on a loose shelf. It received 85 books in Term 1 and 61 books in Term 2, and 40 more books are due in Term 3. The librarian must choose one carton size for the whole year: Plan X uses cartons of 9 books and Plan Y uses cartons of 7 books. She wants the fewer loose books. (a) Find the remainders of 85 and 61 when divided by 9 and when divided by 7. (b) Without adding, find the number of loose books after Terms 1 and 2 under each plan. (c) Using the remainders of 40, find the number of loose books after all three terms under each plan. (d) Which plan should she choose? Does the answer change between (b) and (c)?",
+          "a": "(a) 85 = 9 x 9 + 4 and 61 = 9 x 6 + 7, so the remainders on division by 9 are 4 and 7. 85 = 7 x 12 + 1 and 61 = 7 x 8 + 5, so the remainders on division by 7 are 1 and 5. (b) Plan X: 4 + 7 = 11 = 9 + 2, so 2 loose books. Plan Y: 1 + 5 = 6, so 6 loose books. (c) 40 = 9 x 4 + 4 and 40 = 7 x 5 + 5. Plan X: 2 + 4 = 6 loose books. Plan Y: 6 + 5 = 11 = 7 + 4, so 4 loose books (check: 186 = 9 x 20 + 6 = 7 x 26 + 4). (d) She should choose Plan Y, which leaves 4 loose books against 6. The answer changes: after two terms Plan X was better (2 against 6), but after all three terms Plan Y is better.",
+          "s": [
+            [
+              "Finds the remainders 4, 7 (on 9) and 1, 5 (on 7)",
+              1
+            ],
+            [
+              "Finds 2 loose books under Plan X and 6 under Plan Y after two terms",
+              1
+            ],
+            [
+              "Finds 6 loose books under Plan X and 4 under Plan Y after three terms",
+              1
+            ],
+            [
+              "Chooses Plan Y and notes that the better plan changes once Term 3 is added",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 121-123",
+          "q": "A number N leaves a remainder of 1 when divided by 4 and a remainder of 3 when divided by 5. (a) Write each condition as an algebraic expression. (b) List the numbers less than 25 that meet the first condition, and pick out those that also meet the second. (c) Show that if N meets both conditions, then N + 20 also does, and write an expression for all such numbers. (d) How many such numbers lie between 100 and 200?",
+          "a": "(a) N = 4k + 1 and N = 5m + 3. (b) The numbers 1, 5, 9, 13, 17, 21 leave a remainder of 1 on division by 4. Of these only 13 = 5 x 2 + 3 leaves a remainder of 3 on division by 5. (c) 20 is a multiple of both 4 and 5, so adding 20 does not change either remainder. All such numbers are 20j + 13, j = 0, 1, 2, ... (d) 113, 133, 153, 173 and 193, so there are 5 such numbers.",
+          "s": [
+            [
+              "Writes N = 4k + 1 and N = 5m + 3",
+              1
+            ],
+            [
+              "Lists 1, 5, 9, 13, 17, 21 and picks out 13",
+              1
+            ],
+            [
+              "Explains that adding 20 keeps both remainders and writes 20j + 13",
+              1
+            ],
+            [
+              "Finds 113, 133, 153, 173, 193: five numbers",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.4",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 124-125",
+          "q": "Which of the following numbers is divisible by 9?",
+          "a": "6,372",
+          "o": [
+            "6,372",
+            "5,816",
+            "4,235",
+            "9,019"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "pp. 125-126",
+          "q": "Consider the following statements.\nI. Every number whose units digit is 9 is divisible by 9.\nII. Every number divisible by 9 is also divisible by 3.\nIII. If a number is divisible by 3, the sum of its digits is divisible by 9.\nWhich of the statements are correct?",
+          "a": "II only",
+          "o": [
+            "II only",
+            "I and II only",
+            "II and III only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 125-126",
+          "q": "(a) Find the sum of the digits of 6,453. (b) Is 6,453 divisible by 9? Give a reason.",
+          "a": "(a) 6 + 4 + 5 + 3 = 18. (b) Yes, because the digit sum 18 is divisible by 9.",
+          "s": [
+            [
+              "Finds the digit sum 18",
+              1
+            ],
+            [
+              "Concludes divisible by 9 because 18 is a multiple of 9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "p. 125",
+          "q": "Find the remainder when 5,843 is divided by 9, without dividing. (a) Add the digits of 5,843. (b) Add the digits of your answer to (a). (c) State the remainder on division by 9.",
+          "a": "(a) 5 + 8 + 4 + 3 = 20. (b) 2 + 0 = 2. (c) The remainder is 2.",
+          "s": [
+            [
+              "Adds the digits to get 20",
+              1
+            ],
+            [
+              "Adds again to get 2",
+              1
+            ],
+            [
+              "States the remainder is 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 125-126",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or false: If the digits of a number add up to 12, the number is divisible by 9. Give the reason or the correct statement.",
+          "a": "False. A number is divisible by 9 only when its digit sum is divisible by 9, and 12 is not. (A number with digit sum 12 is divisible by 3.)",
+          "s": [
+            [
+              "States the verdict: False",
+              1
+            ],
+            [
+              "Gives the reason: 12 is not divisible by 9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 124-125",
+          "q": "The number 8x45 (x is a digit) is a multiple of 9. What remainder does 8x46 leave when divided by 9?",
+          "a": "1",
+          "o": [
+            "1",
+            "0",
+            "8",
+            "2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 125-126",
+          "q": "Rita writes every 3-digit number that uses each of the digits 1, 2 and 3 exactly once. (a) Write all such numbers. (b) Find the digit sum of each. (c) What can you say about their divisibility by 3 and by 9?",
+          "a": "(a) 123, 132, 213, 231, 312 and 321. (b) Each has digit sum 1 + 2 + 3 = 6. (c) All six are divisible by 3 and none is divisible by 9, because 6 is a multiple of 3 but not of 9.",
+          "s": [
+            [
+              "Lists all six numbers",
+              1
+            ],
+            [
+              "States the common digit sum 6",
+              1
+            ],
+            [
+              "Concludes all are divisible by 3 and none by 9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "p": "p. 125",
+          "q": "The 4-digit number 52y7, where y is a digit, leaves a remainder of 4 when divided by 9. Use digit sums, not division. (a) Write the digit sum in terms of y. (b) Between which two numbers must the digit sum lie, and which number in that range leaves a remainder of 4 on division by 9? (c) Find y and write the number. (d) Which digit y would instead make 52y7 divisible by 9?",
+          "a": "(a) The digit sum is 5 + 2 + y + 7 = 14 + y. (b) y is a digit from 0 to 9, so 14 + y lies from 14 to 23. The numbers that leave a remainder of 4 on division by 9 are 4, 13, 22, 31, ..., and only 22 lies in this range. (c) 14 + y = 22 gives y = 8, so the number is 5,287. (d) 14 + y must then be a multiple of 9, and the only multiple of 9 from 14 to 23 is 18, so y = 4 and the number is 5,247.",
+          "s": [
+            [
+              "Writes the digit sum 14 + y",
+              1
+            ],
+            [
+              "States the range 14 to 23 and picks 22 as the only sum leaving remainder 4",
+              1
+            ],
+            [
+              "Finds y = 8 and writes 5,287",
+              1
+            ],
+            [
+              "Finds y = 4 (digit sum 18) for divisibility by 9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 123-126",
+          "q": "A = 4,7d3, where d is a digit, and B = 2,158. Use digit sums, not division. (a) Find the remainder when B is divided by 9. (b) Write the digit sum of A in terms of d. (c) Find the digit d for which A + B is divisible by 9. (d) For this value of d, find the remainder when A - B is divided by 9. (e) Ravi says, 'If A + B is divisible by 9, then A - B must also be divisible by 9.' Use your answers to evaluate his claim.",
+          "a": "(a) 2 + 1 + 5 + 8 = 16 and 1 + 6 = 7, so B leaves a remainder of 7. (b) 4 + 7 + d + 3 = 14 + d. (c) A + B is divisible by 9 when the remainders of A and B add up to a multiple of 9, so A must leave a remainder of 2. 14 + d must be 2 more than a multiple of 9, that is 20, so d = 6 and A = 4,763 (check: 4,763 + 2,158 = 6,921, digit sum 18). (d) A leaves 2 and B leaves 7, and 2 - 7 = -5 = -9 + 4, so A - B leaves a remainder of 4 (check: 4,763 - 2,158 = 2,605, digit sum 13, then 4). (e) Ravi is wrong. With d = 6, A + B is divisible by 9 but A - B leaves a remainder of 4. A - B is divisible by 9 only when A and B leave the same remainder.",
+          "s": [
+            [
+              "Finds the remainder 7 for B",
+              1
+            ],
+            [
+              "Writes the digit sum of A as 14 + d",
+              1
+            ],
+            [
+              "Finds d = 6 so that A leaves a remainder of 2",
+              1
+            ],
+            [
+              "Finds the remainder 4 for A - B",
+              1
+            ],
+            [
+              "Judges Ravi's claim false using d = 6, as the remainders 2 and 7 differ",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 124-126",
+          "tags": [
+            "case_study"
+          ],
+          "q": "At a railway booking counter, a clerk checks 5-digit coupon numbers by adding digits, never by dividing. A coupon is 'green' if its number is divisible by 9, and 'yellow' if it is divisible by 3 but not by 9. The coupons on one counter are 36,207, 48,615, 70,143 and 52,938. A fifth coupon is smudged and reads 64x05, where x is an unreadable digit. (a) Find the digit sum of each of the four clear coupons. (b) Which are green and which are yellow? (c) For each yellow coupon, find the smallest number that must be added to its number to make it green. (d) If the smudged coupon is green, find x.",
+          "a": "(a) The digit sums are 18, 24, 15 and 27. (b) 36,207 and 52,938 are green; 48,615 and 70,143 are yellow (digit sums 24 and 15 are multiples of 3 but not of 9). (c) The digit sums 24 and 15 each leave a remainder of 6 on division by 9, so 3 must be added to each: 48,618 and 70,146 are multiples of 9. (d) 6 + 4 + x + 0 + 5 = 15 + x, which must be 18, so x = 3 and the coupon is 64,305.",
+          "s": [
+            [
+              "Finds the digit sums 18, 24, 15 and 27",
+              1
+            ],
+            [
+              "Classifies 36,207 and 52,938 as green and 48,615 and 70,143 as yellow",
+              1
+            ],
+            [
+              "Uses remainder 6 to find that 3 must be added to each yellow coupon",
+              1
+            ],
+            [
+              "Finds x = 3 from 15 + x = 18",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.5",
+      "questions": [
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "pp. 127-129",
+          "q": "Which of the following numbers is divisible by 11?",
+          "a": "4,917",
+          "o": [
+            "4,917",
+            "4,918",
+            "4,927",
+            "5,917"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "match",
+          "m": 1,
+          "p": "pp. 121-130",
+          "tags": [
+            "match"
+          ],
+          "q": "A number passes a divisibility test for the divisor in Column I when it passes the two tests in Column II. Match them.\nColumn I: I. 6  II. 12  III. 24  IV. 33\nColumn II: A. tests for 3 and 8  B. tests for 3 and 11  C. tests for 2 and 3  D. tests for 3 and 4",
+          "a": "I-C, II-D, III-A, IV-B",
+          "o": [
+            "I-C, II-D, III-A, IV-B",
+            "I-C, II-A, III-D, IV-B",
+            "I-D, II-C, III-A, IV-B",
+            "I-C, II-D, III-B, IV-A"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 128-129",
+          "q": "(a) Starting from the units digit, write the alternating sum for 2,816 (+, -, +, - in turn). (b) Is 2,816 divisible by 11? Give a reason.",
+          "a": "(a) 6 - 1 + 8 - 2 = 11. (b) Yes, because the alternating sum 11 is divisible by 11.",
+          "s": [
+            [
+              "Writes and evaluates 6 - 1 + 8 - 2 = 11",
+              1
+            ],
+            [
+              "Concludes divisible by 11 because 11 is a multiple of 11",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 129-130",
+          "tags": [
+            "true_false"
+          ],
+          "q": "True or false: A number that is divisible by both 3 and 11 is divisible by 33. Give the reason or the correct statement.",
+          "a": "True. 3 and 11 share no common factor other than 1, so a number divisible by both is divisible by their product 33.",
+          "s": [
+            [
+              "States the verdict: True",
+              1
+            ],
+            [
+              "Gives the reason: 3 and 11 have no common factor, so 3 x 11 = 33 divides the number",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 128-129",
+          "q": "Find the remainder when 52,813 is divided by 11, without dividing. (a) Write the alternating expression, starting from the units digit with +. (b) Evaluate it. (c) State the remainder.",
+          "a": "(a) 3 - 1 + 8 - 2 + 5. (b) The value is 13. (c) 13 = 11 + 2, so the remainder is 2.",
+          "s": [
+            [
+              "Writes 3 - 1 + 8 - 2 + 5",
+              1
+            ],
+            [
+              "Evaluates it as 13",
+              1
+            ],
+            [
+              "States the remainder 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 128",
+          "q": "The 4-digit number 6a38 is divisible by 11, where a is a digit. Its last two digits are swapped to give 6a83. What remainder does 6a83 leave when divided by 11?",
+          "a": "1",
+          "o": [
+            "1",
+            "0",
+            "10",
+            "5"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "p": "pp. 126-129",
+          "q": "Assertion (A): A number is divisible by 11 whenever the sum of its digits is divisible by 11.\nReason (R): The test for 11 adds the digits in alternate places and subtracts the digits in the other places.",
+          "a": "A is false but R is true.",
+          "o": [
+            "A is false but R is true.",
+            "Both A and R are true, and R is the correct explanation of A.",
+            "Both A and R are true, but R is not the correct explanation of A.",
+            "A is true but R is false."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 128-130",
+          "q": "Show that 4,356 is divisible by 33 and by 44. (a) Apply the test for 11. (b) Use the test for 3 and your answer to (a) to decide divisibility by 33. (c) Use the test for 4 and your answer to (a) to decide divisibility by 44.",
+          "a": "(a) 6 - 5 + 3 - 4 = 0, so 4,356 is divisible by 11. (b) 4 + 3 + 5 + 6 = 18 is divisible by 3, so with 11 the number is divisible by 33. (c) The last two digits 56 are divisible by 4, so with 11 the number is divisible by 44.",
+          "s": [
+            [
+              "Finds the alternating sum 0, so divisible by 11",
+              1
+            ],
+            [
+              "Uses digit sum 18 and 11 to conclude divisible by 33",
+              1
+            ],
+            [
+              "Uses the last two digits 56 and 11 to conclude divisible by 44",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 5,
+          "p": "pp. 125-130",
+          "q": "Mohan's 6-digit number is 73d529, where d is a digit. (a) Starting from the units digit with +, write the alternating sum of the digits in terms of d. (b) Find the value of d for which 73d529 is divisible by 11. (c) Find all the values of d for which 73d529 is divisible by 3. (d) Decide whether any digit d makes 73d529 divisible by 33. Explain. (e) For d = 0, use the alternating sum to find the remainder when 730,529 is divided by 11.",
+          "a": "(a) 9 - 2 + 5 - d + 3 - 7 = 8 - d. (b) 8 - d must be 0 or a multiple of 11; d is a digit, so 8 - d lies between -1 and 8 and must be 0, giving d = 8. (c) The digit sum 7 + 3 + d + 5 + 2 + 9 = 26 + d must be a multiple of 3, so d = 1, 4 or 7. (d) No digit works. Divisibility by 33 needs divisibility by both 3 and 11, which needs d = 8 and d in {1, 4, 7} at once, and 8 is not in that list (738,529 has digit sum 34, not a multiple of 3). (e) The alternating sum is 8 - 0 = 8, so 730,529 is 8 more than a multiple of 11 and leaves a remainder of 8.",
+          "s": [
+            [
+              "Writes the alternating sum 8 - d",
+              1
+            ],
+            [
+              "Finds d = 8 for divisibility by 11",
+              1
+            ],
+            [
+              "Finds d = 1, 4 or 7 from the digit sum 26 + d",
+              1
+            ],
+            [
+              "Concludes that no d works for 33, since 8 is not 1, 4 or 7",
+              1
+            ],
+            [
+              "Finds the remainder 8 for 730,529",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 126-130",
+          "tags": [
+            "case_study"
+          ],
+          "q": "A courier office prints a 5-digit code on every parcel. Its computer accepts a code only if the number is divisible by 33. A clerk checks four codes using the shortcuts only, never dividing: 47,256, 29,172, 52,712 and 61,683. She is told that exactly one of the rejected codes was printed with a wrong hundreds digit, and all its other digits are correct. (a) Use the test for 11 to find which codes are divisible by 11. (b) Use the test for 3 to find which codes the computer accepts, and explain why passing both tests is enough. (c) Explain why changing only the hundreds digit of 52,712 can never make it acceptable. (d) Decide which rejected code was misprinted and find its correct number.",
+          "a": "(a) Starting from the units digit with +, the alternating sums are 0, -11, 11 and 6, so 47,256, 29,172 and 52,712 are divisible by 11, and 61,683 is not. (b) The digit sums are 24, 21, 17 and 24, so 52,712 fails the test for 3. The computer accepts 47,256 and 29,172. Passing both tests is enough because 3 and 11 have no common factor, so their LCM is 3 x 11 = 33. (c) Changing the hundreds digit by any amount from 1 to 9 (up or down) changes the alternating sum of 52,712 from 11 to a number between 2 and 20 that is not 11, so the number stops being divisible by 11. (d) It must be 61,683. Its digit sum 24 already passes the test for 3, so the hundreds digit must change by a multiple of 3, and the alternating sum 6 must become a multiple of 11. Lowering the hundreds digit by 6 does both, giving 61,083 (alternating sum 0, digit sum 18). This is the only digit that works.",
+          "s": [
+            [
+              "Finds the alternating sums 0, -11, 11, 6 and names the three codes divisible by 11",
+              1
+            ],
+            [
+              "Finds the digit sums, names 47,256 and 29,172 as accepted, and explains that 3 and 11 have no common factor",
+              1
+            ],
+            [
+              "Explains that any change to the hundreds digit moves the alternating sum 11 away from a multiple of 11",
+              1
+            ],
+            [
+              "Rules out 52,712 and finds the correct code 61,083",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.6",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 131",
+          "q": "Which of the following is NOT a rule of the cryptarithms in this chapter?",
+          "a": "Two different letters may stand for the same digit.",
+          "o": [
+            "Two different letters may stand for the same digit.",
+            "Each letter stands for one digit.",
+            "A digit is represented by at most one letter.",
+            "The first digit of a number is never 0."
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "multi_statement",
+          "m": 1,
+          "p": "p. 131",
+          "q": "Consider the cryptarithm AB + AB = BCC, where different letters stand for different digits and no number begins with 0.\nI. B must be 1, because two 2-digit numbers add up to less than 200.\nII. C must be odd, because C is the units digit of B + B.\nIII. A must be 6, because the tens column must give A + A = 12.\nWhich of the statements are correct?",
+          "a": "I and III only",
+          "o": [
+            "I and III only",
+            "I and II only",
+            "II and III only",
+            "I, II and III"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "p. 131",
+          "q": "Solve the cryptarithm A5 + 2B = B1, where each letter stands for a different digit. (a) Find B from the units column. (b) Find A from the tens column.",
+          "a": "(a) 5 + B must end in 1, so 5 + B = 11 and B = 6, with 1 carried. (b) In the tens column A + 2 + 1 = 6, so A = 3. Check: 35 + 26 = 61.",
+          "s": [
+            [
+              "Finds B = 6 from the units column",
+              1
+            ],
+            [
+              "Finds A = 3 from the tens column (with the carry)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 131-132",
+          "q": "Solve PQ x 5 = RPP, where each letter stands for a different digit and no number begins with 0. (a) 5 x Q must end in P. Explain why P must be 5. (b) Use the size of PQ to find R. (c) Find Q and check the solution.",
+          "a": "(a) 5 times any digit ends in 0 or 5, and P cannot be 0 because it begins PQ, so P = 5. (b) PQ lies between 50 and 59, so PQ x 5 lies between 250 and 295, which gives R = 2. (c) RPP = 255, so PQ = 255 / 5 = 51 and Q = 1. Check: 51 x 5 = 255, and the digits 5, 1 and 2 are different.",
+          "s": [
+            [
+              "Explains that 5 x Q ends in 0 or 5 and P is not 0, so P = 5",
+              1
+            ],
+            [
+              "Finds R = 2 from 250 to 295",
+              1
+            ],
+            [
+              "Finds Q = 1 and checks 51 x 5 = 255",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "p": "pp. 131-132",
+          "q": "In the cryptarithm PQR x 7 = STU, each letter stands for a different digit and the product has three digits. (a) What happens if P = 2? (b) What does this tell you about P?",
+          "a": "(a) If P = 2, the number PQR is at least 200, and 200 x 7 = 1,400 has four digits, but STU has only three. (b) P cannot be 2 or more, since a larger P gives an even larger product, and P cannot be 0 because it is the first digit, so P = 1.",
+          "s": [
+            [
+              "Shows that P = 2 gives a product of at least 1,400 (four digits)",
+              1
+            ],
+            [
+              "Concludes P = 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "p": "p. 132",
+          "q": "In the cryptarithm PQ x 4 = QRP, each letter stands for a different digit and no number begins with 0. What is the value of R?",
+          "a": "6",
+          "o": [
+            "6",
+            "4",
+            "1",
+            "9"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "p": "pp. 131-132",
+          "q": "Solve AB x 9 = BCB, where each letter stands for a different digit and no number begins with 0. (a) Use the units column to find B. (b) Use the size of the product to find A. (c) Find C and check the solution.",
+          "a": "(a) 9 x B must end in B. Checking the digits, only B = 0 (0) and B = 5 (45) do this, and B cannot be 0 because it begins BCB, so B = 5. (b) The product 5C5 lies between 500 and 599. Since 9 x 55 = 495 and 9 x 67 = 603, AB lies from 56 to 66, and the only number in this range ending in 5 is 65, so A = 6. (c) 65 x 9 = 585, so C = 8, and the digits 6, 5 and 8 are different.",
+          "s": [
+            [
+              "Finds B = 5 from the units column (B = 0 is not allowed)",
+              1
+            ],
+            [
+              "Uses 500 to 599 to show AB is 56 to 66, so AB = 65 and A = 6",
+              1
+            ],
+            [
+              "Checks 65 x 9 = 585 and states C = 8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 131-132",
+          "q": "Solve ABC x 2 = DDA, where each letter stands for a different digit and no number begins with 0. (a) Explain why A must be 2 or 4. (b) Show that A = 4 gives no solution. (c) Take A = 2 and find D. (d) Find B and C, and check the solution.",
+          "a": "(a) The product has three digits, so ABC is less than 500 and A is at most 4. The product ends in A, and 2 x C is even, so A is even and not 0: A = 2 or 4. (b) If A = 4, the product lies between 800 and 999, so DD4 is 884 or 994. Then ABC is 442 (B = A) or 497 (D = B = 9), and both repeat a digit. (c) If A = 2, the product lies between 400 and 599, so DD2 is 442 or 552. 442 / 2 = 221 repeats the digit 2, so DD2 = 552 and D = 5. (d) ABC = 552 / 2 = 276, so B = 7 and C = 6. Check: 276 x 2 = 552, and the digits 2, 7, 6 and 5 are all different.",
+          "s": [
+            [
+              "Explains A is at most 4 and even, so A = 2 or 4",
+              1
+            ],
+            [
+              "Rejects A = 4 because 442 and 497 repeat a digit",
+              1
+            ],
+            [
+              "Rejects 442 and finds D = 5",
+              1
+            ],
+            [
+              "Finds 276 x 2 = 552 with B = 7, C = 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 5,
+          "p": "p. 132",
+          "q": "Solve JK x 6 = KKK, where each letter stands for a different digit. (a) Write KKK as a multiple of K. (b) Use the units digit of 6 x K to find the digits K can be. (c) Find JK from 111K / 6 for each such K. (d) Reject the values that do not fit the cryptarithm. (e) State the solution.",
+          "a": "(a) KKK = 111 x K. (b) 6 x K must end in K, so K is 2, 4, 6 or 8 (K cannot be 0). (c) JK = 111K / 6 gives 37, 74, 111 and 148 for K = 2, 4, 6, 8. (d) 37 does not end in 2, 111 and 148 are not 2-digit numbers, and only 74 ends in K = 4. (e) 74 x 6 = 444, so J = 7 and K = 4.",
+          "s": [
+            [
+              "Writes KKK = 111K",
+              1
+            ],
+            [
+              "Finds K = 2, 4, 6 or 8 from the units digit",
+              1
+            ],
+            [
+              "Finds JK = 37, 74, 111, 148",
+              1
+            ],
+            [
+              "Rejects 37, 111 and 148",
+              1
+            ],
+            [
+              "States 74 x 6 = 444 with J = 7, K = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "p": "pp. 128-133",
+          "tags": [
+            "case_study"
+          ],
+          "q": "At a school fair, Neha runs a puzzle booth with three cryptarithms, in each of which different letters stand for different digits and no number begins with 0. The puzzles are AB x 8 = ACA, AB x 4 = CBA and AB x 3 = CCB. A visitor who solves a puzzle earns the product as points, and the total points are checked using the shortcut for 11. (a) Solve AB x 8 = ACA. (b) Solve AB x 4 = CBA. (c) Solve AB x 3 = CCB. (d) Add the three products and use the shortcut for 11 to say whether the total is divisible by 11.",
+          "a": "(a) 29 x 8 = 232, so A = 2, B = 9 and C = 3. (b) 82 x 4 = 328, so A = 8, B = 2 and C = 3. (c) 75 x 3 = 225, so A = 7, B = 5 and C = 2. (d) The total is 232 + 328 + 225 = 785. The alternating sum from the units digit is 5 - 8 + 7 = 4, which is neither 0 nor a multiple of 11, so 785 is not divisible by 11 (785 = 11 x 71 + 4).",
+          "s": [
+            [
+              "Solves AB x 8 = ACA as 29 x 8 = 232",
+              1
+            ],
+            [
+              "Solves AB x 4 = CBA as 82 x 4 = 328",
+              1
+            ],
+            [
+              "Solves AB x 3 = CCB as 75 x 3 = 225",
+              1
+            ],
+            [
+              "Finds the total 785 and shows 5 - 8 + 7 = 4, so it is not divisible by 11",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

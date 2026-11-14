@@ -1,0 +1,1297 @@
+{
+ "kind": "school_topup",
+ "subject": {
+  "code": "MATH8",
+  "class": 8,
+  "board": "CBSE"
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 4,
+  "name": "Exploring Some Geometric Themes"
+ },
+ "source_code": "hegp204",
+ "concepts": [
+  {
+   "code": "C8M-4.1",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 70",
+     "q": "What is done to a square in Step 1 of making the Sierpinski Carpet?",
+     "a": "It is broken into 9 equal smaller squares and the central square is removed.",
+     "o": [
+      "It is broken into 9 equal smaller squares and the central square is removed.",
+      "It is broken into 4 equal smaller squares and one corner square is removed.",
+      "It is broken into 9 equal smaller squares and the four corner squares are removed.",
+      "It is broken into 4 equal smaller squares by joining the midpoints of its sides."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 71",
+     "q": "In the Sierpinski Carpet there is 1 hole at Step 1 and 9 holes at Step 2. At Step 2 there are 64 remaining squares. How many holes are there at Step 3?",
+     "a": "73",
+     "o": [
+      "73",
+      "64",
+      "72",
+      "512"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 72",
+     "q": "Which rule builds the Sierpinski Gasket (Sierpinski Triangle) from an equilateral triangle?",
+     "a": "Join the midpoints of the sides to make 4 identical triangles, remove the central one, and repeat on the 3 that remain.",
+     "o": [
+      "Join the midpoints of the sides to make 4 identical triangles, remove the central one, and repeat on the 3 that remain.",
+      "Divide each side into 3 equal parts, raise a triangle on each middle part, and repeat on every new side.",
+      "Divide the triangle into 9 identical triangles, remove the central one, and repeat on the 8 that remain.",
+      "Join the midpoints of the sides to make 4 identical triangles, remove one corner triangle, and repeat the same rule on the other 3 triangles."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 72",
+     "q": "A Sierpinski Gasket starts from an equilateral triangle of area 1 square unit. (a) What fraction of the area remains after Step 1? (b) What area remains after Step 2?",
+     "a": "(a) The triangle is split into 4 identical triangles and 1 is removed, so 3/4 of the area remains. (b) Each remaining triangle again keeps 3/4 of its area, so the area left is 3/4 x 3/4 = 9/16 square unit.",
+     "s": [
+      [
+       "(a) States that 3 of the 4 identical triangles remain, so 3/4 of the area is left",
+       1
+      ],
+      [
+       "(b) Multiplies by 3/4 again to get 9/16 square unit",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 71",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: At Step 2 of the Sierpinski Carpet there are 64 remaining squares, all of the same size. Give a reason.",
+     "a": "True. Every square that remains at one step gives rise to 8 remaining squares at the next step. Step 1 has 8 squares, so Step 2 has 8 x 8 = 64 squares, all of the same smaller size.",
+     "s": [
+      [
+       "States the verdict: True",
+       1
+      ],
+      [
+       "Gives the reason: each of the 8 squares of Step 1 gives 8 squares, so 8 x 8 = 64",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 71",
+     "q": "Assertion (A): The Sierpinski Carpet has 9 holes at Step 2.\nReason (R): The holes at the next step are the holes already present plus one new hole for every square that remained, that is, H(n+1) = H(n) + R(n).",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 72",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "In the Sierpinski Gasket, the number of remaining triangles triples at every step. Riya claims: 'So the number of holes also triples at every step.' (a) Write the number of remaining triangles at Steps 0, 1 and 2. (b) Find the number of holes at Steps 1, 2 and 3. (c) Is Riya right? Explain using your numbers.",
+     "a": "(a) Remaining triangles: 1, 3, 9. (b) Each remaining triangle makes one new hole at the next step and old holes stay, so holes are 1 at Step 1, 1 + 3 = 4 at Step 2 and 4 + 9 = 13 at Step 3. (c) No. From Step 1 to Step 2 the holes go from 1 to 4, and from Step 2 to Step 3 they go from 4 to 13, not 12. The holes grow by the number of remaining triangles; they are not multiplied by 3.",
+     "s": [
+      [
+       "(a) Writes the remaining triangles 1, 3 and 9",
+       1
+      ],
+      [
+       "(b) Finds the holes 1, 4 and 13 by adding the remaining triangles to the old holes",
+       1
+      ],
+      [
+       "(c) Says Riya is wrong, pointing out that 4 x 3 = 12, not 13 (or that 1 x 3 is not 4)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 72",
+     "q": "A craft teacher makes a Sierpinski Gasket from an equilateral triangle of side 48 cm and stops at Step 3. (a) Find the side of each smallest remaining triangle at Step 3. (b) How many triangles remain at Step 3? (c) How many holes are there at Step 3, and how many of these holes were cut at Step 3 itself? (d) Find the side of the largest hole.",
+     "a": "(a) The side is halved at every step: 48, 24, 12, 6, so the smallest triangles have side 6 cm. (b) 3 x 3 x 3 = 27 triangles remain. (c) Holes: 1 at Step 1, 1 + 3 = 4 at Step 2, 4 + 9 = 13 at Step 3. The holes cut at Step 3 are one for each of the 9 triangles of Step 2, so 9 holes. (d) The largest hole is the central triangle removed at Step 1; joining midpoints gives it half the side, 24 cm.",
+     "s": [
+      [
+       "(a) Halves the side three times to get 6 cm",
+       1
+      ],
+      [
+       "(b) Finds 27 remaining triangles",
+       1
+      ],
+      [
+       "(c) Finds 13 holes in all, of which 9 were cut at Step 3",
+       1
+      ],
+      [
+       "(d) Identifies the Step 1 hole as largest, with side 24 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 70-72",
+     "q": "A Sierpinski Carpet is cut from a square sheet of side 54 cm and taken to Step 3. (a) Find the side of each smallest remaining square at Step 3. (b) How many squares remain at Step 3? (c) How many holes are there at Step 3? (d) Find the total area of all the holes, using the sizes of the holes cut at Steps 1, 2 and 3. (e) Find the area of the sheet that remains, and check that the two areas add up to the area of the starting square.",
+     "a": "(a) The side is divided by 3 at each step: 54, 18, 6, 2, so the smallest squares have side 2 cm. (b) 8 x 8 x 8 = 512 squares remain. (c) Holes = 1 + 8 + 64 = 73. (d) Step 1 cuts 1 hole of side 18 cm (324 sq cm), Step 2 cuts 8 holes of side 6 cm (8 x 36 = 288 sq cm) and Step 3 cuts 64 holes of side 2 cm (64 x 4 = 256 sq cm), total 868 sq cm. (e) Remaining area = 512 x 4 = 2048 sq cm, and 2048 + 868 = 2916 = 54 x 54 sq cm, the area of the starting square.",
+     "s": [
+      [
+       "(a) Finds the smallest side 2 cm by dividing by 3 three times",
+       1
+      ],
+      [
+       "(b) Finds 512 remaining squares",
+       1
+      ],
+      [
+       "(c) Finds 73 holes",
+       1
+      ],
+      [
+       "(d) Adds 324 + 288 + 256 = 868 sq cm for the holes",
+       1
+      ],
+      [
+       "(e) Finds 2048 sq cm remaining and checks 2048 + 868 = 2916 = 54 x 54",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 70-71",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A tile maker in Morbi designs a square wall tile of side 36 cm using the Sierpinski Carpet rule. In Step 1 the tile is marked into equal smaller squares and the centre square is cut out. In Step 2 the same rule is used on every square that is left. Each cut-out hole is then filled with a piece of coloured glass of exactly the same size as the hole.\n(a) How many squares are left after Step 1?\n(b) What is the side of each of these squares?\n(c) How many squares are left after Step 2?\n(d) How many glass pieces does one tile need after Step 2, and of how many different sizes?",
+     "a": "(a) The tile is marked into 9 squares and 1 is cut out, so 8 squares are left. (b) Each side is 36 / 3 = 12 cm. (c) Each of the 8 squares leaves 8 smaller squares, so 8 x 8 = 64 squares are left. (d) Holes = 1 + 8 = 9, so 9 glass pieces: 1 piece of side 12 cm and 8 pieces of side 4 cm, that is, 2 different sizes.",
+     "s": [
+      [
+       "(a) States 8 squares are left after Step 1",
+       1
+      ],
+      [
+       "(b) Finds the side 12 cm",
+       1
+      ],
+      [
+       "(c) Finds 64 squares after Step 2",
+       1
+      ],
+      [
+       "(d) Finds 9 glass pieces of 2 sizes (one 12 cm, eight 4 cm)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-4.2",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 74",
+     "q": "The Kandariya Mahadev Temple, completed in around 1025 C.E., shows a tall structure made of smaller copies of itself. Where is this temple?",
+     "a": "Khajuraho",
+     "o": [
+      "Khajuraho",
+      "Hampi",
+      "Madurai",
+      "Rameswaram"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 73",
+     "q": "A Koch Snowflake starts from an equilateral triangle, and at every step each side is replaced by 4 shorter sides. How many sides does the shape have at Step 3?",
+     "a": "192",
+     "o": [
+      "192",
+      "48",
+      "64",
+      "81"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 70-75",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each example in Column I with the self-similar pattern it shows in Column II.\nColumn I: I. Kandariya Mahadev Temple  II. Nigerian Fulani wedding blanket  III. M.C. Escher's 'Smaller and Smaller'  IV. Fern\nColumn II: A. Diamond shapes inside which there are smaller diamond shapes  B. Leaves that are smaller copies of the whole plant, with even smaller sub-leaves  C. A tall structure made of smaller copies of the full structure  D. The same pattern of lizards at smaller and smaller scales",
+     "a": "I-C, II-A, III-D, IV-B",
+     "o": [
+      "I-C, II-A, III-D, IV-B",
+      "I-A, II-C, III-D, IV-B",
+      "I-C, II-D, III-A, IV-B",
+      "I-B, II-A, III-D, IV-C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 73",
+     "q": "A Koch Snowflake starts from an equilateral triangle of side 9 cm. (a) After Step 1, how many sides does the shape have, and how long is each side? (b) What is its perimeter after Step 1?",
+     "a": "(a) Each of the 3 sides is replaced by 4 sides, giving 12 sides, each 9 / 3 = 3 cm long. (b) Perimeter = 12 x 3 = 36 cm.",
+     "s": [
+      [
+       "(a) States 12 sides, each 3 cm long",
+       1
+      ],
+      [
+       "(b) Finds the perimeter 36 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 73",
+     "q": "Consider these statements about the Koch Snowflake, which starts from an equilateral triangle.\nI. At Step 1 the shape has 12 sides.\nII. The perimeter at Step 1 is 4/3 of the perimeter at Step 0.\nIII. At each step the length of each side is multiplied by 4.\nWhich of the statements are correct?",
+     "a": "I and II only",
+     "o": [
+      "I and II only",
+      "II and III only",
+      "I and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 73",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A Koch Snowflake starts from an equilateral triangle of side 3 cm. Step 1 adds 3 cm to its perimeter, so Step 2 also adds exactly 3 cm. Give the reason or the correct statement.",
+     "a": "False. The perimeter is 9 cm at Step 0, 12 cm at Step 1 (12 sides of 1 cm), and 16 cm at Step 2 (48 sides of 1/3 cm). So Step 2 adds 4 cm, not 3 cm, because the perimeter is multiplied by 4/3 at every step rather than increased by the same amount.",
+     "s": [
+      [
+       "States the verdict: False",
+       1
+      ],
+      [
+       "Shows the perimeter goes 9, 12, 16 cm, so Step 2 adds 4 cm (multiplied by 4/3 each time)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 73",
+     "q": "A Koch Snowflake starts from an equilateral triangle of side 36 cm. (a) What is the length of each side at Step 2? (b) How many sides does the shape have at Step 2? (c) Find its perimeter at Step 2.",
+     "a": "(a) The side is divided by 3 at each step: 36, 12, 4, so each side is 4 cm. (b) 3 x 4 x 4 = 48 sides. (c) Perimeter = 48 x 4 = 192 cm.",
+     "s": [
+      [
+       "(a) Finds each side 4 cm",
+       1
+      ],
+      [
+       "(b) Finds 48 sides",
+       1
+      ],
+      [
+       "(c) Finds the perimeter 192 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 74",
+     "q": "Assertion (A): The Kandariya Mahadev Temple shows a fractal-like pattern.\nReason (R): The Kandariya Mahadev Temple was completed in around 1025 C.E.",
+     "a": "Both A and R are true, but R is not the correct explanation of A.",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "Both A and R are true, and R is the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "p. 73",
+     "q": "Zoya bends wire into Koch Snowflake outlines. She starts from an equilateral triangle of side 9 cm. (a) Find the number of sides at Steps 1, 2 and 3. (b) Find the length of each side at Step 3. (c) Find the perimeter at Step 3. (d) She has one piece of wire 50 cm long and uses the whole outline as one piece. Which is the highest step she can make? Show the perimeters you compare. (e) The number of sides is multiplied by 4 at each step. Explain why the perimeter is not also multiplied by 4.",
+     "a": "(a) 12, 48 and 192 sides. (b) 9 / 27 = 1/3 cm. (c) 192 x 1/3 = 64 cm. (d) Perimeters are 27 cm (Step 0), 36 cm (Step 1), 48 cm (Step 2) and 64 cm (Step 3). 48 cm is within 50 cm but 64 cm is not, so Step 2 is the highest step. (e) Each side is replaced by 4 sides, but each new side is only 1/3 as long, so the perimeter is multiplied by 4 x 1/3 = 4/3, not by 4.",
+     "s": [
+      [
+       "(a) Finds 12, 48 and 192 sides",
+       1
+      ],
+      [
+       "(b) Finds each side at Step 3 is 1/3 cm",
+       1
+      ],
+      [
+       "(c) Finds the Step 3 perimeter 64 cm",
+       1
+      ],
+      [
+       "(d) Compares 48 cm and 64 cm with 50 cm and chooses Step 2",
+       1
+      ],
+      [
+       "(e) Explains that 4 sides of 1/3 the length multiply the perimeter by 4/3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 73",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A school in Nagpur plans a flower bed whose border follows Step 2 of the Koch Snowflake. The border starts as an equilateral triangle of side 18 m and is then changed step by step by the Koch rule. Brick edging costs Rs 50 for every metre of border, and the school has set aside Rs 6,000 for the edging.\n(a) How many sides does the border have at Step 2?\n(b) How long is each side at Step 2?\n(c) What will the edging cost for the Step 2 border?\n(d) A teacher suggests making the border at Step 3 instead. Can the school afford it? Justify with numbers.",
+     "a": "(a) 3 x 4 x 4 = 48 sides. (b) 18 / 9 = 2 m. (c) Border = 48 x 2 = 96 m, so the cost is 96 x 50 = Rs 4,800. (d) No. At Step 3 the perimeter is 96 x 4/3 = 128 m, costing 128 x 50 = Rs 6,400, which is Rs 400 more than the Rs 6,000 set aside.",
+     "s": [
+      [
+       "(a) Finds 48 sides",
+       1
+      ],
+      [
+       "(b) Finds each side 2 m",
+       1
+      ],
+      [
+       "(c) Finds 96 m and the cost Rs 4,800",
+       1
+      ],
+      [
+       "(d) Finds 128 m costing Rs 6,400 and decides the school cannot afford Step 3",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-4.3",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 78",
+     "q": "How many edges does a cuboid have?",
+     "a": "12",
+     "o": [
+      "12",
+      "6",
+      "8",
+      "24"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 79",
+     "q": "A pencil box is shaped like a hexagonal prism: its two end faces are congruent hexagons. How many faces, edges and vertices does it have?",
+     "a": "8 faces, 18 edges, 12 vertices",
+     "o": [
+      "8 faces, 18 edges, 12 vertices",
+      "7 faces, 12 edges, 7 vertices",
+      "8 faces, 12 edges, 12 vertices",
+      "6 faces, 18 edges, 12 vertices"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 79-81",
+     "q": "(a) What is a net of a solid? (b) Name the shapes in a net of a regular tetrahedron and say how many of them there are.",
+     "a": "(a) A net is a flat shape that can be folded to make the solid; it is what we get by unfolding the solid onto a plane. (b) A net of a regular tetrahedron is made of 4 equilateral triangles.",
+     "s": [
+      [
+       "(a) Defines a net as a flat shape that folds into the solid (the solid unfolded onto a plane)",
+       1
+      ],
+      [
+       "(b) States 4 equilateral triangles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 79",
+     "q": "The base of a pyramid is an octagon (8 sides). (a) How many faces and how many vertices does the pyramid have? (b) How many edges does it have?",
+     "a": "(a) Faces: 1 base + 8 triangles = 9. Vertices: 8 on the base + 1 apex = 9. (b) Edges: 8 on the base + 8 from the apex to the base vertices = 16.",
+     "s": [
+      [
+       "(a) Finds 9 faces and 9 vertices",
+       1
+      ],
+      [
+       "(b) Finds 16 edges (8 base edges and 8 slant edges)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 81",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: A regular tetrahedron has 4 different nets, one for each of its faces. Give the reason or the correct statement.",
+     "a": "False. A regular tetrahedron has only 2 possible nets. (A cube has 11 nets, counting two nets as the same if one is a rotation or flip of the other.)",
+     "s": [
+      [
+       "States the verdict: False",
+       1
+      ],
+      [
+       "Gives the correct statement: a regular tetrahedron has only 2 nets",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 80-81",
+     "q": "A net of a cube has two rows of three squares. The top row is A, B, C from left to right. The bottom row is D, E, F from left to right, with D directly below C, so the bottom row starts where the top row ends. When the net is folded into a cube, which face is opposite face B?",
+     "a": "E",
+     "o": [
+      "E",
+      "D",
+      "F",
+      "C"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "p. 79",
+     "q": "Consider these statements.\nI. A triangular prism has 5 faces, 9 edges and 6 vertices.\nII. A square pyramid has 5 faces, 8 edges and 8 vertices.\nIII. A triangular pyramid has as many faces as vertices.\nWhich of the statements are correct?",
+     "a": "I and III only",
+     "o": [
+      "I and III only",
+      "I and II only",
+      "II and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 79",
+     "q": "A prism has 21 edges. (a) How many sides does each of its two end polygons have? Explain. (b) How many faces and vertices does it have? (c) A pyramid has the same number of vertices as this prism. How many sides does the pyramid's base have, and how many edges does the pyramid have?",
+     "a": "(a) An n-sided prism has n edges on each end and n edges joining them, so 3n = 21 and n = 7: the ends are heptagons. (b) Faces = 7 + 2 = 9; vertices = 2 x 7 = 14. (c) An n-sided pyramid has n + 1 vertices, so n + 1 = 14 and n = 13. Its edges are 2 x 13 = 26.",
+     "s": [
+      [
+       "(a) Uses 3n = 21 to get 7-sided ends",
+       1
+      ],
+      [
+       "(b) Finds 9 faces and 14 vertices",
+       1
+      ],
+      [
+       "(c) Finds a 13-sided base and 26 edges",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 80-81",
+     "q": "A toy maker draws two nets of 6 equal squares for a dice. Net X: a row of three squares P, Q, R from left to right; square S is joined above P; square T is joined below R; square U is joined to the right of T. Net Y: squares P and Q side by side in the top row; squares R and S directly below them; squares T and U continue the bottom row to the right of S. (a) Can Net Y be folded into a cube? Give a reason. (b) For Net X, name the three pairs of opposite faces. (c) On a dice the numbers on opposite faces add up to 7. In Net X, P shows 1, Q shows 2 and S shows 3. What do R, T and U show? (d) Show how moving just one square of Net Y makes it a net of a cube.",
+     "a": "(a) No. P, Q, R and S form a 2 by 2 block of squares that meet at one point, but at a corner of a cube only three faces meet, so Net Y cannot fold into a cube. (b) P is opposite R, Q is opposite U, and S is opposite T. (c) R = 7 - 1 = 6, U = 7 - 2 = 5, T = 7 - 3 = 4. (d) For example, move Q from above S to below S. Then R, S, T, U form a row of four with P above R and Q below S, which folds into a cube.",
+     "s": [
+      [
+       "(a) Says Net Y cannot fold",
+       1
+      ],
+      [
+       "(a) Reason: the 2 by 2 block puts four faces at one corner, where a cube has only three",
+       1
+      ],
+      [
+       "(b) Names the pairs P-R, Q-U and S-T",
+       1
+      ],
+      [
+       "(c) Finds R = 6, U = 5 and T = 4",
+       1
+      ],
+      [
+       "(d) Moves one square (for example Q to below S) to give a row of four with one square above and one below",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 79",
+     "q": "For a maths exhibition, Kavya builds skeleton models of solids: each edge is one straw and each vertex is one ball of clay. (a) How many straws and clay balls does a pentagonal prism need? (b) She has 24 straws and 14 clay balls. Can she build a heptagonal prism (7-sided ends) with them? (c) Can she build an octagonal prism (8-sided ends) with them? Give the reason. (d) Can she build a square pyramid and a pentagonal prism together with what she has? Show the totals.",
+     "a": "(a) A pentagonal prism has 3 x 5 = 15 edges and 2 x 5 = 10 vertices: 15 straws and 10 clay balls. (b) Yes. It needs 3 x 7 = 21 straws and 2 x 7 = 14 clay balls, and she has 24 and 14. (c) No. It needs 24 straws, which she has, but 16 clay balls, and she has only 14. (d) No. A square pyramid needs 8 straws and 5 clay balls, so together they need 8 + 15 = 23 straws (enough) but 5 + 10 = 15 clay balls, one more than she has.",
+     "s": [
+      [
+       "(a) Finds 15 straws and 10 clay balls",
+       1
+      ],
+      [
+       "(b) Finds 21 straws and 14 balls and says yes",
+       1
+      ],
+      [
+       "(c) Finds 16 clay balls are needed and says no",
+       1
+      ],
+      [
+       "(d) Finds totals 23 straws and 15 clay balls and says no, short of clay",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-4.4",
+   "questions": [
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "match",
+     "m": 1,
+     "p": "pp. 80-82",
+     "tags": [
+      "match"
+     ],
+     "q": "Match each solid in Column I with the pieces of its net in Column II.\nColumn I: I. Cylinder  II. Cone  III. Cube  IV. Regular tetrahedron\nColumn II: A. 6 squares  B. 4 equilateral triangles  C. 2 circles and 1 rectangle  D. 1 circle and a portion (sector) of a larger circle",
+     "a": "I-C, II-D, III-A, IV-B",
+     "o": [
+      "I-C, II-D, III-A, IV-B",
+      "I-D, II-C, III-A, IV-B",
+      "I-C, II-D, III-B, IV-A",
+      "I-C, II-A, III-D, IV-B"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 83-84",
+     "q": "For which of these solids can no flat paper cut-out be made that wraps it perfectly, without wrinkles, gaps or overlaps?",
+     "a": "Sphere",
+     "o": [
+      "Sphere",
+      "Cone",
+      "Cylinder",
+      "Octahedron"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 86",
+     "q": "To find an ant's shortest path to a laddu on a cuboid, Sameer unfolds the cuboid into a net and joins the ant and the laddu by a straight line. Part of his line runs outside the net. What should he conclude?",
+     "a": "His line is not a path on the cuboid, so he must try a different unfolding.",
+     "o": [
+      "His line is not a path on the cuboid, so he must try a different unfolding.",
+      "His line is still the shortest path, because a straight line is always shortest.",
+      "The ant cannot reach the laddu by walking on the surface at all.",
+      "He should measure only the part of the line that lies inside the net."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 82",
+     "q": "A closed cylindrical water tank has radius 21 cm and height 25 cm. Its curved surface is cut along the height and opened out flat. (Circumference of a circle = 2 x 22/7 x radius.) (a) What are the lengths of the sides of the rectangle obtained? (b) Name the other pieces that complete the net of the tank.",
+     "a": "(a) One side equals the circumference of the base, 2 x 22/7 x 21 = 132 cm, and the other equals the height, 25 cm. So the rectangle is 132 cm by 25 cm. (b) Two circles of radius 21 cm, for the top and the bottom.",
+     "s": [
+      [
+       "(a) Finds the rectangle 132 cm by 25 cm (length = circumference, width = height)",
+       1
+      ],
+      [
+       "(b) Names two circles of radius 21 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 87",
+     "q": "Two faces of a box are unfolded into one plane. On this net, the straight path d from an ant to a laddu is the longest side of a right triangle whose other two sides are 20 cm and 21 cm. (a) Which theorem gives d, and what is d squared? (b) Find d.",
+     "a": "(a) The Baudhayana (Pythagoras) theorem: d squared = 20 x 20 + 21 x 21 = 400 + 441 = 841. (b) d = 29 cm, since 29 x 29 = 841.",
+     "s": [
+      [
+       "(a) Names the Baudhayana theorem and finds d squared = 841",
+       1
+      ],
+      [
+       "(b) Finds d = 29 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 82",
+     "q": "Assertion (A): When a cone is slit along a line from its tip O to the base and unrolled, the curved boundary of the flat piece is a portion of a circle with centre O.\nReason (R): All the points on the boundary of the base circle of the cone are at equal distances from O.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 85-87",
+     "q": "A spider is on the left side of a steel almirah, 30 cm behind its front edge and 40 cm above the floor. A fly is on the front door, 42 cm to the right of the same front-left edge and 136 cm above the floor. The spider walks on the surface across this edge. (a) The left side and the front are unfolded into one flat plane. On this net, how far apart are the spider and the fly horizontally, and how far vertically? (b) Find the length of the straight path between them on the net. (c) Why is this straight path on the net a path the spider can really walk on the almirah?",
+     "a": "(a) Horizontally 30 + 42 = 72 cm; vertically 136 - 40 = 96 cm. (b) By the Baudhayana theorem, path squared = 72 x 72 + 96 x 96 = 5184 + 9216 = 14400, so the path is 120 cm. (c) The straight line stays inside the two unfolded faces, and every path on the net folds back into a path of the same length on the almirah's surface.",
+     "s": [
+      [
+       "(a) Finds 72 cm horizontally and 96 cm vertically",
+       1
+      ],
+      [
+       "(b) Uses the Baudhayana theorem to get 120 cm",
+       1
+      ],
+      [
+       "(c) Explains that the line lies inside the net, and a path on the net is a path of the same length on the surface",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 84-87",
+     "q": "A closed carton stands on the floor. It is 30 cm long (left to right), 10 cm deep (front to back) and 20 cm high. An ant is on the front face, 7 cm from the left edge and 3 cm above the floor. A laddu is on the back face, 7 cm from the left edge (seen from the front) and 10 cm above the floor. The ant cannot go under the carton. (a) Find the length of the route over the top, using the net in which the front, top and back faces lie in one strip. (b) Find the length of the route round the left side, using the net in which the front, left and back faces lie in one strip. (c) Find the length of the route round the right side in the same way (you may leave it as a square root or give it to one decimal place). (d) Which of these three routes is the shortest? What does this show about the route that looks most direct?",
+     "a": "(a) Over the top the ant goes up 20 - 3 = 17 cm, across 10 cm and down 20 - 10 = 10 cm, with no sideways shift: 17 + 10 + 10 = 37 cm. (b) Round the left side the horizontal distance is 7 + 10 + 7 = 24 cm and the vertical distance is 10 - 3 = 7 cm, so the path is the square root of 576 + 49 = 625, that is, 25 cm. (c) Round the right side the horizontal distance is 23 + 10 + 23 = 56 cm and the vertical distance is 7 cm, so the path is the square root of 3136 + 49 = 3185, about 56.4 cm. (d) The route round the left side, 25 cm, is the shortest. Going straight up and over the top looks direct but is 12 cm longer, so different unfoldings must be compared before choosing.",
+     "s": [
+      [
+       "(a) Finds the route over the top is 37 cm",
+       1
+      ],
+      [
+       "(b) Sets up the left-side net with sides 24 cm and 7 cm",
+       1
+      ],
+      [
+       "(b) Uses the Baudhayana theorem to get 25 cm",
+       1
+      ],
+      [
+       "(c) Finds the right-side route, the square root of 3185, about 56.4 cm",
+       1
+      ],
+      [
+       "(d) Chooses the left-side route (25 cm) and explains that the unfoldings must be compared",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 3,
+     "p": "p. 82",
+     "q": "A paper cone is slit open along a straight line from its tip O to the edge of its base and its curved surface is unrolled flat. (a) What shape is the unrolled curved surface? (b) What is the centre of its curved boundary, and what length is its radius? (c) What other piece completes the net of the cone?",
+     "a": "(a) A portion (sector) of a circle. (b) The centre is the tip O, and the radius is the distance from O to any point on the edge of the base (the length of the slit line). (c) A circle, which is the base of the cone.",
+     "s": [
+      [
+       "(a) States a portion (sector) of a circle",
+       1
+      ],
+      [
+       "(b) States centre O and radius equal to the distance from O to the edge of the base",
+       1
+      ],
+      [
+       "(c) Names the circular base",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "p. 82",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A Diwali craft club in Indore makes closed cylindrical lanterns of radius 10.5 cm and height 25 cm. Each lantern is made from its net, cut from chart paper sheets that are 80 cm long and 50 cm wide. The pieces of a net must not be cut in two, and no sheet is joined to another. (Circumference of a circle = 2 x 22/7 x radius.)\n(a) Name the pieces in the net of one lantern.\n(b) Find the length and width of the rectangular piece.\n(c) Show that the full net of one lantern fits on one sheet.\n(d) Rafi says one sheet is enough for the nets of two lanterns. Is he right? Justify.",
+     "a": "(a) Two circles of radius 10.5 cm and one rectangle. (b) Length = circumference = 2 x 22/7 x 10.5 = 66 cm; width = height = 25 cm. (c) The 66 cm by 25 cm rectangle fits along the 80 cm side, leaving a strip 80 cm by 25 cm. Each circle is 21 cm across, so the two circles side by side need 42 cm by 21 cm, which fits in that strip. (d) No. The 66 cm side cannot run along the 50 cm side, so both rectangles must lie along the 80 cm side, one above the other, using 25 + 25 = 50 cm, the whole width. That leaves only a strip 80 - 66 = 14 cm wide, too narrow for a circle 21 cm across.",
+     "s": [
+      [
+       "(a) Names two circles and one rectangle",
+       1
+      ],
+      [
+       "(b) Finds the rectangle 66 cm by 25 cm",
+       1
+      ],
+      [
+       "(c) Shows the rectangle and both 21 cm circles fit on one sheet",
+       1
+      ],
+      [
+       "(d) Shows two rectangles use the full 50 cm width, leaving a 14 cm strip too narrow for the circles, so Rafi is wrong",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-4.5",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 91",
+     "q": "What is the projection of an object on the horizontal plane below it called?",
+     "a": "Top view",
+     "o": [
+      "Top view",
+      "Front view",
+      "Side view",
+      "Isometric view"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 91-92",
+     "q": "A cone stands on its circular base on a table. What is the shape of its front view?",
+     "a": "A triangle",
+     "o": [
+      "A triangle",
+      "A circle",
+      "A rectangle",
+      "A sector of a circle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 89-94",
+     "q": "At noon the sun's rays fall perpendicular to the floor. A stick 25 cm long is held slanting, neither upright nor parallel to the floor. What can be said about the length of its shadow on the floor?",
+     "a": "It is less than 25 cm.",
+     "o": [
+      "It is less than 25 cm.",
+      "It is exactly 25 cm.",
+      "It is more than 25 cm.",
+      "It is 0 cm, a single point."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 90",
+     "tags": [
+      "true_false"
+     ],
+     "q": "True or False: Two different solids can have exactly the same front view. Give a reason with an example.",
+     "a": "True. A given projection is not made by a unique object. For example, a cone standing on its base and a square pyramid standing on its base can both have a triangle as their front view.",
+     "s": [
+      [
+       "States the verdict: True",
+       1
+      ],
+      [
+       "Gives a valid example of two different solids with the same front view (such as a cone and a square pyramid, both a triangle)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "p. 91",
+     "q": "(a) On which plane is the front view of an object projected? (b) On which plane is the side view projected?",
+     "a": "(a) The front view is the projection on the vertical plane in front of the object. (b) The side view is the projection on the side plane, the plane to the side of the object.",
+     "s": [
+      [
+       "(a) States the vertical plane in front of the object",
+       1
+      ],
+      [
+       "(b) States the side plane to the side of the object",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "p": "pp. 91-94",
+     "q": "Consider these statements.\nI. The projection of an object on the horizontal plane is called its side view.\nII. When sunlight falls perpendicular to a plane, the shadows it casts on that plane are indistinguishable from projections.\nIII. If a torch pointing perpendicular to a wall is moved farther and farther back, the shadow of an object on the wall becomes indistinguishable from its projection.\nWhich of the statements are correct?",
+     "a": "II and III only",
+     "o": [
+      "II and III only",
+      "I and II only",
+      "I and III only",
+      "I, II and III"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 91-95",
+     "q": "Five identical cubes are glued face to face: three in a row on the table from left to right, a fourth on top of the middle cube, and a fifth behind the right-hand cube, also on the table. How many squares are seen in (a) the front view, (b) the top view and (c) the side view from the right?",
+     "a": "(a) Front view: the bottom row shows 3 squares and the cube on top of the middle shows 1 more, so 4 squares (the cube behind is hidden behind the right cube). (b) Top view: the 3 cubes of the row and the cube behind the right one, so 4 squares (the top cube covers the middle one). (c) Side view from the right: a front square and a back square on the table, and one square above the front one for the raised cube, so 3 squares.",
+     "s": [
+      [
+       "(a) Finds 4 squares in the front view",
+       1
+      ],
+      [
+       "(b) Finds 4 squares in the top view",
+       1
+      ],
+      [
+       "(c) Finds 3 squares in the side view",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 88-89",
+     "q": "A ladder 2.5 m long leans against a wall. Its foot is on the floor, 0.7 m from the wall, and its top rests on the wall. The ladder stands in a plane perpendicular to the wall. (a) What is the length of the ladder's projection on the floor? (b) Using the Baudhayana theorem, find how high up the wall the top of the ladder is. (c) What is the length of the ladder's projection on the wall, and how does it compare with 2.5 m? (d) How must the ladder be placed so that its projection on the wall is 2.5 m long?",
+     "a": "(a) The top projects to the foot of the wall, so the floor projection is 0.7 m. (b) Height squared = 2.5 x 2.5 - 0.7 x 0.7 = 6.25 - 0.49 = 5.76, so the height is 2.4 m. (c) The foot projects to the bottom of the wall directly behind it, so the wall projection is 2.4 m, which is less than 2.5 m because the ladder is not parallel to the wall. (d) It must be parallel to the wall, for example lying flat against the wall; only then does the projected length equal the actual length.",
+     "s": [
+      [
+       "(a) Finds the floor projection 0.7 m",
+       1
+      ],
+      [
+       "(b) Finds the height 2.4 m using 6.25 - 0.49 = 5.76",
+       1
+      ],
+      [
+       "(c) States the wall projection 2.4 m, shorter than the ladder",
+       1
+      ],
+      [
+       "(d) States that the ladder must be parallel to the wall",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 91-97",
+     "q": "Identical cubes are stacked on a 3 by 3 grid on a table. The number of cubes in each stack is: back row 3, 1, 2 (left to right); middle row 1, 2, 1; front row 2, 1, 3. (a) How many cubes are used? (b) Give the heights of the columns in the front view, from left to right. (c) Give the heights of the columns in the side view from the right, for the back, middle and front rows. (d) The top view shows all 9 squares. What is the smallest number of cubes that gives the same front, side and top views? (e) Name the stacks from which cubes can be removed to reach this smallest number.",
+     "a": "(a) 3 + 1 + 2 + 1 + 2 + 1 + 2 + 1 + 3 = 16 cubes. (b) The front view shows the tallest stack in each column: 3, 2, 3. (c) The side view shows the tallest stack in each row: back 3, middle 2, front 3. (d) Every one of the 9 places needs at least 1 cube for the top view. The left and right columns each need a stack of 3, and these must stand in the back or front row, since the middle row is only 2 tall. The middle column and the middle row each need a stack of 2, and one stack of 2 at the centre does both. So the smallest is 9 + 2 + 2 + 1 = 14 cubes. (e) Remove one cube from the back-right stack (2 to 1) and one from the front-left stack (2 to 1); the back-left and front-right stacks of 3 and the middle stack of 2 keep all three views the same.",
+     "s": [
+      [
+       "(a) Adds the stacks to get 16 cubes",
+       1
+      ],
+      [
+       "(b) Gives the front view heights 3, 2, 3",
+       1
+      ],
+      [
+       "(c) Gives the side view heights 3, 2, 3 for the back, middle and front rows",
+       1
+      ],
+      [
+       "(d) Argues that 14 is the smallest number of cubes with the same three views",
+       1
+      ],
+      [
+       "(e) Removes one cube each from the back-right and front-left stacks",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 91-93",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A furniture workshop in Saharanpur gets an order for a wooden step-block made of 6 identical cubes. Three cubes stand in a row on the floor from left to right. Two more cubes sit on top of the left and middle cubes, and the last cube sits on top of the left-hand stack. All six cubes are in a single row from front to back. The drawing office must send the carpenter the front, top and side views.\n(a) How many squares are in the front view?\n(b) What does the top view look like?\n(c) What does the side view from the right look like?\n(d) The office manager says the top view alone tells the carpenter how many cubes to use. Is the manager right? Explain.",
+     "a": "(a) The front view shows columns of 3, 2 and 1 squares, so 6 squares. (b) The top view is 3 squares in a row from left to right. (c) The side view from the right is a column of 3 squares, one above another. (d) No. The top view only shows the 3 places covered. A plain row of 3 cubes, or stacks of any other heights on those places, gives the same top view; the front view is needed to show the heights 3, 2 and 1.",
+     "s": [
+      [
+       "(a) Finds 6 squares (columns of 3, 2 and 1)",
+       1
+      ],
+      [
+       "(b) Describes 3 squares in a row",
+       1
+      ],
+      [
+       "(c) Describes a column of 3 squares",
+       1
+      ],
+      [
+       "(d) Says the manager is wrong, since different stacks give the same top view",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C8M-4.6",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 97",
+     "q": "What does the Greek word 'isometric' mean?",
+     "a": "Equal measure",
+     "o": [
+      "Equal measure",
+      "Equal angles",
+      "Three views",
+      "Seen from above"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "p. 97",
+     "q": "A cube is balanced perfectly on one of its corner vertices and projected down onto the floor. What shape is this isometric projection?",
+     "a": "A regular hexagon",
+     "o": [
+      "A regular hexagon",
+      "A square",
+      "A rhombus",
+      "An equilateral triangle"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 99-100",
+     "q": "A cuboid made of unit cubes is drawn on isometric paper. Its edges are 3 units along the length axis, 2 units along the depth axis and 4 units along the height axis. How many unit cubes make the cuboid?",
+     "a": "24",
+     "o": [
+      "24",
+      "9",
+      "12",
+      "26"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "p": "pp. 97-100",
+     "q": "(a) On an isometric grid, which axis of a solid is shown by the vertical lines? (b) A 1-unit edge along the depth axis and a 1-unit edge along the height axis are drawn on isometric paper. How do their drawn lengths compare, and why?",
+     "a": "(a) The height axis. (b) They are drawn the same length, because in an isometric projection the projections of unit distances along all three axes are equal ('isometric' means equal measure).",
+     "s": [
+      [
+       "(a) States the height axis",
+       1
+      ],
+      [
+       "(b) States they are equal, because isometric projection makes unit lengths along all three axes equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "p": "p. 100",
+     "q": "Assertion (A): In an isometric drawing of a cuboid, all the edges that run along its length are drawn parallel to one another.\nReason (R): The projection of a pair of parallel lines is always a pair of parallel lines.",
+     "a": "Both A and R are true, and R is the correct explanation of A.",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "p": "pp. 99-100",
+     "q": "A 3 by 3 by 3 cube built from 27 unit cubes is drawn on isometric paper so that only its top, front and right faces are seen. How many of the 27 unit cubes cannot be seen at all in the drawing?",
+     "a": "8",
+     "o": [
+      "8",
+      "1",
+      "9",
+      "19"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "short_answer",
+     "m": 3,
+     "p": "pp. 99-100",
+     "tags": [
+      "claim_check"
+     ],
+     "q": "Three boxes made of unit cubes are drawn on isometric paper. Drawing P has edges of 3 units along length, 2 along depth and 1 along height. Drawing Q has 2 units along length, 1 along depth and 3 along height. Drawing R has 1 unit along length, 6 along depth and 1 along height. Asha says: 'All three drawings show the same box, because each box uses the same number of cubes.' (a) Find the number of cubes in each box. (b) Which two drawings could show the same box turned to a new position? Explain. (c) Is Asha right?",
+     "a": "(a) P: 3 x 2 x 1 = 6, Q: 2 x 1 x 3 = 6, R: 1 x 6 x 1 = 6. (b) P and Q, because both boxes have edges of 1, 2 and 3 units; only the axes they lie along are different. (c) No. R also has 6 cubes but its edges are 1, 1 and 6 units, a long thin box that no turning of P can give. The same number of cubes does not mean the same box.",
+     "s": [
+      [
+       "(a) Finds 6 cubes in each box",
+       1
+      ],
+      [
+       "(b) Picks P and Q since both have edges 1, 2 and 3 units",
+       1
+      ],
+      [
+       "(c) Says Asha is wrong, using R (edges 1, 1, 6) as the counter-example",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 91-100",
+     "q": "A block is made of identical unit cubes: three cubes in a row on the floor along the length axis, and two more cubes stacked on top of the left-hand cube. All the cubes are in one row along the depth axis. Ravi draws it on isometric paper. (a) How many cubes are in the block? (b) How many units long is the vertical edge at the left end of his drawing? (c) How many squares does the front view have? (d) How many squares does the top view have? (e) How many squares does the side view from the right have?",
+     "a": "(a) 3 + 2 = 5 cubes. (b) The left-hand stack is 3 cubes tall, so 3 units. (c) Front view: columns of 3, 1 and 1 squares, so 5 squares. (d) Top view: 3 squares in a row. (e) Side view from the right: a column of 3 squares.",
+     "s": [
+      [
+       "(a) Finds 5 cubes",
+       1
+      ],
+      [
+       "(b) States 3 units for the left vertical edge",
+       1
+      ],
+      [
+       "(c) Finds 5 squares in the front view",
+       1
+      ],
+      [
+       "(d) Finds 3 squares in the top view",
+       1
+      ],
+      [
+       "(e) Finds 3 squares in the side view",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 5,
+     "p": "pp. 91-100",
+     "q": "An isometric drawing shows a solid of unit cubes in three layers. The bottom layer is 3 units along the length axis and 2 units along the depth axis. The middle layer is 2 units along length and 2 units along depth, placed over the left part of the bottom layer. The top layer is one cube over the back-left corner. (a) How many unit cubes are in the solid? (b) In the drawing, how many units long is the tallest vertical edge? (c) Give the heights of the columns in the front view, from left to right. (d) Give the heights in the side view from the right, for the front row and the back row. (e) How many more cubes are needed to make the solid into a box 3 units long, 2 units deep and 3 units high?",
+     "a": "(a) 6 + 4 + 1 = 11 cubes. (b) The back-left stack is 3 cubes tall, so 3 units. (c) The tallest stack in each column, left to right: 3, 2, 1. (d) Front row: the tallest stack is 2 (the left and middle stacks); back row: 3 (the back-left stack). (e) The full box has 3 x 2 x 3 = 18 cubes, so 18 - 11 = 7 more cubes are needed.",
+     "s": [
+      [
+       "(a) Finds 11 cubes, layer by layer",
+       1
+      ],
+      [
+       "(b) States 3 units",
+       1
+      ],
+      [
+       "(c) Gives front view heights 3, 2, 1",
+       1
+      ],
+      [
+       "(d) Gives side view heights 2 (front row) and 3 (back row)",
+       1
+      ],
+      [
+       "(e) Finds 18 - 11 = 7 more cubes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "p": "pp. 99-100",
+     "tags": [
+      "case_study"
+     ],
+     "q": "A packing firm in Ludhiana sends drawings of its stacks of identical cube-shaped cartons on isometric paper, one carton being one unit. Stack A is drawn with edges of 3 units along length, 2 along depth and 2 along height. Stack B is drawn with 1 unit along length, 2 along depth and 4 along height. The cargo space of a small truck is exactly 3 cartons long, 2 deep and 3 high.\n(a) How many cartons are in Stack A?\n(b) How many cartons are in Stack B?\n(c) Can Stack B be loaded without unstacking it, if it may be turned to lie in any direction? Explain.\n(d) The manager will unstack B and load its cartons loose. Can all the cartons of A and B go in one trip? Justify.",
+     "a": "(a) 3 x 2 x 2 = 12 cartons. (b) 1 x 2 x 4 = 8 cartons. (c) No. Stack B has an edge of 4 units, and every edge of the cargo space is at most 3 units, so in any direction the 4-unit edge does not fit. (d) No. The truck holds 3 x 2 x 3 = 18 cartons, but A and B together have 12 + 8 = 20 cartons, which is 2 too many.",
+     "s": [
+      [
+       "(a) Finds 12 cartons",
+       1
+      ],
+      [
+       "(b) Finds 8 cartons",
+       1
+      ],
+      [
+       "(c) Says no, since the 4-unit edge is longer than every 3-unit edge of the cargo space",
+       1
+      ],
+      [
+       "(d) Compares 20 cartons with the truck's 18 and decides they cannot all go in one trip",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
