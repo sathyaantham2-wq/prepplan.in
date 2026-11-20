@@ -29,6 +29,7 @@ import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as RewardsRouteImport } from './routes/rewards'
 import { Route as SchoolRouteImport } from './routes/school'
+import { Route as SchoolsRouteImport } from './routes/schools'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
@@ -374,6 +375,11 @@ const RewardsRoute = RewardsRouteImport.update({
 const SchoolRoute = SchoolRouteImport.update({
   id: '/school',
   path: '/school',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolsRoute = SchoolsRouteImport.update({
+  id: '/schools',
+  path: '/schools',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SettingsRoute = SettingsRouteImport.update({
@@ -1733,6 +1739,7 @@ export interface FileRoutesByFullPath {
   '/remediation': typeof RemediationRoute
   '/rewards': typeof RewardsRoute
   '/school': typeof SchoolRouteWithChildren
+  '/schools': typeof SchoolsRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -1999,6 +2006,7 @@ export interface FileRoutesByTo {
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/rewards': typeof RewardsRoute
+  '/schools': typeof SchoolsRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -2267,6 +2275,7 @@ export interface FileRoutesById {
   '/remediation': typeof RemediationRoute
   '/rewards': typeof RewardsRoute
   '/school': typeof SchoolRouteWithChildren
+  '/schools': typeof SchoolsRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
@@ -2537,6 +2546,7 @@ export interface FileRouteTypes {
     | '/remediation'
     | '/rewards'
     | '/school'
+    | '/schools'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -2803,6 +2813,7 @@ export interface FileRouteTypes {
     | '/profile-setup'
     | '/remediation'
     | '/rewards'
+    | '/schools'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -3070,6 +3081,7 @@ export interface FileRouteTypes {
     | '/remediation'
     | '/rewards'
     | '/school'
+    | '/schools'
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
@@ -3339,6 +3351,7 @@ export interface RootRouteChildren {
   RemediationRoute: typeof RemediationRoute
   RewardsRoute: typeof RewardsRoute
   SchoolRoute: typeof SchoolRouteWithChildren
+  SchoolsRoute: typeof SchoolsRoute
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
   DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
@@ -3578,6 +3591,13 @@ declare module '@tanstack/react-router' {
       path: '/school'
       fullPath: '/school'
       preLoaderRoute: typeof SchoolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schools': {
+      id: '/schools'
+      path: '/schools'
+      fullPath: '/schools'
+      preLoaderRoute: typeof SchoolsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/settings': {
@@ -6123,6 +6143,7 @@ const rootRouteChildren: RootRouteChildren = {
   RemediationRoute: RemediationRoute,
   RewardsRoute: RewardsRoute,
   SchoolRoute: SchoolRouteWithChildren,
+  SchoolsRoute: SchoolsRoute,
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
   DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
@@ -6240,3 +6261,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
