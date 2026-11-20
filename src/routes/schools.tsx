@@ -19,7 +19,8 @@ import { SUPPORT_EMAIL } from '../lib/legal'
 // how it works, marking, reports and privacy. English only. It claims only what the school module
 // already does (CLAUDE.md "School module rules"): no prices, counts, ratings or testimonials.
 // /school stays the signed-in app; a school login that opens this page is sent there (SchoolRedirect).
-// Photos: Unsplash License (free for commercial use), credited in the footer.
+// Photos: Pexels License and Unsplash License (both free for commercial use), credited in the footer.
+// Never pick a photo where a real school's name or logo can be read: it would look like that school uses PrepPlan.
 export const Route = createFileRoute('/schools')({
   head: () => ({
     meta: [
@@ -37,7 +38,7 @@ export const Route = createFileRoute('/schools')({
       },
       {
         property: 'og:image',
-        content: 'https://www.prepplan.in/img/schools/hero-1000.webp',
+        content: 'https://www.prepplan.in/img/schools/classroom-hero-1000.webp',
       },
     ],
   }),
@@ -186,17 +187,17 @@ function Hero() {
         <picture>
           <source
             type="image/webp"
-            srcSet="/img/schools/hero-1000.webp 1000w, /img/schools/hero-2000.webp 2000w"
+            srcSet="/img/schools/classroom-hero-1000.webp 1000w, /img/schools/classroom-hero-2000.webp 2000w"
             sizes="(min-width: 1400px) 1400px, 100vw"
           />
           <img
-            src="/img/schools/hero-2000.webp"
-            alt="Two schoolgirls in blue uniforms writing in their notebooks in a classroom"
+            src="/img/schools/classroom-hero-2000.webp"
+            alt="A schoolgirl in a red uniform writing in her notebook at her classroom desk"
             width={2000}
-            height={1125}
+            height={1333}
             fetchPriority="high"
             decoding="async"
-            className="absolute inset-0 size-full object-cover object-[72%_center] lg:object-center"
+            className="absolute inset-0 size-full object-cover object-[66%_center] lg:object-center"
           />
         </picture>
         <div
@@ -575,13 +576,13 @@ function Footer() {
       <p className={`${wrap} pb-8 text-xs text-slate-500 dark:text-slate-500`}>
         Photos by{' '}
         <a
-          href="https://unsplash.com/@swastikarora"
+          href="https://www.pexels.com/@bipspatiala/"
           className="underline"
           rel="noopener noreferrer"
         >
-          Swastik Arora
+          Bhupindra International Public School
         </a>{' '}
-        and{' '}
+        on Pexels and{' '}
         <a
           href="https://unsplash.com/@cimthooghly"
           className="underline"
