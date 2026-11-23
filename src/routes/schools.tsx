@@ -12,6 +12,7 @@ import {
   Users,
 } from 'lucide-react'
 import { Brand } from '../components/school/auth-shell'
+import { ReportGallery } from '../components/school/landing-reports'
 import { SUPPORT_EMAIL } from '../lib/legal'
 
 // The public front page of PrepPlan for Schools (owner request 2026-11-20, no F-number): a large
@@ -369,7 +370,7 @@ function Marking() {
 function Reports() {
   return (
     <section id="reports" className={`${wrap} scroll-mt-24 py-14 sm:py-20`}>
-      <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
+      <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.25fr]">
         <div>
           <SectionHead
             eyebrow="Reports"
@@ -394,78 +395,9 @@ function Reports() {
             ))}
           </div>
         </div>
-        <SampleReport />
+        <ReportGallery />
       </div>
     </section>
-  )
-}
-
-// A drawn example of a student report. Made-up figures, labelled as an example, never a real student.
-function SampleReport() {
-  const topics = [
-    { name: 'Large Numbers Around Us', pct: 90, tone: 'bg-emerald-500' },
-    { name: 'Working with Fractions', pct: 72, tone: 'bg-emerald-500' },
-    { name: 'Expressions using Letter-Numbers', pct: 45, tone: 'bg-amber-500' },
-    { name: 'Parallel and Intersecting Lines', pct: 30, tone: 'bg-rose-500' },
-  ]
-  return (
-    <figure
-      aria-label="Example of a student report"
-      className="rounded-[1.75rem] bg-white p-6 shadow-xl ring-1 shadow-slate-900/10 ring-slate-900/5 sm:p-8 dark:bg-slate-900 dark:ring-white/10"
-    >
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
-            Example report
-          </p>
-          <p className="mt-1 text-lg font-bold">
-            Half-Yearly · Class 7 · Mathematics
-          </p>
-        </div>
-        <span className="rounded-2xl bg-emerald-50 px-4 py-2 text-2xl font-bold text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">
-          58
-          <span className="text-base text-emerald-700/70 dark:text-emerald-300/70">
-            /80
-          </span>
-        </span>
-      </div>
-      <ul className="mt-6 space-y-4">
-        {topics.map((t) => (
-          <li key={t.name}>
-            <div className="flex justify-between text-[15px]">
-              <span className="font-medium">{t.name}</span>
-              <span className="text-slate-500 dark:text-slate-400">
-                {t.pct}%
-              </span>
-            </div>
-            <div className="mt-1.5 h-2.5 rounded-full bg-slate-100 dark:bg-slate-800">
-              <div
-                className={`h-full rounded-full ${t.tone}`}
-                style={{ width: `${t.pct}%` }}
-              />
-            </div>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-6 grid grid-cols-2 gap-3">
-        <div className="rounded-2xl bg-rose-50 p-4 dark:bg-rose-950/40">
-          <p className="text-2xl font-bold text-rose-700 dark:text-rose-300">
-            −14
-          </p>
-          <p className="text-sm text-rose-900/80 dark:text-rose-200/80">
-            Topic not learnt
-          </p>
-        </div>
-        <div className="rounded-2xl bg-amber-50 p-4 dark:bg-amber-950/40">
-          <p className="text-2xl font-bold text-amber-700 dark:text-amber-300">
-            −8
-          </p>
-          <p className="text-sm text-amber-900/80 dark:text-amber-200/80">
-            Writing habits: missing units, stopped early
-          </p>
-        </div>
-      </div>
-    </figure>
   )
 }
 
